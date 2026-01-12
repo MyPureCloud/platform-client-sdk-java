@@ -29,6 +29,7 @@ public class BotFlowSession  implements Serializable {
   
   private String id = null;
   private Entity flow = null;
+  private AddressableEntityRef conversation = null;
   private BotChannel channel = null;
   private String language = null;
   private String endLanguage = null;
@@ -152,7 +153,6 @@ public class BotFlowSession  implements Serializable {
   private BotResultCategoryEnum botResultCategory = null;
   private Date dateCreated = null;
   private Date dateCompleted = null;
-  private AddressableEntityRef conversation = null;
 
   public BotFlowSession() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -193,6 +193,24 @@ public class BotFlowSession  implements Serializable {
   }
   public void setFlow(Entity flow) {
     this.flow = flow;
+  }
+
+
+  /**
+   * The conversation details, across potentially multiple Bot Flow sessions.
+   **/
+  public BotFlowSession conversation(AddressableEntityRef conversation) {
+    this.conversation = conversation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Bot Flow sessions.")
+  @JsonProperty("conversation")
+  public AddressableEntityRef getConversation() {
+    return conversation;
+  }
+  public void setConversation(AddressableEntityRef conversation) {
+    this.conversation = conversation;
   }
 
 
@@ -322,13 +340,6 @@ public class BotFlowSession  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Bot Flow sessions.")
-  @JsonProperty("conversation")
-  public AddressableEntityRef getConversation() {
-    return conversation;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -341,19 +352,19 @@ public class BotFlowSession  implements Serializable {
 
     return Objects.equals(this.id, botFlowSession.id) &&
             Objects.equals(this.flow, botFlowSession.flow) &&
+            Objects.equals(this.conversation, botFlowSession.conversation) &&
             Objects.equals(this.channel, botFlowSession.channel) &&
             Objects.equals(this.language, botFlowSession.language) &&
             Objects.equals(this.endLanguage, botFlowSession.endLanguage) &&
             Objects.equals(this.botResult, botFlowSession.botResult) &&
             Objects.equals(this.botResultCategory, botFlowSession.botResultCategory) &&
             Objects.equals(this.dateCreated, botFlowSession.dateCreated) &&
-            Objects.equals(this.dateCompleted, botFlowSession.dateCompleted) &&
-            Objects.equals(this.conversation, botFlowSession.conversation);
+            Objects.equals(this.dateCompleted, botFlowSession.dateCompleted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, flow, channel, language, endLanguage, botResult, botResultCategory, dateCreated, dateCompleted, conversation);
+    return Objects.hash(id, flow, conversation, channel, language, endLanguage, botResult, botResultCategory, dateCreated, dateCompleted);
   }
 
   @Override
@@ -363,6 +374,7 @@ public class BotFlowSession  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
+    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    endLanguage: ").append(toIndentedString(endLanguage)).append("\n");
@@ -370,7 +382,6 @@ public class BotFlowSession  implements Serializable {
     sb.append("    botResultCategory: ").append(toIndentedString(botResultCategory)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
-    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

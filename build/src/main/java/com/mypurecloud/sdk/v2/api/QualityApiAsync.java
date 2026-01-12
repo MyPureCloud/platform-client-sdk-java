@@ -14,6 +14,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.AgentScoringRule;
+import com.mypurecloud.sdk.v2.model.AgentScoringRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.AiScoringSettings;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
@@ -60,6 +62,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteQualityConversationEvaluationReq
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsSurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteQualityProgramAgentscoringruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobRequest;
@@ -85,6 +88,8 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkContextsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityProgramAgentscoringruleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityProgramAgentscoringrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationRequest;
@@ -106,6 +111,7 @@ import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityProgramAgentscoringrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsSurveysRequest;
@@ -116,6 +122,7 @@ import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationAiscoringSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsSurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.PutQualityProgramAgentscoringruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualitySurveysScorableRequest;
 
 import java.io.IOException;
@@ -634,6 +641,81 @@ public class QualityApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteQualityFormsSurveyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an Agent Scoring Rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteQualityProgramAgentscoringruleAsync(DeleteQualityProgramAgentscoringruleRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an Agent Scoring Rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteQualityProgramAgentscoringruleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -2557,6 +2639,156 @@ public class QualityApiAsync {
   }
 
   /**
+   * Get an Agent Scoring Rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentScoringRule> getQualityProgramAgentscoringruleAsync(GetQualityProgramAgentscoringruleRequest request, final AsyncApiCallback<AgentScoringRule> callback) {
+    try {
+      final SettableFuture<AgentScoringRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentScoringRule>() {}, new AsyncApiCallback<ApiResponse<AgentScoringRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScoringRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Agent Scoring Rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentScoringRule>> getQualityProgramAgentscoringruleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentScoringRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentScoringRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentScoringRule>() {}, new AsyncApiCallback<ApiResponse<AgentScoringRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScoringRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Agent Scoring Rules for a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentScoringRuleEntityListing> getQualityProgramAgentscoringrulesAsync(GetQualityProgramAgentscoringrulesRequest request, final AsyncApiCallback<AgentScoringRuleEntityListing> callback) {
+    try {
+      final SettableFuture<AgentScoringRuleEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentScoringRuleEntityListing>() {}, new AsyncApiCallback<ApiResponse<AgentScoringRuleEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScoringRuleEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Agent Scoring Rules for a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentScoringRuleEntityListing>> getQualityProgramAgentscoringrulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentScoringRuleEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentScoringRuleEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentScoringRuleEntityListing>() {}, new AsyncApiCallback<ApiResponse<AgentScoringRuleEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScoringRuleEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScoringRuleEntityListing> response = (ApiResponse<AgentScoringRuleEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScoringRuleEntityListing> response = (ApiResponse<AgentScoringRuleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the published evaluation forms.
    * 
    * @param request the request object
@@ -4142,6 +4374,81 @@ public class QualityApiAsync {
   }
 
   /**
+   * Create an Agent Scoring Rule
+   * Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentScoringRule> postQualityProgramAgentscoringrulesAsync(PostQualityProgramAgentscoringrulesRequest request, final AsyncApiCallback<AgentScoringRule> callback) {
+    try {
+      final SettableFuture<AgentScoringRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentScoringRule>() {}, new AsyncApiCallback<ApiResponse<AgentScoringRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScoringRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an Agent Scoring Rule
+   * Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentScoringRule>> postQualityProgramAgentscoringrulesAsync(ApiRequest<AgentScoringRule> request, final AsyncApiCallback<ApiResponse<AgentScoringRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentScoringRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentScoringRule>() {}, new AsyncApiCallback<ApiResponse<AgentScoringRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScoringRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Publish an evaluation form.
    * 
    * @param request the request object
@@ -4884,6 +5191,81 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an Agent Scoring Rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentScoringRule> putQualityProgramAgentscoringruleAsync(PutQualityProgramAgentscoringruleRequest request, final AsyncApiCallback<AgentScoringRule> callback) {
+    try {
+      final SettableFuture<AgentScoringRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentScoringRule>() {}, new AsyncApiCallback<ApiResponse<AgentScoringRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScoringRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an Agent Scoring Rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentScoringRule>> putQualityProgramAgentscoringruleAsync(ApiRequest<AgentScoringRule> request, final AsyncApiCallback<ApiResponse<AgentScoringRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentScoringRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentScoringRule>() {}, new AsyncApiCallback<ApiResponse<AgentScoringRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScoringRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

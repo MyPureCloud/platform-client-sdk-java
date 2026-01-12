@@ -22,9 +22,9 @@ import java.io.Serializable;
 
 public class ConversationSummaryResolution  implements Serializable {
   
+  private Float confidence = null;
   private String text = null;
   private String description = null;
-  private Float confidence = null;
   private String outcome = null;
 
   public ConversationSummaryResolution() {
@@ -33,6 +33,24 @@ public class ConversationSummaryResolution  implements Serializable {
   }
 
   
+  /**
+   * The AI confidence value.
+   **/
+  public ConversationSummaryResolution confidence(Float confidence) {
+    this.confidence = confidence;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The AI confidence value.")
+  @JsonProperty("confidence")
+  public Float getConfidence() {
+    return confidence;
+  }
+  public void setConfidence(Float confidence) {
+    this.confidence = confidence;
+  }
+
+
   /**
    * The text of the resolution.
    **/
@@ -69,17 +87,21 @@ public class ConversationSummaryResolution  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The AI confidence value.")
-  @JsonProperty("confidence")
-  public Float getConfidence() {
-    return confidence;
+  /**
+   * The outcome of the conversation's resolution.
+   **/
+  public ConversationSummaryResolution outcome(String outcome) {
+    this.outcome = outcome;
+    return this;
   }
-
-
+  
   @ApiModelProperty(example = "null", value = "The outcome of the conversation's resolution.")
   @JsonProperty("outcome")
   public String getOutcome() {
     return outcome;
+  }
+  public void setOutcome(String outcome) {
+    this.outcome = outcome;
   }
 
 
@@ -93,15 +115,15 @@ public class ConversationSummaryResolution  implements Serializable {
     }
     ConversationSummaryResolution conversationSummaryResolution = (ConversationSummaryResolution) o;
 
-    return Objects.equals(this.text, conversationSummaryResolution.text) &&
+    return Objects.equals(this.confidence, conversationSummaryResolution.confidence) &&
+            Objects.equals(this.text, conversationSummaryResolution.text) &&
             Objects.equals(this.description, conversationSummaryResolution.description) &&
-            Objects.equals(this.confidence, conversationSummaryResolution.confidence) &&
             Objects.equals(this.outcome, conversationSummaryResolution.outcome);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, description, confidence, outcome);
+    return Objects.hash(confidence, text, description, outcome);
   }
 
   @Override
@@ -109,9 +131,9 @@ public class ConversationSummaryResolution  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationSummaryResolution {\n");
     
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    outcome: ").append(toIndentedString(outcome)).append("\n");
     sb.append("}");
     return sb.toString();

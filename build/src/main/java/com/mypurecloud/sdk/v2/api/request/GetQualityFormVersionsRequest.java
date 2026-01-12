@@ -21,6 +21,8 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.AgentScoringRule;
+import com.mypurecloud.sdk.v2.model.AgentScoringRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.AiScoringSettings;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
@@ -103,6 +105,20 @@ public class GetQualityFormVersionsRequest {
 	    return this;
 	} 
 
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetQualityFormVersionsRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -138,6 +154,9 @@ public class GetQualityFormVersionsRequest {
         
 
                 .withQueryParameters("pageNumber", "", pageNumber)
+        
+
+                .withQueryParameters("sortOrder", "", sortOrder)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -177,6 +196,11 @@ public class GetQualityFormVersionsRequest {
 
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
 			return this;
 		}
 

@@ -326,7 +326,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **types** | [**List&lt;String&gt;**](String)| The types of the rule |<br />**Values**: Learning 
+| **types** | [**List&lt;String&gt;**](String)| The types of the rule |<br />**Values**: Learning, ActivityPlan 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Number of results per page | [optional] [default to 25] 
 | **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response | [optional]<br />**Values**: criteria 
@@ -392,7 +392,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ruleType** | **String**| The type of the rule |<br />**Values**: Learning 
+| **ruleType** | **String**| The type of the rule |<br />**Values**: Learning, ActivityPlan 
 {: class="table-striped"}
 
 
@@ -596,4 +596,4 @@ try {
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

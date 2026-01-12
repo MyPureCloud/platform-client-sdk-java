@@ -21,6 +21,8 @@ import com.mypurecloud.sdk.v2.model.AssistantQueue;
 import com.mypurecloud.sdk.v2.model.AssistantQueueListing;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkAddRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersJobsRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersJobsResponse;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryResponse;
 import com.mypurecloud.sdk.v2.model.BulkResponse;
@@ -34,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAssistantQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAssistantsAgentchecklistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAssistantQueueUsersJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantsAgentchecklistRequest;
@@ -44,6 +47,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAssistantQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantsAgentchecklistsRequest;
@@ -507,6 +511,81 @@ public class AgentAssistantsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AssistantQueue> response = (ApiResponse<AssistantQueue>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get job details.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AssistantQueueUsersJobsResponse> getAssistantQueueUsersJobAsync(GetAssistantQueueUsersJobRequest request, final AsyncApiCallback<AssistantQueueUsersJobsResponse> callback) {
+    try {
+      final SettableFuture<AssistantQueueUsersJobsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssistantQueueUsersJobsResponse>() {}, new AsyncApiCallback<ApiResponse<AssistantQueueUsersJobsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssistantQueueUsersJobsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get job details.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AssistantQueueUsersJobsResponse>> getAssistantQueueUsersJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssistantQueueUsersJobsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AssistantQueueUsersJobsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AssistantQueueUsersJobsResponse>() {}, new AsyncApiCallback<ApiResponse<AssistantQueueUsersJobsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssistantQueueUsersJobsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssistantQueueUsersJobsResponse> response = (ApiResponse<AssistantQueueUsersJobsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssistantQueueUsersJobsResponse> response = (ApiResponse<AssistantQueueUsersJobsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1257,6 +1336,81 @@ public class AgentAssistantsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start a new job to assistant-queue.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AssistantQueueUsersJobsResponse> postAssistantQueueUsersJobsAsync(PostAssistantQueueUsersJobsRequest request, final AsyncApiCallback<AssistantQueueUsersJobsResponse> callback) {
+    try {
+      final SettableFuture<AssistantQueueUsersJobsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssistantQueueUsersJobsResponse>() {}, new AsyncApiCallback<ApiResponse<AssistantQueueUsersJobsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssistantQueueUsersJobsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start a new job to assistant-queue.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AssistantQueueUsersJobsResponse>> postAssistantQueueUsersJobsAsync(ApiRequest<AssistantQueueUsersJobsRequest> request, final AsyncApiCallback<ApiResponse<AssistantQueueUsersJobsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AssistantQueueUsersJobsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AssistantQueueUsersJobsResponse>() {}, new AsyncApiCallback<ApiResponse<AssistantQueueUsersJobsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssistantQueueUsersJobsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssistantQueueUsersJobsResponse> response = (ApiResponse<AssistantQueueUsersJobsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssistantQueueUsersJobsResponse> response = (ApiResponse<AssistantQueueUsersJobsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

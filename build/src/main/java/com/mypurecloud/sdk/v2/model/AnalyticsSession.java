@@ -446,6 +446,7 @@ public class AnalyticsSession  implements Serializable {
   private String sessionId = null;
   private Boolean sharingScreen = null;
   private Boolean skipEnabled = null;
+  private Boolean snippetRecording = null;
   private Integer timeoutSeconds = null;
 
   private static class UsedRoutingEnumDeserializer extends StdDeserializer<UsedRoutingEnum> {
@@ -1883,6 +1884,24 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
+   * Whether or not the conversation included a snippet being recorded.
+   **/
+  public AnalyticsSession snippetRecording(Boolean snippetRecording) {
+    this.snippetRecording = snippetRecording;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether or not the conversation included a snippet being recorded.")
+  @JsonProperty("snippetRecording")
+  public Boolean getSnippetRecording() {
+    return snippetRecording;
+  }
+  public void setSnippetRecording(Boolean snippetRecording) {
+    this.snippetRecording = snippetRecording;
+  }
+
+
+  /**
    * The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling)
    **/
   public AnalyticsSession timeoutSeconds(Integer timeoutSeconds) {
@@ -2165,6 +2184,7 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.sessionId, analyticsSession.sessionId) &&
             Objects.equals(this.sharingScreen, analyticsSession.sharingScreen) &&
             Objects.equals(this.skipEnabled, analyticsSession.skipEnabled) &&
+            Objects.equals(this.snippetRecording, analyticsSession.snippetRecording) &&
             Objects.equals(this.timeoutSeconds, analyticsSession.timeoutSeconds) &&
             Objects.equals(this.usedRouting, analyticsSession.usedRouting) &&
             Objects.equals(this.videoAddressSelf, analyticsSession.videoAddressSelf) &&
@@ -2180,7 +2200,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, engagementSource, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenMonitoredUserId, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, engagementSource, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenMonitoredUserId, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, snippetRecording, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -2263,6 +2283,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
+    sb.append("    snippetRecording: ").append(toIndentedString(snippetRecording)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");
     sb.append("    videoAddressSelf: ").append(toIndentedString(videoAddressSelf)).append("\n");

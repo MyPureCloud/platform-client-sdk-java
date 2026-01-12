@@ -98,6 +98,7 @@ public class ConversationAggregationSort  implements Serializable {
     TPARK("tPark"),
     TPARKCOMPLETE("tParkComplete"),
     TSCREENMONITORING("tScreenMonitoring"),
+    TSNIPPETRECORD("tSnippetRecord"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),
     TUSERRESPONSETIME("tUserResponseTime"),

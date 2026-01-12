@@ -1756,7 +1756,7 @@ try {
 # **getSocialmediaTopics**
 
 
-> [SocialTopicResponseEntityListing](SocialTopicResponseEntityListing) getSocialmediaTopics(pageNumber, pageSize, divisionIds, includeDeleted, name)
+> [SocialTopicResponseEntityListing](SocialTopicResponseEntityListing) getSocialmediaTopics(pageNumber, pageSize, divisionIds, includeDeleted, name, ids)
 
 Retrieve all social topics.
 
@@ -1793,8 +1793,9 @@ Integer pageSize = 25; // Integer | Page size
 List<String> divisionIds = Arrays.asList(null); // List<String> | One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
 Boolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted items in the result.
 String name = "name_example"; // String | Search for topic by name that contains the given search string, search is case insensitive
+List<String> ids = Arrays.asList(null); // List<String> | One or more topic IDs to search through the topics.
 try {
-    SocialTopicResponseEntityListing result = apiInstance.getSocialmediaTopics(pageNumber, pageSize, divisionIds, includeDeleted, name);
+    SocialTopicResponseEntityListing result = apiInstance.getSocialmediaTopics(pageNumber, pageSize, divisionIds, includeDeleted, name, ids);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SocialMediaApi#getSocialmediaTopics");
@@ -1812,6 +1813,7 @@ try {
 | **divisionIds** | [**List&lt;String&gt;**](String)| One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. | [optional] 
 | **includeDeleted** | **Boolean**| Determines whether to include soft-deleted items in the result. | [optional] 
 | **name** | **String**| Search for topic by name that contains the given search string, search is case insensitive | [optional] 
+| **ids** | [**List&lt;String&gt;**](String)| One or more topic IDs to search through the topics. | [optional] 
 {: class="table-striped"}
 
 
@@ -3176,4 +3178,4 @@ try {
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

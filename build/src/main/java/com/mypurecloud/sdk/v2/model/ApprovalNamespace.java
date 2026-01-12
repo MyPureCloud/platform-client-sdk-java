@@ -65,6 +65,7 @@ public class ApprovalNamespace  implements Serializable {
     COBROWSE("cobrowse"),
     CONTENT_MANAGEMENT("content.management"),
     CONVERSATION("conversation"),
+    COPILOT("copilot"),
     DATAACTIONS("dataactions"),
     DATATABLES("datatables"),
     DIRECTORY("directory"),
@@ -124,6 +125,7 @@ public class ApprovalNamespace  implements Serializable {
     WEBHOOKS("webhooks"),
     WORKFORCE_MANAGEMENT_AGENT_AVAILABILITY("workforce.management.agent.availability"),
     WORKFORCE_MANAGEMENT("workforce.management"),
+    WORKFORCE_MANAGEMENT_SELF_SCHEDULE("workforce.management.self.schedule"),
     WORKFORCE_MANAGEMENT_SHIFT_TRADING("workforce.management.shift.trading"),
     SYSTEM("system");
 

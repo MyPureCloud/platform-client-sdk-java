@@ -134,6 +134,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequestWaitlistpositions**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequestWaitlistpositions) | Get the daily waitlist positions of a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequests) | Get a list of time off requests for the current user |
+| [**getWorkforcemanagementUnavailabletimesSettings**](WorkforceManagementApi#getWorkforcemanagementUnavailabletimesSettings) | Get availability management unit's settings for agent |
+| [**getWorkforcemanagementUnavailabletimesValidationJob**](WorkforceManagementApi#getWorkforcemanagementUnavailabletimesValidationJob) | Query agent unavailable times validation job |
 | [**getWorkforcemanagementUserWorkplanbidranks**](WorkforceManagementApi#getWorkforcemanagementUserWorkplanbidranks) | Get work plan bid ranks for a user |
 | [**getWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi#getWorkforcemanagementWorkplanbidPreferences) | Gets an agent's work plan bidding preference |
 | [**getWorkforcemanagementWorkplanbidWorkplans**](WorkforceManagementApi#getWorkforcemanagementWorkplanbidWorkplans) | Gets an agent's work plans for a bid |
@@ -160,11 +162,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeofflimit) | Updates a time off limit object. |
 | [**patchWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffplan) | Updates a time off plan |
 | [**patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus) | Set integration status for a time off request. |
+| [**patchWorkforcemanagementManagementunitUnavailabletimesSettings**](WorkforceManagementApi#patchWorkforcemanagementManagementunitUnavailabletimesSettings) | Update management unit availability settings |
 | [**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi#patchWorkforcemanagementManagementunitUserTimeoffrequest) | Update a time off request |
 | [**patchWorkforcemanagementManagementunitWeekShifttrade**](WorkforceManagementApi#patchWorkforcemanagementManagementunitWeekShifttrade) | Updates a shift trade. This route can only be called by the initiating agent |
 | [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi#patchWorkforcemanagementManagementunitWorkplan) | Update a work plan |
 | [**patchWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi#patchWorkforcemanagementManagementunitWorkplanrotation) | Update a work plan rotation |
 | [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi#patchWorkforcemanagementTimeoffrequest) | Update a time off request for the current user |
+| [**patchWorkforcemanagementUnavailabletimes**](WorkforceManagementApi#patchWorkforcemanagementUnavailabletimes) | Update agent unavailable times |
 | [**patchWorkforcemanagementUserWorkplanbidranks**](WorkforceManagementApi#patchWorkforcemanagementUserWorkplanbidranks) | Update work plan bid ranks for a user |
 | [**patchWorkforcemanagementUsersWorkplanbidranksBulk**](WorkforceManagementApi#patchWorkforcemanagementUsersWorkplanbidranksBulk) | Update bulk work plan bid ranks on users. Max 50 users can be updated at a time. |
 | [**patchWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi#patchWorkforcemanagementWorkplanbidPreferences) | Update an agent's work plan bidding preference |
@@ -174,6 +178,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi#postWorkforcemanagementAdherenceHistoricalBulk) | Request a historical adherence report in bulk |
 | [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanations) | Add an adherence explanation for the requested user |
 | [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanationsQuery) | Query adherence explanations for the given agent across a specified range |
+| [**postWorkforcemanagementAgentUnavailabletimesQuery**](WorkforceManagementApi#postWorkforcemanagementAgentUnavailabletimesQuery) | Get agent unavailable times |
 | [**postWorkforcemanagementAgents**](WorkforceManagementApi#postWorkforcemanagementAgents) | Move agents in and out of management unit |
 | [**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi#postWorkforcemanagementAgentsIntegrationsHrisQuery) | Query integrations for agents |
 | [**postWorkforcemanagementAgentsMeAdherenceHistoricalJobs**](WorkforceManagementApi#postWorkforcemanagementAgentsMeAdherenceHistoricalJobs) | Request an agent historical adherence report |
@@ -205,6 +210,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimits) | Creates a new time-off limit object |
 | [**postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery) | Retrieves time-off limit related values based on a given set of filters. |
 | [**postWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeoffplans) | Creates a new time-off plan |
+| [**postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery) | Get agent schedule generation unavailable times |
+| [**postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery) | Query availability management units settings |
 | [**postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery) | Loads agent schedule data from the schedule. Used in combination with the metadata route |
 | [**postWorkforcemanagementBusinessunitWeekScheduleCopy**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekScheduleCopy) | Copy a schedule |
 | [**postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations) | Request a daily recalculation of the performance prediction for the associated schedule |
@@ -263,6 +270,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementTimeoffrequests**](WorkforceManagementApi#postWorkforcemanagementTimeoffrequests) | Create a time off request for the current user |
 | [**postWorkforcemanagementTimeoffrequestsEstimate**](WorkforceManagementApi#postWorkforcemanagementTimeoffrequestsEstimate) | Estimates available time off for current user |
 | [**postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi#postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery) | Retrieves integration statuses for a list of current user time off requests |
+| [**postWorkforcemanagementUnavailabletimesQuery**](WorkforceManagementApi#postWorkforcemanagementUnavailabletimesQuery) | Get agent unavailable times |
+| [**postWorkforcemanagementUnavailabletimesValidationJobs**](WorkforceManagementApi#postWorkforcemanagementUnavailabletimesValidationJobs) | Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week |
 | [**putWorkforcemanagementAgentIntegrationsHris**](WorkforceManagementApi#putWorkforcemanagementAgentIntegrationsHris) | Update integrations for agent |
 | [**putWorkforcemanagementBusinessunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementBusinessunitTimeofflimitValues) | Sets daily values for a date range of time-off limit object |
 | [**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementManagementunitTimeofflimitValues) | Sets daily values for a date range of time off limit object |
@@ -8534,6 +8543,120 @@ This endpoint does not require any parameters.
 [**TimeOffRequestList**](TimeOffRequestList)
 
 
+# **getWorkforcemanagementUnavailabletimesSettings**
+
+
+> [ManagementUnitAvailabilitySettingsResponse](ManagementUnitAvailabilitySettingsResponse) getWorkforcemanagementUnavailabletimesSettings()
+
+Get availability management unit's settings for agent
+
+Wraps GET /api/v2/workforcemanagement/unavailabletimes/settings  
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    ManagementUnitAvailabilitySettingsResponse result = apiInstance.getWorkforcemanagementUnavailabletimesSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementUnavailabletimesSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ManagementUnitAvailabilitySettingsResponse**](ManagementUnitAvailabilitySettingsResponse)
+
+
+# **getWorkforcemanagementUnavailabletimesValidationJob**
+
+
+> [QueryAgentUnavailableTimesValidationJobResponse](QueryAgentUnavailableTimesValidationJobResponse) getWorkforcemanagementUnavailabletimesValidationJob(jobId)
+
+Query agent unavailable times validation job
+
+Wraps GET /api/v2/workforcemanagement/unavailabletimes/validation/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    QueryAgentUnavailableTimesValidationJobResponse result = apiInstance.getWorkforcemanagementUnavailabletimesValidationJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementUnavailabletimesValidationJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QueryAgentUnavailableTimesValidationJobResponse**](QueryAgentUnavailableTimesValidationJobResponse)
+
+
 # **getWorkforcemanagementUserWorkplanbidranks**
 
 
@@ -10146,6 +10269,67 @@ try {
 [**UserTimeOffIntegrationStatusResponse**](UserTimeOffIntegrationStatusResponse)
 
 
+# **patchWorkforcemanagementManagementunitUnavailabletimesSettings**
+
+
+> [ManagementUnitAvailabilitySettingsResponse](ManagementUnitAvailabilitySettingsResponse) patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId, body)
+
+Update management unit availability settings
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/unavailabletimes/settings  
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
+UpdateManagementUnitsSettingsRequest body = new UpdateManagementUnitsSettingsRequest(); // UpdateManagementUnitsSettingsRequest | body
+try {
+    ManagementUnitAvailabilitySettingsResponse result = apiInstance.patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitUnavailabletimesSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit | 
+| **body** | [**UpdateManagementUnitsSettingsRequest**](UpdateManagementUnitsSettingsRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ManagementUnitAvailabilitySettingsResponse**](ManagementUnitAvailabilitySettingsResponse)
+
+
 # **patchWorkforcemanagementManagementunitUserTimeoffrequest**
 
 
@@ -10463,6 +10647,65 @@ try {
 ### Return type
 
 [**TimeOffRequestResponse**](TimeOffRequestResponse)
+
+
+# **patchWorkforcemanagementUnavailabletimes**
+
+
+> [UnavailableTimeListing](UnavailableTimeListing) patchWorkforcemanagementUnavailabletimes(body)
+
+Update agent unavailable times
+
+Wraps PATCH /api/v2/workforcemanagement/unavailabletimes  
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+UpdateUnavailableTimesRequest body = new UpdateUnavailableTimesRequest(); // UpdateUnavailableTimesRequest | body
+try {
+    UnavailableTimeListing result = apiInstance.patchWorkforcemanagementUnavailabletimes(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementUnavailabletimes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UpdateUnavailableTimesRequest**](UpdateUnavailableTimesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UnavailableTimeListing**](UnavailableTimeListing)
 
 
 # **patchWorkforcemanagementUserWorkplanbidranks**
@@ -11013,6 +11256,67 @@ try {
 ### Return type
 
 [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse)
+
+
+# **postWorkforcemanagementAgentUnavailabletimesQuery**
+
+
+> [UnavailableTimeListing](UnavailableTimeListing) postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body)
+
+Get agent unavailable times
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/unavailabletimes/query  
+
+Requires ANY permissions: 
+
+* wfm:unavailableTimes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent
+QueryAgentUnavailableTimesRequest body = new QueryAgentUnavailableTimesRequest(); // QueryAgentUnavailableTimesRequest | body
+try {
+    UnavailableTimeListing result = apiInstance.postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentUnavailabletimesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent | 
+| **body** | [**QueryAgentUnavailableTimesRequest**](QueryAgentUnavailableTimesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UnavailableTimeListing**](UnavailableTimeListing)
 
 
 # **postWorkforcemanagementAgents**
@@ -12919,6 +13223,128 @@ try {
 ### Return type
 
 [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse)
+
+
+# **postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery**
+
+
+> [QueryAgentScheduleUnavailableTimesResponse](QueryAgentScheduleUnavailableTimesResponse) postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId, body)
+
+Get agent schedule generation unavailable times
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query  
+
+Requires ANY permissions: 
+
+* wfm:unavailableTimes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+QueryAgentScheduleUnavailableTimesRequest body = new QueryAgentScheduleUnavailableTimesRequest(); // QueryAgentScheduleUnavailableTimesRequest | body
+try {
+    QueryAgentScheduleUnavailableTimesResponse result = apiInstance.postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**QueryAgentScheduleUnavailableTimesRequest**](QueryAgentScheduleUnavailableTimesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QueryAgentScheduleUnavailableTimesResponse**](QueryAgentScheduleUnavailableTimesResponse)
+
+
+# **postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery**
+
+
+> [QueryAvailabilityManagementUnitsSettingsResponse](QueryAvailabilityManagementUnitsSettingsResponse) postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId, body)
+
+Query availability management units settings
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query  
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+QueryAvailabilityManagementUnitsSettingsRequest body = new QueryAvailabilityManagementUnitsSettingsRequest(); // QueryAvailabilityManagementUnitsSettingsRequest | body
+try {
+    QueryAvailabilityManagementUnitsSettingsResponse result = apiInstance.postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**QueryAvailabilityManagementUnitsSettingsRequest**](QueryAvailabilityManagementUnitsSettingsRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QueryAvailabilityManagementUnitsSettingsResponse**](QueryAvailabilityManagementUnitsSettingsResponse)
 
 
 # **postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery**
@@ -16574,6 +17000,124 @@ try {
 [**TimeOffIntegrationStatusResponseListing**](TimeOffIntegrationStatusResponseListing)
 
 
+# **postWorkforcemanagementUnavailabletimesQuery**
+
+
+> [UnavailableTimeListing](UnavailableTimeListing) postWorkforcemanagementUnavailabletimesQuery(body)
+
+Get agent unavailable times
+
+Wraps POST /api/v2/workforcemanagement/unavailabletimes/query  
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+QueryAgentUnavailableTimesRequest body = new QueryAgentUnavailableTimesRequest(); // QueryAgentUnavailableTimesRequest | body
+try {
+    UnavailableTimeListing result = apiInstance.postWorkforcemanagementUnavailabletimesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementUnavailabletimesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**QueryAgentUnavailableTimesRequest**](QueryAgentUnavailableTimesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UnavailableTimeListing**](UnavailableTimeListing)
+
+
+# **postWorkforcemanagementUnavailabletimesValidationJobs**
+
+
+> [ValidateAgentUnavailableTimesResponse](ValidateAgentUnavailableTimesResponse) postWorkforcemanagementUnavailabletimesValidationJobs(body)
+
+Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+
+Wraps POST /api/v2/workforcemanagement/unavailabletimes/validation/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+ValidateAgentUnavailableTimesRequest body = new ValidateAgentUnavailableTimesRequest(); // ValidateAgentUnavailableTimesRequest | body
+try {
+    ValidateAgentUnavailableTimesResponse result = apiInstance.postWorkforcemanagementUnavailabletimesValidationJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementUnavailabletimesValidationJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ValidateAgentUnavailableTimesRequest**](ValidateAgentUnavailableTimesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ValidateAgentUnavailableTimesResponse**](ValidateAgentUnavailableTimesResponse)
+
+
 # **putWorkforcemanagementAgentIntegrationsHris**
 
 
@@ -16765,4 +17309,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

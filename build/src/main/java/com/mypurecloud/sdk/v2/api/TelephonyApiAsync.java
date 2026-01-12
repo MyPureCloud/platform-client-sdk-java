@@ -58,7 +58,6 @@ public class TelephonyApiAsync {
   /**
    * Get an agent's greetings.
    * 
-   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -93,7 +92,6 @@ public class TelephonyApiAsync {
   /**
    * Get an agent's greetings.
    * 
-   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -135,7 +133,6 @@ public class TelephonyApiAsync {
   /**
    * Get the agent's own greetings.
    * 
-   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -170,7 +167,6 @@ public class TelephonyApiAsync {
   /**
    * Get the agent's own greetings.
    * 
-   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -662,7 +658,6 @@ public class TelephonyApiAsync {
   /**
    * Updates an agent's greetings.
    * 
-   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -697,7 +692,6 @@ public class TelephonyApiAsync {
   /**
    * Updates an agent's greetings.
    * 
-   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -739,7 +733,6 @@ public class TelephonyApiAsync {
   /**
    * Updates the agent's own greetings.
    * 
-   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -774,7 +767,6 @@ public class TelephonyApiAsync {
   /**
    * Updates the agent's own greetings.
    * 
-   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.Email;
 import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.InternalMessage;
 import com.mypurecloud.sdk.v2.model.Message;
+import com.mypurecloud.sdk.v2.model.ScreenMonitoring;
 import com.mypurecloud.sdk.v2.model.Screenshare;
 import com.mypurecloud.sdk.v2.model.SocialExpression;
 import com.mypurecloud.sdk.v2.model.Video;
@@ -130,6 +131,8 @@ public class ParticipantBasic  implements Serializable {
   private List<Cobrowsesession> cobrowsesessions = null;
   private List<Email> emails = null;
   private List<Message> messages = null;
+  private List<InternalMessage> internalMessages = null;
+  private List<ScreenMonitoring> screenMonitorings = null;
   private List<Screenshare> screenshares = null;
   private List<SocialExpression> socialExpressions = null;
   private List<Video> videos = null;
@@ -235,7 +238,6 @@ public class ParticipantBasic  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
-  private List<InternalMessage> internalMessages = null;
   private String bargedParticipantId = null;
 
   public ParticipantBasic() {
@@ -247,11 +249,12 @@ public class ParticipantBasic  implements Serializable {
       cobrowsesessions = new ArrayList<Cobrowsesession>();
       emails = new ArrayList<Email>();
       messages = new ArrayList<Message>();
+      internalMessages = new ArrayList<InternalMessage>();
+      screenMonitorings = new ArrayList<ScreenMonitoring>();
       screenshares = new ArrayList<Screenshare>();
       socialExpressions = new ArrayList<SocialExpression>();
       videos = new ArrayList<Video>();
       evaluations = new ArrayList<Evaluation>();
-      internalMessages = new ArrayList<InternalMessage>();
     }
   }
 
@@ -954,6 +957,40 @@ public class ParticipantBasic  implements Serializable {
 
   /**
    **/
+  public ParticipantBasic internalMessages(List<InternalMessage> internalMessages) {
+    this.internalMessages = internalMessages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("internalMessages")
+  public List<InternalMessage> getInternalMessages() {
+    return internalMessages;
+  }
+  public void setInternalMessages(List<InternalMessage> internalMessages) {
+    this.internalMessages = internalMessages;
+  }
+
+
+  /**
+   **/
+  public ParticipantBasic screenMonitorings(List<ScreenMonitoring> screenMonitorings) {
+    this.screenMonitorings = screenMonitorings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("screenMonitorings")
+  public List<ScreenMonitoring> getScreenMonitorings() {
+    return screenMonitorings;
+  }
+  public void setScreenMonitorings(List<ScreenMonitoring> screenMonitorings) {
+    this.screenMonitorings = screenMonitorings;
+  }
+
+
+  /**
+   **/
   public ParticipantBasic screenshares(List<Screenshare> screenshares) {
     this.screenshares = screenshares;
     return this;
@@ -1093,23 +1130,6 @@ public class ParticipantBasic  implements Serializable {
 
 
   /**
-   **/
-  public ParticipantBasic internalMessages(List<InternalMessage> internalMessages) {
-    this.internalMessages = internalMessages;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("internalMessages")
-  public List<InternalMessage> getInternalMessages() {
-    return internalMessages;
-  }
-  public void setInternalMessages(List<InternalMessage> internalMessages) {
-    this.internalMessages = internalMessages;
-  }
-
-
-  /**
    * If this participant barged in a participant's call, then this will be the id of the targeted participant.
    **/
   public ParticipantBasic bargedParticipantId(String bargedParticipantId) {
@@ -1176,6 +1196,8 @@ public class ParticipantBasic  implements Serializable {
             Objects.equals(this.cobrowsesessions, participantBasic.cobrowsesessions) &&
             Objects.equals(this.emails, participantBasic.emails) &&
             Objects.equals(this.messages, participantBasic.messages) &&
+            Objects.equals(this.internalMessages, participantBasic.internalMessages) &&
+            Objects.equals(this.screenMonitorings, participantBasic.screenMonitorings) &&
             Objects.equals(this.screenshares, participantBasic.screenshares) &&
             Objects.equals(this.socialExpressions, participantBasic.socialExpressions) &&
             Objects.equals(this.videos, participantBasic.videos) &&
@@ -1184,13 +1206,12 @@ public class ParticipantBasic  implements Serializable {
             Objects.equals(this.flaggedReason, participantBasic.flaggedReason) &&
             Objects.equals(this.startAcwTime, participantBasic.startAcwTime) &&
             Objects.equals(this.endAcwTime, participantBasic.endAcwTime) &&
-            Objects.equals(this.internalMessages, participantBasic.internalMessages) &&
             Objects.equals(this.bargedParticipantId, participantBasic.bargedParticipantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalContactInitialDivisionId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, mediaRoles, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime, internalMessages, bargedParticipantId);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalContactInitialDivisionId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, mediaRoles, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenMonitorings, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime, bargedParticipantId);
   }
 
   @Override
@@ -1237,6 +1258,8 @@ public class ParticipantBasic  implements Serializable {
     sb.append("    cobrowsesessions: ").append(toIndentedString(cobrowsesessions)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+    sb.append("    internalMessages: ").append(toIndentedString(internalMessages)).append("\n");
+    sb.append("    screenMonitorings: ").append(toIndentedString(screenMonitorings)).append("\n");
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");
@@ -1245,7 +1268,6 @@ public class ParticipantBasic  implements Serializable {
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
-    sb.append("    internalMessages: ").append(toIndentedString(internalMessages)).append("\n");
     sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -156,6 +156,7 @@ import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.LongTermRequirementsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
+import com.mypurecloud.sdk.v2.model.ManagementUnitAvailabilitySettingsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
@@ -174,7 +175,13 @@ import com.mypurecloud.sdk.v2.model.PlanningGroupList;
 import com.mypurecloud.sdk.v2.model.PlanningGroupToStaffingGroupsListing;
 import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
+import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesRequest;
+import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesResponse;
+import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesRequest;
+import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesValidationJobResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
+import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsRequest;
+import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
 import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
@@ -209,6 +216,7 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
+import com.mypurecloud.sdk.v2.model.UnavailableTimeListing;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
@@ -217,6 +225,7 @@ import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateCapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateManagementUnitsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchRequest;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentsRequest;
@@ -228,6 +237,7 @@ import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanRequest;
+import com.mypurecloud.sdk.v2.model.UpdateUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequestBody;
@@ -238,6 +248,8 @@ import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserStaffingGroupListing;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponse;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponseListing;
+import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesRequest;
+import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesResponse;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
 import com.mypurecloud.sdk.v2.model.ValidationServiceAsyncResponse;
 import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
@@ -405,6 +417,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffbalanceJo
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementUnavailabletimesSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementUnavailabletimesValidationJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementUserWorkplanbidranksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidWorkplansRequest;
@@ -431,11 +445,13 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunit
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUnavailabletimesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekShifttradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUnavailabletimesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUserWorkplanbidranksRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUsersWorkplanbidranksBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementWorkplanbidPreferencesRequest;
@@ -445,6 +461,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistor
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentUnavailabletimesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest;
@@ -476,6 +493,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSta
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeoffplansRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest;
@@ -534,6 +553,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeofflimitsAv
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsEstimateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletimesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletimesValidationJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementAgentIntegrationsHrisRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
@@ -10319,6 +10340,156 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get availability management unit's settings for agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ManagementUnitAvailabilitySettingsResponse> getWorkforcemanagementUnavailabletimesSettingsAsync(GetWorkforcemanagementUnavailabletimesSettingsRequest request, final AsyncApiCallback<ManagementUnitAvailabilitySettingsResponse> callback) {
+    try {
+      final SettableFuture<ManagementUnitAvailabilitySettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ManagementUnitAvailabilitySettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitAvailabilitySettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ManagementUnitAvailabilitySettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get availability management unit's settings for agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ManagementUnitAvailabilitySettingsResponse>> getWorkforcemanagementUnavailabletimesSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ManagementUnitAvailabilitySettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ManagementUnitAvailabilitySettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ManagementUnitAvailabilitySettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitAvailabilitySettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ManagementUnitAvailabilitySettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = (ApiResponse<ManagementUnitAvailabilitySettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = (ApiResponse<ManagementUnitAvailabilitySettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query agent unavailable times validation job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QueryAgentUnavailableTimesValidationJobResponse> getWorkforcemanagementUnavailabletimesValidationJobAsync(GetWorkforcemanagementUnavailabletimesValidationJobRequest request, final AsyncApiCallback<QueryAgentUnavailableTimesValidationJobResponse> callback) {
+    try {
+      final SettableFuture<QueryAgentUnavailableTimesValidationJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryAgentUnavailableTimesValidationJobResponse>() {}, new AsyncApiCallback<ApiResponse<QueryAgentUnavailableTimesValidationJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryAgentUnavailableTimesValidationJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query agent unavailable times validation job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QueryAgentUnavailableTimesValidationJobResponse>> getWorkforcemanagementUnavailabletimesValidationJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QueryAgentUnavailableTimesValidationJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QueryAgentUnavailableTimesValidationJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QueryAgentUnavailableTimesValidationJobResponse>() {}, new AsyncApiCallback<ApiResponse<QueryAgentUnavailableTimesValidationJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryAgentUnavailableTimesValidationJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryAgentUnavailableTimesValidationJobResponse> response = (ApiResponse<QueryAgentUnavailableTimesValidationJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryAgentUnavailableTimesValidationJobResponse> response = (ApiResponse<QueryAgentUnavailableTimesValidationJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get work plan bid ranks for a user
    * 
    * @param request the request object
@@ -12269,6 +12440,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Update management unit availability settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ManagementUnitAvailabilitySettingsResponse> patchWorkforcemanagementManagementunitUnavailabletimesSettingsAsync(PatchWorkforcemanagementManagementunitUnavailabletimesSettingsRequest request, final AsyncApiCallback<ManagementUnitAvailabilitySettingsResponse> callback) {
+    try {
+      final SettableFuture<ManagementUnitAvailabilitySettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ManagementUnitAvailabilitySettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitAvailabilitySettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ManagementUnitAvailabilitySettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update management unit availability settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ManagementUnitAvailabilitySettingsResponse>> patchWorkforcemanagementManagementunitUnavailabletimesSettingsAsync(ApiRequest<UpdateManagementUnitsSettingsRequest> request, final AsyncApiCallback<ApiResponse<ManagementUnitAvailabilitySettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ManagementUnitAvailabilitySettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ManagementUnitAvailabilitySettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitAvailabilitySettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ManagementUnitAvailabilitySettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = (ApiResponse<ManagementUnitAvailabilitySettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = (ApiResponse<ManagementUnitAvailabilitySettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update a time off request
    * 
    * @param request the request object
@@ -12632,6 +12878,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update agent unavailable times
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UnavailableTimeListing> patchWorkforcemanagementUnavailabletimesAsync(PatchWorkforcemanagementUnavailabletimesRequest request, final AsyncApiCallback<UnavailableTimeListing> callback) {
+    try {
+      final SettableFuture<UnavailableTimeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UnavailableTimeListing>() {}, new AsyncApiCallback<ApiResponse<UnavailableTimeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnavailableTimeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update agent unavailable times
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UnavailableTimeListing>> patchWorkforcemanagementUnavailabletimesAsync(ApiRequest<UpdateUnavailableTimesRequest> request, final AsyncApiCallback<ApiResponse<UnavailableTimeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UnavailableTimeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UnavailableTimeListing>() {}, new AsyncApiCallback<ApiResponse<UnavailableTimeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnavailableTimeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -13309,6 +13630,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UnavailableTimeListing> postWorkforcemanagementAgentUnavailabletimesQueryAsync(PostWorkforcemanagementAgentUnavailabletimesQueryRequest request, final AsyncApiCallback<UnavailableTimeListing> callback) {
+    try {
+      final SettableFuture<UnavailableTimeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UnavailableTimeListing>() {}, new AsyncApiCallback<ApiResponse<UnavailableTimeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnavailableTimeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UnavailableTimeListing>> postWorkforcemanagementAgentUnavailabletimesQueryAsync(ApiRequest<QueryAgentUnavailableTimesRequest> request, final AsyncApiCallback<ApiResponse<UnavailableTimeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UnavailableTimeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UnavailableTimeListing>() {}, new AsyncApiCallback<ApiResponse<UnavailableTimeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnavailableTimeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -15634,6 +16030,156 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BuTimeOffPlanResponse> response = (ApiResponse<BuTimeOffPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agent schedule generation unavailable times
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QueryAgentScheduleUnavailableTimesResponse> postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryAsync(PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryRequest request, final AsyncApiCallback<QueryAgentScheduleUnavailableTimesResponse> callback) {
+    try {
+      final SettableFuture<QueryAgentScheduleUnavailableTimesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryAgentScheduleUnavailableTimesResponse>() {}, new AsyncApiCallback<ApiResponse<QueryAgentScheduleUnavailableTimesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryAgentScheduleUnavailableTimesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agent schedule generation unavailable times
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QueryAgentScheduleUnavailableTimesResponse>> postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryAsync(ApiRequest<QueryAgentScheduleUnavailableTimesRequest> request, final AsyncApiCallback<ApiResponse<QueryAgentScheduleUnavailableTimesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QueryAgentScheduleUnavailableTimesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QueryAgentScheduleUnavailableTimesResponse>() {}, new AsyncApiCallback<ApiResponse<QueryAgentScheduleUnavailableTimesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryAgentScheduleUnavailableTimesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryAgentScheduleUnavailableTimesResponse> response = (ApiResponse<QueryAgentScheduleUnavailableTimesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryAgentScheduleUnavailableTimesResponse> response = (ApiResponse<QueryAgentScheduleUnavailableTimesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query availability management units settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QueryAvailabilityManagementUnitsSettingsResponse> postWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryAsync(PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryRequest request, final AsyncApiCallback<QueryAvailabilityManagementUnitsSettingsResponse> callback) {
+    try {
+      final SettableFuture<QueryAvailabilityManagementUnitsSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryAvailabilityManagementUnitsSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query availability management units settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse>> postWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryAsync(ApiRequest<QueryAvailabilityManagementUnitsSettingsRequest> request, final AsyncApiCallback<ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QueryAvailabilityManagementUnitsSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse> response = (ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse> response = (ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -19988,6 +20534,156 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TimeOffIntegrationStatusResponseListing> response = (ApiResponse<TimeOffIntegrationStatusResponseListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UnavailableTimeListing> postWorkforcemanagementUnavailabletimesQueryAsync(PostWorkforcemanagementUnavailabletimesQueryRequest request, final AsyncApiCallback<UnavailableTimeListing> callback) {
+    try {
+      final SettableFuture<UnavailableTimeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UnavailableTimeListing>() {}, new AsyncApiCallback<ApiResponse<UnavailableTimeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnavailableTimeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UnavailableTimeListing>> postWorkforcemanagementUnavailabletimesQueryAsync(ApiRequest<QueryAgentUnavailableTimesRequest> request, final AsyncApiCallback<ApiResponse<UnavailableTimeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UnavailableTimeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UnavailableTimeListing>() {}, new AsyncApiCallback<ApiResponse<UnavailableTimeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnavailableTimeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ValidateAgentUnavailableTimesResponse> postWorkforcemanagementUnavailabletimesValidationJobsAsync(PostWorkforcemanagementUnavailabletimesValidationJobsRequest request, final AsyncApiCallback<ValidateAgentUnavailableTimesResponse> callback) {
+    try {
+      final SettableFuture<ValidateAgentUnavailableTimesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ValidateAgentUnavailableTimesResponse>() {}, new AsyncApiCallback<ApiResponse<ValidateAgentUnavailableTimesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ValidateAgentUnavailableTimesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ValidateAgentUnavailableTimesResponse>> postWorkforcemanagementUnavailabletimesValidationJobsAsync(ApiRequest<ValidateAgentUnavailableTimesRequest> request, final AsyncApiCallback<ApiResponse<ValidateAgentUnavailableTimesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ValidateAgentUnavailableTimesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ValidateAgentUnavailableTimesResponse>() {}, new AsyncApiCallback<ApiResponse<ValidateAgentUnavailableTimesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ValidateAgentUnavailableTimesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ValidateAgentUnavailableTimesResponse> response = (ApiResponse<ValidateAgentUnavailableTimesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ValidateAgentUnavailableTimesResponse> response = (ApiResponse<ValidateAgentUnavailableTimesResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

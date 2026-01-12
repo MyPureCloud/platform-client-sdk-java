@@ -33,6 +33,8 @@ import java.io.Serializable;
 public class Suggestion  implements Serializable {
   
   private String id = null;
+  private AddressableEntityRef conversation = null;
+  private AddressableEntityRef assistant = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -199,8 +201,6 @@ public class Suggestion  implements Serializable {
   private SuggestionCannedResponse cannedResponse = null;
   private SuggestionScript script = null;
   private String selfUri = null;
-  private AddressableEntityRef conversation = null;
-  private AddressableEntityRef assistant = null;
 
   public Suggestion() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -212,6 +212,20 @@ public class Suggestion  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The conversation that the suggestions correspond to.")
+  @JsonProperty("conversation")
+  public AddressableEntityRef getConversation() {
+    return conversation;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The assistant that was used to provide the suggestions.")
+  @JsonProperty("assistant")
+  public AddressableEntityRef getAssistant() {
+    return assistant;
   }
 
 
@@ -306,20 +320,6 @@ public class Suggestion  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The conversation that the suggestions correspond to.")
-  @JsonProperty("conversation")
-  public AddressableEntityRef getConversation() {
-    return conversation;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "The assistant that was used to provide the suggestions.")
-  @JsonProperty("assistant")
-  public AddressableEntityRef getAssistant() {
-    return assistant;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -331,6 +331,8 @@ public class Suggestion  implements Serializable {
     Suggestion suggestion = (Suggestion) o;
 
     return Objects.equals(this.id, suggestion.id) &&
+            Objects.equals(this.conversation, suggestion.conversation) &&
+            Objects.equals(this.assistant, suggestion.assistant) &&
             Objects.equals(this.type, suggestion.type) &&
             Objects.equals(this.faq, suggestion.faq) &&
             Objects.equals(this.article, suggestion.article) &&
@@ -343,14 +345,12 @@ public class Suggestion  implements Serializable {
             Objects.equals(this.knowledgeArticle, suggestion.knowledgeArticle) &&
             Objects.equals(this.cannedResponse, suggestion.cannedResponse) &&
             Objects.equals(this.script, suggestion.script) &&
-            Objects.equals(this.selfUri, suggestion.selfUri) &&
-            Objects.equals(this.conversation, suggestion.conversation) &&
-            Objects.equals(this.assistant, suggestion.assistant);
+            Objects.equals(this.selfUri, suggestion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, faq, article, dateCreated, answerRecordId, triggerType, context, state, knowledgeSearch, knowledgeArticle, cannedResponse, script, selfUri, conversation, assistant);
+    return Objects.hash(id, conversation, assistant, type, faq, article, dateCreated, answerRecordId, triggerType, context, state, knowledgeSearch, knowledgeArticle, cannedResponse, script, selfUri);
   }
 
   @Override
@@ -359,6 +359,8 @@ public class Suggestion  implements Serializable {
     sb.append("class Suggestion {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
+    sb.append("    assistant: ").append(toIndentedString(assistant)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    faq: ").append(toIndentedString(faq)).append("\n");
     sb.append("    article: ").append(toIndentedString(article)).append("\n");
@@ -372,8 +374,6 @@ public class Suggestion  implements Serializable {
     sb.append("    cannedResponse: ").append(toIndentedString(cannedResponse)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
-    sb.append("    assistant: ").append(toIndentedString(assistant)).append("\n");
     sb.append("}");
     return sb.toString();
   }

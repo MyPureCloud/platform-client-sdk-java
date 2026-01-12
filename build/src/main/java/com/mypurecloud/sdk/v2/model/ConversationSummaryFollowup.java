@@ -22,9 +22,9 @@ import java.io.Serializable;
 
 public class ConversationSummaryFollowup  implements Serializable {
   
+  private Float confidence = null;
   private String text = null;
   private String description = null;
-  private Float confidence = null;
 
   public ConversationSummaryFollowup() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -32,6 +32,24 @@ public class ConversationSummaryFollowup  implements Serializable {
   }
 
   
+  /**
+   * The AI confidence value.
+   **/
+  public ConversationSummaryFollowup confidence(Float confidence) {
+    this.confidence = confidence;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The AI confidence value.")
+  @JsonProperty("confidence")
+  public Float getConfidence() {
+    return confidence;
+  }
+  public void setConfidence(Float confidence) {
+    this.confidence = confidence;
+  }
+
+
   /**
    * The text of the followup.
    **/
@@ -68,13 +86,6 @@ public class ConversationSummaryFollowup  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The AI confidence value.")
-  @JsonProperty("confidence")
-  public Float getConfidence() {
-    return confidence;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -85,14 +96,14 @@ public class ConversationSummaryFollowup  implements Serializable {
     }
     ConversationSummaryFollowup conversationSummaryFollowup = (ConversationSummaryFollowup) o;
 
-    return Objects.equals(this.text, conversationSummaryFollowup.text) &&
-            Objects.equals(this.description, conversationSummaryFollowup.description) &&
-            Objects.equals(this.confidence, conversationSummaryFollowup.confidence);
+    return Objects.equals(this.confidence, conversationSummaryFollowup.confidence) &&
+            Objects.equals(this.text, conversationSummaryFollowup.text) &&
+            Objects.equals(this.description, conversationSummaryFollowup.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, description, confidence);
+    return Objects.hash(confidence, text, description);
   }
 
   @Override
@@ -100,9 +111,9 @@ public class ConversationSummaryFollowup  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationSummaryFollowup {\n");
     
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("}");
     return sb.toString();
   }

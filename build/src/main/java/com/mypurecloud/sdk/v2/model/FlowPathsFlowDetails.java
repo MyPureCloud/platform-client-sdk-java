@@ -24,6 +24,7 @@ import java.io.Serializable;
 
 public class FlowPathsFlowDetails  implements Serializable {
   
+  private AddressableEntityRef flow = null;
   private String version = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -79,7 +80,6 @@ public class FlowPathsFlowDetails  implements Serializable {
   }
   private TypeEnum type = null;
   private Integer count = null;
-  private AddressableEntityRef flow = null;
 
   public FlowPathsFlowDetails() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -87,6 +87,24 @@ public class FlowPathsFlowDetails  implements Serializable {
   }
 
   
+  /**
+   * The identifier of the flow.
+   **/
+  public FlowPathsFlowDetails flow(AddressableEntityRef flow) {
+    this.flow = flow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The identifier of the flow.")
+  @JsonProperty("flow")
+  public AddressableEntityRef getFlow() {
+    return flow;
+  }
+  public void setFlow(AddressableEntityRef flow) {
+    this.flow = flow;
+  }
+
+
   /**
    * The version of the flow.
    **/
@@ -141,13 +159,6 @@ public class FlowPathsFlowDetails  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", required = true, value = "The identifier of the flow.")
-  @JsonProperty("flow")
-  public AddressableEntityRef getFlow() {
-    return flow;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -158,15 +169,15 @@ public class FlowPathsFlowDetails  implements Serializable {
     }
     FlowPathsFlowDetails flowPathsFlowDetails = (FlowPathsFlowDetails) o;
 
-    return Objects.equals(this.version, flowPathsFlowDetails.version) &&
+    return Objects.equals(this.flow, flowPathsFlowDetails.flow) &&
+            Objects.equals(this.version, flowPathsFlowDetails.version) &&
             Objects.equals(this.type, flowPathsFlowDetails.type) &&
-            Objects.equals(this.count, flowPathsFlowDetails.count) &&
-            Objects.equals(this.flow, flowPathsFlowDetails.flow);
+            Objects.equals(this.count, flowPathsFlowDetails.count);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, type, count, flow);
+    return Objects.hash(flow, version, type, count);
   }
 
   @Override
@@ -174,10 +185,10 @@ public class FlowPathsFlowDetails  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class FlowPathsFlowDetails {\n");
     
+    sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

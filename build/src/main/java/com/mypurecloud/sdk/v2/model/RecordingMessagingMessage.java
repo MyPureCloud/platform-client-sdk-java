@@ -103,6 +103,7 @@ public class RecordingMessagingMessage  implements Serializable {
     PAYMENTREQUEST("PaymentRequest"),
     PAYMENTRESPONSE("PaymentResponse"),
     FORM("Form"),
+    RICHLINK("RichLink"),
     ROADSIDEASSISTANCE("RoadsideAssistance");
 
     private String value;

@@ -60,7 +60,7 @@ public class GroupMembersUpdate  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The current group version.")
+  @ApiModelProperty(example = "null", value = "The current group version.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;

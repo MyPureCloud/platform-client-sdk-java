@@ -90,7 +90,7 @@ public class ButtonResponse  implements Serializable {
     }
   }
   /**
-   * Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+   * Button response message type that captures QuickReply , Cards and Carousel.This is used  as label for Card selection
    */
  @JsonDeserialize(using = MessageTypeEnumDeserializer.class)
   public enum MessageTypeEnum {
@@ -188,14 +188,14 @@ public class ButtonResponse  implements Serializable {
 
 
   /**
-   * Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+   * Button response message type that captures QuickReply , Cards and Carousel.This is used  as label for Card selection
    **/
   public ButtonResponse messageType(MessageTypeEnum messageType) {
     this.messageType = messageType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection")
+  @ApiModelProperty(example = "null", value = "Button response message type that captures QuickReply , Cards and Carousel.This is used  as label for Card selection")
   @JsonProperty("messageType")
   public MessageTypeEnum getMessageType() {
     return messageType;

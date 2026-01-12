@@ -33,7 +33,9 @@ import java.io.Serializable;
 
 public class ConversationSessionSummary  implements Serializable {
   
+  private String id = null;
   private String text = null;
+  private Float confidence = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -145,10 +147,8 @@ public class ConversationSessionSummary  implements Serializable {
   private ConversationSummaryFollowup followup = null;
   private ConversationSummaryResolution resolution = null;
   private Date dateCreated = null;
-  private String id = null;
-  private Float confidence = null;
-  private List<AddressableEntityRef> participants = null;
   private Entity communication = null;
+  private List<AddressableEntityRef> participants = null;
 
   public ConversationSessionSummary() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -158,6 +158,24 @@ public class ConversationSessionSummary  implements Serializable {
   }
 
   
+  /**
+   * The id of the summary.
+   **/
+  public ConversationSessionSummary id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the summary.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    * The text of the summary.
    **/
@@ -173,6 +191,24 @@ public class ConversationSessionSummary  implements Serializable {
   }
   public void setText(String text) {
     this.text = text;
+  }
+
+
+  /**
+   * The AI confidence value.
+   **/
+  public ConversationSessionSummary confidence(Float confidence) {
+    this.confidence = confidence;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The AI confidence value.")
+  @JsonProperty("confidence")
+  public Float getConfidence() {
+    return confidence;
+  }
+  public void setConfidence(Float confidence) {
+    this.confidence = confidence;
   }
 
 
@@ -338,17 +374,21 @@ public class ConversationSessionSummary  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The id of the summary.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
+  /**
+   * The communication object of the summary.
+   **/
+  public ConversationSessionSummary communication(Entity communication) {
+    this.communication = communication;
+    return this;
   }
-
-
-  @ApiModelProperty(example = "null", value = "The AI confidence value.")
-  @JsonProperty("confidence")
-  public Float getConfidence() {
-    return confidence;
+  
+  @ApiModelProperty(example = "null", value = "The communication object of the summary.")
+  @JsonProperty("communication")
+  public Entity getCommunication() {
+    return communication;
+  }
+  public void setCommunication(Entity communication) {
+    this.communication = communication;
   }
 
 
@@ -370,13 +410,6 @@ public class ConversationSessionSummary  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The communication object of the summary.")
-  @JsonProperty("communication")
-  public Entity getCommunication() {
-    return communication;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -387,7 +420,9 @@ public class ConversationSessionSummary  implements Serializable {
     }
     ConversationSessionSummary conversationSessionSummary = (ConversationSessionSummary) o;
 
-    return Objects.equals(this.text, conversationSessionSummary.text) &&
+    return Objects.equals(this.id, conversationSessionSummary.id) &&
+            Objects.equals(this.text, conversationSessionSummary.text) &&
+            Objects.equals(this.confidence, conversationSessionSummary.confidence) &&
             Objects.equals(this.status, conversationSessionSummary.status) &&
             Objects.equals(this.mediaType, conversationSessionSummary.mediaType) &&
             Objects.equals(this.language, conversationSessionSummary.language) &&
@@ -397,15 +432,13 @@ public class ConversationSessionSummary  implements Serializable {
             Objects.equals(this.followup, conversationSessionSummary.followup) &&
             Objects.equals(this.resolution, conversationSessionSummary.resolution) &&
             Objects.equals(this.dateCreated, conversationSessionSummary.dateCreated) &&
-            Objects.equals(this.id, conversationSessionSummary.id) &&
-            Objects.equals(this.confidence, conversationSessionSummary.confidence) &&
-            Objects.equals(this.participants, conversationSessionSummary.participants) &&
-            Objects.equals(this.communication, conversationSessionSummary.communication);
+            Objects.equals(this.communication, conversationSessionSummary.communication) &&
+            Objects.equals(this.participants, conversationSessionSummary.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, status, mediaType, language, predictedWrapupCodes, editedSummary, reason, followup, resolution, dateCreated, id, confidence, participants, communication);
+    return Objects.hash(id, text, confidence, status, mediaType, language, predictedWrapupCodes, editedSummary, reason, followup, resolution, dateCreated, communication, participants);
   }
 
   @Override
@@ -413,7 +446,9 @@ public class ConversationSessionSummary  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationSessionSummary {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
@@ -423,10 +458,8 @@ public class ConversationSessionSummary  implements Serializable {
     sb.append("    followup: ").append(toIndentedString(followup)).append("\n");
     sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-    sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    communication: ").append(toIndentedString(communication)).append("\n");
+    sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");
     return sb.toString();
   }

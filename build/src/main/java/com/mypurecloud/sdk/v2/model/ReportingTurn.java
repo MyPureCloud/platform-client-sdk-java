@@ -35,6 +35,7 @@ public class ReportingTurn  implements Serializable {
   private String userInput = null;
   private List<String> botPrompts = null;
   private String sessionId = null;
+  private AddressableEntityRef conversation = null;
   private ReportingTurnAction askAction = null;
   private ReportingTurnIntent intent = null;
   private ReportingTurnKnowledge knowledge = null;
@@ -106,7 +107,6 @@ public class ReportingTurn  implements Serializable {
   }
   private AskActionResultEnum askActionResult = null;
   private SessionEndDetails sessionEndDetails = null;
-  private AddressableEntityRef conversation = null;
 
   public ReportingTurn() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -166,6 +166,24 @@ public class ReportingTurn  implements Serializable {
   }
   public void setSessionId(String sessionId) {
     this.sessionId = sessionId;
+  }
+
+
+  /**
+   * The conversation details, across potentially multiple Bot Flow sessions.
+   **/
+  public ReportingTurn conversation(AddressableEntityRef conversation) {
+    this.conversation = conversation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Bot Flow sessions.")
+  @JsonProperty("conversation")
+  public AddressableEntityRef getConversation() {
+    return conversation;
+  }
+  public void setConversation(AddressableEntityRef conversation) {
+    this.conversation = conversation;
   }
 
 
@@ -313,13 +331,6 @@ public class ReportingTurn  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Bot Flow sessions.")
-  @JsonProperty("conversation")
-  public AddressableEntityRef getConversation() {
-    return conversation;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -333,6 +344,7 @@ public class ReportingTurn  implements Serializable {
     return Objects.equals(this.userInput, reportingTurn.userInput) &&
             Objects.equals(this.botPrompts, reportingTurn.botPrompts) &&
             Objects.equals(this.sessionId, reportingTurn.sessionId) &&
+            Objects.equals(this.conversation, reportingTurn.conversation) &&
             Objects.equals(this.askAction, reportingTurn.askAction) &&
             Objects.equals(this.intent, reportingTurn.intent) &&
             Objects.equals(this.knowledge, reportingTurn.knowledge) &&
@@ -340,13 +352,12 @@ public class ReportingTurn  implements Serializable {
             Objects.equals(this.dateCreated, reportingTurn.dateCreated) &&
             Objects.equals(this.dateCompleted, reportingTurn.dateCompleted) &&
             Objects.equals(this.askActionResult, reportingTurn.askActionResult) &&
-            Objects.equals(this.sessionEndDetails, reportingTurn.sessionEndDetails) &&
-            Objects.equals(this.conversation, reportingTurn.conversation);
+            Objects.equals(this.sessionEndDetails, reportingTurn.sessionEndDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userInput, botPrompts, sessionId, askAction, intent, knowledge, knowledgeBaseEvents, dateCreated, dateCompleted, askActionResult, sessionEndDetails, conversation);
+    return Objects.hash(userInput, botPrompts, sessionId, conversation, askAction, intent, knowledge, knowledgeBaseEvents, dateCreated, dateCompleted, askActionResult, sessionEndDetails);
   }
 
   @Override
@@ -357,6 +368,7 @@ public class ReportingTurn  implements Serializable {
     sb.append("    userInput: ").append(toIndentedString(userInput)).append("\n");
     sb.append("    botPrompts: ").append(toIndentedString(botPrompts)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("    askAction: ").append(toIndentedString(askAction)).append("\n");
     sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
     sb.append("    knowledge: ").append(toIndentedString(knowledge)).append("\n");
@@ -365,7 +377,6 @@ public class ReportingTurn  implements Serializable {
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("    askActionResult: ").append(toIndentedString(askActionResult)).append("\n");
     sb.append("    sessionEndDetails: ").append(toIndentedString(sessionEndDetails)).append("\n");
-    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

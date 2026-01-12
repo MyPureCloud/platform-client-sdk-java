@@ -48,7 +48,8 @@ public class GetUsersRulesRequest {
 	} 
 
 	public enum typesValues { 
-		LEARNING("Learning");
+		LEARNING("Learning"),
+		ACTIVITYPLAN("ActivityPlan");
 
 		private String value;
 

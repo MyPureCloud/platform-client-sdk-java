@@ -48,7 +48,8 @@ public class UsersRulesDependent  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    LEARNING("Learning");
+    LEARNING("Learning"),
+    ACTIVITYPLAN("ActivityPlan");
 
     private String value;
 

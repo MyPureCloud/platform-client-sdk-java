@@ -6674,28 +6674,32 @@ public class AnalyticsApi {
    * Count agents by different groupings
    * 
    * @param body query (required)
+   * @param groupBy Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType (optional)
    * @return AnalyticsAgentStateCountsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AnalyticsAgentStateCountsResponse postAnalyticsAgentsStatusCounts(AgentStateCountsRequest body) throws IOException, ApiException {
-    return  postAnalyticsAgentsStatusCounts(createPostAnalyticsAgentsStatusCountsRequest(body));
+  public AnalyticsAgentStateCountsResponse postAnalyticsAgentsStatusCounts(AgentStateCountsRequest body, List<String> groupBy) throws IOException, ApiException {
+    return  postAnalyticsAgentsStatusCounts(createPostAnalyticsAgentsStatusCountsRequest(body, groupBy));
   }
 
   /**
    * Count agents by different groupings
    * 
    * @param body query (required)
+   * @param groupBy Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType (optional)
    * @return AnalyticsAgentStateCountsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsAgentStateCountsResponse> postAnalyticsAgentsStatusCountsWithHttpInfo(AgentStateCountsRequest body) throws IOException {
-    return postAnalyticsAgentsStatusCounts(createPostAnalyticsAgentsStatusCountsRequest(body).withHttpInfo());
+  public ApiResponse<AnalyticsAgentStateCountsResponse> postAnalyticsAgentsStatusCountsWithHttpInfo(AgentStateCountsRequest body, List<String> groupBy) throws IOException {
+    return postAnalyticsAgentsStatusCounts(createPostAnalyticsAgentsStatusCountsRequest(body, groupBy).withHttpInfo());
   }
 
-  private PostAnalyticsAgentsStatusCountsRequest createPostAnalyticsAgentsStatusCountsRequest(AgentStateCountsRequest body) {
+  private PostAnalyticsAgentsStatusCountsRequest createPostAnalyticsAgentsStatusCountsRequest(AgentStateCountsRequest body, List<String> groupBy) {
     return PostAnalyticsAgentsStatusCountsRequest.builder()
             .withBody(body)
+
+            .withGroupBy(groupBy)
 
             .build();
   }

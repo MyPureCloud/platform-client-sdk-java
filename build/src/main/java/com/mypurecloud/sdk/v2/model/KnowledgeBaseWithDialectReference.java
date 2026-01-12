@@ -75,7 +75,10 @@ public class KnowledgeBaseWithDialectReference  implements Serializable {
     FI_FI("fi-FI"),
     NB_NO("nb-NO"),
     CS_CZ("cs-CZ"),
-    HU_HU("hu-HU");
+    HU_HU("hu-HU"),
+    TH_TH("th-TH"),
+    PL_PL("pl-PL"),
+    NL_BE("nl-BE");
 
     private String value;
 

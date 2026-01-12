@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicConversationRouti
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicEmail;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicInternalMessage;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicMessage;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicScreenMonitoring;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicScreenShare;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicSocialExpression;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicVideo;
@@ -129,6 +130,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private List<QueueConversationEventTopicEmail> emails = null;
   private List<QueueConversationEventTopicMessage> messages = null;
   private List<QueueConversationEventTopicInternalMessage> internalMessages = null;
+  private List<QueueConversationEventTopicScreenMonitoring> screenMonitorings = null;
   private List<QueueConversationEventTopicScreenShare> screenshares = null;
   private List<QueueConversationEventTopicSocialExpression> socialExpressions = null;
   private List<QueueConversationEventTopicVideo> videos = null;
@@ -144,6 +146,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
       emails = new ArrayList<QueueConversationEventTopicEmail>();
       messages = new ArrayList<QueueConversationEventTopicMessage>();
       internalMessages = new ArrayList<QueueConversationEventTopicInternalMessage>();
+      screenMonitorings = new ArrayList<QueueConversationEventTopicScreenMonitoring>();
       screenshares = new ArrayList<QueueConversationEventTopicScreenShare>();
       socialExpressions = new ArrayList<QueueConversationEventTopicSocialExpression>();
       videos = new ArrayList<QueueConversationEventTopicVideo>();
@@ -810,6 +813,23 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
   /**
    **/
+  public QueueConversationEventTopicParticipant screenMonitorings(List<QueueConversationEventTopicScreenMonitoring> screenMonitorings) {
+    this.screenMonitorings = screenMonitorings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("screenMonitorings")
+  public List<QueueConversationEventTopicScreenMonitoring> getScreenMonitorings() {
+    return screenMonitorings;
+  }
+  public void setScreenMonitorings(List<QueueConversationEventTopicScreenMonitoring> screenMonitorings) {
+    this.screenMonitorings = screenMonitorings;
+  }
+
+
+  /**
+   **/
   public QueueConversationEventTopicParticipant screenshares(List<QueueConversationEventTopicScreenShare> screenshares) {
     this.screenshares = screenshares;
     return this;
@@ -923,6 +943,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
             Objects.equals(this.emails, queueConversationEventTopicParticipant.emails) &&
             Objects.equals(this.messages, queueConversationEventTopicParticipant.messages) &&
             Objects.equals(this.internalMessages, queueConversationEventTopicParticipant.internalMessages) &&
+            Objects.equals(this.screenMonitorings, queueConversationEventTopicParticipant.screenMonitorings) &&
             Objects.equals(this.screenshares, queueConversationEventTopicParticipant.screenshares) &&
             Objects.equals(this.socialExpressions, queueConversationEventTopicParticipant.socialExpressions) &&
             Objects.equals(this.videos, queueConversationEventTopicParticipant.videos) &&
@@ -931,7 +952,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalContactInitialDivisionId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenshares, socialExpressions, videos, workflow);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalContactInitialDivisionId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenMonitorings, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -976,6 +997,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    internalMessages: ").append(toIndentedString(internalMessages)).append("\n");
+    sb.append("    screenMonitorings: ").append(toIndentedString(screenMonitorings)).append("\n");
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");

@@ -29,8 +29,8 @@ public class SegmentAssignment  implements Serializable {
   private Date dateAssigned = null;
   private Date dateForUnassignment = null;
   private SegmentAssignmentSegment segment = null;
-  private SegmentAssignmentSession session = null;
   private AddressableEntityRef externalContact = null;
+  private SegmentAssignmentSession session = null;
 
   public SegmentAssignment() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -93,6 +93,24 @@ public class SegmentAssignment  implements Serializable {
 
 
   /**
+   * External contact of the customer to which the segment is assigned.
+   **/
+  public SegmentAssignment externalContact(AddressableEntityRef externalContact) {
+    this.externalContact = externalContact;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "External contact of the customer to which the segment is assigned.")
+  @JsonProperty("externalContact")
+  public AddressableEntityRef getExternalContact() {
+    return externalContact;
+  }
+  public void setExternalContact(AddressableEntityRef externalContact) {
+    this.externalContact = externalContact;
+  }
+
+
+  /**
    * For session-scoped segments, the session for which the segment was assigned.
    **/
   public SegmentAssignment session(SegmentAssignmentSession session) {
@@ -110,13 +128,6 @@ public class SegmentAssignment  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", required = true, value = "External contact of the customer to which the segment is assigned.")
-  @JsonProperty("externalContact")
-  public AddressableEntityRef getExternalContact() {
-    return externalContact;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -130,13 +141,13 @@ public class SegmentAssignment  implements Serializable {
     return Objects.equals(this.dateAssigned, segmentAssignment.dateAssigned) &&
             Objects.equals(this.dateForUnassignment, segmentAssignment.dateForUnassignment) &&
             Objects.equals(this.segment, segmentAssignment.segment) &&
-            Objects.equals(this.session, segmentAssignment.session) &&
-            Objects.equals(this.externalContact, segmentAssignment.externalContact);
+            Objects.equals(this.externalContact, segmentAssignment.externalContact) &&
+            Objects.equals(this.session, segmentAssignment.session);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateAssigned, dateForUnassignment, segment, session, externalContact);
+    return Objects.hash(dateAssigned, dateForUnassignment, segment, externalContact, session);
   }
 
   @Override
@@ -147,8 +158,8 @@ public class SegmentAssignment  implements Serializable {
     sb.append("    dateAssigned: ").append(toIndentedString(dateAssigned)).append("\n");
     sb.append("    dateForUnassignment: ").append(toIndentedString(dateForUnassignment)).append("\n");
     sb.append("    segment: ").append(toIndentedString(segment)).append("\n");
-    sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -4889,7 +4889,7 @@ try {
 # **postAnalyticsAgentsStatusCounts**
 
 
-> [AnalyticsAgentStateCountsResponse](AnalyticsAgentStateCountsResponse) postAnalyticsAgentsStatusCounts(body)
+> [AnalyticsAgentStateCountsResponse](AnalyticsAgentStateCountsResponse) postAnalyticsAgentsStatusCounts(body, groupBy)
 
 Count agents by different groupings
 
@@ -4922,8 +4922,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
 AgentStateCountsRequest body = new AgentStateCountsRequest(); // AgentStateCountsRequest | query
+List<String> groupBy = Arrays.asList(null); // List<String> | Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType
 try {
-    AnalyticsAgentStateCountsResponse result = apiInstance.postAnalyticsAgentsStatusCounts(body);
+    AnalyticsAgentStateCountsResponse result = apiInstance.postAnalyticsAgentsStatusCounts(body, groupBy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsAgentsStatusCounts");
@@ -4937,6 +4938,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**AgentStateCountsRequest**](AgentStateCountsRequest)| query | 
+| **groupBy** | [**List&lt;String&gt;**](String)| Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType | [optional]<br />**Values**: segmentType, presence, routingStatus, isOutOfOffice 
 {: class="table-striped"}
 
 
@@ -7895,4 +7897,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

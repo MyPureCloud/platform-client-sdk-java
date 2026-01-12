@@ -157,6 +157,52 @@ public class PostAnalyticsAgentsStatusCountsRequest {
 	    return this;
 	} 
 
+	private List<String> groupBy;
+	public List<String> getGroupBy() {
+		return this.groupBy;
+	}
+
+	public void setGroupBy(List<String> groupBy) {
+		this.groupBy = groupBy;
+	}
+
+	public PostAnalyticsAgentsStatusCountsRequest withGroupBy(List<String> groupBy) {
+	    this.setGroupBy(groupBy);
+	    return this;
+	} 
+
+	public enum groupByValues { 
+		SEGMENTTYPE("segmentType"),
+		PRESENCE("presence"),
+		ROUTINGSTATUS("routingStatus"),
+		ISOUTOFOFFICE("isOutOfOffice");
+
+		private String value;
+
+		groupByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static groupByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (groupByValues value : groupByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return groupByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -185,6 +231,9 @@ public class PostAnalyticsAgentsStatusCountsRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/agents/status/counts")
+
+                .withQueryParameters("groupBy", "multi", groupBy)
+        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -216,6 +265,22 @@ public class PostAnalyticsAgentsStatusCountsRequest {
 		public Builder withBody(AgentStateCountsRequest body) {
 			request.setBody(body);
 			return this;
+		}
+
+		public Builder withGroupBy(List<String> groupBy) {
+			request.setGroupBy(groupBy);
+			return this;
+		}
+
+
+
+		public Builder withGroupByEnumValues(List<groupByValues> groupBy) {
+		    List<String> stringList = new ArrayList<>();
+	      for (groupByValues e : groupBy) {
+	        stringList.add(e.toString());
+	      }
+	      request.setGroupBy(stringList);
+		    return this;
 		}
 
 

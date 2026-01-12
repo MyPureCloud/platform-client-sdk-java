@@ -168,6 +168,7 @@
 | TPARKCOMPLETE | &quot;tParkComplete&quot; |
 | TSCREENMONITORING | &quot;tScreenMonitoring&quot; |
 | TSHORTABANDON | &quot;tShortAbandon&quot; |
+| TSNIPPETRECORD | &quot;tSnippetRecord&quot; |
 | TTALK | &quot;tTalk&quot; |
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; |
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; |
@@ -185,4 +186,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

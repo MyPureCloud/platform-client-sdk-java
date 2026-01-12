@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAssistantsAgentchecklist**](AgentAssistantsApi#deleteAssistantsAgentchecklist) | Delete an agent checklist |
 | [**getAssistant**](AgentAssistantsApi#getAssistant) | Get an assistant. |
 | [**getAssistantQueue**](AgentAssistantsApi#getAssistantQueue) | Get queue Information for an assistant. |
+| [**getAssistantQueueUsersJob**](AgentAssistantsApi#getAssistantQueueUsersJob) | Get job details. |
 | [**getAssistantQueues**](AgentAssistantsApi#getAssistantQueues) | Get all the queues associated with an assistant. |
 | [**getAssistants**](AgentAssistantsApi#getAssistants) | Get all assistants. |
 | [**getAssistantsAgentchecklist**](AgentAssistantsApi#getAssistantsAgentchecklist) | Get an agent checklist |
@@ -20,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchAssistantQueues**](AgentAssistantsApi#patchAssistantQueues) | Update Queues for an Assistant. |
 | [**postAssistantQueueUsersBulkAdd**](AgentAssistantsApi#postAssistantQueueUsersBulkAdd) | Bulk add users to assistant-queue (requires manual assignment mode). |
 | [**postAssistantQueueUsersBulkRemove**](AgentAssistantsApi#postAssistantQueueUsersBulkRemove) | Bulk remove users from assistant-queue (requires manual assignment mode). |
+| [**postAssistantQueueUsersJobs**](AgentAssistantsApi#postAssistantQueueUsersJobs) | Start a new job to assistant-queue. |
 | [**postAssistantQueueUsersQuery**](AgentAssistantsApi#postAssistantQueueUsersQuery) | Query for users in the assistant-queue (requires manual assignment mode). |
 | [**postAssistants**](AgentAssistantsApi#postAssistants) | Create an Assistant. |
 | [**postAssistantsAgentchecklists**](AgentAssistantsApi#postAssistantsAgentchecklists) | Create an agent checklist |
@@ -386,6 +388,69 @@ try {
 ### Return type
 
 [**AssistantQueue**](AssistantQueue)
+
+
+# **getAssistantQueueUsersJob**
+
+
+> [AssistantQueueUsersJobsResponse](AssistantQueueUsersJobsResponse) getAssistantQueueUsersJob(assistantId, queueId, jobId)
+
+Get job details.
+
+Wraps GET /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* assistants:queueUserJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+String assistantId = "assistantId_example"; // String | Assistant ID
+String queueId = "queueId_example"; // String | Queue ID
+String jobId = "jobId_example"; // String | Job ID
+try {
+    AssistantQueueUsersJobsResponse result = apiInstance.getAssistantQueueUsersJob(assistantId, queueId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#getAssistantQueueUsersJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assistantId** | **String**| Assistant ID | 
+| **queueId** | **String**| Queue ID | 
+| **jobId** | **String**| Job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssistantQueueUsersJobsResponse**](AssistantQueueUsersJobsResponse)
 
 
 # **getAssistantQueues**
@@ -1024,6 +1089,69 @@ try {
 [**BulkResponse**](BulkResponse)
 
 
+# **postAssistantQueueUsersJobs**
+
+
+> [AssistantQueueUsersJobsResponse](AssistantQueueUsersJobsResponse) postAssistantQueueUsersJobs(assistantId, queueId, body)
+
+Start a new job to assistant-queue.
+
+Wraps POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs  
+
+Requires ANY permissions: 
+
+* assistants:queueUserJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+String assistantId = "assistantId_example"; // String | Assistant ID
+String queueId = "queueId_example"; // String | Queue ID
+AssistantQueueUsersJobsRequest body = new AssistantQueueUsersJobsRequest(); // AssistantQueueUsersJobsRequest | 
+try {
+    AssistantQueueUsersJobsResponse result = apiInstance.postAssistantQueueUsersJobs(assistantId, queueId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#postAssistantQueueUsersJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assistantId** | **String**| Assistant ID | 
+| **queueId** | **String**| Queue ID | 
+| **body** | [**AssistantQueueUsersJobsRequest**](AssistantQueueUsersJobsRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssistantQueueUsersJobsResponse**](AssistantQueueUsersJobsResponse)
+
+
 # **postAssistantQueueUsersQuery**
 
 
@@ -1331,4 +1459,4 @@ try {
 [**AgentChecklist**](AgentChecklist)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

@@ -85,6 +85,7 @@ public class BuRescheduleRequest  implements Serializable {
   }
   private ActivitySmoothingTypeEnum activitySmoothingType = null;
   private Boolean induceScheduleVariability = null;
+  private Boolean useUnavailableTimesSnapshot = null;
 
   public BuRescheduleRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -293,6 +294,24 @@ public class BuRescheduleRequest  implements Serializable {
   }
 
 
+  /**
+   * Whether to use original unavailable times from schedule generation or latest saved unavailable times for this reschedule run
+   **/
+  public BuRescheduleRequest useUnavailableTimesSnapshot(Boolean useUnavailableTimesSnapshot) {
+    this.useUnavailableTimesSnapshot = useUnavailableTimesSnapshot;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to use original unavailable times from schedule generation or latest saved unavailable times for this reschedule run")
+  @JsonProperty("useUnavailableTimesSnapshot")
+  public Boolean getUseUnavailableTimesSnapshot() {
+    return useUnavailableTimesSnapshot;
+  }
+  public void setUseUnavailableTimesSnapshot(Boolean useUnavailableTimesSnapshot) {
+    this.useUnavailableTimesSnapshot = useUnavailableTimesSnapshot;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -313,12 +332,13 @@ public class BuRescheduleRequest  implements Serializable {
             Objects.equals(this.doNotChangeShiftStartTimes, buRescheduleRequest.doNotChangeShiftStartTimes) &&
             Objects.equals(this.doNotChangeManuallyEditedShifts, buRescheduleRequest.doNotChangeManuallyEditedShifts) &&
             Objects.equals(this.activitySmoothingType, buRescheduleRequest.activitySmoothingType) &&
-            Objects.equals(this.induceScheduleVariability, buRescheduleRequest.induceScheduleVariability);
+            Objects.equals(this.induceScheduleVariability, buRescheduleRequest.induceScheduleVariability) &&
+            Objects.equals(this.useUnavailableTimesSnapshot, buRescheduleRequest.useUnavailableTimesSnapshot);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, agentIds, activityCodeIds, managementUnitIds, doNotChangeWeeklyPaidTime, doNotChangeDailyPaidTime, doNotChangeShiftStartTimes, doNotChangeManuallyEditedShifts, activitySmoothingType, induceScheduleVariability);
+    return Objects.hash(startDate, endDate, agentIds, activityCodeIds, managementUnitIds, doNotChangeWeeklyPaidTime, doNotChangeDailyPaidTime, doNotChangeShiftStartTimes, doNotChangeManuallyEditedShifts, activitySmoothingType, induceScheduleVariability, useUnavailableTimesSnapshot);
   }
 
   @Override
@@ -337,6 +357,7 @@ public class BuRescheduleRequest  implements Serializable {
     sb.append("    doNotChangeManuallyEditedShifts: ").append(toIndentedString(doNotChangeManuallyEditedShifts)).append("\n");
     sb.append("    activitySmoothingType: ").append(toIndentedString(activitySmoothingType)).append("\n");
     sb.append("    induceScheduleVariability: ").append(toIndentedString(induceScheduleVariability)).append("\n");
+    sb.append("    useUnavailableTimesSnapshot: ").append(toIndentedString(useUnavailableTimesSnapshot)).append("\n");
     sb.append("}");
     return sb.toString();
   }

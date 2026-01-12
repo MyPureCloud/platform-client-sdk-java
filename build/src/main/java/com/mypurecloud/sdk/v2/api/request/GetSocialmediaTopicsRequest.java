@@ -134,6 +134,20 @@ public class GetSocialmediaTopicsRequest {
 	    return this;
 	} 
 
+	private List<String> ids;
+	public List<String> getIds() {
+		return this.ids;
+	}
+
+	public void setIds(List<String> ids) {
+		this.ids = ids;
+	}
+
+	public GetSocialmediaTopicsRequest withIds(List<String> ids) {
+	    this.setIds(ids);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -171,6 +185,9 @@ public class GetSocialmediaTopicsRequest {
         
 
                 .withQueryParameters("name", "", name)
+        
+
+                .withQueryParameters("ids", "multi", ids)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -215,6 +232,11 @@ public class GetSocialmediaTopicsRequest {
 
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+
+		public Builder withIds(List<String> ids) {
+			request.setIds(ids);
 			return this;
 		}
 

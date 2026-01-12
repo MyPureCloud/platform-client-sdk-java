@@ -98,6 +98,7 @@
 | SEGMENTTYPE | &quot;segmentType&quot; | 
 | SESSIONDNIS | &quot;sessionDnis&quot; | 
 | SIPRESPONSECODE | &quot;sipResponseCode&quot; | 
+| SNIPPETRECORDING | &quot;snippetRecording&quot; | 
 | SUBJECT | &quot;subject&quot; | 
 | TEAMID | &quot;teamId&quot; | 
 | TRANSFERTARGETADDRESS | &quot;transferTargetAddress&quot; | 
@@ -142,4 +143,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

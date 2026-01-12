@@ -69,10 +69,21 @@ public class ConversationUserDisposition  implements Serializable {
   }
 
 
+  /**
+   * The user that wrapped up the conversation.
+   **/
+  public ConversationUserDisposition user(AddressableEntityRef user) {
+    this.user = user;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", required = true, value = "The user that wrapped up the conversation.")
   @JsonProperty("user")
   public AddressableEntityRef getUser() {
     return user;
+  }
+  public void setUser(AddressableEntityRef user) {
+    this.user = user;
   }
 
 

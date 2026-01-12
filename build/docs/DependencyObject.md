@@ -43,12 +43,14 @@
 | DIALOGENGINEBOTVERSION | &quot;DIALOGENGINEBOTVERSION&quot; | 
 | DIALOGFLOWAGENT | &quot;DIALOGFLOWAGENT&quot; | 
 | DIALOGFLOWCXAGENT | &quot;DIALOGFLOWCXAGENT&quot; | 
+| DIGITALAUDIO | &quot;DIGITALAUDIO&quot; | 
 | DIGITALBOTCONNECTOR | &quot;DIGITALBOTCONNECTOR&quot; | 
 | DIGITALBOTCONNECTORINTEGRATION | &quot;DIGITALBOTCONNECTORINTEGRATION&quot; | 
 | DIGITALBOTFLOW | &quot;DIGITALBOTFLOW&quot; | 
 | DIVISION | &quot;DIVISION&quot; | 
 | EMAILROUTE | &quot;EMAILROUTE&quot; | 
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; | 
+| FILE | &quot;FILE&quot; | 
 | FLOWACTION | &quot;FLOWACTION&quot; | 
 | FLOWDATATYPE | &quot;FLOWDATATYPE&quot; | 
 | FLOWMILESTONE | &quot;FLOWMILESTONE&quot; | 
@@ -82,6 +84,7 @@
 | QUEUE | &quot;QUEUE&quot; | 
 | RECORDINGPOLICY | &quot;RECORDINGPOLICY&quot; | 
 | RESPONSE | &quot;RESPONSE&quot; | 
+| RESPONSEASSET | &quot;RESPONSEASSET&quot; | 
 | SCHEDULE | &quot;SCHEDULE&quot; | 
 | SCHEDULEGROUP | &quot;SCHEDULEGROUP&quot; | 
 | SECUREACTION | &quot;SECUREACTION&quot; | 
@@ -96,6 +99,7 @@
 | USER | &quot;USER&quot; | 
 | USERPROMPT | &quot;USERPROMPT&quot; | 
 | UTILIZATIONLABEL | &quot;UTILIZATIONLABEL&quot; | 
+| VIDEO | &quot;VIDEO&quot; | 
 | VOICEFLOW | &quot;VOICEFLOW&quot; | 
 | VOICEMAILFLOW | &quot;VOICEMAILFLOW&quot; | 
 | VOICESURVEYFLOW | &quot;VOICESURVEYFLOW&quot; | 
@@ -107,4 +111,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

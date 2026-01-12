@@ -85,8 +85,8 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
   private Boolean useExistingActiveConversation = null;
   private MessageData message = null;
   private Date timestamp = null;
-  private String selfUri = null;
   private AddressableEntityRef user = null;
+  private String selfUri = null;
 
   public SendAgentlessOutboundMessageResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -263,17 +263,17 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-
   @ApiModelProperty(example = "null", value = "Details of the user created the job")
   @JsonProperty("user")
   public AddressableEntityRef getUser() {
     return user;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
 
@@ -297,13 +297,13 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
             Objects.equals(this.useExistingActiveConversation, sendAgentlessOutboundMessageResponse.useExistingActiveConversation) &&
             Objects.equals(this.message, sendAgentlessOutboundMessageResponse.message) &&
             Objects.equals(this.timestamp, sendAgentlessOutboundMessageResponse.timestamp) &&
-            Objects.equals(this.selfUri, sendAgentlessOutboundMessageResponse.selfUri) &&
-            Objects.equals(this.user, sendAgentlessOutboundMessageResponse.user);
+            Objects.equals(this.user, sendAgentlessOutboundMessageResponse.user) &&
+            Objects.equals(this.selfUri, sendAgentlessOutboundMessageResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, textBody, messagingTemplate, useExistingActiveConversation, message, timestamp, selfUri, user);
+    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, textBody, messagingTemplate, useExistingActiveConversation, message, timestamp, user, selfUri);
   }
 
   @Override
@@ -321,8 +321,8 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     sb.append("    useExistingActiveConversation: ").append(toIndentedString(useExistingActiveConversation)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

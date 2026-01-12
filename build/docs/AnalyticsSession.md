@@ -80,6 +80,7 @@
 | **sessionId** | **String** | The unique identifier of this session |  [optional] |
 | **sharingScreen** | **Boolean** | Flag determining if screen share is started or not (true/false) |  [optional] |
 | **skipEnabled** | **Boolean** | (Dialer) Whether the agent can skip the dialer contact |  [optional] |
+| **snippetRecording** | **Boolean** | Whether or not the conversation included a snippet being recorded. |  [optional] |
 | **timeoutSeconds** | **Integer** | The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling) |  [optional] |
 | **usedRouting** | [**UsedRoutingEnum**](#Enum--UsedRoutingEnum) | Complete routing method |  [optional] |
 | **videoAddressSelf** | **String** | Direct Video address |  [optional] |
@@ -222,4 +223,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

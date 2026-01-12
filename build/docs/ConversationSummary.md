@@ -5,7 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **id** | **String** | The id of the summary. |  [optional] |
 | **text** | **String** | The text of the summary. |  [optional] |
+| **confidence** | **Float** | The AI confidence value. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the conversation summary. |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the conversation. |  [optional] |
 | **language** | **String** | The language of the conversation. |  [optional] |
@@ -15,8 +17,6 @@
 | **followup** | [**ConversationSummaryFollowup**](ConversationSummaryFollowup) | The followup of the conversation summary. |  [optional] |
 | **resolution** | [**ConversationSummaryResolution**](ConversationSummaryResolution) | The resolution of the conversation summary. |  [optional] |
 | **dateCreated** | [**Date**](Date) | The created date of the summary. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **id** | **String** | The id of the summary. |  [optional] |
-| **confidence** | **Float** | The AI confidence value. |  [optional] |
 | **participants** | [**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef) | The list of participants. |  [optional] |
 
 
@@ -48,4 +48,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

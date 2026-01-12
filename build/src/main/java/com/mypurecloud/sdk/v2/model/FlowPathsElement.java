@@ -95,6 +95,8 @@ public class FlowPathsElement  implements Serializable {
   private TypeEnum type = null;
   private Integer count = null;
   private List<FlowPathsFlowDetails> flows = null;
+  private AddressableEntityRef flowMilestone = null;
+  private AddressableEntityRef flowOutcome = null;
 
   private static class FlowOutcomeValueEnumDeserializer extends StdDeserializer<FlowOutcomeValueEnum> {
     public FlowOutcomeValueEnumDeserializer() {
@@ -144,8 +146,6 @@ public class FlowPathsElement  implements Serializable {
     }
   }
   private FlowOutcomeValueEnum flowOutcomeValue = null;
-  private AddressableEntityRef flowMilestone = null;
-  private AddressableEntityRef flowOutcome = null;
 
   public FlowPathsElement() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -227,6 +227,42 @@ public class FlowPathsElement  implements Serializable {
 
 
   /**
+   * The flow milestone, set if the element type is Milestone.
+   **/
+  public FlowPathsElement flowMilestone(AddressableEntityRef flowMilestone) {
+    this.flowMilestone = flowMilestone;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The flow milestone, set if the element type is Milestone.")
+  @JsonProperty("flowMilestone")
+  public AddressableEntityRef getFlowMilestone() {
+    return flowMilestone;
+  }
+  public void setFlowMilestone(AddressableEntityRef flowMilestone) {
+    this.flowMilestone = flowMilestone;
+  }
+
+
+  /**
+   * The flow outcome, set if the element type is Outcome or Milestone.
+   **/
+  public FlowPathsElement flowOutcome(AddressableEntityRef flowOutcome) {
+    this.flowOutcome = flowOutcome;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The flow outcome, set if the element type is Outcome or Milestone.")
+  @JsonProperty("flowOutcome")
+  public AddressableEntityRef getFlowOutcome() {
+    return flowOutcome;
+  }
+  public void setFlowOutcome(AddressableEntityRef flowOutcome) {
+    this.flowOutcome = flowOutcome;
+  }
+
+
+  /**
    * The value of the flow outcome, if the element type is Outcome.
    **/
   public FlowPathsElement flowOutcomeValue(FlowOutcomeValueEnum flowOutcomeValue) {
@@ -244,20 +280,6 @@ public class FlowPathsElement  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The flow milestone, set if the element type is Milestone.")
-  @JsonProperty("flowMilestone")
-  public AddressableEntityRef getFlowMilestone() {
-    return flowMilestone;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "The flow outcome, set if the element type is Outcome or Milestone.")
-  @JsonProperty("flowOutcome")
-  public AddressableEntityRef getFlowOutcome() {
-    return flowOutcome;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -272,14 +294,14 @@ public class FlowPathsElement  implements Serializable {
             Objects.equals(this.type, flowPathsElement.type) &&
             Objects.equals(this.count, flowPathsElement.count) &&
             Objects.equals(this.flows, flowPathsElement.flows) &&
-            Objects.equals(this.flowOutcomeValue, flowPathsElement.flowOutcomeValue) &&
             Objects.equals(this.flowMilestone, flowPathsElement.flowMilestone) &&
-            Objects.equals(this.flowOutcome, flowPathsElement.flowOutcome);
+            Objects.equals(this.flowOutcome, flowPathsElement.flowOutcome) &&
+            Objects.equals(this.flowOutcomeValue, flowPathsElement.flowOutcomeValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parentId, type, count, flows, flowOutcomeValue, flowMilestone, flowOutcome);
+    return Objects.hash(parentId, type, count, flows, flowMilestone, flowOutcome, flowOutcomeValue);
   }
 
   @Override
@@ -291,9 +313,9 @@ public class FlowPathsElement  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    flows: ").append(toIndentedString(flows)).append("\n");
-    sb.append("    flowOutcomeValue: ").append(toIndentedString(flowOutcomeValue)).append("\n");
     sb.append("    flowMilestone: ").append(toIndentedString(flowMilestone)).append("\n");
     sb.append("    flowOutcome: ").append(toIndentedString(flowOutcome)).append("\n");
+    sb.append("    flowOutcomeValue: ").append(toIndentedString(flowOutcomeValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -18,6 +18,8 @@ import com.mypurecloud.sdk.v2.model.AssistantQueue;
 import com.mypurecloud.sdk.v2.model.AssistantQueueListing;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkAddRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersJobsRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersJobsResponse;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryResponse;
 import com.mypurecloud.sdk.v2.model.BulkResponse;
@@ -31,6 +33,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAssistantQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAssistantsAgentchecklistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAssistantQueueUsersJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantsAgentchecklistRequest;
@@ -41,6 +44,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAssistantQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantsAgentchecklistsRequest;
@@ -536,6 +540,92 @@ public class AgentAssistantsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AssistantQueue> response = (ApiResponse<AssistantQueue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get job details.
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param jobId Job ID (required)
+   * @return AssistantQueueUsersJobsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssistantQueueUsersJobsResponse getAssistantQueueUsersJob(String assistantId, String queueId, String jobId) throws IOException, ApiException {
+    return  getAssistantQueueUsersJob(createGetAssistantQueueUsersJobRequest(assistantId, queueId, jobId));
+  }
+
+  /**
+   * Get job details.
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param jobId Job ID (required)
+   * @return AssistantQueueUsersJobsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssistantQueueUsersJobsResponse> getAssistantQueueUsersJobWithHttpInfo(String assistantId, String queueId, String jobId) throws IOException {
+    return getAssistantQueueUsersJob(createGetAssistantQueueUsersJobRequest(assistantId, queueId, jobId).withHttpInfo());
+  }
+
+  private GetAssistantQueueUsersJobRequest createGetAssistantQueueUsersJobRequest(String assistantId, String queueId, String jobId) {
+    return GetAssistantQueueUsersJobRequest.builder()
+            .withAssistantId(assistantId)
+
+            .withQueueId(queueId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get job details.
+   * 
+   * @param request The request object
+   * @return AssistantQueueUsersJobsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssistantQueueUsersJobsResponse getAssistantQueueUsersJob(GetAssistantQueueUsersJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AssistantQueueUsersJobsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssistantQueueUsersJobsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get job details.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssistantQueueUsersJobsResponse> getAssistantQueueUsersJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AssistantQueueUsersJobsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssistantQueueUsersJobsResponse> response = (ApiResponse<AssistantQueueUsersJobsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssistantQueueUsersJobsResponse> response = (ApiResponse<AssistantQueueUsersJobsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1412,6 +1502,92 @@ public class AgentAssistantsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start a new job to assistant-queue.
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @return AssistantQueueUsersJobsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssistantQueueUsersJobsResponse postAssistantQueueUsersJobs(String assistantId, String queueId, AssistantQueueUsersJobsRequest body) throws IOException, ApiException {
+    return  postAssistantQueueUsersJobs(createPostAssistantQueueUsersJobsRequest(assistantId, queueId, body));
+  }
+
+  /**
+   * Start a new job to assistant-queue.
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @return AssistantQueueUsersJobsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssistantQueueUsersJobsResponse> postAssistantQueueUsersJobsWithHttpInfo(String assistantId, String queueId, AssistantQueueUsersJobsRequest body) throws IOException {
+    return postAssistantQueueUsersJobs(createPostAssistantQueueUsersJobsRequest(assistantId, queueId, body).withHttpInfo());
+  }
+
+  private PostAssistantQueueUsersJobsRequest createPostAssistantQueueUsersJobsRequest(String assistantId, String queueId, AssistantQueueUsersJobsRequest body) {
+    return PostAssistantQueueUsersJobsRequest.builder()
+            .withAssistantId(assistantId)
+
+            .withQueueId(queueId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Start a new job to assistant-queue.
+   * 
+   * @param request The request object
+   * @return AssistantQueueUsersJobsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssistantQueueUsersJobsResponse postAssistantQueueUsersJobs(PostAssistantQueueUsersJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AssistantQueueUsersJobsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssistantQueueUsersJobsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start a new job to assistant-queue.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssistantQueueUsersJobsResponse> postAssistantQueueUsersJobs(ApiRequest<AssistantQueueUsersJobsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AssistantQueueUsersJobsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssistantQueueUsersJobsResponse> response = (ApiResponse<AssistantQueueUsersJobsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssistantQueueUsersJobsResponse> response = (ApiResponse<AssistantQueueUsersJobsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

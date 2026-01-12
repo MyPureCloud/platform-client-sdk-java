@@ -48,7 +48,8 @@ public class GetUsersRulesSettingRequest {
 	} 
 
 	public enum ruleTypeValues { 
-		LEARNING("Learning");
+		LEARNING("Learning"),
+		ACTIVITYPLAN("ActivityPlan");
 
 		private String value;
 

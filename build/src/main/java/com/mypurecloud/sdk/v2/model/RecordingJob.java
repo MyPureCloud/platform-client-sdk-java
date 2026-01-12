@@ -27,6 +27,7 @@ import java.io.Serializable;
 public class RecordingJob  implements Serializable {
   
   private String id = null;
+  private AddressableEntityRef user = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -90,7 +91,6 @@ public class RecordingJob  implements Serializable {
   private String errorMessage = null;
   private String failedRecordings = null;
   private String selfUri = null;
-  private AddressableEntityRef user = null;
 
   public RecordingJob() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -102,6 +102,13 @@ public class RecordingJob  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Details of the user created the job")
+  @JsonProperty("user")
+  public AddressableEntityRef getUser() {
+    return user;
   }
 
 
@@ -200,13 +207,6 @@ public class RecordingJob  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "Details of the user created the job")
-  @JsonProperty("user")
-  public AddressableEntityRef getUser() {
-    return user;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -218,6 +218,7 @@ public class RecordingJob  implements Serializable {
     RecordingJob recordingJob = (RecordingJob) o;
 
     return Objects.equals(this.id, recordingJob.id) &&
+            Objects.equals(this.user, recordingJob.user) &&
             Objects.equals(this.state, recordingJob.state) &&
             Objects.equals(this.recordingJobsQuery, recordingJob.recordingJobsQuery) &&
             Objects.equals(this.dateCreated, recordingJob.dateCreated) &&
@@ -229,13 +230,12 @@ public class RecordingJob  implements Serializable {
             Objects.equals(this.percentProgress, recordingJob.percentProgress) &&
             Objects.equals(this.errorMessage, recordingJob.errorMessage) &&
             Objects.equals(this.failedRecordings, recordingJob.failedRecordings) &&
-            Objects.equals(this.selfUri, recordingJob.selfUri) &&
-            Objects.equals(this.user, recordingJob.user);
+            Objects.equals(this.selfUri, recordingJob.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalSkippedRecordings, totalFailedRecordings, totalProcessedRecordings, percentProgress, errorMessage, failedRecordings, selfUri, user);
+    return Objects.hash(id, user, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalSkippedRecordings, totalFailedRecordings, totalProcessedRecordings, percentProgress, errorMessage, failedRecordings, selfUri);
   }
 
   @Override
@@ -244,6 +244,7 @@ public class RecordingJob  implements Serializable {
     sb.append("class RecordingJob {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    recordingJobsQuery: ").append(toIndentedString(recordingJobsQuery)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
@@ -256,7 +257,6 @@ public class RecordingJob  implements Serializable {
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("    failedRecordings: ").append(toIndentedString(failedRecordings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();
   }

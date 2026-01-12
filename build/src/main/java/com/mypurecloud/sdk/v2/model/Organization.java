@@ -33,6 +33,7 @@ public class Organization  implements Serializable {
   private String thirdPartyOrgName = null;
   private String thirdPartyURI = null;
   private String domain = null;
+  private Map<String, Boolean> features = null;
   private Integer version = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
@@ -140,7 +141,6 @@ public class Organization  implements Serializable {
   }
   private ProductPlatformEnum productPlatform = null;
   private String selfUri = null;
-  private Map<String, Boolean> features = null;
 
   public Organization() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -249,6 +249,13 @@ public class Organization  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The state of features available for the organization.")
+  @JsonProperty("features")
+  public Map<String, Boolean> getFeatures() {
+    return features;
+  }
+
+
   /**
    * The current version of the organization.
    **/
@@ -351,13 +358,6 @@ public class Organization  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The state of features available for the organization.")
-  @JsonProperty("features")
-  public Map<String, Boolean> getFeatures() {
-    return features;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -375,19 +375,19 @@ public class Organization  implements Serializable {
             Objects.equals(this.thirdPartyOrgName, organization.thirdPartyOrgName) &&
             Objects.equals(this.thirdPartyURI, organization.thirdPartyURI) &&
             Objects.equals(this.domain, organization.domain) &&
+            Objects.equals(this.features, organization.features) &&
             Objects.equals(this.version, organization.version) &&
             Objects.equals(this.state, organization.state) &&
             Objects.equals(this.defaultSiteId, organization.defaultSiteId) &&
             Objects.equals(this.supportURI, organization.supportURI) &&
             Objects.equals(this.voicemailEnabled, organization.voicemailEnabled) &&
             Objects.equals(this.productPlatform, organization.productPlatform) &&
-            Objects.equals(this.selfUri, organization.selfUri) &&
-            Objects.equals(this.features, organization.features);
+            Objects.equals(this.selfUri, organization.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, defaultLanguage, defaultCountryCode, thirdPartyOrgName, thirdPartyURI, domain, version, state, defaultSiteId, supportURI, voicemailEnabled, productPlatform, selfUri, features);
+    return Objects.hash(id, name, defaultLanguage, defaultCountryCode, thirdPartyOrgName, thirdPartyURI, domain, features, version, state, defaultSiteId, supportURI, voicemailEnabled, productPlatform, selfUri);
   }
 
   @Override
@@ -402,6 +402,7 @@ public class Organization  implements Serializable {
     sb.append("    thirdPartyOrgName: ").append(toIndentedString(thirdPartyOrgName)).append("\n");
     sb.append("    thirdPartyURI: ").append(toIndentedString(thirdPartyURI)).append("\n");
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+    sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    defaultSiteId: ").append(toIndentedString(defaultSiteId)).append("\n");
@@ -409,7 +410,6 @@ public class Organization  implements Serializable {
     sb.append("    voicemailEnabled: ").append(toIndentedString(voicemailEnabled)).append("\n");
     sb.append("    productPlatform: ").append(toIndentedString(productPlatform)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -40,6 +40,7 @@ public class EvaluationResponse  implements Serializable {
   private EvaluationFormResponse evaluationForm = null;
   private User evaluator = null;
   private User agent = null;
+  private AddressableEntityRef calibration = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -126,6 +127,7 @@ public class EvaluationResponse  implements Serializable {
     EMAIL("EMAIL"),
     MESSAGE("MESSAGE"),
     INTERNAL_MESSAGE("INTERNAL_MESSAGE"),
+    SCREEN_MONITORING("SCREEN_MONITORING"),
     SOCIAL_EXPRESSION("SOCIAL_EXPRESSION"),
     VIDEO("VIDEO"),
     SCREENSHARE("SCREENSHARE");
@@ -217,7 +219,6 @@ public class EvaluationResponse  implements Serializable {
   private EvaluationSource evaluationSource = null;
   private AiScoring aiScoring = null;
   private String selfUri = null;
-  private AddressableEntityRef calibration = null;
 
   public EvaluationResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -317,6 +318,23 @@ public class EvaluationResponse  implements Serializable {
   }
   public void setAgent(User agent) {
     this.agent = agent;
+  }
+
+
+  /**
+   **/
+  public EvaluationResponse calibration(AddressableEntityRef calibration) {
+    this.calibration = calibration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("calibration")
+  public AddressableEntityRef getCalibration() {
+    return calibration;
+  }
+  public void setCalibration(AddressableEntityRef calibration) {
+    this.calibration = calibration;
   }
 
 
@@ -749,13 +767,6 @@ public class EvaluationResponse  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("calibration")
-  public AddressableEntityRef getCalibration() {
-    return calibration;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -772,6 +783,7 @@ public class EvaluationResponse  implements Serializable {
             Objects.equals(this.evaluationForm, evaluationResponse.evaluationForm) &&
             Objects.equals(this.evaluator, evaluationResponse.evaluator) &&
             Objects.equals(this.agent, evaluationResponse.agent) &&
+            Objects.equals(this.calibration, evaluationResponse.calibration) &&
             Objects.equals(this.status, evaluationResponse.status) &&
             Objects.equals(this.answers, evaluationResponse.answers) &&
             Objects.equals(this.agentHasRead, evaluationResponse.agentHasRead) &&
@@ -797,13 +809,12 @@ public class EvaluationResponse  implements Serializable {
             Objects.equals(this.hasAssistanceFailed, evaluationResponse.hasAssistanceFailed) &&
             Objects.equals(this.evaluationSource, evaluationResponse.evaluationSource) &&
             Objects.equals(this.aiScoring, evaluationResponse.aiScoring) &&
-            Objects.equals(this.selfUri, evaluationResponse.selfUri) &&
-            Objects.equals(this.calibration, evaluationResponse.calibration);
+            Objects.equals(this.selfUri, evaluationResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, aiScoring, selfUri, calibration);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, aiScoring, selfUri);
   }
 
   @Override
@@ -817,6 +828,7 @@ public class EvaluationResponse  implements Serializable {
     sb.append("    evaluationForm: ").append(toIndentedString(evaluationForm)).append("\n");
     sb.append("    evaluator: ").append(toIndentedString(evaluator)).append("\n");
     sb.append("    agent: ").append(toIndentedString(agent)).append("\n");
+    sb.append("    calibration: ").append(toIndentedString(calibration)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    answers: ").append(toIndentedString(answers)).append("\n");
     sb.append("    agentHasRead: ").append(toIndentedString(agentHasRead)).append("\n");
@@ -843,7 +855,6 @@ public class EvaluationResponse  implements Serializable {
     sb.append("    evaluationSource: ").append(toIndentedString(evaluationSource)).append("\n");
     sb.append("    aiScoring: ").append(toIndentedString(aiScoring)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    calibration: ").append(toIndentedString(calibration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

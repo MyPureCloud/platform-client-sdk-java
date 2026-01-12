@@ -2434,12 +2434,13 @@ public class SocialMediaApi {
    * @param divisionIds One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. (optional)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
    * @param name Search for topic by name that contains the given search string, search is case insensitive (optional)
+   * @param ids One or more topic IDs to search through the topics. (optional)
    * @return SocialTopicResponseEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SocialTopicResponseEntityListing getSocialmediaTopics(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted, String name) throws IOException, ApiException {
-    return  getSocialmediaTopics(createGetSocialmediaTopicsRequest(pageNumber, pageSize, divisionIds, includeDeleted, name));
+  public SocialTopicResponseEntityListing getSocialmediaTopics(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted, String name, List<String> ids) throws IOException, ApiException {
+    return  getSocialmediaTopics(createGetSocialmediaTopicsRequest(pageNumber, pageSize, divisionIds, includeDeleted, name, ids));
   }
 
   /**
@@ -2450,14 +2451,15 @@ public class SocialMediaApi {
    * @param divisionIds One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. (optional)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
    * @param name Search for topic by name that contains the given search string, search is case insensitive (optional)
+   * @param ids One or more topic IDs to search through the topics. (optional)
    * @return SocialTopicResponseEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SocialTopicResponseEntityListing> getSocialmediaTopicsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted, String name) throws IOException {
-    return getSocialmediaTopics(createGetSocialmediaTopicsRequest(pageNumber, pageSize, divisionIds, includeDeleted, name).withHttpInfo());
+  public ApiResponse<SocialTopicResponseEntityListing> getSocialmediaTopicsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted, String name, List<String> ids) throws IOException {
+    return getSocialmediaTopics(createGetSocialmediaTopicsRequest(pageNumber, pageSize, divisionIds, includeDeleted, name, ids).withHttpInfo());
   }
 
-  private GetSocialmediaTopicsRequest createGetSocialmediaTopicsRequest(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted, String name) {
+  private GetSocialmediaTopicsRequest createGetSocialmediaTopicsRequest(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted, String name, List<String> ids) {
     return GetSocialmediaTopicsRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -2468,6 +2470,8 @@ public class SocialMediaApi {
             .withIncludeDeleted(includeDeleted)
 
             .withName(name)
+
+            .withIds(ids)
 
             .build();
   }

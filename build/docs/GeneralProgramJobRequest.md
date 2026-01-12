@@ -49,9 +49,11 @@
 | PT_BR | &quot;pt-BR&quot; | 
 | PT_PT | &quot;pt-PT&quot; | 
 | SV_SE | &quot;sv-SE&quot; | 
+| TR_TR | &quot;tr-TR&quot; | 
 | ZH_CN | &quot;zh-CN&quot; | 
 | ZH_HK | &quot;zh-HK&quot; | 
 | ZH_TW | &quot;zh-TW&quot; | 
+| ZU_ZA | &quot;zu-ZA&quot; | 
 
 
 ## Enum: ModeEnum
@@ -66,4 +68,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

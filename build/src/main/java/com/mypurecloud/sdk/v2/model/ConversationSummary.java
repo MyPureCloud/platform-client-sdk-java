@@ -32,7 +32,9 @@ import java.io.Serializable;
 
 public class ConversationSummary  implements Serializable {
   
+  private String id = null;
   private String text = null;
+  private Float confidence = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -144,8 +146,6 @@ public class ConversationSummary  implements Serializable {
   private ConversationSummaryFollowup followup = null;
   private ConversationSummaryResolution resolution = null;
   private Date dateCreated = null;
-  private String id = null;
-  private Float confidence = null;
   private List<AddressableEntityRef> participants = null;
 
   public ConversationSummary() {
@@ -156,6 +156,24 @@ public class ConversationSummary  implements Serializable {
   }
 
   
+  /**
+   * The id of the summary.
+   **/
+  public ConversationSummary id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the summary.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    * The text of the summary.
    **/
@@ -171,6 +189,24 @@ public class ConversationSummary  implements Serializable {
   }
   public void setText(String text) {
     this.text = text;
+  }
+
+
+  /**
+   * The AI confidence value.
+   **/
+  public ConversationSummary confidence(Float confidence) {
+    this.confidence = confidence;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The AI confidence value.")
+  @JsonProperty("confidence")
+  public Float getConfidence() {
+    return confidence;
+  }
+  public void setConfidence(Float confidence) {
+    this.confidence = confidence;
   }
 
 
@@ -336,20 +372,6 @@ public class ConversationSummary  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The id of the summary.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "The AI confidence value.")
-  @JsonProperty("confidence")
-  public Float getConfidence() {
-    return confidence;
-  }
-
-
   /**
    * The list of participants.
    **/
@@ -378,7 +400,9 @@ public class ConversationSummary  implements Serializable {
     }
     ConversationSummary conversationSummary = (ConversationSummary) o;
 
-    return Objects.equals(this.text, conversationSummary.text) &&
+    return Objects.equals(this.id, conversationSummary.id) &&
+            Objects.equals(this.text, conversationSummary.text) &&
+            Objects.equals(this.confidence, conversationSummary.confidence) &&
             Objects.equals(this.status, conversationSummary.status) &&
             Objects.equals(this.mediaType, conversationSummary.mediaType) &&
             Objects.equals(this.language, conversationSummary.language) &&
@@ -388,14 +412,12 @@ public class ConversationSummary  implements Serializable {
             Objects.equals(this.followup, conversationSummary.followup) &&
             Objects.equals(this.resolution, conversationSummary.resolution) &&
             Objects.equals(this.dateCreated, conversationSummary.dateCreated) &&
-            Objects.equals(this.id, conversationSummary.id) &&
-            Objects.equals(this.confidence, conversationSummary.confidence) &&
             Objects.equals(this.participants, conversationSummary.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, status, mediaType, language, predictedWrapupCodes, editedSummary, reason, followup, resolution, dateCreated, id, confidence, participants);
+    return Objects.hash(id, text, confidence, status, mediaType, language, predictedWrapupCodes, editedSummary, reason, followup, resolution, dateCreated, participants);
   }
 
   @Override
@@ -403,7 +425,9 @@ public class ConversationSummary  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationSummary {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
@@ -413,8 +437,6 @@ public class ConversationSummary  implements Serializable {
     sb.append("    followup: ").append(toIndentedString(followup)).append("\n");
     sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");
     return sb.toString();

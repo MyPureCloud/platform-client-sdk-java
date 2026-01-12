@@ -24,8 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get an agent's greetings.
 
-getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/telephony/agents/{agentId}/greetings  
 
 Requires ANY permissions: 
@@ -84,8 +82,6 @@ try {
 > [SelfAgentGreeting](SelfAgentGreeting) getTelephonyAgentsGreetingsMe()
 
 Get the agent's own greetings.
-
-getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/telephony/agents/greetings/me  
 
@@ -510,8 +506,6 @@ try {
 
 Updates an agent's greetings.
 
-putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/telephony/agents/{agentId}/greetings  
 
 Requires ANY permissions: 
@@ -573,8 +567,6 @@ try {
 
 Updates the agent's own greetings.
 
-putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/telephony/agents/greetings/me  
 
 Requires ANY permissions: 
@@ -627,4 +619,4 @@ try {
 [**SelfAgentGreeting**](SelfAgentGreeting)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.AssistantQueue;
 import com.mypurecloud.sdk.v2.model.AssistantQueueListing;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkAddRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersJobsRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersJobsResponse;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryResponse;
 import com.mypurecloud.sdk.v2.model.BulkResponse;

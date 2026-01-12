@@ -5,13 +5,13 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **id** | **String** | The id of the wrapup code. |  [optional] |
 | **name** | **String** | The name of the wrapup code. |  [optional] |
 | **description** | **String** | The description of the wrapup code. |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
-| **id** | **String** | The id of the wrapup code. |  [optional] |
 | **confidence** | **Float** | The AI confidence value. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

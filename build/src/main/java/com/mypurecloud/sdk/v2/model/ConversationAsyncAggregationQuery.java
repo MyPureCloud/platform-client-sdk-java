@@ -236,6 +236,7 @@ public class ConversationAsyncAggregationQuery  implements Serializable {
     TPARKCOMPLETE("tParkComplete"),
     TSCREENMONITORING("tScreenMonitoring"),
     TSHORTABANDON("tShortAbandon"),
+    TSNIPPETRECORD("tSnippetRecord"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),
     TUSERRESPONSETIME("tUserResponseTime"),

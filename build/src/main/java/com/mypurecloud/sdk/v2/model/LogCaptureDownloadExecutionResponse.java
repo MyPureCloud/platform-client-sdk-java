@@ -26,6 +26,7 @@ import java.io.Serializable;
 public class LogCaptureDownloadExecutionResponse  implements Serializable {
   
   private String id = null;
+  private AddressableEntityRef user = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -78,7 +79,6 @@ public class LogCaptureDownloadExecutionResponse  implements Serializable {
   private Date dateStart = null;
   private String fileUrl = null;
   private String selfUri = null;
-  private AddressableEntityRef user = null;
 
   public LogCaptureDownloadExecutionResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -101,6 +101,13 @@ public class LogCaptureDownloadExecutionResponse  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  @ApiModelProperty(example = "null", required = true, value = "Details of the user that created the job")
+  @JsonProperty("user")
+  public AddressableEntityRef getUser() {
+    return user;
   }
 
 
@@ -132,13 +139,6 @@ public class LogCaptureDownloadExecutionResponse  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", required = true, value = "Details of the user that created the job")
-  @JsonProperty("user")
-  public AddressableEntityRef getUser() {
-    return user;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -150,16 +150,16 @@ public class LogCaptureDownloadExecutionResponse  implements Serializable {
     LogCaptureDownloadExecutionResponse logCaptureDownloadExecutionResponse = (LogCaptureDownloadExecutionResponse) o;
 
     return Objects.equals(this.id, logCaptureDownloadExecutionResponse.id) &&
+            Objects.equals(this.user, logCaptureDownloadExecutionResponse.user) &&
             Objects.equals(this.state, logCaptureDownloadExecutionResponse.state) &&
             Objects.equals(this.dateStart, logCaptureDownloadExecutionResponse.dateStart) &&
             Objects.equals(this.fileUrl, logCaptureDownloadExecutionResponse.fileUrl) &&
-            Objects.equals(this.selfUri, logCaptureDownloadExecutionResponse.selfUri) &&
-            Objects.equals(this.user, logCaptureDownloadExecutionResponse.user);
+            Objects.equals(this.selfUri, logCaptureDownloadExecutionResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, dateStart, fileUrl, selfUri, user);
+    return Objects.hash(id, user, state, dateStart, fileUrl, selfUri);
   }
 
   @Override
@@ -168,11 +168,11 @@ public class LogCaptureDownloadExecutionResponse  implements Serializable {
     sb.append("class LogCaptureDownloadExecutionResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
     sb.append("    fileUrl: ").append(toIndentedString(fileUrl)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();
   }

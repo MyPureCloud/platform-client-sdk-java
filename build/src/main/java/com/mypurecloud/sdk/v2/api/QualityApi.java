@@ -11,6 +11,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.AgentScoringRule;
+import com.mypurecloud.sdk.v2.model.AgentScoringRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.AiScoringSettings;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
@@ -57,6 +59,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteQualityConversationEvaluationReq
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsSurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteQualityProgramAgentscoringruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobRequest;
@@ -82,6 +85,8 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkContextsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityProgramAgentscoringruleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityProgramAgentscoringrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationRequest;
@@ -103,6 +108,7 @@ import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityProgramAgentscoringrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsSurveysRequest;
@@ -113,6 +119,7 @@ import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationAiscoringSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsSurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.PutQualityProgramAgentscoringruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualitySurveysScorableRequest;
 
 import java.io.IOException;
@@ -666,6 +673,85 @@ public class QualityApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteQualityFormsSurvey(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an Agent Scoring Rule
+   * 
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @param ruleId Agent Scoring Rule ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteQualityProgramAgentscoringrule(String programId, String ruleId) throws IOException, ApiException {
+     deleteQualityProgramAgentscoringrule(createDeleteQualityProgramAgentscoringruleRequest(programId, ruleId));
+  }
+
+  /**
+   * Delete an Agent Scoring Rule
+   * 
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @param ruleId Agent Scoring Rule ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteQualityProgramAgentscoringruleWithHttpInfo(String programId, String ruleId) throws IOException {
+    return deleteQualityProgramAgentscoringrule(createDeleteQualityProgramAgentscoringruleRequest(programId, ruleId).withHttpInfo());
+  }
+
+  private DeleteQualityProgramAgentscoringruleRequest createDeleteQualityProgramAgentscoringruleRequest(String programId, String ruleId) {
+    return DeleteQualityProgramAgentscoringruleRequest.builder()
+            .withProgramId(programId)
+
+            .withRuleId(ruleId)
+
+            .build();
+  }
+
+  /**
+   * Delete an Agent Scoring Rule
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteQualityProgramAgentscoringrule(DeleteQualityProgramAgentscoringruleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an Agent Scoring Rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteQualityProgramAgentscoringrule(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2053,13 +2139,14 @@ public class QualityApi {
    * @param formId Form ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order (optional, default to asc)
    * @return EvaluationFormResponseEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    * @deprecated
    */
-  public EvaluationFormResponseEntityListing getQualityFormVersions(String formId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getQualityFormVersions(createGetQualityFormVersionsRequest(formId, pageSize, pageNumber));
+  public EvaluationFormResponseEntityListing getQualityFormVersions(String formId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
+    return  getQualityFormVersions(createGetQualityFormVersionsRequest(formId, pageSize, pageNumber, sortOrder));
   }
 
   /**
@@ -2068,21 +2155,24 @@ public class QualityApi {
    * @param formId Form ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order (optional, default to asc)
    * @return EvaluationFormResponseEntityListing
    * @throws IOException if the request fails to be processed
    * @deprecated
    */
-  public ApiResponse<EvaluationFormResponseEntityListing> getQualityFormVersionsWithHttpInfo(String formId, Integer pageSize, Integer pageNumber) throws IOException {
-    return getQualityFormVersions(createGetQualityFormVersionsRequest(formId, pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<EvaluationFormResponseEntityListing> getQualityFormVersionsWithHttpInfo(String formId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
+    return getQualityFormVersions(createGetQualityFormVersionsRequest(formId, pageSize, pageNumber, sortOrder).withHttpInfo());
   }
 
-  private GetQualityFormVersionsRequest createGetQualityFormVersionsRequest(String formId, Integer pageSize, Integer pageNumber) {
+  private GetQualityFormVersionsRequest createGetQualityFormVersionsRequest(String formId, Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetQualityFormVersionsRequest.builder()
             .withFormId(formId)
 
             .withPageSize(pageSize)
 
             .withPageNumber(pageNumber)
+
+            .withSortOrder(sortOrder)
 
             .build();
   }
@@ -3025,6 +3115,166 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<SurveyForm>> response = (ApiResponse<List<SurveyForm>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an Agent Scoring Rule
+   * 
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @param ruleId Agent Scoring Rule ID (required)
+   * @return AgentScoringRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScoringRule getQualityProgramAgentscoringrule(String programId, String ruleId) throws IOException, ApiException {
+    return  getQualityProgramAgentscoringrule(createGetQualityProgramAgentscoringruleRequest(programId, ruleId));
+  }
+
+  /**
+   * Get an Agent Scoring Rule
+   * 
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @param ruleId Agent Scoring Rule ID (required)
+   * @return AgentScoringRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScoringRule> getQualityProgramAgentscoringruleWithHttpInfo(String programId, String ruleId) throws IOException {
+    return getQualityProgramAgentscoringrule(createGetQualityProgramAgentscoringruleRequest(programId, ruleId).withHttpInfo());
+  }
+
+  private GetQualityProgramAgentscoringruleRequest createGetQualityProgramAgentscoringruleRequest(String programId, String ruleId) {
+    return GetQualityProgramAgentscoringruleRequest.builder()
+            .withProgramId(programId)
+
+            .withRuleId(ruleId)
+
+            .build();
+  }
+
+  /**
+   * Get an Agent Scoring Rule
+   * 
+   * @param request The request object
+   * @return AgentScoringRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScoringRule getQualityProgramAgentscoringrule(GetQualityProgramAgentscoringruleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentScoringRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentScoringRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an Agent Scoring Rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScoringRule> getQualityProgramAgentscoringrule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentScoringRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Agent Scoring Rules for a program
+   * 
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @return AgentScoringRuleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScoringRuleEntityListing getQualityProgramAgentscoringrules(String programId) throws IOException, ApiException {
+    return  getQualityProgramAgentscoringrules(createGetQualityProgramAgentscoringrulesRequest(programId));
+  }
+
+  /**
+   * Get Agent Scoring Rules for a program
+   * 
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @return AgentScoringRuleEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScoringRuleEntityListing> getQualityProgramAgentscoringrulesWithHttpInfo(String programId) throws IOException {
+    return getQualityProgramAgentscoringrules(createGetQualityProgramAgentscoringrulesRequest(programId).withHttpInfo());
+  }
+
+  private GetQualityProgramAgentscoringrulesRequest createGetQualityProgramAgentscoringrulesRequest(String programId) {
+    return GetQualityProgramAgentscoringrulesRequest.builder()
+            .withProgramId(programId)
+
+            .build();
+  }
+
+  /**
+   * Get Agent Scoring Rules for a program
+   * 
+   * @param request The request object
+   * @return AgentScoringRuleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScoringRuleEntityListing getQualityProgramAgentscoringrules(GetQualityProgramAgentscoringrulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentScoringRuleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentScoringRuleEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Agent Scoring Rules for a program
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScoringRuleEntityListing> getQualityProgramAgentscoringrules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentScoringRuleEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScoringRuleEntityListing> response = (ApiResponse<AgentScoringRuleEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScoringRuleEntityListing> response = (ApiResponse<AgentScoringRuleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4740,6 +4990,88 @@ public class QualityApi {
   }
 
   /**
+   * Create an Agent Scoring Rule
+   * Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @param body Agent Scoring Rule (required)
+   * @return AgentScoringRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScoringRule postQualityProgramAgentscoringrules(String programId, AgentScoringRule body) throws IOException, ApiException {
+    return  postQualityProgramAgentscoringrules(createPostQualityProgramAgentscoringrulesRequest(programId, body));
+  }
+
+  /**
+   * Create an Agent Scoring Rule
+   * Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @param body Agent Scoring Rule (required)
+   * @return AgentScoringRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScoringRule> postQualityProgramAgentscoringrulesWithHttpInfo(String programId, AgentScoringRule body) throws IOException {
+    return postQualityProgramAgentscoringrules(createPostQualityProgramAgentscoringrulesRequest(programId, body).withHttpInfo());
+  }
+
+  private PostQualityProgramAgentscoringrulesRequest createPostQualityProgramAgentscoringrulesRequest(String programId, AgentScoringRule body) {
+    return PostQualityProgramAgentscoringrulesRequest.builder()
+            .withProgramId(programId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an Agent Scoring Rule
+   * Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+   * @param request The request object
+   * @return AgentScoringRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScoringRule postQualityProgramAgentscoringrules(PostQualityProgramAgentscoringrulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentScoringRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentScoringRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an Agent Scoring Rule
+   * Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScoringRule> postQualityProgramAgentscoringrules(ApiRequest<AgentScoringRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentScoringRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Publish an evaluation form.
    * 
    * @param body Publish request containing id of form to publish (required)
@@ -5555,6 +5887,92 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an Agent Scoring Rule
+   * 
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @param ruleId Agent Scoring Rule ID (required)
+   * @param body Agent Scoring Rule (required)
+   * @return AgentScoringRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScoringRule putQualityProgramAgentscoringrule(String programId, String ruleId, AgentScoringRule body) throws IOException, ApiException {
+    return  putQualityProgramAgentscoringrule(createPutQualityProgramAgentscoringruleRequest(programId, ruleId, body));
+  }
+
+  /**
+   * Update an Agent Scoring Rule
+   * 
+   * @param programId Program ID from Speech and Text Analytics (required)
+   * @param ruleId Agent Scoring Rule ID (required)
+   * @param body Agent Scoring Rule (required)
+   * @return AgentScoringRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScoringRule> putQualityProgramAgentscoringruleWithHttpInfo(String programId, String ruleId, AgentScoringRule body) throws IOException {
+    return putQualityProgramAgentscoringrule(createPutQualityProgramAgentscoringruleRequest(programId, ruleId, body).withHttpInfo());
+  }
+
+  private PutQualityProgramAgentscoringruleRequest createPutQualityProgramAgentscoringruleRequest(String programId, String ruleId, AgentScoringRule body) {
+    return PutQualityProgramAgentscoringruleRequest.builder()
+            .withProgramId(programId)
+
+            .withRuleId(ruleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an Agent Scoring Rule
+   * 
+   * @param request The request object
+   * @return AgentScoringRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScoringRule putQualityProgramAgentscoringrule(PutQualityProgramAgentscoringruleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentScoringRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentScoringRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an Agent Scoring Rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScoringRule> putQualityProgramAgentscoringrule(ApiRequest<AgentScoringRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentScoringRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScoringRule> response = (ApiResponse<AgentScoringRule>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

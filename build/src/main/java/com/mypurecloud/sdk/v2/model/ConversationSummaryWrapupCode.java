@@ -22,11 +22,11 @@ import java.io.Serializable;
 
 public class ConversationSummaryWrapupCode  implements Serializable {
   
+  private String id = null;
   private String name = null;
   private String description = null;
-  private String selfUri = null;
-  private String id = null;
   private Float confidence = null;
+  private String selfUri = null;
 
   public ConversationSummaryWrapupCode() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -34,6 +34,24 @@ public class ConversationSummaryWrapupCode  implements Serializable {
   }
 
   
+  /**
+   * The id of the wrapup code.
+   **/
+  public ConversationSummaryWrapupCode id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the wrapup code.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    * The name of the wrapup code.
    **/
@@ -70,24 +88,28 @@ public class ConversationSummaryWrapupCode  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
+  /**
+   * The AI confidence value.
+   **/
+  public ConversationSummaryWrapupCode confidence(Float confidence) {
+    this.confidence = confidence;
+    return this;
   }
-
-
-  @ApiModelProperty(example = "null", value = "The id of the wrapup code.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
+  
   @ApiModelProperty(example = "null", value = "The AI confidence value.")
   @JsonProperty("confidence")
   public Float getConfidence() {
     return confidence;
+  }
+  public void setConfidence(Float confidence) {
+    this.confidence = confidence;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
 
@@ -101,16 +123,16 @@ public class ConversationSummaryWrapupCode  implements Serializable {
     }
     ConversationSummaryWrapupCode conversationSummaryWrapupCode = (ConversationSummaryWrapupCode) o;
 
-    return Objects.equals(this.name, conversationSummaryWrapupCode.name) &&
+    return Objects.equals(this.id, conversationSummaryWrapupCode.id) &&
+            Objects.equals(this.name, conversationSummaryWrapupCode.name) &&
             Objects.equals(this.description, conversationSummaryWrapupCode.description) &&
-            Objects.equals(this.selfUri, conversationSummaryWrapupCode.selfUri) &&
-            Objects.equals(this.id, conversationSummaryWrapupCode.id) &&
-            Objects.equals(this.confidence, conversationSummaryWrapupCode.confidence);
+            Objects.equals(this.confidence, conversationSummaryWrapupCode.confidence) &&
+            Objects.equals(this.selfUri, conversationSummaryWrapupCode.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, selfUri, id, confidence);
+    return Objects.hash(id, name, description, confidence, selfUri);
   }
 
   @Override
@@ -118,11 +140,11 @@ public class ConversationSummaryWrapupCode  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationSummaryWrapupCode {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

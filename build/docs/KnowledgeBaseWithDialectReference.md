@@ -48,8 +48,11 @@
 | NB_NO | &quot;nb-NO&quot; | 
 | CS_CZ | &quot;cs-CZ&quot; | 
 | HU_HU | &quot;hu-HU&quot; | 
+| TH_TH | &quot;th-TH&quot; | 
+| PL_PL | &quot;pl-PL&quot; | 
+| NL_BE | &quot;nl-BE&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

@@ -126,9 +126,11 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 		PT_BR("pt-BR"),
 		PT_PT("pt-PT"),
 		SV_SE("sv-SE"),
+		TR_TR("tr-TR"),
 		ZH_CN("zh-CN"),
 		ZH_HK("zh-HK"),
-		ZH_TW("zh-TW");
+		ZH_TW("zh-TW"),
+		ZU_ZA("zu-ZA");
 
 		private String value;
 

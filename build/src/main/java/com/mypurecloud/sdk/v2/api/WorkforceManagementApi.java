@@ -153,6 +153,7 @@ import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.LongTermRequirementsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
+import com.mypurecloud.sdk.v2.model.ManagementUnitAvailabilitySettingsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
@@ -171,7 +172,13 @@ import com.mypurecloud.sdk.v2.model.PlanningGroupList;
 import com.mypurecloud.sdk.v2.model.PlanningGroupToStaffingGroupsListing;
 import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
+import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesRequest;
+import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesResponse;
+import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesRequest;
+import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesValidationJobResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
+import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsRequest;
+import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
 import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
@@ -206,6 +213,7 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
+import com.mypurecloud.sdk.v2.model.UnavailableTimeListing;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
@@ -214,6 +222,7 @@ import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateCapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateManagementUnitsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchRequest;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentsRequest;
@@ -225,6 +234,7 @@ import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanRequest;
+import com.mypurecloud.sdk.v2.model.UpdateUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequestBody;
@@ -235,6 +245,8 @@ import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserStaffingGroupListing;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponse;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponseListing;
+import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesRequest;
+import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesResponse;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
 import com.mypurecloud.sdk.v2.model.ValidationServiceAsyncResponse;
 import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
@@ -402,6 +414,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffbalanceJo
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementUnavailabletimesSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementUnavailabletimesValidationJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementUserWorkplanbidranksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidWorkplansRequest;
@@ -428,11 +442,13 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunit
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUnavailabletimesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekShifttradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUnavailabletimesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUserWorkplanbidranksRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUsersWorkplanbidranksBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementWorkplanbidPreferencesRequest;
@@ -442,6 +458,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistor
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentUnavailabletimesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest;
@@ -473,6 +490,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSta
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeoffplansRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest;
@@ -531,6 +550,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeofflimitsAv
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsEstimateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletimesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletimesValidationJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementAgentIntegrationsHrisRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
@@ -11175,6 +11196,158 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get availability management unit's settings for agent
+   * 
+   * @return ManagementUnitAvailabilitySettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnitAvailabilitySettingsResponse getWorkforcemanagementUnavailabletimesSettings() throws IOException, ApiException {
+    return  getWorkforcemanagementUnavailabletimesSettings(createGetWorkforcemanagementUnavailabletimesSettingsRequest());
+  }
+
+  /**
+   * Get availability management unit's settings for agent
+   * 
+   * @return ManagementUnitAvailabilitySettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnitAvailabilitySettingsResponse> getWorkforcemanagementUnavailabletimesSettingsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementUnavailabletimesSettings(createGetWorkforcemanagementUnavailabletimesSettingsRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementUnavailabletimesSettingsRequest createGetWorkforcemanagementUnavailabletimesSettingsRequest() {
+    return GetWorkforcemanagementUnavailabletimesSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get availability management unit's settings for agent
+   * 
+   * @param request The request object
+   * @return ManagementUnitAvailabilitySettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnitAvailabilitySettingsResponse getWorkforcemanagementUnavailabletimesSettings(GetWorkforcemanagementUnavailabletimesSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnitAvailabilitySettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get availability management unit's settings for agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnitAvailabilitySettingsResponse> getWorkforcemanagementUnavailabletimesSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ManagementUnitAvailabilitySettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = (ApiResponse<ManagementUnitAvailabilitySettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = (ApiResponse<ManagementUnitAvailabilitySettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query agent unavailable times validation job
+   * 
+   * @param jobId The ID of the job (required)
+   * @return QueryAgentUnavailableTimesValidationJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryAgentUnavailableTimesValidationJobResponse getWorkforcemanagementUnavailabletimesValidationJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementUnavailabletimesValidationJob(createGetWorkforcemanagementUnavailabletimesValidationJobRequest(jobId));
+  }
+
+  /**
+   * Query agent unavailable times validation job
+   * 
+   * @param jobId The ID of the job (required)
+   * @return QueryAgentUnavailableTimesValidationJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryAgentUnavailableTimesValidationJobResponse> getWorkforcemanagementUnavailabletimesValidationJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementUnavailabletimesValidationJob(createGetWorkforcemanagementUnavailabletimesValidationJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementUnavailabletimesValidationJobRequest createGetWorkforcemanagementUnavailabletimesValidationJobRequest(String jobId) {
+    return GetWorkforcemanagementUnavailabletimesValidationJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query agent unavailable times validation job
+   * 
+   * @param request The request object
+   * @return QueryAgentUnavailableTimesValidationJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryAgentUnavailableTimesValidationJobResponse getWorkforcemanagementUnavailabletimesValidationJob(GetWorkforcemanagementUnavailabletimesValidationJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueryAgentUnavailableTimesValidationJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryAgentUnavailableTimesValidationJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query agent unavailable times validation job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryAgentUnavailableTimesValidationJobResponse> getWorkforcemanagementUnavailabletimesValidationJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryAgentUnavailableTimesValidationJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryAgentUnavailableTimesValidationJobResponse> response = (ApiResponse<QueryAgentUnavailableTimesValidationJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryAgentUnavailableTimesValidationJobResponse> response = (ApiResponse<QueryAgentUnavailableTimesValidationJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get work plan bid ranks for a user
    * 
    * @param userId The userId to whom the work plan bid ranks apply. (required)
@@ -13353,6 +13526,88 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Update management unit availability settings
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param body body (required)
+   * @return ManagementUnitAvailabilitySettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnitAvailabilitySettingsResponse patchWorkforcemanagementManagementunitUnavailabletimesSettings(String managementUnitId, UpdateManagementUnitsSettingsRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitUnavailabletimesSettings(createPatchWorkforcemanagementManagementunitUnavailabletimesSettingsRequest(managementUnitId, body));
+  }
+
+  /**
+   * Update management unit availability settings
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param body body (required)
+   * @return ManagementUnitAvailabilitySettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnitAvailabilitySettingsResponse> patchWorkforcemanagementManagementunitUnavailabletimesSettingsWithHttpInfo(String managementUnitId, UpdateManagementUnitsSettingsRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitUnavailabletimesSettings(createPatchWorkforcemanagementManagementunitUnavailabletimesSettingsRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitUnavailabletimesSettingsRequest createPatchWorkforcemanagementManagementunitUnavailabletimesSettingsRequest(String managementUnitId, UpdateManagementUnitsSettingsRequest body) {
+    return PatchWorkforcemanagementManagementunitUnavailabletimesSettingsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update management unit availability settings
+   * 
+   * @param request The request object
+   * @return ManagementUnitAvailabilitySettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnitAvailabilitySettingsResponse patchWorkforcemanagementManagementunitUnavailabletimesSettings(PatchWorkforcemanagementManagementunitUnavailabletimesSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnitAvailabilitySettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update management unit availability settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnitAvailabilitySettingsResponse> patchWorkforcemanagementManagementunitUnavailabletimesSettings(ApiRequest<UpdateManagementUnitsSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ManagementUnitAvailabilitySettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = (ApiResponse<ManagementUnitAvailabilitySettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnitAvailabilitySettingsResponse> response = (ApiResponse<ManagementUnitAvailabilitySettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update a time off request
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
@@ -13786,6 +14041,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update agent unavailable times
+   * 
+   * @param body body (required)
+   * @return UnavailableTimeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnavailableTimeListing patchWorkforcemanagementUnavailabletimes(UpdateUnavailableTimesRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementUnavailabletimes(createPatchWorkforcemanagementUnavailabletimesRequest(body));
+  }
+
+  /**
+   * Update agent unavailable times
+   * 
+   * @param body body (required)
+   * @return UnavailableTimeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnavailableTimeListing> patchWorkforcemanagementUnavailabletimesWithHttpInfo(UpdateUnavailableTimesRequest body) throws IOException {
+    return patchWorkforcemanagementUnavailabletimes(createPatchWorkforcemanagementUnavailabletimesRequest(body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementUnavailabletimesRequest createPatchWorkforcemanagementUnavailabletimesRequest(UpdateUnavailableTimesRequest body) {
+    return PatchWorkforcemanagementUnavailabletimesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update agent unavailable times
+   * 
+   * @param request The request object
+   * @return UnavailableTimeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnavailableTimeListing patchWorkforcemanagementUnavailabletimes(PatchWorkforcemanagementUnavailabletimesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UnavailableTimeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UnavailableTimeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update agent unavailable times
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnavailableTimeListing> patchWorkforcemanagementUnavailabletimes(ApiRequest<UpdateUnavailableTimesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UnavailableTimeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -14524,6 +14857,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @return UnavailableTimeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnavailableTimeListing postWorkforcemanagementAgentUnavailabletimesQuery(String agentId, QueryAgentUnavailableTimesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentUnavailabletimesQuery(createPostWorkforcemanagementAgentUnavailabletimesQueryRequest(agentId, body));
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @return UnavailableTimeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnavailableTimeListing> postWorkforcemanagementAgentUnavailabletimesQueryWithHttpInfo(String agentId, QueryAgentUnavailableTimesRequest body) throws IOException {
+    return postWorkforcemanagementAgentUnavailabletimesQuery(createPostWorkforcemanagementAgentUnavailabletimesQueryRequest(agentId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentUnavailabletimesQueryRequest createPostWorkforcemanagementAgentUnavailabletimesQueryRequest(String agentId, QueryAgentUnavailableTimesRequest body) {
+    return PostWorkforcemanagementAgentUnavailabletimesQueryRequest.builder()
+            .withAgentId(agentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param request The request object
+   * @return UnavailableTimeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnavailableTimeListing postWorkforcemanagementAgentUnavailabletimesQuery(PostWorkforcemanagementAgentUnavailabletimesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UnavailableTimeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UnavailableTimeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnavailableTimeListing> postWorkforcemanagementAgentUnavailabletimesQuery(ApiRequest<QueryAgentUnavailableTimesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UnavailableTimeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -17083,6 +17498,170 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuTimeOffPlanResponse> response = (ApiResponse<BuTimeOffPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get agent schedule generation unavailable times
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return QueryAgentScheduleUnavailableTimesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryAgentScheduleUnavailableTimesResponse postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(String businessUnitId, QueryAgentScheduleUnavailableTimesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(createPostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryRequest(businessUnitId, body));
+  }
+
+  /**
+   * Get agent schedule generation unavailable times
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return QueryAgentScheduleUnavailableTimesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryAgentScheduleUnavailableTimesResponse> postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryWithHttpInfo(String businessUnitId, QueryAgentScheduleUnavailableTimesRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(createPostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryRequest createPostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryRequest(String businessUnitId, QueryAgentScheduleUnavailableTimesRequest body) {
+    return PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get agent schedule generation unavailable times
+   * 
+   * @param request The request object
+   * @return QueryAgentScheduleUnavailableTimesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryAgentScheduleUnavailableTimesResponse postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueryAgentScheduleUnavailableTimesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryAgentScheduleUnavailableTimesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get agent schedule generation unavailable times
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryAgentScheduleUnavailableTimesResponse> postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(ApiRequest<QueryAgentScheduleUnavailableTimesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryAgentScheduleUnavailableTimesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryAgentScheduleUnavailableTimesResponse> response = (ApiResponse<QueryAgentScheduleUnavailableTimesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryAgentScheduleUnavailableTimesResponse> response = (ApiResponse<QueryAgentScheduleUnavailableTimesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query availability management units settings
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return QueryAvailabilityManagementUnitsSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryAvailabilityManagementUnitsSettingsResponse postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(String businessUnitId, QueryAvailabilityManagementUnitsSettingsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(createPostWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryRequest(businessUnitId, body));
+  }
+
+  /**
+   * Query availability management units settings
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return QueryAvailabilityManagementUnitsSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse> postWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryWithHttpInfo(String businessUnitId, QueryAvailabilityManagementUnitsSettingsRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(createPostWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryRequest createPostWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryRequest(String businessUnitId, QueryAvailabilityManagementUnitsSettingsRequest body) {
+    return PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query availability management units settings
+   * 
+   * @param request The request object
+   * @return QueryAvailabilityManagementUnitsSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryAvailabilityManagementUnitsSettingsResponse postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryAvailabilityManagementUnitsSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query availability management units settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse> postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(ApiRequest<QueryAvailabilityManagementUnitsSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryAvailabilityManagementUnitsSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse> response = (ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse> response = (ApiResponse<QueryAvailabilityManagementUnitsSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -21991,6 +22570,162 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffIntegrationStatusResponseListing> response = (ApiResponse<TimeOffIntegrationStatusResponseListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param body body (required)
+   * @return UnavailableTimeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnavailableTimeListing postWorkforcemanagementUnavailabletimesQuery(QueryAgentUnavailableTimesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementUnavailabletimesQuery(createPostWorkforcemanagementUnavailabletimesQueryRequest(body));
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param body body (required)
+   * @return UnavailableTimeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnavailableTimeListing> postWorkforcemanagementUnavailabletimesQueryWithHttpInfo(QueryAgentUnavailableTimesRequest body) throws IOException {
+    return postWorkforcemanagementUnavailabletimesQuery(createPostWorkforcemanagementUnavailabletimesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementUnavailabletimesQueryRequest createPostWorkforcemanagementUnavailabletimesQueryRequest(QueryAgentUnavailableTimesRequest body) {
+    return PostWorkforcemanagementUnavailabletimesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param request The request object
+   * @return UnavailableTimeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnavailableTimeListing postWorkforcemanagementUnavailabletimesQuery(PostWorkforcemanagementUnavailabletimesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UnavailableTimeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UnavailableTimeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get agent unavailable times
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnavailableTimeListing> postWorkforcemanagementUnavailabletimesQuery(ApiRequest<QueryAgentUnavailableTimesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UnavailableTimeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnavailableTimeListing> response = (ApiResponse<UnavailableTimeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+   * 
+   * @param body body (required)
+   * @return ValidateAgentUnavailableTimesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ValidateAgentUnavailableTimesResponse postWorkforcemanagementUnavailabletimesValidationJobs(ValidateAgentUnavailableTimesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementUnavailabletimesValidationJobs(createPostWorkforcemanagementUnavailabletimesValidationJobsRequest(body));
+  }
+
+  /**
+   * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+   * 
+   * @param body body (required)
+   * @return ValidateAgentUnavailableTimesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ValidateAgentUnavailableTimesResponse> postWorkforcemanagementUnavailabletimesValidationJobsWithHttpInfo(ValidateAgentUnavailableTimesRequest body) throws IOException {
+    return postWorkforcemanagementUnavailabletimesValidationJobs(createPostWorkforcemanagementUnavailabletimesValidationJobsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementUnavailabletimesValidationJobsRequest createPostWorkforcemanagementUnavailabletimesValidationJobsRequest(ValidateAgentUnavailableTimesRequest body) {
+    return PostWorkforcemanagementUnavailabletimesValidationJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+   * 
+   * @param request The request object
+   * @return ValidateAgentUnavailableTimesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ValidateAgentUnavailableTimesResponse postWorkforcemanagementUnavailabletimesValidationJobs(PostWorkforcemanagementUnavailabletimesValidationJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ValidateAgentUnavailableTimesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ValidateAgentUnavailableTimesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ValidateAgentUnavailableTimesResponse> postWorkforcemanagementUnavailabletimesValidationJobs(ApiRequest<ValidateAgentUnavailableTimesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ValidateAgentUnavailableTimesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ValidateAgentUnavailableTimesResponse> response = (ApiResponse<ValidateAgentUnavailableTimesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ValidateAgentUnavailableTimesResponse> response = (ApiResponse<ValidateAgentUnavailableTimesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

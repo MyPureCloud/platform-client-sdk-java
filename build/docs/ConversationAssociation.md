@@ -23,6 +23,7 @@
 | EMAIL | &quot;EMAIL&quot; | 
 | MESSAGE | &quot;MESSAGE&quot; | 
 | INTERNAL_MESSAGE | &quot;INTERNAL_MESSAGE&quot; | 
+| SCREEN_MONITORING | &quot;SCREEN_MONITORING&quot; | 
 | SOCIAL_EXPRESSION | &quot;SOCIAL_EXPRESSION&quot; | 
 | VIDEO | &quot;VIDEO&quot; | 
 | SCREENSHARE | &quot;SCREENSHARE&quot; | 
@@ -30,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

@@ -6,6 +6,8 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **conversation** | [**AddressableEntityRef**](AddressableEntityRef) | The conversation that the suggestions correspond to. |  [optional] |
+| **assistant** | [**AddressableEntityRef**](AddressableEntityRef) | The assistant that was used to provide the suggestions. |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the documents for which the suggestion is. |  [optional] |
 | **faq** | [**Faq**](Faq) | The Faq from the knowledgebase that was provided as the suggestion. |  [optional] |
 | **article** | [**Article**](Article) | The article from the knowledgebase that was provided as the suggestion. |  [optional] |
@@ -19,8 +21,6 @@
 | **cannedResponse** | [**SuggestionCannedResponse**](SuggestionCannedResponse) | The suggested canned response that was provided as the suggestion. |  [optional] |
 | **script** | [**SuggestionScript**](SuggestionScript) | The suggested script that was provided as the suggestion. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-| **conversation** | [**AddressableEntityRef**](AddressableEntityRef) | The conversation that the suggestions correspond to. |  [optional] |
-| **assistant** | [**AddressableEntityRef**](AddressableEntityRef) | The assistant that was used to provide the suggestions. |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -64,4 +64,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

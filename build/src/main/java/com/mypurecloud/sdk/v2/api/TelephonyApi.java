@@ -54,7 +54,6 @@ public class TelephonyApi {
   /**
    * Get an agent's greetings.
    * 
-   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param agentId User ID (required)
    * @return AgentGreeting
    * @throws ApiException if the request fails on the server
@@ -67,7 +66,6 @@ public class TelephonyApi {
   /**
    * Get an agent's greetings.
    * 
-   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param agentId User ID (required)
    * @return AgentGreeting
    * @throws IOException if the request fails to be processed
@@ -86,7 +84,6 @@ public class TelephonyApi {
   /**
    * Get an agent's greetings.
    * 
-   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AgentGreeting
    * @throws ApiException if the request fails on the server
@@ -106,7 +103,6 @@ public class TelephonyApi {
   /**
    * Get an agent's greetings.
    * 
-   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -136,7 +132,6 @@ public class TelephonyApi {
   /**
    * Get the agent's own greetings.
    * 
-   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return SelfAgentGreeting
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -148,7 +143,6 @@ public class TelephonyApi {
   /**
    * Get the agent's own greetings.
    * 
-   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return SelfAgentGreeting
    * @throws IOException if the request fails to be processed
    */
@@ -164,7 +158,6 @@ public class TelephonyApi {
   /**
    * Get the agent's own greetings.
    * 
-   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SelfAgentGreeting
    * @throws ApiException if the request fails on the server
@@ -184,7 +177,6 @@ public class TelephonyApi {
   /**
    * Get the agent's own greetings.
    * 
-   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -702,7 +694,6 @@ public class TelephonyApi {
   /**
    * Updates an agent's greetings.
    * 
-   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param agentId User ID (required)
    * @param body Agent Greeting (required)
    * @return AgentGreeting
@@ -716,7 +707,6 @@ public class TelephonyApi {
   /**
    * Updates an agent's greetings.
    * 
-   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param agentId User ID (required)
    * @param body Agent Greeting (required)
    * @return AgentGreeting
@@ -738,7 +728,6 @@ public class TelephonyApi {
   /**
    * Updates an agent's greetings.
    * 
-   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AgentGreeting
    * @throws ApiException if the request fails on the server
@@ -758,7 +747,6 @@ public class TelephonyApi {
   /**
    * Updates an agent's greetings.
    * 
-   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -788,7 +776,6 @@ public class TelephonyApi {
   /**
    * Updates the agent's own greetings.
    * 
-   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Agent Greeting (required)
    * @return SelfAgentGreeting
    * @throws ApiException if the request fails on the server
@@ -801,7 +788,6 @@ public class TelephonyApi {
   /**
    * Updates the agent's own greetings.
    * 
-   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Agent Greeting (required)
    * @return SelfAgentGreeting
    * @throws IOException if the request fails to be processed
@@ -820,7 +806,6 @@ public class TelephonyApi {
   /**
    * Updates the agent's own greetings.
    * 
-   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SelfAgentGreeting
    * @throws ApiException if the request fails on the server
@@ -840,7 +825,6 @@ public class TelephonyApi {
   /**
    * Updates the agent's own greetings.
    * 
-   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
