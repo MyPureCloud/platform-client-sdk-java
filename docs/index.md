@@ -8,11 +8,16 @@
 * **Documentation** https://mypurecloud.github.io/platform-client-sdk-java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
-Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:241.0.0
+Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:243.0.0
 
 ## Install Using maven
 
 Install the library from maven via the package [com.mypurecloud.sdk.v2:platform-client-v2](https://mvnrepository.com/artifact/com.mypurecloud/platform-client-v2)
+
+## SDK Javadoc (jar)
+
+The Javadoc (jar file) of the Platform API Client SDK is **no longer available in this github repository**, due to its size.  
+You can find and download the javadoc from the maven repository via the url: `https://repo1.maven.org/maven2/com/mypurecloud/platform-client-v2/{PLATFORM_API_SDK_LIBRARY_VERSION}/platform-client-v2-{PLATFORM_API_SDK_LIBRARY_VERSION}-javadoc.jar` (e.g. `https://repo1.maven.org/maven2/com/mypurecloud/platform-client-v2/241.0.0/platform-client-v2-241.0.0-javadoc.jar`).
 
 ## Android Support
 

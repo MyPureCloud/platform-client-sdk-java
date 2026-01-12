@@ -60,6 +60,7 @@
 | PAYMENTREQUEST | &quot;PaymentRequest&quot; | 
 | PAYMENTRESPONSE | &quot;PaymentResponse&quot; | 
 | FORM | &quot;Form&quot; | 
+| RICHLINK | &quot;RichLink&quot; | 
 | ROADSIDEASSISTANCE | &quot;RoadsideAssistance&quot; | 
 
 
@@ -74,4 +75,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

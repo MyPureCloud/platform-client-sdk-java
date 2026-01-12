@@ -44,6 +44,8 @@
 | **cobrowsesessions** | [**List&lt;Cobrowsesession&gt;**](Cobrowsesession) |  |  [optional] |
 | **emails** | [**List&lt;Email&gt;**](Email) |  |  [optional] |
 | **messages** | [**List&lt;Message&gt;**](Message) |  |  [optional] |
+| **internalMessages** | [**List&lt;InternalMessage&gt;**](InternalMessage) |  |  [optional] |
+| **screenMonitorings** | [**List&lt;ScreenMonitoring&gt;**](ScreenMonitoring) |  |  [optional] |
 | **screenshares** | [**List&lt;Screenshare&gt;**](Screenshare) |  |  [optional] |
 | **socialExpressions** | [**List&lt;SocialExpression&gt;**](SocialExpression) |  |  [optional] |
 | **videos** | [**List&lt;Video&gt;**](Video) |  |  [optional] |
@@ -52,7 +54,6 @@
 | **flaggedReason** | [**FlaggedReasonEnum**](#Enum--FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |
 | **startAcwTime** | [**Date**](Date) | The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **endAcwTime** | [**Date**](Date) | The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **internalMessages** | [**List&lt;InternalMessage&gt;**](InternalMessage) |  |  [optional] |
 | **bargedParticipantId** | **String** | If this participant barged in a participant's call, then this will be the id of the targeted participant. |  [optional] |
 
 
@@ -91,4 +92,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

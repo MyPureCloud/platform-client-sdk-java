@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteQualityForm**](QualityApi#deleteQualityForm) | Delete an evaluation form. |
 | [**deleteQualityFormsEvaluation**](QualityApi#deleteQualityFormsEvaluation) | Delete an evaluation form. |
 | [**deleteQualityFormsSurvey**](QualityApi#deleteQualityFormsSurvey) | Delete a survey form. |
+| [**deleteQualityProgramAgentscoringrule**](QualityApi#deleteQualityProgramAgentscoringrule) | Delete an Agent Scoring Rule |
 | [**getAnalyticsEvaluationsAggregatesJob**](QualityApi#getAnalyticsEvaluationsAggregatesJob) | Get status for async query for evaluation aggregates |
 | [**getAnalyticsEvaluationsAggregatesJobResults**](QualityApi#getAnalyticsEvaluationsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsSurveysAggregatesJob**](QualityApi#getAnalyticsSurveysAggregatesJob) | Get status for async query for survey aggregates |
@@ -36,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityFormsSurveys**](QualityApi#getQualityFormsSurveys) | Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form. |
 | [**getQualityFormsSurveysBulk**](QualityApi#getQualityFormsSurveysBulk) | Retrieve a list of survey forms by their ids |
 | [**getQualityFormsSurveysBulkContexts**](QualityApi#getQualityFormsSurveysBulkContexts) | Retrieve a list of the latest form versions by context ids |
+| [**getQualityProgramAgentscoringrule**](QualityApi#getQualityProgramAgentscoringrule) | Get an Agent Scoring Rule |
+| [**getQualityProgramAgentscoringrules**](QualityApi#getQualityProgramAgentscoringrules) | Get Agent Scoring Rules for a program |
 | [**getQualityPublishedform**](QualityApi#getQualityPublishedform) | Get the published evaluation forms. |
 | [**getQualityPublishedforms**](QualityApi#getQualityPublishedforms) | Get the published evaluation forms. |
 | [**getQualityPublishedformsEvaluation**](QualityApi#getQualityPublishedformsEvaluation) | Get the most recent published version of an evaluation form. |
@@ -57,6 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postQualityForms**](QualityApi#postQualityForms) | Create an evaluation form. |
 | [**postQualityFormsEvaluations**](QualityApi#postQualityFormsEvaluations) | Create an evaluation form. |
 | [**postQualityFormsSurveys**](QualityApi#postQualityFormsSurveys) | Create a survey form. |
+| [**postQualityProgramAgentscoringrules**](QualityApi#postQualityProgramAgentscoringrules) | Create an Agent Scoring Rule |
 | [**postQualityPublishedforms**](QualityApi#postQualityPublishedforms) | Publish an evaluation form. |
 | [**postQualityPublishedformsEvaluations**](QualityApi#postQualityPublishedformsEvaluations) | Publish an evaluation form. |
 | [**postQualityPublishedformsSurveys**](QualityApi#postQualityPublishedformsSurveys) | Publish a survey form. |
@@ -67,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putQualityFormsEvaluation**](QualityApi#putQualityFormsEvaluation) | Update an evaluation form. |
 | [**putQualityFormsEvaluationAiscoringSettings**](QualityApi#putQualityFormsEvaluationAiscoringSettings) | Update the AI Scoring settings of an evaluation form. |
 | [**putQualityFormsSurvey**](QualityApi#putQualityFormsSurvey) | Update a survey form. |
+| [**putQualityProgramAgentscoringrule**](QualityApi#putQualityProgramAgentscoringrule) | Update an Agent Scoring Rule |
 | [**putQualitySurveysScorable**](QualityApi#putQualitySurveysScorable) | Update a survey as an end-customer, for the purposes of scoring it. |
 {: class="table-striped"}
 
@@ -484,6 +489,66 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteQualityProgramAgentscoringrule**
+
+
+> Void deleteQualityProgramAgentscoringrule(programId, ruleId)
+
+Delete an Agent Scoring Rule
+
+Wraps DELETE /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}  
+
+Requires ANY permissions: 
+
+* quality:scoringRule:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+String ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
+try {
+    apiInstance.deleteQualityProgramAgentscoringrule(programId, ruleId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteQualityProgramAgentscoringrule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| Program ID from Speech and Text Analytics | 
+| **ruleId** | **String**| Agent Scoring Rule ID | 
 {: class="table-striped"}
 
 
@@ -1467,7 +1532,7 @@ try {
 This resource has been deprecated
 :::
 
-> [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing) getQualityFormVersions(formId, pageSize, pageNumber)
+> [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing) getQualityFormVersions(formId, pageSize, pageNumber, sortOrder)
 
 Gets all the revisions for a specific evaluation.
 
@@ -1502,8 +1567,9 @@ QualityApi apiInstance = new QualityApi();
 String formId = "formId_example"; // String | Form ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "asc"; // String | Sort order
 try {
-    EvaluationFormResponseEntityListing result = apiInstance.getQualityFormVersions(formId, pageSize, pageNumber);
+    EvaluationFormResponseEntityListing result = apiInstance.getQualityFormVersions(formId, pageSize, pageNumber, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormVersions");
@@ -1519,6 +1585,7 @@ try {
 | **formId** | **String**| Form ID | 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc] 
 {: class="table-striped"}
 
 
@@ -2174,6 +2241,126 @@ try {
 ### Return type
 
 [**List&lt;SurveyForm&gt;**](SurveyForm)
+
+
+# **getQualityProgramAgentscoringrule**
+
+
+> [AgentScoringRule](AgentScoringRule) getQualityProgramAgentscoringrule(programId, ruleId)
+
+Get an Agent Scoring Rule
+
+Wraps GET /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}  
+
+Requires ANY permissions: 
+
+* quality:scoringRule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+String ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
+try {
+    AgentScoringRule result = apiInstance.getQualityProgramAgentscoringrule(programId, ruleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityProgramAgentscoringrule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| Program ID from Speech and Text Analytics | 
+| **ruleId** | **String**| Agent Scoring Rule ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentScoringRule**](AgentScoringRule)
+
+
+# **getQualityProgramAgentscoringrules**
+
+
+> [AgentScoringRuleEntityListing](AgentScoringRuleEntityListing) getQualityProgramAgentscoringrules(programId)
+
+Get Agent Scoring Rules for a program
+
+Wraps GET /api/v2/quality/programs/{programId}/agentscoringrules  
+
+Requires ANY permissions: 
+
+* quality:scoringRule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+try {
+    AgentScoringRuleEntityListing result = apiInstance.getQualityProgramAgentscoringrules(programId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityProgramAgentscoringrules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| Program ID from Speech and Text Analytics | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentScoringRuleEntityListing**](AgentScoringRuleEntityListing)
 
 
 # **getQualityPublishedform**
@@ -3438,6 +3625,69 @@ try {
 [**SurveyForm**](SurveyForm)
 
 
+# **postQualityProgramAgentscoringrules**
+
+
+> [AgentScoringRule](AgentScoringRule) postQualityProgramAgentscoringrules(programId, body)
+
+Create an Agent Scoring Rule
+
+Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+
+Wraps POST /api/v2/quality/programs/{programId}/agentscoringrules  
+
+Requires ANY permissions: 
+
+* quality:scoringRule:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+AgentScoringRule body = new AgentScoringRule(); // AgentScoringRule | Agent Scoring Rule
+try {
+    AgentScoringRule result = apiInstance.postQualityProgramAgentscoringrules(programId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityProgramAgentscoringrules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| Program ID from Speech and Text Analytics | 
+| **body** | [**AgentScoringRule**](AgentScoringRule)| Agent Scoring Rule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentScoringRule**](AgentScoringRule)
+
+
 # **postQualityPublishedforms**
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
@@ -4053,6 +4303,69 @@ try {
 [**SurveyForm**](SurveyForm)
 
 
+# **putQualityProgramAgentscoringrule**
+
+
+> [AgentScoringRule](AgentScoringRule) putQualityProgramAgentscoringrule(programId, ruleId, body)
+
+Update an Agent Scoring Rule
+
+Wraps PUT /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}  
+
+Requires ANY permissions: 
+
+* quality:scoringRule:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+String ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
+AgentScoringRule body = new AgentScoringRule(); // AgentScoringRule | Agent Scoring Rule
+try {
+    AgentScoringRule result = apiInstance.putQualityProgramAgentscoringrule(programId, ruleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#putQualityProgramAgentscoringrule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| Program ID from Speech and Text Analytics | 
+| **ruleId** | **String**| Agent Scoring Rule ID | 
+| **body** | [**AgentScoringRule**](AgentScoringRule)| Agent Scoring Rule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentScoringRule**](AgentScoringRule)
+
+
 # **putQualitySurveysScorable**
 
 
@@ -4100,4 +4413,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

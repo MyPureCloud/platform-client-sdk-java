@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **flow** | [**AddressableEntityRef**](AddressableEntityRef) | The identifier of the flow. |  |
 | **version** | **String** | The version of the flow. |  |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the flow. |  |
 | **count** | **Integer** | Count of all journeys that include this element in the given flow. |  |
-| **flow** | [**AddressableEntityRef**](AddressableEntityRef) | The identifier of the flow. |  |
 
 
 ## Enum: TypeEnum
@@ -27,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

@@ -38,6 +38,7 @@
 | COBROWSE | &quot;cobrowse&quot; | 
 | CONTENT_MANAGEMENT | &quot;content.management&quot; | 
 | CONVERSATION | &quot;conversation&quot; | 
+| COPILOT | &quot;copilot&quot; | 
 | DATAACTIONS | &quot;dataactions&quot; | 
 | DATATABLES | &quot;datatables&quot; | 
 | DIRECTORY | &quot;directory&quot; | 
@@ -97,10 +98,11 @@
 | WEBHOOKS | &quot;webhooks&quot; | 
 | WORKFORCE_MANAGEMENT_AGENT_AVAILABILITY | &quot;workforce.management.agent.availability&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
+| WORKFORCE_MANAGEMENT_SELF_SCHEDULE | &quot;workforce.management.self.schedule&quot; | 
 | WORKFORCE_MANAGEMENT_SHIFT_TRADING | &quot;workforce.management.shift.trading&quot; | 
 | SYSTEM | &quot;system&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

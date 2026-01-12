@@ -8,7 +8,6 @@
 | **text** | **String** | The phrase text |  |
 | **strictness** | [**StrictnessEnum**](#Enum--StrictnessEnum) | The phrase strictness, default value is null |  [optional] |
 | **sentiment** | [**SentimentEnum**](#Enum--SentimentEnum) | The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system. |  [optional] |
-| **isAIGenerated** | **Boolean** | Indicates whether the phrase is AI generated |  [optional] |
 
 
 ## Enum: StrictnessEnum
@@ -37,4 +36,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

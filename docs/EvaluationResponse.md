@@ -11,6 +11,7 @@
 | **evaluationForm** | [**EvaluationFormResponse**](EvaluationFormResponse) | Evaluation form used for evaluation. |  [optional] |
 | **evaluator** | [**User**](User) |  |  [optional] |
 | **agent** | [**User**](User) |  |  [optional] |
+| **calibration** | [**AddressableEntityRef**](AddressableEntityRef) |  |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 | **answers** | [**EvaluationScoringSet**](EvaluationScoringSet) |  |  [optional] |
 | **agentHasRead** | **Boolean** |  |  [optional] |
@@ -37,7 +38,6 @@
 | **evaluationSource** | [**EvaluationSource**](EvaluationSource) | The source that created the evaluation. |  [optional] |
 | **aiScoring** | [**AiScoring**](AiScoring) | AI scoring details for the evaluation. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-| **calibration** | [**AddressableEntityRef**](AddressableEntityRef) |  |  [optional] |
 
 
 ## Enum: StatusEnum
@@ -64,6 +64,7 @@
 | EMAIL | &quot;EMAIL&quot; |
 | MESSAGE | &quot;MESSAGE&quot; |
 | INTERNAL_MESSAGE | &quot;INTERNAL_MESSAGE&quot; |
+| SCREEN_MONITORING | &quot;SCREEN_MONITORING&quot; |
 | SOCIAL_EXPRESSION | &quot;SOCIAL_EXPRESSION&quot; |
 | VIDEO | &quot;VIDEO&quot; |
 | SCREENSHARE | &quot;SCREENSHARE&quot; |
@@ -79,4 +80,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

@@ -16,6 +16,7 @@
 | **doNotChangeManuallyEditedShifts** | **Boolean** | Instructs the scheduler whether it is allowed to change manually edited shifts |  |
 | **activitySmoothingType** | [**ActivitySmoothingTypeEnum**](#Enum--ActivitySmoothingTypeEnum) | Overrides the default BU level activity smoothing type for this reschedule run |  [optional] |
 | **induceScheduleVariability** | **Boolean** | Overrides the default BU level induce schedule variability setting for this reschedule run |  [optional] |
+| **useUnavailableTimesSnapshot** | **Boolean** | Whether to use original unavailable times from schedule generation or latest saved unavailable times for this reschedule run |  [optional] |
 
 
 ## Enum: ActivitySmoothingTypeEnum
@@ -30,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

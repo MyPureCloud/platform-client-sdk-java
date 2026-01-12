@@ -26,8 +26,9 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LEARNING | &quot;Learning&quot; | 
+| ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

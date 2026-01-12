@@ -12,6 +12,7 @@
 | **thirdPartyOrgName** | **String** | The short name for the organization. This field is globally unique and cannot be changed. |  [optional] |
 | **thirdPartyURI** | **String** |  |  [optional] |
 | **domain** | **String** |  |  [optional] |
+| **features** | **Map&lt;String, Boolean&gt;** | The state of features available for the organization. |  [optional] |
 | **version** | **Integer** | The current version of the organization. |  |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The current state. Examples are active, inactive, deleted. |  [optional] |
 | **defaultSiteId** | **String** |  |  [optional] |
@@ -19,7 +20,6 @@
 | **voicemailEnabled** | **Boolean** |  |  [optional] |
 | **productPlatform** | [**ProductPlatformEnum**](#Enum--ProductPlatformEnum) | Organizations Originating Platform. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-| **features** | **Map&lt;String, Boolean&gt;** | The state of features available for the organization. |  [optional] |
 
 
 ## Enum: StateEnum
@@ -48,4 +48,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_

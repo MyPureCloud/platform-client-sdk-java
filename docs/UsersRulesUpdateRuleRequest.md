@@ -8,8 +8,9 @@
 | **name** | **String** | The name of the rule |  [optional] |
 | **description** | **String** | The description of the rule |  [optional] |
 | **criteria** | [**List&lt;UsersRulesCriteria&gt;**](UsersRulesCriteria) | The criteria of the rule |  [optional] |
+| **lockedCriteria** | [**List&lt;UsersRulesCriteria&gt;**](UsersRulesCriteria) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
