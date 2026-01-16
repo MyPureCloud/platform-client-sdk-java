@@ -9,7 +9,7 @@
 | **division** | [**WritableStarrableDivision**](WritableStarrableDivision) | The division to which this entity belongs. |  [optional] |
 | **entityId** | **String** | The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs. |  [optional] |
 | **entityType** | [**EntityTypeEnum**](#Enum--EntityTypeEnum) | This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used. |  [optional] |
-| **noteText** | **String** |  |  [optional] |
+| **noteText** | **String** | Between 1 and 32,000 characters. |  [optional] |
 | **modifyDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **createDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **createdBy** | [**User**](User) | When creating or updating a note, only User.id is required. User object is fully populated when expanding a note. |  |
@@ -28,4 +28,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

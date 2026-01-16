@@ -639,7 +639,7 @@ Get response libraries.
 
 Wraps POST /api/v2/responsemanagement/libraries/bulk  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * responses:library:view
 
@@ -940,7 +940,7 @@ Fields that can be updated: name. The most recent version is required for update
 
 Wraps PUT /api/v2/responsemanagement/libraries/{libraryId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * responses:library:edit
 
@@ -1118,4 +1118,4 @@ try {
 [**ResponseAsset**](ResponseAsset)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

@@ -17,6 +17,7 @@
 | **state** | [**StateEnum**](#Enum--StateEnum) | State of the assistant. |  [optional] |
 | **copilot** | [**Copilot**](Copilot) | Agent copilot configuration. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
+| **variationParent** | [**AddressableEntityRef**](AddressableEntityRef) | The parent assistant if this assistant is a variation of an assistant |  [optional] |
 
 
 ## Enum: StateEnum
@@ -30,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

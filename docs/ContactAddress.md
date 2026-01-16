@@ -5,14 +5,14 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **address1** | **String** |  |  [optional] |
-| **address2** | **String** |  |  [optional] |
-| **city** | **String** |  |  [optional] |
-| **state** | **String** |  |  [optional] |
-| **postalCode** | **String** |  |  [optional] |
-| **countryCode** | **String** |  |  [optional] |
+| **address1** | **String** | Max: 200 characters. Leading and trailing whitespace stripped. |  [optional] |
+| **address2** | **String** | Max: 200 characters. Leading and trailing whitespace stripped. |  [optional] |
+| **city** | **String** | Max: 100 characters. Leading and trailing whitespace stripped. |  [optional] |
+| **state** | **String** | Max: 50 characters. Leading and trailing whitespace stripped. |  [optional] |
+| **postalCode** | **String** | Max: 25 characters. Leading and trailing whitespace stripped. |  [optional] |
+| **countryCode** | **String** | Max: 25 characters. Leading and trailing whitespace stripped. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

@@ -1,11 +1,11 @@
-# ProgramsMappingsEntityListing
+# TopicsDefinitionsProgramsMappingsEntityListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;ProgramMappings&gt;**](ProgramMappings) |  |  [optional] |
+| **entities** | [**List&lt;TopicsDefinitionsProgramMappings&gt;**](TopicsDefinitionsProgramMappings) |  |  [optional] |
 | **pageSize** | **Integer** |  |  [optional] |
 | **nextUri** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
@@ -14,4 +14,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

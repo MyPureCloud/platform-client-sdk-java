@@ -32,6 +32,7 @@
 | **maximumWorkingWeekendsPerPlanningPeriod** | **Integer** | Maximum working weekends in the planning period |  [optional] |
 | **optionalDays** | [**SetWrapperDayOfWeek**](SetWrapperDayOfWeek) | Optional days to schedule for this work plan |  [optional] |
 | **shiftStartVarianceType** | [**ShiftStartVarianceTypeEnum**](#Enum--ShiftStartVarianceTypeEnum) | This constraint ensures that an agent starts each workday within a user-defined time threshold |  [optional] |
+| **shiftStartVariancePeriod** | [**ShiftStartVariancePeriodEnum**](#Enum--ShiftStartVariancePeriodEnum) | The length of the period over which the maximum shift start time variance is applied |  [optional] |
 | **shiftStartVariances** | [**ListWrapperShiftStartVariance**](ListWrapperShiftStartVariance) | Variance in minutes among start times of shifts in this work plan |  [optional] |
 | **shifts** | [**List&lt;CreateWorkPlanShift&gt;**](CreateWorkPlanShift) | Shifts in this work plan |  [optional] |
 | **agents** | [**List&lt;UserReference&gt;**](UserReference) | Agents in this work plan |  [optional] |
@@ -46,6 +47,15 @@
 | SHIFTSTARTANDPAIDDURATION | &quot;ShiftStartAndPaidDuration&quot; | 
 
 
+## Enum: ShiftStartVariancePeriodEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WEEKLY | &quot;Weekly&quot; | 
+| PLANNINGPERIOD | &quot;PlanningPeriod&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

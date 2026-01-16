@@ -1159,7 +1159,7 @@ try {
 # **getSpeechandtextanalyticsProgramMappings**
 
 
-> [ProgramMappings](ProgramMappings) getSpeechandtextanalyticsProgramMappings(programId)
+> [TopicsDefinitionsProgramMappings](TopicsDefinitionsProgramMappings) getSpeechandtextanalyticsProgramMappings(programId)
 
 Get Speech & Text Analytics program mappings to queues and flows by id
 
@@ -1193,7 +1193,7 @@ Configuration.setDefaultApiClient(apiClient);
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String programId = "programId_example"; // String | The id of the program
 try {
-    ProgramMappings result = apiInstance.getSpeechandtextanalyticsProgramMappings(programId);
+    TopicsDefinitionsProgramMappings result = apiInstance.getSpeechandtextanalyticsProgramMappings(programId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramMappings");
@@ -1212,7 +1212,7 @@ try {
 
 ### Return type
 
-[**ProgramMappings**](ProgramMappings)
+[**TopicsDefinitionsProgramMappings**](TopicsDefinitionsProgramMappings)
 
 
 # **getSpeechandtextanalyticsProgramSettingsInsights**
@@ -1462,7 +1462,7 @@ try {
 # **getSpeechandtextanalyticsProgramsMappings**
 
 
-> [ProgramsMappingsEntityListing](ProgramsMappingsEntityListing) getSpeechandtextanalyticsProgramsMappings(nextPage, pageSize)
+> [TopicsDefinitionsProgramsMappingsEntityListing](TopicsDefinitionsProgramsMappingsEntityListing) getSpeechandtextanalyticsProgramsMappings(nextPage, pageSize)
 
 Get the list of Speech & Text Analytics programs mappings to queues and flows
 
@@ -1497,7 +1497,7 @@ SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String nextPage = "nextPage_example"; // String | The key for listing the next page
 Integer pageSize = 20; // Integer | The page size for the listing
 try {
-    ProgramsMappingsEntityListing result = apiInstance.getSpeechandtextanalyticsProgramsMappings(nextPage, pageSize);
+    TopicsDefinitionsProgramsMappingsEntityListing result = apiInstance.getSpeechandtextanalyticsProgramsMappings(nextPage, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsMappings");
@@ -1517,7 +1517,7 @@ try {
 
 ### Return type
 
-[**ProgramsMappingsEntityListing**](ProgramsMappingsEntityListing)
+[**TopicsDefinitionsProgramsMappingsEntityListing**](TopicsDefinitionsProgramsMappingsEntityListing)
 
 
 # **getSpeechandtextanalyticsProgramsPublishjob**
@@ -3560,7 +3560,7 @@ try {
 # **putSpeechandtextanalyticsProgramMappings**
 
 
-> [ProgramMappings](ProgramMappings) putSpeechandtextanalyticsProgramMappings(programId, body)
+> [TopicsDefinitionsProgramMappings](TopicsDefinitionsProgramMappings) putSpeechandtextanalyticsProgramMappings(programId, body)
 
 Set Speech & Text Analytics program mappings to queues and flows
 
@@ -3595,7 +3595,7 @@ SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String programId = "programId_example"; // String | The id of the program
 ProgramMappingsRequest body = new ProgramMappingsRequest(); // ProgramMappingsRequest | The program to set mappings for
 try {
-    ProgramMappings result = apiInstance.putSpeechandtextanalyticsProgramMappings(programId, body);
+    TopicsDefinitionsProgramMappings result = apiInstance.putSpeechandtextanalyticsProgramMappings(programId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#putSpeechandtextanalyticsProgramMappings");
@@ -3615,7 +3615,7 @@ try {
 
 ### Return type
 
-[**ProgramMappings**](ProgramMappings)
+[**TopicsDefinitionsProgramMappings**](TopicsDefinitionsProgramMappings)
 
 
 # **putSpeechandtextanalyticsProgramSettingsInsights**
@@ -3861,4 +3861,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
