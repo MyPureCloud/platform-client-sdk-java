@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postGuideVersions**](AIStudioApi#postGuideVersions) | Create a guide version. |
 | [**postGuides**](AIStudioApi#postGuides) | Create a guide. |
 | [**postGuidesJobs**](AIStudioApi#postGuidesJobs) | Start a guide content generation job. |
+| [**postGuidesUploads**](AIStudioApi#postGuidesUploads) | Generate presigned URL for uploading a file content to generate guide |
 | [**putConversationsSummariesSetting**](AIStudioApi#putConversationsSummariesSetting) | Update a summary setting. |
 {: class="table-striped"}
 
@@ -91,8 +92,6 @@ null (empty response body)
 > [GuideJob](GuideJob) deleteGuideJobs(guideId)
 
 Start the deletion of a guide.
-
-deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/guides/{guideId}/jobs  
 
@@ -281,8 +280,6 @@ try {
 
 Get guide.
 
-getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/guides/{guideId}  
 
 Requires ALL permissions: 
@@ -341,8 +338,6 @@ try {
 > [GuideJob](GuideJob) getGuideJob(guideId, jobId)
 
 Get the specified guide deletion job.
-
-getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/guides/{guideId}/jobs/{jobId}  
 
@@ -405,8 +400,6 @@ try {
 
 Get a guide version.
 
-getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/guides/{guideId}/versions/{versionId}  
 
 Requires ALL permissions: 
@@ -467,8 +460,6 @@ try {
 > [GuideVersionPublishJob](GuideVersionPublishJob) getGuideVersionJob(guideId, versionId, jobId)
 
 Get the status of the publishing job for this guide version.
-
-getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}  
 
@@ -532,8 +523,6 @@ try {
 > [GuideEntityListing](GuideEntityListing) getGuides(name, nameContains, status, sortBy, sortOrder, pageNumber, pageSize)
 
 Get all guides.
-
-getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/guides  
 
@@ -606,8 +595,6 @@ try {
 
 Get the status of the guide content generation job.
 
-getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/guides/jobs/{jobId}  
 
 Requires ALL permissions: 
@@ -666,8 +653,6 @@ try {
 > [Guide](Guide) patchGuide(guideId, body)
 
 Update a guide.
-
-patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/guides/{guideId}  
 
@@ -729,8 +714,6 @@ try {
 > [GuideVersion](GuideVersion) patchGuideVersion(guideId, versionId, body)
 
 Update a guide version.
-
-patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/guides/{guideId}/versions/{versionId}  
 
@@ -977,8 +960,6 @@ try {
 
 Start the publishing of a guide version.
 
-postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/guides/{guideId}/versions/{versionId}/jobs  
 
 Requires ALL permissions: 
@@ -1042,8 +1023,6 @@ try {
 
 Create a guide version.
 
-postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/guides/{guideId}/versions  
 
 Requires ALL permissions: 
@@ -1105,8 +1084,6 @@ try {
 
 Create a guide.
 
-postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/guides  
 
 Requires ALL permissions: 
@@ -1166,8 +1143,6 @@ try {
 
 Start a guide content generation job.
 
-postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/guides/jobs  
 
 Requires ALL permissions: 
@@ -1218,6 +1193,65 @@ try {
 ### Return type
 
 [**GuideContentGenerationJob**](GuideContentGenerationJob)
+
+
+# **postGuidesUploads**
+
+
+> [UploadUrlResponse](UploadUrlResponse) postGuidesUploads(body)
+
+Generate presigned URL for uploading a file content to generate guide
+
+Wraps POST /api/v2/guides/uploads  
+
+Requires ALL permissions: 
+
+* aiStudio:guide:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+UploadUrlRequest body = new UploadUrlRequest(); // UploadUrlRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postGuidesUploads(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#postGuidesUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 # **putConversationsSummariesSetting**
@@ -1281,4 +1315,4 @@ try {
 [**SummarySetting**](SummarySetting)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

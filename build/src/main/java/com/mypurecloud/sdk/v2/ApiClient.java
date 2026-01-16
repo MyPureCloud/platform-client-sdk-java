@@ -20,6 +20,7 @@ import java.net.URLEncoder;
 import java.net.Proxy;
 import java.text.DateFormat;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
@@ -47,6 +48,7 @@ import com.mypurecloud.sdk.v2.connector.*;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 import com.mypurecloud.sdk.v2.Logger;
 import com.mypurecloud.sdk.v2.extensions.LocalDateSerializer;
+import com.mypurecloud.sdk.v2.extensions.YearMonthSerializer;
 
 import com.mypurecloud.sdk.v2.hooksmanager.HookManager;
 import com.mypurecloud.sdk.v2.hooksmanager.LoggingPostResponseHook;
@@ -184,6 +186,10 @@ public class ApiClient implements AutoCloseable {
         objectMapper.registerModule(new JodaModule());
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.setDateFormat(dateFormat);
+        SimpleModule yearMonthModule = new SimpleModule();
+        yearMonthModule.addSerializer(YearMonth.class, new YearMonthSerializer());
+        yearMonthModule.addDeserializer(YearMonth.class, new YearMonthDeserializer());
+        objectMapper.registerModule(yearMonthModule);
         SimpleModule localDateModule = new SimpleModule();
         localDateModule.addSerializer(LocalDate.class, new LocalDateSerializer());
         localDateModule.addDeserializer(LocalDate.class, new LocalDateDeserializer());
@@ -1162,7 +1168,7 @@ public class ApiClient implements AutoCloseable {
             this.gatewayConfiguration = new GatewayConfiguration();
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "243.0.0");
+            withDefaultHeader("purecloud-sdk", "244.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

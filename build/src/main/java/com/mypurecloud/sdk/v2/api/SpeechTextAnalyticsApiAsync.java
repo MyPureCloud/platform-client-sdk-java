@@ -34,12 +34,10 @@ import com.mypurecloud.sdk.v2.model.ProgramInsightsSettings;
 import com.mypurecloud.sdk.v2.model.ProgramInsightsSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
 import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.model.ProgramRequest;
 import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ReprocessInteractionsByJobIdResponse;
 import com.mypurecloud.sdk.v2.model.ReprocessJobEntityListingResponse;
 import com.mypurecloud.sdk.v2.model.ReprocessJobResponse;
@@ -58,6 +56,8 @@ import com.mypurecloud.sdk.v2.model.Topic;
 import com.mypurecloud.sdk.v2.model.TopicJob;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
 import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramMappings;
+import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
@@ -1509,13 +1509,13 @@ public class SpeechTextAnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ProgramMappings> getSpeechandtextanalyticsProgramMappingsAsync(GetSpeechandtextanalyticsProgramMappingsRequest request, final AsyncApiCallback<ProgramMappings> callback) {
+  public Future<TopicsDefinitionsProgramMappings> getSpeechandtextanalyticsProgramMappingsAsync(GetSpeechandtextanalyticsProgramMappingsRequest request, final AsyncApiCallback<TopicsDefinitionsProgramMappings> callback) {
     try {
-      final SettableFuture<ProgramMappings> future = SettableFuture.create();
+      final SettableFuture<TopicsDefinitionsProgramMappings> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramMappings>() {}, new AsyncApiCallback<ApiResponse<ProgramMappings>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TopicsDefinitionsProgramMappings>() {}, new AsyncApiCallback<ApiResponse<TopicsDefinitionsProgramMappings>>() {
         @Override
-        public void onCompleted(ApiResponse<ProgramMappings> response) {
+        public void onCompleted(ApiResponse<TopicsDefinitionsProgramMappings> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1543,13 +1543,13 @@ public class SpeechTextAnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ProgramMappings>> getSpeechandtextanalyticsProgramMappingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ProgramMappings>> callback) {
+  public Future<ApiResponse<TopicsDefinitionsProgramMappings>> getSpeechandtextanalyticsProgramMappingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TopicsDefinitionsProgramMappings>> callback) {
     try {
-      final SettableFuture<ApiResponse<ProgramMappings>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<TopicsDefinitionsProgramMappings>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ProgramMappings>() {}, new AsyncApiCallback<ApiResponse<ProgramMappings>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<TopicsDefinitionsProgramMappings>() {}, new AsyncApiCallback<ApiResponse<TopicsDefinitionsProgramMappings>>() {
         @Override
-        public void onCompleted(ApiResponse<ProgramMappings> response) {
+        public void onCompleted(ApiResponse<TopicsDefinitionsProgramMappings> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1557,7 +1557,7 @@ public class SpeechTextAnalyticsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)exception;
+            ApiResponse<TopicsDefinitionsProgramMappings> response = (ApiResponse<TopicsDefinitionsProgramMappings>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1565,7 +1565,7 @@ public class SpeechTextAnalyticsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<TopicsDefinitionsProgramMappings> response = (ApiResponse<TopicsDefinitionsProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1884,13 +1884,13 @@ public class SpeechTextAnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ProgramsMappingsEntityListing> getSpeechandtextanalyticsProgramsMappingsAsync(GetSpeechandtextanalyticsProgramsMappingsRequest request, final AsyncApiCallback<ProgramsMappingsEntityListing> callback) {
+  public Future<TopicsDefinitionsProgramsMappingsEntityListing> getSpeechandtextanalyticsProgramsMappingsAsync(GetSpeechandtextanalyticsProgramsMappingsRequest request, final AsyncApiCallback<TopicsDefinitionsProgramsMappingsEntityListing> callback) {
     try {
-      final SettableFuture<ProgramsMappingsEntityListing> future = SettableFuture.create();
+      final SettableFuture<TopicsDefinitionsProgramsMappingsEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramsMappingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<ProgramsMappingsEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TopicsDefinitionsProgramsMappingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<ProgramsMappingsEntityListing> response) {
+        public void onCompleted(ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1918,13 +1918,13 @@ public class SpeechTextAnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ProgramsMappingsEntityListing>> getSpeechandtextanalyticsProgramsMappingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ProgramsMappingsEntityListing>> callback) {
+  public Future<ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing>> getSpeechandtextanalyticsProgramsMappingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<ProgramsMappingsEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ProgramsMappingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<ProgramsMappingsEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<TopicsDefinitionsProgramsMappingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<ProgramsMappingsEntityListing> response) {
+        public void onCompleted(ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1932,7 +1932,7 @@ public class SpeechTextAnalyticsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ProgramsMappingsEntityListing> response = (ApiResponse<ProgramsMappingsEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing> response = (ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1940,7 +1940,7 @@ public class SpeechTextAnalyticsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ProgramsMappingsEntityListing> response = (ApiResponse<ProgramsMappingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing> response = (ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4517,13 +4517,13 @@ public class SpeechTextAnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ProgramMappings> putSpeechandtextanalyticsProgramMappingsAsync(PutSpeechandtextanalyticsProgramMappingsRequest request, final AsyncApiCallback<ProgramMappings> callback) {
+  public Future<TopicsDefinitionsProgramMappings> putSpeechandtextanalyticsProgramMappingsAsync(PutSpeechandtextanalyticsProgramMappingsRequest request, final AsyncApiCallback<TopicsDefinitionsProgramMappings> callback) {
     try {
-      final SettableFuture<ProgramMappings> future = SettableFuture.create();
+      final SettableFuture<TopicsDefinitionsProgramMappings> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramMappings>() {}, new AsyncApiCallback<ApiResponse<ProgramMappings>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TopicsDefinitionsProgramMappings>() {}, new AsyncApiCallback<ApiResponse<TopicsDefinitionsProgramMappings>>() {
         @Override
-        public void onCompleted(ApiResponse<ProgramMappings> response) {
+        public void onCompleted(ApiResponse<TopicsDefinitionsProgramMappings> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4551,13 +4551,13 @@ public class SpeechTextAnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ProgramMappings>> putSpeechandtextanalyticsProgramMappingsAsync(ApiRequest<ProgramMappingsRequest> request, final AsyncApiCallback<ApiResponse<ProgramMappings>> callback) {
+  public Future<ApiResponse<TopicsDefinitionsProgramMappings>> putSpeechandtextanalyticsProgramMappingsAsync(ApiRequest<ProgramMappingsRequest> request, final AsyncApiCallback<ApiResponse<TopicsDefinitionsProgramMappings>> callback) {
     try {
-      final SettableFuture<ApiResponse<ProgramMappings>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<TopicsDefinitionsProgramMappings>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ProgramMappings>() {}, new AsyncApiCallback<ApiResponse<ProgramMappings>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<TopicsDefinitionsProgramMappings>() {}, new AsyncApiCallback<ApiResponse<TopicsDefinitionsProgramMappings>>() {
         @Override
-        public void onCompleted(ApiResponse<ProgramMappings> response) {
+        public void onCompleted(ApiResponse<TopicsDefinitionsProgramMappings> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4565,7 +4565,7 @@ public class SpeechTextAnalyticsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)exception;
+            ApiResponse<TopicsDefinitionsProgramMappings> response = (ApiResponse<TopicsDefinitionsProgramMappings>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4573,7 +4573,7 @@ public class SpeechTextAnalyticsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<TopicsDefinitionsProgramMappings> response = (ApiResponse<TopicsDefinitionsProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

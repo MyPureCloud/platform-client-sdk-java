@@ -31,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.SummarySettingEntityListing;
 import com.mypurecloud.sdk.v2.model.SummarySettingWithTranscript;
 import com.mypurecloud.sdk.v2.model.UpdateGuide;
 import com.mypurecloud.sdk.v2.model.UpdateGuideVersion;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsSummariesSettingRequest;
@@ -52,6 +54,7 @@ import com.mypurecloud.sdk.v2.api.request.PostGuideVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuidesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuidesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGuidesUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsSummariesSettingRequest;
 
 import java.io.IOException;
@@ -150,7 +153,6 @@ public class AIStudioApiAsync {
   /**
    * Start the deletion of a guide.
    * 
-   * deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -185,7 +187,6 @@ public class AIStudioApiAsync {
   /**
    * Start the deletion of a guide.
    * 
-   * deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -377,7 +378,6 @@ public class AIStudioApiAsync {
   /**
    * Get guide.
    * 
-   * getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -412,7 +412,6 @@ public class AIStudioApiAsync {
   /**
    * Get guide.
    * 
-   * getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -454,7 +453,6 @@ public class AIStudioApiAsync {
   /**
    * Get the specified guide deletion job.
    * 
-   * getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -489,7 +487,6 @@ public class AIStudioApiAsync {
   /**
    * Get the specified guide deletion job.
    * 
-   * getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -531,7 +528,6 @@ public class AIStudioApiAsync {
   /**
    * Get a guide version.
    * 
-   * getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -566,7 +562,6 @@ public class AIStudioApiAsync {
   /**
    * Get a guide version.
    * 
-   * getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -608,7 +603,6 @@ public class AIStudioApiAsync {
   /**
    * Get the status of the publishing job for this guide version.
    * 
-   * getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -643,7 +637,6 @@ public class AIStudioApiAsync {
   /**
    * Get the status of the publishing job for this guide version.
    * 
-   * getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -685,7 +678,6 @@ public class AIStudioApiAsync {
   /**
    * Get all guides.
    * 
-   * getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -720,7 +712,6 @@ public class AIStudioApiAsync {
   /**
    * Get all guides.
    * 
-   * getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -762,7 +753,6 @@ public class AIStudioApiAsync {
   /**
    * Get the status of the guide content generation job.
    * 
-   * getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -797,7 +787,6 @@ public class AIStudioApiAsync {
   /**
    * Get the status of the guide content generation job.
    * 
-   * getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -839,7 +828,6 @@ public class AIStudioApiAsync {
   /**
    * Update a guide.
    * 
-   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -874,7 +862,6 @@ public class AIStudioApiAsync {
   /**
    * Update a guide.
    * 
-   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -916,7 +903,6 @@ public class AIStudioApiAsync {
   /**
    * Update a guide version.
    * 
-   * patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -951,7 +937,6 @@ public class AIStudioApiAsync {
   /**
    * Update a guide version.
    * 
-   * patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1218,7 +1203,6 @@ public class AIStudioApiAsync {
   /**
    * Start the publishing of a guide version.
    * 
-   * postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1253,7 +1237,6 @@ public class AIStudioApiAsync {
   /**
    * Start the publishing of a guide version.
    * 
-   * postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1295,7 +1278,6 @@ public class AIStudioApiAsync {
   /**
    * Create a guide version.
    * 
-   * postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1330,7 +1312,6 @@ public class AIStudioApiAsync {
   /**
    * Create a guide version.
    * 
-   * postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1372,7 +1353,6 @@ public class AIStudioApiAsync {
   /**
    * Create a guide.
    * 
-   * postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1407,7 +1387,6 @@ public class AIStudioApiAsync {
   /**
    * Create a guide.
    * 
-   * postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1449,7 +1428,6 @@ public class AIStudioApiAsync {
   /**
    * Start a guide content generation job.
    * 
-   * postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1484,7 +1462,6 @@ public class AIStudioApiAsync {
   /**
    * Start a guide content generation job.
    * 
-   * postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1512,6 +1489,81 @@ public class AIStudioApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<GuideContentGenerationJob> response = (ApiResponse<GuideContentGenerationJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UploadUrlResponse> postGuidesUploadsAsync(PostGuidesUploadsRequest request, final AsyncApiCallback<UploadUrlResponse> callback) {
+    try {
+      final SettableFuture<UploadUrlResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UploadUrlResponse>> postGuidesUploadsAsync(ApiRequest<UploadUrlRequest> request, final AsyncApiCallback<ApiResponse<UploadUrlResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UploadUrlResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

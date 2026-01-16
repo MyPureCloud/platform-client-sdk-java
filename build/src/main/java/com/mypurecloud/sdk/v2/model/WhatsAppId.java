@@ -34,14 +34,14 @@ public class WhatsAppId  implements Serializable {
 
   
   /**
-   * The phone number associated with this WhatsApp account
+   * The phone number associated with this WhatsApp account. Requires 'E164 without a leading plus' phone number.
    **/
   public WhatsAppId phoneNumber(PhoneNumber phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The phone number associated with this WhatsApp account")
+  @ApiModelProperty(example = "null", required = true, value = "The phone number associated with this WhatsApp account. Requires 'E164 without a leading plus' phone number.")
   @JsonProperty("phoneNumber")
   public PhoneNumber getPhoneNumber() {
     return phoneNumber;
@@ -52,14 +52,14 @@ public class WhatsAppId  implements Serializable {
 
 
   /**
-   * The displayName of this person's account in WhatsApp
+   * The displayName of this person's account in WhatsApp. Max: 100 characters.
    **/
   public WhatsAppId displayName(String displayName) {
     this.displayName = displayName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The displayName of this person's account in WhatsApp")
+  @ApiModelProperty(example = "null", value = "The displayName of this person's account in WhatsApp. Max: 100 characters.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;

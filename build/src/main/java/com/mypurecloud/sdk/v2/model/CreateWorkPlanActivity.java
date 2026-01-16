@@ -35,6 +35,7 @@ public class CreateWorkPlanActivity  implements Serializable {
   private Boolean countsAsContiguousWorkTime = null;
   private Integer minimumLengthFromShiftStartMinutes = null;
   private Integer minimumLengthFromShiftEndMinutes = null;
+  private Integer maximumLengthFromShiftEndMinutes = null;
 
   public CreateWorkPlanActivity() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -276,6 +277,24 @@ public class CreateWorkPlanActivity  implements Serializable {
   }
 
 
+  /**
+   * The maximum duration between shift item (e.g., break or meal) end and shift end in minutes
+   **/
+  public CreateWorkPlanActivity maximumLengthFromShiftEndMinutes(Integer maximumLengthFromShiftEndMinutes) {
+    this.maximumLengthFromShiftEndMinutes = maximumLengthFromShiftEndMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The maximum duration between shift item (e.g., break or meal) end and shift end in minutes")
+  @JsonProperty("maximumLengthFromShiftEndMinutes")
+  public Integer getMaximumLengthFromShiftEndMinutes() {
+    return maximumLengthFromShiftEndMinutes;
+  }
+  public void setMaximumLengthFromShiftEndMinutes(Integer maximumLengthFromShiftEndMinutes) {
+    this.maximumLengthFromShiftEndMinutes = maximumLengthFromShiftEndMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -298,12 +317,13 @@ public class CreateWorkPlanActivity  implements Serializable {
             Objects.equals(this.countsAsPaidTime, createWorkPlanActivity.countsAsPaidTime) &&
             Objects.equals(this.countsAsContiguousWorkTime, createWorkPlanActivity.countsAsContiguousWorkTime) &&
             Objects.equals(this.minimumLengthFromShiftStartMinutes, createWorkPlanActivity.minimumLengthFromShiftStartMinutes) &&
-            Objects.equals(this.minimumLengthFromShiftEndMinutes, createWorkPlanActivity.minimumLengthFromShiftEndMinutes);
+            Objects.equals(this.minimumLengthFromShiftEndMinutes, createWorkPlanActivity.minimumLengthFromShiftEndMinutes) &&
+            Objects.equals(this.maximumLengthFromShiftEndMinutes, createWorkPlanActivity.maximumLengthFromShiftEndMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityCodeId, description, lengthMinutes, startTimeIsRelativeToShiftStart, flexibleStartTime, earliestStartTimeMinutes, latestStartTimeMinutes, exactStartTimeMinutes, startTimeIncrementMinutes, countsAsPaidTime, countsAsContiguousWorkTime, minimumLengthFromShiftStartMinutes, minimumLengthFromShiftEndMinutes);
+    return Objects.hash(activityCodeId, description, lengthMinutes, startTimeIsRelativeToShiftStart, flexibleStartTime, earliestStartTimeMinutes, latestStartTimeMinutes, exactStartTimeMinutes, startTimeIncrementMinutes, countsAsPaidTime, countsAsContiguousWorkTime, minimumLengthFromShiftStartMinutes, minimumLengthFromShiftEndMinutes, maximumLengthFromShiftEndMinutes);
   }
 
   @Override
@@ -324,6 +344,7 @@ public class CreateWorkPlanActivity  implements Serializable {
     sb.append("    countsAsContiguousWorkTime: ").append(toIndentedString(countsAsContiguousWorkTime)).append("\n");
     sb.append("    minimumLengthFromShiftStartMinutes: ").append(toIndentedString(minimumLengthFromShiftStartMinutes)).append("\n");
     sb.append("    minimumLengthFromShiftEndMinutes: ").append(toIndentedString(minimumLengthFromShiftEndMinutes)).append("\n");
+    sb.append("    maximumLengthFromShiftEndMinutes: ").append(toIndentedString(maximumLengthFromShiftEndMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -33,13 +33,14 @@ public class ExternalId  implements Serializable {
 
   
   /**
+   * The external source of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.
    **/
   public ExternalId externalSource(ExternalSource externalSource) {
     this.externalSource = externalSource;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The external source of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("externalSource")
   public ExternalSource getExternalSource() {
     return externalSource;
@@ -50,13 +51,14 @@ public class ExternalId  implements Serializable {
 
 
   /**
+   * The string value of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.
    **/
   public ExternalId value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The string value of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("value")
   public String getValue() {
     return value;

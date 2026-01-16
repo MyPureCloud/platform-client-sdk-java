@@ -17,9 +17,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * User information for a twitter account
+ * User information for a twitter account. Either id OR screenName (or both) must be present
  */
-@ApiModel(description = "User information for a twitter account")
+@ApiModel(description = "User information for a twitter account. Either id OR screenName (or both) must be present")
 
 public class TwitterId  implements Serializable {
   
@@ -36,14 +36,14 @@ public class TwitterId  implements Serializable {
 
   
   /**
-   * twitter user.id_str
+   * twitter user.id_str. Max: 255 characters
    **/
   public TwitterId id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "twitter user.id_str")
+  @ApiModelProperty(example = "null", value = "twitter user.id_str. Max: 255 characters")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -54,14 +54,14 @@ public class TwitterId  implements Serializable {
 
 
   /**
-   * twitter user.name
+   * twitter user.name. Max: 255 characters
    **/
   public TwitterId name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "twitter user.name")
+  @ApiModelProperty(example = "null", value = "twitter user.name. Max: 255 characters")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -72,14 +72,14 @@ public class TwitterId  implements Serializable {
 
 
   /**
-   * twitter user.screen_name
+   * twitter user.screen_name. Max: 255 characters. Must match pattern: ^@?[A-Za-z0-9_]+$
    **/
   public TwitterId screenName(String screenName) {
     this.screenName = screenName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "twitter user.screen_name")
+  @ApiModelProperty(example = "null", value = "twitter user.screen_name. Max: 255 characters. Must match pattern: ^@?[A-Za-z0-9_]+$")
   @JsonProperty("screenName")
   public String getScreenName() {
     return screenName;

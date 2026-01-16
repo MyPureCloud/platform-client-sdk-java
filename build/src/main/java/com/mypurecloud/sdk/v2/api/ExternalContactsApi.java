@@ -1425,7 +1425,7 @@ public class ExternalContactsApi {
    * List notes for an external contact
    * 
    * @param contactId ExternalContact Id (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -1441,7 +1441,7 @@ public class ExternalContactsApi {
    * List notes for an external contact
    * 
    * @param contactId ExternalContact Id (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)

@@ -32,14 +32,14 @@ public class LineUserId  implements Serializable {
 
   
   /**
-   * The unique channel-specific userId for the user
+   * The unique channel-specific userId for the user. Max: 255 characters.
    **/
   public LineUserId userId(String userId) {
     this.userId = userId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The unique channel-specific userId for the user")
+  @ApiModelProperty(example = "null", required = true, value = "The unique channel-specific userId for the user. Max: 255 characters.")
   @JsonProperty("userId")
   public String getUserId() {
     return userId;

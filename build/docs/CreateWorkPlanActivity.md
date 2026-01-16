@@ -18,8 +18,9 @@
 | **countsAsContiguousWorkTime** | **Boolean** | Whether the activity duration is counted towards contiguous work time |  [optional] |
 | **minimumLengthFromShiftStartMinutes** | **Integer** | The minimum duration between shift start and shift item (e.g., break or meal) start in minutes |  [optional] |
 | **minimumLengthFromShiftEndMinutes** | **Integer** | The minimum duration between shift item (e.g., break or meal) end and shift end in minutes |  [optional] |
+| **maximumLengthFromShiftEndMinutes** | **Integer** | The maximum duration between shift item (e.g., break or meal) end and shift end in minutes |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

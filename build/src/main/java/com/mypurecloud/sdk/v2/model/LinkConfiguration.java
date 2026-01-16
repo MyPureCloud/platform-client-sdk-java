@@ -31,13 +31,14 @@ public class LinkConfiguration  implements Serializable {
 
   
   /**
+   * Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 400 characters.
    **/
   public LinkConfiguration uriTemplate(String uriTemplate) {
     this.uriTemplate = uriTemplate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 400 characters.")
   @JsonProperty("uriTemplate")
   public String getUriTemplate() {
     return uriTemplate;

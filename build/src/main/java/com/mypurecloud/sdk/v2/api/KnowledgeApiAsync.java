@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ChunkSearchRegisterRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
@@ -152,6 +153,7 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseCategoryRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentVariationRequest;
@@ -3658,6 +3660,81 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CategoryResponse> response = (ApiResponse<CategoryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Register chunk search result.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> patchKnowledgeKnowledgebaseChunksSearchSearchIdAsync(PatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Register chunk search result.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> patchKnowledgeKnowledgebaseChunksSearchSearchIdAsync(ApiRequest<ChunkSearchRegisterRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

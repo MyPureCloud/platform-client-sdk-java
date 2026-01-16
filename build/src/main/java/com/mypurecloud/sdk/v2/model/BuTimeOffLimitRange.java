@@ -61,7 +61,7 @@ public class BuTimeOffLimitRange  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The list of time-off limit values in minutes per day. If 'null' is specified, then the day-specific value is cleared. Such a day will have a value of 0")
+  @ApiModelProperty(example = "null", value = "The list of time-off limit values in minutes per day. If 'null' is specified, then the day-specific value is cleared. Such a day will have a value of 0")
   @JsonProperty("limitMinutesPerDay")
   public List<Integer> getLimitMinutesPerDay() {
     return limitMinutesPerDay;

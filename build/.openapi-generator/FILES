@@ -413,6 +413,7 @@ docs/AuditTopicDomainEntityRef.md
 docs/AuditTopicMessageInfo.md
 docs/AuditTopicPropertyChange.md
 docs/AuthenticationSettings.md
+docs/AuthoringKnowledgeSettings.md
 docs/AuthorizationApi.json
 docs/AuthorizationApi.md
 docs/AuthorizationPolicy.md
@@ -799,7 +800,10 @@ docs/CapacityPlanningRequirementsResultTopicStaffingRequirementsNotification.md
 docs/CapacityPlansListResponse.md
 docs/Card.md
 docs/CardAction.md
+docs/CardBodyText.md
 docs/CardParameters.md
+docs/Carousel.md
+docs/CarouselCard.md
 docs/CarouselParameters.md
 docs/CarrierServicesApi.json
 docs/CarrierServicesApi.md
@@ -868,6 +872,7 @@ docs/ChecklistInferenceJobCreationResponse.md
 docs/ChecklistInferenceJobPayload.md
 docs/ChecklistInferenceJobResponse.md
 docs/ChecklistItem.md
+docs/ChunkSearchRegisterRequest.md
 docs/ClientApp.md
 docs/ClientAppConfigurationInfo.md
 docs/ClientAppEntityListing.md
@@ -1315,7 +1320,6 @@ docs/ConversationEventTopicPhoneNumberColumn.md
 docs/ConversationEventTopicQueueMediaSettings.md
 docs/ConversationEventTopicRecordersState.md
 docs/ConversationEventTopicScoredAgent.md
-docs/ConversationEventTopicScreenMonitoring.md
 docs/ConversationEventTopicScreenShare.md
 docs/ConversationEventTopicSocialExpression.md
 docs/ConversationEventTopicTransferDestination.md
@@ -3056,6 +3060,7 @@ docs/KnowledgeParseRecord.md
 docs/KnowledgeSearchClientApplication.md
 docs/KnowledgeSearchDocumentResponse.md
 docs/KnowledgeSetting.md
+docs/KnowledgeSettings.md
 docs/KnowledgeSuggestionConfig.md
 docs/KnowledgeSyncJobReport.md
 docs/KnowledgeSyncJobRequest.md
@@ -3878,7 +3883,6 @@ docs/ProgramInsightsSettings.md
 docs/ProgramInsightsSettingsEntityListing.md
 docs/ProgramJob.md
 docs/ProgramJobRequest.md
-docs/ProgramMappings.md
 docs/ProgramMappingsRequest.md
 docs/ProgramRequest.md
 docs/ProgramTopicLinksTestPhraseDetectedPhrase.md
@@ -3888,7 +3892,6 @@ docs/ProgramTopicLinksTopicsDefinitionsJob.md
 docs/ProgramTranscriptionEngine.md
 docs/ProgramTranscriptionEngines.md
 docs/ProgramsEntityListing.md
-docs/ProgramsMappingsEntityListing.md
 docs/ProgressConsultTransferEvent.md
 docs/ProgressTransferEvent.md
 docs/Prompt.md
@@ -4098,7 +4101,6 @@ docs/QueueConversationEventTopicPhoneNumberColumn.md
 docs/QueueConversationEventTopicQueueMediaSettings.md
 docs/QueueConversationEventTopicRecordersState.md
 docs/QueueConversationEventTopicScoredAgent.md
-docs/QueueConversationEventTopicScreenMonitoring.md
 docs/QueueConversationEventTopicScreenShare.md
 docs/QueueConversationEventTopicSocialExpression.md
 docs/QueueConversationEventTopicTransferDestination.md
@@ -4192,7 +4194,6 @@ docs/QueueConversationSocialExpressionEventTopicPhoneNumberColumn.md
 docs/QueueConversationSocialExpressionEventTopicQueueMediaSettings.md
 docs/QueueConversationSocialExpressionEventTopicRecordersState.md
 docs/QueueConversationSocialExpressionEventTopicScoredAgent.md
-docs/QueueConversationSocialExpressionEventTopicScreenMonitoring.md
 docs/QueueConversationSocialExpressionEventTopicScreenShare.md
 docs/QueueConversationSocialExpressionEventTopicSocialExpression.md
 docs/QueueConversationSocialExpressionEventTopicTransferDestination.md
@@ -4243,7 +4244,6 @@ docs/QueueConversationVideoEventTopicPhoneNumberColumn.md
 docs/QueueConversationVideoEventTopicQueueMediaSettings.md
 docs/QueueConversationVideoEventTopicRecordersState.md
 docs/QueueConversationVideoEventTopicScoredAgent.md
-docs/QueueConversationVideoEventTopicScreenMonitoring.md
 docs/QueueConversationVideoEventTopicScreenShare.md
 docs/QueueConversationVideoEventTopicSocialExpression.md
 docs/QueueConversationVideoEventTopicTransferDestination.md
@@ -4750,8 +4750,8 @@ docs/SocialMediaStatisticalSummary.md
 docs/SocialTopicPatchRequest.md
 docs/SocialTopicRequest.md
 docs/SocialTopicResponse.md
-docs/SocialTopicResponseEntityListing.md
 docs/SocialTopicWithDataIngestionRuleMetadataResponse.md
+docs/SocialTopicWithDataIngestionRuleMetadataResponseEntityListing.md
 docs/SortItem.md
 docs/Source.md
 docs/SourceBaseResponse.md
@@ -4805,6 +4805,7 @@ docs/StationsApi.md
 docs/StatisticalResponse.md
 docs/StatisticalSummary.md
 docs/StatusChange.md
+docs/StatusInfo.md
 docs/StopSettings.md
 docs/StorySetting.md
 docs/StreetAddress.md
@@ -5050,6 +5051,8 @@ docs/TopicJobRequest.md
 docs/TopicOffset.md
 docs/TopicPhrase.md
 docs/TopicRequest.md
+docs/TopicsDefinitionsProgramMappings.md
+docs/TopicsDefinitionsProgramsMappingsEntityListing.md
 docs/TopicsEntityListing.md
 docs/Touchpoint.md
 docs/TouchpointResponse.md
@@ -6028,7 +6031,6 @@ docs/WritableDialerContact.md
 docs/WritableDivision.md
 docs/WritableEntity.md
 docs/WritableStarrableDivision.md
-docs/YearMonth.md
 docs/deleteAlertingAlert-example.txt
 docs/deleteAlertingAlertsAll-example.txt
 docs/deleteAlertingRule-example.txt
@@ -7918,6 +7920,7 @@ docs/patchJourneyViewVersionJob-example.txt
 docs/patchKnowledgeGuestSessionDocumentsSearchSearchId-example.txt
 docs/patchKnowledgeKnowledgebase-example.txt
 docs/patchKnowledgeKnowledgebaseCategory-example.txt
+docs/patchKnowledgeKnowledgebaseChunksSearchSearchId-example.txt
 docs/patchKnowledgeKnowledgebaseDocument-example.txt
 docs/patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId-example.txt
 docs/patchKnowledgeKnowledgebaseDocumentVariation-example.txt
@@ -8404,6 +8407,8 @@ docs/postGuideVersionJobs-example.txt
 docs/postGuideVersions-example.txt
 docs/postGuides-example.txt
 docs/postGuidesJobs-example.txt
+docs/postGuidesUploads-example.txt
+docs/postGuidesUploads-example.txt
 docs/postIdentityproviders-example.txt
 docs/postInfrastructureascodeJobs-example.txt
 docs/postIntegrations-example.txt
@@ -11207,6 +11212,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchJourneySegmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchJourneyViewVersionJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseCategoryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseDocumentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseDocumentVariationRequest.java
@@ -11694,6 +11700,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostGuideVersionJobsRequest.jav
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGuideVersionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGuidesJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGuidesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostGuidesUploadsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostGuidesUploadsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostIdentityprovidersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostInfrastructureascodeJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostIntegrationsActionDraftFunctionUploadRequest.java
@@ -12827,6 +12835,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AuditTopicDomainEntityRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditTopicMessageInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditTopicPropertyChange.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuthenticationSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/AuthoringKnowledgeSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuthorizationPolicy.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuthorizationPolicyEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuthorizationSettings.java
@@ -13207,7 +13216,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/CapacityPlanningRequirementsResultTop
 src/main/java/com/mypurecloud/sdk/v2/model/CapacityPlansListResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Card.java
 src/main/java/com/mypurecloud/sdk/v2/model/CardAction.java
+src/main/java/com/mypurecloud/sdk/v2/model/CardBodyText.java
 src/main/java/com/mypurecloud/sdk/v2/model/CardParameters.java
+src/main/java/com/mypurecloud/sdk/v2/model/Carousel.java
+src/main/java/com/mypurecloud/sdk/v2/model/CarouselCard.java
 src/main/java/com/mypurecloud/sdk/v2/model/CarouselParameters.java
 src/main/java/com/mypurecloud/sdk/v2/model/CaseManagementAggregateDataContainer.java
 src/main/java/com/mypurecloud/sdk/v2/model/CaseManagementAggregateQueryClause.java
@@ -13272,6 +13284,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ChecklistInferenceJobCreationResponse
 src/main/java/com/mypurecloud/sdk/v2/model/ChecklistInferenceJobPayload.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChecklistInferenceJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChecklistItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/ChunkSearchRegisterRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ClientApp.java
 src/main/java/com/mypurecloud/sdk/v2/model/ClientAppConfigurationInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/ClientAppEntityListing.java
@@ -13715,7 +13728,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicPhoneNumberColu
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicRecordersState.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicScoredAgent.java
-src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicScreenMonitoring.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicScreenShare.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicSocialExpression.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicTransferDestination.java
@@ -15414,6 +15426,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeParseRecord.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSearchClientApplication.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSearchDocumentResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSetting.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSuggestionConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSyncJobReport.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSyncJobRequest.java
@@ -16202,7 +16215,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/ProgramInsightsSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramInsightsSettingsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramJobRequest.java
-src/main/java/com/mypurecloud/sdk/v2/model/ProgramMappings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramMappingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramTopicLinksTestPhraseDetectedPhrase.java
@@ -16212,7 +16224,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/ProgramTopicLinksTopicsDefinitionsJob
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramTranscriptionEngine.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramTranscriptionEngines.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramsEntityListing.java
-src/main/java/com/mypurecloud/sdk/v2/model/ProgramsMappingsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgressConsultTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgressTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/Prompt.java
@@ -16420,7 +16431,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicPhoneNumbe
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicRecordersState.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicScoredAgent.java
-src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicScreenMonitoring.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicScreenShare.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicSocialExpression.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicTransferDestination.java
@@ -16514,7 +16524,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEven
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicRecordersState.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicScoredAgent.java
-src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicScreenMonitoring.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicScreenShare.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicSocialExpression.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicTransferDestination.java
@@ -16565,7 +16574,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicPhone
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicRecordersState.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicScoredAgent.java
-src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicScreenMonitoring.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicScreenShare.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicSocialExpression.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicTransferDestination.java
@@ -17054,8 +17062,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/SocialMediaStatisticalSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/SocialTopicPatchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SocialTopicRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SocialTopicResponse.java
-src/main/java/com/mypurecloud/sdk/v2/model/SocialTopicResponseEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SocialTopicWithDataIngestionRuleMetadataResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/SocialTopicWithDataIngestionRuleMetadataResponseEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SortItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/Source.java
 src/main/java/com/mypurecloud/sdk/v2/model/SourceBaseResponse.java
@@ -17105,6 +17113,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/StationEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatisticalResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatisticalSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatusChange.java
+src/main/java/com/mypurecloud/sdk/v2/model/StatusInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/StopSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/StorySetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/StreetAddress.java
@@ -17336,6 +17345,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/TopicJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TopicOffset.java
 src/main/java/com/mypurecloud/sdk/v2/model/TopicPhrase.java
 src/main/java/com/mypurecloud/sdk/v2/model/TopicRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/TopicsDefinitionsProgramMappings.java
+src/main/java/com/mypurecloud/sdk/v2/model/TopicsDefinitionsProgramsMappingsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/TopicsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Touchpoint.java
 src/main/java/com/mypurecloud/sdk/v2/model/TouchpointResponse.java
@@ -18290,6 +18301,5 @@ src/main/java/com/mypurecloud/sdk/v2/model/WritableDialerContact.java
 src/main/java/com/mypurecloud/sdk/v2/model/WritableDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/WritableEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/WritableStarrableDivision.java
-src/main/java/com/mypurecloud/sdk/v2/model/YearMonth.java
 testng-integration.xml
 testng-unit.xml

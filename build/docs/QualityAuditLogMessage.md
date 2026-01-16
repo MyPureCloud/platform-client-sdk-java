@@ -85,8 +85,9 @@
 | SCREENRECORDING | &quot;ScreenRecording&quot; | 
 | SURVEY | &quot;Survey&quot; | 
 | SNIPPETRECORDING | &quot;SnippetRecording&quot; | 
+| SCREENMONITORING | &quot;ScreenMonitoring&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

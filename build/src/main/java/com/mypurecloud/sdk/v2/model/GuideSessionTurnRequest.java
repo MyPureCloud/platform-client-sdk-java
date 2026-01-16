@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GuideSessionInputEvent;
 import com.mypurecloud.sdk.v2.model.GuideSessionVariable;
+import com.mypurecloud.sdk.v2.model.KnowledgeSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class GuideSessionTurnRequest  implements Serializable {
   private String languageCode = null;
   private String version = null;
   private List<GuideSessionVariable> inputVariables = null;
+  private KnowledgeSettings knowledgeSettings = null;
 
   public GuideSessionTurnRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -111,6 +113,24 @@ public class GuideSessionTurnRequest  implements Serializable {
   }
 
 
+  /**
+   * The knowledge settings for this turn.
+   **/
+  public GuideSessionTurnRequest knowledgeSettings(KnowledgeSettings knowledgeSettings) {
+    this.knowledgeSettings = knowledgeSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The knowledge settings for this turn.")
+  @JsonProperty("knowledgeSettings")
+  public KnowledgeSettings getKnowledgeSettings() {
+    return knowledgeSettings;
+  }
+  public void setKnowledgeSettings(KnowledgeSettings knowledgeSettings) {
+    this.knowledgeSettings = knowledgeSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -124,12 +144,13 @@ public class GuideSessionTurnRequest  implements Serializable {
     return Objects.equals(this.inputEvent, guideSessionTurnRequest.inputEvent) &&
             Objects.equals(this.languageCode, guideSessionTurnRequest.languageCode) &&
             Objects.equals(this.version, guideSessionTurnRequest.version) &&
-            Objects.equals(this.inputVariables, guideSessionTurnRequest.inputVariables);
+            Objects.equals(this.inputVariables, guideSessionTurnRequest.inputVariables) &&
+            Objects.equals(this.knowledgeSettings, guideSessionTurnRequest.knowledgeSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputEvent, languageCode, version, inputVariables);
+    return Objects.hash(inputEvent, languageCode, version, inputVariables, knowledgeSettings);
   }
 
   @Override
@@ -141,6 +162,7 @@ public class GuideSessionTurnRequest  implements Serializable {
     sb.append("    languageCode: ").append(toIndentedString(languageCode)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    inputVariables: ").append(toIndentedString(inputVariables)).append("\n");
+    sb.append("    knowledgeSettings: ").append(toIndentedString(knowledgeSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

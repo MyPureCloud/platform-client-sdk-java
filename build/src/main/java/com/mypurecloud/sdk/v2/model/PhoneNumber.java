@@ -37,14 +37,14 @@ public class PhoneNumber  implements Serializable {
 
   
   /**
-   * The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field.
+   * The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field. Max: 512 characters.
    **/
   public PhoneNumber display(String display) {
     this.display = display;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field.")
+  @ApiModelProperty(example = "null", value = "The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field. Max: 512 characters.")
   @JsonProperty("display")
   public String getDisplay() {
     return display;
@@ -145,14 +145,14 @@ public class PhoneNumber  implements Serializable {
 
 
   /**
-   * The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.
+   * The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164. Max: 4 characters.
    **/
   public PhoneNumber countryCode(String countryCode) {
     this.countryCode = countryCode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.")
+  @ApiModelProperty(example = "null", value = "The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164. Max: 4 characters.")
   @JsonProperty("countryCode")
   public String getCountryCode() {
     return countryCode;

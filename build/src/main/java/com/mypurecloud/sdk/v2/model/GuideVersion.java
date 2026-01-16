@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.AuthoringKnowledgeSettings;
 import com.mypurecloud.sdk.v2.model.GuideVersionResources;
 import com.mypurecloud.sdk.v2.model.Variable;
 import io.swagger.annotations.ApiModel;
@@ -86,6 +87,7 @@ public class GuideVersion  implements Serializable {
   private Date dateModified = null;
   private List<Variable> variables = null;
   private GuideVersionResources resources = null;
+  private AuthoringKnowledgeSettings knowledgeSettings = null;
 
   public GuideVersion() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -189,6 +191,24 @@ public class GuideVersion  implements Serializable {
   }
 
 
+  /**
+   * The knowledge settings associated with this version of the guide.
+   **/
+  public GuideVersion knowledgeSettings(AuthoringKnowledgeSettings knowledgeSettings) {
+    this.knowledgeSettings = knowledgeSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The knowledge settings associated with this version of the guide.")
+  @JsonProperty("knowledgeSettings")
+  public AuthoringKnowledgeSettings getKnowledgeSettings() {
+    return knowledgeSettings;
+  }
+  public void setKnowledgeSettings(AuthoringKnowledgeSettings knowledgeSettings) {
+    this.knowledgeSettings = knowledgeSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -207,12 +227,13 @@ public class GuideVersion  implements Serializable {
             Objects.equals(this.dateCreated, guideVersion.dateCreated) &&
             Objects.equals(this.dateModified, guideVersion.dateModified) &&
             Objects.equals(this.variables, guideVersion.variables) &&
-            Objects.equals(this.resources, guideVersion.resources);
+            Objects.equals(this.resources, guideVersion.resources) &&
+            Objects.equals(this.knowledgeSettings, guideVersion.knowledgeSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(selfUri, guide, version, instruction, state, dateCreated, dateModified, variables, resources);
+    return Objects.hash(selfUri, guide, version, instruction, state, dateCreated, dateModified, variables, resources, knowledgeSettings);
   }
 
   @Override
@@ -229,6 +250,7 @@ public class GuideVersion  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    variables: ").append(toIndentedString(variables)).append("\n");
     sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+    sb.append("    knowledgeSettings: ").append(toIndentedString(knowledgeSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

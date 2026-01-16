@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ChunkSearchRegisterRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;

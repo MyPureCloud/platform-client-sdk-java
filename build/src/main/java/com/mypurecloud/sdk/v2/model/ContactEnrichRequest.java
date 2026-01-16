@@ -131,14 +131,14 @@ public class ContactEnrichRequest  implements Serializable {
 
 
   /**
-   * An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here.
+   * An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here. Between 1 and 25.
    **/
   public ContactEnrichRequest matchingIdentifiers(List<ContactIdentifier> matchingIdentifiers) {
     this.matchingIdentifiers = matchingIdentifiers;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here.")
+  @ApiModelProperty(example = "null", required = true, value = "An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here. Between 1 and 25.")
   @JsonProperty("matchingIdentifiers")
   public List<ContactIdentifier> getMatchingIdentifiers() {
     return matchingIdentifiers;

@@ -7,9 +7,15 @@ import java.util.TimeZone;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class ApiDateFormat extends DateFormat {
+
+    // Regex to detect values generated from a java.time.Instant with microseconds and nanoseconds precision
+    private static final Pattern ISO_NANOS_UTC =
+        Pattern.compile("^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\d+Z$");
 
     List<String> formatStrings = new ArrayList<>(Arrays.asList(
         // Standard ISO-8601 format used by PureCloud
@@ -44,9 +50,19 @@ public class ApiDateFormat extends DateFormat {
 
     @Override
     public Date parse(String source, ParsePosition pos) {
+        if (source == null) return null;
+        String sourceToParse = source;
+
+        // Detect values generated from a java.time.Instant with microseconds and nanoseconds precision
+        Matcher m = ISO_NANOS_UTC.matcher(source);
+        if (m.matches()) {
+            // keep up to milliseconds + Z to preserve comatibility with java.util.Date
+            sourceToParse = m.group(1) + "Z";
+        }
+        
         for (SimpleDateFormat format : formats) {
             try {
-                Date d = format.parse(source, pos);
+                Date d = format.parse(sourceToParse, pos);
                 if (d != null)
                     return d;
             }

@@ -36,14 +36,14 @@ public class FacebookId  implements Serializable {
 
   
   /**
-   * The set of scopedIds that this person has. Each scopedId is specific to a page or app that the user interacts with.
+   * The set of scopedIds that this person has. Each scopedId is specific to a page or app that the user interacts with. Max: 1 Id
    **/
   public FacebookId ids(List<FacebookScopedId> ids) {
     this.ids = ids;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The set of scopedIds that this person has. Each scopedId is specific to a page or app that the user interacts with.")
+  @ApiModelProperty(example = "null", required = true, value = "The set of scopedIds that this person has. Each scopedId is specific to a page or app that the user interacts with. Max: 1 Id")
   @JsonProperty("ids")
   public List<FacebookScopedId> getIds() {
     return ids;
@@ -54,14 +54,14 @@ public class FacebookId  implements Serializable {
 
 
   /**
-   * The displayName of this person's Facebook account. Roughly translates to user.first_name + ' ' + user.last_name in the Facebook API.
+   * The displayName of this person's Facebook account. Roughly translates to user.first_name + ' ' + user.last_name in the Facebook API. Max: 100 characters.
    **/
   public FacebookId displayName(String displayName) {
     this.displayName = displayName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The displayName of this person's Facebook account. Roughly translates to user.first_name + ' ' + user.last_name in the Facebook API.")
+  @ApiModelProperty(example = "null", value = "The displayName of this person's Facebook account. Roughly translates to user.first_name + ' ' + user.last_name in the Facebook API. Max: 100 characters.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;

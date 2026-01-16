@@ -105,14 +105,14 @@ public class Relationship  implements Serializable {
 
 
   /**
-   * The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant
+   * The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant. Between 1 and 100 characters.
    **/
   public Relationship relationship(String relationship) {
     this.relationship = relationship;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant")
+  @ApiModelProperty(example = "null", required = true, value = "The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant. Between 1 and 100 characters.")
   @JsonProperty("relationship")
   public String getRelationship() {
     return relationship;

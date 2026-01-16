@@ -21,7 +21,6 @@ import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicC
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicEmail;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicInternalMessage;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicMessage;
-import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicScreenMonitoring;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicScreenShare;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicSocialExpression;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicVideo;
@@ -130,7 +129,6 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   private List<QueueConversationSocialExpressionEventTopicEmail> emails = null;
   private List<QueueConversationSocialExpressionEventTopicMessage> messages = null;
   private List<QueueConversationSocialExpressionEventTopicInternalMessage> internalMessages = null;
-  private List<QueueConversationSocialExpressionEventTopicScreenMonitoring> screenMonitorings = null;
   private List<QueueConversationSocialExpressionEventTopicScreenShare> screenshares = null;
   private List<QueueConversationSocialExpressionEventTopicSocialExpression> socialExpressions = null;
   private List<QueueConversationSocialExpressionEventTopicVideo> videos = null;
@@ -146,7 +144,6 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
       emails = new ArrayList<QueueConversationSocialExpressionEventTopicEmail>();
       messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessage>();
       internalMessages = new ArrayList<QueueConversationSocialExpressionEventTopicInternalMessage>();
-      screenMonitorings = new ArrayList<QueueConversationSocialExpressionEventTopicScreenMonitoring>();
       screenshares = new ArrayList<QueueConversationSocialExpressionEventTopicScreenShare>();
       socialExpressions = new ArrayList<QueueConversationSocialExpressionEventTopicSocialExpression>();
       videos = new ArrayList<QueueConversationSocialExpressionEventTopicVideo>();
@@ -813,23 +810,6 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
 
   /**
    **/
-  public QueueConversationSocialExpressionEventTopicParticipant screenMonitorings(List<QueueConversationSocialExpressionEventTopicScreenMonitoring> screenMonitorings) {
-    this.screenMonitorings = screenMonitorings;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("screenMonitorings")
-  public List<QueueConversationSocialExpressionEventTopicScreenMonitoring> getScreenMonitorings() {
-    return screenMonitorings;
-  }
-  public void setScreenMonitorings(List<QueueConversationSocialExpressionEventTopicScreenMonitoring> screenMonitorings) {
-    this.screenMonitorings = screenMonitorings;
-  }
-
-
-  /**
-   **/
   public QueueConversationSocialExpressionEventTopicParticipant screenshares(List<QueueConversationSocialExpressionEventTopicScreenShare> screenshares) {
     this.screenshares = screenshares;
     return this;
@@ -943,7 +923,6 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
             Objects.equals(this.emails, queueConversationSocialExpressionEventTopicParticipant.emails) &&
             Objects.equals(this.messages, queueConversationSocialExpressionEventTopicParticipant.messages) &&
             Objects.equals(this.internalMessages, queueConversationSocialExpressionEventTopicParticipant.internalMessages) &&
-            Objects.equals(this.screenMonitorings, queueConversationSocialExpressionEventTopicParticipant.screenMonitorings) &&
             Objects.equals(this.screenshares, queueConversationSocialExpressionEventTopicParticipant.screenshares) &&
             Objects.equals(this.socialExpressions, queueConversationSocialExpressionEventTopicParticipant.socialExpressions) &&
             Objects.equals(this.videos, queueConversationSocialExpressionEventTopicParticipant.videos) &&
@@ -952,7 +931,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalContactInitialDivisionId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenMonitorings, screenshares, socialExpressions, videos, workflow);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalContactInitialDivisionId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -997,7 +976,6 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    internalMessages: ").append(toIndentedString(internalMessages)).append("\n");
-    sb.append("    screenMonitorings: ").append(toIndentedString(screenMonitorings)).append("\n");
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");

@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUploadsUrlsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationContestsUploadsPrizeimagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGuidesUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftFunctionUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
@@ -189,6 +190,84 @@ public class UploadsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<UploadUrlResponse> postGamificationContestsUploadsPrizeimages(ApiRequest<GamificationContestPrizeImageUploadUrlRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postGuidesUploads(UploadUrlRequest body) throws IOException, ApiException {
+    return  postGuidesUploads(createPostGuidesUploadsRequest(body));
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postGuidesUploadsWithHttpInfo(UploadUrlRequest body) throws IOException {
+    return postGuidesUploads(createPostGuidesUploadsRequest(body).withHttpInfo());
+  }
+
+  private PostGuidesUploadsRequest createPostGuidesUploadsRequest(UploadUrlRequest body) {
+    return PostGuidesUploadsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postGuidesUploads(PostGuidesUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postGuidesUploads(ApiRequest<UploadUrlRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
     }

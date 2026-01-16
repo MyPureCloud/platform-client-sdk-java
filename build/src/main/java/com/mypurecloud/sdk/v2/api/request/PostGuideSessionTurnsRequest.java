@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.SummarySettingEntityListing;
 import com.mypurecloud.sdk.v2.model.SummarySettingWithTranscript;
 import com.mypurecloud.sdk.v2.model.UpdateGuide;
 import com.mypurecloud.sdk.v2.model.UpdateGuideVersion;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 public class PostGuideSessionTurnsRequest {
 

@@ -31,13 +31,14 @@ public class AppleOpaqueId  implements Serializable {
 
   
   /**
+   * Max: 255 characters. Leading and trailing whitespace stripped.
    **/
   public AppleOpaqueId value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Max: 255 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("value")
   public String getValue() {
     return value;

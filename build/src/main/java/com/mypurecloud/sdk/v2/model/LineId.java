@@ -36,14 +36,14 @@ public class LineId  implements Serializable {
 
   
   /**
-   * The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with.
+   * The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with. Max 1 Id.
    **/
   public LineId ids(List<LineUserId> ids) {
     this.ids = ids;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with.")
+  @ApiModelProperty(example = "null", required = true, value = "The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with. Max 1 Id.")
   @JsonProperty("ids")
   public List<LineUserId> getIds() {
     return ids;
@@ -54,14 +54,14 @@ public class LineId  implements Serializable {
 
 
   /**
-   * The displayName of this person's account in Line
+   * The displayName of this person's account in Line. Max: 100 characters.
    **/
   public LineId displayName(String displayName) {
     this.displayName = displayName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The displayName of this person's account in Line")
+  @ApiModelProperty(example = "null", value = "The displayName of this person's account in Line. Max: 100 characters.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;

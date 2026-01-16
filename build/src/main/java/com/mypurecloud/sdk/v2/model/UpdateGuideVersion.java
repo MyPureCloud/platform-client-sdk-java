@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AuthoringKnowledgeSettings;
 import com.mypurecloud.sdk.v2.model.GuideVersionResources;
 import com.mypurecloud.sdk.v2.model.Variable;
 import io.swagger.annotations.ApiModel;
@@ -30,6 +31,7 @@ public class UpdateGuideVersion  implements Serializable {
   private String instruction = null;
   private List<Variable> variables = null;
   private GuideVersionResources resources = null;
+  private AuthoringKnowledgeSettings knowledgeSettings = null;
 
   public UpdateGuideVersion() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -92,6 +94,24 @@ public class UpdateGuideVersion  implements Serializable {
   }
 
 
+  /**
+   * The knowledge settings associated with this version of the guide.
+   **/
+  public UpdateGuideVersion knowledgeSettings(AuthoringKnowledgeSettings knowledgeSettings) {
+    this.knowledgeSettings = knowledgeSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The knowledge settings associated with this version of the guide.")
+  @JsonProperty("knowledgeSettings")
+  public AuthoringKnowledgeSettings getKnowledgeSettings() {
+    return knowledgeSettings;
+  }
+  public void setKnowledgeSettings(AuthoringKnowledgeSettings knowledgeSettings) {
+    this.knowledgeSettings = knowledgeSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -104,12 +124,13 @@ public class UpdateGuideVersion  implements Serializable {
 
     return Objects.equals(this.instruction, updateGuideVersion.instruction) &&
             Objects.equals(this.variables, updateGuideVersion.variables) &&
-            Objects.equals(this.resources, updateGuideVersion.resources);
+            Objects.equals(this.resources, updateGuideVersion.resources) &&
+            Objects.equals(this.knowledgeSettings, updateGuideVersion.knowledgeSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(instruction, variables, resources);
+    return Objects.hash(instruction, variables, resources, knowledgeSettings);
   }
 
   @Override
@@ -120,6 +141,7 @@ public class UpdateGuideVersion  implements Serializable {
     sb.append("    instruction: ").append(toIndentedString(instruction)).append("\n");
     sb.append("    variables: ").append(toIndentedString(variables)).append("\n");
     sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+    sb.append("    knowledgeSettings: ").append(toIndentedString(knowledgeSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

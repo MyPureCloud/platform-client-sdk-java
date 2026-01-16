@@ -156,13 +156,14 @@ public class Note  implements Serializable {
 
 
   /**
+   * Between 1 and 32,000 characters.
    **/
   public Note noteText(String noteText) {
     this.noteText = noteText;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Between 1 and 32,000 characters.")
   @JsonProperty("noteText")
   public String getNoteText() {
     return noteText;

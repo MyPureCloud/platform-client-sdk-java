@@ -31,12 +31,10 @@ import com.mypurecloud.sdk.v2.model.ProgramInsightsSettings;
 import com.mypurecloud.sdk.v2.model.ProgramInsightsSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
 import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.model.ProgramRequest;
 import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ReprocessInteractionsByJobIdResponse;
 import com.mypurecloud.sdk.v2.model.ReprocessJobEntityListingResponse;
 import com.mypurecloud.sdk.v2.model.ReprocessJobResponse;
@@ -55,6 +53,8 @@ import com.mypurecloud.sdk.v2.model.Topic;
 import com.mypurecloud.sdk.v2.model.TopicJob;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
 import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramMappings;
+import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
@@ -1584,11 +1584,11 @@ public class SpeechTextAnalyticsApi {
    * Get Speech & Text Analytics program mappings to queues and flows by id
    * 
    * @param programId The id of the program (required)
-   * @return ProgramMappings
+   * @return TopicsDefinitionsProgramMappings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ProgramMappings getSpeechandtextanalyticsProgramMappings(String programId) throws IOException, ApiException {
+  public TopicsDefinitionsProgramMappings getSpeechandtextanalyticsProgramMappings(String programId) throws IOException, ApiException {
     return  getSpeechandtextanalyticsProgramMappings(createGetSpeechandtextanalyticsProgramMappingsRequest(programId));
   }
 
@@ -1596,10 +1596,10 @@ public class SpeechTextAnalyticsApi {
    * Get Speech & Text Analytics program mappings to queues and flows by id
    * 
    * @param programId The id of the program (required)
-   * @return ProgramMappings
+   * @return TopicsDefinitionsProgramMappings
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ProgramMappings> getSpeechandtextanalyticsProgramMappingsWithHttpInfo(String programId) throws IOException {
+  public ApiResponse<TopicsDefinitionsProgramMappings> getSpeechandtextanalyticsProgramMappingsWithHttpInfo(String programId) throws IOException {
     return getSpeechandtextanalyticsProgramMappings(createGetSpeechandtextanalyticsProgramMappingsRequest(programId).withHttpInfo());
   }
 
@@ -1614,13 +1614,13 @@ public class SpeechTextAnalyticsApi {
    * Get Speech & Text Analytics program mappings to queues and flows by id
    * 
    * @param request The request object
-   * @return ProgramMappings
+   * @return TopicsDefinitionsProgramMappings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ProgramMappings getSpeechandtextanalyticsProgramMappings(GetSpeechandtextanalyticsProgramMappingsRequest request) throws IOException, ApiException {
+  public TopicsDefinitionsProgramMappings getSpeechandtextanalyticsProgramMappings(GetSpeechandtextanalyticsProgramMappingsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ProgramMappings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramMappings>() {});
+      ApiResponse<TopicsDefinitionsProgramMappings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TopicsDefinitionsProgramMappings>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1636,13 +1636,13 @@ public class SpeechTextAnalyticsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ProgramMappings> getSpeechandtextanalyticsProgramMappings(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<TopicsDefinitionsProgramMappings> getSpeechandtextanalyticsProgramMappings(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ProgramMappings>() {});
+      return pcapiClient.invoke(request, new TypeReference<TopicsDefinitionsProgramMappings>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)exception;
+      ApiResponse<TopicsDefinitionsProgramMappings> response = (ApiResponse<TopicsDefinitionsProgramMappings>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1653,7 +1653,7 @@ public class SpeechTextAnalyticsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<TopicsDefinitionsProgramMappings> response = (ApiResponse<TopicsDefinitionsProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1983,11 +1983,11 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
-   * @return ProgramsMappingsEntityListing
+   * @return TopicsDefinitionsProgramsMappingsEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(String nextPage, Integer pageSize) throws IOException, ApiException {
+  public TopicsDefinitionsProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(String nextPage, Integer pageSize) throws IOException, ApiException {
     return  getSpeechandtextanalyticsProgramsMappings(createGetSpeechandtextanalyticsProgramsMappingsRequest(nextPage, pageSize));
   }
 
@@ -1996,10 +1996,10 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
-   * @return ProgramsMappingsEntityListing
+   * @return TopicsDefinitionsProgramsMappingsEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ProgramsMappingsEntityListing> getSpeechandtextanalyticsProgramsMappingsWithHttpInfo(String nextPage, Integer pageSize) throws IOException {
+  public ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing> getSpeechandtextanalyticsProgramsMappingsWithHttpInfo(String nextPage, Integer pageSize) throws IOException {
     return getSpeechandtextanalyticsProgramsMappings(createGetSpeechandtextanalyticsProgramsMappingsRequest(nextPage, pageSize).withHttpInfo());
   }
 
@@ -2016,13 +2016,13 @@ public class SpeechTextAnalyticsApi {
    * Get the list of Speech & Text Analytics programs mappings to queues and flows
    * 
    * @param request The request object
-   * @return ProgramsMappingsEntityListing
+   * @return TopicsDefinitionsProgramsMappingsEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(GetSpeechandtextanalyticsProgramsMappingsRequest request) throws IOException, ApiException {
+  public TopicsDefinitionsProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(GetSpeechandtextanalyticsProgramsMappingsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ProgramsMappingsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramsMappingsEntityListing>() {});
+      ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TopicsDefinitionsProgramsMappingsEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2038,13 +2038,13 @@ public class SpeechTextAnalyticsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ProgramsMappingsEntityListing> getSpeechandtextanalyticsProgramsMappings(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing> getSpeechandtextanalyticsProgramsMappings(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ProgramsMappingsEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<TopicsDefinitionsProgramsMappingsEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ProgramsMappingsEntityListing> response = (ApiResponse<ProgramsMappingsEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing> response = (ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2055,7 +2055,7 @@ public class SpeechTextAnalyticsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ProgramsMappingsEntityListing> response = (ApiResponse<ProgramsMappingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing> response = (ApiResponse<TopicsDefinitionsProgramsMappingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4793,11 +4793,11 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param programId The id of the program (required)
    * @param body The program to set mappings for (required)
-   * @return ProgramMappings
+   * @return TopicsDefinitionsProgramMappings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ProgramMappings putSpeechandtextanalyticsProgramMappings(String programId, ProgramMappingsRequest body) throws IOException, ApiException {
+  public TopicsDefinitionsProgramMappings putSpeechandtextanalyticsProgramMappings(String programId, ProgramMappingsRequest body) throws IOException, ApiException {
     return  putSpeechandtextanalyticsProgramMappings(createPutSpeechandtextanalyticsProgramMappingsRequest(programId, body));
   }
 
@@ -4806,10 +4806,10 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param programId The id of the program (required)
    * @param body The program to set mappings for (required)
-   * @return ProgramMappings
+   * @return TopicsDefinitionsProgramMappings
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ProgramMappings> putSpeechandtextanalyticsProgramMappingsWithHttpInfo(String programId, ProgramMappingsRequest body) throws IOException {
+  public ApiResponse<TopicsDefinitionsProgramMappings> putSpeechandtextanalyticsProgramMappingsWithHttpInfo(String programId, ProgramMappingsRequest body) throws IOException {
     return putSpeechandtextanalyticsProgramMappings(createPutSpeechandtextanalyticsProgramMappingsRequest(programId, body).withHttpInfo());
   }
 
@@ -4826,13 +4826,13 @@ public class SpeechTextAnalyticsApi {
    * Set Speech & Text Analytics program mappings to queues and flows
    * 
    * @param request The request object
-   * @return ProgramMappings
+   * @return TopicsDefinitionsProgramMappings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ProgramMappings putSpeechandtextanalyticsProgramMappings(PutSpeechandtextanalyticsProgramMappingsRequest request) throws IOException, ApiException {
+  public TopicsDefinitionsProgramMappings putSpeechandtextanalyticsProgramMappings(PutSpeechandtextanalyticsProgramMappingsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ProgramMappings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramMappings>() {});
+      ApiResponse<TopicsDefinitionsProgramMappings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TopicsDefinitionsProgramMappings>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4848,13 +4848,13 @@ public class SpeechTextAnalyticsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ProgramMappings> putSpeechandtextanalyticsProgramMappings(ApiRequest<ProgramMappingsRequest> request) throws IOException {
+  public ApiResponse<TopicsDefinitionsProgramMappings> putSpeechandtextanalyticsProgramMappings(ApiRequest<ProgramMappingsRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ProgramMappings>() {});
+      return pcapiClient.invoke(request, new TypeReference<TopicsDefinitionsProgramMappings>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)exception;
+      ApiResponse<TopicsDefinitionsProgramMappings> response = (ApiResponse<TopicsDefinitionsProgramMappings>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4865,7 +4865,7 @@ public class SpeechTextAnalyticsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<TopicsDefinitionsProgramMappings> response = (ApiResponse<TopicsDefinitionsProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.SummarySettingEntityListing;
 import com.mypurecloud.sdk.v2.model.SummarySettingWithTranscript;
 import com.mypurecloud.sdk.v2.model.UpdateGuide;
 import com.mypurecloud.sdk.v2.model.UpdateGuideVersion;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsSummariesSettingRequest;
@@ -49,6 +51,7 @@ import com.mypurecloud.sdk.v2.api.request.PostGuideVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuidesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuidesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGuidesUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsSummariesSettingRequest;
 
 import java.io.IOException;
@@ -146,7 +149,6 @@ public class AIStudioApi {
   /**
    * Start the deletion of a guide.
    * 
-   * deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @return GuideJob
    * @throws ApiException if the request fails on the server
@@ -159,7 +161,6 @@ public class AIStudioApi {
   /**
    * Start the deletion of a guide.
    * 
-   * deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @return GuideJob
    * @throws IOException if the request fails to be processed
@@ -178,7 +179,6 @@ public class AIStudioApi {
   /**
    * Start the deletion of a guide.
    * 
-   * deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideJob
    * @throws ApiException if the request fails on the server
@@ -198,7 +198,6 @@ public class AIStudioApi {
   /**
    * Start the deletion of a guide.
    * 
-   * deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -404,7 +403,6 @@ public class AIStudioApi {
   /**
    * Get guide.
    * 
-   * getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @return Guide
    * @throws ApiException if the request fails on the server
@@ -417,7 +415,6 @@ public class AIStudioApi {
   /**
    * Get guide.
    * 
-   * getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @return Guide
    * @throws IOException if the request fails to be processed
@@ -436,7 +433,6 @@ public class AIStudioApi {
   /**
    * Get guide.
    * 
-   * getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Guide
    * @throws ApiException if the request fails on the server
@@ -456,7 +452,6 @@ public class AIStudioApi {
   /**
    * Get guide.
    * 
-   * getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -486,7 +481,6 @@ public class AIStudioApi {
   /**
    * Get the specified guide deletion job.
    * 
-   * getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param jobId jobId (required)
    * @return GuideJob
@@ -500,7 +494,6 @@ public class AIStudioApi {
   /**
    * Get the specified guide deletion job.
    * 
-   * getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param jobId jobId (required)
    * @return GuideJob
@@ -522,7 +515,6 @@ public class AIStudioApi {
   /**
    * Get the specified guide deletion job.
    * 
-   * getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideJob
    * @throws ApiException if the request fails on the server
@@ -542,7 +534,6 @@ public class AIStudioApi {
   /**
    * Get the specified guide deletion job.
    * 
-   * getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -572,7 +563,6 @@ public class AIStudioApi {
   /**
    * Get a guide version.
    * 
-   * getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param versionId Version ID (required)
    * @return GuideVersion
@@ -586,7 +576,6 @@ public class AIStudioApi {
   /**
    * Get a guide version.
    * 
-   * getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param versionId Version ID (required)
    * @return GuideVersion
@@ -608,7 +597,6 @@ public class AIStudioApi {
   /**
    * Get a guide version.
    * 
-   * getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideVersion
    * @throws ApiException if the request fails on the server
@@ -628,7 +616,6 @@ public class AIStudioApi {
   /**
    * Get a guide version.
    * 
-   * getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -658,7 +645,6 @@ public class AIStudioApi {
   /**
    * Get the status of the publishing job for this guide version.
    * 
-   * getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param versionId Version ID (required)
    * @param jobId jobId (required)
@@ -673,7 +659,6 @@ public class AIStudioApi {
   /**
    * Get the status of the publishing job for this guide version.
    * 
-   * getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param versionId Version ID (required)
    * @param jobId jobId (required)
@@ -698,7 +683,6 @@ public class AIStudioApi {
   /**
    * Get the status of the publishing job for this guide version.
    * 
-   * getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideVersionPublishJob
    * @throws ApiException if the request fails on the server
@@ -718,7 +702,6 @@ public class AIStudioApi {
   /**
    * Get the status of the publishing job for this guide version.
    * 
-   * getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -748,7 +731,6 @@ public class AIStudioApi {
   /**
    * Get all guides.
    * 
-   * getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param name Filter by matching name - case insensitive. (optional)
    * @param nameContains Filter by name contains - case insensitive. (optional)
    * @param status Filter by status. (optional)
@@ -767,7 +749,6 @@ public class AIStudioApi {
   /**
    * Get all guides.
    * 
-   * getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param name Filter by matching name - case insensitive. (optional)
    * @param nameContains Filter by name contains - case insensitive. (optional)
    * @param status Filter by status. (optional)
@@ -804,7 +785,6 @@ public class AIStudioApi {
   /**
    * Get all guides.
    * 
-   * getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideEntityListing
    * @throws ApiException if the request fails on the server
@@ -824,7 +804,6 @@ public class AIStudioApi {
   /**
    * Get all guides.
    * 
-   * getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -854,7 +833,6 @@ public class AIStudioApi {
   /**
    * Get the status of the guide content generation job.
    * 
-   * getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return GuideContentGenerationJob
    * @throws ApiException if the request fails on the server
@@ -867,7 +845,6 @@ public class AIStudioApi {
   /**
    * Get the status of the guide content generation job.
    * 
-   * getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return GuideContentGenerationJob
    * @throws IOException if the request fails to be processed
@@ -886,7 +863,6 @@ public class AIStudioApi {
   /**
    * Get the status of the guide content generation job.
    * 
-   * getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideContentGenerationJob
    * @throws ApiException if the request fails on the server
@@ -906,7 +882,6 @@ public class AIStudioApi {
   /**
    * Get the status of the guide content generation job.
    * 
-   * getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -936,7 +911,6 @@ public class AIStudioApi {
   /**
    * Update a guide.
    * 
-   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param body  (required)
    * @return Guide
@@ -950,7 +924,6 @@ public class AIStudioApi {
   /**
    * Update a guide.
    * 
-   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param body  (required)
    * @return Guide
@@ -972,7 +945,6 @@ public class AIStudioApi {
   /**
    * Update a guide.
    * 
-   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Guide
    * @throws ApiException if the request fails on the server
@@ -992,7 +964,6 @@ public class AIStudioApi {
   /**
    * Update a guide.
    * 
-   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1022,7 +993,6 @@ public class AIStudioApi {
   /**
    * Update a guide version.
    * 
-   * patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param versionId Version ID (required)
    * @param body  (required)
@@ -1037,7 +1007,6 @@ public class AIStudioApi {
   /**
    * Update a guide version.
    * 
-   * patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param versionId Version ID (required)
    * @param body  (required)
@@ -1062,7 +1031,6 @@ public class AIStudioApi {
   /**
    * Update a guide version.
    * 
-   * patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideVersion
    * @throws ApiException if the request fails on the server
@@ -1082,7 +1050,6 @@ public class AIStudioApi {
   /**
    * Update a guide version.
    * 
-   * patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1351,7 +1318,6 @@ public class AIStudioApi {
   /**
    * Start the publishing of a guide version.
    * 
-   * postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param versionId Version ID (required)
    * @param body  (required)
@@ -1366,7 +1332,6 @@ public class AIStudioApi {
   /**
    * Start the publishing of a guide version.
    * 
-   * postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param versionId Version ID (required)
    * @param body  (required)
@@ -1391,7 +1356,6 @@ public class AIStudioApi {
   /**
    * Start the publishing of a guide version.
    * 
-   * postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideVersionPublishJob
    * @throws ApiException if the request fails on the server
@@ -1411,7 +1375,6 @@ public class AIStudioApi {
   /**
    * Start the publishing of a guide version.
    * 
-   * postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1441,7 +1404,6 @@ public class AIStudioApi {
   /**
    * Create a guide version.
    * 
-   * postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param body  (optional)
    * @return GuideVersion
@@ -1455,7 +1417,6 @@ public class AIStudioApi {
   /**
    * Create a guide version.
    * 
-   * postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param guideId Guide ID (required)
    * @param body  (optional)
    * @return GuideVersion
@@ -1477,7 +1438,6 @@ public class AIStudioApi {
   /**
    * Create a guide version.
    * 
-   * postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideVersion
    * @throws ApiException if the request fails on the server
@@ -1497,7 +1457,6 @@ public class AIStudioApi {
   /**
    * Create a guide version.
    * 
-   * postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1527,7 +1486,6 @@ public class AIStudioApi {
   /**
    * Create a guide.
    * 
-   * postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return Guide
    * @throws ApiException if the request fails on the server
@@ -1540,7 +1498,6 @@ public class AIStudioApi {
   /**
    * Create a guide.
    * 
-   * postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return Guide
    * @throws IOException if the request fails to be processed
@@ -1559,7 +1516,6 @@ public class AIStudioApi {
   /**
    * Create a guide.
    * 
-   * postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Guide
    * @throws ApiException if the request fails on the server
@@ -1579,7 +1535,6 @@ public class AIStudioApi {
   /**
    * Create a guide.
    * 
-   * postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1609,7 +1564,6 @@ public class AIStudioApi {
   /**
    * Start a guide content generation job.
    * 
-   * postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return GuideContentGenerationJob
    * @throws ApiException if the request fails on the server
@@ -1622,7 +1576,6 @@ public class AIStudioApi {
   /**
    * Start a guide content generation job.
    * 
-   * postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return GuideContentGenerationJob
    * @throws IOException if the request fails to be processed
@@ -1641,7 +1594,6 @@ public class AIStudioApi {
   /**
    * Start a guide content generation job.
    * 
-   * postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GuideContentGenerationJob
    * @throws ApiException if the request fails on the server
@@ -1661,7 +1613,6 @@ public class AIStudioApi {
   /**
    * Start a guide content generation job.
    * 
-   * postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1684,6 +1635,84 @@ public class AIStudioApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GuideContentGenerationJob> response = (ApiResponse<GuideContentGenerationJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postGuidesUploads(UploadUrlRequest body) throws IOException, ApiException {
+    return  postGuidesUploads(createPostGuidesUploadsRequest(body));
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postGuidesUploadsWithHttpInfo(UploadUrlRequest body) throws IOException {
+    return postGuidesUploads(createPostGuidesUploadsRequest(body).withHttpInfo());
+  }
+
+  private PostGuidesUploadsRequest createPostGuidesUploadsRequest(UploadUrlRequest body) {
+    return PostGuidesUploadsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postGuidesUploads(PostGuidesUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate presigned URL for uploading a file content to generate guide
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postGuidesUploads(ApiRequest<UploadUrlRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

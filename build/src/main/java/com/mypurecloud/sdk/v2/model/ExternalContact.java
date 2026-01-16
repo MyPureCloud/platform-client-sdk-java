@@ -180,14 +180,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
-   * The first name of the contact.
+   * The first name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
    **/
   public ExternalContact firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The first name of the contact.")
+  @ApiModelProperty(example = "null", value = "The first name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("firstName")
   public String getFirstName() {
     return firstName;
@@ -198,13 +198,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * The middle name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
    **/
   public ExternalContact middleName(String middleName) {
     this.middleName = middleName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The middle name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("middleName")
   public String getMiddleName() {
     return middleName;
@@ -215,14 +216,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
-   * The last name of the contact.
+   * The last name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
    **/
   public ExternalContact lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The last name of the contact.")
+  @ApiModelProperty(example = "null", value = "The last name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("lastName")
   public String getLastName() {
     return lastName;
@@ -233,13 +234,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * The salutation of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
    **/
   public ExternalContact salutation(String salutation) {
     this.salutation = salutation;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The salutation of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("salutation")
   public String getSalutation() {
     return salutation;
@@ -250,13 +252,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * The title of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
    **/
   public ExternalContact title(String title) {
     this.title = title;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The title of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("title")
   public String getTitle() {
     return title;
@@ -335,13 +338,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * The work email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
    **/
   public ExternalContact workEmail(String workEmail) {
     this.workEmail = workEmail;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The work email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format")
   @JsonProperty("workEmail")
   public String getWorkEmail() {
     return workEmail;
@@ -352,13 +356,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * The personal email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
    **/
   public ExternalContact personalEmail(String personalEmail) {
     this.personalEmail = personalEmail;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The personal email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format")
   @JsonProperty("personalEmail")
   public String getPersonalEmail() {
     return personalEmail;
@@ -369,13 +374,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * The other email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
    **/
   public ExternalContact otherEmail(String otherEmail) {
     this.otherEmail = otherEmail;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The other email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format")
   @JsonProperty("otherEmail")
   public String getOtherEmail() {
     return otherEmail;
@@ -403,13 +409,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * User information for a Twitter account
    **/
   public ExternalContact twitterId(TwitterId twitterId) {
     this.twitterId = twitterId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "User information for a Twitter account")
   @JsonProperty("twitterId")
   public TwitterId getTwitterId() {
     return twitterId;
@@ -437,13 +444,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * User information for a WhatsApp account
    **/
   public ExternalContact whatsAppId(WhatsAppId whatsAppId) {
     this.whatsAppId = whatsAppId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "User information for a WhatsApp account")
   @JsonProperty("whatsAppId")
   public WhatsAppId getWhatsAppId() {
     return whatsAppId;
@@ -454,13 +462,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * User information for a Facebook account
    **/
   public ExternalContact facebookId(FacebookId facebookId) {
     this.facebookId = facebookId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "User information for a Facebook account")
   @JsonProperty("facebookId")
   public FacebookId getFacebookId() {
     return facebookId;
@@ -489,14 +498,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
-   * User information for an Apple account
+   * User information for an Apple account. Max: 10 ids
    **/
   public ExternalContact appleOpaqueIds(List<AppleOpaqueId> appleOpaqueIds) {
     this.appleOpaqueIds = appleOpaqueIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User information for an Apple account")
+  @ApiModelProperty(example = "null", value = "User information for an Apple account. Max: 10 ids")
   @JsonProperty("appleOpaqueIds")
   public List<AppleOpaqueId> getAppleOpaqueIds() {
     return appleOpaqueIds;
@@ -507,14 +516,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
-   * A list of external identifiers that identify this contact in an external system
+   * A list of external identifiers that identify this contact in an external system. Max: 10 ids
    **/
   public ExternalContact externalIds(List<ExternalId> externalIds) {
     this.externalIds = externalIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of external identifiers that identify this contact in an external system")
+  @ApiModelProperty(example = "null", value = "A list of external identifiers that identify this contact in an external system. Max: 10 ids")
   @JsonProperty("externalIds")
   public List<ExternalId> getExternalIds() {
     return externalIds;
@@ -613,14 +622,14 @@ public class ExternalContact  implements Serializable {
 
 
   /**
-   * A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
+   * A string that identifies an external system-of-record resource that may have more detailed information on the contact. Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 1000 characters.
    **/
   public ExternalContact externalSystemUrl(String externalSystemUrl) {
     this.externalSystemUrl = externalSystemUrl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.")
+  @ApiModelProperty(example = "null", value = "A string that identifies an external system-of-record resource that may have more detailed information on the contact. Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 1000 characters.")
   @JsonProperty("externalSystemUrl")
   public String getExternalSystemUrl() {
     return externalSystemUrl;

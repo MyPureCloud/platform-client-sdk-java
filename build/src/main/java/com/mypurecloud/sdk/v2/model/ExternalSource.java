@@ -54,14 +54,14 @@ public class ExternalSource  implements Serializable {
 
 
   /**
-   * The name of the external source.
+   * The name of the external source. Must be unique. Max: 200 characters. Leading and trailing whitespace stripped.
    **/
   public ExternalSource name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of the external source.")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the external source. Must be unique. Max: 200 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("name")
   public String getName() {
     return name;

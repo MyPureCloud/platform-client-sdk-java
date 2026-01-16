@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ChunkSearchRegisterRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
@@ -149,6 +150,7 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseCategoryRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentVariationRequest;
@@ -4335,6 +4337,89 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CategoryResponse> response = (ApiResponse<CategoryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Register chunk search result.
+   * 
+   * @param knowledgeBaseId Knowledge Base ID (required)
+   * @param searchId Unique identifier of search request (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchKnowledgeKnowledgebaseChunksSearchSearchId(String knowledgeBaseId, String searchId, ChunkSearchRegisterRequest body) throws IOException, ApiException {
+     patchKnowledgeKnowledgebaseChunksSearchSearchId(createPatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest(knowledgeBaseId, searchId, body));
+  }
+
+  /**
+   * Register chunk search result.
+   * 
+   * @param knowledgeBaseId Knowledge Base ID (required)
+   * @param searchId Unique identifier of search request (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchKnowledgeKnowledgebaseChunksSearchSearchIdWithHttpInfo(String knowledgeBaseId, String searchId, ChunkSearchRegisterRequest body) throws IOException {
+    return patchKnowledgeKnowledgebaseChunksSearchSearchId(createPatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest(knowledgeBaseId, searchId, body).withHttpInfo());
+  }
+
+  private PatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest createPatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest(String knowledgeBaseId, String searchId, ChunkSearchRegisterRequest body) {
+    return PatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSearchId(searchId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Register chunk search result.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchKnowledgeKnowledgebaseChunksSearchSearchId(PatchKnowledgeKnowledgebaseChunksSearchSearchIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Register chunk search result.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchKnowledgeKnowledgebaseChunksSearchSearchId(ApiRequest<ChunkSearchRegisterRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

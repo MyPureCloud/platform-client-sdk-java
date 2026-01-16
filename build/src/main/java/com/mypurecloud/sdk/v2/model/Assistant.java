@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Copilot;
 import com.mypurecloud.sdk.v2.model.GoogleDialogflowConfig;
 import com.mypurecloud.sdk.v2.model.KnowledgeSuggestionConfig;
@@ -88,6 +89,7 @@ public class Assistant  implements Serializable {
   private StateEnum state = null;
   private Copilot copilot = null;
   private String selfUri = null;
+  private AddressableEntityRef variationParent = null;
 
   public Assistant() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -223,6 +225,13 @@ public class Assistant  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The parent assistant if this assistant is a variation of an assistant")
+  @JsonProperty("variationParent")
+  public AddressableEntityRef getVariationParent() {
+    return variationParent;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -244,12 +253,13 @@ public class Assistant  implements Serializable {
             Objects.equals(this.knowledgeSuggestionConfig, assistant.knowledgeSuggestionConfig) &&
             Objects.equals(this.state, assistant.state) &&
             Objects.equals(this.copilot, assistant.copilot) &&
-            Objects.equals(this.selfUri, assistant.selfUri);
+            Objects.equals(this.selfUri, assistant.selfUri) &&
+            Objects.equals(this.variationParent, assistant.variationParent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, googleDialogflowConfig, transcriptionConfig, knowledgeSuggestionConfig, state, copilot, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, googleDialogflowConfig, transcriptionConfig, knowledgeSuggestionConfig, state, copilot, selfUri, variationParent);
   }
 
   @Override
@@ -269,6 +279,7 @@ public class Assistant  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    copilot: ").append(toIndentedString(copilot)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    variationParent: ").append(toIndentedString(variationParent)).append("\n");
     sb.append("}");
     return sb.toString();
   }

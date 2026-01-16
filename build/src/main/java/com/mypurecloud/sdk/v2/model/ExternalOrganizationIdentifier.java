@@ -130,14 +130,14 @@ public class ExternalOrganizationIdentifier  implements Serializable {
 
 
   /**
-   * The string value of the identifier. Will vary in syntax by type.
+   * The string value of the identifier. Will vary in syntax by type. Max: 255 characters.
    **/
   public ExternalOrganizationIdentifier value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The string value of the identifier. Will vary in syntax by type.")
+  @ApiModelProperty(example = "null", required = true, value = "The string value of the identifier. Will vary in syntax by type. Max: 255 characters.")
   @JsonProperty("value")
   public String getValue() {
     return value;

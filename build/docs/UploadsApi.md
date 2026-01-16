@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**getKnowledgeKnowledgebaseUploadsUrlsJob**](UploadsApi#getKnowledgeKnowledgebaseUploadsUrlsJob) | Get content upload from URL job status |
 | [**postGamificationContestsUploadsPrizeimages**](UploadsApi#postGamificationContestsUploadsPrizeimages) | Generates pre-signed URL to upload a prize image for gamification contests |
+| [**postGuidesUploads**](UploadsApi#postGuidesUploads) | Generate presigned URL for uploading a file content to generate guide |
 | [**postIntegrationsActionDraftFunctionUpload**](UploadsApi#postIntegrationsActionDraftFunctionUpload) | Create upload presigned URL for draft function package file. |
 | [**postKnowledgeDocumentuploads**](UploadsApi#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
 | [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](UploadsApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | Create content upload from URL job |
@@ -129,6 +130,65 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**GamificationContestPrizeImageUploadUrlRequest**](GamificationContestPrizeImageUploadUrlRequest)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
+
+
+# **postGuidesUploads**
+
+
+> [UploadUrlResponse](UploadUrlResponse) postGuidesUploads(body)
+
+Generate presigned URL for uploading a file content to generate guide
+
+Wraps POST /api/v2/guides/uploads  
+
+Requires ALL permissions: 
+
+* aiStudio:guide:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+UploadUrlRequest body = new UploadUrlRequest(); // UploadUrlRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postGuidesUploads(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#postGuidesUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query | 
 {: class="table-striped"}
 
 
@@ -615,4 +675,4 @@ try {
 [**UploadUrlResponse**](UploadUrlResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

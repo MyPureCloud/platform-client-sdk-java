@@ -93,14 +93,14 @@ public class ExternalOrganization  implements Serializable {
 
 
   /**
-   * The name of the company.
+   * The name of the company. Max: 1000 characters. Leading and trailing whitespace stripped.
    **/
   public ExternalOrganization name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of the company.")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the company. Max: 1000 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -441,14 +441,14 @@ public class ExternalOrganization  implements Serializable {
 
 
   /**
-   * A list of external identifiers that identify this External Organization in an external system
+   * A list of external identifiers that identify this External Organization in an external system. Max 10 items.
    **/
   public ExternalOrganization externalIds(List<ExternalId> externalIds) {
     this.externalIds = externalIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of external identifiers that identify this External Organization in an external system")
+  @ApiModelProperty(example = "null", value = "A list of external identifiers that identify this External Organization in an external system. Max 10 items.")
   @JsonProperty("externalIds")
   public List<ExternalId> getExternalIds() {
     return externalIds;

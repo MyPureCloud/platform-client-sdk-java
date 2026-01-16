@@ -50,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeGuestSessionDocumentsSearchSearchId) | Update search result. |
 | [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | Update knowledge base |
 | [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi#patchKnowledgeKnowledgebaseCategory) | Update category |
+| [**patchKnowledgeKnowledgebaseChunksSearchSearchId**](KnowledgeApi#patchKnowledgeKnowledgebaseChunksSearchSearchId) | Register chunk search result. |
 | [**patchKnowledgeKnowledgebaseDocument**](KnowledgeApi#patchKnowledgeKnowledgebaseDocument) | Update document. |
 | [**patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId) | Update feedback on a document |
 | [**patchKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentVariation) | Update a variation for a document. |
@@ -3032,6 +3033,68 @@ try {
 [**CategoryResponse**](CategoryResponse)
 
 
+# **patchKnowledgeKnowledgebaseChunksSearchSearchId**
+
+
+> Void patchKnowledgeKnowledgebaseChunksSearchSearchId(knowledgeBaseId, searchId, body)
+
+Register chunk search result.
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}  
+
+Requires ALL permissions: 
+
+* knowledge:knowledgebase:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
+String searchId = "searchId_example"; // String | Unique identifier of search request
+ChunkSearchRegisterRequest body = new ChunkSearchRegisterRequest(); // ChunkSearchRegisterRequest | 
+try {
+    apiInstance.patchKnowledgeKnowledgebaseChunksSearchSearchId(knowledgeBaseId, searchId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#patchKnowledgeKnowledgebaseChunksSearchSearchId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge Base ID | 
+| **searchId** | **String**| Unique identifier of search request | 
+| **body** | [**ChunkSearchRegisterRequest**](ChunkSearchRegisterRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **patchKnowledgeKnowledgebaseDocument**
 
 
@@ -5892,4 +5955,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

@@ -34,6 +34,7 @@ public class RecordingEmailMessage  implements Serializable {
   private List<EmailAddress> cc = null;
   private List<EmailAddress> bcc = null;
   private EmailAddress from = null;
+  private EmailAddress replyTo = null;
   private String subject = null;
   private List<EmailAttachment> attachments = null;
   private Date time = null;
@@ -168,6 +169,24 @@ public class RecordingEmailMessage  implements Serializable {
 
 
   /**
+   * Indicates the address to which the author of the message suggests that replies be sent
+   **/
+  public RecordingEmailMessage replyTo(EmailAddress replyTo) {
+    this.replyTo = replyTo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the address to which the author of the message suggests that replies be sent")
+  @JsonProperty("replyTo")
+  public EmailAddress getReplyTo() {
+    return replyTo;
+  }
+  public void setReplyTo(EmailAddress replyTo) {
+    this.replyTo = replyTo;
+  }
+
+
+  /**
    **/
   public RecordingEmailMessage subject(String subject) {
     this.subject = subject;
@@ -236,6 +255,7 @@ public class RecordingEmailMessage  implements Serializable {
             Objects.equals(this.cc, recordingEmailMessage.cc) &&
             Objects.equals(this.bcc, recordingEmailMessage.bcc) &&
             Objects.equals(this.from, recordingEmailMessage.from) &&
+            Objects.equals(this.replyTo, recordingEmailMessage.replyTo) &&
             Objects.equals(this.subject, recordingEmailMessage.subject) &&
             Objects.equals(this.attachments, recordingEmailMessage.attachments) &&
             Objects.equals(this.time, recordingEmailMessage.time);
@@ -243,7 +263,7 @@ public class RecordingEmailMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(htmlBody, textBody, id, to, cc, bcc, from, subject, attachments, time);
+    return Objects.hash(htmlBody, textBody, id, to, cc, bcc, from, replyTo, subject, attachments, time);
   }
 
   @Override
@@ -258,6 +278,7 @@ public class RecordingEmailMessage  implements Serializable {
     sb.append("    cc: ").append(toIndentedString(cc)).append("\n");
     sb.append("    bcc: ").append(toIndentedString(bcc)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
+    sb.append("    replyTo: ").append(toIndentedString(replyTo)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");

@@ -103,6 +103,54 @@ public class CreateWorkPlan  implements Serializable {
     }
   }
   private ShiftStartVarianceTypeEnum shiftStartVarianceType = null;
+
+  private static class ShiftStartVariancePeriodEnumDeserializer extends StdDeserializer<ShiftStartVariancePeriodEnum> {
+    public ShiftStartVariancePeriodEnumDeserializer() {
+      super(ShiftStartVariancePeriodEnumDeserializer.class);
+    }
+
+    @Override
+    public ShiftStartVariancePeriodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ShiftStartVariancePeriodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The length of the period over which the maximum shift start time variance is applied
+   */
+ @JsonDeserialize(using = ShiftStartVariancePeriodEnumDeserializer.class)
+  public enum ShiftStartVariancePeriodEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    WEEKLY("Weekly"),
+    PLANNINGPERIOD("PlanningPeriod");
+
+    private String value;
+
+    ShiftStartVariancePeriodEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ShiftStartVariancePeriodEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ShiftStartVariancePeriodEnum value : ShiftStartVariancePeriodEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ShiftStartVariancePeriodEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ShiftStartVariancePeriodEnum shiftStartVariancePeriod = null;
   private ListWrapperShiftStartVariance shiftStartVariances = null;
   private List<CreateWorkPlanShift> shifts = null;
   private List<UserReference> agents = null;
@@ -602,6 +650,24 @@ public class CreateWorkPlan  implements Serializable {
 
 
   /**
+   * The length of the period over which the maximum shift start time variance is applied
+   **/
+  public CreateWorkPlan shiftStartVariancePeriod(ShiftStartVariancePeriodEnum shiftStartVariancePeriod) {
+    this.shiftStartVariancePeriod = shiftStartVariancePeriod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The length of the period over which the maximum shift start time variance is applied")
+  @JsonProperty("shiftStartVariancePeriod")
+  public ShiftStartVariancePeriodEnum getShiftStartVariancePeriod() {
+    return shiftStartVariancePeriod;
+  }
+  public void setShiftStartVariancePeriod(ShiftStartVariancePeriodEnum shiftStartVariancePeriod) {
+    this.shiftStartVariancePeriod = shiftStartVariancePeriod;
+  }
+
+
+  /**
    * Variance in minutes among start times of shifts in this work plan
    **/
   public CreateWorkPlan shiftStartVariances(ListWrapperShiftStartVariance shiftStartVariances) {
@@ -692,6 +758,7 @@ public class CreateWorkPlan  implements Serializable {
             Objects.equals(this.maximumWorkingWeekendsPerPlanningPeriod, createWorkPlan.maximumWorkingWeekendsPerPlanningPeriod) &&
             Objects.equals(this.optionalDays, createWorkPlan.optionalDays) &&
             Objects.equals(this.shiftStartVarianceType, createWorkPlan.shiftStartVarianceType) &&
+            Objects.equals(this.shiftStartVariancePeriod, createWorkPlan.shiftStartVariancePeriod) &&
             Objects.equals(this.shiftStartVariances, createWorkPlan.shiftStartVariances) &&
             Objects.equals(this.shifts, createWorkPlan.shifts) &&
             Objects.equals(this.agents, createWorkPlan.agents);
@@ -699,7 +766,7 @@ public class CreateWorkPlan  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, enabled, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, minimumConsecutiveNonWorkingMinutesPerWeek, constrainMaximumConsecutiveWorkingWeekends, maximumConsecutiveWorkingWeekends, minimumWorkingDaysPerWeek, constrainMaximumConsecutiveWorkingDays, maximumConsecutiveWorkingDays, minimumShiftStartDistanceMinutes, minimumDaysOffPerPlanningPeriod, maximumDaysOffPerPlanningPeriod, minimumPaidMinutesPerPlanningPeriod, maximumPaidMinutesPerPlanningPeriod, constrainMaximumWorkingWeekendsPerPlanningPeriod, maximumWorkingWeekendsPerPlanningPeriod, optionalDays, shiftStartVarianceType, shiftStartVariances, shifts, agents);
+    return Objects.hash(name, enabled, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, minimumConsecutiveNonWorkingMinutesPerWeek, constrainMaximumConsecutiveWorkingWeekends, maximumConsecutiveWorkingWeekends, minimumWorkingDaysPerWeek, constrainMaximumConsecutiveWorkingDays, maximumConsecutiveWorkingDays, minimumShiftStartDistanceMinutes, minimumDaysOffPerPlanningPeriod, maximumDaysOffPerPlanningPeriod, minimumPaidMinutesPerPlanningPeriod, maximumPaidMinutesPerPlanningPeriod, constrainMaximumWorkingWeekendsPerPlanningPeriod, maximumWorkingWeekendsPerPlanningPeriod, optionalDays, shiftStartVarianceType, shiftStartVariancePeriod, shiftStartVariances, shifts, agents);
   }
 
   @Override
@@ -734,6 +801,7 @@ public class CreateWorkPlan  implements Serializable {
     sb.append("    maximumWorkingWeekendsPerPlanningPeriod: ").append(toIndentedString(maximumWorkingWeekendsPerPlanningPeriod)).append("\n");
     sb.append("    optionalDays: ").append(toIndentedString(optionalDays)).append("\n");
     sb.append("    shiftStartVarianceType: ").append(toIndentedString(shiftStartVarianceType)).append("\n");
+    sb.append("    shiftStartVariancePeriod: ").append(toIndentedString(shiftStartVariancePeriod)).append("\n");
     sb.append("    shiftStartVariances: ").append(toIndentedString(shiftStartVariances)).append("\n");
     sb.append("    shifts: ").append(toIndentedString(shifts)).append("\n");
     sb.append("    agents: ").append(toIndentedString(agents)).append("\n");

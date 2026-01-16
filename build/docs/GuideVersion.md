@@ -14,6 +14,7 @@
 | **dateModified** | [**Date**](Date) | The date and time the guide version was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **variables** | [**List&lt;Variable&gt;**](Variable) | The variables associated with this version of the guide. Includes input variables (provided) and output variables (captured during execution). |  [optional] |
 | **resources** | [**GuideVersionResources**](GuideVersionResources) | The resources associated with this version of the guide. |  [optional] |
+| **knowledgeSettings** | [**AuthoringKnowledgeSettings**](AuthoringKnowledgeSettings) | The knowledge settings associated with this version of the guide. |  [optional] |
 
 
 ## Enum: StateEnum
@@ -28,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:243.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_

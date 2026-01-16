@@ -36,13 +36,14 @@ public class ContactAddress  implements Serializable {
 
   
   /**
+   * Max: 200 characters. Leading and trailing whitespace stripped.
    **/
   public ContactAddress address1(String address1) {
     this.address1 = address1;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Max: 200 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("address1")
   public String getAddress1() {
     return address1;
@@ -53,13 +54,14 @@ public class ContactAddress  implements Serializable {
 
 
   /**
+   * Max: 200 characters. Leading and trailing whitespace stripped.
    **/
   public ContactAddress address2(String address2) {
     this.address2 = address2;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Max: 200 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("address2")
   public String getAddress2() {
     return address2;
@@ -70,13 +72,14 @@ public class ContactAddress  implements Serializable {
 
 
   /**
+   * Max: 100 characters. Leading and trailing whitespace stripped.
    **/
   public ContactAddress city(String city) {
     this.city = city;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Max: 100 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("city")
   public String getCity() {
     return city;
@@ -87,13 +90,14 @@ public class ContactAddress  implements Serializable {
 
 
   /**
+   * Max: 50 characters. Leading and trailing whitespace stripped.
    **/
   public ContactAddress state(String state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Max: 50 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("state")
   public String getState() {
     return state;
@@ -104,13 +108,14 @@ public class ContactAddress  implements Serializable {
 
 
   /**
+   * Max: 25 characters. Leading and trailing whitespace stripped.
    **/
   public ContactAddress postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Max: 25 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("postalCode")
   public String getPostalCode() {
     return postalCode;
@@ -121,13 +126,14 @@ public class ContactAddress  implements Serializable {
 
 
   /**
+   * Max: 25 characters. Leading and trailing whitespace stripped.
    **/
   public ContactAddress countryCode(String countryCode) {
     this.countryCode = countryCode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Max: 25 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("countryCode")
   public String getCountryCode() {
     return countryCode;

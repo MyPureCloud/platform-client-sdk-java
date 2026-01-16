@@ -32,14 +32,14 @@ public class InstagramScopedId  implements Serializable {
 
   
   /**
-   * The unique page/app-specific scopedId for the user
+   * The unique page/app-specific scopedId for the user. Max: 255 characters. Leading and trailing whitespace stripped.
    **/
   public InstagramScopedId scopedId(String scopedId) {
     this.scopedId = scopedId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The unique page/app-specific scopedId for the user")
+  @ApiModelProperty(example = "null", required = true, value = "The unique page/app-specific scopedId for the user. Max: 255 characters. Leading and trailing whitespace stripped.")
   @JsonProperty("scopedId")
   public String getScopedId() {
     return scopedId;

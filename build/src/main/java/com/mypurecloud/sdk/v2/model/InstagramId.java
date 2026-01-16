@@ -37,14 +37,14 @@ public class InstagramId  implements Serializable {
 
   
   /**
-   * The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with.
+   * The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with. Max 1 id.
    **/
   public InstagramId ids(List<InstagramScopedId> ids) {
     this.ids = ids;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with.")
+  @ApiModelProperty(example = "null", required = true, value = "The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with. Max 1 id.")
   @JsonProperty("ids")
   public List<InstagramScopedId> getIds() {
     return ids;
@@ -55,14 +55,14 @@ public class InstagramId  implements Serializable {
 
 
   /**
-   * The displayName of the person who owns this Instagram account
+   * The displayName of the person who owns this Instagram account. Max: 100 characters.
    **/
   public InstagramId displayName(String displayName) {
     this.displayName = displayName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The displayName of the person who owns this Instagram account")
+  @ApiModelProperty(example = "null", value = "The displayName of the person who owns this Instagram account. Max: 100 characters.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;
@@ -73,14 +73,14 @@ public class InstagramId  implements Serializable {
 
 
   /**
-   * The handle of the person who owns this Instagram account
+   * The handle of the person who owns this Instagram account. Max: 100 characters.
    **/
   public InstagramId handle(String handle) {
     this.handle = handle;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The handle of the person who owns this Instagram account")
+  @ApiModelProperty(example = "null", value = "The handle of the person who owns this Instagram account. Max: 100 characters.")
   @JsonProperty("handle")
   public String getHandle() {
     return handle;
