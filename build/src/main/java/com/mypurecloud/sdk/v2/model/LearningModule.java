@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
+import com.mypurecloud.sdk.v2.model.LearningModuleAutoAssignResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleInformStep;
 import com.mypurecloud.sdk.v2.model.LearningModuleReassignSummary;
@@ -95,6 +96,7 @@ public class LearningModule  implements Serializable {
   private LearningModuleRule rule = null;
   private Boolean enforceContentOrder = null;
   private ReviewAssessmentResults reviewAssessmentResults = null;
+  private LearningModuleAutoAssignResponse autoAssign = null;
   private String selfUri = null;
   private Boolean isArchived = null;
   private Boolean isPublished = null;
@@ -348,6 +350,24 @@ public class LearningModule  implements Serializable {
   }
 
 
+  /**
+   * The auto assignment settings for this module
+   **/
+  public LearningModule autoAssign(LearningModuleAutoAssignResponse autoAssign) {
+    this.autoAssign = autoAssign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The auto assignment settings for this module")
+  @JsonProperty("autoAssign")
+  public LearningModuleAutoAssignResponse getAutoAssign() {
+    return autoAssign;
+  }
+  public void setAutoAssign(LearningModuleAutoAssignResponse autoAssign) {
+    this.autoAssign = autoAssign;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -572,6 +592,7 @@ public class LearningModule  implements Serializable {
             Objects.equals(this.rule, learningModule.rule) &&
             Objects.equals(this.enforceContentOrder, learningModule.enforceContentOrder) &&
             Objects.equals(this.reviewAssessmentResults, learningModule.reviewAssessmentResults) &&
+            Objects.equals(this.autoAssign, learningModule.autoAssign) &&
             Objects.equals(this.selfUri, learningModule.selfUri) &&
             Objects.equals(this.isArchived, learningModule.isArchived) &&
             Objects.equals(this.isPublished, learningModule.isPublished) &&
@@ -589,7 +610,7 @@ public class LearningModule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, excludedFromCatalog, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, enforceContentOrder, reviewAssessmentResults, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, lengthInMinutes, archivalMode);
+    return Objects.hash(id, name, excludedFromCatalog, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, enforceContentOrder, reviewAssessmentResults, autoAssign, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, lengthInMinutes, archivalMode);
   }
 
   @Override
@@ -610,6 +631,7 @@ public class LearningModule  implements Serializable {
     sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
     sb.append("    enforceContentOrder: ").append(toIndentedString(enforceContentOrder)).append("\n");
     sb.append("    reviewAssessmentResults: ").append(toIndentedString(reviewAssessmentResults)).append("\n");
+    sb.append("    autoAssign: ").append(toIndentedString(autoAssign)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    isArchived: ").append(toIndentedString(isArchived)).append("\n");
     sb.append("    isPublished: ").append(toIndentedString(isPublished)).append("\n");

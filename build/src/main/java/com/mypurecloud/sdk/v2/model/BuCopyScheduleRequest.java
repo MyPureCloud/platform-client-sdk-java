@@ -25,6 +25,7 @@ public class BuCopyScheduleRequest  implements Serializable {
   
   private String description = null;
   private LocalDate weekDate = null;
+  private Boolean includeForecast = null;
 
   public BuCopyScheduleRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -68,6 +69,24 @@ public class BuCopyScheduleRequest  implements Serializable {
   }
 
 
+  /**
+   * Whether to include the forecast while copying the schedule
+   **/
+  public BuCopyScheduleRequest includeForecast(Boolean includeForecast) {
+    this.includeForecast = includeForecast;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to include the forecast while copying the schedule")
+  @JsonProperty("includeForecast")
+  public Boolean getIncludeForecast() {
+    return includeForecast;
+  }
+  public void setIncludeForecast(Boolean includeForecast) {
+    this.includeForecast = includeForecast;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -79,12 +98,13 @@ public class BuCopyScheduleRequest  implements Serializable {
     BuCopyScheduleRequest buCopyScheduleRequest = (BuCopyScheduleRequest) o;
 
     return Objects.equals(this.description, buCopyScheduleRequest.description) &&
-            Objects.equals(this.weekDate, buCopyScheduleRequest.weekDate);
+            Objects.equals(this.weekDate, buCopyScheduleRequest.weekDate) &&
+            Objects.equals(this.includeForecast, buCopyScheduleRequest.includeForecast);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, weekDate);
+    return Objects.hash(description, weekDate, includeForecast);
   }
 
   @Override
@@ -94,6 +114,7 @@ public class BuCopyScheduleRequest  implements Serializable {
     
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
+    sb.append("    includeForecast: ").append(toIndentedString(includeForecast)).append("\n");
     sb.append("}");
     return sb.toString();
   }

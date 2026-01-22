@@ -17,8 +17,9 @@
 | **externalLinks** | **List&lt;String&gt;** | The list of external links related to the appointment |  [optional] |
 | **location** | **String** | The location of the appointment |  [optional] |
 | **shareInsightsData** | **Boolean** | Whether to share the insight data |  [optional] |
+| **addToSchedule** | **Boolean** | If True, adds the appointment to their schedule |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

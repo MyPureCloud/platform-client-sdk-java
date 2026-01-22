@@ -87,6 +87,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
   private List<String> externalLinks = null;
   private String location = null;
   private Boolean shareInsightsData = null;
+  private Boolean addToSchedule = null;
 
   public UpdateCoachingAppointmentRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -295,6 +296,24 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
   }
 
 
+  /**
+   * If True, adds the appointment to their schedule
+   **/
+  public UpdateCoachingAppointmentRequest addToSchedule(Boolean addToSchedule) {
+    this.addToSchedule = addToSchedule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If True, adds the appointment to their schedule")
+  @JsonProperty("addToSchedule")
+  public Boolean getAddToSchedule() {
+    return addToSchedule;
+  }
+  public void setAddToSchedule(Boolean addToSchedule) {
+    this.addToSchedule = addToSchedule;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -315,12 +334,13 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
             Objects.equals(this.wfmSchedule, updateCoachingAppointmentRequest.wfmSchedule) &&
             Objects.equals(this.externalLinks, updateCoachingAppointmentRequest.externalLinks) &&
             Objects.equals(this.location, updateCoachingAppointmentRequest.location) &&
-            Objects.equals(this.shareInsightsData, updateCoachingAppointmentRequest.shareInsightsData);
+            Objects.equals(this.shareInsightsData, updateCoachingAppointmentRequest.shareInsightsData) &&
+            Objects.equals(this.addToSchedule, updateCoachingAppointmentRequest.addToSchedule);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, dateStart, lengthInMinutes, conversationIds, documentIds, status, wfmSchedule, externalLinks, location, shareInsightsData);
+    return Objects.hash(name, description, dateStart, lengthInMinutes, conversationIds, documentIds, status, wfmSchedule, externalLinks, location, shareInsightsData, addToSchedule);
   }
 
   @Override
@@ -339,6 +359,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     sb.append("    externalLinks: ").append(toIndentedString(externalLinks)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    shareInsightsData: ").append(toIndentedString(shareInsightsData)).append("\n");
+    sb.append("    addToSchedule: ").append(toIndentedString(addToSchedule)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
 import com.mypurecloud.sdk.v2.model.CreateKpiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.CreateRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
@@ -11824,7 +11825,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RoutingSkill postRoutingSkills(RoutingSkill body) throws IOException, ApiException {
+  public RoutingSkill postRoutingSkills(CreateRoutingSkill body) throws IOException, ApiException {
     return  postRoutingSkills(createPostRoutingSkillsRequest(body));
   }
 
@@ -11835,11 +11836,11 @@ public class RoutingApi {
    * @return RoutingSkill
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingSkill> postRoutingSkillsWithHttpInfo(RoutingSkill body) throws IOException {
+  public ApiResponse<RoutingSkill> postRoutingSkillsWithHttpInfo(CreateRoutingSkill body) throws IOException {
     return postRoutingSkills(createPostRoutingSkillsRequest(body).withHttpInfo());
   }
 
-  private PostRoutingSkillsRequest createPostRoutingSkillsRequest(RoutingSkill body) {
+  private PostRoutingSkillsRequest createPostRoutingSkillsRequest(CreateRoutingSkill body) {
     return PostRoutingSkillsRequest.builder()
             .withBody(body)
 
@@ -11872,7 +11873,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingSkill> postRoutingSkills(ApiRequest<RoutingSkill> request) throws IOException {
+  public ApiResponse<RoutingSkill> postRoutingSkills(ApiRequest<CreateRoutingSkill> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<RoutingSkill>() {});
     }

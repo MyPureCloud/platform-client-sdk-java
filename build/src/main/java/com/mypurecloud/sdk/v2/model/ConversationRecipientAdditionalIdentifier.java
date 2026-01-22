@@ -48,7 +48,8 @@ public class ConversationRecipientAdditionalIdentifier  implements Serializable 
     UNKNOWN("Unknown"),
     TOPIC("Topic"),
     INGESTIONRULE("IngestionRule"),
-    INGESTIONRULEVERSION("IngestionRuleVersion");
+    INGESTIONRULEVERSION("IngestionRuleVersion"),
+    PHONENUMBER("PhoneNumber");
 
     private String value;
 

@@ -2261,4 +2261,4 @@ try {
 [**TagValue**](TagValue)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

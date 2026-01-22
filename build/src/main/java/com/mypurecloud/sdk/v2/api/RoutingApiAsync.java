@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
 import com.mypurecloud.sdk.v2.model.CreateKpiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.CreateRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
@@ -10797,7 +10798,7 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingSkill>> postRoutingSkillsAsync(ApiRequest<RoutingSkill> request, final AsyncApiCallback<ApiResponse<RoutingSkill>> callback) {
+  public Future<ApiResponse<RoutingSkill>> postRoutingSkillsAsync(ApiRequest<CreateRoutingSkill> request, final AsyncApiCallback<ApiResponse<RoutingSkill>> callback) {
     try {
       final SettableFuture<ApiResponse<RoutingSkill>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

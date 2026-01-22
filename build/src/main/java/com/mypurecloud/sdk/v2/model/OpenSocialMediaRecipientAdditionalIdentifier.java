@@ -44,7 +44,8 @@ public class OpenSocialMediaRecipientAdditionalIdentifier  implements Serializab
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TOPIC("Topic"),
     INGESTIONRULE("IngestionRule"),
-    INGESTIONRULEVERSION("IngestionRuleVersion");
+    INGESTIONRULEVERSION("IngestionRuleVersion"),
+    PHONENUMBER("PhoneNumber");
 
     private String value;
 

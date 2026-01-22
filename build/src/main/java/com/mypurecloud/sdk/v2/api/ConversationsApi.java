@@ -126,6 +126,7 @@ import com.mypurecloud.sdk.v2.model.InternalMessageData;
 import com.mypurecloud.sdk.v2.model.InternalMessageDataEntityListing;
 import com.mypurecloud.sdk.v2.model.InternalMessageRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
+import com.mypurecloud.sdk.v2.model.MandatoryPostCallActionInput;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.MeetingIdRecord;
@@ -214,6 +215,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJob
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantCommunicationPostflowactionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest;
@@ -346,6 +348,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallConferenceReques
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantCommunicationPostflowactionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantUserUserIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackRequest;
@@ -891,6 +894,89 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversationParticipantFlaggedreason(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Remove mandatory post call actions.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsCallParticipantCommunicationPostflowaction(String conversationId, String participantId, String communicationId) throws IOException, ApiException {
+     deleteConversationsCallParticipantCommunicationPostflowaction(createDeleteConversationsCallParticipantCommunicationPostflowactionRequest(conversationId, participantId, communicationId));
+  }
+
+  /**
+   * Remove mandatory post call actions.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsCallParticipantCommunicationPostflowactionWithHttpInfo(String conversationId, String participantId, String communicationId) throws IOException {
+    return deleteConversationsCallParticipantCommunicationPostflowaction(createDeleteConversationsCallParticipantCommunicationPostflowactionRequest(conversationId, participantId, communicationId).withHttpInfo());
+  }
+
+  private DeleteConversationsCallParticipantCommunicationPostflowactionRequest createDeleteConversationsCallParticipantCommunicationPostflowactionRequest(String conversationId, String participantId, String communicationId) {
+    return DeleteConversationsCallParticipantCommunicationPostflowactionRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withCommunicationId(communicationId)
+
+            .build();
+  }
+
+  /**
+   * Remove mandatory post call actions.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsCallParticipantCommunicationPostflowaction(DeleteConversationsCallParticipantCommunicationPostflowactionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove mandatory post call actions.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsCallParticipantCommunicationPostflowaction(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -11750,6 +11836,93 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Set mandatory post call actions.  If both values are null or blank error will occur.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @param body Action (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsCallParticipantCommunicationPostflowaction(String conversationId, String participantId, String communicationId, MandatoryPostCallActionInput body) throws IOException, ApiException {
+     patchConversationsCallParticipantCommunicationPostflowaction(createPatchConversationsCallParticipantCommunicationPostflowactionRequest(conversationId, participantId, communicationId, body));
+  }
+
+  /**
+   * Set mandatory post call actions.  If both values are null or blank error will occur.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @param body Action (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsCallParticipantCommunicationPostflowactionWithHttpInfo(String conversationId, String participantId, String communicationId, MandatoryPostCallActionInput body) throws IOException {
+    return patchConversationsCallParticipantCommunicationPostflowaction(createPatchConversationsCallParticipantCommunicationPostflowactionRequest(conversationId, participantId, communicationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsCallParticipantCommunicationPostflowactionRequest createPatchConversationsCallParticipantCommunicationPostflowactionRequest(String conversationId, String participantId, String communicationId, MandatoryPostCallActionInput body) {
+    return PatchConversationsCallParticipantCommunicationPostflowactionRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withCommunicationId(communicationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Set mandatory post call actions.  If both values are null or blank error will occur.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsCallParticipantCommunicationPostflowaction(PatchConversationsCallParticipantCommunicationPostflowactionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Set mandatory post call actions.  If both values are null or blank error will occur.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsCallParticipantCommunicationPostflowaction(ApiRequest<MandatoryPostCallActionInput> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

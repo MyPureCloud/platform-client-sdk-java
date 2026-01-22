@@ -37,6 +37,7 @@ public class EvaluationForm  implements Serializable {
   private List<EvaluationQuestionGroup> questionGroups = null;
   private DomainEntityListingEvaluationForm publishedVersions = null;
   private EvaluationSettings evaluationSettings = null;
+  private String latestVersionFormName = null;
   private AiScoringSettings aiScoring = null;
   private String selfUri = null;
 
@@ -178,6 +179,24 @@ public class EvaluationForm  implements Serializable {
   }
 
 
+  /**
+   * The name of the form's most recently published version
+   **/
+  public EvaluationForm latestVersionFormName(String latestVersionFormName) {
+    this.latestVersionFormName = latestVersionFormName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name of the form's most recently published version")
+  @JsonProperty("latestVersionFormName")
+  public String getLatestVersionFormName() {
+    return latestVersionFormName;
+  }
+  public void setLatestVersionFormName(String latestVersionFormName) {
+    this.latestVersionFormName = latestVersionFormName;
+  }
+
+
   @ApiModelProperty(example = "null", value = "AI scoring settings for the evaluation form.")
   @JsonProperty("aiScoring")
   public AiScoringSettings getAiScoring() {
@@ -210,13 +229,14 @@ public class EvaluationForm  implements Serializable {
             Objects.equals(this.questionGroups, evaluationForm.questionGroups) &&
             Objects.equals(this.publishedVersions, evaluationForm.publishedVersions) &&
             Objects.equals(this.evaluationSettings, evaluationForm.evaluationSettings) &&
+            Objects.equals(this.latestVersionFormName, evaluationForm.latestVersionFormName) &&
             Objects.equals(this.aiScoring, evaluationForm.aiScoring) &&
             Objects.equals(this.selfUri, evaluationForm.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, publishedVersions, evaluationSettings, aiScoring, selfUri);
+    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, publishedVersions, evaluationSettings, latestVersionFormName, aiScoring, selfUri);
   }
 
   @Override
@@ -232,6 +252,7 @@ public class EvaluationForm  implements Serializable {
     sb.append("    questionGroups: ").append(toIndentedString(questionGroups)).append("\n");
     sb.append("    publishedVersions: ").append(toIndentedString(publishedVersions)).append("\n");
     sb.append("    evaluationSettings: ").append(toIndentedString(evaluationSettings)).append("\n");
+    sb.append("    latestVersionFormName: ").append(toIndentedString(latestVersionFormName)).append("\n");
     sb.append("    aiScoring: ").append(toIndentedString(aiScoring)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

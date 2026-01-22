@@ -136,6 +136,7 @@ import com.mypurecloud.sdk.v2.model.InternalMessageData;
 import com.mypurecloud.sdk.v2.model.InternalMessageDataEntityListing;
 import com.mypurecloud.sdk.v2.model.InternalMessageRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
+import com.mypurecloud.sdk.v2.model.MandatoryPostCallActionInput;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.MeetingIdRecord;

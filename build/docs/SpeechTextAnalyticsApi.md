@@ -978,7 +978,7 @@ try {
 # **getSpeechandtextanalyticsDictionaryfeedback**
 
 
-> [DictionaryFeedbackEntityListing](DictionaryFeedbackEntityListing) getSpeechandtextanalyticsDictionaryfeedback(dialect, nextPage, pageSize)
+> [DictionaryFeedbackEntityListing](DictionaryFeedbackEntityListing) getSpeechandtextanalyticsDictionaryfeedback(dialect, transcriptionEngine, nextPage, pageSize)
 
 Get the list of Speech & Text Analytics dictionary feedbacks
 
@@ -1011,10 +1011,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String dialect = en-US; // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+String transcriptionEngine = "transcriptionEngine_example"; // String | Filter by transcription engine
 String nextPage = "nextPage_example"; // String | The key for listing the next page
 Integer pageSize = 500; // Integer | The page size for the listing
 try {
-    DictionaryFeedbackEntityListing result = apiInstance.getSpeechandtextanalyticsDictionaryfeedback(dialect, nextPage, pageSize);
+    DictionaryFeedbackEntityListing result = apiInstance.getSpeechandtextanalyticsDictionaryfeedback(dialect, transcriptionEngine, nextPage, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsDictionaryfeedback");
@@ -1028,6 +1029,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dialect** | **String**| The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] [default to null] 
+| **transcriptionEngine** | **String**| Filter by transcription engine | [optional]<br />**Values**: Genesys, GenesysExtended 
 | **nextPage** | **String**| The key for listing the next page | [optional] 
 | **pageSize** | **Integer**| The page size for the listing | [optional] [default to 500] 
 {: class="table-striped"}
@@ -1337,7 +1339,7 @@ try {
 # **getSpeechandtextanalyticsPrograms**
 
 
-> [ProgramsEntityListing](ProgramsEntityListing) getSpeechandtextanalyticsPrograms(nextPage, pageSize, state)
+> [ProgramsEntityListing](ProgramsEntityListing) getSpeechandtextanalyticsPrograms(nextPage, pageSize, state, name, sortBy, sortOrder)
 
 Get the list of Speech & Text Analytics programs
 
@@ -1372,8 +1374,11 @@ SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String nextPage = "nextPage_example"; // String | The key for listing the next page
 Integer pageSize = 20; // Integer | The page size for the listing
 String state = "state_example"; // String | Program state. Defaults to Latest
+String name = "name_example"; // String | Case insensitive partial name to filter by
+String sortBy = "sortBy_example"; // String | Sort results by. Defaults to name
+String sortOrder = "sortOrder_example"; // String | Sort order. Defaults to asc
 try {
-    ProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsPrograms(nextPage, pageSize, state);
+    ProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsPrograms(nextPage, pageSize, state, name, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsPrograms");
@@ -1389,6 +1394,9 @@ try {
 | **nextPage** | **String**| The key for listing the next page | [optional] 
 | **pageSize** | **Integer**| The page size for the listing | [optional] [default to 20] 
 | **state** | **String**| Program state. Defaults to Latest | [optional]<br />**Values**: Latest, Published 
+| **name** | **String**| Case insensitive partial name to filter by | [optional] 
+| **sortBy** | **String**| Sort results by. Defaults to name | [optional]<br />**Values**: name 
+| **sortOrder** | **String**| Sort order. Defaults to asc | [optional]<br />**Values**: asc, desc 
 {: class="table-striped"}
 
 
@@ -3861,4 +3869,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
 import com.mypurecloud.sdk.v2.model.LearningAssignment;
+import com.mypurecloud.sdk.v2.model.LearningModuleAutoAssignResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleInformStep;
 import com.mypurecloud.sdk.v2.model.LearningModuleReassignSummary;
@@ -96,6 +97,7 @@ public class AssignedLearningModule  implements Serializable {
   private LearningModuleRule rule = null;
   private Boolean enforceContentOrder = null;
   private ReviewAssessmentResults reviewAssessmentResults = null;
+  private LearningModuleAutoAssignResponse autoAssign = null;
   private List<LearningAssignment> currentAssignments = null;
   private String selfUri = null;
   private Boolean isArchived = null;
@@ -352,6 +354,24 @@ public class AssignedLearningModule  implements Serializable {
 
 
   /**
+   * The auto assignment settings for this module
+   **/
+  public AssignedLearningModule autoAssign(LearningModuleAutoAssignResponse autoAssign) {
+    this.autoAssign = autoAssign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The auto assignment settings for this module")
+  @JsonProperty("autoAssign")
+  public LearningModuleAutoAssignResponse getAutoAssign() {
+    return autoAssign;
+  }
+  public void setAutoAssign(LearningModuleAutoAssignResponse autoAssign) {
+    this.autoAssign = autoAssign;
+  }
+
+
+  /**
    * The current assignments for the requested users
    **/
   public AssignedLearningModule currentAssignments(List<LearningAssignment> currentAssignments) {
@@ -593,6 +613,7 @@ public class AssignedLearningModule  implements Serializable {
             Objects.equals(this.rule, assignedLearningModule.rule) &&
             Objects.equals(this.enforceContentOrder, assignedLearningModule.enforceContentOrder) &&
             Objects.equals(this.reviewAssessmentResults, assignedLearningModule.reviewAssessmentResults) &&
+            Objects.equals(this.autoAssign, assignedLearningModule.autoAssign) &&
             Objects.equals(this.currentAssignments, assignedLearningModule.currentAssignments) &&
             Objects.equals(this.selfUri, assignedLearningModule.selfUri) &&
             Objects.equals(this.isArchived, assignedLearningModule.isArchived) &&
@@ -611,7 +632,7 @@ public class AssignedLearningModule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, excludedFromCatalog, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, enforceContentOrder, reviewAssessmentResults, currentAssignments, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, lengthInMinutes, archivalMode);
+    return Objects.hash(id, name, excludedFromCatalog, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, enforceContentOrder, reviewAssessmentResults, autoAssign, currentAssignments, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, lengthInMinutes, archivalMode);
   }
 
   @Override
@@ -632,6 +653,7 @@ public class AssignedLearningModule  implements Serializable {
     sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
     sb.append("    enforceContentOrder: ").append(toIndentedString(enforceContentOrder)).append("\n");
     sb.append("    reviewAssessmentResults: ").append(toIndentedString(reviewAssessmentResults)).append("\n");
+    sb.append("    autoAssign: ").append(toIndentedString(autoAssign)).append("\n");
     sb.append("    currentAssignments: ").append(toIndentedString(currentAssignments)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    isArchived: ").append(toIndentedString(isArchived)).append("\n");

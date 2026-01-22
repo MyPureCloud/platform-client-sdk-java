@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityFormsEvaluation**](QualityApi#getQualityFormsEvaluation) | Get an evaluation form |
 | [**getQualityFormsEvaluationVersions**](QualityApi#getQualityFormsEvaluationVersions) | Gets all the revisions for a specific evaluation. |
 | [**getQualityFormsEvaluations**](QualityApi#getQualityFormsEvaluations) | Get the list of evaluation forms |
+| [**getQualityFormsEvaluationsBulk**](QualityApi#getQualityFormsEvaluationsBulk) | Retrieve a list of evaluation forms by their ids |
 | [**getQualityFormsEvaluationsBulkContexts**](QualityApi#getQualityFormsEvaluationsBulkContexts) | Retrieve a list of the latest published evaluation form versions by context ids |
 | [**getQualityFormsSurvey**](QualityApi#getQualityFormsSurvey) | Get a survey form |
 | [**getQualityFormsSurveyVersions**](QualityApi#getQualityFormsSurveyVersions) | Gets all the revisions for a specific survey. |
@@ -57,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postQualityConversationsAuditsQuery**](QualityApi#postQualityConversationsAuditsQuery) | Create audit query execution |
 | [**postQualityEvaluationsAggregatesQueryMe**](QualityApi#postQualityEvaluationsAggregatesQueryMe) | Query for evaluation aggregates for the current user |
 | [**postQualityEvaluationsScoring**](QualityApi#postQualityEvaluationsScoring) | Score evaluation |
+| [**postQualityEvaluationsSearch**](QualityApi#postQualityEvaluationsSearch) | Search evaluations based along specified criteria |
 | [**postQualityForms**](QualityApi#postQualityForms) | Create an evaluation form. |
 | [**postQualityFormsEvaluations**](QualityApi#postQualityFormsEvaluations) | Create an evaluation form. |
 | [**postQualityFormsSurveys**](QualityApi#postQualityFormsSurveys) | Create a survey form. |
@@ -64,6 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postQualityPublishedforms**](QualityApi#postQualityPublishedforms) | Publish an evaluation form. |
 | [**postQualityPublishedformsEvaluations**](QualityApi#postQualityPublishedformsEvaluations) | Publish an evaluation form. |
 | [**postQualityPublishedformsSurveys**](QualityApi#postQualityPublishedformsSurveys) | Publish a survey form. |
+| [**postQualitySurveys**](QualityApi#postQualitySurveys) | Create a survey for a conversation |
 | [**postQualitySurveysScoring**](QualityApi#postQualitySurveysScoring) | Score survey |
 | [**putQualityCalibration**](QualityApi#putQualityCalibration) | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex |
 | [**putQualityConversationEvaluation**](QualityApi#putQualityConversationEvaluation) | Update an evaluation |
@@ -1869,6 +1872,67 @@ try {
 [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
 
+# **getQualityFormsEvaluationsBulk**
+
+
+> [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing) getQualityFormsEvaluationsBulk(id, includeLatestVersionFormName)
+
+Retrieve a list of evaluation forms by their ids
+
+Wraps GET /api/v2/quality/forms/evaluations/bulk  
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+List<String> id = Arrays.asList(null); // List<String> | A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100
+Boolean includeLatestVersionFormName = false; // Boolean | Whether to include the name of the form's most recently published version
+try {
+    EvaluationFormResponseEntityListing result = apiInstance.getQualityFormsEvaluationsBulk(id, includeLatestVersionFormName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsEvaluationsBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String)| A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100 | 
+| **includeLatestVersionFormName** | **Boolean**| Whether to include the name of the form&#39;s most recently published version | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
+
+
 # **getQualityFormsEvaluationsBulkContexts**
 
 
@@ -3445,6 +3509,67 @@ try {
 [**EvaluationScoringSet**](EvaluationScoringSet)
 
 
+# **postQualityEvaluationsSearch**
+
+
+> [EvaluationSearchResponse](EvaluationSearchResponse) postQualityEvaluationsSearch(body)
+
+Search evaluations based along specified criteria
+
+Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+
+Wraps POST /api/v2/quality/evaluations/search  
+
+Requires ANY permissions: 
+
+* quality:evaluation:searchAny
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+EvaluationSearchRequestDTO body = new EvaluationSearchRequestDTO(); // EvaluationSearchRequestDTO | Evaluation search request
+try {
+    EvaluationSearchResponse result = apiInstance.postQualityEvaluationsSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityEvaluationsSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EvaluationSearchRequestDTO**](EvaluationSearchRequestDTO)| Evaluation search request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EvaluationSearchResponse**](EvaluationSearchResponse)
+
+
 # **postQualityForms**
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
@@ -3866,6 +3991,65 @@ try {
 ### Return type
 
 [**SurveyForm**](SurveyForm)
+
+
+# **postQualitySurveys**
+
+
+> [Survey](Survey) postQualitySurveys(body)
+
+Create a survey for a conversation
+
+Wraps POST /api/v2/quality/surveys  
+
+Requires ANY permissions: 
+
+* quality:survey:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+CreateSurveyRequest body = new CreateSurveyRequest(); // CreateSurveyRequest | Survey creation request
+try {
+    Survey result = apiInstance.postQualitySurveys(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualitySurveys");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateSurveyRequest**](CreateSurveyRequest)| Survey creation request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Survey**](Survey)
 
 
 # **postQualitySurveysScoring**
@@ -4413,4 +4597,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

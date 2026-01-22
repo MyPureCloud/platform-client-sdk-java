@@ -148,6 +148,20 @@ public class GetUsersRulesRequest {
 		}
 	}
 
+	private Boolean enabled;
+	public Boolean getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public GetUsersRulesRequest withEnabled(Boolean enabled) {
+	    this.setEnabled(enabled);
+	    return this;
+	} 
+
 	private String searchTerm;
 	public String getSearchTerm() {
 		return this.searchTerm;
@@ -247,6 +261,9 @@ public class GetUsersRulesRequest {
                 .withQueryParameters("expand", "multi", expand)
         
 
+                .withQueryParameters("enabled", "", enabled)
+        
+
                 .withQueryParameters("searchTerm", "", searchTerm)
         
 
@@ -318,6 +335,11 @@ public class GetUsersRulesRequest {
 	      }
 	      request.setExpand(stringList);
 		    return this;
+		}
+
+		public Builder withEnabled(Boolean enabled) {
+			request.setEnabled(enabled);
+			return this;
 		}
 
 		public Builder withSearchTerm(String searchTerm) {

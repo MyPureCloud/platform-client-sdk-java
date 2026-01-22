@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.Calibration;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
+import com.mypurecloud.sdk.v2.model.CreateSurveyRequest;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Evaluation;
@@ -35,6 +36,8 @@ import com.mypurecloud.sdk.v2.model.EvaluationFormResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationFormResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationSearchRequestDTO;
+import com.mypurecloud.sdk.v2.model.EvaluationSearchResponse;
 import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
 import com.mypurecloud.sdk.v2.model.PublishForm;
 import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
@@ -79,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsBulkContextsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
@@ -105,6 +109,7 @@ import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequ
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationsAuditsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsAggregatesQueryMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsSurveysRequest;
@@ -112,6 +117,7 @@ import com.mypurecloud.sdk.v2.api.request.PostQualityProgramAgentscoringrulesReq
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualitySurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualitySurveysScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityConversationEvaluationRequest;
@@ -2612,6 +2618,88 @@ public class QualityApi {
   }
 
   /**
+   * Retrieve a list of evaluation forms by their ids
+   * 
+   * @param id A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100 (required)
+   * @param includeLatestVersionFormName Whether to include the name of the form's most recently published version (optional, default to false)
+   * @return EvaluationFormResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationFormResponseEntityListing getQualityFormsEvaluationsBulk(List<String> id, Boolean includeLatestVersionFormName) throws IOException, ApiException {
+    return  getQualityFormsEvaluationsBulk(createGetQualityFormsEvaluationsBulkRequest(id, includeLatestVersionFormName));
+  }
+
+  /**
+   * Retrieve a list of evaluation forms by their ids
+   * 
+   * @param id A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100 (required)
+   * @param includeLatestVersionFormName Whether to include the name of the form's most recently published version (optional, default to false)
+   * @return EvaluationFormResponseEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationFormResponseEntityListing> getQualityFormsEvaluationsBulkWithHttpInfo(List<String> id, Boolean includeLatestVersionFormName) throws IOException {
+    return getQualityFormsEvaluationsBulk(createGetQualityFormsEvaluationsBulkRequest(id, includeLatestVersionFormName).withHttpInfo());
+  }
+
+  private GetQualityFormsEvaluationsBulkRequest createGetQualityFormsEvaluationsBulkRequest(List<String> id, Boolean includeLatestVersionFormName) {
+    return GetQualityFormsEvaluationsBulkRequest.builder()
+            .withId(id)
+
+            .withIncludeLatestVersionFormName(includeLatestVersionFormName)
+
+            .build();
+  }
+
+  /**
+   * Retrieve a list of evaluation forms by their ids
+   * 
+   * @param request The request object
+   * @return EvaluationFormResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationFormResponseEntityListing getQualityFormsEvaluationsBulk(GetQualityFormsEvaluationsBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationFormResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationFormResponseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of evaluation forms by their ids
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationFormResponseEntityListing> getQualityFormsEvaluationsBulk(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationFormResponseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormResponseEntityListing> response = (ApiResponse<EvaluationFormResponseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormResponseEntityListing> response = (ApiResponse<EvaluationFormResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Retrieve a list of the latest published evaluation form versions by context ids
    * 
    * @param contextId A comma-delimited list of valid evaluation form context ids (required)
@@ -4752,6 +4840,84 @@ public class QualityApi {
   }
 
   /**
+   * Search evaluations based along specified criteria
+   * Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+   * @param body Evaluation search request (required)
+   * @return EvaluationSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationSearchResponse postQualityEvaluationsSearch(EvaluationSearchRequestDTO body) throws IOException, ApiException {
+    return  postQualityEvaluationsSearch(createPostQualityEvaluationsSearchRequest(body));
+  }
+
+  /**
+   * Search evaluations based along specified criteria
+   * Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+   * @param body Evaluation search request (required)
+   * @return EvaluationSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationSearchResponse> postQualityEvaluationsSearchWithHttpInfo(EvaluationSearchRequestDTO body) throws IOException {
+    return postQualityEvaluationsSearch(createPostQualityEvaluationsSearchRequest(body).withHttpInfo());
+  }
+
+  private PostQualityEvaluationsSearchRequest createPostQualityEvaluationsSearchRequest(EvaluationSearchRequestDTO body) {
+    return PostQualityEvaluationsSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search evaluations based along specified criteria
+   * Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+   * @param request The request object
+   * @return EvaluationSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationSearchResponse postQualityEvaluationsSearch(PostQualityEvaluationsSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search evaluations based along specified criteria
+   * Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationSearchResponse> postQualityEvaluationsSearch(ApiRequest<EvaluationSearchRequestDTO> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationSearchResponse> response = (ApiResponse<EvaluationSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationSearchResponse> response = (ApiResponse<EvaluationSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create an evaluation form.
    * 
    * @param body Evaluation form (required)
@@ -5305,6 +5471,84 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a survey for a conversation
+   * 
+   * @param body Survey creation request (required)
+   * @return Survey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Survey postQualitySurveys(CreateSurveyRequest body) throws IOException, ApiException {
+    return  postQualitySurveys(createPostQualitySurveysRequest(body));
+  }
+
+  /**
+   * Create a survey for a conversation
+   * 
+   * @param body Survey creation request (required)
+   * @return Survey
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Survey> postQualitySurveysWithHttpInfo(CreateSurveyRequest body) throws IOException {
+    return postQualitySurveys(createPostQualitySurveysRequest(body).withHttpInfo());
+  }
+
+  private PostQualitySurveysRequest createPostQualitySurveysRequest(CreateSurveyRequest body) {
+    return PostQualitySurveysRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a survey for a conversation
+   * 
+   * @param request The request object
+   * @return Survey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Survey postQualitySurveys(PostQualitySurveysRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Survey> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Survey>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a survey for a conversation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Survey> postQualitySurveys(ApiRequest<CreateSurveyRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Survey>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

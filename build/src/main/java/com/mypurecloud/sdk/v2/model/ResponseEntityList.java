@@ -31,12 +31,12 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private Integer pageCount = null;
   private String firstUri = null;
   private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
   private String selfUri = null;
-  private Integer pageCount = null;
 
   public ResponseEntityList() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -110,6 +110,24 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
   }
   public void setTotal(Long total) {
     this.total = total;
+  }
+
+
+  /**
+   * Total number of pages
+   **/
+  public ResponseEntityList pageCount(Integer pageCount) {
+    this.pageCount = pageCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Total number of pages")
+  @JsonProperty("pageCount")
+  public Integer getPageCount() {
+    return pageCount;
+  }
+  public void setPageCount(Integer pageCount) {
+    this.pageCount = pageCount;
   }
 
 
@@ -198,23 +216,6 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
   }
 
 
-  /**
-   **/
-  public ResponseEntityList pageCount(Integer pageCount) {
-    this.pageCount = pageCount;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("pageCount")
-  public Integer getPageCount() {
-    return pageCount;
-  }
-  public void setPageCount(Integer pageCount) {
-    this.pageCount = pageCount;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -229,17 +230,17 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
             Objects.equals(this.pageSize, responseEntityList.pageSize) &&
             Objects.equals(this.pageNumber, responseEntityList.pageNumber) &&
             Objects.equals(this.total, responseEntityList.total) &&
+            Objects.equals(this.pageCount, responseEntityList.pageCount) &&
             Objects.equals(this.firstUri, responseEntityList.firstUri) &&
             Objects.equals(this.previousUri, responseEntityList.previousUri) &&
             Objects.equals(this.nextUri, responseEntityList.nextUri) &&
             Objects.equals(this.lastUri, responseEntityList.lastUri) &&
-            Objects.equals(this.selfUri, responseEntityList.selfUri) &&
-            Objects.equals(this.pageCount, responseEntityList.pageCount);
+            Objects.equals(this.selfUri, responseEntityList.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, pageCount, firstUri, previousUri, nextUri, lastUri, selfUri);
   }
 
   @Override
@@ -251,12 +252,12 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

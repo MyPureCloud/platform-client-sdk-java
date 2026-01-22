@@ -98,7 +98,9 @@ public class EvaluationResponse  implements Serializable {
   private Boolean assigneeApplicable = null;
   private Date releaseDate = null;
   private Date assignedDate = null;
+  private Date createdDate = null;
   private Date changedDate = null;
+  private Date submittedDate = null;
   private Date revisionCreatedDate = null;
   private Queue queue = null;
 
@@ -158,6 +160,7 @@ public class EvaluationResponse  implements Serializable {
     }
   }
   private List<MediaTypeEnum> mediaType = null;
+  private List<String> divisionIds = null;
   private Boolean rescore = null;
   private Date conversationDate = null;
   private Date conversationEndDate = null;
@@ -223,6 +226,7 @@ public class EvaluationResponse  implements Serializable {
   public EvaluationResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       mediaType = new ArrayList<MediaTypeEnum>();
+      divisionIds = new ArrayList<String>();
       authorizedActions = new ArrayList<String>();
     }
   }
@@ -460,6 +464,13 @@ public class EvaluationResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Date the first version of this evaluation was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("createdDate")
+  public Date getCreatedDate() {
+    return createdDate;
+  }
+
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -475,6 +486,13 @@ public class EvaluationResponse  implements Serializable {
   }
   public void setChangedDate(Date changedDate) {
     this.changedDate = changedDate;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Date the evaluation was last submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("submittedDate")
+  public Date getSubmittedDate() {
+    return submittedDate;
   }
 
 
@@ -528,6 +546,13 @@ public class EvaluationResponse  implements Serializable {
   }
   public void setMediaType(List<MediaTypeEnum> mediaType) {
     this.mediaType = mediaType;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Evaluation is assigned in the following division(s).")
+  @JsonProperty("divisionIds")
+  public List<String> getDivisionIds() {
+    return divisionIds;
   }
 
 
@@ -791,10 +816,13 @@ public class EvaluationResponse  implements Serializable {
             Objects.equals(this.assigneeApplicable, evaluationResponse.assigneeApplicable) &&
             Objects.equals(this.releaseDate, evaluationResponse.releaseDate) &&
             Objects.equals(this.assignedDate, evaluationResponse.assignedDate) &&
+            Objects.equals(this.createdDate, evaluationResponse.createdDate) &&
             Objects.equals(this.changedDate, evaluationResponse.changedDate) &&
+            Objects.equals(this.submittedDate, evaluationResponse.submittedDate) &&
             Objects.equals(this.revisionCreatedDate, evaluationResponse.revisionCreatedDate) &&
             Objects.equals(this.queue, evaluationResponse.queue) &&
             Objects.equals(this.mediaType, evaluationResponse.mediaType) &&
+            Objects.equals(this.divisionIds, evaluationResponse.divisionIds) &&
             Objects.equals(this.rescore, evaluationResponse.rescore) &&
             Objects.equals(this.conversationDate, evaluationResponse.conversationDate) &&
             Objects.equals(this.conversationEndDate, evaluationResponse.conversationEndDate) &&
@@ -814,7 +842,7 @@ public class EvaluationResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, aiScoring, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, createdDate, changedDate, submittedDate, revisionCreatedDate, queue, mediaType, divisionIds, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, aiScoring, selfUri);
   }
 
   @Override
@@ -836,10 +864,13 @@ public class EvaluationResponse  implements Serializable {
     sb.append("    assigneeApplicable: ").append(toIndentedString(assigneeApplicable)).append("\n");
     sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
     sb.append("    assignedDate: ").append(toIndentedString(assignedDate)).append("\n");
+    sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    changedDate: ").append(toIndentedString(changedDate)).append("\n");
+    sb.append("    submittedDate: ").append(toIndentedString(submittedDate)).append("\n");
     sb.append("    revisionCreatedDate: ").append(toIndentedString(revisionCreatedDate)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    rescore: ").append(toIndentedString(rescore)).append("\n");
     sb.append("    conversationDate: ").append(toIndentedString(conversationDate)).append("\n");
     sb.append("    conversationEndDate: ").append(toIndentedString(conversationEndDate)).append("\n");

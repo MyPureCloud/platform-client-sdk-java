@@ -25,6 +25,7 @@ public class LearningAssignmentReassign  implements Serializable {
   
   private Date recommendedCompletionDate = null;
   private Integer lengthInMinutes = null;
+  private Boolean addToSchedule = null;
 
   public LearningAssignmentReassign() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -68,6 +69,24 @@ public class LearningAssignmentReassign  implements Serializable {
   }
 
 
+  /**
+   * If True, adds the assignment to their schedule
+   **/
+  public LearningAssignmentReassign addToSchedule(Boolean addToSchedule) {
+    this.addToSchedule = addToSchedule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If True, adds the assignment to their schedule")
+  @JsonProperty("addToSchedule")
+  public Boolean getAddToSchedule() {
+    return addToSchedule;
+  }
+  public void setAddToSchedule(Boolean addToSchedule) {
+    this.addToSchedule = addToSchedule;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -79,12 +98,13 @@ public class LearningAssignmentReassign  implements Serializable {
     LearningAssignmentReassign learningAssignmentReassign = (LearningAssignmentReassign) o;
 
     return Objects.equals(this.recommendedCompletionDate, learningAssignmentReassign.recommendedCompletionDate) &&
-            Objects.equals(this.lengthInMinutes, learningAssignmentReassign.lengthInMinutes);
+            Objects.equals(this.lengthInMinutes, learningAssignmentReassign.lengthInMinutes) &&
+            Objects.equals(this.addToSchedule, learningAssignmentReassign.addToSchedule);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(recommendedCompletionDate, lengthInMinutes);
+    return Objects.hash(recommendedCompletionDate, lengthInMinutes, addToSchedule);
   }
 
   @Override
@@ -94,6 +114,7 @@ public class LearningAssignmentReassign  implements Serializable {
     
     sb.append("    recommendedCompletionDate: ").append(toIndentedString(recommendedCompletionDate)).append("\n");
     sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
+    sb.append("    addToSchedule: ").append(toIndentedString(addToSchedule)).append("\n");
     sb.append("}");
     return sb.toString();
   }

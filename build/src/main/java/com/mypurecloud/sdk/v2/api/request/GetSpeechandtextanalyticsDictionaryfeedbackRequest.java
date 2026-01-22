@@ -90,6 +90,50 @@ public class GetSpeechandtextanalyticsDictionaryfeedbackRequest {
 	    return this;
 	} 
 
+	private String transcriptionEngine;
+	public String getTranscriptionEngine() {
+		return this.transcriptionEngine;
+	}
+
+	public void setTranscriptionEngine(String transcriptionEngine) {
+		this.transcriptionEngine = transcriptionEngine;
+	}
+
+	public GetSpeechandtextanalyticsDictionaryfeedbackRequest withTranscriptionEngine(String transcriptionEngine) {
+	    this.setTranscriptionEngine(transcriptionEngine);
+	    return this;
+	} 
+
+	public enum transcriptionEngineValues { 
+		GENESYS("Genesys"),
+		GENESYSEXTENDED("GenesysExtended");
+
+		private String value;
+
+		transcriptionEngineValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static transcriptionEngineValues fromString(String key) {
+			if (key == null) return null;
+
+			for (transcriptionEngineValues value : transcriptionEngineValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return transcriptionEngineValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -145,6 +189,9 @@ public class GetSpeechandtextanalyticsDictionaryfeedbackRequest {
                 .withQueryParameters("dialect", "", dialect)
         
 
+                .withQueryParameters("transcriptionEngine", "", transcriptionEngine)
+        
+
                 .withQueryParameters("nextPage", "", nextPage)
         
 
@@ -174,6 +221,20 @@ public class GetSpeechandtextanalyticsDictionaryfeedbackRequest {
 		public Builder withDialect(String dialect) {
 			request.setDialect(dialect);
 			return this;
+		}
+
+		public Builder withTranscriptionEngine(String transcriptionEngine) {
+			request.setTranscriptionEngine(transcriptionEngine);
+			return this;
+		}
+
+
+
+		
+		public Builder withTranscriptionEngine(transcriptionEngineValues transcriptionEngine) {
+		    request.setTranscriptionEngine(transcriptionEngine.toString());
+
+		    return this;
 		}
 
 		public Builder withNextPage(String nextPage) {

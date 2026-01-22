@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
+import com.mypurecloud.sdk.v2.model.LearningModuleAutoAssignRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleInformStepRequest;
 import com.mypurecloud.sdk.v2.model.ReviewAssessmentResults;
@@ -92,6 +93,7 @@ public class LearningModuleRequest  implements Serializable {
   private String externalId = null;
   private Boolean enforceContentOrder = null;
   private ReviewAssessmentResults reviewAssessmentResults = null;
+  private LearningModuleAutoAssignRequest autoAssign = null;
 
   public LearningModuleRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -316,6 +318,24 @@ public class LearningModuleRequest  implements Serializable {
   }
 
 
+  /**
+   * The configuration for linking a module to a rule
+   **/
+  public LearningModuleRequest autoAssign(LearningModuleAutoAssignRequest autoAssign) {
+    this.autoAssign = autoAssign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The configuration for linking a module to a rule")
+  @JsonProperty("autoAssign")
+  public LearningModuleAutoAssignRequest getAutoAssign() {
+    return autoAssign;
+  }
+  public void setAutoAssign(LearningModuleAutoAssignRequest autoAssign) {
+    this.autoAssign = autoAssign;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -337,12 +357,13 @@ public class LearningModuleRequest  implements Serializable {
             Objects.equals(this.excludedFromCatalog, learningModuleRequest.excludedFromCatalog) &&
             Objects.equals(this.externalId, learningModuleRequest.externalId) &&
             Objects.equals(this.enforceContentOrder, learningModuleRequest.enforceContentOrder) &&
-            Objects.equals(this.reviewAssessmentResults, learningModuleRequest.reviewAssessmentResults);
+            Objects.equals(this.reviewAssessmentResults, learningModuleRequest.reviewAssessmentResults) &&
+            Objects.equals(this.autoAssign, learningModuleRequest.autoAssign);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, completionTimeInDays, informSteps, type, assessmentForm, coverArt, lengthInMinutes, excludedFromCatalog, externalId, enforceContentOrder, reviewAssessmentResults);
+    return Objects.hash(name, description, completionTimeInDays, informSteps, type, assessmentForm, coverArt, lengthInMinutes, excludedFromCatalog, externalId, enforceContentOrder, reviewAssessmentResults, autoAssign);
   }
 
   @Override
@@ -362,6 +383,7 @@ public class LearningModuleRequest  implements Serializable {
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    enforceContentOrder: ").append(toIndentedString(enforceContentOrder)).append("\n");
     sb.append("    reviewAssessmentResults: ").append(toIndentedString(reviewAssessmentResults)).append("\n");
+    sb.append("    autoAssign: ").append(toIndentedString(autoAssign)).append("\n");
     sb.append("}");
     return sb.toString();
   }

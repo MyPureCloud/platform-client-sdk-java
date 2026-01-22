@@ -83,6 +83,104 @@ public class DictionaryFeedback  implements Serializable {
   private UserReference createdBy = null;
   private Date dateModified = null;
   private UserReference modifiedBy = null;
+
+  private static class TranscriptionEngineEnumDeserializer extends StdDeserializer<TranscriptionEngineEnum> {
+    public TranscriptionEngineEnumDeserializer() {
+      super(TranscriptionEngineEnumDeserializer.class);
+    }
+
+    @Override
+    public TranscriptionEngineEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TranscriptionEngineEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+   */
+ @JsonDeserialize(using = TranscriptionEngineEnumDeserializer.class)
+  public enum TranscriptionEngineEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENESYS("Genesys"),
+    GENESYSEXTENDED("GenesysExtended");
+
+    private String value;
+
+    TranscriptionEngineEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TranscriptionEngineEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TranscriptionEngineEnum value : TranscriptionEngineEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TranscriptionEngineEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TranscriptionEngineEnum transcriptionEngine = null;
+
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+   */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
+  public enum StatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVE("Active"),
+    PENDING("Pending"),
+    FAILED("Failed");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusEnum value : StatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusEnum status = null;
+  private String displayAs = null;
   private List<DictionaryFeedbackExamplePhrase> examplePhrases = null;
   private List<String> soundsLike = null;
   private String selfUri = null;
@@ -192,14 +290,57 @@ public class DictionaryFeedback  implements Serializable {
 
 
   /**
-   * A list of at least 3 and up to 20 unique phrases that are example usage of the term
+   * The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+   **/
+  public DictionaryFeedback transcriptionEngine(TranscriptionEngineEnum transcriptionEngine) {
+    this.transcriptionEngine = transcriptionEngine;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.")
+  @JsonProperty("transcriptionEngine")
+  public TranscriptionEngineEnum getTranscriptionEngine() {
+    return transcriptionEngine;
+  }
+  public void setTranscriptionEngine(TranscriptionEngineEnum transcriptionEngine) {
+    this.transcriptionEngine = transcriptionEngine;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+
+  /**
+   * The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+   **/
+  public DictionaryFeedback displayAs(String displayAs) {
+    this.displayAs = displayAs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.")
+  @JsonProperty("displayAs")
+  public String getDisplayAs() {
+    return displayAs;
+  }
+  public void setDisplayAs(String displayAs) {
+    this.displayAs = displayAs;
+  }
+
+
+  /**
+   * A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.
    **/
   public DictionaryFeedback examplePhrases(List<DictionaryFeedbackExamplePhrase> examplePhrases) {
     this.examplePhrases = examplePhrases;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A list of at least 3 and up to 20 unique phrases that are example usage of the term")
+  @ApiModelProperty(example = "null", value = "A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.")
   @JsonProperty("examplePhrases")
   public List<DictionaryFeedbackExamplePhrase> getExamplePhrases() {
     return examplePhrases;
@@ -210,14 +351,14 @@ public class DictionaryFeedback  implements Serializable {
 
 
   /**
-   * A list of up to 10 terms that give examples of how the term sounds
+   * A list of up to 10 terms that give examples of how the term sounds. This field is only valid for Genesys transcription engine.
    **/
   public DictionaryFeedback soundsLike(List<String> soundsLike) {
     this.soundsLike = soundsLike;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of up to 10 terms that give examples of how the term sounds")
+  @ApiModelProperty(example = "null", value = "A list of up to 10 terms that give examples of how the term sounds. This field is only valid for Genesys transcription engine.")
   @JsonProperty("soundsLike")
   public List<String> getSoundsLike() {
     return soundsLike;
@@ -253,6 +394,9 @@ public class DictionaryFeedback  implements Serializable {
             Objects.equals(this.createdBy, dictionaryFeedback.createdBy) &&
             Objects.equals(this.dateModified, dictionaryFeedback.dateModified) &&
             Objects.equals(this.modifiedBy, dictionaryFeedback.modifiedBy) &&
+            Objects.equals(this.transcriptionEngine, dictionaryFeedback.transcriptionEngine) &&
+            Objects.equals(this.status, dictionaryFeedback.status) &&
+            Objects.equals(this.displayAs, dictionaryFeedback.displayAs) &&
             Objects.equals(this.examplePhrases, dictionaryFeedback.examplePhrases) &&
             Objects.equals(this.soundsLike, dictionaryFeedback.soundsLike) &&
             Objects.equals(this.selfUri, dictionaryFeedback.selfUri);
@@ -260,7 +404,7 @@ public class DictionaryFeedback  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, term, dialect, boostValue, source, dateCreated, createdBy, dateModified, modifiedBy, examplePhrases, soundsLike, selfUri);
+    return Objects.hash(id, term, dialect, boostValue, source, dateCreated, createdBy, dateModified, modifiedBy, transcriptionEngine, status, displayAs, examplePhrases, soundsLike, selfUri);
   }
 
   @Override
@@ -277,6 +421,9 @@ public class DictionaryFeedback  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
+    sb.append("    transcriptionEngine: ").append(toIndentedString(transcriptionEngine)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    displayAs: ").append(toIndentedString(displayAs)).append("\n");
     sb.append("    examplePhrases: ").append(toIndentedString(examplePhrases)).append("\n");
     sb.append("    soundsLike: ").append(toIndentedString(soundsLike)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

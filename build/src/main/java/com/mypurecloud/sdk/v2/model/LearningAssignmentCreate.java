@@ -23,6 +23,7 @@ import java.io.Serializable;
 
 public class LearningAssignmentCreate  implements Serializable {
   
+  private Boolean addToSchedule = null;
   private String moduleId = null;
   private String userId = null;
   private Date recommendedCompletionDate = null;
@@ -34,6 +35,24 @@ public class LearningAssignmentCreate  implements Serializable {
   }
 
   
+  /**
+   * If True, adds the assignment to their schedule
+   **/
+  public LearningAssignmentCreate addToSchedule(Boolean addToSchedule) {
+    this.addToSchedule = addToSchedule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If True, adds the assignment to their schedule")
+  @JsonProperty("addToSchedule")
+  public Boolean getAddToSchedule() {
+    return addToSchedule;
+  }
+  public void setAddToSchedule(Boolean addToSchedule) {
+    this.addToSchedule = addToSchedule;
+  }
+
+
   /**
    * The Learning module Id associated with this assignment
    **/
@@ -116,7 +135,8 @@ public class LearningAssignmentCreate  implements Serializable {
     }
     LearningAssignmentCreate learningAssignmentCreate = (LearningAssignmentCreate) o;
 
-    return Objects.equals(this.moduleId, learningAssignmentCreate.moduleId) &&
+    return Objects.equals(this.addToSchedule, learningAssignmentCreate.addToSchedule) &&
+            Objects.equals(this.moduleId, learningAssignmentCreate.moduleId) &&
             Objects.equals(this.userId, learningAssignmentCreate.userId) &&
             Objects.equals(this.recommendedCompletionDate, learningAssignmentCreate.recommendedCompletionDate) &&
             Objects.equals(this.lengthInMinutes, learningAssignmentCreate.lengthInMinutes);
@@ -124,7 +144,7 @@ public class LearningAssignmentCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(moduleId, userId, recommendedCompletionDate, lengthInMinutes);
+    return Objects.hash(addToSchedule, moduleId, userId, recommendedCompletionDate, lengthInMinutes);
   }
 
   @Override
@@ -132,6 +152,7 @@ public class LearningAssignmentCreate  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class LearningAssignmentCreate {\n");
     
+    sb.append("    addToSchedule: ").append(toIndentedString(addToSchedule)).append("\n");
     sb.append("    moduleId: ").append(toIndentedString(moduleId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    recommendedCompletionDate: ").append(toIndentedString(recommendedCompletionDate)).append("\n");

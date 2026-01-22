@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
 import com.mypurecloud.sdk.v2.model.CreateKpiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.CreateRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
@@ -126,16 +127,16 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class PostRoutingSkillsRequest {
 
-	private RoutingSkill body;
-	public RoutingSkill getBody() {
+	private CreateRoutingSkill body;
+	public CreateRoutingSkill getBody() {
 		return this.body;
 	}
 
-	public void setBody(RoutingSkill body) {
+	public void setBody(CreateRoutingSkill body) {
 		this.body = body;
 	}
 
-	public PostRoutingSkillsRequest withBody(RoutingSkill body) {
+	public PostRoutingSkillsRequest withBody(CreateRoutingSkill body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -159,7 +160,7 @@ public class PostRoutingSkillsRequest {
         return this;
     }
 
-    public ApiRequest<RoutingSkill> withHttpInfo() {
+    public ApiRequest<CreateRoutingSkill> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -182,7 +183,7 @@ public class PostRoutingSkillsRequest {
 	}
 
 
-	public static Builder builder(RoutingSkill body) {
+	public static Builder builder(CreateRoutingSkill body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -196,14 +197,14 @@ public class PostRoutingSkillsRequest {
 		}
 
 
-		public Builder withBody(RoutingSkill body) {
+		public Builder withBody(CreateRoutingSkill body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(RoutingSkill body) {
+		public Builder withRequiredParams(CreateRoutingSkill body) {
 			request.setBody(body);
 
 			return this;

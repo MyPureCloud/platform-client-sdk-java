@@ -45,7 +45,8 @@ public class CommonAllAlertUpdateRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MUTE("Mute"),
     SNOOZE("Snooze"),
-    UNREAD("Unread");
+    UNREAD("Unread"),
+    CLOSE("Close");
 
     private String value;
 

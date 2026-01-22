@@ -1342,32 +1342,36 @@ public class SpeechTextAnalyticsApi {
    * Get the list of Speech & Text Analytics dictionary feedbacks
    * 
    * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
+   * @param transcriptionEngine Filter by transcription engine (optional)
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 500)
    * @return DictionaryFeedbackEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DictionaryFeedbackEntityListing getSpeechandtextanalyticsDictionaryfeedback(String dialect, String nextPage, Integer pageSize) throws IOException, ApiException {
-    return  getSpeechandtextanalyticsDictionaryfeedback(createGetSpeechandtextanalyticsDictionaryfeedbackRequest(dialect, nextPage, pageSize));
+  public DictionaryFeedbackEntityListing getSpeechandtextanalyticsDictionaryfeedback(String dialect, String transcriptionEngine, String nextPage, Integer pageSize) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsDictionaryfeedback(createGetSpeechandtextanalyticsDictionaryfeedbackRequest(dialect, transcriptionEngine, nextPage, pageSize));
   }
 
   /**
    * Get the list of Speech & Text Analytics dictionary feedbacks
    * 
    * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
+   * @param transcriptionEngine Filter by transcription engine (optional)
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 500)
    * @return DictionaryFeedbackEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DictionaryFeedbackEntityListing> getSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo(String dialect, String nextPage, Integer pageSize) throws IOException {
-    return getSpeechandtextanalyticsDictionaryfeedback(createGetSpeechandtextanalyticsDictionaryfeedbackRequest(dialect, nextPage, pageSize).withHttpInfo());
+  public ApiResponse<DictionaryFeedbackEntityListing> getSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo(String dialect, String transcriptionEngine, String nextPage, Integer pageSize) throws IOException {
+    return getSpeechandtextanalyticsDictionaryfeedback(createGetSpeechandtextanalyticsDictionaryfeedbackRequest(dialect, transcriptionEngine, nextPage, pageSize).withHttpInfo());
   }
 
-  private GetSpeechandtextanalyticsDictionaryfeedbackRequest createGetSpeechandtextanalyticsDictionaryfeedbackRequest(String dialect, String nextPage, Integer pageSize) {
+  private GetSpeechandtextanalyticsDictionaryfeedbackRequest createGetSpeechandtextanalyticsDictionaryfeedbackRequest(String dialect, String transcriptionEngine, String nextPage, Integer pageSize) {
     return GetSpeechandtextanalyticsDictionaryfeedbackRequest.builder()
             .withDialect(dialect)
+
+            .withTranscriptionEngine(transcriptionEngine)
 
             .withNextPage(nextPage)
 
@@ -1820,12 +1824,15 @@ public class SpeechTextAnalyticsApi {
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
    * @param state Program state. Defaults to Latest (optional)
+   * @param name Case insensitive partial name to filter by (optional)
+   * @param sortBy Sort results by. Defaults to name (optional)
+   * @param sortOrder Sort order. Defaults to asc (optional)
    * @return ProgramsEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ProgramsEntityListing getSpeechandtextanalyticsPrograms(String nextPage, Integer pageSize, String state) throws IOException, ApiException {
-    return  getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state));
+  public ProgramsEntityListing getSpeechandtextanalyticsPrograms(String nextPage, Integer pageSize, String state, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state, name, sortBy, sortOrder));
   }
 
   /**
@@ -1834,20 +1841,29 @@ public class SpeechTextAnalyticsApi {
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
    * @param state Program state. Defaults to Latest (optional)
+   * @param name Case insensitive partial name to filter by (optional)
+   * @param sortBy Sort results by. Defaults to name (optional)
+   * @param sortOrder Sort order. Defaults to asc (optional)
    * @return ProgramsEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ProgramsEntityListing> getSpeechandtextanalyticsProgramsWithHttpInfo(String nextPage, Integer pageSize, String state) throws IOException {
-    return getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state).withHttpInfo());
+  public ApiResponse<ProgramsEntityListing> getSpeechandtextanalyticsProgramsWithHttpInfo(String nextPage, Integer pageSize, String state, String name, String sortBy, String sortOrder) throws IOException {
+    return getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state, name, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetSpeechandtextanalyticsProgramsRequest createGetSpeechandtextanalyticsProgramsRequest(String nextPage, Integer pageSize, String state) {
+  private GetSpeechandtextanalyticsProgramsRequest createGetSpeechandtextanalyticsProgramsRequest(String nextPage, Integer pageSize, String state, String name, String sortBy, String sortOrder) {
     return GetSpeechandtextanalyticsProgramsRequest.builder()
             .withNextPage(nextPage)
 
             .withPageSize(pageSize)
 
             .withState(state)
+
+            .withName(name)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
 
             .build();
   }

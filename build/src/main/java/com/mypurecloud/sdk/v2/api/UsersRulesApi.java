@@ -402,14 +402,15 @@ public class UsersRulesApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Number of results per page (optional, default to 25)
    * @param expand Fields to expand in response (optional)
+   * @param enabled Whether to list enabled or disabled rules (optional)
    * @param searchTerm a search term for finding a rule by name (optional)
    * @param sortOrder sort rules by name, ascending, descending (optional, default to ascending)
    * @return UsersRulesRuleList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UsersRulesRuleList getUsersRules(List<String> types, Integer pageNumber, Integer pageSize, List<String> expand, String searchTerm, String sortOrder) throws IOException, ApiException {
-    return  getUsersRules(createGetUsersRulesRequest(types, pageNumber, pageSize, expand, searchTerm, sortOrder));
+  public UsersRulesRuleList getUsersRules(List<String> types, Integer pageNumber, Integer pageSize, List<String> expand, Boolean enabled, String searchTerm, String sortOrder) throws IOException, ApiException {
+    return  getUsersRules(createGetUsersRulesRequest(types, pageNumber, pageSize, expand, enabled, searchTerm, sortOrder));
   }
 
   /**
@@ -420,16 +421,17 @@ public class UsersRulesApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Number of results per page (optional, default to 25)
    * @param expand Fields to expand in response (optional)
+   * @param enabled Whether to list enabled or disabled rules (optional)
    * @param searchTerm a search term for finding a rule by name (optional)
    * @param sortOrder sort rules by name, ascending, descending (optional, default to ascending)
    * @return UsersRulesRuleList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UsersRulesRuleList> getUsersRulesWithHttpInfo(List<String> types, Integer pageNumber, Integer pageSize, List<String> expand, String searchTerm, String sortOrder) throws IOException {
-    return getUsersRules(createGetUsersRulesRequest(types, pageNumber, pageSize, expand, searchTerm, sortOrder).withHttpInfo());
+  public ApiResponse<UsersRulesRuleList> getUsersRulesWithHttpInfo(List<String> types, Integer pageNumber, Integer pageSize, List<String> expand, Boolean enabled, String searchTerm, String sortOrder) throws IOException {
+    return getUsersRules(createGetUsersRulesRequest(types, pageNumber, pageSize, expand, enabled, searchTerm, sortOrder).withHttpInfo());
   }
 
-  private GetUsersRulesRequest createGetUsersRulesRequest(List<String> types, Integer pageNumber, Integer pageSize, List<String> expand, String searchTerm, String sortOrder) {
+  private GetUsersRulesRequest createGetUsersRulesRequest(List<String> types, Integer pageNumber, Integer pageSize, List<String> expand, Boolean enabled, String searchTerm, String sortOrder) {
     return GetUsersRulesRequest.builder()
             .withTypes(types)
 
@@ -438,6 +440,8 @@ public class UsersRulesApi {
             .withPageSize(pageSize)
 
             .withExpand(expand)
+
+            .withEnabled(enabled)
 
             .withSearchTerm(searchTerm)
 

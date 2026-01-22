@@ -169,7 +169,8 @@ public class GetExternalcontactsContactNotesRequest {
 	public enum expandValues { 
 		AUTHOR("author"),
 		EXTERNALDATASOURCES("externalDataSources"),
-		DIVISION("division");
+		DIVISION("division"),
+		MERGESET("mergeset");
 
 		private String value;
 

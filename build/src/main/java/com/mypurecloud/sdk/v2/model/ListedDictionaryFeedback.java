@@ -80,6 +80,104 @@ public class ListedDictionaryFeedback  implements Serializable {
   private UserReference createdBy = null;
   private Date dateModified = null;
   private UserReference modifiedBy = null;
+
+  private static class TranscriptionEngineEnumDeserializer extends StdDeserializer<TranscriptionEngineEnum> {
+    public TranscriptionEngineEnumDeserializer() {
+      super(TranscriptionEngineEnumDeserializer.class);
+    }
+
+    @Override
+    public TranscriptionEngineEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TranscriptionEngineEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+   */
+ @JsonDeserialize(using = TranscriptionEngineEnumDeserializer.class)
+  public enum TranscriptionEngineEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENESYS("Genesys"),
+    GENESYSEXTENDED("GenesysExtended");
+
+    private String value;
+
+    TranscriptionEngineEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TranscriptionEngineEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TranscriptionEngineEnum value : TranscriptionEngineEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TranscriptionEngineEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TranscriptionEngineEnum transcriptionEngine = null;
+
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+   */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
+  public enum StatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVE("Active"),
+    PENDING("Pending"),
+    FAILED("Failed");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusEnum value : StatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusEnum status = null;
+  private String displayAs = null;
   private String selfUri = null;
 
   public ListedDictionaryFeedback() {
@@ -184,6 +282,49 @@ public class ListedDictionaryFeedback  implements Serializable {
   }
 
 
+  /**
+   * The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+   **/
+  public ListedDictionaryFeedback transcriptionEngine(TranscriptionEngineEnum transcriptionEngine) {
+    this.transcriptionEngine = transcriptionEngine;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.")
+  @JsonProperty("transcriptionEngine")
+  public TranscriptionEngineEnum getTranscriptionEngine() {
+    return transcriptionEngine;
+  }
+  public void setTranscriptionEngine(TranscriptionEngineEnum transcriptionEngine) {
+    this.transcriptionEngine = transcriptionEngine;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+
+  /**
+   * The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+   **/
+  public ListedDictionaryFeedback displayAs(String displayAs) {
+    this.displayAs = displayAs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.")
+  @JsonProperty("displayAs")
+  public String getDisplayAs() {
+    return displayAs;
+  }
+  public void setDisplayAs(String displayAs) {
+    this.displayAs = displayAs;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -210,12 +351,15 @@ public class ListedDictionaryFeedback  implements Serializable {
             Objects.equals(this.createdBy, listedDictionaryFeedback.createdBy) &&
             Objects.equals(this.dateModified, listedDictionaryFeedback.dateModified) &&
             Objects.equals(this.modifiedBy, listedDictionaryFeedback.modifiedBy) &&
+            Objects.equals(this.transcriptionEngine, listedDictionaryFeedback.transcriptionEngine) &&
+            Objects.equals(this.status, listedDictionaryFeedback.status) &&
+            Objects.equals(this.displayAs, listedDictionaryFeedback.displayAs) &&
             Objects.equals(this.selfUri, listedDictionaryFeedback.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, term, dialect, boostValue, source, dateCreated, createdBy, dateModified, modifiedBy, selfUri);
+    return Objects.hash(id, term, dialect, boostValue, source, dateCreated, createdBy, dateModified, modifiedBy, transcriptionEngine, status, displayAs, selfUri);
   }
 
   @Override
@@ -232,6 +376,9 @@ public class ListedDictionaryFeedback  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
+    sb.append("    transcriptionEngine: ").append(toIndentedString(transcriptionEngine)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    displayAs: ").append(toIndentedString(displayAs)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
