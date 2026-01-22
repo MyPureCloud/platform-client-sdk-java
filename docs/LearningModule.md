@@ -18,6 +18,7 @@
 | **rule** | [**LearningModuleRule**](LearningModuleRule) | The rule for learning module; read-only, and only populated when requested via expand param. |  [optional] |
 | **enforceContentOrder** | **Boolean** | If true, learning module content should be viewed one by one in order |  [optional] |
 | **reviewAssessmentResults** | [**ReviewAssessmentResults**](ReviewAssessmentResults) | Allows to view Assessment results in detail |  [optional] |
+| **autoAssign** | [**LearningModuleAutoAssignResponse**](LearningModuleAutoAssignResponse) | The auto assignment settings for this module |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **isArchived** | **Boolean** | If true, learning module is archived |  [optional] |
 | **isPublished** | **Boolean** | If true, learning module is published |  [optional] |
@@ -65,4 +66,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

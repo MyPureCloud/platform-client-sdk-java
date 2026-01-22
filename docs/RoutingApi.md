@@ -946,9 +946,10 @@ Delete Routing Skill
 
 Wraps DELETE /api/v2/routing/skills/{skillId}  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:skill:manage
+* routing:skill:delete
 
 ### Example
 
@@ -8752,6 +8753,7 @@ Wraps POST /api/v2/routing/skills
 Requires ANY permissions: 
 
 * routing:skill:manage
+* routing:skill:create
 
 ### Example
 
@@ -8775,7 +8777,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-RoutingSkill body = new RoutingSkill(); // RoutingSkill | Skill
+CreateRoutingSkill body = new CreateRoutingSkill(); // CreateRoutingSkill | Skill
 try {
     RoutingSkill result = apiInstance.postRoutingSkills(body);
     System.out.println(result);
@@ -8790,7 +8792,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**RoutingSkill**](RoutingSkill)| Skill | 
+| **body** | [**CreateRoutingSkill**](CreateRoutingSkill)| Skill | 
 {: class="table-striped"}
 
 
@@ -10375,4 +10377,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

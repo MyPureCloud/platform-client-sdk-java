@@ -1075,7 +1075,7 @@ String contactId = "contactId_example"; // String | ExternalContact Id
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String sortOrder = "sortOrder_example"; // String | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\"
-List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand. mergeset will include notes attached to ancestor contacts which have been merged into this one.
 try {
     NoteListing result = apiInstance.getExternalcontactsContactNotes(contactId, pageSize, pageNumber, sortOrder, expand);
     System.out.println(result);
@@ -1094,7 +1094,7 @@ try {
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageSize &lt;&#x3D; 100; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **sortOrder** | **String**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources, division 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand. mergeset will include notes attached to ancestor contacts which have been merged into this one. | [optional]<br />**Values**: author, externalDataSources, division, mergeset 
 {: class="table-striped"}
 
 
@@ -7458,4 +7458,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

@@ -42,6 +42,7 @@
 | **emails** | [**List&lt;ConversationEventTopicEmail&gt;**](ConversationEventTopicEmail) |  |  [optional] |
 | **messages** | [**List&lt;ConversationEventTopicMessage&gt;**](ConversationEventTopicMessage) |  |  [optional] |
 | **internalMessages** | [**List&lt;ConversationEventTopicInternalMessage&gt;**](ConversationEventTopicInternalMessage) |  |  [optional] |
+| **screenMonitorings** | [**List&lt;ConversationEventTopicScreenMonitoring&gt;**](ConversationEventTopicScreenMonitoring) |  |  [optional] |
 | **screenshares** | [**List&lt;ConversationEventTopicScreenShare&gt;**](ConversationEventTopicScreenShare) |  |  [optional] |
 | **socialExpressions** | [**List&lt;ConversationEventTopicSocialExpression&gt;**](ConversationEventTopicSocialExpression) |  |  [optional] |
 | **videos** | [**List&lt;ConversationEventTopicVideo&gt;**](ConversationEventTopicVideo) |  |  [optional] |
@@ -63,4 +64,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

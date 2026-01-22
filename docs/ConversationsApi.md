@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversation**](ConversationsApi#deleteConversation) | Update a conversation by disconnecting all of the participants |
 | [**deleteConversationParticipantCode**](ConversationsApi#deleteConversationParticipantCode) | Delete a code used to add a communication to this participant |
 | [**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | Remove flagged reason from conversation participant. |
+| [**deleteConversationsCallParticipantCommunicationPostflowaction**](ConversationsApi#deleteConversationsCallParticipantCommunicationPostflowaction) | Remove mandatory post call actions. |
 | [**deleteConversationsCallParticipantConsult**](ConversationsApi#deleteConversationsCallParticipantConsult) | Cancel the transfer |
 | [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi#deleteConversationsEmailMessagesDraftAttachment) | Delete attachment from draft |
 | [**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#deleteConversationsMessagesCachedmediaCachedMediaItemId) | Remove a cached media item asychronously |
@@ -141,6 +142,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsCallParticipant**](ConversationsApi#patchConversationsCallParticipant) | Update conversation participant |
 | [**patchConversationsCallParticipantAttributes**](ConversationsApi#patchConversationsCallParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup. |
+| [**patchConversationsCallParticipantCommunicationPostflowaction**](ConversationsApi#patchConversationsCallParticipantCommunicationPostflowaction) | Set mandatory post call actions.  If both values are null or blank error will occur. |
 | [**patchConversationsCallParticipantConsult**](ConversationsApi#patchConversationsCallParticipantConsult) | Change who can speak |
 | [**patchConversationsCallParticipantUserUserId**](ConversationsApi#patchConversationsCallParticipantUserUserId) | Update conversation participant on behalf of a user |
 | [**patchConversationsCallback**](ConversationsApi#patchConversationsCallback) | Update a conversation by disconnecting all of the participants |
@@ -590,6 +592,68 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversation ID | 
 | **participantId** | **String**| participant ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteConversationsCallParticipantCommunicationPostflowaction**
+
+
+> Void deleteConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId)
+
+Remove mandatory post call actions.
+
+Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction  
+
+Requires ANY permissions: 
+
+* conversation:call:deleteMandatoryPostFlowAction
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+try {
+    apiInstance.deleteConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsCallParticipantCommunicationPostflowaction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
 {: class="table-striped"}
 
 
@@ -8635,6 +8699,70 @@ try {
 ### Return type
 
 **Empty**
+
+
+# **patchConversationsCallParticipantCommunicationPostflowaction**
+
+
+> Void patchConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, body)
+
+Set mandatory post call actions.  If both values are null or blank error will occur.
+
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction  
+
+Requires ANY permissions: 
+
+* conversation:call:setMandatoryPostFlowAction
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+MandatoryPostCallActionInput body = new MandatoryPostCallActionInput(); // MandatoryPostCallActionInput | Action
+try {
+    apiInstance.patchConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsCallParticipantCommunicationPostflowaction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**MandatoryPostCallActionInput**](MandatoryPostCallActionInput)| Action | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **patchConversationsCallParticipantConsult**
@@ -18485,4 +18613,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

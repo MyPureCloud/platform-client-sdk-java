@@ -19,10 +19,13 @@
 | **assigneeApplicable** | **Boolean** | Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable. |  [optional] |
 | **releaseDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **assignedDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **createdDate** | [**Date**](Date) | Date the first version of this evaluation was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **changedDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **submittedDate** | [**Date**](Date) | Date the evaluation was last submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **revisionCreatedDate** | [**Date**](Date) | Date of when evaluation revision is created. Null if there is no revision. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **queue** | [**Queue**](Queue) |  |  [optional] |
 | **mediaType** | [**List<MediaTypeEnum>**](#Enum--MediaTypeEnum) | List of different communication types used in conversation. |  [optional] |
+| **divisionIds** | **List&lt;String&gt;** | Evaluation is assigned in the following division(s). |  [optional] |
 | **rescore** | **Boolean** | Is only true when evaluation is re-scored. |  [optional] |
 | **conversationDate** | [**Date**](Date) | Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **conversationEndDate** | [**Date**](Date) | End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -80,4 +83,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_

@@ -8,7 +8,7 @@
 * **Documentation** https://mypurecloud.github.io/platform-client-sdk-java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
-Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:244.0.0
+Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:245.0.0
 
 ## Install Using maven
 

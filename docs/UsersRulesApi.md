@@ -272,7 +272,7 @@ try {
 # **getUsersRules**
 
 
-> [UsersRulesRuleList](UsersRulesRuleList) getUsersRules(types, pageNumber, pageSize, expand, searchTerm, sortOrder)
+> [UsersRulesRuleList](UsersRulesRuleList) getUsersRules(types, pageNumber, pageSize, expand, enabled, searchTerm, sortOrder)
 
 Get the list of users rules
 
@@ -310,10 +310,11 @@ List<String> types = Arrays.asList(null); // List<String> | The types of the rul
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Number of results per page
 List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response
+Boolean enabled = true; // Boolean | Whether to list enabled or disabled rules
 String searchTerm = "searchTerm_example"; // String | a search term for finding a rule by name
 String sortOrder = "ascending"; // String | sort rules by name, ascending, descending
 try {
-    UsersRulesRuleList result = apiInstance.getUsersRules(types, pageNumber, pageSize, expand, searchTerm, sortOrder);
+    UsersRulesRuleList result = apiInstance.getUsersRules(types, pageNumber, pageSize, expand, enabled, searchTerm, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersRulesApi#getUsersRules");
@@ -330,6 +331,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Number of results per page | [optional] [default to 25] 
 | **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response | [optional]<br />**Values**: criteria 
+| **enabled** | **Boolean**| Whether to list enabled or disabled rules | [optional] 
 | **searchTerm** | **String**| a search term for finding a rule by name | [optional] 
 | **sortOrder** | **String**| sort rules by name, ascending, descending | [optional] [default to ascending]<br />**Values**: ascending, descending 
 {: class="table-striped"}
@@ -596,4 +598,4 @@ try {
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:244.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
