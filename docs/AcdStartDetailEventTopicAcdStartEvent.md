@@ -28,6 +28,7 @@
 | **utilizationLabel** | **String** |  |  [optional] |
 | **routingPriority** | **Long** |  |  [optional] |
 | **requestedRoutingSkillIds** | **List&lt;String&gt;** |  |  [optional] |
+| **skillExpressionApplied** | **Boolean** |  |  [optional] |
 
 
 ## Enum: MediaTypeEnum

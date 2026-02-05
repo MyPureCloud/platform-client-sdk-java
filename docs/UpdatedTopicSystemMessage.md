@@ -11,6 +11,7 @@
 | **organizationId** | **String** |  |  [optional] |
 | **userId** | **String** |  |  [optional] |
 | **oauthClientId** | **String** |  |  [optional] |
+| **oauthClientOrgId** | **String** |  |  [optional] |
 | **reason** | [**ReasonEnum**](#Enum--ReasonEnum) |  |  [optional] |
 | **message** | **String** |  |  [optional] |
 | **data** | **Map&lt;String, Object&gt;** |  |  [optional] |

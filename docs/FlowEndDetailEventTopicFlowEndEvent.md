@@ -56,6 +56,7 @@
 | DND_TRANSFER | &quot;DND_TRANSFER&quot; | 
 | INACTIVITY | &quot;INACTIVITY&quot; | 
 | SESSION_EXPIRED | &quot;SESSION_EXPIRED&quot; | 
+| TAKEOVER | &quot;TAKEOVER&quot; | 
 
 
 ## Enum: MediaTypeEnum

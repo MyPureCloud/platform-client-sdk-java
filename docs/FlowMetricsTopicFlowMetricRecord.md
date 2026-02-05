@@ -209,6 +209,7 @@
 | SESSIONEXPIRED | &quot;sessionExpired&quot; | 
 | SPAM | &quot;spam&quot; | 
 | SYSTEM | &quot;system&quot; | 
+| TAKEOVER | &quot;takeover&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
 | TRANSFER | &quot;transfer&quot; | 
 | TRANSFERDND | &quot;transferDnd&quot; | 

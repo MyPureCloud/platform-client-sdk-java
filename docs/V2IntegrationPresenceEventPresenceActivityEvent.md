@@ -13,6 +13,7 @@
 | **message** | **String** |  |  [optional] |
 | **currentDisplaySourceId** | **String** |  |  [optional] |
 | **previousDisplaySourceId** | **String** |  |  [optional] |
+| **futurePresenceDefinition** | [**V2IntegrationPresenceEventOrganizationPresence**](V2IntegrationPresenceEventOrganizationPresence) |  |  [optional] |
 
 
 ## Enum: EventTypeEnum

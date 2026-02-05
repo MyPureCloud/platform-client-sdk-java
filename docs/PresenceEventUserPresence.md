@@ -10,6 +10,7 @@
 | **primary** | **Boolean** |  |  [optional] |
 | **message** | **String** |  |  [optional] |
 | **modifiedDate** | [**Date**](Date) |  |  [optional] |
+| **futurePresenceDefinition** | [**PresenceEventOrganizationPresence**](PresenceEventOrganizationPresence) |  |  [optional] |
 
 
 
