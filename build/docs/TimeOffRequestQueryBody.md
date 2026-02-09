@@ -18,6 +18,9 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | PENDING | &quot;PENDING&quot; |
+| APPROVED | &quot;APPROVED&quot; |
+| DENIED | &quot;DENIED&quot; |
+| CANCELED | &quot;CANCELED&quot; |
 
 
 ## Enum: SubstatusesEnum
@@ -40,4 +43,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

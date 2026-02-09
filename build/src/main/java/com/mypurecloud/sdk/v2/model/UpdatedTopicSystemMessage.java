@@ -80,6 +80,7 @@ public class UpdatedTopicSystemMessage  implements Serializable {
   private String organizationId = null;
   private String userId = null;
   private String oauthClientId = null;
+  private String oauthClientOrgId = null;
 
   private static class ReasonEnumDeserializer extends StdDeserializer<ReasonEnum> {
     public ReasonEnumDeserializer() {
@@ -241,6 +242,23 @@ public class UpdatedTopicSystemMessage  implements Serializable {
 
   /**
    **/
+  public UpdatedTopicSystemMessage oauthClientOrgId(String oauthClientOrgId) {
+    this.oauthClientOrgId = oauthClientOrgId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("oauthClientOrgId")
+  public String getOauthClientOrgId() {
+    return oauthClientOrgId;
+  }
+  public void setOauthClientOrgId(String oauthClientOrgId) {
+    this.oauthClientOrgId = oauthClientOrgId;
+  }
+
+
+  /**
+   **/
   public UpdatedTopicSystemMessage reason(ReasonEnum reason) {
     this.reason = reason;
     return this;
@@ -306,6 +324,7 @@ public class UpdatedTopicSystemMessage  implements Serializable {
             Objects.equals(this.organizationId, updatedTopicSystemMessage.organizationId) &&
             Objects.equals(this.userId, updatedTopicSystemMessage.userId) &&
             Objects.equals(this.oauthClientId, updatedTopicSystemMessage.oauthClientId) &&
+            Objects.equals(this.oauthClientOrgId, updatedTopicSystemMessage.oauthClientOrgId) &&
             Objects.equals(this.reason, updatedTopicSystemMessage.reason) &&
             Objects.equals(this.message, updatedTopicSystemMessage.message) &&
             Objects.equals(this.data, updatedTopicSystemMessage.data);
@@ -313,7 +332,7 @@ public class UpdatedTopicSystemMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, systemTopicType, correlationId, organizationId, userId, oauthClientId, reason, message, data);
+    return Objects.hash(channelId, systemTopicType, correlationId, organizationId, userId, oauthClientId, oauthClientOrgId, reason, message, data);
   }
 
   @Override
@@ -327,6 +346,7 @@ public class UpdatedTopicSystemMessage  implements Serializable {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    oauthClientId: ").append(toIndentedString(oauthClientId)).append("\n");
+    sb.append("    oauthClientOrgId: ").append(toIndentedString(oauthClientOrgId)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");

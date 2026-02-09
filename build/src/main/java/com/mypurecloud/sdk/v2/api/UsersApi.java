@@ -24,8 +24,12 @@ import com.mypurecloud.sdk.v2.model.CallForwarding;
 import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
 import com.mypurecloud.sdk.v2.model.ChatItemCursorListing;
+import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.DataSchema;
+import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
@@ -38,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.OutOfOffice;
 import com.mypurecloud.sdk.v2.model.PatchUser;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.UpdateVerifierRequest;
@@ -50,6 +55,8 @@ import com.mypurecloud.sdk.v2.model.UserAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserCursorEntityListing;
+import com.mypurecloud.sdk.v2.model.UserCustomAttributes;
+import com.mypurecloud.sdk.v2.model.UserCustomAttributesUpdateRequest;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
@@ -83,12 +90,14 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingDirectroutingbackupSettin
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUserCustomattributeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserExternalidAuthorityNameExternalKeyRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserVerifierRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUsersCustomattributesSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
@@ -107,6 +116,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserAdjacentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserCallforwardingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserCustomattributeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserDirectreportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserExternalidRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserExternalidAuthorityNameRequest;
@@ -128,6 +139,13 @@ import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserVerifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersChatsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemaVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivityRequest;
@@ -137,6 +155,8 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserCallforwardingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserCustomattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
@@ -160,6 +180,7 @@ import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersCustomattributesSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersDevelopmentActivitiesAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersMePasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
@@ -170,6 +191,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRoutingDirectroutingbackupSettingsM
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserCallforwardingRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUserCustomattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserOutofofficeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserProfileskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRolesRequest;
@@ -180,6 +202,7 @@ import com.mypurecloud.sdk.v2.api.request.PutUserStateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationAssociatedstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationDefaultstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserVerifierRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUsersCustomattributesSchemaRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -735,6 +758,89 @@ public class UsersApi {
   }
 
   /**
+   * Delete a custom attributes record.
+   * 
+   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param schemaId schemaId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUserCustomattribute(String userId, String schemaId) throws IOException, ApiException {
+     deleteUserCustomattribute(createDeleteUserCustomattributeRequest(userId, schemaId));
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param schemaId schemaId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUserCustomattributeWithHttpInfo(String userId, String schemaId) throws IOException {
+    return deleteUserCustomattribute(createDeleteUserCustomattributeRequest(userId, schemaId).withHttpInfo());
+  }
+
+  private DeleteUserCustomattributeRequest createDeleteUserCustomattributeRequest(String userId, String schemaId) {
+    return DeleteUserCustomattributeRequest.builder()
+            .withUserId(userId)
+
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUserCustomattribute(DeleteUserCustomattributeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUserCustomattribute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Delete the external identifier for user.
    * 
    * @param userId User ID (required)
@@ -1183,6 +1289,85 @@ public class UsersApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteUserVerifier(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUsersCustomattributesSchema(String schemaId) throws IOException, ApiException {
+     deleteUsersCustomattributesSchema(createDeleteUsersCustomattributesSchemaRequest(schemaId));
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUsersCustomattributesSchemaWithHttpInfo(String schemaId) throws IOException {
+    return deleteUsersCustomattributesSchema(createDeleteUsersCustomattributesSchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private DeleteUsersCustomattributesSchemaRequest createDeleteUsersCustomattributesSchemaRequest(String schemaId) {
+    return DeleteUsersCustomattributesSchemaRequest.builder()
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUsersCustomattributesSchema(DeleteUsersCustomattributesSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUsersCustomattributesSchema(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2700,6 +2885,178 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CallForwarding> response = (ApiResponse<CallForwarding>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get custom attributes by schema id
+   * 
+   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param schemaId schemaId (required)
+   * @return UserCustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCustomAttributes getUserCustomattribute(String userId, String schemaId) throws IOException, ApiException {
+    return  getUserCustomattribute(createGetUserCustomattributeRequest(userId, schemaId));
+  }
+
+  /**
+   * Get custom attributes by schema id
+   * 
+   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param schemaId schemaId (required)
+   * @return UserCustomAttributes
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCustomAttributes> getUserCustomattributeWithHttpInfo(String userId, String schemaId) throws IOException {
+    return getUserCustomattribute(createGetUserCustomattributeRequest(userId, schemaId).withHttpInfo());
+  }
+
+  private GetUserCustomattributeRequest createGetUserCustomattributeRequest(String userId, String schemaId) {
+    return GetUserCustomattributeRequest.builder()
+            .withUserId(userId)
+
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Get custom attributes by schema id
+   * 
+   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UserCustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCustomAttributes getUserCustomattribute(GetUserCustomattributeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserCustomAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserCustomAttributes>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get custom attributes by schema id
+   * 
+   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCustomAttributes> getUserCustomattribute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserCustomAttributes>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get multiple custom attributes records by schema ids
+   * 
+   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param schemaIds  (required)
+   * @return List<Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Object> getUserCustomattributesBulk(String userId, List<String> schemaIds) throws IOException, ApiException {
+    return  getUserCustomattributesBulk(createGetUserCustomattributesBulkRequest(userId, schemaIds));
+  }
+
+  /**
+   * Get multiple custom attributes records by schema ids
+   * 
+   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param schemaIds  (required)
+   * @return List<Object>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Object>> getUserCustomattributesBulkWithHttpInfo(String userId, List<String> schemaIds) throws IOException {
+    return getUserCustomattributesBulk(createGetUserCustomattributesBulkRequest(userId, schemaIds).withHttpInfo());
+  }
+
+  private GetUserCustomattributesBulkRequest createGetUserCustomattributesBulkRequest(String userId, List<String> schemaIds) {
+    return GetUserCustomattributesBulkRequest.builder()
+            .withUserId(userId)
+
+            .withSchemaIds(schemaIds)
+
+            .build();
+  }
+
+  /**
+   * Get multiple custom attributes records by schema ids
+   * 
+   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return List<Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Object> getUserCustomattributesBulk(GetUserCustomattributesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<Object>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Object>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get multiple custom attributes records by schema ids
+   * 
+   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Object>> getUserCustomattributesBulk(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Object>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4487,6 +4844,572 @@ public class UsersApi {
   }
 
   /**
+   * Get a schema
+   * 
+   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getUsersCustomattributesSchema(String schemaId) throws IOException, ApiException {
+    return  getUsersCustomattributesSchema(createGetUsersCustomattributesSchemaRequest(schemaId));
+  }
+
+  /**
+   * Get a schema
+   * 
+   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getUsersCustomattributesSchemaWithHttpInfo(String schemaId) throws IOException {
+    return getUsersCustomattributesSchema(createGetUsersCustomattributesSchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private GetUsersCustomattributesSchemaRequest createGetUsersCustomattributesSchemaRequest(String schemaId) {
+    return GetUsersCustomattributesSchemaRequest.builder()
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Get a schema
+   * 
+   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getUsersCustomattributesSchema(GetUsersCustomattributesSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getUsersCustomattributesSchema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getUsersCustomattributesSchemaVersion(String schemaId, String versionId) throws IOException, ApiException {
+    return  getUsersCustomattributesSchemaVersion(createGetUsersCustomattributesSchemaVersionRequest(schemaId, versionId));
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getUsersCustomattributesSchemaVersionWithHttpInfo(String schemaId, String versionId) throws IOException {
+    return getUsersCustomattributesSchemaVersion(createGetUsersCustomattributesSchemaVersionRequest(schemaId, versionId).withHttpInfo());
+  }
+
+  private GetUsersCustomattributesSchemaVersionRequest createGetUsersCustomattributesSchemaVersionRequest(String schemaId, String versionId) {
+    return GetUsersCustomattributesSchemaVersionRequest.builder()
+            .withSchemaId(schemaId)
+
+            .withVersionId(versionId)
+
+            .build();
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getUsersCustomattributesSchemaVersion(GetUsersCustomattributesSchemaVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getUsersCustomattributesSchemaVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all versions of a user schema
+   * 
+   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @return DataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchemaListing getUsersCustomattributesSchemaVersions(String schemaId) throws IOException, ApiException {
+    return  getUsersCustomattributesSchemaVersions(createGetUsersCustomattributesSchemaVersionsRequest(schemaId));
+  }
+
+  /**
+   * Get all versions of a user schema
+   * 
+   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @return DataSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchemaListing> getUsersCustomattributesSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
+    return getUsersCustomattributesSchemaVersions(createGetUsersCustomattributesSchemaVersionsRequest(schemaId).withHttpInfo());
+  }
+
+  private GetUsersCustomattributesSchemaVersionsRequest createGetUsersCustomattributesSchemaVersionsRequest(String schemaId) {
+    return GetUsersCustomattributesSchemaVersionsRequest.builder()
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Get all versions of a user schema
+   * 
+   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return DataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchemaListing getUsersCustomattributesSchemaVersions(GetUsersCustomattributesSchemaVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all versions of a user schema
+   * 
+   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchemaListing> getUsersCustomattributesSchemaVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return DataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchemaListing getUsersCustomattributesSchemas() throws IOException, ApiException {
+    return  getUsersCustomattributesSchemas(createGetUsersCustomattributesSchemasRequest());
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return DataSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchemaListing> getUsersCustomattributesSchemasWithHttpInfo() throws IOException {
+    return getUsersCustomattributesSchemas(createGetUsersCustomattributesSchemasRequest().withHttpInfo());
+  }
+
+  private GetUsersCustomattributesSchemasRequest createGetUsersCustomattributesSchemasRequest() {
+    return GetUsersCustomattributesSchemasRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return DataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchemaListing getUsersCustomattributesSchemas(GetUsersCustomattributesSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchemaListing> getUsersCustomattributesSchemas(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getUsersCustomattributesSchemasCoretype(String coreTypeName) throws IOException, ApiException {
+    return  getUsersCustomattributesSchemasCoretype(createGetUsersCustomattributesSchemasCoretypeRequest(coreTypeName));
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getUsersCustomattributesSchemasCoretypeWithHttpInfo(String coreTypeName) throws IOException {
+    return getUsersCustomattributesSchemasCoretype(createGetUsersCustomattributesSchemasCoretypeRequest(coreTypeName).withHttpInfo());
+  }
+
+  private GetUsersCustomattributesSchemasCoretypeRequest createGetUsersCustomattributesSchemasCoretypeRequest(String coreTypeName) {
+    return GetUsersCustomattributesSchemasCoretypeRequest.builder()
+            .withCoreTypeName(coreTypeName)
+
+            .build();
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getUsersCustomattributesSchemasCoretype(GetUsersCustomattributesSchemasCoretypeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getUsersCustomattributesSchemasCoretype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return CoretypeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoretypeListing getUsersCustomattributesSchemasCoretypes() throws IOException, ApiException {
+    return  getUsersCustomattributesSchemasCoretypes(createGetUsersCustomattributesSchemasCoretypesRequest());
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return CoretypeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoretypeListing> getUsersCustomattributesSchemasCoretypesWithHttpInfo() throws IOException {
+    return getUsersCustomattributesSchemasCoretypes(createGetUsersCustomattributesSchemasCoretypesRequest().withHttpInfo());
+  }
+
+  private GetUsersCustomattributesSchemasCoretypesRequest createGetUsersCustomattributesSchemasCoretypesRequest() {
+    return GetUsersCustomattributesSchemasCoretypesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CoretypeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoretypeListing getUsersCustomattributesSchemasCoretypes(GetUsersCustomattributesSchemasCoretypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CoretypeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoretypeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoretypeListing> getUsersCustomattributesSchemasCoretypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CoretypeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getUsersCustomattributesSchemasLimits() throws IOException, ApiException {
+    return  getUsersCustomattributesSchemasLimits(createGetUsersCustomattributesSchemasLimitsRequest());
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return SchemaQuantityLimits
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getUsersCustomattributesSchemasLimitsWithHttpInfo() throws IOException {
+    return getUsersCustomattributesSchemasLimits(createGetUsersCustomattributesSchemasLimitsRequest().withHttpInfo());
+  }
+
+  private GetUsersCustomattributesSchemasLimitsRequest createGetUsersCustomattributesSchemasLimitsRequest() {
+    return GetUsersCustomattributesSchemasLimitsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getUsersCustomattributesSchemasLimits(GetUsersCustomattributesSchemasLimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SchemaQuantityLimits> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getUsersCustomattributesSchemasLimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchemaQuantityLimits>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get list of Development Activities
    * Either moduleId or userId is required. Results are filtered based on the applicable permissions.
    * @param userId Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId. (optional)
@@ -5329,6 +6252,178 @@ public class UsersApi {
   }
 
   /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param userCustomAttributes  (required)
+   * @return UserCustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCustomAttributes patchUserCustomattributes(String userId, UserCustomAttributesUpdateRequest userCustomAttributes) throws IOException, ApiException {
+    return  patchUserCustomattributes(createPatchUserCustomattributesRequest(userId, userCustomAttributes));
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param userCustomAttributes  (required)
+   * @return UserCustomAttributes
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCustomAttributes> patchUserCustomattributesWithHttpInfo(String userId, UserCustomAttributesUpdateRequest userCustomAttributes) throws IOException {
+    return patchUserCustomattributes(createPatchUserCustomattributesRequest(userId, userCustomAttributes).withHttpInfo());
+  }
+
+  private PatchUserCustomattributesRequest createPatchUserCustomattributesRequest(String userId, UserCustomAttributesUpdateRequest userCustomAttributes) {
+    return PatchUserCustomattributesRequest.builder()
+            .withUserId(userId)
+
+            .withUserCustomAttributes(userCustomAttributes)
+
+            .build();
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UserCustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCustomAttributes patchUserCustomattributes(PatchUserCustomattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserCustomAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserCustomAttributes>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCustomAttributes> patchUserCustomattributes(ApiRequest<UserCustomAttributesUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserCustomAttributes>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update multiple custom attributes records by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param userCustomAttributesList  (required)
+   * @return UserCustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCustomAttributes patchUserCustomattributesBulk(String userId, List<UserCustomAttributesUpdateRequest> userCustomAttributesList) throws IOException, ApiException {
+    return  patchUserCustomattributesBulk(createPatchUserCustomattributesBulkRequest(userId, userCustomAttributesList));
+  }
+
+  /**
+   * Update multiple custom attributes records by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param userCustomAttributesList  (required)
+   * @return UserCustomAttributes
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCustomAttributes> patchUserCustomattributesBulkWithHttpInfo(String userId, List<UserCustomAttributesUpdateRequest> userCustomAttributesList) throws IOException {
+    return patchUserCustomattributesBulk(createPatchUserCustomattributesBulkRequest(userId, userCustomAttributesList).withHttpInfo());
+  }
+
+  private PatchUserCustomattributesBulkRequest createPatchUserCustomattributesBulkRequest(String userId, List<UserCustomAttributesUpdateRequest> userCustomAttributesList) {
+    return PatchUserCustomattributesBulkRequest.builder()
+            .withUserId(userId)
+
+            .withUserCustomAttributesList(userCustomAttributesList)
+
+            .build();
+  }
+
+  /**
+   * Update multiple custom attributes records by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UserCustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCustomAttributes patchUserCustomattributesBulk(PatchUserCustomattributesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserCustomAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserCustomAttributes>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update multiple custom attributes records by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCustomAttributes> patchUserCustomattributesBulk(ApiRequest<List<UserCustomAttributesUpdateRequest>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserCustomAttributes>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Patch a user's Geolocation
    * The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
    * @param userId user Id (required)
@@ -5502,7 +6597,7 @@ public class UsersApi {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param userId User ID (required)
    * @param body User Queues (required)
    * @param divisionId Division ID(s) (optional)
@@ -5516,7 +6611,7 @@ public class UsersApi {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param userId User ID (required)
    * @param body User Queues (required)
    * @param divisionId Division ID(s) (optional)
@@ -5540,7 +6635,7 @@ public class UsersApi {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request The request object
    * @return UserQueueEntityListing
    * @throws ApiException if the request fails on the server
@@ -5559,7 +6654,7 @@ public class UsersApi {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7209,6 +8304,88 @@ public class UsersApi {
   }
 
   /**
+   * Create a schema
+   * 
+   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Schema (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema postUsersCustomattributesSchemas(DataSchema body) throws IOException, ApiException {
+    return  postUsersCustomattributesSchemas(createPostUsersCustomattributesSchemasRequest(body));
+  }
+
+  /**
+   * Create a schema
+   * 
+   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Schema (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> postUsersCustomattributesSchemasWithHttpInfo(DataSchema body) throws IOException {
+    return postUsersCustomattributesSchemas(createPostUsersCustomattributesSchemasRequest(body).withHttpInfo());
+  }
+
+  private PostUsersCustomattributesSchemasRequest createPostUsersCustomattributesSchemasRequest(DataSchema body) {
+    return PostUsersCustomattributesSchemasRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a schema
+   * 
+   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema postUsersCustomattributesSchemas(PostUsersCustomattributesSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> postUsersCustomattributesSchemas(ApiRequest<DataSchema> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Retrieve aggregated development activity data
    * Results are filtered based on the applicable permissions.
    * @param body Aggregate Request (required)
@@ -8001,6 +9178,92 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CallForwarding> response = (ApiResponse<CallForwarding>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param userCustomAttributes  (required)
+   * @return UserCustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCustomAttributes putUserCustomattributes(String userId, UserCustomAttributesUpdateRequest userCustomAttributes) throws IOException, ApiException {
+    return  putUserCustomattributes(createPutUserCustomattributesRequest(userId, userCustomAttributes));
+  }
+
+  /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId user ID (required)
+   * @param userCustomAttributes  (required)
+   * @return UserCustomAttributes
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCustomAttributes> putUserCustomattributesWithHttpInfo(String userId, UserCustomAttributesUpdateRequest userCustomAttributes) throws IOException {
+    return putUserCustomattributes(createPutUserCustomattributesRequest(userId, userCustomAttributes).withHttpInfo());
+  }
+
+  private PutUserCustomattributesRequest createPutUserCustomattributesRequest(String userId, UserCustomAttributesUpdateRequest userCustomAttributes) {
+    return PutUserCustomattributesRequest.builder()
+            .withUserId(userId)
+
+            .withUserCustomAttributes(userCustomAttributes)
+
+            .build();
+  }
+
+  /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UserCustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCustomAttributes putUserCustomattributes(PutUserCustomattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserCustomAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserCustomAttributes>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCustomAttributes> putUserCustomattributes(ApiRequest<UserCustomAttributesUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserCustomAttributes>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8823,6 +10086,92 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @param body Data Schema (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema putUsersCustomattributesSchema(String schemaId, DataSchema body) throws IOException, ApiException {
+    return  putUsersCustomattributesSchema(createPutUsersCustomattributesSchemaRequest(schemaId, body));
+  }
+
+  /**
+   * Update a schema
+   * 
+   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param schemaId Schema ID (required)
+   * @param body Data Schema (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> putUsersCustomattributesSchemaWithHttpInfo(String schemaId, DataSchema body) throws IOException {
+    return putUsersCustomattributesSchema(createPutUsersCustomattributesSchemaRequest(schemaId, body).withHttpInfo());
+  }
+
+  private PutUsersCustomattributesSchemaRequest createPutUsersCustomattributesSchemaRequest(String schemaId, DataSchema body) {
+    return PutUsersCustomattributesSchemaRequest.builder()
+            .withSchemaId(schemaId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a schema
+   * 
+   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema putUsersCustomattributesSchema(PutUsersCustomattributesSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> putUsersCustomattributesSchema(ApiRequest<DataSchema> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

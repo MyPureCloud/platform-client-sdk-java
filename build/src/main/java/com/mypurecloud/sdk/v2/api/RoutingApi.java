@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.MailFromResult;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -219,6 +220,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
@@ -244,6 +246,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainVerificationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsSimulatedRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
@@ -4696,12 +4699,14 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param expand Which fields, if any, to expand. (optional)
+   * @param languageVariation Language variation (optional)
+   * @param fallbackToPrimaryAssistant Fall back to primary assistant if specified variation is not found (optional)
    * @return AssistantQueue
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AssistantQueue getRoutingQueueAssistant(String queueId, List<String> expand) throws IOException, ApiException {
-    return  getRoutingQueueAssistant(createGetRoutingQueueAssistantRequest(queueId, expand));
+  public AssistantQueue getRoutingQueueAssistant(String queueId, List<String> expand, String languageVariation, Boolean fallbackToPrimaryAssistant) throws IOException, ApiException {
+    return  getRoutingQueueAssistant(createGetRoutingQueueAssistantRequest(queueId, expand, languageVariation, fallbackToPrimaryAssistant));
   }
 
   /**
@@ -4709,18 +4714,24 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param expand Which fields, if any, to expand. (optional)
+   * @param languageVariation Language variation (optional)
+   * @param fallbackToPrimaryAssistant Fall back to primary assistant if specified variation is not found (optional)
    * @return AssistantQueue
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AssistantQueue> getRoutingQueueAssistantWithHttpInfo(String queueId, List<String> expand) throws IOException {
-    return getRoutingQueueAssistant(createGetRoutingQueueAssistantRequest(queueId, expand).withHttpInfo());
+  public ApiResponse<AssistantQueue> getRoutingQueueAssistantWithHttpInfo(String queueId, List<String> expand, String languageVariation, Boolean fallbackToPrimaryAssistant) throws IOException {
+    return getRoutingQueueAssistant(createGetRoutingQueueAssistantRequest(queueId, expand, languageVariation, fallbackToPrimaryAssistant).withHttpInfo());
   }
 
-  private GetRoutingQueueAssistantRequest createGetRoutingQueueAssistantRequest(String queueId, List<String> expand) {
+  private GetRoutingQueueAssistantRequest createGetRoutingQueueAssistantRequest(String queueId, List<String> expand, String languageVariation, Boolean fallbackToPrimaryAssistant) {
     return GetRoutingQueueAssistantRequest.builder()
             .withQueueId(queueId)
 
             .withExpand(expand)
+
+            .withLanguageVariation(languageVariation)
+
+            .withFallbackToPrimaryAssistant(fallbackToPrimaryAssistant)
 
             .build();
   }
@@ -8647,7 +8658,7 @@ public class RoutingApi {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
    * @param conversationId Conversation ID (required)
    * @param body Conversation Attributes (required)
    * @return RoutingConversationAttributesResponse
@@ -8660,7 +8671,7 @@ public class RoutingApi {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
    * @param conversationId Conversation ID (required)
    * @param body Conversation Attributes (required)
    * @return RoutingConversationAttributesResponse
@@ -8681,7 +8692,7 @@ public class RoutingApi {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
    * @param request The request object
    * @return RoutingConversationAttributesResponse
    * @throws ApiException if the request fails on the server
@@ -8700,7 +8711,7 @@ public class RoutingApi {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8887,6 +8898,88 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+   * 
+   * @param domainId domain ID (required)
+   * @param body Domain settings (required)
+   * @return OutboundDomain
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutboundDomain patchRoutingEmailOutboundDomain(String domainId, OutboundDomainPatchRequest body) throws IOException, ApiException {
+    return  patchRoutingEmailOutboundDomain(createPatchRoutingEmailOutboundDomainRequest(domainId, body));
+  }
+
+  /**
+   * Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+   * 
+   * @param domainId domain ID (required)
+   * @param body Domain settings (required)
+   * @return OutboundDomain
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutboundDomain> patchRoutingEmailOutboundDomainWithHttpInfo(String domainId, OutboundDomainPatchRequest body) throws IOException {
+    return patchRoutingEmailOutboundDomain(createPatchRoutingEmailOutboundDomainRequest(domainId, body).withHttpInfo());
+  }
+
+  private PatchRoutingEmailOutboundDomainRequest createPatchRoutingEmailOutboundDomainRequest(String domainId, OutboundDomainPatchRequest body) {
+    return PatchRoutingEmailOutboundDomainRequest.builder()
+            .withDomainId(domainId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+   * 
+   * @param request The request object
+   * @return OutboundDomain
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutboundDomain patchRoutingEmailOutboundDomain(PatchRoutingEmailOutboundDomainRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutboundDomain> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundDomain>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutboundDomain> patchRoutingEmailOutboundDomain(ApiRequest<OutboundDomainPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundDomain>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9144,7 +9237,7 @@ public class RoutingApi {
 
   /**
    * Join or unjoin a set of up to 100 users for a queue
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
    * @return QueueMemberEntityListing
@@ -9157,7 +9250,7 @@ public class RoutingApi {
 
   /**
    * Join or unjoin a set of up to 100 users for a queue
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
    * @return QueueMemberEntityListing
@@ -9178,7 +9271,7 @@ public class RoutingApi {
 
   /**
    * Join or unjoin a set of up to 100 users for a queue
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request The request object
    * @return QueueMemberEntityListing
    * @throws ApiException if the request fails on the server
@@ -9197,7 +9290,7 @@ public class RoutingApi {
 
   /**
    * Join or unjoin a set of up to 100 users for a queue
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9802,7 +9895,7 @@ public class RoutingApi {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param userId User ID (required)
    * @param body User Queues (required)
    * @param divisionId Division ID(s) (optional)
@@ -9816,7 +9909,7 @@ public class RoutingApi {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param userId User ID (required)
    * @param body User Queues (required)
    * @param divisionId Division ID(s) (optional)
@@ -9840,7 +9933,7 @@ public class RoutingApi {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request The request object
    * @return UserQueueEntityListing
    * @throws ApiException if the request fails on the server
@@ -9859,7 +9952,7 @@ public class RoutingApi {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10932,6 +11025,88 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Tests the custom SMTP server integration connection set on this outbound domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param domainId domain ID (required)
+   * @param body TestMessage (optional)
+   * @return TestMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TestMessage postRoutingEmailOutboundDomainTestconnection(String domainId, TestMessage body) throws IOException, ApiException {
+    return  postRoutingEmailOutboundDomainTestconnection(createPostRoutingEmailOutboundDomainTestconnectionRequest(domainId, body));
+  }
+
+  /**
+   * Tests the custom SMTP server integration connection set on this outbound domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param domainId domain ID (required)
+   * @param body TestMessage (optional)
+   * @return TestMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TestMessage> postRoutingEmailOutboundDomainTestconnectionWithHttpInfo(String domainId, TestMessage body) throws IOException {
+    return postRoutingEmailOutboundDomainTestconnection(createPostRoutingEmailOutboundDomainTestconnectionRequest(domainId, body).withHttpInfo());
+  }
+
+  private PostRoutingEmailOutboundDomainTestconnectionRequest createPostRoutingEmailOutboundDomainTestconnectionRequest(String domainId, TestMessage body) {
+    return PostRoutingEmailOutboundDomainTestconnectionRequest.builder()
+            .withDomainId(domainId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Tests the custom SMTP server integration connection set on this outbound domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param request The request object
+   * @return TestMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TestMessage postRoutingEmailOutboundDomainTestconnection(PostRoutingEmailOutboundDomainTestconnectionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TestMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TestMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Tests the custom SMTP server integration connection set on this outbound domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TestMessage> postRoutingEmailOutboundDomainTestconnection(ApiRequest<TestMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TestMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TestMessage> response = (ApiResponse<TestMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TestMessage> response = (ApiResponse<TestMessage>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

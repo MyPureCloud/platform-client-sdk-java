@@ -170,7 +170,8 @@ public class Session  implements Serializable {
     UNCALLABLE("Uncallable"),
     DONOTDISTURBENDPOINT("DoNotDisturbEndpoint"),
     DONOTDISTURBTRANSFER("DoNotDisturbTransfer"),
-    SESSIONEXPIRED("SessionExpired");
+    SESSIONEXPIRED("SessionExpired"),
+    TAKEOVER("Takeover");
 
     private String value;
 

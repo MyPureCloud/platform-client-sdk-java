@@ -8,6 +8,7 @@
 | **id** | **String** |  |  [optional] |
 | **buId** | **String** |  |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **bidType** | [**BidTypeEnum**](#Enum--BidTypeEnum) |  |  [optional] |
 | **bidWindowStartDate** | **String** |  |  [optional] |
 | **bidWindowEndDate** | **String** |  |  [optional] |
 | **effectiveDate** | **String** |  |  [optional] |
@@ -30,6 +31,16 @@
 | CLOSED | &quot;Closed&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
+
+
+## Enum: BidTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| WORKPLANBID | &quot;WorkPlanBid&quot; | 
+| SCHEDULEBID | &quot;ScheduleBid&quot; | 
 
 
 ## Enum: AgentRankingTypeEnum
@@ -66,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

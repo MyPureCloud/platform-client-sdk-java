@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsProgramsMappings**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsMappings) | Get the list of Speech & Text Analytics programs mappings to queues and flows |
 | [**getSpeechandtextanalyticsProgramsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsPublishjob) | Get a Speech & Text Analytics publish programs job by id |
 | [**getSpeechandtextanalyticsProgramsSettingsInsights**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsSettingsInsights) | Get the list of program AI Insights settings for the organization |
+| [**getSpeechandtextanalyticsProgramsTopiclinksJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTopiclinksJob) | Get a Speech & Text Analytics program-topic links job by id |
 | [**getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTranscriptionenginesDialects) | Get supported dialects for each transcription engine |
 | [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsUnpublished) | Get the list of Speech & Text Analytics unpublished programs |
 | [**getSpeechandtextanalyticsReprocessingJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsReprocessingJob) | Get a Speech & Text Analytics reprocess job by id |
@@ -1011,7 +1012,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String dialect = en-US; // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
-String transcriptionEngine = "transcriptionEngine_example"; // String | Filter by transcription engine
+String transcriptionEngine = "transcriptionEngine_example"; // String | Filter by transcription engine, If not provided, all transcription engines will be considered
 String nextPage = "nextPage_example"; // String | The key for listing the next page
 Integer pageSize = 500; // Integer | The page size for the listing
 try {
@@ -1029,7 +1030,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dialect** | **String**| The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] [default to null] 
-| **transcriptionEngine** | **String**| Filter by transcription engine | [optional]<br />**Values**: Genesys, GenesysExtended 
+| **transcriptionEngine** | **String**| Filter by transcription engine, If not provided, all transcription engines will be considered | [optional]<br />**Values**: Genesys, GenesysExtended 
 | **nextPage** | **String**| The key for listing the next page | [optional] 
 | **pageSize** | **Integer**| The page size for the listing | [optional] [default to 500] 
 {: class="table-striped"}
@@ -1649,6 +1650,65 @@ try {
 ### Return type
 
 [**ProgramInsightsSettingsEntityListing**](ProgramInsightsSettingsEntityListing)
+
+
+# **getSpeechandtextanalyticsProgramsTopiclinksJob**
+
+
+> [ProgramTopicLinksJob](ProgramTopicLinksJob) getSpeechandtextanalyticsProgramsTopiclinksJob(jobId)
+
+Get a Speech & Text Analytics program-topic links job by id
+
+Wraps GET /api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String jobId = "jobId_example"; // String | The id of the program-topic links job
+try {
+    ProgramTopicLinksJob result = apiInstance.getSpeechandtextanalyticsProgramsTopiclinksJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTopiclinksJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The id of the program-topic links job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ProgramTopicLinksJob**](ProgramTopicLinksJob)
 
 
 # **getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**
@@ -3869,4 +3929,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

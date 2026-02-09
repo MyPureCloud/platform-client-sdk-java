@@ -20572,7 +20572,7 @@ public class WorkforceManagementApi {
 
   /**
    * Fetches time off requests matching the conditions specified in the request body
-   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+   * Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (required)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
@@ -20586,7 +20586,7 @@ public class WorkforceManagementApi {
 
   /**
    * Fetches time off requests matching the conditions specified in the request body
-   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+   * Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (required)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
@@ -20610,7 +20610,7 @@ public class WorkforceManagementApi {
 
   /**
    * Fetches time off requests matching the conditions specified in the request body
-   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+   * Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
    * @param request The request object
    * @return TimeOffRequestListing
    * @throws ApiException if the request fails on the server
@@ -20629,7 +20629,7 @@ public class WorkforceManagementApi {
 
   /**
    * Fetches time off requests matching the conditions specified in the request body
-   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+   * Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -47,11 +47,13 @@ import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingResponse;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJobListing;
 import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
+import com.mypurecloud.sdk.v2.model.DNCListUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
 import com.mypurecloud.sdk.v2.model.DigitalRuleSet;
@@ -92,6 +94,7 @@ import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 import com.mypurecloud.sdk.v2.model.WhatsAppCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.WhatsAppCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
@@ -230,6 +233,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersBulkRetrieveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkRetrieveRequest;
@@ -239,6 +243,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistEmailaddressesReque
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundFilespecificationtemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesBulkAddRequest;
@@ -11269,6 +11274,84 @@ public class OutboundApi {
   }
 
   /**
+   * Generate presigned upload URL for contact list.
+   * 
+   * @param body contactListUploadUrlRequest (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postOutboundContactlistsUploads(ContactListUploadUrlRequest body) throws IOException, ApiException {
+    return  postOutboundContactlistsUploads(createPostOutboundContactlistsUploadsRequest(body));
+  }
+
+  /**
+   * Generate presigned upload URL for contact list.
+   * 
+   * @param body contactListUploadUrlRequest (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postOutboundContactlistsUploadsWithHttpInfo(ContactListUploadUrlRequest body) throws IOException {
+    return postOutboundContactlistsUploads(createPostOutboundContactlistsUploadsRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundContactlistsUploadsRequest createPostOutboundContactlistsUploadsRequest(ContactListUploadUrlRequest body) {
+    return PostOutboundContactlistsUploadsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Generate presigned upload URL for contact list.
+   * 
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postOutboundContactlistsUploads(PostOutboundContactlistsUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate presigned upload URL for contact list.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postOutboundContactlistsUploads(ApiRequest<ContactListUploadUrlRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create Contact List Template
    * 
    * @param body ContactListTemplate (required)
@@ -11969,6 +12052,84 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Generate presigned upload URL for dnc list.
+   * 
+   * @param body dncListUploadUrlRequest (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postOutboundDnclistsUploads(DNCListUploadUrlRequest body) throws IOException, ApiException {
+    return  postOutboundDnclistsUploads(createPostOutboundDnclistsUploadsRequest(body));
+  }
+
+  /**
+   * Generate presigned upload URL for dnc list.
+   * 
+   * @param body dncListUploadUrlRequest (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postOutboundDnclistsUploadsWithHttpInfo(DNCListUploadUrlRequest body) throws IOException {
+    return postOutboundDnclistsUploads(createPostOutboundDnclistsUploadsRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundDnclistsUploadsRequest createPostOutboundDnclistsUploadsRequest(DNCListUploadUrlRequest body) {
+    return PostOutboundDnclistsUploadsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Generate presigned upload URL for dnc list.
+   * 
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postOutboundDnclistsUploads(PostOutboundDnclistsUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate presigned upload URL for dnc list.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postOutboundDnclistsUploads(ApiRequest<DNCListUploadUrlRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

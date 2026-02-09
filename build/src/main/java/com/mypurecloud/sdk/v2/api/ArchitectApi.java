@@ -1985,7 +1985,7 @@ public class ArchitectApi {
    * @param id Consuming object ID (required)
    * @param version Consuming object version (required)
    * @param objectType Consuming object type.  Only versioned types are allowed here. (required)
-   * @param resourceType Types of consumed resources to show (optional)
+   * @param resourceType Types of consumed resources to show. (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return ConsumedResourcesEntityListing
@@ -2002,7 +2002,7 @@ public class ArchitectApi {
    * @param id Consuming object ID (required)
    * @param version Consuming object version (required)
    * @param objectType Consuming object type.  Only versioned types are allowed here. (required)
-   * @param resourceType Types of consumed resources to show (optional)
+   * @param resourceType Types of consumed resources to show. (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return ConsumedResourcesEntityListing

@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.PaymentResponse;
 import com.mypurecloud.sdk.v2.model.QuickReply;
 import com.mypurecloud.sdk.v2.model.RecordingContentStory;
 import com.mypurecloud.sdk.v2.model.RecordingForm;
+import com.mypurecloud.sdk.v2.model.RecordingMessageReceipt;
 import com.mypurecloud.sdk.v2.model.RecordingNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.RecordingRoadsideAssistance;
 import com.mypurecloud.sdk.v2.model.User;
@@ -50,6 +51,7 @@ public class RecordingMessagingMessage  implements Serializable {
   private String to = null;
   private Date timestamp = null;
   private String id = null;
+  private String status = null;
   private String purpose = null;
   private String participantId = null;
   private AddressableEntityRef queue = null;
@@ -186,6 +188,7 @@ public class RecordingMessagingMessage  implements Serializable {
   private PaymentResponse paymentResponse = null;
   private RecordingForm form = null;
   private RecordingRoadsideAssistance roadsideAssistance = null;
+  private List<RecordingMessageReceipt> messageReceipts = null;
 
   public RecordingMessagingMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -195,6 +198,7 @@ public class RecordingMessagingMessage  implements Serializable {
       buttonResponses = new ArrayList<ButtonResponse>();
       cards = new ArrayList<Card>();
       events = new ArrayList<ConversationMessageEvent>();
+      messageReceipts = new ArrayList<RecordingMessageReceipt>();
     }
   }
 
@@ -304,6 +308,24 @@ public class RecordingMessagingMessage  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   * Status of the message
+   **/
+  public RecordingMessagingMessage status(String status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Status of the message")
+  @JsonProperty("status")
+  public String getStatus() {
+    return status;
+  }
+  public void setStatus(String status) {
+    this.status = status;
   }
 
 
@@ -721,6 +743,24 @@ public class RecordingMessagingMessage  implements Serializable {
   }
 
 
+  /**
+   * List of message receipts
+   **/
+  public RecordingMessagingMessage messageReceipts(List<RecordingMessageReceipt> messageReceipts) {
+    this.messageReceipts = messageReceipts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of message receipts")
+  @JsonProperty("messageReceipts")
+  public List<RecordingMessageReceipt> getMessageReceipts() {
+    return messageReceipts;
+  }
+  public void setMessageReceipts(List<RecordingMessageReceipt> messageReceipts) {
+    this.messageReceipts = messageReceipts;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -737,6 +777,7 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.to, recordingMessagingMessage.to) &&
             Objects.equals(this.timestamp, recordingMessagingMessage.timestamp) &&
             Objects.equals(this.id, recordingMessagingMessage.id) &&
+            Objects.equals(this.status, recordingMessagingMessage.status) &&
             Objects.equals(this.purpose, recordingMessagingMessage.purpose) &&
             Objects.equals(this.participantId, recordingMessagingMessage.participantId) &&
             Objects.equals(this.queue, recordingMessagingMessage.queue) &&
@@ -759,12 +800,13 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.paymentRequest, recordingMessagingMessage.paymentRequest) &&
             Objects.equals(this.paymentResponse, recordingMessagingMessage.paymentResponse) &&
             Objects.equals(this.form, recordingMessagingMessage.form) &&
-            Objects.equals(this.roadsideAssistance, recordingMessagingMessage.roadsideAssistance);
+            Objects.equals(this.roadsideAssistance, recordingMessagingMessage.roadsideAssistance) &&
+            Objects.equals(this.messageReceipts, recordingMessagingMessage.messageReceipts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, buttonResponses, story, cards, notificationTemplate, datePicker, listPicker, contentType, socialVisibility, events, interactiveApplication, paymentRequest, paymentResponse, form, roadsideAssistance);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, status, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, buttonResponses, story, cards, notificationTemplate, datePicker, listPicker, contentType, socialVisibility, events, interactiveApplication, paymentRequest, paymentResponse, form, roadsideAssistance, messageReceipts);
   }
 
   @Override
@@ -778,6 +820,7 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
@@ -801,6 +844,7 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    paymentResponse: ").append(toIndentedString(paymentResponse)).append("\n");
     sb.append("    form: ").append(toIndentedString(form)).append("\n");
     sb.append("    roadsideAssistance: ").append(toIndentedString(roadsideAssistance)).append("\n");
+    sb.append("    messageReceipts: ").append(toIndentedString(messageReceipts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

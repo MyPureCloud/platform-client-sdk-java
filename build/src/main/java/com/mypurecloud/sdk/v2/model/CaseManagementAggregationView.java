@@ -44,7 +44,13 @@ public class CaseManagementAggregationView  implements Serializable {
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCASESOPENED("nCasesOpened"),
-    NCASESTERMINATED("nCasesTerminated");
+    NCASESOVERSLA("nCasesOverSla"),
+    NCASESPURGED("nCasesPurged"),
+    NCASESSTATUSCHANGED("nCasesStatusChanged"),
+    NCASESTERMINATED("nCasesTerminated"),
+    OCASESSERVICELEVEL("oCasesServiceLevel"),
+    TCASESRESOLVED("tCasesResolved"),
+    TCASESSTATUS("tCasesStatus");
 
     private String value;
 

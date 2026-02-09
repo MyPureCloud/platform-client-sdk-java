@@ -27,8 +27,12 @@ import com.mypurecloud.sdk.v2.model.CallForwarding;
 import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
 import com.mypurecloud.sdk.v2.model.ChatItemCursorListing;
+import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.DataSchema;
+import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
@@ -41,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.OutOfOffice;
 import com.mypurecloud.sdk.v2.model.PatchUser;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.UpdateVerifierRequest;
@@ -53,6 +58,8 @@ import com.mypurecloud.sdk.v2.model.UserAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserCursorEntityListing;
+import com.mypurecloud.sdk.v2.model.UserCustomAttributes;
+import com.mypurecloud.sdk.v2.model.UserCustomAttributesUpdateRequest;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
@@ -86,12 +93,14 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingDirectroutingbackupSettin
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUserCustomattributeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserExternalidAuthorityNameExternalKeyRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserVerifierRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUsersCustomattributesSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
@@ -110,6 +119,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserAdjacentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserCallforwardingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserCustomattributeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserDirectreportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserExternalidRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserExternalidAuthorityNameRequest;
@@ -131,6 +142,13 @@ import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserVerifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersChatsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemaVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersCustomattributesSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivityRequest;
@@ -140,6 +158,8 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserCallforwardingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserCustomattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
@@ -163,6 +183,7 @@ import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersCustomattributesSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersDevelopmentActivitiesAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersMePasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
@@ -173,6 +194,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRoutingDirectroutingbackupSettingsM
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserCallforwardingRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUserCustomattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserOutofofficeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserProfileskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRolesRequest;
@@ -183,6 +205,7 @@ import com.mypurecloud.sdk.v2.api.request.PutUserStateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationAssociatedstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationDefaultstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserVerifierRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUsersCustomattributesSchemaRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -730,6 +753,83 @@ public class UsersApiAsync {
   }
 
   /**
+   * Delete a custom attributes record.
+   * 
+   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteUserCustomattributeAsync(DeleteUserCustomattributeRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteUserCustomattributeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Delete the external identifier for user.
    * 
    * @param request the request object
@@ -1146,6 +1246,83 @@ public class UsersApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteUserVerifierAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteUsersCustomattributesSchemaAsync(DeleteUsersCustomattributesSchemaRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteUsersCustomattributesSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -2530,6 +2707,160 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CallForwarding> response = (ApiResponse<CallForwarding>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get custom attributes by schema id
+   * 
+   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserCustomAttributes> getUserCustomattributeAsync(GetUserCustomattributeRequest request, final AsyncApiCallback<UserCustomAttributes> callback) {
+    try {
+      final SettableFuture<UserCustomAttributes> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserCustomAttributes>() {}, new AsyncApiCallback<ApiResponse<UserCustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCustomAttributes> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get custom attributes by schema id
+   * 
+   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserCustomAttributes>> getUserCustomattributeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserCustomAttributes>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserCustomAttributes>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserCustomAttributes>() {}, new AsyncApiCallback<ApiResponse<UserCustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCustomAttributes> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get multiple custom attributes records by schema ids
+   * 
+   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<Object>> getUserCustomattributesBulkAsync(GetUserCustomattributesBulkRequest request, final AsyncApiCallback<List<Object>> callback) {
+    try {
+      final SettableFuture<List<Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Object>>() {}, new AsyncApiCallback<ApiResponse<List<Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Object>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get multiple custom attributes records by schema ids
+   * 
+   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<Object>>> getUserCustomattributesBulkAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Object>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<Object>>() {}, new AsyncApiCallback<ApiResponse<List<Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Object>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4121,6 +4452,545 @@ public class UsersApiAsync {
   }
 
   /**
+   * Get a schema
+   * 
+   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataSchema> getUsersCustomattributesSchemaAsync(GetUsersCustomattributesSchemaRequest request, final AsyncApiCallback<DataSchema> callback) {
+    try {
+      final SettableFuture<DataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataSchema>> getUsersCustomattributesSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataSchema> getUsersCustomattributesSchemaVersionAsync(GetUsersCustomattributesSchemaVersionRequest request, final AsyncApiCallback<DataSchema> callback) {
+    try {
+      final SettableFuture<DataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataSchema>> getUsersCustomattributesSchemaVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all versions of a user schema
+   * 
+   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataSchemaListing> getUsersCustomattributesSchemaVersionsAsync(GetUsersCustomattributesSchemaVersionsRequest request, final AsyncApiCallback<DataSchemaListing> callback) {
+    try {
+      final SettableFuture<DataSchemaListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchemaListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all versions of a user schema
+   * 
+   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataSchemaListing>> getUsersCustomattributesSchemaVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchemaListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataSchemaListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchemaListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataSchemaListing> getUsersCustomattributesSchemasAsync(GetUsersCustomattributesSchemasRequest request, final AsyncApiCallback<DataSchemaListing> callback) {
+    try {
+      final SettableFuture<DataSchemaListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchemaListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataSchemaListing>> getUsersCustomattributesSchemasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchemaListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataSchemaListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchemaListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Coretype> getUsersCustomattributesSchemasCoretypeAsync(GetUsersCustomattributesSchemasCoretypeRequest request, final AsyncApiCallback<Coretype> callback) {
+    try {
+      final SettableFuture<Coretype> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Coretype>> getUsersCustomattributesSchemasCoretypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CoretypeListing> getUsersCustomattributesSchemasCoretypesAsync(GetUsersCustomattributesSchemasCoretypesRequest request, final AsyncApiCallback<CoretypeListing> callback) {
+    try {
+      final SettableFuture<CoretypeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CoretypeListing>> getUsersCustomattributesSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoretypeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CoretypeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SchemaQuantityLimits> getUsersCustomattributesSchemasLimitsAsync(GetUsersCustomattributesSchemasLimitsRequest request, final AsyncApiCallback<SchemaQuantityLimits> callback) {
+    try {
+      final SettableFuture<SchemaQuantityLimits> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SchemaQuantityLimits>> getUsersCustomattributesSchemasLimitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SchemaQuantityLimits>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SchemaQuantityLimits>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get list of Development Activities
    * Either moduleId or userId is required. Results are filtered based on the applicable permissions.
    * @param request the request object
@@ -4798,6 +5668,160 @@ public class UsersApiAsync {
   }
 
   /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserCustomAttributes> patchUserCustomattributesAsync(PatchUserCustomattributesRequest request, final AsyncApiCallback<UserCustomAttributes> callback) {
+    try {
+      final SettableFuture<UserCustomAttributes> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserCustomAttributes>() {}, new AsyncApiCallback<ApiResponse<UserCustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCustomAttributes> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserCustomAttributes>> patchUserCustomattributesAsync(ApiRequest<UserCustomAttributesUpdateRequest> request, final AsyncApiCallback<ApiResponse<UserCustomAttributes>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserCustomAttributes>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserCustomAttributes>() {}, new AsyncApiCallback<ApiResponse<UserCustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCustomAttributes> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update multiple custom attributes records by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserCustomAttributes> patchUserCustomattributesBulkAsync(PatchUserCustomattributesBulkRequest request, final AsyncApiCallback<UserCustomAttributes> callback) {
+    try {
+      final SettableFuture<UserCustomAttributes> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserCustomAttributes>() {}, new AsyncApiCallback<ApiResponse<UserCustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCustomAttributes> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update multiple custom attributes records by amending the data with only the provided fields.
+   * 
+   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserCustomAttributes>> patchUserCustomattributesBulkAsync(ApiRequest<List<UserCustomAttributesUpdateRequest>> request, final AsyncApiCallback<ApiResponse<UserCustomAttributes>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserCustomAttributes>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserCustomAttributes>() {}, new AsyncApiCallback<ApiResponse<UserCustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCustomAttributes> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Patch a user's Geolocation
    * The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
    * @param request the request object
@@ -4949,7 +5973,7 @@ public class UsersApiAsync {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4983,7 +6007,7 @@ public class UsersApiAsync {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6525,6 +7549,83 @@ public class UsersApiAsync {
   }
 
   /**
+   * Create a schema
+   * 
+   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataSchema> postUsersCustomattributesSchemasAsync(PostUsersCustomattributesSchemasRequest request, final AsyncApiCallback<DataSchema> callback) {
+    try {
+      final SettableFuture<DataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataSchema>> postUsersCustomattributesSchemasAsync(ApiRequest<DataSchema> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Retrieve aggregated development activity data
    * Results are filtered based on the applicable permissions.
    * @param request the request object
@@ -7279,6 +8380,83 @@ public class UsersApiAsync {
   }
 
   /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserCustomAttributes> putUserCustomattributesAsync(PutUserCustomattributesRequest request, final AsyncApiCallback<UserCustomAttributes> callback) {
+    try {
+      final SettableFuture<UserCustomAttributes> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserCustomAttributes>() {}, new AsyncApiCallback<ApiResponse<UserCustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCustomAttributes> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserCustomAttributes>> putUserCustomattributesAsync(ApiRequest<UserCustomAttributesUpdateRequest> request, final AsyncApiCallback<ApiResponse<UserCustomAttributes>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserCustomAttributes>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserCustomAttributes>() {}, new AsyncApiCallback<ApiResponse<UserCustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCustomAttributes> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCustomAttributes> response = (ApiResponse<UserCustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update an OutOfOffice
    * 
    * @param request the request object
@@ -8017,6 +9195,83 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataSchema> putUsersCustomattributesSchemaAsync(PutUsersCustomattributesSchemaRequest request, final AsyncApiCallback<DataSchema> callback) {
+    try {
+      final SettableFuture<DataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataSchema>> putUsersCustomattributesSchemaAsync(ApiRequest<DataSchema> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

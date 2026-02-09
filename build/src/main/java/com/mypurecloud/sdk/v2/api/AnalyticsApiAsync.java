@@ -117,6 +117,8 @@ import com.mypurecloud.sdk.v2.model.TaskManagementAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TaskManagementAggregationQuery;
 import com.mypurecloud.sdk.v2.model.TaskManagementAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TaskManagementAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TaskManagementObservationQuery;
+import com.mypurecloud.sdk.v2.model.TaskManagementObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.TeamActivityQuery;
 import com.mypurecloud.sdk.v2.model.TeamActivityResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
@@ -252,6 +254,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesJobsRequ
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementMetricsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTeamsActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesQueryRequest;
@@ -9179,6 +9182,83 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TaskManagementAggregateQueryResponse> response = (ApiResponse<TaskManagementAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for task management observations
+   * 
+   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TaskManagementObservationQueryResponse> postAnalyticsTaskmanagementMetricsQueryAsync(PostAnalyticsTaskmanagementMetricsQueryRequest request, final AsyncApiCallback<TaskManagementObservationQueryResponse> callback) {
+    try {
+      final SettableFuture<TaskManagementObservationQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TaskManagementObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<TaskManagementObservationQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TaskManagementObservationQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for task management observations
+   * 
+   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TaskManagementObservationQueryResponse>> postAnalyticsTaskmanagementMetricsQueryAsync(ApiRequest<TaskManagementObservationQuery> request, final AsyncApiCallback<ApiResponse<TaskManagementObservationQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TaskManagementObservationQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TaskManagementObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<TaskManagementObservationQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TaskManagementObservationQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TaskManagementObservationQueryResponse> response = (ApiResponse<TaskManagementObservationQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TaskManagementObservationQueryResponse> response = (ApiResponse<TaskManagementObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

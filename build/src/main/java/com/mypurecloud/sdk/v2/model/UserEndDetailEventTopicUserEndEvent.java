@@ -68,7 +68,8 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     DND_ENDPOINT("DND_ENDPOINT"),
     DND_TRANSFER("DND_TRANSFER"),
     INACTIVITY("INACTIVITY"),
-    SESSION_EXPIRED("SESSION_EXPIRED");
+    SESSION_EXPIRED("SESSION_EXPIRED"),
+    TAKEOVER("TAKEOVER");
 
     private String value;
 

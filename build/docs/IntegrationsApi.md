@@ -1101,7 +1101,7 @@ try {
 # **getIntegrationsActions**
 
 
-> [ActionEntityListing](ActionEntityListing) getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)
+> [ActionEntityListing](ActionEntityListing) getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions, includeConfig)
 
 Retrieves all actions associated with filters passed in via query param.
 
@@ -1145,8 +1145,9 @@ String name = "name_example"; // String | Filter by partial or complete action n
 String ids = "ids_example"; // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
 String secure = "secure_example"; // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 String includeAuthActions = "false"; // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
+Boolean includeConfig = false; // Boolean | Return config in response.
 try {
-    ActionEntityListing result = apiInstance.getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions);
+    ActionEntityListing result = apiInstance.getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions, includeConfig);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActions");
@@ -1170,6 +1171,7 @@ try {
 | **ids** | **String**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional] 
 | **secure** | **String**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
 | **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false 
+| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -1369,7 +1371,7 @@ This endpoint does not require any parameters.
 # **getIntegrationsActionsDrafts**
 
 
-> [ActionEntityListing](ActionEntityListing) getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)
+> [ActionEntityListing](ActionEntityListing) getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions, includeConfig)
 
 Retrieves all action drafts associated with the filters passed in via query param.
 
@@ -1413,8 +1415,9 @@ String name = "name_example"; // String | Filter by partial or complete action n
 String ids = "ids_example"; // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
 String secure = "secure_example"; // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 String includeAuthActions = "false"; // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
+Boolean includeConfig = false; // Boolean | Return config in response.
 try {
-    ActionEntityListing result = apiInstance.getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions);
+    ActionEntityListing result = apiInstance.getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions, includeConfig);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionsDrafts");
@@ -1438,6 +1441,7 @@ try {
 | **ids** | **String**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional] 
 | **secure** | **String**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
 | **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false 
+| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -5860,4 +5864,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

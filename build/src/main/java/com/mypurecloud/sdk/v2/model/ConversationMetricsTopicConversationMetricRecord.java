@@ -406,6 +406,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     SESSIONEXPIRED("sessionExpired"),
     SPAM("spam"),
     SYSTEM("system"),
+    TAKEOVER("takeover"),
     TIMEOUT("timeout"),
     TRANSFER("transfer"),
     TRANSFERDND("transferDnd"),

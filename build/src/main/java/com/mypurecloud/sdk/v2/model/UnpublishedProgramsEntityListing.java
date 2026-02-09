@@ -27,9 +27,9 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
   
   private List<Program> entities = null;
   private Integer pageSize = null;
+  private Integer pageCount = null;
   private String nextUri = null;
   private String selfUri = null;
-  private Integer pageCount = null;
 
   public UnpublishedProgramsEntityListing() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -74,6 +74,23 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
 
   /**
    **/
+  public UnpublishedProgramsEntityListing pageCount(Integer pageCount) {
+    this.pageCount = pageCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("pageCount")
+  public Integer getPageCount() {
+    return pageCount;
+  }
+  public void setPageCount(Integer pageCount) {
+    this.pageCount = pageCount;
+  }
+
+
+  /**
+   **/
   public UnpublishedProgramsEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -106,23 +123,6 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
   }
 
 
-  /**
-   **/
-  public UnpublishedProgramsEntityListing pageCount(Integer pageCount) {
-    this.pageCount = pageCount;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("pageCount")
-  public Integer getPageCount() {
-    return pageCount;
-  }
-  public void setPageCount(Integer pageCount) {
-    this.pageCount = pageCount;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -135,14 +135,14 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
 
     return Objects.equals(this.entities, unpublishedProgramsEntityListing.entities) &&
             Objects.equals(this.pageSize, unpublishedProgramsEntityListing.pageSize) &&
+            Objects.equals(this.pageCount, unpublishedProgramsEntityListing.pageCount) &&
             Objects.equals(this.nextUri, unpublishedProgramsEntityListing.nextUri) &&
-            Objects.equals(this.selfUri, unpublishedProgramsEntityListing.selfUri) &&
-            Objects.equals(this.pageCount, unpublishedProgramsEntityListing.pageCount);
+            Objects.equals(this.selfUri, unpublishedProgramsEntityListing.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, nextUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageCount, nextUri, selfUri);
   }
 
   @Override
@@ -152,9 +152,9 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

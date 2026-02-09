@@ -45,7 +45,10 @@ public class TimeOffRequestQueryBody  implements Serializable {
  @JsonDeserialize(using = StatusesEnumDeserializer.class)
   public enum StatusesEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    PENDING("PENDING");
+    PENDING("PENDING"),
+    APPROVED("APPROVED"),
+    DENIED("DENIED"),
+    CANCELED("CANCELED");
 
     private String value;
 

@@ -95,6 +95,34 @@ public class GetAssistantRequest {
 		}
 	}
 
+	private String languageVariation;
+	public String getLanguageVariation() {
+		return this.languageVariation;
+	}
+
+	public void setLanguageVariation(String languageVariation) {
+		this.languageVariation = languageVariation;
+	}
+
+	public GetAssistantRequest withLanguageVariation(String languageVariation) {
+	    this.setLanguageVariation(languageVariation);
+	    return this;
+	} 
+
+	private Boolean fallbackToPrimaryAssistant;
+	public Boolean getFallbackToPrimaryAssistant() {
+		return this.fallbackToPrimaryAssistant;
+	}
+
+	public void setFallbackToPrimaryAssistant(Boolean fallbackToPrimaryAssistant) {
+		this.fallbackToPrimaryAssistant = fallbackToPrimaryAssistant;
+	}
+
+	public GetAssistantRequest withFallbackToPrimaryAssistant(Boolean fallbackToPrimaryAssistant) {
+	    this.setFallbackToPrimaryAssistant(fallbackToPrimaryAssistant);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,6 +155,12 @@ public class GetAssistantRequest {
         
 
                 .withQueryParameters("expand", "", expand)
+        
+
+                .withQueryParameters("languageVariation", "", languageVariation)
+        
+
+                .withQueryParameters("fallbackToPrimaryAssistant", "", fallbackToPrimaryAssistant)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -171,6 +205,16 @@ public class GetAssistantRequest {
 		    request.setExpand(expand.toString());
 
 		    return this;
+		}
+
+		public Builder withLanguageVariation(String languageVariation) {
+			request.setLanguageVariation(languageVariation);
+			return this;
+		}
+
+		public Builder withFallbackToPrimaryAssistant(Boolean fallbackToPrimaryAssistant) {
+			request.setFallbackToPrimaryAssistant(fallbackToPrimaryAssistant);
+			return this;
 		}
 
 

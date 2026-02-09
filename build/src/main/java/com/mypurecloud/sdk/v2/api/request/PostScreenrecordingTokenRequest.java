@@ -20,22 +20,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.BackgroundAssistantUserAuthenticatedInfo;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingUserAuthenticatedInfo;
 import com.mypurecloud.sdk.v2.model.SignedData;
 
 public class PostScreenrecordingTokenRequest {
 
-	private ScreenRecordingUserAuthenticatedInfo body;
-	public ScreenRecordingUserAuthenticatedInfo getBody() {
+	private BackgroundAssistantUserAuthenticatedInfo body;
+	public BackgroundAssistantUserAuthenticatedInfo getBody() {
 		return this.body;
 	}
 
-	public void setBody(ScreenRecordingUserAuthenticatedInfo body) {
+	public void setBody(BackgroundAssistantUserAuthenticatedInfo body) {
 		this.body = body;
 	}
 
-	public PostScreenrecordingTokenRequest withBody(ScreenRecordingUserAuthenticatedInfo body) {
+	public PostScreenrecordingTokenRequest withBody(BackgroundAssistantUserAuthenticatedInfo body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -59,7 +59,7 @@ public class PostScreenrecordingTokenRequest {
         return this;
     }
 
-    public ApiRequest<ScreenRecordingUserAuthenticatedInfo> withHttpInfo() {
+    public ApiRequest<BackgroundAssistantUserAuthenticatedInfo> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/screenrecording/token")
@@ -86,7 +86,7 @@ public class PostScreenrecordingTokenRequest {
 		}
 
 
-		public Builder withBody(ScreenRecordingUserAuthenticatedInfo body) {
+		public Builder withBody(BackgroundAssistantUserAuthenticatedInfo body) {
 			request.setBody(body);
 			return this;
 		}

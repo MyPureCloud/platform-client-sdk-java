@@ -16,6 +16,7 @@
 | **publishedVersions** | [**DomainEntityListingEvaluationForm**](DomainEntityListingEvaluationForm) | A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable). |  [optional] |
 | **latestVersionFormName** | **String** | The name of the form's most recently published version |  [optional] |
 | **aiScoring** | [**AiScoringSettings**](AiScoringSettings) | AI scoring settings for the evaluation form. |  [optional] |
+| **dialect** | **String** | The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -30,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

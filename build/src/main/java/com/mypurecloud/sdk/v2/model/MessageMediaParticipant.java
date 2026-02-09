@@ -187,7 +187,8 @@ public class MessageMediaParticipant  implements Serializable {
     OTHER("other"),
     SPAM("spam"),
     INACTIVITY("inactivity"),
-    SESSION_EXPIRED("session.expired");
+    SESSION_EXPIRED("session.expired"),
+    TAKEOVER("takeover");
 
     private String value;
 

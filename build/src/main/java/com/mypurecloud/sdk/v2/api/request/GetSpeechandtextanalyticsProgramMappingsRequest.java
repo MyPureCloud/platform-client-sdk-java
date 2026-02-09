@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramTopicLinksJob;
 import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.ReprocessInteractionsByJobIdResponse;

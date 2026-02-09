@@ -2356,7 +2356,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
-| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT 
+| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT, LIBRARY 
 | **body** | [**List&lt;String&gt;**](String)| Object Id List | 
 {: class="table-striped"}
 
@@ -2490,7 +2490,7 @@ try {
 # **postAuthorizationPoliciesTarget**
 
 
-> [AuthorizationPolicy](AuthorizationPolicy) postAuthorizationPoliciesTarget(targetName, body)
+> [AuthorizationPolicy](AuthorizationPolicy) postAuthorizationPoliciesTarget(targetName, body, skipLockoutCheck)
 
 Add an access control policy for a specified resource target and subject
 
@@ -2524,8 +2524,9 @@ Configuration.setDefaultApiClient(apiClient);
 AuthorizationApi apiInstance = new AuthorizationApi();
 String targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
 AuthorizationPolicy body = new AuthorizationPolicy(); // AuthorizationPolicy | Access control policy
+Boolean skipLockoutCheck = false; // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
 try {
-    AuthorizationPolicy result = apiInstance.postAuthorizationPoliciesTarget(targetName, body);
+    AuthorizationPolicy result = apiInstance.postAuthorizationPoliciesTarget(targetName, body, skipLockoutCheck);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#postAuthorizationPoliciesTarget");
@@ -2540,6 +2541,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **targetName** | **String**| The domain:entity:action target to which the policy will be applied | 
 | **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy | 
+| **skipLockoutCheck** | **Boolean**| Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3232,7 +3234,7 @@ try {
 # **putAuthorizationPoliciesTarget**
 
 
-> [AuthorizationPolicy](AuthorizationPolicy) putAuthorizationPoliciesTarget(targetName, body)
+> [AuthorizationPolicy](AuthorizationPolicy) putAuthorizationPoliciesTarget(targetName, body, skipLockoutCheck)
 
 Add an access control policy for a specified resource target and subject, overwriting any existing policy
 
@@ -3267,8 +3269,9 @@ Configuration.setDefaultApiClient(apiClient);
 AuthorizationApi apiInstance = new AuthorizationApi();
 String targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
 AuthorizationPolicy body = new AuthorizationPolicy(); // AuthorizationPolicy | Access control policy
+Boolean skipLockoutCheck = false; // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
 try {
-    AuthorizationPolicy result = apiInstance.putAuthorizationPoliciesTarget(targetName, body);
+    AuthorizationPolicy result = apiInstance.putAuthorizationPoliciesTarget(targetName, body, skipLockoutCheck);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#putAuthorizationPoliciesTarget");
@@ -3283,6 +3286,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **targetName** | **String**| The domain:entity:action target to which the policy will be applied | 
 | **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy | 
+| **skipLockoutCheck** | **Boolean**| Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3294,7 +3298,7 @@ try {
 # **putAuthorizationPolicy**
 
 
-> [AuthorizationPolicy](AuthorizationPolicy) putAuthorizationPolicy(policyId, body)
+> [AuthorizationPolicy](AuthorizationPolicy) putAuthorizationPolicy(policyId, body, skipLockoutCheck)
 
 Update an access control policy with a given ID
 
@@ -3328,8 +3332,9 @@ Configuration.setDefaultApiClient(apiClient);
 AuthorizationApi apiInstance = new AuthorizationApi();
 String policyId = "policyId_example"; // String | The ID of the policy to update
 AuthorizationPolicy body = new AuthorizationPolicy(); // AuthorizationPolicy | Access control policy
+Boolean skipLockoutCheck = false; // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
 try {
-    AuthorizationPolicy result = apiInstance.putAuthorizationPolicy(policyId, body);
+    AuthorizationPolicy result = apiInstance.putAuthorizationPolicy(policyId, body, skipLockoutCheck);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#putAuthorizationPolicy");
@@ -3344,6 +3349,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **policyId** | **String**| The ID of the policy to update | 
 | **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy | 
+| **skipLockoutCheck** | **Boolean**| Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3719,4 +3725,4 @@ try {
 [**UserAuthorization**](UserAuthorization)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

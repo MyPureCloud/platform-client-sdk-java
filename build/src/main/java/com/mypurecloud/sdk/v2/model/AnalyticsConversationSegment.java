@@ -67,6 +67,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     SESSIONEXPIRED("sessionExpired"),
     SPAM("spam"),
     SYSTEM("system"),
+    TAKEOVER("takeover"),
     TIMEOUT("timeout"),
     TRANSFER("transfer"),
     TRANSPORTFAILURE("transportFailure"),

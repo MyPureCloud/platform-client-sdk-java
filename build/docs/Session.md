@@ -89,6 +89,7 @@
 | DONOTDISTURBENDPOINT | &quot;DoNotDisturbEndpoint&quot; | 
 | DONOTDISTURBTRANSFER | &quot;DoNotDisturbTransfer&quot; | 
 | SESSIONEXPIRED | &quot;SessionExpired&quot; | 
+| TAKEOVER | &quot;Takeover&quot; | 
 
 
 ## Enum: LastAcdOutcomeEnum
@@ -104,4 +105,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

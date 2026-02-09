@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramTopicLinksJob;
 import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.ReprocessInteractionsByJobIdResponse;
@@ -94,6 +95,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGener
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsSettingsInsightsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTopiclinksJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsReprocessingJobRequest;
@@ -2091,6 +2093,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ProgramInsightsSettingsEntityListing> response = (ApiResponse<ProgramInsightsSettingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics program-topic links job by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ProgramTopicLinksJob> getSpeechandtextanalyticsProgramsTopiclinksJobAsync(GetSpeechandtextanalyticsProgramsTopiclinksJobRequest request, final AsyncApiCallback<ProgramTopicLinksJob> callback) {
+    try {
+      final SettableFuture<ProgramTopicLinksJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramTopicLinksJob>() {}, new AsyncApiCallback<ApiResponse<ProgramTopicLinksJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramTopicLinksJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics program-topic links job by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ProgramTopicLinksJob>> getSpeechandtextanalyticsProgramsTopiclinksJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ProgramTopicLinksJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ProgramTopicLinksJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ProgramTopicLinksJob>() {}, new AsyncApiCallback<ApiResponse<ProgramTopicLinksJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramTopicLinksJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramTopicLinksJob> response = (ApiResponse<ProgramTopicLinksJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramTopicLinksJob> response = (ApiResponse<ProgramTopicLinksJob>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

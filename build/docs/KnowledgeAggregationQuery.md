@@ -25,6 +25,7 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AGENTASSISTANTID | &quot;agentAssistantId&quot; |
+| ANSWERGENERATIONENABLED | &quot;answerGenerationEnabled&quot; |
 | APPDEPLOYMENTID | &quot;appDeploymentId&quot; |
 | APPTYPE | &quot;appType&quot; |
 | BOTFLOWID | &quot;botFlowId&quot; |
@@ -40,16 +41,19 @@
 | FEEDBACKREASON | &quot;feedbackReason&quot; |
 | FEEDBACKTYPE | &quot;feedbackType&quot; |
 | HASCOMMENT | &quot;hasComment&quot; |
+| HASRETRIEVEDREFERENCES | &quot;hasRetrievedReferences&quot; |
 | HASSEARCH | &quot;hasSearch&quot; |
 | KNOWLEDGEBASEDOCUMENTID | &quot;knowledgeBaseDocumentId&quot; |
 | KNOWLEDGEBASEDOCUMENTVARIATIONID | &quot;knowledgeBaseDocumentVariationId&quot; |
 | KNOWLEDGEBASEDOCUMENTVERSIONID | &quot;knowledgeBaseDocumentVersionId&quot; |
 | KNOWLEDGEBASEID | &quot;knowledgeBaseId&quot; |
+| KNOWLEDGESETTINGID | &quot;knowledgeSettingId&quot; |
 | LANGUAGECODE | &quot;languageCode&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
 | PRESENTEDDOCUMENTSCOUNT | &quot;presentedDocumentsCount&quot; |
 | QUERYTYPE | &quot;queryType&quot; |
+| QUERYTYPEV3 | &quot;queryTypeV3&quot; |
 | QUEUEID | &quot;queueId&quot; |
 | SEARCHID | &quot;searchId&quot; |
 | SEARCHQUERY | &quot;searchQuery&quot; |
@@ -75,6 +79,7 @@
 | NKNOWLEDGESEARCHFEEDBACK | &quot;nKnowledgeSearchFeedback&quot; |
 | NKNOWLEDGESEARCHUNANSWERED | &quot;nKnowledgeSearchUnanswered&quot; |
 | NKNOWLEDGESESSIONS | &quot;nKnowledgeSessions&quot; |
+| NKNOWLEDGEV3SEARCH | &quot;nKnowledgeV3Search&quot; |
 | OKNOWLEDGEDOCUMENTQUERY | &quot;oKnowledgeDocumentQuery&quot; |
 | OKNOWLEDGEDOCUMENTQUERYSELFSERVED | &quot;oKnowledgeDocumentQuerySelfServed&quot; |
 | OKNOWLEDGESEARCH | &quot;oKnowledgeSearch&quot; |
@@ -100,4 +105,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

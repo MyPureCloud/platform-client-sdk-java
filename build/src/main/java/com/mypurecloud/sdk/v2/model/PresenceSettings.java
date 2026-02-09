@@ -26,6 +26,8 @@ public class PresenceSettings  implements Serializable {
   private String id = null;
   private String name = null;
   private RestorePresenceSettings restorePresenceSettings = null;
+  private Boolean requestingOffQueueEnabled = null;
+  private String defaultPrimaryPresenceRegisteredSourceId = null;
   private String selfUri = null;
 
   public PresenceSettings() {
@@ -76,6 +78,42 @@ public class PresenceSettings  implements Serializable {
   }
 
 
+  /**
+   * Whether requesting off queue is enabled for the organization
+   **/
+  public PresenceSettings requestingOffQueueEnabled(Boolean requestingOffQueueEnabled) {
+    this.requestingOffQueueEnabled = requestingOffQueueEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether requesting off queue is enabled for the organization")
+  @JsonProperty("requestingOffQueueEnabled")
+  public Boolean getRequestingOffQueueEnabled() {
+    return requestingOffQueueEnabled;
+  }
+  public void setRequestingOffQueueEnabled(Boolean requestingOffQueueEnabled) {
+    this.requestingOffQueueEnabled = requestingOffQueueEnabled;
+  }
+
+
+  /**
+   * The default primary presence registered source ID for the organization
+   **/
+  public PresenceSettings defaultPrimaryPresenceRegisteredSourceId(String defaultPrimaryPresenceRegisteredSourceId) {
+    this.defaultPrimaryPresenceRegisteredSourceId = defaultPrimaryPresenceRegisteredSourceId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The default primary presence registered source ID for the organization")
+  @JsonProperty("defaultPrimaryPresenceRegisteredSourceId")
+  public String getDefaultPrimaryPresenceRegisteredSourceId() {
+    return defaultPrimaryPresenceRegisteredSourceId;
+  }
+  public void setDefaultPrimaryPresenceRegisteredSourceId(String defaultPrimaryPresenceRegisteredSourceId) {
+    this.defaultPrimaryPresenceRegisteredSourceId = defaultPrimaryPresenceRegisteredSourceId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -96,12 +134,14 @@ public class PresenceSettings  implements Serializable {
     return Objects.equals(this.id, presenceSettings.id) &&
             Objects.equals(this.name, presenceSettings.name) &&
             Objects.equals(this.restorePresenceSettings, presenceSettings.restorePresenceSettings) &&
+            Objects.equals(this.requestingOffQueueEnabled, presenceSettings.requestingOffQueueEnabled) &&
+            Objects.equals(this.defaultPrimaryPresenceRegisteredSourceId, presenceSettings.defaultPrimaryPresenceRegisteredSourceId) &&
             Objects.equals(this.selfUri, presenceSettings.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, restorePresenceSettings, selfUri);
+    return Objects.hash(id, name, restorePresenceSettings, requestingOffQueueEnabled, defaultPrimaryPresenceRegisteredSourceId, selfUri);
   }
 
   @Override
@@ -112,6 +152,8 @@ public class PresenceSettings  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    restorePresenceSettings: ").append(toIndentedString(restorePresenceSettings)).append("\n");
+    sb.append("    requestingOffQueueEnabled: ").append(toIndentedString(requestingOffQueueEnabled)).append("\n");
+    sb.append("    defaultPrimaryPresenceRegisteredSourceId: ").append(toIndentedString(defaultPrimaryPresenceRegisteredSourceId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

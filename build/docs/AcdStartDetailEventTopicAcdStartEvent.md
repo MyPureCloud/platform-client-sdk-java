@@ -28,6 +28,7 @@
 | **utilizationLabel** | **String** |  |  [optional] |
 | **routingPriority** | **Long** |  |  [optional] |
 | **requestedRoutingSkillIds** | **List&lt;String&gt;** |  |  [optional] |
+| **skillExpressionApplied** | **Boolean** |  |  [optional] |
 
 
 ## Enum: MediaTypeEnum
@@ -77,4 +78,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

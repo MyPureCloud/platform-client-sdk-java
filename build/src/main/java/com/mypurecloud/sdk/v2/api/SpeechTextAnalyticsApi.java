@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramTopicLinksJob;
 import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.ReprocessInteractionsByJobIdResponse;
@@ -91,6 +92,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGener
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsSettingsInsightsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTopiclinksJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsReprocessingJobRequest;
@@ -1342,7 +1344,7 @@ public class SpeechTextAnalyticsApi {
    * Get the list of Speech & Text Analytics dictionary feedbacks
    * 
    * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
-   * @param transcriptionEngine Filter by transcription engine (optional)
+   * @param transcriptionEngine Filter by transcription engine, If not provided, all transcription engines will be considered (optional)
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 500)
    * @return DictionaryFeedbackEntityListing
@@ -1357,7 +1359,7 @@ public class SpeechTextAnalyticsApi {
    * Get the list of Speech & Text Analytics dictionary feedbacks
    * 
    * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
-   * @param transcriptionEngine Filter by transcription engine (optional)
+   * @param transcriptionEngine Filter by transcription engine, If not provided, all transcription engines will be considered (optional)
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 500)
    * @return DictionaryFeedbackEntityListing
@@ -2236,6 +2238,84 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ProgramInsightsSettingsEntityListing> response = (ApiResponse<ProgramInsightsSettingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics program-topic links job by id
+   * 
+   * @param jobId The id of the program-topic links job (required)
+   * @return ProgramTopicLinksJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramTopicLinksJob getSpeechandtextanalyticsProgramsTopiclinksJob(String jobId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramsTopiclinksJob(createGetSpeechandtextanalyticsProgramsTopiclinksJobRequest(jobId));
+  }
+
+  /**
+   * Get a Speech & Text Analytics program-topic links job by id
+   * 
+   * @param jobId The id of the program-topic links job (required)
+   * @return ProgramTopicLinksJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramTopicLinksJob> getSpeechandtextanalyticsProgramsTopiclinksJobWithHttpInfo(String jobId) throws IOException {
+    return getSpeechandtextanalyticsProgramsTopiclinksJob(createGetSpeechandtextanalyticsProgramsTopiclinksJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramsTopiclinksJobRequest createGetSpeechandtextanalyticsProgramsTopiclinksJobRequest(String jobId) {
+    return GetSpeechandtextanalyticsProgramsTopiclinksJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get a Speech & Text Analytics program-topic links job by id
+   * 
+   * @param request The request object
+   * @return ProgramTopicLinksJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramTopicLinksJob getSpeechandtextanalyticsProgramsTopiclinksJob(GetSpeechandtextanalyticsProgramsTopiclinksJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramTopicLinksJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramTopicLinksJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics program-topic links job by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramTopicLinksJob> getSpeechandtextanalyticsProgramsTopiclinksJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramTopicLinksJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramTopicLinksJob> response = (ApiResponse<ProgramTopicLinksJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramTopicLinksJob> response = (ApiResponse<ProgramTopicLinksJob>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

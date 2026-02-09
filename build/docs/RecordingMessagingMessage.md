@@ -11,6 +11,7 @@
 | **to** | **String** | The message recipient. |  [optional] |
 | **timestamp** | [**Date**](Date) | The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **id** | **String** | A globally unique identifier for this communication. |  [optional] |
+| **status** | **String** | Status of the message |  [optional] |
 | **purpose** | **String** | A well known string that specifies the purpose or type of the participant on this communication. |  [optional] |
 | **participantId** | **String** | A globally unique identifier for the participant on this communication. |  [optional] |
 | **queue** | [**AddressableEntityRef**](AddressableEntityRef) | A globally unique identifier for the queue involved in this communication. |  [optional] |
@@ -34,6 +35,7 @@
 | **paymentResponse** | [**PaymentResponse**](PaymentResponse) | Payment response content. |  [optional] |
 | **form** | [**RecordingForm**](RecordingForm) | Form content. |  [optional] |
 | **roadsideAssistance** | [**RecordingRoadsideAssistance**](RecordingRoadsideAssistance) | Roadside Assistance content. |  [optional] |
+| **messageReceipts** | [**List&lt;RecordingMessageReceipt&gt;**](RecordingMessageReceipt) | List of message receipts |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -75,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

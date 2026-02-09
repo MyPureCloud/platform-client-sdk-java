@@ -269,7 +269,7 @@ null (empty response body)
 # **getAssistant**
 
 
-> [Assistant](Assistant) getAssistant(assistantId, expand)
+> [Assistant](Assistant) getAssistant(assistantId, expand, languageVariation, fallbackToPrimaryAssistant)
 
 Get an assistant.
 
@@ -303,8 +303,10 @@ Configuration.setDefaultApiClient(apiClient);
 AgentAssistantsApi apiInstance = new AgentAssistantsApi();
 String assistantId = "assistantId_example"; // String | Assistant ID
 String expand = "expand_example"; // String | Which fields, if any, to expand.
+String languageVariation = "languageVariation_example"; // String | Language variation
+Boolean fallbackToPrimaryAssistant = true; // Boolean | Fall back to primary assistant if specified variation is not found
 try {
-    Assistant result = apiInstance.getAssistant(assistantId, expand);
+    Assistant result = apiInstance.getAssistant(assistantId, expand, languageVariation, fallbackToPrimaryAssistant);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentAssistantsApi#getAssistant");
@@ -319,6 +321,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **assistantId** | **String**| Assistant ID | 
 | **expand** | **String**| Which fields, if any, to expand. | [optional]<br />**Values**: copilot 
+| **languageVariation** | **String**| Language variation | [optional] 
+| **fallbackToPrimaryAssistant** | **Boolean**| Fall back to primary assistant if specified variation is not found | [optional] 
 {: class="table-striped"}
 
 
@@ -1459,4 +1463,4 @@ try {
 [**AgentChecklist**](AgentChecklist)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

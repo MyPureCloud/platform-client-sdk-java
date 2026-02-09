@@ -62,7 +62,8 @@ public class GetUsersRuleDependentTypeIdRequest {
 	} 
 
 	public enum ruleTypeValues { 
-		LEARNING("learning");
+		LEARNING("learning"),
+		ACTIVITYPLAN("activityplan");
 
 		private String value;
 

@@ -39,6 +39,7 @@ public class EvaluationForm  implements Serializable {
   private EvaluationSettings evaluationSettings = null;
   private String latestVersionFormName = null;
   private AiScoringSettings aiScoring = null;
+  private String dialect = null;
   private String selfUri = null;
 
   public EvaluationForm() {
@@ -204,6 +205,24 @@ public class EvaluationForm  implements Serializable {
   }
 
 
+  /**
+   * The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW
+   **/
+  public EvaluationForm dialect(String dialect) {
+    this.dialect = dialect;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW")
+  @JsonProperty("dialect")
+  public String getDialect() {
+    return dialect;
+  }
+  public void setDialect(String dialect) {
+    this.dialect = dialect;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -231,12 +250,13 @@ public class EvaluationForm  implements Serializable {
             Objects.equals(this.evaluationSettings, evaluationForm.evaluationSettings) &&
             Objects.equals(this.latestVersionFormName, evaluationForm.latestVersionFormName) &&
             Objects.equals(this.aiScoring, evaluationForm.aiScoring) &&
+            Objects.equals(this.dialect, evaluationForm.dialect) &&
             Objects.equals(this.selfUri, evaluationForm.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, publishedVersions, evaluationSettings, latestVersionFormName, aiScoring, selfUri);
+    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, publishedVersions, evaluationSettings, latestVersionFormName, aiScoring, dialect, selfUri);
   }
 
   @Override
@@ -254,6 +274,7 @@ public class EvaluationForm  implements Serializable {
     sb.append("    evaluationSettings: ").append(toIndentedString(evaluationSettings)).append("\n");
     sb.append("    latestVersionFormName: ").append(toIndentedString(latestVersionFormName)).append("\n");
     sb.append("    aiScoring: ").append(toIndentedString(aiScoring)).append("\n");
+    sb.append("    dialect: ").append(toIndentedString(dialect)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

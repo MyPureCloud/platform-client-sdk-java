@@ -1550,12 +1550,13 @@ public class IntegrationsApi {
    * @param ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
    * @param secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
    * @param includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional, default to false)
+   * @param includeConfig Return config in response. (optional, default to false)
    * @return ActionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ActionEntityListing getIntegrationsActions(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions) throws IOException, ApiException {
-    return  getIntegrationsActions(createGetIntegrationsActionsRequest(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions));
+  public ActionEntityListing getIntegrationsActions(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions, Boolean includeConfig) throws IOException, ApiException {
+    return  getIntegrationsActions(createGetIntegrationsActionsRequest(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions, includeConfig));
   }
 
   /**
@@ -1572,14 +1573,15 @@ public class IntegrationsApi {
    * @param ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
    * @param secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
    * @param includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional, default to false)
+   * @param includeConfig Return config in response. (optional, default to false)
    * @return ActionEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActionEntityListing> getIntegrationsActionsWithHttpInfo(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions) throws IOException {
-    return getIntegrationsActions(createGetIntegrationsActionsRequest(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions).withHttpInfo());
+  public ApiResponse<ActionEntityListing> getIntegrationsActionsWithHttpInfo(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions, Boolean includeConfig) throws IOException {
+    return getIntegrationsActions(createGetIntegrationsActionsRequest(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions, includeConfig).withHttpInfo());
   }
 
-  private GetIntegrationsActionsRequest createGetIntegrationsActionsRequest(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions) {
+  private GetIntegrationsActionsRequest createGetIntegrationsActionsRequest(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions, Boolean includeConfig) {
     return GetIntegrationsActionsRequest.builder()
             .withPageSize(pageSize)
 
@@ -1602,6 +1604,8 @@ public class IntegrationsApi {
             .withSecure(secure)
 
             .withIncludeAuthActions(includeAuthActions)
+
+            .withIncludeConfig(includeConfig)
 
             .build();
   }
@@ -1926,12 +1930,13 @@ public class IntegrationsApi {
    * @param ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
    * @param secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
    * @param includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional, default to false)
+   * @param includeConfig Return config in response. (optional, default to false)
    * @return ActionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ActionEntityListing getIntegrationsActionsDrafts(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions) throws IOException, ApiException {
-    return  getIntegrationsActionsDrafts(createGetIntegrationsActionsDraftsRequest(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions));
+  public ActionEntityListing getIntegrationsActionsDrafts(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions, Boolean includeConfig) throws IOException, ApiException {
+    return  getIntegrationsActionsDrafts(createGetIntegrationsActionsDraftsRequest(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions, includeConfig));
   }
 
   /**
@@ -1948,14 +1953,15 @@ public class IntegrationsApi {
    * @param ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
    * @param secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
    * @param includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional, default to false)
+   * @param includeConfig Return config in response. (optional, default to false)
    * @return ActionEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActionEntityListing> getIntegrationsActionsDraftsWithHttpInfo(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions) throws IOException {
-    return getIntegrationsActionsDrafts(createGetIntegrationsActionsDraftsRequest(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions).withHttpInfo());
+  public ApiResponse<ActionEntityListing> getIntegrationsActionsDraftsWithHttpInfo(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions, Boolean includeConfig) throws IOException {
+    return getIntegrationsActionsDrafts(createGetIntegrationsActionsDraftsRequest(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions, includeConfig).withHttpInfo());
   }
 
-  private GetIntegrationsActionsDraftsRequest createGetIntegrationsActionsDraftsRequest(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions) {
+  private GetIntegrationsActionsDraftsRequest createGetIntegrationsActionsDraftsRequest(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions, Boolean includeConfig) {
     return GetIntegrationsActionsDraftsRequest.builder()
             .withPageSize(pageSize)
 
@@ -1978,6 +1984,8 @@ public class IntegrationsApi {
             .withSecure(secure)
 
             .withIncludeAuthActions(includeAuthActions)
+
+            .withIncludeConfig(includeConfig)
 
             .build();
   }

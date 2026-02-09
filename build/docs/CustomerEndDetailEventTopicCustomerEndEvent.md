@@ -56,6 +56,7 @@
 | DND_TRANSFER | &quot;DND_TRANSFER&quot; | 
 | INACTIVITY | &quot;INACTIVITY&quot; | 
 | SESSION_EXPIRED | &quot;SESSION_EXPIRED&quot; | 
+| TAKEOVER | &quot;TAKEOVER&quot; | 
 
 
 ## Enum: MediaTypeEnum
@@ -105,4 +106,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

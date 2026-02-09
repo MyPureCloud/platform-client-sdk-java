@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ButtonQuickReplyPayload;
 import com.mypurecloud.sdk.v2.model.TemplateParameter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,17 +27,38 @@ import java.io.Serializable;
 
 public class CardParameters  implements Serializable {
   
+  private Integer index = null;
   private List<TemplateParameter> bodyParameters = null;
   private List<TemplateParameter> buttonUrlParameters = null;
+  private List<ButtonQuickReplyPayload> buttonQuickReplyPayloads = null;
 
   public CardParameters() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       bodyParameters = new ArrayList<TemplateParameter>();
       buttonUrlParameters = new ArrayList<TemplateParameter>();
+      buttonQuickReplyPayloads = new ArrayList<ButtonQuickReplyPayload>();
     }
   }
 
   
+  /**
+   * Index of the card in the carousel template
+   **/
+  public CardParameters index(Integer index) {
+    this.index = index;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Index of the card in the carousel template")
+  @JsonProperty("index")
+  public Integer getIndex() {
+    return index;
+  }
+  public void setIndex(Integer index) {
+    this.index = index;
+  }
+
+
   /**
    * A list of Response Management carousel card body parameter substitutions for the response's messaging template
    **/
@@ -73,6 +95,24 @@ public class CardParameters  implements Serializable {
   }
 
 
+  /**
+   * A list of quick reply button payloads for the carousel card
+   **/
+  public CardParameters buttonQuickReplyPayloads(List<ButtonQuickReplyPayload> buttonQuickReplyPayloads) {
+    this.buttonQuickReplyPayloads = buttonQuickReplyPayloads;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of quick reply button payloads for the carousel card")
+  @JsonProperty("buttonQuickReplyPayloads")
+  public List<ButtonQuickReplyPayload> getButtonQuickReplyPayloads() {
+    return buttonQuickReplyPayloads;
+  }
+  public void setButtonQuickReplyPayloads(List<ButtonQuickReplyPayload> buttonQuickReplyPayloads) {
+    this.buttonQuickReplyPayloads = buttonQuickReplyPayloads;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -83,13 +123,15 @@ public class CardParameters  implements Serializable {
     }
     CardParameters cardParameters = (CardParameters) o;
 
-    return Objects.equals(this.bodyParameters, cardParameters.bodyParameters) &&
-            Objects.equals(this.buttonUrlParameters, cardParameters.buttonUrlParameters);
+    return Objects.equals(this.index, cardParameters.index) &&
+            Objects.equals(this.bodyParameters, cardParameters.bodyParameters) &&
+            Objects.equals(this.buttonUrlParameters, cardParameters.buttonUrlParameters) &&
+            Objects.equals(this.buttonQuickReplyPayloads, cardParameters.buttonQuickReplyPayloads);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bodyParameters, buttonUrlParameters);
+    return Objects.hash(index, bodyParameters, buttonUrlParameters, buttonQuickReplyPayloads);
   }
 
   @Override
@@ -97,8 +139,10 @@ public class CardParameters  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardParameters {\n");
     
+    sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    bodyParameters: ").append(toIndentedString(bodyParameters)).append("\n");
     sb.append("    buttonUrlParameters: ").append(toIndentedString(buttonUrlParameters)).append("\n");
+    sb.append("    buttonQuickReplyPayloads: ").append(toIndentedString(buttonQuickReplyPayloads)).append("\n");
     sb.append("}");
     return sb.toString();
   }

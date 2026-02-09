@@ -381,12 +381,14 @@ public class AgentAssistantsApi {
    * 
    * @param assistantId Assistant ID (required)
    * @param expand Which fields, if any, to expand. (optional)
+   * @param languageVariation Language variation (optional)
+   * @param fallbackToPrimaryAssistant Fall back to primary assistant if specified variation is not found (optional)
    * @return Assistant
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Assistant getAssistant(String assistantId, String expand) throws IOException, ApiException {
-    return  getAssistant(createGetAssistantRequest(assistantId, expand));
+  public Assistant getAssistant(String assistantId, String expand, String languageVariation, Boolean fallbackToPrimaryAssistant) throws IOException, ApiException {
+    return  getAssistant(createGetAssistantRequest(assistantId, expand, languageVariation, fallbackToPrimaryAssistant));
   }
 
   /**
@@ -394,18 +396,24 @@ public class AgentAssistantsApi {
    * 
    * @param assistantId Assistant ID (required)
    * @param expand Which fields, if any, to expand. (optional)
+   * @param languageVariation Language variation (optional)
+   * @param fallbackToPrimaryAssistant Fall back to primary assistant if specified variation is not found (optional)
    * @return Assistant
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Assistant> getAssistantWithHttpInfo(String assistantId, String expand) throws IOException {
-    return getAssistant(createGetAssistantRequest(assistantId, expand).withHttpInfo());
+  public ApiResponse<Assistant> getAssistantWithHttpInfo(String assistantId, String expand, String languageVariation, Boolean fallbackToPrimaryAssistant) throws IOException {
+    return getAssistant(createGetAssistantRequest(assistantId, expand, languageVariation, fallbackToPrimaryAssistant).withHttpInfo());
   }
 
-  private GetAssistantRequest createGetAssistantRequest(String assistantId, String expand) {
+  private GetAssistantRequest createGetAssistantRequest(String assistantId, String expand, String languageVariation, Boolean fallbackToPrimaryAssistant) {
     return GetAssistantRequest.builder()
             .withAssistantId(assistantId)
 
             .withExpand(expand)
+
+            .withLanguageVariation(languageVariation)
+
+            .withFallbackToPrimaryAssistant(fallbackToPrimaryAssistant)
 
             .build();
   }

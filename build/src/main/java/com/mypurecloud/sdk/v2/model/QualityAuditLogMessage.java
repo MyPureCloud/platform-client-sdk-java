@@ -59,7 +59,8 @@ public class QualityAuditLogMessage  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     RECORDINGSERVICE("RecordingService"),
     RECORDINGPLAYBACKSERVICE("RecordingPlaybackService"),
-    QUALITYSERVICE("QualityService");
+    QUALITYSERVICE("QualityService"),
+    HORUSSERVICE("HorusService");
 
     private String value;
 
@@ -218,7 +219,9 @@ public class QualityAuditLogMessage  implements Serializable {
     RESTORECOMPLETE("RestoreComplete"),
     APPLYPROTECTION("ApplyProtection"),
     REVOKEPROTECTION("RevokeProtection"),
-    UPDATERETENTION("UpdateRetention");
+    UPDATERETENTION("UpdateRetention"),
+    START("Start"),
+    STOP("Stop");
 
     private String value;
 

@@ -207,6 +207,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
   private String utilizationLabel = null;
   private Long routingPriority = null;
   private List<String> requestedRoutingSkillIds = null;
+  private Boolean skillExpressionApplied = null;
 
   public AcdStartDetailEventTopicAcdStartEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -609,6 +610,23 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent skillExpressionApplied(Boolean skillExpressionApplied) {
+    this.skillExpressionApplied = skillExpressionApplied;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("skillExpressionApplied")
+  public Boolean getSkillExpressionApplied() {
+    return skillExpressionApplied;
+  }
+  public void setSkillExpressionApplied(Boolean skillExpressionApplied) {
+    this.skillExpressionApplied = skillExpressionApplied;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -641,12 +659,13 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
             Objects.equals(this.conversationExternalOrganizationIds, acdStartDetailEventTopicAcdStartEvent.conversationExternalOrganizationIds) &&
             Objects.equals(this.utilizationLabel, acdStartDetailEventTopicAcdStartEvent.utilizationLabel) &&
             Objects.equals(this.routingPriority, acdStartDetailEventTopicAcdStartEvent.routingPriority) &&
-            Objects.equals(this.requestedRoutingSkillIds, acdStartDetailEventTopicAcdStartEvent.requestedRoutingSkillIds);
+            Objects.equals(this.requestedRoutingSkillIds, acdStartDetailEventTopicAcdStartEvent.requestedRoutingSkillIds) &&
+            Objects.equals(this.skillExpressionApplied, acdStartDetailEventTopicAcdStartEvent.skillExpressionApplied);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, routingPriority, requestedRoutingSkillIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, routingPriority, requestedRoutingSkillIds, skillExpressionApplied);
   }
 
   @Override
@@ -677,6 +696,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("    routingPriority: ").append(toIndentedString(routingPriority)).append("\n");
     sb.append("    requestedRoutingSkillIds: ").append(toIndentedString(requestedRoutingSkillIds)).append("\n");
+    sb.append("    skillExpressionApplied: ").append(toIndentedString(skillExpressionApplied)).append("\n");
     sb.append("}");
     return sb.toString();
   }

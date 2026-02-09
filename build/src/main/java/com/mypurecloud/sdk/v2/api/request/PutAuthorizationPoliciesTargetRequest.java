@@ -79,6 +79,20 @@ public class PutAuthorizationPoliciesTargetRequest {
 	    return this;
 	} 
 
+	private Boolean skipLockoutCheck;
+	public Boolean getSkipLockoutCheck() {
+		return this.skipLockoutCheck;
+	}
+
+	public void setSkipLockoutCheck(Boolean skipLockoutCheck) {
+		this.skipLockoutCheck = skipLockoutCheck;
+	}
+
+	public PutAuthorizationPoliciesTargetRequest withSkipLockoutCheck(Boolean skipLockoutCheck) {
+	    this.setSkipLockoutCheck(skipLockoutCheck);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -113,6 +127,9 @@ public class PutAuthorizationPoliciesTargetRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/authorization/policies/targets/{targetName}")
                 .withPathParameter("targetName", targetName)
+        
+
+                .withQueryParameters("skipLockoutCheck", "", skipLockoutCheck)
         
                 .withBody(body)
 
@@ -149,6 +166,11 @@ public class PutAuthorizationPoliciesTargetRequest {
 
 		public Builder withBody(AuthorizationPolicy body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withSkipLockoutCheck(Boolean skipLockoutCheck) {
+			request.setSkipLockoutCheck(skipLockoutCheck);
 			return this;
 		}
 

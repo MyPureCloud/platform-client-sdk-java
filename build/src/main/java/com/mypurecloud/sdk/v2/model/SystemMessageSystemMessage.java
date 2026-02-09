@@ -80,6 +80,7 @@ public class SystemMessageSystemMessage  implements Serializable {
   private String organizationId = null;
   private String userId = null;
   private String oauthClientId = null;
+  private String oauthClientOrgId = null;
 
   private static class ReasonEnumDeserializer extends StdDeserializer<ReasonEnum> {
     public ReasonEnumDeserializer() {
@@ -241,6 +242,23 @@ public class SystemMessageSystemMessage  implements Serializable {
 
   /**
    **/
+  public SystemMessageSystemMessage oauthClientOrgId(String oauthClientOrgId) {
+    this.oauthClientOrgId = oauthClientOrgId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("oauthClientOrgId")
+  public String getOauthClientOrgId() {
+    return oauthClientOrgId;
+  }
+  public void setOauthClientOrgId(String oauthClientOrgId) {
+    this.oauthClientOrgId = oauthClientOrgId;
+  }
+
+
+  /**
+   **/
   public SystemMessageSystemMessage reason(ReasonEnum reason) {
     this.reason = reason;
     return this;
@@ -306,6 +324,7 @@ public class SystemMessageSystemMessage  implements Serializable {
             Objects.equals(this.organizationId, systemMessageSystemMessage.organizationId) &&
             Objects.equals(this.userId, systemMessageSystemMessage.userId) &&
             Objects.equals(this.oauthClientId, systemMessageSystemMessage.oauthClientId) &&
+            Objects.equals(this.oauthClientOrgId, systemMessageSystemMessage.oauthClientOrgId) &&
             Objects.equals(this.reason, systemMessageSystemMessage.reason) &&
             Objects.equals(this.message, systemMessageSystemMessage.message) &&
             Objects.equals(this.data, systemMessageSystemMessage.data);
@@ -313,7 +332,7 @@ public class SystemMessageSystemMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, systemTopicType, correlationId, organizationId, userId, oauthClientId, reason, message, data);
+    return Objects.hash(channelId, systemTopicType, correlationId, organizationId, userId, oauthClientId, oauthClientOrgId, reason, message, data);
   }
 
   @Override
@@ -327,6 +346,7 @@ public class SystemMessageSystemMessage  implements Serializable {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    oauthClientId: ").append(toIndentedString(oauthClientId)).append("\n");
+    sb.append("    oauthClientOrgId: ").append(toIndentedString(oauthClientOrgId)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");

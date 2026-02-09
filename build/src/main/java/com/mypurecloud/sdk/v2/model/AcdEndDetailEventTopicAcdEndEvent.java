@@ -68,7 +68,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     DND_ENDPOINT("DND_ENDPOINT"),
     DND_TRANSFER("DND_TRANSFER"),
     INACTIVITY("INACTIVITY"),
-    SESSION_EXPIRED("SESSION_EXPIRED");
+    SESSION_EXPIRED("SESSION_EXPIRED"),
+    TAKEOVER("TAKEOVER");
 
     private String value;
 
@@ -433,6 +434,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   }
   private UsedRoutingEnum usedRouting = null;
   private List<String> requestedRoutingSkillIds = null;
+  private List<String> requestedSkillExpressionIds = null;
   private String requestedLanguageId = null;
   private List<String> requestedRoutingUserIds = null;
   private Long routingPriority = null;
@@ -447,6 +449,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
       callbackNumbers = new ArrayList<String>();
       requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
       requestedRoutingSkillIds = new ArrayList<String>();
+      requestedSkillExpressionIds = new ArrayList<String>();
       requestedRoutingUserIds = new ArrayList<String>();
       conversationExternalContactIds = new ArrayList<String>();
       conversationExternalOrganizationIds = new ArrayList<String>();
@@ -864,6 +867,23 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
 
   /**
    **/
+  public AcdEndDetailEventTopicAcdEndEvent requestedSkillExpressionIds(List<String> requestedSkillExpressionIds) {
+    this.requestedSkillExpressionIds = requestedSkillExpressionIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("requestedSkillExpressionIds")
+  public List<String> getRequestedSkillExpressionIds() {
+    return requestedSkillExpressionIds;
+  }
+  public void setRequestedSkillExpressionIds(List<String> requestedSkillExpressionIds) {
+    this.requestedSkillExpressionIds = requestedSkillExpressionIds;
+  }
+
+
+  /**
+   **/
   public AcdEndDetailEventTopicAcdEndEvent requestedLanguageId(String requestedLanguageId) {
     this.requestedLanguageId = requestedLanguageId;
     return this;
@@ -1032,6 +1052,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
             Objects.equals(this.requestedRoutings, acdEndDetailEventTopicAcdEndEvent.requestedRoutings) &&
             Objects.equals(this.usedRouting, acdEndDetailEventTopicAcdEndEvent.usedRouting) &&
             Objects.equals(this.requestedRoutingSkillIds, acdEndDetailEventTopicAcdEndEvent.requestedRoutingSkillIds) &&
+            Objects.equals(this.requestedSkillExpressionIds, acdEndDetailEventTopicAcdEndEvent.requestedSkillExpressionIds) &&
             Objects.equals(this.requestedLanguageId, acdEndDetailEventTopicAcdEndEvent.requestedLanguageId) &&
             Objects.equals(this.requestedRoutingUserIds, acdEndDetailEventTopicAcdEndEvent.requestedRoutingUserIds) &&
             Objects.equals(this.routingPriority, acdEndDetailEventTopicAcdEndEvent.routingPriority) &&
@@ -1044,7 +1065,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, acdOutcome, answeredUserId, requestedRoutings, usedRouting, requestedRoutingSkillIds, requestedLanguageId, requestedRoutingUserIds, routingPriority, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, flowType);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, acdOutcome, answeredUserId, requestedRoutings, usedRouting, requestedRoutingSkillIds, requestedSkillExpressionIds, requestedLanguageId, requestedRoutingUserIds, routingPriority, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, flowType);
   }
 
   @Override
@@ -1076,6 +1097,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     sb.append("    requestedRoutings: ").append(toIndentedString(requestedRoutings)).append("\n");
     sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");
     sb.append("    requestedRoutingSkillIds: ").append(toIndentedString(requestedRoutingSkillIds)).append("\n");
+    sb.append("    requestedSkillExpressionIds: ").append(toIndentedString(requestedSkillExpressionIds)).append("\n");
     sb.append("    requestedLanguageId: ").append(toIndentedString(requestedLanguageId)).append("\n");
     sb.append("    requestedRoutingUserIds: ").append(toIndentedString(requestedRoutingUserIds)).append("\n");
     sb.append("    routingPriority: ").append(toIndentedString(routingPriority)).append("\n");

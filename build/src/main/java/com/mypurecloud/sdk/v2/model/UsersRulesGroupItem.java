@@ -103,7 +103,6 @@ public class UsersRulesGroupItem  implements Serializable {
     MANAGEMENTUNIT("ManagementUnit"),
     QUEUE("Queue"),
     REPORTSTO("ReportsTo"),
-    STAFFINGGROUP("StaffingGroup"),
     TEAM("Team"),
     USER("User");
 

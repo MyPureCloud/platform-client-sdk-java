@@ -74,7 +74,11 @@ public class Miner  implements Serializable {
     AR_EG("ar-eg"),
     AR_IL("ar-il"),
     AR_SA("ar-sa"),
-    AR_TN("ar-tn");
+    AR_TN("ar-tn"),
+    DA_DK("da-dk"),
+    FI_FI("fi-fi"),
+    SV_SE("sv-se"),
+    NB_NO("nb-no");
 
     private String value;
 

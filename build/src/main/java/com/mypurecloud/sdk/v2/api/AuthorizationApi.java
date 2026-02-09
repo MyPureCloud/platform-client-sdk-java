@@ -3377,12 +3377,13 @@ public class AuthorizationApi {
    * 
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
+   * @param skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)
    * @return AuthorizationPolicy
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuthorizationPolicy postAuthorizationPoliciesTarget(String targetName, AuthorizationPolicy body) throws IOException, ApiException {
-    return  postAuthorizationPoliciesTarget(createPostAuthorizationPoliciesTargetRequest(targetName, body));
+  public AuthorizationPolicy postAuthorizationPoliciesTarget(String targetName, AuthorizationPolicy body, Boolean skipLockoutCheck) throws IOException, ApiException {
+    return  postAuthorizationPoliciesTarget(createPostAuthorizationPoliciesTargetRequest(targetName, body, skipLockoutCheck));
   }
 
   /**
@@ -3390,18 +3391,21 @@ public class AuthorizationApi {
    * 
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
+   * @param skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)
    * @return AuthorizationPolicy
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuthorizationPolicy> postAuthorizationPoliciesTargetWithHttpInfo(String targetName, AuthorizationPolicy body) throws IOException {
-    return postAuthorizationPoliciesTarget(createPostAuthorizationPoliciesTargetRequest(targetName, body).withHttpInfo());
+  public ApiResponse<AuthorizationPolicy> postAuthorizationPoliciesTargetWithHttpInfo(String targetName, AuthorizationPolicy body, Boolean skipLockoutCheck) throws IOException {
+    return postAuthorizationPoliciesTarget(createPostAuthorizationPoliciesTargetRequest(targetName, body, skipLockoutCheck).withHttpInfo());
   }
 
-  private PostAuthorizationPoliciesTargetRequest createPostAuthorizationPoliciesTargetRequest(String targetName, AuthorizationPolicy body) {
+  private PostAuthorizationPoliciesTargetRequest createPostAuthorizationPoliciesTargetRequest(String targetName, AuthorizationPolicy body, Boolean skipLockoutCheck) {
     return PostAuthorizationPoliciesTargetRequest.builder()
             .withTargetName(targetName)
 
             .withBody(body)
+
+            .withSkipLockoutCheck(skipLockoutCheck)
 
             .build();
   }
@@ -4362,12 +4366,13 @@ public class AuthorizationApi {
    * 
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
+   * @param skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)
    * @return AuthorizationPolicy
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuthorizationPolicy putAuthorizationPoliciesTarget(String targetName, AuthorizationPolicy body) throws IOException, ApiException {
-    return  putAuthorizationPoliciesTarget(createPutAuthorizationPoliciesTargetRequest(targetName, body));
+  public AuthorizationPolicy putAuthorizationPoliciesTarget(String targetName, AuthorizationPolicy body, Boolean skipLockoutCheck) throws IOException, ApiException {
+    return  putAuthorizationPoliciesTarget(createPutAuthorizationPoliciesTargetRequest(targetName, body, skipLockoutCheck));
   }
 
   /**
@@ -4375,18 +4380,21 @@ public class AuthorizationApi {
    * 
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
+   * @param skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)
    * @return AuthorizationPolicy
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuthorizationPolicy> putAuthorizationPoliciesTargetWithHttpInfo(String targetName, AuthorizationPolicy body) throws IOException {
-    return putAuthorizationPoliciesTarget(createPutAuthorizationPoliciesTargetRequest(targetName, body).withHttpInfo());
+  public ApiResponse<AuthorizationPolicy> putAuthorizationPoliciesTargetWithHttpInfo(String targetName, AuthorizationPolicy body, Boolean skipLockoutCheck) throws IOException {
+    return putAuthorizationPoliciesTarget(createPutAuthorizationPoliciesTargetRequest(targetName, body, skipLockoutCheck).withHttpInfo());
   }
 
-  private PutAuthorizationPoliciesTargetRequest createPutAuthorizationPoliciesTargetRequest(String targetName, AuthorizationPolicy body) {
+  private PutAuthorizationPoliciesTargetRequest createPutAuthorizationPoliciesTargetRequest(String targetName, AuthorizationPolicy body, Boolean skipLockoutCheck) {
     return PutAuthorizationPoliciesTargetRequest.builder()
             .withTargetName(targetName)
 
             .withBody(body)
+
+            .withSkipLockoutCheck(skipLockoutCheck)
 
             .build();
   }
@@ -4444,12 +4452,13 @@ public class AuthorizationApi {
    * 
    * @param policyId The ID of the policy to update (required)
    * @param body Access control policy (required)
+   * @param skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)
    * @return AuthorizationPolicy
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuthorizationPolicy putAuthorizationPolicy(String policyId, AuthorizationPolicy body) throws IOException, ApiException {
-    return  putAuthorizationPolicy(createPutAuthorizationPolicyRequest(policyId, body));
+  public AuthorizationPolicy putAuthorizationPolicy(String policyId, AuthorizationPolicy body, Boolean skipLockoutCheck) throws IOException, ApiException {
+    return  putAuthorizationPolicy(createPutAuthorizationPolicyRequest(policyId, body, skipLockoutCheck));
   }
 
   /**
@@ -4457,18 +4466,21 @@ public class AuthorizationApi {
    * 
    * @param policyId The ID of the policy to update (required)
    * @param body Access control policy (required)
+   * @param skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)
    * @return AuthorizationPolicy
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuthorizationPolicy> putAuthorizationPolicyWithHttpInfo(String policyId, AuthorizationPolicy body) throws IOException {
-    return putAuthorizationPolicy(createPutAuthorizationPolicyRequest(policyId, body).withHttpInfo());
+  public ApiResponse<AuthorizationPolicy> putAuthorizationPolicyWithHttpInfo(String policyId, AuthorizationPolicy body, Boolean skipLockoutCheck) throws IOException {
+    return putAuthorizationPolicy(createPutAuthorizationPolicyRequest(policyId, body, skipLockoutCheck).withHttpInfo());
   }
 
-  private PutAuthorizationPolicyRequest createPutAuthorizationPolicyRequest(String policyId, AuthorizationPolicy body) {
+  private PutAuthorizationPolicyRequest createPutAuthorizationPolicyRequest(String policyId, AuthorizationPolicy body, Boolean skipLockoutCheck) {
     return PutAuthorizationPolicyRequest.builder()
             .withPolicyId(policyId)
 
             .withBody(body)
+
+            .withSkipLockoutCheck(skipLockoutCheck)
 
             .build();
   }

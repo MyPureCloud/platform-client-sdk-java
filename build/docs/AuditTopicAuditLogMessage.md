@@ -82,6 +82,7 @@
 | BUSINESSRULES | &quot;BusinessRules&quot; | 
 | SOCIALESCALATIONRULES | &quot;SocialEscalationRules&quot; | 
 | ALERTING | &quot;Alerting&quot; | 
+| ASSISTANTS | &quot;Assistants&quot; | 
 
 
 ## Enum: ActionEnum
@@ -242,6 +243,7 @@
 | ORGANIZATIONAUTHORIZATIONTRUST | &quot;OrganizationAuthorizationTrust&quot; | 
 | ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; | 
 | MFAVERIFIER | &quot;MFAVerifier&quot; | 
+| IDENTITYPROVIDER | &quot;IdentityProvider&quot; | 
 | ROLE | &quot;Role&quot; | 
 | ROLESETTINGS | &quot;RoleSettings&quot; | 
 | POLICY | &quot;Policy&quot; | 
@@ -332,6 +334,8 @@
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
 | STAFFINGGROUP | &quot;StaffingGroup&quot; | 
 | CAPACITYPLAN | &quot;CapacityPlan&quot; | 
+| SCHEDULEBID | &quot;ScheduleBid&quot; | 
+| SCHEDULEBIDGROUP | &quot;ScheduleBidGroup&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSELIBRARY | &quot;ResponseLibrary&quot; | 
@@ -398,6 +402,7 @@
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; | 
 | ANALYTICSREPORTINGSETTINGS | &quot;AnalyticsReportingSettings&quot; | 
 | CUSTOMCALCULATIONS | &quot;CustomCalculations&quot; | 
+| SAVEDVIEWS | &quot;SavedViews&quot; | 
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; | 
 | EXPORTS | &quot;Exports&quot; | 
 | EXPORTPDFTEMPLATES | &quot;ExportPdfTemplates&quot; | 
@@ -436,6 +441,7 @@
 | CONVERSATION | &quot;Conversation&quot; | 
 | ORGANIZATIONSUSPENSION | &quot;OrganizationSuspension&quot; | 
 | OPERATIONALEVENT | &quot;OperationalEvent&quot; | 
+| ALLOWANDBLOCKNUMBER | &quot;AllowAndBlockNumber&quot; | 
 | PARTICIPANT | &quot;Participant&quot; | 
 | CONTACTSCHEMA | &quot;ContactSchema&quot; | 
 | EXTERNALORGANIZATIONSCHEMA | &quot;ExternalOrganizationSchema&quot; | 
@@ -476,8 +482,10 @@
 | RELATIONSHIP | &quot;Relationship&quot; | 
 | EXTERNALORG | &quot;ExternalOrg&quot; | 
 | SOCIALMEDIAMESSAGE | &quot;SocialMediaMessage&quot; | 
+| ASSISTANT | &quot;Assistant&quot; | 
+| ASSISTANTQUEUE | &quot;AssistantQueue&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

@@ -43,7 +43,12 @@ public class CaseManagementAggregationSort  implements Serializable {
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCASESOPENED("nCasesOpened"),
-    NCASESTERMINATED("nCasesTerminated");
+    NCASESOVERSLA("nCasesOverSla"),
+    NCASESPURGED("nCasesPurged"),
+    NCASESSTATUSCHANGED("nCasesStatusChanged"),
+    NCASESTERMINATED("nCasesTerminated"),
+    TCASESRESOLVED("tCasesResolved"),
+    TCASESSTATUS("tCasesStatus");
 
     private String value;
 

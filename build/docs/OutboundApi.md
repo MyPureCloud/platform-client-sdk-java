@@ -136,6 +136,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi#postOutboundContactlistfiltersBulkRetrieve) | Retrieve multiple contact list filters |
 | [**postOutboundContactlistfiltersPreview**](OutboundApi#postOutboundContactlistfiltersPreview) | Get a preview of the output of a contact list filter |
 | [**postOutboundContactlists**](OutboundApi#postOutboundContactlists) | Create a contact List. |
+| [**postOutboundContactlistsUploads**](OutboundApi#postOutboundContactlistsUploads) | Generate presigned upload URL for contact list. |
 | [**postOutboundContactlisttemplates**](OutboundApi#postOutboundContactlisttemplates) | Create Contact List Template |
 | [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi#postOutboundContactlisttemplatesBulkAdd) | Add multiple contact list templates |
 | [**postOutboundContactlisttemplatesBulkRetrieve**](OutboundApi#postOutboundContactlisttemplatesBulkRetrieve) | Get multiple contact list templates |
@@ -145,6 +146,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundDnclistExport**](OutboundApi#postOutboundDnclistExport) | Initiate the export of a dnc list. |
 | [**postOutboundDnclistPhonenumbers**](OutboundApi#postOutboundDnclistPhonenumbers) | Add phone numbers to a DNC list. |
 | [**postOutboundDnclists**](OutboundApi#postOutboundDnclists) | Create dialer DNC list |
+| [**postOutboundDnclistsUploads**](OutboundApi#postOutboundDnclistsUploads) | Generate presigned upload URL for dnc list. |
 | [**postOutboundFilespecificationtemplates**](OutboundApi#postOutboundFilespecificationtemplates) | Create File Specification Template |
 | [**postOutboundImporttemplates**](OutboundApi#postOutboundImporttemplates) | Create Import Template |
 | [**postOutboundImporttemplatesBulkAdd**](OutboundApi#postOutboundImporttemplatesBulkAdd) | Add multiple import templates |
@@ -8402,6 +8404,65 @@ try {
 [**ContactList**](ContactList)
 
 
+# **postOutboundContactlistsUploads**
+
+
+> [UploadUrlResponse](UploadUrlResponse) postOutboundContactlistsUploads(body)
+
+Generate presigned upload URL for contact list.
+
+Wraps POST /api/v2/outbound/contactlists/uploads  
+
+Requires ANY permissions: 
+
+* outbound:contactList:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+ContactListUploadUrlRequest body = new ContactListUploadUrlRequest(); // ContactListUploadUrlRequest | contactListUploadUrlRequest
+try {
+    UploadUrlResponse result = apiInstance.postOutboundContactlistsUploads(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlistsUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactListUploadUrlRequest**](ContactListUploadUrlRequest)| contactListUploadUrlRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
+
+
 # **postOutboundContactlisttemplates**
 
 
@@ -8941,6 +9002,65 @@ try {
 ### Return type
 
 [**DncList**](DncList)
+
+
+# **postOutboundDnclistsUploads**
+
+
+> [UploadUrlResponse](UploadUrlResponse) postOutboundDnclistsUploads(body)
+
+Generate presigned upload URL for dnc list.
+
+Wraps POST /api/v2/outbound/dnclists/uploads  
+
+Requires ANY permissions: 
+
+* outbound:dncList:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+DNCListUploadUrlRequest body = new DNCListUploadUrlRequest(); // DNCListUploadUrlRequest | dncListUploadUrlRequest
+try {
+    UploadUrlResponse result = apiInstance.postOutboundDnclistsUploads(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundDnclistsUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DNCListUploadUrlRequest**](DNCListUploadUrlRequest)| dncListUploadUrlRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 # **postOutboundFilespecificationtemplates**
@@ -10899,4 +11019,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

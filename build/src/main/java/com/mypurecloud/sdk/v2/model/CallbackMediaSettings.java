@@ -184,6 +184,8 @@ public class CallbackMediaSettings  implements Serializable {
   }
   private AnsweringMachineReactionTypeEnum answeringMachineReactionType = null;
   private DomainEntityRef answeringMachineFlow = null;
+  private DomainEntityRef edgeGroup = null;
+  private DomainEntityRef site = null;
 
   public CallbackMediaSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -479,6 +481,42 @@ public class CallbackMediaSettings  implements Serializable {
   }
 
 
+  /**
+   * The identifier of the edge group that will place the calls. Can be set to specify custom edge group instead of default one.
+   **/
+  public CallbackMediaSettings edgeGroup(DomainEntityRef edgeGroup) {
+    this.edgeGroup = edgeGroup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The identifier of the edge group that will place the calls. Can be set to specify custom edge group instead of default one.")
+  @JsonProperty("edgeGroup")
+  public DomainEntityRef getEdgeGroup() {
+    return edgeGroup;
+  }
+  public void setEdgeGroup(DomainEntityRef edgeGroup) {
+    this.edgeGroup = edgeGroup;
+  }
+
+
+  /**
+   * The identifier of the site to be used for dialing; can be set in place of an edge group.
+   **/
+  public CallbackMediaSettings site(DomainEntityRef site) {
+    this.site = site;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The identifier of the site to be used for dialing; can be set in place of an edge group.")
+  @JsonProperty("site")
+  public DomainEntityRef getSite() {
+    return site;
+  }
+  public void setSite(DomainEntityRef site) {
+    this.site = site;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -504,12 +542,14 @@ public class CallbackMediaSettings  implements Serializable {
             Objects.equals(this.liveVoiceReactionType, callbackMediaSettings.liveVoiceReactionType) &&
             Objects.equals(this.liveVoiceFlow, callbackMediaSettings.liveVoiceFlow) &&
             Objects.equals(this.answeringMachineReactionType, callbackMediaSettings.answeringMachineReactionType) &&
-            Objects.equals(this.answeringMachineFlow, callbackMediaSettings.answeringMachineFlow);
+            Objects.equals(this.answeringMachineFlow, callbackMediaSettings.answeringMachineFlow) &&
+            Objects.equals(this.edgeGroup, callbackMediaSettings.edgeGroup) &&
+            Objects.equals(this.site, callbackMediaSettings.site);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, mode, enableAutoDialAndEnd, autoDialDelaySeconds, autoEndDelaySeconds, pacingModifier, maxRetryCount, retryDelaySeconds, liveVoiceReactionType, liveVoiceFlow, answeringMachineReactionType, answeringMachineFlow);
+    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, mode, enableAutoDialAndEnd, autoDialDelaySeconds, autoEndDelaySeconds, pacingModifier, maxRetryCount, retryDelaySeconds, liveVoiceReactionType, liveVoiceFlow, answeringMachineReactionType, answeringMachineFlow, edgeGroup, site);
   }
 
   @Override
@@ -533,6 +573,8 @@ public class CallbackMediaSettings  implements Serializable {
     sb.append("    liveVoiceFlow: ").append(toIndentedString(liveVoiceFlow)).append("\n");
     sb.append("    answeringMachineReactionType: ").append(toIndentedString(answeringMachineReactionType)).append("\n");
     sb.append("    answeringMachineFlow: ").append(toIndentedString(answeringMachineFlow)).append("\n");
+    sb.append("    edgeGroup: ").append(toIndentedString(edgeGroup)).append("\n");
+    sb.append("    site: ").append(toIndentedString(site)).append("\n");
     sb.append("}");
     return sb.toString();
   }

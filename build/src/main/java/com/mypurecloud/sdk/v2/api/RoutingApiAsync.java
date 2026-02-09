@@ -51,6 +51,7 @@ import com.mypurecloud.sdk.v2.model.MailFromResult;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -222,6 +223,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
@@ -247,6 +249,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainVerificationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsSimulatedRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
@@ -7824,7 +7827,7 @@ public class RoutingApiAsync {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7858,7 +7861,7 @@ public class RoutingApiAsync {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8036,6 +8039,81 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OutboundDomain> patchRoutingEmailOutboundDomainAsync(PatchRoutingEmailOutboundDomainRequest request, final AsyncApiCallback<OutboundDomain> callback) {
+    try {
+      final SettableFuture<OutboundDomain> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundDomain>() {}, new AsyncApiCallback<ApiResponse<OutboundDomain>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundDomain> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OutboundDomain>> patchRoutingEmailOutboundDomainAsync(ApiRequest<OutboundDomainPatchRequest> request, final AsyncApiCallback<ApiResponse<OutboundDomain>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OutboundDomain>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutboundDomain>() {}, new AsyncApiCallback<ApiResponse<OutboundDomain>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundDomain> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -8276,7 +8354,7 @@ public class RoutingApiAsync {
 
   /**
    * Join or unjoin a set of up to 100 users for a queue
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8310,7 +8388,7 @@ public class RoutingApiAsync {
 
   /**
    * Join or unjoin a set of up to 100 users for a queue
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8880,7 +8958,7 @@ public class RoutingApiAsync {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8914,7 +8992,7 @@ public class RoutingApiAsync {
 
   /**
    * Join or unjoin a set of queues for a user
-   * 
+   * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9917,6 +9995,81 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Tests the custom SMTP server integration connection set on this outbound domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TestMessage> postRoutingEmailOutboundDomainTestconnectionAsync(PostRoutingEmailOutboundDomainTestconnectionRequest request, final AsyncApiCallback<TestMessage> callback) {
+    try {
+      final SettableFuture<TestMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TestMessage>() {}, new AsyncApiCallback<ApiResponse<TestMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<TestMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Tests the custom SMTP server integration connection set on this outbound domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TestMessage>> postRoutingEmailOutboundDomainTestconnectionAsync(ApiRequest<TestMessage> request, final AsyncApiCallback<ApiResponse<TestMessage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TestMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TestMessage>() {}, new AsyncApiCallback<ApiResponse<TestMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<TestMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TestMessage> response = (ApiResponse<TestMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TestMessage> response = (ApiResponse<TestMessage>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

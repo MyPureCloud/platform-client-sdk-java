@@ -124,6 +124,8 @@ import com.mypurecloud.sdk.v2.model.TaskManagementAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TaskManagementAggregationQuery;
 import com.mypurecloud.sdk.v2.model.TaskManagementAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TaskManagementAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TaskManagementObservationQuery;
+import com.mypurecloud.sdk.v2.model.TaskManagementObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.TeamActivityQuery;
 import com.mypurecloud.sdk.v2.model.TeamActivityResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;

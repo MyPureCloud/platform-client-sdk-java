@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **rowIndexUpdate** | [**UpdateRowIndexRequest**](UpdateRowIndexRequest) | An update to a decision table version row index, which moves the row to a new position in the table. Execution output is returned based on the first matching row. |  |
+| **rowIndexUpdate** | [**UpdateRowIndexRequest**](UpdateRowIndexRequest) | An update to a decision table version row index, which moves the row to a new position in the table. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

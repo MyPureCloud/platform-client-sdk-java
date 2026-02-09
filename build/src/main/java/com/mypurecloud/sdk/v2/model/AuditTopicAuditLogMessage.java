@@ -111,7 +111,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     SOCIALLISTENING("SocialListening"),
     BUSINESSRULES("BusinessRules"),
     SOCIALESCALATIONRULES("SocialEscalationRules"),
-    ALERTING("Alerting");
+    ALERTING("Alerting"),
+    ASSISTANTS("Assistants");
 
     private String value;
 
@@ -353,6 +354,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ORGANIZATIONAUTHORIZATIONTRUST("OrganizationAuthorizationTrust"),
     ORGANIZATIONAUTHORIZATIONUSERTRUST("OrganizationAuthorizationUserTrust"),
     MFAVERIFIER("MFAVerifier"),
+    IDENTITYPROVIDER("IdentityProvider"),
     ROLE("Role"),
     ROLESETTINGS("RoleSettings"),
     POLICY("Policy"),
@@ -443,6 +445,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     HISTORICALDATA("HistoricalData"),
     STAFFINGGROUP("StaffingGroup"),
     CAPACITYPLAN("CapacityPlan"),
+    SCHEDULEBID("ScheduleBid"),
+    SCHEDULEBIDGROUP("ScheduleBidGroup"),
     TRIGGER("Trigger"),
     RESPONSE("Response"),
     RESPONSELIBRARY("ResponseLibrary"),
@@ -509,6 +513,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     INSIGHTSETTINGS("InsightSettings"),
     ANALYTICSREPORTINGSETTINGS("AnalyticsReportingSettings"),
     CUSTOMCALCULATIONS("CustomCalculations"),
+    SAVEDVIEWS("SavedViews"),
     SCHEDULEDEXPORTS("ScheduledExports"),
     EXPORTS("Exports"),
     EXPORTPDFTEMPLATES("ExportPdfTemplates"),
@@ -547,6 +552,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CONVERSATION("Conversation"),
     ORGANIZATIONSUSPENSION("OrganizationSuspension"),
     OPERATIONALEVENT("OperationalEvent"),
+    ALLOWANDBLOCKNUMBER("AllowAndBlockNumber"),
     PARTICIPANT("Participant"),
     CONTACTSCHEMA("ContactSchema"),
     EXTERNALORGANIZATIONSCHEMA("ExternalOrganizationSchema"),
@@ -586,7 +592,9 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     NOTE("Note"),
     RELATIONSHIP("Relationship"),
     EXTERNALORG("ExternalOrg"),
-    SOCIALMEDIAMESSAGE("SocialMediaMessage");
+    SOCIALMEDIAMESSAGE("SocialMediaMessage"),
+    ASSISTANT("Assistant"),
+    ASSISTANTQUEUE("AssistantQueue");
 
     private String value;
 

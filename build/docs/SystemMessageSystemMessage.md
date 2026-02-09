@@ -11,6 +11,7 @@
 | **organizationId** | **String** |  |  [optional] |
 | **userId** | **String** |  |  [optional] |
 | **oauthClientId** | **String** |  |  [optional] |
+| **oauthClientOrgId** | **String** |  |  [optional] |
 | **reason** | [**ReasonEnum**](#Enum--ReasonEnum) |  |  [optional] |
 | **message** | **String** |  |  [optional] |
 | **data** | **Map&lt;String, Object&gt;** |  |  [optional] |
@@ -37,4 +38,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

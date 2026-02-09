@@ -58,6 +58,7 @@ import com.mypurecloud.sdk.v2.model.MailFromResult;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;

@@ -15,7 +15,12 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NCASESOPENED | &quot;nCasesOpened&quot; | 
+| NCASESOVERSLA | &quot;nCasesOverSla&quot; | 
+| NCASESPURGED | &quot;nCasesPurged&quot; | 
+| NCASESSTATUSCHANGED | &quot;nCasesStatusChanged&quot; | 
 | NCASESTERMINATED | &quot;nCasesTerminated&quot; | 
+| TCASESRESOLVED | &quot;tCasesResolved&quot; | 
+| TCASESSTATUS | &quot;tCasesStatus&quot; | 
 
 
 ## Enum: FunctionEnum
@@ -32,4 +37,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

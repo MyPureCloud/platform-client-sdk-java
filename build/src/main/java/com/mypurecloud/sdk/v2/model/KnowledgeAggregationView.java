@@ -54,6 +54,7 @@ public class KnowledgeAggregationView  implements Serializable {
     NKNOWLEDGESEARCHFEEDBACK("nKnowledgeSearchFeedback"),
     NKNOWLEDGESEARCHUNANSWERED("nKnowledgeSearchUnanswered"),
     NKNOWLEDGESESSIONS("nKnowledgeSessions"),
+    NKNOWLEDGEV3SEARCH("nKnowledgeV3Search"),
     OKNOWLEDGEDOCUMENTQUERY("oKnowledgeDocumentQuery"),
     OKNOWLEDGEDOCUMENTQUERYSELFSERVED("oKnowledgeDocumentQuerySelfServed"),
     OKNOWLEDGESEARCH("oKnowledgeSearch");

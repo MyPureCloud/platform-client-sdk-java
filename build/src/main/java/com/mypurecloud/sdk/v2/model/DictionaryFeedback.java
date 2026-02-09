@@ -152,7 +152,8 @@ public class DictionaryFeedback  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("Active"),
     PENDING("Pending"),
-    FAILED("Failed");
+    FAILED("Failed"),
+    SAVED("Saved");
 
     private String value;
 

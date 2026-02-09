@@ -58,6 +58,7 @@ import com.mypurecloud.sdk.v2.model.MailFromResult;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -185,6 +186,34 @@ public class GetRoutingQueueAssistantRequest {
 		}
 	}
 
+	private String languageVariation;
+	public String getLanguageVariation() {
+		return this.languageVariation;
+	}
+
+	public void setLanguageVariation(String languageVariation) {
+		this.languageVariation = languageVariation;
+	}
+
+	public GetRoutingQueueAssistantRequest withLanguageVariation(String languageVariation) {
+	    this.setLanguageVariation(languageVariation);
+	    return this;
+	} 
+
+	private Boolean fallbackToPrimaryAssistant;
+	public Boolean getFallbackToPrimaryAssistant() {
+		return this.fallbackToPrimaryAssistant;
+	}
+
+	public void setFallbackToPrimaryAssistant(Boolean fallbackToPrimaryAssistant) {
+		this.fallbackToPrimaryAssistant = fallbackToPrimaryAssistant;
+	}
+
+	public GetRoutingQueueAssistantRequest withFallbackToPrimaryAssistant(Boolean fallbackToPrimaryAssistant) {
+	    this.setFallbackToPrimaryAssistant(fallbackToPrimaryAssistant);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -217,6 +246,12 @@ public class GetRoutingQueueAssistantRequest {
         
 
                 .withQueryParameters("expand", "multi", expand)
+        
+
+                .withQueryParameters("languageVariation", "", languageVariation)
+        
+
+                .withQueryParameters("fallbackToPrimaryAssistant", "", fallbackToPrimaryAssistant)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -263,6 +298,16 @@ public class GetRoutingQueueAssistantRequest {
 	      }
 	      request.setExpand(stringList);
 		    return this;
+		}
+
+		public Builder withLanguageVariation(String languageVariation) {
+			request.setLanguageVariation(languageVariation);
+			return this;
+		}
+
+		public Builder withFallbackToPrimaryAssistant(Boolean fallbackToPrimaryAssistant) {
+			request.setFallbackToPrimaryAssistant(fallbackToPrimaryAssistant);
+			return this;
 		}
 
 

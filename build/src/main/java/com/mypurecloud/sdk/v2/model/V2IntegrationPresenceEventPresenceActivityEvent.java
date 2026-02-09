@@ -80,6 +80,7 @@ public class V2IntegrationPresenceEventPresenceActivityEvent  implements Seriali
   private String message = null;
   private String currentDisplaySourceId = null;
   private String previousDisplaySourceId = null;
+  private V2IntegrationPresenceEventOrganizationPresence futurePresenceDefinition = null;
 
   public V2IntegrationPresenceEventPresenceActivityEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -223,6 +224,23 @@ public class V2IntegrationPresenceEventPresenceActivityEvent  implements Seriali
   }
 
 
+  /**
+   **/
+  public V2IntegrationPresenceEventPresenceActivityEvent futurePresenceDefinition(V2IntegrationPresenceEventOrganizationPresence futurePresenceDefinition) {
+    this.futurePresenceDefinition = futurePresenceDefinition;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("futurePresenceDefinition")
+  public V2IntegrationPresenceEventOrganizationPresence getFuturePresenceDefinition() {
+    return futurePresenceDefinition;
+  }
+  public void setFuturePresenceDefinition(V2IntegrationPresenceEventOrganizationPresence futurePresenceDefinition) {
+    this.futurePresenceDefinition = futurePresenceDefinition;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -240,12 +258,13 @@ public class V2IntegrationPresenceEventPresenceActivityEvent  implements Seriali
             Objects.equals(this.presenceDefinition, v2IntegrationPresenceEventPresenceActivityEvent.presenceDefinition) &&
             Objects.equals(this.message, v2IntegrationPresenceEventPresenceActivityEvent.message) &&
             Objects.equals(this.currentDisplaySourceId, v2IntegrationPresenceEventPresenceActivityEvent.currentDisplaySourceId) &&
-            Objects.equals(this.previousDisplaySourceId, v2IntegrationPresenceEventPresenceActivityEvent.previousDisplaySourceId);
+            Objects.equals(this.previousDisplaySourceId, v2IntegrationPresenceEventPresenceActivityEvent.previousDisplaySourceId) &&
+            Objects.equals(this.futurePresenceDefinition, v2IntegrationPresenceEventPresenceActivityEvent.futurePresenceDefinition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, eventType, source, modifiedDate, presenceDefinition, message, currentDisplaySourceId, previousDisplaySourceId);
+    return Objects.hash(userId, eventType, source, modifiedDate, presenceDefinition, message, currentDisplaySourceId, previousDisplaySourceId, futurePresenceDefinition);
   }
 
   @Override
@@ -261,6 +280,7 @@ public class V2IntegrationPresenceEventPresenceActivityEvent  implements Seriali
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    currentDisplaySourceId: ").append(toIndentedString(currentDisplaySourceId)).append("\n");
     sb.append("    previousDisplaySourceId: ").append(toIndentedString(previousDisplaySourceId)).append("\n");
+    sb.append("    futurePresenceDefinition: ").append(toIndentedString(futurePresenceDefinition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

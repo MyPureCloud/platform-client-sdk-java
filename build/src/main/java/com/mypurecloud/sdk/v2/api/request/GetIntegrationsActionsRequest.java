@@ -338,6 +338,20 @@ public class GetIntegrationsActionsRequest {
 		}
 	}
 
+	private Boolean includeConfig;
+	public Boolean getIncludeConfig() {
+		return this.includeConfig;
+	}
+
+	public void setIncludeConfig(Boolean includeConfig) {
+		this.includeConfig = includeConfig;
+	}
+
+	public GetIntegrationsActionsRequest withIncludeConfig(Boolean includeConfig) {
+	    this.setIncludeConfig(includeConfig);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -393,6 +407,9 @@ public class GetIntegrationsActionsRequest {
         
 
                 .withQueryParameters("includeAuthActions", "", includeAuthActions)
+        
+
+                .withQueryParameters("includeConfig", "", includeConfig)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -495,6 +512,11 @@ public class GetIntegrationsActionsRequest {
 		    request.setIncludeAuthActions(includeAuthActions.toString());
 
 		    return this;
+		}
+
+		public Builder withIncludeConfig(Boolean includeConfig) {
+			request.setIncludeConfig(includeConfig);
+			return this;
 		}
 
 

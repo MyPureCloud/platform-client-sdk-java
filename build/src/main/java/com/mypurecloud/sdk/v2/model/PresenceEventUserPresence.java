@@ -29,6 +29,7 @@ public class PresenceEventUserPresence  implements Serializable {
   private Boolean primary = null;
   private String message = null;
   private Date modifiedDate = null;
+  private PresenceEventOrganizationPresence futurePresenceDefinition = null;
 
   public PresenceEventUserPresence() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -121,6 +122,23 @@ public class PresenceEventUserPresence  implements Serializable {
   }
 
 
+  /**
+   **/
+  public PresenceEventUserPresence futurePresenceDefinition(PresenceEventOrganizationPresence futurePresenceDefinition) {
+    this.futurePresenceDefinition = futurePresenceDefinition;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("futurePresenceDefinition")
+  public PresenceEventOrganizationPresence getFuturePresenceDefinition() {
+    return futurePresenceDefinition;
+  }
+  public void setFuturePresenceDefinition(PresenceEventOrganizationPresence futurePresenceDefinition) {
+    this.futurePresenceDefinition = futurePresenceDefinition;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -135,12 +153,13 @@ public class PresenceEventUserPresence  implements Serializable {
             Objects.equals(this.presenceDefinition, presenceEventUserPresence.presenceDefinition) &&
             Objects.equals(this.primary, presenceEventUserPresence.primary) &&
             Objects.equals(this.message, presenceEventUserPresence.message) &&
-            Objects.equals(this.modifiedDate, presenceEventUserPresence.modifiedDate);
+            Objects.equals(this.modifiedDate, presenceEventUserPresence.modifiedDate) &&
+            Objects.equals(this.futurePresenceDefinition, presenceEventUserPresence.futurePresenceDefinition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(source, presenceDefinition, primary, message, modifiedDate);
+    return Objects.hash(source, presenceDefinition, primary, message, modifiedDate, futurePresenceDefinition);
   }
 
   @Override
@@ -153,6 +172,7 @@ public class PresenceEventUserPresence  implements Serializable {
     sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
+    sb.append("    futurePresenceDefinition: ").append(toIndentedString(futurePresenceDefinition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -82,6 +82,55 @@ public class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification  i
     }
   }
   private StatusEnum status = null;
+
+  private static class BidTypeEnumDeserializer extends StdDeserializer<BidTypeEnum> {
+    public BidTypeEnumDeserializer() {
+      super(BidTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public BidTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BidTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets bidType
+   */
+ @JsonDeserialize(using = BidTypeEnumDeserializer.class)
+  public enum BidTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    WORKPLANBID("WorkPlanBid"),
+    SCHEDULEBID("ScheduleBid");
+
+    private String value;
+
+    BidTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BidTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BidTypeEnum value : BidTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BidTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private BidTypeEnum bidType = null;
   private String bidWindowStartDate = null;
   private String bidWindowEndDate = null;
   private String effectiveDate = null;
@@ -295,6 +344,23 @@ public class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification  i
 
   /**
    **/
+  public WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification bidType(BidTypeEnum bidType) {
+    this.bidType = bidType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("bidType")
+  public BidTypeEnum getBidType() {
+    return bidType;
+  }
+  public void setBidType(BidTypeEnum bidType) {
+    this.bidType = bidType;
+  }
+
+
+  /**
+   **/
   public WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification bidWindowStartDate(String bidWindowStartDate) {
     this.bidWindowStartDate = bidWindowStartDate;
     return this;
@@ -408,6 +474,7 @@ public class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification  i
     return Objects.equals(this.id, workPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.id) &&
             Objects.equals(this.buId, workPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.buId) &&
             Objects.equals(this.status, workPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.status) &&
+            Objects.equals(this.bidType, workPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.bidType) &&
             Objects.equals(this.bidWindowStartDate, workPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.bidWindowStartDate) &&
             Objects.equals(this.bidWindowEndDate, workPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.bidWindowEndDate) &&
             Objects.equals(this.effectiveDate, workPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.effectiveDate) &&
@@ -418,7 +485,7 @@ public class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification  i
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, buId, status, bidWindowStartDate, bidWindowEndDate, effectiveDate, agentRankingType, rankingTiebreakerType, workPlanFieldsVisibleToAgents);
+    return Objects.hash(id, buId, status, bidType, bidWindowStartDate, bidWindowEndDate, effectiveDate, agentRankingType, rankingTiebreakerType, workPlanFieldsVisibleToAgents);
   }
 
   @Override
@@ -429,6 +496,7 @@ public class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification  i
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    buId: ").append(toIndentedString(buId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    bidType: ").append(toIndentedString(bidType)).append("\n");
     sb.append("    bidWindowStartDate: ").append(toIndentedString(bidWindowStartDate)).append("\n");
     sb.append("    bidWindowEndDate: ").append(toIndentedString(bidWindowEndDate)).append("\n");
     sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");

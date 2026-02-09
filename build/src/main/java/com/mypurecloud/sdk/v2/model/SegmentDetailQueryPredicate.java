@@ -154,6 +154,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     REQUESTEDROUTING("requestedRouting"),
     REQUESTEDROUTINGSKILLID("requestedRoutingSkillId"),
     SCOREDAGENTID("scoredAgentId"),
+    SCREENMONITOREDUSERID("screenMonitoredUserId"),
     SCREENRECORDING("screenRecording"),
     SCRIPTID("scriptId"),
     SEGMENTEND("segmentEnd"),

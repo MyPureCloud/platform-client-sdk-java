@@ -56,7 +56,9 @@ public class WorkitemQueryJobCreate  implements Serializable {
     STATUS("status"),
     ASSIGNEE("assignee"),
     REPORTER("reporter"),
-    QUEUE("queue");
+    QUEUE("queue"),
+    CASE("case"),
+    EXTERNALCONTACT("externalContact");
 
     private String value;
 

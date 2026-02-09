@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
-import com.mypurecloud.sdk.v2.model.OAuthClientListing;
+import com.mypurecloud.sdk.v2.model.OAuthClient;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,39 +24,39 @@ import java.io.Serializable;
  * OAuthClientEntityListing
  */
 
-public class OAuthClientEntityListing  implements Serializable, PagedResource<OAuthClientListing> {
+public class OAuthClientEntityListing  implements Serializable, PagedResource<OAuthClient> {
   
-  private List<OAuthClientListing> entities = null;
+  private List<OAuthClient> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
-  private String previousUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private String selfUri = null;
   private Integer pageCount = null;
 
   public OAuthClientEntityListing() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      entities = new ArrayList<OAuthClientListing>();
+      entities = new ArrayList<OAuthClient>();
     }
   }
 
   
   /**
    **/
-  public OAuthClientEntityListing entities(List<OAuthClientListing> entities) {
+  public OAuthClientEntityListing entities(List<OAuthClient> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<OAuthClientListing> getEntities() {
+  public List<OAuthClient> getEntities() {
     return entities;
   }
-  public void setEntities(List<OAuthClientListing> entities) {
+  public void setEntities(List<OAuthClient> entities) {
     this.entities = entities;
   }
 
@@ -131,23 +131,6 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
 
   /**
    **/
-  public OAuthClientEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
   public OAuthClientEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -160,6 +143,23 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public OAuthClientEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -229,8 +229,8 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
             Objects.equals(this.pageNumber, oAuthClientEntityListing.pageNumber) &&
             Objects.equals(this.total, oAuthClientEntityListing.total) &&
             Objects.equals(this.firstUri, oAuthClientEntityListing.firstUri) &&
-            Objects.equals(this.previousUri, oAuthClientEntityListing.previousUri) &&
             Objects.equals(this.nextUri, oAuthClientEntityListing.nextUri) &&
+            Objects.equals(this.previousUri, oAuthClientEntityListing.previousUri) &&
             Objects.equals(this.lastUri, oAuthClientEntityListing.lastUri) &&
             Objects.equals(this.selfUri, oAuthClientEntityListing.selfUri) &&
             Objects.equals(this.pageCount, oAuthClientEntityListing.pageCount);
@@ -238,7 +238,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -251,8 +251,8 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");

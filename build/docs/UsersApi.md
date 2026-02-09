@@ -11,12 +11,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingUserDirectroutingbackupSettings**](UsersApi#deleteRoutingUserDirectroutingbackupSettings) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
 | [**deleteRoutingUserUtilization**](UsersApi#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
 | [**deleteUser**](UsersApi#deleteUser) | Delete user |
+| [**deleteUserCustomattribute**](UsersApi#deleteUserCustomattribute) | Delete a custom attributes record. |
 | [**deleteUserExternalidAuthorityNameExternalKey**](UsersApi#deleteUserExternalidAuthorityNameExternalKey) | Delete the external identifier for user. |
 | [**deleteUserRoutinglanguage**](UsersApi#deleteUserRoutinglanguage) | Remove a routing language from a user |
 | [**deleteUserRoutingskill**](UsersApi#deleteUserRoutingskill) | Remove a routing skill from a user |
 | [**deleteUserStationAssociatedstation**](UsersApi#deleteUserStationAssociatedstation) | Clear associated station |
 | [**deleteUserStationDefaultstation**](UsersApi#deleteUserStationDefaultstation) | Clear default station |
 | [**deleteUserVerifier**](UsersApi#deleteUserVerifier) | Delete a verifier |
+| [**deleteUsersCustomattributesSchema**](UsersApi#deleteUsersCustomattributesSchema) | Delete a schema |
 | [**getAnalyticsUsersAggregatesJob**](UsersApi#getAnalyticsUsersAggregatesJob) | Get status for async query for user aggregates |
 | [**getAnalyticsUsersAggregatesJobResults**](UsersApi#getAnalyticsUsersAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsUsersDetailsJob**](UsersApi#getAnalyticsUsersDetailsJob) | Get status for async query for user details |
@@ -35,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUser**](UsersApi#getUser) | Get user. |
 | [**getUserAdjacents**](UsersApi#getUserAdjacents) | Get adjacents |
 | [**getUserCallforwarding**](UsersApi#getUserCallforwarding) | Get a user's CallForwarding |
+| [**getUserCustomattribute**](UsersApi#getUserCustomattribute) | Get custom attributes by schema id |
+| [**getUserCustomattributesBulk**](UsersApi#getUserCustomattributesBulk) | Get multiple custom attributes records by schema ids |
 | [**getUserDirectreports**](UsersApi#getUserDirectreports) | Get direct reports |
 | [**getUserExternalid**](UsersApi#getUserExternalid) | Get the external identifiers for a user. |
 | [**getUserExternalidAuthorityName**](UsersApi#getUserExternalidAuthorityName) | Get the external identifier of user for an authority. |
@@ -56,6 +60,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserVerifiers**](UsersApi#getUserVerifiers) | Get a list of verifiers |
 | [**getUsers**](UsersApi#getUsers) | Get the list of available users. |
 | [**getUsersChatsMe**](UsersApi#getUsersChatsMe) | Get chats for a user |
+| [**getUsersCustomattributesSchema**](UsersApi#getUsersCustomattributesSchema) | Get a schema |
+| [**getUsersCustomattributesSchemaVersion**](UsersApi#getUsersCustomattributesSchemaVersion) | Get a specific version of a schema |
+| [**getUsersCustomattributesSchemaVersions**](UsersApi#getUsersCustomattributesSchemaVersions) | Get all versions of a user schema |
+| [**getUsersCustomattributesSchemas**](UsersApi#getUsersCustomattributesSchemas) | Get a list of schemas. |
+| [**getUsersCustomattributesSchemasCoretype**](UsersApi#getUsersCustomattributesSchemasCoretype) | Get the core types from which all schemas are built. |
+| [**getUsersCustomattributesSchemasCoretypes**](UsersApi#getUsersCustomattributesSchemasCoretypes) | Get the list of core types enabled for a specific namespace. |
+| [**getUsersCustomattributesSchemasLimits**](UsersApi#getUsersCustomattributesSchemasLimits) | Get quantitative limits on schemas |
 | [**getUsersDevelopmentActivities**](UsersApi#getUsersDevelopmentActivities) | Get list of Development Activities |
 | [**getUsersDevelopmentActivitiesMe**](UsersApi#getUsersDevelopmentActivitiesMe) | Get list of Development Activities for current user |
 | [**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | Get a Development Activity |
@@ -65,6 +76,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUsersSearch**](UsersApi#getUsersSearch) | Search users using the q64 value returned from a previous search |
 | [**patchUser**](UsersApi#patchUser) | Update user |
 | [**patchUserCallforwarding**](UsersApi#patchUserCallforwarding) | Patch a user's CallForwarding |
+| [**patchUserCustomattributes**](UsersApi#patchUserCustomattributes) | Update a single custom attributes record by amending the data with only the provided fields. |
+| [**patchUserCustomattributesBulk**](UsersApi#patchUserCustomattributesBulk) | Update multiple custom attributes records by amending the data with only the provided fields. |
 | [**patchUserGeolocation**](UsersApi#patchUserGeolocation) | Patch a user's Geolocation |
 | [**patchUserQueue**](UsersApi#patchUserQueue) | Join or unjoin a queue for a user |
 | [**patchUserQueues**](UsersApi#patchUserQueues) | Join or unjoin a set of queues for a user |
@@ -88,6 +101,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUserRoutinglanguages**](UsersApi#postUserRoutinglanguages) | Assign a routing language to a user |
 | [**postUserRoutingskills**](UsersApi#postUserRoutingskills) | Assign a routing skill to a user |
 | [**postUsers**](UsersApi#postUsers) | Create user |
+| [**postUsersCustomattributesSchemas**](UsersApi#postUsersCustomattributesSchemas) | Create a schema |
 | [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi#postUsersDevelopmentActivitiesAggregatesQuery) | Retrieve aggregated development activity data |
 | [**postUsersMePassword**](UsersApi#postUsersMePassword) | Change your password |
 | [**postUsersSearch**](UsersApi#postUsersSearch) | Search users |
@@ -98,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRoutingUserDirectroutingbackupSettings**](UsersApi#putRoutingUserDirectroutingbackupSettings) | Update the user's Direct Routing Backup settings. |
 | [**putRoutingUserUtilization**](UsersApi#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putUserCallforwarding**](UsersApi#putUserCallforwarding) | Update a user's CallForwarding |
+| [**putUserCustomattributes**](UsersApi#putUserCustomattributes) | Create or update a single custom attributes record. Updating replaces all data with the provided fields. |
 | [**putUserOutofoffice**](UsersApi#putUserOutofoffice) | Update an OutOfOffice |
 | [**putUserProfileskills**](UsersApi#putUserProfileskills) | Update profile skills for a user |
 | [**putUserRoles**](UsersApi#putUserRoles) | Sets the user's roles |
@@ -108,6 +123,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserStationAssociatedstationStationId**](UsersApi#putUserStationAssociatedstationStationId) | Set associated station |
 | [**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | Set default station |
 | [**putUserVerifier**](UsersApi#putUserVerifier) | Update a verifier |
+| [**putUsersCustomattributesSchema**](UsersApi#putUsersCustomattributesSchema) | Update a schema |
 {: class="table-striped"}
 
 
@@ -522,6 +538,68 @@ try {
 **Empty**
 
 
+# **deleteUserCustomattribute**
+
+
+> Void deleteUserCustomattribute(userId, schemaId)
+
+Delete a custom attributes record.
+
+deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/users/{userId}/customattributes/{schemaId}  
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | user ID
+String schemaId = "schemaId_example"; // String | schemaId
+try {
+    apiInstance.deleteUserCustomattribute(userId, schemaId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteUserCustomattribute");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user ID | 
+| **schemaId** | **String**| schemaId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **deleteUserExternalidAuthorityNameExternalKey**
 
 
@@ -873,6 +951,66 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
 | **verifierId** | **String**| Verifier ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteUsersCustomattributesSchema**
+
+
+> Void deleteUsersCustomattributesSchema(schemaId)
+
+Delete a schema
+
+deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/users/customattributes/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    apiInstance.deleteUsersCustomattributesSchema(schemaId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteUsersCustomattributesSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
 {: class="table-striped"}
 
 
@@ -1987,6 +2125,132 @@ try {
 ### Return type
 
 [**CallForwarding**](CallForwarding)
+
+
+# **getUserCustomattribute**
+
+
+> [UserCustomAttributes](UserCustomAttributes) getUserCustomattribute(userId, schemaId)
+
+Get custom attributes by schema id
+
+getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/{userId}/customattributes/{schemaId}  
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | user ID
+String schemaId = "schemaId_example"; // String | schemaId
+try {
+    UserCustomAttributes result = apiInstance.getUserCustomattribute(userId, schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserCustomattribute");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user ID | 
+| **schemaId** | **String**| schemaId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
+
+
+# **getUserCustomattributesBulk**
+
+
+> List&lt;Object&gt; getUserCustomattributesBulk(userId, schemaIds)
+
+Get multiple custom attributes records by schema ids
+
+getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/{userId}/customattributes/bulk  
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | user ID
+List<String> schemaIds = Arrays.asList(null); // List<String> | 
+try {
+    List<Object> result = apiInstance.getUserCustomattributesBulk(userId, schemaIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserCustomattributesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user ID | 
+| **schemaIds** | [**List&lt;String&gt;**](String)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+**List&lt;Object&gt;**
 
 
 # **getUserDirectreports**
@@ -3294,6 +3558,423 @@ try {
 [**ChatItemCursorListing**](ChatItemCursorListing)
 
 
+# **getUsersCustomattributesSchema**
+
+
+> [DataSchema](DataSchema) getUsersCustomattributesSchema(schemaId)
+
+Get a schema
+
+getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    DataSchema result = apiInstance.getUsersCustomattributesSchema(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersCustomattributesSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
+# **getUsersCustomattributesSchemaVersion**
+
+
+> [DataSchema](DataSchema) getUsersCustomattributesSchemaVersion(schemaId, versionId)
+
+Get a specific version of a schema
+
+getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId}  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+String versionId = "versionId_example"; // String | Schema version
+try {
+    DataSchema result = apiInstance.getUsersCustomattributesSchemaVersion(schemaId, versionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersCustomattributesSchemaVersion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **versionId** | **String**| Schema version | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
+# **getUsersCustomattributesSchemaVersions**
+
+
+> [DataSchemaListing](DataSchemaListing) getUsersCustomattributesSchemaVersions(schemaId)
+
+Get all versions of a user schema
+
+getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/{schemaId}/versions  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    DataSchemaListing result = apiInstance.getUsersCustomattributesSchemaVersions(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersCustomattributesSchemaVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchemaListing**](DataSchemaListing)
+
+
+# **getUsersCustomattributesSchemas**
+
+
+> [DataSchemaListing](DataSchemaListing) getUsersCustomattributesSchemas()
+
+Get a list of schemas.
+
+getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    DataSchemaListing result = apiInstance.getUsersCustomattributesSchemas();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersCustomattributesSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**DataSchemaListing**](DataSchemaListing)
+
+
+# **getUsersCustomattributesSchemasCoretype**
+
+
+> [Coretype](Coretype) getUsersCustomattributesSchemasCoretype(coreTypeName)
+
+Get the core types from which all schemas are built.
+
+getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/coretypes/{coreTypeName}  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String coreTypeName = "coreTypeName_example"; // String | Name of the core type
+try {
+    Coretype result = apiInstance.getUsersCustomattributesSchemasCoretype(coreTypeName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersCustomattributesSchemasCoretype");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **coreTypeName** | **String**| Name of the core type | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+# **getUsersCustomattributesSchemasCoretypes**
+
+
+> [CoretypeListing](CoretypeListing) getUsersCustomattributesSchemasCoretypes()
+
+Get the list of core types enabled for a specific namespace.
+
+getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/coretypes  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    CoretypeListing result = apiInstance.getUsersCustomattributesSchemasCoretypes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersCustomattributesSchemasCoretypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**CoretypeListing**](CoretypeListing)
+
+
+# **getUsersCustomattributesSchemasLimits**
+
+
+> [SchemaQuantityLimits](SchemaQuantityLimits) getUsersCustomattributesSchemasLimits()
+
+Get quantitative limits on schemas
+
+getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/limits  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    SchemaQuantityLimits result = apiInstance.getUsersCustomattributesSchemasLimits();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersCustomattributesSchemasLimits");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
+
+
 # **getUsersDevelopmentActivities**
 
 
@@ -3906,6 +4587,132 @@ try {
 [**CallForwarding**](CallForwarding)
 
 
+# **patchUserCustomattributes**
+
+
+> [UserCustomAttributes](UserCustomAttributes) patchUserCustomattributes(userId, userCustomAttributes)
+
+Update a single custom attributes record by amending the data with only the provided fields.
+
+patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/users/{userId}/customattributes  
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | user ID
+UserCustomAttributesUpdateRequest userCustomAttributes = new UserCustomAttributesUpdateRequest(); // UserCustomAttributesUpdateRequest | 
+try {
+    UserCustomAttributes result = apiInstance.patchUserCustomattributes(userId, userCustomAttributes);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#patchUserCustomattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user ID | 
+| **userCustomAttributes** | [**UserCustomAttributesUpdateRequest**](UserCustomAttributesUpdateRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
+
+
+# **patchUserCustomattributesBulk**
+
+
+> [UserCustomAttributes](UserCustomAttributes) patchUserCustomattributesBulk(userId, userCustomAttributesList)
+
+Update multiple custom attributes records by amending the data with only the provided fields.
+
+patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/users/{userId}/customattributes/bulk  
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | user ID
+List<UserCustomAttributesUpdateRequest> userCustomAttributesList = Arrays.asList(new UserCustomAttributesUpdateRequest()); // List<UserCustomAttributesUpdateRequest> | 
+try {
+    UserCustomAttributes result = apiInstance.patchUserCustomattributesBulk(userId, userCustomAttributesList);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#patchUserCustomattributesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user ID | 
+| **userCustomAttributesList** | [**List&lt;UserCustomAttributesUpdateRequest&gt;**](UserCustomAttributesUpdateRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
+
+
 # **patchUserGeolocation**
 
 
@@ -4040,6 +4847,8 @@ try {
 > [UserQueueEntityListing](UserQueueEntityListing) patchUserQueues(userId, body, divisionId)
 
 Join or unjoin a set of queues for a user
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Wraps PATCH /api/v2/users/{userId}/queues  
 
@@ -5325,6 +6134,67 @@ try {
 [**User**](User)
 
 
+# **postUsersCustomattributesSchemas**
+
+
+> [DataSchema](DataSchema) postUsersCustomattributesSchemas(body)
+
+Create a schema
+
+postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/users/customattributes/schemas  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+DataSchema body = new DataSchema(); // DataSchema | Schema
+try {
+    DataSchema result = apiInstance.postUsersCustomattributesSchemas(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersCustomattributesSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DataSchema**](DataSchema)| Schema | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
 # **postUsersDevelopmentActivitiesAggregatesQuery**
 
 
@@ -5925,6 +6795,69 @@ try {
 ### Return type
 
 [**CallForwarding**](CallForwarding)
+
+
+# **putUserCustomattributes**
+
+
+> [UserCustomAttributes](UserCustomAttributes) putUserCustomattributes(userId, userCustomAttributes)
+
+Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+
+putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/users/{userId}/customattributes  
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | user ID
+UserCustomAttributesUpdateRequest userCustomAttributes = new UserCustomAttributesUpdateRequest(); // UserCustomAttributesUpdateRequest | 
+try {
+    UserCustomAttributes result = apiInstance.putUserCustomattributes(userId, userCustomAttributes);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#putUserCustomattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user ID | 
+| **userCustomAttributes** | [**UserCustomAttributesUpdateRequest**](UserCustomAttributesUpdateRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
 
 
 # **putUserOutofoffice**
@@ -6537,4 +7470,67 @@ try {
 [**Verifier**](Verifier)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+# **putUsersCustomattributesSchema**
+
+
+> [DataSchema](DataSchema) putUsersCustomattributesSchema(schemaId, body)
+
+Update a schema
+
+putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/users/customattributes/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+DataSchema body = new DataSchema(); // DataSchema | Data Schema
+try {
+    DataSchema result = apiInstance.putUsersCustomattributesSchema(schemaId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#putUsersCustomattributesSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **body** | [**DataSchema**](DataSchema)| Data Schema | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

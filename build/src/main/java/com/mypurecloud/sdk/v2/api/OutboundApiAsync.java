@@ -50,11 +50,13 @@ import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingResponse;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJobListing;
 import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
+import com.mypurecloud.sdk.v2.model.DNCListUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
 import com.mypurecloud.sdk.v2.model.DigitalRuleSet;
@@ -95,6 +97,7 @@ import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 import com.mypurecloud.sdk.v2.model.WhatsAppCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.WhatsAppCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
@@ -233,6 +236,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersBulkRetrieveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkRetrieveRequest;
@@ -242,6 +246,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistEmailaddressesReque
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundFilespecificationtemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesBulkAddRequest;
@@ -10196,6 +10201,81 @@ public class OutboundApiAsync {
   }
 
   /**
+   * Generate presigned upload URL for contact list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UploadUrlResponse> postOutboundContactlistsUploadsAsync(PostOutboundContactlistsUploadsRequest request, final AsyncApiCallback<UploadUrlResponse> callback) {
+    try {
+      final SettableFuture<UploadUrlResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate presigned upload URL for contact list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UploadUrlResponse>> postOutboundContactlistsUploadsAsync(ApiRequest<ContactListUploadUrlRequest> request, final AsyncApiCallback<ApiResponse<UploadUrlResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UploadUrlResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create Contact List Template
    * 
    * @param request the request object
@@ -10859,6 +10939,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate presigned upload URL for dnc list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UploadUrlResponse> postOutboundDnclistsUploadsAsync(PostOutboundDnclistsUploadsRequest request, final AsyncApiCallback<UploadUrlResponse> callback) {
+    try {
+      final SettableFuture<UploadUrlResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate presigned upload URL for dnc list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UploadUrlResponse>> postOutboundDnclistsUploadsAsync(ApiRequest<DNCListUploadUrlRequest> request, final AsyncApiCallback<ApiResponse<UploadUrlResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UploadUrlResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

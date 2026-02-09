@@ -107,6 +107,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingConversation**](RoutingApi#patchRoutingConversation) | Update attributes of an in-queue conversation |
 | [**patchRoutingEmailDomain**](RoutingApi#patchRoutingEmailDomain) | Update domain settings |
 | [**patchRoutingEmailDomainValidate**](RoutingApi#patchRoutingEmailDomainValidate) | Validate domain settings |
+| [**patchRoutingEmailOutboundDomain**](RoutingApi#patchRoutingEmailOutboundDomain) | Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP). |
 | [**patchRoutingPredictor**](RoutingApi#patchRoutingPredictor) | Update single predictor. |
 | [**patchRoutingPredictorsKeyperformanceindicator**](RoutingApi#patchRoutingPredictorsKeyperformanceindicator) | Update a custom Key Performance Indicator. |
 | [**patchRoutingQueueMember**](RoutingApi#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
@@ -132,6 +133,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingEmailDomainTestconnection**](RoutingApi#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this ACD domain |
 | [**postRoutingEmailDomainVerification**](RoutingApi#postRoutingEmailDomainVerification) | Restart domain verification |
 | [**postRoutingEmailDomains**](RoutingApi#postRoutingEmailDomains) | Create a domain |
+| [**postRoutingEmailOutboundDomainTestconnection**](RoutingApi#postRoutingEmailOutboundDomainTestconnection) | Tests the custom SMTP server integration connection set on this outbound domain |
 | [**postRoutingEmailOutboundDomains**](RoutingApi#postRoutingEmailOutboundDomains) | Create a domain |
 | [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | Create a simulated domain |
 | [**postRoutingLanguages**](RoutingApi#postRoutingLanguages) | Create Language |
@@ -3478,7 +3480,7 @@ try {
 # **getRoutingQueueAssistant**
 
 
-> [AssistantQueue](AssistantQueue) getRoutingQueueAssistant(queueId, expand)
+> [AssistantQueue](AssistantQueue) getRoutingQueueAssistant(queueId, expand, languageVariation, fallbackToPrimaryAssistant)
 
 Get an assistant associated with a queue.
 
@@ -3512,8 +3514,10 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
 List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
+String languageVariation = "languageVariation_example"; // String | Language variation
+Boolean fallbackToPrimaryAssistant = true; // Boolean | Fall back to primary assistant if specified variation is not found
 try {
-    AssistantQueue result = apiInstance.getRoutingQueueAssistant(queueId, expand);
+    AssistantQueue result = apiInstance.getRoutingQueueAssistant(queueId, expand, languageVariation, fallbackToPrimaryAssistant);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueueAssistant");
@@ -3528,6 +3532,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
 | **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: assistant, copilot 
+| **languageVariation** | **String**| Language variation | [optional] 
+| **fallbackToPrimaryAssistant** | **Boolean**| Fall back to primary assistant if specified variation is not found | [optional] 
 {: class="table-striped"}
 
 
@@ -6359,7 +6365,7 @@ try {
 
 Update attributes of an in-queue conversation
 
-Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
 
 Wraps PATCH /api/v2/routing/conversations/{conversationId}  
 
@@ -6535,6 +6541,67 @@ try {
 ### Return type
 
 [**InboundDomain**](InboundDomain)
+
+
+# **patchRoutingEmailOutboundDomain**
+
+
+> [OutboundDomain](OutboundDomain) patchRoutingEmailOutboundDomain(domainId, body)
+
+Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+
+Wraps PATCH /api/v2/routing/email/outbound/domains/{domainId}  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+OutboundDomainPatchRequest body = new OutboundDomainPatchRequest(); // OutboundDomainPatchRequest | Domain settings
+try {
+    OutboundDomain result = apiInstance.patchRoutingEmailOutboundDomain(domainId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingEmailOutboundDomain");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+| **body** | [**OutboundDomainPatchRequest**](OutboundDomainPatchRequest)| Domain settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutboundDomain**](OutboundDomain)
 
 
 # **patchRoutingPredictor**
@@ -6731,6 +6798,8 @@ null (empty response body)
 > [QueueMemberEntityListing](QueueMemberEntityListing) patchRoutingQueueMembers(queueId, body)
 
 Join or unjoin a set of up to 100 users for a queue
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/members  
 
@@ -7227,6 +7296,8 @@ try {
 > [UserQueueEntityListing](UserQueueEntityListing) patchUserQueues(userId, body, divisionId)
 
 Join or unjoin a set of queues for a user
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Wraps PATCH /api/v2/users/{userId}/queues  
 
@@ -8073,6 +8144,69 @@ try {
 ### Return type
 
 [**InboundDomain**](InboundDomain)
+
+
+# **postRoutingEmailOutboundDomainTestconnection**
+
+
+> [TestMessage](TestMessage) postRoutingEmailOutboundDomainTestconnection(domainId, body)
+
+Tests the custom SMTP server integration connection set on this outbound domain
+
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+
+Wraps POST /api/v2/routing/email/outbound/domains/{domainId}/testconnection  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+TestMessage body = new TestMessage(); // TestMessage | TestMessage
+try {
+    TestMessage result = apiInstance.postRoutingEmailOutboundDomainTestconnection(domainId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingEmailOutboundDomainTestconnection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+| **body** | [**TestMessage**](TestMessage)| TestMessage | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TestMessage**](TestMessage)
 
 
 # **postRoutingEmailOutboundDomains**
@@ -10377,4 +10511,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

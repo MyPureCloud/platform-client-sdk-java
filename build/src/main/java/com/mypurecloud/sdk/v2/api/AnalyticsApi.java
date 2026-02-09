@@ -114,6 +114,8 @@ import com.mypurecloud.sdk.v2.model.TaskManagementAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TaskManagementAggregationQuery;
 import com.mypurecloud.sdk.v2.model.TaskManagementAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TaskManagementAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TaskManagementObservationQuery;
+import com.mypurecloud.sdk.v2.model.TaskManagementObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.TeamActivityQuery;
 import com.mypurecloud.sdk.v2.model.TeamActivityResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
@@ -249,6 +251,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesJobsRequ
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementMetricsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTeamsActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesQueryRequest;
@@ -9868,6 +9871,96 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TaskManagementAggregateQueryResponse> response = (ApiResponse<TaskManagementAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for task management observations
+   * 
+   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. Used for pagination. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional)
+   * @return TaskManagementObservationQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TaskManagementObservationQueryResponse postAnalyticsTaskmanagementMetricsQuery(TaskManagementObservationQuery body, String after, Integer pageSize) throws IOException, ApiException {
+    return  postAnalyticsTaskmanagementMetricsQuery(createPostAnalyticsTaskmanagementMetricsQueryRequest(body, after, pageSize));
+  }
+
+  /**
+   * Query for task management observations
+   * 
+   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. Used for pagination. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional)
+   * @return TaskManagementObservationQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TaskManagementObservationQueryResponse> postAnalyticsTaskmanagementMetricsQueryWithHttpInfo(TaskManagementObservationQuery body, String after, Integer pageSize) throws IOException {
+    return postAnalyticsTaskmanagementMetricsQuery(createPostAnalyticsTaskmanagementMetricsQueryRequest(body, after, pageSize).withHttpInfo());
+  }
+
+  private PostAnalyticsTaskmanagementMetricsQueryRequest createPostAnalyticsTaskmanagementMetricsQueryRequest(TaskManagementObservationQuery body, String after, Integer pageSize) {
+    return PostAnalyticsTaskmanagementMetricsQueryRequest.builder()
+            .withBody(body)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Query for task management observations
+   * 
+   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return TaskManagementObservationQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TaskManagementObservationQueryResponse postAnalyticsTaskmanagementMetricsQuery(PostAnalyticsTaskmanagementMetricsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TaskManagementObservationQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TaskManagementObservationQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for task management observations
+   * 
+   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TaskManagementObservationQueryResponse> postAnalyticsTaskmanagementMetricsQuery(ApiRequest<TaskManagementObservationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TaskManagementObservationQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TaskManagementObservationQueryResponse> response = (ApiResponse<TaskManagementObservationQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TaskManagementObservationQueryResponse> response = (ApiResponse<TaskManagementObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -5,10 +5,12 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **index** | **Integer** | Index of the card in the carousel template |  [optional] |
 | **bodyParameters** | [**List&lt;TemplateParameter&gt;**](TemplateParameter) | A list of Response Management carousel card body parameter substitutions for the response's messaging template |  [optional] |
 | **buttonUrlParameters** | [**List&lt;TemplateParameter&gt;**](TemplateParameter) | A list of Response Management carousel card button URL parameter substitutions for the response's messaging template |  [optional] |
+| **buttonQuickReplyPayloads** | [**List&lt;ButtonQuickReplyPayload&gt;**](ButtonQuickReplyPayload) | A list of quick reply button payloads for the carousel card |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

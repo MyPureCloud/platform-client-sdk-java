@@ -31,8 +31,8 @@ public class AppleIntegrationEntityListing  implements Serializable, PagedResour
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
-  private String previousUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private String selfUri = null;
   private Integer pageCount = null;
@@ -131,23 +131,6 @@ public class AppleIntegrationEntityListing  implements Serializable, PagedResour
 
   /**
    **/
-  public AppleIntegrationEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
   public AppleIntegrationEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -160,6 +143,23 @@ public class AppleIntegrationEntityListing  implements Serializable, PagedResour
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public AppleIntegrationEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -229,8 +229,8 @@ public class AppleIntegrationEntityListing  implements Serializable, PagedResour
             Objects.equals(this.pageNumber, appleIntegrationEntityListing.pageNumber) &&
             Objects.equals(this.total, appleIntegrationEntityListing.total) &&
             Objects.equals(this.firstUri, appleIntegrationEntityListing.firstUri) &&
-            Objects.equals(this.previousUri, appleIntegrationEntityListing.previousUri) &&
             Objects.equals(this.nextUri, appleIntegrationEntityListing.nextUri) &&
+            Objects.equals(this.previousUri, appleIntegrationEntityListing.previousUri) &&
             Objects.equals(this.lastUri, appleIntegrationEntityListing.lastUri) &&
             Objects.equals(this.selfUri, appleIntegrationEntityListing.selfUri) &&
             Objects.equals(this.pageCount, appleIntegrationEntityListing.pageCount);
@@ -238,7 +238,7 @@ public class AppleIntegrationEntityListing  implements Serializable, PagedResour
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -251,8 +251,8 @@ public class AppleIntegrationEntityListing  implements Serializable, PagedResour
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");

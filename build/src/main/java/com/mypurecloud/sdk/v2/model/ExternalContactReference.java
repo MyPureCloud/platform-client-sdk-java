@@ -23,6 +23,8 @@ import java.io.Serializable;
 public class ExternalContactReference  implements Serializable {
   
   private String id = null;
+  private String firstName = null;
+  private String lastName = null;
   private String selfUri = null;
 
   public ExternalContactReference() {
@@ -49,6 +51,42 @@ public class ExternalContactReference  implements Serializable {
   }
 
 
+  /**
+   * The first name of the contact.
+   **/
+  public ExternalContactReference firstName(String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The first name of the contact.")
+  @JsonProperty("firstName")
+  public String getFirstName() {
+    return firstName;
+  }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+
+  /**
+   * The last name of the contact.
+   **/
+  public ExternalContactReference lastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The last name of the contact.")
+  @JsonProperty("lastName")
+  public String getLastName() {
+    return lastName;
+  }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -67,12 +105,14 @@ public class ExternalContactReference  implements Serializable {
     ExternalContactReference externalContactReference = (ExternalContactReference) o;
 
     return Objects.equals(this.id, externalContactReference.id) &&
+            Objects.equals(this.firstName, externalContactReference.firstName) &&
+            Objects.equals(this.lastName, externalContactReference.lastName) &&
             Objects.equals(this.selfUri, externalContactReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri);
+    return Objects.hash(id, firstName, lastName, selfUri);
   }
 
   @Override
@@ -81,6 +121,8 @@ public class ExternalContactReference  implements Serializable {
     sb.append("class ExternalContactReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

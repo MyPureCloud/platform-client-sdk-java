@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserReference;
+import com.mypurecloud.sdk.v2.model.UsersRulesDependentRule;
 import com.mypurecloud.sdk.v2.model.UsersRulesLastRunMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,7 +28,7 @@ import java.io.Serializable;
 
 public class UsersRulesDependent  implements Serializable {
   
-  private String ruleId = null;
+  private UsersRulesDependentRule rule = null;
   private String typeId = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -89,10 +90,10 @@ public class UsersRulesDependent  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The id of the rule")
-  @JsonProperty("ruleId")
-  public String getRuleId() {
-    return ruleId;
+  @ApiModelProperty(example = "null", value = "The rule associated with this dependent")
+  @JsonProperty("rule")
+  public UsersRulesDependentRule getRule() {
+    return rule;
   }
 
 
@@ -155,7 +156,7 @@ public class UsersRulesDependent  implements Serializable {
     }
     UsersRulesDependent usersRulesDependent = (UsersRulesDependent) o;
 
-    return Objects.equals(this.ruleId, usersRulesDependent.ruleId) &&
+    return Objects.equals(this.rule, usersRulesDependent.rule) &&
             Objects.equals(this.typeId, usersRulesDependent.typeId) &&
             Objects.equals(this.type, usersRulesDependent.type) &&
             Objects.equals(this.createdDate, usersRulesDependent.createdDate) &&
@@ -167,7 +168,7 @@ public class UsersRulesDependent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ruleId, typeId, type, createdDate, createdBy, lastRun, recentRunCount, selfUri);
+    return Objects.hash(rule, typeId, type, createdDate, createdBy, lastRun, recentRunCount, selfUri);
   }
 
   @Override
@@ -175,7 +176,7 @@ public class UsersRulesDependent  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class UsersRulesDependent {\n");
     
-    sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
+    sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
