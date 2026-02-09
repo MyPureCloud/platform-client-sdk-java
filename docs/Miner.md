@@ -61,6 +61,10 @@
 | AR_IL | &quot;ar-il&quot; | 
 | AR_SA | &quot;ar-sa&quot; | 
 | AR_TN | &quot;ar-tn&quot; | 
+| DA_DK | &quot;da-dk&quot; | 
+| FI_FI | &quot;fi-fi&quot; | 
+| SV_SE | &quot;sv-se&quot; | 
+| NB_NO | &quot;nb-no&quot; | 
 
 
 ## Enum: MinerTypeEnum
@@ -120,4 +124,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

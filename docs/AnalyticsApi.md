@@ -121,6 +121,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi#postAnalyticsSurveysAggregatesQuery) | Query for survey aggregates |
 | [**postAnalyticsTaskmanagementAggregatesJobs**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesJobs) | Query for task management aggregates asynchronously |
 | [**postAnalyticsTaskmanagementAggregatesQuery**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesQuery) | Query for task management aggregates |
+| [**postAnalyticsTaskmanagementMetricsQuery**](AnalyticsApi#postAnalyticsTaskmanagementMetricsQuery) | Query for task management observations |
 | [**postAnalyticsTeamsActivityQuery**](AnalyticsApi#postAnalyticsTeamsActivityQuery) | Query for team activity observations |
 | [**postAnalyticsTranscriptsAggregatesJobs**](AnalyticsApi#postAnalyticsTranscriptsAggregatesJobs) | Query for transcript aggregates asynchronously |
 | [**postAnalyticsTranscriptsAggregatesQuery**](AnalyticsApi#postAnalyticsTranscriptsAggregatesQuery) | Query for transcript aggregates |
@@ -7295,6 +7296,71 @@ try {
 [**TaskManagementAggregateQueryResponse**](TaskManagementAggregateQueryResponse)
 
 
+# **postAnalyticsTaskmanagementMetricsQuery**
+
+
+> [TaskManagementObservationQueryResponse](TaskManagementObservationQueryResponse) postAnalyticsTaskmanagementMetricsQuery(body, after, pageSize)
+
+Query for task management observations
+
+postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/taskmanagement/metrics/query  
+
+Requires ALL permissions: 
+
+* analytics:taskManagementObservation:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+TaskManagementObservationQuery body = new TaskManagementObservationQuery(); // TaskManagementObservationQuery | query
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned. Used for pagination.
+Integer pageSize = 56; // Integer | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+try {
+    TaskManagementObservationQueryResponse result = apiInstance.postAnalyticsTaskmanagementMetricsQuery(body, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsTaskmanagementMetricsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TaskManagementObservationQuery**](TaskManagementObservationQuery)| query | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. Used for pagination. | [optional] 
+| **pageSize** | **Integer**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TaskManagementObservationQueryResponse**](TaskManagementObservationQueryResponse)
+
+
 # **postAnalyticsTeamsActivityQuery**
 
 
@@ -7897,4 +7963,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

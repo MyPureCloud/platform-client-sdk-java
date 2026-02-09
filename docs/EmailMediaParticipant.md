@@ -102,6 +102,7 @@
 | SPAM | &quot;spam&quot; | 
 | INACTIVITY | &quot;inactivity&quot; | 
 | SESSION_EXPIRED | &quot;session.expired&quot; | 
+| TAKEOVER | &quot;takeover&quot; | 
 
 
 ## Enum: FlaggedReasonEnum
@@ -114,4 +115,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

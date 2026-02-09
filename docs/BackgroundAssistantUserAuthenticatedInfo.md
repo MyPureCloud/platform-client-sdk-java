@@ -1,4 +1,4 @@
-# ScreenRecordingUserAuthenticatedInfo
+# BackgroundAssistantUserAuthenticatedInfo
 
 
 ## Properties
@@ -10,4 +10,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

@@ -92,6 +92,7 @@
 | REQUESTEDROUTING | &quot;requestedRouting&quot; | 
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; | 
 | SCOREDAGENTID | &quot;scoredAgentId&quot; | 
+| SCREENMONITOREDUSERID | &quot;screenMonitoredUserId&quot; | 
 | SCREENRECORDING | &quot;screenRecording&quot; | 
 | SCRIPTID | &quot;scriptId&quot; | 
 | SEGMENTEND | &quot;segmentEnd&quot; | 
@@ -143,4 +144,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

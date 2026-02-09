@@ -53,6 +53,7 @@
 | SESSIONEXPIRED | &quot;sessionExpired&quot; | 
 | SPAM | &quot;spam&quot; | 
 | SYSTEM | &quot;system&quot; | 
+| TAKEOVER | &quot;takeover&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
 | TRANSFER | &quot;transfer&quot; | 
 | TRANSPORTFAILURE | &quot;transportFailure&quot; | 
@@ -90,4 +91,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **ruleId** | **String** | The id of the rule |  [optional] |
+| **rule** | [**UsersRulesDependentRule**](UsersRulesDependentRule) | The rule associated with this dependent |  [optional] |
 | **typeId** | **String** | The type id of the dependent |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the dependent |  [optional] |
 | **createdDate** | [**Date**](Date) | The date/time the dependent was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -26,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

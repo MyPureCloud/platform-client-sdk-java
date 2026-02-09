@@ -3520,6 +3520,7 @@ Requires ANY permissions:
 * recording:settings:editScreenRecordings
 * recording:settings:editRegionalStorage
 * recording:settings:editUrlExpiration
+* recording:settings:editConferenceRecording
 
 ### Example
 
@@ -3628,4 +3629,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

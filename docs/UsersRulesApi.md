@@ -192,7 +192,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| The ID of the rule for which to retrieve dependents | 
-| **ruleType** | **String**| The type of the dependent |<br />**Values**: learning 
+| **ruleType** | **String**| The type of the dependent |<br />**Values**: learning, activityplan 
 | **typeId** | **String**| The type ID of the dependent | 
 {: class="table-striped"}
 
@@ -598,4 +598,4 @@ try {
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

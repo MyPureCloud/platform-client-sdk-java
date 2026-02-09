@@ -31,6 +31,7 @@
 | RECORDINGSERVICE | &quot;RecordingService&quot; | 
 | RECORDINGPLAYBACKSERVICE | &quot;RecordingPlaybackService&quot; | 
 | QUALITYSERVICE | &quot;QualityService&quot; | 
+| HORUSSERVICE | &quot;HorusService&quot; | 
 
 
 ## Enum: LevelEnum
@@ -71,6 +72,8 @@
 | APPLYPROTECTION | &quot;ApplyProtection&quot; | 
 | REVOKEPROTECTION | &quot;RevokeProtection&quot; | 
 | UPDATERETENTION | &quot;UpdateRetention&quot; | 
+| START | &quot;Start&quot; | 
+| STOP | &quot;Stop&quot; | 
 
 
 ## Enum: EntityTypeEnum
@@ -90,4 +93,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_

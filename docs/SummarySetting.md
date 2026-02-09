@@ -16,6 +16,9 @@
 | **customEntities** | [**List&lt;SummarySettingCustomEntity&gt;**](SummarySettingCustomEntity) | Custom entity definition. |  [optional] |
 | **settingType** | [**SettingTypeEnum**](#Enum--SettingTypeEnum) | Type of the summary setting. |  [optional] |
 | **prompt** | **String** | Custom prompt of summary setting. |  [optional] |
+| **serviceType** | [**ServiceTypeEnum**](#Enum--ServiceTypeEnum) | Service type for summarization. Can be 'Native' for Genesys native summarization engine or 'External' for external service. If specified as 'External', integrationId must be provided. |  [optional] |
+| **integrationId** | **String** | Integration ID for the external summarization service. Required when serviceType is External. |  [optional] |
+| **timeoutDuration** | **Integer** | Timeout duration in seconds for the external summarization service request. |  [optional] |
 | **dateCreated** | [**Date**](Date) | The date and time the setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | [**Date**](Date) | The date and time the setting was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -60,6 +63,15 @@
 | PROMPT | &quot;Prompt&quot; | 
 
 
+## Enum: ServiceTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NATIVE | &quot;Native&quot; | 
+| EXTERNAL | &quot;External&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:245.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
