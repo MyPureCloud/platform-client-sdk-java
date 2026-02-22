@@ -139,6 +139,55 @@ public class MessagingIntegration  implements Serializable {
     }
   }
   private MessengerTypeEnum messengerType = null;
+
+  private static class OpenExtensionTypeEnumDeserializer extends StdDeserializer<OpenExtensionTypeEnum> {
+    public OpenExtensionTypeEnumDeserializer() {
+      super(OpenExtensionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public OpenExtensionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OpenExtensionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of Open Messaging Integration Extension. Only present when 'messengerType' is 'open' and the Open Integration has an extension
+   */
+ @JsonDeserialize(using = OpenExtensionTypeEnumDeserializer.class)
+  public enum OpenExtensionTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NONE("None"),
+    GOOGLEBUSINESSPROFILE("GoogleBusinessProfile"),
+    YOUTUBE("YouTube");
+
+    private String value;
+
+    OpenExtensionTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static OpenExtensionTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (OpenExtensionTypeEnum value : OpenExtensionTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return OpenExtensionTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private OpenExtensionTypeEnum openExtensionType = null;
   private DomainEntityRef recipient = null;
   private Date dateCreated = null;
   private Date dateModified = null;
@@ -216,6 +265,13 @@ public class MessagingIntegration  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The type of Open Messaging Integration Extension. Only present when 'messengerType' is 'open' and the Open Integration has an extension")
+  @JsonProperty("openExtensionType")
+  public OpenExtensionTypeEnum getOpenExtensionType() {
+    return openExtensionType;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The recipient associated to the Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
@@ -281,6 +337,7 @@ public class MessagingIntegration  implements Serializable {
             Objects.equals(this.messagingSetting, messagingIntegration.messagingSetting) &&
             Objects.equals(this.status, messagingIntegration.status) &&
             Objects.equals(this.messengerType, messagingIntegration.messengerType) &&
+            Objects.equals(this.openExtensionType, messagingIntegration.openExtensionType) &&
             Objects.equals(this.recipient, messagingIntegration.recipient) &&
             Objects.equals(this.dateCreated, messagingIntegration.dateCreated) &&
             Objects.equals(this.dateModified, messagingIntegration.dateModified) &&
@@ -292,7 +349,7 @@ public class MessagingIntegration  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, messagingSetting, status, messengerType, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, status, messengerType, openExtensionType, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, selfUri);
   }
 
   @Override
@@ -306,6 +363,7 @@ public class MessagingIntegration  implements Serializable {
     sb.append("    messagingSetting: ").append(toIndentedString(messagingSetting)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    messengerType: ").append(toIndentedString(messengerType)).append("\n");
+    sb.append("    openExtensionType: ").append(toIndentedString(openExtensionType)).append("\n");
     sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");

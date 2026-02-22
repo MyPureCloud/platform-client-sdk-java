@@ -28,6 +28,7 @@ public class ListPicker  implements Serializable {
   private String id = null;
   private String title = null;
   private String subtitle = null;
+  private String header = null;
   private List<ListPickerSection> sections = null;
 
   public ListPicker() {
@@ -92,6 +93,24 @@ public class ListPicker  implements Serializable {
 
 
   /**
+   * Text to show in the header.
+   **/
+  public ListPicker header(String header) {
+    this.header = header;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Text to show in the header.")
+  @JsonProperty("header")
+  public String getHeader() {
+    return header;
+  }
+  public void setHeader(String header) {
+    this.header = header;
+  }
+
+
+  /**
    * An array of sections in the List Picker.
    **/
   public ListPicker sections(List<ListPickerSection> sections) {
@@ -122,12 +141,13 @@ public class ListPicker  implements Serializable {
     return Objects.equals(this.id, listPicker.id) &&
             Objects.equals(this.title, listPicker.title) &&
             Objects.equals(this.subtitle, listPicker.subtitle) &&
+            Objects.equals(this.header, listPicker.header) &&
             Objects.equals(this.sections, listPicker.sections);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, subtitle, sections);
+    return Objects.hash(id, title, subtitle, header, sections);
   }
 
   @Override
@@ -138,6 +158,7 @@ public class ListPicker  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
+    sb.append("    header: ").append(toIndentedString(header)).append("\n");
     sb.append("    sections: ").append(toIndentedString(sections)).append("\n");
     sb.append("}");
     return sb.toString();

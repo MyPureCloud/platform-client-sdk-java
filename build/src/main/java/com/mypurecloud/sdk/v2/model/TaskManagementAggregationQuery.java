@@ -50,6 +50,7 @@ public class TaskManagementAggregationQuery  implements Serializable {
   public enum GroupByEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASSIGNEEID("assigneeId"),
+    CASEID("caseId"),
     DIVISIONID("divisionId"),
     EXTERNALTAG("externalTag"),
     QUEUEID("queueId"),

@@ -458,37 +458,49 @@ public class WebDeploymentsApi {
 
   /**
    * Get the versions of a configuration
-   * This returns the 50 most recent versions for this configuration
+   * 
    * @param configurationId The configuration version ID (required)
+   * @param pageSize Number of entities to return. Defaults to 300. (optional)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @return WebDeploymentConfigurationVersionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WebDeploymentConfigurationVersionEntityListing getWebdeploymentsConfigurationVersions(String configurationId) throws IOException, ApiException {
-    return  getWebdeploymentsConfigurationVersions(createGetWebdeploymentsConfigurationVersionsRequest(configurationId));
+  public WebDeploymentConfigurationVersionEntityListing getWebdeploymentsConfigurationVersions(String configurationId, String pageSize, String before, String after) throws IOException, ApiException {
+    return  getWebdeploymentsConfigurationVersions(createGetWebdeploymentsConfigurationVersionsRequest(configurationId, pageSize, before, after));
   }
 
   /**
    * Get the versions of a configuration
-   * This returns the 50 most recent versions for this configuration
+   * 
    * @param configurationId The configuration version ID (required)
+   * @param pageSize Number of entities to return. Defaults to 300. (optional)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @return WebDeploymentConfigurationVersionEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WebDeploymentConfigurationVersionEntityListing> getWebdeploymentsConfigurationVersionsWithHttpInfo(String configurationId) throws IOException {
-    return getWebdeploymentsConfigurationVersions(createGetWebdeploymentsConfigurationVersionsRequest(configurationId).withHttpInfo());
+  public ApiResponse<WebDeploymentConfigurationVersionEntityListing> getWebdeploymentsConfigurationVersionsWithHttpInfo(String configurationId, String pageSize, String before, String after) throws IOException {
+    return getWebdeploymentsConfigurationVersions(createGetWebdeploymentsConfigurationVersionsRequest(configurationId, pageSize, before, after).withHttpInfo());
   }
 
-  private GetWebdeploymentsConfigurationVersionsRequest createGetWebdeploymentsConfigurationVersionsRequest(String configurationId) {
+  private GetWebdeploymentsConfigurationVersionsRequest createGetWebdeploymentsConfigurationVersionsRequest(String configurationId, String pageSize, String before, String after) {
     return GetWebdeploymentsConfigurationVersionsRequest.builder()
             .withConfigurationId(configurationId)
+
+            .withPageSize(pageSize)
+
+            .withBefore(before)
+
+            .withAfter(after)
 
             .build();
   }
 
   /**
    * Get the versions of a configuration
-   * This returns the 50 most recent versions for this configuration
+   * 
    * @param request The request object
    * @return WebDeploymentConfigurationVersionEntityListing
    * @throws ApiException if the request fails on the server
@@ -507,7 +519,7 @@ public class WebDeploymentsApi {
 
   /**
    * Get the versions of a configuration
-   * This returns the 50 most recent versions for this configuration
+   * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -615,28 +627,40 @@ public class WebDeploymentsApi {
   /**
    * View configuration drafts
    * 
+   * @param pageSize Number of entities to return. Defaults to 300. (optional)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param showOnlyPublished Filter by published status. (optional)
    * @return WebDeploymentConfigurationVersionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WebDeploymentConfigurationVersionEntityListing getWebdeploymentsConfigurations(Boolean showOnlyPublished) throws IOException, ApiException {
-    return  getWebdeploymentsConfigurations(createGetWebdeploymentsConfigurationsRequest(showOnlyPublished));
+  public WebDeploymentConfigurationVersionEntityListing getWebdeploymentsConfigurations(String pageSize, String before, String after, Boolean showOnlyPublished) throws IOException, ApiException {
+    return  getWebdeploymentsConfigurations(createGetWebdeploymentsConfigurationsRequest(pageSize, before, after, showOnlyPublished));
   }
 
   /**
    * View configuration drafts
    * 
+   * @param pageSize Number of entities to return. Defaults to 300. (optional)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param showOnlyPublished Filter by published status. (optional)
    * @return WebDeploymentConfigurationVersionEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WebDeploymentConfigurationVersionEntityListing> getWebdeploymentsConfigurationsWithHttpInfo(Boolean showOnlyPublished) throws IOException {
-    return getWebdeploymentsConfigurations(createGetWebdeploymentsConfigurationsRequest(showOnlyPublished).withHttpInfo());
+  public ApiResponse<WebDeploymentConfigurationVersionEntityListing> getWebdeploymentsConfigurationsWithHttpInfo(String pageSize, String before, String after, Boolean showOnlyPublished) throws IOException {
+    return getWebdeploymentsConfigurations(createGetWebdeploymentsConfigurationsRequest(pageSize, before, after, showOnlyPublished).withHttpInfo());
   }
 
-  private GetWebdeploymentsConfigurationsRequest createGetWebdeploymentsConfigurationsRequest(Boolean showOnlyPublished) {
+  private GetWebdeploymentsConfigurationsRequest createGetWebdeploymentsConfigurationsRequest(String pageSize, String before, String after, Boolean showOnlyPublished) {
     return GetWebdeploymentsConfigurationsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
             .withShowOnlyPublished(showOnlyPublished)
 
             .build();
@@ -1021,28 +1045,40 @@ public class WebDeploymentsApi {
   /**
    * Get deployments
    * 
+   * @param pageSize Number of entities to return. Defaults to 300. (optional)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param expand The specified entity attributes will be filled. Comma separated values expected.  (optional)
    * @return ExpandableWebDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExpandableWebDeploymentEntityListing getWebdeploymentsDeployments(List<String> expand) throws IOException, ApiException {
-    return  getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest(expand));
+  public ExpandableWebDeploymentEntityListing getWebdeploymentsDeployments(String pageSize, String before, String after, List<String> expand) throws IOException, ApiException {
+    return  getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest(pageSize, before, after, expand));
   }
 
   /**
    * Get deployments
    * 
+   * @param pageSize Number of entities to return. Defaults to 300. (optional)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param expand The specified entity attributes will be filled. Comma separated values expected.  (optional)
    * @return ExpandableWebDeploymentEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExpandableWebDeploymentEntityListing> getWebdeploymentsDeploymentsWithHttpInfo(List<String> expand) throws IOException {
-    return getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest(expand).withHttpInfo());
+  public ApiResponse<ExpandableWebDeploymentEntityListing> getWebdeploymentsDeploymentsWithHttpInfo(String pageSize, String before, String after, List<String> expand) throws IOException {
+    return getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest(pageSize, before, after, expand).withHttpInfo());
   }
 
-  private GetWebdeploymentsDeploymentsRequest createGetWebdeploymentsDeploymentsRequest(List<String> expand) {
+  private GetWebdeploymentsDeploymentsRequest createGetWebdeploymentsDeploymentsRequest(String pageSize, String before, String after, List<String> expand) {
     return GetWebdeploymentsDeploymentsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
             .withExpand(expand)
 
             .build();

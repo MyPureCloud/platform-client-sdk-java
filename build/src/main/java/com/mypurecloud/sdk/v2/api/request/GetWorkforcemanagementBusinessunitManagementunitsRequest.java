@@ -334,6 +334,9 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		COACHING("Coaching"),
 		LEARNING("Learning"),
 		AGENTUNAVAILABLETIMES("AgentUnavailableTimes"),
+		AGENTOPPORTUNITIESQUERY("AgentOpportunitiesQuery"),
+		AGENTOPPORTUNITIESENROLLMENTS("AgentOpportunitiesEnrollments"),
+		AGENTOPPORTUNITIESENROLLMENTSSTATUSES("AgentOpportunitiesEnrollmentsStatuses"),
 		ACTIVITYCODES("ActivityCodes"),
 		ACTIVITYPLANS("ActivityPlans"),
 		UNAVAILABLETIMES("UnavailableTimes"),
@@ -365,7 +368,13 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		WORKPLANROTATIONS("WorkPlanRotations"),
 		WORKPLANS("WorkPlans"),
 		SCHEDULEBID("ScheduleBid"),
-		SCHEDULEBIDGROUP("ScheduleBidGroup");
+		SCHEDULEBIDGROUP("ScheduleBidGroup"),
+		OPPORTUNITIES("Opportunities"),
+		OPPORTUNITIESQUERY("OpportunitiesQuery"),
+		OPPORTUNITIESENROLLMENTSQUERY("OpportunitiesEnrollmentsQuery"),
+		OPPORTUNITIESEXTERNALACTIVITIESQUERY("OpportunitiesExternalActivitiesQuery"),
+		OPPORTUNITIESSTATUSES("OpportunitiesStatuses"),
+		OPPORTUNITIESENROLLMENTSSTATUSES("OpportunitiesEnrollmentsStatuses");
 
 		private String value;
 

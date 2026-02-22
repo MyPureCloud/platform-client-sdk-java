@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ConversationCustomAttributesSearchRequest;
 import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;

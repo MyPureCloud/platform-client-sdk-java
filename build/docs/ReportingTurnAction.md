@@ -92,9 +92,10 @@
 | SETATTRIBUTESACTION | &quot;SetAttributesAction&quot; | 
 | SENDINTERACTIVEAPPLICATIONACTION | &quot;SendInteractiveApplicationAction&quot; | 
 | SENDRICHLINKACTION | &quot;SendRichLinkAction&quot; | 
+| SENDDIGITALCAROUSELACTION | &quot;SendDigitalCarouselAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

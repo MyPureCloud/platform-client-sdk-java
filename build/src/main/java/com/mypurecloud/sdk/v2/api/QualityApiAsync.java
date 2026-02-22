@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.Calibration;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
 import com.mypurecloud.sdk.v2.model.CreateSurveyRequest;
+import com.mypurecloud.sdk.v2.model.CreateSurveyResponse;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Evaluation;
@@ -4838,13 +4839,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Survey> postQualitySurveysAsync(PostQualitySurveysRequest request, final AsyncApiCallback<Survey> callback) {
+  public Future<CreateSurveyResponse> postQualitySurveysAsync(PostQualitySurveysRequest request, final AsyncApiCallback<CreateSurveyResponse> callback) {
     try {
-      final SettableFuture<Survey> future = SettableFuture.create();
+      final SettableFuture<CreateSurveyResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Survey>() {}, new AsyncApiCallback<ApiResponse<Survey>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CreateSurveyResponse>() {}, new AsyncApiCallback<ApiResponse<CreateSurveyResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Survey> response) {
+        public void onCompleted(ApiResponse<CreateSurveyResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4872,13 +4873,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Survey>> postQualitySurveysAsync(ApiRequest<CreateSurveyRequest> request, final AsyncApiCallback<ApiResponse<Survey>> callback) {
+  public Future<ApiResponse<CreateSurveyResponse>> postQualitySurveysAsync(ApiRequest<CreateSurveyRequest> request, final AsyncApiCallback<ApiResponse<CreateSurveyResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<Survey>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<CreateSurveyResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Survey>() {}, new AsyncApiCallback<ApiResponse<Survey>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<CreateSurveyResponse>() {}, new AsyncApiCallback<ApiResponse<CreateSurveyResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Survey> response) {
+        public void onCompleted(ApiResponse<CreateSurveyResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4886,7 +4887,7 @@ public class QualityApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)exception;
+            ApiResponse<CreateSurveyResponse> response = (ApiResponse<CreateSurveyResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4894,7 +4895,7 @@ public class QualityApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<CreateSurveyResponse> response = (ApiResponse<CreateSurveyResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

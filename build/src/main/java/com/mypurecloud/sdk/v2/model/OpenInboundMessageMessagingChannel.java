@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ConversationChannelMetadata;
 import com.mypurecloud.sdk.v2.model.OpenMessagingFromRecipient;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,7 +29,7 @@ public class OpenInboundMessageMessagingChannel  implements Serializable {
   private OpenMessagingFromRecipient from = null;
   private Date time = null;
   private String messageId = null;
-  private Object metadata = null;
+  private ConversationChannelMetadata metadata = null;
 
   public OpenInboundMessageMessagingChannel() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -93,17 +94,17 @@ public class OpenInboundMessageMessagingChannel  implements Serializable {
   /**
    * Additional Custom Information about the channel.
    **/
-  public OpenInboundMessageMessagingChannel metadata(Object metadata) {
+  public OpenInboundMessageMessagingChannel metadata(ConversationChannelMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Additional Custom Information about the channel.")
   @JsonProperty("metadata")
-  public Object getMetadata() {
+  public ConversationChannelMetadata getMetadata() {
     return metadata;
   }
-  public void setMetadata(Object metadata) {
+  public void setMetadata(ConversationChannelMetadata metadata) {
     this.metadata = metadata;
   }
 

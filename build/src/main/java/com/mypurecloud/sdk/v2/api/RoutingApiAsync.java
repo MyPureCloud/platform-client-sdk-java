@@ -96,6 +96,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.UpdateKpiRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSkillDivisionRequest;
 import com.mypurecloud.sdk.v2.model.UpdateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -232,6 +233,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsTranscriptionRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
@@ -8720,6 +8722,81 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Routing Skill Division
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RoutingSkill> patchRoutingSkillAsync(PatchRoutingSkillRequest request, final AsyncApiCallback<RoutingSkill> callback) {
+    try {
+      final SettableFuture<RoutingSkill> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingSkill>() {}, new AsyncApiCallback<ApiResponse<RoutingSkill>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoutingSkill> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Routing Skill Division
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RoutingSkill>> patchRoutingSkillAsync(ApiRequest<UpdateSkillDivisionRequest> request, final AsyncApiCallback<ApiResponse<RoutingSkill>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RoutingSkill>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RoutingSkill>() {}, new AsyncApiCallback<ApiResponse<RoutingSkill>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoutingSkill> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoutingSkill> response = (ApiResponse<RoutingSkill>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoutingSkill> response = (ApiResponse<RoutingSkill>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

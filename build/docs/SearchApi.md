@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesSitesSearch**](SearchApi#getTelephonyProvidersEdgesSitesSearch) | Search sites using the q64 value returned from a previous search |
 | [**getUsersSearch**](SearchApi#getUsersSearch) | Search users using the q64 value returned from a previous search |
 | [**getVoicemailSearch**](SearchApi#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
+| [**postConversationsCustomattributesSearch**](SearchApi#postConversationsCustomattributesSearch) | Search resources. |
 | [**postConversationsParticipantsAttributesSearch**](SearchApi#postConversationsParticipantsAttributesSearch) | Search conversations |
 | [**postDocumentationAllSearch**](SearchApi#postDocumentationAllSearch) | Search all documents |
 | [**postDocumentationGknSearch**](SearchApi#postDocumentationGknSearch) | Search gkn documentation |
@@ -551,6 +552,65 @@ try {
 ### Return type
 
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
+
+
+# **postConversationsCustomattributesSearch**
+
+
+> [JsonSearchResponse](JsonSearchResponse) postConversationsCustomattributesSearch(body)
+
+Search resources.
+
+Wraps POST /api/v2/conversations/customattributes/search  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+ConversationCustomAttributesSearchRequest body = new ConversationCustomAttributesSearchRequest(); // ConversationCustomAttributesSearchRequest | Search request options
+try {
+    JsonSearchResponse result = apiInstance.postConversationsCustomattributesSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postConversationsCustomattributesSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConversationCustomAttributesSearchRequest**](ConversationCustomAttributesSearchRequest)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JsonSearchResponse**](JsonSearchResponse)
 
 
 # **postConversationsParticipantsAttributesSearch**
@@ -1466,4 +1526,4 @@ try {
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

@@ -24,6 +24,10 @@ import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleRequest;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleResponse;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleVersionResponse;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleVersionResponse;
@@ -60,6 +64,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaEscalationruleRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
@@ -74,6 +79,9 @@ import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesR
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest;
@@ -86,6 +94,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesT
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
@@ -94,6 +103,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaAnalyticsMessagesJobsRe
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesFacebookRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest;
@@ -103,6 +113,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTwitterHistoricalTweetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaEscalationruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
@@ -394,6 +405,83 @@ public class SocialMediaApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Google Business Profile data ingestion rule.
+   * 
+   * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdAsync(DeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Google Business Profile data ingestion rule.
+   * 
+   * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1478,6 +1566,237 @@ public class SocialMediaApiAsync {
   }
 
   /**
+   * Get a single Google Business Profile data ingestion rule.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileDataIngestionRuleResponse> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdAsync(GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest request, final AsyncApiCallback<GoogleBusinessProfileDataIngestionRuleResponse> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileDataIngestionRuleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule version.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileDataIngestionRuleVersionResponse> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionAsync(GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest request, final AsyncApiCallback<GoogleBusinessProfileDataIngestionRuleVersionResponse> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileDataIngestionRuleVersionResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleVersionResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule version.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse>> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleVersionResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the Google Business Profile data ingestion rule versions.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsAsync(GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest request, final AsyncApiCallback<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the Google Business Profile data ingestion rule versions.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a single Instagram data ingestion rule.
    * 
    * @param request the request object
@@ -2378,6 +2697,83 @@ public class SocialMediaApiAsync {
   }
 
   /**
+   * Update the status of a Google Business Profile data ingestion rule.
+   * 
+   * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileDataIngestionRuleResponse> patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdAsync(PatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest request, final AsyncApiCallback<GoogleBusinessProfileDataIngestionRuleResponse> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileDataIngestionRuleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the status of a Google Business Profile data ingestion rule.
+   * 
+   * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdAsync(ApiRequest<DataIngestionRuleStatusPatchRequest> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update the status of a Instagram data ingestion rule.
    * 
    * @param request the request object
@@ -2966,6 +3362,83 @@ public class SocialMediaApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FacebookDataIngestionRuleResponse> response = (ApiResponse<FacebookDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Google Business Profile data ingestion rule.
+   * 
+   * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileDataIngestionRuleResponse> postSocialmediaTopicDataingestionrulesGooglebusinessprofileAsync(PostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest request, final AsyncApiCallback<GoogleBusinessProfileDataIngestionRuleResponse> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileDataIngestionRuleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Google Business Profile data ingestion rule.
+   * 
+   * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> postSocialmediaTopicDataingestionrulesGooglebusinessprofileAsync(ApiRequest<GoogleBusinessProfileDataIngestionRuleRequest> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3641,6 +4114,83 @@ public class SocialMediaApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FacebookDataIngestionRuleResponse> response = (ApiResponse<FacebookDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the Google Business Profile data ingestion rule.
+   * 
+   * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileDataIngestionRuleResponse> putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdAsync(PutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest request, final AsyncApiCallback<GoogleBusinessProfileDataIngestionRuleResponse> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileDataIngestionRuleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the Google Business Profile data ingestion rule.
+   * 
+   * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdAsync(ApiRequest<GoogleBusinessProfileDataIngestionRuleRequest> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

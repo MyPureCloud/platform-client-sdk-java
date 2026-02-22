@@ -274,7 +274,8 @@ public class GetAnalyticsBotflowDivisionsReportingturnsRequest {
 		SUCCESSCONFIRMATIONNO("SuccessConfirmationNo"),
 		SUCCESSCONFIRMATIONYES("SuccessConfirmationYes"),
 		SUCCESSDISAMBIGUATION("SuccessDisambiguation"),
-		SUCCESSDISAMBIGUATIONNONE("SuccessDisambiguationNone");
+		SUCCESSDISAMBIGUATIONNONE("SuccessDisambiguationNone"),
+		GUARDRAILSVIOLATION("GuardrailsViolation");
 
 		private String value;
 

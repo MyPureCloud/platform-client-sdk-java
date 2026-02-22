@@ -696,7 +696,6 @@ docs/BusinessUnitResponse.md
 docs/BusinessUnitSettingsResponse.md
 docs/Button.md
 docs/ButtonComponent.md
-docs/ButtonQuickReplyPayload.md
 docs/ButtonResponse.md
 docs/CachedMediaItem.md
 docs/CachedMediaItemEntityListing.md
@@ -1254,6 +1253,10 @@ docs/ConversationContentText.md
 docs/ConversationContentWheelPicker.md
 docs/ConversationContentWheelPickerItem.md
 docs/ConversationContext.md
+docs/ConversationCustomAttributesSearchCriteria.md
+docs/ConversationCustomAttributesSearchRequest.md
+docs/ConversationDataSchema.md
+docs/ConversationDataSchemaListing.md
 docs/ConversationDeletionProtectionQuery.md
 docs/ConversationDetailQueryClause.md
 docs/ConversationDetailQueryFilter.md
@@ -1352,6 +1355,8 @@ docs/ConversationIntentSuggestionsTopicSuggestedIntent.md
 docs/ConversationIntentSuggestionsTopicSuggestedIntentSlot.md
 docs/ConversationIntentSuggestionsTopicSuggestionContext.md
 docs/ConversationIntentSuggestionsTopicSuggestionFeedback.md
+docs/ConversationJsonSchemaDocument.md
+docs/ConversationJsonSchemaRequest.md
 docs/ConversationKnowledgeArticleSuggestionsTopicKnowledgeAnswer.md
 docs/ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent.md
 docs/ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle.md
@@ -1434,6 +1439,7 @@ docs/ConversationRoutingData.md
 docs/ConversationSchemaAttribute.md
 docs/ConversationSchemaData.md
 docs/ConversationSchemaReference.md
+docs/ConversationSchemaUpdateRequest.md
 docs/ConversationScreenShareEventTopicConversationDivisionMembership.md
 docs/ConversationScreenShareEventTopicConversationRoutingData.md
 docs/ConversationScreenShareEventTopicDetail.md
@@ -1612,6 +1618,7 @@ docs/CreateShareResponse.md
 docs/CreateStaffingGroupAllocation.md
 docs/CreateStaffingGroupRequest.md
 docs/CreateSurveyRequest.md
+docs/CreateSurveyResponse.md
 docs/CreateTimeOffLimitRequest.md
 docs/CreateTimeOffPlanBusinessUnitAssociation.md
 docs/CreateTimeOffPlanManagementUnitAssociation.md
@@ -1668,6 +1675,13 @@ docs/CursorNoteListing.md
 docs/CursorOrganizationListing.md
 docs/CursorRelationshipListing.md
 docs/Cursors.md
+docs/CustomAttributes.md
+docs/CustomAttributesBulkUpdateResponse.md
+docs/CustomAttributesBulkUpdateResponseMap.md
+docs/CustomAttributesIdResponse.md
+docs/CustomAttributesListing.md
+docs/CustomAttributesPatchRequest.md
+docs/CustomAttributesUpdateRequest.md
 docs/CustomEventAttribute.md
 docs/CustomEventAttributeList.md
 docs/CustomI18nLabels.md
@@ -1910,6 +1924,7 @@ docs/DivisionEntityRef.md
 docs/DivisionReference.md
 docs/DivisionedDomainEntityRef.md
 docs/DivsPermittedEntityListing.md
+docs/DmarcResult.md
 docs/DncList.md
 docs/DncListCreate.md
 docs/DncListDivisionView.md
@@ -2043,6 +2058,7 @@ docs/DynamicGroupRoutingSkillCondition.md
 docs/DynamicGroupSkillCondition.md
 docs/DynamicLineBalancingSettings.md
 docs/DynamicLineBalancingSettingsPatchRequest.md
+docs/DynamicUtilization.md
 docs/Edge.md
 docs/EdgeAutoUpdateConfig.md
 docs/EdgeChangeTopicEdge.md
@@ -2486,6 +2502,7 @@ docs/FlowVersionEntityListing.md
 docs/FlowsApi.json
 docs/FlowsApi.md
 docs/FlowsQueryCriteriaResponse.md
+docs/FollowersFilter.md
 docs/FooterTemplate.md
 docs/ForecastAbandonRateResponse.md
 docs/ForecastAverageSpeedOfAnswerResponse.md
@@ -2569,8 +2586,22 @@ docs/GetProfilesResponse.md
 docs/GetRulesQuery.md
 docs/GetTemplatesResponse.md
 docs/GetUploadSourceUrlJobStatusResponse.md
+docs/GoogleAuthToken.md
+docs/GoogleAuthTokenReference.md
+docs/GoogleAuthTokenRequest.md
+docs/GoogleBusinessProfileAccount.md
+docs/GoogleBusinessProfileAccountListing.md
+docs/GoogleBusinessProfileAccountReference.md
+docs/GoogleBusinessProfileDataIngestionRuleRequest.md
+docs/GoogleBusinessProfileDataIngestionRuleResponse.md
+docs/GoogleBusinessProfileDataIngestionRuleVersionResponse.md
+docs/GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing.md
+docs/GoogleBusinessProfileOpenIntegration.md
+docs/GoogleBusinessProfileOpenIntegrationRequest.md
+docs/GoogleBusinessProfileOpenIntegrationUpdateRequest.md
 docs/GoogleDialogflowConfig.md
 docs/GoogleDialogflowCustomSettings.md
+docs/GoogleOAuthSettingsResponse.md
 docs/Grammar.md
 docs/GrammarFileUploadRequest.md
 docs/GrammarLanguage.md
@@ -2629,6 +2660,7 @@ docs/GuideVersionResources.md
 docs/HeadcountForecast.md
 docs/HeadcountInterval.md
 docs/Header.md
+docs/HeaderEntry.md
 docs/HealthInfo.md
 docs/HelpLink.md
 docs/HelpSettings.md
@@ -5269,6 +5301,7 @@ docs/UpdateScheduleUploadSchema.md
 docs/UpdateSegmentAssignmentRequest.md
 docs/UpdateSegmentAssignmentResponse.md
 docs/UpdateServiceGoalTemplate.md
+docs/UpdateSkillDivisionRequest.md
 docs/UpdateStaffingGroupRequest.md
 docs/UpdateTimeOffLimitRequest.md
 docs/UpdateTimeOffPlanBusinessUnitAssociation.md
@@ -6147,6 +6180,7 @@ docs/deleteContentmanagementWorkspace-example.txt
 docs/deleteContentmanagementWorkspaceMember-example.txt
 docs/deleteContentmanagementWorkspaceTagvalue-example.txt
 docs/deleteConversation-example.txt
+docs/deleteConversationCustomattribute-example.txt
 docs/deleteConversationParticipantCode-example.txt
 docs/deleteConversationParticipantFlaggedreason-example.txt
 docs/deleteConversationRecordingAnnotation-example.txt
@@ -6157,6 +6191,7 @@ docs/deleteConversationsMessagesCachedmediaCachedMediaItemId-example.txt
 docs/deleteConversationsMessagingIntegrationsAppleIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
+docs/deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
@@ -6340,6 +6375,7 @@ docs/deleteSocialmediaEscalationrule-example.txt
 docs/deleteSocialmediaMessage-example.txt
 docs/deleteSocialmediaTopic-example.txt
 docs/deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId-example.txt
 docs/deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId-example.txt
 docs/deleteSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
 docs/deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
@@ -6658,6 +6694,8 @@ docs/getConversationCommunicationAgentchecklistJob-example.txt
 docs/getConversationCommunicationAgentchecklists-example.txt
 docs/getConversationCommunicationInternalmessage-example.txt
 docs/getConversationCommunicationInternalmessages-example.txt
+docs/getConversationCustomattribute-example.txt
+docs/getConversationCustomattributes-example.txt
 docs/getConversationParticipantSecureivrsession-example.txt
 docs/getConversationParticipantSecureivrsessions-example.txt
 docs/getConversationParticipantWrapup-example.txt
@@ -6697,6 +6735,13 @@ docs/getConversationsCobrowsesessionParticipantCommunicationWrapup-example.txt
 docs/getConversationsCobrowsesessionParticipantWrapup-example.txt
 docs/getConversationsCobrowsesessionParticipantWrapupcodes-example.txt
 docs/getConversationsCobrowsesessions-example.txt
+docs/getConversationsCustomattributesSchema-example.txt
+docs/getConversationsCustomattributesSchemaVersion-example.txt
+docs/getConversationsCustomattributesSchemaVersions-example.txt
+docs/getConversationsCustomattributesSchemas-example.txt
+docs/getConversationsCustomattributesSchemasCoretype-example.txt
+docs/getConversationsCustomattributesSchemasCoretypes-example.txt
+docs/getConversationsCustomattributesSchemasLimits-example.txt
 docs/getConversationsEmail-example.txt
 docs/getConversationsEmailMessage-example.txt
 docs/getConversationsEmailMessages-example.txt
@@ -6738,6 +6783,10 @@ docs/getConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsInstagram-example.txt
 docs/getConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsOpen-example.txt
+docs/getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId-example.txt
+docs/getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings-example.txt
+docs/getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken-example.txt
+docs/getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts-example.txt
 docs/getConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsTwitter-example.txt
 docs/getConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
@@ -7483,6 +7532,9 @@ docs/getSocialmediaTopicDataingestionrules-example.txt
 docs/getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
 docs/getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion-example.txt
 docs/getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions-example.txt
+docs/getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId-example.txt
+docs/getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion-example.txt
+docs/getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions-example.txt
 docs/getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId-example.txt
 docs/getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion-example.txt
 docs/getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions-example.txt
@@ -7905,6 +7957,8 @@ docs/patchCoachingAppointment-example.txt
 docs/patchCoachingAppointmentAnnotation-example.txt
 docs/patchCoachingAppointmentStatus-example.txt
 docs/patchCoachingNotification-example.txt
+docs/patchConversationCustomattributes-example.txt
+docs/patchConversationCustomattributesBulk-example.txt
 docs/patchConversationParticipant-example.txt
 docs/patchConversationParticipantAttributes-example.txt
 docs/patchConversationRecordingstate-example.txt
@@ -7947,6 +8001,7 @@ docs/patchConversationsMessageParticipantCommunication-example.txt
 docs/patchConversationsMessagingIntegrationsAppleIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
+docs/patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId-example.txt
@@ -8024,6 +8079,7 @@ docs/patchRoutingQueueUser-example.txt
 docs/patchRoutingQueueUsers-example.txt
 docs/patchRoutingSettingsContactcenter-example.txt
 docs/patchRoutingSettingsTranscription-example.txt
+docs/patchRoutingSkill-example.txt
 docs/patchRoutingSkillgroup-example.txt
 docs/patchRoutingSmsPhonenumber-example.txt
 docs/patchScimGroup-example.txt
@@ -8033,6 +8089,7 @@ docs/patchScimV2User-example.txt
 docs/patchSettingsExecutiondata-example.txt
 docs/patchSocialmediaTopic-example.txt
 docs/patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId-example.txt
 docs/patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId-example.txt
 docs/patchSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
 docs/patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
@@ -8325,6 +8382,9 @@ docs/postConversationsChatParticipantReplace-example.txt
 docs/postConversationsChats-example.txt
 docs/postConversationsCobrowsesessionParticipantCommunicationWrapup-example.txt
 docs/postConversationsCobrowsesessionParticipantReplace-example.txt
+docs/postConversationsCustomattributesSchemas-example.txt
+docs/postConversationsCustomattributesSearch-example.txt
+docs/postConversationsCustomattributesSearch-example.txt
 docs/postConversationsEmailInboundmessages-example.txt
 docs/postConversationsEmailMessages-example.txt
 docs/postConversationsEmailMessagesDraftAttachmentsCopy-example.txt
@@ -8356,6 +8416,8 @@ docs/postConversationsMessagingIntegrationsApple-example.txt
 docs/postConversationsMessagingIntegrationsFacebook-example.txt
 docs/postConversationsMessagingIntegrationsInstagram-example.txt
 docs/postConversationsMessagingIntegrationsOpen-example.txt
+docs/postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile-example.txt
+docs/postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens-example.txt
 docs/postConversationsMessagingIntegrationsTwitter-example.txt
 docs/postConversationsMessagingIntegrationsWhatsapp-example.txt
 docs/postConversationsMessagingIntegrationsWhatsappEmbeddedsignup-example.txt
@@ -8733,6 +8795,7 @@ docs/postSocialmediaAnalyticsMessagesJobs-example.txt
 docs/postSocialmediaEscalationrules-example.txt
 docs/postSocialmediaEscalationsMessages-example.txt
 docs/postSocialmediaTopicDataingestionrulesFacebook-example.txt
+docs/postSocialmediaTopicDataingestionrulesGooglebusinessprofile-example.txt
 docs/postSocialmediaTopicDataingestionrulesInstagram-example.txt
 docs/postSocialmediaTopicDataingestionrulesOpen-example.txt
 docs/postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk-example.txt
@@ -8982,6 +9045,8 @@ docs/putChatsSettings-example.txt
 docs/putContentmanagementWorkspace-example.txt
 docs/putContentmanagementWorkspaceMember-example.txt
 docs/putContentmanagementWorkspaceTagvalue-example.txt
+docs/putConversationCustomattributes-example.txt
+docs/putConversationCustomattributesBulk-example.txt
 docs/putConversationParticipantFlaggedreason-example.txt
 docs/putConversationRecording-example.txt
 docs/putConversationRecordingAnnotation-example.txt
@@ -8992,6 +9057,7 @@ docs/putConversationsCallRecordingstate-example.txt
 docs/putConversationsCallbackRecordingstate-example.txt
 docs/putConversationsChatRecordingstate-example.txt
 docs/putConversationsCobrowsesessionRecordingstate-example.txt
+docs/putConversationsCustomattributesSchema-example.txt
 docs/putConversationsEmailMessagesDraft-example.txt
 docs/putConversationsEmailRecordingstate-example.txt
 docs/putConversationsKeyconfiguration-example.txt
@@ -9156,6 +9222,7 @@ docs/putScimV2Group-example.txt
 docs/putScimV2User-example.txt
 docs/putSocialmediaEscalationrule-example.txt
 docs/putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId-example.txt
 docs/putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId-example.txt
 docs/putSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
 docs/putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
@@ -9474,6 +9541,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteContentmanagementStatusSt
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteContentmanagementWorkspaceMemberRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteContentmanagementWorkspaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteContentmanagementWorkspaceTagvalueRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationCustomattributeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationParticipantCodeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationParticipantFlaggedreasonRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationRecordingAnnotationRequest.java
@@ -9485,6 +9553,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagesCach
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.java
@@ -9667,6 +9736,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteScimV2UserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSocialmediaEscalationruleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSocialmediaMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSocialmediaTopicDataingestionrulesOpenOpenIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest.java
@@ -9985,6 +10055,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationCommunicationAge
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationCommunicationAgentchecklistsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationCommunicationInternalmessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationCommunicationInternalmessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationCustomattributeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationCustomattributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationParticipantSecureivrsessionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationParticipantSecureivrsessionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationParticipantWrapupRequest.java
@@ -10024,6 +10096,13 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesession
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesessionParticipantWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesessionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesessionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCustomattributesSchemaRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCustomattributesSchemaVersionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCustomattributesSchemaVersionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCustomattributesSchemasCoretypeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCustomattributesSchemasCoretypesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCustomattributesSchemasLimitsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCustomattributesSchemasRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailMessagesDraftRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailMessagesRequest.java
@@ -10063,6 +10142,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegr
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsFacebookRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsInstagramRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsRequest.java
@@ -10809,6 +10892,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaEscalationrulesRe
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest.java
@@ -11233,6 +11319,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingAppointmentAnnotat
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingAppointmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingAppointmentStatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingNotificationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationCustomattributesBulkRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationCustomattributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationParticipantAttributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationParticipantRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationRecordingstateRequest.java
@@ -11275,6 +11363,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessageReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest.java
@@ -11352,6 +11441,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueUserRequest.ja
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueUsersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSettingsContactcenterRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSettingsTranscriptionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSkillRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSkillgroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSmsPhonenumberRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimGroupRequest.java
@@ -11360,6 +11450,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimV2GroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimV2UserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchSettingsExecutiondataRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchSocialmediaTopicDataingestionrulesOpenOpenIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest.java
@@ -11653,6 +11744,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsChatParticipan
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsChatsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCobrowsesessionParticipantReplaceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCustomattributesSchemasRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCustomattributesSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCustomattributesSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailInboundmessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailMessagesDraftAttachmentsCopyRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailMessagesRequest.java
@@ -11683,6 +11777,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsAppleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsFacebookRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsInstagramRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsOpenRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsTwitterRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest.java
@@ -12061,6 +12157,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostSocialmediaAnalyticsMessage
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSocialmediaEscalationrulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSocialmediaEscalationsMessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSocialmediaTopicDataingestionrulesFacebookRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSocialmediaTopicDataingestionrulesInstagramRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSocialmediaTopicDataingestionrulesOpenRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest.java
@@ -12310,6 +12407,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutChatsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutContentmanagementWorkspaceMemberRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutContentmanagementWorkspaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutContentmanagementWorkspaceTagvalueRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationCustomattributesBulkRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationCustomattributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationParticipantFlaggedreasonRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationRecordingAnnotationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationRecordingRequest.java
@@ -12320,6 +12419,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationsCallRecordingst
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationsCallbackRecordingstateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationsChatRecordingstateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationsCobrowsesessionRecordingstateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationsCustomattributesSchemaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationsEmailMessagesDraftRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationsEmailRecordingstateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutConversationsKeyconfigurationRequest.java
@@ -12484,6 +12584,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutScimV2GroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutScimV2UserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSocialmediaEscalationruleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSocialmediaTopicDataingestionrulesOpenOpenIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest.java
@@ -13220,7 +13321,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/BusinessUnitResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BusinessUnitSettingsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Button.java
 src/main/java/com/mypurecloud/sdk/v2/model/ButtonComponent.java
-src/main/java/com/mypurecloud/sdk/v2/model/ButtonQuickReplyPayload.java
 src/main/java/com/mypurecloud/sdk/v2/model/ButtonResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/CachedMediaItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/CachedMediaItemEntityListing.java
@@ -13770,6 +13870,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentText.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentWheelPicker.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentWheelPickerItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContext.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationCustomAttributesSearchCriteria.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationCustomAttributesSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationDataSchema.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationDataSchemaListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDeletionProtectionQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDetailQueryClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDetailQueryFilter.java
@@ -13868,6 +13972,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationIntentSuggestionsTopicSug
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationIntentSuggestionsTopicSuggestedIntentSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationIntentSuggestionsTopicSuggestionContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationIntentSuggestionsTopicSuggestionFeedback.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationJsonSchemaDocument.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationJsonSchemaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationKnowledgeArticleSuggestionsTopicKnowledgeAnswer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle.java
@@ -13950,6 +14056,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationRoutingData.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSchemaAttribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSchemaData.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSchemaReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSchemaUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicConversationDivisionMembership.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicConversationRoutingData.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicDetail.java
@@ -14126,6 +14233,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CreateShareResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateStaffingGroupAllocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateStaffingGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateSurveyRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/CreateSurveyResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateTimeOffLimitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateTimeOffPlanBusinessUnitAssociation.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateTimeOffPlanManagementUnitAssociation.java
@@ -14182,6 +14290,13 @@ src/main/java/com/mypurecloud/sdk/v2/model/CursorNoteListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/CursorOrganizationListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/CursorRelationshipListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Cursors.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributes.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesBulkUpdateResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesBulkUpdateResponseMap.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesIdResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesPatchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomEventAttribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomEventAttributeList.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomI18nLabels.java
@@ -14420,6 +14535,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/DivisionEntityRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/DivisionReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/DivisionedDomainEntityRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/DivsPermittedEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/DmarcResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/DncList.java
 src/main/java/com/mypurecloud/sdk/v2/model/DncListCreate.java
 src/main/java/com/mypurecloud/sdk/v2/model/DncListDivisionView.java
@@ -14551,6 +14667,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/DynamicGroupRoutingSkillCondition.jav
 src/main/java/com/mypurecloud/sdk/v2/model/DynamicGroupSkillCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/DynamicLineBalancingSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/DynamicLineBalancingSettingsPatchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/DynamicUtilization.java
 src/main/java/com/mypurecloud/sdk/v2/model/Edge.java
 src/main/java/com/mypurecloud/sdk/v2/model/EdgeAutoUpdateConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/EdgeChangeTopicEdge.java
@@ -14982,6 +15099,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/FlowStartDetailEventTopicFlowStartEve
 src/main/java/com/mypurecloud/sdk/v2/model/FlowVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowVersionEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowsQueryCriteriaResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/FollowersFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/FooterTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastAbandonRateResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastAverageSpeedOfAnswerResponse.java
@@ -15059,8 +15177,22 @@ src/main/java/com/mypurecloud/sdk/v2/model/GetProfilesResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/GetRulesQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/GetTemplatesResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/GetUploadSourceUrlJobStatusResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleAuthToken.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleAuthTokenReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleAuthTokenRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileAccount.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileAccountListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileAccountReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileDataIngestionRuleRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileDataIngestionRuleResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileDataIngestionRuleVersionResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileOpenIntegration.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileOpenIntegrationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleBusinessProfileOpenIntegrationUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GoogleDialogflowConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/GoogleDialogflowCustomSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/GoogleOAuthSettingsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Grammar.java
 src/main/java/com/mypurecloud/sdk/v2/model/GrammarFileUploadRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GrammarLanguage.java
@@ -15115,6 +15247,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/GuideVersionResources.java
 src/main/java/com/mypurecloud/sdk/v2/model/HeadcountForecast.java
 src/main/java/com/mypurecloud/sdk/v2/model/HeadcountInterval.java
 src/main/java/com/mypurecloud/sdk/v2/model/Header.java
+src/main/java/com/mypurecloud/sdk/v2/model/HeaderEntry.java
 src/main/java/com/mypurecloud/sdk/v2/model/HealthInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/HelpLink.java
 src/main/java/com/mypurecloud/sdk/v2/model/HelpSettings.java
@@ -17673,6 +17806,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UpdateScheduleUploadSchema.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateSegmentAssignmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateSegmentAssignmentResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateServiceGoalTemplate.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateSkillDivisionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateStaffingGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateTimeOffLimitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateTimeOffPlanBusinessUnitAssociation.java

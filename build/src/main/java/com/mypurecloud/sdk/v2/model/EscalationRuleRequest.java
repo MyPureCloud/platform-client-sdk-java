@@ -81,6 +81,7 @@ public class EscalationRuleRequest  implements Serializable {
   private EscalationTarget facebookEscalation = null;
   private EscalationTarget instagramEscalation = null;
   private EscalationTarget twitterEscalation = null;
+  private EscalationTarget googleBusinessProfileEscalation = null;
 
   public EscalationRuleRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -269,6 +270,24 @@ public class EscalationRuleRequest  implements Serializable {
   }
 
 
+  /**
+   * The target integration configuration used for a Google Business Profile message escalation.
+   **/
+  public EscalationRuleRequest googleBusinessProfileEscalation(EscalationTarget googleBusinessProfileEscalation) {
+    this.googleBusinessProfileEscalation = googleBusinessProfileEscalation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The target integration configuration used for a Google Business Profile message escalation.")
+  @JsonProperty("googleBusinessProfileEscalation")
+  public EscalationTarget getGoogleBusinessProfileEscalation() {
+    return googleBusinessProfileEscalation;
+  }
+  public void setGoogleBusinessProfileEscalation(EscalationTarget googleBusinessProfileEscalation) {
+    this.googleBusinessProfileEscalation = googleBusinessProfileEscalation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -288,12 +307,13 @@ public class EscalationRuleRequest  implements Serializable {
             Objects.equals(this.openEscalation, escalationRuleRequest.openEscalation) &&
             Objects.equals(this.facebookEscalation, escalationRuleRequest.facebookEscalation) &&
             Objects.equals(this.instagramEscalation, escalationRuleRequest.instagramEscalation) &&
-            Objects.equals(this.twitterEscalation, escalationRuleRequest.twitterEscalation);
+            Objects.equals(this.twitterEscalation, escalationRuleRequest.twitterEscalation) &&
+            Objects.equals(this.googleBusinessProfileEscalation, escalationRuleRequest.googleBusinessProfileEscalation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, matchCriteria, priority, divisionId, description, status, openEscalation, facebookEscalation, instagramEscalation, twitterEscalation);
+    return Objects.hash(name, matchCriteria, priority, divisionId, description, status, openEscalation, facebookEscalation, instagramEscalation, twitterEscalation, googleBusinessProfileEscalation);
   }
 
   @Override
@@ -311,6 +331,7 @@ public class EscalationRuleRequest  implements Serializable {
     sb.append("    facebookEscalation: ").append(toIndentedString(facebookEscalation)).append("\n");
     sb.append("    instagramEscalation: ").append(toIndentedString(instagramEscalation)).append("\n");
     sb.append("    twitterEscalation: ").append(toIndentedString(twitterEscalation)).append("\n");
+    sb.append("    googleBusinessProfileEscalation: ").append(toIndentedString(googleBusinessProfileEscalation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

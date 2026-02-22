@@ -116,6 +116,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingQueueUsers**](RoutingApi#patchRoutingQueueUsers) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue. |
 | [**patchRoutingSettingsContactcenter**](RoutingApi#patchRoutingSettingsContactcenter) | Update Contact Center Settings |
 | [**patchRoutingSettingsTranscription**](RoutingApi#patchRoutingSettingsTranscription) | Patch Transcription Settings |
+| [**patchRoutingSkill**](RoutingApi#patchRoutingSkill) | Update Routing Skill Division |
 | [**patchRoutingSkillgroup**](RoutingApi#patchRoutingSkillgroup) | Update skill group definition |
 | [**patchRoutingSmsPhonenumber**](RoutingApi#patchRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
 | [**patchUserQueue**](RoutingApi#patchUserQueue) | Join or unjoin a queue for a user |
@@ -7104,6 +7105,67 @@ try {
 [**TranscriptionSettings**](TranscriptionSettings)
 
 
+# **patchRoutingSkill**
+
+
+> [RoutingSkill](RoutingSkill) patchRoutingSkill(skillId, body)
+
+Update Routing Skill Division
+
+Wraps PATCH /api/v2/routing/skills/{skillId}  
+
+Requires ANY permissions: 
+
+* routing:skill:update
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String skillId = "skillId_example"; // String | Skill ID
+UpdateSkillDivisionRequest body = new UpdateSkillDivisionRequest(); // UpdateSkillDivisionRequest | updateSkillDivisionRequest
+try {
+    RoutingSkill result = apiInstance.patchRoutingSkill(skillId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingSkill");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **skillId** | **String**| Skill ID | 
+| **body** | [**UpdateSkillDivisionRequest**](UpdateSkillDivisionRequest)| updateSkillDivisionRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RoutingSkill**](RoutingSkill)
+
+
 # **patchRoutingSkillgroup**
 
 
@@ -10511,4 +10573,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

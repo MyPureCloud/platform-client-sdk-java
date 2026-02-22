@@ -14,7 +14,9 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnswerGenerationConfig;
+import com.mypurecloud.sdk.v2.model.AutoSearchConfig;
 import com.mypurecloud.sdk.v2.model.KnowledgeAnswerConfig;
+import com.mypurecloud.sdk.v2.model.ManualSearchConfig;
 import com.mypurecloud.sdk.v2.model.NluConfig;
 import com.mypurecloud.sdk.v2.model.RuleEngineConfig;
 import com.mypurecloud.sdk.v2.model.SummaryGenerationConfig;
@@ -85,6 +87,8 @@ public class Copilot  implements Serializable {
   private NluEngineTypeEnum nluEngineType = null;
   private NluConfig nluConfig = null;
   private RuleEngineConfig ruleEngineConfig = null;
+  private AutoSearchConfig autoSearchConfig = null;
+  private ManualSearchConfig manualSearchConfig = null;
   private String selfUri = null;
 
   public Copilot() {
@@ -137,14 +141,14 @@ public class Copilot  implements Serializable {
 
 
   /**
-   * Knowledge answer configuration.
+   * Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.
    **/
   public Copilot knowledgeAnswerConfig(KnowledgeAnswerConfig knowledgeAnswerConfig) {
     this.knowledgeAnswerConfig = knowledgeAnswerConfig;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Knowledge answer configuration.")
+  @ApiModelProperty(example = "null", value = "Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.")
   @JsonProperty("knowledgeAnswerConfig")
   public KnowledgeAnswerConfig getKnowledgeAnswerConfig() {
     return knowledgeAnswerConfig;
@@ -191,14 +195,14 @@ public class Copilot  implements Serializable {
 
 
   /**
-   * Answer generation configuration.
+   * Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.
    **/
   public Copilot answerGenerationConfig(AnswerGenerationConfig answerGenerationConfig) {
     this.answerGenerationConfig = answerGenerationConfig;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Answer generation configuration.")
+  @ApiModelProperty(example = "null", value = "Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.")
   @JsonProperty("answerGenerationConfig")
   public AnswerGenerationConfig getAnswerGenerationConfig() {
     return answerGenerationConfig;
@@ -262,6 +266,42 @@ public class Copilot  implements Serializable {
   }
 
 
+  /**
+   * Auto search configuration.
+   **/
+  public Copilot autoSearchConfig(AutoSearchConfig autoSearchConfig) {
+    this.autoSearchConfig = autoSearchConfig;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Auto search configuration.")
+  @JsonProperty("autoSearchConfig")
+  public AutoSearchConfig getAutoSearchConfig() {
+    return autoSearchConfig;
+  }
+  public void setAutoSearchConfig(AutoSearchConfig autoSearchConfig) {
+    this.autoSearchConfig = autoSearchConfig;
+  }
+
+
+  /**
+   * Manual Search configuration.
+   **/
+  public Copilot manualSearchConfig(ManualSearchConfig manualSearchConfig) {
+    this.manualSearchConfig = manualSearchConfig;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Manual Search configuration.")
+  @JsonProperty("manualSearchConfig")
+  public ManualSearchConfig getManualSearchConfig() {
+    return manualSearchConfig;
+  }
+  public void setManualSearchConfig(ManualSearchConfig manualSearchConfig) {
+    this.manualSearchConfig = manualSearchConfig;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -289,12 +329,14 @@ public class Copilot  implements Serializable {
             Objects.equals(this.nluEngineType, copilot.nluEngineType) &&
             Objects.equals(this.nluConfig, copilot.nluConfig) &&
             Objects.equals(this.ruleEngineConfig, copilot.ruleEngineConfig) &&
+            Objects.equals(this.autoSearchConfig, copilot.autoSearchConfig) &&
+            Objects.equals(this.manualSearchConfig, copilot.manualSearchConfig) &&
             Objects.equals(this.selfUri, copilot.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, liveOnQueue, defaultLanguage, knowledgeAnswerConfig, summaryGenerationConfig, wrapupCodePredictionConfig, answerGenerationConfig, nluEngineType, nluConfig, ruleEngineConfig, selfUri);
+    return Objects.hash(enabled, liveOnQueue, defaultLanguage, knowledgeAnswerConfig, summaryGenerationConfig, wrapupCodePredictionConfig, answerGenerationConfig, nluEngineType, nluConfig, ruleEngineConfig, autoSearchConfig, manualSearchConfig, selfUri);
   }
 
   @Override
@@ -312,6 +354,8 @@ public class Copilot  implements Serializable {
     sb.append("    nluEngineType: ").append(toIndentedString(nluEngineType)).append("\n");
     sb.append("    nluConfig: ").append(toIndentedString(nluConfig)).append("\n");
     sb.append("    ruleEngineConfig: ").append(toIndentedString(ruleEngineConfig)).append("\n");
+    sb.append("    autoSearchConfig: ").append(toIndentedString(autoSearchConfig)).append("\n");
+    sb.append("    manualSearchConfig: ").append(toIndentedString(manualSearchConfig)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

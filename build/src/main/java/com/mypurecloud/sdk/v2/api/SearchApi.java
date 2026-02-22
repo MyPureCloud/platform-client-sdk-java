@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ConversationCustomAttributesSearchRequest;
 import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
@@ -46,6 +47,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCustomattributesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttributesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationAllSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationGknSearchRequest;
@@ -818,6 +820,84 @@ public class SearchApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param body Search request options (required)
+   * @return JsonSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonSearchResponse postConversationsCustomattributesSearch(ConversationCustomAttributesSearchRequest body) throws IOException, ApiException {
+    return  postConversationsCustomattributesSearch(createPostConversationsCustomattributesSearchRequest(body));
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param body Search request options (required)
+   * @return JsonSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonSearchResponse> postConversationsCustomattributesSearchWithHttpInfo(ConversationCustomAttributesSearchRequest body) throws IOException {
+    return postConversationsCustomattributesSearch(createPostConversationsCustomattributesSearchRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsCustomattributesSearchRequest createPostConversationsCustomattributesSearchRequest(ConversationCustomAttributesSearchRequest body) {
+    return PostConversationsCustomattributesSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request The request object
+   * @return JsonSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonSearchResponse postConversationsCustomattributesSearch(PostConversationsCustomattributesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JsonSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonSearchResponse> postConversationsCustomattributesSearch(ApiRequest<ConversationCustomAttributesSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

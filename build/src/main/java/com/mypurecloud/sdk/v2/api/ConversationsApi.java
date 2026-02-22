@@ -67,11 +67,16 @@ import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationCustomAttributesSearchRequest;
+import com.mypurecloud.sdk.v2.model.ConversationDataSchema;
+import com.mypurecloud.sdk.v2.model.ConversationDataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.ConversationJsonSchemaRequest;
 import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationSchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ConversationSecureAttributes;
 import com.mypurecloud.sdk.v2.model.ConversationSummariesGetResponse;
 import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
@@ -79,6 +84,8 @@ import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
 import com.mypurecloud.sdk.v2.model.ConversationUtilizationLabelUpdate;
 import com.mypurecloud.sdk.v2.model.CopyAttachmentsRequest;
+import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
 import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
@@ -90,6 +97,12 @@ import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationResponse;
 import com.mypurecloud.sdk.v2.model.CreateSecureSession;
 import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
+import com.mypurecloud.sdk.v2.model.CustomAttributes;
+import com.mypurecloud.sdk.v2.model.CustomAttributesBulkUpdateResponseMap;
+import com.mypurecloud.sdk.v2.model.CustomAttributesIdResponse;
+import com.mypurecloud.sdk.v2.model.CustomAttributesListing;
+import com.mypurecloud.sdk.v2.model.CustomAttributesPatchRequest;
+import com.mypurecloud.sdk.v2.model.CustomAttributesUpdateRequest;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.Digits;
 import com.mypurecloud.sdk.v2.model.DraftManipulationRequest;
@@ -114,6 +127,13 @@ import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.FeedbackUpdateRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
+import com.mypurecloud.sdk.v2.model.GoogleAuthToken;
+import com.mypurecloud.sdk.v2.model.GoogleAuthTokenRequest;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileAccountListing;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegration;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.GoogleOAuthSettingsResponse;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
@@ -126,6 +146,7 @@ import com.mypurecloud.sdk.v2.model.InternalMessageData;
 import com.mypurecloud.sdk.v2.model.InternalMessageDataEntityListing;
 import com.mypurecloud.sdk.v2.model.InternalMessageRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.MandatoryPostCallActionInput;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
@@ -165,6 +186,7 @@ import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
 import com.mypurecloud.sdk.v2.model.PatchCallbackResponse;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.SecureSession;
 import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageRequest;
@@ -213,6 +235,7 @@ import com.mypurecloud.sdk.v2.model.WrapupInput;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationCustomattributeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantCommunicationPostflowactionRequest;
@@ -222,6 +245,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmedia
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
@@ -241,6 +265,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentcheck
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCustomattributeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCustomattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
@@ -274,6 +300,13 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsCobrowsesessionPartici
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCobrowsesessionParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCobrowsesessionParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCobrowsesessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemaVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailMessagesRequest;
@@ -315,6 +348,10 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsF
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
@@ -335,6 +372,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsSocialParticipantCommu
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideosMeetingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationCustomattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationRecordingstateRequest;
@@ -377,6 +416,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCo
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest;
@@ -440,6 +480,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsChatParticipantReplac
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCobrowsesessionParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCustomattributesSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCustomattributesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailInboundmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsCopyRequest;
@@ -471,6 +513,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrations
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest;
@@ -482,6 +526,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsSocialParticipantComm
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoAgentconferenceCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideosMeetingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationCustomattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationTagsRequest;
@@ -490,6 +536,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsCallRecordingstateRequ
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallbackRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsChatRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCobrowsesessionRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsCustomattributesSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
@@ -732,6 +779,85 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param attributesId attributesId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationCustomattribute(String conversationId, String attributesId) throws IOException, ApiException {
+     deleteConversationCustomattribute(createDeleteConversationCustomattributeRequest(conversationId, attributesId));
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param attributesId attributesId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationCustomattributeWithHttpInfo(String conversationId, String attributesId) throws IOException {
+    return deleteConversationCustomattribute(createDeleteConversationCustomattributeRequest(conversationId, attributesId).withHttpInfo());
+  }
+
+  private DeleteConversationCustomattributeRequest createDeleteConversationCustomattributeRequest(String conversationId, String attributesId) {
+    return DeleteConversationCustomattributeRequest.builder()
+            .withConversationId(conversationId)
+
+            .withAttributesId(attributesId)
+
+            .build();
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationCustomattribute(DeleteConversationCustomattributeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationCustomattribute(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1435,6 +1561,85 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversationsMessagingIntegrationsInstagramIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(String integrationId) throws IOException, ApiException {
+     deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(createDeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Delete an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(createDeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest createDeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest(String integrationId) {
+    return DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Delete an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2975,6 +3180,166 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InternalMessageDataEntityListing> response = (ApiResponse<InternalMessageDataEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get custom attributes by id
+   * 
+   * @param conversationId conversation ID (required)
+   * @param attributesId attributesId (required)
+   * @return CustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributes getConversationCustomattribute(String conversationId, String attributesId) throws IOException, ApiException {
+    return  getConversationCustomattribute(createGetConversationCustomattributeRequest(conversationId, attributesId));
+  }
+
+  /**
+   * Get custom attributes by id
+   * 
+   * @param conversationId conversation ID (required)
+   * @param attributesId attributesId (required)
+   * @return CustomAttributes
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributes> getConversationCustomattributeWithHttpInfo(String conversationId, String attributesId) throws IOException {
+    return getConversationCustomattribute(createGetConversationCustomattributeRequest(conversationId, attributesId).withHttpInfo());
+  }
+
+  private GetConversationCustomattributeRequest createGetConversationCustomattributeRequest(String conversationId, String attributesId) {
+    return GetConversationCustomattributeRequest.builder()
+            .withConversationId(conversationId)
+
+            .withAttributesId(attributesId)
+
+            .build();
+  }
+
+  /**
+   * Get custom attributes by id
+   * 
+   * @param request The request object
+   * @return CustomAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributes getConversationCustomattribute(GetConversationCustomattributeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CustomAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CustomAttributes>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get custom attributes by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributes> getConversationCustomattribute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CustomAttributes>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributes> response = (ApiResponse<CustomAttributes>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributes> response = (ApiResponse<CustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of custom attributes for a conversation.
+   * 
+   * @param conversationId conversation ID (required)
+   * @return CustomAttributesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributesListing getConversationCustomattributes(String conversationId) throws IOException, ApiException {
+    return  getConversationCustomattributes(createGetConversationCustomattributesRequest(conversationId));
+  }
+
+  /**
+   * Get a list of custom attributes for a conversation.
+   * 
+   * @param conversationId conversation ID (required)
+   * @return CustomAttributesListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributesListing> getConversationCustomattributesWithHttpInfo(String conversationId) throws IOException {
+    return getConversationCustomattributes(createGetConversationCustomattributesRequest(conversationId).withHttpInfo());
+  }
+
+  private GetConversationCustomattributesRequest createGetConversationCustomattributesRequest(String conversationId) {
+    return GetConversationCustomattributesRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get a list of custom attributes for a conversation.
+   * 
+   * @param request The request object
+   * @return CustomAttributesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributesListing getConversationCustomattributes(GetConversationCustomattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CustomAttributesListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CustomAttributesListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of custom attributes for a conversation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributesListing> getConversationCustomattributes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CustomAttributesListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributesListing> response = (ApiResponse<CustomAttributesListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributesListing> response = (ApiResponse<CustomAttributesListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5750,6 +6115,544 @@ public class ConversationsApi {
   }
 
   /**
+   * Get a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return ConversationDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchema getConversationsCustomattributesSchema(String schemaId) throws IOException, ApiException {
+    return  getConversationsCustomattributesSchema(createGetConversationsCustomattributesSchemaRequest(schemaId));
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return ConversationDataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchema> getConversationsCustomattributesSchemaWithHttpInfo(String schemaId) throws IOException {
+    return getConversationsCustomattributesSchema(createGetConversationsCustomattributesSchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private GetConversationsCustomattributesSchemaRequest createGetConversationsCustomattributesSchemaRequest(String schemaId) {
+    return GetConversationsCustomattributesSchemaRequest.builder()
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request The request object
+   * @return ConversationDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchema getConversationsCustomattributesSchema(GetConversationsCustomattributesSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationDataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchema> getConversationsCustomattributesSchema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationDataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return ConversationDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchema getConversationsCustomattributesSchemaVersion(String schemaId, String versionId) throws IOException, ApiException {
+    return  getConversationsCustomattributesSchemaVersion(createGetConversationsCustomattributesSchemaVersionRequest(schemaId, versionId));
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return ConversationDataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchema> getConversationsCustomattributesSchemaVersionWithHttpInfo(String schemaId, String versionId) throws IOException {
+    return getConversationsCustomattributesSchemaVersion(createGetConversationsCustomattributesSchemaVersionRequest(schemaId, versionId).withHttpInfo());
+  }
+
+  private GetConversationsCustomattributesSchemaVersionRequest createGetConversationsCustomattributesSchemaVersionRequest(String schemaId, String versionId) {
+    return GetConversationsCustomattributesSchemaVersionRequest.builder()
+            .withSchemaId(schemaId)
+
+            .withVersionId(versionId)
+
+            .build();
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request The request object
+   * @return ConversationDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchema getConversationsCustomattributesSchemaVersion(GetConversationsCustomattributesSchemaVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationDataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchema> getConversationsCustomattributesSchemaVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationDataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all versions of a CCA schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return ConversationDataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchemaListing getConversationsCustomattributesSchemaVersions(String schemaId) throws IOException, ApiException {
+    return  getConversationsCustomattributesSchemaVersions(createGetConversationsCustomattributesSchemaVersionsRequest(schemaId));
+  }
+
+  /**
+   * Get all versions of a CCA schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return ConversationDataSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchemaListing> getConversationsCustomattributesSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
+    return getConversationsCustomattributesSchemaVersions(createGetConversationsCustomattributesSchemaVersionsRequest(schemaId).withHttpInfo());
+  }
+
+  private GetConversationsCustomattributesSchemaVersionsRequest createGetConversationsCustomattributesSchemaVersionsRequest(String schemaId) {
+    return GetConversationsCustomattributesSchemaVersionsRequest.builder()
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Get all versions of a CCA schema
+   * 
+   * @param request The request object
+   * @return ConversationDataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchemaListing getConversationsCustomattributesSchemaVersions(GetConversationsCustomattributesSchemaVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationDataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationDataSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all versions of a CCA schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchemaListing> getConversationsCustomattributesSchemaVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationDataSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchemaListing> response = (ApiResponse<ConversationDataSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchemaListing> response = (ApiResponse<ConversationDataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @return ConversationDataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchemaListing getConversationsCustomattributesSchemas() throws IOException, ApiException {
+    return  getConversationsCustomattributesSchemas(createGetConversationsCustomattributesSchemasRequest());
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @return ConversationDataSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchemaListing> getConversationsCustomattributesSchemasWithHttpInfo() throws IOException {
+    return getConversationsCustomattributesSchemas(createGetConversationsCustomattributesSchemasRequest().withHttpInfo());
+  }
+
+  private GetConversationsCustomattributesSchemasRequest createGetConversationsCustomattributesSchemasRequest() {
+    return GetConversationsCustomattributesSchemasRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request The request object
+   * @return ConversationDataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchemaListing getConversationsCustomattributesSchemas(GetConversationsCustomattributesSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationDataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationDataSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchemaListing> getConversationsCustomattributesSchemas(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationDataSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchemaListing> response = (ApiResponse<ConversationDataSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchemaListing> response = (ApiResponse<ConversationDataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getConversationsCustomattributesSchemasCoretype(String coreTypeName) throws IOException, ApiException {
+    return  getConversationsCustomattributesSchemasCoretype(createGetConversationsCustomattributesSchemasCoretypeRequest(coreTypeName));
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getConversationsCustomattributesSchemasCoretypeWithHttpInfo(String coreTypeName) throws IOException {
+    return getConversationsCustomattributesSchemasCoretype(createGetConversationsCustomattributesSchemasCoretypeRequest(coreTypeName).withHttpInfo());
+  }
+
+  private GetConversationsCustomattributesSchemasCoretypeRequest createGetConversationsCustomattributesSchemasCoretypeRequest(String coreTypeName) {
+    return GetConversationsCustomattributesSchemasCoretypeRequest.builder()
+            .withCoreTypeName(coreTypeName)
+
+            .build();
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getConversationsCustomattributesSchemasCoretype(GetConversationsCustomattributesSchemasCoretypeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getConversationsCustomattributesSchemasCoretype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @return CoretypeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoretypeListing getConversationsCustomattributesSchemasCoretypes() throws IOException, ApiException {
+    return  getConversationsCustomattributesSchemasCoretypes(createGetConversationsCustomattributesSchemasCoretypesRequest());
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @return CoretypeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoretypeListing> getConversationsCustomattributesSchemasCoretypesWithHttpInfo() throws IOException {
+    return getConversationsCustomattributesSchemasCoretypes(createGetConversationsCustomattributesSchemasCoretypesRequest().withHttpInfo());
+  }
+
+  private GetConversationsCustomattributesSchemasCoretypesRequest createGetConversationsCustomattributesSchemasCoretypesRequest() {
+    return GetConversationsCustomattributesSchemasCoretypesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @param request The request object
+   * @return CoretypeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoretypeListing getConversationsCustomattributesSchemasCoretypes(GetConversationsCustomattributesSchemasCoretypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CoretypeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoretypeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoretypeListing> getConversationsCustomattributesSchemasCoretypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CoretypeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getConversationsCustomattributesSchemasLimits() throws IOException, ApiException {
+    return  getConversationsCustomattributesSchemasLimits(createGetConversationsCustomattributesSchemasLimitsRequest());
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getConversationsCustomattributesSchemasLimitsWithHttpInfo() throws IOException {
+    return getConversationsCustomattributesSchemasLimits(createGetConversationsCustomattributesSchemasLimitsRequest().withHttpInfo());
+  }
+
+  private GetConversationsCustomattributesSchemasLimitsRequest createGetConversationsCustomattributesSchemasLimitsRequest() {
+    return GetConversationsCustomattributesSchemasLimitsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getConversationsCustomattributesSchemasLimits(GetConversationsCustomattributesSchemasLimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SchemaQuantityLimits> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getConversationsCustomattributesSchemasLimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchemaQuantityLimits>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get email conversation
    * 
    * @param conversationId conversationId (required)
@@ -6953,7 +7856,7 @@ public class ConversationsApi {
 
   /**
    * Get media
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param mediaId mediaId (required)
@@ -6967,7 +7870,7 @@ public class ConversationsApi {
 
   /**
    * Get media
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param mediaId mediaId (required)
@@ -6991,7 +7894,7 @@ public class ConversationsApi {
 
   /**
    * Get media
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param request The request object
    * @return MessageMediaData
    * @throws ApiException if the request fails on the server
@@ -7010,7 +7913,7 @@ public class ConversationsApi {
 
   /**
    * Get media
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9112,6 +10015,334 @@ public class ConversationsApi {
   }
 
   /**
+   * Get an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return GoogleBusinessProfileOpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileOpenIntegration getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(String integrationId, String expand) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest(integrationId, expand));
+  }
+
+  /**
+   * Get an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return GoogleBusinessProfileOpenIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileOpenIntegration> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
+    return getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest(integrationId, expand).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest(String integrationId, String expand) {
+    return GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileOpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileOpenIntegration getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileOpenIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileOpenIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileOpenIntegration> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileOpenIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Google Business Profile OAuth 2 settings
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return GoogleOAuthSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleOAuthSettingsResponse getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings() throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings(createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest());
+  }
+
+  /**
+   * Get Google Business Profile OAuth 2 settings
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return GoogleOAuthSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleOAuthSettingsResponse> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsWithHttpInfo() throws IOException {
+    return getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings(createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest().withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest() {
+    return GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get Google Business Profile OAuth 2 settings
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleOAuthSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleOAuthSettingsResponse getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings(GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleOAuthSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleOAuthSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Google Business Profile OAuth 2 settings
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleOAuthSettingsResponse> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleOAuthSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleOAuthSettingsResponse> response = (ApiResponse<GoogleOAuthSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleOAuthSettingsResponse> response = (ApiResponse<GoogleOAuthSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Google Auth Token
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param tokenId Token ID (required)
+   * @return GoogleAuthToken
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleAuthToken getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(String tokenId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest(tokenId));
+  }
+
+  /**
+   * Get a Google Auth Token
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param tokenId Token ID (required)
+   * @return GoogleAuthToken
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleAuthToken> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenWithHttpInfo(String tokenId) throws IOException {
+    return getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest(tokenId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest(String tokenId) {
+    return GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest.builder()
+            .withTokenId(tokenId)
+
+            .build();
+  }
+
+  /**
+   * Get a Google Auth Token
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleAuthToken
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleAuthToken getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleAuthToken> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleAuthToken>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Google Auth Token
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleAuthToken> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleAuthToken>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleAuthToken> response = (ApiResponse<GoogleAuthToken>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleAuthToken> response = (ApiResponse<GoogleAuthToken>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Google Business Profile accounts
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param tokenId Token ID (required)
+   * @return GoogleBusinessProfileAccountListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileAccountListing getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(String tokenId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest(tokenId));
+  }
+
+  /**
+   * Get Google Business Profile accounts
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param tokenId Token ID (required)
+   * @return GoogleBusinessProfileAccountListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileAccountListing> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsWithHttpInfo(String tokenId) throws IOException {
+    return getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest(tokenId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest createGetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest(String tokenId) {
+    return GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest.builder()
+            .withTokenId(tokenId)
+
+            .build();
+  }
+
+  /**
+   * Get Google Business Profile accounts
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileAccountListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileAccountListing getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileAccountListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileAccountListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Google Business Profile accounts
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileAccountListing> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileAccountListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileAccountListing> response = (ApiResponse<GoogleBusinessProfileAccountListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileAccountListing> response = (ApiResponse<GoogleBusinessProfileAccountListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param integrationId Integration ID (required)
@@ -10751,6 +11982,167 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationCustomattributes(String conversationId, CustomAttributesPatchRequest body) throws IOException, ApiException {
+     patchConversationCustomattributes(createPatchConversationCustomattributesRequest(conversationId, body));
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationCustomattributesWithHttpInfo(String conversationId, CustomAttributesPatchRequest body) throws IOException {
+    return patchConversationCustomattributes(createPatchConversationCustomattributesRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PatchConversationCustomattributesRequest createPatchConversationCustomattributesRequest(String conversationId, CustomAttributesPatchRequest body) {
+    return PatchConversationCustomattributesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationCustomattributes(PatchConversationCustomattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationCustomattributes(ApiRequest<CustomAttributesPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a list of custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body  (optional)
+   * @return CustomAttributesBulkUpdateResponseMap
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributesBulkUpdateResponseMap patchConversationCustomattributesBulk(String conversationId, List<CustomAttributesPatchRequest> body) throws IOException, ApiException {
+    return  patchConversationCustomattributesBulk(createPatchConversationCustomattributesBulkRequest(conversationId, body));
+  }
+
+  /**
+   * Update a list of custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body  (optional)
+   * @return CustomAttributesBulkUpdateResponseMap
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributesBulkUpdateResponseMap> patchConversationCustomattributesBulkWithHttpInfo(String conversationId, List<CustomAttributesPatchRequest> body) throws IOException {
+    return patchConversationCustomattributesBulk(createPatchConversationCustomattributesBulkRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PatchConversationCustomattributesBulkRequest createPatchConversationCustomattributesBulkRequest(String conversationId, List<CustomAttributesPatchRequest> body) {
+    return PatchConversationCustomattributesBulkRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a list of custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param request The request object
+   * @return CustomAttributesBulkUpdateResponseMap
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributesBulkUpdateResponseMap patchConversationCustomattributesBulk(PatchConversationCustomattributesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CustomAttributesBulkUpdateResponseMap> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CustomAttributesBulkUpdateResponseMap>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a list of custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributesBulkUpdateResponseMap> patchConversationCustomattributesBulk(ApiRequest<List<CustomAttributesPatchRequest>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CustomAttributesBulkUpdateResponseMap>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributesBulkUpdateResponseMap> response = (ApiResponse<CustomAttributesBulkUpdateResponseMap>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributesBulkUpdateResponseMap> response = (ApiResponse<CustomAttributesBulkUpdateResponseMap>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -14330,6 +15722,92 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param body GoogleBusinessProfileOpenIntegrationUpdateRequest (required)
+   * @return GoogleBusinessProfileOpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileOpenIntegration patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(String integrationId, GoogleBusinessProfileOpenIntegrationUpdateRequest body) throws IOException, ApiException {
+    return  patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(createPatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Update an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param body GoogleBusinessProfileOpenIntegrationUpdateRequest (required)
+   * @return GoogleBusinessProfileOpenIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileOpenIntegration> patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdWithHttpInfo(String integrationId, GoogleBusinessProfileOpenIntegrationUpdateRequest body) throws IOException {
+    return patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(createPatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest createPatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest(String integrationId, GoogleBusinessProfileOpenIntegrationUpdateRequest body) {
+    return PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileOpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileOpenIntegration patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileOpenIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileOpenIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileOpenIntegration> patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(ApiRequest<GoogleBusinessProfileOpenIntegrationUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileOpenIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -19593,6 +21071,162 @@ public class ConversationsApi {
   }
 
   /**
+   * Create a schema
+   * 
+   * @param body Schema create request body (required)
+   * @return ConversationDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchema postConversationsCustomattributesSchemas(ConversationJsonSchemaRequest body) throws IOException, ApiException {
+    return  postConversationsCustomattributesSchemas(createPostConversationsCustomattributesSchemasRequest(body));
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param body Schema create request body (required)
+   * @return ConversationDataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchema> postConversationsCustomattributesSchemasWithHttpInfo(ConversationJsonSchemaRequest body) throws IOException {
+    return postConversationsCustomattributesSchemas(createPostConversationsCustomattributesSchemasRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsCustomattributesSchemasRequest createPostConversationsCustomattributesSchemasRequest(ConversationJsonSchemaRequest body) {
+    return PostConversationsCustomattributesSchemasRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request The request object
+   * @return ConversationDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchema postConversationsCustomattributesSchemas(PostConversationsCustomattributesSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationDataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchema> postConversationsCustomattributesSchemas(ApiRequest<ConversationJsonSchemaRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationDataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param body Search request options (required)
+   * @return JsonSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonSearchResponse postConversationsCustomattributesSearch(ConversationCustomAttributesSearchRequest body) throws IOException, ApiException {
+    return  postConversationsCustomattributesSearch(createPostConversationsCustomattributesSearchRequest(body));
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param body Search request options (required)
+   * @return JsonSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonSearchResponse> postConversationsCustomattributesSearchWithHttpInfo(ConversationCustomAttributesSearchRequest body) throws IOException {
+    return postConversationsCustomattributesSearch(createPostConversationsCustomattributesSearchRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsCustomattributesSearchRequest createPostConversationsCustomattributesSearchRequest(ConversationCustomAttributesSearchRequest body) {
+    return PostConversationsCustomattributesSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request The request object
+   * @return JsonSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonSearchResponse postConversationsCustomattributesSearch(PostConversationsCustomattributesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JsonSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonSearchResponse> postConversationsCustomattributesSearch(ApiRequest<ConversationCustomAttributesSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
    * 
    * @param conversationId conversationId (required)
@@ -20651,7 +22285,7 @@ public class ConversationsApi {
 
   /**
    * Create a URL to upload a message media file
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body request (required)
@@ -20665,7 +22299,7 @@ public class ConversationsApi {
 
   /**
    * Create a URL to upload a message media file
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body request (required)
@@ -20689,7 +22323,7 @@ public class ConversationsApi {
 
   /**
    * Create a URL to upload a message media file
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param request The request object
    * @return MessageMediaUploadData
    * @throws ApiException if the request fails on the server
@@ -20708,7 +22342,7 @@ public class ConversationsApi {
 
   /**
    * Create a URL to upload a message media file
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -22126,6 +23760,170 @@ public class ConversationsApi {
   }
 
   /**
+   * Create an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body GoogleBusinessProfileOpenIntegrationRequest (required)
+   * @return GoogleBusinessProfileOpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileOpenIntegration postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(GoogleBusinessProfileOpenIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(createPostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest(body));
+  }
+
+  /**
+   * Create an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body GoogleBusinessProfileOpenIntegrationRequest (required)
+   * @return GoogleBusinessProfileOpenIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileOpenIntegration> postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileWithHttpInfo(GoogleBusinessProfileOpenIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(createPostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest createPostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest(GoogleBusinessProfileOpenIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileOpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileOpenIntegration postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileOpenIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileOpenIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileOpenIntegration> postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(ApiRequest<GoogleBusinessProfileOpenIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileOpenIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body GoogleAuthTokenRequest (required)
+   * @return GoogleAuthToken
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleAuthToken postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(GoogleAuthTokenRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(createPostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest(body));
+  }
+
+  /**
+   * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body GoogleAuthTokenRequest (required)
+   * @return GoogleAuthToken
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleAuthToken> postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensWithHttpInfo(GoogleAuthTokenRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(createPostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest createPostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest(GoogleAuthTokenRequest body) {
+    return PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleAuthToken
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleAuthToken postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleAuthToken> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleAuthToken>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleAuthToken> postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(ApiRequest<GoogleAuthTokenRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleAuthToken>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleAuthToken> response = (ApiResponse<GoogleAuthToken>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleAuthToken> response = (ApiResponse<GoogleAuthToken>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create Twitter Integration
    * 
    * @param body TwitterIntegrationRequest (required)
@@ -23027,6 +24825,170 @@ public class ConversationsApi {
   }
 
   /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body  (optional)
+   * @return CustomAttributesIdResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributesIdResponse putConversationCustomattributes(String conversationId, CustomAttributesUpdateRequest body) throws IOException, ApiException {
+    return  putConversationCustomattributes(createPutConversationCustomattributesRequest(conversationId, body));
+  }
+
+  /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body  (optional)
+   * @return CustomAttributesIdResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributesIdResponse> putConversationCustomattributesWithHttpInfo(String conversationId, CustomAttributesUpdateRequest body) throws IOException {
+    return putConversationCustomattributes(createPutConversationCustomattributesRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationCustomattributesRequest createPutConversationCustomattributesRequest(String conversationId, CustomAttributesUpdateRequest body) {
+    return PutConversationCustomattributesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * @param request The request object
+   * @return CustomAttributesIdResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributesIdResponse putConversationCustomattributes(PutConversationCustomattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CustomAttributesIdResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CustomAttributesIdResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributesIdResponse> putConversationCustomattributes(ApiRequest<CustomAttributesUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CustomAttributesIdResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributesIdResponse> response = (ApiResponse<CustomAttributesIdResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributesIdResponse> response = (ApiResponse<CustomAttributesIdResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body  (optional)
+   * @return CustomAttributesBulkUpdateResponseMap
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributesBulkUpdateResponseMap putConversationCustomattributesBulk(String conversationId, List<CustomAttributesUpdateRequest> body) throws IOException, ApiException {
+    return  putConversationCustomattributesBulk(createPutConversationCustomattributesBulkRequest(conversationId, body));
+  }
+
+  /**
+   * Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body  (optional)
+   * @return CustomAttributesBulkUpdateResponseMap
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributesBulkUpdateResponseMap> putConversationCustomattributesBulkWithHttpInfo(String conversationId, List<CustomAttributesUpdateRequest> body) throws IOException {
+    return putConversationCustomattributesBulk(createPutConversationCustomattributesBulkRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationCustomattributesBulkRequest createPutConversationCustomattributesBulkRequest(String conversationId, List<CustomAttributesUpdateRequest> body) {
+    return PutConversationCustomattributesBulkRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+   * 
+   * @param request The request object
+   * @return CustomAttributesBulkUpdateResponseMap
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomAttributesBulkUpdateResponseMap putConversationCustomattributesBulk(PutConversationCustomattributesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CustomAttributesBulkUpdateResponseMap> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CustomAttributesBulkUpdateResponseMap>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomAttributesBulkUpdateResponseMap> putConversationCustomattributesBulk(ApiRequest<List<CustomAttributesUpdateRequest>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CustomAttributesBulkUpdateResponseMap>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributesBulkUpdateResponseMap> response = (ApiResponse<CustomAttributesBulkUpdateResponseMap>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomAttributesBulkUpdateResponseMap> response = (ApiResponse<CustomAttributesBulkUpdateResponseMap>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Set flagged reason on conversation participant to indicate bad conversation quality.
    * 
    * @param conversationId conversation ID (required)
@@ -23691,6 +25653,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param body Schema update request body (required)
+   * @return ConversationDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchema putConversationsCustomattributesSchema(String schemaId, ConversationSchemaUpdateRequest body) throws IOException, ApiException {
+    return  putConversationsCustomattributesSchema(createPutConversationsCustomattributesSchemaRequest(schemaId, body));
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param body Schema update request body (required)
+   * @return ConversationDataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchema> putConversationsCustomattributesSchemaWithHttpInfo(String schemaId, ConversationSchemaUpdateRequest body) throws IOException {
+    return putConversationsCustomattributesSchema(createPutConversationsCustomattributesSchemaRequest(schemaId, body).withHttpInfo());
+  }
+
+  private PutConversationsCustomattributesSchemaRequest createPutConversationsCustomattributesSchemaRequest(String schemaId, ConversationSchemaUpdateRequest body) {
+    return PutConversationsCustomattributesSchemaRequest.builder()
+            .withSchemaId(schemaId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request The request object
+   * @return ConversationDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationDataSchema putConversationsCustomattributesSchema(PutConversationsCustomattributesSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationDataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationDataSchema> putConversationsCustomattributesSchema(ApiRequest<ConversationSchemaUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationDataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

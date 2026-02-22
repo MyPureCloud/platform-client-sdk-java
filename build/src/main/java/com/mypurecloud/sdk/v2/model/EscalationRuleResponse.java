@@ -85,6 +85,7 @@ public class EscalationRuleResponse  implements Serializable {
   private EscalationTarget facebookEscalation = null;
   private EscalationTarget instagramEscalation = null;
   private EscalationTarget twitterEscalation = null;
+  private EscalationTarget googleBusinessProfileEscalation = null;
   private String selfUri = null;
 
   public EscalationRuleResponse() {
@@ -327,6 +328,24 @@ public class EscalationRuleResponse  implements Serializable {
   }
 
 
+  /**
+   * The target integration configuration used for a Google Business Profile message escalation.
+   **/
+  public EscalationRuleResponse googleBusinessProfileEscalation(EscalationTarget googleBusinessProfileEscalation) {
+    this.googleBusinessProfileEscalation = googleBusinessProfileEscalation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The target integration configuration used for a Google Business Profile message escalation.")
+  @JsonProperty("googleBusinessProfileEscalation")
+  public EscalationTarget getGoogleBusinessProfileEscalation() {
+    return googleBusinessProfileEscalation;
+  }
+  public void setGoogleBusinessProfileEscalation(EscalationTarget googleBusinessProfileEscalation) {
+    this.googleBusinessProfileEscalation = googleBusinessProfileEscalation;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -357,12 +376,13 @@ public class EscalationRuleResponse  implements Serializable {
             Objects.equals(this.facebookEscalation, escalationRuleResponse.facebookEscalation) &&
             Objects.equals(this.instagramEscalation, escalationRuleResponse.instagramEscalation) &&
             Objects.equals(this.twitterEscalation, escalationRuleResponse.twitterEscalation) &&
+            Objects.equals(this.googleBusinessProfileEscalation, escalationRuleResponse.googleBusinessProfileEscalation) &&
             Objects.equals(this.selfUri, escalationRuleResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, matchCriteria, priority, divisionId, description, dateCreated, dateModified, status, openEscalation, facebookEscalation, instagramEscalation, twitterEscalation, selfUri);
+    return Objects.hash(id, name, matchCriteria, priority, divisionId, description, dateCreated, dateModified, status, openEscalation, facebookEscalation, instagramEscalation, twitterEscalation, googleBusinessProfileEscalation, selfUri);
   }
 
   @Override
@@ -383,6 +403,7 @@ public class EscalationRuleResponse  implements Serializable {
     sb.append("    facebookEscalation: ").append(toIndentedString(facebookEscalation)).append("\n");
     sb.append("    instagramEscalation: ").append(toIndentedString(instagramEscalation)).append("\n");
     sb.append("    twitterEscalation: ").append(toIndentedString(twitterEscalation)).append("\n");
+    sb.append("    googleBusinessProfileEscalation: ").append(toIndentedString(googleBusinessProfileEscalation)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

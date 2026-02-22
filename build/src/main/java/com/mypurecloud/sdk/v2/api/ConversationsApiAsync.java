@@ -70,11 +70,16 @@ import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationCustomAttributesSearchRequest;
+import com.mypurecloud.sdk.v2.model.ConversationDataSchema;
+import com.mypurecloud.sdk.v2.model.ConversationDataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.ConversationJsonSchemaRequest;
 import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationSchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ConversationSecureAttributes;
 import com.mypurecloud.sdk.v2.model.ConversationSummariesGetResponse;
 import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
@@ -82,6 +87,8 @@ import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
 import com.mypurecloud.sdk.v2.model.ConversationUtilizationLabelUpdate;
 import com.mypurecloud.sdk.v2.model.CopyAttachmentsRequest;
+import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
 import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
@@ -93,6 +100,12 @@ import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationResponse;
 import com.mypurecloud.sdk.v2.model.CreateSecureSession;
 import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
+import com.mypurecloud.sdk.v2.model.CustomAttributes;
+import com.mypurecloud.sdk.v2.model.CustomAttributesBulkUpdateResponseMap;
+import com.mypurecloud.sdk.v2.model.CustomAttributesIdResponse;
+import com.mypurecloud.sdk.v2.model.CustomAttributesListing;
+import com.mypurecloud.sdk.v2.model.CustomAttributesPatchRequest;
+import com.mypurecloud.sdk.v2.model.CustomAttributesUpdateRequest;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.Digits;
 import com.mypurecloud.sdk.v2.model.DraftManipulationRequest;
@@ -117,6 +130,13 @@ import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.FeedbackUpdateRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
+import com.mypurecloud.sdk.v2.model.GoogleAuthToken;
+import com.mypurecloud.sdk.v2.model.GoogleAuthTokenRequest;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileAccountListing;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegration;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.GoogleOAuthSettingsResponse;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
@@ -129,6 +149,7 @@ import com.mypurecloud.sdk.v2.model.InternalMessageData;
 import com.mypurecloud.sdk.v2.model.InternalMessageDataEntityListing;
 import com.mypurecloud.sdk.v2.model.InternalMessageRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.MandatoryPostCallActionInput;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
@@ -168,6 +189,7 @@ import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
 import com.mypurecloud.sdk.v2.model.PatchCallbackResponse;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.SecureSession;
 import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageRequest;
@@ -216,6 +238,7 @@ import com.mypurecloud.sdk.v2.model.WrapupInput;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationCustomattributeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantCommunicationPostflowactionRequest;
@@ -225,6 +248,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmedia
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
@@ -244,6 +268,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentcheck
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCustomattributeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCustomattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
@@ -277,6 +303,13 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsCobrowsesessionPartici
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCobrowsesessionParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCobrowsesessionParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCobrowsesessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemaVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCustomattributesSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailMessagesRequest;
@@ -318,6 +351,10 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsF
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
@@ -338,6 +375,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsSocialParticipantCommu
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideosMeetingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationCustomattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationRecordingstateRequest;
@@ -380,6 +419,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCo
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest;
@@ -443,6 +483,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsChatParticipantReplac
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCobrowsesessionParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCustomattributesSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCustomattributesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailInboundmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsCopyRequest;
@@ -474,6 +516,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrations
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest;
@@ -485,6 +529,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsSocialParticipantComm
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoAgentconferenceCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideosMeetingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationCustomattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationTagsRequest;
@@ -493,6 +539,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsCallRecordingstateRequ
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallbackRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsChatRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCobrowsesessionRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsCustomattributesSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
@@ -722,6 +769,81 @@ public class ConversationsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteConversationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteConversationCustomattributeAsync(DeleteConversationCustomattributeRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a custom attributes record.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteConversationCustomattributeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1397,6 +1519,83 @@ public class ConversationsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteConversationsMessagingIntegrationsInstagramIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdAsync(DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -2848,6 +3047,156 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<InternalMessageDataEntityListing> response = (ApiResponse<InternalMessageDataEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get custom attributes by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CustomAttributes> getConversationCustomattributeAsync(GetConversationCustomattributeRequest request, final AsyncApiCallback<CustomAttributes> callback) {
+    try {
+      final SettableFuture<CustomAttributes> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CustomAttributes>() {}, new AsyncApiCallback<ApiResponse<CustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributes> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get custom attributes by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CustomAttributes>> getConversationCustomattributeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CustomAttributes>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CustomAttributes>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CustomAttributes>() {}, new AsyncApiCallback<ApiResponse<CustomAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributes> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributes> response = (ApiResponse<CustomAttributes>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributes> response = (ApiResponse<CustomAttributes>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of custom attributes for a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CustomAttributesListing> getConversationCustomattributesAsync(GetConversationCustomattributesRequest request, final AsyncApiCallback<CustomAttributesListing> callback) {
+    try {
+      final SettableFuture<CustomAttributesListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CustomAttributesListing>() {}, new AsyncApiCallback<ApiResponse<CustomAttributesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributesListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of custom attributes for a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CustomAttributesListing>> getConversationCustomattributesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CustomAttributesListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CustomAttributesListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CustomAttributesListing>() {}, new AsyncApiCallback<ApiResponse<CustomAttributesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributesListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributesListing> response = (ApiResponse<CustomAttributesListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributesListing> response = (ApiResponse<CustomAttributesListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5355,6 +5704,531 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Get a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationDataSchema> getConversationsCustomattributesSchemaAsync(GetConversationsCustomattributesSchemaRequest request, final AsyncApiCallback<ConversationDataSchema> callback) {
+    try {
+      final SettableFuture<ConversationDataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationDataSchema>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationDataSchema>> getConversationsCustomattributesSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationDataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationDataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationDataSchema>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationDataSchema> getConversationsCustomattributesSchemaVersionAsync(GetConversationsCustomattributesSchemaVersionRequest request, final AsyncApiCallback<ConversationDataSchema> callback) {
+    try {
+      final SettableFuture<ConversationDataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationDataSchema>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationDataSchema>> getConversationsCustomattributesSchemaVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationDataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationDataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationDataSchema>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all versions of a CCA schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationDataSchemaListing> getConversationsCustomattributesSchemaVersionsAsync(GetConversationsCustomattributesSchemaVersionsRequest request, final AsyncApiCallback<ConversationDataSchemaListing> callback) {
+    try {
+      final SettableFuture<ConversationDataSchemaListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationDataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchemaListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all versions of a CCA schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationDataSchemaListing>> getConversationsCustomattributesSchemaVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationDataSchemaListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationDataSchemaListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationDataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchemaListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchemaListing> response = (ApiResponse<ConversationDataSchemaListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchemaListing> response = (ApiResponse<ConversationDataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationDataSchemaListing> getConversationsCustomattributesSchemasAsync(GetConversationsCustomattributesSchemasRequest request, final AsyncApiCallback<ConversationDataSchemaListing> callback) {
+    try {
+      final SettableFuture<ConversationDataSchemaListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationDataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchemaListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationDataSchemaListing>> getConversationsCustomattributesSchemasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationDataSchemaListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationDataSchemaListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationDataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchemaListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchemaListing> response = (ApiResponse<ConversationDataSchemaListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchemaListing> response = (ApiResponse<ConversationDataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Coretype> getConversationsCustomattributesSchemasCoretypeAsync(GetConversationsCustomattributesSchemasCoretypeRequest request, final AsyncApiCallback<Coretype> callback) {
+    try {
+      final SettableFuture<Coretype> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Coretype>> getConversationsCustomattributesSchemasCoretypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CoretypeListing> getConversationsCustomattributesSchemasCoretypesAsync(GetConversationsCustomattributesSchemasCoretypesRequest request, final AsyncApiCallback<CoretypeListing> callback) {
+    try {
+      final SettableFuture<CoretypeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CoretypeListing>> getConversationsCustomattributesSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoretypeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CoretypeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SchemaQuantityLimits> getConversationsCustomattributesSchemasLimitsAsync(GetConversationsCustomattributesSchemasLimitsRequest request, final AsyncApiCallback<SchemaQuantityLimits> callback) {
+    try {
+      final SettableFuture<SchemaQuantityLimits> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SchemaQuantityLimits>> getConversationsCustomattributesSchemasLimitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SchemaQuantityLimits>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SchemaQuantityLimits>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get email conversation
    * 
    * @param request the request object
@@ -6481,7 +7355,7 @@ public class ConversationsApiAsync {
 
   /**
    * Get media
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6515,7 +7389,7 @@ public class ConversationsApiAsync {
 
   /**
    * Get media
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8430,6 +9304,314 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Get an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileOpenIntegration> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdAsync(GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest request, final AsyncApiCallback<GoogleBusinessProfileOpenIntegration> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileOpenIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileOpenIntegration>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileOpenIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileOpenIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileOpenIntegration>> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileOpenIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileOpenIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileOpenIntegration>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileOpenIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileOpenIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Google Business Profile OAuth 2 settings
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleOAuthSettingsResponse> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsAsync(GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsRequest request, final AsyncApiCallback<GoogleOAuthSettingsResponse> callback) {
+    try {
+      final SettableFuture<GoogleOAuthSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleOAuthSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleOAuthSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleOAuthSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Google Business Profile OAuth 2 settings
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleOAuthSettingsResponse>> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GoogleOAuthSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleOAuthSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleOAuthSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<GoogleOAuthSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleOAuthSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleOAuthSettingsResponse> response = (ApiResponse<GoogleOAuthSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleOAuthSettingsResponse> response = (ApiResponse<GoogleOAuthSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Google Auth Token
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleAuthToken> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAsync(GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest request, final AsyncApiCallback<GoogleAuthToken> callback) {
+    try {
+      final SettableFuture<GoogleAuthToken> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleAuthToken>() {}, new AsyncApiCallback<ApiResponse<GoogleAuthToken>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleAuthToken> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Google Auth Token
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleAuthToken>> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GoogleAuthToken>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleAuthToken>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleAuthToken>() {}, new AsyncApiCallback<ApiResponse<GoogleAuthToken>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleAuthToken> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleAuthToken> response = (ApiResponse<GoogleAuthToken>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleAuthToken> response = (ApiResponse<GoogleAuthToken>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Google Business Profile accounts
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileAccountListing> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsAsync(GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsRequest request, final AsyncApiCallback<GoogleBusinessProfileAccountListing> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileAccountListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileAccountListing>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileAccountListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileAccountListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Google Business Profile accounts
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileAccountListing>> getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileAccountListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileAccountListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileAccountListing>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileAccountListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileAccountListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileAccountListing> response = (ApiResponse<GoogleBusinessProfileAccountListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileAccountListing> response = (ApiResponse<GoogleBusinessProfileAccountListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param request the request object
@@ -9922,6 +11104,156 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> patchConversationCustomattributesAsync(PatchConversationCustomattributesRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a single custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> patchConversationCustomattributesAsync(ApiRequest<CustomAttributesPatchRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a list of custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CustomAttributesBulkUpdateResponseMap> patchConversationCustomattributesBulkAsync(PatchConversationCustomattributesBulkRequest request, final AsyncApiCallback<CustomAttributesBulkUpdateResponseMap> callback) {
+    try {
+      final SettableFuture<CustomAttributesBulkUpdateResponseMap> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CustomAttributesBulkUpdateResponseMap>() {}, new AsyncApiCallback<ApiResponse<CustomAttributesBulkUpdateResponseMap>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributesBulkUpdateResponseMap> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a list of custom attributes record by amending the data with only the provided fields.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CustomAttributesBulkUpdateResponseMap>> patchConversationCustomattributesBulkAsync(ApiRequest<List<CustomAttributesPatchRequest>> request, final AsyncApiCallback<ApiResponse<CustomAttributesBulkUpdateResponseMap>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CustomAttributesBulkUpdateResponseMap>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CustomAttributesBulkUpdateResponseMap>() {}, new AsyncApiCallback<ApiResponse<CustomAttributesBulkUpdateResponseMap>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributesBulkUpdateResponseMap> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributesBulkUpdateResponseMap> response = (ApiResponse<CustomAttributesBulkUpdateResponseMap>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributesBulkUpdateResponseMap> response = (ApiResponse<CustomAttributesBulkUpdateResponseMap>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -13088,6 +14420,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileOpenIntegration> patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdAsync(PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest request, final AsyncApiCallback<GoogleBusinessProfileOpenIntegration> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileOpenIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileOpenIntegration>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileOpenIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileOpenIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileOpenIntegration>> patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdAsync(ApiRequest<GoogleBusinessProfileOpenIntegrationUpdateRequest> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileOpenIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileOpenIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileOpenIntegration>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileOpenIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileOpenIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -17851,6 +19260,156 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Create a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationDataSchema> postConversationsCustomattributesSchemasAsync(PostConversationsCustomattributesSchemasRequest request, final AsyncApiCallback<ConversationDataSchema> callback) {
+    try {
+      final SettableFuture<ConversationDataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationDataSchema>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationDataSchema>> postConversationsCustomattributesSchemasAsync(ApiRequest<ConversationJsonSchemaRequest> request, final AsyncApiCallback<ApiResponse<ConversationDataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationDataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationDataSchema>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JsonSearchResponse> postConversationsCustomattributesSearchAsync(PostConversationsCustomattributesSearchRequest request, final AsyncApiCallback<JsonSearchResponse> callback) {
+    try {
+      final SettableFuture<JsonSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JsonSearchResponse>> postConversationsCustomattributesSearchAsync(ApiRequest<ConversationCustomAttributesSearchRequest> request, final AsyncApiCallback<ApiResponse<JsonSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JsonSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JsonSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
    * 
    * @param request the request object
@@ -18829,7 +20388,7 @@ public class ConversationsApiAsync {
 
   /**
    * Create a URL to upload a message media file
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -18863,7 +20422,7 @@ public class ConversationsApiAsync {
 
   /**
    * Create a URL to upload a message media file
-   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -20180,6 +21739,160 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Create an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleBusinessProfileOpenIntegration> postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileAsync(PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileRequest request, final AsyncApiCallback<GoogleBusinessProfileOpenIntegration> callback) {
+    try {
+      final SettableFuture<GoogleBusinessProfileOpenIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileOpenIntegration>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileOpenIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileOpenIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an Open messaging integration with the Google Business Profile extension
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleBusinessProfileOpenIntegration>> postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileAsync(ApiRequest<GoogleBusinessProfileOpenIntegrationRequest> request, final AsyncApiCallback<ApiResponse<GoogleBusinessProfileOpenIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleBusinessProfileOpenIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleBusinessProfileOpenIntegration>() {}, new AsyncApiCallback<ApiResponse<GoogleBusinessProfileOpenIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleBusinessProfileOpenIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleBusinessProfileOpenIntegration> response = (ApiResponse<GoogleBusinessProfileOpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GoogleAuthToken> postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensAsync(PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensRequest request, final AsyncApiCallback<GoogleAuthToken> callback) {
+    try {
+      final SettableFuture<GoogleAuthToken> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GoogleAuthToken>() {}, new AsyncApiCallback<ApiResponse<GoogleAuthToken>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleAuthToken> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GoogleAuthToken>> postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensAsync(ApiRequest<GoogleAuthTokenRequest> request, final AsyncApiCallback<ApiResponse<GoogleAuthToken>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GoogleAuthToken>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GoogleAuthToken>() {}, new AsyncApiCallback<ApiResponse<GoogleAuthToken>>() {
+        @Override
+        public void onCompleted(ApiResponse<GoogleAuthToken> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleAuthToken> response = (ApiResponse<GoogleAuthToken>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GoogleAuthToken> response = (ApiResponse<GoogleAuthToken>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create Twitter Integration
    * 
    * @param request the request object
@@ -21011,6 +22724,156 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CustomAttributesIdResponse> putConversationCustomattributesAsync(PutConversationCustomattributesRequest request, final AsyncApiCallback<CustomAttributesIdResponse> callback) {
+    try {
+      final SettableFuture<CustomAttributesIdResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CustomAttributesIdResponse>() {}, new AsyncApiCallback<ApiResponse<CustomAttributesIdResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributesIdResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CustomAttributesIdResponse>> putConversationCustomattributesAsync(ApiRequest<CustomAttributesUpdateRequest> request, final AsyncApiCallback<ApiResponse<CustomAttributesIdResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CustomAttributesIdResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CustomAttributesIdResponse>() {}, new AsyncApiCallback<ApiResponse<CustomAttributesIdResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributesIdResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributesIdResponse> response = (ApiResponse<CustomAttributesIdResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributesIdResponse> response = (ApiResponse<CustomAttributesIdResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CustomAttributesBulkUpdateResponseMap> putConversationCustomattributesBulkAsync(PutConversationCustomattributesBulkRequest request, final AsyncApiCallback<CustomAttributesBulkUpdateResponseMap> callback) {
+    try {
+      final SettableFuture<CustomAttributesBulkUpdateResponseMap> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CustomAttributesBulkUpdateResponseMap>() {}, new AsyncApiCallback<ApiResponse<CustomAttributesBulkUpdateResponseMap>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributesBulkUpdateResponseMap> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CustomAttributesBulkUpdateResponseMap>> putConversationCustomattributesBulkAsync(ApiRequest<List<CustomAttributesUpdateRequest>> request, final AsyncApiCallback<ApiResponse<CustomAttributesBulkUpdateResponseMap>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CustomAttributesBulkUpdateResponseMap>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CustomAttributesBulkUpdateResponseMap>() {}, new AsyncApiCallback<ApiResponse<CustomAttributesBulkUpdateResponseMap>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomAttributesBulkUpdateResponseMap> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributesBulkUpdateResponseMap> response = (ApiResponse<CustomAttributesBulkUpdateResponseMap>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomAttributesBulkUpdateResponseMap> response = (ApiResponse<CustomAttributesBulkUpdateResponseMap>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Set flagged reason on conversation participant to indicate bad conversation quality.
    * 
    * @param request the request object
@@ -21603,6 +23466,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationDataSchema> putConversationsCustomattributesSchemaAsync(PutConversationsCustomattributesSchemaRequest request, final AsyncApiCallback<ConversationDataSchema> callback) {
+    try {
+      final SettableFuture<ConversationDataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationDataSchema>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationDataSchema>> putConversationsCustomattributesSchemaAsync(ApiRequest<ConversationSchemaUpdateRequest> request, final AsyncApiCallback<ApiResponse<ConversationDataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationDataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationDataSchema>() {}, new AsyncApiCallback<ApiResponse<ConversationDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationDataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationDataSchema> response = (ApiResponse<ConversationDataSchema>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

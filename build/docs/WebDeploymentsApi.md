@@ -301,11 +301,9 @@ try {
 # **getWebdeploymentsConfigurationVersions**
 
 
-> [WebDeploymentConfigurationVersionEntityListing](WebDeploymentConfigurationVersionEntityListing) getWebdeploymentsConfigurationVersions(configurationId)
+> [WebDeploymentConfigurationVersionEntityListing](WebDeploymentConfigurationVersionEntityListing) getWebdeploymentsConfigurationVersions(configurationId, pageSize, before, after)
 
 Get the versions of a configuration
-
-This returns the 50 most recent versions for this configuration
 
 Wraps GET /api/v2/webdeployments/configurations/{configurationId}/versions  
 
@@ -336,8 +334,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
 String configurationId = "configurationId_example"; // String | The configuration version ID
+String pageSize = "pageSize_example"; // String | Number of entities to return. Defaults to 300.
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 try {
-    WebDeploymentConfigurationVersionEntityListing result = apiInstance.getWebdeploymentsConfigurationVersions(configurationId);
+    WebDeploymentConfigurationVersionEntityListing result = apiInstance.getWebdeploymentsConfigurationVersions(configurationId, pageSize, before, after);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsConfigurationVersions");
@@ -351,6 +352,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **configurationId** | **String**| The configuration version ID | 
+| **pageSize** | **String**| Number of entities to return. Defaults to 300. | [optional] 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 {: class="table-striped"}
 
 
@@ -421,7 +425,7 @@ try {
 # **getWebdeploymentsConfigurations**
 
 
-> [WebDeploymentConfigurationVersionEntityListing](WebDeploymentConfigurationVersionEntityListing) getWebdeploymentsConfigurations(showOnlyPublished)
+> [WebDeploymentConfigurationVersionEntityListing](WebDeploymentConfigurationVersionEntityListing) getWebdeploymentsConfigurations(pageSize, before, after, showOnlyPublished)
 
 View configuration drafts
 
@@ -453,9 +457,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+String pageSize = "pageSize_example"; // String | Number of entities to return. Defaults to 300.
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 Boolean showOnlyPublished = true; // Boolean | Filter by published status.
 try {
-    WebDeploymentConfigurationVersionEntityListing result = apiInstance.getWebdeploymentsConfigurations(showOnlyPublished);
+    WebDeploymentConfigurationVersionEntityListing result = apiInstance.getWebdeploymentsConfigurations(pageSize, before, after, showOnlyPublished);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsConfigurations");
@@ -468,6 +475,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **String**| Number of entities to return. Defaults to 300. | [optional] 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **showOnlyPublished** | **Boolean**| Filter by published status. | [optional] 
 {: class="table-striped"}
 
@@ -710,7 +720,7 @@ try {
 # **getWebdeploymentsDeployments**
 
 
-> [ExpandableWebDeploymentEntityListing](ExpandableWebDeploymentEntityListing) getWebdeploymentsDeployments(expand)
+> [ExpandableWebDeploymentEntityListing](ExpandableWebDeploymentEntityListing) getWebdeploymentsDeployments(pageSize, before, after, expand)
 
 Get deployments
 
@@ -742,9 +752,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+String pageSize = "pageSize_example"; // String | Number of entities to return. Defaults to 300.
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected. 
 try {
-    ExpandableWebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(expand);
+    ExpandableWebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(pageSize, before, after, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsDeployments");
@@ -757,6 +770,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **String**| Number of entities to return. Defaults to 300. | [optional] 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected.  | [optional]<br />**Values**: Configuration, SupportedContent, identityresolution 
 {: class="table-striped"}
 
@@ -1218,4 +1234,4 @@ try {
 [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

@@ -527,6 +527,13 @@ public class ApiClient implements AutoCloseable {
     }
 
     /**
+     * Format the given YearMonth object into string.
+     */
+    public String formatYearMonth(YearMonth ym) {
+        return ym.toString();
+    }
+
+    /**
      * Format the given parameter object into string.
      */
     public String parameterToString(Object param) {
@@ -545,6 +552,8 @@ public class ApiClient implements AutoCloseable {
             return b.toString();
         } else if (param instanceof Boolean) {
             return String.valueOf(param).toLowerCase();
+        } else if (param instanceof YearMonth) {
+            return formatYearMonth((YearMonth) param);
         } else {
             return String.valueOf(param);
         }
@@ -1168,7 +1177,7 @@ public class ApiClient implements AutoCloseable {
             this.gatewayConfiguration = new GatewayConfiguration();
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "246.0.0");
+            withDefaultHeader("purecloud-sdk", "247.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

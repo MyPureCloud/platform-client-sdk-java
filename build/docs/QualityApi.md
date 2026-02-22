@@ -3996,7 +3996,7 @@ try {
 # **postQualitySurveys**
 
 
-> [Survey](Survey) postQualitySurveys(body)
+> [CreateSurveyResponse](CreateSurveyResponse) postQualitySurveys(body)
 
 Create a survey for a conversation
 
@@ -4030,7 +4030,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 CreateSurveyRequest body = new CreateSurveyRequest(); // CreateSurveyRequest | Survey creation request
 try {
-    Survey result = apiInstance.postQualitySurveys(body);
+    CreateSurveyResponse result = apiInstance.postQualitySurveys(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#postQualitySurveys");
@@ -4049,7 +4049,7 @@ try {
 
 ### Return type
 
-[**Survey**](Survey)
+[**CreateSurveyResponse**](CreateSurveyResponse)
 
 
 # **postQualitySurveysScoring**
@@ -4597,4 +4597,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

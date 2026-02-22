@@ -21,6 +21,10 @@ import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleRequest;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleResponse;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleVersionResponse;
+import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleVersionResponse;
@@ -57,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaEscalationruleRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
@@ -71,6 +76,9 @@ import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesR
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest;
@@ -83,6 +91,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesT
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
@@ -91,6 +100,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaAnalyticsMessagesJobsRe
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesFacebookRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest;
@@ -100,6 +110,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTwitterHistoricalTweetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaEscalationruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
@@ -416,6 +427,93 @@ public class SocialMediaApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a Google Business Profile data ingestion rule.
+   * 
+   * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param hardDelete Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(String topicId, String googleBusinessProfileIngestionRuleId, Boolean hardDelete) throws IOException, ApiException {
+     deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(createDeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(topicId, googleBusinessProfileIngestionRuleId, hardDelete));
+  }
+
+  /**
+   * Delete a Google Business Profile data ingestion rule.
+   * 
+   * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param hardDelete Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdWithHttpInfo(String topicId, String googleBusinessProfileIngestionRuleId, Boolean hardDelete) throws IOException {
+    return deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(createDeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(topicId, googleBusinessProfileIngestionRuleId, hardDelete).withHttpInfo());
+  }
+
+  private DeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest createDeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(String topicId, String googleBusinessProfileIngestionRuleId, Boolean hardDelete) {
+    return DeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest.builder()
+            .withTopicId(topicId)
+
+            .withGoogleBusinessProfileIngestionRuleId(googleBusinessProfileIngestionRuleId)
+
+            .withHardDelete(hardDelete)
+
+            .build();
+  }
+
+  /**
+   * Delete a Google Business Profile data ingestion rule.
+   * 
+   * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(DeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Google Business Profile data ingestion rule.
+   * 
+   * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1617,6 +1715,288 @@ public class SocialMediaApi {
   }
 
   /**
+   * Get a single Google Business Profile data ingestion rule.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleResponse getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(String topicId, String googleBusinessProfileIngestionRuleId, Boolean includeDeleted) throws IOException, ApiException {
+    return  getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(createGetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(topicId, googleBusinessProfileIngestionRuleId, includeDeleted));
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdWithHttpInfo(String topicId, String googleBusinessProfileIngestionRuleId, Boolean includeDeleted) throws IOException {
+    return getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(createGetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(topicId, googleBusinessProfileIngestionRuleId, includeDeleted).withHttpInfo());
+  }
+
+  private GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest createGetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(String topicId, String googleBusinessProfileIngestionRuleId, Boolean includeDeleted) {
+    return GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest.builder()
+            .withTopicId(topicId)
+
+            .withGoogleBusinessProfileIngestionRuleId(googleBusinessProfileIngestionRuleId)
+
+            .withIncludeDeleted(includeDeleted)
+
+            .build();
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleResponse getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule version.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param dataIngestionRuleVersion version (required)
+   * @param includeDeleted Determines whether to include soft-deleted item in the result. (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleVersionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleVersionResponse getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(String topicId, String googleBusinessProfileIngestionRuleId, String dataIngestionRuleVersion, Boolean includeDeleted) throws IOException, ApiException {
+    return  getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(createGetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, includeDeleted));
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule version.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param dataIngestionRuleVersion version (required)
+   * @param includeDeleted Determines whether to include soft-deleted item in the result. (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleVersionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionWithHttpInfo(String topicId, String googleBusinessProfileIngestionRuleId, String dataIngestionRuleVersion, Boolean includeDeleted) throws IOException {
+    return getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(createGetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, includeDeleted).withHttpInfo());
+  }
+
+  private GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest createGetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest(String topicId, String googleBusinessProfileIngestionRuleId, String dataIngestionRuleVersion, Boolean includeDeleted) {
+    return GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest.builder()
+            .withTopicId(topicId)
+
+            .withGoogleBusinessProfileIngestionRuleId(googleBusinessProfileIngestionRuleId)
+
+            .withDataIngestionRuleVersion(dataIngestionRuleVersion)
+
+            .withIncludeDeleted(includeDeleted)
+
+            .build();
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule version.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileDataIngestionRuleVersionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleVersionResponse getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleVersionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a single Google Business Profile data ingestion rule version.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleVersionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the Google Business Profile data ingestion rule versions.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(String topicId, String googleBusinessProfileIngestionRuleId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException, ApiException {
+    return  getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(createGetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest(topicId, googleBusinessProfileIngestionRuleId, pageNumber, pageSize, includeDeleted));
+  }
+
+  /**
+   * Get the Google Business Profile data ingestion rule versions.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsWithHttpInfo(String topicId, String googleBusinessProfileIngestionRuleId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException {
+    return getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(createGetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest(topicId, googleBusinessProfileIngestionRuleId, pageNumber, pageSize, includeDeleted).withHttpInfo());
+  }
+
+  private GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest createGetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest(String topicId, String googleBusinessProfileIngestionRuleId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) {
+    return GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest.builder()
+            .withTopicId(topicId)
+
+            .withGoogleBusinessProfileIngestionRuleId(googleBusinessProfileIngestionRuleId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withIncludeDeleted(includeDeleted)
+
+            .build();
+  }
+
+  /**
+   * Get the Google Business Profile data ingestion rule versions.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(GetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the Google Business Profile data ingestion rule versions.
+   * 
+   * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a single Instagram data ingestion rule.
    * 
    * @param topicId topicId (required)
@@ -2693,6 +3073,96 @@ public class SocialMediaApi {
   }
 
   /**
+   * Update the status of a Google Business Profile data ingestion rule.
+   * 
+   * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param body  (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleResponse patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(String topicId, String googleBusinessProfileIngestionRuleId, DataIngestionRuleStatusPatchRequest body) throws IOException, ApiException {
+    return  patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(createPatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(topicId, googleBusinessProfileIngestionRuleId, body));
+  }
+
+  /**
+   * Update the status of a Google Business Profile data ingestion rule.
+   * 
+   * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param body  (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdWithHttpInfo(String topicId, String googleBusinessProfileIngestionRuleId, DataIngestionRuleStatusPatchRequest body) throws IOException {
+    return patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(createPatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(topicId, googleBusinessProfileIngestionRuleId, body).withHttpInfo());
+  }
+
+  private PatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest createPatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(String topicId, String googleBusinessProfileIngestionRuleId, DataIngestionRuleStatusPatchRequest body) {
+    return PatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest.builder()
+            .withTopicId(topicId)
+
+            .withGoogleBusinessProfileIngestionRuleId(googleBusinessProfileIngestionRuleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the status of a Google Business Profile data ingestion rule.
+   * 
+   * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleResponse patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(PatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the status of a Google Business Profile data ingestion rule.
+   * 
+   * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(ApiRequest<DataIngestionRuleStatusPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the status of a Instagram data ingestion rule.
    * 
    * @param topicId topicId (required)
@@ -3344,6 +3814,92 @@ public class SocialMediaApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FacebookDataIngestionRuleResponse> response = (ApiResponse<FacebookDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a Google Business Profile data ingestion rule.
+   * 
+   * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param body  (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleResponse postSocialmediaTopicDataingestionrulesGooglebusinessprofile(String topicId, GoogleBusinessProfileDataIngestionRuleRequest body) throws IOException, ApiException {
+    return  postSocialmediaTopicDataingestionrulesGooglebusinessprofile(createPostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest(topicId, body));
+  }
+
+  /**
+   * Create a Google Business Profile data ingestion rule.
+   * 
+   * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param body  (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> postSocialmediaTopicDataingestionrulesGooglebusinessprofileWithHttpInfo(String topicId, GoogleBusinessProfileDataIngestionRuleRequest body) throws IOException {
+    return postSocialmediaTopicDataingestionrulesGooglebusinessprofile(createPostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest(topicId, body).withHttpInfo());
+  }
+
+  private PostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest createPostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest(String topicId, GoogleBusinessProfileDataIngestionRuleRequest body) {
+    return PostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest.builder()
+            .withTopicId(topicId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a Google Business Profile data ingestion rule.
+   * 
+   * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleResponse postSocialmediaTopicDataingestionrulesGooglebusinessprofile(PostSocialmediaTopicDataingestionrulesGooglebusinessprofileRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Google Business Profile data ingestion rule.
+   * 
+   * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> postSocialmediaTopicDataingestionrulesGooglebusinessprofile(ApiRequest<GoogleBusinessProfileDataIngestionRuleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4086,6 +4642,96 @@ public class SocialMediaApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FacebookDataIngestionRuleResponse> response = (ApiResponse<FacebookDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the Google Business Profile data ingestion rule.
+   * 
+   * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param body  (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleResponse putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(String topicId, String googleBusinessProfileIngestionRuleId, GoogleBusinessProfileDataIngestionRuleRequest body) throws IOException, ApiException {
+    return  putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(createPutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(topicId, googleBusinessProfileIngestionRuleId, body));
+  }
+
+  /**
+   * Update the Google Business Profile data ingestion rule.
+   * 
+   * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param topicId topicId (required)
+   * @param googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId (required)
+   * @param body  (optional)
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdWithHttpInfo(String topicId, String googleBusinessProfileIngestionRuleId, GoogleBusinessProfileDataIngestionRuleRequest body) throws IOException {
+    return putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(createPutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(topicId, googleBusinessProfileIngestionRuleId, body).withHttpInfo());
+  }
+
+  private PutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest createPutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest(String topicId, String googleBusinessProfileIngestionRuleId, GoogleBusinessProfileDataIngestionRuleRequest body) {
+    return PutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest.builder()
+            .withTopicId(topicId)
+
+            .withGoogleBusinessProfileIngestionRuleId(googleBusinessProfileIngestionRuleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the Google Business Profile data ingestion rule.
+   * 
+   * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GoogleBusinessProfileDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GoogleBusinessProfileDataIngestionRuleResponse putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(PutSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the Google Business Profile data ingestion rule.
+   * 
+   * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(ApiRequest<GoogleBusinessProfileDataIngestionRuleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GoogleBusinessProfileDataIngestionRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse> response = (ApiResponse<GoogleBusinessProfileDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

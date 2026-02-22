@@ -121,6 +121,7 @@ public class ReportingTurnAction  implements Serializable {
     SETATTRIBUTESACTION("SetAttributesAction"),
     SENDINTERACTIVEAPPLICATIONACTION("SendInteractiveApplicationAction"),
     SENDRICHLINKACTION("SendRichLinkAction"),
+    SENDDIGITALCAROUSELACTION("SendDigitalCarouselAction"),
     UNKNOWN("Unknown");
 
     private String value;

@@ -11026,6 +11026,24 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteConversation {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversation ID\n        try { \n            // Update a conversation by disconnecting all of the participants\n            apiInstance.deleteConversation(conversationId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#deleteConversation\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deleteconversationcustomattribute": {
+    "operationId": "deleteconversationcustomattribute",
+    "functionName": "deleteConversationCustomattribute",
+    "signature": "deleteConversationCustomattribute(conversationId, attributesId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "attributesId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteConversationCustomattribute {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversation ID\nString attributesId = \"attributesId_example\"; // String | attributesId\n        try { \n            // Delete a custom attributes record.\n            apiInstance.deleteConversationCustomattribute(conversationId, attributesId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#deleteConversationCustomattribute\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deleteconversationparticipantcode": {
     "operationId": "deleteconversationparticipantcode",
     "functionName": "deleteConversationParticipantCode",
@@ -11177,6 +11195,19 @@
       }
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteConversationsMessagingIntegrationsInstagramIntegrationId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String integrationId = \"integrationId_example\"; // String | Integration ID\n        try { \n            // Delete Instagram messaging integration\n            apiInstance.deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsInstagramIntegrationId\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "deleteconversationsmessagingintegrationsopenextensionsgooglebusinessprofileintegrationid": {
+    "operationId": "deleteconversationsmessagingintegrationsopenextensionsgooglebusinessprofileintegrationid",
+    "functionName": "deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId",
+    "signature": "deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId)",
+    "parameters": [
+      {
+        "name": "integrationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String integrationId = \"integrationId_example\"; // String | Integration ID\n        try { \n            // Delete an Open messaging integration with the Google Business Profile extension\n            apiInstance.deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "deleteconversationsmessagingintegrationsopenintegrationid": {
     "operationId": "deleteconversationsmessagingintegrationsopenintegrationid",
@@ -11388,6 +11419,39 @@
     ],
     "return": "InternalMessageDataEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.InternalMessageDataEntityListing;\n\npublic class ExamplegetConversationCommunicationInternalmessages {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversationId\nString communicationId = \"communicationId_example\"; // String | communicationId\nInteger pageSize = 25; // Integer | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200.\nInteger pageNumber = 1; // Integer | Page number\n        try { \n            // Get messages for communication\n            InternalMessageDataEntityListing result = apiInstance.getConversationCommunicationInternalmessages(conversationId, communicationId, pageSize, pageNumber);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationCommunicationInternalmessages\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationcustomattribute": {
+    "operationId": "getconversationcustomattribute",
+    "functionName": "getConversationCustomattribute",
+    "signature": "getConversationCustomattribute(conversationId, attributesId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "attributesId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CustomAttributes",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.CustomAttributes;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConversationCustomattribute {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversation ID\nString attributesId = \"attributesId_example\"; // String | attributesId\n        try { \n            // Get custom attributes by id\n            CustomAttributes result = apiInstance.getConversationCustomattribute(conversationId, attributesId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationCustomattribute\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationcustomattributes": {
+    "operationId": "getconversationcustomattributes",
+    "functionName": "getConversationCustomattributes",
+    "signature": "getConversationCustomattributes(conversationId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CustomAttributesListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CustomAttributesListing;\n\npublic class ExamplegetConversationCustomattributes {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversation ID\n        try { \n            // Get a list of custom attributes for a conversation.\n            CustomAttributesListing result = apiInstance.getConversationCustomattributes(conversationId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationCustomattributes\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getconversationparticipantsecureivrsession": {
     "operationId": "getconversationparticipantsecureivrsession",
@@ -12035,6 +12099,88 @@
     "signature": "getConversationsCobrowsesessions()",
     "return": "CobrowseConversationEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;\n\npublic class ExamplegetConversationsCobrowsesessions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n                try { \n            // Get active cobrowse conversations for the logged in user\n            CobrowseConversationEntityListing result = apiInstance.getConversationsCobrowsesessions();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsCobrowsesessions\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationscustomattributesschema": {
+    "operationId": "getconversationscustomattributesschema",
+    "functionName": "getConversationsCustomattributesSchema",
+    "signature": "getConversationsCustomattributesSchema(schemaId)",
+    "parameters": [
+      {
+        "name": "schemaId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ConversationDataSchema",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConversationDataSchema;\n\npublic class ExamplegetConversationsCustomattributesSchema {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String schemaId = \"schemaId_example\"; // String | Schema ID\n        try { \n            // Get a schema\n            ConversationDataSchema result = apiInstance.getConversationsCustomattributesSchema(schemaId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsCustomattributesSchema\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationscustomattributesschemaversion": {
+    "operationId": "getconversationscustomattributesschemaversion",
+    "functionName": "getConversationsCustomattributesSchemaVersion",
+    "signature": "getConversationsCustomattributesSchemaVersion(schemaId, versionId)",
+    "parameters": [
+      {
+        "name": "schemaId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ConversationDataSchema",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConversationDataSchema;\n\npublic class ExamplegetConversationsCustomattributesSchemaVersion {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String schemaId = \"schemaId_example\"; // String | Schema ID\nString versionId = \"versionId_example\"; // String | Schema version\n        try { \n            // Get a specific version of a schema\n            ConversationDataSchema result = apiInstance.getConversationsCustomattributesSchemaVersion(schemaId, versionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsCustomattributesSchemaVersion\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationscustomattributesschemaversions": {
+    "operationId": "getconversationscustomattributesschemaversions",
+    "functionName": "getConversationsCustomattributesSchemaVersions",
+    "signature": "getConversationsCustomattributesSchemaVersions(schemaId)",
+    "parameters": [
+      {
+        "name": "schemaId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ConversationDataSchemaListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConversationDataSchemaListing;\n\npublic class ExamplegetConversationsCustomattributesSchemaVersions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String schemaId = \"schemaId_example\"; // String | Schema ID\n        try { \n            // Get all versions of a CCA schema\n            ConversationDataSchemaListing result = apiInstance.getConversationsCustomattributesSchemaVersions(schemaId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsCustomattributesSchemaVersions\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationscustomattributesschemas": {
+    "operationId": "getconversationscustomattributesschemas",
+    "functionName": "getConversationsCustomattributesSchemas",
+    "signature": "getConversationsCustomattributesSchemas()",
+    "return": "ConversationDataSchemaListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConversationDataSchemaListing;\n\npublic class ExamplegetConversationsCustomattributesSchemas {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n                try { \n            // Get a list of schemas.\n            ConversationDataSchemaListing result = apiInstance.getConversationsCustomattributesSchemas();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsCustomattributesSchemas\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationscustomattributesschemascoretype": {
+    "operationId": "getconversationscustomattributesschemascoretype",
+    "functionName": "getConversationsCustomattributesSchemasCoretype",
+    "signature": "getConversationsCustomattributesSchemasCoretype(coreTypeName)",
+    "parameters": [
+      {
+        "name": "coreTypeName",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Coretype",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Coretype;\n\npublic class ExamplegetConversationsCustomattributesSchemasCoretype {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String coreTypeName = \"coreTypeName_example\"; // String | Name of the core type\n        try { \n            // Get the core types from which all schemas are built.\n            Coretype result = apiInstance.getConversationsCustomattributesSchemasCoretype(coreTypeName);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsCustomattributesSchemasCoretype\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationscustomattributesschemascoretypes": {
+    "operationId": "getconversationscustomattributesschemascoretypes",
+    "functionName": "getConversationsCustomattributesSchemasCoretypes",
+    "signature": "getConversationsCustomattributesSchemasCoretypes()",
+    "return": "CoretypeListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CoretypeListing;\n\npublic class ExamplegetConversationsCustomattributesSchemasCoretypes {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n                try { \n            // Get the list of core types enabled for a specific namespace.\n            CoretypeListing result = apiInstance.getConversationsCustomattributesSchemasCoretypes();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsCustomattributesSchemasCoretypes\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationscustomattributesschemaslimits": {
+    "operationId": "getconversationscustomattributesschemaslimits",
+    "functionName": "getConversationsCustomattributesSchemasLimits",
+    "signature": "getConversationsCustomattributesSchemasLimits()",
+    "return": "SchemaQuantityLimits",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConversationsCustomattributesSchemasLimits {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n                try { \n            // Get quantitative limits on schemas\n            SchemaQuantityLimits result = apiInstance.getConversationsCustomattributesSchemasLimits();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsCustomattributesSchemasLimits\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getconversationsemail": {
     "operationId": "getconversationsemail",
@@ -12803,6 +12949,60 @@
     "return": "OpenIntegrationEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;\n\npublic class ExamplegetConversationsMessagingIntegrationsOpen {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        Integer pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString expand = \"expand_example\"; // String | Expand instructions for the return value.\nString supportedContentId = \"supportedContentId_example\"; // String | Filter integrations returned based on the supported content ID\nString messagingSettingId = \"messagingSettingId_example\"; // String | Filter integrations returned based on the setting ID\n        try { \n            // Get a list of Open messaging integrations\n            OpenIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsOpen(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpen\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getconversationsmessagingintegrationsopenextensionsgooglebusinessprofileintegrationid": {
+    "operationId": "getconversationsmessagingintegrationsopenextensionsgooglebusinessprofileintegrationid",
+    "functionName": "getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId",
+    "signature": "getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, expand)",
+    "parameters": [
+      {
+        "name": "integrationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "GoogleBusinessProfileOpenIntegration",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegration;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String integrationId = \"integrationId_example\"; // String | Integration ID\nString expand = \"expand_example\"; // String | Expand instructions for the return value.\n        try { \n            // Get an Open messaging integration with the Google Business Profile extension\n            GoogleBusinessProfileOpenIntegration result = apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationsmessagingintegrationsopenextensionsgooglebusinessprofileoauthsettings": {
+    "operationId": "getconversationsmessagingintegrationsopenextensionsgooglebusinessprofileoauthsettings",
+    "functionName": "getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings",
+    "signature": "getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings()",
+    "return": "GoogleOAuthSettingsResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.GoogleOAuthSettingsResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n                try { \n            // Get Google Business Profile OAuth 2 settings\n            GoogleOAuthSettingsResponse result = apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationsmessagingintegrationsopenextensionsgooglebusinessprofiletoken": {
+    "operationId": "getconversationsmessagingintegrationsopenextensionsgooglebusinessprofiletoken",
+    "functionName": "getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken",
+    "signature": "getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId)",
+    "parameters": [
+      {
+        "name": "tokenId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "GoogleAuthToken",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.GoogleAuthToken;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String tokenId = \"tokenId_example\"; // String | Token ID\n        try { \n            // Get a Google Auth Token\n            GoogleAuthToken result = apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getconversationsmessagingintegrationsopenextensionsgooglebusinessprofiletokenaccounts": {
+    "operationId": "getconversationsmessagingintegrationsopenextensionsgooglebusinessprofiletokenaccounts",
+    "functionName": "getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts",
+    "signature": "getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId)",
+    "parameters": [
+      {
+        "name": "tokenId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "GoogleBusinessProfileAccountListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.GoogleBusinessProfileAccountListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String tokenId = \"tokenId_example\"; // String | Token ID\n        try { \n            // Get Google Business Profile accounts\n            GoogleBusinessProfileAccountListing result = apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getconversationsmessagingintegrationsopenintegrationid": {
     "operationId": "getconversationsmessagingintegrationsopenintegrationid",
     "functionName": "getConversationsMessagingIntegrationsOpenIntegrationId",
@@ -13167,6 +13367,43 @@
     ],
     "return": "MeetingIdRecord",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.MeetingIdRecord;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConversationsVideosMeeting {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String meetingId = \"meetingId_example\"; // String | meetingId\n        try { \n            // Gets a record for a given meetingId\n            MeetingIdRecord result = apiInstance.getConversationsVideosMeeting(meetingId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsVideosMeeting\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchconversationcustomattributes": {
+    "operationId": "patchconversationcustomattributes",
+    "functionName": "patchConversationCustomattributes",
+    "signature": "patchConversationCustomattributes(conversationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CustomAttributesPatchRequest",
+        "required": "false"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CustomAttributesPatchRequest;\n\npublic class ExamplepatchConversationCustomattributes {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversation ID\nCustomAttributesPatchRequest body = new CustomAttributesPatchRequest(); // CustomAttributesPatchRequest | \n        try { \n            // Update a single custom attributes record by amending the data with only the provided fields.\n            apiInstance.patchConversationCustomattributes(conversationId, body);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#patchConversationCustomattributes\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchconversationcustomattributesbulk": {
+    "operationId": "patchconversationcustomattributesbulk",
+    "functionName": "patchConversationCustomattributesBulk",
+    "signature": "patchConversationCustomattributesBulk(conversationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "List<CustomAttributesPatchRequest>",
+        "required": "false"
+      }
+    ],
+    "return": "CustomAttributesBulkUpdateResponseMap",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CustomAttributesBulkUpdateResponseMap;import com.mypurecloud.sdk.v2.model.List;import com.mypurecloud.sdk.v2.model.CustomAttributesPatchRequest;\n\npublic class ExamplepatchConversationCustomattributesBulk {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversation ID\nList<CustomAttributesPatchRequest> body = Arrays.asList(new CustomAttributesPatchRequest()); // List<CustomAttributesPatchRequest> | \n        try { \n            // Update a list of custom attributes record by amending the data with only the provided fields.\n            CustomAttributesBulkUpdateResponseMap result = apiInstance.patchConversationCustomattributesBulk(conversationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#patchConversationCustomattributesBulk\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "patchconversationparticipant": {
     "operationId": "patchconversationparticipant",
@@ -14135,6 +14372,25 @@
     ],
     "return": "InstagramIntegration",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.InstagramIntegrationUpdateRequest;import com.mypurecloud.sdk.v2.model.InstagramIntegration;\n\npublic class ExamplepatchConversationsMessagingIntegrationsInstagramIntegrationId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String integrationId = \"integrationId_example\"; // String | Integration ID\nInstagramIntegrationUpdateRequest body = new InstagramIntegrationUpdateRequest(); // InstagramIntegrationUpdateRequest | InstagramIntegrationUpdateRequest\n        try { \n            // Update Instagram messaging integration\n            InstagramIntegration result = apiInstance.patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchconversationsmessagingintegrationsopenextensionsgooglebusinessprofileintegrationid": {
+    "operationId": "patchconversationsmessagingintegrationsopenextensionsgooglebusinessprofileintegrationid",
+    "functionName": "patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId",
+    "signature": "patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body)",
+    "parameters": [
+      {
+        "name": "integrationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "GoogleBusinessProfileOpenIntegrationUpdateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "GoogleBusinessProfileOpenIntegration",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegration;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegrationUpdateRequest;\n\npublic class ExamplepatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String integrationId = \"integrationId_example\"; // String | Integration ID\nGoogleBusinessProfileOpenIntegrationUpdateRequest body = new GoogleBusinessProfileOpenIntegrationUpdateRequest(); // GoogleBusinessProfileOpenIntegrationUpdateRequest | GoogleBusinessProfileOpenIntegrationUpdateRequest\n        try { \n            // Update an Open messaging integration with the Google Business Profile extension\n            GoogleBusinessProfileOpenIntegration result = apiInstance.patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "patchconversationsmessagingintegrationsopenintegrationid": {
     "operationId": "patchconversationsmessagingintegrationsopenintegrationid",
@@ -15350,6 +15606,34 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TransferRequest;\n\npublic class ExamplepostConversationsCobrowsesessionParticipantReplace {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversationId\nString participantId = \"participantId_example\"; // String | participantId\nTransferRequest body = new TransferRequest(); // TransferRequest | \n        try { \n            // Replace this participant with the specified user and/or address\n            apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, body);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationsCobrowsesessionParticipantReplace\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "postconversationscustomattributesschemas": {
+    "operationId": "postconversationscustomattributesschemas",
+    "functionName": "postConversationsCustomattributesSchemas",
+    "signature": "postConversationsCustomattributesSchemas(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ConversationJsonSchemaRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ConversationDataSchema",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConversationDataSchema;import com.mypurecloud.sdk.v2.model.ConversationJsonSchemaRequest;\n\npublic class ExamplepostConversationsCustomattributesSchemas {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        ConversationJsonSchemaRequest body = new ConversationJsonSchemaRequest(); // ConversationJsonSchemaRequest | Schema create request body\n        try { \n            // Create a schema\n            ConversationDataSchema result = apiInstance.postConversationsCustomattributesSchemas(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationsCustomattributesSchemas\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postconversationscustomattributessearch": {
+    "operationId": "postconversationscustomattributessearch",
+    "functionName": "postConversationsCustomattributesSearch",
+    "signature": "postConversationsCustomattributesSearch(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ConversationCustomAttributesSearchRequest",
+        "required": "true"
+      }
+    ],
+    "return": "JsonSearchResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SearchApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.JsonSearchResponse;import com.mypurecloud.sdk.v2.model.ConversationCustomAttributesSearchRequest;\n\npublic class ExamplepostConversationsCustomattributesSearch {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SearchApi apiInstance = new SearchApi();\n        ConversationCustomAttributesSearchRequest body = new ConversationCustomAttributesSearchRequest(); // ConversationCustomAttributesSearchRequest | Search request options\n        try { \n            // Search resources.\n            JsonSearchResponse result = apiInstance.postConversationsCustomattributesSearch(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SearchApi#postConversationsCustomattributesSearch\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "postconversationsemailinboundmessages": {
     "operationId": "postconversationsemailinboundmessages",
     "functionName": "postConversationsEmailInboundmessages",
@@ -15937,6 +16221,34 @@
     "return": "OpenIntegration",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.OpenIntegration;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;\n\npublic class ExamplepostConversationsMessagingIntegrationsOpen {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        OpenIntegrationRequest body = new OpenIntegrationRequest(); // OpenIntegrationRequest | OpenIntegrationRequest\n        try { \n            // Create an Open messaging integration\n            OpenIntegration result = apiInstance.postConversationsMessagingIntegrationsOpen(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationsMessagingIntegrationsOpen\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "postconversationsmessagingintegrationsopenextensionsgooglebusinessprofile": {
+    "operationId": "postconversationsmessagingintegrationsopenextensionsgooglebusinessprofile",
+    "functionName": "postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile",
+    "signature": "postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "GoogleBusinessProfileOpenIntegrationRequest",
+        "required": "true"
+      }
+    ],
+    "return": "GoogleBusinessProfileOpenIntegration",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegration;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileOpenIntegrationRequest;\n\npublic class ExamplepostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        GoogleBusinessProfileOpenIntegrationRequest body = new GoogleBusinessProfileOpenIntegrationRequest(); // GoogleBusinessProfileOpenIntegrationRequest | GoogleBusinessProfileOpenIntegrationRequest\n        try { \n            // Create an Open messaging integration with the Google Business Profile extension\n            GoogleBusinessProfileOpenIntegration result = apiInstance.postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postconversationsmessagingintegrationsopenextensionsgooglebusinessprofiletokens": {
+    "operationId": "postconversationsmessagingintegrationsopenextensionsgooglebusinessprofiletokens",
+    "functionName": "postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens",
+    "signature": "postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "GoogleAuthTokenRequest",
+        "required": "true"
+      }
+    ],
+    "return": "GoogleAuthToken",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.GoogleAuthToken;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GoogleAuthTokenRequest;\n\npublic class ExamplepostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        GoogleAuthTokenRequest body = new GoogleAuthTokenRequest(); // GoogleAuthTokenRequest | GoogleAuthTokenRequest\n        try { \n            // Create a Google Auth Token by exchanging the one-time auth code retrieved from Google\n            GoogleAuthToken result = apiInstance.postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "postconversationsmessagingintegrationstwitter": {
     "operationId": "postconversationsmessagingintegrationstwitter",
     "functionName": "postConversationsMessagingIntegrationsTwitter",
@@ -16138,6 +16450,44 @@
     "return": "MeetingIdRecord",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.MeetingIdRecord;import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostConversationsVideosMeetings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        GenerateMeetingIdRequest body = new GenerateMeetingIdRequest(); // GenerateMeetingIdRequest | MeetingIdRequest\n        try { \n            // Generate a meetingId for a given conferenceId\n            MeetingIdRecord result = apiInstance.postConversationsVideosMeetings(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationsVideosMeetings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "putconversationcustomattributes": {
+    "operationId": "putconversationcustomattributes",
+    "functionName": "putConversationCustomattributes",
+    "signature": "putConversationCustomattributes(conversationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CustomAttributesUpdateRequest",
+        "required": "false"
+      }
+    ],
+    "return": "CustomAttributesIdResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.CustomAttributesIdResponse;import com.mypurecloud.sdk.v2.model.CustomAttributesUpdateRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampleputConversationCustomattributes {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversation ID\nCustomAttributesUpdateRequest body = new CustomAttributesUpdateRequest(); // CustomAttributesUpdateRequest | \n        try { \n            // Create or update a single custom attributes record. Updating replaces all data with the provided fields.\n            CustomAttributesIdResponse result = apiInstance.putConversationCustomattributes(conversationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#putConversationCustomattributes\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putconversationcustomattributesbulk": {
+    "operationId": "putconversationcustomattributesbulk",
+    "functionName": "putConversationCustomattributesBulk",
+    "signature": "putConversationCustomattributesBulk(conversationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "List<CustomAttributesUpdateRequest>",
+        "required": "false"
+      }
+    ],
+    "return": "CustomAttributesBulkUpdateResponseMap",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.CustomAttributesUpdateRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CustomAttributesBulkUpdateResponseMap;import com.mypurecloud.sdk.v2.model.List;\n\npublic class ExampleputConversationCustomattributesBulk {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversation ID\nList<CustomAttributesUpdateRequest> body = Arrays.asList(new CustomAttributesUpdateRequest()); // List<CustomAttributesUpdateRequest> | \n        try { \n            // Create or update a list of custom attributes records. Updating replaces all data with the provided fields.\n            CustomAttributesBulkUpdateResponseMap result = apiInstance.putConversationCustomattributesBulk(conversationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#putConversationCustomattributesBulk\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "putconversationparticipantflaggedreason": {
     "operationId": "putconversationparticipantflaggedreason",
     "functionName": "putConversationParticipantFlaggedreason",
@@ -16298,6 +16648,25 @@
     ],
     "return": "String",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.SetRecordingState;\n\npublic class ExampleputConversationsCobrowsesessionRecordingstate {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversationId\nSetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState\n        try { \n            // Update a conversation by setting its recording state\n            String result = apiInstance.putConversationsCobrowsesessionRecordingstate(conversationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#putConversationsCobrowsesessionRecordingstate\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putconversationscustomattributesschema": {
+    "operationId": "putconversationscustomattributesschema",
+    "functionName": "putConversationsCustomattributesSchema",
+    "signature": "putConversationsCustomattributesSchema(schemaId, body)",
+    "parameters": [
+      {
+        "name": "schemaId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ConversationSchemaUpdateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ConversationDataSchema",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConversationSchemaUpdateRequest;import com.mypurecloud.sdk.v2.model.ConversationDataSchema;\n\npublic class ExampleputConversationsCustomattributesSchema {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String schemaId = \"schemaId_example\"; // String | Schema ID\nConversationSchemaUpdateRequest body = new ConversationSchemaUpdateRequest(); // ConversationSchemaUpdateRequest | Schema update request body\n        try { \n            // Update a schema\n            ConversationDataSchema result = apiInstance.putConversationsCustomattributesSchema(schemaId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#putConversationsCustomattributesSchema\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putconversationsemailmessagesdraft": {
     "operationId": "putconversationsemailmessagesdraft",
@@ -37891,8 +38260,8 @@
         "required": "true"
       }
     ],
-    "return": "Survey",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.QualityApi;\nimport com.mypurecloud.sdk.v2.model.Survey;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CreateSurveyRequest;\n\npublic class ExamplepostQualitySurveys {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        QualityApi apiInstance = new QualityApi();\n        CreateSurveyRequest body = new CreateSurveyRequest(); // CreateSurveyRequest | Survey creation request\n        try { \n            // Create a survey for a conversation\n            Survey result = apiInstance.postQualitySurveys(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling QualityApi#postQualitySurveys\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "return": "CreateSurveyResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.QualityApi;\nimport com.mypurecloud.sdk.v2.model.CreateSurveyResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CreateSurveyRequest;\n\npublic class ExamplepostQualitySurveys {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        QualityApi apiInstance = new QualityApi();\n        CreateSurveyRequest body = new CreateSurveyRequest(); // CreateSurveyRequest | Survey creation request\n        try { \n            // Create a survey for a conversation\n            CreateSurveyResponse result = apiInstance.postQualitySurveys(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling QualityApi#postQualitySurveys\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postqualitysurveysscoring": {
     "operationId": "postqualitysurveysscoring",
@@ -41893,6 +42262,25 @@
     "return": "TranscriptionSettings",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TranscriptionSettings;\n\npublic class ExamplepatchRoutingSettingsTranscription {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        TranscriptionSettings body = new TranscriptionSettings(); // TranscriptionSettings | Organization Settings\n        try { \n            // Patch Transcription Settings\n            TranscriptionSettings result = apiInstance.patchRoutingSettingsTranscription(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#patchRoutingSettingsTranscription\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "patchroutingskill": {
+    "operationId": "patchroutingskill",
+    "functionName": "patchRoutingSkill",
+    "signature": "patchRoutingSkill(skillId, body)",
+    "parameters": [
+      {
+        "name": "skillId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UpdateSkillDivisionRequest",
+        "required": "true"
+      }
+    ],
+    "return": "RoutingSkill",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UpdateSkillDivisionRequest;import com.mypurecloud.sdk.v2.model.RoutingSkill;\n\npublic class ExamplepatchRoutingSkill {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        String skillId = \"skillId_example\"; // String | Skill ID\nUpdateSkillDivisionRequest body = new UpdateSkillDivisionRequest(); // UpdateSkillDivisionRequest | updateSkillDivisionRequest\n        try { \n            // Update Routing Skill Division\n            RoutingSkill result = apiInstance.patchRoutingSkill(skillId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#patchRoutingSkill\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "patchroutingskillgroup": {
     "operationId": "patchroutingskillgroup",
     "functionName": "patchRoutingSkillgroup",
@@ -44373,6 +44761,29 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString facebookIngestionRuleId = \"facebookIngestionRuleId_example\"; // String | facebookIngestionRuleId\nBoolean hardDelete = false; // Boolean | Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.\n        try { \n            // Delete a Facebook data ingestion rule.\n            apiInstance.deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, hardDelete);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deletesocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleid": {
+    "operationId": "deletesocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleid",
+    "functionName": "deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId",
+    "signature": "deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, hardDelete)",
+    "parameters": [
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "googleBusinessProfileIngestionRuleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "hardDelete",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString googleBusinessProfileIngestionRuleId = \"googleBusinessProfileIngestionRuleId_example\"; // String | googleBusinessProfileIngestionRuleId\nBoolean hardDelete = false; // Boolean | Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.\n        try { \n            // Delete a Google Business Profile data ingestion rule.\n            apiInstance.deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, hardDelete);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deletesocialmediatopicdataingestionrulesinstagraminstagramingestionruleid": {
     "operationId": "deletesocialmediatopicdataingestionrulesinstagraminstagramingestionruleid",
     "functionName": "deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId",
@@ -44685,6 +45096,93 @@
     ],
     "return": "FacebookDataIngestionRuleVersionResponseEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponseEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString facebookIngestionRuleId = \"facebookIngestionRuleId_example\"; // String | facebookIngestionRuleId\nInteger pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\nBoolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted items in the result.\n        try { \n            // Get the Facebook data ingestion rule versions.\n            FacebookDataIngestionRuleVersionResponseEntityListing result = apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions(topicId, facebookIngestionRuleId, pageNumber, pageSize, includeDeleted);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleid": {
+    "operationId": "getsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleid",
+    "functionName": "getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId",
+    "signature": "getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, includeDeleted)",
+    "parameters": [
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "googleBusinessProfileIngestionRuleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "includeDeleted",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "GoogleBusinessProfileDataIngestionRuleResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString googleBusinessProfileIngestionRuleId = \"googleBusinessProfileIngestionRuleId_example\"; // String | googleBusinessProfileIngestionRuleId\nBoolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted items in the result.\n        try { \n            // Get a single Google Business Profile data ingestion rule.\n            GoogleBusinessProfileDataIngestionRuleResponse result = apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, includeDeleted);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleidversion": {
+    "operationId": "getsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleidversion",
+    "functionName": "getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion",
+    "signature": "getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, includeDeleted)",
+    "parameters": [
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "googleBusinessProfileIngestionRuleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "dataIngestionRuleVersion",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "includeDeleted",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "GoogleBusinessProfileDataIngestionRuleVersionResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleVersionResponse;\n\npublic class ExamplegetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString googleBusinessProfileIngestionRuleId = \"googleBusinessProfileIngestionRuleId_example\"; // String | googleBusinessProfileIngestionRuleId\nString dataIngestionRuleVersion = \"dataIngestionRuleVersion_example\"; // String | version\nBoolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted item in the result.\n        try { \n            // Get a single Google Business Profile data ingestion rule version.\n            GoogleBusinessProfileDataIngestionRuleVersionResponse result = apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, includeDeleted);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleidversions": {
+    "operationId": "getsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleidversions",
+    "functionName": "getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions",
+    "signature": "getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(topicId, googleBusinessProfileIngestionRuleId, pageNumber, pageSize, includeDeleted)",
+    "parameters": [
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "googleBusinessProfileIngestionRuleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "includeDeleted",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString googleBusinessProfileIngestionRuleId = \"googleBusinessProfileIngestionRuleId_example\"; // String | googleBusinessProfileIngestionRuleId\nInteger pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\nBoolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted items in the result.\n        try { \n            // Get the Google Business Profile data ingestion rule versions.\n            GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing result = apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(topicId, googleBusinessProfileIngestionRuleId, pageNumber, pageSize, includeDeleted);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getsocialmediatopicdataingestionrulesinstagraminstagramingestionruleid": {
     "operationId": "getsocialmediatopicdataingestionrulesinstagraminstagramingestionruleid",
@@ -45029,6 +45527,30 @@
     "return": "FacebookDataIngestionRuleResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.DataIngestionRuleStatusPatchRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;\n\npublic class ExamplepatchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString facebookIngestionRuleId = \"facebookIngestionRuleId_example\"; // String | facebookIngestionRuleId\nDataIngestionRuleStatusPatchRequest body = new DataIngestionRuleStatusPatchRequest(); // DataIngestionRuleStatusPatchRequest | \n        try { \n            // Update the status of a Facebook data ingestion rule.\n            FacebookDataIngestionRuleResponse result = apiInstance.patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "patchsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleid": {
+    "operationId": "patchsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleid",
+    "functionName": "patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId",
+    "signature": "patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, body)",
+    "parameters": [
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "googleBusinessProfileIngestionRuleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "DataIngestionRuleStatusPatchRequest",
+        "required": "false"
+      }
+    ],
+    "return": "GoogleBusinessProfileDataIngestionRuleResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleResponse;import com.mypurecloud.sdk.v2.model.DataIngestionRuleStatusPatchRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepatchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString googleBusinessProfileIngestionRuleId = \"googleBusinessProfileIngestionRuleId_example\"; // String | googleBusinessProfileIngestionRuleId\nDataIngestionRuleStatusPatchRequest body = new DataIngestionRuleStatusPatchRequest(); // DataIngestionRuleStatusPatchRequest | \n        try { \n            // Update the status of a Google Business Profile data ingestion rule.\n            GoogleBusinessProfileDataIngestionRuleResponse result = apiInstance.patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "patchsocialmediatopicdataingestionrulesinstagraminstagramingestionruleid": {
     "operationId": "patchsocialmediatopicdataingestionrulesinstagraminstagramingestionruleid",
     "functionName": "patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId",
@@ -45180,6 +45702,25 @@
     ],
     "return": "FacebookDataIngestionRuleResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleRequest;import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;\n\npublic class ExamplepostSocialmediaTopicDataingestionrulesFacebook {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nFacebookDataIngestionRuleRequest body = new FacebookDataIngestionRuleRequest(); // FacebookDataIngestionRuleRequest | \n        try { \n            // Create an Facebook data ingestion rule.\n            FacebookDataIngestionRuleResponse result = apiInstance.postSocialmediaTopicDataingestionrulesFacebook(topicId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#postSocialmediaTopicDataingestionrulesFacebook\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postsocialmediatopicdataingestionrulesgooglebusinessprofile": {
+    "operationId": "postsocialmediatopicdataingestionrulesgooglebusinessprofile",
+    "functionName": "postSocialmediaTopicDataingestionrulesGooglebusinessprofile",
+    "signature": "postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId, body)",
+    "parameters": [
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "GoogleBusinessProfileDataIngestionRuleRequest",
+        "required": "false"
+      }
+    ],
+    "return": "GoogleBusinessProfileDataIngestionRuleResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleRequest;\n\npublic class ExamplepostSocialmediaTopicDataingestionrulesGooglebusinessprofile {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nGoogleBusinessProfileDataIngestionRuleRequest body = new GoogleBusinessProfileDataIngestionRuleRequest(); // GoogleBusinessProfileDataIngestionRuleRequest | \n        try { \n            // Create a Google Business Profile data ingestion rule.\n            GoogleBusinessProfileDataIngestionRuleResponse result = apiInstance.postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#postSocialmediaTopicDataingestionrulesGooglebusinessprofile\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postsocialmediatopicdataingestionrulesinstagram": {
     "operationId": "postsocialmediatopicdataingestionrulesinstagram",
@@ -45356,6 +45897,30 @@
     ],
     "return": "FacebookDataIngestionRuleResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleRequest;import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;\n\npublic class ExampleputSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString facebookIngestionRuleId = \"facebookIngestionRuleId_example\"; // String | facebookIngestionRuleId\nFacebookDataIngestionRuleRequest body = new FacebookDataIngestionRuleRequest(); // FacebookDataIngestionRuleRequest | \n        try { \n            // Update the Facebook data ingestion rule.\n            FacebookDataIngestionRuleResponse result = apiInstance.putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleid": {
+    "operationId": "putsocialmediatopicdataingestionrulesgooglebusinessprofilegooglebusinessprofileingestionruleid",
+    "functionName": "putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId",
+    "signature": "putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, body)",
+    "parameters": [
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "googleBusinessProfileIngestionRuleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "GoogleBusinessProfileDataIngestionRuleRequest",
+        "required": "false"
+      }
+    ],
+    "return": "GoogleBusinessProfileDataIngestionRuleResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SocialMediaApi;\nimport com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleRequest;\n\npublic class ExampleputSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SocialMediaApi apiInstance = new SocialMediaApi();\n        String topicId = \"topicId_example\"; // String | topicId\nString googleBusinessProfileIngestionRuleId = \"googleBusinessProfileIngestionRuleId_example\"; // String | googleBusinessProfileIngestionRuleId\nGoogleBusinessProfileDataIngestionRuleRequest body = new GoogleBusinessProfileDataIngestionRuleRequest(); // GoogleBusinessProfileDataIngestionRuleRequest | \n        try { \n            // Update the Google Business Profile data ingestion rule.\n            GoogleBusinessProfileDataIngestionRuleResponse result = apiInstance.putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SocialMediaApi#putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putsocialmediatopicdataingestionrulesinstagraminstagramingestionruleid": {
     "operationId": "putsocialmediatopicdataingestionrulesinstagraminstagramingestionruleid",
@@ -53562,16 +54127,31 @@
   "getwebdeploymentsconfigurationversions": {
     "operationId": "getwebdeploymentsconfigurationversions",
     "functionName": "getWebdeploymentsConfigurationVersions",
-    "signature": "getWebdeploymentsConfigurationVersions(configurationId)",
+    "signature": "getWebdeploymentsConfigurationVersions(configurationId, pageSize, before, after)",
     "parameters": [
       {
         "name": "configurationId",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "WebDeploymentConfigurationVersionEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWebdeploymentsConfigurationVersions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String configurationId = \"configurationId_example\"; // String | The configuration version ID\n        try { \n            // Get the versions of a configuration\n            WebDeploymentConfigurationVersionEntityListing result = apiInstance.getWebdeploymentsConfigurationVersions(configurationId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsConfigurationVersions\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWebdeploymentsConfigurationVersions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String configurationId = \"configurationId_example\"; // String | The configuration version ID\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Defaults to 300.\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\n        try { \n            // Get the versions of a configuration\n            WebDeploymentConfigurationVersionEntityListing result = apiInstance.getWebdeploymentsConfigurationVersions(configurationId, pageSize, before, after);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsConfigurationVersions\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getwebdeploymentsconfigurationversionsdraft": {
     "operationId": "getwebdeploymentsconfigurationversionsdraft",
@@ -53590,8 +54170,23 @@
   "getwebdeploymentsconfigurations": {
     "operationId": "getwebdeploymentsconfigurations",
     "functionName": "getWebdeploymentsConfigurations",
-    "signature": "getWebdeploymentsConfigurations(showOnlyPublished)",
+    "signature": "getWebdeploymentsConfigurations(pageSize, before, after, showOnlyPublished)",
     "parameters": [
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
       {
         "name": "showOnlyPublished",
         "type": "Boolean",
@@ -53599,7 +54194,7 @@
       }
     ],
     "return": "WebDeploymentConfigurationVersionEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWebdeploymentsConfigurations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        Boolean showOnlyPublished = true; // Boolean | Filter by published status.\n        try { \n            // View configuration drafts\n            WebDeploymentConfigurationVersionEntityListing result = apiInstance.getWebdeploymentsConfigurations(showOnlyPublished);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsConfigurations\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWebdeploymentsConfigurations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String pageSize = \"pageSize_example\"; // String | Number of entities to return. Defaults to 300.\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nBoolean showOnlyPublished = true; // Boolean | Filter by published status.\n        try { \n            // View configuration drafts\n            WebDeploymentConfigurationVersionEntityListing result = apiInstance.getWebdeploymentsConfigurations(pageSize, before, after, showOnlyPublished);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsConfigurations\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getwebdeploymentsdeployment": {
     "operationId": "getwebdeploymentsdeployment",
@@ -53680,8 +54275,23 @@
   "getwebdeploymentsdeployments": {
     "operationId": "getwebdeploymentsdeployments",
     "functionName": "getWebdeploymentsDeployments",
-    "signature": "getWebdeploymentsDeployments(expand)",
+    "signature": "getWebdeploymentsDeployments(pageSize, before, after, expand)",
     "parameters": [
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
       {
         "name": "expand",
         "type": "List<String>",
@@ -53689,7 +54299,7 @@
       }
     ],
     "return": "ExpandableWebDeploymentEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;\n\npublic class ExamplegetWebdeploymentsDeployments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected. \n        try { \n            // Get deployments\n            ExpandableWebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsDeployments\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;\n\npublic class ExamplegetWebdeploymentsDeployments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String pageSize = \"pageSize_example\"; // String | Number of entities to return. Defaults to 300.\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nList<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected. \n        try { \n            // Get deployments\n            ExpandableWebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(pageSize, before, after, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsDeployments\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postwebdeploymentsconfigurationversionsdraftpublish": {
     "operationId": "postwebdeploymentsconfigurationversionsdraftpublish",

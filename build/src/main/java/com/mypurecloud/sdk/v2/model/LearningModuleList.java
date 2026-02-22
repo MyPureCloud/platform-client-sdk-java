@@ -33,8 +33,8 @@ public class LearningModuleList  implements Serializable, PagedResource<Learning
   private Long total = null;
   private Long totalLegacyRules = null;
   private String firstUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
   private String lastUri = null;
   private String selfUri = null;
   private Integer pageCount = null;
@@ -151,23 +151,6 @@ public class LearningModuleList  implements Serializable, PagedResource<Learning
 
   /**
    **/
-  public LearningModuleList nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
   public LearningModuleList previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -180,6 +163,23 @@ public class LearningModuleList  implements Serializable, PagedResource<Learning
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
+  public LearningModuleList nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
 
@@ -250,8 +250,8 @@ public class LearningModuleList  implements Serializable, PagedResource<Learning
             Objects.equals(this.total, learningModuleList.total) &&
             Objects.equals(this.totalLegacyRules, learningModuleList.totalLegacyRules) &&
             Objects.equals(this.firstUri, learningModuleList.firstUri) &&
-            Objects.equals(this.nextUri, learningModuleList.nextUri) &&
             Objects.equals(this.previousUri, learningModuleList.previousUri) &&
+            Objects.equals(this.nextUri, learningModuleList.nextUri) &&
             Objects.equals(this.lastUri, learningModuleList.lastUri) &&
             Objects.equals(this.selfUri, learningModuleList.selfUri) &&
             Objects.equals(this.pageCount, learningModuleList.pageCount);
@@ -259,7 +259,7 @@ public class LearningModuleList  implements Serializable, PagedResource<Learning
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, totalLegacyRules, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, totalLegacyRules, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -273,8 +273,8 @@ public class LearningModuleList  implements Serializable, PagedResource<Learning
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    totalLegacyRules: ").append(toIndentedString(totalLegacyRules)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");

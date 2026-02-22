@@ -239,7 +239,8 @@
 | **sentimentTrendCategories** | [**List<SentimentTrendCategoriesEnum>**](#Enum--SentimentTrendCategoriesEnum) | A set of Sentiment Trend Categories for filtering |  [optional] |
 | **contentModerationFlags** | [**List<ContentModerationFlagsEnum>**](#Enum--ContentModerationFlagsEnum) | A set of Content Moderation Flags for filtering |  [optional] |
 | **sessionExpired** | **Boolean** | Filter to indicate for if session is expired |  [optional] |
-| **engagementSource** | [**List<EngagementSourceEnum>**](#Enum--EngagementSourceEnum) | The engagement sources used to filter the view |  [optional] |
+| **engagementSources** | [**List<EngagementSourcesEnum>**](#Enum--EngagementSourcesEnum) | The engagement sources used to filter the view |  [optional] |
+| **isSnippetRecorded** | **Boolean** | Indicates filtering for snippet recorded |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -1043,7 +1044,7 @@
 | UNKNOWN | &quot;Unknown&quot; |
 
 
-## Enum: EngagementSourceEnum
+## Enum: EngagementSourcesEnum
 
 | Name | Value |
 | ---- | ----- |
@@ -1086,4 +1087,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

@@ -56,7 +56,6 @@ public class UsersRulesApiAsync {
   /**
    * Delete an existing users rule
    * 
-   * deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -91,7 +90,6 @@ public class UsersRulesApiAsync {
   /**
    * Delete an existing users rule
    * 
-   * deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -133,7 +131,6 @@ public class UsersRulesApiAsync {
   /**
    * Get a users rule
    * 
-   * getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -168,7 +165,6 @@ public class UsersRulesApiAsync {
   /**
    * Get a users rule
    * 
-   * getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -210,7 +206,6 @@ public class UsersRulesApiAsync {
   /**
    * Get dependent of a users rule
    * 
-   * getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -245,7 +240,6 @@ public class UsersRulesApiAsync {
   /**
    * Get dependent of a users rule
    * 
-   * getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -287,7 +281,6 @@ public class UsersRulesApiAsync {
   /**
    * Get dependents for a users rule
    * 
-   * getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -322,7 +315,6 @@ public class UsersRulesApiAsync {
   /**
    * Get dependents for a users rule
    * 
-   * getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -364,7 +356,6 @@ public class UsersRulesApiAsync {
   /**
    * Get the list of users rules
    * 
-   * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -399,7 +390,6 @@ public class UsersRulesApiAsync {
   /**
    * Get the list of users rules
    * 
-   * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -441,7 +431,6 @@ public class UsersRulesApiAsync {
   /**
    * Get the settings for a specific users rule type
    * 
-   * getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -476,7 +465,6 @@ public class UsersRulesApiAsync {
   /**
    * Get the settings for a specific users rule type
    * 
-   * getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -518,7 +506,6 @@ public class UsersRulesApiAsync {
   /**
    * Update an existing users rule
    * This will update an existing users rule with the specified fields.
-   * patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -553,7 +540,6 @@ public class UsersRulesApiAsync {
   /**
    * Update an existing users rule
    * This will update an existing users rule with the specified fields.
-   * patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -595,7 +581,6 @@ public class UsersRulesApiAsync {
   /**
    * Create a new rule
    * This will create a new rule with the specified fields.
-   * postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -630,7 +615,6 @@ public class UsersRulesApiAsync {
   /**
    * Create a new rule
    * This will create a new rule with the specified fields.
-   * postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -672,7 +656,6 @@ public class UsersRulesApiAsync {
   /**
    * Query the result of a users rule
    * This will query the result of a rule.
-   * postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -707,7 +690,6 @@ public class UsersRulesApiAsync {
   /**
    * Query the result of a users rule
    * This will query the result of a rule.
-   * postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

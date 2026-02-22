@@ -35,6 +35,48 @@ import com.mypurecloud.sdk.v2.model.WebDeploymentsRefreshJWTRequest;
 
 public class GetWebdeploymentsDeploymentsRequest {
 
+	private String pageSize;
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetWebdeploymentsDeploymentsRequest withPageSize(String pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+
+	private String before;
+	public String getBefore() {
+		return this.before;
+	}
+
+	public void setBefore(String before) {
+		this.before = before;
+	}
+
+	public GetWebdeploymentsDeploymentsRequest withBefore(String before) {
+	    this.setBefore(before);
+	    return this;
+	} 
+
+	private String after;
+	public String getAfter() {
+		return this.after;
+	}
+
+	public void setAfter(String after) {
+		this.after = after;
+	}
+
+	public GetWebdeploymentsDeploymentsRequest withAfter(String after) {
+	    this.setAfter(after);
+	    return this;
+	} 
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -104,6 +146,15 @@ public class GetWebdeploymentsDeploymentsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/webdeployments/deployments")
 
+                .withQueryParameters("pageSize", "", pageSize)
+        
+
+                .withQueryParameters("before", "", before)
+        
+
+                .withQueryParameters("after", "", after)
+        
+
                 .withQueryParameters("expand", "multi", expand)
         
 		.withCustomHeaders(customHeaders)
@@ -126,6 +177,21 @@ public class GetWebdeploymentsDeploymentsRequest {
 			request = new GetWebdeploymentsDeploymentsRequest();
 		}
 
+
+		public Builder withPageSize(String pageSize) {
+			request.setPageSize(pageSize);
+			return this;
+		}
+
+		public Builder withBefore(String before) {
+			request.setBefore(before);
+			return this;
+		}
+
+		public Builder withAfter(String after) {
+			request.setAfter(after);
+			return this;
+		}
 
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);

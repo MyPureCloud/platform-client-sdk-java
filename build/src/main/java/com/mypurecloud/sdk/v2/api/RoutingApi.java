@@ -93,6 +93,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.UpdateKpiRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSkillDivisionRequest;
 import com.mypurecloud.sdk.v2.model.UpdateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -229,6 +230,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsTranscriptionRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
@@ -9639,6 +9641,88 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Routing Skill Division
+   * 
+   * @param skillId Skill ID (required)
+   * @param body updateSkillDivisionRequest (required)
+   * @return RoutingSkill
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoutingSkill patchRoutingSkill(String skillId, UpdateSkillDivisionRequest body) throws IOException, ApiException {
+    return  patchRoutingSkill(createPatchRoutingSkillRequest(skillId, body));
+  }
+
+  /**
+   * Update Routing Skill Division
+   * 
+   * @param skillId Skill ID (required)
+   * @param body updateSkillDivisionRequest (required)
+   * @return RoutingSkill
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoutingSkill> patchRoutingSkillWithHttpInfo(String skillId, UpdateSkillDivisionRequest body) throws IOException {
+    return patchRoutingSkill(createPatchRoutingSkillRequest(skillId, body).withHttpInfo());
+  }
+
+  private PatchRoutingSkillRequest createPatchRoutingSkillRequest(String skillId, UpdateSkillDivisionRequest body) {
+    return PatchRoutingSkillRequest.builder()
+            .withSkillId(skillId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Routing Skill Division
+   * 
+   * @param request The request object
+   * @return RoutingSkill
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoutingSkill patchRoutingSkill(PatchRoutingSkillRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoutingSkill> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingSkill>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Routing Skill Division
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoutingSkill> patchRoutingSkill(ApiRequest<UpdateSkillDivisionRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingSkill>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingSkill> response = (ApiResponse<RoutingSkill>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingSkill> response = (ApiResponse<RoutingSkill>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

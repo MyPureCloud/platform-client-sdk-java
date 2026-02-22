@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.Calibration;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
 import com.mypurecloud.sdk.v2.model.CreateSurveyRequest;
+import com.mypurecloud.sdk.v2.model.CreateSurveyResponse;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Evaluation;
@@ -5479,11 +5480,11 @@ public class QualityApi {
    * Create a survey for a conversation
    * 
    * @param body Survey creation request (required)
-   * @return Survey
+   * @return CreateSurveyResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Survey postQualitySurveys(CreateSurveyRequest body) throws IOException, ApiException {
+  public CreateSurveyResponse postQualitySurveys(CreateSurveyRequest body) throws IOException, ApiException {
     return  postQualitySurveys(createPostQualitySurveysRequest(body));
   }
 
@@ -5491,10 +5492,10 @@ public class QualityApi {
    * Create a survey for a conversation
    * 
    * @param body Survey creation request (required)
-   * @return Survey
+   * @return CreateSurveyResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Survey> postQualitySurveysWithHttpInfo(CreateSurveyRequest body) throws IOException {
+  public ApiResponse<CreateSurveyResponse> postQualitySurveysWithHttpInfo(CreateSurveyRequest body) throws IOException {
     return postQualitySurveys(createPostQualitySurveysRequest(body).withHttpInfo());
   }
 
@@ -5509,13 +5510,13 @@ public class QualityApi {
    * Create a survey for a conversation
    * 
    * @param request The request object
-   * @return Survey
+   * @return CreateSurveyResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Survey postQualitySurveys(PostQualitySurveysRequest request) throws IOException, ApiException {
+  public CreateSurveyResponse postQualitySurveys(PostQualitySurveysRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Survey> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Survey>() {});
+      ApiResponse<CreateSurveyResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateSurveyResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -5531,13 +5532,13 @@ public class QualityApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Survey> postQualitySurveys(ApiRequest<CreateSurveyRequest> request) throws IOException {
+  public ApiResponse<CreateSurveyResponse> postQualitySurveys(ApiRequest<CreateSurveyRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Survey>() {});
+      return pcapiClient.invoke(request, new TypeReference<CreateSurveyResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)exception;
+      ApiResponse<CreateSurveyResponse> response = (ApiResponse<CreateSurveyResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5548,7 +5549,7 @@ public class QualityApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CreateSurveyResponse> response = (ApiResponse<CreateSurveyResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

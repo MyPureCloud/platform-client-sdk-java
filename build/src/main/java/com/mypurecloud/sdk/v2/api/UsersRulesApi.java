@@ -52,7 +52,6 @@ public class UsersRulesApi {
   /**
    * Delete an existing users rule
    * 
-   * deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The id of the rule (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -64,7 +63,6 @@ public class UsersRulesApi {
   /**
    * Delete an existing users rule
    * 
-   * deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The id of the rule (required)
    * @throws IOException if the request fails to be processed
    */
@@ -82,7 +80,6 @@ public class UsersRulesApi {
   /**
    * Delete an existing users rule
    * 
-   * deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -101,7 +98,6 @@ public class UsersRulesApi {
   /**
    * Delete an existing users rule
    * 
-   * deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -131,7 +127,6 @@ public class UsersRulesApi {
   /**
    * Get a users rule
    * 
-   * getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The ID of the rule to retrieve (required)
    * @return UsersRulesRule
    * @throws ApiException if the request fails on the server
@@ -144,7 +139,6 @@ public class UsersRulesApi {
   /**
    * Get a users rule
    * 
-   * getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The ID of the rule to retrieve (required)
    * @return UsersRulesRule
    * @throws IOException if the request fails to be processed
@@ -163,7 +157,6 @@ public class UsersRulesApi {
   /**
    * Get a users rule
    * 
-   * getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersRulesRule
    * @throws ApiException if the request fails on the server
@@ -183,7 +176,6 @@ public class UsersRulesApi {
   /**
    * Get a users rule
    * 
-   * getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -213,7 +205,6 @@ public class UsersRulesApi {
   /**
    * Get dependent of a users rule
    * 
-   * getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The ID of the rule for which to retrieve dependents (required)
    * @param ruleType The type of the dependent (required)
    * @param typeId The type ID of the dependent (required)
@@ -228,7 +219,6 @@ public class UsersRulesApi {
   /**
    * Get dependent of a users rule
    * 
-   * getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The ID of the rule for which to retrieve dependents (required)
    * @param ruleType The type of the dependent (required)
    * @param typeId The type ID of the dependent (required)
@@ -253,7 +243,6 @@ public class UsersRulesApi {
   /**
    * Get dependent of a users rule
    * 
-   * getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersRulesDependent
    * @throws ApiException if the request fails on the server
@@ -273,7 +262,6 @@ public class UsersRulesApi {
   /**
    * Get dependent of a users rule
    * 
-   * getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -303,7 +291,6 @@ public class UsersRulesApi {
   /**
    * Get dependents for a users rule
    * 
-   * getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The ID of the rule for which to retrieve dependents (required)
    * @param pageSize Number of results per page (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -319,7 +306,6 @@ public class UsersRulesApi {
   /**
    * Get dependents for a users rule
    * 
-   * getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The ID of the rule for which to retrieve dependents (required)
    * @param pageSize Number of results per page (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -347,7 +333,6 @@ public class UsersRulesApi {
   /**
    * Get dependents for a users rule
    * 
-   * getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersRulesDependentList
    * @throws ApiException if the request fails on the server
@@ -367,7 +352,6 @@ public class UsersRulesApi {
   /**
    * Get dependents for a users rule
    * 
-   * getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -397,7 +381,6 @@ public class UsersRulesApi {
   /**
    * Get the list of users rules
    * 
-   * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param types The types of the rule (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Number of results per page (optional, default to 25)
@@ -416,7 +399,6 @@ public class UsersRulesApi {
   /**
    * Get the list of users rules
    * 
-   * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param types The types of the rule (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Number of results per page (optional, default to 25)
@@ -453,7 +435,6 @@ public class UsersRulesApi {
   /**
    * Get the list of users rules
    * 
-   * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersRulesRuleList
    * @throws ApiException if the request fails on the server
@@ -473,7 +454,6 @@ public class UsersRulesApi {
   /**
    * Get the list of users rules
    * 
-   * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -503,7 +483,6 @@ public class UsersRulesApi {
   /**
    * Get the settings for a specific users rule type
    * 
-   * getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleType The type of the rule (required)
    * @return UsersRulesRuleSettings
    * @throws ApiException if the request fails on the server
@@ -516,7 +495,6 @@ public class UsersRulesApi {
   /**
    * Get the settings for a specific users rule type
    * 
-   * getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleType The type of the rule (required)
    * @return UsersRulesRuleSettings
    * @throws IOException if the request fails to be processed
@@ -535,7 +513,6 @@ public class UsersRulesApi {
   /**
    * Get the settings for a specific users rule type
    * 
-   * getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersRulesRuleSettings
    * @throws ApiException if the request fails on the server
@@ -555,7 +532,6 @@ public class UsersRulesApi {
   /**
    * Get the settings for a specific users rule type
    * 
-   * getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -585,7 +561,6 @@ public class UsersRulesApi {
   /**
    * Update an existing users rule
    * This will update an existing users rule with the specified fields.
-   * patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The ID of the rule to update (required)
    * @param body updateRuleRequest (required)
    * @return UsersRulesRule
@@ -599,7 +574,6 @@ public class UsersRulesApi {
   /**
    * Update an existing users rule
    * This will update an existing users rule with the specified fields.
-   * patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ruleId The ID of the rule to update (required)
    * @param body updateRuleRequest (required)
    * @return UsersRulesRule
@@ -621,7 +595,6 @@ public class UsersRulesApi {
   /**
    * Update an existing users rule
    * This will update an existing users rule with the specified fields.
-   * patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersRulesRule
    * @throws ApiException if the request fails on the server
@@ -641,7 +614,6 @@ public class UsersRulesApi {
   /**
    * Update an existing users rule
    * This will update an existing users rule with the specified fields.
-   * patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -671,7 +643,6 @@ public class UsersRulesApi {
   /**
    * Create a new rule
    * This will create a new rule with the specified fields.
-   * postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body usersRulesCreateRuleRequest (required)
    * @return UsersRulesRule
    * @throws ApiException if the request fails on the server
@@ -684,7 +655,6 @@ public class UsersRulesApi {
   /**
    * Create a new rule
    * This will create a new rule with the specified fields.
-   * postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body usersRulesCreateRuleRequest (required)
    * @return UsersRulesRule
    * @throws IOException if the request fails to be processed
@@ -703,7 +673,6 @@ public class UsersRulesApi {
   /**
    * Create a new rule
    * This will create a new rule with the specified fields.
-   * postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersRulesRule
    * @throws ApiException if the request fails on the server
@@ -723,7 +692,6 @@ public class UsersRulesApi {
   /**
    * Create a new rule
    * This will create a new rule with the specified fields.
-   * postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -753,7 +721,6 @@ public class UsersRulesApi {
   /**
    * Query the result of a users rule
    * This will query the result of a rule.
-   * postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body usersRulesQueryRuleRequest (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Number of results per page (optional, default to 25)
@@ -768,7 +735,6 @@ public class UsersRulesApi {
   /**
    * Query the result of a users rule
    * This will query the result of a rule.
-   * postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body usersRulesQueryRuleRequest (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Number of results per page (optional, default to 25)
@@ -793,7 +759,6 @@ public class UsersRulesApi {
   /**
    * Query the result of a users rule
    * This will query the result of a rule.
-   * postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersRulesQueryResponse
    * @throws ApiException if the request fails on the server
@@ -813,7 +778,6 @@ public class UsersRulesApi {
   /**
    * Query the result of a users rule
    * This will query the result of a rule.
-   * postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

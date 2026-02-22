@@ -103,6 +103,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.UpdateKpiRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSkillDivisionRequest;
 import com.mypurecloud.sdk.v2.model.UpdateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueue;

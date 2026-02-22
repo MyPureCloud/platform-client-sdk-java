@@ -11,12 +11,12 @@
 | **total** | **Long** |  |  [optional] |
 | **pageCount** | **Integer** | Total number of pages |  [optional] |
 | **firstUri** | **String** |  |  [optional] |
-| **nextUri** | **String** |  |  [optional] |
 | **previousUri** | **String** |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
 | **lastUri** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

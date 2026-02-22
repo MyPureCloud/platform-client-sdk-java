@@ -93,6 +93,7 @@ public class TaskManagementAggregateQueryPredicate  implements Serializable {
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASSIGNEEID("assigneeId"),
+    CASEID("caseId"),
     DIVISIONID("divisionId"),
     EXTERNALTAG("externalTag"),
     QUEUEID("queueId"),
