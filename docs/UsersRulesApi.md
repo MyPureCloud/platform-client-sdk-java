@@ -23,8 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete an existing users rule
 
-deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/users/rules/{ruleId}  
 
 Requires ANY permissions: 
@@ -82,8 +80,6 @@ null (empty response body)
 > [UsersRulesRule](UsersRulesRule) getUsersRule(ruleId)
 
 Get a users rule
-
-getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/rules/{ruleId}  
 
@@ -143,8 +139,6 @@ try {
 > [UsersRulesDependent](UsersRulesDependent) getUsersRuleDependentTypeId(ruleId, ruleType, typeId)
 
 Get dependent of a users rule
-
-getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}  
 
@@ -208,8 +202,6 @@ try {
 > [UsersRulesDependentList](UsersRulesDependentList) getUsersRuleDependents(ruleId, pageSize, pageNumber, sortOrder)
 
 Get dependents for a users rule
-
-getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/rules/{ruleId}/dependents  
 
@@ -275,8 +267,6 @@ try {
 > [UsersRulesRuleList](UsersRulesRuleList) getUsersRules(types, pageNumber, pageSize, expand, enabled, searchTerm, sortOrder)
 
 Get the list of users rules
-
-getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/rules  
 
@@ -349,8 +339,6 @@ try {
 
 Get the settings for a specific users rule type
 
-getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/users/rules/settings/{ruleType}  
 
 Requires ANY permissions: 
@@ -411,8 +399,6 @@ try {
 Update an existing users rule
 
 This will update an existing users rule with the specified fields.
-
-patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/users/rules/{ruleId}  
 
@@ -477,8 +463,6 @@ Create a new rule
 
 This will create a new rule with the specified fields.
 
-postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/users/rules  
 
 Requires ANY permissions: 
@@ -540,8 +524,6 @@ Query the result of a users rule
 
 This will query the result of a rule.
 
-postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/users/rules/query  
 
 Requires ANY permissions: 
@@ -598,4 +580,4 @@ try {
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

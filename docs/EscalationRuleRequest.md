@@ -15,6 +15,7 @@
 | **facebookEscalation** | [**EscalationTarget**](EscalationTarget) | The target integration configuration used for a Facebook message escalation. |  [optional] |
 | **instagramEscalation** | [**EscalationTarget**](EscalationTarget) | The target integration configuration used for an Instagram message escalation. |  [optional] |
 | **twitterEscalation** | [**EscalationTarget**](EscalationTarget) | The target integration configuration used for a X (formerly Twitter) message escalation. |  [optional] |
+| **googleBusinessProfileEscalation** | [**EscalationTarget**](EscalationTarget) | The target integration configuration used for a Google Business Profile message escalation. |  [optional] |
 
 
 ## Enum: StatusEnum
@@ -28,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

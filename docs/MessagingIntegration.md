@@ -11,6 +11,7 @@
 | **messagingSetting** | [**MessagingSettingReference**](MessagingSettingReference) |  |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the Integration |  [optional] |
 | **messengerType** | [**MessengerTypeEnum**](#Enum--MessengerTypeEnum) | The type of Messaging Integration |  |
+| **openExtensionType** | [**OpenExtensionTypeEnum**](#Enum--OpenExtensionTypeEnum) | The type of Open Messaging Integration Extension. Only present when 'messengerType' is 'open' and the Open Integration has an extension |  [optional] |
 | **recipient** | [**DomainEntityRef**](DomainEntityRef) | The recipient associated to the Integration. This recipient is used to associate a flow to an integration |  [optional] |
 | **dateCreated** | [**Date**](Date) | Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | [**Date**](Date) | Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -50,6 +51,16 @@
 | APPLE | &quot;apple&quot; | 
 
 
+## Enum: OpenExtensionTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NONE | &quot;None&quot; | 
+| GOOGLEBUSINESSPROFILE | &quot;GoogleBusinessProfile&quot; | 
+| YOUTUBE | &quot;YouTube&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

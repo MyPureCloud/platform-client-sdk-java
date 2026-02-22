@@ -829,4 +829,4 @@ try {
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

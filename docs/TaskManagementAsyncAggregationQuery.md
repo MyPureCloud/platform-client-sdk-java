@@ -23,6 +23,7 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ASSIGNEEID | &quot;assigneeId&quot; |
+| CASEID | &quot;caseId&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | EXTERNALTAG | &quot;externalTag&quot; |
 | QUEUEID | &quot;queueId&quot; |
@@ -89,4 +90,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_

@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAnalyticsConversationsAggregatesJob**](ConversationsApi#deleteAnalyticsConversationsAggregatesJob) | Delete/cancel an async request for conversation aggregates |
 | [**deleteAnalyticsConversationsDetailsJob**](ConversationsApi#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async details job |
 | [**deleteConversation**](ConversationsApi#deleteConversation) | Update a conversation by disconnecting all of the participants |
+| [**deleteConversationCustomattribute**](ConversationsApi#deleteConversationCustomattribute) | Delete a custom attributes record. |
 | [**deleteConversationParticipantCode**](ConversationsApi#deleteConversationParticipantCode) | Delete a code used to add a communication to this participant |
 | [**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | Remove flagged reason from conversation participant. |
 | [**deleteConversationsCallParticipantCommunicationPostflowaction**](ConversationsApi#deleteConversationsCallParticipantCommunicationPostflowaction) | Remove mandatory post call actions. |
@@ -16,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsAppleIntegrationId) | Delete an Apple messaging integration |
 | [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | Delete a Facebook messaging integration |
 | [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | Delete Instagram messaging integration |
+| [**deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | Delete an Open messaging integration with the Google Business Profile extension |
 | [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsOpenIntegrationId) | Delete an Open messaging integration |
 | [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | Delete Twitter messaging integration |
 | [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | Delete a WhatsApp messaging integration |
@@ -35,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationCommunicationAgentchecklists**](ConversationsApi#getConversationCommunicationAgentchecklists) | Get information of all checklists associated with a conversation. |
 | [**getConversationCommunicationInternalmessage**](ConversationsApi#getConversationCommunicationInternalmessage) | Get message |
 | [**getConversationCommunicationInternalmessages**](ConversationsApi#getConversationCommunicationInternalmessages) | Get messages for communication |
+| [**getConversationCustomattribute**](ConversationsApi#getConversationCustomattribute) | Get custom attributes by id |
+| [**getConversationCustomattributes**](ConversationsApi#getConversationCustomattributes) | Get a list of custom attributes for a conversation. |
 | [**getConversationParticipantSecureivrsession**](ConversationsApi#getConversationParticipantSecureivrsession) | Fetch info on a secure session |
 | [**getConversationParticipantSecureivrsessions**](ConversationsApi#getConversationParticipantSecureivrsessions) | Get a list of secure sessions for this participant. |
 | [**getConversationParticipantWrapup**](ConversationsApi#getConversationParticipantWrapup) | Get the wrap-up for this conversation participant.  |
@@ -68,6 +72,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsCobrowsesessionParticipantWrapup**](ConversationsApi#getConversationsCobrowsesessionParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsCobrowsesessionParticipantWrapupcodes**](ConversationsApi#getConversationsCobrowsesessionParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsCobrowsesessions**](ConversationsApi#getConversationsCobrowsesessions) | Get active cobrowse conversations for the logged in user |
+| [**getConversationsCustomattributesSchema**](ConversationsApi#getConversationsCustomattributesSchema) | Get a schema |
+| [**getConversationsCustomattributesSchemaVersion**](ConversationsApi#getConversationsCustomattributesSchemaVersion) | Get a specific version of a schema |
+| [**getConversationsCustomattributesSchemaVersions**](ConversationsApi#getConversationsCustomattributesSchemaVersions) | Get all versions of a CCA schema |
+| [**getConversationsCustomattributesSchemas**](ConversationsApi#getConversationsCustomattributesSchemas) | Get a list of schemas. |
+| [**getConversationsCustomattributesSchemasCoretype**](ConversationsApi#getConversationsCustomattributesSchemasCoretype) | Get the core types from which all schemas are built. |
+| [**getConversationsCustomattributesSchemasCoretypes**](ConversationsApi#getConversationsCustomattributesSchemasCoretypes) | Get the list of core types enabled for a specific namespace. |
+| [**getConversationsCustomattributesSchemasLimits**](ConversationsApi#getConversationsCustomattributesSchemasLimits) | Get quantitative limits on schemas |
 | [**getConversationsEmail**](ConversationsApi#getConversationsEmail) | Get email conversation |
 | [**getConversationsEmailMessage**](ConversationsApi#getConversationsEmailMessage) | Get conversation message |
 | [**getConversationsEmailMessages**](ConversationsApi#getConversationsEmailMessages) | Get conversation messages |
@@ -109,6 +120,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingIntegrationsInstagram**](ConversationsApi#getConversationsMessagingIntegrationsInstagram) | Get a list of Instagram Integrations |
 | [**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsInstagramIntegrationId) | Get Instagram messaging integration |
 | [**getConversationsMessagingIntegrationsOpen**](ConversationsApi#getConversationsMessagingIntegrationsOpen) | Get a list of Open messaging integrations |
+| [**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | Get an Open messaging integration with the Google Business Profile extension |
+| [**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings) | Get Google Business Profile OAuth 2 settings |
+| [**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken) | Get a Google Auth Token |
+| [**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts) | Get Google Business Profile accounts |
 | [**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsOpenIntegrationId) | Get an Open messaging integration |
 | [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi#getConversationsMessagingIntegrationsTwitter) | Get a list of Twitter Integrations |
 | [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsTwitterIntegrationId) | Get Twitter messaging integration |
@@ -129,6 +144,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsVideoDetails**](ConversationsApi#getConversationsVideoDetails) | Get video conference details (e.g. the current number of active participants). |
 | [**getConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#getConversationsVideoParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsVideosMeeting**](ConversationsApi#getConversationsVideosMeeting) | Gets a record for a given meetingId |
+| [**patchConversationCustomattributes**](ConversationsApi#patchConversationCustomattributes) | Update a single custom attributes record by amending the data with only the provided fields. |
+| [**patchConversationCustomattributesBulk**](ConversationsApi#patchConversationCustomattributesBulk) | Update a list of custom attributes record by amending the data with only the provided fields. |
 | [**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationRecordingstate**](ConversationsApi#patchConversationRecordingstate) | Update a conversation by setting its recording state |
@@ -171,6 +188,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsAppleIntegrationId) | Update an Apple messaging integration |
 | [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsFacebookIntegrationId) | Update Facebook messaging integration |
 | [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId) | Update Instagram messaging integration |
+| [**patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | Update an Open messaging integration with the Google Business Profile extension |
 | [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenIntegrationId) | Update an Open messaging integration |
 | [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsTwitterIntegrationId) | Update a Twitter messaging integration |
 | [**patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId) | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow |
@@ -234,6 +252,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsChats**](ConversationsApi#postConversationsChats) | Create a web chat conversation |
 | [**postConversationsCobrowsesessionParticipantCommunicationWrapup**](ConversationsApi#postConversationsCobrowsesessionParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsCobrowsesessionParticipantReplace**](ConversationsApi#postConversationsCobrowsesessionParticipantReplace) | Replace this participant with the specified user and/or address |
+| [**postConversationsCustomattributesSchemas**](ConversationsApi#postConversationsCustomattributesSchemas) | Create a schema |
+| [**postConversationsCustomattributesSearch**](ConversationsApi#postConversationsCustomattributesSearch) | Search resources. |
 | [**postConversationsEmailInboundmessages**](ConversationsApi#postConversationsEmailInboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it. |
 | [**postConversationsEmailMessages**](ConversationsApi#postConversationsEmailMessages) | Send an email reply |
 | [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsCopy) | Copy attachments from an email message to the current draft. |
@@ -265,6 +285,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi#postConversationsMessagingIntegrationsFacebook) | Create a Facebook Integration |
 | [**postConversationsMessagingIntegrationsInstagram**](ConversationsApi#postConversationsMessagingIntegrationsInstagram) | Create Instagram Integration |
 | [**postConversationsMessagingIntegrationsOpen**](ConversationsApi#postConversationsMessagingIntegrationsOpen) | Create an Open messaging integration |
+| [**postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile**](ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile) | Create an Open messaging integration with the Google Business Profile extension |
+| [**postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens**](ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens) | Create a Google Auth Token by exchanging the one-time auth code retrieved from Google |
 | [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi#postConversationsMessagingIntegrationsTwitter) | Create Twitter Integration |
 | [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#postConversationsMessagingIntegrationsWhatsapp) | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration |
 | [**postConversationsMessagingIntegrationsWhatsappEmbeddedsignup**](ConversationsApi#postConversationsMessagingIntegrationsWhatsappEmbeddedsignup) | Create a WhatsApp Integration using the WhatsApp embedded signup flow |
@@ -276,6 +298,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsVideoAgentconferenceCommunication**](ConversationsApi#postConversationsVideoAgentconferenceCommunication) | Create an Agent-Type video conference and assign an agent to it |
 | [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#postConversationsVideoParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsVideosMeetings**](ConversationsApi#postConversationsVideosMeetings) | Generate a meetingId for a given conferenceId |
+| [**putConversationCustomattributes**](ConversationsApi#putConversationCustomattributes) | Create or update a single custom attributes record. Updating replaces all data with the provided fields. |
+| [**putConversationCustomattributesBulk**](ConversationsApi#putConversationCustomattributesBulk) | Create or update a list of custom attributes records. Updating replaces all data with the provided fields. |
 | [**putConversationParticipantFlaggedreason**](ConversationsApi#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
 | [**putConversationSecureattributes**](ConversationsApi#putConversationSecureattributes) | Set the secure attributes on a conversation. |
 | [**putConversationTags**](ConversationsApi#putConversationTags) | Update the tags on a conversation. |
@@ -284,6 +308,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationsCallbackRecordingstate**](ConversationsApi#putConversationsCallbackRecordingstate) | Update a conversation by setting its recording state |
 | [**putConversationsChatRecordingstate**](ConversationsApi#putConversationsChatRecordingstate) | Update a conversation by setting its recording state |
 | [**putConversationsCobrowsesessionRecordingstate**](ConversationsApi#putConversationsCobrowsesessionRecordingstate) | Update a conversation by setting its recording state |
+| [**putConversationsCustomattributesSchema**](ConversationsApi#putConversationsCustomattributesSchema) | Update a schema |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi#putConversationsEmailMessagesDraft) | Update conversation draft reply |
 | [**putConversationsEmailRecordingstate**](ConversationsApi#putConversationsEmailRecordingstate) | Update a conversation by setting its recording state |
 | [**putConversationsKeyconfiguration**](ConversationsApi#putConversationsKeyconfiguration) | Update the encryption key configurations |
@@ -472,6 +497,66 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversation ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteConversationCustomattribute**
+
+
+> Void deleteConversationCustomattribute(conversationId, attributesId)
+
+Delete a custom attributes record.
+
+Wraps DELETE /api/v2/conversations/{conversationId}/customattributes/{attributesId}  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String attributesId = "attributesId_example"; // String | attributesId
+try {
+    apiInstance.deleteConversationCustomattribute(conversationId, attributesId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationCustomattribute");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **attributesId** | **String**| attributesId | 
 {: class="table-striped"}
 
 
@@ -994,6 +1079,68 @@ try {
     apiInstance.deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsInstagramIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**
+
+
+> Void deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId)
+
+Delete an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    apiInstance.deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId");
     e.printStackTrace();
 }
 ```
@@ -2158,6 +2305,126 @@ try {
 ### Return type
 
 [**InternalMessageDataEntityListing**](InternalMessageDataEntityListing)
+
+
+# **getConversationCustomattribute**
+
+
+> [CustomAttributes](CustomAttributes) getConversationCustomattribute(conversationId, attributesId)
+
+Get custom attributes by id
+
+Wraps GET /api/v2/conversations/{conversationId}/customattributes/{attributesId}  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String attributesId = "attributesId_example"; // String | attributesId
+try {
+    CustomAttributes result = apiInstance.getConversationCustomattribute(conversationId, attributesId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationCustomattribute");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **attributesId** | **String**| attributesId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CustomAttributes**](CustomAttributes)
+
+
+# **getConversationCustomattributes**
+
+
+> [CustomAttributesListing](CustomAttributesListing) getConversationCustomattributes(conversationId)
+
+Get a list of custom attributes for a conversation.
+
+Wraps GET /api/v2/conversations/{conversationId}/customattributes  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+try {
+    CustomAttributesListing result = apiInstance.getConversationCustomattributes(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationCustomattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CustomAttributesListing**](CustomAttributesListing)
 
 
 # **getConversationParticipantSecureivrsession**
@@ -4196,6 +4463,409 @@ This endpoint does not require any parameters.
 [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing)
 
 
+# **getConversationsCustomattributesSchema**
+
+
+> [ConversationDataSchema](ConversationDataSchema) getConversationsCustomattributesSchema(schemaId)
+
+Get a schema
+
+Wraps GET /api/v2/conversations/customattributes/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    ConversationDataSchema result = apiInstance.getConversationsCustomattributesSchema(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCustomattributesSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
+
+
+# **getConversationsCustomattributesSchemaVersion**
+
+
+> [ConversationDataSchema](ConversationDataSchema) getConversationsCustomattributesSchemaVersion(schemaId, versionId)
+
+Get a specific version of a schema
+
+Wraps GET /api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId}  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+String versionId = "versionId_example"; // String | Schema version
+try {
+    ConversationDataSchema result = apiInstance.getConversationsCustomattributesSchemaVersion(schemaId, versionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCustomattributesSchemaVersion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **versionId** | **String**| Schema version | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
+
+
+# **getConversationsCustomattributesSchemaVersions**
+
+
+> [ConversationDataSchemaListing](ConversationDataSchemaListing) getConversationsCustomattributesSchemaVersions(schemaId)
+
+Get all versions of a CCA schema
+
+Wraps GET /api/v2/conversations/customattributes/schemas/{schemaId}/versions  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    ConversationDataSchemaListing result = apiInstance.getConversationsCustomattributesSchemaVersions(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCustomattributesSchemaVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationDataSchemaListing**](ConversationDataSchemaListing)
+
+
+# **getConversationsCustomattributesSchemas**
+
+
+> [ConversationDataSchemaListing](ConversationDataSchemaListing) getConversationsCustomattributesSchemas()
+
+Get a list of schemas.
+
+Wraps GET /api/v2/conversations/customattributes/schemas  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    ConversationDataSchemaListing result = apiInstance.getConversationsCustomattributesSchemas();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCustomattributesSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ConversationDataSchemaListing**](ConversationDataSchemaListing)
+
+
+# **getConversationsCustomattributesSchemasCoretype**
+
+
+> [Coretype](Coretype) getConversationsCustomattributesSchemasCoretype(coreTypeName)
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName}  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String coreTypeName = "coreTypeName_example"; // String | Name of the core type
+try {
+    Coretype result = apiInstance.getConversationsCustomattributesSchemasCoretype(coreTypeName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCustomattributesSchemasCoretype");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **coreTypeName** | **String**| Name of the core type | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+# **getConversationsCustomattributesSchemasCoretypes**
+
+
+> [CoretypeListing](CoretypeListing) getConversationsCustomattributesSchemasCoretypes()
+
+Get the list of core types enabled for a specific namespace.
+
+Wraps GET /api/v2/conversations/customattributes/schemas/coretypes  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    CoretypeListing result = apiInstance.getConversationsCustomattributesSchemasCoretypes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCustomattributesSchemasCoretypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**CoretypeListing**](CoretypeListing)
+
+
+# **getConversationsCustomattributesSchemasLimits**
+
+
+> [SchemaQuantityLimits](SchemaQuantityLimits) getConversationsCustomattributesSchemasLimits()
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/conversations/customattributes/schemas/limits  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    SchemaQuantityLimits result = apiInstance.getConversationsCustomattributesSchemasLimits();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCustomattributesSchemasLimits");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
+
+
 # **getConversationsEmail**
 
 
@@ -5088,7 +5758,7 @@ try {
 
 Get media
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}  
 
@@ -6686,6 +7356,256 @@ try {
 [**OpenIntegrationEntityListing**](OpenIntegrationEntityListing)
 
 
+# **getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**
+
+
+> [GoogleBusinessProfileOpenIntegration](GoogleBusinessProfileOpenIntegration) getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, expand)
+
+Get an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+String expand = "expand_example"; // String | Expand instructions for the return value.
+try {
+    GoogleBusinessProfileOpenIntegration result = apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration)
+
+
+# **getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings**
+
+
+> [GoogleOAuthSettingsResponse](GoogleOAuthSettingsResponse) getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings()
+
+Get Google Business Profile OAuth 2 settings
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings  
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileOAuthSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    GoogleOAuthSettingsResponse result = apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**GoogleOAuthSettingsResponse**](GoogleOAuthSettingsResponse)
+
+
+# **getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken**
+
+
+> [GoogleAuthToken](GoogleAuthToken) getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId)
+
+Get a Google Auth Token
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}  
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileToken:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String tokenId = "tokenId_example"; // String | Token ID
+try {
+    GoogleAuthToken result = apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tokenId** | **String**| Token ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GoogleAuthToken**](GoogleAuthToken)
+
+
+# **getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts**
+
+
+> [GoogleBusinessProfileAccountListing](GoogleBusinessProfileAccountListing) getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId)
+
+Get Google Business Profile accounts
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts  
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileAccount:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String tokenId = "tokenId_example"; // String | Token ID
+try {
+    GoogleBusinessProfileAccountListing result = apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tokenId** | **String**| Token ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GoogleBusinessProfileAccountListing**](GoogleBusinessProfileAccountListing)
+
+
 # **getConversationsMessagingIntegrationsOpenIntegrationId**
 
 
@@ -7890,6 +8810,127 @@ try {
 ### Return type
 
 [**MeetingIdRecord**](MeetingIdRecord)
+
+
+# **patchConversationCustomattributes**
+
+
+> Void patchConversationCustomattributes(conversationId, body)
+
+Update a single custom attributes record by amending the data with only the provided fields.
+
+Wraps PATCH /api/v2/conversations/{conversationId}/customattributes  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+CustomAttributesPatchRequest body = new CustomAttributesPatchRequest(); // CustomAttributesPatchRequest | 
+try {
+    apiInstance.patchConversationCustomattributes(conversationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationCustomattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **body** | [**CustomAttributesPatchRequest**](CustomAttributesPatchRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **patchConversationCustomattributesBulk**
+
+
+> [CustomAttributesBulkUpdateResponseMap](CustomAttributesBulkUpdateResponseMap) patchConversationCustomattributesBulk(conversationId, body)
+
+Update a list of custom attributes record by amending the data with only the provided fields.
+
+Wraps PATCH /api/v2/conversations/{conversationId}/customattributes/bulk  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+List<CustomAttributesPatchRequest> body = Arrays.asList(new CustomAttributesPatchRequest()); // List<CustomAttributesPatchRequest> | 
+try {
+    CustomAttributesBulkUpdateResponseMap result = apiInstance.patchConversationCustomattributesBulk(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationCustomattributesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **body** | [**List&lt;CustomAttributesPatchRequest&gt;**](CustomAttributesPatchRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap)
 
 
 # **patchConversationParticipant**
@@ -10557,6 +11598,71 @@ try {
 ### Return type
 
 [**InstagramIntegration**](InstagramIntegration)
+
+
+# **patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**
+
+
+> [GoogleBusinessProfileOpenIntegration](GoogleBusinessProfileOpenIntegration) patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body)
+
+Update an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:googleBusinessProfileIntegration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+GoogleBusinessProfileOpenIntegrationUpdateRequest body = new GoogleBusinessProfileOpenIntegrationUpdateRequest(); // GoogleBusinessProfileOpenIntegrationUpdateRequest | GoogleBusinessProfileOpenIntegrationUpdateRequest
+try {
+    GoogleBusinessProfileOpenIntegration result = apiInstance.patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **body** | [**GoogleBusinessProfileOpenIntegrationUpdateRequest**](GoogleBusinessProfileOpenIntegrationUpdateRequest)| GoogleBusinessProfileOpenIntegrationUpdateRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration)
 
 
 # **patchConversationsMessagingIntegrationsOpenIntegrationId**
@@ -14519,6 +15625,124 @@ try {
 null (empty response body)
 
 
+# **postConversationsCustomattributesSchemas**
+
+
+> [ConversationDataSchema](ConversationDataSchema) postConversationsCustomattributesSchemas(body)
+
+Create a schema
+
+Wraps POST /api/v2/conversations/customattributes/schemas  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaAdd
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+ConversationJsonSchemaRequest body = new ConversationJsonSchemaRequest(); // ConversationJsonSchemaRequest | Schema create request body
+try {
+    ConversationDataSchema result = apiInstance.postConversationsCustomattributesSchemas(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCustomattributesSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConversationJsonSchemaRequest**](ConversationJsonSchemaRequest)| Schema create request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
+
+
+# **postConversationsCustomattributesSearch**
+
+
+> [JsonSearchResponse](JsonSearchResponse) postConversationsCustomattributesSearch(body)
+
+Search resources.
+
+Wraps POST /api/v2/conversations/customattributes/search  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+ConversationCustomAttributesSearchRequest body = new ConversationCustomAttributesSearchRequest(); // ConversationCustomAttributesSearchRequest | Search request options
+try {
+    JsonSearchResponse result = apiInstance.postConversationsCustomattributesSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCustomattributesSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConversationCustomAttributesSearchRequest**](ConversationCustomAttributesSearchRequest)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JsonSearchResponse**](JsonSearchResponse)
+
+
 # **postConversationsEmailInboundmessages**
 
 
@@ -15326,7 +16550,7 @@ try {
 
 Create a URL to upload a message media file
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads  
 
@@ -16448,6 +17672,132 @@ try {
 [**OpenIntegration**](OpenIntegration)
 
 
+# **postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile**
+
+
+> [GoogleBusinessProfileOpenIntegration](GoogleBusinessProfileOpenIntegration) postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body)
+
+Create an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile  
+
+Requires ALL permissions: 
+
+* messaging:googleBusinessProfileIntegration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+GoogleBusinessProfileOpenIntegrationRequest body = new GoogleBusinessProfileOpenIntegrationRequest(); // GoogleBusinessProfileOpenIntegrationRequest | GoogleBusinessProfileOpenIntegrationRequest
+try {
+    GoogleBusinessProfileOpenIntegration result = apiInstance.postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**GoogleBusinessProfileOpenIntegrationRequest**](GoogleBusinessProfileOpenIntegrationRequest)| GoogleBusinessProfileOpenIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration)
+
+
+# **postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens**
+
+
+> [GoogleAuthToken](GoogleAuthToken) postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body)
+
+Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens  
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileToken:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+GoogleAuthTokenRequest body = new GoogleAuthTokenRequest(); // GoogleAuthTokenRequest | GoogleAuthTokenRequest
+try {
+    GoogleAuthToken result = apiInstance.postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**GoogleAuthTokenRequest**](GoogleAuthTokenRequest)| GoogleAuthTokenRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GoogleAuthToken**](GoogleAuthToken)
+
+
 # **postConversationsMessagingIntegrationsTwitter**
 
 
@@ -17128,6 +18478,128 @@ try {
 [**MeetingIdRecord**](MeetingIdRecord)
 
 
+# **putConversationCustomattributes**
+
+
+> [CustomAttributesIdResponse](CustomAttributesIdResponse) putConversationCustomattributes(conversationId, body)
+
+Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+
+Wraps PUT /api/v2/conversations/{conversationId}/customattributes  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+CustomAttributesUpdateRequest body = new CustomAttributesUpdateRequest(); // CustomAttributesUpdateRequest | 
+try {
+    CustomAttributesIdResponse result = apiInstance.putConversationCustomattributes(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationCustomattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **body** | [**CustomAttributesUpdateRequest**](CustomAttributesUpdateRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CustomAttributesIdResponse**](CustomAttributesIdResponse)
+
+
+# **putConversationCustomattributesBulk**
+
+
+> [CustomAttributesBulkUpdateResponseMap](CustomAttributesBulkUpdateResponseMap) putConversationCustomattributesBulk(conversationId, body)
+
+Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+
+Wraps PUT /api/v2/conversations/{conversationId}/customattributes/bulk  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+List<CustomAttributesUpdateRequest> body = Arrays.asList(new CustomAttributesUpdateRequest()); // List<CustomAttributesUpdateRequest> | 
+try {
+    CustomAttributesBulkUpdateResponseMap result = apiInstance.putConversationCustomattributesBulk(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationCustomattributesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **body** | [**List&lt;CustomAttributesUpdateRequest&gt;**](CustomAttributesUpdateRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap)
+
+
 # **putConversationParticipantFlaggedreason**
 
 
@@ -17625,6 +19097,67 @@ try {
 ### Return type
 
 **String**
+
+
+# **putConversationsCustomattributesSchema**
+
+
+> [ConversationDataSchema](ConversationDataSchema) putConversationsCustomattributesSchema(schemaId, body)
+
+Update a schema
+
+Wraps PUT /api/v2/conversations/customattributes/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaEdit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+ConversationSchemaUpdateRequest body = new ConversationSchemaUpdateRequest(); // ConversationSchemaUpdateRequest | Schema update request body
+try {
+    ConversationDataSchema result = apiInstance.putConversationsCustomattributesSchema(schemaId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsCustomattributesSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **body** | [**ConversationSchemaUpdateRequest**](ConversationSchemaUpdateRequest)| Schema update request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
 
 
 # **putConversationsEmailMessagesDraft**
@@ -18613,4 +20146,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:246.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
