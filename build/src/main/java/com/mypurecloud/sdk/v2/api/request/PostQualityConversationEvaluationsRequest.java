@@ -95,6 +95,20 @@ public class PostQualityConversationEvaluationsRequest {
 	    return this;
 	} 
 
+	private String idempotencyKey;
+	public String getIdempotencyKey() {
+		return this.idempotencyKey;
+	}
+
+	public void setIdempotencyKey(String idempotencyKey) {
+		this.idempotencyKey = idempotencyKey;
+	}
+
+	public PostQualityConversationEvaluationsRequest withIdempotencyKey(String idempotencyKey) {
+	    this.setIdempotencyKey(idempotencyKey);
+	    return this;
+	} 
+
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -147,6 +161,8 @@ public class PostQualityConversationEvaluationsRequest {
 
                 .withQueryParameters("expand", "", expand)
         
+                .withHeaderParameter("Idempotency-Key", idempotencyKey)
+        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -182,6 +198,11 @@ public class PostQualityConversationEvaluationsRequest {
 
 		public Builder withBody(EvaluationCreateBody body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withIdempotencyKey(String idempotencyKey) {
+			request.setIdempotencyKey(idempotencyKey);
 			return this;
 		}
 

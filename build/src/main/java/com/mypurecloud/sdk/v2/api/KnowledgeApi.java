@@ -78,6 +78,11 @@ import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestPatch;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSearchPreviewRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSearchPreviewResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSettingListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeSettingsRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSettingsResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobResponse;
 import com.mypurecloud.sdk.v2.model.LabelCreateRequest;
@@ -114,6 +119,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLabelReque
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSynchronizeJobRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentsRequest;
@@ -147,6 +153,8 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGro
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUploadsUrlsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebasesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseCategoryRequest;
@@ -160,6 +168,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLabelReques
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseParseJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentCopiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentFeedbackRequest;
@@ -197,6 +206,8 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesServi
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSynchronizeJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchPreviewRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
 
@@ -995,6 +1006,81 @@ public class KnowledgeApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteKnowledgeKnowledgebaseSynchronizeJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete Knowledge setting.
+   * 
+   * @param knowledgeSettingId Knowledge Setting ID. (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeSetting(String knowledgeSettingId) throws IOException, ApiException {
+     deleteKnowledgeSetting(createDeleteKnowledgeSettingRequest(knowledgeSettingId));
+  }
+
+  /**
+   * Delete Knowledge setting.
+   * 
+   * @param knowledgeSettingId Knowledge Setting ID. (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeSettingWithHttpInfo(String knowledgeSettingId) throws IOException {
+    return deleteKnowledgeSetting(createDeleteKnowledgeSettingRequest(knowledgeSettingId).withHttpInfo());
+  }
+
+  private DeleteKnowledgeSettingRequest createDeleteKnowledgeSettingRequest(String knowledgeSettingId) {
+    return DeleteKnowledgeSettingRequest.builder()
+            .withKnowledgeSettingId(knowledgeSettingId)
+
+            .build();
+  }
+
+  /**
+   * Delete Knowledge setting.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeSetting(DeleteKnowledgeSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Knowledge setting.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeSetting(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -4091,6 +4177,186 @@ public class KnowledgeApi {
   }
 
   /**
+   * Get Knowledge setting.
+   * 
+   * @param knowledgeSettingId Knowledge Setting ID. (required)
+   * @return KnowledgeSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSettingsResponse getKnowledgeSetting(String knowledgeSettingId) throws IOException, ApiException {
+    return  getKnowledgeSetting(createGetKnowledgeSettingRequest(knowledgeSettingId));
+  }
+
+  /**
+   * Get Knowledge setting.
+   * 
+   * @param knowledgeSettingId Knowledge Setting ID. (required)
+   * @return KnowledgeSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSettingsResponse> getKnowledgeSettingWithHttpInfo(String knowledgeSettingId) throws IOException {
+    return getKnowledgeSetting(createGetKnowledgeSettingRequest(knowledgeSettingId).withHttpInfo());
+  }
+
+  private GetKnowledgeSettingRequest createGetKnowledgeSettingRequest(String knowledgeSettingId) {
+    return GetKnowledgeSettingRequest.builder()
+            .withKnowledgeSettingId(knowledgeSettingId)
+
+            .build();
+  }
+
+  /**
+   * Get Knowledge setting.
+   * 
+   * @param request The request object
+   * @return KnowledgeSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSettingsResponse getKnowledgeSetting(GetKnowledgeSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Knowledge setting.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSettingsResponse> getKnowledgeSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Knowledge settings.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param name Knowledge setting name to search upon. (optional)
+   * @param sourceId Source ID to filter knowledge settings by. (optional)
+   * @param sortBy Field to sort the knowledge settings on. (optional)
+   * @param sortOrder Sorting order for knowledge settings. (optional)
+   * @return KnowledgeSettingListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSettingListing getKnowledgeSettings(String before, String after, String pageSize, String name, String sourceId, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getKnowledgeSettings(createGetKnowledgeSettingsRequest(before, after, pageSize, name, sourceId, sortBy, sortOrder));
+  }
+
+  /**
+   * Get Knowledge settings.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param name Knowledge setting name to search upon. (optional)
+   * @param sourceId Source ID to filter knowledge settings by. (optional)
+   * @param sortBy Field to sort the knowledge settings on. (optional)
+   * @param sortOrder Sorting order for knowledge settings. (optional)
+   * @return KnowledgeSettingListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSettingListing> getKnowledgeSettingsWithHttpInfo(String before, String after, String pageSize, String name, String sourceId, String sortBy, String sortOrder) throws IOException {
+    return getKnowledgeSettings(createGetKnowledgeSettingsRequest(before, after, pageSize, name, sourceId, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetKnowledgeSettingsRequest createGetKnowledgeSettingsRequest(String before, String after, String pageSize, String name, String sourceId, String sortBy, String sortOrder) {
+    return GetKnowledgeSettingsRequest.builder()
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withName(name)
+
+            .withSourceId(sourceId)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .build();
+  }
+
+  /**
+   * Get Knowledge settings.
+   * 
+   * @param request The request object
+   * @return KnowledgeSettingListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSettingListing getKnowledgeSettings(GetKnowledgeSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSettingListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSettingListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Knowledge settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSettingListing> getKnowledgeSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSettingListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSettingListing> response = (ApiResponse<KnowledgeSettingListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSettingListing> response = (ApiResponse<KnowledgeSettingListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update search result.
    * 
    * @param sessionId Knowledge guest session ID. (required)
@@ -5200,6 +5466,88 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UnansweredPhraseGroupUpdateResponse> response = (ApiResponse<UnansweredPhraseGroupUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Knowledge setting.
+   * 
+   * @param knowledgeSettingId Knowledge Setting ID. (required)
+   * @param body  (required)
+   * @return KnowledgeSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSettingsResponse patchKnowledgeSetting(String knowledgeSettingId, KnowledgeSettingsRequest body) throws IOException, ApiException {
+    return  patchKnowledgeSetting(createPatchKnowledgeSettingRequest(knowledgeSettingId, body));
+  }
+
+  /**
+   * Update Knowledge setting.
+   * 
+   * @param knowledgeSettingId Knowledge Setting ID. (required)
+   * @param body  (required)
+   * @return KnowledgeSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSettingsResponse> patchKnowledgeSettingWithHttpInfo(String knowledgeSettingId, KnowledgeSettingsRequest body) throws IOException {
+    return patchKnowledgeSetting(createPatchKnowledgeSettingRequest(knowledgeSettingId, body).withHttpInfo());
+  }
+
+  private PatchKnowledgeSettingRequest createPatchKnowledgeSettingRequest(String knowledgeSettingId, KnowledgeSettingsRequest body) {
+    return PatchKnowledgeSettingRequest.builder()
+            .withKnowledgeSettingId(knowledgeSettingId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Knowledge setting.
+   * 
+   * @param request The request object
+   * @return KnowledgeSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSettingsResponse patchKnowledgeSetting(PatchKnowledgeSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Knowledge setting.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSettingsResponse> patchKnowledgeSetting(ApiRequest<KnowledgeSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8257,6 +8605,162 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeBase> response = (ApiResponse<KnowledgeBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Knowledge Search Preview
+   * 
+   * @param body  (optional)
+   * @return KnowledgeSearchPreviewResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSearchPreviewResponse postKnowledgeSearchPreview(KnowledgeSearchPreviewRequest body) throws IOException, ApiException {
+    return  postKnowledgeSearchPreview(createPostKnowledgeSearchPreviewRequest(body));
+  }
+
+  /**
+   * Get Knowledge Search Preview
+   * 
+   * @param body  (optional)
+   * @return KnowledgeSearchPreviewResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSearchPreviewResponse> postKnowledgeSearchPreviewWithHttpInfo(KnowledgeSearchPreviewRequest body) throws IOException {
+    return postKnowledgeSearchPreview(createPostKnowledgeSearchPreviewRequest(body).withHttpInfo());
+  }
+
+  private PostKnowledgeSearchPreviewRequest createPostKnowledgeSearchPreviewRequest(KnowledgeSearchPreviewRequest body) {
+    return PostKnowledgeSearchPreviewRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get Knowledge Search Preview
+   * 
+   * @param request The request object
+   * @return KnowledgeSearchPreviewResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSearchPreviewResponse postKnowledgeSearchPreview(PostKnowledgeSearchPreviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSearchPreviewResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSearchPreviewResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Knowledge Search Preview
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSearchPreviewResponse> postKnowledgeSearchPreview(ApiRequest<KnowledgeSearchPreviewRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSearchPreviewResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSearchPreviewResponse> response = (ApiResponse<KnowledgeSearchPreviewResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSearchPreviewResponse> response = (ApiResponse<KnowledgeSearchPreviewResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create Knowledge setting.
+   * 
+   * @param body  (optional)
+   * @return KnowledgeSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSettingsResponse postKnowledgeSettings(KnowledgeSettingsRequest body) throws IOException, ApiException {
+    return  postKnowledgeSettings(createPostKnowledgeSettingsRequest(body));
+  }
+
+  /**
+   * Create Knowledge setting.
+   * 
+   * @param body  (optional)
+   * @return KnowledgeSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSettingsResponse> postKnowledgeSettingsWithHttpInfo(KnowledgeSettingsRequest body) throws IOException {
+    return postKnowledgeSettings(createPostKnowledgeSettingsRequest(body).withHttpInfo());
+  }
+
+  private PostKnowledgeSettingsRequest createPostKnowledgeSettingsRequest(KnowledgeSettingsRequest body) {
+    return PostKnowledgeSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create Knowledge setting.
+   * 
+   * @param request The request object
+   * @return KnowledgeSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSettingsResponse postKnowledgeSettings(PostKnowledgeSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Knowledge setting.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSettingsResponse> postKnowledgeSettings(ApiRequest<KnowledgeSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

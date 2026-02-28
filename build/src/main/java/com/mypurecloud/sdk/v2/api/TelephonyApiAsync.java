@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.Callmessage;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MediaRegions;
+import com.mypurecloud.sdk.v2.model.OrganizationCallMetrics;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
 import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
@@ -28,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentsGreetingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyCallsMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
@@ -194,6 +196,81 @@ public class TelephonyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the concurrent call metrics for a given organization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OrganizationCallMetrics> getTelephonyCallsMetricsAsync(GetTelephonyCallsMetricsRequest request, final AsyncApiCallback<OrganizationCallMetrics> callback) {
+    try {
+      final SettableFuture<OrganizationCallMetrics> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrganizationCallMetrics>() {}, new AsyncApiCallback<ApiResponse<OrganizationCallMetrics>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrganizationCallMetrics> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the concurrent call metrics for a given organization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OrganizationCallMetrics>> getTelephonyCallsMetricsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationCallMetrics>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OrganizationCallMetrics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrganizationCallMetrics>() {}, new AsyncApiCallback<ApiResponse<OrganizationCallMetrics>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrganizationCallMetrics> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrganizationCallMetrics> response = (ApiResponse<OrganizationCallMetrics>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrganizationCallMetrics> response = (ApiResponse<OrganizationCallMetrics>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

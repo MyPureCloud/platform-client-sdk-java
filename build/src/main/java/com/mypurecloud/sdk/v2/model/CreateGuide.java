@@ -45,7 +45,8 @@ public class CreateGuide  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MANUAL("Manual"),
     PROMPT("Prompt"),
-    DOCUMENT("Document");
+    DOCUMENT("Document"),
+    TRANSCRIPTS("Transcripts");
 
     private String value;
 

@@ -23,7 +23,6 @@ import java.io.Serializable;
 public class ConversationSchemaReference  implements Serializable {
   
   private String id = null;
-  private Integer version = null;
   private String selfUri = null;
 
   public ConversationSchemaReference() {
@@ -50,24 +49,6 @@ public class ConversationSchemaReference  implements Serializable {
   }
 
 
-  /**
-   * The version of the schema.
-   **/
-  public ConversationSchemaReference version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The version of the schema.")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -86,13 +67,12 @@ public class ConversationSchemaReference  implements Serializable {
     ConversationSchemaReference conversationSchemaReference = (ConversationSchemaReference) o;
 
     return Objects.equals(this.id, conversationSchemaReference.id) &&
-            Objects.equals(this.version, conversationSchemaReference.version) &&
             Objects.equals(this.selfUri, conversationSchemaReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, version, selfUri);
+    return Objects.hash(id, selfUri);
   }
 
   @Override
@@ -101,7 +81,6 @@ public class ConversationSchemaReference  implements Serializable {
     sb.append("class ConversationSchemaReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

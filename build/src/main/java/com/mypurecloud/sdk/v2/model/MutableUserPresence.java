@@ -30,6 +30,7 @@ public class MutableUserPresence  implements Serializable {
   private String sourceId = null;
   private Boolean primary = null;
   private PresenceDefinition presenceDefinition = null;
+  private PresenceDefinition futurePresenceDefinition = null;
   private String message = null;
   private Date modifiedDate = null;
   private String selfUri = null;
@@ -146,6 +147,13 @@ public class MutableUserPresence  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The definition of the user's desired future presence")
+  @JsonProperty("futurePresenceDefinition")
+  public PresenceDefinition getFuturePresenceDefinition() {
+    return futurePresenceDefinition;
+  }
+
+
   /**
    **/
   public MutableUserPresence message(String message) {
@@ -204,6 +212,7 @@ public class MutableUserPresence  implements Serializable {
             Objects.equals(this.sourceId, mutableUserPresence.sourceId) &&
             Objects.equals(this.primary, mutableUserPresence.primary) &&
             Objects.equals(this.presenceDefinition, mutableUserPresence.presenceDefinition) &&
+            Objects.equals(this.futurePresenceDefinition, mutableUserPresence.futurePresenceDefinition) &&
             Objects.equals(this.message, mutableUserPresence.message) &&
             Objects.equals(this.modifiedDate, mutableUserPresence.modifiedDate) &&
             Objects.equals(this.selfUri, mutableUserPresence.selfUri);
@@ -211,7 +220,7 @@ public class MutableUserPresence  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, source, sourceId, primary, presenceDefinition, message, modifiedDate, selfUri);
+    return Objects.hash(id, name, source, sourceId, primary, presenceDefinition, futurePresenceDefinition, message, modifiedDate, selfUri);
   }
 
   @Override
@@ -225,6 +234,7 @@ public class MutableUserPresence  implements Serializable {
     sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
     sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
     sb.append("    presenceDefinition: ").append(toIndentedString(presenceDefinition)).append("\n");
+    sb.append("    futurePresenceDefinition: ").append(toIndentedString(futurePresenceDefinition)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

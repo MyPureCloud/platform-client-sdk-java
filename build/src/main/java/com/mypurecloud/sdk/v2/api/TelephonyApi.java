@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.Callmessage;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MediaRegions;
+import com.mypurecloud.sdk.v2.model.OrganizationCallMetrics;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
 import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
@@ -25,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentsGreetingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyCallsMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
@@ -199,6 +201,84 @@ public class TelephonyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the concurrent call metrics for a given organization.
+   * 
+   * @param metricType Flag to indicate metric type to fetch. (optional, default to cloud)
+   * @return OrganizationCallMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationCallMetrics getTelephonyCallsMetrics(String metricType) throws IOException, ApiException {
+    return  getTelephonyCallsMetrics(createGetTelephonyCallsMetricsRequest(metricType));
+  }
+
+  /**
+   * Get the concurrent call metrics for a given organization.
+   * 
+   * @param metricType Flag to indicate metric type to fetch. (optional, default to cloud)
+   * @return OrganizationCallMetrics
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationCallMetrics> getTelephonyCallsMetricsWithHttpInfo(String metricType) throws IOException {
+    return getTelephonyCallsMetrics(createGetTelephonyCallsMetricsRequest(metricType).withHttpInfo());
+  }
+
+  private GetTelephonyCallsMetricsRequest createGetTelephonyCallsMetricsRequest(String metricType) {
+    return GetTelephonyCallsMetricsRequest.builder()
+            .withMetricType(metricType)
+
+            .build();
+  }
+
+  /**
+   * Get the concurrent call metrics for a given organization.
+   * 
+   * @param request The request object
+   * @return OrganizationCallMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationCallMetrics getTelephonyCallsMetrics(GetTelephonyCallsMetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationCallMetrics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationCallMetrics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the concurrent call metrics for a given organization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationCallMetrics> getTelephonyCallsMetrics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationCallMetrics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationCallMetrics> response = (ApiResponse<OrganizationCallMetrics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationCallMetrics> response = (ApiResponse<OrganizationCallMetrics>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.RecordingForm;
 import com.mypurecloud.sdk.v2.model.RecordingMessageReceipt;
 import com.mypurecloud.sdk.v2.model.RecordingNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.RecordingRoadsideAssistance;
+import com.mypurecloud.sdk.v2.model.RichLink;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -188,6 +189,7 @@ public class RecordingMessagingMessage  implements Serializable {
   private PaymentResponse paymentResponse = null;
   private RecordingForm form = null;
   private RecordingRoadsideAssistance roadsideAssistance = null;
+  private RichLink richLink = null;
   private List<RecordingMessageReceipt> messageReceipts = null;
 
   public RecordingMessagingMessage() {
@@ -744,6 +746,24 @@ public class RecordingMessagingMessage  implements Serializable {
 
 
   /**
+   * Rich Link content.
+   **/
+  public RecordingMessagingMessage richLink(RichLink richLink) {
+    this.richLink = richLink;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Rich Link content.")
+  @JsonProperty("richLink")
+  public RichLink getRichLink() {
+    return richLink;
+  }
+  public void setRichLink(RichLink richLink) {
+    this.richLink = richLink;
+  }
+
+
+  /**
    * List of message receipts
    **/
   public RecordingMessagingMessage messageReceipts(List<RecordingMessageReceipt> messageReceipts) {
@@ -801,12 +821,13 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.paymentResponse, recordingMessagingMessage.paymentResponse) &&
             Objects.equals(this.form, recordingMessagingMessage.form) &&
             Objects.equals(this.roadsideAssistance, recordingMessagingMessage.roadsideAssistance) &&
+            Objects.equals(this.richLink, recordingMessagingMessage.richLink) &&
             Objects.equals(this.messageReceipts, recordingMessagingMessage.messageReceipts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, status, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, buttonResponses, story, cards, notificationTemplate, datePicker, listPicker, contentType, socialVisibility, events, interactiveApplication, paymentRequest, paymentResponse, form, roadsideAssistance, messageReceipts);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, status, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, buttonResponses, story, cards, notificationTemplate, datePicker, listPicker, contentType, socialVisibility, events, interactiveApplication, paymentRequest, paymentResponse, form, roadsideAssistance, richLink, messageReceipts);
   }
 
   @Override
@@ -844,6 +865,7 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    paymentResponse: ").append(toIndentedString(paymentResponse)).append("\n");
     sb.append("    form: ").append(toIndentedString(form)).append("\n");
     sb.append("    roadsideAssistance: ").append(toIndentedString(roadsideAssistance)).append("\n");
+    sb.append("    richLink: ").append(toIndentedString(richLink)).append("\n");
     sb.append("    messageReceipts: ").append(toIndentedString(messageReceipts)).append("\n");
     sb.append("}");
     return sb.toString();

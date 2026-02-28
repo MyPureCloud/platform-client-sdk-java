@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationAttributeProperties;
 import com.mypurecloud.sdk.v2.model.ParticipantDataProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -44,6 +45,8 @@ public class CopilotContextValue  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVEINTENT("ActiveIntent"),
+    CONVERSATIONATTRIBUTE("ConversationAttribute"),
     PARTICIPANTDATA("ParticipantData");
 
     private String value;
@@ -73,6 +76,7 @@ public class CopilotContextValue  implements Serializable {
   }
   private TypeEnum type = null;
   private ParticipantDataProperties participantDataProperties = null;
+  private ConversationAttributeProperties conversationAttributeProperties = null;
 
   public CopilotContextValue() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -134,6 +138,24 @@ public class CopilotContextValue  implements Serializable {
   }
 
 
+  /**
+   * Conversation attribute properties.
+   **/
+  public CopilotContextValue conversationAttributeProperties(ConversationAttributeProperties conversationAttributeProperties) {
+    this.conversationAttributeProperties = conversationAttributeProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Conversation attribute properties.")
+  @JsonProperty("conversationAttributeProperties")
+  public ConversationAttributeProperties getConversationAttributeProperties() {
+    return conversationAttributeProperties;
+  }
+  public void setConversationAttributeProperties(ConversationAttributeProperties conversationAttributeProperties) {
+    this.conversationAttributeProperties = conversationAttributeProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -146,12 +168,13 @@ public class CopilotContextValue  implements Serializable {
 
     return Objects.equals(this.name, copilotContextValue.name) &&
             Objects.equals(this.type, copilotContextValue.type) &&
-            Objects.equals(this.participantDataProperties, copilotContextValue.participantDataProperties);
+            Objects.equals(this.participantDataProperties, copilotContextValue.participantDataProperties) &&
+            Objects.equals(this.conversationAttributeProperties, copilotContextValue.conversationAttributeProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, participantDataProperties);
+    return Objects.hash(name, type, participantDataProperties, conversationAttributeProperties);
   }
 
   @Override
@@ -162,6 +185,7 @@ public class CopilotContextValue  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    participantDataProperties: ").append(toIndentedString(participantDataProperties)).append("\n");
+    sb.append("    conversationAttributeProperties: ").append(toIndentedString(conversationAttributeProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

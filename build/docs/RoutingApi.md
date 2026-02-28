@@ -2187,8 +2187,9 @@ Get a route
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
+* routing:email:view
 * routing:email:manage
 
 ### Example
@@ -2312,8 +2313,9 @@ Get routes
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
+* routing:email:view
 * routing:email:manage
 
 ### Example
@@ -10573,4 +10575,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_

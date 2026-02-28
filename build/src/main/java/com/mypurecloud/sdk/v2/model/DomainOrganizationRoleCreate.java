@@ -198,13 +198,14 @@ public class DomainOrganizationRoleCreate  implements Serializable {
 
 
   /**
+   * Set baseLicense only while updating license using PUT /license endpoint
    **/
   public DomainOrganizationRoleCreate baseLicense(String baseLicense) {
     this.baseLicense = baseLicense;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Set baseLicense only while updating license using PUT /license endpoint")
   @JsonProperty("baseLicense")
   public String getBaseLicense() {
     return baseLicense;
@@ -215,13 +216,14 @@ public class DomainOrganizationRoleCreate  implements Serializable {
 
 
   /**
+   * Set addonLicenses only while updating license using PUT /license endpoint
    **/
   public DomainOrganizationRoleCreate addonLicenses(List<String> addonLicenses) {
     this.addonLicenses = addonLicenses;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Set addonLicenses only while updating license using PUT /license endpoint")
   @JsonProperty("addonLicenses")
   public List<String> getAddonLicenses() {
     return addonLicenses;
@@ -231,7 +233,7 @@ public class DomainOrganizationRoleCreate  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The time that this role licenses were most recently updated using the PUT /license endpoint. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateLicenseLastUpdated")
   public Date getDateLicenseLastUpdated() {
     return dateLicenseLastUpdated;

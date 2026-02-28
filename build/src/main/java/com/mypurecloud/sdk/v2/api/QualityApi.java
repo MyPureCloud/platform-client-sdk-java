@@ -4525,13 +4525,14 @@ public class QualityApi {
    * 
    * @param conversationId conversationId (required)
    * @param body evaluation (required)
+   * @param idempotencyKey Idempotency key for request deduplication (optional)
    * @param expand evaluatorId (optional)
    * @return Evaluation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Evaluation postQualityConversationEvaluations(String conversationId, EvaluationCreateBody body, String expand) throws IOException, ApiException {
-    return  postQualityConversationEvaluations(createPostQualityConversationEvaluationsRequest(conversationId, body, expand));
+  public Evaluation postQualityConversationEvaluations(String conversationId, EvaluationCreateBody body, String idempotencyKey, String expand) throws IOException, ApiException {
+    return  postQualityConversationEvaluations(createPostQualityConversationEvaluationsRequest(conversationId, body, idempotencyKey, expand));
   }
 
   /**
@@ -4539,19 +4540,22 @@ public class QualityApi {
    * 
    * @param conversationId conversationId (required)
    * @param body evaluation (required)
+   * @param idempotencyKey Idempotency key for request deduplication (optional)
    * @param expand evaluatorId (optional)
    * @return Evaluation
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> postQualityConversationEvaluationsWithHttpInfo(String conversationId, EvaluationCreateBody body, String expand) throws IOException {
-    return postQualityConversationEvaluations(createPostQualityConversationEvaluationsRequest(conversationId, body, expand).withHttpInfo());
+  public ApiResponse<Evaluation> postQualityConversationEvaluationsWithHttpInfo(String conversationId, EvaluationCreateBody body, String idempotencyKey, String expand) throws IOException {
+    return postQualityConversationEvaluations(createPostQualityConversationEvaluationsRequest(conversationId, body, idempotencyKey, expand).withHttpInfo());
   }
 
-  private PostQualityConversationEvaluationsRequest createPostQualityConversationEvaluationsRequest(String conversationId, EvaluationCreateBody body, String expand) {
+  private PostQualityConversationEvaluationsRequest createPostQualityConversationEvaluationsRequest(String conversationId, EvaluationCreateBody body, String idempotencyKey, String expand) {
     return PostQualityConversationEvaluationsRequest.builder()
             .withConversationId(conversationId)
 
             .withBody(body)
+
+            .withIdempotencyKey(idempotencyKey)
 
             .withExpand(expand)
 

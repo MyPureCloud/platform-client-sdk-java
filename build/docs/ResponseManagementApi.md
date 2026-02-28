@@ -639,7 +639,7 @@ Get response libraries.
 
 Wraps POST /api/v2/responsemanagement/libraries/bulk  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * responses:library:view
 
@@ -1118,4 +1118,4 @@ try {
 [**ResponseAsset**](ResponseAsset)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_

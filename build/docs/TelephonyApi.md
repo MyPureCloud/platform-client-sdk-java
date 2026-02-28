@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**getTelephonyAgentGreetings**](TelephonyApi#getTelephonyAgentGreetings) | Get an agent's greetings. |
 | [**getTelephonyAgentsGreetingsMe**](TelephonyApi#getTelephonyAgentsGreetingsMe) | Get the agent's own greetings. |
+| [**getTelephonyCallsMetrics**](TelephonyApi#getTelephonyCallsMetrics) | Get the concurrent call metrics for a given organization. |
 | [**getTelephonyMediaregions**](TelephonyApi#getTelephonyMediaregions) | Retrieve the list of AWS regions media can stream through. |
 | [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | Get a SIP message. |
 | [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | Get SIP headers. |
@@ -129,6 +130,65 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**SelfAgentGreeting**](SelfAgentGreeting)
+
+
+# **getTelephonyCallsMetrics**
+
+
+> [OrganizationCallMetrics](OrganizationCallMetrics) getTelephonyCallsMetrics(metricType)
+
+Get the concurrent call metrics for a given organization.
+
+Wraps GET /api/v2/telephony/calls/metrics  
+
+Requires ANY permissions: 
+
+* telephony:callMetrics:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String metricType = "cloud"; // String | Flag to indicate metric type to fetch.
+try {
+    OrganizationCallMetrics result = apiInstance.getTelephonyCallsMetrics(metricType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonyCallsMetrics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **metricType** | **String**| Flag to indicate metric type to fetch. | [optional] [default to cloud]<br />**Values**: cloud, premises 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationCallMetrics**](OrganizationCallMetrics)
 
 
 # **getTelephonyMediaregions**
@@ -619,4 +679,4 @@ try {
 [**SelfAgentGreeting**](SelfAgentGreeting)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_
