@@ -6,10 +6,9 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The id of the schema. |  |
-| **version** | **Integer** | The version of the schema. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_

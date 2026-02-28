@@ -51,8 +51,12 @@
 | TH_TH | &quot;th-TH&quot; | 
 | PL_PL | &quot;pl-PL&quot; | 
 | NL_BE | &quot;nl-BE&quot; | 
+| FIL_PH | &quot;fil-PH&quot; | 
+| MS_MY | &quot;ms-MY&quot; | 
+| HE_IL | &quot;he-IL&quot; | 
+| EL_GR | &quot;el-GR&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_

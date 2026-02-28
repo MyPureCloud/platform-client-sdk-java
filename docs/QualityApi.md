@@ -3274,7 +3274,7 @@ try {
 # **postQualityConversationEvaluations**
 
 
-> [Evaluation](Evaluation) postQualityConversationEvaluations(conversationId, body, expand)
+> [Evaluation](Evaluation) postQualityConversationEvaluations(conversationId, body, idempotencyKey, expand)
 
 Create an evaluation
 
@@ -3308,9 +3308,10 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 String conversationId = "conversationId_example"; // String | conversationId
 EvaluationCreateBody body = new EvaluationCreateBody(); // EvaluationCreateBody | evaluation
+String idempotencyKey = "idempotencyKey_example"; // String | Idempotency key for request deduplication
 String expand = "expand_example"; // String | evaluatorId
 try {
-    Evaluation result = apiInstance.postQualityConversationEvaluations(conversationId, body, expand);
+    Evaluation result = apiInstance.postQualityConversationEvaluations(conversationId, body, idempotencyKey, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#postQualityConversationEvaluations");
@@ -3325,6 +3326,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **body** | [**EvaluationCreateBody**](EvaluationCreateBody)| evaluation | 
+| **idempotencyKey** | **String**| Idempotency key for request deduplication | [optional] 
 | **expand** | **String**| evaluatorId | [optional] 
 {: class="table-striped"}
 
@@ -4597,4 +4599,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_

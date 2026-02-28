@@ -33,8 +33,9 @@
 | MANUAL | &quot;Manual&quot; | 
 | PROMPT | &quot;Prompt&quot; | 
 | DOCUMENT | &quot;Document&quot; | 
+| TRANSCRIPTS | &quot;Transcripts&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_

@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId) | Delete Salesforce Knowledge integration source |
 | [**deleteKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesServicenowSourceId) | Delete ServiceNow Knowledge integration source |
 | [**deleteKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseSynchronizeJob) | Delete synchronization job |
+| [**deleteKnowledgeSetting**](KnowledgeApi#deleteKnowledgeSetting) | Delete Knowledge setting. |
 | [**getKnowledgeGuestSessionCategories**](KnowledgeApi#getKnowledgeGuestSessionCategories) | Get categories |
 | [**getKnowledgeGuestSessionDocument**](KnowledgeApi#getKnowledgeGuestSessionDocument) | Get a knowledge document by ID. |
 | [**getKnowledgeGuestSessionDocuments**](KnowledgeApi#getKnowledgeGuestSessionDocuments) | Get documents. |
@@ -47,6 +48,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroups) | Get knowledge base unanswered groups |
 | [**getKnowledgeKnowledgebaseUploadsUrlsJob**](KnowledgeApi#getKnowledgeKnowledgebaseUploadsUrlsJob) | Get content upload from URL job status |
 | [**getKnowledgeKnowledgebases**](KnowledgeApi#getKnowledgeKnowledgebases) | Get knowledge bases |
+| [**getKnowledgeSetting**](KnowledgeApi#getKnowledgeSetting) | Get Knowledge setting. |
+| [**getKnowledgeSettings**](KnowledgeApi#getKnowledgeSettings) | Get Knowledge settings. |
 | [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeGuestSessionDocumentsSearchSearchId) | Update search result. |
 | [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | Update knowledge base |
 | [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi#patchKnowledgeKnowledgebaseCategory) | Update category |
@@ -60,6 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi#patchKnowledgeKnowledgebaseParseJob) | Send update to the parse operation |
 | [**patchKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#patchKnowledgeKnowledgebaseSynchronizeJob) | Update synchronization job |
 | [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Update a Knowledge base unanswered phrase group |
+| [**patchKnowledgeSetting**](KnowledgeApi#patchKnowledgeSetting) | Update Knowledge setting. |
 | [**postKnowledgeDocumentuploads**](KnowledgeApi#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
 | [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi#postKnowledgeGuestSessionDocumentCopies) | Indicate that the document was copied by the user. |
 | [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi#postKnowledgeGuestSessionDocumentFeedback) | Give feedback on a document |
@@ -97,6 +101,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeKnowledgebaseSynchronizeJobs**](KnowledgeApi#postKnowledgeKnowledgebaseSynchronizeJobs) | Create synchronization job |
 | [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | Create content upload from URL job |
 | [**postKnowledgeKnowledgebases**](KnowledgeApi#postKnowledgeKnowledgebases) | Create new knowledge base |
+| [**postKnowledgeSearchPreview**](KnowledgeApi#postKnowledgeSearchPreview) | Get Knowledge Search Preview |
+| [**postKnowledgeSettings**](KnowledgeApi#postKnowledgeSettings) | Create Knowledge setting. |
 | [**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | Update Salesforce Knowledge integration source |
 | [**putKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId) | Update ServiceNow Knowledge integration source |
 {: class="table-striped"}
@@ -698,6 +704,64 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **syncJobId** | **String**| Synchronization job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteKnowledgeSetting**
+
+
+> Void deleteKnowledgeSetting(knowledgeSettingId)
+
+Delete Knowledge setting.
+
+Wraps DELETE /api/v2/knowledge/settings/{knowledgeSettingId}  
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeSettingId = "knowledgeSettingId_example"; // String | Knowledge Setting ID.
+try {
+    apiInstance.deleteKnowledgeSetting(knowledgeSettingId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeSettingId** | **String**| Knowledge Setting ID. | 
 {: class="table-striped"}
 
 
@@ -2861,6 +2925,136 @@ try {
 [**KnowledgeBaseListing**](KnowledgeBaseListing)
 
 
+# **getKnowledgeSetting**
+
+
+> [KnowledgeSettingsResponse](KnowledgeSettingsResponse) getKnowledgeSetting(knowledgeSettingId)
+
+Get Knowledge setting.
+
+Wraps GET /api/v2/knowledge/settings/{knowledgeSettingId}  
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeSettingId = "knowledgeSettingId_example"; // String | Knowledge Setting ID.
+try {
+    KnowledgeSettingsResponse result = apiInstance.getKnowledgeSetting(knowledgeSettingId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeSettingId** | **String**| Knowledge Setting ID. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
+
+
+# **getKnowledgeSettings**
+
+
+> [KnowledgeSettingListing](KnowledgeSettingListing) getKnowledgeSettings(before, after, pageSize, name, sourceId, sortBy, sortOrder)
+
+Get Knowledge settings.
+
+Wraps GET /api/v2/knowledge/settings  
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String name = "name_example"; // String | Knowledge setting name to search upon.
+String sourceId = "sourceId_example"; // String | Source ID to filter knowledge settings by.
+String sortBy = "sortBy_example"; // String | Field to sort the knowledge settings on.
+String sortOrder = "sortOrder_example"; // String | Sorting order for knowledge settings.
+try {
+    KnowledgeSettingListing result = apiInstance.getKnowledgeSettings(before, after, pageSize, name, sourceId, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **name** | **String**| Knowledge setting name to search upon. | [optional] 
+| **sourceId** | **String**| Source ID to filter knowledge settings by. | [optional] 
+| **sortBy** | **String**| Field to sort the knowledge settings on. | [optional]<br />**Values**: dateModified, name 
+| **sortOrder** | **String**| Sorting order for knowledge settings. | [optional]<br />**Values**: Asc, Desc 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSettingListing**](KnowledgeSettingListing)
+
+
 # **patchKnowledgeGuestSessionDocumentsSearchSearchId**
 
 
@@ -3665,6 +3859,67 @@ try {
 ### Return type
 
 [**UnansweredPhraseGroupUpdateResponse**](UnansweredPhraseGroupUpdateResponse)
+
+
+# **patchKnowledgeSetting**
+
+
+> [KnowledgeSettingsResponse](KnowledgeSettingsResponse) patchKnowledgeSetting(knowledgeSettingId, body)
+
+Update Knowledge setting.
+
+Wraps PATCH /api/v2/knowledge/settings/{knowledgeSettingId}  
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeSettingId = "knowledgeSettingId_example"; // String | Knowledge Setting ID.
+KnowledgeSettingsRequest body = new KnowledgeSettingsRequest(); // KnowledgeSettingsRequest | 
+try {
+    KnowledgeSettingsResponse result = apiInstance.patchKnowledgeSetting(knowledgeSettingId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#patchKnowledgeSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeSettingId** | **String**| Knowledge Setting ID. | 
+| **body** | [**KnowledgeSettingsRequest**](KnowledgeSettingsRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
 
 
 # **postKnowledgeDocumentuploads**
@@ -5829,6 +6084,124 @@ try {
 [**KnowledgeBase**](KnowledgeBase)
 
 
+# **postKnowledgeSearchPreview**
+
+
+> [KnowledgeSearchPreviewResponse](KnowledgeSearchPreviewResponse) postKnowledgeSearchPreview(body)
+
+Get Knowledge Search Preview
+
+Wraps POST /api/v2/knowledge/search/preview  
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:searchPreview
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+KnowledgeSearchPreviewRequest body = new KnowledgeSearchPreviewRequest(); // KnowledgeSearchPreviewRequest | 
+try {
+    KnowledgeSearchPreviewResponse result = apiInstance.postKnowledgeSearchPreview(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeSearchPreview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**KnowledgeSearchPreviewRequest**](KnowledgeSearchPreviewRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSearchPreviewResponse**](KnowledgeSearchPreviewResponse)
+
+
+# **postKnowledgeSettings**
+
+
+> [KnowledgeSettingsResponse](KnowledgeSettingsResponse) postKnowledgeSettings(body)
+
+Create Knowledge setting.
+
+Wraps POST /api/v2/knowledge/settings  
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+KnowledgeSettingsRequest body = new KnowledgeSettingsRequest(); // KnowledgeSettingsRequest | 
+try {
+    KnowledgeSettingsResponse result = apiInstance.postKnowledgeSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**KnowledgeSettingsRequest**](KnowledgeSettingsRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
+
+
 # **putKnowledgeKnowledgebaseSourcesSalesforceSourceId**
 
 
@@ -5955,4 +6328,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_

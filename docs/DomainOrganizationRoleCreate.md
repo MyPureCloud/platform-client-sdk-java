@@ -14,9 +14,9 @@
 | **permissionPolicies** | [**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy) |  |  [optional] |
 | **userCount** | **Integer** |  |  [optional] |
 | **roleNeedsUpdate** | **Boolean** | Optional unless patch operation. |  [optional] |
-| **baseLicense** | **String** |  |  [optional] |
-| **addonLicenses** | **List&lt;String&gt;** |  |  [optional] |
-| **dateLicenseLastUpdated** | [**Date**](Date) | The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **baseLicense** | **String** | Set baseLicense only while updating license using PUT /license endpoint |  [optional] |
+| **addonLicenses** | **List&lt;String&gt;** | Set addonLicenses only while updating license using PUT /license endpoint |  [optional] |
+| **dateLicenseLastUpdated** | [**Date**](Date) | The time that this role licenses were most recently updated using the PUT /license endpoint. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **base** | **Boolean** |  |  [optional] |
 | **_default** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -24,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:247.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_
