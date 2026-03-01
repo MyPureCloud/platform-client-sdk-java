@@ -210,6 +210,7 @@
 | REJECT | &quot;Reject&quot; | 
 | REVERSE | &quot;Reverse&quot; | 
 | SEND | &quot;Send&quot; | 
+| BULKDELETE | &quot;BulkDelete&quot; | 
 | HARDDELETE | &quot;HardDelete&quot; | 
 | SOFTDELETE | &quot;SoftDelete&quot; | 
 | SUBMIT | &quot;Submit&quot; | 
@@ -441,6 +442,7 @@
 | CONVERSATION | &quot;Conversation&quot; | 
 | ORGANIZATIONSUSPENSION | &quot;OrganizationSuspension&quot; | 
 | OPERATIONALEVENT | &quot;OperationalEvent&quot; | 
+| SENDER | &quot;Sender&quot; | 
 | ALLOWANDBLOCKNUMBER | &quot;AllowAndBlockNumber&quot; | 
 | PARTICIPANT | &quot;Participant&quot; | 
 | CONTACTSCHEMA | &quot;ContactSchema&quot; | 
