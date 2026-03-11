@@ -3241,7 +3241,7 @@ try {
 # **getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**
 
 
-> [CapacityPlanStaffingGroupAllocationsResponse](CapacityPlanStaffingGroupAllocationsResponse) getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId)
+> [CapacityPlanStaffingGroupAllocationsResponse](CapacityPlanStaffingGroupAllocationsResponse) getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, granularity)
 
 Get a capacity plan's staffing group allocations
 
@@ -3275,8 +3275,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+String granularity = "granularity_example"; // String | Granularity to access staffing group data, defaults to weekly
 try {
-    CapacityPlanStaffingGroupAllocationsResponse result = apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId);
+    CapacityPlanStaffingGroupAllocationsResponse result = apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, granularity);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations");
@@ -3291,6 +3292,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **capacityPlanId** | **String**| The ID of the capacity plan | 
+| **granularity** | **String**| Granularity to access staffing group data, defaults to weekly | [optional]<br />**Values**: weekly, monthly 
 {: class="table-striped"}
 
 
@@ -3363,7 +3365,7 @@ try {
 # **getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast**
 
 
-> [LongTermRequirementsResponse](LongTermRequirementsResponse) getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId)
+> [LongTermRequirementsResponse](LongTermRequirementsResponse) getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId, granularity)
 
 Get the latest long term staffing requirements for a business unit
 
@@ -3398,8 +3400,9 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | 
 LocalDate weekDateId = new LocalDate(); // LocalDate | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | forecastId of forecast
+String granularity = "granularity_example"; // String | Granularity to access staffing requirements data, defaults to weekly
 try {
-    LongTermRequirementsResponse result = apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId);
+    LongTermRequirementsResponse result = apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId, granularity);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast");
@@ -3415,6 +3418,7 @@ try {
 | **businessUnitId** | **String**|  | 
 | **weekDateId** | **LocalDate**| weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| forecastId of forecast | 
+| **granularity** | **String**| Granularity to access staffing requirements data, defaults to weekly | [optional]<br />**Values**: weekly, monthly 
 {: class="table-striped"}
 
 
@@ -17309,4 +17313,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_

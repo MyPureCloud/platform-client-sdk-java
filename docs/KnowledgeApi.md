@@ -101,6 +101,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeKnowledgebaseSynchronizeJobs**](KnowledgeApi#postKnowledgeKnowledgebaseSynchronizeJobs) | Create synchronization job |
 | [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | Create content upload from URL job |
 | [**postKnowledgeKnowledgebases**](KnowledgeApi#postKnowledgeKnowledgebases) | Create new knowledge base |
+| [**postKnowledgeSearch**](KnowledgeApi#postKnowledgeSearch) | Get Knowledge Search |
 | [**postKnowledgeSearchPreview**](KnowledgeApi#postKnowledgeSearchPreview) | Get Knowledge Search Preview |
 | [**postKnowledgeSettings**](KnowledgeApi#postKnowledgeSettings) | Create Knowledge setting. |
 | [**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | Update Salesforce Knowledge integration source |
@@ -6084,6 +6085,65 @@ try {
 [**KnowledgeBase**](KnowledgeBase)
 
 
+# **postKnowledgeSearch**
+
+
+> [KnowledgeSourcesSearchResponse](KnowledgeSourcesSearchResponse) postKnowledgeSearch(body)
+
+Get Knowledge Search
+
+Wraps POST /api/v2/knowledge/search  
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+KnowledgeSourcesSearchRequest body = new KnowledgeSourcesSearchRequest(); // KnowledgeSourcesSearchRequest | 
+try {
+    KnowledgeSourcesSearchResponse result = apiInstance.postKnowledgeSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**KnowledgeSourcesSearchRequest**](KnowledgeSourcesSearchRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSourcesSearchResponse**](KnowledgeSourcesSearchResponse)
+
+
 # **postKnowledgeSearchPreview**
 
 
@@ -6328,4 +6388,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_

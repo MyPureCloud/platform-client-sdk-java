@@ -909,4 +909,4 @@ try {
 [**CommonRule**](CommonRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_

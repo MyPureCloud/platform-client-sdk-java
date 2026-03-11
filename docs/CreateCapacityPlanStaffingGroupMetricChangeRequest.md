@@ -10,6 +10,7 @@
 | **value** | **Double** | The value of the metric |  |
 | **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric which is going to be modified for the selected staffing groups |  |
 | **notes** | **String** | Notes about the staffing groups metric changes |  [optional] |
+| **transfersFullTimeEquivalent** | [**TransfersFullTimeEquivalent**](TransfersFullTimeEquivalent) | Full time equivalent transfer from one staffing group to another |  [optional] |
 | **staffingGroupIds** | **List&lt;String&gt;** | The IDs of the staffing groups affected by the metric change |  |
 | **version** | **Integer** | The version of the capacity plan |  |
 
@@ -29,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
