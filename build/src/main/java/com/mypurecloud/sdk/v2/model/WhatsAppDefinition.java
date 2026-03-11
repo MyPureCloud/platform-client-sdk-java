@@ -97,14 +97,14 @@ public class WhatsAppDefinition  implements Serializable {
 
 
   /**
-   * List of buttons to be included in the WhatsApp messages channel
+   * List of buttons to be included in the standard WhatsApp messages channel
    **/
   public WhatsAppDefinition buttons(List<Button> buttons) {
     this.buttons = buttons;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of buttons to be included in the WhatsApp messages channel")
+  @ApiModelProperty(example = "null", value = "List of buttons to be included in the standard WhatsApp messages channel")
   @JsonProperty("buttons")
   public List<Button> getButtons() {
     return buttons;
@@ -115,14 +115,14 @@ public class WhatsAppDefinition  implements Serializable {
 
 
   /**
-   * Footer for the message in the WhatsApp messages channel
+   * Footer for the message in the standard WhatsApp messages channel
    **/
   public WhatsAppDefinition messageFooter(MessageFooter messageFooter) {
     this.messageFooter = messageFooter;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Footer for the message in the WhatsApp messages channel")
+  @ApiModelProperty(example = "null", value = "Footer for the message in the standard WhatsApp messages channel")
   @JsonProperty("messageFooter")
   public MessageFooter getMessageFooter() {
     return messageFooter;
@@ -133,14 +133,14 @@ public class WhatsAppDefinition  implements Serializable {
 
 
   /**
-   * Header for the message in the WhatsApp messages channel
+   * Header for the message in the standard WhatsApp messages channel
    **/
   public WhatsAppDefinition header(MessageHeader header) {
     this.header = header;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Header for the message in the WhatsApp messages channel")
+  @ApiModelProperty(example = "null", value = "Header for the message in the standard WhatsApp messages channel")
   @JsonProperty("header")
   public MessageHeader getHeader() {
     return header;

@@ -5541,8 +5541,7 @@ public class TaskManagementApi {
 
   /**
    * Query for workitems
-   * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
-   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
    * @param body WorkitemQueryPostRequest (required)
    * @return WorkitemPostQueryEntityListing
    * @throws ApiException if the request fails on the server
@@ -5554,8 +5553,7 @@ public class TaskManagementApi {
 
   /**
    * Query for workitems
-   * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
-   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
    * @param body WorkitemQueryPostRequest (required)
    * @return WorkitemPostQueryEntityListing
    * @throws IOException if the request fails to be processed
@@ -5573,8 +5571,7 @@ public class TaskManagementApi {
 
   /**
    * Query for workitems
-   * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
-   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
    * @param request The request object
    * @return WorkitemPostQueryEntityListing
    * @throws ApiException if the request fails on the server
@@ -5593,8 +5590,7 @@ public class TaskManagementApi {
 
   /**
    * Query for workitems
-   * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
-   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

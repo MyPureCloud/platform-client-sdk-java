@@ -95,7 +95,8 @@ public class Variable  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INPUT("Input"),
     OUTPUT("Output"),
-    INPUTANDOUTPUT("InputAndOutput");
+    INPUTANDOUTPUT("InputAndOutput"),
+    GUIDEONLY("GuideOnly");
 
     private String value;
 

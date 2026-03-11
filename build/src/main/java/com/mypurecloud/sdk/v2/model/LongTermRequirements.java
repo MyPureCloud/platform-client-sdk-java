@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.ForecastMetadata;
 import com.mypurecloud.sdk.v2.model.PlanningGroupRequirementOutput;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -29,10 +30,12 @@ public class LongTermRequirements  implements Serializable {
   
   private ForecastMetadata forecastMetadata = null;
   private Date dateGenerationStarted = null;
+  private List<YearMonth> months = null;
   private List<PlanningGroupRequirementOutput> requirementResults = null;
 
   public LongTermRequirements() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      months = new ArrayList<YearMonth>();
       requirementResults = new ArrayList<PlanningGroupRequirementOutput>();
     }
   }
@@ -75,6 +78,24 @@ public class LongTermRequirements  implements Serializable {
 
 
   /**
+   * The list of months covered by the long-term staffing requirements, formatted as yyyy-MM
+   **/
+  public LongTermRequirements months(List<YearMonth> months) {
+    this.months = months;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of months covered by the long-term staffing requirements, formatted as yyyy-MM")
+  @JsonProperty("months")
+  public List<YearMonth> getMonths() {
+    return months;
+  }
+  public void setMonths(List<YearMonth> months) {
+    this.months = months;
+  }
+
+
+  /**
    * List of planning group outputs
    **/
   public LongTermRequirements requirementResults(List<PlanningGroupRequirementOutput> requirementResults) {
@@ -104,12 +125,13 @@ public class LongTermRequirements  implements Serializable {
 
     return Objects.equals(this.forecastMetadata, longTermRequirements.forecastMetadata) &&
             Objects.equals(this.dateGenerationStarted, longTermRequirements.dateGenerationStarted) &&
+            Objects.equals(this.months, longTermRequirements.months) &&
             Objects.equals(this.requirementResults, longTermRequirements.requirementResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(forecastMetadata, dateGenerationStarted, requirementResults);
+    return Objects.hash(forecastMetadata, dateGenerationStarted, months, requirementResults);
   }
 
   @Override
@@ -119,6 +141,7 @@ public class LongTermRequirements  implements Serializable {
     
     sb.append("    forecastMetadata: ").append(toIndentedString(forecastMetadata)).append("\n");
     sb.append("    dateGenerationStarted: ").append(toIndentedString(dateGenerationStarted)).append("\n");
+    sb.append("    months: ").append(toIndentedString(months)).append("\n");
     sb.append("    requirementResults: ").append(toIndentedString(requirementResults)).append("\n");
     sb.append("}");
     return sb.toString();

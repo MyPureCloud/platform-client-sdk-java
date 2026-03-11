@@ -4767,8 +4767,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active callback conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Callback participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
    * @return CallbackConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4778,8 +4778,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active callback conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Callback participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
    * @return CallbackConversationEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -4793,8 +4793,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active callback conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Callback participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
    * @param request The request object
    * @return CallbackConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -4812,8 +4812,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active callback conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Callback participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4841,8 +4841,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active call conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Call participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
    * @return CallConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4852,8 +4852,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active call conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Call participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
    * @return CallConversationEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -4867,8 +4867,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active call conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Call participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
    * @param request The request object
    * @return CallConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -4886,8 +4886,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active call conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Call participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7305,8 +7305,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active email conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Email participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
    * @return EmailConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -7316,8 +7316,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active email conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Email participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
    * @return EmailConversationEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -7331,8 +7331,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active email conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Email participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
    * @param request The request object
    * @return EmailConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -7350,8 +7350,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active email conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Email participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7457,8 +7457,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active internal message conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their InternalMessage participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
    * @return InternalMessageConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -7468,8 +7468,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active internal message conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their InternalMessage participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
    * @return InternalMessageConversationEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -7483,8 +7483,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active internal message conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their InternalMessage participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
    * @param request The request object
    * @return InternalMessageConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -7502,8 +7502,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active internal message conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their InternalMessage participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8367,8 +8367,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active message conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Message participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
    * @return MessageConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -8378,8 +8378,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active message conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Message participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
    * @return MessageConversationEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -8393,8 +8393,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active message conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Message participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
    * @param request The request object
    * @return MessageConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -8412,8 +8412,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get active message conversations for the logged in user
-   * 
+   * Get the logged-in user's active conversations and their Message participants state.
+   * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

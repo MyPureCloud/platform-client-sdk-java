@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.TransfersFullTimeEquivalent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -81,6 +82,7 @@ public class CreateCapacityPlanStaffingGroupMetricChangeRequest  implements Seri
   }
   private MetricEnum metric = null;
   private String notes = null;
+  private TransfersFullTimeEquivalent transfersFullTimeEquivalent = null;
   private List<String> staffingGroupIds = null;
   private Integer version = null;
 
@@ -182,6 +184,24 @@ public class CreateCapacityPlanStaffingGroupMetricChangeRequest  implements Seri
 
 
   /**
+   * Full time equivalent transfer from one staffing group to another
+   **/
+  public CreateCapacityPlanStaffingGroupMetricChangeRequest transfersFullTimeEquivalent(TransfersFullTimeEquivalent transfersFullTimeEquivalent) {
+    this.transfersFullTimeEquivalent = transfersFullTimeEquivalent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Full time equivalent transfer from one staffing group to another")
+  @JsonProperty("transfersFullTimeEquivalent")
+  public TransfersFullTimeEquivalent getTransfersFullTimeEquivalent() {
+    return transfersFullTimeEquivalent;
+  }
+  public void setTransfersFullTimeEquivalent(TransfersFullTimeEquivalent transfersFullTimeEquivalent) {
+    this.transfersFullTimeEquivalent = transfersFullTimeEquivalent;
+  }
+
+
+  /**
    * The IDs of the staffing groups affected by the metric change
    **/
   public CreateCapacityPlanStaffingGroupMetricChangeRequest staffingGroupIds(List<String> staffingGroupIds) {
@@ -232,13 +252,14 @@ public class CreateCapacityPlanStaffingGroupMetricChangeRequest  implements Seri
             Objects.equals(this.value, createCapacityPlanStaffingGroupMetricChangeRequest.value) &&
             Objects.equals(this.metric, createCapacityPlanStaffingGroupMetricChangeRequest.metric) &&
             Objects.equals(this.notes, createCapacityPlanStaffingGroupMetricChangeRequest.notes) &&
+            Objects.equals(this.transfersFullTimeEquivalent, createCapacityPlanStaffingGroupMetricChangeRequest.transfersFullTimeEquivalent) &&
             Objects.equals(this.staffingGroupIds, createCapacityPlanStaffingGroupMetricChangeRequest.staffingGroupIds) &&
             Objects.equals(this.version, createCapacityPlanStaffingGroupMetricChangeRequest.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(numberOfWeeks, weekStartNumber, value, metric, notes, staffingGroupIds, version);
+    return Objects.hash(numberOfWeeks, weekStartNumber, value, metric, notes, transfersFullTimeEquivalent, staffingGroupIds, version);
   }
 
   @Override
@@ -251,6 +272,7 @@ public class CreateCapacityPlanStaffingGroupMetricChangeRequest  implements Seri
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    sb.append("    transfersFullTimeEquivalent: ").append(toIndentedString(transfersFullTimeEquivalent)).append("\n");
     sb.append("    staffingGroupIds: ").append(toIndentedString(staffingGroupIds)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");

@@ -1,0 +1,91 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.RecurrenceEndSettings;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
+/**
+ * RecurrenceSettingsBase
+ */
+
+public class RecurrenceSettingsBase  implements Serializable {
+  
+  private RecurrenceEndSettings endAfter = null;
+
+  public RecurrenceSettingsBase() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
+
+  
+  /**
+   * Settings controlling when to end the recurrence for the activity plan
+   **/
+  public RecurrenceSettingsBase endAfter(RecurrenceEndSettings endAfter) {
+    this.endAfter = endAfter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Settings controlling when to end the recurrence for the activity plan")
+  @JsonProperty("endAfter")
+  public RecurrenceEndSettings getEndAfter() {
+    return endAfter;
+  }
+  public void setEndAfter(RecurrenceEndSettings endAfter) {
+    this.endAfter = endAfter;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    RecurrenceSettingsBase recurrenceSettingsBase = (RecurrenceSettingsBase) o;
+
+    return Objects.equals(this.endAfter, recurrenceSettingsBase.endAfter);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(endAfter);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class RecurrenceSettingsBase {\n");
+    
+    sb.append("    endAfter: ").append(toIndentedString(endAfter)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

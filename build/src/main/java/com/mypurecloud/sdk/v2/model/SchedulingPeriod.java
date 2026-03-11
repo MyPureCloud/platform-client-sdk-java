@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class SchedulingPeriod  implements Serializable {
   
-  private LocalDate earliestStartDate = null;
   private LocalDate latestEndDate = null;
+  private LocalDate earliestStartDate = null;
 
   public SchedulingPeriod() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -32,24 +32,6 @@ public class SchedulingPeriod  implements Serializable {
   }
 
   
-  /**
-   * The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   **/
-  public SchedulingPeriod earliestStartDate(LocalDate earliestStartDate) {
-    this.earliestStartDate = earliestStartDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
-  @JsonProperty("earliestStartDate")
-  public LocalDate getEarliestStartDate() {
-    return earliestStartDate;
-  }
-  public void setEarliestStartDate(LocalDate earliestStartDate) {
-    this.earliestStartDate = earliestStartDate;
-  }
-
-
   /**
    * The latest date the associated activity plan can end, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -68,6 +50,24 @@ public class SchedulingPeriod  implements Serializable {
   }
 
 
+  /**
+   * The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+   **/
+  public SchedulingPeriod earliestStartDate(LocalDate earliestStartDate) {
+    this.earliestStartDate = earliestStartDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @JsonProperty("earliestStartDate")
+  public LocalDate getEarliestStartDate() {
+    return earliestStartDate;
+  }
+  public void setEarliestStartDate(LocalDate earliestStartDate) {
+    this.earliestStartDate = earliestStartDate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -78,13 +78,13 @@ public class SchedulingPeriod  implements Serializable {
     }
     SchedulingPeriod schedulingPeriod = (SchedulingPeriod) o;
 
-    return Objects.equals(this.earliestStartDate, schedulingPeriod.earliestStartDate) &&
-            Objects.equals(this.latestEndDate, schedulingPeriod.latestEndDate);
+    return Objects.equals(this.latestEndDate, schedulingPeriod.latestEndDate) &&
+            Objects.equals(this.earliestStartDate, schedulingPeriod.earliestStartDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(earliestStartDate, latestEndDate);
+    return Objects.hash(latestEndDate, earliestStartDate);
   }
 
   @Override
@@ -92,8 +92,8 @@ public class SchedulingPeriod  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class SchedulingPeriod {\n");
     
-    sb.append("    earliestStartDate: ").append(toIndentedString(earliestStartDate)).append("\n");
     sb.append("    latestEndDate: ").append(toIndentedString(latestEndDate)).append("\n");
+    sb.append("    earliestStartDate: ").append(toIndentedString(earliestStartDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

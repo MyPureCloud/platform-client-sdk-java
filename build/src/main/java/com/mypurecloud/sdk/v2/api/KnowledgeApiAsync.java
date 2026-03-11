@@ -86,6 +86,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeSearchPreviewResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettingListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettingsRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettingsResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSourcesSearchRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSourcesSearchResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobResponse;
 import com.mypurecloud.sdk.v2.model.LabelCreateRequest;
@@ -209,6 +211,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesServi
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSynchronizeJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
@@ -7496,6 +7499,81 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KnowledgeBase> response = (ApiResponse<KnowledgeBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Knowledge Search
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeSourcesSearchResponse> postKnowledgeSearchAsync(PostKnowledgeSearchRequest request, final AsyncApiCallback<KnowledgeSourcesSearchResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeSourcesSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeSourcesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSourcesSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSourcesSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Knowledge Search
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeSourcesSearchResponse>> postKnowledgeSearchAsync(ApiRequest<KnowledgeSourcesSearchRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeSourcesSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeSourcesSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeSourcesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSourcesSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSourcesSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSourcesSearchResponse> response = (ApiResponse<KnowledgeSourcesSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSourcesSearchResponse> response = (ApiResponse<KnowledgeSourcesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -93,12 +93,64 @@ public class InboundRoute  implements Serializable {
   }
   private HistoryInclusionEnum historyInclusion = null;
   private Boolean allowMultipleActions = null;
+  private List<String> mailboxFolders = null;
+
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The status of the route.
+   */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
+  public enum StatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PENDING("Pending"),
+    ACTIVE("Active"),
+    REMOVING("Removing"),
+    ERROR("Error");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusEnum value : StatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusEnum status = null;
   private String selfUri = null;
 
   public InboundRoute() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       skills = new ArrayList<DomainEntityRef>();
       autoBcc = new ArrayList<EmailAddress>();
+      mailboxFolders = new ArrayList<String>();
     }
   }
 
@@ -379,6 +431,31 @@ public class InboundRoute  implements Serializable {
   }
 
 
+  /**
+   * Integration Folder routed to this route
+   **/
+  public InboundRoute mailboxFolders(List<String> mailboxFolders) {
+    this.mailboxFolders = mailboxFolders;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Integration Folder routed to this route")
+  @JsonProperty("mailboxFolders")
+  public List<String> getMailboxFolders() {
+    return mailboxFolders;
+  }
+  public void setMailboxFolders(List<String> mailboxFolders) {
+    this.mailboxFolders = mailboxFolders;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The status of the route.")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -412,12 +489,14 @@ public class InboundRoute  implements Serializable {
             Objects.equals(this.signature, inboundRoute.signature) &&
             Objects.equals(this.historyInclusion, inboundRoute.historyInclusion) &&
             Objects.equals(this.allowMultipleActions, inboundRoute.allowMultipleActions) &&
+            Objects.equals(this.mailboxFolders, inboundRoute.mailboxFolders) &&
+            Objects.equals(this.status, inboundRoute.status) &&
             Objects.equals(this.selfUri, inboundRoute.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, signature, historyInclusion, allowMultipleActions, selfUri);
+    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, signature, historyInclusion, allowMultipleActions, mailboxFolders, status, selfUri);
   }
 
   @Override
@@ -441,6 +520,8 @@ public class InboundRoute  implements Serializable {
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
     sb.append("    historyInclusion: ").append(toIndentedString(historyInclusion)).append("\n");
     sb.append("    allowMultipleActions: ").append(toIndentedString(allowMultipleActions)).append("\n");
+    sb.append("    mailboxFolders: ").append(toIndentedString(mailboxFolders)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

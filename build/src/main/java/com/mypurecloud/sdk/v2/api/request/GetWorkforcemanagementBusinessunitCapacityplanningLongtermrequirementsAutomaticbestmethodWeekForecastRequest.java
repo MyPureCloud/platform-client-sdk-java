@@ -337,6 +337,50 @@ public class GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequireme
 	    return this;
 	} 
 
+	private String granularity;
+	public String getGranularity() {
+		return this.granularity;
+	}
+
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+	}
+
+	public GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest withGranularity(String granularity) {
+	    this.setGranularity(granularity);
+	    return this;
+	} 
+
+	public enum granularityValues { 
+		WEEKLY("weekly"),
+		MONTHLY("monthly");
+
+		private String value;
+
+		granularityValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static granularityValues fromString(String key) {
+			if (key == null) return null;
+
+			for (granularityValues value : granularityValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return granularityValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -381,6 +425,9 @@ public class GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequireme
         
                 .withPathParameter("forecastId", forecastId)
         
+
+                .withQueryParameters("granularity", "", granularity)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -420,6 +467,20 @@ public class GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequireme
 		public Builder withForecastId(String forecastId) {
 			request.setForecastId(forecastId);
 			return this;
+		}
+
+		public Builder withGranularity(String granularity) {
+			request.setGranularity(granularity);
+			return this;
+		}
+
+
+
+		
+		public Builder withGranularity(granularityValues granularity) {
+		    request.setGranularity(granularity.toString());
+
+		    return this;
 		}
 
 

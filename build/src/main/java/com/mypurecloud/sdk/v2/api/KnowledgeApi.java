@@ -83,6 +83,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeSearchPreviewResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettingListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettingsRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettingsResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSourcesSearchRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSourcesSearchResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobResponse;
 import com.mypurecloud.sdk.v2.model.LabelCreateRequest;
@@ -206,6 +208,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesServi
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSynchronizeJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
@@ -8605,6 +8608,84 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeBase> response = (ApiResponse<KnowledgeBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Knowledge Search
+   * 
+   * @param body  (optional)
+   * @return KnowledgeSourcesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSourcesSearchResponse postKnowledgeSearch(KnowledgeSourcesSearchRequest body) throws IOException, ApiException {
+    return  postKnowledgeSearch(createPostKnowledgeSearchRequest(body));
+  }
+
+  /**
+   * Get Knowledge Search
+   * 
+   * @param body  (optional)
+   * @return KnowledgeSourcesSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSourcesSearchResponse> postKnowledgeSearchWithHttpInfo(KnowledgeSourcesSearchRequest body) throws IOException {
+    return postKnowledgeSearch(createPostKnowledgeSearchRequest(body).withHttpInfo());
+  }
+
+  private PostKnowledgeSearchRequest createPostKnowledgeSearchRequest(KnowledgeSourcesSearchRequest body) {
+    return PostKnowledgeSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get Knowledge Search
+   * 
+   * @param request The request object
+   * @return KnowledgeSourcesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSourcesSearchResponse postKnowledgeSearch(PostKnowledgeSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSourcesSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSourcesSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Knowledge Search
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSourcesSearchResponse> postKnowledgeSearch(ApiRequest<KnowledgeSourcesSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSourcesSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSourcesSearchResponse> response = (ApiResponse<KnowledgeSourcesSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSourcesSearchResponse> response = (ApiResponse<KnowledgeSourcesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

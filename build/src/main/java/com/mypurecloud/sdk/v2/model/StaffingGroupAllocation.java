@@ -30,6 +30,14 @@ public class StaffingGroupAllocation  implements Serializable {
   private List<Double> newHiresFullTimeEquivalentCount = null;
   private Double startingWeeklyFullTimeEquivalentCount = null;
   private List<String> planningGroupIds = null;
+  private List<Double> baseStartingFullTimeEquivalentCount = null;
+  private List<Double> attritionFullTimeEquivalentCount = null;
+  private List<Double> staffingGroupPlannedFullTimeEquivalentCount = null;
+  private List<Double> endOfMonthPlannedFullTimeEquivalentCount = null;
+  private List<Double> shrinkageFullTimeEquivalentCount = null;
+  private List<Double> netFullTimeEquivalentCount = null;
+  private List<Double> extraTimeUnderTimeFullTimeEquivalentCount = null;
+  private List<Double> transfersFullTimeEquivalentCount = null;
 
   public StaffingGroupAllocation() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -37,6 +45,14 @@ public class StaffingGroupAllocation  implements Serializable {
       attritionPercentages = new ArrayList<Double>();
       newHiresFullTimeEquivalentCount = new ArrayList<Double>();
       planningGroupIds = new ArrayList<String>();
+      baseStartingFullTimeEquivalentCount = new ArrayList<Double>();
+      attritionFullTimeEquivalentCount = new ArrayList<Double>();
+      staffingGroupPlannedFullTimeEquivalentCount = new ArrayList<Double>();
+      endOfMonthPlannedFullTimeEquivalentCount = new ArrayList<Double>();
+      shrinkageFullTimeEquivalentCount = new ArrayList<Double>();
+      netFullTimeEquivalentCount = new ArrayList<Double>();
+      extraTimeUnderTimeFullTimeEquivalentCount = new ArrayList<Double>();
+      transfersFullTimeEquivalentCount = new ArrayList<Double>();
     }
   }
 
@@ -149,6 +165,150 @@ public class StaffingGroupAllocation  implements Serializable {
   }
 
 
+  /**
+   * The weekly calculated starting full time equivalent count
+   **/
+  public StaffingGroupAllocation baseStartingFullTimeEquivalentCount(List<Double> baseStartingFullTimeEquivalentCount) {
+    this.baseStartingFullTimeEquivalentCount = baseStartingFullTimeEquivalentCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The weekly calculated starting full time equivalent count")
+  @JsonProperty("baseStartingFullTimeEquivalentCount")
+  public List<Double> getBaseStartingFullTimeEquivalentCount() {
+    return baseStartingFullTimeEquivalentCount;
+  }
+  public void setBaseStartingFullTimeEquivalentCount(List<Double> baseStartingFullTimeEquivalentCount) {
+    this.baseStartingFullTimeEquivalentCount = baseStartingFullTimeEquivalentCount;
+  }
+
+
+  /**
+   * The weekly projected attrition full time equivalent count
+   **/
+  public StaffingGroupAllocation attritionFullTimeEquivalentCount(List<Double> attritionFullTimeEquivalentCount) {
+    this.attritionFullTimeEquivalentCount = attritionFullTimeEquivalentCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The weekly projected attrition full time equivalent count")
+  @JsonProperty("attritionFullTimeEquivalentCount")
+  public List<Double> getAttritionFullTimeEquivalentCount() {
+    return attritionFullTimeEquivalentCount;
+  }
+  public void setAttritionFullTimeEquivalentCount(List<Double> attritionFullTimeEquivalentCount) {
+    this.attritionFullTimeEquivalentCount = attritionFullTimeEquivalentCount;
+  }
+
+
+  /**
+   * The weekly calculated staffing group full time equivalent count
+   **/
+  public StaffingGroupAllocation staffingGroupPlannedFullTimeEquivalentCount(List<Double> staffingGroupPlannedFullTimeEquivalentCount) {
+    this.staffingGroupPlannedFullTimeEquivalentCount = staffingGroupPlannedFullTimeEquivalentCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The weekly calculated staffing group full time equivalent count")
+  @JsonProperty("staffingGroupPlannedFullTimeEquivalentCount")
+  public List<Double> getStaffingGroupPlannedFullTimeEquivalentCount() {
+    return staffingGroupPlannedFullTimeEquivalentCount;
+  }
+  public void setStaffingGroupPlannedFullTimeEquivalentCount(List<Double> staffingGroupPlannedFullTimeEquivalentCount) {
+    this.staffingGroupPlannedFullTimeEquivalentCount = staffingGroupPlannedFullTimeEquivalentCount;
+  }
+
+
+  /**
+   * The end of month planned full time equivalent count of this staffing group
+   **/
+  public StaffingGroupAllocation endOfMonthPlannedFullTimeEquivalentCount(List<Double> endOfMonthPlannedFullTimeEquivalentCount) {
+    this.endOfMonthPlannedFullTimeEquivalentCount = endOfMonthPlannedFullTimeEquivalentCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The end of month planned full time equivalent count of this staffing group")
+  @JsonProperty("endOfMonthPlannedFullTimeEquivalentCount")
+  public List<Double> getEndOfMonthPlannedFullTimeEquivalentCount() {
+    return endOfMonthPlannedFullTimeEquivalentCount;
+  }
+  public void setEndOfMonthPlannedFullTimeEquivalentCount(List<Double> endOfMonthPlannedFullTimeEquivalentCount) {
+    this.endOfMonthPlannedFullTimeEquivalentCount = endOfMonthPlannedFullTimeEquivalentCount;
+  }
+
+
+  /**
+   * The weekly projected shrinkage full time equivalent count of this staffing group
+   **/
+  public StaffingGroupAllocation shrinkageFullTimeEquivalentCount(List<Double> shrinkageFullTimeEquivalentCount) {
+    this.shrinkageFullTimeEquivalentCount = shrinkageFullTimeEquivalentCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The weekly projected shrinkage full time equivalent count of this staffing group")
+  @JsonProperty("shrinkageFullTimeEquivalentCount")
+  public List<Double> getShrinkageFullTimeEquivalentCount() {
+    return shrinkageFullTimeEquivalentCount;
+  }
+  public void setShrinkageFullTimeEquivalentCount(List<Double> shrinkageFullTimeEquivalentCount) {
+    this.shrinkageFullTimeEquivalentCount = shrinkageFullTimeEquivalentCount;
+  }
+
+
+  /**
+   * The weekly net full time equivalent count of this staffing group
+   **/
+  public StaffingGroupAllocation netFullTimeEquivalentCount(List<Double> netFullTimeEquivalentCount) {
+    this.netFullTimeEquivalentCount = netFullTimeEquivalentCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The weekly net full time equivalent count of this staffing group")
+  @JsonProperty("netFullTimeEquivalentCount")
+  public List<Double> getNetFullTimeEquivalentCount() {
+    return netFullTimeEquivalentCount;
+  }
+  public void setNetFullTimeEquivalentCount(List<Double> netFullTimeEquivalentCount) {
+    this.netFullTimeEquivalentCount = netFullTimeEquivalentCount;
+  }
+
+
+  /**
+   * The weekly projected extra or under full time equivalent to the staffing group
+   **/
+  public StaffingGroupAllocation extraTimeUnderTimeFullTimeEquivalentCount(List<Double> extraTimeUnderTimeFullTimeEquivalentCount) {
+    this.extraTimeUnderTimeFullTimeEquivalentCount = extraTimeUnderTimeFullTimeEquivalentCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The weekly projected extra or under full time equivalent to the staffing group")
+  @JsonProperty("extraTimeUnderTimeFullTimeEquivalentCount")
+  public List<Double> getExtraTimeUnderTimeFullTimeEquivalentCount() {
+    return extraTimeUnderTimeFullTimeEquivalentCount;
+  }
+  public void setExtraTimeUnderTimeFullTimeEquivalentCount(List<Double> extraTimeUnderTimeFullTimeEquivalentCount) {
+    this.extraTimeUnderTimeFullTimeEquivalentCount = extraTimeUnderTimeFullTimeEquivalentCount;
+  }
+
+
+  /**
+   * The weekly projected full time equivalent transfers of agents into or out of this staffing group
+   **/
+  public StaffingGroupAllocation transfersFullTimeEquivalentCount(List<Double> transfersFullTimeEquivalentCount) {
+    this.transfersFullTimeEquivalentCount = transfersFullTimeEquivalentCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The weekly projected full time equivalent transfers of agents into or out of this staffing group")
+  @JsonProperty("transfersFullTimeEquivalentCount")
+  public List<Double> getTransfersFullTimeEquivalentCount() {
+    return transfersFullTimeEquivalentCount;
+  }
+  public void setTransfersFullTimeEquivalentCount(List<Double> transfersFullTimeEquivalentCount) {
+    this.transfersFullTimeEquivalentCount = transfersFullTimeEquivalentCount;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -164,12 +324,20 @@ public class StaffingGroupAllocation  implements Serializable {
             Objects.equals(this.attritionPercentages, staffingGroupAllocation.attritionPercentages) &&
             Objects.equals(this.newHiresFullTimeEquivalentCount, staffingGroupAllocation.newHiresFullTimeEquivalentCount) &&
             Objects.equals(this.startingWeeklyFullTimeEquivalentCount, staffingGroupAllocation.startingWeeklyFullTimeEquivalentCount) &&
-            Objects.equals(this.planningGroupIds, staffingGroupAllocation.planningGroupIds);
+            Objects.equals(this.planningGroupIds, staffingGroupAllocation.planningGroupIds) &&
+            Objects.equals(this.baseStartingFullTimeEquivalentCount, staffingGroupAllocation.baseStartingFullTimeEquivalentCount) &&
+            Objects.equals(this.attritionFullTimeEquivalentCount, staffingGroupAllocation.attritionFullTimeEquivalentCount) &&
+            Objects.equals(this.staffingGroupPlannedFullTimeEquivalentCount, staffingGroupAllocation.staffingGroupPlannedFullTimeEquivalentCount) &&
+            Objects.equals(this.endOfMonthPlannedFullTimeEquivalentCount, staffingGroupAllocation.endOfMonthPlannedFullTimeEquivalentCount) &&
+            Objects.equals(this.shrinkageFullTimeEquivalentCount, staffingGroupAllocation.shrinkageFullTimeEquivalentCount) &&
+            Objects.equals(this.netFullTimeEquivalentCount, staffingGroupAllocation.netFullTimeEquivalentCount) &&
+            Objects.equals(this.extraTimeUnderTimeFullTimeEquivalentCount, staffingGroupAllocation.extraTimeUnderTimeFullTimeEquivalentCount) &&
+            Objects.equals(this.transfersFullTimeEquivalentCount, staffingGroupAllocation.transfersFullTimeEquivalentCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(staffingGroupId, shrinkagePercentages, attritionPercentages, newHiresFullTimeEquivalentCount, startingWeeklyFullTimeEquivalentCount, planningGroupIds);
+    return Objects.hash(staffingGroupId, shrinkagePercentages, attritionPercentages, newHiresFullTimeEquivalentCount, startingWeeklyFullTimeEquivalentCount, planningGroupIds, baseStartingFullTimeEquivalentCount, attritionFullTimeEquivalentCount, staffingGroupPlannedFullTimeEquivalentCount, endOfMonthPlannedFullTimeEquivalentCount, shrinkageFullTimeEquivalentCount, netFullTimeEquivalentCount, extraTimeUnderTimeFullTimeEquivalentCount, transfersFullTimeEquivalentCount);
   }
 
   @Override
@@ -183,6 +351,14 @@ public class StaffingGroupAllocation  implements Serializable {
     sb.append("    newHiresFullTimeEquivalentCount: ").append(toIndentedString(newHiresFullTimeEquivalentCount)).append("\n");
     sb.append("    startingWeeklyFullTimeEquivalentCount: ").append(toIndentedString(startingWeeklyFullTimeEquivalentCount)).append("\n");
     sb.append("    planningGroupIds: ").append(toIndentedString(planningGroupIds)).append("\n");
+    sb.append("    baseStartingFullTimeEquivalentCount: ").append(toIndentedString(baseStartingFullTimeEquivalentCount)).append("\n");
+    sb.append("    attritionFullTimeEquivalentCount: ").append(toIndentedString(attritionFullTimeEquivalentCount)).append("\n");
+    sb.append("    staffingGroupPlannedFullTimeEquivalentCount: ").append(toIndentedString(staffingGroupPlannedFullTimeEquivalentCount)).append("\n");
+    sb.append("    endOfMonthPlannedFullTimeEquivalentCount: ").append(toIndentedString(endOfMonthPlannedFullTimeEquivalentCount)).append("\n");
+    sb.append("    shrinkageFullTimeEquivalentCount: ").append(toIndentedString(shrinkageFullTimeEquivalentCount)).append("\n");
+    sb.append("    netFullTimeEquivalentCount: ").append(toIndentedString(netFullTimeEquivalentCount)).append("\n");
+    sb.append("    extraTimeUnderTimeFullTimeEquivalentCount: ").append(toIndentedString(extraTimeUnderTimeFullTimeEquivalentCount)).append("\n");
+    sb.append("    transfersFullTimeEquivalentCount: ").append(toIndentedString(transfersFullTimeEquivalentCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

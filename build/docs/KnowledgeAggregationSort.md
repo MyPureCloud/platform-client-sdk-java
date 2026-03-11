@@ -25,6 +25,7 @@
 | NKNOWLEDGESEARCHFEEDBACK | &quot;nKnowledgeSearchFeedback&quot; | 
 | NKNOWLEDGESEARCHUNANSWERED | &quot;nKnowledgeSearchUnanswered&quot; | 
 | NKNOWLEDGESESSIONS | &quot;nKnowledgeSessions&quot; | 
+| NKNOWLEDGEV3SEARCH | &quot;nKnowledgeV3Search&quot; | 
 | OKNOWLEDGEDOCUMENTQUERY | &quot;oKnowledgeDocumentQuery&quot; | 
 | OKNOWLEDGEDOCUMENTQUERYSELFSERVED | &quot;oKnowledgeDocumentQuerySelfServed&quot; | 
 | OKNOWLEDGESEARCH | &quot;oKnowledgeSearch&quot; | 
@@ -44,4 +45,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_

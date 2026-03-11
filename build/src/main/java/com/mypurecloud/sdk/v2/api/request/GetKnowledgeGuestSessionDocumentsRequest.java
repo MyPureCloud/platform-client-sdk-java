@@ -93,6 +93,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeSearchPreviewResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettingListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettingsRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettingsResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSourcesSearchRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSourcesSearchResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobResponse;
 import com.mypurecloud.sdk.v2.model.LabelCreateRequest;

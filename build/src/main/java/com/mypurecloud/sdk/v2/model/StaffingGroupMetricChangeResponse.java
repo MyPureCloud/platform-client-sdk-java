@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.StaffingGroupReference;
+import com.mypurecloud.sdk.v2.model.TransfersFullTimeEquivalent;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -84,6 +85,7 @@ public class StaffingGroupMetricChangeResponse  implements Serializable {
   }
   private MetricEnum metric = null;
   private String notes = null;
+  private TransfersFullTimeEquivalent transfersFullTimeEquivalent = null;
   private List<StaffingGroupReference> staffingGroups = null;
   private UserReference createdBy = null;
   private Date createdDate = null;
@@ -186,6 +188,24 @@ public class StaffingGroupMetricChangeResponse  implements Serializable {
 
 
   /**
+   * Full time equivalent transfer from one staffing group to another
+   **/
+  public StaffingGroupMetricChangeResponse transfersFullTimeEquivalent(TransfersFullTimeEquivalent transfersFullTimeEquivalent) {
+    this.transfersFullTimeEquivalent = transfersFullTimeEquivalent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Full time equivalent transfer from one staffing group to another")
+  @JsonProperty("transfersFullTimeEquivalent")
+  public TransfersFullTimeEquivalent getTransfersFullTimeEquivalent() {
+    return transfersFullTimeEquivalent;
+  }
+  public void setTransfersFullTimeEquivalent(TransfersFullTimeEquivalent transfersFullTimeEquivalent) {
+    this.transfersFullTimeEquivalent = transfersFullTimeEquivalent;
+  }
+
+
+  /**
    * The staffing groups affected by the metric change
    **/
   public StaffingGroupMetricChangeResponse staffingGroups(List<StaffingGroupReference> staffingGroups) {
@@ -254,6 +274,7 @@ public class StaffingGroupMetricChangeResponse  implements Serializable {
             Objects.equals(this.value, staffingGroupMetricChangeResponse.value) &&
             Objects.equals(this.metric, staffingGroupMetricChangeResponse.metric) &&
             Objects.equals(this.notes, staffingGroupMetricChangeResponse.notes) &&
+            Objects.equals(this.transfersFullTimeEquivalent, staffingGroupMetricChangeResponse.transfersFullTimeEquivalent) &&
             Objects.equals(this.staffingGroups, staffingGroupMetricChangeResponse.staffingGroups) &&
             Objects.equals(this.createdBy, staffingGroupMetricChangeResponse.createdBy) &&
             Objects.equals(this.createdDate, staffingGroupMetricChangeResponse.createdDate);
@@ -261,7 +282,7 @@ public class StaffingGroupMetricChangeResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(numberOfWeeks, weekStartNumber, value, metric, notes, staffingGroups, createdBy, createdDate);
+    return Objects.hash(numberOfWeeks, weekStartNumber, value, metric, notes, transfersFullTimeEquivalent, staffingGroups, createdBy, createdDate);
   }
 
   @Override
@@ -274,6 +295,7 @@ public class StaffingGroupMetricChangeResponse  implements Serializable {
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    sb.append("    transfersFullTimeEquivalent: ").append(toIndentedString(transfersFullTimeEquivalent)).append("\n");
     sb.append("    staffingGroups: ").append(toIndentedString(staffingGroups)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");

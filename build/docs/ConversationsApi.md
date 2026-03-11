@@ -56,8 +56,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#getConversationsCallbackParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsCallbackParticipantWrapup**](ConversationsApi#getConversationsCallbackParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsCallbackParticipantWrapupcodes**](ConversationsApi#getConversationsCallbackParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
-| [**getConversationsCallbacks**](ConversationsApi#getConversationsCallbacks) | Get active callback conversations for the logged in user |
-| [**getConversationsCalls**](ConversationsApi#getConversationsCalls) | Get active call conversations for the logged in user |
+| [**getConversationsCallbacks**](ConversationsApi#getConversationsCallbacks) | Get the logged-in user's active conversations and their Callback participants state. |
+| [**getConversationsCalls**](ConversationsApi#getConversationsCalls) | Get the logged-in user's active conversations and their Call participants state. |
 | [**getConversationsCallsHistory**](ConversationsApi#getConversationsCallsHistory) | Get call history |
 | [**getConversationsCallsMaximumconferenceparties**](ConversationsApi#getConversationsCallsMaximumconferenceparties) | Get the maximum number of participants that this user can have on a conference |
 | [**getConversationsChat**](ConversationsApi#getConversationsChat) | Get chat conversation |
@@ -87,9 +87,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsEmailParticipantWrapup**](ConversationsApi#getConversationsEmailParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi#getConversationsEmailParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsEmailSettings**](ConversationsApi#getConversationsEmailSettings) | Get emails settings for a given conversation |
-| [**getConversationsEmails**](ConversationsApi#getConversationsEmails) | Get active email conversations for the logged in user |
+| [**getConversationsEmails**](ConversationsApi#getConversationsEmails) | Get the logged-in user's active conversations and their Email participants state. |
 | [**getConversationsInternalmessage**](ConversationsApi#getConversationsInternalmessage) | Get internal message conversation |
-| [**getConversationsInternalmessages**](ConversationsApi#getConversationsInternalmessages) | Get active internal message conversations for the logged in user |
+| [**getConversationsInternalmessages**](ConversationsApi#getConversationsInternalmessages) | Get the logged-in user's active conversations and their InternalMessage participants state. |
 | [**getConversationsKeyconfiguration**](ConversationsApi#getConversationsKeyconfiguration) | Get the encryption key configurations |
 | [**getConversationsKeyconfigurations**](ConversationsApi#getConversationsKeyconfigurations) | Get a list of key configurations data |
 | [**getConversationsMessage**](ConversationsApi#getConversationsMessage) | Get message conversation |
@@ -100,7 +100,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#getConversationsMessageParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsMessageParticipantWrapup**](ConversationsApi#getConversationsMessageParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi#getConversationsMessageParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
-| [**getConversationsMessages**](ConversationsApi#getConversationsMessages) | Get active message conversations for the logged in user |
+| [**getConversationsMessages**](ConversationsApi#getConversationsMessages) | Get the logged-in user's active conversations and their Message participants state. |
 | [**getConversationsMessagesCachedmedia**](ConversationsApi#getConversationsMessagesCachedmedia) | Get a list of cached media items |
 | [**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#getConversationsMessagesCachedmediaCachedMediaItemId) | Get a cached media item |
 | [**getConversationsMessagingFacebookApp**](ConversationsApi#getConversationsMessagingFacebookApp) | Get Genesys Facebook App Id |
@@ -3470,7 +3470,9 @@ try {
 
 > [CallbackConversationEntityListing](CallbackConversationEntityListing) getConversationsCallbacks()
 
-Get active callback conversations for the logged in user
+Get the logged-in user's active conversations and their Callback participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
 
 Wraps GET /api/v2/conversations/callbacks  
 
@@ -3524,7 +3526,9 @@ This endpoint does not require any parameters.
 
 > [CallConversationEntityListing](CallConversationEntityListing) getConversationsCalls()
 
-Get active call conversations for the logged in user
+Get the logged-in user's active conversations and their Call participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
 
 Wraps GET /api/v2/conversations/calls  
 
@@ -5349,7 +5353,9 @@ try {
 
 > [EmailConversationEntityListing](EmailConversationEntityListing) getConversationsEmails()
 
-Get active email conversations for the logged in user
+Get the logged-in user's active conversations and their Email participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
 
 Wraps GET /api/v2/conversations/emails  
 
@@ -5462,7 +5468,9 @@ try {
 
 > [InternalMessageConversationEntityListing](InternalMessageConversationEntityListing) getConversationsInternalmessages()
 
-Get active internal message conversations for the logged in user
+Get the logged-in user's active conversations and their InternalMessage participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
 
 Wraps GET /api/v2/conversations/internalmessages  
 
@@ -6134,7 +6142,9 @@ try {
 
 > [MessageConversationEntityListing](MessageConversationEntityListing) getConversationsMessages()
 
-Get active message conversations for the logged in user
+Get the logged-in user's active conversations and their Message participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
 
 Wraps GET /api/v2/conversations/messages  
 
@@ -20146,4 +20156,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:248.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_

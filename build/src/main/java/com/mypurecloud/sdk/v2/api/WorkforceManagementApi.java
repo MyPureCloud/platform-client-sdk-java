@@ -4228,12 +4228,13 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param capacityPlanId The ID of the capacity plan (required)
+   * @param granularity Granularity to access staffing group data, defaults to weekly (optional)
    * @return CapacityPlanStaffingGroupAllocationsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CapacityPlanStaffingGroupAllocationsResponse getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(String businessUnitId, String capacityPlanId) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(createGetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(businessUnitId, capacityPlanId));
+  public CapacityPlanStaffingGroupAllocationsResponse getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(String businessUnitId, String capacityPlanId, String granularity) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(createGetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(businessUnitId, capacityPlanId, granularity));
   }
 
   /**
@@ -4241,18 +4242,21 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param capacityPlanId The ID of the capacity plan (required)
+   * @param granularity Granularity to access staffing group data, defaults to weekly (optional)
    * @return CapacityPlanStaffingGroupAllocationsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo(String businessUnitId, String capacityPlanId) throws IOException {
-    return getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(createGetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(businessUnitId, capacityPlanId).withHttpInfo());
+  public ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo(String businessUnitId, String capacityPlanId, String granularity) throws IOException {
+    return getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(createGetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(businessUnitId, capacityPlanId, granularity).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest createGetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(String businessUnitId, String capacityPlanId) {
+  private GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest createGetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(String businessUnitId, String capacityPlanId, String granularity) {
     return GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
             .withCapacityPlanId(capacityPlanId)
+
+            .withGranularity(granularity)
 
             .build();
   }
@@ -4393,12 +4397,13 @@ public class WorkforceManagementApi {
    * @param businessUnitId  (required)
    * @param weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param forecastId forecastId of forecast (required)
+   * @param granularity Granularity to access staffing requirements data, defaults to weekly (optional)
    * @return LongTermRequirementsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LongTermRequirementsResponse getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(createGetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest(businessUnitId, weekDateId, forecastId));
+  public LongTermRequirementsResponse getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(String businessUnitId, LocalDate weekDateId, String forecastId, String granularity) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(createGetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest(businessUnitId, weekDateId, forecastId, granularity));
   }
 
   /**
@@ -4407,20 +4412,23 @@ public class WorkforceManagementApi {
    * @param businessUnitId  (required)
    * @param weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param forecastId forecastId of forecast (required)
+   * @param granularity Granularity to access staffing requirements data, defaults to weekly (optional)
    * @return LongTermRequirementsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LongTermRequirementsResponse> getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException {
-    return getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(createGetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest(businessUnitId, weekDateId, forecastId).withHttpInfo());
+  public ApiResponse<LongTermRequirementsResponse> getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId, String granularity) throws IOException {
+    return getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(createGetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest(businessUnitId, weekDateId, forecastId, granularity).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest createGetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest(String businessUnitId, LocalDate weekDateId, String forecastId) {
+  private GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest createGetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest(String businessUnitId, LocalDate weekDateId, String forecastId, String granularity) {
     return GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
             .withWeekDateId(weekDateId)
 
             .withForecastId(forecastId)
+
+            .withGranularity(granularity)
 
             .build();
   }

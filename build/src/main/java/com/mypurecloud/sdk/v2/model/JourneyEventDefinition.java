@@ -47,7 +47,7 @@ public class JourneyEventDefinition  implements Serializable {
   public enum SourceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NATIVE("Native"),
-    CUSTOM("Custom");
+    EXTERNAL("External");
 
     private String value;
 

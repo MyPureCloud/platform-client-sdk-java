@@ -56,7 +56,8 @@ public class SocialMediaAsyncAggregationQuery  implements Serializable {
     SENTIMENT("sentiment"),
     DATAINGESTIONRULE("dataIngestionRule"),
     TEXT("text"),
-    MODERATIONFLAG("moderationFlag");
+    MODERATIONFLAG("moderationFlag"),
+    SOURCETYPE("sourceType");
 
     private String value;
 

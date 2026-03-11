@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailSettingReference;
+import com.mypurecloud.sdk.v2.model.GraphApiSettings;
 import com.mypurecloud.sdk.v2.model.ImapSettings;
 import com.mypurecloud.sdk.v2.model.MailFromResult;
 import io.swagger.annotations.ApiModel;
@@ -29,6 +30,7 @@ public class InboundDomainPatchRequest  implements Serializable {
   private MailFromResult mailFromSettings = null;
   private DomainEntityRef customSMTPServer = null;
   private ImapSettings imapSettings = null;
+  private GraphApiSettings graphApiSettings = null;
   private EmailSettingReference emailSetting = null;
 
   public InboundDomainPatchRequest() {
@@ -92,6 +94,24 @@ public class InboundDomainPatchRequest  implements Serializable {
 
 
   /**
+   * The GraphAPI server integration and settings to use for processing inbound and outbound emails.
+   **/
+  public InboundDomainPatchRequest graphApiSettings(GraphApiSettings graphApiSettings) {
+    this.graphApiSettings = graphApiSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The GraphAPI server integration and settings to use for processing inbound and outbound emails.")
+  @JsonProperty("graphApiSettings")
+  public GraphApiSettings getGraphApiSettings() {
+    return graphApiSettings;
+  }
+  public void setGraphApiSettings(GraphApiSettings graphApiSettings) {
+    this.graphApiSettings = graphApiSettings;
+  }
+
+
+  /**
    * The email settings to associate with this domain.
    **/
   public InboundDomainPatchRequest emailSetting(EmailSettingReference emailSetting) {
@@ -122,12 +142,13 @@ public class InboundDomainPatchRequest  implements Serializable {
     return Objects.equals(this.mailFromSettings, inboundDomainPatchRequest.mailFromSettings) &&
             Objects.equals(this.customSMTPServer, inboundDomainPatchRequest.customSMTPServer) &&
             Objects.equals(this.imapSettings, inboundDomainPatchRequest.imapSettings) &&
+            Objects.equals(this.graphApiSettings, inboundDomainPatchRequest.graphApiSettings) &&
             Objects.equals(this.emailSetting, inboundDomainPatchRequest.emailSetting);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mailFromSettings, customSMTPServer, imapSettings, emailSetting);
+    return Objects.hash(mailFromSettings, customSMTPServer, imapSettings, graphApiSettings, emailSetting);
   }
 
   @Override
@@ -138,6 +159,7 @@ public class InboundDomainPatchRequest  implements Serializable {
     sb.append("    mailFromSettings: ").append(toIndentedString(mailFromSettings)).append("\n");
     sb.append("    customSMTPServer: ").append(toIndentedString(customSMTPServer)).append("\n");
     sb.append("    imapSettings: ").append(toIndentedString(imapSettings)).append("\n");
+    sb.append("    graphApiSettings: ").append(toIndentedString(graphApiSettings)).append("\n");
     sb.append("    emailSetting: ").append(toIndentedString(emailSetting)).append("\n");
     sb.append("}");
     return sb.toString();
