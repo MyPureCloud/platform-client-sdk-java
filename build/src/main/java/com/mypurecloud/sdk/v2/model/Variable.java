@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.VariableValidation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -46,7 +47,8 @@ public class Variable  implements Serializable {
     STRING("String"),
     INTEGER("Integer"),
     NUMBER("Number"),
-    BOOLEAN("Boolean");
+    BOOLEAN("Boolean"),
+    DATE("Date");
 
     private String value;
 
@@ -125,6 +127,7 @@ public class Variable  implements Serializable {
   }
   private ScopeEnum scope = null;
   private String description = null;
+  private VariableValidation validation = null;
 
   public Variable() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -204,6 +207,24 @@ public class Variable  implements Serializable {
   }
 
 
+  /**
+   * The validation configuration for the variable. Optional - if not present, no validation is applied.
+   **/
+  public Variable validation(VariableValidation validation) {
+    this.validation = validation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The validation configuration for the variable. Optional - if not present, no validation is applied.")
+  @JsonProperty("validation")
+  public VariableValidation getValidation() {
+    return validation;
+  }
+  public void setValidation(VariableValidation validation) {
+    this.validation = validation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -217,12 +238,13 @@ public class Variable  implements Serializable {
     return Objects.equals(this.name, variable.name) &&
             Objects.equals(this.type, variable.type) &&
             Objects.equals(this.scope, variable.scope) &&
-            Objects.equals(this.description, variable.description);
+            Objects.equals(this.description, variable.description) &&
+            Objects.equals(this.validation, variable.validation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, scope, description);
+    return Objects.hash(name, type, scope, description, validation);
   }
 
   @Override
@@ -234,6 +256,7 @@ public class Variable  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    validation: ").append(toIndentedString(validation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

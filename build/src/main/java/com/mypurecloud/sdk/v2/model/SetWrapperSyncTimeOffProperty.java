@@ -42,7 +42,9 @@ public class SetWrapperSyncTimeOffProperty  implements Serializable {
  @JsonDeserialize(using = ValuesEnumDeserializer.class)
   public enum ValuesEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    PAYABLEMINUTES("PayableMinutes");
+    PAYABLEMINUTES("PayableMinutes"),
+    FULLDAYEARLIESTSTARTOFFSETMINUTES("FullDayEarliestStartOffsetMinutes"),
+    FULLDAYLATESTENDOFFSETMINUTES("FullDayLatestEndOffsetMinutes");
 
     private String value;
 

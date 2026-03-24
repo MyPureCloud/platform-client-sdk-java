@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+import com.mypurecloud.sdk.v2.model.AgentScoringRule;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetQualityProgramAgentscoringrule {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        QualityApi apiInstance = new QualityApi();
+        String programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+String ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
+        try { 
+            // Get an Agent Scoring Rule
+            AgentScoringRule result = apiInstance.getQualityProgramAgentscoringrule(programId, ruleId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling QualityApi#getQualityProgramAgentscoringrule");
+            e.printStackTrace();
+        }
+    }
+}

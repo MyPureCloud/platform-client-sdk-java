@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ProcessAutomationApi;
+import com.mypurecloud.sdk.v2.model.Trigger;import com.mypurecloud.sdk.v2.model.UpdateTriggerRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampleputProcessautomationTrigger {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ProcessAutomationApi apiInstance = new ProcessAutomationApi();
+        String triggerId = "triggerId_example"; // String | triggerId
+UpdateTriggerRequest body = new UpdateTriggerRequest(); // UpdateTriggerRequest | Input to update Trigger. (topicName cannot be updated, a new trigger must be created to use a new topicName)
+        try { 
+            // Update a Trigger
+            Trigger result = apiInstance.putProcessautomationTrigger(triggerId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessAutomationApi#putProcessautomationTrigger");
+            e.printStackTrace();
+        }
+    }
+}

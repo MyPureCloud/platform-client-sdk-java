@@ -4,7 +4,7 @@
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
   <name>platform-client-v2</name>
-  <version>249.0.0</version>
+  <version>250.0.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
 
@@ -79,7 +79,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>3.4.2</version>
+        <version>3.5.0</version>
         <executions>
           <execution>
             <id>default-jar</id>
@@ -126,7 +126,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.14.0</version>
+        <version>3.14.1</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
@@ -306,18 +306,8 @@
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-joda</artifactId>
-      <version>${jackson-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
       <artifactId>jackson-datatype-jsr310</artifactId>
       <version>${jackson-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <version>${jodatime-version}</version>
     </dependency>
 
     <!-- Base64 encoding that works in both JVM and Android -->
@@ -361,22 +351,21 @@
     <slf4j-version>2.0.17</slf4j-version>
     <swagger-annotations-version>1.6.16</swagger-annotations-version>
     <jersey-version>1.19.1</jersey-version>
-    <jackson-version>2.20.1</jackson-version>
-    <jackson-annotations-version>2.20</jackson-annotations-version>
-    <jodatime-version>2.14.0</jodatime-version>
+    <jackson-version>2.21.1</jackson-version>
+    <jackson-annotations-version>2.21</jackson-annotations-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
     <testng-version>7.10.2</testng-version>
     <apache-httpclient-version>4.5.14</apache-httpclient-version>
     <okhttpclient-version>4.12.0</okhttpclient-version>
-    <ning-asynchttpclient-version>3.0.6</ning-asynchttpclient-version>
+    <ning-asynchttpclient-version>3.0.7</ning-asynchttpclient-version>
     <nv-websocket-client-version>2.14</nv-websocket-client-version>
     <guava-version>33.5.0-jre</guava-version>
-    <mockito.version>5.19.0</mockito.version>
+    <mockito.version>5.21.0</mockito.version>
     <commons-configuration-version>2.13.0</commons-configuration-version>
-    <io-netty-version>4.2.9.Final</io-netty-version>
+    <io-netty-version>4.2.10.Final</io-netty-version>
 
     <name>platform-client-v2</name>
-    <version>249.0.0</version>
+    <version>250.0.0</version>
     <description>A Java package to interface with the PureCloud Platform API</description>
     <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
   </properties>

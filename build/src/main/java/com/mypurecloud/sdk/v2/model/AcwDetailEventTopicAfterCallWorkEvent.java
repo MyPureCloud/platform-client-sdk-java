@@ -207,6 +207,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
   private Long wrapupDurationMs = null;
   private List<String> conversationExternalContactIds = null;
   private List<String> conversationExternalOrganizationIds = null;
+  private String utilizationLabel = null;
 
   public AcwDetailEventTopicAfterCallWorkEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -608,6 +609,23 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcwDetailEventTopicAfterCallWorkEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -640,12 +658,13 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
             Objects.equals(this.wrapupNotes, acwDetailEventTopicAfterCallWorkEvent.wrapupNotes) &&
             Objects.equals(this.wrapupDurationMs, acwDetailEventTopicAfterCallWorkEvent.wrapupDurationMs) &&
             Objects.equals(this.conversationExternalContactIds, acwDetailEventTopicAfterCallWorkEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, acwDetailEventTopicAfterCallWorkEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, acwDetailEventTopicAfterCallWorkEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.utilizationLabel, acwDetailEventTopicAfterCallWorkEvent.utilizationLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, queueId, wrapupCode, wrapupNotes, wrapupDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, queueId, wrapupCode, wrapupNotes, wrapupDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel);
   }
 
   @Override
@@ -676,6 +695,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     sb.append("    wrapupDurationMs: ").append(toIndentedString(wrapupDurationMs)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

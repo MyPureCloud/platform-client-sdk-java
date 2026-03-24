@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) | The direction of the message. |  |
+| **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) | The type of email domain used to send the agentless message. |  |
 | **conversationId** | **String** | The identifier of the conversation. This must be an email interaction. |  [optional] |
 | **fromAddress** | [**EmailAddress**](EmailAddress) | The sender of the message. |  |
 | **toAddresses** | [**List&lt;EmailAddress&gt;**](EmailAddress) | The recipient of the message. We currently support one recipient only. |  |
@@ -21,10 +21,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
-| INBOUND | &quot;Inbound&quot; | 
-| INTEGRATION | &quot;Integration&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

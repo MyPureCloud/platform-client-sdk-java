@@ -267,6 +267,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
   private String flowVersion = null;
   private List<String> conversationExternalContactIds = null;
   private List<String> conversationExternalOrganizationIds = null;
+  private String utilizationLabel = null;
 
   public FlowStartDetailEventTopicFlowStartEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -599,6 +600,23 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public FlowStartDetailEventTopicFlowStartEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -627,12 +645,13 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
             Objects.equals(this.divisionId, flowStartDetailEventTopicFlowStartEvent.divisionId) &&
             Objects.equals(this.flowVersion, flowStartDetailEventTopicFlowStartEvent.flowVersion) &&
             Objects.equals(this.conversationExternalContactIds, flowStartDetailEventTopicFlowStartEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, flowStartDetailEventTopicFlowStartEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, flowStartDetailEventTopicFlowStartEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.utilizationLabel, flowStartDetailEventTopicFlowStartEvent.utilizationLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, subject, messageType, flowType, flowId, divisionId, flowVersion, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, subject, messageType, flowType, flowId, divisionId, flowVersion, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel);
   }
 
   @Override
@@ -659,6 +678,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     sb.append("    flowVersion: ").append(toIndentedString(flowVersion)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

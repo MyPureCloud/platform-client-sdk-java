@@ -37,7 +37,6 @@ public class WhatsappCampaignScheduleConfigChangeScheduleRecurrence  implements 
   private WhatsappCampaignScheduleConfigChangeRecurrencePattern pattern = null;
   private List<WhatsappCampaignScheduleConfigChangeAlteration> alterations = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public WhatsappCampaignScheduleConfigChangeScheduleRecurrence() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -187,23 +186,6 @@ public class WhatsappCampaignScheduleConfigChangeScheduleRecurrence  implements 
   }
 
 
-  /**
-   **/
-  public WhatsappCampaignScheduleConfigChangeScheduleRecurrence getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -221,13 +203,12 @@ public class WhatsappCampaignScheduleConfigChangeScheduleRecurrence  implements 
             Objects.equals(this.range, whatsappCampaignScheduleConfigChangeScheduleRecurrence.range) &&
             Objects.equals(this.pattern, whatsappCampaignScheduleConfigChangeScheduleRecurrence.pattern) &&
             Objects.equals(this.alterations, whatsappCampaignScheduleConfigChangeScheduleRecurrence.alterations) &&
-            Objects.equals(this.additionalProperties, whatsappCampaignScheduleConfigChangeScheduleRecurrence.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, whatsappCampaignScheduleConfigChangeScheduleRecurrence.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, whatsappCampaignScheduleConfigChangeScheduleRecurrence.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, start, end, timeZone, range, pattern, alterations, additionalProperties, getAdditionalProperties);
+    return Objects.hash(id, start, end, timeZone, range, pattern, alterations, additionalProperties);
   }
 
   @Override
@@ -243,7 +224,6 @@ public class WhatsappCampaignScheduleConfigChangeScheduleRecurrence  implements 
     sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    alterations: ").append(toIndentedString(alterations)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -79,7 +79,6 @@ public class WhatsappCampaignScheduleConfigChangeRecurrencePattern  implements S
   private Long interval = null;
   private List<String> daysOfWeek = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public WhatsappCampaignScheduleConfigChangeRecurrencePattern() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -158,23 +157,6 @@ public class WhatsappCampaignScheduleConfigChangeRecurrencePattern  implements S
   }
 
 
-  /**
-   **/
-  public WhatsappCampaignScheduleConfigChangeRecurrencePattern getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -188,13 +170,12 @@ public class WhatsappCampaignScheduleConfigChangeRecurrencePattern  implements S
     return Objects.equals(this.type, whatsappCampaignScheduleConfigChangeRecurrencePattern.type) &&
             Objects.equals(this.interval, whatsappCampaignScheduleConfigChangeRecurrencePattern.interval) &&
             Objects.equals(this.daysOfWeek, whatsappCampaignScheduleConfigChangeRecurrencePattern.daysOfWeek) &&
-            Objects.equals(this.additionalProperties, whatsappCampaignScheduleConfigChangeRecurrencePattern.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, whatsappCampaignScheduleConfigChangeRecurrencePattern.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, whatsappCampaignScheduleConfigChangeRecurrencePattern.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, interval, daysOfWeek, additionalProperties, getAdditionalProperties);
+    return Objects.hash(type, interval, daysOfWeek, additionalProperties);
   }
 
   @Override
@@ -206,7 +187,6 @@ public class WhatsappCampaignScheduleConfigChangeRecurrencePattern  implements S
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    daysOfWeek: ").append(toIndentedString(daysOfWeek)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

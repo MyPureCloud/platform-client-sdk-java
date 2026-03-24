@@ -91,6 +91,7 @@ public class CampaignRule  implements Serializable {
   private CampaignRuleProcessingEnum campaignRuleProcessing = null;
   private List<CampaignRuleConditionGroup> conditionGroups = null;
   private CampaignRuleExecutionSettings executionSettings = null;
+  private String timeZoneId = null;
   private List<CampaignRuleWarning> warnings = null;
   private String selfUri = null;
 
@@ -304,6 +305,24 @@ public class CampaignRule  implements Serializable {
   }
 
 
+  /**
+   * The time zone to use for date-time conditions.
+   **/
+  public CampaignRule timeZoneId(String timeZoneId) {
+    this.timeZoneId = timeZoneId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time zone to use for date-time conditions.")
+  @JsonProperty("timeZoneId")
+  public String getTimeZoneId() {
+    return timeZoneId;
+  }
+  public void setTimeZoneId(String timeZoneId) {
+    this.timeZoneId = timeZoneId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "A list of current warning conditions associated with the campaign rule.")
   @JsonProperty("warnings")
   public List<CampaignRuleWarning> getWarnings() {
@@ -341,13 +360,14 @@ public class CampaignRule  implements Serializable {
             Objects.equals(this.campaignRuleProcessing, campaignRule.campaignRuleProcessing) &&
             Objects.equals(this.conditionGroups, campaignRule.conditionGroups) &&
             Objects.equals(this.executionSettings, campaignRule.executionSettings) &&
+            Objects.equals(this.timeZoneId, campaignRule.timeZoneId) &&
             Objects.equals(this.warnings, campaignRule.warnings) &&
             Objects.equals(this.selfUri, campaignRule.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, campaignRuleProcessing, conditionGroups, executionSettings, warnings, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, campaignRuleProcessing, conditionGroups, executionSettings, timeZoneId, warnings, selfUri);
   }
 
   @Override
@@ -368,6 +388,7 @@ public class CampaignRule  implements Serializable {
     sb.append("    campaignRuleProcessing: ").append(toIndentedString(campaignRuleProcessing)).append("\n");
     sb.append("    conditionGroups: ").append(toIndentedString(conditionGroups)).append("\n");
     sb.append("    executionSettings: ").append(toIndentedString(executionSettings)).append("\n");
+    sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
     sb.append("    warnings: ").append(toIndentedString(warnings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

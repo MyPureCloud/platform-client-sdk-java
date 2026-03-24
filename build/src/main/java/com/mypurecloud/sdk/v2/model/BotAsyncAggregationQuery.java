@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BotAggregateQueryFilter;
+import com.mypurecloud.sdk.v2.model.BotAggregationSort;
 import com.mypurecloud.sdk.v2.model.BotAggregationView;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -213,6 +214,57 @@ public class BotAsyncAggregationQuery  implements Serializable {
     }
   }
   private AlternateTimeDimensionEnum alternateTimeDimension = null;
+
+  private static class QueryTypeEnumDeserializer extends StdDeserializer<QueryTypeEnum> {
+    public QueryTypeEnumDeserializer() {
+      super(QueryTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public QueryTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return QueryTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
+   */
+ @JsonDeserialize(using = QueryTypeEnumDeserializer.class)
+  public enum QueryTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BOTTOMN("bottomN"),
+    GROUPBY("groupBy"),
+    TOPN("topN");
+
+    private String value;
+
+    QueryTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static QueryTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (QueryTypeEnum value : QueryTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return QueryTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private QueryTypeEnum queryType = null;
+  private BotAggregationSort sortMetric = null;
+  private Integer limit = null;
   private Integer pageSize = null;
 
   public BotAsyncAggregationQuery() {
@@ -387,6 +439,60 @@ public class BotAsyncAggregationQuery  implements Serializable {
 
 
   /**
+   * Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
+   **/
+  public BotAsyncAggregationQuery queryType(QueryTypeEnum queryType) {
+    this.queryType = queryType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.")
+  @JsonProperty("queryType")
+  public QueryTypeEnum getQueryType() {
+    return queryType;
+  }
+  public void setQueryType(QueryTypeEnum queryType) {
+    this.queryType = queryType;
+  }
+
+
+  /**
+   * Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+   **/
+  public BotAsyncAggregationQuery sortMetric(BotAggregationSort sortMetric) {
+    this.sortMetric = sortMetric;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required when requesting multiple metrics. Only applicable for topN/bottomN query type.")
+  @JsonProperty("sortMetric")
+  public BotAggregationSort getSortMetric() {
+    return sortMetric;
+  }
+  public void setSortMetric(BotAggregationSort sortMetric) {
+    this.sortMetric = sortMetric;
+  }
+
+
+  /**
+   * How many results you want in an ordered list. Only applicable for topN/bottomN query type.
+   **/
+  public BotAsyncAggregationQuery limit(Integer limit) {
+    this.limit = limit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "How many results you want in an ordered list. Only applicable for topN/bottomN query type.")
+  @JsonProperty("limit")
+  public Integer getLimit() {
+    return limit;
+  }
+  public void setLimit(Integer limit) {
+    this.limit = limit;
+  }
+
+
+  /**
    * The number of results per page
    **/
   public BotAsyncAggregationQuery pageSize(Integer pageSize) {
@@ -423,12 +529,15 @@ public class BotAsyncAggregationQuery  implements Serializable {
             Objects.equals(this.flattenMultivaluedDimensions, botAsyncAggregationQuery.flattenMultivaluedDimensions) &&
             Objects.equals(this.views, botAsyncAggregationQuery.views) &&
             Objects.equals(this.alternateTimeDimension, botAsyncAggregationQuery.alternateTimeDimension) &&
+            Objects.equals(this.queryType, botAsyncAggregationQuery.queryType) &&
+            Objects.equals(this.sortMetric, botAsyncAggregationQuery.sortMetric) &&
+            Objects.equals(this.limit, botAsyncAggregationQuery.limit) &&
             Objects.equals(this.pageSize, botAsyncAggregationQuery.pageSize);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension, pageSize);
+    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension, queryType, sortMetric, limit, pageSize);
   }
 
   @Override
@@ -445,6 +554,9 @@ public class BotAsyncAggregationQuery  implements Serializable {
     sb.append("    flattenMultivaluedDimensions: ").append(toIndentedString(flattenMultivaluedDimensions)).append("\n");
     sb.append("    views: ").append(toIndentedString(views)).append("\n");
     sb.append("    alternateTimeDimension: ").append(toIndentedString(alternateTimeDimension)).append("\n");
+    sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+    sb.append("    sortMetric: ").append(toIndentedString(sortMetric)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("}");
     return sb.toString();

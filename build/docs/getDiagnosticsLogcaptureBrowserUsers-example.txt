@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.LogCaptureApi;
+import com.mypurecloud.sdk.v2.model.LogCaptureUserConfigurationListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetDiagnosticsLogcaptureBrowserUsers {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        LogCaptureApi apiInstance = new LogCaptureApi();
+        Boolean includeExpired = false; // Boolean | Include expired users with log captures still available for search or download
+        try { 
+            // Get all log capture enabled users for an org
+            LogCaptureUserConfigurationListing result = apiInstance.getDiagnosticsLogcaptureBrowserUsers(includeExpired);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LogCaptureApi#getDiagnosticsLogcaptureBrowserUsers");
+            e.printStackTrace();
+        }
+    }
+}

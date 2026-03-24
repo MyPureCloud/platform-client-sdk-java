@@ -16,6 +16,12 @@ import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ChunkSearchRegisterRequest;
+import com.mypurecloud.sdk.v2.model.ConnectionCreateRequest;
+import com.mypurecloud.sdk.v2.model.ConnectionCreateResponse;
+import com.mypurecloud.sdk.v2.model.ConnectionListing;
+import com.mypurecloud.sdk.v2.model.ConnectionOptionListing;
+import com.mypurecloud.sdk.v2.model.ConnectionResponse;
+import com.mypurecloud.sdk.v2.model.ConnectionUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
@@ -109,8 +115,20 @@ import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupPatchRequestBody;
 import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupUpdateResponse;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
+import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceDetailedWithErrorResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SourceWithErrorListing;
+import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
+import com.mypurecloud.sdk.v2.model.V3Synchronization;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeConnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseDocumentRequest;
@@ -122,6 +140,10 @@ import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesSal
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionOptionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentsRequest;
@@ -157,6 +179,12 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUploadsUrlsJo
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesSynchronizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeConnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseCategoryRequest;
@@ -171,6 +199,8 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseParseJobReq
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeSourceSynchronizationRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeConnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentCopiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentFeedbackRequest;
@@ -211,8 +241,12 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationUploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutKnowledgeSourceRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -229,6 +263,84 @@ public class KnowledgeApi {
 
   public KnowledgeApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete connection
+   * 
+   * @param connectionId Connection ID (required)
+   * @return ConnectionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionResponse deleteKnowledgeConnection(String connectionId) throws IOException, ApiException {
+    return  deleteKnowledgeConnection(createDeleteKnowledgeConnectionRequest(connectionId));
+  }
+
+  /**
+   * Delete connection
+   * 
+   * @param connectionId Connection ID (required)
+   * @return ConnectionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionResponse> deleteKnowledgeConnectionWithHttpInfo(String connectionId) throws IOException {
+    return deleteKnowledgeConnection(createDeleteKnowledgeConnectionRequest(connectionId).withHttpInfo());
+  }
+
+  private DeleteKnowledgeConnectionRequest createDeleteKnowledgeConnectionRequest(String connectionId) {
+    return DeleteKnowledgeConnectionRequest.builder()
+            .withConnectionId(connectionId)
+
+            .build();
+  }
+
+  /**
+   * Delete connection
+   * 
+   * @param request The request object
+   * @return ConnectionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionResponse deleteKnowledgeConnection(DeleteKnowledgeConnectionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConnectionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConnectionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete connection
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionResponse> deleteKnowledgeConnection(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConnectionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1101,6 +1213,319 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete source
+   * 
+   * @param sourceId Source ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeSource(String sourceId) throws IOException, ApiException {
+     deleteKnowledgeSource(createDeleteKnowledgeSourceRequest(sourceId));
+  }
+
+  /**
+   * Delete source
+   * 
+   * @param sourceId Source ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeSourceWithHttpInfo(String sourceId) throws IOException {
+    return deleteKnowledgeSource(createDeleteKnowledgeSourceRequest(sourceId).withHttpInfo());
+  }
+
+  private DeleteKnowledgeSourceRequest createDeleteKnowledgeSourceRequest(String sourceId) {
+    return DeleteKnowledgeSourceRequest.builder()
+            .withSourceId(sourceId)
+
+            .build();
+  }
+
+  /**
+   * Delete source
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeSource(DeleteKnowledgeSourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeSource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get connection
+   * 
+   * @param connectionId Connection ID (required)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @return ConnectionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionResponse getKnowledgeConnection(String connectionId, List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeConnection(createGetKnowledgeConnectionRequest(connectionId, expand));
+  }
+
+  /**
+   * Get connection
+   * 
+   * @param connectionId Connection ID (required)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @return ConnectionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionResponse> getKnowledgeConnectionWithHttpInfo(String connectionId, List<String> expand) throws IOException {
+    return getKnowledgeConnection(createGetKnowledgeConnectionRequest(connectionId, expand).withHttpInfo());
+  }
+
+  private GetKnowledgeConnectionRequest createGetKnowledgeConnectionRequest(String connectionId, List<String> expand) {
+    return GetKnowledgeConnectionRequest.builder()
+            .withConnectionId(connectionId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get connection
+   * 
+   * @param request The request object
+   * @return ConnectionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionResponse getKnowledgeConnection(GetKnowledgeConnectionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConnectionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConnectionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get connection
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionResponse> getKnowledgeConnection(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConnectionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get connection options
+   * 
+   * @param connectionId Connection ID (required)
+   * @param parentId The id of the parent option whose children to be listed. (optional)
+   * @return ConnectionOptionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionOptionListing getKnowledgeConnectionOptions(String connectionId, String parentId) throws IOException, ApiException {
+    return  getKnowledgeConnectionOptions(createGetKnowledgeConnectionOptionsRequest(connectionId, parentId));
+  }
+
+  /**
+   * Get connection options
+   * 
+   * @param connectionId Connection ID (required)
+   * @param parentId The id of the parent option whose children to be listed. (optional)
+   * @return ConnectionOptionListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionOptionListing> getKnowledgeConnectionOptionsWithHttpInfo(String connectionId, String parentId) throws IOException {
+    return getKnowledgeConnectionOptions(createGetKnowledgeConnectionOptionsRequest(connectionId, parentId).withHttpInfo());
+  }
+
+  private GetKnowledgeConnectionOptionsRequest createGetKnowledgeConnectionOptionsRequest(String connectionId, String parentId) {
+    return GetKnowledgeConnectionOptionsRequest.builder()
+            .withConnectionId(connectionId)
+
+            .withParentId(parentId)
+
+            .build();
+  }
+
+  /**
+   * Get connection options
+   * 
+   * @param request The request object
+   * @return ConnectionOptionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionOptionListing getKnowledgeConnectionOptions(GetKnowledgeConnectionOptionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConnectionOptionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConnectionOptionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get connection options
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionOptionListing> getKnowledgeConnectionOptions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConnectionOptionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionOptionListing> response = (ApiResponse<ConnectionOptionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionOptionListing> response = (ApiResponse<ConnectionOptionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get connections
+   * 
+   * @return ConnectionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionListing getKnowledgeConnections() throws IOException, ApiException {
+    return  getKnowledgeConnections(createGetKnowledgeConnectionsRequest());
+  }
+
+  /**
+   * Get connections
+   * 
+   * @return ConnectionListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionListing> getKnowledgeConnectionsWithHttpInfo() throws IOException {
+    return getKnowledgeConnections(createGetKnowledgeConnectionsRequest().withHttpInfo());
+  }
+
+  private GetKnowledgeConnectionsRequest createGetKnowledgeConnectionsRequest() {
+    return GetKnowledgeConnectionsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get connections
+   * 
+   * @param request The request object
+   * @return ConnectionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionListing getKnowledgeConnections(GetKnowledgeConnectionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConnectionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConnectionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get connections
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionListing> getKnowledgeConnections(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConnectionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionListing> response = (ApiResponse<ConnectionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionListing> response = (ApiResponse<ConnectionListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4360,6 +4785,506 @@ public class KnowledgeApi {
   }
 
   /**
+   * Get source
+   * 
+   * @param sourceId Source ID (required)
+   * @param expand Optional fields to expand for the Source. (optional)
+   * @return V3SourceDetailedWithErrorResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceDetailedWithErrorResponse getKnowledgeSource(String sourceId, List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeSource(createGetKnowledgeSourceRequest(sourceId, expand));
+  }
+
+  /**
+   * Get source
+   * 
+   * @param sourceId Source ID (required)
+   * @param expand Optional fields to expand for the Source. (optional)
+   * @return V3SourceDetailedWithErrorResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceDetailedWithErrorResponse> getKnowledgeSourceWithHttpInfo(String sourceId, List<String> expand) throws IOException {
+    return getKnowledgeSource(createGetKnowledgeSourceRequest(sourceId, expand).withHttpInfo());
+  }
+
+  private GetKnowledgeSourceRequest createGetKnowledgeSourceRequest(String sourceId, List<String> expand) {
+    return GetKnowledgeSourceRequest.builder()
+            .withSourceId(sourceId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get source
+   * 
+   * @param request The request object
+   * @return V3SourceDetailedWithErrorResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceDetailedWithErrorResponse getKnowledgeSource(GetKnowledgeSourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SourceDetailedWithErrorResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceDetailedWithErrorResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceDetailedWithErrorResponse> getKnowledgeSource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SourceDetailedWithErrorResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceDetailedWithErrorResponse> response = (ApiResponse<V3SourceDetailedWithErrorResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceDetailedWithErrorResponse> response = (ApiResponse<V3SourceDetailedWithErrorResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a specific synchronization of a source.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @return V3Synchronization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3Synchronization getKnowledgeSourceSynchronization(String sourceId, String synchronizationId) throws IOException, ApiException {
+    return  getKnowledgeSourceSynchronization(createGetKnowledgeSourceSynchronizationRequest(sourceId, synchronizationId));
+  }
+
+  /**
+   * Get a specific synchronization of a source.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @return V3Synchronization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3Synchronization> getKnowledgeSourceSynchronizationWithHttpInfo(String sourceId, String synchronizationId) throws IOException {
+    return getKnowledgeSourceSynchronization(createGetKnowledgeSourceSynchronizationRequest(sourceId, synchronizationId).withHttpInfo());
+  }
+
+  private GetKnowledgeSourceSynchronizationRequest createGetKnowledgeSourceSynchronizationRequest(String sourceId, String synchronizationId) {
+    return GetKnowledgeSourceSynchronizationRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .build();
+  }
+
+  /**
+   * Get a specific synchronization of a source.
+   * 
+   * @param request The request object
+   * @return V3Synchronization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3Synchronization getKnowledgeSourceSynchronization(GetKnowledgeSourceSynchronizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3Synchronization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3Synchronization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific synchronization of a source.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3Synchronization> getKnowledgeSourceSynchronization(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3Synchronization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get synchronizations of a source.
+   * 
+   * @param sourceId Source ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return V3SynchronizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationListing getKnowledgeSourceSynchronizations(String sourceId, String before, String after, String pageSize) throws IOException, ApiException {
+    return  getKnowledgeSourceSynchronizations(createGetKnowledgeSourceSynchronizationsRequest(sourceId, before, after, pageSize));
+  }
+
+  /**
+   * Get synchronizations of a source.
+   * 
+   * @param sourceId Source ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return V3SynchronizationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationListing> getKnowledgeSourceSynchronizationsWithHttpInfo(String sourceId, String before, String after, String pageSize) throws IOException {
+    return getKnowledgeSourceSynchronizations(createGetKnowledgeSourceSynchronizationsRequest(sourceId, before, after, pageSize).withHttpInfo());
+  }
+
+  private GetKnowledgeSourceSynchronizationsRequest createGetKnowledgeSourceSynchronizationsRequest(String sourceId, String before, String after, String pageSize) {
+    return GetKnowledgeSourceSynchronizationsRequest.builder()
+            .withSourceId(sourceId)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get synchronizations of a source.
+   * 
+   * @param request The request object
+   * @return V3SynchronizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationListing getKnowledgeSourceSynchronizations(GetKnowledgeSourceSynchronizationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SynchronizationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SynchronizationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get synchronizations of a source.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationListing> getKnowledgeSourceSynchronizations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SynchronizationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationListing> response = (ApiResponse<V3SynchronizationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationListing> response = (ApiResponse<V3SynchronizationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List sources
+   * 
+   * @param expand Optional fields to expand for the Source. (optional)
+   * @return V3SourceWithErrorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceWithErrorListing getKnowledgeSources(List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeSources(createGetKnowledgeSourcesRequest(expand));
+  }
+
+  /**
+   * List sources
+   * 
+   * @param expand Optional fields to expand for the Source. (optional)
+   * @return V3SourceWithErrorListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceWithErrorListing> getKnowledgeSourcesWithHttpInfo(List<String> expand) throws IOException {
+    return getKnowledgeSources(createGetKnowledgeSourcesRequest(expand).withHttpInfo());
+  }
+
+  private GetKnowledgeSourcesRequest createGetKnowledgeSourcesRequest(List<String> expand) {
+    return GetKnowledgeSourcesRequest.builder()
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * List sources
+   * 
+   * @param request The request object
+   * @return V3SourceWithErrorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceWithErrorListing getKnowledgeSources(GetKnowledgeSourcesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SourceWithErrorListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceWithErrorListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List sources
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceWithErrorListing> getKnowledgeSources(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SourceWithErrorListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceWithErrorListing> response = (ApiResponse<V3SourceWithErrorListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceWithErrorListing> response = (ApiResponse<V3SourceWithErrorListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get synchronizations of all sources of the organization.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return V3SynchronizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationListing getKnowledgeSourcesSynchronizations(String before, String after, String pageSize) throws IOException, ApiException {
+    return  getKnowledgeSourcesSynchronizations(createGetKnowledgeSourcesSynchronizationsRequest(before, after, pageSize));
+  }
+
+  /**
+   * Get synchronizations of all sources of the organization.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return V3SynchronizationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationListing> getKnowledgeSourcesSynchronizationsWithHttpInfo(String before, String after, String pageSize) throws IOException {
+    return getKnowledgeSourcesSynchronizations(createGetKnowledgeSourcesSynchronizationsRequest(before, after, pageSize).withHttpInfo());
+  }
+
+  private GetKnowledgeSourcesSynchronizationsRequest createGetKnowledgeSourcesSynchronizationsRequest(String before, String after, String pageSize) {
+    return GetKnowledgeSourcesSynchronizationsRequest.builder()
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get synchronizations of all sources of the organization.
+   * 
+   * @param request The request object
+   * @return V3SynchronizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationListing getKnowledgeSourcesSynchronizations(GetKnowledgeSourcesSynchronizationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SynchronizationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SynchronizationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get synchronizations of all sources of the organization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationListing> getKnowledgeSourcesSynchronizations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SynchronizationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationListing> response = (ApiResponse<V3SynchronizationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationListing> response = (ApiResponse<V3SynchronizationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update connection
+   * 
+   * @param connectionId Connection ID (required)
+   * @param body  (optional)
+   * @return ConnectionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionResponse patchKnowledgeConnection(String connectionId, ConnectionUpdateRequest body) throws IOException, ApiException {
+    return  patchKnowledgeConnection(createPatchKnowledgeConnectionRequest(connectionId, body));
+  }
+
+  /**
+   * Update connection
+   * 
+   * @param connectionId Connection ID (required)
+   * @param body  (optional)
+   * @return ConnectionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionResponse> patchKnowledgeConnectionWithHttpInfo(String connectionId, ConnectionUpdateRequest body) throws IOException {
+    return patchKnowledgeConnection(createPatchKnowledgeConnectionRequest(connectionId, body).withHttpInfo());
+  }
+
+  private PatchKnowledgeConnectionRequest createPatchKnowledgeConnectionRequest(String connectionId, ConnectionUpdateRequest body) {
+    return PatchKnowledgeConnectionRequest.builder()
+            .withConnectionId(connectionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update connection
+   * 
+   * @param request The request object
+   * @return ConnectionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionResponse patchKnowledgeConnection(PatchKnowledgeConnectionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConnectionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConnectionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update connection
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionResponse> patchKnowledgeConnection(ApiRequest<ConnectionUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConnectionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update search result.
    * 
    * @param sessionId Knowledge guest session ID. (required)
@@ -5551,6 +6476,170 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update synchronization.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param body  (required)
+   * @return V3Synchronization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3Synchronization patchKnowledgeSourceSynchronization(String sourceId, String synchronizationId, V3SynchronizationUpdateRequest body) throws IOException, ApiException {
+    return  patchKnowledgeSourceSynchronization(createPatchKnowledgeSourceSynchronizationRequest(sourceId, synchronizationId, body));
+  }
+
+  /**
+   * Update synchronization.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param body  (required)
+   * @return V3Synchronization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3Synchronization> patchKnowledgeSourceSynchronizationWithHttpInfo(String sourceId, String synchronizationId, V3SynchronizationUpdateRequest body) throws IOException {
+    return patchKnowledgeSourceSynchronization(createPatchKnowledgeSourceSynchronizationRequest(sourceId, synchronizationId, body).withHttpInfo());
+  }
+
+  private PatchKnowledgeSourceSynchronizationRequest createPatchKnowledgeSourceSynchronizationRequest(String sourceId, String synchronizationId, V3SynchronizationUpdateRequest body) {
+    return PatchKnowledgeSourceSynchronizationRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update synchronization.
+   * 
+   * @param request The request object
+   * @return V3Synchronization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3Synchronization patchKnowledgeSourceSynchronization(PatchKnowledgeSourceSynchronizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3Synchronization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3Synchronization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update synchronization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3Synchronization> patchKnowledgeSourceSynchronization(ApiRequest<V3SynchronizationUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3Synchronization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create new connection
+   * 
+   * @param body  (required)
+   * @return ConnectionCreateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionCreateResponse postKnowledgeConnections(ConnectionCreateRequest body) throws IOException, ApiException {
+    return  postKnowledgeConnections(createPostKnowledgeConnectionsRequest(body));
+  }
+
+  /**
+   * Create new connection
+   * 
+   * @param body  (required)
+   * @return ConnectionCreateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionCreateResponse> postKnowledgeConnectionsWithHttpInfo(ConnectionCreateRequest body) throws IOException {
+    return postKnowledgeConnections(createPostKnowledgeConnectionsRequest(body).withHttpInfo());
+  }
+
+  private PostKnowledgeConnectionsRequest createPostKnowledgeConnectionsRequest(ConnectionCreateRequest body) {
+    return PostKnowledgeConnectionsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create new connection
+   * 
+   * @param request The request object
+   * @return ConnectionCreateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConnectionCreateResponse postKnowledgeConnections(PostKnowledgeConnectionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConnectionCreateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConnectionCreateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create new connection
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConnectionCreateResponse> postKnowledgeConnections(ApiRequest<ConnectionCreateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConnectionCreateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionCreateResponse> response = (ApiResponse<ConnectionCreateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConnectionCreateResponse> response = (ApiResponse<ConnectionCreateResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8847,6 +9936,252 @@ public class KnowledgeApi {
   }
 
   /**
+   * Create presigned URL for uploading a file in the synchronization.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param body  (required)
+   * @return V3SynchronizationUploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationUploadUrlResponse postKnowledgeSourceSynchronizationUploads(String sourceId, String synchronizationId, V3SynchronizationUploadUrlRequest body) throws IOException, ApiException {
+    return  postKnowledgeSourceSynchronizationUploads(createPostKnowledgeSourceSynchronizationUploadsRequest(sourceId, synchronizationId, body));
+  }
+
+  /**
+   * Create presigned URL for uploading a file in the synchronization.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param body  (required)
+   * @return V3SynchronizationUploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationUploadUrlResponse> postKnowledgeSourceSynchronizationUploadsWithHttpInfo(String sourceId, String synchronizationId, V3SynchronizationUploadUrlRequest body) throws IOException {
+    return postKnowledgeSourceSynchronizationUploads(createPostKnowledgeSourceSynchronizationUploadsRequest(sourceId, synchronizationId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeSourceSynchronizationUploadsRequest createPostKnowledgeSourceSynchronizationUploadsRequest(String sourceId, String synchronizationId, V3SynchronizationUploadUrlRequest body) {
+    return PostKnowledgeSourceSynchronizationUploadsRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create presigned URL for uploading a file in the synchronization.
+   * 
+   * @param request The request object
+   * @return V3SynchronizationUploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationUploadUrlResponse postKnowledgeSourceSynchronizationUploads(PostKnowledgeSourceSynchronizationUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SynchronizationUploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SynchronizationUploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create presigned URL for uploading a file in the synchronization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationUploadUrlResponse> postKnowledgeSourceSynchronizationUploads(ApiRequest<V3SynchronizationUploadUrlRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SynchronizationUploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationUploadUrlResponse> response = (ApiResponse<V3SynchronizationUploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationUploadUrlResponse> response = (ApiResponse<V3SynchronizationUploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start a manual synchronization from a source.
+   * 
+   * @param sourceId Source ID (required)
+   * @param body  (optional)
+   * @return V3Synchronization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3Synchronization postKnowledgeSourceSynchronizations(String sourceId, V3StartManualSyncRequest body) throws IOException, ApiException {
+    return  postKnowledgeSourceSynchronizations(createPostKnowledgeSourceSynchronizationsRequest(sourceId, body));
+  }
+
+  /**
+   * Start a manual synchronization from a source.
+   * 
+   * @param sourceId Source ID (required)
+   * @param body  (optional)
+   * @return V3Synchronization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3Synchronization> postKnowledgeSourceSynchronizationsWithHttpInfo(String sourceId, V3StartManualSyncRequest body) throws IOException {
+    return postKnowledgeSourceSynchronizations(createPostKnowledgeSourceSynchronizationsRequest(sourceId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeSourceSynchronizationsRequest createPostKnowledgeSourceSynchronizationsRequest(String sourceId, V3StartManualSyncRequest body) {
+    return PostKnowledgeSourceSynchronizationsRequest.builder()
+            .withSourceId(sourceId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Start a manual synchronization from a source.
+   * 
+   * @param request The request object
+   * @return V3Synchronization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3Synchronization postKnowledgeSourceSynchronizations(PostKnowledgeSourceSynchronizationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3Synchronization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3Synchronization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start a manual synchronization from a source.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3Synchronization> postKnowledgeSourceSynchronizations(ApiRequest<V3StartManualSyncRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3Synchronization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new source
+   * 
+   * @param body  (required)
+   * @return V3SourceDetailedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceDetailedResponse postKnowledgeSources(V3SourceCreateRequest body) throws IOException, ApiException {
+    return  postKnowledgeSources(createPostKnowledgeSourcesRequest(body));
+  }
+
+  /**
+   * Create a new source
+   * 
+   * @param body  (required)
+   * @return V3SourceDetailedResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceDetailedResponse> postKnowledgeSourcesWithHttpInfo(V3SourceCreateRequest body) throws IOException {
+    return postKnowledgeSources(createPostKnowledgeSourcesRequest(body).withHttpInfo());
+  }
+
+  private PostKnowledgeSourcesRequest createPostKnowledgeSourcesRequest(V3SourceCreateRequest body) {
+    return PostKnowledgeSourcesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new source
+   * 
+   * @param request The request object
+   * @return V3SourceDetailedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceDetailedResponse postKnowledgeSources(PostKnowledgeSourcesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SourceDetailedResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceDetailedResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceDetailedResponse> postKnowledgeSources(ApiRequest<V3SourceCreateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SourceDetailedResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update Salesforce Knowledge integration source
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
@@ -9014,6 +10349,88 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the source
+   * 
+   * @param sourceId Source ID (required)
+   * @param body  (required)
+   * @return V3SourceDetailedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceDetailedResponse putKnowledgeSource(String sourceId, V3SourceUpdateRequest body) throws IOException, ApiException {
+    return  putKnowledgeSource(createPutKnowledgeSourceRequest(sourceId, body));
+  }
+
+  /**
+   * Update the source
+   * 
+   * @param sourceId Source ID (required)
+   * @param body  (required)
+   * @return V3SourceDetailedResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceDetailedResponse> putKnowledgeSourceWithHttpInfo(String sourceId, V3SourceUpdateRequest body) throws IOException {
+    return putKnowledgeSource(createPutKnowledgeSourceRequest(sourceId, body).withHttpInfo());
+  }
+
+  private PutKnowledgeSourceRequest createPutKnowledgeSourceRequest(String sourceId, V3SourceUpdateRequest body) {
+    return PutKnowledgeSourceRequest.builder()
+            .withSourceId(sourceId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the source
+   * 
+   * @param request The request object
+   * @return V3SourceDetailedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceDetailedResponse putKnowledgeSource(PutKnowledgeSourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SourceDetailedResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceDetailedResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceDetailedResponse> putKnowledgeSource(ApiRequest<V3SourceUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SourceDetailedResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -119,6 +119,7 @@ public class GetFlowsRequest {
 		BOT("bot"),
 		COMMONMODULE("commonmodule"),
 		DIGITALBOT("digitalbot"),
+		EMAILSEND("emailsend"),
 		INBOUNDCALL("inboundcall"),
 		INBOUNDCHAT("inboundchat"),
 		INBOUNDEMAIL("inboundemail"),

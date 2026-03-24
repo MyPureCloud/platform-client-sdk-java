@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
 import com.mypurecloud.sdk.v2.model.Campaign;
+import com.mypurecloud.sdk.v2.model.CampaignDiagnosticSummary;
 import com.mypurecloud.sdk.v2.model.CampaignDiagnostics;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
@@ -171,6 +172,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewReq
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlisttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlisttemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundDiagnosticsCampaignSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
@@ -899,7 +901,7 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Delete contacts from a contact list.
+   * Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -933,7 +935,7 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Delete contacts from a contact list.
+   * Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5312,6 +5314,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get diagnostic summary for a single campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CampaignDiagnosticSummary> getOutboundDiagnosticsCampaignSummaryAsync(GetOutboundDiagnosticsCampaignSummaryRequest request, final AsyncApiCallback<CampaignDiagnosticSummary> callback) {
+    try {
+      final SettableFuture<CampaignDiagnosticSummary> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignDiagnosticSummary>() {}, new AsyncApiCallback<ApiResponse<CampaignDiagnosticSummary>>() {
+        @Override
+        public void onCompleted(ApiResponse<CampaignDiagnosticSummary> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get diagnostic summary for a single campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CampaignDiagnosticSummary>> getOutboundDiagnosticsCampaignSummaryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignDiagnosticSummary>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CampaignDiagnosticSummary>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CampaignDiagnosticSummary>() {}, new AsyncApiCallback<ApiResponse<CampaignDiagnosticSummary>>() {
+        @Override
+        public void onCompleted(ApiResponse<CampaignDiagnosticSummary> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CampaignDiagnosticSummary> response = (ApiResponse<CampaignDiagnosticSummary>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CampaignDiagnosticSummary> response = (ApiResponse<CampaignDiagnosticSummary>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

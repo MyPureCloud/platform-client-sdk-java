@@ -745,14 +745,14 @@ public class SmsPhoneNumber  implements Serializable {
 
 
   /**
-   * Defines the media SupportedContent profile configured for an MMS capable phone number.
+   * Defines the media SupportedContent profile configured for an MMS capable phone number. If no custom profile is assigned, the phone number uses the system's \"SMS Default\" profile. The \"SMS Default\" profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. When the \"SMS Default\" profile is in use, this field will contain the profile name and media types, but will not have an 'id' or 'selfUri' field. To customize media filtering, assign a custom supported content profile using the PATCH endpoint.
    **/
   public SmsPhoneNumber supportedContent(SupportedContentReference supportedContent) {
     this.supportedContent = supportedContent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Defines the media SupportedContent profile configured for an MMS capable phone number.")
+  @ApiModelProperty(example = "null", value = "Defines the media SupportedContent profile configured for an MMS capable phone number. If no custom profile is assigned, the phone number uses the system's \"SMS Default\" profile. The \"SMS Default\" profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. When the \"SMS Default\" profile is in use, this field will contain the profile name and media types, but will not have an 'id' or 'selfUri' field. To customize media filtering, assign a custom supported content profile using the PATCH endpoint.")
   @JsonProperty("supportedContent")
   public SupportedContentReference getSupportedContent() {
     return supportedContent;

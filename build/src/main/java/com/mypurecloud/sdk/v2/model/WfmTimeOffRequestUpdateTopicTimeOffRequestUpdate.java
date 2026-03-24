@@ -141,6 +141,8 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
   private SubstatusEnum substatus = null;
   private List<String> partialDayStartDateTimes = null;
   private List<String> fullDayManagementUnitDates = null;
+  private List<Long> fullDayEarliestStartOffsetMinutes = null;
+  private List<Long> fullDayLatestEndOffsetMinutes = null;
   private Long dailyDurationMinutes = null;
   private List<Long> durationMinutes = null;
   private List<Long> payableMinutes = null;
@@ -156,6 +158,8 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       partialDayStartDateTimes = new ArrayList<String>();
       fullDayManagementUnitDates = new ArrayList<String>();
+      fullDayEarliestStartOffsetMinutes = new ArrayList<Long>();
+      fullDayLatestEndOffsetMinutes = new ArrayList<Long>();
       durationMinutes = new ArrayList<Long>();
       payableMinutes = new ArrayList<Long>();
     }
@@ -329,6 +333,40 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
   }
   public void setFullDayManagementUnitDates(List<String> fullDayManagementUnitDates) {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
+  }
+
+
+  /**
+   **/
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate fullDayEarliestStartOffsetMinutes(List<Long> fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("fullDayEarliestStartOffsetMinutes")
+  public List<Long> getFullDayEarliestStartOffsetMinutes() {
+    return fullDayEarliestStartOffsetMinutes;
+  }
+  public void setFullDayEarliestStartOffsetMinutes(List<Long> fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+  }
+
+
+  /**
+   **/
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate fullDayLatestEndOffsetMinutes(List<Long> fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("fullDayLatestEndOffsetMinutes")
+  public List<Long> getFullDayLatestEndOffsetMinutes() {
+    return fullDayLatestEndOffsetMinutes;
+  }
+  public void setFullDayLatestEndOffsetMinutes(List<Long> fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
   }
 
 
@@ -522,6 +560,8 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
             Objects.equals(this.substatus, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.substatus) &&
             Objects.equals(this.partialDayStartDateTimes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.partialDayStartDateTimes) &&
             Objects.equals(this.fullDayManagementUnitDates, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.fullDayManagementUnitDates) &&
+            Objects.equals(this.fullDayEarliestStartOffsetMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.fullDayEarliestStartOffsetMinutes) &&
+            Objects.equals(this.fullDayLatestEndOffsetMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.fullDayLatestEndOffsetMinutes) &&
             Objects.equals(this.dailyDurationMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.dailyDurationMinutes) &&
             Objects.equals(this.durationMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.durationMinutes) &&
             Objects.equals(this.payableMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.payableMinutes) &&
@@ -536,7 +576,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, durationMinutes, payableMinutes, notes, reviewedDate, reviewedBy, submittedDate, submittedBy, modifiedDate, modifiedBy);
+    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, fullDayEarliestStartOffsetMinutes, fullDayLatestEndOffsetMinutes, dailyDurationMinutes, durationMinutes, payableMinutes, notes, reviewedDate, reviewedBy, submittedDate, submittedBy, modifiedDate, modifiedBy);
   }
 
   @Override
@@ -554,6 +594,8 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     sb.append("    substatus: ").append(toIndentedString(substatus)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
+    sb.append("    fullDayEarliestStartOffsetMinutes: ").append(toIndentedString(fullDayEarliestStartOffsetMinutes)).append("\n");
+    sb.append("    fullDayLatestEndOffsetMinutes: ").append(toIndentedString(fullDayLatestEndOffsetMinutes)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
     sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");

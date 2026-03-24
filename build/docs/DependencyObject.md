@@ -49,6 +49,7 @@
 | DIGITALBOTFLOW | &quot;DIGITALBOTFLOW&quot; | 
 | DIVISION | &quot;DIVISION&quot; | 
 | EMAILROUTE | &quot;EMAILROUTE&quot; | 
+| EMAILSENDFLOW | &quot;EMAILSENDFLOW&quot; | 
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; | 
 | FILE | &quot;FILE&quot; | 
 | FLOWACTION | &quot;FLOWACTION&quot; | 
@@ -111,4 +112,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

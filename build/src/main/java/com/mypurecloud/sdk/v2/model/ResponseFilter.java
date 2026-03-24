@@ -48,7 +48,10 @@ public class ResponseFilter  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     IN("IN"),
     EQUALS("EQUALS"),
-    NOTEQUALS("NOTEQUALS");
+    NOTEQUALS("NOTEQUALS"),
+    BEGINS_WITH("BEGINS_WITH"),
+    ENDS_WITH("ENDS_WITH"),
+    CONTAINS("CONTAINS");
 
     private String value;
 

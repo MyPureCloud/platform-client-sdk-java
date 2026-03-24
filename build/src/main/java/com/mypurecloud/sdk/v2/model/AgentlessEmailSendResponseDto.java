@@ -48,9 +48,7 @@ public class AgentlessEmailSendResponseDto  implements Serializable {
  @JsonDeserialize(using = SenderTypeEnumDeserializer.class)
   public enum SenderTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    OUTBOUND("Outbound"),
-    INBOUND("Inbound"),
-    INTEGRATION("Integration");
+    OUTBOUND("Outbound");
 
     private String value;
 

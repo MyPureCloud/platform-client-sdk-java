@@ -18,8 +18,11 @@
 | IN | &quot;IN&quot; | 
 | EQUALS | &quot;EQUALS&quot; | 
 | NOTEQUALS | &quot;NOTEQUALS&quot; | 
+| BEGINS_WITH | &quot;BEGINS_WITH&quot; | 
+| ENDS_WITH | &quot;ENDS_WITH&quot; | 
+| CONTAINS | &quot;CONTAINS&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

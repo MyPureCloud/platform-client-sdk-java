@@ -16,8 +16,11 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Library;
 import com.mypurecloud.sdk.v2.model.LibraryBatchRequest;
 import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
+import com.mypurecloud.sdk.v2.model.QueryCriteriaQuery;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
+import com.mypurecloud.sdk.v2.model.ResponseAssetBulkRequest;
+import com.mypurecloud.sdk.v2.model.ResponseAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
@@ -38,6 +41,8 @@ import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetsSta
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesRequest;
@@ -936,6 +941,174 @@ public class ResponseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+   * 
+   * postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Query criteria (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return LibraryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LibraryEntityListing postResponsemanagementLibrariesQuery(QueryCriteriaQuery body, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  postResponsemanagementLibrariesQuery(createPostResponsemanagementLibrariesQueryRequest(body, pageNumber, pageSize));
+  }
+
+  /**
+   * Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+   * 
+   * postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Query criteria (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return LibraryEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LibraryEntityListing> postResponsemanagementLibrariesQueryWithHttpInfo(QueryCriteriaQuery body, Integer pageNumber, Integer pageSize) throws IOException {
+    return postResponsemanagementLibrariesQuery(createPostResponsemanagementLibrariesQueryRequest(body, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private PostResponsemanagementLibrariesQueryRequest createPostResponsemanagementLibrariesQueryRequest(QueryCriteriaQuery body, Integer pageNumber, Integer pageSize) {
+    return PostResponsemanagementLibrariesQueryRequest.builder()
+            .withBody(body)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+   * 
+   * postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return LibraryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LibraryEntityListing postResponsemanagementLibrariesQuery(PostResponsemanagementLibrariesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LibraryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+   * 
+   * postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LibraryEntityListing> postResponsemanagementLibrariesQuery(ApiRequest<QueryCriteriaQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LibraryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get response assets.
+   * 
+   * @param body Asset IDs (max allowed 50) (required)
+   * @return ResponseAssetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAssetEntityListing postResponsemanagementResponseassetsBulk(ResponseAssetBulkRequest body) throws IOException, ApiException {
+    return  postResponsemanagementResponseassetsBulk(createPostResponsemanagementResponseassetsBulkRequest(body));
+  }
+
+  /**
+   * Get response assets.
+   * 
+   * @param body Asset IDs (max allowed 50) (required)
+   * @return ResponseAssetEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAssetEntityListing> postResponsemanagementResponseassetsBulkWithHttpInfo(ResponseAssetBulkRequest body) throws IOException {
+    return postResponsemanagementResponseassetsBulk(createPostResponsemanagementResponseassetsBulkRequest(body).withHttpInfo());
+  }
+
+  private PostResponsemanagementResponseassetsBulkRequest createPostResponsemanagementResponseassetsBulkRequest(ResponseAssetBulkRequest body) {
+    return PostResponsemanagementResponseassetsBulkRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get response assets.
+   * 
+   * @param request The request object
+   * @return ResponseAssetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAssetEntityListing postResponsemanagementResponseassetsBulk(PostResponsemanagementResponseassetsBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ResponseAssetEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseAssetEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get response assets.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAssetEntityListing> postResponsemanagementResponseassetsBulk(ApiRequest<ResponseAssetBulkRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseAssetEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAssetEntityListing> response = (ApiResponse<ResponseAssetEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAssetEntityListing> response = (ApiResponse<ResponseAssetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -207,6 +207,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
   private List<String> conversationExternalOrganizationIds = null;
   private CustomerStartDetailEventTopicJourneyContext journeyContext = null;
   private String divisionId = null;
+  private String utilizationLabel = null;
 
   public CustomerStartDetailEventTopicCustomerStartEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -591,6 +592,23 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
   }
 
 
+  /**
+   **/
+  public CustomerStartDetailEventTopicCustomerStartEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -622,12 +640,13 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
             Objects.equals(this.conversationExternalContactIds, customerStartDetailEventTopicCustomerStartEvent.conversationExternalContactIds) &&
             Objects.equals(this.conversationExternalOrganizationIds, customerStartDetailEventTopicCustomerStartEvent.conversationExternalOrganizationIds) &&
             Objects.equals(this.journeyContext, customerStartDetailEventTopicCustomerStartEvent.journeyContext) &&
-            Objects.equals(this.divisionId, customerStartDetailEventTopicCustomerStartEvent.divisionId);
+            Objects.equals(this.divisionId, customerStartDetailEventTopicCustomerStartEvent.divisionId) &&
+            Objects.equals(this.utilizationLabel, customerStartDetailEventTopicCustomerStartEvent.utilizationLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, conversationExternalContactIds, conversationExternalOrganizationIds, journeyContext, divisionId);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, conversationExternalContactIds, conversationExternalOrganizationIds, journeyContext, divisionId, utilizationLabel);
   }
 
   @Override
@@ -657,6 +676,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

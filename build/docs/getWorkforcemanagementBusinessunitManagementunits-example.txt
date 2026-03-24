@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
+
+public class ExamplegetWorkforcemanagementBusinessunitManagementunits {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+String feature = "feature_example"; // String | If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+String divisionId = "divisionId_example"; // String | If specified, the list of management units belonging to the specified division will be returned
+        try { 
+            // Get all authorized management units in the business unit
+            ManagementUnitListing result = apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, feature, divisionId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitManagementunits");
+            e.printStackTrace();
+        }
+    }
+}

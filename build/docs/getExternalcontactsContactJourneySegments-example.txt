@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
+
+public class ExamplegetExternalcontactsContactJourneySegments {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        JourneyApi apiInstance = new JourneyApi();
+        String contactId = "contactId_example"; // String | ExternalContact ID
+Boolean includeMerged = true; // Boolean | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
+Integer limit = 56; // Integer | Number of entities to return. Default of 25, maximum of 500.
+        try { 
+            // Retrieve segment assignments by external contact ID.
+            SegmentAssignmentListing result = apiInstance.getExternalcontactsContactJourneySegments(contactId, includeMerged, limit);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling JourneyApi#getExternalcontactsContactJourneySegments");
+            e.printStackTrace();
+        }
+    }
+}

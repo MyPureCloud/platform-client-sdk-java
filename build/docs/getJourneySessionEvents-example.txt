@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EventListing;
+
+public class ExamplegetJourneySessionEvents {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        JourneyApi apiInstance = new JourneyApi();
+        String sessionId = "sessionId_example"; // String | System-generated UUID that represents the session the event is a part of.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String eventType = "eventType_example"; // String | A comma separated list of journey event types to include in the results.
+        try { 
+            // Retrieve all events for a given session.
+            EventListing result = apiInstance.getJourneySessionEvents(sessionId, pageSize, after, eventType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling JourneyApi#getJourneySessionEvents");
+            e.printStackTrace();
+        }
+    }
+}

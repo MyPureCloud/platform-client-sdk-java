@@ -40,7 +40,6 @@ public class MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule  imp
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -228,23 +227,6 @@ public class MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule  imp
   }
 
 
-  /**
-   **/
-  public MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -264,13 +246,12 @@ public class MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule  imp
             Objects.equals(this.name, messagingCampaignScheduleConfigChangeMessagingCampaignSchedule.name) &&
             Objects.equals(this.dateCreated, messagingCampaignScheduleConfigChangeMessagingCampaignSchedule.dateCreated) &&
             Objects.equals(this.dateModified, messagingCampaignScheduleConfigChangeMessagingCampaignSchedule.dateModified) &&
-            Objects.equals(this.version, messagingCampaignScheduleConfigChangeMessagingCampaignSchedule.version) &&
-            Objects.equals(this.getAdditionalProperties, messagingCampaignScheduleConfigChangeMessagingCampaignSchedule.getAdditionalProperties);
+            Objects.equals(this.version, messagingCampaignScheduleConfigChangeMessagingCampaignSchedule.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(intervals, recurrences, timeZone, messagingCampaign, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
+    return Objects.hash(intervals, recurrences, timeZone, messagingCampaign, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -288,7 +269,6 @@ public class MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule  imp
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

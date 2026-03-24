@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.IntentsApi;
+import com.mypurecloud.sdk.v2.model.CustomerSourceIntentListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetIntentsSourceintents {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        IntentsApi apiInstance = new IntentsApi();
+        Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String type = "type_example"; // String | Source Type to query by. If none selected default response will be for type Segment.
+String sourceId = "sourceId_example"; // String | Source Id to query by. Only required for sourceType: Copilot, Bot, Digitalbot
+        try { 
+            // Get all mapped source intents by type. If no type selected default is type Segment
+            CustomerSourceIntentListing result = apiInstance.getIntentsSourceintents(pageSize, pageNumber, type, sourceId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IntentsApi#getIntentsSourceintents");
+            e.printStackTrace();
+        }
+    }
+}

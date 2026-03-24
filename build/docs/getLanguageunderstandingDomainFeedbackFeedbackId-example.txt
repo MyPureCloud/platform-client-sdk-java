@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
+
+public class ExamplegetLanguageunderstandingDomainFeedbackFeedbackId {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+        String domainId = "domainId_example"; // String | ID of the NLU domain.
+String feedbackId = "feedbackId_example"; // String | ID of the Feedback
+List<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated
+        try { 
+            // Find a Feedback
+            NluFeedbackResponse result = apiInstance.getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, fields);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingDomainFeedbackFeedbackId");
+            e.printStackTrace();
+        }
+    }
+}

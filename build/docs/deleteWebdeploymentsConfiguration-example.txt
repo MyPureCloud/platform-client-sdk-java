@@ -1,0 +1,28 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampledeleteWebdeploymentsConfiguration {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+        String configurationId = "configurationId_example"; // String | The configuration version ID
+        try { 
+            // Delete all versions of a configuration
+            apiInstance.deleteWebdeploymentsConfiguration(configurationId);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WebDeploymentsApi#deleteWebdeploymentsConfiguration");
+            e.printStackTrace();
+        }
+    }
+}

@@ -17,7 +17,7 @@
 | **substitutionsSchema** | [**JsonSchemaDocument**](JsonSchemaDocument) | Metadata about the text substitutions in json schema format. |  [optional] |
 | **responseType** | [**ResponseTypeEnum**](#Enum--ResponseTypeEnum) | The response type represented by the response. |  [optional] |
 | **messagingTemplate** | [**MessagingTemplate**](MessagingTemplate) | An optional messaging template definition for responseType.MessagingTemplate. |  [optional] |
-| **assets** | [**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef) | Assets used in the response |  [optional] |
+| **assets** | [**List&lt;RmsAssetAddressableRef&gt;**](RmsAssetAddressableRef) | Assets used in the response |  [optional] |
 | **footer** | [**FooterTemplate**](FooterTemplate) | Footer template definition for responseType.Footer. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -46,4 +46,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

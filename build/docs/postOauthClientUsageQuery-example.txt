@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UsageApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ApiUsageClientQuery;import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
+
+public class ExamplepostOauthClientUsageQuery {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UsageApi apiInstance = new UsageApi();
+        String clientId = "clientId_example"; // String | Client ID
+ApiUsageClientQuery body = new ApiUsageClientQuery(); // ApiUsageClientQuery | Query
+        try { 
+            // Query for OAuth client API usage
+            UsageExecutionResult result = apiInstance.postOauthClientUsageQuery(clientId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsageApi#postOauthClientUsageQuery");
+            e.printStackTrace();
+        }
+    }
+}

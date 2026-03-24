@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.WfmAgentHistoricalAdherenceResponse;import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForAgent;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplepostWorkforcemanagementAgentsMeAdherenceHistoricalJobs {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities.
+WfmHistoricalAdherenceQueryForAgent body = new WfmHistoricalAdherenceQueryForAgent(); // WfmHistoricalAdherenceQueryForAgent | body
+        try { 
+            // Request an agent historical adherence report
+            WfmAgentHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(expand, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentsMeAdherenceHistoricalJobs");
+            e.printStackTrace();
+        }
+    }
+}

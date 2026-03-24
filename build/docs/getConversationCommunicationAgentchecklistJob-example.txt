@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+import com.mypurecloud.sdk.v2.model.ChecklistInferenceJobResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetConversationCommunicationAgentchecklistJob {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ConversationsApi apiInstance = new ConversationsApi();
+        String conversationId = "conversationId_example"; // String | Conversation ID
+String communicationId = "communicationId_example"; // String | Communication ID
+String agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+String jobId = "jobId_example"; // String | Inference Job ID
+        try { 
+            // Get inference job status
+            ChecklistInferenceJobResponse result = apiInstance.getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ConversationsApi#getConversationCommunicationAgentchecklistJob");
+            e.printStackTrace();
+        }
+    }
+}

@@ -28,7 +28,6 @@ public class ContactlistDownloadReadyExportUri  implements Serializable {
   private String uri = null;
   private String exportTimestamp = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public ContactlistDownloadReadyExportUri() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -87,23 +86,6 @@ public class ContactlistDownloadReadyExportUri  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ContactlistDownloadReadyExportUri getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -116,13 +98,12 @@ public class ContactlistDownloadReadyExportUri  implements Serializable {
 
     return Objects.equals(this.uri, contactlistDownloadReadyExportUri.uri) &&
             Objects.equals(this.exportTimestamp, contactlistDownloadReadyExportUri.exportTimestamp) &&
-            Objects.equals(this.additionalProperties, contactlistDownloadReadyExportUri.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, contactlistDownloadReadyExportUri.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, contactlistDownloadReadyExportUri.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uri, exportTimestamp, additionalProperties, getAdditionalProperties);
+    return Objects.hash(uri, exportTimestamp, additionalProperties);
   }
 
   @Override
@@ -133,7 +114,6 @@ public class ContactlistDownloadReadyExportUri  implements Serializable {
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    exportTimestamp: ").append(toIndentedString(exportTimestamp)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UsageApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ClientPublicApiUsageResultsResponse;
+
+public class ExamplegetUsageClientClientIdAggregatesQueryJob {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UsageApi apiInstance = new UsageApi();
+        String clientId = "clientId_example"; // String | clientId
+String jobId = "jobId_example"; // String | jobId
+Integer pageSize = 100; // Integer | Page size of the results. Max is 1000.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+        try { 
+            // Get the status and results of the usage query
+            ClientPublicApiUsageResultsResponse result = apiInstance.getUsageClientClientIdAggregatesQueryJob(clientId, jobId, pageSize, after);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsageApi#getUsageClientClientIdAggregatesQueryJob");
+            e.printStackTrace();
+        }
+    }
+}

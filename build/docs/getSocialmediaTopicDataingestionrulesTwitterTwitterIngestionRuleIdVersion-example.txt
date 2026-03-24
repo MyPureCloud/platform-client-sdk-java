@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SocialMediaApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TwitterDataIngestionRuleVersionResponse;
+
+public class ExamplegetSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SocialMediaApi apiInstance = new SocialMediaApi();
+        String topicId = "topicId_example"; // String | topicId
+String twitterIngestionRuleId = "twitterIngestionRuleId_example"; // String | twitterIngestionRuleId
+String dataIngestionRuleVersion = "dataIngestionRuleVersion_example"; // String | version
+Boolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted item in the result.
+        try { 
+            // Get a single X (formally Twitter) data ingestion rule version.
+            TwitterDataIngestionRuleVersionResponse result = apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion(topicId, twitterIngestionRuleId, dataIngestionRuleVersion, includeDeleted);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SocialMediaApi#getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion");
+            e.printStackTrace();
+        }
+    }
+}

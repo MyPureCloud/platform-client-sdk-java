@@ -83,6 +83,8 @@ import com.mypurecloud.sdk.v2.model.BuScheduleListing;
 import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
 import com.mypurecloud.sdk.v2.model.BuScheduleRun;
 import com.mypurecloud.sdk.v2.model.BuScheduleRunListing;
+import com.mypurecloud.sdk.v2.model.BuSchedulerSettingsRequest;
+import com.mypurecloud.sdk.v2.model.BuSchedulerSettingsResponse;
 import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
 import com.mypurecloud.sdk.v2.model.BuSetTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
@@ -93,6 +95,7 @@ import com.mypurecloud.sdk.v2.model.BuTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
 import com.mypurecloud.sdk.v2.model.BuUpdateTimeOffPlanRequest;
+import com.mypurecloud.sdk.v2.model.BuUserListing;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
@@ -160,6 +163,8 @@ import com.mypurecloud.sdk.v2.model.ManagementUnitAvailabilitySettingsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.MinimumStaffingRequest;
+import com.mypurecloud.sdk.v2.model.MinimumStaffingResponse;
 import com.mypurecloud.sdk.v2.model.MoveAgentsRequest;
 import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
@@ -342,8 +347,10 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMain
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunResultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunsRequest;
@@ -355,6 +362,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTime
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplansRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest;
@@ -431,7 +439,9 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAc
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCapacityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitStaffinggroupRequest;
@@ -4709,6 +4719,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get minimum staffing settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MinimumStaffingResponse> getWorkforcemanagementBusinessunitMinimumstaffingSettingsAsync(GetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest request, final AsyncApiCallback<MinimumStaffingResponse> callback) {
+    try {
+      final SettableFuture<MinimumStaffingResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MinimumStaffingResponse>() {}, new AsyncApiCallback<ApiResponse<MinimumStaffingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinimumStaffingResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get minimum staffing settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MinimumStaffingResponse>> getWorkforcemanagementBusinessunitMinimumstaffingSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MinimumStaffingResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MinimumStaffingResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MinimumStaffingResponse>() {}, new AsyncApiCallback<ApiResponse<MinimumStaffingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinimumStaffingResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinimumStaffingResponse> response = (ApiResponse<MinimumStaffingResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinimumStaffingResponse> response = (ApiResponse<MinimumStaffingResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a planning group
    * 
    * @param request the request object
@@ -4847,6 +4932,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<PlanningGroupList> response = (ApiResponse<PlanningGroupList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get scheduler settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuSchedulerSettingsResponse> getWorkforcemanagementBusinessunitSchedulerSettingsAsync(GetWorkforcemanagementBusinessunitSchedulerSettingsRequest request, final AsyncApiCallback<BuSchedulerSettingsResponse> callback) {
+    try {
+      final SettableFuture<BuSchedulerSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuSchedulerSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BuSchedulerSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuSchedulerSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get scheduler settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuSchedulerSettingsResponse>> getWorkforcemanagementBusinessunitSchedulerSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BuSchedulerSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuSchedulerSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuSchedulerSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BuSchedulerSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuSchedulerSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuSchedulerSettingsResponse> response = (ApiResponse<BuSchedulerSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuSchedulerSettingsResponse> response = (ApiResponse<BuSchedulerSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5672,6 +5832,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BuTimeOffPlanListing> response = (ApiResponse<BuTimeOffPlanListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get users in the business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuUserListing> getWorkforcemanagementBusinessunitUsersAsync(GetWorkforcemanagementBusinessunitUsersRequest request, final AsyncApiCallback<BuUserListing> callback) {
+    try {
+      final SettableFuture<BuUserListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuUserListing>() {}, new AsyncApiCallback<ApiResponse<BuUserListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuUserListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get users in the business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuUserListing>> getWorkforcemanagementBusinessunitUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BuUserListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuUserListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuUserListing>() {}, new AsyncApiCallback<ApiResponse<BuUserListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuUserListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuUserListing> response = (ApiResponse<BuUserListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuUserListing> response = (ApiResponse<BuUserListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -11390,6 +11625,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Update minimum staffing settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MinimumStaffingResponse> patchWorkforcemanagementBusinessunitMinimumstaffingSettingsAsync(PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest request, final AsyncApiCallback<MinimumStaffingResponse> callback) {
+    try {
+      final SettableFuture<MinimumStaffingResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MinimumStaffingResponse>() {}, new AsyncApiCallback<ApiResponse<MinimumStaffingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinimumStaffingResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update minimum staffing settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MinimumStaffingResponse>> patchWorkforcemanagementBusinessunitMinimumstaffingSettingsAsync(ApiRequest<MinimumStaffingRequest> request, final AsyncApiCallback<ApiResponse<MinimumStaffingResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MinimumStaffingResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MinimumStaffingResponse>() {}, new AsyncApiCallback<ApiResponse<MinimumStaffingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinimumStaffingResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinimumStaffingResponse> response = (ApiResponse<MinimumStaffingResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinimumStaffingResponse> response = (ApiResponse<MinimumStaffingResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Updates the planning group
    * 
    * @param request the request object
@@ -11453,6 +11763,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update scheduler settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuSchedulerSettingsResponse> patchWorkforcemanagementBusinessunitSchedulerSettingsAsync(PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest request, final AsyncApiCallback<BuSchedulerSettingsResponse> callback) {
+    try {
+      final SettableFuture<BuSchedulerSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuSchedulerSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BuSchedulerSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuSchedulerSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update scheduler settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuSchedulerSettingsResponse>> patchWorkforcemanagementBusinessunitSchedulerSettingsAsync(ApiRequest<BuSchedulerSettingsRequest> request, final AsyncApiCallback<ApiResponse<BuSchedulerSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuSchedulerSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuSchedulerSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BuSchedulerSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuSchedulerSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuSchedulerSettingsResponse> response = (ApiResponse<BuSchedulerSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuSchedulerSettingsResponse> response = (ApiResponse<BuSchedulerSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

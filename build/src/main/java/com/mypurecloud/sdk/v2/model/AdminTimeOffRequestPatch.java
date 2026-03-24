@@ -169,14 +169,14 @@ public class AdminTimeOffRequestPatch  implements Serializable {
 
 
   /**
-   * A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone.
+   * A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone
    **/
   public AdminTimeOffRequestPatch fullDayManagementUnitDates(List<String> fullDayManagementUnitDates) {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone.")
+  @ApiModelProperty(example = "null", value = "A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone")
   @JsonProperty("fullDayManagementUnitDates")
   public List<String> getFullDayManagementUnitDates() {
     return fullDayManagementUnitDates;
@@ -187,14 +187,14 @@ public class AdminTimeOffRequestPatch  implements Serializable {
 
 
   /**
-   * A set of start date-times in ISO-8601 format for partial day requests.
+   * A set of start date-times in ISO-8601 format for partial day requests
    **/
   public AdminTimeOffRequestPatch partialDayStartDateTimes(List<Date> partialDayStartDateTimes) {
     this.partialDayStartDateTimes = partialDayStartDateTimes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A set of start date-times in ISO-8601 format for partial day requests.")
+  @ApiModelProperty(example = "null", value = "A set of start date-times in ISO-8601 format for partial day requests")
   @JsonProperty("partialDayStartDateTimes")
   public List<Date> getPartialDayStartDateTimes() {
     return partialDayStartDateTimes;

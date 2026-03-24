@@ -171,14 +171,14 @@ public class CreateRecognition  implements Serializable {
 
 
   /**
-   * The title of the recognition. Max length of 100 characters (optional)
+   * The title of the recognition. Max length of 100 characters
    **/
   public CreateRecognition title(String title) {
     this.title = title;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The title of the recognition. Max length of 100 characters (optional)")
+  @ApiModelProperty(example = "null", required = true, value = "The title of the recognition. Max length of 100 characters")
   @JsonProperty("title")
   public String getTitle() {
     return title;

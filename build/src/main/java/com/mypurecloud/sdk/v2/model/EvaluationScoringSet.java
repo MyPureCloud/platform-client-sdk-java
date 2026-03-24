@@ -28,6 +28,8 @@ public class EvaluationScoringSet  implements Serializable {
   
   private Float totalScore = null;
   private Float totalCriticalScore = null;
+  private Float maxTotalRawCriticalScore = null;
+  private Float maxTotalRawScore = null;
   private Float totalNonCriticalScore = null;
   private List<EvaluationQuestionGroupScore> questionGroupScores = null;
   private Boolean anyFailedKillQuestions = null;
@@ -77,6 +79,42 @@ public class EvaluationScoringSet  implements Serializable {
   }
   public void setTotalCriticalScore(Float totalCriticalScore) {
     this.totalCriticalScore = totalCriticalScore;
+  }
+
+
+  /**
+   * Maximum total raw score for the critical questions. Raw score is the actual point values before applying weights or percentages.
+   **/
+  public EvaluationScoringSet maxTotalRawCriticalScore(Float maxTotalRawCriticalScore) {
+    this.maxTotalRawCriticalScore = maxTotalRawCriticalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Maximum total raw score for the critical questions. Raw score is the actual point values before applying weights or percentages.")
+  @JsonProperty("maxTotalRawCriticalScore")
+  public Float getMaxTotalRawCriticalScore() {
+    return maxTotalRawCriticalScore;
+  }
+  public void setMaxTotalRawCriticalScore(Float maxTotalRawCriticalScore) {
+    this.maxTotalRawCriticalScore = maxTotalRawCriticalScore;
+  }
+
+
+  /**
+   * Maximum total raw score for all questions. Raw score is the actual point values before applying weights or percentages.
+   **/
+  public EvaluationScoringSet maxTotalRawScore(Float maxTotalRawScore) {
+    this.maxTotalRawScore = maxTotalRawScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Maximum total raw score for all questions. Raw score is the actual point values before applying weights or percentages.")
+  @JsonProperty("maxTotalRawScore")
+  public Float getMaxTotalRawScore() {
+    return maxTotalRawScore;
+  }
+  public void setMaxTotalRawScore(Float maxTotalRawScore) {
+    this.maxTotalRawScore = maxTotalRawScore;
   }
 
 
@@ -217,6 +255,8 @@ public class EvaluationScoringSet  implements Serializable {
 
     return Objects.equals(this.totalScore, evaluationScoringSet.totalScore) &&
             Objects.equals(this.totalCriticalScore, evaluationScoringSet.totalCriticalScore) &&
+            Objects.equals(this.maxTotalRawCriticalScore, evaluationScoringSet.maxTotalRawCriticalScore) &&
+            Objects.equals(this.maxTotalRawScore, evaluationScoringSet.maxTotalRawScore) &&
             Objects.equals(this.totalNonCriticalScore, evaluationScoringSet.totalNonCriticalScore) &&
             Objects.equals(this.questionGroupScores, evaluationScoringSet.questionGroupScores) &&
             Objects.equals(this.anyFailedKillQuestions, evaluationScoringSet.anyFailedKillQuestions) &&
@@ -228,7 +268,7 @@ public class EvaluationScoringSet  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalScore, totalCriticalScore, totalNonCriticalScore, questionGroupScores, anyFailedKillQuestions, comments, privateComments, agentComments, transcriptTopics);
+    return Objects.hash(totalScore, totalCriticalScore, maxTotalRawCriticalScore, maxTotalRawScore, totalNonCriticalScore, questionGroupScores, anyFailedKillQuestions, comments, privateComments, agentComments, transcriptTopics);
   }
 
   @Override
@@ -238,6 +278,8 @@ public class EvaluationScoringSet  implements Serializable {
     
     sb.append("    totalScore: ").append(toIndentedString(totalScore)).append("\n");
     sb.append("    totalCriticalScore: ").append(toIndentedString(totalCriticalScore)).append("\n");
+    sb.append("    maxTotalRawCriticalScore: ").append(toIndentedString(maxTotalRawCriticalScore)).append("\n");
+    sb.append("    maxTotalRawScore: ").append(toIndentedString(maxTotalRawScore)).append("\n");
     sb.append("    totalNonCriticalScore: ").append(toIndentedString(totalNonCriticalScore)).append("\n");
     sb.append("    questionGroupScores: ").append(toIndentedString(questionGroupScores)).append("\n");
     sb.append("    anyFailedKillQuestions: ").append(toIndentedString(anyFailedKillQuestions)).append("\n");

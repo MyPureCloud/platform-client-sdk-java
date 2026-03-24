@@ -9,6 +9,7 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The data type of the variable. |  |
 | **scope** | [**ScopeEnum**](#Enum--ScopeEnum) | The scope that determines the variable's usage context within Guides runtime. |  |
 | **description** | **String** | The description of the variable used by Guides runtime for input/output handling. |  [optional] |
+| **validation** | [**VariableValidation**](VariableValidation) | The validation configuration for the variable. Optional - if not present, no validation is applied. |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -20,6 +21,7 @@
 | INTEGER | &quot;Integer&quot; | 
 | NUMBER | &quot;Number&quot; | 
 | BOOLEAN | &quot;Boolean&quot; | 
+| DATE | &quot;Date&quot; | 
 
 
 ## Enum: ScopeEnum
@@ -35,4 +37,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

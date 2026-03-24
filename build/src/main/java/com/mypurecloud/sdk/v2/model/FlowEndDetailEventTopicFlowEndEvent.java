@@ -450,6 +450,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     }
   }
   private TransferTypeEnum transferType = null;
+  private String utilizationLabel = null;
 
   public FlowEndDetailEventTopicFlowEndEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -850,6 +851,23 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public FlowEndDetailEventTopicFlowEndEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -882,12 +900,13 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
             Objects.equals(this.conversationExternalContactIds, flowEndDetailEventTopicFlowEndEvent.conversationExternalContactIds) &&
             Objects.equals(this.conversationExternalOrganizationIds, flowEndDetailEventTopicFlowEndEvent.conversationExternalOrganizationIds) &&
             Objects.equals(this.exitReason, flowEndDetailEventTopicFlowEndEvent.exitReason) &&
-            Objects.equals(this.transferType, flowEndDetailEventTopicFlowEndEvent.transferType);
+            Objects.equals(this.transferType, flowEndDetailEventTopicFlowEndEvent.transferType) &&
+            Objects.equals(this.utilizationLabel, flowEndDetailEventTopicFlowEndEvent.utilizationLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, subject, messageType, flowType, flowId, divisionId, flowVersion, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, exitReason, transferType);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, subject, messageType, flowType, flowId, divisionId, flowVersion, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, exitReason, transferType, utilizationLabel);
   }
 
   @Override
@@ -918,6 +937,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("    exitReason: ").append(toIndentedString(exitReason)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

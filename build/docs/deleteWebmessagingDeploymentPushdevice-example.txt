@@ -1,0 +1,27 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WebMessagingApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampledeleteWebmessagingDeploymentPushdevice {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+
+        WebMessagingApi apiInstance = new WebMessagingApi();
+        String deploymentId = "deploymentId_example"; // String | WebMessaging deployment id
+String tokenId = "tokenId_example"; // String | Device token id or cookie id
+        try { 
+            // Delete device information
+            apiInstance.deleteWebmessagingDeploymentPushdevice(deploymentId, tokenId);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WebMessagingApi#deleteWebmessagingDeploymentPushdevice");
+            e.printStackTrace();
+        }
+    }
+}

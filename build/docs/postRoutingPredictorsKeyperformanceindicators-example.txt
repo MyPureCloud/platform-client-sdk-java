@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CreateKpiRequest;import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+
+public class ExamplepostRoutingPredictorsKeyperformanceindicators {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        RoutingApi apiInstance = new RoutingApi();
+        CreateKpiRequest body = new CreateKpiRequest(); // CreateKpiRequest | request
+        try { 
+            // Create a custom Key Performance Indicator.
+            KeyPerformanceIndicator result = apiInstance.postRoutingPredictorsKeyperformanceindicators(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RoutingApi#postRoutingPredictorsKeyperformanceindicators");
+            e.printStackTrace();
+        }
+    }
+}

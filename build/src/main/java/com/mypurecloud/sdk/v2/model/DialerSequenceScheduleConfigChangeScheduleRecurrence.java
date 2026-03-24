@@ -37,7 +37,6 @@ public class DialerSequenceScheduleConfigChangeScheduleRecurrence  implements Se
   private DialerSequenceScheduleConfigChangeRecurrencePattern pattern = null;
   private List<DialerSequenceScheduleConfigChangeAlteration> alterations = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerSequenceScheduleConfigChangeScheduleRecurrence() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -187,23 +186,6 @@ public class DialerSequenceScheduleConfigChangeScheduleRecurrence  implements Se
   }
 
 
-  /**
-   **/
-  public DialerSequenceScheduleConfigChangeScheduleRecurrence getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -221,13 +203,12 @@ public class DialerSequenceScheduleConfigChangeScheduleRecurrence  implements Se
             Objects.equals(this.range, dialerSequenceScheduleConfigChangeScheduleRecurrence.range) &&
             Objects.equals(this.pattern, dialerSequenceScheduleConfigChangeScheduleRecurrence.pattern) &&
             Objects.equals(this.alterations, dialerSequenceScheduleConfigChangeScheduleRecurrence.alterations) &&
-            Objects.equals(this.additionalProperties, dialerSequenceScheduleConfigChangeScheduleRecurrence.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerSequenceScheduleConfigChangeScheduleRecurrence.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerSequenceScheduleConfigChangeScheduleRecurrence.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, start, end, timeZone, range, pattern, alterations, additionalProperties, getAdditionalProperties);
+    return Objects.hash(id, start, end, timeZone, range, pattern, alterations, additionalProperties);
   }
 
   @Override
@@ -243,7 +224,6 @@ public class DialerSequenceScheduleConfigChangeScheduleRecurrence  implements Se
     sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    alterations: ").append(toIndentedString(alterations)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

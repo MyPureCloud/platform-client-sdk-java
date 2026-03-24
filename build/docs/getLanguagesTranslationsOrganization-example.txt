@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.LanguagesApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Map;
+
+public class ExamplegetLanguagesTranslationsOrganization {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        LanguagesApi apiInstance = new LanguagesApi();
+        String language = "language_example"; // String | The language of the translation to retrieve for the organization
+        try { 
+            // Get effective translation for an organization by language
+            Map<String, Object> result = apiInstance.getLanguagesTranslationsOrganization(language);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LanguagesApi#getLanguagesTranslationsOrganization");
+            e.printStackTrace();
+        }
+    }
+}

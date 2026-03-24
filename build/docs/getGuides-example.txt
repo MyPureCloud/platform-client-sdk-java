@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GuideEntityListing;
+
+public class ExamplegetGuides {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AIStudioApi apiInstance = new AIStudioApi();
+        String name = "name_example"; // String | Filter by matching name - case insensitive.
+String nameContains = "nameContains_example"; // String | Filter by name contains - case insensitive.
+String status = "status_example"; // String | Filter by status.
+String sortBy = "dateModified"; // String | Sort by. Default value dateModified.
+String sortOrder = "desc"; // String | Sort Order. Default value desc.
+Integer pageNumber = 1; // Integer | Page number.
+Integer pageSize = 25; // Integer | Page size. The maximum page size is 100.
+        try { 
+            // Get all guides.
+            GuideEntityListing result = apiInstance.getGuides(name, nameContains, status, sortBy, sortOrder, pageNumber, pageSize);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AIStudioApi#getGuides");
+            e.printStackTrace();
+        }
+    }
+}

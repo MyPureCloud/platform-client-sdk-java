@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.BulkJobUpdate;import com.mypurecloud.sdk.v2.model.BulkJob;
+
+public class ExamplepatchTaskmanagementWorkitemsBulkAddJob {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        TaskManagementApi apiInstance = new TaskManagementApi();
+        String bulkJobId = "bulkJobId_example"; // String | Bulk job id
+BulkJobUpdate body = new BulkJobUpdate(); // BulkJobUpdate | Bulk add job update request
+        try { 
+            // Update workitem bulk add job.
+            BulkJob result = apiInstance.patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TaskManagementApi#patchTaskmanagementWorkitemsBulkAddJob");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AssistantCopilotVariationsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampledeleteAssistantVariation {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AssistantCopilotVariationsApi apiInstance = new AssistantCopilotVariationsApi();
+        String assistantId = "assistantId_example"; // String | Assistant ID
+String variationId = "variationId_example"; // String | Variation ID
+        try { 
+            // Delete assistant copilot variation by id
+            apiInstance.deleteAssistantVariation(assistantId, variationId);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AssistantCopilotVariationsApi#deleteAssistantVariation");
+            e.printStackTrace();
+        }
+    }
+}

@@ -171,6 +171,7 @@ public class Campaign  implements Serializable {
   private String agentOwnedColumn = null;
   private DynamicContactQueueingSettings dynamicContactQueueingSettings = null;
   private List<String> skillColumns = null;
+  private Boolean previewAutoEnd = null;
   private Integer maxCallsPerAgent = null;
   private Double maxCallsPerAgentDecimal = null;
   private Boolean callbackAutoAnswer = null;
@@ -778,6 +779,24 @@ public class Campaign  implements Serializable {
 
 
   /**
+   * Option to enable preview auto end
+   **/
+  public Campaign previewAutoEnd(Boolean previewAutoEnd) {
+    this.previewAutoEnd = previewAutoEnd;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Option to enable preview auto end")
+  @JsonProperty("previewAutoEnd")
+  public Boolean getPreviewAutoEnd() {
+    return previewAutoEnd;
+  }
+  public void setPreviewAutoEnd(Boolean previewAutoEnd) {
+    this.previewAutoEnd = previewAutoEnd;
+  }
+
+
+  /**
    * The maximum number of calls that can be placed per agent on this campaign
    **/
   public Campaign maxCallsPerAgent(Integer maxCallsPerAgent) {
@@ -919,6 +938,7 @@ public class Campaign  implements Serializable {
             Objects.equals(this.agentOwnedColumn, campaign.agentOwnedColumn) &&
             Objects.equals(this.dynamicContactQueueingSettings, campaign.dynamicContactQueueingSettings) &&
             Objects.equals(this.skillColumns, campaign.skillColumns) &&
+            Objects.equals(this.previewAutoEnd, campaign.previewAutoEnd) &&
             Objects.equals(this.maxCallsPerAgent, campaign.maxCallsPerAgent) &&
             Objects.equals(this.maxCallsPerAgentDecimal, campaign.maxCallsPerAgentDecimal) &&
             Objects.equals(this.callbackAutoAnswer, campaign.callbackAutoAnswer) &&
@@ -929,7 +949,7 @@ public class Campaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, dynamicContactQueueingSettings, skillColumns, maxCallsPerAgent, maxCallsPerAgentDecimal, callbackAutoAnswer, dynamicLineBalancingSettings, diagnosticsSettings, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, dynamicContactQueueingSettings, skillColumns, previewAutoEnd, maxCallsPerAgent, maxCallsPerAgentDecimal, callbackAutoAnswer, dynamicLineBalancingSettings, diagnosticsSettings, selfUri);
   }
 
   @Override
@@ -972,6 +992,7 @@ public class Campaign  implements Serializable {
     sb.append("    agentOwnedColumn: ").append(toIndentedString(agentOwnedColumn)).append("\n");
     sb.append("    dynamicContactQueueingSettings: ").append(toIndentedString(dynamicContactQueueingSettings)).append("\n");
     sb.append("    skillColumns: ").append(toIndentedString(skillColumns)).append("\n");
+    sb.append("    previewAutoEnd: ").append(toIndentedString(previewAutoEnd)).append("\n");
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
     sb.append("    maxCallsPerAgentDecimal: ").append(toIndentedString(maxCallsPerAgentDecimal)).append("\n");
     sb.append("    callbackAutoAnswer: ").append(toIndentedString(callbackAutoAnswer)).append("\n");

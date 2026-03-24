@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AgentCopilotApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LanguageSupportResponse;
+
+public class ExamplegetAssistantsCopilotFeaturesupport {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AgentCopilotApi apiInstance = new AgentCopilotApi();
+        String language = "language_example"; // String | Which language are the features supported for
+        try { 
+            // Get information about the support of features for all the languages or only for a certain language.
+            LanguageSupportResponse result = apiInstance.getAssistantsCopilotFeaturesupport(language);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AgentCopilotApi#getAssistantsCopilotFeaturesupport");
+            e.printStackTrace();
+        }
+    }
+}

@@ -78,7 +78,8 @@ public class Miner  implements Serializable {
     DA_DK("da-dk"),
     FI_FI("fi-fi"),
     SV_SE("sv-se"),
-    NB_NO("nb-no");
+    NB_NO("nb-no"),
+    TR_TR("tr-tr");
 
     private String value;
 
@@ -435,14 +436,14 @@ public class Miner  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "Thu Jun 20 00:00:00 UTC 2019", value = "Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "Thu Jun 20 02:00:00 CEST 2019", value = "Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("conversationsDateRangeStart")
   public LocalDate getConversationsDateRangeStart() {
     return conversationsDateRangeStart;
   }
 
 
-  @ApiModelProperty(example = "Fri Dec 20 00:00:00 UTC 2019", value = "Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "Fri Dec 20 01:00:00 CET 2019", value = "Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("conversationsDateRangeEnd")
   public LocalDate getConversationsDateRangeEnd() {
     return conversationsDateRangeEnd;

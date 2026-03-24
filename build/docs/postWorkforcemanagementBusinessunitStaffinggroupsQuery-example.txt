@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.QueryUserStaffingGroupListRequest;import com.mypurecloud.sdk.v2.model.UserStaffingGroupListing;
+
+public class ExamplepostWorkforcemanagementBusinessunitStaffinggroupsQuery {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+QueryUserStaffingGroupListRequest body = new QueryUserStaffingGroupListRequest(); // QueryUserStaffingGroupListRequest | body
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service
+        try { 
+            // Gets staffing group associations for a list of user IDs
+            UserStaffingGroupListing result = apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body, forceDownloadService);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsQuery");
+            e.printStackTrace();
+        }
+    }
+}

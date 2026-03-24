@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Step;
+
+public class ExamplegetCasemanagementCaseStageStep {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        CaseManagementApi apiInstance = new CaseManagementApi();
+        String caseId = "caseId_example"; // String | Case ID
+String stageId = "stageId_example"; // String | Stage ID
+String stepId = "stepId_example"; // String | Step ID
+        try { 
+            // Get a Step.
+            Step result = apiInstance.getCasemanagementCaseStageStep(caseId, stageId, stepId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CaseManagementApi#getCasemanagementCaseStageStep");
+            e.printStackTrace();
+        }
+    }
+}

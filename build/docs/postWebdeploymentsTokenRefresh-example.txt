@@ -1,0 +1,27 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+import com.mypurecloud.sdk.v2.model.WebDeploymentsRefreshJWTRequest;import com.mypurecloud.sdk.v2.model.SignedData;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplepostWebdeploymentsTokenRefresh {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+
+        WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+        WebDeploymentsRefreshJWTRequest body = new WebDeploymentsRefreshJWTRequest(); // WebDeploymentsRefreshJWTRequest | 
+        try { 
+            // Refresh a JWT.
+            SignedData result = apiInstance.postWebdeploymentsTokenRefresh(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WebDeploymentsApi#postWebdeploymentsTokenRefresh");
+            e.printStackTrace();
+        }
+    }
+}

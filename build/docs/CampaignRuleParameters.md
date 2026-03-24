@@ -19,6 +19,7 @@
 | **emailMessagesPerMinute** | **Integer** | The number of messages per minute to set a Email messaging campaign to. |  [optional] |
 | **smsContentTemplate** | [**DomainEntityRef**](DomainEntityRef) | The content template to set a SMS campaign to. |  [optional] |
 | **emailContentTemplate** | [**DomainEntityRef**](DomainEntityRef) | The content template to set a Email campaign to. |  [optional] |
+| **forDuration** | [**Duration**](Duration) | ISO-8601 Duration for which condition expression must be continuously true before condition is evaluated as true |  [optional] |
 
 
 ## Enum: OperatorEnum
@@ -64,4 +65,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

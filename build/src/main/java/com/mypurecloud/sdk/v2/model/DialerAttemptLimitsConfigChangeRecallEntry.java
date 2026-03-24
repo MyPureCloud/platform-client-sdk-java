@@ -28,7 +28,6 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
   private Long nbrAttempts = null;
   private Long minutesBetweenAttempts = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerAttemptLimitsConfigChangeRecallEntry() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -89,23 +88,6 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
   }
 
 
-  /**
-   **/
-  public DialerAttemptLimitsConfigChangeRecallEntry getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -118,13 +100,12 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
 
     return Objects.equals(this.nbrAttempts, dialerAttemptLimitsConfigChangeRecallEntry.nbrAttempts) &&
             Objects.equals(this.minutesBetweenAttempts, dialerAttemptLimitsConfigChangeRecallEntry.minutesBetweenAttempts) &&
-            Objects.equals(this.additionalProperties, dialerAttemptLimitsConfigChangeRecallEntry.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerAttemptLimitsConfigChangeRecallEntry.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerAttemptLimitsConfigChangeRecallEntry.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nbrAttempts, minutesBetweenAttempts, additionalProperties, getAdditionalProperties);
+    return Objects.hash(nbrAttempts, minutesBetweenAttempts, additionalProperties);
   }
 
   @Override
@@ -135,7 +116,6 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
     sb.append("    nbrAttempts: ").append(toIndentedString(nbrAttempts)).append("\n");
     sb.append("    minutesBetweenAttempts: ").append(toIndentedString(minutesBetweenAttempts)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

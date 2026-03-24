@@ -139,7 +139,6 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerDnclistConfigChangeDncList() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -396,23 +395,6 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   }
 
 
-  /**
-   **/
-  public DialerDnclistConfigChangeDncList getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -436,13 +418,12 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
             Objects.equals(this.name, dialerDnclistConfigChangeDncList.name) &&
             Objects.equals(this.dateCreated, dialerDnclistConfigChangeDncList.dateCreated) &&
             Objects.equals(this.dateModified, dialerDnclistConfigChangeDncList.dateModified) &&
-            Objects.equals(this.version, dialerDnclistConfigChangeDncList.version) &&
-            Objects.equals(this.getAdditionalProperties, dialerDnclistConfigChangeDncList.getAdditionalProperties);
+            Objects.equals(this.version, dialerDnclistConfigChangeDncList.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(importStatus, size, dncSourceType, loginId, dncCodes, licenseId, contactMethod, division, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
+    return Objects.hash(importStatus, size, dncSourceType, loginId, dncCodes, licenseId, contactMethod, division, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -464,7 +445,6 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

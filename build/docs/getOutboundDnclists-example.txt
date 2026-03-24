@@ -1,0 +1,39 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+
+public class ExamplegetOutboundDnclists {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        OutboundApi apiInstance = new OutboundApi();
+        Boolean includeImportStatus = false; // Boolean | Import status
+Boolean includeSize = false; // Boolean | Include size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
+String filterType = "Prefix"; // String | Filter type
+String name = "name_example"; // String | Name
+String dncSourceType = "dncSourceType_example"; // String | DncSourceType
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
+String sortBy = "sortBy_example"; // String | Sort by
+String sortOrder = "sortOrder_example"; // String | Sort order
+        try { 
+            // Query dialer DNC lists
+            DncListEntityListing result = apiInstance.getOutboundDnclists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OutboundApi#getOutboundDnclists");
+            e.printStackTrace();
+        }
+    }
+}

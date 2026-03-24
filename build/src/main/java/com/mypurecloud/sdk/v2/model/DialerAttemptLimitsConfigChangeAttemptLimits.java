@@ -87,7 +87,6 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerAttemptLimitsConfigChangeAttemptLimits() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -308,23 +307,6 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
   }
 
 
-  /**
-   **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -346,13 +328,12 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
             Objects.equals(this.name, dialerAttemptLimitsConfigChangeAttemptLimits.name) &&
             Objects.equals(this.dateCreated, dialerAttemptLimitsConfigChangeAttemptLimits.dateCreated) &&
             Objects.equals(this.dateModified, dialerAttemptLimitsConfigChangeAttemptLimits.dateModified) &&
-            Objects.equals(this.version, dialerAttemptLimitsConfigChangeAttemptLimits.version) &&
-            Objects.equals(this.getAdditionalProperties, dialerAttemptLimitsConfigChangeAttemptLimits.getAdditionalProperties);
+            Objects.equals(this.version, dialerAttemptLimitsConfigChangeAttemptLimits.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, recallEntries, breadthFirstRecalls, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
+    return Objects.hash(maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, recallEntries, breadthFirstRecalls, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -372,7 +353,6 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

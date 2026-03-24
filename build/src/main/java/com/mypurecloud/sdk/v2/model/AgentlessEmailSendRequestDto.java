@@ -40,14 +40,12 @@ public class AgentlessEmailSendRequestDto  implements Serializable {
     }
   }
   /**
-   * The direction of the message.
+   * The type of email domain used to send the agentless message.
    */
  @JsonDeserialize(using = SenderTypeEnumDeserializer.class)
   public enum SenderTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    OUTBOUND("Outbound"),
-    INBOUND("Inbound"),
-    INTEGRATION("Integration");
+    OUTBOUND("Outbound");
 
     private String value;
 
@@ -91,14 +89,14 @@ public class AgentlessEmailSendRequestDto  implements Serializable {
 
   
   /**
-   * The direction of the message.
+   * The type of email domain used to send the agentless message.
    **/
   public AgentlessEmailSendRequestDto senderType(SenderTypeEnum senderType) {
     this.senderType = senderType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The direction of the message.")
+  @ApiModelProperty(example = "null", required = true, value = "The type of email domain used to send the agentless message.")
   @JsonProperty("senderType")
   public SenderTypeEnum getSenderType() {
     return senderType;

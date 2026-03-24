@@ -109,14 +109,14 @@ public class BuSchedulingSettingsRequest  implements Serializable {
 
 
   /**
-   * Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+   * Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published
    **/
   public BuSchedulingSettingsRequest syncTimeOffProperties(SetWrapperSyncTimeOffProperty syncTimeOffProperties) {
     this.syncTimeOffProperties = syncTimeOffProperties;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.")
+  @ApiModelProperty(example = "null", value = "Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published")
   @JsonProperty("syncTimeOffProperties")
   public SetWrapperSyncTimeOffProperty getSyncTimeOffProperties() {
     return syncTimeOffProperties;
@@ -145,14 +145,14 @@ public class BuSchedulingSettingsRequest  implements Serializable {
 
 
   /**
-   * Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
+   * Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false
    **/
   public BuSchedulingSettingsRequest allowWorkPlanPerMinuteGranularity(Boolean allowWorkPlanPerMinuteGranularity) {
     this.allowWorkPlanPerMinuteGranularity = allowWorkPlanPerMinuteGranularity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.")
+  @ApiModelProperty(example = "null", value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false")
   @JsonProperty("allowWorkPlanPerMinuteGranularity")
   public Boolean getAllowWorkPlanPerMinuteGranularity() {
     return allowWorkPlanPerMinuteGranularity;

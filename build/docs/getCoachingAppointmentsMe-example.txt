@@ -1,0 +1,38 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.CoachingApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
+
+public class ExamplegetCoachingAppointmentsMe {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        CoachingApi apiInstance = new CoachingApi();
+        String interval = "interval_example"; // String | Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+List<String> statuses = Arrays.asList(null); // List<String> | Appointment Statuses to filter by
+List<String> facilitatorIds = Arrays.asList(null); // List<String> | The facilitator IDs for which to retrieve appointments
+String sortOrder = "sortOrder_example"; // String | Sort (by due date) either Asc or Desc
+List<String> relationships = Arrays.asList(null); // List<String> | Relationships to filter by
+String completionInterval = "completionInterval_example"; // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String overdue = "overdue_example"; // String | Overdue status to filter by
+String intervalCondition = "intervalCondition_example"; // String | Filter condition for interval
+        try { 
+            // Get my appointments for a given date range
+            CoachingAppointmentResponseList result = apiInstance.getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CoachingApi#getCoachingAppointmentsMe");
+            e.printStackTrace();
+        }
+    }
+}

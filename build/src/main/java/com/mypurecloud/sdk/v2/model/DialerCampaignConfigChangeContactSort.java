@@ -78,7 +78,6 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
   private DirectionEnum direction = null;
   private Boolean numeric = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerCampaignConfigChangeContactSort() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -155,23 +154,6 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
   }
 
 
-  /**
-   **/
-  public DialerCampaignConfigChangeContactSort getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -185,13 +167,12 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
     return Objects.equals(this.fieldName, dialerCampaignConfigChangeContactSort.fieldName) &&
             Objects.equals(this.direction, dialerCampaignConfigChangeContactSort.direction) &&
             Objects.equals(this.numeric, dialerCampaignConfigChangeContactSort.numeric) &&
-            Objects.equals(this.additionalProperties, dialerCampaignConfigChangeContactSort.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerCampaignConfigChangeContactSort.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerCampaignConfigChangeContactSort.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fieldName, direction, numeric, additionalProperties, getAdditionalProperties);
+    return Objects.hash(fieldName, direction, numeric, additionalProperties);
   }
 
   @Override
@@ -203,7 +184,6 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    numeric: ").append(toIndentedString(numeric)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

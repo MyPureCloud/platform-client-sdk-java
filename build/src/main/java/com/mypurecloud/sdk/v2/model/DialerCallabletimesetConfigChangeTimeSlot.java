@@ -29,7 +29,6 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
   private String stopTime = null;
   private Long day = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerCallabletimesetConfigChangeTimeSlot() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -108,23 +107,6 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
   }
 
 
-  /**
-   **/
-  public DialerCallabletimesetConfigChangeTimeSlot getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -138,13 +120,12 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
     return Objects.equals(this.startTime, dialerCallabletimesetConfigChangeTimeSlot.startTime) &&
             Objects.equals(this.stopTime, dialerCallabletimesetConfigChangeTimeSlot.stopTime) &&
             Objects.equals(this.day, dialerCallabletimesetConfigChangeTimeSlot.day) &&
-            Objects.equals(this.additionalProperties, dialerCallabletimesetConfigChangeTimeSlot.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerCallabletimesetConfigChangeTimeSlot.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerCallabletimesetConfigChangeTimeSlot.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startTime, stopTime, day, additionalProperties, getAdditionalProperties);
+    return Objects.hash(startTime, stopTime, day, additionalProperties);
   }
 
   @Override
@@ -156,7 +137,6 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
     sb.append("    stopTime: ").append(toIndentedString(stopTime)).append("\n");
     sb.append("    day: ").append(toIndentedString(day)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

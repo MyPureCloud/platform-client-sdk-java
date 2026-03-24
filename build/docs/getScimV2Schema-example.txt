@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetScimV2Schema {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SCIMApi apiInstance = new SCIMApi();
+        String schemaId = "schemaId_example"; // String | The ID of a schema. Returned with GET /api/v2/scim/v2/schemas.
+        try { 
+            // Get a SCIM schema
+            ScimV2SchemaDefinition result = apiInstance.getScimV2Schema(schemaId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SCIMApi#getScimV2Schema");
+            e.printStackTrace();
+        }
+    }
+}

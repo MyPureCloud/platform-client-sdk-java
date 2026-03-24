@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UserCustomAttributesUpdateRequest;import com.mypurecloud.sdk.v2.model.UserCustomAttributes;
+
+public class ExampleputUserCustomattributes {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UsersApi apiInstance = new UsersApi();
+        String userId = "userId_example"; // String | user ID
+UserCustomAttributesUpdateRequest userCustomAttributes = new UserCustomAttributesUpdateRequest(); // UserCustomAttributesUpdateRequest | 
+        try { 
+            // Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+            UserCustomAttributes result = apiInstance.putUserCustomattributes(userId, userCustomAttributes);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersApi#putUserCustomattributes");
+            e.printStackTrace();
+        }
+    }
+}

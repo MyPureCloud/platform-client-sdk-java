@@ -52,14 +52,14 @@ public class UserStaffingGroupResponse  implements Serializable {
 
 
   /**
-   * The staffing group
+   * The current staffing group of the user
    **/
   public UserStaffingGroupResponse staffingGroup(StaffingGroupReference staffingGroup) {
     this.staffingGroup = staffingGroup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The staffing group")
+  @ApiModelProperty(example = "null", value = "The current staffing group of the user")
   @JsonProperty("staffingGroup")
   public StaffingGroupReference getStaffingGroup() {
     return staffingGroup;

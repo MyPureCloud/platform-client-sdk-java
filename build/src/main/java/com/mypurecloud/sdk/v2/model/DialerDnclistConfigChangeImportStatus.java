@@ -82,7 +82,6 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
   private List<String> targetContactListIds = null;
   private String listNamePrefix = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerDnclistConfigChangeImportStatus() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -234,23 +233,6 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
   }
 
 
-  /**
-   **/
-  public DialerDnclistConfigChangeImportStatus getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -268,13 +250,12 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
             Objects.equals(this.failureReason, dialerDnclistConfigChangeImportStatus.failureReason) &&
             Objects.equals(this.targetContactListIds, dialerDnclistConfigChangeImportStatus.targetContactListIds) &&
             Objects.equals(this.listNamePrefix, dialerDnclistConfigChangeImportStatus.listNamePrefix) &&
-            Objects.equals(this.additionalProperties, dialerDnclistConfigChangeImportStatus.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerDnclistConfigChangeImportStatus.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerDnclistConfigChangeImportStatus.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason, targetContactListIds, listNamePrefix, additionalProperties, getAdditionalProperties);
+    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason, targetContactListIds, listNamePrefix, additionalProperties);
   }
 
   @Override
@@ -290,7 +271,6 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
     sb.append("    targetContactListIds: ").append(toIndentedString(targetContactListIds)).append("\n");
     sb.append("    listNamePrefix: ").append(toIndentedString(listNamePrefix)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

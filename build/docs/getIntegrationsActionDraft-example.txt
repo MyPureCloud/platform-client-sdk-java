@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.model.Action;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetIntegrationsActionDraft {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        IntegrationsApi apiInstance = new IntegrationsApi();
+        String actionId = "actionId_example"; // String | actionId
+String expand = "expand_example"; // String | Indicates a field in the response which should be expanded.
+Boolean flatten = false; // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+Boolean includeConfig = false; // Boolean | Return config in response.
+        try { 
+            // Retrieve a Draft
+            Action result = apiInstance.getIntegrationsActionDraft(actionId, expand, flatten, includeConfig);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionDraft");
+            e.printStackTrace();
+        }
+    }
+}

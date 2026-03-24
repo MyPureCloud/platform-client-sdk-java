@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+import com.mypurecloud.sdk.v2.model.CaseListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetCasemanagementCasesExternalcontact {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        CaseManagementApi apiInstance = new CaseManagementApi();
+        String externalContactId = "externalContactId_example"; // String | External Contact ID
+String after = "after_example"; // String | The cursor that points to the end of the set of cases that has been returned.
+Integer pageSize = 56; // Integer | Number of cases to return. Maximum of 200.
+String divisionIds = "divisionIds_example"; // String | Filter by Divisions
+List<String> expands = Arrays.asList(null); // List<String> | Which fields to expand.
+        try { 
+            // Get a list of cases for provided external contact id.
+            CaseListing result = apiInstance.getCasemanagementCasesExternalcontact(externalContactId, after, pageSize, divisionIds, expands);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CaseManagementApi#getCasemanagementCasesExternalcontact");
+            e.printStackTrace();
+        }
+    }
+}

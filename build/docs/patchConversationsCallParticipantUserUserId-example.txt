@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
+
+public class ExamplepatchConversationsCallParticipantUserUserId {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ConversationsApi apiInstance = new ConversationsApi();
+        String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String userId = "userId_example"; // String | userId
+MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant request
+        try { 
+            // Update conversation participant on behalf of a user
+            apiInstance.patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ConversationsApi#patchConversationsCallParticipantUserUserId");
+            e.printStackTrace();
+        }
+    }
+}

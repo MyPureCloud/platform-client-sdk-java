@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UsersRulesApi;
+import com.mypurecloud.sdk.v2.model.UsersRulesDependent;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetUsersRuleDependentTypeId {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UsersRulesApi apiInstance = new UsersRulesApi();
+        String ruleId = "ruleId_example"; // String | The ID of the rule for which to retrieve dependents
+String ruleType = "ruleType_example"; // String | The type of the dependent
+String typeId = "typeId_example"; // String | The type ID of the dependent
+        try { 
+            // Get dependent of a users rule
+            UsersRulesDependent result = apiInstance.getUsersRuleDependentTypeId(ruleId, ruleType, typeId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersRulesApi#getUsersRuleDependentTypeId");
+            e.printStackTrace();
+        }
+    }
+}

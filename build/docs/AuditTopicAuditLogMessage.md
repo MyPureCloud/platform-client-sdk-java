@@ -62,6 +62,7 @@
 | SUPPORTABILITY | &quot;Supportability&quot; | 
 | CALLBACK | &quot;Callback&quot; | 
 | DIRECTORY | &quot;Directory&quot; | 
+| LOCATIONS | &quot;Locations&quot; | 
 | EXTERNALCONTACTS | &quot;ExternalContacts&quot; | 
 | TASKMANAGEMENT | &quot;TaskManagement&quot; | 
 | SCIM | &quot;SCIM&quot; | 
@@ -325,6 +326,7 @@
 | SCHEDULE | &quot;Schedule&quot; | 
 | SERVICEGOALTEMPLATE | &quot;ServiceGoalTemplate&quot; | 
 | SHIFTTRADE | &quot;ShiftTrade&quot; | 
+| SELFSCHEDULE | &quot;SelfSchedule&quot; | 
 | TIMEOFFLIMIT | &quot;TimeOffLimit&quot; | 
 | TIMEOFFPLAN | &quot;TimeOffPlan&quot; | 
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
@@ -337,6 +339,7 @@
 | CAPACITYPLAN | &quot;CapacityPlan&quot; | 
 | SCHEDULEBID | &quot;ScheduleBid&quot; | 
 | SCHEDULEBIDGROUP | &quot;ScheduleBidGroup&quot; | 
+| OPPORTUNITY | &quot;Opportunity&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSELIBRARY | &quot;ResponseLibrary&quot; | 
@@ -463,6 +466,8 @@
 | INBOUNDROUTE | &quot;InboundRoute&quot; | 
 | EMAILSETTING | &quot;EmailSetting&quot; | 
 | ORGANIZATIONLIMITS | &quot;OrganizationLimits&quot; | 
+| ROUTINGSKILL | &quot;RoutingSkill&quot; | 
+| ROUTINGLANGUAGE | &quot;RoutingLanguage&quot; | 
 | COMPOSERPAGE | &quot;ComposerPage&quot; | 
 | COMPOSERPUBLISHEDSCRIPT | &quot;ComposerPublishedScript&quot; | 
 | COMPOSERSCRIPT | &quot;ComposerScript&quot; | 
@@ -490,4 +495,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

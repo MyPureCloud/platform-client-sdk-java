@@ -77,7 +77,6 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
   }
   private ConditionTypeEnum conditionType = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerCampaignRuleConfigChangeCampaignRuleCondition() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -156,23 +155,6 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
   }
 
 
-  /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRuleCondition getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -186,13 +168,12 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
     return Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRuleCondition.id) &&
             Objects.equals(this.parameters, dialerCampaignRuleConfigChangeCampaignRuleCondition.parameters) &&
             Objects.equals(this.conditionType, dialerCampaignRuleConfigChangeCampaignRuleCondition.conditionType) &&
-            Objects.equals(this.additionalProperties, dialerCampaignRuleConfigChangeCampaignRuleCondition.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerCampaignRuleConfigChangeCampaignRuleCondition.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerCampaignRuleConfigChangeCampaignRuleCondition.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parameters, conditionType, additionalProperties, getAdditionalProperties);
+    return Objects.hash(id, parameters, conditionType, additionalProperties);
   }
 
   @Override
@@ -204,7 +185,6 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    conditionType: ").append(toIndentedString(conditionType)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

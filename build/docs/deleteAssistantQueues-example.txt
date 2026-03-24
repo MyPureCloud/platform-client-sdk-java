@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampledeleteAssistantQueues {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+        String assistantId = "assistantId_example"; // String | Assistant ID
+String queueIds = "queueIds_example"; // String | Comma-separated identifiers of the queues that need to be deleted.
+        try { 
+            // Disassociate the queues from an assistant for the given assistant ID and queue IDs.
+            apiInstance.deleteAssistantQueues(assistantId, queueIds);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AgentAssistantsApi#deleteAssistantQueues");
+            e.printStackTrace();
+        }
+    }
+}

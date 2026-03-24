@@ -155,7 +155,7 @@ public class ContestsEssentials  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "Fri Jan 12 00:00:00 UTC 2024", required = true, value = "Start date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "Fri Jan 12 01:00:00 CET 2024", required = true, value = "Start date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateStart")
   public LocalDate getDateStart() {
     return dateStart;
@@ -173,7 +173,7 @@ public class ContestsEssentials  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "Fri Jan 12 00:00:00 UTC 2024", required = true, value = "End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "Fri Jan 12 01:00:00 CET 2024", required = true, value = "End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateEnd")
   public LocalDate getDateEnd() {
     return dateEnd;

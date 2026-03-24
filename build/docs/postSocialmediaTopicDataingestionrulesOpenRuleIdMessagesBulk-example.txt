@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SocialMediaApi;
+import com.mypurecloud.sdk.v2.model.OpenSocialNormalizedMessageEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.List;import com.mypurecloud.sdk.v2.model.OpenSocialMediaNormalizedMessage;
+
+public class ExamplepostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SocialMediaApi apiInstance = new SocialMediaApi();
+        String topicId = "topicId_example"; // String | Topic ID
+String ruleId = "ruleId_example"; // String | Data Ingestion Rule ID
+List<OpenSocialMediaNormalizedMessage> body = Arrays.asList(new OpenSocialMediaNormalizedMessage()); // List<OpenSocialMediaNormalizedMessage> | NormalizedMessage
+        try { 
+            // Ingest a list of Open Social Messages
+            OpenSocialNormalizedMessageEntityListing result = apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SocialMediaApi#postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk");
+            e.printStackTrace();
+        }
+    }
+}

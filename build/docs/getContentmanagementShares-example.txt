@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.model.ShareEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetContentmanagementShares {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ContentManagementApi apiInstance = new ContentManagementApi();
+        String entityId = "entityId_example"; // String | Filters the shares returned to only the entity specified by the value of this parameter.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+        try { 
+            // Gets a list of shares.  You must specify at least one filter (e.g. entityId).
+            ShareEntityListing result = apiInstance.getContentmanagementShares(entityId, expand, pageSize, pageNumber);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ContentManagementApi#getContentmanagementShares");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SocialMediaApi;
+import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponseEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SocialMediaApi apiInstance = new SocialMediaApi();
+        String topicId = "topicId_example"; // String | topicId
+String facebookIngestionRuleId = "facebookIngestionRuleId_example"; // String | facebookIngestionRuleId
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+Boolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted items in the result.
+        try { 
+            // Get the Facebook data ingestion rule versions.
+            FacebookDataIngestionRuleVersionResponseEntityListing result = apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions(topicId, facebookIngestionRuleId, pageNumber, pageSize, includeDeleted);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SocialMediaApi#getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions");
+            e.printStackTrace();
+        }
+    }
+}

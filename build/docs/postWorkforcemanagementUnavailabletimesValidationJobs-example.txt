@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesResponse;import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesRequest;
+
+public class ExamplepostWorkforcemanagementUnavailabletimesValidationJobs {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        ValidateAgentUnavailableTimesRequest body = new ValidateAgentUnavailableTimesRequest(); // ValidateAgentUnavailableTimesRequest | body
+        try { 
+            // Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+            ValidateAgentUnavailableTimesResponse result = apiInstance.postWorkforcemanagementUnavailabletimesValidationJobs(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementUnavailabletimesValidationJobs");
+            e.printStackTrace();
+        }
+    }
+}

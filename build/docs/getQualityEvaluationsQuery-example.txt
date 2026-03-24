@@ -1,0 +1,48 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetQualityEvaluationsQuery {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        QualityApi apiInstance = new QualityApi();
+        Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
+String previousPage = "previousPage_example"; // String | Previous page token
+String conversationId = "conversationId_example"; // String | conversationId specified
+String agentUserId = "agentUserId_example"; // String | user id of the agent
+String agentTeamId = "agentTeamId_example"; // String | team id of the agent
+String evaluatorUserId = "evaluatorUserId_example"; // String | evaluator user id
+String assigneeUserId = "assigneeUserId_example"; // String | assignee user id
+String queueId = "queueId_example"; // String | queue id
+String startTime = "startTime_example"; // String | start time of the evaluation query
+String endTime = "endTime_example"; // String | end time of the evaluation query
+String formContextId = "formContextId_example"; // String | shared id between form versions
+List<String> evaluationState = Arrays.asList(null); // List<String> | 
+Boolean isReleased = true; // Boolean | the evaluation has been released
+Boolean agentHasRead = true; // Boolean | agent has the evaluation
+Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
+Integer maximum = 56; // Integer | the maximum number of results to return
+String sortOrder = "sortOrder_example"; // String | NOTE: Does not work when conversationId is supplied.
+Boolean includeDeletedUsers = false; // Boolean | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false.
+        try { 
+            // Queries Evaluations and returns a paged list
+            EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder, includeDeletedUsers);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling QualityApi#getQualityEvaluationsQuery");
+            e.printStackTrace();
+        }
+    }
+}
