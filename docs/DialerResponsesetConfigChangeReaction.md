@@ -9,7 +9,6 @@
 | **name** | **String** |  |  [optional] |
 | **reactionType** | [**ReactionTypeEnum**](#Enum--ReactionTypeEnum) |  |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: ReactionTypeEnum
@@ -25,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

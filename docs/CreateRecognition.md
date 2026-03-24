@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **recipientId** | **String** | The recipient of the recognition |  |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the recognition |  |
-| **title** | **String** | The title of the recognition. Max length of 100 characters (optional) |  [optional] |
+| **title** | **String** | The title of the recognition. Max length of 100 characters |  |
 | **note** | **String** | The note of the recognition. Max length of 800 characters (optional) |  [optional] |
 | **contextType** | [**ContextTypeEnum**](#Enum--ContextTypeEnum) | The context type (optional) |  [optional] |
 | **contextId** | **String** | The context id (optional) |  [optional] |
@@ -37,4 +37,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

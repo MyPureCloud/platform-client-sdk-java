@@ -238,9 +238,11 @@
 | **sentimentScoreCategories** | [**List<SentimentScoreCategoriesEnum>**](#Enum--SentimentScoreCategoriesEnum) | A set of Sentiment Score Categories  for filtering |  [optional] |
 | **sentimentTrendCategories** | [**List<SentimentTrendCategoriesEnum>**](#Enum--SentimentTrendCategoriesEnum) | A set of Sentiment Trend Categories for filtering |  [optional] |
 | **contentModerationFlags** | [**List<ContentModerationFlagsEnum>**](#Enum--ContentModerationFlagsEnum) | A set of Content Moderation Flags for filtering |  [optional] |
+| **socialSourceTypes** | [**List<SocialSourceTypesEnum>**](#Enum--SocialSourceTypesEnum) | A set of Source Types for social filtering |  [optional] |
 | **sessionExpired** | **Boolean** | Filter to indicate for if session is expired |  [optional] |
 | **engagementSources** | [**List<EngagementSourcesEnum>**](#Enum--EngagementSourcesEnum) | The engagement sources used to filter the view |  [optional] |
 | **isSnippetRecorded** | **Boolean** | Indicates filtering for snippet recorded |  [optional] |
+| **takeover** | **Boolean** | Indicates filtering for takeover |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -339,6 +341,7 @@
 | BOT | &quot;bot&quot; |
 | COMMONMODULE | &quot;commonmodule&quot; |
 | DIGITALBOT | &quot;digitalbot&quot; |
+| EMAILSEND | &quot;emailsend&quot; |
 | INBOUNDCALL | &quot;inboundcall&quot; |
 | INBOUNDCHAT | &quot;inboundchat&quot; |
 | INBOUNDEMAIL | &quot;inboundemail&quot; |
@@ -1044,6 +1047,16 @@
 | UNKNOWN | &quot;Unknown&quot; |
 
 
+## Enum: SocialSourceTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| OWNED | &quot;Owned&quot; |
+| NONOWNED | &quot;NonOwned&quot; |
+| OTHERS | &quot;Others&quot; |
+
+
 ## Enum: EngagementSourcesEnum
 
 | Name | Value |
@@ -1087,4 +1100,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

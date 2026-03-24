@@ -9,6 +9,8 @@
 | **name** | **String** |  |  [optional] |
 | **minFieldNameCharacters** | **Integer** | The minimum number of schema field name characters allowed. |  [optional] |
 | **maxFieldNameCharacters** | **Integer** | The maximum number of schema field name characters allowed. |  [optional] |
+| **minFieldTitleCharacters** | **Integer** | The minimum number of schema field title characters allowed. |  [optional] |
+| **maxFieldTitleCharacters** | **Integer** | The maximum number of schema field title characters allowed. |  [optional] |
 | **minFieldDescriptionCharacters** | **Integer** | The minimum number of schema field description characters allowed. |  [optional] |
 | **maxFieldDescriptionCharacters** | **Integer** | The maximum number of schema field description characters allowed. |  [optional] |
 | **minSchemaNameCharacters** | **Integer** | The minimum number of schema name characters allowed. |  [optional] |
@@ -23,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

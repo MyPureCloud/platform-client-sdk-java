@@ -5,8 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **min** | **String** | The minimal day of month (exact day: 1-31) for the \"between\" operator |  [optional] |
+| **max** | **String** | The maximum value of month (exact day: 1-31 or \"LAST_DAY\") for the \"between\" operator |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

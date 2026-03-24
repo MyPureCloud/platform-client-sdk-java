@@ -65,6 +65,7 @@
 | FI_FI | &quot;fi-fi&quot; | 
 | SV_SE | &quot;sv-se&quot; | 
 | NB_NO | &quot;nb-no&quot; | 
+| TR_TR | &quot;tr-tr&quot; | 
 
 
 ## Enum: MinerTypeEnum
@@ -124,4 +125,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

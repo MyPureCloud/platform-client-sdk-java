@@ -1,0 +1,13 @@
+# ConnectionOptionListing
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **entities** | [**List&lt;ConnectionOption&gt;**](ConnectionOption) |  |  [optional] |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

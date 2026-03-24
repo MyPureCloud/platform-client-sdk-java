@@ -9,7 +9,6 @@
 | **parameters** | **Map&lt;String, String&gt;** | The parameters to match this condition |  [optional] |
 | **conditionType** | [**ConditionTypeEnum**](#Enum--ConditionTypeEnum) | The type of this condition |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: ConditionTypeEnum
@@ -23,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

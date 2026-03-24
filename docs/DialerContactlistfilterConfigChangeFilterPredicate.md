@@ -12,7 +12,6 @@
 | **range** | [**DialerContactlistfilterConfigChangeFilterRange**](DialerContactlistfilterConfigChangeFilterRange) |  |  [optional] |
 | **inverted** | **Boolean** | Whether or not to invert to result of evaluating the predicate |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: ColumnTypeEnum
@@ -45,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

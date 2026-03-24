@@ -10,7 +10,7 @@
 | **description** | **String** | The description of the time off marker |  [optional] |
 | **activityCodeId** | **String** | The ID of the activity code associated with the time off marker |  [optional] |
 | **paid** | **Boolean** | Whether the time off marker is paid |  [optional] |
-| **payableMinutes** | **Integer** | Payable minutes for the time off marker |  [optional] |
+| **payableMinutes** | **Integer** | Payable minutes for the time off marker. Must not exceed lengthMinutes |  [optional] |
 | **timeOffRequestId** | **String** | The ID of the time off request |  [optional] |
 | **timeOffRequestSyncVersion** | **Integer** | The sync version of the full day time off request for which the scheduled activity is associated |  [optional] |
 | **delete** | **Boolean** | Set to 'true' to delete this time off marker. Will always be null on responses, only has an effect on schedule update |  [optional] |
@@ -18,4 +18,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

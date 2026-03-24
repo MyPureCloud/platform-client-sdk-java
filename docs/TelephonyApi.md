@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyAgentsGreetingsMe**](TelephonyApi#getTelephonyAgentsGreetingsMe) | Get the agent's own greetings. |
 | [**getTelephonyCallsMetrics**](TelephonyApi#getTelephonyCallsMetrics) | Get the concurrent call metrics for a given organization. |
 | [**getTelephonyMediaregions**](TelephonyApi#getTelephonyMediaregions) | Retrieve the list of AWS regions media can stream through. |
+| [**getTelephonySettings**](TelephonyApi#getTelephonySettings) | Get the global telephony configuration. |
 | [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | Get a SIP message. |
 | [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | Get SIP headers. |
 | [**getTelephonySiptraces**](TelephonyApi#getTelephonySiptraces) | Fetch SIP metadata |
@@ -15,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTelephonySiptracesDownload**](TelephonyApi#postTelephonySiptracesDownload) | Request a download of a pcap file to S3 |
 | [**putTelephonyAgentGreetings**](TelephonyApi#putTelephonyAgentGreetings) | Updates an agent's greetings. |
 | [**putTelephonyAgentsGreetingsMe**](TelephonyApi#putTelephonyAgentsGreetingsMe) | Updates the agent's own greetings. |
+| [**putTelephonySettings**](TelephonyApi#putTelephonySettings) | Update the global telephony configuration. |
 {: class="table-striped"}
 
 
@@ -244,6 +246,61 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**MediaRegions**](MediaRegions)
+
+
+# **getTelephonySettings**
+
+
+> [TelephonySettings](TelephonySettings) getTelephonySettings()
+
+Get the global telephony configuration.
+
+Wraps GET /api/v2/telephony/settings  
+
+Requires ANY permissions: 
+
+* telephony:settings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+try {
+    TelephonySettings result = apiInstance.getTelephonySettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonySettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**TelephonySettings**](TelephonySettings)
 
 
 # **getTelephonySipmessagesConversation**
@@ -679,4 +736,63 @@ try {
 [**SelfAgentGreeting**](SelfAgentGreeting)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+# **putTelephonySettings**
+
+
+> [TelephonySettings](TelephonySettings) putTelephonySettings(body)
+
+Update the global telephony configuration.
+
+Wraps PUT /api/v2/telephony/settings  
+
+Requires ANY permissions: 
+
+* telephony:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+TelephonySettings body = new TelephonySettings(); // TelephonySettings | Telephony
+try {
+    TelephonySettings result = apiInstance.putTelephonySettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#putTelephonySettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TelephonySettings**](TelephonySettings)| Telephony | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TelephonySettings**](TelephonySettings)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

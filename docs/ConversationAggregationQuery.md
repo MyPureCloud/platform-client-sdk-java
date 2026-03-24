@@ -14,6 +14,9 @@
 | **flattenMultivaluedDimensions** | **Boolean** | Flattens any multivalued dimensions used in response groups (e.g. ['a','b','c']->'a,b,c') |  [optional] |
 | **views** | [**List&lt;ConversationAggregationView&gt;**](ConversationAggregationView) | Custom derived metric views |  [optional] |
 | **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#Enum--AlternateTimeDimensionEnum) | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event. |  [optional] |
+| **queryType** | [**QueryTypeEnum**](#Enum--QueryTypeEnum) | Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy. |  [optional] |
+| **sortMetric** | [**ConversationAggregationSort**](ConversationAggregationSort) | Required when requesting multiple metrics. Only applicable for topN/bottomN query type. |  [optional] |
+| **limit** | **Integer** | How many results you want in an ordered list. Only applicable for topN/bottomN query type. |  [optional] |
 
 
 ## Enum: GroupByEnum
@@ -185,6 +188,16 @@
 | EVENTTIME | &quot;eventTime&quot; | 
 
 
+## Enum: QueryTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BOTTOMN | &quot;bottomN&quot; | 
+| GROUPBY | &quot;groupBy&quot; | 
+| TOPN | &quot;topN&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

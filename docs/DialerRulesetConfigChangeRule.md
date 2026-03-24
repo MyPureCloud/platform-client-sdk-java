@@ -12,7 +12,6 @@
 | **order** | **Long** | The ranked order of the rule; rules are processed from lowest number to highest |  [optional] |
 | **category** | [**CategoryEnum**](#Enum--CategoryEnum) | The category of the rule |  [optional] |
 | **actions** | [**List&lt;DialerRulesetConfigChangeAction&gt;**](DialerRulesetConfigChangeAction) | The list of rule actions to be taken if the conditions are true |  [optional] |
-| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: CategoryEnum
@@ -26,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

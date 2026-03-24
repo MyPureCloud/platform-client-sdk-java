@@ -9,7 +9,6 @@
 | **start** | **String** | the end date of an alteration range as an ISO-8601 string |  [optional] |
 | **end** | **String** | the end date of an alteration range as an ISO-8601 string |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -23,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_
