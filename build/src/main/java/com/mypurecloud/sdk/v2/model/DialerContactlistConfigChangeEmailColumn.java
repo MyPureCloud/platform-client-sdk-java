@@ -28,7 +28,6 @@ public class DialerContactlistConfigChangeEmailColumn  implements Serializable {
   private String columnName = null;
   private String type = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerContactlistConfigChangeEmailColumn() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -89,23 +88,6 @@ public class DialerContactlistConfigChangeEmailColumn  implements Serializable {
   }
 
 
-  /**
-   **/
-  public DialerContactlistConfigChangeEmailColumn getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -118,13 +100,12 @@ public class DialerContactlistConfigChangeEmailColumn  implements Serializable {
 
     return Objects.equals(this.columnName, dialerContactlistConfigChangeEmailColumn.columnName) &&
             Objects.equals(this.type, dialerContactlistConfigChangeEmailColumn.type) &&
-            Objects.equals(this.additionalProperties, dialerContactlistConfigChangeEmailColumn.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerContactlistConfigChangeEmailColumn.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerContactlistConfigChangeEmailColumn.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type, additionalProperties, getAdditionalProperties);
+    return Objects.hash(columnName, type, additionalProperties);
   }
 
   @Override
@@ -135,7 +116,6 @@ public class DialerContactlistConfigChangeEmailColumn  implements Serializable {
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -30,7 +30,6 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
   private String updateOption = null;
   private Map<String, String> properties = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerRulesetConfigChangeAction() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -127,23 +126,6 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
   }
 
 
-  /**
-   **/
-  public DialerRulesetConfigChangeAction getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -158,13 +140,12 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
             Objects.equals(this.actionTypeName, dialerRulesetConfigChangeAction.actionTypeName) &&
             Objects.equals(this.updateOption, dialerRulesetConfigChangeAction.updateOption) &&
             Objects.equals(this.properties, dialerRulesetConfigChangeAction.properties) &&
-            Objects.equals(this.additionalProperties, dialerRulesetConfigChangeAction.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerRulesetConfigChangeAction.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerRulesetConfigChangeAction.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, actionTypeName, updateOption, properties, additionalProperties, getAdditionalProperties);
+    return Objects.hash(type, actionTypeName, updateOption, properties, additionalProperties);
   }
 
   @Override
@@ -177,7 +158,6 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
     sb.append("    updateOption: ").append(toIndentedString(updateOption)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

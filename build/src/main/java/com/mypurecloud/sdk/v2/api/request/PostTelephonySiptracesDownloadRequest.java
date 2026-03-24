@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
 import com.mypurecloud.sdk.v2.model.SipSearchResult;
+import com.mypurecloud.sdk.v2.model.TelephonySettings;
 
 public class PostTelephonySiptracesDownloadRequest {
 

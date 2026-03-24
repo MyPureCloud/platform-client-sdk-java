@@ -25,12 +25,14 @@ import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
 import com.mypurecloud.sdk.v2.model.SipSearchResult;
+import com.mypurecloud.sdk.v2.model.TelephonySettings;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentsGreetingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyCallsMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonySettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
@@ -38,6 +40,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesDownloadDownloadI
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentsGreetingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonySettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -346,6 +349,81 @@ public class TelephonyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MediaRegions> response = (ApiResponse<MediaRegions>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the global telephony configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TelephonySettings> getTelephonySettingsAsync(GetTelephonySettingsRequest request, final AsyncApiCallback<TelephonySettings> callback) {
+    try {
+      final SettableFuture<TelephonySettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TelephonySettings>() {}, new AsyncApiCallback<ApiResponse<TelephonySettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TelephonySettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the global telephony configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TelephonySettings>> getTelephonySettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TelephonySettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TelephonySettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TelephonySettings>() {}, new AsyncApiCallback<ApiResponse<TelephonySettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TelephonySettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TelephonySettings> response = (ApiResponse<TelephonySettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TelephonySettings> response = (ApiResponse<TelephonySettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -871,6 +949,81 @@ public class TelephonyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the global telephony configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TelephonySettings> putTelephonySettingsAsync(PutTelephonySettingsRequest request, final AsyncApiCallback<TelephonySettings> callback) {
+    try {
+      final SettableFuture<TelephonySettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TelephonySettings>() {}, new AsyncApiCallback<ApiResponse<TelephonySettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TelephonySettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the global telephony configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TelephonySettings>> putTelephonySettingsAsync(ApiRequest<TelephonySettings> request, final AsyncApiCallback<ApiResponse<TelephonySettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TelephonySettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TelephonySettings>() {}, new AsyncApiCallback<ApiResponse<TelephonySettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TelephonySettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TelephonySettings> response = (ApiResponse<TelephonySettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TelephonySettings> response = (ApiResponse<TelephonySettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

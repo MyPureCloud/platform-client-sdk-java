@@ -47,6 +47,7 @@ public class ArchitectFlowReference  implements Serializable {
     BOT("BOT"),
     COMMONMODULE("COMMONMODULE"),
     DIGITALBOT("DIGITALBOT"),
+    EMAILSEND("EMAILSEND"),
     INBOUNDCALL("INBOUNDCALL"),
     INBOUNDCHAT("INBOUNDCHAT"),
     INBOUNDEMAIL("INBOUNDEMAIL"),

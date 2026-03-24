@@ -4991,7 +4991,7 @@ try {
 # **getConversationsEmailMessages**
 
 
-> [EmailMessagePreviewListing](EmailMessagePreviewListing) getConversationsEmailMessages(conversationId)
+> [EmailMessagePreviewListing](EmailMessagePreviewListing) getConversationsEmailMessages(conversationId, includeAgentlessStitchedMessages)
 
 Get conversation messages
 
@@ -5023,8 +5023,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
+Boolean includeAgentlessStitchedMessages = false; // Boolean | Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message.
 try {
-    EmailMessagePreviewListing result = apiInstance.getConversationsEmailMessages(conversationId);
+    EmailMessagePreviewListing result = apiInstance.getConversationsEmailMessages(conversationId, includeAgentlessStitchedMessages);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsEmailMessages");
@@ -5038,6 +5039,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
+| **includeAgentlessStitchedMessages** | **Boolean**| Whether to include Agentless &#39;api&#39; type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that&#39;s a stitched agentless message. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -19883,7 +19885,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
-SupportedContentReference body = new SupportedContentReference(); // SupportedContentReference | SupportedContent
+SupportedContentReference body = new SupportedContentReference(); // SupportedContentReference | Reference to supported content profile
 try {
     SupportedContent result = apiInstance.putConversationsMessagingSupportedcontentDefault(body);
     System.out.println(result);
@@ -19898,7 +19900,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SupportedContentReference**](SupportedContentReference)| SupportedContent | 
+| **body** | [**SupportedContentReference**](SupportedContentReference)| Reference to supported content profile | 
 {: class="table-striped"}
 
 
@@ -20156,4 +20158,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

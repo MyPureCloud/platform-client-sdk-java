@@ -15,6 +15,8 @@
 | **substatus** | [**SubstatusEnum**](#Enum--SubstatusEnum) |  |  [optional] |
 | **partialDayStartDateTimes** | **List&lt;String&gt;** |  |  [optional] |
 | **fullDayManagementUnitDates** | **List&lt;String&gt;** |  |  [optional] |
+| **fullDayEarliestStartOffsetMinutes** | **List&lt;Long&gt;** |  |  [optional] |
+| **fullDayLatestEndOffsetMinutes** | **List&lt;Long&gt;** |  |  [optional] |
 | **dailyDurationMinutes** | **Long** |  |  [optional] |
 | **durationMinutes** | **List&lt;Long&gt;** |  |  [optional] |
 | **payableMinutes** | **List&lt;Long&gt;** |  |  [optional] |
@@ -58,4 +60,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

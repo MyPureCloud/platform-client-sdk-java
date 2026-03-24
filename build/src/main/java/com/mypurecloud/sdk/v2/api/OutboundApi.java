@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
 import com.mypurecloud.sdk.v2.model.Campaign;
+import com.mypurecloud.sdk.v2.model.CampaignDiagnosticSummary;
 import com.mypurecloud.sdk.v2.model.CampaignDiagnostics;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
@@ -168,6 +169,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewReq
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlisttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlisttemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundDiagnosticsCampaignSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
@@ -902,7 +904,7 @@ public class OutboundApi {
   }
 
   /**
-   * Delete contacts from a contact list.
+   * Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
    * 
    * @param contactListId Contact List ID (required)
    * @param contactIds ContactIds to delete. (required)
@@ -914,7 +916,7 @@ public class OutboundApi {
   }
 
   /**
-   * Delete contacts from a contact list.
+   * Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
    * 
    * @param contactListId Contact List ID (required)
    * @param contactIds ContactIds to delete. (required)
@@ -934,7 +936,7 @@ public class OutboundApi {
   }
 
   /**
-   * Delete contacts from a contact list.
+   * Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -952,7 +954,7 @@ public class OutboundApi {
   }
 
   /**
-   * Delete contacts from a contact list.
+   * Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
    * 
    * @param request The request object
    * @return the response
@@ -5850,6 +5852,92 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get diagnostic summary for a single campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @param start Start datetime (ISO 8601 or Unix epoch) (required)
+   * @param end End datetime (ISO 8601 or Unix epoch) (required)
+   * @return CampaignDiagnosticSummary
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignDiagnosticSummary getOutboundDiagnosticsCampaignSummary(String campaignId, String start, String end) throws IOException, ApiException {
+    return  getOutboundDiagnosticsCampaignSummary(createGetOutboundDiagnosticsCampaignSummaryRequest(campaignId, start, end));
+  }
+
+  /**
+   * Get diagnostic summary for a single campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @param start Start datetime (ISO 8601 or Unix epoch) (required)
+   * @param end End datetime (ISO 8601 or Unix epoch) (required)
+   * @return CampaignDiagnosticSummary
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignDiagnosticSummary> getOutboundDiagnosticsCampaignSummaryWithHttpInfo(String campaignId, String start, String end) throws IOException {
+    return getOutboundDiagnosticsCampaignSummary(createGetOutboundDiagnosticsCampaignSummaryRequest(campaignId, start, end).withHttpInfo());
+  }
+
+  private GetOutboundDiagnosticsCampaignSummaryRequest createGetOutboundDiagnosticsCampaignSummaryRequest(String campaignId, String start, String end) {
+    return GetOutboundDiagnosticsCampaignSummaryRequest.builder()
+            .withCampaignId(campaignId)
+
+            .withStart(start)
+
+            .withEnd(end)
+
+            .build();
+  }
+
+  /**
+   * Get diagnostic summary for a single campaign
+   * 
+   * @param request The request object
+   * @return CampaignDiagnosticSummary
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignDiagnosticSummary getOutboundDiagnosticsCampaignSummary(GetOutboundDiagnosticsCampaignSummaryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CampaignDiagnosticSummary> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignDiagnosticSummary>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get diagnostic summary for a single campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignDiagnosticSummary> getOutboundDiagnosticsCampaignSummary(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignDiagnosticSummary>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignDiagnosticSummary> response = (ApiResponse<CampaignDiagnosticSummary>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignDiagnosticSummary> response = (ApiResponse<CampaignDiagnosticSummary>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

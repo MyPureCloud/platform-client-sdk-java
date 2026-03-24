@@ -205,6 +205,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
   private List<String> conversationExternalContactIds = null;
   private List<String> conversationExternalOrganizationIds = null;
   private String divisionId = null;
+  private String utilizationLabel = null;
 
   public ContactDetailEventTopicContactUpdateEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -572,6 +573,23 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
   }
 
 
+  /**
+   **/
+  public ContactDetailEventTopicContactUpdateEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -602,12 +620,13 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
             Objects.equals(this.messageType, contactDetailEventTopicContactUpdateEvent.messageType) &&
             Objects.equals(this.conversationExternalContactIds, contactDetailEventTopicContactUpdateEvent.conversationExternalContactIds) &&
             Objects.equals(this.conversationExternalOrganizationIds, contactDetailEventTopicContactUpdateEvent.conversationExternalOrganizationIds) &&
-            Objects.equals(this.divisionId, contactDetailEventTopicContactUpdateEvent.divisionId);
+            Objects.equals(this.divisionId, contactDetailEventTopicContactUpdateEvent.divisionId) &&
+            Objects.equals(this.utilizationLabel, contactDetailEventTopicContactUpdateEvent.utilizationLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, conversationExternalContactIds, conversationExternalOrganizationIds, divisionId);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, conversationExternalContactIds, conversationExternalOrganizationIds, divisionId, utilizationLabel);
   }
 
   @Override
@@ -636,6 +655,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

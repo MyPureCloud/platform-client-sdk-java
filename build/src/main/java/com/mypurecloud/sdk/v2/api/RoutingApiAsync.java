@@ -6398,7 +6398,7 @@ public class RoutingApiAsync {
 
   /**
    * Get a phone number provisioned for SMS.
-   * 
+   * When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6432,7 +6432,7 @@ public class RoutingApiAsync {
 
   /**
    * Get a phone number provisioned for SMS.
-   * 
+   * When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6473,7 +6473,7 @@ public class RoutingApiAsync {
 
   /**
    * Get a list of provisioned phone numbers.
-   * 
+   * When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6507,7 +6507,7 @@ public class RoutingApiAsync {
 
   /**
    * Get a list of provisioned phone numbers.
-   * 
+   * When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8885,7 +8885,7 @@ public class RoutingApiAsync {
 
   /**
    * Update a phone number provisioned for SMS.
-   * 
+   * Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8919,7 +8919,7 @@ public class RoutingApiAsync {
 
   /**
    * Update a phone number provisioned for SMS.
-   * 
+   * Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -11139,7 +11139,7 @@ public class RoutingApiAsync {
 
   /**
    * Provision a phone number for SMS
-   * 
+   * When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -11173,7 +11173,7 @@ public class RoutingApiAsync {
 
   /**
    * Provision a phone number for SMS
-   * 
+   * When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

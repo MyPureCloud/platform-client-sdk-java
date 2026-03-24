@@ -8,9 +8,8 @@
 | **nbrAttempts** | **Long** | The number of recall attempts to make |  [optional] |
 | **minutesBetweenAttempts** | **Long** | How long to wait between recall attempts |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

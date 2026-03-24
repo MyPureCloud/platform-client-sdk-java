@@ -241,7 +241,7 @@ public class BusinessRulesApi {
 
   /**
    * Delete a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -254,7 +254,7 @@ public class BusinessRulesApi {
 
   /**
    * Delete a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -277,7 +277,7 @@ public class BusinessRulesApi {
 
   /**
    * Delete a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -295,7 +295,7 @@ public class BusinessRulesApi {
 
   /**
    * Delete a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1317,7 +1317,7 @@ public class BusinessRulesApi {
 
   /**
    * Update a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param tableId Table ID (required)
    * @param body Decision Table (required)
    * @return DecisionTable
@@ -1330,7 +1330,7 @@ public class BusinessRulesApi {
 
   /**
    * Update a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param tableId Table ID (required)
    * @param body Decision Table (required)
    * @return DecisionTable
@@ -1351,7 +1351,7 @@ public class BusinessRulesApi {
 
   /**
    * Update a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @return DecisionTable
    * @throws ApiException if the request fails on the server
@@ -1370,7 +1370,7 @@ public class BusinessRulesApi {
 
   /**
    * Update a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1739,7 +1739,7 @@ public class BusinessRulesApi {
 
   /**
    * Create a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Create decision table row request (required)
@@ -1753,7 +1753,7 @@ public class BusinessRulesApi {
 
   /**
    * Create a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Create decision table row request (required)
@@ -1777,7 +1777,7 @@ public class BusinessRulesApi {
 
   /**
    * Create a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @return DecisionTableRow
    * @throws ApiException if the request fails on the server
@@ -1796,7 +1796,7 @@ public class BusinessRulesApi {
 
   /**
    * Create a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2079,7 +2079,7 @@ public class BusinessRulesApi {
 
   /**
    * Create a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param body Decision Table (required)
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -2091,7 +2091,7 @@ public class BusinessRulesApi {
 
   /**
    * Create a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param body Decision Table (required)
    * @return DecisionTableVersion
    * @throws IOException if the request fails to be processed
@@ -2109,7 +2109,7 @@ public class BusinessRulesApi {
 
   /**
    * Create a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -2128,7 +2128,7 @@ public class BusinessRulesApi {
 
   /**
    * Create a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2317,7 +2317,7 @@ public class BusinessRulesApi {
 
   /**
    * Full update a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -2332,7 +2332,7 @@ public class BusinessRulesApi {
 
   /**
    * Full update a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -2359,7 +2359,7 @@ public class BusinessRulesApi {
 
   /**
    * Full update a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @return DecisionTableRow
    * @throws ApiException if the request fails on the server
@@ -2378,7 +2378,7 @@ public class BusinessRulesApi {
 
   /**
    * Full update a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

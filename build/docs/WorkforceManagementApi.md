@@ -59,8 +59,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId) | Get the session details for the session ID |
 | [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId) | Get the snapshot details for the snapshot ID |
 | [**getWorkforcemanagementBusinessunitManagementunits**](WorkforceManagementApi#getWorkforcemanagementBusinessunitManagementunits) | Get all authorized management units in the business unit |
+| [**getWorkforcemanagementBusinessunitMinimumstaffingSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMinimumstaffingSettings) | Get minimum staffing settings for a business unit |
 | [**getWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroup) | Get a planning group |
 | [**getWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroups) | Gets list of planning groups |
+| [**getWorkforcemanagementBusinessunitSchedulerSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulerSettings) | Get scheduler settings for a business unit |
 | [**getWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRun) | Get a scheduling run |
 | [**getWorkforcemanagementBusinessunitSchedulingRunResult**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRunResult) | Get the result of a rescheduling operation |
 | [**getWorkforcemanagementBusinessunitSchedulingRuns**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRuns) | Get the list of scheduling runs |
@@ -72,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimits) | Gets a list of time-off limit objects |
 | [**getWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeoffplan) | Gets a time-off plan |
 | [**getWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeoffplans) | Gets a list of time-off plans |
+| [**getWorkforcemanagementBusinessunitUsers**](WorkforceManagementApi#getWorkforcemanagementBusinessunitUsers) | Get users in the business unit |
 | [**getWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekSchedule) | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route |
 | [**getWorkforcemanagementBusinessunitWeekScheduleGenerationresults**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekScheduleGenerationresults) | Get the generation results for a generated schedule |
 | [**getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast) | Get the headcount forecast by planning group for the schedule |
@@ -148,7 +151,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivityplan) | Update an activity plan |
 | [**patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAlternativeshiftsSettings) | Update alternative shifts settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitCapacityplan) | Update a capacity plan configuration |
+| [**patchWorkforcemanagementBusinessunitMinimumstaffingSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitMinimumstaffingSettings) | Update minimum staffing settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitPlanninggroup) | Updates the planning group |
+| [**patchWorkforcemanagementBusinessunitSchedulerSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulerSettings) | Update scheduler settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulingRun) | Mark a schedule run as applied |
 | [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitServicegoaltemplate) | Updates a service goal template |
 | [**patchWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitStaffinggroup) | Updates a staffing group |
@@ -3798,6 +3803,65 @@ try {
 [**ManagementUnitListing**](ManagementUnitListing)
 
 
+# **getWorkforcemanagementBusinessunitMinimumstaffingSettings**
+
+
+> [MinimumStaffingResponse](MinimumStaffingResponse) getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId)
+
+Get minimum staffing settings for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings  
+
+Requires ANY permissions: 
+
+* wfm:minimumStaffingSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    MinimumStaffingResponse result = apiInstance.getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitMinimumstaffingSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MinimumStaffingResponse**](MinimumStaffingResponse)
+
+
 # **getWorkforcemanagementBusinessunitPlanninggroup**
 
 
@@ -3921,6 +3985,65 @@ try {
 ### Return type
 
 [**PlanningGroupList**](PlanningGroupList)
+
+
+# **getWorkforcemanagementBusinessunitSchedulerSettings**
+
+
+> [BuSchedulerSettingsResponse](BuSchedulerSettingsResponse) getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId)
+
+Get scheduler settings for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings  
+
+Requires ANY permissions: 
+
+* wfm:schedulerSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    BuSchedulerSettingsResponse result = apiInstance.getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulerSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse)
 
 
 # **getWorkforcemanagementBusinessunitSchedulingRun**
@@ -4608,6 +4731,67 @@ try {
 ### Return type
 
 [**BuTimeOffPlanListing**](BuTimeOffPlanListing)
+
+
+# **getWorkforcemanagementBusinessunitUsers**
+
+
+> [BuUserListing](BuUserListing) getWorkforcemanagementBusinessunitUsers(businessUnitId, managementUnitIds)
+
+Get users in the business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/users  
+
+Requires ANY permissions: 
+
+* wfm:agent:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+List<String> managementUnitIds = Arrays.asList(null); // List<String> | The IDs of the management units for which to retrieve users
+try {
+    BuUserListing result = apiInstance.getWorkforcemanagementBusinessunitUsers(businessUnitId, managementUnitIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitUsers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **managementUnitIds** | [**List&lt;String&gt;**](String)| The IDs of the management units for which to retrieve users | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuUserListing**](BuUserListing)
 
 
 # **getWorkforcemanagementBusinessunitWeekSchedule**
@@ -9391,6 +9575,67 @@ try {
 [**CapacityPlanResponse**](CapacityPlanResponse)
 
 
+# **patchWorkforcemanagementBusinessunitMinimumstaffingSettings**
+
+
+> [MinimumStaffingResponse](MinimumStaffingResponse) patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body)
+
+Update minimum staffing settings for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings  
+
+Requires ANY permissions: 
+
+* wfm:minimumStaffingSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+MinimumStaffingRequest body = new MinimumStaffingRequest(); // MinimumStaffingRequest | body
+try {
+    MinimumStaffingResponse result = apiInstance.patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitMinimumstaffingSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**MinimumStaffingRequest**](MinimumStaffingRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MinimumStaffingResponse**](MinimumStaffingResponse)
+
+
 # **patchWorkforcemanagementBusinessunitPlanninggroup**
 
 
@@ -9452,6 +9697,67 @@ try {
 ### Return type
 
 [**PlanningGroup**](PlanningGroup)
+
+
+# **patchWorkforcemanagementBusinessunitSchedulerSettings**
+
+
+> [BuSchedulerSettingsResponse](BuSchedulerSettingsResponse) patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body)
+
+Update scheduler settings for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings  
+
+Requires ANY permissions: 
+
+* wfm:schedulerSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+BuSchedulerSettingsRequest body = new BuSchedulerSettingsRequest(); // BuSchedulerSettingsRequest | body
+try {
+    BuSchedulerSettingsResponse result = apiInstance.patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulerSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**BuSchedulerSettingsRequest**](BuSchedulerSettingsRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse)
 
 
 # **patchWorkforcemanagementBusinessunitSchedulingRun**
@@ -17313,4 +17619,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

@@ -40,7 +40,6 @@ public class EmailCampaignScheduleConfigChangeEmailCampaignSchedule  implements 
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public EmailCampaignScheduleConfigChangeEmailCampaignSchedule() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -228,23 +227,6 @@ public class EmailCampaignScheduleConfigChangeEmailCampaignSchedule  implements 
   }
 
 
-  /**
-   **/
-  public EmailCampaignScheduleConfigChangeEmailCampaignSchedule getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -264,13 +246,12 @@ public class EmailCampaignScheduleConfigChangeEmailCampaignSchedule  implements 
             Objects.equals(this.name, emailCampaignScheduleConfigChangeEmailCampaignSchedule.name) &&
             Objects.equals(this.dateCreated, emailCampaignScheduleConfigChangeEmailCampaignSchedule.dateCreated) &&
             Objects.equals(this.dateModified, emailCampaignScheduleConfigChangeEmailCampaignSchedule.dateModified) &&
-            Objects.equals(this.version, emailCampaignScheduleConfigChangeEmailCampaignSchedule.version) &&
-            Objects.equals(this.getAdditionalProperties, emailCampaignScheduleConfigChangeEmailCampaignSchedule.getAdditionalProperties);
+            Objects.equals(this.version, emailCampaignScheduleConfigChangeEmailCampaignSchedule.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(intervals, recurrences, timeZone, emailCampaign, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
+    return Objects.hash(intervals, recurrences, timeZone, emailCampaign, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -288,7 +269,6 @@ public class EmailCampaignScheduleConfigChangeEmailCampaignSchedule  implements 
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,6 +26,8 @@ public class SchemaQuantityLimits  implements Serializable {
   private String name = null;
   private Integer minFieldNameCharacters = null;
   private Integer maxFieldNameCharacters = null;
+  private Integer minFieldTitleCharacters = null;
+  private Integer maxFieldTitleCharacters = null;
   private Integer minFieldDescriptionCharacters = null;
   private Integer maxFieldDescriptionCharacters = null;
   private Integer minSchemaNameCharacters = null;
@@ -78,6 +80,20 @@ public class SchemaQuantityLimits  implements Serializable {
   @JsonProperty("maxFieldNameCharacters")
   public Integer getMaxFieldNameCharacters() {
     return maxFieldNameCharacters;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The minimum number of schema field title characters allowed.")
+  @JsonProperty("minFieldTitleCharacters")
+  public Integer getMinFieldTitleCharacters() {
+    return minFieldTitleCharacters;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The maximum number of schema field title characters allowed.")
+  @JsonProperty("maxFieldTitleCharacters")
+  public Integer getMaxFieldTitleCharacters() {
+    return maxFieldTitleCharacters;
   }
 
 
@@ -165,6 +181,8 @@ public class SchemaQuantityLimits  implements Serializable {
             Objects.equals(this.name, schemaQuantityLimits.name) &&
             Objects.equals(this.minFieldNameCharacters, schemaQuantityLimits.minFieldNameCharacters) &&
             Objects.equals(this.maxFieldNameCharacters, schemaQuantityLimits.maxFieldNameCharacters) &&
+            Objects.equals(this.minFieldTitleCharacters, schemaQuantityLimits.minFieldTitleCharacters) &&
+            Objects.equals(this.maxFieldTitleCharacters, schemaQuantityLimits.maxFieldTitleCharacters) &&
             Objects.equals(this.minFieldDescriptionCharacters, schemaQuantityLimits.minFieldDescriptionCharacters) &&
             Objects.equals(this.maxFieldDescriptionCharacters, schemaQuantityLimits.maxFieldDescriptionCharacters) &&
             Objects.equals(this.minSchemaNameCharacters, schemaQuantityLimits.minSchemaNameCharacters) &&
@@ -179,7 +197,7 @@ public class SchemaQuantityLimits  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, minFieldNameCharacters, maxFieldNameCharacters, minFieldDescriptionCharacters, maxFieldDescriptionCharacters, minSchemaNameCharacters, maxSchemaNameCharacters, minSchemaDescriptionCharacters, maxSchemaDescriptionCharacters, maxNumberOfSchemasPerOrg, maxNumberOfFieldsPerSchema, maxNumberOfFieldsPerOrg, selfUri);
+    return Objects.hash(id, name, minFieldNameCharacters, maxFieldNameCharacters, minFieldTitleCharacters, maxFieldTitleCharacters, minFieldDescriptionCharacters, maxFieldDescriptionCharacters, minSchemaNameCharacters, maxSchemaNameCharacters, minSchemaDescriptionCharacters, maxSchemaDescriptionCharacters, maxNumberOfSchemasPerOrg, maxNumberOfFieldsPerSchema, maxNumberOfFieldsPerOrg, selfUri);
   }
 
   @Override
@@ -191,6 +209,8 @@ public class SchemaQuantityLimits  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    minFieldNameCharacters: ").append(toIndentedString(minFieldNameCharacters)).append("\n");
     sb.append("    maxFieldNameCharacters: ").append(toIndentedString(maxFieldNameCharacters)).append("\n");
+    sb.append("    minFieldTitleCharacters: ").append(toIndentedString(minFieldTitleCharacters)).append("\n");
+    sb.append("    maxFieldTitleCharacters: ").append(toIndentedString(maxFieldTitleCharacters)).append("\n");
     sb.append("    minFieldDescriptionCharacters: ").append(toIndentedString(minFieldDescriptionCharacters)).append("\n");
     sb.append("    maxFieldDescriptionCharacters: ").append(toIndentedString(maxFieldDescriptionCharacters)).append("\n");
     sb.append("    minSchemaNameCharacters: ").append(toIndentedString(minSchemaNameCharacters)).append("\n");

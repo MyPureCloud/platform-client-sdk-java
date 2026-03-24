@@ -26,6 +26,12 @@ import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ChunkSearchRegisterRequest;
+import com.mypurecloud.sdk.v2.model.ConnectionCreateRequest;
+import com.mypurecloud.sdk.v2.model.ConnectionCreateResponse;
+import com.mypurecloud.sdk.v2.model.ConnectionListing;
+import com.mypurecloud.sdk.v2.model.ConnectionOptionListing;
+import com.mypurecloud.sdk.v2.model.ConnectionResponse;
+import com.mypurecloud.sdk.v2.model.ConnectionUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
@@ -119,6 +125,17 @@ import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupPatchRequestBody;
 import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupUpdateResponse;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
+import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceDetailedWithErrorResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SourceWithErrorListing;
+import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
+import com.mypurecloud.sdk.v2.model.V3Synchronization;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlResponse;
 
 public class GetKnowledgeGuestSessionDocumentsRequest {
 

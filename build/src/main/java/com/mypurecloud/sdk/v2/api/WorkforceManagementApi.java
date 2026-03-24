@@ -80,6 +80,8 @@ import com.mypurecloud.sdk.v2.model.BuScheduleListing;
 import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
 import com.mypurecloud.sdk.v2.model.BuScheduleRun;
 import com.mypurecloud.sdk.v2.model.BuScheduleRunListing;
+import com.mypurecloud.sdk.v2.model.BuSchedulerSettingsRequest;
+import com.mypurecloud.sdk.v2.model.BuSchedulerSettingsResponse;
 import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
 import com.mypurecloud.sdk.v2.model.BuSetTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
@@ -90,6 +92,7 @@ import com.mypurecloud.sdk.v2.model.BuTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
 import com.mypurecloud.sdk.v2.model.BuUpdateTimeOffPlanRequest;
+import com.mypurecloud.sdk.v2.model.BuUserListing;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
@@ -157,6 +160,8 @@ import com.mypurecloud.sdk.v2.model.ManagementUnitAvailabilitySettingsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.MinimumStaffingRequest;
+import com.mypurecloud.sdk.v2.model.MinimumStaffingResponse;
 import com.mypurecloud.sdk.v2.model.MoveAgentsRequest;
 import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
@@ -339,8 +344,10 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMain
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunResultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunsRequest;
@@ -352,6 +359,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTime
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplansRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest;
@@ -428,7 +436,9 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAc
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCapacityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitStaffinggroupRequest;
@@ -4986,6 +4996,84 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get minimum staffing settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return MinimumStaffingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinimumStaffingResponse getWorkforcemanagementBusinessunitMinimumstaffingSettings(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitMinimumstaffingSettings(createGetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest(businessUnitId));
+  }
+
+  /**
+   * Get minimum staffing settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return MinimumStaffingResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinimumStaffingResponse> getWorkforcemanagementBusinessunitMinimumstaffingSettingsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitMinimumstaffingSettings(createGetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest createGetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get minimum staffing settings for a business unit
+   * 
+   * @param request The request object
+   * @return MinimumStaffingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinimumStaffingResponse getWorkforcemanagementBusinessunitMinimumstaffingSettings(GetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MinimumStaffingResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MinimumStaffingResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get minimum staffing settings for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinimumStaffingResponse> getWorkforcemanagementBusinessunitMinimumstaffingSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MinimumStaffingResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinimumStaffingResponse> response = (ApiResponse<MinimumStaffingResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinimumStaffingResponse> response = (ApiResponse<MinimumStaffingResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a planning group
    * 
    * @param businessUnitId The ID of the business unit. (required)
@@ -5141,6 +5229,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PlanningGroupList> response = (ApiResponse<PlanningGroupList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get scheduler settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BuSchedulerSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuSchedulerSettingsResponse getWorkforcemanagementBusinessunitSchedulerSettings(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulerSettings(createGetWorkforcemanagementBusinessunitSchedulerSettingsRequest(businessUnitId));
+  }
+
+  /**
+   * Get scheduler settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BuSchedulerSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuSchedulerSettingsResponse> getWorkforcemanagementBusinessunitSchedulerSettingsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulerSettings(createGetWorkforcemanagementBusinessunitSchedulerSettingsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulerSettingsRequest createGetWorkforcemanagementBusinessunitSchedulerSettingsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitSchedulerSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get scheduler settings for a business unit
+   * 
+   * @param request The request object
+   * @return BuSchedulerSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuSchedulerSettingsResponse getWorkforcemanagementBusinessunitSchedulerSettings(GetWorkforcemanagementBusinessunitSchedulerSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuSchedulerSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuSchedulerSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get scheduler settings for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuSchedulerSettingsResponse> getWorkforcemanagementBusinessunitSchedulerSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuSchedulerSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuSchedulerSettingsResponse> response = (ApiResponse<BuSchedulerSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuSchedulerSettingsResponse> response = (ApiResponse<BuSchedulerSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6059,6 +6225,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuTimeOffPlanListing> response = (ApiResponse<BuTimeOffPlanListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get users in the business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param managementUnitIds The IDs of the management units for which to retrieve users (optional)
+   * @return BuUserListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuUserListing getWorkforcemanagementBusinessunitUsers(String businessUnitId, List<String> managementUnitIds) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitUsers(createGetWorkforcemanagementBusinessunitUsersRequest(businessUnitId, managementUnitIds));
+  }
+
+  /**
+   * Get users in the business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param managementUnitIds The IDs of the management units for which to retrieve users (optional)
+   * @return BuUserListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuUserListing> getWorkforcemanagementBusinessunitUsersWithHttpInfo(String businessUnitId, List<String> managementUnitIds) throws IOException {
+    return getWorkforcemanagementBusinessunitUsers(createGetWorkforcemanagementBusinessunitUsersRequest(businessUnitId, managementUnitIds).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitUsersRequest createGetWorkforcemanagementBusinessunitUsersRequest(String businessUnitId, List<String> managementUnitIds) {
+    return GetWorkforcemanagementBusinessunitUsersRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withManagementUnitIds(managementUnitIds)
+
+            .build();
+  }
+
+  /**
+   * Get users in the business unit
+   * 
+   * @param request The request object
+   * @return BuUserListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuUserListing getWorkforcemanagementBusinessunitUsers(GetWorkforcemanagementBusinessunitUsersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuUserListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuUserListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get users in the business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuUserListing> getWorkforcemanagementBusinessunitUsers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuUserListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuUserListing> response = (ApiResponse<BuUserListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuUserListing> response = (ApiResponse<BuUserListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -12336,6 +12584,88 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Update minimum staffing settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return MinimumStaffingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinimumStaffingResponse patchWorkforcemanagementBusinessunitMinimumstaffingSettings(String businessUnitId, MinimumStaffingRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitMinimumstaffingSettings(createPatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Update minimum staffing settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return MinimumStaffingResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinimumStaffingResponse> patchWorkforcemanagementBusinessunitMinimumstaffingSettingsWithHttpInfo(String businessUnitId, MinimumStaffingRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitMinimumstaffingSettings(createPatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest createPatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest(String businessUnitId, MinimumStaffingRequest body) {
+    return PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update minimum staffing settings for a business unit
+   * 
+   * @param request The request object
+   * @return MinimumStaffingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinimumStaffingResponse patchWorkforcemanagementBusinessunitMinimumstaffingSettings(PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MinimumStaffingResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MinimumStaffingResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update minimum staffing settings for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinimumStaffingResponse> patchWorkforcemanagementBusinessunitMinimumstaffingSettings(ApiRequest<MinimumStaffingRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MinimumStaffingResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinimumStaffingResponse> response = (ApiResponse<MinimumStaffingResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinimumStaffingResponse> response = (ApiResponse<MinimumStaffingResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Updates the planning group
    * 
    * @param businessUnitId The ID of the business unit. (required)
@@ -12417,6 +12747,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update scheduler settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BuSchedulerSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuSchedulerSettingsResponse patchWorkforcemanagementBusinessunitSchedulerSettings(String businessUnitId, BuSchedulerSettingsRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitSchedulerSettings(createPatchWorkforcemanagementBusinessunitSchedulerSettingsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Update scheduler settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BuSchedulerSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuSchedulerSettingsResponse> patchWorkforcemanagementBusinessunitSchedulerSettingsWithHttpInfo(String businessUnitId, BuSchedulerSettingsRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitSchedulerSettings(createPatchWorkforcemanagementBusinessunitSchedulerSettingsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest createPatchWorkforcemanagementBusinessunitSchedulerSettingsRequest(String businessUnitId, BuSchedulerSettingsRequest body) {
+    return PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update scheduler settings for a business unit
+   * 
+   * @param request The request object
+   * @return BuSchedulerSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuSchedulerSettingsResponse patchWorkforcemanagementBusinessunitSchedulerSettings(PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuSchedulerSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuSchedulerSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update scheduler settings for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuSchedulerSettingsResponse> patchWorkforcemanagementBusinessunitSchedulerSettings(ApiRequest<BuSchedulerSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuSchedulerSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuSchedulerSettingsResponse> response = (ApiResponse<BuSchedulerSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuSchedulerSettingsResponse> response = (ApiResponse<BuSchedulerSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

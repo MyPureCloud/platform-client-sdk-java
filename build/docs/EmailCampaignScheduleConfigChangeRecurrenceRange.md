@@ -9,7 +9,6 @@
 | **end** | **String** | the range end date |  [optional] |
 | **numberOfOccurrences** | **Long** | the number of occurrences to happen before ending |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -24,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

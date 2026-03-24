@@ -61,6 +61,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.ExportListing;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
+import com.mypurecloud.sdk.v2.model.ExternalContactsPatchRequest;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationEnrichRequest;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifier;
@@ -146,6 +147,7 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsRe
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsDivisionviewsAllRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsOrganizationIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRequest;
@@ -5245,6 +5247,88 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CursorRelationshipListing> response = (ApiResponse<CursorRelationshipListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update specific fields of an external contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param body Contact fields to update (required)
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact patchExternalcontactsContact(String contactId, ExternalContactsPatchRequest body) throws IOException, ApiException {
+    return  patchExternalcontactsContact(createPatchExternalcontactsContactRequest(contactId, body));
+  }
+
+  /**
+   * Update specific fields of an external contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param body Contact fields to update (required)
+   * @return ExternalContact
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> patchExternalcontactsContactWithHttpInfo(String contactId, ExternalContactsPatchRequest body) throws IOException {
+    return patchExternalcontactsContact(createPatchExternalcontactsContactRequest(contactId, body).withHttpInfo());
+  }
+
+  private PatchExternalcontactsContactRequest createPatchExternalcontactsContactRequest(String contactId, ExternalContactsPatchRequest body) {
+    return PatchExternalcontactsContactRequest.builder()
+            .withContactId(contactId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update specific fields of an external contact
+   * 
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact patchExternalcontactsContact(PatchExternalcontactsContactRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update specific fields of an external contact
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> patchExternalcontactsContact(ApiRequest<ExternalContactsPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

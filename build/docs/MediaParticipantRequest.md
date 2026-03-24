@@ -12,6 +12,7 @@
 | **confined** | **Boolean** | True to confine this conversation participant.  Should only be used for ad-hoc conferences |  [optional] |
 | **held** | **Boolean** | True to hold this conversation participant. |  [optional] |
 | **wrapupSkipped** | **Boolean** | True to skip wrap-up for this participant. |  [optional] |
+| **resumeTime** | [**Date**](Date) | Time to resume parked communication. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 
 
 ## Enum: StateEnum
@@ -35,4 +36,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

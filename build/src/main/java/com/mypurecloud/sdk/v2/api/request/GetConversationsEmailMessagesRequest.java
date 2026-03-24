@@ -257,6 +257,20 @@ public class GetConversationsEmailMessagesRequest {
 	    return this;
 	} 
 
+	private Boolean includeAgentlessStitchedMessages;
+	public Boolean getIncludeAgentlessStitchedMessages() {
+		return this.includeAgentlessStitchedMessages;
+	}
+
+	public void setIncludeAgentlessStitchedMessages(Boolean includeAgentlessStitchedMessages) {
+		this.includeAgentlessStitchedMessages = includeAgentlessStitchedMessages;
+	}
+
+	public GetConversationsEmailMessagesRequest withIncludeAgentlessStitchedMessages(Boolean includeAgentlessStitchedMessages) {
+	    this.setIncludeAgentlessStitchedMessages(includeAgentlessStitchedMessages);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -287,6 +301,9 @@ public class GetConversationsEmailMessagesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/conversations/emails/{conversationId}/messages")
                 .withPathParameter("conversationId", conversationId)
         
+
+                .withQueryParameters("includeAgentlessStitchedMessages", "", includeAgentlessStitchedMessages)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -315,6 +332,11 @@ public class GetConversationsEmailMessagesRequest {
 
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
+			return this;
+		}
+
+		public Builder withIncludeAgentlessStitchedMessages(Boolean includeAgentlessStitchedMessages) {
+			request.setIncludeAgentlessStitchedMessages(includeAgentlessStitchedMessages);
 			return this;
 		}
 

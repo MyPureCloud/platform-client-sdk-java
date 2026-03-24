@@ -4,6 +4,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteKnowledgeConnection**](KnowledgeApi#deleteKnowledgeConnection) | Delete connection |
 | [**deleteKnowledgeKnowledgebase**](KnowledgeApi#deleteKnowledgeKnowledgebase) | Delete knowledge base |
 | [**deleteKnowledgeKnowledgebaseCategory**](KnowledgeApi#deleteKnowledgeKnowledgebaseCategory) | Delete category |
 | [**deleteKnowledgeKnowledgebaseDocument**](KnowledgeApi#deleteKnowledgeKnowledgebaseDocument) | Delete document. |
@@ -15,6 +16,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesServicenowSourceId) | Delete ServiceNow Knowledge integration source |
 | [**deleteKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseSynchronizeJob) | Delete synchronization job |
 | [**deleteKnowledgeSetting**](KnowledgeApi#deleteKnowledgeSetting) | Delete Knowledge setting. |
+| [**deleteKnowledgeSource**](KnowledgeApi#deleteKnowledgeSource) | Delete source |
+| [**getKnowledgeConnection**](KnowledgeApi#getKnowledgeConnection) | Get connection |
+| [**getKnowledgeConnectionOptions**](KnowledgeApi#getKnowledgeConnectionOptions) | Get connection options |
+| [**getKnowledgeConnections**](KnowledgeApi#getKnowledgeConnections) | Get connections |
 | [**getKnowledgeGuestSessionCategories**](KnowledgeApi#getKnowledgeGuestSessionCategories) | Get categories |
 | [**getKnowledgeGuestSessionDocument**](KnowledgeApi#getKnowledgeGuestSessionDocument) | Get a knowledge document by ID. |
 | [**getKnowledgeGuestSessionDocuments**](KnowledgeApi#getKnowledgeGuestSessionDocuments) | Get documents. |
@@ -50,6 +55,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getKnowledgeKnowledgebases**](KnowledgeApi#getKnowledgeKnowledgebases) | Get knowledge bases |
 | [**getKnowledgeSetting**](KnowledgeApi#getKnowledgeSetting) | Get Knowledge setting. |
 | [**getKnowledgeSettings**](KnowledgeApi#getKnowledgeSettings) | Get Knowledge settings. |
+| [**getKnowledgeSource**](KnowledgeApi#getKnowledgeSource) | Get source |
+| [**getKnowledgeSourceSynchronization**](KnowledgeApi#getKnowledgeSourceSynchronization) | Get a specific synchronization of a source. |
+| [**getKnowledgeSourceSynchronizations**](KnowledgeApi#getKnowledgeSourceSynchronizations) | Get synchronizations of a source. |
+| [**getKnowledgeSources**](KnowledgeApi#getKnowledgeSources) | List sources |
+| [**getKnowledgeSourcesSynchronizations**](KnowledgeApi#getKnowledgeSourcesSynchronizations) | Get synchronizations of all sources of the organization. |
+| [**patchKnowledgeConnection**](KnowledgeApi#patchKnowledgeConnection) | Update connection |
 | [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeGuestSessionDocumentsSearchSearchId) | Update search result. |
 | [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | Update knowledge base |
 | [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi#patchKnowledgeKnowledgebaseCategory) | Update category |
@@ -64,6 +75,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#patchKnowledgeKnowledgebaseSynchronizeJob) | Update synchronization job |
 | [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Update a Knowledge base unanswered phrase group |
 | [**patchKnowledgeSetting**](KnowledgeApi#patchKnowledgeSetting) | Update Knowledge setting. |
+| [**patchKnowledgeSourceSynchronization**](KnowledgeApi#patchKnowledgeSourceSynchronization) | Update synchronization. |
+| [**postKnowledgeConnections**](KnowledgeApi#postKnowledgeConnections) | Create new connection |
 | [**postKnowledgeDocumentuploads**](KnowledgeApi#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
 | [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi#postKnowledgeGuestSessionDocumentCopies) | Indicate that the document was copied by the user. |
 | [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi#postKnowledgeGuestSessionDocumentFeedback) | Give feedback on a document |
@@ -104,9 +117,72 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeSearch**](KnowledgeApi#postKnowledgeSearch) | Get Knowledge Search |
 | [**postKnowledgeSearchPreview**](KnowledgeApi#postKnowledgeSearchPreview) | Get Knowledge Search Preview |
 | [**postKnowledgeSettings**](KnowledgeApi#postKnowledgeSettings) | Create Knowledge setting. |
+| [**postKnowledgeSourceSynchronizationUploads**](KnowledgeApi#postKnowledgeSourceSynchronizationUploads) | Create presigned URL for uploading a file in the synchronization. |
+| [**postKnowledgeSourceSynchronizations**](KnowledgeApi#postKnowledgeSourceSynchronizations) | Start a manual synchronization from a source. |
+| [**postKnowledgeSources**](KnowledgeApi#postKnowledgeSources) | Create a new source |
 | [**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | Update Salesforce Knowledge integration source |
 | [**putKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId) | Update ServiceNow Knowledge integration source |
+| [**putKnowledgeSource**](KnowledgeApi#putKnowledgeSource) | Update the source |
 {: class="table-striped"}
+
+
+# **deleteKnowledgeConnection**
+
+
+> [ConnectionResponse](ConnectionResponse) deleteKnowledgeConnection(connectionId)
+
+Delete connection
+
+Wraps DELETE /api/v2/knowledge/connections/{connectionId}  
+
+Requires ALL permissions: 
+
+* knowledge:connection:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String connectionId = "connectionId_example"; // String | Connection ID
+try {
+    ConnectionResponse result = apiInstance.deleteKnowledgeConnection(connectionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeConnection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **connectionId** | **String**| Connection ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConnectionResponse**](ConnectionResponse)
 
 
 # **deleteKnowledgeKnowledgebase**
@@ -769,6 +845,241 @@ try {
 ### Return type
 
 null (empty response body)
+
+
+# **deleteKnowledgeSource**
+
+
+> Void deleteKnowledgeSource(sourceId)
+
+Delete source
+
+Wraps DELETE /api/v2/knowledge/sources/{sourceId}  
+
+Requires ALL permissions: 
+
+* knowledge:source:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+try {
+    apiInstance.deleteKnowledgeSource(sourceId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeSource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **getKnowledgeConnection**
+
+
+> [ConnectionResponse](ConnectionResponse) getKnowledgeConnection(connectionId, expand)
+
+Get connection
+
+Wraps GET /api/v2/knowledge/connections/{connectionId}  
+
+Requires ALL permissions: 
+
+* knowledge:connection:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String connectionId = "connectionId_example"; // String | Connection ID
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
+try {
+    ConnectionResponse result = apiInstance.getKnowledgeConnection(connectionId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeConnection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **connectionId** | **String**| Connection ID | 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: authenticationProperties 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConnectionResponse**](ConnectionResponse)
+
+
+# **getKnowledgeConnectionOptions**
+
+
+> [ConnectionOptionListing](ConnectionOptionListing) getKnowledgeConnectionOptions(connectionId, parentId)
+
+Get connection options
+
+Wraps GET /api/v2/knowledge/connections/{connectionId}/options  
+
+Requires ALL permissions: 
+
+* knowledge:connectionOptions:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String connectionId = "connectionId_example"; // String | Connection ID
+String parentId = "parentId_example"; // String | The id of the parent option whose children to be listed.
+try {
+    ConnectionOptionListing result = apiInstance.getKnowledgeConnectionOptions(connectionId, parentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeConnectionOptions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **connectionId** | **String**| Connection ID | 
+| **parentId** | **String**| The id of the parent option whose children to be listed. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConnectionOptionListing**](ConnectionOptionListing)
+
+
+# **getKnowledgeConnections**
+
+
+> [ConnectionListing](ConnectionListing) getKnowledgeConnections()
+
+Get connections
+
+Wraps GET /api/v2/knowledge/connections  
+
+Requires ALL permissions: 
+
+* knowledge:connection:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+try {
+    ConnectionListing result = apiInstance.getKnowledgeConnections();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeConnections");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ConnectionListing**](ConnectionListing)
 
 
 # **getKnowledgeGuestSessionCategories**
@@ -3056,6 +3367,376 @@ try {
 [**KnowledgeSettingListing**](KnowledgeSettingListing)
 
 
+# **getKnowledgeSource**
+
+
+> [V3SourceDetailedWithErrorResponse](V3SourceDetailedWithErrorResponse) getKnowledgeSource(sourceId, expand)
+
+Get source
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}  
+
+Requires ALL permissions: 
+
+* knowledge:source:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+List<String> expand = Arrays.asList(null); // List<String> | Optional fields to expand for the Source.
+try {
+    V3SourceDetailedWithErrorResponse result = apiInstance.getKnowledgeSource(sourceId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **expand** | [**List&lt;String&gt;**](String)| Optional fields to expand for the Source. | [optional]<br />**Values**: lastSync, filterDetails 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SourceDetailedWithErrorResponse**](V3SourceDetailedWithErrorResponse)
+
+
+# **getKnowledgeSourceSynchronization**
+
+
+> [V3Synchronization](V3Synchronization) getKnowledgeSourceSynchronization(sourceId, synchronizationId)
+
+Get a specific synchronization of a source.
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}  
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+try {
+    V3Synchronization result = apiInstance.getKnowledgeSourceSynchronization(sourceId, synchronizationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSourceSynchronization");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3Synchronization**](V3Synchronization)
+
+
+# **getKnowledgeSourceSynchronizations**
+
+
+> [V3SynchronizationListing](V3SynchronizationListing) getKnowledgeSourceSynchronizations(sourceId, before, after, pageSize)
+
+Get synchronizations of a source.
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations  
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+try {
+    V3SynchronizationListing result = apiInstance.getKnowledgeSourceSynchronizations(sourceId, before, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSourceSynchronizations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SynchronizationListing**](V3SynchronizationListing)
+
+
+# **getKnowledgeSources**
+
+
+> [V3SourceWithErrorListing](V3SourceWithErrorListing) getKnowledgeSources(expand)
+
+List sources
+
+Wraps GET /api/v2/knowledge/sources  
+
+Requires ALL permissions: 
+
+* knowledge:source:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+List<String> expand = Arrays.asList(null); // List<String> | Optional fields to expand for the Source.
+try {
+    V3SourceWithErrorListing result = apiInstance.getKnowledgeSources(expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSources");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **expand** | [**List&lt;String&gt;**](String)| Optional fields to expand for the Source. | [optional]<br />**Values**: lastSync 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SourceWithErrorListing**](V3SourceWithErrorListing)
+
+
+# **getKnowledgeSourcesSynchronizations**
+
+
+> [V3SynchronizationListing](V3SynchronizationListing) getKnowledgeSourcesSynchronizations(before, after, pageSize)
+
+Get synchronizations of all sources of the organization.
+
+Wraps GET /api/v2/knowledge/sources/synchronizations  
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+try {
+    V3SynchronizationListing result = apiInstance.getKnowledgeSourcesSynchronizations(before, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSourcesSynchronizations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SynchronizationListing**](V3SynchronizationListing)
+
+
+# **patchKnowledgeConnection**
+
+
+> [ConnectionResponse](ConnectionResponse) patchKnowledgeConnection(connectionId, body)
+
+Update connection
+
+Wraps PATCH /api/v2/knowledge/connections/{connectionId}  
+
+Requires ALL permissions: 
+
+* knowledge:connection:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String connectionId = "connectionId_example"; // String | Connection ID
+ConnectionUpdateRequest body = new ConnectionUpdateRequest(); // ConnectionUpdateRequest | 
+try {
+    ConnectionResponse result = apiInstance.patchKnowledgeConnection(connectionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#patchKnowledgeConnection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **connectionId** | **String**| Connection ID | 
+| **body** | [**ConnectionUpdateRequest**](ConnectionUpdateRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConnectionResponse**](ConnectionResponse)
+
+
 # **patchKnowledgeGuestSessionDocumentsSearchSearchId**
 
 
@@ -3921,6 +4602,128 @@ try {
 ### Return type
 
 [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
+
+
+# **patchKnowledgeSourceSynchronization**
+
+
+> [V3Synchronization](V3Synchronization) patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body)
+
+Update synchronization.
+
+Wraps PATCH /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}  
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+V3SynchronizationUpdateRequest body = new V3SynchronizationUpdateRequest(); // V3SynchronizationUpdateRequest | 
+try {
+    V3Synchronization result = apiInstance.patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#patchKnowledgeSourceSynchronization");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+| **body** | [**V3SynchronizationUpdateRequest**](V3SynchronizationUpdateRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3Synchronization**](V3Synchronization)
+
+
+# **postKnowledgeConnections**
+
+
+> [ConnectionCreateResponse](ConnectionCreateResponse) postKnowledgeConnections(body)
+
+Create new connection
+
+Wraps POST /api/v2/knowledge/connections  
+
+Requires ALL permissions: 
+
+* knowledge:connection:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+ConnectionCreateRequest body = new ConnectionCreateRequest(); // ConnectionCreateRequest | 
+try {
+    ConnectionCreateResponse result = apiInstance.postKnowledgeConnections(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeConnections");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConnectionCreateRequest**](ConnectionCreateRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConnectionCreateResponse**](ConnectionCreateResponse)
 
 
 # **postKnowledgeDocumentuploads**
@@ -6262,6 +7065,189 @@ try {
 [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
 
 
+# **postKnowledgeSourceSynchronizationUploads**
+
+
+> [V3SynchronizationUploadUrlResponse](V3SynchronizationUploadUrlResponse) postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body)
+
+Create presigned URL for uploading a file in the synchronization.
+
+Wraps POST /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads  
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+V3SynchronizationUploadUrlRequest body = new V3SynchronizationUploadUrlRequest(); // V3SynchronizationUploadUrlRequest | 
+try {
+    V3SynchronizationUploadUrlResponse result = apiInstance.postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeSourceSynchronizationUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+| **body** | [**V3SynchronizationUploadUrlRequest**](V3SynchronizationUploadUrlRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SynchronizationUploadUrlResponse**](V3SynchronizationUploadUrlResponse)
+
+
+# **postKnowledgeSourceSynchronizations**
+
+
+> [V3Synchronization](V3Synchronization) postKnowledgeSourceSynchronizations(sourceId, body)
+
+Start a manual synchronization from a source.
+
+Wraps POST /api/v2/knowledge/sources/{sourceId}/synchronizations  
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+V3StartManualSyncRequest body = new V3StartManualSyncRequest(); // V3StartManualSyncRequest | 
+try {
+    V3Synchronization result = apiInstance.postKnowledgeSourceSynchronizations(sourceId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeSourceSynchronizations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **body** | [**V3StartManualSyncRequest**](V3StartManualSyncRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3Synchronization**](V3Synchronization)
+
+
+# **postKnowledgeSources**
+
+
+> [V3SourceDetailedResponse](V3SourceDetailedResponse) postKnowledgeSources(body)
+
+Create a new source
+
+Wraps POST /api/v2/knowledge/sources  
+
+Requires ALL permissions: 
+
+* knowledge:source:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+V3SourceCreateRequest body = new V3SourceCreateRequest(); // V3SourceCreateRequest | 
+try {
+    V3SourceDetailedResponse result = apiInstance.postKnowledgeSources(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeSources");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**V3SourceCreateRequest**](V3SourceCreateRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SourceDetailedResponse**](V3SourceDetailedResponse)
+
+
 # **putKnowledgeKnowledgebaseSourcesSalesforceSourceId**
 
 
@@ -6388,4 +7374,65 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+# **putKnowledgeSource**
+
+
+> [V3SourceDetailedResponse](V3SourceDetailedResponse) putKnowledgeSource(sourceId, body)
+
+Update the source
+
+Wraps PUT /api/v2/knowledge/sources/{sourceId}  
+
+Requires ALL permissions: 
+
+* knowledge:source:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+V3SourceUpdateRequest body = new V3SourceUpdateRequest(); // V3SourceUpdateRequest | 
+try {
+    V3SourceDetailedResponse result = apiInstance.putKnowledgeSource(sourceId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#putKnowledgeSource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **body** | [**V3SourceUpdateRequest**](V3SourceUpdateRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SourceDetailedResponse**](V3SourceDetailedResponse)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

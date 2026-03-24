@@ -29,7 +29,6 @@ public class DialerContactlistConfigChangeContactPhoneNumberColumn  implements S
   private String type = null;
   private String callableTimeColumn = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerContactlistConfigChangeContactPhoneNumberColumn() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -108,23 +107,6 @@ public class DialerContactlistConfigChangeContactPhoneNumberColumn  implements S
   }
 
 
-  /**
-   **/
-  public DialerContactlistConfigChangeContactPhoneNumberColumn getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -138,13 +120,12 @@ public class DialerContactlistConfigChangeContactPhoneNumberColumn  implements S
     return Objects.equals(this.columnName, dialerContactlistConfigChangeContactPhoneNumberColumn.columnName) &&
             Objects.equals(this.type, dialerContactlistConfigChangeContactPhoneNumberColumn.type) &&
             Objects.equals(this.callableTimeColumn, dialerContactlistConfigChangeContactPhoneNumberColumn.callableTimeColumn) &&
-            Objects.equals(this.additionalProperties, dialerContactlistConfigChangeContactPhoneNumberColumn.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerContactlistConfigChangeContactPhoneNumberColumn.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerContactlistConfigChangeContactPhoneNumberColumn.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type, callableTimeColumn, additionalProperties, getAdditionalProperties);
+    return Objects.hash(columnName, type, callableTimeColumn, additionalProperties);
   }
 
   @Override
@@ -156,7 +137,6 @@ public class DialerContactlistConfigChangeContactPhoneNumberColumn  implements S
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    callableTimeColumn: ").append(toIndentedString(callableTimeColumn)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

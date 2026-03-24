@@ -15,6 +15,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getResponsemanagementResponses**](ResponseManagementApi#getResponsemanagementResponses) | Gets a list of existing responses. |
 | [**postResponsemanagementLibraries**](ResponseManagementApi#postResponsemanagementLibraries) | Create a response library. |
 | [**postResponsemanagementLibrariesBulk**](ResponseManagementApi#postResponsemanagementLibrariesBulk) | Get response libraries. |
+| [**postResponsemanagementLibrariesQuery**](ResponseManagementApi#postResponsemanagementLibrariesQuery) | Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions. |
+| [**postResponsemanagementResponseassetsBulk**](ResponseManagementApi#postResponsemanagementResponseassetsBulk) | Get response assets. |
 | [**postResponsemanagementResponseassetsSearch**](ResponseManagementApi#postResponsemanagementResponseassetsSearch) | Search response assets |
 | [**postResponsemanagementResponseassetsUploads**](ResponseManagementApi#postResponsemanagementResponseassetsUploads) | Creates pre-signed url for uploading response asset |
 | [**postResponsemanagementResponses**](ResponseManagementApi#postResponsemanagementResponses) | Create a response. |
@@ -689,6 +691,130 @@ try {
 [**LibraryEntityListing**](LibraryEntityListing)
 
 
+# **postResponsemanagementLibrariesQuery**
+
+
+> [LibraryEntityListing](LibraryEntityListing) postResponsemanagementLibrariesQuery(body, pageNumber, pageSize)
+
+Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+
+postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/responsemanagement/libraries/query  
+
+Requires ANY permissions: 
+
+* responses:library:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+QueryCriteriaQuery body = new QueryCriteriaQuery(); // QueryCriteriaQuery | Query criteria
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    LibraryEntityListing result = apiInstance.postResponsemanagementLibrariesQuery(body, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#postResponsemanagementLibrariesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**QueryCriteriaQuery**](QueryCriteriaQuery)| Query criteria | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LibraryEntityListing**](LibraryEntityListing)
+
+
+# **postResponsemanagementResponseassetsBulk**
+
+
+> [ResponseAssetEntityListing](ResponseAssetEntityListing) postResponsemanagementResponseassetsBulk(body)
+
+Get response assets.
+
+Wraps POST /api/v2/responsemanagement/responseassets/bulk  
+
+Requires ANY permissions: 
+
+* responseAssets:asset:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+ResponseAssetBulkRequest body = new ResponseAssetBulkRequest(); // ResponseAssetBulkRequest | Asset IDs (max allowed 50)
+try {
+    ResponseAssetEntityListing result = apiInstance.postResponsemanagementResponseassetsBulk(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#postResponsemanagementResponseassetsBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ResponseAssetBulkRequest**](ResponseAssetBulkRequest)| Asset IDs (max allowed 50) | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ResponseAssetEntityListing**](ResponseAssetEntityListing)
+
+
 # **postResponsemanagementResponseassetsSearch**
 
 
@@ -1118,4 +1244,4 @@ try {
 [**ResponseAsset**](ResponseAsset)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

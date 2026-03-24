@@ -19,8 +19,11 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Library;
 import com.mypurecloud.sdk.v2.model.LibraryBatchRequest;
 import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
+import com.mypurecloud.sdk.v2.model.QueryCriteriaQuery;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
+import com.mypurecloud.sdk.v2.model.ResponseAssetBulkRequest;
+import com.mypurecloud.sdk.v2.model.ResponseAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
@@ -41,6 +44,8 @@ import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetsSta
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesRequest;
@@ -881,6 +886,158 @@ public class ResponseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+   * 
+   * postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LibraryEntityListing> postResponsemanagementLibrariesQueryAsync(PostResponsemanagementLibrariesQueryRequest request, final AsyncApiCallback<LibraryEntityListing> callback) {
+    try {
+      final SettableFuture<LibraryEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {}, new AsyncApiCallback<ApiResponse<LibraryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+   * 
+   * postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LibraryEntityListing>> postResponsemanagementLibrariesQueryAsync(ApiRequest<QueryCriteriaQuery> request, final AsyncApiCallback<ApiResponse<LibraryEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LibraryEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LibraryEntityListing>() {}, new AsyncApiCallback<ApiResponse<LibraryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get response assets.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ResponseAssetEntityListing> postResponsemanagementResponseassetsBulkAsync(PostResponsemanagementResponseassetsBulkRequest request, final AsyncApiCallback<ResponseAssetEntityListing> callback) {
+    try {
+      final SettableFuture<ResponseAssetEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseAssetEntityListing>() {}, new AsyncApiCallback<ApiResponse<ResponseAssetEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAssetEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get response assets.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ResponseAssetEntityListing>> postResponsemanagementResponseassetsBulkAsync(ApiRequest<ResponseAssetBulkRequest> request, final AsyncApiCallback<ApiResponse<ResponseAssetEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ResponseAssetEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResponseAssetEntityListing>() {}, new AsyncApiCallback<ApiResponse<ResponseAssetEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAssetEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAssetEntityListing> response = (ApiResponse<ResponseAssetEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAssetEntityListing> response = (ApiResponse<ResponseAssetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

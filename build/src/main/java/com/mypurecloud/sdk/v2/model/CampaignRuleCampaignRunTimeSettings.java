@@ -11,6 +11,9 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
@@ -19,6 +22,7 @@ import java.io.Serializable;
 
 public class CampaignRuleCampaignRunTimeSettings  implements Serializable {
   
+  private Boolean includeWaitingTime = null;
 
   public CampaignRuleCampaignRunTimeSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -26,6 +30,24 @@ public class CampaignRuleCampaignRunTimeSettings  implements Serializable {
   }
 
   
+  /**
+   * When true counts all campaign running time, otherwise only running time that a campaign was not waiting. Default: true
+   **/
+  public CampaignRuleCampaignRunTimeSettings includeWaitingTime(Boolean includeWaitingTime) {
+    this.includeWaitingTime = includeWaitingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "When true counts all campaign running time, otherwise only running time that a campaign was not waiting. Default: true")
+  @JsonProperty("includeWaitingTime")
+  public Boolean getIncludeWaitingTime() {
+    return includeWaitingTime;
+  }
+  public void setIncludeWaitingTime(Boolean includeWaitingTime) {
+    this.includeWaitingTime = includeWaitingTime;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -34,13 +56,14 @@ public class CampaignRuleCampaignRunTimeSettings  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
+    CampaignRuleCampaignRunTimeSettings campaignRuleCampaignRunTimeSettings = (CampaignRuleCampaignRunTimeSettings) o;
 
-    return true;
+    return Objects.equals(this.includeWaitingTime, campaignRuleCampaignRunTimeSettings.includeWaitingTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(includeWaitingTime);
   }
 
   @Override
@@ -48,6 +71,7 @@ public class CampaignRuleCampaignRunTimeSettings  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class CampaignRuleCampaignRunTimeSettings {\n");
     
+    sb.append("    includeWaitingTime: ").append(toIndentedString(includeWaitingTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

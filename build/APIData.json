@@ -9138,6 +9138,757 @@
     "return": "EmergencyLocation",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CarrierServicesApi;\nimport com.mypurecloud.sdk.v2.model.EmergencyLocation;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ErrorInfo;\n\npublic class ExamplepostCarrierservicesIntegrationsEmergencylocationsMe {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CarrierServicesApi apiInstance = new CarrierServicesApi();\n        EmergencyLocation body = new EmergencyLocation(); // EmergencyLocation | \n        try { \n            // Set current location for the logged in user\n            EmergencyLocation result = apiInstance.postCarrierservicesIntegrationsEmergencylocationsMe(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CarrierServicesApi#postCarrierservicesIntegrationsEmergencylocationsMe\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deletecasemanagementcase": {
+    "operationId": "deletecasemanagementcase",
+    "functionName": "deleteCasemanagementCase",
+    "signature": "deleteCasemanagementCase(caseId)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Empty",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteCasemanagementCase {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\n        try { \n            // Delete a Case.\n            Empty result = apiInstance.deleteCasemanagementCase(caseId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#deleteCasemanagementCase\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "deletecasemanagementcaseplan": {
+    "operationId": "deletecasemanagementcaseplan",
+    "functionName": "deleteCasemanagementCaseplan",
+    "signature": "deleteCasemanagementCaseplan(caseplanId)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Empty",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteCasemanagementCaseplan {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\n        try { \n            // Delete a Caseplan.\n            Empty result = apiInstance.deleteCasemanagementCaseplan(caseplanId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#deleteCasemanagementCaseplan\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcase": {
+    "operationId": "getcasemanagementcase",
+    "functionName": "getCasemanagementCase",
+    "signature": "getCasemanagementCase(caseId, expands)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expands",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ModelCase",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ModelCase;\n\npublic class ExamplegetCasemanagementCase {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nString expands = \"expands_example\"; // String | Which fields to expand.\n        try { \n            // Get a Case.\n            ModelCase result = apiInstance.getCasemanagementCase(caseId, expands);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCase\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseassociation": {
+    "operationId": "getcasemanagementcaseassociation",
+    "functionName": "getCasemanagementCaseAssociation",
+    "signature": "getCasemanagementCaseAssociation(caseId, associationId)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "associationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CaseAssociation",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CaseAssociation;\n\npublic class ExamplegetCasemanagementCaseAssociation {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nString associationId = \"associationId_example\"; // String | Case Association ID\n        try { \n            // Get a Case Association.\n            CaseAssociation result = apiInstance.getCasemanagementCaseAssociation(caseId, associationId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseAssociation\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseassociations": {
+    "operationId": "getcasemanagementcaseassociations",
+    "functionName": "getCasemanagementCaseAssociations",
+    "signature": "getCasemanagementCaseAssociations(caseId, before, after, pageSize)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "CaseAssociationListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CaseAssociationListing;\n\npublic class ExamplegetCasemanagementCaseAssociations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID.\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\n        try { \n            // Get a list of case associations for a provided case.\n            CaseAssociationListing result = apiInstance.getCasemanagementCaseAssociations(caseId, before, after, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseAssociations\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcasestage": {
+    "operationId": "getcasemanagementcasestage",
+    "functionName": "getCasemanagementCaseStage",
+    "signature": "getCasemanagementCaseStage(caseId, stageId)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stageId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Stage",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Stage;\n\npublic class ExamplegetCasemanagementCaseStage {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nString stageId = \"stageId_example\"; // String | Stage ID\n        try { \n            // Get a Stage.\n            Stage result = apiInstance.getCasemanagementCaseStage(caseId, stageId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseStage\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcasestagestep": {
+    "operationId": "getcasemanagementcasestagestep",
+    "functionName": "getCasemanagementCaseStageStep",
+    "signature": "getCasemanagementCaseStageStep(caseId, stageId, stepId)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stageId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stepId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Step",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Step;\n\npublic class ExamplegetCasemanagementCaseStageStep {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nString stageId = \"stageId_example\"; // String | Stage ID\nString stepId = \"stepId_example\"; // String | Step ID\n        try { \n            // Get a Step.\n            Step result = apiInstance.getCasemanagementCaseStageStep(caseId, stageId, stepId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseStageStep\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcasestagesteps": {
+    "operationId": "getcasemanagementcasestagesteps",
+    "functionName": "getCasemanagementCaseStageSteps",
+    "signature": "getCasemanagementCaseStageSteps(caseId, stageId, before, after, pageSize)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stageId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "StepListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.StepListing;\n\npublic class ExamplegetCasemanagementCaseStageSteps {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nString stageId = \"stageId_example\"; // String | Stage ID\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\n        try { \n            // Get a list of Steps.\n            StepListing result = apiInstance.getCasemanagementCaseStageSteps(caseId, stageId, before, after, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseStageSteps\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcasestages": {
+    "operationId": "getcasemanagementcasestages",
+    "functionName": "getCasemanagementCaseStages",
+    "signature": "getCasemanagementCaseStages(caseId, before, after, pageSize)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "StageListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.StageListing;\n\npublic class ExamplegetCasemanagementCaseStages {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\n        try { \n            // Get a list of Stages.\n            StageListing result = apiInstance.getCasemanagementCaseStages(caseId, before, after, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseStages\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseterminatejob": {
+    "operationId": "getcasemanagementcaseterminatejob",
+    "functionName": "getCasemanagementCaseTerminateJob",
+    "signature": "getCasemanagementCaseTerminateJob(caseId, jobId)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "TerminateJob",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.TerminateJob;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetCasemanagementCaseTerminateJob {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nString jobId = \"jobId_example\"; // String | Job ID\n        try { \n            // Get a Terminate Job for a Case.\n            TerminateJob result = apiInstance.getCasemanagementCaseTerminateJob(caseId, jobId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseTerminateJob\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseplan": {
+    "operationId": "getcasemanagementcaseplan",
+    "functionName": "getCasemanagementCaseplan",
+    "signature": "getCasemanagementCaseplan(caseplanId)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Caseplan",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Caseplan;\n\npublic class ExamplegetCasemanagementCaseplan {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\n        try { \n            // Get a Caseplan.\n            Caseplan result = apiInstance.getCasemanagementCaseplan(caseplanId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseplan\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseplanversion": {
+    "operationId": "getcasemanagementcaseplanversion",
+    "functionName": "getCasemanagementCaseplanVersion",
+    "signature": "getCasemanagementCaseplanVersion(caseplanId, versionId)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Caseplan",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Caseplan;\n\npublic class ExamplegetCasemanagementCaseplanVersion {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nString versionId = \"versionId_example\"; // String | Version of the caseplan\n        try { \n            // Get a Caseplan version.\n            Caseplan result = apiInstance.getCasemanagementCaseplanVersion(caseplanId, versionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseplanVersion\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseplanversiondataschemas": {
+    "operationId": "getcasemanagementcaseplanversiondataschemas",
+    "functionName": "getCasemanagementCaseplanVersionDataschemas",
+    "signature": "getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CaseplanDataSchemaListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaListing;\n\npublic class ExamplegetCasemanagementCaseplanVersionDataschemas {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nString versionId = \"versionId_example\"; // String | Version of the caseplan\n        try { \n            // Get the dataSchemas for a caseplan version.\n            CaseplanDataSchemaListing result = apiInstance.getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseplanVersionDataschemas\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseplanversionintakesettings": {
+    "operationId": "getcasemanagementcaseplanversionintakesettings",
+    "functionName": "getCasemanagementCaseplanVersionIntakesettings",
+    "signature": "getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "IntakeSettingsListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;\n\npublic class ExamplegetCasemanagementCaseplanVersionIntakesettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nString versionId = \"versionId_example\"; // String | Version of the caseplan\n        try { \n            // Get the intake settings for a Caseplan version.\n            IntakeSettingsListing result = apiInstance.getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseplanVersionIntakesettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseplanversionstageplan": {
+    "operationId": "getcasemanagementcaseplanversionstageplan",
+    "functionName": "getCasemanagementCaseplanVersionStageplan",
+    "signature": "getCasemanagementCaseplanVersionStageplan(caseplanId, versionId, stageplanId, expands)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stageplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expands",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "Stageplan",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Stageplan;\n\npublic class ExamplegetCasemanagementCaseplanVersionStageplan {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nString versionId = \"versionId_example\"; // String | Version ID\nString stageplanId = \"stageplanId_example\"; // String | Stageplan ID\nList<String> expands = Arrays.asList(null); // List<String> | Which fields to expand.\n        try { \n            // Get a Stageplan.\n            Stageplan result = apiInstance.getCasemanagementCaseplanVersionStageplan(caseplanId, versionId, stageplanId, expands);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseplanVersionStageplan\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseplanversionstageplanstepplan": {
+    "operationId": "getcasemanagementcaseplanversionstageplanstepplan",
+    "functionName": "getCasemanagementCaseplanVersionStageplanStepplan",
+    "signature": "getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versionId, stageplanId, stepplanId, expands)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stageplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stepplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expands",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "Stepplan",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Stepplan;\n\npublic class ExamplegetCasemanagementCaseplanVersionStageplanStepplan {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nString versionId = \"versionId_example\"; // String | Version ID\nString stageplanId = \"stageplanId_example\"; // String | Stageplan ID\nString stepplanId = \"stepplanId_example\"; // String | Stepplan ID\nList<String> expands = Arrays.asList(null); // List<String> | Which fields to expand.\n        try { \n            // Get a Stepplan.\n            Stepplan result = apiInstance.getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versionId, stageplanId, stepplanId, expands);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseplanVersionStageplanStepplan\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseplanversionstageplanstepplans": {
+    "operationId": "getcasemanagementcaseplanversionstageplanstepplans",
+    "functionName": "getCasemanagementCaseplanVersionStageplanStepplans",
+    "signature": "getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, before, after, pageSize, expands)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stageplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expands",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "StepplanListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.StepplanListing;\n\npublic class ExamplegetCasemanagementCaseplanVersionStageplanStepplans {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nString versionId = \"versionId_example\"; // String | Version ID\nString stageplanId = \"stageplanId_example\"; // String | Stageplan ID\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\nList<String> expands = Arrays.asList(null); // List<String> | Which fields to expand.\n        try { \n            // Get a list of Stepplans.\n            StepplanListing result = apiInstance.getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, before, after, pageSize, expands);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseplanVersionStageplanStepplans\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseplanversionstageplans": {
+    "operationId": "getcasemanagementcaseplanversionstageplans",
+    "functionName": "getCasemanagementCaseplanVersionStageplans",
+    "signature": "getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, before, after, pageSize, expands)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expands",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "StageplanListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.StageplanListing;\n\npublic class ExamplegetCasemanagementCaseplanVersionStageplans {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nString versionId = \"versionId_example\"; // String | Version ID\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\nList<String> expands = Arrays.asList(null); // List<String> | Which fields to expand.\n        try { \n            // Get a list of Stageplans.\n            StageplanListing result = apiInstance.getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, before, after, pageSize, expands);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseplanVersionStageplans\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcaseplans": {
+    "operationId": "getcasemanagementcaseplans",
+    "functionName": "getCasemanagementCaseplans",
+    "signature": "getCasemanagementCaseplans(after, pageSize, customerIntentId, divisionIds)",
+    "parameters": [
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "customerIntentId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "divisionIds",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "CaseplanListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CaseplanListing;\n\npublic class ExamplegetCasemanagementCaseplans {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String after = \"after_example\"; // String | The cursor that points to the end of the set of caseplans that has been returned.\nInteger pageSize = 56; // Integer | Number of caseplans to return. Maximum of 200.\nString customerIntentId = \"customerIntentId_example\"; // String | Filter by Customer Intent.\nString divisionIds = \"divisionIds_example\"; // String | Filter by Divisions.\n        try { \n            // Get a list of Caseplans.\n            CaseplanListing result = apiInstance.getCasemanagementCaseplans(after, pageSize, customerIntentId, divisionIds);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCaseplans\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcasesexternalcontact": {
+    "operationId": "getcasemanagementcasesexternalcontact",
+    "functionName": "getCasemanagementCasesExternalcontact",
+    "signature": "getCasemanagementCasesExternalcontact(externalContactId, after, pageSize, divisionIds, expands)",
+    "parameters": [
+      {
+        "name": "externalContactId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "divisionIds",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expands",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "CaseListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.CaseListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetCasemanagementCasesExternalcontact {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String externalContactId = \"externalContactId_example\"; // String | External Contact ID\nString after = \"after_example\"; // String | The cursor that points to the end of the set of cases that has been returned.\nInteger pageSize = 56; // Integer | Number of cases to return. Maximum of 200.\nString divisionIds = \"divisionIds_example\"; // String | Filter by Divisions\nList<String> expands = Arrays.asList(null); // List<String> | Which fields to expand.\n        try { \n            // Get a list of cases for provided external contact id.\n            CaseListing result = apiInstance.getCasemanagementCasesExternalcontact(externalContactId, after, pageSize, divisionIds, expands);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCasesExternalcontact\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getcasemanagementcasesreference": {
+    "operationId": "getcasemanagementcasesreference",
+    "functionName": "getCasemanagementCasesReference",
+    "signature": "getCasemanagementCasesReference(referenceId, expands)",
+    "parameters": [
+      {
+        "name": "referenceId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expands",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ModelCase",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ModelCase;\n\npublic class ExamplegetCasemanagementCasesReference {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String referenceId = \"referenceId_example\"; // String | Reference\nString expands = \"expands_example\"; // String | Which fields to expand.\n        try { \n            // Get a Case by reference.\n            ModelCase result = apiInstance.getCasemanagementCasesReference(referenceId, expands);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#getCasemanagementCasesReference\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchcasemanagementcasedatedue": {
+    "operationId": "patchcasemanagementcasedatedue",
+    "functionName": "patchCasemanagementCaseDatedue",
+    "signature": "patchCasemanagementCaseDatedue(caseId, body)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CaseDateDueUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "ModelCase",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CaseDateDueUpdate;import com.mypurecloud.sdk.v2.model.ModelCase;\n\npublic class ExamplepatchCasemanagementCaseDatedue {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nCaseDateDueUpdate body = new CaseDateDueUpdate(); // CaseDateDueUpdate | Date due\n        try { \n            // Update date due of a Case.\n            ModelCase result = apiInstance.patchCasemanagementCaseDatedue(caseId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#patchCasemanagementCaseDatedue\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchcasemanagementcasepriority": {
+    "operationId": "patchcasemanagementcasepriority",
+    "functionName": "patchCasemanagementCasePriority",
+    "signature": "patchCasemanagementCasePriority(caseId, body)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CasePriorityUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "ModelCase",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CasePriorityUpdate;import com.mypurecloud.sdk.v2.model.ModelCase;\n\npublic class ExamplepatchCasemanagementCasePriority {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nCasePriorityUpdate body = new CasePriorityUpdate(); // CasePriorityUpdate | Priority\n        try { \n            // Update priority of a Case.\n            ModelCase result = apiInstance.patchCasemanagementCasePriority(caseId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#patchCasemanagementCasePriority\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchcasemanagementcasesummary": {
+    "operationId": "patchcasemanagementcasesummary",
+    "functionName": "patchCasemanagementCaseSummary",
+    "signature": "patchCasemanagementCaseSummary(caseId, body)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CaseSummaryUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "ModelCase",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CaseSummaryUpdate;import com.mypurecloud.sdk.v2.model.ModelCase;\n\npublic class ExamplepatchCasemanagementCaseSummary {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\nCaseSummaryUpdate body = new CaseSummaryUpdate(); // CaseSummaryUpdate | Summary\n        try { \n            // Update summary of a Case.\n            ModelCase result = apiInstance.patchCasemanagementCaseSummary(caseId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#patchCasemanagementCaseSummary\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchcasemanagementcaseplan": {
+    "operationId": "patchcasemanagementcaseplan",
+    "functionName": "patchCasemanagementCaseplan",
+    "signature": "patchCasemanagementCaseplan(caseplanId, body)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CaseplanUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "Caseplan",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Caseplan;import com.mypurecloud.sdk.v2.model.CaseplanUpdate;\n\npublic class ExamplepatchCasemanagementCaseplan {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nCaseplanUpdate body = new CaseplanUpdate(); // CaseplanUpdate | Caseplan\n        try { \n            // Update the attributes of a Caseplan.\n            Caseplan result = apiInstance.patchCasemanagementCaseplan(caseplanId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#patchCasemanagementCaseplan\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchcasemanagementcaseplanstageplan": {
+    "operationId": "patchcasemanagementcaseplanstageplan",
+    "functionName": "patchCasemanagementCaseplanStageplan",
+    "signature": "patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stageplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "StageplanUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "Stageplan",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.StageplanUpdate;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Stageplan;\n\npublic class ExamplepatchCasemanagementCaseplanStageplan {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nString stageplanId = \"stageplanId_example\"; // String | Stageplan ID\nStageplanUpdate body = new StageplanUpdate(); // StageplanUpdate | Stageplan\n        try { \n            // Update the attributes of a Stageplan.\n            Stageplan result = apiInstance.patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#patchCasemanagementCaseplanStageplan\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchcasemanagementcaseplanstageplanstepplan": {
+    "operationId": "patchcasemanagementcaseplanstageplanstepplan",
+    "functionName": "patchCasemanagementCaseplanStageplanStepplan",
+    "signature": "patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stageplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "stepplanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "StepplanUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "Stepplan",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Stepplan;import com.mypurecloud.sdk.v2.model.StepplanUpdate;\n\npublic class ExamplepatchCasemanagementCaseplanStageplanStepplan {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\nString stageplanId = \"stageplanId_example\"; // String | Stageplan ID\nString stepplanId = \"stepplanId_example\"; // String | Stepplan ID\nStepplanUpdate body = new StepplanUpdate(); // StepplanUpdate | Stepplan\n        try { \n            // Update the attributes of a Stepplan.\n            Stepplan result = apiInstance.patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#patchCasemanagementCaseplanStageplanStepplan\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postcasemanagementcaseassociations": {
+    "operationId": "postcasemanagementcaseassociations",
+    "functionName": "postCasemanagementCaseAssociations",
+    "signature": "postCasemanagementCaseAssociations(caseId, body)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CaseAssociationCreate",
+        "required": "false"
+      }
+    ],
+    "return": "CaseAssociation",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CaseAssociationCreate;import com.mypurecloud.sdk.v2.model.CaseAssociation;\n\npublic class ExamplepostCasemanagementCaseAssociations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID.\nCaseAssociationCreate body = new CaseAssociationCreate(); // CaseAssociationCreate | Case Association\n        try { \n            // Create a case association.\n            CaseAssociation result = apiInstance.postCasemanagementCaseAssociations(caseId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#postCasemanagementCaseAssociations\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postcasemanagementcaseterminatejobs": {
+    "operationId": "postcasemanagementcaseterminatejobs",
+    "functionName": "postCasemanagementCaseTerminateJobs",
+    "signature": "postCasemanagementCaseTerminateJobs(caseId)",
+    "parameters": [
+      {
+        "name": "caseId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "TerminateJob",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.TerminateJob;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostCasemanagementCaseTerminateJobs {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseId = \"caseId_example\"; // String | Case ID\n        try { \n            // Create a Terminate Job for a Case.\n            TerminateJob result = apiInstance.postCasemanagementCaseTerminateJobs(caseId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#postCasemanagementCaseTerminateJobs\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postcasemanagementcaseplanpublish": {
+    "operationId": "postcasemanagementcaseplanpublish",
+    "functionName": "postCasemanagementCaseplanPublish",
+    "signature": "postCasemanagementCaseplanPublish(caseplanId)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Caseplan",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Caseplan;\n\npublic class ExamplepostCasemanagementCaseplanPublish {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\n        try { \n            // Publish Caseplan.\n            Caseplan result = apiInstance.postCasemanagementCaseplanPublish(caseplanId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#postCasemanagementCaseplanPublish\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postcasemanagementcaseplanversions": {
+    "operationId": "postcasemanagementcaseplanversions",
+    "functionName": "postCasemanagementCaseplanVersions",
+    "signature": "postCasemanagementCaseplanVersions(caseplanId)",
+    "parameters": [
+      {
+        "name": "caseplanId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Caseplan",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Caseplan;\n\npublic class ExamplepostCasemanagementCaseplanVersions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        String caseplanId = \"caseplanId_example\"; // String | Caseplan ID\n        try { \n            // Create Caseplan version.\n            Caseplan result = apiInstance.postCasemanagementCaseplanVersions(caseplanId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#postCasemanagementCaseplanVersions\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postcasemanagementcaseplans": {
+    "operationId": "postcasemanagementcaseplans",
+    "functionName": "postCasemanagementCaseplans",
+    "signature": "postCasemanagementCaseplans(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "CaseplanCreate",
+        "required": "true"
+      }
+    ],
+    "return": "CaseplanCreateResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.CaseplanCreateResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CaseplanCreate;\n\npublic class ExamplepostCasemanagementCaseplans {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        CaseplanCreate body = new CaseplanCreate(); // CaseplanCreate | Caseplan\n        try { \n            // Create a Caseplan.\n            CaseplanCreateResponse result = apiInstance.postCasemanagementCaseplans(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#postCasemanagementCaseplans\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postcasemanagementcases": {
+    "operationId": "postcasemanagementcases",
+    "functionName": "postCasemanagementCases",
+    "signature": "postCasemanagementCases(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "CaseCreate",
+        "required": "true"
+      }
+    ],
+    "return": "ModelCase",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.CaseCreate;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ModelCase;\n\npublic class ExamplepostCasemanagementCases {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        CaseCreate body = new CaseCreate(); // CaseCreate | Case\n        try { \n            // Create a Case.\n            ModelCase result = apiInstance.postCasemanagementCases(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#postCasemanagementCases\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postcasemanagementcasesassociationsquery": {
+    "operationId": "postcasemanagementcasesassociationsquery",
+    "functionName": "postCasemanagementCasesAssociationsQuery",
+    "signature": "postCasemanagementCasesAssociationsQuery(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "CaseAssociationQuery",
+        "required": "false"
+      }
+    ],
+    "return": "CaseAssociationQueryEntityListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.CaseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CaseAssociationQueryEntityListing;import com.mypurecloud.sdk.v2.model.CaseAssociationQuery;\n\npublic class ExamplepostCasemanagementCasesAssociationsQuery {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        CaseManagementApi apiInstance = new CaseManagementApi();\n        CaseAssociationQuery body = new CaseAssociationQuery(); // CaseAssociationQuery | Case Association\n        try { \n            // Query for case associations\n            CaseAssociationQueryEntityListing result = apiInstance.postCasemanagementCasesAssociationsQuery(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling CaseManagementApi#postCasemanagementCasesAssociationsQuery\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deletechatsroommessage": {
     "operationId": "deletechatsroommessage",
     "functionName": "deleteChatsRoomMessage",
@@ -12218,16 +12969,21 @@
   "getconversationsemailmessages": {
     "operationId": "getconversationsemailmessages",
     "functionName": "getConversationsEmailMessages",
-    "signature": "getConversationsEmailMessages(conversationId)",
+    "signature": "getConversationsEmailMessages(conversationId, includeAgentlessStitchedMessages)",
     "parameters": [
       {
         "name": "conversationId",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "includeAgentlessStitchedMessages",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "EmailMessagePreviewListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EmailMessagePreviewListing;\n\npublic class ExamplegetConversationsEmailMessages {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversationId\n        try { \n            // Get conversation messages\n            EmailMessagePreviewListing result = apiInstance.getConversationsEmailMessages(conversationId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsEmailMessages\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EmailMessagePreviewListing;\n\npublic class ExamplegetConversationsEmailMessages {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversationId\nBoolean includeAgentlessStitchedMessages = false; // Boolean | Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message.\n        try { \n            // Get conversation messages\n            EmailMessagePreviewListing result = apiInstance.getConversationsEmailMessages(conversationId, includeAgentlessStitchedMessages);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getConversationsEmailMessages\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getconversationsemailmessagesdraft": {
     "operationId": "getconversationsemailmessagesdraft",
@@ -16884,7 +17640,7 @@
       }
     ],
     "return": "SupportedContent",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.SupportedContentReference;import com.mypurecloud.sdk.v2.model.SupportedContent;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampleputConversationsMessagingSupportedcontentDefault {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        SupportedContentReference body = new SupportedContentReference(); // SupportedContentReference | SupportedContent\n        try { \n            // Set the organization's default supported content profile that may be assigned to an integration when it is created.\n            SupportedContent result = apiInstance.putConversationsMessagingSupportedcontentDefault(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#putConversationsMessagingSupportedcontentDefault\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.SupportedContentReference;import com.mypurecloud.sdk.v2.model.SupportedContent;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampleputConversationsMessagingSupportedcontentDefault {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        SupportedContentReference body = new SupportedContentReference(); // SupportedContentReference | Reference to supported content profile\n        try { \n            // Set the organization's default supported content profile that may be assigned to an integration when it is created.\n            SupportedContent result = apiInstance.putConversationsMessagingSupportedcontentDefault(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#putConversationsMessagingSupportedcontentDefault\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putconversationsmessagingthreadingtimeline": {
     "operationId": "putconversationsmessagingthreadingtimeline",
@@ -18489,6 +19245,25 @@
     ],
     "return": "CursorRelationshipListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ExternalContactsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;\n\npublic class ExamplegetExternalcontactsScanRelationshipsDivisionviewsAll {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ExternalContactsApi apiInstance = new ExternalContactsApi();\n        Integer limit = 56; // Integer | The number of relationships per page; must be between 10 and 200, default is 100\nString cursor = \"cursor_example\"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL\n        try { \n            // Scan for relationships\n            CursorRelationshipListing result = apiInstance.getExternalcontactsScanRelationshipsDivisionviewsAll(limit, cursor);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchexternalcontactscontact": {
+    "operationId": "patchexternalcontactscontact",
+    "functionName": "patchExternalcontactsContact",
+    "signature": "patchExternalcontactsContact(contactId, body)",
+    "parameters": [
+      {
+        "name": "contactId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExternalContactsPatchRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ExternalContact",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ExternalContactsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExternalContact;import com.mypurecloud.sdk.v2.model.ExternalContactsPatchRequest;\n\npublic class ExamplepatchExternalcontactsContact {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ExternalContactsApi apiInstance = new ExternalContactsApi();\n        String contactId = \"contactId_example\"; // String | ExternalContact ID\nExternalContactsPatchRequest body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | Contact fields to update\n        try { \n            // Update specific fields of an external contact\n            ExternalContact result = apiInstance.patchExternalcontactsContact(contactId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ExternalContactsApi#patchExternalcontactsContact\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "patchexternalcontactscontactidentifiers": {
     "operationId": "patchexternalcontactscontactidentifiers",
@@ -26448,6 +27223,20 @@
     "return": "JourneyView",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.JourneyApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.JourneyView;\n\npublic class ExampleputJourneyViewVersion {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        JourneyApi apiInstance = new JourneyApi();\n        String viewId = \"viewId_example\"; // String | viewId\nString versionId = \"versionId_example\"; // String | versionId\nJourneyView body = new JourneyView(); // JourneyView | JourneyView\n        try { \n            // Update a Journey View by ID and version\n            JourneyView result = apiInstance.putJourneyViewVersion(viewId, versionId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling JourneyApi#putJourneyViewVersion\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deleteknowledgeconnection": {
+    "operationId": "deleteknowledgeconnection",
+    "functionName": "deleteKnowledgeConnection",
+    "signature": "deleteKnowledgeConnection(connectionId)",
+    "parameters": [
+      {
+        "name": "connectionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ConnectionResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConnectionResponse;\n\npublic class ExampledeleteKnowledgeConnection {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String connectionId = \"connectionId_example\"; // String | Connection ID\n        try { \n            // Delete connection\n            ConnectionResponse result = apiInstance.deleteKnowledgeConnection(connectionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#deleteKnowledgeConnection\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deleteknowledgeknowledgebase": {
     "operationId": "deleteknowledgeknowledgebase",
     "functionName": "deleteKnowledgeKnowledgebase",
@@ -26643,6 +27432,64 @@
       }
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteKnowledgeSetting {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String knowledgeSettingId = \"knowledgeSettingId_example\"; // String | Knowledge Setting ID.\n        try { \n            // Delete Knowledge setting.\n            apiInstance.deleteKnowledgeSetting(knowledgeSettingId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#deleteKnowledgeSetting\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "deleteknowledgesource": {
+    "operationId": "deleteknowledgesource",
+    "functionName": "deleteKnowledgeSource",
+    "signature": "deleteKnowledgeSource(sourceId)",
+    "parameters": [
+      {
+        "name": "sourceId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteKnowledgeSource {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sourceId = \"sourceId_example\"; // String | Source ID\n        try { \n            // Delete source\n            apiInstance.deleteKnowledgeSource(sourceId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#deleteKnowledgeSource\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getknowledgeconnection": {
+    "operationId": "getknowledgeconnection",
+    "functionName": "getKnowledgeConnection",
+    "signature": "getKnowledgeConnection(connectionId, expand)",
+    "parameters": [
+      {
+        "name": "connectionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "ConnectionResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConnectionResponse;\n\npublic class ExamplegetKnowledgeConnection {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String connectionId = \"connectionId_example\"; // String | Connection ID\nList<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.\n        try { \n            // Get connection\n            ConnectionResponse result = apiInstance.getKnowledgeConnection(connectionId, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeConnection\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getknowledgeconnectionoptions": {
+    "operationId": "getknowledgeconnectionoptions",
+    "functionName": "getKnowledgeConnectionOptions",
+    "signature": "getKnowledgeConnectionOptions(connectionId, parentId)",
+    "parameters": [
+      {
+        "name": "connectionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "parentId",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ConnectionOptionListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ConnectionOptionListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetKnowledgeConnectionOptions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String connectionId = \"connectionId_example\"; // String | Connection ID\nString parentId = \"parentId_example\"; // String | The id of the parent option whose children to be listed.\n        try { \n            // Get connection options\n            ConnectionOptionListing result = apiInstance.getKnowledgeConnectionOptions(connectionId, parentId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeConnectionOptions\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getknowledgeconnections": {
+    "operationId": "getknowledgeconnections",
+    "functionName": "getKnowledgeConnections",
+    "signature": "getKnowledgeConnections()",
+    "return": "ConnectionListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConnectionListing;\n\npublic class ExamplegetKnowledgeConnections {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n                try { \n            // Get connections\n            ConnectionListing result = apiInstance.getKnowledgeConnections();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeConnections\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getknowledgeguestsessioncategories": {
     "operationId": "getknowledgeguestsessioncategories",
@@ -27789,6 +28636,130 @@
     "return": "KnowledgeSettingListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.KnowledgeSettingListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetKnowledgeSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\nString name = \"name_example\"; // String | Knowledge setting name to search upon.\nString sourceId = \"sourceId_example\"; // String | Source ID to filter knowledge settings by.\nString sortBy = \"sortBy_example\"; // String | Field to sort the knowledge settings on.\nString sortOrder = \"sortOrder_example\"; // String | Sorting order for knowledge settings.\n        try { \n            // Get Knowledge settings.\n            KnowledgeSettingListing result = apiInstance.getKnowledgeSettings(before, after, pageSize, name, sourceId, sortBy, sortOrder);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getknowledgesource": {
+    "operationId": "getknowledgesource",
+    "functionName": "getKnowledgeSource",
+    "signature": "getKnowledgeSource(sourceId, expand)",
+    "parameters": [
+      {
+        "name": "sourceId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "V3SourceDetailedWithErrorResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3SourceDetailedWithErrorResponse;\n\npublic class ExamplegetKnowledgeSource {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sourceId = \"sourceId_example\"; // String | Source ID\nList<String> expand = Arrays.asList(null); // List<String> | Optional fields to expand for the Source.\n        try { \n            // Get source\n            V3SourceDetailedWithErrorResponse result = apiInstance.getKnowledgeSource(sourceId, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeSource\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getknowledgesourcesynchronization": {
+    "operationId": "getknowledgesourcesynchronization",
+    "functionName": "getKnowledgeSourceSynchronization",
+    "signature": "getKnowledgeSourceSynchronization(sourceId, synchronizationId)",
+    "parameters": [
+      {
+        "name": "sourceId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "synchronizationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "V3Synchronization",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3Synchronization;\n\npublic class ExamplegetKnowledgeSourceSynchronization {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sourceId = \"sourceId_example\"; // String | Source ID\nString synchronizationId = \"synchronizationId_example\"; // String | Synchronization ID\n        try { \n            // Get a specific synchronization of a source.\n            V3Synchronization result = apiInstance.getKnowledgeSourceSynchronization(sourceId, synchronizationId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeSourceSynchronization\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getknowledgesourcesynchronizations": {
+    "operationId": "getknowledgesourcesynchronizations",
+    "functionName": "getKnowledgeSourceSynchronizations",
+    "signature": "getKnowledgeSourceSynchronizations(sourceId, before, after, pageSize)",
+    "parameters": [
+      {
+        "name": "sourceId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "V3SynchronizationListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;\n\npublic class ExamplegetKnowledgeSourceSynchronizations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sourceId = \"sourceId_example\"; // String | Source ID\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\n        try { \n            // Get synchronizations of a source.\n            V3SynchronizationListing result = apiInstance.getKnowledgeSourceSynchronizations(sourceId, before, after, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeSourceSynchronizations\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getknowledgesources": {
+    "operationId": "getknowledgesources",
+    "functionName": "getKnowledgeSources",
+    "signature": "getKnowledgeSources(expand)",
+    "parameters": [
+      {
+        "name": "expand",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "V3SourceWithErrorListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3SourceWithErrorListing;\n\npublic class ExamplegetKnowledgeSources {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        List<String> expand = Arrays.asList(null); // List<String> | Optional fields to expand for the Source.\n        try { \n            // List sources\n            V3SourceWithErrorListing result = apiInstance.getKnowledgeSources(expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeSources\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getknowledgesourcessynchronizations": {
+    "operationId": "getknowledgesourcessynchronizations",
+    "functionName": "getKnowledgeSourcesSynchronizations",
+    "signature": "getKnowledgeSourcesSynchronizations(before, after, pageSize)",
+    "parameters": [
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "V3SynchronizationListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;\n\npublic class ExamplegetKnowledgeSourcesSynchronizations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\n        try { \n            // Get synchronizations of all sources of the organization.\n            V3SynchronizationListing result = apiInstance.getKnowledgeSourcesSynchronizations(before, after, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeSourcesSynchronizations\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchknowledgeconnection": {
+    "operationId": "patchknowledgeconnection",
+    "functionName": "patchKnowledgeConnection",
+    "signature": "patchKnowledgeConnection(connectionId, body)",
+    "parameters": [
+      {
+        "name": "connectionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ConnectionUpdateRequest",
+        "required": "false"
+      }
+    ],
+    "return": "ConnectionResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConnectionUpdateRequest;import com.mypurecloud.sdk.v2.model.ConnectionResponse;\n\npublic class ExamplepatchKnowledgeConnection {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String connectionId = \"connectionId_example\"; // String | Connection ID\nConnectionUpdateRequest body = new ConnectionUpdateRequest(); // ConnectionUpdateRequest | \n        try { \n            // Update connection\n            ConnectionResponse result = apiInstance.patchKnowledgeConnection(connectionId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#patchKnowledgeConnection\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "patchknowledgeguestsessiondocumentssearchsearchid": {
     "operationId": "patchknowledgeguestsessiondocumentssearchsearchid",
     "functionName": "patchKnowledgeGuestSessionDocumentsSearchSearchId",
@@ -28125,6 +29096,44 @@
     ],
     "return": "KnowledgeSettingsResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeSettingsResponse;import com.mypurecloud.sdk.v2.model.KnowledgeSettingsRequest;\n\npublic class ExamplepatchKnowledgeSetting {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String knowledgeSettingId = \"knowledgeSettingId_example\"; // String | Knowledge Setting ID.\nKnowledgeSettingsRequest body = new KnowledgeSettingsRequest(); // KnowledgeSettingsRequest | \n        try { \n            // Update Knowledge setting.\n            KnowledgeSettingsResponse result = apiInstance.patchKnowledgeSetting(knowledgeSettingId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#patchKnowledgeSetting\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchknowledgesourcesynchronization": {
+    "operationId": "patchknowledgesourcesynchronization",
+    "functionName": "patchKnowledgeSourceSynchronization",
+    "signature": "patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body)",
+    "parameters": [
+      {
+        "name": "sourceId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "synchronizationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "V3SynchronizationUpdateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "V3Synchronization",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3SynchronizationUpdateRequest;import com.mypurecloud.sdk.v2.model.V3Synchronization;\n\npublic class ExamplepatchKnowledgeSourceSynchronization {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sourceId = \"sourceId_example\"; // String | Source ID\nString synchronizationId = \"synchronizationId_example\"; // String | Synchronization ID\nV3SynchronizationUpdateRequest body = new V3SynchronizationUpdateRequest(); // V3SynchronizationUpdateRequest | \n        try { \n            // Update synchronization.\n            V3Synchronization result = apiInstance.patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#patchKnowledgeSourceSynchronization\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postknowledgeconnections": {
+    "operationId": "postknowledgeconnections",
+    "functionName": "postKnowledgeConnections",
+    "signature": "postKnowledgeConnections(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ConnectionCreateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ConnectionCreateResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ConnectionCreateResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConnectionCreateRequest;\n\npublic class ExamplepostKnowledgeConnections {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        ConnectionCreateRequest body = new ConnectionCreateRequest(); // ConnectionCreateRequest | \n        try { \n            // Create new connection\n            ConnectionCreateResponse result = apiInstance.postKnowledgeConnections(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#postKnowledgeConnections\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postknowledgedocumentuploads": {
     "operationId": "postknowledgedocumentuploads",
@@ -28919,6 +29928,63 @@
     "return": "KnowledgeSettingsResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeSettingsResponse;import com.mypurecloud.sdk.v2.model.KnowledgeSettingsRequest;\n\npublic class ExamplepostKnowledgeSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        KnowledgeSettingsRequest body = new KnowledgeSettingsRequest(); // KnowledgeSettingsRequest | \n        try { \n            // Create Knowledge setting.\n            KnowledgeSettingsResponse result = apiInstance.postKnowledgeSettings(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#postKnowledgeSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "postknowledgesourcesynchronizationuploads": {
+    "operationId": "postknowledgesourcesynchronizationuploads",
+    "functionName": "postKnowledgeSourceSynchronizationUploads",
+    "signature": "postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body)",
+    "parameters": [
+      {
+        "name": "sourceId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "synchronizationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "V3SynchronizationUploadUrlRequest",
+        "required": "true"
+      }
+    ],
+    "return": "V3SynchronizationUploadUrlResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlRequest;\n\npublic class ExamplepostKnowledgeSourceSynchronizationUploads {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sourceId = \"sourceId_example\"; // String | Source ID\nString synchronizationId = \"synchronizationId_example\"; // String | Synchronization ID\nV3SynchronizationUploadUrlRequest body = new V3SynchronizationUploadUrlRequest(); // V3SynchronizationUploadUrlRequest | \n        try { \n            // Create presigned URL for uploading a file in the synchronization.\n            V3SynchronizationUploadUrlResponse result = apiInstance.postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#postKnowledgeSourceSynchronizationUploads\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postknowledgesourcesynchronizations": {
+    "operationId": "postknowledgesourcesynchronizations",
+    "functionName": "postKnowledgeSourceSynchronizations",
+    "signature": "postKnowledgeSourceSynchronizations(sourceId, body)",
+    "parameters": [
+      {
+        "name": "sourceId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "V3StartManualSyncRequest",
+        "required": "false"
+      }
+    ],
+    "return": "V3Synchronization",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;import com.mypurecloud.sdk.v2.model.V3Synchronization;\n\npublic class ExamplepostKnowledgeSourceSynchronizations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sourceId = \"sourceId_example\"; // String | Source ID\nV3StartManualSyncRequest body = new V3StartManualSyncRequest(); // V3StartManualSyncRequest | \n        try { \n            // Start a manual synchronization from a source.\n            V3Synchronization result = apiInstance.postKnowledgeSourceSynchronizations(sourceId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#postKnowledgeSourceSynchronizations\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postknowledgesources": {
+    "operationId": "postknowledgesources",
+    "functionName": "postKnowledgeSources",
+    "signature": "postKnowledgeSources(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "V3SourceCreateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "V3SourceDetailedResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;\n\npublic class ExamplepostKnowledgeSources {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        V3SourceCreateRequest body = new V3SourceCreateRequest(); // V3SourceCreateRequest | \n        try { \n            // Create a new source\n            V3SourceDetailedResponse result = apiInstance.postKnowledgeSources(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#postKnowledgeSources\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "putknowledgeknowledgebasesourcessalesforcesourceid": {
     "operationId": "putknowledgeknowledgebasesourcessalesforcesourceid",
     "functionName": "putKnowledgeKnowledgebaseSourcesSalesforceSourceId",
@@ -28966,6 +30032,25 @@
     ],
     "return": "ServiceNowSourceResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ServiceNowSourceResponse;import com.mypurecloud.sdk.v2.model.ServiceNowSourceRequest;\n\npublic class ExampleputKnowledgeKnowledgebaseSourcesServicenowSourceId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nString sourceId = \"sourceId_example\"; // String | Source ID\nServiceNowSourceRequest body = new ServiceNowSourceRequest(); // ServiceNowSourceRequest | \n        try { \n            // Update ServiceNow Knowledge integration source\n            ServiceNowSourceResponse result = apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putknowledgesource": {
+    "operationId": "putknowledgesource",
+    "functionName": "putKnowledgeSource",
+    "signature": "putKnowledgeSource(sourceId, body)",
+    "parameters": [
+      {
+        "name": "sourceId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "V3SourceUpdateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "V3SourceDetailedResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;\n\npublic class ExampleputKnowledgeSource {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sourceId = \"sourceId_example\"; // String | Source ID\nV3SourceUpdateRequest body = new V3SourceUpdateRequest(); // V3SourceUpdateRequest | \n        try { \n            // Update the source\n            V3SourceDetailedResponse result = apiInstance.putKnowledgeSource(sourceId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#putKnowledgeSource\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "deletelanguageunderstandingdomain": {
     "operationId": "deletelanguageunderstandingdomain",
@@ -30883,6 +31968,20 @@
     ],
     "return": "List<String>",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LicenseApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.List;\n\npublic class ExamplepostLicenseInfer {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LicenseApi apiInstance = new LicenseApi();\n        List<String> body = Arrays.asList(null); // List<String> | The roleIds to use while inferring licenses\n        try { \n            // Get a list of licenses inferred based on a list of roleIds\n            List<String> result = apiInstance.postLicenseInfer(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LicenseApi#postLicenseInfer\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postlicenseinferpermissions": {
+    "operationId": "postlicenseinferpermissions",
+    "functionName": "postLicenseInferPermissions",
+    "signature": "postLicenseInferPermissions(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "List<String>",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LicenseApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.List;\n\npublic class ExamplepostLicenseInferPermissions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LicenseApi apiInstance = new LicenseApi();\n        List<String> body = Arrays.asList(null); // List<String> | The permissions to use while inferring licenses\n        try { \n            // Get a list of licenses inferred based on a list of permissions\n            List<String> result = apiInstance.postLicenseInferPermissions(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LicenseApi#postLicenseInferPermissions\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postlicenseorganization": {
     "operationId": "postlicenseorganization",
@@ -33104,7 +34203,7 @@
         "required": "true"
       }
     ],
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOutboundContactlistContacts {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String contactListId = \"contactListId_example\"; // String | Contact List ID\nList<String> contactIds = Arrays.asList(null); // List<String> | ContactIds to delete.\n        try { \n            // Delete contacts from a contact list.\n            apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#deleteOutboundContactlistContacts\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOutboundContactlistContacts {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String contactListId = \"contactListId_example\"; // String | Contact List ID\nList<String> contactIds = Arrays.asList(null); // List<String> | ContactIds to delete.\n        try { \n            // Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted\n            apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#deleteOutboundContactlistContacts\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "deleteoutboundcontactlistfilter": {
     "operationId": "deleteoutboundcontactlistfilter",
@@ -34415,6 +35514,30 @@
     ],
     "return": "ContactListTemplateEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;\n\npublic class ExamplegetOutboundContactlisttemplates {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.\nInteger pageNumber = 1; // Integer | Page number\nBoolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page\nString filterType = \"Prefix\"; // String | Filter type\nString name = \"name_example\"; // String | Name\nString sortBy = \"sortBy_example\"; // String | Sort by\nString sortOrder = \"a\"; // String | Sort order\n        try { \n            // Query a list of contact list templates\n            ContactListTemplateEntityListing result = apiInstance.getOutboundContactlisttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#getOutboundContactlisttemplates\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getoutbounddiagnosticscampaignsummary": {
+    "operationId": "getoutbounddiagnosticscampaignsummary",
+    "functionName": "getOutboundDiagnosticsCampaignSummary",
+    "signature": "getOutboundDiagnosticsCampaignSummary(campaignId, start, end)",
+    "parameters": [
+      {
+        "name": "campaignId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "start",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "end",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CampaignDiagnosticSummary",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.CampaignDiagnosticSummary;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetOutboundDiagnosticsCampaignSummary {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String campaignId = \"campaignId_example\"; // String | Campaign ID\nString start = \"start_example\"; // String | Start datetime (ISO 8601 or Unix epoch)\nString end = \"end_example\"; // String | End datetime (ISO 8601 or Unix epoch)\n        try { \n            // Get diagnostic summary for a single campaign\n            CampaignDiagnosticSummary result = apiInstance.getOutboundDiagnosticsCampaignSummary(campaignId, start, end);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#getOutboundDiagnosticsCampaignSummary\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getoutbounddigitalruleset": {
     "operationId": "getoutbounddigitalruleset",
@@ -39952,6 +41075,44 @@
     ],
     "return": "LibraryEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ResponseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LibraryEntityListing;import com.mypurecloud.sdk.v2.model.LibraryBatchRequest;\n\npublic class ExamplepostResponsemanagementLibrariesBulk {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ResponseManagementApi apiInstance = new ResponseManagementApi();\n        LibraryBatchRequest body = new LibraryBatchRequest(); // LibraryBatchRequest | LibraryIDs (max allowed 50)\n        try { \n            // Get response libraries.\n            LibraryEntityListing result = apiInstance.postResponsemanagementLibrariesBulk(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ResponseManagementApi#postResponsemanagementLibrariesBulk\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postresponsemanagementlibrariesquery": {
+    "operationId": "postresponsemanagementlibrariesquery",
+    "functionName": "postResponsemanagementLibrariesQuery",
+    "signature": "postResponsemanagementLibrariesQuery(body, pageNumber, pageSize)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "QueryCriteriaQuery",
+        "required": "true"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      }
+    ],
+    "return": "LibraryEntityListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ResponseManagementApi;\nimport com.mypurecloud.sdk.v2.model.QueryCriteriaQuery;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LibraryEntityListing;\n\npublic class ExamplepostResponsemanagementLibrariesQuery {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ResponseManagementApi apiInstance = new ResponseManagementApi();\n        QueryCriteriaQuery body = new QueryCriteriaQuery(); // QueryCriteriaQuery | Query criteria\nInteger pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\n        try { \n            // Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.\n            LibraryEntityListing result = apiInstance.postResponsemanagementLibrariesQuery(body, pageNumber, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ResponseManagementApi#postResponsemanagementLibrariesQuery\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postresponsemanagementresponseassetsbulk": {
+    "operationId": "postresponsemanagementresponseassetsbulk",
+    "functionName": "postResponsemanagementResponseassetsBulk",
+    "signature": "postResponsemanagementResponseassetsBulk(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ResponseAssetBulkRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAssetEntityListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ResponseManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ResponseAssetEntityListing;import com.mypurecloud.sdk.v2.model.ResponseAssetBulkRequest;\n\npublic class ExamplepostResponsemanagementResponseassetsBulk {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ResponseManagementApi apiInstance = new ResponseManagementApi();\n        ResponseAssetBulkRequest body = new ResponseAssetBulkRequest(); // ResponseAssetBulkRequest | Asset IDs (max allowed 50)\n        try { \n            // Get response assets.\n            ResponseAssetEntityListing result = apiInstance.postResponsemanagementResponseassetsBulk(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ResponseManagementApi#postResponsemanagementResponseassetsBulk\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postresponsemanagementresponseassetssearch": {
     "operationId": "postresponsemanagementresponseassetssearch",
@@ -48868,6 +50029,13 @@
     "return": "MediaRegions",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.MediaRegions;\n\npublic class ExamplegetTelephonyMediaregions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyApi apiInstance = new TelephonyApi();\n                try { \n            // Retrieve the list of AWS regions media can stream through.\n            MediaRegions result = apiInstance.getTelephonyMediaregions();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyApi#getTelephonyMediaregions\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "gettelephonysettings": {
+    "operationId": "gettelephonysettings",
+    "functionName": "getTelephonySettings",
+    "signature": "getTelephonySettings()",
+    "return": "TelephonySettings",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TelephonySettings;\n\npublic class ExamplegetTelephonySettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyApi apiInstance = new TelephonyApi();\n                try { \n            // Get the global telephony configuration.\n            TelephonySettings result = apiInstance.getTelephonySettings();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyApi#getTelephonySettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "gettelephonysipmessagesconversation": {
     "operationId": "gettelephonysipmessagesconversation",
     "functionName": "getTelephonySipmessagesConversation",
@@ -49000,6 +50168,20 @@
     ],
     "return": "SelfAgentGreeting",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyApi;\nimport com.mypurecloud.sdk.v2.model.SelfAgentGreeting;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampleputTelephonyAgentsGreetingsMe {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyApi apiInstance = new TelephonyApi();\n        SelfAgentGreeting body = new SelfAgentGreeting(); // SelfAgentGreeting | Agent Greeting\n        try { \n            // Updates the agent's own greetings.\n            SelfAgentGreeting result = apiInstance.putTelephonyAgentsGreetingsMe(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyApi#putTelephonyAgentsGreetingsMe\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "puttelephonysettings": {
+    "operationId": "puttelephonysettings",
+    "functionName": "putTelephonySettings",
+    "signature": "putTelephonySettings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "TelephonySettings",
+        "required": "true"
+      }
+    ],
+    "return": "TelephonySettings",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TelephonySettings;\n\npublic class ExampleputTelephonySettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyApi apiInstance = new TelephonyApi();\n        TelephonySettings body = new TelephonySettings(); // TelephonySettings | Telephony\n        try { \n            // Update the global telephony configuration.\n            TelephonySettings result = apiInstance.putTelephonySettings(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyApi#putTelephonySettings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "deletetelephonyprovidersedge": {
     "operationId": "deletetelephonyprovidersedge",
@@ -55680,6 +56862,20 @@
     "return": "ManagementUnitListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ManagementUnitListing;\n\npublic class ExamplegetWorkforcemanagementBusinessunitManagementunits {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.\nString feature = \"feature_example\"; // String | If specified, the list of management units for which the user is authorized to use the requested feature will be returned\nString divisionId = \"divisionId_example\"; // String | If specified, the list of management units belonging to the specified division will be returned\n        try { \n            // Get all authorized management units in the business unit\n            ManagementUnitListing result = apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, feature, divisionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitManagementunits\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getworkforcemanagementbusinessunitminimumstaffingsettings": {
+    "operationId": "getworkforcemanagementbusinessunitminimumstaffingsettings",
+    "functionName": "getWorkforcemanagementBusinessunitMinimumstaffingSettings",
+    "signature": "getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "MinimumStaffingResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.MinimumStaffingResponse;\n\npublic class ExamplegetWorkforcemanagementBusinessunitMinimumstaffingSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\n        try { \n            // Get minimum staffing settings for a business unit\n            MinimumStaffingResponse result = apiInstance.getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitMinimumstaffingSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getworkforcemanagementbusinessunitplanninggroup": {
     "operationId": "getworkforcemanagementbusinessunitplanninggroup",
     "functionName": "getWorkforcemanagementBusinessunitPlanninggroup",
@@ -55712,6 +56908,20 @@
     ],
     "return": "PlanningGroupList",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.PlanningGroupList;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWorkforcemanagementBusinessunitPlanninggroups {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\n        try { \n            // Gets list of planning groups\n            PlanningGroupList result = apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroups\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementbusinessunitschedulersettings": {
+    "operationId": "getworkforcemanagementbusinessunitschedulersettings",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulerSettings",
+    "signature": "getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "BuSchedulerSettingsResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.BuSchedulerSettingsResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWorkforcemanagementBusinessunitSchedulerSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\n        try { \n            // Get scheduler settings for a business unit\n            BuSchedulerSettingsResponse result = apiInstance.getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulerSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getworkforcemanagementbusinessunitschedulingrun": {
     "operationId": "getworkforcemanagementbusinessunitschedulingrun",
@@ -55941,6 +57151,25 @@
     ],
     "return": "BuTimeOffPlanListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.BuTimeOffPlanListing;\n\npublic class ExamplegetWorkforcemanagementBusinessunitTimeoffplans {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString managementUnitId = \"managementUnitId_example\"; // String | The ID of the management unit to get management unit specific staffing groups\nBoolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes\n        try { \n            // Gets a list of time-off plans\n            BuTimeOffPlanListing result = apiInstance.getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, managementUnitId, forceDownloadService);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeoffplans\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementbusinessunitusers": {
+    "operationId": "getworkforcemanagementbusinessunitusers",
+    "functionName": "getWorkforcemanagementBusinessunitUsers",
+    "signature": "getWorkforcemanagementBusinessunitUsers(businessUnitId, managementUnitIds)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "managementUnitIds",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "BuUserListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.BuUserListing;\n\npublic class ExamplegetWorkforcemanagementBusinessunitUsers {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nList<String> managementUnitIds = Arrays.asList(null); // List<String> | The IDs of the management units for which to retrieve users\n        try { \n            // Get users in the business unit\n            BuUserListing result = apiInstance.getWorkforcemanagementBusinessunitUsers(businessUnitId, managementUnitIds);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitUsers\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getworkforcemanagementbusinessunitweekschedule": {
     "operationId": "getworkforcemanagementbusinessunitweekschedule",
@@ -57403,6 +58632,25 @@
     "return": "CapacityPlanResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.UpdateCapacityPlanRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;\n\npublic class ExamplepatchWorkforcemanagementBusinessunitCapacityplan {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString capacityPlanId = \"capacityPlanId_example\"; // String | The ID of the capacity plan\nUpdateCapacityPlanRequest body = new UpdateCapacityPlanRequest(); // UpdateCapacityPlanRequest | body\n        try { \n            // Update a capacity plan configuration\n            CapacityPlanResponse result = apiInstance.patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitCapacityplan\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "patchworkforcemanagementbusinessunitminimumstaffingsettings": {
+    "operationId": "patchworkforcemanagementbusinessunitminimumstaffingsettings",
+    "functionName": "patchWorkforcemanagementBusinessunitMinimumstaffingSettings",
+    "signature": "patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "MinimumStaffingRequest",
+        "required": "true"
+      }
+    ],
+    "return": "MinimumStaffingResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.MinimumStaffingRequest;import com.mypurecloud.sdk.v2.model.MinimumStaffingResponse;\n\npublic class ExamplepatchWorkforcemanagementBusinessunitMinimumstaffingSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nMinimumStaffingRequest body = new MinimumStaffingRequest(); // MinimumStaffingRequest | body\n        try { \n            // Update minimum staffing settings for a business unit\n            MinimumStaffingResponse result = apiInstance.patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitMinimumstaffingSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "patchworkforcemanagementbusinessunitplanninggroup": {
     "operationId": "patchworkforcemanagementbusinessunitplanninggroup",
     "functionName": "patchWorkforcemanagementBusinessunitPlanninggroup",
@@ -57426,6 +58674,25 @@
     ],
     "return": "PlanningGroup",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;import com.mypurecloud.sdk.v2.model.PlanningGroup;\n\npublic class ExamplepatchWorkforcemanagementBusinessunitPlanninggroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\nString planningGroupId = \"planningGroupId_example\"; // String | The ID of a planning group to update\nUpdatePlanningGroupRequest body = new UpdatePlanningGroupRequest(); // UpdatePlanningGroupRequest | body\n        try { \n            // Updates the planning group\n            PlanningGroup result = apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitPlanninggroup\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchworkforcemanagementbusinessunitschedulersettings": {
+    "operationId": "patchworkforcemanagementbusinessunitschedulersettings",
+    "functionName": "patchWorkforcemanagementBusinessunitSchedulerSettings",
+    "signature": "patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "BuSchedulerSettingsRequest",
+        "required": "true"
+      }
+    ],
+    "return": "BuSchedulerSettingsResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.BuSchedulerSettingsRequest;import com.mypurecloud.sdk.v2.model.BuSchedulerSettingsResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepatchWorkforcemanagementBusinessunitSchedulerSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nBuSchedulerSettingsRequest body = new BuSchedulerSettingsRequest(); // BuSchedulerSettingsRequest | body\n        try { \n            // Update scheduler settings for a business unit\n            BuSchedulerSettingsResponse result = apiInstance.patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulerSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "patchworkforcemanagementbusinessunitschedulingrun": {
     "operationId": "patchworkforcemanagementbusinessunitschedulingrun",

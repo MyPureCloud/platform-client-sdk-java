@@ -8,6 +8,9 @@
 | **id** | **String** |  |  [optional] |
 | **parameters** | [**CampaignRuleParameters**](CampaignRuleParameters) | The parameters for the CampaignRuleCondition. |  |
 | **conditionType** | [**ConditionTypeEnum**](#Enum--ConditionTypeEnum) | The type of condition to evaluate. |  |
+| **dateTimeParameters** | [**CampaignRuleDateTimeConditionParameters**](CampaignRuleDateTimeConditionParameters) | Parameters for conditions (timeOfDay, dayOfWeek, dayOfMonth, weekDayOfMonth and specificDate) |  [optional] |
+| **campaignRunTimeSettings** | [**CampaignRuleCampaignRunTimeSettings**](CampaignRuleCampaignRunTimeSettings) | Settings for campaignRunTime conditions |  [optional] |
+| **campaignWaitTimeSettings** | [**CampaignRuleCampaignWaitTimeSettings**](CampaignRuleCampaignWaitTimeSettings) | Settings for campaignWaitTime conditions |  [optional] |
 
 
 ## Enum: ConditionTypeEnum
@@ -35,4 +38,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

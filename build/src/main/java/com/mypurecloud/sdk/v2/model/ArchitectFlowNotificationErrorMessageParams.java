@@ -27,7 +27,6 @@ import java.io.Serializable;
 public class ArchitectFlowNotificationErrorMessageParams  implements Serializable {
   
   private Map<String, String> additionalProperties = null;
-  private Map<String, String> getAdditionalProperties = null;
 
   public ArchitectFlowNotificationErrorMessageParams() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -52,23 +51,6 @@ public class ArchitectFlowNotificationErrorMessageParams  implements Serializabl
   }
 
 
-  /**
-   **/
-  public ArchitectFlowNotificationErrorMessageParams getAdditionalProperties(Map<String, String> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, String> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, String> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -79,13 +61,12 @@ public class ArchitectFlowNotificationErrorMessageParams  implements Serializabl
     }
     ArchitectFlowNotificationErrorMessageParams architectFlowNotificationErrorMessageParams = (ArchitectFlowNotificationErrorMessageParams) o;
 
-    return Objects.equals(this.additionalProperties, architectFlowNotificationErrorMessageParams.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, architectFlowNotificationErrorMessageParams.getAdditionalProperties);
+    return Objects.equals(this.additionalProperties, architectFlowNotificationErrorMessageParams.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalProperties, getAdditionalProperties);
+    return Objects.hash(additionalProperties);
   }
 
   @Override
@@ -94,7 +75,6 @@ public class ArchitectFlowNotificationErrorMessageParams  implements Serializabl
     sb.append("class ArchitectFlowNotificationErrorMessageParams {\n");
     
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

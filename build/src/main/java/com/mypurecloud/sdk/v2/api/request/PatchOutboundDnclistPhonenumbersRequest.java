@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
 import com.mypurecloud.sdk.v2.model.Campaign;
+import com.mypurecloud.sdk.v2.model.CampaignDiagnosticSummary;
 import com.mypurecloud.sdk.v2.model.CampaignDiagnostics;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;

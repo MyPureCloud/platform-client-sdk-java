@@ -18,6 +18,7 @@
 | **campaignRuleProcessing** | [**CampaignRuleProcessingEnum**](#Enum--CampaignRuleProcessingEnum) | CampaignRule processing algorithm |  [optional] |
 | **conditionGroups** | [**List&lt;CampaignRuleConditionGroup&gt;**](CampaignRuleConditionGroup) | List of condition groups that are evaluated, used only with campaignRuleProcessing=\"v2\" |  [optional] |
 | **executionSettings** | [**CampaignRuleExecutionSettings**](CampaignRuleExecutionSettings) | CampaignRule execution settings |  [optional] |
+| **timeZoneId** | **String** | The time zone to use for date-time conditions. |  [optional] |
 | **warnings** | [**List&lt;CampaignRuleWarning&gt;**](CampaignRuleWarning) | A list of current warning conditions associated with the campaign rule. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -32,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

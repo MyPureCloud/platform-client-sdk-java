@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLicenseUser**](LicenseApi#getLicenseUser) | Get licenses for specified user. |
 | [**getLicenseUsers**](LicenseApi#getLicenseUsers) | Get a page of users and their licenses |
 | [**postLicenseInfer**](LicenseApi#postLicenseInfer) | Get a list of licenses inferred based on a list of roleIds |
+| [**postLicenseInferPermissions**](LicenseApi#postLicenseInferPermissions) | Get a list of licenses inferred based on a list of permissions |
 | [**postLicenseOrganization**](LicenseApi#postLicenseOrganization) | Update the organization's license assignments in a batch. |
 | [**postLicenseToggle**](LicenseApi#postLicenseToggle) | Deprecated. No alternative required - this endpoint has no effect |
 | [**postLicenseUsers**](LicenseApi#postLicenseUsers) | Fetch user licenses in a batch. |
@@ -370,6 +371,68 @@ try {
 **List&lt;String&gt;**
 
 
+# **postLicenseInferPermissions**
+
+
+> List&lt;String&gt; postLicenseInferPermissions(body)
+
+Get a list of licenses inferred based on a list of permissions
+
+postLicenseInferPermissions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/license/infer/permissions  
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+* authorization:license:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LicenseApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LicenseApi apiInstance = new LicenseApi();
+List<String> body = Arrays.asList(null); // List<String> | The permissions to use while inferring licenses
+try {
+    List<String> result = apiInstance.postLicenseInferPermissions(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LicenseApi#postLicenseInferPermissions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;String&gt;**](String)| The permissions to use while inferring licenses | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+**List&lt;String&gt;**
+
+
 # **postLicenseOrganization**
 
 
@@ -547,4 +610,4 @@ try {
 **Map&lt;String, Object&gt;**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

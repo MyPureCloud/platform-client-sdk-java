@@ -279,6 +279,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
   private Long callbackDurationMs = null;
   private List<String> conversationExternalContactIds = null;
   private List<String> conversationExternalOrganizationIds = null;
+  private String utilizationLabel = null;
 
   public UserEndDetailEventTopicUserEndEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -765,6 +766,23 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public UserEndDetailEventTopicUserEndEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -802,12 +820,13 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
             Objects.equals(this.dialingDurationMs, userEndDetailEventTopicUserEndEvent.dialingDurationMs) &&
             Objects.equals(this.callbackDurationMs, userEndDetailEventTopicUserEndEvent.callbackDurationMs) &&
             Objects.equals(this.conversationExternalContactIds, userEndDetailEventTopicUserEndEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, userEndDetailEventTopicUserEndEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, userEndDetailEventTopicUserEndEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.utilizationLabel, userEndDetailEventTopicUserEndEvent.utilizationLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, divisionId, queueId, interactingDurationMs, heldDurationMs, alertingDurationMs, contactingDurationMs, dialingDurationMs, callbackDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, divisionId, queueId, interactingDurationMs, heldDurationMs, alertingDurationMs, contactingDurationMs, dialingDurationMs, callbackDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel);
   }
 
   @Override
@@ -843,6 +862,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     sb.append("    callbackDurationMs: ").append(toIndentedString(callbackDurationMs)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -87,7 +87,6 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerContactlistfilterConfigChangeContactListFilter() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -274,23 +273,6 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
   }
 
 
-  /**
-   **/
-  public DialerContactlistfilterConfigChangeContactListFilter getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -310,13 +292,12 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
             Objects.equals(this.name, dialerContactlistfilterConfigChangeContactListFilter.name) &&
             Objects.equals(this.dateCreated, dialerContactlistfilterConfigChangeContactListFilter.dateCreated) &&
             Objects.equals(this.dateModified, dialerContactlistfilterConfigChangeContactListFilter.dateModified) &&
-            Objects.equals(this.version, dialerContactlistfilterConfigChangeContactListFilter.version) &&
-            Objects.equals(this.getAdditionalProperties, dialerContactlistfilterConfigChangeContactListFilter.getAdditionalProperties);
+            Objects.equals(this.version, dialerContactlistfilterConfigChangeContactListFilter.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactList, contactListColumns, clauses, filterType, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
+    return Objects.hash(contactList, contactListColumns, clauses, filterType, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -334,7 +315,6 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

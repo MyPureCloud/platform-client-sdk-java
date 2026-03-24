@@ -143,6 +143,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
   private String divisionId = null;
   private List<String> conversationExternalContactIds = null;
   private List<String> conversationExternalOrganizationIds = null;
+  private String utilizationLabel = null;
 
   public VoicemailStartDetailEventTopicVoicemailStartEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -390,6 +391,23 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
   }
 
 
+  /**
+   **/
+  public VoicemailStartDetailEventTopicVoicemailStartEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -413,12 +431,13 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
             Objects.equals(this.queueId, voicemailStartDetailEventTopicVoicemailStartEvent.queueId) &&
             Objects.equals(this.divisionId, voicemailStartDetailEventTopicVoicemailStartEvent.divisionId) &&
             Objects.equals(this.conversationExternalContactIds, voicemailStartDetailEventTopicVoicemailStartEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, voicemailStartDetailEventTopicVoicemailStartEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, voicemailStartDetailEventTopicVoicemailStartEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.utilizationLabel, voicemailStartDetailEventTopicVoicemailStartEvent.utilizationLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, userId, queueId, divisionId, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, userId, queueId, divisionId, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel);
   }
 
   @Override
@@ -440,6 +459,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

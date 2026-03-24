@@ -6,6 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **state** | [**StateEnum**](#Enum--StateEnum) | State to set the participant. |  |
+| **resumeTime** | [**Date**](Date) | Timestamp for resume parked conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 
 
 ## Enum: StateEnum
@@ -29,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

@@ -18,9 +18,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Reference to supported content profile associated with the integration
+ * SupportedContentReference
  */
-@ApiModel(description = "Reference to supported content profile associated with the integration")
 
 public class SupportedContentReference  implements Serializable {
   
@@ -36,14 +35,14 @@ public class SupportedContentReference  implements Serializable {
 
   
   /**
-   * The SupportedContent unique identifier associated with this integration
+   * The SupportedContent unique identifier associated with this integration or phone number
    **/
   public SupportedContentReference id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The SupportedContent unique identifier associated with this integration")
+  @ApiModelProperty(example = "null", required = true, value = "The SupportedContent unique identifier associated with this integration or phone number")
   @JsonProperty("id")
   public String getId() {
     return id;

@@ -22,10 +22,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
-| INBOUND | &quot;Inbound&quot; | 
-| INTEGRATION | &quot;Integration&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

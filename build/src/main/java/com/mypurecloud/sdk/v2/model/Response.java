@@ -13,13 +13,13 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FooterTemplate;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.MessagingTemplate;
 import com.mypurecloud.sdk.v2.model.ResponseSubstitution;
 import com.mypurecloud.sdk.v2.model.ResponseText;
+import com.mypurecloud.sdk.v2.model.RmsAssetAddressableRef;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -145,7 +145,7 @@ public class Response  implements Serializable {
   }
   private ResponseTypeEnum responseType = null;
   private MessagingTemplate messagingTemplate = null;
-  private List<AddressableEntityRef> assets = null;
+  private List<RmsAssetAddressableRef> assets = null;
   private FooterTemplate footer = null;
   private String selfUri = null;
 
@@ -154,7 +154,7 @@ public class Response  implements Serializable {
       libraries = new ArrayList<DomainEntityRef>();
       texts = new ArrayList<ResponseText>();
       substitutions = new ArrayList<ResponseSubstitution>();
-      assets = new ArrayList<AddressableEntityRef>();
+      assets = new ArrayList<RmsAssetAddressableRef>();
     }
   }
 
@@ -344,17 +344,17 @@ public class Response  implements Serializable {
   /**
    * Assets used in the response
    **/
-  public Response assets(List<AddressableEntityRef> assets) {
+  public Response assets(List<RmsAssetAddressableRef> assets) {
     this.assets = assets;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Assets used in the response")
   @JsonProperty("assets")
-  public List<AddressableEntityRef> getAssets() {
+  public List<RmsAssetAddressableRef> getAssets() {
     return assets;
   }
-  public void setAssets(List<AddressableEntityRef> assets) {
+  public void setAssets(List<RmsAssetAddressableRef> assets) {
     this.assets = assets;
   }
 

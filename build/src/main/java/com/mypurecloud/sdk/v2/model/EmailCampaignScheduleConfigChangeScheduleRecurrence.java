@@ -37,7 +37,6 @@ public class EmailCampaignScheduleConfigChangeScheduleRecurrence  implements Ser
   private EmailCampaignScheduleConfigChangeRecurrencePattern pattern = null;
   private List<EmailCampaignScheduleConfigChangeAlteration> alterations = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public EmailCampaignScheduleConfigChangeScheduleRecurrence() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -187,23 +186,6 @@ public class EmailCampaignScheduleConfigChangeScheduleRecurrence  implements Ser
   }
 
 
-  /**
-   **/
-  public EmailCampaignScheduleConfigChangeScheduleRecurrence getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -221,13 +203,12 @@ public class EmailCampaignScheduleConfigChangeScheduleRecurrence  implements Ser
             Objects.equals(this.range, emailCampaignScheduleConfigChangeScheduleRecurrence.range) &&
             Objects.equals(this.pattern, emailCampaignScheduleConfigChangeScheduleRecurrence.pattern) &&
             Objects.equals(this.alterations, emailCampaignScheduleConfigChangeScheduleRecurrence.alterations) &&
-            Objects.equals(this.additionalProperties, emailCampaignScheduleConfigChangeScheduleRecurrence.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, emailCampaignScheduleConfigChangeScheduleRecurrence.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, emailCampaignScheduleConfigChangeScheduleRecurrence.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, start, end, timeZone, range, pattern, alterations, additionalProperties, getAdditionalProperties);
+    return Objects.hash(id, start, end, timeZone, range, pattern, alterations, additionalProperties);
   }
 
   @Override
@@ -243,7 +224,6 @@ public class EmailCampaignScheduleConfigChangeScheduleRecurrence  implements Ser
     sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    alterations: ").append(toIndentedString(alterations)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

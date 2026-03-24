@@ -237,7 +237,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Delete a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -271,7 +271,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Delete a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1212,7 +1212,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Update a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1246,7 +1246,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Update a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1587,7 +1587,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Create a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1621,7 +1621,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Create a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1887,7 +1887,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Create a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1921,7 +1921,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Create a decision table
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2112,7 +2112,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Full update a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2146,7 +2146,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Full update a decision table row
-   * 
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

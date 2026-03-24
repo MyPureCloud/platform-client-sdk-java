@@ -212,6 +212,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
   private Long voicemailDurationMs = null;
   private List<String> conversationExternalContactIds = null;
   private List<String> conversationExternalOrganizationIds = null;
+  private String utilizationLabel = null;
 
   public VoicemailEndDetailEventTopicVoicemailEndEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -493,6 +494,23 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
   }
 
 
+  /**
+   **/
+  public VoicemailEndDetailEventTopicVoicemailEndEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -518,12 +536,13 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
             Objects.equals(this.divisionId, voicemailEndDetailEventTopicVoicemailEndEvent.divisionId) &&
             Objects.equals(this.voicemailDurationMs, voicemailEndDetailEventTopicVoicemailEndEvent.voicemailDurationMs) &&
             Objects.equals(this.conversationExternalContactIds, voicemailEndDetailEventTopicVoicemailEndEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, voicemailEndDetailEventTopicVoicemailEndEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, voicemailEndDetailEventTopicVoicemailEndEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.utilizationLabel, voicemailEndDetailEventTopicVoicemailEndEvent.utilizationLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, userId, queueId, divisionId, voicemailDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, userId, queueId, divisionId, voicemailDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel);
   }
 
   @Override
@@ -547,6 +566,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     sb.append("    voicemailDurationMs: ").append(toIndentedString(voicemailDurationMs)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -64,6 +64,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.ExportListing;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
+import com.mypurecloud.sdk.v2.model.ExternalContactsPatchRequest;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationEnrichRequest;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifier;
@@ -149,6 +150,7 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsRe
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsDivisionviewsAllRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsOrganizationIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRequest;
@@ -4791,6 +4793,81 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CursorRelationshipListing> response = (ApiResponse<CursorRelationshipListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update specific fields of an external contact
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalContact> patchExternalcontactsContactAsync(PatchExternalcontactsContactRequest request, final AsyncApiCallback<ExternalContact> callback) {
+    try {
+      final SettableFuture<ExternalContact> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update specific fields of an external contact
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalContact>> patchExternalcontactsContactAsync(ApiRequest<ExternalContactsPatchRequest> request, final AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

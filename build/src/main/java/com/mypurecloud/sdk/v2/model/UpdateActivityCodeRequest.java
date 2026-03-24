@@ -88,9 +88,9 @@ public class UpdateActivityCodeRequest  implements Serializable {
   private Boolean countsTowardShrinkage = null;
   private Boolean plannedShrinkage = null;
   private Boolean interruptible = null;
-  private ListWrapperSecondaryPresence secondaryPresences = null;
   private ListWrapperString planningGroupIds = null;
   private WfmVersionedEntityMetadata metadata = null;
+  private ListWrapperSecondaryPresence secondaryPresences = null;
 
   public UpdateActivityCodeRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -261,24 +261,6 @@ public class UpdateActivityCodeRequest  implements Serializable {
 
 
   /**
-   * The secondary presences of this activity code
-   **/
-  public UpdateActivityCodeRequest secondaryPresences(ListWrapperSecondaryPresence secondaryPresences) {
-    this.secondaryPresences = secondaryPresences;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The secondary presences of this activity code")
-  @JsonProperty("secondaryPresences")
-  public ListWrapperSecondaryPresence getSecondaryPresences() {
-    return secondaryPresences;
-  }
-  public void setSecondaryPresences(ListWrapperSecondaryPresence secondaryPresences) {
-    this.secondaryPresences = secondaryPresences;
-  }
-
-
-  /**
    * The planning group IDs associated with this activity code
    **/
   public UpdateActivityCodeRequest planningGroupIds(ListWrapperString planningGroupIds) {
@@ -314,6 +296,24 @@ public class UpdateActivityCodeRequest  implements Serializable {
   }
 
 
+  /**
+   * The secondary presences of this activity code
+   **/
+  public UpdateActivityCodeRequest secondaryPresences(ListWrapperSecondaryPresence secondaryPresences) {
+    this.secondaryPresences = secondaryPresences;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The secondary presences of this activity code")
+  @JsonProperty("secondaryPresences")
+  public ListWrapperSecondaryPresence getSecondaryPresences() {
+    return secondaryPresences;
+  }
+  public void setSecondaryPresences(ListWrapperSecondaryPresence secondaryPresences) {
+    this.secondaryPresences = secondaryPresences;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -333,14 +333,14 @@ public class UpdateActivityCodeRequest  implements Serializable {
             Objects.equals(this.countsTowardShrinkage, updateActivityCodeRequest.countsTowardShrinkage) &&
             Objects.equals(this.plannedShrinkage, updateActivityCodeRequest.plannedShrinkage) &&
             Objects.equals(this.interruptible, updateActivityCodeRequest.interruptible) &&
-            Objects.equals(this.secondaryPresences, updateActivityCodeRequest.secondaryPresences) &&
             Objects.equals(this.planningGroupIds, updateActivityCodeRequest.planningGroupIds) &&
-            Objects.equals(this.metadata, updateActivityCodeRequest.metadata);
+            Objects.equals(this.metadata, updateActivityCodeRequest.metadata) &&
+            Objects.equals(this.secondaryPresences, updateActivityCodeRequest.secondaryPresences);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, planningGroupIds, metadata);
+    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, planningGroupIds, metadata, secondaryPresences);
   }
 
   @Override
@@ -357,9 +357,9 @@ public class UpdateActivityCodeRequest  implements Serializable {
     sb.append("    countsTowardShrinkage: ").append(toIndentedString(countsTowardShrinkage)).append("\n");
     sb.append("    plannedShrinkage: ").append(toIndentedString(plannedShrinkage)).append("\n");
     sb.append("    interruptible: ").append(toIndentedString(interruptible)).append("\n");
-    sb.append("    secondaryPresences: ").append(toIndentedString(secondaryPresences)).append("\n");
     sb.append("    planningGroupIds: ").append(toIndentedString(planningGroupIds)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    secondaryPresences: ").append(toIndentedString(secondaryPresences)).append("\n");
     sb.append("}");
     return sb.toString();
   }

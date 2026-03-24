@@ -12,7 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundCampaignrule**](OutboundApi#deleteOutboundCampaignrule) | Delete Campaign Rule |
 | [**deleteOutboundContactlist**](OutboundApi#deleteOutboundContactlist) | Delete a contact list. |
 | [**deleteOutboundContactlistContact**](OutboundApi#deleteOutboundContactlistContact) | Delete a contact. |
-| [**deleteOutboundContactlistContacts**](OutboundApi#deleteOutboundContactlistContacts) | Delete contacts from a contact list. |
+| [**deleteOutboundContactlistContacts**](OutboundApi#deleteOutboundContactlistContacts) | Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted |
 | [**deleteOutboundContactlistfilter**](OutboundApi#deleteOutboundContactlistfilter) | Delete Contact List Filter |
 | [**deleteOutboundContactlists**](OutboundApi#deleteOutboundContactlists) | Delete multiple contact lists. |
 | [**deleteOutboundContactlisttemplate**](OutboundApi#deleteOutboundContactlisttemplate) | Delete Contact List Template |
@@ -71,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundContactlistsDivisionviews**](OutboundApi#getOutboundContactlistsDivisionviews) | Query a list of simplified contact list objects. |
 | [**getOutboundContactlisttemplate**](OutboundApi#getOutboundContactlisttemplate) | Get Contact List Template |
 | [**getOutboundContactlisttemplates**](OutboundApi#getOutboundContactlisttemplates) | Query a list of contact list templates |
+| [**getOutboundDiagnosticsCampaignSummary**](OutboundApi#getOutboundDiagnosticsCampaignSummary) | Get diagnostic summary for a single campaign |
 | [**getOutboundDigitalruleset**](OutboundApi#getOutboundDigitalruleset) | Get an Outbound Digital Rule Set |
 | [**getOutboundDigitalrulesets**](OutboundApi#getOutboundDigitalrulesets) | Query a list of Outbound Digital Rule Sets |
 | [**getOutboundDnclist**](OutboundApi#getOutboundDnclist) | Get dialer DNC list |
@@ -655,7 +656,7 @@ null (empty response body)
 
 > Void deleteOutboundContactlistContacts(contactListId, contactIds)
 
-Delete contacts from a contact list.
+Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts  
 
@@ -4355,6 +4356,69 @@ try {
 ### Return type
 
 [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing)
+
+
+# **getOutboundDiagnosticsCampaignSummary**
+
+
+> [CampaignDiagnosticSummary](CampaignDiagnosticSummary) getOutboundDiagnosticsCampaignSummary(campaignId, start, end)
+
+Get diagnostic summary for a single campaign
+
+Wraps GET /api/v2/outbound/diagnostics/campaigns/{campaignId}/summary  
+
+Requires ANY permissions: 
+
+* outbound:campaignDiagnostic:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String campaignId = "campaignId_example"; // String | Campaign ID
+String start = "start_example"; // String | Start datetime (ISO 8601 or Unix epoch)
+String end = "end_example"; // String | End datetime (ISO 8601 or Unix epoch)
+try {
+    CampaignDiagnosticSummary result = apiInstance.getOutboundDiagnosticsCampaignSummary(campaignId, start, end);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundDiagnosticsCampaignSummary");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **String**| Campaign ID | 
+| **start** | **String**| Start datetime (ISO 8601 or Unix epoch) | 
+| **end** | **String**| End datetime (ISO 8601 or Unix epoch) | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CampaignDiagnosticSummary**](CampaignDiagnosticSummary)
 
 
 # **getOutboundDigitalruleset**
@@ -11019,4 +11083,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

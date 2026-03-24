@@ -7002,7 +7002,7 @@ public class RoutingApi {
 
   /**
    * Get a phone number provisioned for SMS.
-   * 
+   * When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
    * @param phoneNumberId phone number (required)
    * @param expand Expand response with additional information (optional)
    * @return SmsPhoneNumber
@@ -7015,7 +7015,7 @@ public class RoutingApi {
 
   /**
    * Get a phone number provisioned for SMS.
-   * 
+   * When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
    * @param phoneNumberId phone number (required)
    * @param expand Expand response with additional information (optional)
    * @return SmsPhoneNumber
@@ -7036,7 +7036,7 @@ public class RoutingApi {
 
   /**
    * Get a phone number provisioned for SMS.
-   * 
+   * When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
    * @param request The request object
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
@@ -7055,7 +7055,7 @@ public class RoutingApi {
 
   /**
    * Get a phone number provisioned for SMS.
-   * 
+   * When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7084,7 +7084,7 @@ public class RoutingApi {
 
   /**
    * Get a list of provisioned phone numbers.
-   * 
+   * When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
    * @param phoneNumber Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. (optional)
    * @param phoneNumberType Filter on phone number type (optional)
    * @param phoneNumberStatus Filter on phone number status (optional)
@@ -7107,7 +7107,7 @@ public class RoutingApi {
 
   /**
    * Get a list of provisioned phone numbers.
-   * 
+   * When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
    * @param phoneNumber Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. (optional)
    * @param phoneNumberType Filter on phone number type (optional)
    * @param phoneNumberStatus Filter on phone number status (optional)
@@ -7158,7 +7158,7 @@ public class RoutingApi {
 
   /**
    * Get a list of provisioned phone numbers.
-   * 
+   * When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
    * @param request The request object
    * @return SmsPhoneNumberEntityListing
    * @throws ApiException if the request fails on the server
@@ -7177,7 +7177,7 @@ public class RoutingApi {
 
   /**
    * Get a list of provisioned phone numbers.
-   * 
+   * When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9811,7 +9811,7 @@ public class RoutingApi {
 
   /**
    * Update a phone number provisioned for SMS.
-   * 
+   * Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
    * @param phoneNumberId phone number (required)
    * @param body SmsPhoneNumberPatchRequest (required)
    * @return SmsPhoneNumber
@@ -9824,7 +9824,7 @@ public class RoutingApi {
 
   /**
    * Update a phone number provisioned for SMS.
-   * 
+   * Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
    * @param phoneNumberId phone number (required)
    * @param body SmsPhoneNumberPatchRequest (required)
    * @return SmsPhoneNumber
@@ -9845,7 +9845,7 @@ public class RoutingApi {
 
   /**
    * Update a phone number provisioned for SMS.
-   * 
+   * Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
    * @param request The request object
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
@@ -9864,7 +9864,7 @@ public class RoutingApi {
 
   /**
    * Update a phone number provisioned for SMS.
-   * 
+   * Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12234,7 +12234,7 @@ public class RoutingApi {
 
   /**
    * Provision a phone number for SMS
-   * 
+   * When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
    * @param body SmsPhoneNumber (required)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
@@ -12246,7 +12246,7 @@ public class RoutingApi {
 
   /**
    * Provision a phone number for SMS
-   * 
+   * When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
    * @param body SmsPhoneNumber (required)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
@@ -12264,7 +12264,7 @@ public class RoutingApi {
 
   /**
    * Provision a phone number for SMS
-   * 
+   * When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
    * @param request The request object
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
@@ -12283,7 +12283,7 @@ public class RoutingApi {
 
   /**
    * Provision a phone number for SMS
-   * 
+   * When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*\\/\\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

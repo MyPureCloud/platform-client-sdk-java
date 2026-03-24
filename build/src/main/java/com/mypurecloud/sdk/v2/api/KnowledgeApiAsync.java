@@ -19,6 +19,12 @@ import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ChunkSearchRegisterRequest;
+import com.mypurecloud.sdk.v2.model.ConnectionCreateRequest;
+import com.mypurecloud.sdk.v2.model.ConnectionCreateResponse;
+import com.mypurecloud.sdk.v2.model.ConnectionListing;
+import com.mypurecloud.sdk.v2.model.ConnectionOptionListing;
+import com.mypurecloud.sdk.v2.model.ConnectionResponse;
+import com.mypurecloud.sdk.v2.model.ConnectionUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
@@ -112,8 +118,20 @@ import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupPatchRequestBody;
 import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupUpdateResponse;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
+import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceDetailedWithErrorResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SourceWithErrorListing;
+import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
+import com.mypurecloud.sdk.v2.model.V3Synchronization;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeConnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseDocumentRequest;
@@ -125,6 +143,10 @@ import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesSal
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionOptionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentsRequest;
@@ -160,6 +182,12 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUploadsUrlsJo
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesSynchronizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeConnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseCategoryRequest;
@@ -174,6 +202,8 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseParseJobReq
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeSourceSynchronizationRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeConnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentCopiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentFeedbackRequest;
@@ -214,8 +244,12 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationUploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutKnowledgeSourceRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -233,6 +267,81 @@ public class KnowledgeApiAsync {
 
   public KnowledgeApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConnectionResponse> deleteKnowledgeConnectionAsync(DeleteKnowledgeConnectionRequest request, final AsyncApiCallback<ConnectionResponse> callback) {
+    try {
+      final SettableFuture<ConnectionResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConnectionResponse>() {}, new AsyncApiCallback<ApiResponse<ConnectionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConnectionResponse>> deleteKnowledgeConnectionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConnectionResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConnectionResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConnectionResponse>() {}, new AsyncApiCallback<ApiResponse<ConnectionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -1049,6 +1158,306 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteKnowledgeSourceAsync(DeleteKnowledgeSourceRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteKnowledgeSourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConnectionResponse> getKnowledgeConnectionAsync(GetKnowledgeConnectionRequest request, final AsyncApiCallback<ConnectionResponse> callback) {
+    try {
+      final SettableFuture<ConnectionResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConnectionResponse>() {}, new AsyncApiCallback<ApiResponse<ConnectionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConnectionResponse>> getKnowledgeConnectionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConnectionResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConnectionResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConnectionResponse>() {}, new AsyncApiCallback<ApiResponse<ConnectionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get connection options
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConnectionOptionListing> getKnowledgeConnectionOptionsAsync(GetKnowledgeConnectionOptionsRequest request, final AsyncApiCallback<ConnectionOptionListing> callback) {
+    try {
+      final SettableFuture<ConnectionOptionListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConnectionOptionListing>() {}, new AsyncApiCallback<ApiResponse<ConnectionOptionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionOptionListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get connection options
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConnectionOptionListing>> getKnowledgeConnectionOptionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConnectionOptionListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConnectionOptionListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConnectionOptionListing>() {}, new AsyncApiCallback<ApiResponse<ConnectionOptionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionOptionListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionOptionListing> response = (ApiResponse<ConnectionOptionListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionOptionListing> response = (ApiResponse<ConnectionOptionListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get connections
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConnectionListing> getKnowledgeConnectionsAsync(GetKnowledgeConnectionsRequest request, final AsyncApiCallback<ConnectionListing> callback) {
+    try {
+      final SettableFuture<ConnectionListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConnectionListing>() {}, new AsyncApiCallback<ApiResponse<ConnectionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get connections
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConnectionListing>> getKnowledgeConnectionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConnectionListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConnectionListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConnectionListing>() {}, new AsyncApiCallback<ApiResponse<ConnectionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionListing> response = (ApiResponse<ConnectionListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionListing> response = (ApiResponse<ConnectionListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3686,6 +4095,456 @@ public class KnowledgeApiAsync {
   }
 
   /**
+   * Get source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SourceDetailedWithErrorResponse> getKnowledgeSourceAsync(GetKnowledgeSourceRequest request, final AsyncApiCallback<V3SourceDetailedWithErrorResponse> callback) {
+    try {
+      final SettableFuture<V3SourceDetailedWithErrorResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceDetailedWithErrorResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceDetailedWithErrorResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceDetailedWithErrorResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SourceDetailedWithErrorResponse>> getKnowledgeSourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SourceDetailedWithErrorResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SourceDetailedWithErrorResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SourceDetailedWithErrorResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceDetailedWithErrorResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceDetailedWithErrorResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceDetailedWithErrorResponse> response = (ApiResponse<V3SourceDetailedWithErrorResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceDetailedWithErrorResponse> response = (ApiResponse<V3SourceDetailedWithErrorResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific synchronization of a source.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3Synchronization> getKnowledgeSourceSynchronizationAsync(GetKnowledgeSourceSynchronizationRequest request, final AsyncApiCallback<V3Synchronization> callback) {
+    try {
+      final SettableFuture<V3Synchronization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3Synchronization>() {}, new AsyncApiCallback<ApiResponse<V3Synchronization>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3Synchronization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific synchronization of a source.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3Synchronization>> getKnowledgeSourceSynchronizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3Synchronization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3Synchronization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3Synchronization>() {}, new AsyncApiCallback<ApiResponse<V3Synchronization>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3Synchronization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get synchronizations of a source.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SynchronizationListing> getKnowledgeSourceSynchronizationsAsync(GetKnowledgeSourceSynchronizationsRequest request, final AsyncApiCallback<V3SynchronizationListing> callback) {
+    try {
+      final SettableFuture<V3SynchronizationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SynchronizationListing>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get synchronizations of a source.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SynchronizationListing>> getKnowledgeSourceSynchronizationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SynchronizationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SynchronizationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SynchronizationListing>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationListing> response = (ApiResponse<V3SynchronizationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationListing> response = (ApiResponse<V3SynchronizationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List sources
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SourceWithErrorListing> getKnowledgeSourcesAsync(GetKnowledgeSourcesRequest request, final AsyncApiCallback<V3SourceWithErrorListing> callback) {
+    try {
+      final SettableFuture<V3SourceWithErrorListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceWithErrorListing>() {}, new AsyncApiCallback<ApiResponse<V3SourceWithErrorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceWithErrorListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List sources
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SourceWithErrorListing>> getKnowledgeSourcesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SourceWithErrorListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SourceWithErrorListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SourceWithErrorListing>() {}, new AsyncApiCallback<ApiResponse<V3SourceWithErrorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceWithErrorListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceWithErrorListing> response = (ApiResponse<V3SourceWithErrorListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceWithErrorListing> response = (ApiResponse<V3SourceWithErrorListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get synchronizations of all sources of the organization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SynchronizationListing> getKnowledgeSourcesSynchronizationsAsync(GetKnowledgeSourcesSynchronizationsRequest request, final AsyncApiCallback<V3SynchronizationListing> callback) {
+    try {
+      final SettableFuture<V3SynchronizationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SynchronizationListing>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get synchronizations of all sources of the organization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SynchronizationListing>> getKnowledgeSourcesSynchronizationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SynchronizationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SynchronizationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SynchronizationListing>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationListing> response = (ApiResponse<V3SynchronizationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationListing> response = (ApiResponse<V3SynchronizationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConnectionResponse> patchKnowledgeConnectionAsync(PatchKnowledgeConnectionRequest request, final AsyncApiCallback<ConnectionResponse> callback) {
+    try {
+      final SettableFuture<ConnectionResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConnectionResponse>() {}, new AsyncApiCallback<ApiResponse<ConnectionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConnectionResponse>> patchKnowledgeConnectionAsync(ApiRequest<ConnectionUpdateRequest> request, final AsyncApiCallback<ApiResponse<ConnectionResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConnectionResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConnectionResponse>() {}, new AsyncApiCallback<ApiResponse<ConnectionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionResponse> response = (ApiResponse<ConnectionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update search result.
    * 
    * @param request the request object
@@ -4724,6 +5583,156 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update synchronization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3Synchronization> patchKnowledgeSourceSynchronizationAsync(PatchKnowledgeSourceSynchronizationRequest request, final AsyncApiCallback<V3Synchronization> callback) {
+    try {
+      final SettableFuture<V3Synchronization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3Synchronization>() {}, new AsyncApiCallback<ApiResponse<V3Synchronization>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3Synchronization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update synchronization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3Synchronization>> patchKnowledgeSourceSynchronizationAsync(ApiRequest<V3SynchronizationUpdateRequest> request, final AsyncApiCallback<ApiResponse<V3Synchronization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3Synchronization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3Synchronization>() {}, new AsyncApiCallback<ApiResponse<V3Synchronization>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3Synchronization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create new connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConnectionCreateResponse> postKnowledgeConnectionsAsync(PostKnowledgeConnectionsRequest request, final AsyncApiCallback<ConnectionCreateResponse> callback) {
+    try {
+      final SettableFuture<ConnectionCreateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConnectionCreateResponse>() {}, new AsyncApiCallback<ApiResponse<ConnectionCreateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionCreateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create new connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConnectionCreateResponse>> postKnowledgeConnectionsAsync(ApiRequest<ConnectionCreateRequest> request, final AsyncApiCallback<ApiResponse<ConnectionCreateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConnectionCreateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConnectionCreateResponse>() {}, new AsyncApiCallback<ApiResponse<ConnectionCreateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConnectionCreateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionCreateResponse> response = (ApiResponse<ConnectionCreateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConnectionCreateResponse> response = (ApiResponse<ConnectionCreateResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7736,6 +8745,231 @@ public class KnowledgeApiAsync {
   }
 
   /**
+   * Create presigned URL for uploading a file in the synchronization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SynchronizationUploadUrlResponse> postKnowledgeSourceSynchronizationUploadsAsync(PostKnowledgeSourceSynchronizationUploadsRequest request, final AsyncApiCallback<V3SynchronizationUploadUrlResponse> callback) {
+    try {
+      final SettableFuture<V3SynchronizationUploadUrlResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SynchronizationUploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationUploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationUploadUrlResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create presigned URL for uploading a file in the synchronization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SynchronizationUploadUrlResponse>> postKnowledgeSourceSynchronizationUploadsAsync(ApiRequest<V3SynchronizationUploadUrlRequest> request, final AsyncApiCallback<ApiResponse<V3SynchronizationUploadUrlResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SynchronizationUploadUrlResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SynchronizationUploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationUploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationUploadUrlResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationUploadUrlResponse> response = (ApiResponse<V3SynchronizationUploadUrlResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationUploadUrlResponse> response = (ApiResponse<V3SynchronizationUploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start a manual synchronization from a source.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3Synchronization> postKnowledgeSourceSynchronizationsAsync(PostKnowledgeSourceSynchronizationsRequest request, final AsyncApiCallback<V3Synchronization> callback) {
+    try {
+      final SettableFuture<V3Synchronization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3Synchronization>() {}, new AsyncApiCallback<ApiResponse<V3Synchronization>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3Synchronization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start a manual synchronization from a source.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3Synchronization>> postKnowledgeSourceSynchronizationsAsync(ApiRequest<V3StartManualSyncRequest> request, final AsyncApiCallback<ApiResponse<V3Synchronization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3Synchronization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3Synchronization>() {}, new AsyncApiCallback<ApiResponse<V3Synchronization>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3Synchronization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SourceDetailedResponse> postKnowledgeSourcesAsync(PostKnowledgeSourcesRequest request, final AsyncApiCallback<V3SourceDetailedResponse> callback) {
+    try {
+      final SettableFuture<V3SourceDetailedResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceDetailedResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceDetailedResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceDetailedResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SourceDetailedResponse>> postKnowledgeSourcesAsync(ApiRequest<V3SourceCreateRequest> request, final AsyncApiCallback<ApiResponse<V3SourceDetailedResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SourceDetailedResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SourceDetailedResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceDetailedResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceDetailedResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update Salesforce Knowledge integration source
    * 
    * @param request the request object
@@ -7874,6 +9108,81 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SourceDetailedResponse> putKnowledgeSourceAsync(PutKnowledgeSourceRequest request, final AsyncApiCallback<V3SourceDetailedResponse> callback) {
+    try {
+      final SettableFuture<V3SourceDetailedResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceDetailedResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceDetailedResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceDetailedResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SourceDetailedResponse>> putKnowledgeSourceAsync(ApiRequest<V3SourceUpdateRequest> request, final AsyncApiCallback<ApiResponse<V3SourceDetailedResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SourceDetailedResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SourceDetailedResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceDetailedResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceDetailedResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

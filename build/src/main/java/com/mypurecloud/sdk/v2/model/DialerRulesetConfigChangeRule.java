@@ -83,7 +83,6 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
   }
   private CategoryEnum category = null;
   private List<DialerRulesetConfigChangeAction> actions = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerRulesetConfigChangeRule() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -218,23 +217,6 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
   }
 
 
-  /**
-   **/
-  public DialerRulesetConfigChangeRule getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -251,13 +233,12 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
             Objects.equals(this.name, dialerRulesetConfigChangeRule.name) &&
             Objects.equals(this.order, dialerRulesetConfigChangeRule.order) &&
             Objects.equals(this.category, dialerRulesetConfigChangeRule.category) &&
-            Objects.equals(this.actions, dialerRulesetConfigChangeRule.actions) &&
-            Objects.equals(this.getAdditionalProperties, dialerRulesetConfigChangeRule.getAdditionalProperties);
+            Objects.equals(this.actions, dialerRulesetConfigChangeRule.actions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, additionalProperties, id, name, order, category, actions, getAdditionalProperties);
+    return Objects.hash(conditions, additionalProperties, id, name, order, category, actions);
   }
 
   @Override
@@ -272,7 +253,6 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

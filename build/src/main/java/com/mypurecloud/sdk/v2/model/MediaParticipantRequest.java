@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WrapupInput;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -88,6 +89,7 @@ public class MediaParticipantRequest  implements Serializable {
   private Boolean confined = null;
   private Boolean held = null;
   private Boolean wrapupSkipped = null;
+  private Date resumeTime = null;
 
   public MediaParticipantRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -221,6 +223,24 @@ public class MediaParticipantRequest  implements Serializable {
   }
 
 
+  /**
+   * Time to resume parked communication. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public MediaParticipantRequest resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Time to resume parked communication. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -237,12 +257,13 @@ public class MediaParticipantRequest  implements Serializable {
             Objects.equals(this.muted, mediaParticipantRequest.muted) &&
             Objects.equals(this.confined, mediaParticipantRequest.confined) &&
             Objects.equals(this.held, mediaParticipantRequest.held) &&
-            Objects.equals(this.wrapupSkipped, mediaParticipantRequest.wrapupSkipped);
+            Objects.equals(this.wrapupSkipped, mediaParticipantRequest.wrapupSkipped) &&
+            Objects.equals(this.resumeTime, mediaParticipantRequest.resumeTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(wrapup, state, recording, muted, confined, held, wrapupSkipped);
+    return Objects.hash(wrapup, state, recording, muted, confined, held, wrapupSkipped, resumeTime);
   }
 
   @Override
@@ -257,6 +278,7 @@ public class MediaParticipantRequest  implements Serializable {
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

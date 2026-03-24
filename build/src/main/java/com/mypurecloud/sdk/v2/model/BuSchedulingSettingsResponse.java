@@ -47,7 +47,9 @@ public class BuSchedulingSettingsResponse  implements Serializable {
  @JsonDeserialize(using = SyncTimeOffPropertiesEnumDeserializer.class)
   public enum SyncTimeOffPropertiesEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    PAYABLEMINUTES("PayableMinutes");
+    PAYABLEMINUTES("PayableMinutes"),
+    FULLDAYEARLIESTSTARTOFFSETMINUTES("FullDayEarliestStartOffsetMinutes"),
+    FULLDAYLATESTENDOFFSETMINUTES("FullDayLatestEndOffsetMinutes");
 
     private String value;
 
@@ -155,14 +157,14 @@ public class BuSchedulingSettingsResponse  implements Serializable {
 
 
   /**
-   * Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+   * Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published
    **/
   public BuSchedulingSettingsResponse syncTimeOffProperties(List<SyncTimeOffPropertiesEnum> syncTimeOffProperties) {
     this.syncTimeOffProperties = syncTimeOffProperties;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.")
+  @ApiModelProperty(example = "null", value = "Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published")
   @JsonProperty("syncTimeOffProperties")
   public List<SyncTimeOffPropertiesEnum> getSyncTimeOffProperties() {
     return syncTimeOffProperties;
@@ -191,14 +193,14 @@ public class BuSchedulingSettingsResponse  implements Serializable {
 
 
   /**
-   * Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
+   * Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false
    **/
   public BuSchedulingSettingsResponse allowWorkPlanPerMinuteGranularity(Boolean allowWorkPlanPerMinuteGranularity) {
     this.allowWorkPlanPerMinuteGranularity = allowWorkPlanPerMinuteGranularity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.")
+  @ApiModelProperty(example = "null", value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false")
   @JsonProperty("allowWorkPlanPerMinuteGranularity")
   public Boolean getAllowWorkPlanPerMinuteGranularity() {
     return allowWorkPlanPerMinuteGranularity;

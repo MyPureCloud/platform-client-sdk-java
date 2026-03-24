@@ -247,7 +247,8 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     SPAM("spam"),
     UNCALLABLE("uncallable"),
     INACTIVITY("inactivity"),
-    SESSION_EXPIRED("session.expired");
+    SESSION_EXPIRED("session.expired"),
+    TAKEOVER("takeover");
 
     private String value;
 

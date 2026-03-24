@@ -65,6 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsScanOrganizationsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanOrganizationsDivisionviewsAll) | Scan for external organizations using paging |
 | [**getExternalcontactsScanRelationships**](ExternalContactsApi#getExternalcontactsScanRelationships) | Scan for relationships |
 | [**getExternalcontactsScanRelationshipsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll) | Scan for relationships |
+| [**patchExternalcontactsContact**](ExternalContactsApi#patchExternalcontactsContact) | Update specific fields of an external contact |
 | [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | Claim or release identifiers for a contact |
 | [**patchExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#patchExternalcontactsOrganizationIdentifiers) | Claim or release identifiers for an external organization |
 | [**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | Bulk fetch contacts |
@@ -3876,6 +3877,67 @@ try {
 [**CursorRelationshipListing**](CursorRelationshipListing)
 
 
+# **patchExternalcontactsContact**
+
+
+> [ExternalContact](ExternalContact) patchExternalcontactsContact(contactId, body)
+
+Update specific fields of an external contact
+
+Wraps PATCH /api/v2/externalcontacts/contacts/{contactId}  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String contactId = "contactId_example"; // String | ExternalContact ID
+ExternalContactsPatchRequest body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | Contact fields to update
+try {
+    ExternalContact result = apiInstance.patchExternalcontactsContact(contactId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#patchExternalcontactsContact");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactId** | **String**| ExternalContact ID | 
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Contact fields to update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalContact**](ExternalContact)
+
+
 # **patchExternalcontactsContactIdentifiers**
 
 
@@ -7458,4 +7520,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:249.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_

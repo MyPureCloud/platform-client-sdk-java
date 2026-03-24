@@ -28,7 +28,6 @@ public class DialerCampaignScheduleConfigChangeScheduleInterval  implements Seri
   private String start = null;
   private String end = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerCampaignScheduleConfigChangeScheduleInterval() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -89,23 +88,6 @@ public class DialerCampaignScheduleConfigChangeScheduleInterval  implements Seri
   }
 
 
-  /**
-   **/
-  public DialerCampaignScheduleConfigChangeScheduleInterval getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -118,13 +100,12 @@ public class DialerCampaignScheduleConfigChangeScheduleInterval  implements Seri
 
     return Objects.equals(this.start, dialerCampaignScheduleConfigChangeScheduleInterval.start) &&
             Objects.equals(this.end, dialerCampaignScheduleConfigChangeScheduleInterval.end) &&
-            Objects.equals(this.additionalProperties, dialerCampaignScheduleConfigChangeScheduleInterval.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, dialerCampaignScheduleConfigChangeScheduleInterval.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, dialerCampaignScheduleConfigChangeScheduleInterval.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end, additionalProperties, getAdditionalProperties);
+    return Objects.hash(start, end, additionalProperties);
   }
 
   @Override
@@ -135,7 +116,6 @@ public class DialerCampaignScheduleConfigChangeScheduleInterval  implements Seri
     sb.append("    start: ").append(toIndentedString(start)).append("\n");
     sb.append("    end: ").append(toIndentedString(end)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

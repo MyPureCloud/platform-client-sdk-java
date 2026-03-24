@@ -46,7 +46,8 @@ public class GuideSessionTurnInvocationParameters  implements Serializable {
     STRING("String"),
     INTEGER("Integer"),
     NUMBER("Number"),
-    BOOLEAN("Boolean");
+    BOOLEAN("Boolean"),
+    DATE("Date");
 
     private String value;
 

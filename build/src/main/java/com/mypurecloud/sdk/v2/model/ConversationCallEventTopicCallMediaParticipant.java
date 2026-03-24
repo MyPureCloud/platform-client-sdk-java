@@ -249,7 +249,8 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     SPAM("spam"),
     UNCALLABLE("uncallable"),
     INACTIVITY("inactivity"),
-    SESSION_EXPIRED("session.expired");
+    SESSION_EXPIRED("session.expired"),
+    TAKEOVER("takeover");
 
     private String value;
 

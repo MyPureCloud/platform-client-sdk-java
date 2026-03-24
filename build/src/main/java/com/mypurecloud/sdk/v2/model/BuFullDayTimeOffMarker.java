@@ -130,14 +130,14 @@ public class BuFullDayTimeOffMarker  implements Serializable {
 
 
   /**
-   * Payable minutes for the time off marker
+   * Payable minutes for the time off marker. Must not exceed lengthMinutes
    **/
   public BuFullDayTimeOffMarker payableMinutes(Integer payableMinutes) {
     this.payableMinutes = payableMinutes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Payable minutes for the time off marker")
+  @ApiModelProperty(example = "null", value = "Payable minutes for the time off marker. Must not exceed lengthMinutes")
   @JsonProperty("payableMinutes")
   public Integer getPayableMinutes() {
     return payableMinutes;

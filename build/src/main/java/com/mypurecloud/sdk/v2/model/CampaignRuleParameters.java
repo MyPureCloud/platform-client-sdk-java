@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
+import java.time.Duration;
 
 import java.io.Serializable;
 /**
@@ -194,6 +195,7 @@ public class CampaignRuleParameters  implements Serializable {
   private Integer emailMessagesPerMinute = null;
   private DomainEntityRef smsContentTemplate = null;
   private DomainEntityRef emailContentTemplate = null;
+  private Duration forDuration = null;
 
   public CampaignRuleParameters() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -453,6 +455,24 @@ public class CampaignRuleParameters  implements Serializable {
   }
 
 
+  /**
+   * ISO-8601 Duration for which condition expression must be continuously true before condition is evaluated as true
+   **/
+  public CampaignRuleParameters forDuration(Duration forDuration) {
+    this.forDuration = forDuration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ISO-8601 Duration for which condition expression must be continuously true before condition is evaluated as true")
+  @JsonProperty("forDuration")
+  public Duration getForDuration() {
+    return forDuration;
+  }
+  public void setForDuration(Duration forDuration) {
+    this.forDuration = forDuration;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -476,12 +496,13 @@ public class CampaignRuleParameters  implements Serializable {
             Objects.equals(this.smsMessagesPerMinute, campaignRuleParameters.smsMessagesPerMinute) &&
             Objects.equals(this.emailMessagesPerMinute, campaignRuleParameters.emailMessagesPerMinute) &&
             Objects.equals(this.smsContentTemplate, campaignRuleParameters.smsContentTemplate) &&
-            Objects.equals(this.emailContentTemplate, campaignRuleParameters.emailContentTemplate);
+            Objects.equals(this.emailContentTemplate, campaignRuleParameters.emailContentTemplate) &&
+            Objects.equals(this.forDuration, campaignRuleParameters.forDuration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operator, value, priority, dialingMode, abandonRate, outboundLineCount, relativeWeight, maxCallsPerAgent, queue, messagesPerMinute, smsMessagesPerMinute, emailMessagesPerMinute, smsContentTemplate, emailContentTemplate);
+    return Objects.hash(operator, value, priority, dialingMode, abandonRate, outboundLineCount, relativeWeight, maxCallsPerAgent, queue, messagesPerMinute, smsMessagesPerMinute, emailMessagesPerMinute, smsContentTemplate, emailContentTemplate, forDuration);
   }
 
   @Override
@@ -503,6 +524,7 @@ public class CampaignRuleParameters  implements Serializable {
     sb.append("    emailMessagesPerMinute: ").append(toIndentedString(emailMessagesPerMinute)).append("\n");
     sb.append("    smsContentTemplate: ").append(toIndentedString(smsContentTemplate)).append("\n");
     sb.append("    emailContentTemplate: ").append(toIndentedString(emailContentTemplate)).append("\n");
+    sb.append("    forDuration: ").append(toIndentedString(forDuration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

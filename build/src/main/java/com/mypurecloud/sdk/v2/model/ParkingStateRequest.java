@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -81,6 +82,7 @@ public class ParkingStateRequest  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private Date resumeTime = null;
 
   public ParkingStateRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -106,6 +108,24 @@ public class ParkingStateRequest  implements Serializable {
   }
 
 
+  /**
+   * Timestamp for resume parked conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public ParkingStateRequest resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Timestamp for resume parked conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -116,12 +136,13 @@ public class ParkingStateRequest  implements Serializable {
     }
     ParkingStateRequest parkingStateRequest = (ParkingStateRequest) o;
 
-    return Objects.equals(this.state, parkingStateRequest.state);
+    return Objects.equals(this.state, parkingStateRequest.state) &&
+            Objects.equals(this.resumeTime, parkingStateRequest.resumeTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state);
+    return Objects.hash(state, resumeTime);
   }
 
   @Override
@@ -130,6 +151,7 @@ public class ParkingStateRequest  implements Serializable {
     sb.append("class ParkingStateRequest {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

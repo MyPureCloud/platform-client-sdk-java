@@ -79,7 +79,6 @@ public class EmailCampaignScheduleConfigChangeRecurrenceRange  implements Serial
   private String end = null;
   private Long numberOfOccurrences = null;
   private Map<String, Object> additionalProperties = null;
-  private Map<String, Object> getAdditionalProperties = null;
 
   public EmailCampaignScheduleConfigChangeRecurrenceRange() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -157,23 +156,6 @@ public class EmailCampaignScheduleConfigChangeRecurrenceRange  implements Serial
   }
 
 
-  /**
-   **/
-  public EmailCampaignScheduleConfigChangeRecurrenceRange getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("getAdditionalProperties")
-  public Map<String, Object> getGetAdditionalProperties() {
-    return getAdditionalProperties;
-  }
-  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
-    this.getAdditionalProperties = getAdditionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -187,13 +169,12 @@ public class EmailCampaignScheduleConfigChangeRecurrenceRange  implements Serial
     return Objects.equals(this.type, emailCampaignScheduleConfigChangeRecurrenceRange.type) &&
             Objects.equals(this.end, emailCampaignScheduleConfigChangeRecurrenceRange.end) &&
             Objects.equals(this.numberOfOccurrences, emailCampaignScheduleConfigChangeRecurrenceRange.numberOfOccurrences) &&
-            Objects.equals(this.additionalProperties, emailCampaignScheduleConfigChangeRecurrenceRange.additionalProperties) &&
-            Objects.equals(this.getAdditionalProperties, emailCampaignScheduleConfigChangeRecurrenceRange.getAdditionalProperties);
+            Objects.equals(this.additionalProperties, emailCampaignScheduleConfigChangeRecurrenceRange.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, end, numberOfOccurrences, additionalProperties, getAdditionalProperties);
+    return Objects.hash(type, end, numberOfOccurrences, additionalProperties);
   }
 
   @Override
@@ -205,7 +186,6 @@ public class EmailCampaignScheduleConfigChangeRecurrenceRange  implements Serial
     sb.append("    end: ").append(toIndentedString(end)).append("\n");
     sb.append("    numberOfOccurrences: ").append(toIndentedString(numberOfOccurrences)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

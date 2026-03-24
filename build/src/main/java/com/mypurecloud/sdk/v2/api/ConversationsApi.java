@@ -6816,28 +6816,32 @@ public class ConversationsApi {
    * Get conversation messages
    * 
    * @param conversationId conversationId (required)
+   * @param includeAgentlessStitchedMessages Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message. (optional, default to false)
    * @return EmailMessagePreviewListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EmailMessagePreviewListing getConversationsEmailMessages(String conversationId) throws IOException, ApiException {
-    return  getConversationsEmailMessages(createGetConversationsEmailMessagesRequest(conversationId));
+  public EmailMessagePreviewListing getConversationsEmailMessages(String conversationId, Boolean includeAgentlessStitchedMessages) throws IOException, ApiException {
+    return  getConversationsEmailMessages(createGetConversationsEmailMessagesRequest(conversationId, includeAgentlessStitchedMessages));
   }
 
   /**
    * Get conversation messages
    * 
    * @param conversationId conversationId (required)
+   * @param includeAgentlessStitchedMessages Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message. (optional, default to false)
    * @return EmailMessagePreviewListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessagePreviewListing> getConversationsEmailMessagesWithHttpInfo(String conversationId) throws IOException {
-    return getConversationsEmailMessages(createGetConversationsEmailMessagesRequest(conversationId).withHttpInfo());
+  public ApiResponse<EmailMessagePreviewListing> getConversationsEmailMessagesWithHttpInfo(String conversationId, Boolean includeAgentlessStitchedMessages) throws IOException {
+    return getConversationsEmailMessages(createGetConversationsEmailMessagesRequest(conversationId, includeAgentlessStitchedMessages).withHttpInfo());
   }
 
-  private GetConversationsEmailMessagesRequest createGetConversationsEmailMessagesRequest(String conversationId) {
+  private GetConversationsEmailMessagesRequest createGetConversationsEmailMessagesRequest(String conversationId, Boolean includeAgentlessStitchedMessages) {
     return GetConversationsEmailMessagesRequest.builder()
             .withConversationId(conversationId)
+
+            .withIncludeAgentlessStitchedMessages(includeAgentlessStitchedMessages)
 
             .build();
   }
@@ -26640,7 +26644,7 @@ public class ConversationsApi {
   /**
    * Set the organization's default supported content profile that may be assigned to an integration when it is created.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
-   * @param body SupportedContent (required)
+   * @param body Reference to supported content profile (required)
    * @return SupportedContent
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -26652,7 +26656,7 @@ public class ConversationsApi {
   /**
    * Set the organization's default supported content profile that may be assigned to an integration when it is created.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
-   * @param body SupportedContent (required)
+   * @param body Reference to supported content profile (required)
    * @return SupportedContent
    * @throws IOException if the request fails to be processed
    */

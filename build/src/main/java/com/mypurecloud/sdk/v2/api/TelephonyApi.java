@@ -22,12 +22,14 @@ import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
 import com.mypurecloud.sdk.v2.model.SipSearchResult;
+import com.mypurecloud.sdk.v2.model.TelephonySettings;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentsGreetingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyCallsMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonySettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
@@ -35,6 +37,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesDownloadDownloadI
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentsGreetingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonySettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -353,6 +356,80 @@ public class TelephonyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MediaRegions> response = (ApiResponse<MediaRegions>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the global telephony configuration.
+   * 
+   * @return TelephonySettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TelephonySettings getTelephonySettings() throws IOException, ApiException {
+    return  getTelephonySettings(createGetTelephonySettingsRequest());
+  }
+
+  /**
+   * Get the global telephony configuration.
+   * 
+   * @return TelephonySettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TelephonySettings> getTelephonySettingsWithHttpInfo() throws IOException {
+    return getTelephonySettings(createGetTelephonySettingsRequest().withHttpInfo());
+  }
+
+  private GetTelephonySettingsRequest createGetTelephonySettingsRequest() {
+    return GetTelephonySettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the global telephony configuration.
+   * 
+   * @param request The request object
+   * @return TelephonySettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TelephonySettings getTelephonySettings(GetTelephonySettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TelephonySettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TelephonySettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the global telephony configuration.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TelephonySettings> getTelephonySettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TelephonySettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TelephonySettings> response = (ApiResponse<TelephonySettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TelephonySettings> response = (ApiResponse<TelephonySettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -927,6 +1004,84 @@ public class TelephonyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the global telephony configuration.
+   * 
+   * @param body Telephony (required)
+   * @return TelephonySettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TelephonySettings putTelephonySettings(TelephonySettings body) throws IOException, ApiException {
+    return  putTelephonySettings(createPutTelephonySettingsRequest(body));
+  }
+
+  /**
+   * Update the global telephony configuration.
+   * 
+   * @param body Telephony (required)
+   * @return TelephonySettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TelephonySettings> putTelephonySettingsWithHttpInfo(TelephonySettings body) throws IOException {
+    return putTelephonySettings(createPutTelephonySettingsRequest(body).withHttpInfo());
+  }
+
+  private PutTelephonySettingsRequest createPutTelephonySettingsRequest(TelephonySettings body) {
+    return PutTelephonySettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the global telephony configuration.
+   * 
+   * @param request The request object
+   * @return TelephonySettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TelephonySettings putTelephonySettings(PutTelephonySettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TelephonySettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TelephonySettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the global telephony configuration.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TelephonySettings> putTelephonySettings(ApiRequest<TelephonySettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TelephonySettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TelephonySettings> response = (ApiResponse<TelephonySettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TelephonySettings> response = (ApiResponse<TelephonySettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

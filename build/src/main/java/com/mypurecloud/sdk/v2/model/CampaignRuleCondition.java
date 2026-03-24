@@ -13,6 +13,9 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.CampaignRuleCampaignRunTimeSettings;
+import com.mypurecloud.sdk.v2.model.CampaignRuleCampaignWaitTimeSettings;
+import com.mypurecloud.sdk.v2.model.CampaignRuleDateTimeConditionParameters;
 import com.mypurecloud.sdk.v2.model.CampaignRuleParameters;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -88,6 +91,9 @@ public class CampaignRuleCondition  implements Serializable {
     }
   }
   private ConditionTypeEnum conditionType = null;
+  private CampaignRuleDateTimeConditionParameters dateTimeParameters = null;
+  private CampaignRuleCampaignRunTimeSettings campaignRunTimeSettings = null;
+  private CampaignRuleCampaignWaitTimeSettings campaignWaitTimeSettings = null;
 
   public CampaignRuleCondition() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -148,6 +154,60 @@ public class CampaignRuleCondition  implements Serializable {
   }
 
 
+  /**
+   * Parameters for conditions (timeOfDay, dayOfWeek, dayOfMonth, weekDayOfMonth and specificDate)
+   **/
+  public CampaignRuleCondition dateTimeParameters(CampaignRuleDateTimeConditionParameters dateTimeParameters) {
+    this.dateTimeParameters = dateTimeParameters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Parameters for conditions (timeOfDay, dayOfWeek, dayOfMonth, weekDayOfMonth and specificDate)")
+  @JsonProperty("dateTimeParameters")
+  public CampaignRuleDateTimeConditionParameters getDateTimeParameters() {
+    return dateTimeParameters;
+  }
+  public void setDateTimeParameters(CampaignRuleDateTimeConditionParameters dateTimeParameters) {
+    this.dateTimeParameters = dateTimeParameters;
+  }
+
+
+  /**
+   * Settings for campaignRunTime conditions
+   **/
+  public CampaignRuleCondition campaignRunTimeSettings(CampaignRuleCampaignRunTimeSettings campaignRunTimeSettings) {
+    this.campaignRunTimeSettings = campaignRunTimeSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Settings for campaignRunTime conditions")
+  @JsonProperty("campaignRunTimeSettings")
+  public CampaignRuleCampaignRunTimeSettings getCampaignRunTimeSettings() {
+    return campaignRunTimeSettings;
+  }
+  public void setCampaignRunTimeSettings(CampaignRuleCampaignRunTimeSettings campaignRunTimeSettings) {
+    this.campaignRunTimeSettings = campaignRunTimeSettings;
+  }
+
+
+  /**
+   * Settings for campaignWaitTime conditions
+   **/
+  public CampaignRuleCondition campaignWaitTimeSettings(CampaignRuleCampaignWaitTimeSettings campaignWaitTimeSettings) {
+    this.campaignWaitTimeSettings = campaignWaitTimeSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Settings for campaignWaitTime conditions")
+  @JsonProperty("campaignWaitTimeSettings")
+  public CampaignRuleCampaignWaitTimeSettings getCampaignWaitTimeSettings() {
+    return campaignWaitTimeSettings;
+  }
+  public void setCampaignWaitTimeSettings(CampaignRuleCampaignWaitTimeSettings campaignWaitTimeSettings) {
+    this.campaignWaitTimeSettings = campaignWaitTimeSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -160,12 +220,15 @@ public class CampaignRuleCondition  implements Serializable {
 
     return Objects.equals(this.id, campaignRuleCondition.id) &&
             Objects.equals(this.parameters, campaignRuleCondition.parameters) &&
-            Objects.equals(this.conditionType, campaignRuleCondition.conditionType);
+            Objects.equals(this.conditionType, campaignRuleCondition.conditionType) &&
+            Objects.equals(this.dateTimeParameters, campaignRuleCondition.dateTimeParameters) &&
+            Objects.equals(this.campaignRunTimeSettings, campaignRuleCondition.campaignRunTimeSettings) &&
+            Objects.equals(this.campaignWaitTimeSettings, campaignRuleCondition.campaignWaitTimeSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parameters, conditionType);
+    return Objects.hash(id, parameters, conditionType, dateTimeParameters, campaignRunTimeSettings, campaignWaitTimeSettings);
   }
 
   @Override
@@ -176,6 +239,9 @@ public class CampaignRuleCondition  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    conditionType: ").append(toIndentedString(conditionType)).append("\n");
+    sb.append("    dateTimeParameters: ").append(toIndentedString(dateTimeParameters)).append("\n");
+    sb.append("    campaignRunTimeSettings: ").append(toIndentedString(campaignRunTimeSettings)).append("\n");
+    sb.append("    campaignWaitTimeSettings: ").append(toIndentedString(campaignWaitTimeSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }
