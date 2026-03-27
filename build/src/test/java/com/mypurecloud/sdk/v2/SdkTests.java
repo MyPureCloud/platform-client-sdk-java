@@ -108,7 +108,7 @@ public class SdkTests {
     public void createUser() {
         try {
             CreateUser newUser = new CreateUser();
-            newUser.name(userName).email(userEmail).password(UUID.randomUUID() + "!@#$1234asdfASDF");
+            newUser.name(userName).email(userEmail).password(UUID.randomUUID() + "!@#$!@#$&?&?123412345656asdfasdfghghASDFASDFGHGH");
             User user = usersApi.postUsers(newUser);
             userId = user.getId();
             Assert.assertEquals(user.getName(), userName);

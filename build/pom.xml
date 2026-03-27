@@ -351,7 +351,7 @@
     <slf4j-version>2.0.17</slf4j-version>
     <swagger-annotations-version>1.6.16</swagger-annotations-version>
     <jersey-version>1.19.1</jersey-version>
-    <jackson-version>2.21.1</jackson-version>
+    <jackson-version>2.21.2</jackson-version>
     <jackson-annotations-version>2.21</jackson-annotations-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
     <testng-version>7.10.2</testng-version>
