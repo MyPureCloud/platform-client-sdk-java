@@ -509,4 +509,4 @@ try {
 [**Trigger**](Trigger)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_

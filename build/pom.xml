@@ -4,7 +4,7 @@
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
   <name>platform-client-v2</name>
-  <version>250.0.0</version>
+  <version>250.1.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
 
@@ -361,7 +361,7 @@
     <slf4j-version>2.0.17</slf4j-version>
     <swagger-annotations-version>1.6.16</swagger-annotations-version>
     <jersey-version>1.19.1</jersey-version>
-    <jackson-version>2.21.1</jackson-version>
+    <jackson-version>2.21.2</jackson-version>
     <jackson-annotations-version>2.21</jackson-annotations-version>
     <jodatime-version>2.14.0</jodatime-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
@@ -376,7 +376,7 @@
     <io-netty-version>4.2.10.Final</io-netty-version>
 
     <name>platform-client-v2</name>
-    <version>250.0.0</version>
+    <version>250.1.0</version>
     <description>A Java package to interface with the PureCloud Platform API</description>
     <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
   </properties>
