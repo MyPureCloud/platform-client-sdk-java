@@ -30,6 +30,8 @@
 | TEXT | &quot;text&quot; |
 | MODERATIONFLAG | &quot;moderationFlag&quot; |
 | SOURCETYPE | &quot;sourceType&quot; |
+| VERIFIEDUSER | &quot;verifiedUser&quot; |
+| FOLLOWERCOUNT | &quot;followerCount&quot; |
 
 
 ## Enum: MetricsEnum
@@ -46,4 +48,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

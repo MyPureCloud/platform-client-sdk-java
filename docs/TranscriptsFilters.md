@@ -8,6 +8,7 @@
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the transcripts, default value is all  |  [optional] |
 | **startTimeMs** | **Long** | start time to filter by, default value is 7 days into the past |  [optional] |
 | **endTimeMs** | **Long** | end time to filter by, default value is current time |  [optional] |
+| **programs** | **List&lt;String&gt;** | list of programs ids to filter by |  [optional] |
 | **queues** | **List&lt;String&gt;** | list of queues ids to filter by |  [optional] |
 | **flows** | **List&lt;String&gt;** | list of flows ids to filter by |  [optional] |
 
@@ -27,4 +28,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

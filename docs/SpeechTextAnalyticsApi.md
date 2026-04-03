@@ -865,9 +865,6 @@ Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/sentimen
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:sentimentData:view
-* speechAndTextAnalytics:data:view
-* recording:recording:view
-* recording:recording:viewSensitiveData
 
 ### Example
 
@@ -927,8 +924,6 @@ Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/summarie
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:aiSummary:view
-* recording:recording:view
-* recording:recording:viewSensitiveData
 
 ### Example
 
@@ -3929,4 +3924,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

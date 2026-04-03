@@ -1,11 +1,11 @@
-# CredentialTypeListing
+# ExternalEventsConfigurationListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;CredentialType&gt;**](CredentialType) |  |  [optional] |
+| **entities** | [**List&lt;ExternalEventsConfiguration&gt;**](ExternalEventsConfiguration) |  |  [optional] |
 | **pageSize** | **Integer** |  |  [optional] |
 | **pageNumber** | **Integer** |  |  [optional] |
 | **total** | **Long** |  |  [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

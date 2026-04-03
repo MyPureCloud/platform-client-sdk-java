@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **utilization** | [**Map&lt;String, MediaUtilization&gt;**](MediaUtilization) | Map of media type to utilization settings. |  [optional] |
 | **labelUtilizations** | [**Map&lt;String, LabelUtilizationResponse&gt;**](LabelUtilizationResponse) | Map of label ids to utilization settings. |  [optional] |
+| **maxInboundCalls** | **Integer** | Max number of inbound voice calls. |  [optional] |
 | **level** | [**LevelEnum**](#Enum--LevelEnum) |  |  [optional] |
 
 
@@ -21,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

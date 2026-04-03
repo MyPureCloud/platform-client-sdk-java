@@ -68,6 +68,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitSchedulingRuns**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRuns) | Get the list of scheduling runs |
 | [**getWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#getWorkforcemanagementBusinessunitServicegoaltemplate) | Get a service goal template |
 | [**getWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi#getWorkforcemanagementBusinessunitServicegoaltemplates) | Gets list of service goal templates |
+| [**getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob) | View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementBusinessunitShifttradingTradesQueryJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingTradesQueryJob) | View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob) | View results of bulk update trades states operation. Only the user who started the operation can query the status. |
+| [**getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob) | View result of potential shift trade matches for the current user. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob) | View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitStaffinggroup) | Gets a staffing group |
 | [**getWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitStaffinggroups) | Gets a list of staffing groups |
 | [**getWorkforcemanagementBusinessunitTimeofflimit**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimit) | Gets a time-off limit object |
@@ -131,6 +136,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementNotifications**](WorkforceManagementApi#getWorkforcemanagementNotifications) | Get a list of notifications for the current user |
 | [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi#getWorkforcemanagementSchedulingjob) | Get status of the scheduling job |
 | [**getWorkforcemanagementShifttrades**](WorkforceManagementApi#getWorkforcemanagementShifttrades) | Gets all of my shift trades |
+| [**getWorkforcemanagementShifttradingTradeJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradeJob) | View result of update trade operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementShifttradingTradeMatchJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradeMatchJob) | View result of match shift trade operation. Only the receiving user who started the operation can query the status. |
+| [**getWorkforcemanagementShifttradingTradeStateJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradeStateJob) | View result of update trade state operation. Only the user who started the operation can query the status. |
+| [**getWorkforcemanagementShifttradingTradesJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradesJob) | View result of create trade operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementShifttradingTradesMineQueryJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradesMineQueryJob) | View results of retrieve all my shift trade operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementShrinkageJob**](WorkforceManagementApi#getWorkforcemanagementShrinkageJob) | Request to fetch the status of the historical shrinkage query |
 | [**getWorkforcemanagementTeamAdherence**](WorkforceManagementApi#getWorkforcemanagementTeamAdherence) | Get a list of user schedule adherence records for the requested team |
 | [**getWorkforcemanagementTimeoffbalanceJob**](WorkforceManagementApi#getWorkforcemanagementTimeoffbalanceJob) | Query the results of time off types job |
@@ -209,6 +219,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi#postWorkforcemanagementBusinessunitIntraday) | Get intraday data for the given date for the requested planningGroupIds |
 | [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitPlanninggroups) | Adds a new planning group |
 | [**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi#postWorkforcemanagementBusinessunitServicegoaltemplates) | Adds a new service goal template |
+| [**postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs) | Queries and evaluates against shift trade configuration shift trades in a management unit per week |
+| [**postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs) | Queries shift trades in a management unit per user |
+| [**postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs) | Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades. |
+| [**postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs) | Start an async job to find potential shift trade matches for the current receiving user |
+| [**postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs) | Retrieves the summary of shift trades in a matched state per week |
 | [**postWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroups) | Creates a new staffing group |
 | [**postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery) | Gets a list of planning group to staffing groups list association |
 | [**postWorkforcemanagementBusinessunitStaffinggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsQuery) | Gets staffing group associations for a list of user IDs |
@@ -268,6 +283,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementManagementunits**](WorkforceManagementApi#postWorkforcemanagementManagementunits) | Add a management unit |
 | [**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi#postWorkforcemanagementNotificationsUpdate) | Mark a list of notifications as read or unread |
 | [**postWorkforcemanagementSchedules**](WorkforceManagementApi#postWorkforcemanagementSchedules) | Get published schedule for the current user |
+| [**postWorkforcemanagementShifttradingTradeJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradeJobs) | Updates a shift trade. This route can only be called by the initiating user |
+| [**postWorkforcemanagementShifttradingTradeMatchJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradeMatchJobs) | Matches a shift trade. This route can only be called by the receiving user |
+| [**postWorkforcemanagementShifttradingTradeStateJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradeStateJobs) | Update trade state by a user |
+| [**postWorkforcemanagementShifttradingTradesJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradesJobs) | Add a shift trade job |
+| [**postWorkforcemanagementShifttradingTradesMineQueryJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradesMineQueryJobs) | Retrieve all my shift trades where I am either the initiating or receiving user |
 | [**postWorkforcemanagementTeamAdherenceHistorical**](WorkforceManagementApi#postWorkforcemanagementTeamAdherenceHistorical) | Request a teams historical adherence report |
 | [**postWorkforcemanagementTeamShrinkageJobs**](WorkforceManagementApi#postWorkforcemanagementTeamShrinkageJobs) | Request a historical shrinkage report |
 | [**postWorkforcemanagementTimeoffbalanceJobs**](WorkforceManagementApi#postWorkforcemanagementTimeoffbalanceJobs) | Query time off balances for the current user for specified activity code and dates |
@@ -4360,6 +4380,324 @@ try {
 [**ServiceGoalTemplateList**](ServiceGoalTemplateList)
 
 
+# **getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob**
+
+
+> [ShiftTradeEvaluateTradesBuJobResponse](ShiftTradeEvaluateTradesBuJobResponse) getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(businessUnitId, jobId)
+
+View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeEvaluateTradesBuJobResponse result = apiInstance.getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(businessUnitId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitShifttradingTradesQueryJob**
+
+
+> [ShiftTradeQueryTradesBuJobResponse](ShiftTradeQueryTradesBuJobResponse) getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(businessUnitId, jobId)
+
+View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeQueryTradesBuJobResponse result = apiInstance.getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(businessUnitId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingTradesQueryJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob**
+
+
+> [ShiftTradeBulkUpdateTradeStateBuJobResponse](ShiftTradeBulkUpdateTradeStateBuJobResponse) getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(businessUnitId, jobId)
+
+View results of bulk update trades states operation. Only the user who started the operation can query the status.
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeBulkUpdateTradeStateBuJobResponse result = apiInstance.getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(businessUnitId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob**
+
+
+> [ShiftTradeSearchUnmatchedTradesBuJobResponse](ShiftTradeSearchUnmatchedTradesBuJobResponse) getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(businessUnitId, jobId)
+
+View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeSearchUnmatchedTradesBuJobResponse result = apiInstance.getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(businessUnitId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob**
+
+
+> [ShiftTradeQueryWeekSummariesBuJobResponse](ShiftTradeQueryWeekSummariesBuJobResponse) getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(businessUnitId, jobId)
+
+View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeQueryWeekSummariesBuJobResponse result = apiInstance.getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(businessUnitId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse)
+
+
 # **getWorkforcemanagementBusinessunitStaffinggroup**
 
 
@@ -5193,7 +5531,7 @@ try {
 
 Get the list of week schedules for the specified week
 
-Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules  
 
@@ -5657,7 +5995,7 @@ try {
 
 Get short term forecasts
 
-Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts  
 
@@ -8379,6 +8717,317 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**ShiftTradeListResponse**](ShiftTradeListResponse)
+
+
+# **getWorkforcemanagementShifttradingTradeJob**
+
+
+> [ShiftTradeUpdateTradeJobResponse](ShiftTradeUpdateTradeJobResponse) getWorkforcemanagementShifttradingTradeJob(tradeId, jobId)
+
+View result of update trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeUpdateTradeJobResponse result = apiInstance.getWorkforcemanagementShifttradingTradeJob(tradeId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementShifttradingTradeJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tradeId** | **String**| The ID of the shift trade to update | 
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse)
+
+
+# **getWorkforcemanagementShifttradingTradeMatchJob**
+
+
+> [ShiftTradeMatchTradeJobResponse](ShiftTradeMatchTradeJobResponse) getWorkforcemanagementShifttradingTradeMatchJob(tradeId, jobId)
+
+View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeMatchTradeJobResponse result = apiInstance.getWorkforcemanagementShifttradingTradeMatchJob(tradeId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementShifttradingTradeMatchJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tradeId** | **String**| The ID of the shift trade to update | 
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse)
+
+
+# **getWorkforcemanagementShifttradingTradeStateJob**
+
+
+> [ShiftTradeUpdateTradeStateJobResponse](ShiftTradeUpdateTradeStateJobResponse) getWorkforcemanagementShifttradingTradeStateJob(tradeId, jobId)
+
+View result of update trade state operation. Only the user who started the operation can query the status.
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeUpdateTradeStateJobResponse result = apiInstance.getWorkforcemanagementShifttradingTradeStateJob(tradeId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementShifttradingTradeStateJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tradeId** | **String**| The ID of the shift trade to update | 
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse)
+
+
+# **getWorkforcemanagementShifttradingTradesJob**
+
+
+> [ShiftTradeAddTradeJobResponse](ShiftTradeAddTradeJobResponse) getWorkforcemanagementShifttradingTradesJob(jobId)
+
+View result of create trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeAddTradeJobResponse result = apiInstance.getWorkforcemanagementShifttradingTradesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementShifttradingTradesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse)
+
+
+# **getWorkforcemanagementShifttradingTradesMineQueryJob**
+
+
+> [ShiftTradeQueryAgentTradesJobResponse](ShiftTradeQueryAgentTradesJobResponse) getWorkforcemanagementShifttradingTradesMineQueryJob(jobId)
+
+View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    ShiftTradeQueryAgentTradesJobResponse result = apiInstance.getWorkforcemanagementShifttradingTradesMineQueryJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementShifttradingTradesMineQueryJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse)
 
 
 # **getWorkforcemanagementShrinkageJob**
@@ -13167,6 +13816,332 @@ try {
 [**ServiceGoalTemplate**](ServiceGoalTemplate)
 
 
+# **postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs**
+
+
+> [ShiftTradeEvaluateTradesBuJobResponse](ShiftTradeEvaluateTradesBuJobResponse) postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(businessUnitId, body, forceAsync, forceDownloadService)
+
+Queries and evaluates against shift trade configuration shift trades in a management unit per week
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs  
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+EvaluateShiftTradeListJobRequest body = new EvaluateShiftTradeListJobRequest(); // EvaluateShiftTradeListJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    ShiftTradeEvaluateTradesBuJobResponse result = apiInstance.postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(businessUnitId, body, forceAsync, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**EvaluateShiftTradeListJobRequest**](EvaluateShiftTradeListJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs**
+
+
+> [ShiftTradeQueryTradesBuJobResponse](ShiftTradeQueryTradesBuJobResponse) postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(businessUnitId, body, forceAsync, forceDownloadService)
+
+Queries shift trades in a management unit per user
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs  
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+QueryShiftTradeListJobRequest body = new QueryShiftTradeListJobRequest(); // QueryShiftTradeListJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    ShiftTradeQueryTradesBuJobResponse result = apiInstance.postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(businessUnitId, body, forceAsync, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**QueryShiftTradeListJobRequest**](QueryShiftTradeListJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs**
+
+
+> [ShiftTradeBulkUpdateTradeStateBuJobResponse](ShiftTradeBulkUpdateTradeStateBuJobResponse) postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(businessUnitId, body, forceAsync, forceDownloadService)
+
+Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs  
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+BulkUpdateShiftTradeListJobRequest body = new BulkUpdateShiftTradeListJobRequest(); // BulkUpdateShiftTradeListJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    ShiftTradeBulkUpdateTradeStateBuJobResponse result = apiInstance.postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(businessUnitId, body, forceAsync, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**BulkUpdateShiftTradeListJobRequest**](BulkUpdateShiftTradeListJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs**
+
+
+> [ShiftTradeSearchUnmatchedTradesBuJobResponse](ShiftTradeSearchUnmatchedTradesBuJobResponse) postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(businessUnitId, body, forceAsync, forceDownloadService)
+
+Start an async job to find potential shift trade matches for the current receiving user
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+SearchUnmatchedShiftTradeListJobRequest body = new SearchUnmatchedShiftTradeListJobRequest(); // SearchUnmatchedShiftTradeListJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    ShiftTradeSearchUnmatchedTradesBuJobResponse result = apiInstance.postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(businessUnitId, body, forceAsync, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**SearchUnmatchedShiftTradeListJobRequest**](SearchUnmatchedShiftTradeListJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs**
+
+
+> [ShiftTradeQueryWeekSummariesBuJobResponse](ShiftTradeQueryWeekSummariesBuJobResponse) postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(businessUnitId, body, forceAsync)
+
+Retrieves the summary of shift trades in a matched state per week
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs  
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+QueryWeekSummaryListJobRequest body = new QueryWeekSummaryListJobRequest(); // QueryWeekSummaryListJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+try {
+    ShiftTradeQueryWeekSummariesBuJobResponse result = apiInstance.postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(businessUnitId, body, forceAsync);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**QueryWeekSummaryListJobRequest**](QueryWeekSummaryListJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse)
+
+
 # **postWorkforcemanagementBusinessunitStaffinggroups**
 
 
@@ -16889,6 +17864,319 @@ try {
 [**UserScheduleContainer**](UserScheduleContainer)
 
 
+# **postWorkforcemanagementShifttradingTradeJobs**
+
+
+> [ShiftTradeUpdateTradeJobResponse](ShiftTradeUpdateTradeJobResponse) postWorkforcemanagementShifttradingTradeJobs(tradeId, body, forceAsync)
+
+Updates a shift trade. This route can only be called by the initiating user
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+UpdateShiftTradeJobRequest body = new UpdateShiftTradeJobRequest(); // UpdateShiftTradeJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+try {
+    ShiftTradeUpdateTradeJobResponse result = apiInstance.postWorkforcemanagementShifttradingTradeJobs(tradeId, body, forceAsync);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementShifttradingTradeJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tradeId** | **String**| The ID of the shift trade to update | 
+| **body** | [**UpdateShiftTradeJobRequest**](UpdateShiftTradeJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse)
+
+
+# **postWorkforcemanagementShifttradingTradeMatchJobs**
+
+
+> [ShiftTradeMatchTradeJobResponse](ShiftTradeMatchTradeJobResponse) postWorkforcemanagementShifttradingTradeMatchJobs(tradeId, body, forceAsync)
+
+Matches a shift trade. This route can only be called by the receiving user
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String tradeId = "tradeId_example"; // String | The ID of the shift trade to match
+MatchShiftTradeJobRequest body = new MatchShiftTradeJobRequest(); // MatchShiftTradeJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+try {
+    ShiftTradeMatchTradeJobResponse result = apiInstance.postWorkforcemanagementShifttradingTradeMatchJobs(tradeId, body, forceAsync);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementShifttradingTradeMatchJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tradeId** | **String**| The ID of the shift trade to match | 
+| **body** | [**MatchShiftTradeJobRequest**](MatchShiftTradeJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse)
+
+
+# **postWorkforcemanagementShifttradingTradeStateJobs**
+
+
+> [ShiftTradeUpdateTradeStateJobResponse](ShiftTradeUpdateTradeStateJobResponse) postWorkforcemanagementShifttradingTradeStateJobs(tradeId, body, forceAsync)
+
+Update trade state by a user
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String tradeId = "tradeId_example"; // String | The ID of the shift trade to update state
+UpdateShiftTradeStateJobRequest body = new UpdateShiftTradeStateJobRequest(); // UpdateShiftTradeStateJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+try {
+    ShiftTradeUpdateTradeStateJobResponse result = apiInstance.postWorkforcemanagementShifttradingTradeStateJobs(tradeId, body, forceAsync);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementShifttradingTradeStateJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tradeId** | **String**| The ID of the shift trade to update state | 
+| **body** | [**UpdateShiftTradeStateJobRequest**](UpdateShiftTradeStateJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse)
+
+
+# **postWorkforcemanagementShifttradingTradesJobs**
+
+
+> [ShiftTradeAddTradeJobResponse](ShiftTradeAddTradeJobResponse) postWorkforcemanagementShifttradingTradesJobs(body, forceAsync)
+
+Add a shift trade job
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+AddShiftTradeJobRequest body = new AddShiftTradeJobRequest(); // AddShiftTradeJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+try {
+    ShiftTradeAddTradeJobResponse result = apiInstance.postWorkforcemanagementShifttradingTradesJobs(body, forceAsync);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementShifttradingTradesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AddShiftTradeJobRequest**](AddShiftTradeJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse)
+
+
+# **postWorkforcemanagementShifttradingTradesMineQueryJobs**
+
+
+> [ShiftTradeQueryAgentTradesJobResponse](ShiftTradeQueryAgentTradesJobResponse) postWorkforcemanagementShifttradingTradesMineQueryJobs(body, forceAsync, forceDownloadService)
+
+Retrieve all my shift trades where I am either the initiating or receiving user
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+QueryAgentShiftTradeListJobRequest body = new QueryAgentShiftTradeListJobRequest(); // QueryAgentShiftTradeListJobRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    ShiftTradeQueryAgentTradesJobResponse result = apiInstance.postWorkforcemanagementShifttradingTradesMineQueryJobs(body, forceAsync, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementShifttradingTradesMineQueryJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**QueryAgentShiftTradeListJobRequest**](QueryAgentShiftTradeListJobRequest)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse)
+
+
 # **postWorkforcemanagementTeamAdherenceHistorical**
 
 
@@ -17619,4 +18907,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

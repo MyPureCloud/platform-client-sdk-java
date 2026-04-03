@@ -240,6 +240,7 @@
 | **contentModerationFlags** | [**List<ContentModerationFlagsEnum>**](#Enum--ContentModerationFlagsEnum) | A set of Content Moderation Flags for filtering |  [optional] |
 | **socialSourceTypes** | [**List<SocialSourceTypesEnum>**](#Enum--SocialSourceTypesEnum) | A set of Source Types for social filtering |  [optional] |
 | **sessionExpired** | **Boolean** | Filter to indicate for if session is expired |  [optional] |
+| **screenMonitored** | **Boolean** | Filter to indicate if the interaction was screen monitored |  [optional] |
 | **engagementSources** | [**List<EngagementSourcesEnum>**](#Enum--EngagementSourcesEnum) | The engagement sources used to filter the view |  [optional] |
 | **isSnippetRecorded** | **Boolean** | Indicates filtering for snippet recorded |  [optional] |
 | **takeover** | **Boolean** | Indicates filtering for takeover |  [optional] |
@@ -1100,4 +1101,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

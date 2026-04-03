@@ -66,6 +66,8 @@
 | SV_SE | &quot;sv-se&quot; | 
 | NB_NO | &quot;nb-no&quot; | 
 | TR_TR | &quot;tr-tr&quot; | 
+| HE_IL | &quot;he-il&quot; | 
+| ZU_ZA | &quot;zu-za&quot; | 
 
 
 ## Enum: MinerTypeEnum
@@ -125,4 +127,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

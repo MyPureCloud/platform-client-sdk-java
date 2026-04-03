@@ -235,6 +235,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsCallParticipantConsultQueue**](ConversationsApi#postConversationsCallParticipantConsultQueue) | Initiate a consult transfer to a queue |
 | [**postConversationsCallParticipantMonitor**](ConversationsApi#postConversationsCallParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
 | [**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | Replace this participant with the specified user and/or address |
+| [**postConversationsCallParticipantSnippetRecord**](ConversationsApi#postConversationsCallParticipantSnippetRecord) | Start/stop the snippet recording for a participant |
 | [**postConversationsCallParticipantVoiceConsult**](ConversationsApi#postConversationsCallParticipantVoiceConsult) | Initiate voice consult transfer |
 | [**postConversationsCallParticipants**](ConversationsApi#postConversationsCallParticipants) | Add participants to a conversation |
 | [**postConversationsCallParticipantsUserUserId**](ConversationsApi#postConversationsCallParticipantsUserUserId) | Add participants to a conversation on behalf of a user |
@@ -14560,6 +14561,69 @@ try {
 null (empty response body)
 
 
+# **postConversationsCallParticipantSnippetRecord**
+
+
+> String postConversationsCallParticipantSnippetRecord(conversationId, participantId, body)
+
+Start/stop the snippet recording for a participant
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/snippet/record  
+
+Requires ANY permissions: 
+
+* conversation:recording:snippetRecord
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+SnippetRecordingRequest body = new SnippetRecordingRequest(); // SnippetRecordingRequest | snippetRecordingRequest
+try {
+    String result = apiInstance.postConversationsCallParticipantSnippetRecord(conversationId, participantId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantSnippetRecord");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**SnippetRecordingRequest**](SnippetRecordingRequest)| snippetRecordingRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+
 # **postConversationsCallParticipantVoiceConsult**
 
 
@@ -20158,4 +20222,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

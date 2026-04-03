@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationRecordingAnnotation**](RecordingApi#getConversationRecordingAnnotation) | Get annotation |
 | [**getConversationRecordingAnnotations**](RecordingApi#getConversationRecordingAnnotations) | Get annotations for recording |
 | [**getConversationRecordingmetadata**](RecordingApi#getConversationRecordingmetadata) | Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing. |
-| [**getConversationRecordingmetadataRecordingId**](RecordingApi#getConversationRecordingmetadataRecordingId) | Get metadata for a specific recording. Does not return playable media. |
+| [**getConversationRecordingmetadataRecordingId**](RecordingApi#getConversationRecordingmetadataRecordingId) | Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing. |
 | [**getConversationRecordings**](RecordingApi#getConversationRecordings) | Get all of a Conversation's Recordings. |
 | [**getOrphanrecording**](RecordingApi#getOrphanrecording) | Gets a single orphan recording |
 | [**getOrphanrecordingMedia**](RecordingApi#getOrphanrecordingMedia) | Gets the media of a single orphan recording |
@@ -39,7 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi#patchRecordingCrossplatformMediaretentionpolicy) | Patch a media retention policy |
 | [**patchRecordingMediaretentionpolicy**](RecordingApi#patchRecordingMediaretentionpolicy) | Patch a media retention policy |
 | [**postConversationRecordingAnnotations**](RecordingApi#postConversationRecordingAnnotations) | Create annotation |
-| [**postRecordingBatchrequests**](RecordingApi#postRecordingBatchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. |
+| [**postRecordingBatchrequests**](RecordingApi#postRecordingBatchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download. |
 | [**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi#postRecordingCrossplatformMediaretentionpolicies) | Create media retention policy |
 | [**postRecordingJobs**](RecordingApi#postRecordingJobs) | Create a recording bulk job. |
 | [**postRecordingKeyconfigurations**](RecordingApi#postRecordingKeyconfigurations) | Setup configurations for encryption key creation |
@@ -490,6 +490,8 @@ null (empty response body)
 
 Gets a specific recording.
 
+Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
+
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}  
 
 Requires ANY permissions: 
@@ -762,7 +764,7 @@ try {
 
 > [RecordingMetadata](RecordingMetadata) getConversationRecordingmetadataRecordingId(conversationId, recordingId)
 
-Get metadata for a specific recording. Does not return playable media.
+Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}  
 
@@ -827,6 +829,8 @@ try {
 > [List&lt;Recording&gt;](Recording) getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats, locale, includePauseAnnotationsForScreenRecordings)
 
 Get all of a Conversation's Recordings.
+
+Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings  
 
@@ -2233,11 +2237,14 @@ try {
 
 Create annotation
 
+If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
+
 Wraps POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations  
 
 Requires ANY permissions: 
 
 * recording:annotation:add
+* recording:annotation:edit
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
@@ -2298,7 +2305,7 @@ try {
 
 > [BatchDownloadJobSubmissionResult](BatchDownloadJobSubmissionResult) postRecordingBatchrequests(body)
 
-Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
 
 Wraps POST /api/v2/recording/batchrequests  
 
@@ -3008,7 +3015,7 @@ null (empty response body)
 
 Updates the retention records on a recording.
 
-Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
 
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}  
 
@@ -3016,10 +3023,13 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recording:editRetention
+* recording:recording:restore
 * recording:screenRecording:view
 * recording:screenRecording:editRetention
+* recording:screenRecording:restore
 * recording:snippetRecording:view
 * recording:snippetRecording:editRetention
+* recording:snippetRecording:restore
 
 ### Example
 
@@ -3080,11 +3090,14 @@ try {
 
 Update annotation
 
+If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
+
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}  
 
 Requires ANY permissions: 
 
 * recording:annotation:edit
+* recording:annotation:add
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
@@ -3640,4 +3653,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

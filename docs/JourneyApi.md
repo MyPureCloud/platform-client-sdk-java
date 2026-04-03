@@ -7,6 +7,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAnalyticsJourneysAggregatesJob**](JourneyApi#deleteAnalyticsJourneysAggregatesJob) | Delete/cancel an async request for journey aggregates |
 | [**deleteJourneyActionmap**](JourneyApi#deleteJourneyActionmap) | Delete single action map. |
 | [**deleteJourneyActiontemplate**](JourneyApi#deleteJourneyActiontemplate) | Delete a single action template. |
+| [**deleteJourneyExternaleventsConfiguration**](JourneyApi#deleteJourneyExternaleventsConfiguration) | Delete an external events configuration. |
+| [**deleteJourneyExternaleventsSchema**](JourneyApi#deleteJourneyExternaleventsSchema) | Delete a schema |
 | [**deleteJourneyOutcome**](JourneyApi#deleteJourneyOutcome) | Delete an outcome. |
 | [**deleteJourneyOutcomesPredictor**](JourneyApi#deleteJourneyOutcomesPredictor) | Delete an outcome predictor. |
 | [**deleteJourneySegment**](JourneyApi#deleteJourneySegment) | Delete a segment. |
@@ -25,6 +27,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyActiontemplate**](JourneyApi#getJourneyActiontemplate) | Retrieve a single action template. |
 | [**getJourneyActiontemplates**](JourneyApi#getJourneyActiontemplates) | Retrieve all action templates. |
 | [**getJourneyDeploymentCustomerPing**](JourneyApi#getJourneyDeploymentCustomerPing) | Send a ping. |
+| [**getJourneyExternaleventsConfiguration**](JourneyApi#getJourneyExternaleventsConfiguration) | Get an external events configuration |
+| [**getJourneyExternaleventsConfigurations**](JourneyApi#getJourneyExternaleventsConfigurations) | Get all external event configurations. |
+| [**getJourneyExternaleventsSchema**](JourneyApi#getJourneyExternaleventsSchema) | Get a schema |
+| [**getJourneyExternaleventsSchemaVersion**](JourneyApi#getJourneyExternaleventsSchemaVersion) | Get a specific version of a schema |
+| [**getJourneyExternaleventsSchemaVersions**](JourneyApi#getJourneyExternaleventsSchemaVersions) | Get all versions of a External Events schema |
+| [**getJourneyExternaleventsSchemas**](JourneyApi#getJourneyExternaleventsSchemas) | Get a list of schemas. |
+| [**getJourneyExternaleventsSchemasCoretype**](JourneyApi#getJourneyExternaleventsSchemasCoretype) | Get a core type from which all schemas are built |
+| [**getJourneyExternaleventsSchemasCoretypes**](JourneyApi#getJourneyExternaleventsSchemasCoretypes) | Get the list of core types enabled for a specific namespace. |
+| [**getJourneyExternaleventsSchemasLimits**](JourneyApi#getJourneyExternaleventsSchemasLimits) | Get quantitative limits on schemas |
 | [**getJourneyOutcome**](JourneyApi#getJourneyOutcome) | Retrieve a single outcome. |
 | [**getJourneyOutcomes**](JourneyApi#getJourneyOutcomes) | Retrieve all outcomes. |
 | [**getJourneyOutcomesAttributionsJob**](JourneyApi#getJourneyOutcomesAttributionsJob) | Get job status. |
@@ -55,6 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | Update a single action target. |
 | [**patchJourneyActiontemplate**](JourneyApi#patchJourneyActiontemplate) | Update a single action template. |
+| [**patchJourneyExternaleventsConfiguration**](JourneyApi#patchJourneyExternaleventsConfiguration) | Update an external events configuration. |
 | [**patchJourneyOutcome**](JourneyApi#patchJourneyOutcome) | Update an outcome. |
 | [**patchJourneySegment**](JourneyApi#patchJourneySegment) | Update a segment. |
 | [**patchJourneyViewVersionJob**](JourneyApi#patchJourneyViewVersionJob) | Update the job for a journey view version. Only the status can be changed and only to Cancelled |
@@ -67,6 +79,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postJourneyDeploymentActionevent**](JourneyApi#postJourneyDeploymentActionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user. |
 | [**postJourneyDeploymentAppevents**](JourneyApi#postJourneyDeploymentAppevents) | Send a journey app event, used for tracking customer activity on an application. |
 | [**postJourneyDeploymentWebevents**](JourneyApi#postJourneyDeploymentWebevents) | Send a journey web event, used for tracking customer activity on a website. |
+| [**postJourneyExternaleventsConfigurationEvents**](JourneyApi#postJourneyExternaleventsConfigurationEvents) | Create external events |
+| [**postJourneyExternaleventsConfigurations**](JourneyApi#postJourneyExternaleventsConfigurations) | Create an external events configuration. |
+| [**postJourneyExternaleventsSchemas**](JourneyApi#postJourneyExternaleventsSchemas) | Create a schema |
 | [**postJourneyFlowsPathsQuery**](JourneyApi#postJourneyFlowsPathsQuery) | Query for flow paths. |
 | [**postJourneyOutcomes**](JourneyApi#postJourneyOutcomes) | Create an outcome. |
 | [**postJourneyOutcomesAttributionsJobs**](JourneyApi#postJourneyOutcomesAttributionsJobs) | Create Outcome Attributions |
@@ -77,6 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postJourneyViewVersions**](JourneyApi#postJourneyViewVersions) | Update a Journey View by ID |
 | [**postJourneyViews**](JourneyApi#postJourneyViews) | Create a new Journey View |
 | [**postJourneyViewsEncodingsValidate**](JourneyApi#postJourneyViewsEncodingsValidate) | Validate whether an encoding exist for a label/value combination. |
+| [**putJourneyExternaleventsSchema**](JourneyApi#putJourneyExternaleventsSchema) | Update a schema |
 | [**putJourneyViewSchedules**](JourneyApi#putJourneyViewSchedules) | Update the Schedule for a JourneyView |
 | [**putJourneyViewVersion**](JourneyApi#putJourneyViewVersion) | Update a Journey View by ID and version |
 {: class="table-striped"}
@@ -252,6 +268,122 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionTemplateId** | **String**| ID of the action template. | 
 | **hardDelete** | **Boolean**| Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteJourneyExternaleventsConfiguration**
+
+
+> Void deleteJourneyExternaleventsConfiguration(configId)
+
+Delete an external events configuration.
+
+Wraps DELETE /api/v2/journey/externalevents/configurations/{configId}  
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String configId = "configId_example"; // String | The ID of the external event configuration.
+try {
+    apiInstance.deleteJourneyExternaleventsConfiguration(configId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#deleteJourneyExternaleventsConfiguration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **configId** | **String**| The ID of the external event configuration. | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteJourneyExternaleventsSchema**
+
+
+> Void deleteJourneyExternaleventsSchema(schemaId)
+
+Delete a schema
+
+Wraps DELETE /api/v2/journey/externalevents/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    apiInstance.deleteJourneyExternaleventsSchema(schemaId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#deleteJourneyExternaleventsSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
 {: class="table-striped"}
 
 
@@ -1360,6 +1492,529 @@ try {
 ### Return type
 
 [**DeploymentPing**](DeploymentPing)
+
+
+# **getJourneyExternaleventsConfiguration**
+
+
+> [ExternalEventsConfiguration](ExternalEventsConfiguration) getJourneyExternaleventsConfiguration(configId)
+
+Get an external events configuration
+
+Wraps GET /api/v2/journey/externalevents/configurations/{configId}  
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String configId = "configId_example"; // String | The ID of the external event configuration.
+try {
+    ExternalEventsConfiguration result = apiInstance.getJourneyExternaleventsConfiguration(configId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyExternaleventsConfiguration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **configId** | **String**| The ID of the external event configuration. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalEventsConfiguration**](ExternalEventsConfiguration)
+
+
+# **getJourneyExternaleventsConfigurations**
+
+
+> [ExternalEventsConfigurationListing](ExternalEventsConfigurationListing) getJourneyExternaleventsConfigurations(pageSize, pageNumber)
+
+Get all external event configurations.
+
+Wraps GET /api/v2/journey/externalevents/configurations  
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+Integer pageSize = 20; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    ExternalEventsConfigurationListing result = apiInstance.getJourneyExternaleventsConfigurations(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyExternaleventsConfigurations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalEventsConfigurationListing**](ExternalEventsConfigurationListing)
+
+
+# **getJourneyExternaleventsSchema**
+
+
+> [JourneyExternalEventsSchema](JourneyExternalEventsSchema) getJourneyExternaleventsSchema(schemaId)
+
+Get a schema
+
+Wraps GET /api/v2/journey/externalevents/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    JourneyExternalEventsSchema result = apiInstance.getJourneyExternaleventsSchema(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyExternaleventsSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
+# **getJourneyExternaleventsSchemaVersion**
+
+
+> [JourneyExternalEventsSchema](JourneyExternalEventsSchema) getJourneyExternaleventsSchemaVersion(schemaId, versionId)
+
+Get a specific version of a schema
+
+Wraps GET /api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId}  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+String versionId = "versionId_example"; // String | Schema version
+try {
+    JourneyExternalEventsSchema result = apiInstance.getJourneyExternaleventsSchemaVersion(schemaId, versionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyExternaleventsSchemaVersion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **versionId** | **String**| Schema version | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
+# **getJourneyExternaleventsSchemaVersions**
+
+
+> [JourneyExternalEventsSchemaListing](JourneyExternalEventsSchemaListing) getJourneyExternaleventsSchemaVersions(schemaId)
+
+Get all versions of a External Events schema
+
+Wraps GET /api/v2/journey/externalevents/schemas/{schemaId}/versions  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    JourneyExternalEventsSchemaListing result = apiInstance.getJourneyExternaleventsSchemaVersions(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyExternaleventsSchemaVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing)
+
+
+# **getJourneyExternaleventsSchemas**
+
+
+> [JourneyExternalEventsSchemaListing](JourneyExternalEventsSchemaListing) getJourneyExternaleventsSchemas()
+
+Get a list of schemas.
+
+Wraps GET /api/v2/journey/externalevents/schemas  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+try {
+    JourneyExternalEventsSchemaListing result = apiInstance.getJourneyExternaleventsSchemas();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyExternaleventsSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing)
+
+
+# **getJourneyExternaleventsSchemasCoretype**
+
+
+> [Coretype](Coretype) getJourneyExternaleventsSchemasCoretype(coreTypeName)
+
+Get a core type from which all schemas are built
+
+Wraps GET /api/v2/journey/externalevents/schemas/coretypes/{coreTypeName}  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String coreTypeName = "coreTypeName_example"; // String | Name of core type
+try {
+    Coretype result = apiInstance.getJourneyExternaleventsSchemasCoretype(coreTypeName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyExternaleventsSchemasCoretype");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **coreTypeName** | **String**| Name of core type | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+# **getJourneyExternaleventsSchemasCoretypes**
+
+
+> [CoretypeListing](CoretypeListing) getJourneyExternaleventsSchemasCoretypes()
+
+Get the list of core types enabled for a specific namespace.
+
+Wraps GET /api/v2/journey/externalevents/schemas/coretypes  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+try {
+    CoretypeListing result = apiInstance.getJourneyExternaleventsSchemasCoretypes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyExternaleventsSchemasCoretypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**CoretypeListing**](CoretypeListing)
+
+
+# **getJourneyExternaleventsSchemasLimits**
+
+
+> [SchemaQuantityLimits](SchemaQuantityLimits) getJourneyExternaleventsSchemasLimits()
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/journey/externalevents/schemas/limits  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+try {
+    SchemaQuantityLimits result = apiInstance.getJourneyExternaleventsSchemasLimits();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyExternaleventsSchemasLimits");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
 
 # **getJourneyOutcome**
@@ -3213,6 +3868,67 @@ try {
 [**ActionTemplate**](ActionTemplate)
 
 
+# **patchJourneyExternaleventsConfiguration**
+
+
+> [ExternalEventsConfiguration](ExternalEventsConfiguration) patchJourneyExternaleventsConfiguration(configId, body)
+
+Update an external events configuration.
+
+Wraps PATCH /api/v2/journey/externalevents/configurations/{configId}  
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String configId = "configId_example"; // String | The ID of the external event configuration.
+UpdateExternalEventsConfigurationRequest body = new UpdateExternalEventsConfigurationRequest(); // UpdateExternalEventsConfigurationRequest | 
+try {
+    ExternalEventsConfiguration result = apiInstance.patchJourneyExternaleventsConfiguration(configId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#patchJourneyExternaleventsConfiguration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **configId** | **String**| The ID of the external event configuration. | 
+| **body** | [**UpdateExternalEventsConfigurationRequest**](UpdateExternalEventsConfigurationRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalEventsConfiguration**](ExternalEventsConfiguration)
+
+
 # **patchJourneyOutcome**
 
 
@@ -3899,6 +4615,185 @@ try {
 [**WebEventResponse**](WebEventResponse)
 
 
+# **postJourneyExternaleventsConfigurationEvents**
+
+
+> [ExternalEventsResponse](ExternalEventsResponse) postJourneyExternaleventsConfigurationEvents(configurationId, body)
+
+Create external events
+
+Wraps POST /api/v2/journey/externalevents/configurations/{configurationId}/events  
+
+Requires ANY permissions: 
+
+* journey:externalEventsEvent:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String configurationId = "configurationId_example"; // String | The ID of the external event configuration.
+ExternalEventsRequest body = new ExternalEventsRequest(); // ExternalEventsRequest | 
+try {
+    ExternalEventsResponse result = apiInstance.postJourneyExternaleventsConfigurationEvents(configurationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyExternaleventsConfigurationEvents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **configurationId** | **String**| The ID of the external event configuration. | 
+| **body** | [**ExternalEventsRequest**](ExternalEventsRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalEventsResponse**](ExternalEventsResponse)
+
+
+# **postJourneyExternaleventsConfigurations**
+
+
+> [ExternalEventsConfiguration](ExternalEventsConfiguration) postJourneyExternaleventsConfigurations(body)
+
+Create an external events configuration.
+
+Wraps POST /api/v2/journey/externalevents/configurations  
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+CreateExternalEventsConfigurationRequest body = new CreateExternalEventsConfigurationRequest(); // CreateExternalEventsConfigurationRequest | 
+try {
+    ExternalEventsConfiguration result = apiInstance.postJourneyExternaleventsConfigurations(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyExternaleventsConfigurations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateExternalEventsConfigurationRequest**](CreateExternalEventsConfigurationRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalEventsConfiguration**](ExternalEventsConfiguration)
+
+
+# **postJourneyExternaleventsSchemas**
+
+
+> [JourneyExternalEventsSchema](JourneyExternalEventsSchema) postJourneyExternaleventsSchemas(body)
+
+Create a schema
+
+Wraps POST /api/v2/journey/externalevents/schemas  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+JourneyJsonSchemaRequest body = new JourneyJsonSchemaRequest(); // JourneyJsonSchemaRequest | Schema create request body
+try {
+    JourneyExternalEventsSchema result = apiInstance.postJourneyExternaleventsSchemas(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyExternaleventsSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**JourneyJsonSchemaRequest**](JourneyJsonSchemaRequest)| Schema create request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
 # **postJourneyFlowsPathsQuery**
 
 
@@ -4501,6 +5396,67 @@ try {
 [**EntityListing**](EntityListing)
 
 
+# **putJourneyExternaleventsSchema**
+
+
+> [JourneyExternalEventsSchema](JourneyExternalEventsSchema) putJourneyExternaleventsSchema(schemaId, body)
+
+Update a schema
+
+Wraps PUT /api/v2/journey/externalevents/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+JourneySchemaUpdateRequest body = new JourneySchemaUpdateRequest(); // JourneySchemaUpdateRequest | Schema update request body
+try {
+    JourneyExternalEventsSchema result = apiInstance.putJourneyExternaleventsSchema(schemaId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#putJourneyExternaleventsSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **body** | [**JourneySchemaUpdateRequest**](JourneySchemaUpdateRequest)| Schema update request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
 # **putJourneyViewSchedules**
 
 
@@ -4627,4 +5583,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_
