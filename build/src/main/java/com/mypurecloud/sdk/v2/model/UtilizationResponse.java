@@ -29,6 +29,7 @@ public class UtilizationResponse  implements Serializable {
   
   private Map<String, MediaUtilization> utilization = null;
   private Map<String, LabelUtilizationResponse> labelUtilizations = null;
+  private Integer maxInboundCalls = null;
 
   public UtilizationResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -72,6 +73,24 @@ public class UtilizationResponse  implements Serializable {
   }
 
 
+  /**
+   * Max number of inbound voice calls.
+   **/
+  public UtilizationResponse maxInboundCalls(Integer maxInboundCalls) {
+    this.maxInboundCalls = maxInboundCalls;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Max number of inbound voice calls.")
+  @JsonProperty("maxInboundCalls")
+  public Integer getMaxInboundCalls() {
+    return maxInboundCalls;
+  }
+  public void setMaxInboundCalls(Integer maxInboundCalls) {
+    this.maxInboundCalls = maxInboundCalls;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -83,12 +102,13 @@ public class UtilizationResponse  implements Serializable {
     UtilizationResponse utilizationResponse = (UtilizationResponse) o;
 
     return Objects.equals(this.utilization, utilizationResponse.utilization) &&
-            Objects.equals(this.labelUtilizations, utilizationResponse.labelUtilizations);
+            Objects.equals(this.labelUtilizations, utilizationResponse.labelUtilizations) &&
+            Objects.equals(this.maxInboundCalls, utilizationResponse.maxInboundCalls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(utilization, labelUtilizations);
+    return Objects.hash(utilization, labelUtilizations, maxInboundCalls);
   }
 
   @Override
@@ -98,6 +118,7 @@ public class UtilizationResponse  implements Serializable {
     
     sb.append("    utilization: ").append(toIndentedString(utilization)).append("\n");
     sb.append("    labelUtilizations: ").append(toIndentedString(labelUtilizations)).append("\n");
+    sb.append("    maxInboundCalls: ").append(toIndentedString(maxInboundCalls)).append("\n");
     sb.append("}");
     return sb.toString();
   }

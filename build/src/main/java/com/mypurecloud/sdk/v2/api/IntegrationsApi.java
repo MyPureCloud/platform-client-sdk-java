@@ -31,7 +31,7 @@ import com.mypurecloud.sdk.v2.model.Credential;
 import com.mypurecloud.sdk.v2.model.CredentialInfo;
 import com.mypurecloud.sdk.v2.model.CredentialInfoCursorListing;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
-import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
+import com.mypurecloud.sdk.v2.model.CredentialType;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.DialogflowCXAgent;
@@ -3175,21 +3175,21 @@ public class IntegrationsApi {
   /**
    * List all credential types
    * 
-   * @return CredentialTypeListing
+   * @return List<CredentialType>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CredentialTypeListing getIntegrationsCredentialsTypes() throws IOException, ApiException {
+  public List<CredentialType> getIntegrationsCredentialsTypes() throws IOException, ApiException {
     return  getIntegrationsCredentialsTypes(createGetIntegrationsCredentialsTypesRequest());
   }
 
   /**
    * List all credential types
    * 
-   * @return CredentialTypeListing
+   * @return List<CredentialType>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CredentialTypeListing> getIntegrationsCredentialsTypesWithHttpInfo() throws IOException {
+  public ApiResponse<List<CredentialType>> getIntegrationsCredentialsTypesWithHttpInfo() throws IOException {
     return getIntegrationsCredentialsTypes(createGetIntegrationsCredentialsTypesRequest().withHttpInfo());
   }
 
@@ -3202,13 +3202,13 @@ public class IntegrationsApi {
    * List all credential types
    * 
    * @param request The request object
-   * @return CredentialTypeListing
+   * @return List<CredentialType>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CredentialTypeListing getIntegrationsCredentialsTypes(GetIntegrationsCredentialsTypesRequest request) throws IOException, ApiException {
+  public List<CredentialType> getIntegrationsCredentialsTypes(GetIntegrationsCredentialsTypesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<CredentialTypeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CredentialTypeListing>() {});
+      ApiResponse<List<CredentialType>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<CredentialType>>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3224,13 +3224,13 @@ public class IntegrationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CredentialTypeListing> getIntegrationsCredentialsTypes(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<List<CredentialType>> getIntegrationsCredentialsTypes(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<CredentialTypeListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<List<CredentialType>>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<CredentialTypeListing> response = (ApiResponse<CredentialTypeListing>)(ApiResponse<?>)exception;
+      ApiResponse<List<CredentialType>> response = (ApiResponse<List<CredentialType>>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -3241,7 +3241,7 @@ public class IntegrationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<CredentialTypeListing> response = (ApiResponse<CredentialTypeListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<List<CredentialType>> response = (ApiResponse<List<CredentialType>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

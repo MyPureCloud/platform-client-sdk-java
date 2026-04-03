@@ -10,7 +10,7 @@
 | **filter** | [**SocialMediaQueryFilter**](SocialMediaQueryFilter) | Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters |  [optional] |
 | **topicIds** | **List&lt;String&gt;** | List of topicIds to query in |  [optional] |
 | **pageSize** | **Integer** | The number of results per page |  [optional] |
-| **order** | [**OrderEnum**](#Enum--OrderEnum) | Sorting of results based on time |  [optional] |
+| **order** | [**OrderEnum**](#Enum--OrderEnum) | Deprecated: use 'sort' field instead. Sorting of results based on time |  [optional] |
 
 
 ## Enum: OrderEnum
@@ -24,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

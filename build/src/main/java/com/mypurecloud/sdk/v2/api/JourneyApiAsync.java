@@ -26,12 +26,19 @@ import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
+import com.mypurecloud.sdk.v2.model.CreateExternalEventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.model.DataRange;
 import com.mypurecloud.sdk.v2.model.DeploymentPing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateJobAsyncResponse;
 import com.mypurecloud.sdk.v2.model.EventListing;
+import com.mypurecloud.sdk.v2.model.ExternalEventsConfiguration;
+import com.mypurecloud.sdk.v2.model.ExternalEventsConfigurationListing;
+import com.mypurecloud.sdk.v2.model.ExternalEventsRequest;
+import com.mypurecloud.sdk.v2.model.ExternalEventsResponse;
 import com.mypurecloud.sdk.v2.model.FlowPaths;
 import com.mypurecloud.sdk.v2.model.FlowPathsQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
@@ -40,6 +47,10 @@ import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyEventDefinition;
 import com.mypurecloud.sdk.v2.model.JourneyEventDefinitionListing;
+import com.mypurecloud.sdk.v2.model.JourneyExternalEventsSchema;
+import com.mypurecloud.sdk.v2.model.JourneyExternalEventsSchemaListing;
+import com.mypurecloud.sdk.v2.model.JourneyJsonSchemaRequest;
+import com.mypurecloud.sdk.v2.model.JourneySchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.JourneyView;
@@ -68,10 +79,12 @@ import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.UpdateExternalEventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentResponse;
 import com.mypurecloud.sdk.v2.model.WebEventRequest;
@@ -81,6 +94,8 @@ import com.mypurecloud.sdk.v2.model.WebEventResponse;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsJourneysAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActiontemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneyExternaleventsConfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneyExternaleventsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomesPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneySegmentRequest;
@@ -99,6 +114,15 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyDeploymentCustomerPingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsConfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsConfigurationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemaVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesAttributionsJobRequest;
@@ -129,6 +153,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchJourneyExternaleventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyViewVersionJobRequest;
@@ -141,6 +166,9 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentActioneventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentAppeventsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentWebeventsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyExternaleventsConfigurationEventsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyExternaleventsConfigurationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyExternaleventsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyFlowsPathsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
@@ -151,6 +179,7 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsEncodingsValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutJourneyExternaleventsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutJourneyViewSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutJourneyViewVersionRequest;
 
@@ -366,6 +395,156 @@ public class JourneyApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteJourneyActiontemplateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an external events configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteJourneyExternaleventsConfigurationAsync(DeleteJourneyExternaleventsConfigurationRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an external events configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteJourneyExternaleventsConfigurationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteJourneyExternaleventsSchemaAsync(DeleteJourneyExternaleventsSchemaRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteJourneyExternaleventsSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1742,6 +1921,681 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DeploymentPing> response = (ApiResponse<DeploymentPing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an external events configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalEventsConfiguration> getJourneyExternaleventsConfigurationAsync(GetJourneyExternaleventsConfigurationRequest request, final AsyncApiCallback<ExternalEventsConfiguration> callback) {
+    try {
+      final SettableFuture<ExternalEventsConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalEventsConfiguration>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an external events configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalEventsConfiguration>> getJourneyExternaleventsConfigurationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalEventsConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalEventsConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalEventsConfiguration>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all external event configurations.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalEventsConfigurationListing> getJourneyExternaleventsConfigurationsAsync(GetJourneyExternaleventsConfigurationsRequest request, final AsyncApiCallback<ExternalEventsConfigurationListing> callback) {
+    try {
+      final SettableFuture<ExternalEventsConfigurationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalEventsConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsConfigurationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsConfigurationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all external event configurations.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalEventsConfigurationListing>> getJourneyExternaleventsConfigurationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalEventsConfigurationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalEventsConfigurationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalEventsConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsConfigurationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsConfigurationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsConfigurationListing> response = (ApiResponse<ExternalEventsConfigurationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsConfigurationListing> response = (ApiResponse<ExternalEventsConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyExternalEventsSchema> getJourneyExternaleventsSchemaAsync(GetJourneyExternaleventsSchemaRequest request, final AsyncApiCallback<JourneyExternalEventsSchema> callback) {
+    try {
+      final SettableFuture<JourneyExternalEventsSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchema>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyExternalEventsSchema>> getJourneyExternaleventsSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyExternalEventsSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyExternalEventsSchema>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyExternalEventsSchema> getJourneyExternaleventsSchemaVersionAsync(GetJourneyExternaleventsSchemaVersionRequest request, final AsyncApiCallback<JourneyExternalEventsSchema> callback) {
+    try {
+      final SettableFuture<JourneyExternalEventsSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchema>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyExternalEventsSchema>> getJourneyExternaleventsSchemaVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyExternalEventsSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyExternalEventsSchema>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all versions of a External Events schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyExternalEventsSchemaListing> getJourneyExternaleventsSchemaVersionsAsync(GetJourneyExternaleventsSchemaVersionsRequest request, final AsyncApiCallback<JourneyExternalEventsSchemaListing> callback) {
+    try {
+      final SettableFuture<JourneyExternalEventsSchemaListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchemaListing>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchemaListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all versions of a External Events schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyExternalEventsSchemaListing>> getJourneyExternaleventsSchemaVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyExternalEventsSchemaListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyExternalEventsSchemaListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyExternalEventsSchemaListing>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchemaListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchemaListing> response = (ApiResponse<JourneyExternalEventsSchemaListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchemaListing> response = (ApiResponse<JourneyExternalEventsSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyExternalEventsSchemaListing> getJourneyExternaleventsSchemasAsync(GetJourneyExternaleventsSchemasRequest request, final AsyncApiCallback<JourneyExternalEventsSchemaListing> callback) {
+    try {
+      final SettableFuture<JourneyExternalEventsSchemaListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchemaListing>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchemaListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyExternalEventsSchemaListing>> getJourneyExternaleventsSchemasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyExternalEventsSchemaListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyExternalEventsSchemaListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyExternalEventsSchemaListing>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchemaListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchemaListing> response = (ApiResponse<JourneyExternalEventsSchemaListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchemaListing> response = (ApiResponse<JourneyExternalEventsSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a core type from which all schemas are built
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Coretype> getJourneyExternaleventsSchemasCoretypeAsync(GetJourneyExternaleventsSchemasCoretypeRequest request, final AsyncApiCallback<Coretype> callback) {
+    try {
+      final SettableFuture<Coretype> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a core type from which all schemas are built
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Coretype>> getJourneyExternaleventsSchemasCoretypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CoretypeListing> getJourneyExternaleventsSchemasCoretypesAsync(GetJourneyExternaleventsSchemasCoretypesRequest request, final AsyncApiCallback<CoretypeListing> callback) {
+    try {
+      final SettableFuture<CoretypeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CoretypeListing>> getJourneyExternaleventsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoretypeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CoretypeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SchemaQuantityLimits> getJourneyExternaleventsSchemasLimitsAsync(GetJourneyExternaleventsSchemasLimitsRequest request, final AsyncApiCallback<SchemaQuantityLimits> callback) {
+    try {
+      final SettableFuture<SchemaQuantityLimits> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SchemaQuantityLimits>> getJourneyExternaleventsSchemasLimitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SchemaQuantityLimits>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SchemaQuantityLimits>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4008,6 +4862,81 @@ public class JourneyApiAsync {
   }
 
   /**
+   * Update an external events configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalEventsConfiguration> patchJourneyExternaleventsConfigurationAsync(PatchJourneyExternaleventsConfigurationRequest request, final AsyncApiCallback<ExternalEventsConfiguration> callback) {
+    try {
+      final SettableFuture<ExternalEventsConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalEventsConfiguration>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an external events configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalEventsConfiguration>> patchJourneyExternaleventsConfigurationAsync(ApiRequest<UpdateExternalEventsConfigurationRequest> request, final AsyncApiCallback<ApiResponse<ExternalEventsConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalEventsConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalEventsConfiguration>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update an outcome.
    * 
    * @param request the request object
@@ -4910,6 +5839,231 @@ public class JourneyApiAsync {
   }
 
   /**
+   * Create external events
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalEventsResponse> postJourneyExternaleventsConfigurationEventsAsync(PostJourneyExternaleventsConfigurationEventsRequest request, final AsyncApiCallback<ExternalEventsResponse> callback) {
+    try {
+      final SettableFuture<ExternalEventsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalEventsResponse>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create external events
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalEventsResponse>> postJourneyExternaleventsConfigurationEventsAsync(ApiRequest<ExternalEventsRequest> request, final AsyncApiCallback<ApiResponse<ExternalEventsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalEventsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalEventsResponse>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsResponse> response = (ApiResponse<ExternalEventsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsResponse> response = (ApiResponse<ExternalEventsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an external events configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalEventsConfiguration> postJourneyExternaleventsConfigurationsAsync(PostJourneyExternaleventsConfigurationsRequest request, final AsyncApiCallback<ExternalEventsConfiguration> callback) {
+    try {
+      final SettableFuture<ExternalEventsConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalEventsConfiguration>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an external events configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalEventsConfiguration>> postJourneyExternaleventsConfigurationsAsync(ApiRequest<CreateExternalEventsConfigurationRequest> request, final AsyncApiCallback<ApiResponse<ExternalEventsConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalEventsConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalEventsConfiguration>() {}, new AsyncApiCallback<ApiResponse<ExternalEventsConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventsConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyExternalEventsSchema> postJourneyExternaleventsSchemasAsync(PostJourneyExternaleventsSchemasRequest request, final AsyncApiCallback<JourneyExternalEventsSchema> callback) {
+    try {
+      final SettableFuture<JourneyExternalEventsSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchema>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyExternalEventsSchema>> postJourneyExternaleventsSchemasAsync(ApiRequest<JourneyJsonSchemaRequest> request, final AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyExternalEventsSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyExternalEventsSchema>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Query for flow paths.
    * 
    * @param request the request object
@@ -5650,6 +6804,81 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyExternalEventsSchema> putJourneyExternaleventsSchemaAsync(PutJourneyExternaleventsSchemaRequest request, final AsyncApiCallback<JourneyExternalEventsSchema> callback) {
+    try {
+      final SettableFuture<JourneyExternalEventsSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchema>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyExternalEventsSchema>> putJourneyExternaleventsSchemaAsync(ApiRequest<JourneySchemaUpdateRequest> request, final AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyExternalEventsSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyExternalEventsSchema>() {}, new AsyncApiCallback<ApiResponse<JourneyExternalEventsSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyExternalEventsSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

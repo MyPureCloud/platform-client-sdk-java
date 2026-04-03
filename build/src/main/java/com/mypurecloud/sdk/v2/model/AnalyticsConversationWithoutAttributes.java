@@ -30,7 +30,10 @@ import java.io.Serializable;
 
 public class AnalyticsConversationWithoutAttributes  implements Serializable {
   
+  private List<String> accessAttributes = null;
+  private String associatedConversationId = null;
   private Date conferenceStart = null;
+  private List<String> consultationConversationIds = null;
   private Date conversationEnd = null;
   private String conversationId = null;
 
@@ -103,8 +106,6 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
   private List<String> divisionIds = null;
   private String externalTag = null;
   private Date inactivityTimeout = null;
-  private String associatedConversationId = null;
-  private List<String> consultationConversationIds = null;
   private List<String> knowledgeBaseIds = null;
   private Double mediaStatsMinConversationMos = null;
   private Double mediaStatsMinConversationRFactor = null;
@@ -165,8 +166,9 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
 
   public AnalyticsConversationWithoutAttributes() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      divisionIds = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
       consultationConversationIds = new ArrayList<String>();
+      divisionIds = new ArrayList<String>();
       knowledgeBaseIds = new ArrayList<String>();
       evaluations = new ArrayList<AnalyticsEvaluation>();
       surveys = new ArrayList<AnalyticsSurvey>();
@@ -176,6 +178,42 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
   }
 
   
+  /**
+   * Set of attributes that limit which users can access the conversation
+   **/
+  public AnalyticsConversationWithoutAttributes accessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set of attributes that limit which users can access the conversation")
+  @JsonProperty("accessAttributes")
+  public List<String> getAccessAttributes() {
+    return accessAttributes;
+  }
+  public void setAccessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+  }
+
+
+  /**
+   * ID of the conversation the initiator is signaling this new conversation is associated with
+   **/
+  public AnalyticsConversationWithoutAttributes associatedConversationId(String associatedConversationId) {
+    this.associatedConversationId = associatedConversationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ID of the conversation the initiator is signaling this new conversation is associated with")
+  @JsonProperty("associatedConversationId")
+  public String getAssociatedConversationId() {
+    return associatedConversationId;
+  }
+  public void setAssociatedConversationId(String associatedConversationId) {
+    this.associatedConversationId = associatedConversationId;
+  }
+
+
   /**
    * The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -191,6 +229,24 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
   }
   public void setConferenceStart(Date conferenceStart) {
     this.conferenceStart = conferenceStart;
+  }
+
+
+  /**
+   * Set of conversationIds the initiator has signaled this conversation is associated with
+   **/
+  public AnalyticsConversationWithoutAttributes consultationConversationIds(List<String> consultationConversationIds) {
+    this.consultationConversationIds = consultationConversationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set of conversationIds the initiator has signaled this conversation is associated with")
+  @JsonProperty("consultationConversationIds")
+  public List<String> getConsultationConversationIds() {
+    return consultationConversationIds;
+  }
+  public void setConsultationConversationIds(List<String> consultationConversationIds) {
+    this.consultationConversationIds = consultationConversationIds;
   }
 
 
@@ -335,42 +391,6 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
   }
   public void setInactivityTimeout(Date inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
-  }
-
-
-  /**
-   * ID of the conversation the initiator is signaling this new conversation is associated with
-   **/
-  public AnalyticsConversationWithoutAttributes associatedConversationId(String associatedConversationId) {
-    this.associatedConversationId = associatedConversationId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "ID of the conversation the initiator is signaling this new conversation is associated with")
-  @JsonProperty("associatedConversationId")
-  public String getAssociatedConversationId() {
-    return associatedConversationId;
-  }
-  public void setAssociatedConversationId(String associatedConversationId) {
-    this.associatedConversationId = associatedConversationId;
-  }
-
-
-  /**
-   * Set of conversationIds the initiator has signaled this conversation is associated with
-   **/
-  public AnalyticsConversationWithoutAttributes consultationConversationIds(List<String> consultationConversationIds) {
-    this.consultationConversationIds = consultationConversationIds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Set of conversationIds the initiator has signaled this conversation is associated with")
-  @JsonProperty("consultationConversationIds")
-  public List<String> getConsultationConversationIds() {
-    return consultationConversationIds;
-  }
-  public void setConsultationConversationIds(List<String> consultationConversationIds) {
-    this.consultationConversationIds = consultationConversationIds;
   }
 
 
@@ -564,7 +584,10 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     }
     AnalyticsConversationWithoutAttributes analyticsConversationWithoutAttributes = (AnalyticsConversationWithoutAttributes) o;
 
-    return Objects.equals(this.conferenceStart, analyticsConversationWithoutAttributes.conferenceStart) &&
+    return Objects.equals(this.accessAttributes, analyticsConversationWithoutAttributes.accessAttributes) &&
+            Objects.equals(this.associatedConversationId, analyticsConversationWithoutAttributes.associatedConversationId) &&
+            Objects.equals(this.conferenceStart, analyticsConversationWithoutAttributes.conferenceStart) &&
+            Objects.equals(this.consultationConversationIds, analyticsConversationWithoutAttributes.consultationConversationIds) &&
             Objects.equals(this.conversationEnd, analyticsConversationWithoutAttributes.conversationEnd) &&
             Objects.equals(this.conversationId, analyticsConversationWithoutAttributes.conversationId) &&
             Objects.equals(this.conversationInitiator, analyticsConversationWithoutAttributes.conversationInitiator) &&
@@ -573,8 +596,6 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
             Objects.equals(this.divisionIds, analyticsConversationWithoutAttributes.divisionIds) &&
             Objects.equals(this.externalTag, analyticsConversationWithoutAttributes.externalTag) &&
             Objects.equals(this.inactivityTimeout, analyticsConversationWithoutAttributes.inactivityTimeout) &&
-            Objects.equals(this.associatedConversationId, analyticsConversationWithoutAttributes.associatedConversationId) &&
-            Objects.equals(this.consultationConversationIds, analyticsConversationWithoutAttributes.consultationConversationIds) &&
             Objects.equals(this.knowledgeBaseIds, analyticsConversationWithoutAttributes.knowledgeBaseIds) &&
             Objects.equals(this.mediaStatsMinConversationMos, analyticsConversationWithoutAttributes.mediaStatsMinConversationMos) &&
             Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversationWithoutAttributes.mediaStatsMinConversationRFactor) &&
@@ -589,7 +610,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conferenceStart, conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, inactivityTimeout, associatedConversationId, consultationConversationIds, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, originatingSocialMediaPublic, selfServed, evaluations, surveys, resolutions, participants);
+    return Objects.hash(accessAttributes, associatedConversationId, conferenceStart, consultationConversationIds, conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, inactivityTimeout, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, originatingSocialMediaPublic, selfServed, evaluations, surveys, resolutions, participants);
   }
 
   @Override
@@ -597,7 +618,10 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsConversationWithoutAttributes {\n");
     
+    sb.append("    accessAttributes: ").append(toIndentedString(accessAttributes)).append("\n");
+    sb.append("    associatedConversationId: ").append(toIndentedString(associatedConversationId)).append("\n");
     sb.append("    conferenceStart: ").append(toIndentedString(conferenceStart)).append("\n");
+    sb.append("    consultationConversationIds: ").append(toIndentedString(consultationConversationIds)).append("\n");
     sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    conversationInitiator: ").append(toIndentedString(conversationInitiator)).append("\n");
@@ -606,8 +630,6 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
-    sb.append("    associatedConversationId: ").append(toIndentedString(associatedConversationId)).append("\n");
-    sb.append("    consultationConversationIds: ").append(toIndentedString(consultationConversationIds)).append("\n");
     sb.append("    knowledgeBaseIds: ").append(toIndentedString(knowledgeBaseIds)).append("\n");
     sb.append("    mediaStatsMinConversationMos: ").append(toIndentedString(mediaStatsMinConversationMos)).append("\n");
     sb.append("    mediaStatsMinConversationRFactor: ").append(toIndentedString(mediaStatsMinConversationRFactor)).append("\n");

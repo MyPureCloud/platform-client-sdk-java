@@ -26,7 +26,6 @@ import java.io.Serializable;
 
 public class ExternalOrganizationIdentifier  implements Serializable {
   
-  private String id = null;
   private WritableStarrableDivision division = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -78,7 +77,6 @@ public class ExternalOrganizationIdentifier  implements Serializable {
   private String value = null;
   private Date dateCreated = null;
   private ExternalSource externalSource = null;
-  private String selfUri = null;
 
   public ExternalOrganizationIdentifier() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -86,13 +84,6 @@ public class ExternalOrganizationIdentifier  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
   /**
    * The division to which this entity belongs.
    **/
@@ -183,13 +174,6 @@ public class ExternalOrganizationIdentifier  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -200,18 +184,16 @@ public class ExternalOrganizationIdentifier  implements Serializable {
     }
     ExternalOrganizationIdentifier externalOrganizationIdentifier = (ExternalOrganizationIdentifier) o;
 
-    return Objects.equals(this.id, externalOrganizationIdentifier.id) &&
-            Objects.equals(this.division, externalOrganizationIdentifier.division) &&
+    return Objects.equals(this.division, externalOrganizationIdentifier.division) &&
             Objects.equals(this.type, externalOrganizationIdentifier.type) &&
             Objects.equals(this.value, externalOrganizationIdentifier.value) &&
             Objects.equals(this.dateCreated, externalOrganizationIdentifier.dateCreated) &&
-            Objects.equals(this.externalSource, externalOrganizationIdentifier.externalSource) &&
-            Objects.equals(this.selfUri, externalOrganizationIdentifier.selfUri);
+            Objects.equals(this.externalSource, externalOrganizationIdentifier.externalSource);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, type, value, dateCreated, externalSource, selfUri);
+    return Objects.hash(division, type, value, dateCreated, externalSource);
   }
 
   @Override
@@ -219,13 +201,11 @@ public class ExternalOrganizationIdentifier  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExternalOrganizationIdentifier {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    externalSource: ").append(toIndentedString(externalSource)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

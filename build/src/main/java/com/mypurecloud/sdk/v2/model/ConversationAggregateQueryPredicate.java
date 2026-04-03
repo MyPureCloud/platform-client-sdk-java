@@ -168,6 +168,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     SELFSERVED("selfServed"),
     SESSIONDNIS("sessionDnis"),
     SESSIONID("sessionId"),
+    SKILLEXPRESSIONID("skillExpressionId"),
     STATIONID("stationId"),
     TEAMID("teamId"),
     USEDROUTING("usedRouting"),

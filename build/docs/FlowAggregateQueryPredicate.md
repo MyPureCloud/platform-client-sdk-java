@@ -116,6 +116,7 @@
 | SELFSERVED | &quot;selfServed&quot; | 
 | SESSIONDNIS | &quot;sessionDnis&quot; | 
 | SESSIONID | &quot;sessionId&quot; | 
+| SKILLEXPRESSIONID | &quot;skillExpressionId&quot; | 
 | STARTINGLANGUAGE | &quot;startingLanguage&quot; | 
 | STATIONID | &quot;stationId&quot; | 
 | TEAMID | &quot;teamId&quot; | 
@@ -141,4 +142,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

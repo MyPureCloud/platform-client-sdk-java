@@ -760,7 +760,6 @@ public class UsersApi {
   /**
    * Delete a custom attributes record.
    * 
-   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param schemaId schemaId (required)
    * @throws ApiException if the request fails on the server
@@ -773,7 +772,6 @@ public class UsersApi {
   /**
    * Delete a custom attributes record.
    * 
-   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param schemaId schemaId (required)
    * @throws IOException if the request fails to be processed
@@ -794,7 +792,6 @@ public class UsersApi {
   /**
    * Delete a custom attributes record.
    * 
-   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -813,7 +810,6 @@ public class UsersApi {
   /**
    * Delete a custom attributes record.
    * 
-   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1313,7 +1309,6 @@ public class UsersApi {
   /**
    * Delete a schema
    * 
-   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1325,7 +1320,6 @@ public class UsersApi {
   /**
    * Delete a schema
    * 
-   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1343,7 +1337,6 @@ public class UsersApi {
   /**
    * Delete a schema
    * 
-   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1362,7 +1355,6 @@ public class UsersApi {
   /**
    * Delete a schema
    * 
-   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2645,13 +2637,14 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for a user instead of their default. (optional)
+   * @param userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100 (optional)
    * @param state Search for a user with this state (optional, default to active)
    * @return User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public User getUser(String userId, List<String> expand, String integrationPresenceSource, String state) throws IOException, ApiException {
-    return  getUser(createGetUserRequest(userId, expand, integrationPresenceSource, state));
+  public User getUser(String userId, List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds, String state) throws IOException, ApiException {
+    return  getUser(createGetUserRequest(userId, expand, integrationPresenceSource, userCustomAttributeSchemaIds, state));
   }
 
   /**
@@ -2660,21 +2653,24 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for a user instead of their default. (optional)
+   * @param userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100 (optional)
    * @param state Search for a user with this state (optional, default to active)
    * @return User
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand, String integrationPresenceSource, String state) throws IOException {
-    return getUser(createGetUserRequest(userId, expand, integrationPresenceSource, state).withHttpInfo());
+  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds, String state) throws IOException {
+    return getUser(createGetUserRequest(userId, expand, integrationPresenceSource, userCustomAttributeSchemaIds, state).withHttpInfo());
   }
 
-  private GetUserRequest createGetUserRequest(String userId, List<String> expand, String integrationPresenceSource, String state) {
+  private GetUserRequest createGetUserRequest(String userId, List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds, String state) {
     return GetUserRequest.builder()
             .withUserId(userId)
 
             .withExpand(expand)
 
             .withIntegrationPresenceSource(integrationPresenceSource)
+
+            .withUserCustomAttributeSchemaIds(userCustomAttributeSchemaIds)
 
             .withState(state)
 
@@ -2892,7 +2888,6 @@ public class UsersApi {
   /**
    * Get custom attributes by schema id
    * 
-   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param schemaId schemaId (required)
    * @return UserCustomAttributes
@@ -2906,7 +2901,6 @@ public class UsersApi {
   /**
    * Get custom attributes by schema id
    * 
-   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param schemaId schemaId (required)
    * @return UserCustomAttributes
@@ -2928,7 +2922,6 @@ public class UsersApi {
   /**
    * Get custom attributes by schema id
    * 
-   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserCustomAttributes
    * @throws ApiException if the request fails on the server
@@ -2948,7 +2941,6 @@ public class UsersApi {
   /**
    * Get custom attributes by schema id
    * 
-   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2978,7 +2970,6 @@ public class UsersApi {
   /**
    * Get multiple custom attributes records by schema ids
    * 
-   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param schemaIds  (required)
    * @return List<Object>
@@ -2992,7 +2983,6 @@ public class UsersApi {
   /**
    * Get multiple custom attributes records by schema ids
    * 
-   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param schemaIds  (required)
    * @return List<Object>
@@ -3014,7 +3004,6 @@ public class UsersApi {
   /**
    * Get multiple custom attributes records by schema ids
    * 
-   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return List<Object>
    * @throws ApiException if the request fails on the server
@@ -3034,7 +3023,6 @@ public class UsersApi {
   /**
    * Get multiple custom attributes records by schema ids
    * 
-   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4661,13 +4649,14 @@ public class UsersApi {
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+   * @param userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5 (optional)
    * @param state Only list users of this state (optional, default to active)
    * @return UserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String integrationPresenceSource, String state) throws IOException, ApiException {
-    return  getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state));
+  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds, String state) throws IOException, ApiException {
+    return  getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, userCustomAttributeSchemaIds, state));
   }
 
   /**
@@ -4680,15 +4669,16 @@ public class UsersApi {
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+   * @param userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5 (optional)
    * @param state Only list users of this state (optional, default to active)
    * @return UserEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String integrationPresenceSource, String state) throws IOException {
-    return getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state).withHttpInfo());
+  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds, String state) throws IOException {
+    return getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, userCustomAttributeSchemaIds, state).withHttpInfo());
   }
 
-  private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String integrationPresenceSource, String state) {
+  private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds, String state) {
     return GetUsersRequest.builder()
             .withPageSize(pageSize)
 
@@ -4703,6 +4693,8 @@ public class UsersApi {
             .withExpand(expand)
 
             .withIntegrationPresenceSource(integrationPresenceSource)
+
+            .withUserCustomAttributeSchemaIds(userCustomAttributeSchemaIds)
 
             .withState(state)
 
@@ -4846,7 +4838,6 @@ public class UsersApi {
   /**
    * Get a schema
    * 
-   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return DataSchema
    * @throws ApiException if the request fails on the server
@@ -4859,7 +4850,6 @@ public class UsersApi {
   /**
    * Get a schema
    * 
-   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return DataSchema
    * @throws IOException if the request fails to be processed
@@ -4878,7 +4868,6 @@ public class UsersApi {
   /**
    * Get a schema
    * 
-   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchema
    * @throws ApiException if the request fails on the server
@@ -4898,7 +4887,6 @@ public class UsersApi {
   /**
    * Get a schema
    * 
-   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4928,7 +4916,6 @@ public class UsersApi {
   /**
    * Get a specific version of a schema
    * 
-   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param versionId Schema version (required)
    * @return DataSchema
@@ -4942,7 +4929,6 @@ public class UsersApi {
   /**
    * Get a specific version of a schema
    * 
-   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param versionId Schema version (required)
    * @return DataSchema
@@ -4964,7 +4950,6 @@ public class UsersApi {
   /**
    * Get a specific version of a schema
    * 
-   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchema
    * @throws ApiException if the request fails on the server
@@ -4984,7 +4969,6 @@ public class UsersApi {
   /**
    * Get a specific version of a schema
    * 
-   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5014,7 +4998,6 @@ public class UsersApi {
   /**
    * Get all versions of a user schema
    * 
-   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
@@ -5027,7 +5010,6 @@ public class UsersApi {
   /**
    * Get all versions of a user schema
    * 
-   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return DataSchemaListing
    * @throws IOException if the request fails to be processed
@@ -5046,7 +5028,6 @@ public class UsersApi {
   /**
    * Get all versions of a user schema
    * 
-   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
@@ -5066,7 +5047,6 @@ public class UsersApi {
   /**
    * Get all versions of a user schema
    * 
-   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5096,7 +5076,6 @@ public class UsersApi {
   /**
    * Get a list of schemas.
    * 
-   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5108,7 +5087,6 @@ public class UsersApi {
   /**
    * Get a list of schemas.
    * 
-   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return DataSchemaListing
    * @throws IOException if the request fails to be processed
    */
@@ -5124,7 +5102,6 @@ public class UsersApi {
   /**
    * Get a list of schemas.
    * 
-   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
@@ -5144,7 +5121,6 @@ public class UsersApi {
   /**
    * Get a list of schemas.
    * 
-   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5174,7 +5150,6 @@ public class UsersApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param coreTypeName Name of the core type (required)
    * @return Coretype
    * @throws ApiException if the request fails on the server
@@ -5187,7 +5162,6 @@ public class UsersApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param coreTypeName Name of the core type (required)
    * @return Coretype
    * @throws IOException if the request fails to be processed
@@ -5206,7 +5180,6 @@ public class UsersApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Coretype
    * @throws ApiException if the request fails on the server
@@ -5226,7 +5199,6 @@ public class UsersApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5256,7 +5228,6 @@ public class UsersApi {
   /**
    * Get the list of core types enabled for a specific namespace.
    * 
-   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return CoretypeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5268,7 +5239,6 @@ public class UsersApi {
   /**
    * Get the list of core types enabled for a specific namespace.
    * 
-   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return CoretypeListing
    * @throws IOException if the request fails to be processed
    */
@@ -5284,7 +5254,6 @@ public class UsersApi {
   /**
    * Get the list of core types enabled for a specific namespace.
    * 
-   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CoretypeListing
    * @throws ApiException if the request fails on the server
@@ -5304,7 +5273,6 @@ public class UsersApi {
   /**
    * Get the list of core types enabled for a specific namespace.
    * 
-   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5334,7 +5302,6 @@ public class UsersApi {
   /**
    * Get quantitative limits on schemas
    * 
-   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return SchemaQuantityLimits
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5346,7 +5313,6 @@ public class UsersApi {
   /**
    * Get quantitative limits on schemas
    * 
-   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return SchemaQuantityLimits
    * @throws IOException if the request fails to be processed
    */
@@ -5362,7 +5328,6 @@ public class UsersApi {
   /**
    * Get quantitative limits on schemas
    * 
-   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SchemaQuantityLimits
    * @throws ApiException if the request fails on the server
@@ -5382,7 +5347,6 @@ public class UsersApi {
   /**
    * Get quantitative limits on schemas
    * 
-   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5822,12 +5786,13 @@ public class UsersApi {
    * This request is not valid when using the Client Credentials OAuth grant.
    * @param expand Which fields, if any, to expand. (optional)
    * @param integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\". (optional)
+   * @param userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100 (optional)
    * @return UserMe
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserMe getUsersMe(List<String> expand, String integrationPresenceSource) throws IOException, ApiException {
-    return  getUsersMe(createGetUsersMeRequest(expand, integrationPresenceSource));
+  public UserMe getUsersMe(List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds) throws IOException, ApiException {
+    return  getUsersMe(createGetUsersMeRequest(expand, integrationPresenceSource, userCustomAttributeSchemaIds));
   }
 
   /**
@@ -5835,18 +5800,21 @@ public class UsersApi {
    * This request is not valid when using the Client Credentials OAuth grant.
    * @param expand Which fields, if any, to expand. (optional)
    * @param integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\". (optional)
+   * @param userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100 (optional)
    * @return UserMe
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserMe> getUsersMeWithHttpInfo(List<String> expand, String integrationPresenceSource) throws IOException {
-    return getUsersMe(createGetUsersMeRequest(expand, integrationPresenceSource).withHttpInfo());
+  public ApiResponse<UserMe> getUsersMeWithHttpInfo(List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds) throws IOException {
+    return getUsersMe(createGetUsersMeRequest(expand, integrationPresenceSource, userCustomAttributeSchemaIds).withHttpInfo());
   }
 
-  private GetUsersMeRequest createGetUsersMeRequest(List<String> expand, String integrationPresenceSource) {
+  private GetUsersMeRequest createGetUsersMeRequest(List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds) {
     return GetUsersMeRequest.builder()
             .withExpand(expand)
 
             .withIntegrationPresenceSource(integrationPresenceSource)
+
+            .withUserCustomAttributeSchemaIds(userCustomAttributeSchemaIds)
 
             .build();
   }
@@ -5908,13 +5876,14 @@ public class UsersApi {
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+   * @param userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5 (optional)
    * @param state Only list users of this state (optional, default to active)
    * @return UserCursorEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserCursorEntityListing getUsersQuery(String cursor, Integer pageSize, String sortOrder, List<String> expand, String integrationPresenceSource, String state) throws IOException, ApiException {
-    return  getUsersQuery(createGetUsersQueryRequest(cursor, pageSize, sortOrder, expand, integrationPresenceSource, state));
+  public UserCursorEntityListing getUsersQuery(String cursor, Integer pageSize, String sortOrder, List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds, String state) throws IOException, ApiException {
+    return  getUsersQuery(createGetUsersQueryRequest(cursor, pageSize, sortOrder, expand, integrationPresenceSource, userCustomAttributeSchemaIds, state));
   }
 
   /**
@@ -5926,15 +5895,16 @@ public class UsersApi {
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+   * @param userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5 (optional)
    * @param state Only list users of this state (optional, default to active)
    * @return UserCursorEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserCursorEntityListing> getUsersQueryWithHttpInfo(String cursor, Integer pageSize, String sortOrder, List<String> expand, String integrationPresenceSource, String state) throws IOException {
-    return getUsersQuery(createGetUsersQueryRequest(cursor, pageSize, sortOrder, expand, integrationPresenceSource, state).withHttpInfo());
+  public ApiResponse<UserCursorEntityListing> getUsersQueryWithHttpInfo(String cursor, Integer pageSize, String sortOrder, List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds, String state) throws IOException {
+    return getUsersQuery(createGetUsersQueryRequest(cursor, pageSize, sortOrder, expand, integrationPresenceSource, userCustomAttributeSchemaIds, state).withHttpInfo());
   }
 
-  private GetUsersQueryRequest createGetUsersQueryRequest(String cursor, Integer pageSize, String sortOrder, List<String> expand, String integrationPresenceSource, String state) {
+  private GetUsersQueryRequest createGetUsersQueryRequest(String cursor, Integer pageSize, String sortOrder, List<String> expand, String integrationPresenceSource, List<String> userCustomAttributeSchemaIds, String state) {
     return GetUsersQueryRequest.builder()
             .withCursor(cursor)
 
@@ -5945,6 +5915,8 @@ public class UsersApi {
             .withExpand(expand)
 
             .withIntegrationPresenceSource(integrationPresenceSource)
+
+            .withUserCustomAttributeSchemaIds(userCustomAttributeSchemaIds)
 
             .withState(state)
 
@@ -6254,7 +6226,6 @@ public class UsersApi {
   /**
    * Update a single custom attributes record by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param userCustomAttributes  (required)
    * @return UserCustomAttributes
@@ -6268,7 +6239,6 @@ public class UsersApi {
   /**
    * Update a single custom attributes record by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param userCustomAttributes  (required)
    * @return UserCustomAttributes
@@ -6290,7 +6260,6 @@ public class UsersApi {
   /**
    * Update a single custom attributes record by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserCustomAttributes
    * @throws ApiException if the request fails on the server
@@ -6310,7 +6279,6 @@ public class UsersApi {
   /**
    * Update a single custom attributes record by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6340,7 +6308,6 @@ public class UsersApi {
   /**
    * Update multiple custom attributes records by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param userCustomAttributesList  (required)
    * @return UserCustomAttributes
@@ -6354,7 +6321,6 @@ public class UsersApi {
   /**
    * Update multiple custom attributes records by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param userCustomAttributesList  (required)
    * @return UserCustomAttributes
@@ -6376,7 +6342,6 @@ public class UsersApi {
   /**
    * Update multiple custom attributes records by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserCustomAttributes
    * @throws ApiException if the request fails on the server
@@ -6396,7 +6361,6 @@ public class UsersApi {
   /**
    * Update multiple custom attributes records by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8306,7 +8270,6 @@ public class UsersApi {
   /**
    * Create a schema
    * 
-   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Schema (required)
    * @return DataSchema
    * @throws ApiException if the request fails on the server
@@ -8319,7 +8282,6 @@ public class UsersApi {
   /**
    * Create a schema
    * 
-   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Schema (required)
    * @return DataSchema
    * @throws IOException if the request fails to be processed
@@ -8338,7 +8300,6 @@ public class UsersApi {
   /**
    * Create a schema
    * 
-   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchema
    * @throws ApiException if the request fails on the server
@@ -8358,7 +8319,6 @@ public class UsersApi {
   /**
    * Create a schema
    * 
-   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9185,7 +9145,6 @@ public class UsersApi {
   /**
    * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
    * 
-   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param userCustomAttributes  (required)
    * @return UserCustomAttributes
@@ -9199,7 +9158,6 @@ public class UsersApi {
   /**
    * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
    * 
-   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId user ID (required)
    * @param userCustomAttributes  (required)
    * @return UserCustomAttributes
@@ -9221,7 +9179,6 @@ public class UsersApi {
   /**
    * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
    * 
-   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserCustomAttributes
    * @throws ApiException if the request fails on the server
@@ -9241,7 +9198,6 @@ public class UsersApi {
   /**
    * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
    * 
-   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10093,7 +10049,6 @@ public class UsersApi {
   /**
    * Update a schema
    * 
-   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param body Data Schema (required)
    * @return DataSchema
@@ -10107,7 +10062,6 @@ public class UsersApi {
   /**
    * Update a schema
    * 
-   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param body Data Schema (required)
    * @return DataSchema
@@ -10129,7 +10083,6 @@ public class UsersApi {
   /**
    * Update a schema
    * 
-   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchema
    * @throws ApiException if the request fails on the server
@@ -10149,7 +10102,6 @@ public class UsersApi {
   /**
    * Update a schema
    * 
-   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

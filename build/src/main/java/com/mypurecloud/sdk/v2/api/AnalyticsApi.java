@@ -50,6 +50,10 @@ import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
+import com.mypurecloud.sdk.v2.model.CopilotAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.CopilotAggregationQuery;
+import com.mypurecloud.sdk.v2.model.CopilotAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.CopilotAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.DashboardConfigurationBulkRequest;
 import com.mypurecloud.sdk.v2.model.DashboardConfigurationListing;
 import com.mypurecloud.sdk.v2.model.DashboardConfigurationQueryRequest;
@@ -140,6 +144,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsBotsAggregatesJobReques
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsCasemanagementAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsCopilotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsEvaluationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsFlowexecutionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsFlowsAggregatesJobRequest;
@@ -171,6 +176,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsReques
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsCopilotsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsCopilotsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsDataextractionDownloadRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsDataextractionDownloadsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsDataretentionSettingsRequest;
@@ -223,6 +230,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesJo
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsCopilotsAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsCopilotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsDataextractionDownloadsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
@@ -729,6 +738,85 @@ public class AnalyticsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAnalyticsConversationsDetailsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for copilot aggregates
+   * 
+   * deleteAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsCopilotsAggregatesJob(String jobId) throws IOException, ApiException {
+     deleteAnalyticsCopilotsAggregatesJob(createDeleteAnalyticsCopilotsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Delete/cancel an async request for copilot aggregates
+   * 
+   * deleteAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsCopilotsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return deleteAnalyticsCopilotsAggregatesJob(createDeleteAnalyticsCopilotsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteAnalyticsCopilotsAggregatesJobRequest createDeleteAnalyticsCopilotsAggregatesJobRequest(String jobId) {
+    return DeleteAnalyticsCopilotsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Delete/cancel an async request for copilot aggregates
+   * 
+   * deleteAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsCopilotsAggregatesJob(DeleteAnalyticsCopilotsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for copilot aggregates
+   * 
+   * deleteAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsCopilotsAggregatesJob(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3316,6 +3404,174 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for copilot aggregates
+   * 
+   * getAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsCopilotsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsCopilotsAggregatesJob(createGetAnalyticsCopilotsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for copilot aggregates
+   * 
+   * getAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsCopilotsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsCopilotsAggregatesJob(createGetAnalyticsCopilotsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsCopilotsAggregatesJobRequest createGetAnalyticsCopilotsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsCopilotsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for copilot aggregates
+   * 
+   * getAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsCopilotsAggregatesJob(GetAnalyticsCopilotsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for copilot aggregates
+   * 
+   * getAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsCopilotsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsCopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return CopilotAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CopilotAsyncAggregateQueryResponse getAnalyticsCopilotsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsCopilotsAggregatesJobResults(createGetAnalyticsCopilotsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsCopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return CopilotAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CopilotAsyncAggregateQueryResponse> getAnalyticsCopilotsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsCopilotsAggregatesJobResults(createGetAnalyticsCopilotsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsCopilotsAggregatesJobResultsRequest createGetAnalyticsCopilotsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsCopilotsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsCopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CopilotAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CopilotAsyncAggregateQueryResponse getAnalyticsCopilotsAggregatesJobResults(GetAnalyticsCopilotsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CopilotAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CopilotAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsCopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CopilotAsyncAggregateQueryResponse> getAnalyticsCopilotsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CopilotAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CopilotAsyncAggregateQueryResponse> response = (ApiResponse<CopilotAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CopilotAsyncAggregateQueryResponse> response = (ApiResponse<CopilotAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7642,6 +7898,170 @@ public class AnalyticsApi {
   }
 
   /**
+   * Query for copilot aggregates asynchronously
+   * 
+   * postAnalyticsCopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsCopilotsAggregatesJobs(CopilotAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsCopilotsAggregatesJobs(createPostAnalyticsCopilotsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for copilot aggregates asynchronously
+   * 
+   * postAnalyticsCopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsCopilotsAggregatesJobsWithHttpInfo(CopilotAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsCopilotsAggregatesJobs(createPostAnalyticsCopilotsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsCopilotsAggregatesJobsRequest createPostAnalyticsCopilotsAggregatesJobsRequest(CopilotAsyncAggregationQuery body) {
+    return PostAnalyticsCopilotsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for copilot aggregates asynchronously
+   * 
+   * postAnalyticsCopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsCopilotsAggregatesJobs(PostAnalyticsCopilotsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for copilot aggregates asynchronously
+   * 
+   * postAnalyticsCopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsCopilotsAggregatesJobs(ApiRequest<CopilotAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for copilot aggregates
+   * 
+   * postAnalyticsCopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return CopilotAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CopilotAggregateQueryResponse postAnalyticsCopilotsAggregatesQuery(CopilotAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsCopilotsAggregatesQuery(createPostAnalyticsCopilotsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for copilot aggregates
+   * 
+   * postAnalyticsCopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return CopilotAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CopilotAggregateQueryResponse> postAnalyticsCopilotsAggregatesQueryWithHttpInfo(CopilotAggregationQuery body) throws IOException {
+    return postAnalyticsCopilotsAggregatesQuery(createPostAnalyticsCopilotsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsCopilotsAggregatesQueryRequest createPostAnalyticsCopilotsAggregatesQueryRequest(CopilotAggregationQuery body) {
+    return PostAnalyticsCopilotsAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for copilot aggregates
+   * 
+   * postAnalyticsCopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CopilotAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CopilotAggregateQueryResponse postAnalyticsCopilotsAggregatesQuery(PostAnalyticsCopilotsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CopilotAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CopilotAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for copilot aggregates
+   * 
+   * postAnalyticsCopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CopilotAggregateQueryResponse> postAnalyticsCopilotsAggregatesQuery(ApiRequest<CopilotAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CopilotAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CopilotAggregateQueryResponse> response = (ApiResponse<CopilotAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CopilotAggregateQueryResponse> response = (ApiResponse<CopilotAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get download URLs for analytics data warehouse files
    * 
    * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -9878,7 +10298,6 @@ public class AnalyticsApi {
   /**
    * Query for task management observations
    * 
-   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. Used for pagination. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional)
@@ -9893,7 +10312,6 @@ public class AnalyticsApi {
   /**
    * Query for task management observations
    * 
-   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. Used for pagination. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional)
@@ -9918,7 +10336,6 @@ public class AnalyticsApi {
   /**
    * Query for task management observations
    * 
-   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TaskManagementObservationQueryResponse
    * @throws ApiException if the request fails on the server
@@ -9938,7 +10355,6 @@ public class AnalyticsApi {
   /**
    * Query for task management observations
    * 
-   * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

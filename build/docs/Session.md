@@ -47,6 +47,10 @@
 | **authenticated** | **Boolean** | Indicates whether or not the session is authenticated. |  |
 | **divisionIds** | **List&lt;String&gt;** | List of division IDs associated with the session. |  [optional] |
 | **lastScreen** | **String** | The app screen name where the customer's last app interaction occurred. |  [optional] |
+| **caseAssociations** | [**List&lt;JourneyCaseAssociation&gt;**](JourneyCaseAssociation) | Cases associated with the session - conversation only. |  [optional] |
+| **caseEntity** | [**AddressableEntityRef**](AddressableEntityRef) | The case this session refers to. |  [optional] |
+| **caseReference** | **String** | The reference for this case. |  [optional] |
+| **caseStatus** | [**CaseStatusEnum**](#Enum--CaseStatusEnum) | The status of this case. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **createdDate** | [**Date**](Date) | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **endedDate** | [**Date**](Date) | Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -103,6 +107,18 @@
 | FLOWOUT | &quot;FlowOut&quot; | 
 
 
+## Enum: CaseStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| OPEN | &quot;Open&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| TERMINATED | &quot;Terminated&quot; | 
+| CLOSED | &quot;Closed&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

@@ -126,6 +126,7 @@ public class Phrase  implements Serializable {
     }
   }
   private SentimentEnum sentiment = null;
+  private Boolean isAIGenerated = null;
 
   public Phrase() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -187,6 +188,24 @@ public class Phrase  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether the phrase is AI generated
+   **/
+  public Phrase isAIGenerated(Boolean isAIGenerated) {
+    this.isAIGenerated = isAIGenerated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether the phrase is AI generated")
+  @JsonProperty("isAIGenerated")
+  public Boolean getIsAIGenerated() {
+    return isAIGenerated;
+  }
+  public void setIsAIGenerated(Boolean isAIGenerated) {
+    this.isAIGenerated = isAIGenerated;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -199,12 +218,13 @@ public class Phrase  implements Serializable {
 
     return Objects.equals(this.text, phrase.text) &&
             Objects.equals(this.strictness, phrase.strictness) &&
-            Objects.equals(this.sentiment, phrase.sentiment);
+            Objects.equals(this.sentiment, phrase.sentiment) &&
+            Objects.equals(this.isAIGenerated, phrase.isAIGenerated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, strictness, sentiment);
+    return Objects.hash(text, strictness, sentiment, isAIGenerated);
   }
 
   @Override
@@ -215,6 +235,7 @@ public class Phrase  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    strictness: ").append(toIndentedString(strictness)).append("\n");
     sb.append("    sentiment: ").append(toIndentedString(sentiment)).append("\n");
+    sb.append("    isAIGenerated: ").append(toIndentedString(isAIGenerated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

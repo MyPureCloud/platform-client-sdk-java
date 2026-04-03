@@ -92,6 +92,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
  @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACCESSATTRIBUTE("accessAttribute"),
     CONVERSATIONEND("conversationEnd"),
     CONVERSATIONID("conversationId"),
     CONVERSATIONINITIATOR("conversationInitiator"),
@@ -150,6 +151,8 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NBLINDTRANSFERRED("nBlindTransferred"),
     NBOTINTERACTIONS("nBotInteractions"),
+    NCALLBACKATTEMPTS("nCallbackAttempts"),
+    NCALLBACKSCHEDULED("nCallbackScheduled"),
     NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
     NCONSULT("nConsult"),

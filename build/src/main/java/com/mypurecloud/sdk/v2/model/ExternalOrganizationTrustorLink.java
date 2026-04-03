@@ -24,13 +24,11 @@ import java.io.Serializable;
 
 public class ExternalOrganizationTrustorLink  implements Serializable {
   
-  private String id = null;
   private WritableStarrableDivision division = null;
   private String externalOrganizationId = null;
   private String trustorOrgId = null;
   private Date dateCreated = null;
   private String externalOrganizationUri = null;
-  private String selfUri = null;
 
   public ExternalOrganizationTrustorLink() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -38,13 +36,6 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
   /**
    * The division to which this entity belongs.
    **/
@@ -124,13 +115,6 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -141,18 +125,16 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
     }
     ExternalOrganizationTrustorLink externalOrganizationTrustorLink = (ExternalOrganizationTrustorLink) o;
 
-    return Objects.equals(this.id, externalOrganizationTrustorLink.id) &&
-            Objects.equals(this.division, externalOrganizationTrustorLink.division) &&
+    return Objects.equals(this.division, externalOrganizationTrustorLink.division) &&
             Objects.equals(this.externalOrganizationId, externalOrganizationTrustorLink.externalOrganizationId) &&
             Objects.equals(this.trustorOrgId, externalOrganizationTrustorLink.trustorOrgId) &&
             Objects.equals(this.dateCreated, externalOrganizationTrustorLink.dateCreated) &&
-            Objects.equals(this.externalOrganizationUri, externalOrganizationTrustorLink.externalOrganizationUri) &&
-            Objects.equals(this.selfUri, externalOrganizationTrustorLink.selfUri);
+            Objects.equals(this.externalOrganizationUri, externalOrganizationTrustorLink.externalOrganizationUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, externalOrganizationId, trustorOrgId, dateCreated, externalOrganizationUri, selfUri);
+    return Objects.hash(division, externalOrganizationId, trustorOrgId, dateCreated, externalOrganizationUri);
   }
 
   @Override
@@ -160,13 +142,11 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExternalOrganizationTrustorLink {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("    trustorOrgId: ").append(toIndentedString(trustorOrgId)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    externalOrganizationUri: ").append(toIndentedString(externalOrganizationUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

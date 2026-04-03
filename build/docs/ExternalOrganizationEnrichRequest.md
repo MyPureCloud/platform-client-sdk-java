@@ -11,7 +11,6 @@
 | **action** | [**ActionEnum**](#Enum--ActionEnum) | The action that should be taken based on any External Organization found by `matchingIdentifiers`. |  [optional] |
 | **externalOrganization** | [**ExternalOrganization**](ExternalOrganization) | Data to be added, either as an update to an existing External Organization or the body of a new External Organization. Omitting a field in this contract means that it will be treated as null in the `fieldRules` logic. |  [optional] |
 | **fieldRules** | [**EnrichFieldRules**](EnrichFieldRules) | Logic describing how to combine data from the submitted request with data found in the database. |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 ## Enum: ActionEnum
@@ -26,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

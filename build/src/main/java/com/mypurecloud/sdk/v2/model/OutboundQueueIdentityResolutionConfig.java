@@ -23,7 +23,6 @@ import java.io.Serializable;
 
 public class OutboundQueueIdentityResolutionConfig  implements Serializable {
   
-  private String id = null;
   private WritableStarrableDivision division = null;
   private Boolean resolveIdentities = null;
   private String selfUri = null;
@@ -34,13 +33,6 @@ public class OutboundQueueIdentityResolutionConfig  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
   /**
    * The division to use when performing identity resolution.
    **/
@@ -94,15 +86,14 @@ public class OutboundQueueIdentityResolutionConfig  implements Serializable {
     }
     OutboundQueueIdentityResolutionConfig outboundQueueIdentityResolutionConfig = (OutboundQueueIdentityResolutionConfig) o;
 
-    return Objects.equals(this.id, outboundQueueIdentityResolutionConfig.id) &&
-            Objects.equals(this.division, outboundQueueIdentityResolutionConfig.division) &&
+    return Objects.equals(this.division, outboundQueueIdentityResolutionConfig.division) &&
             Objects.equals(this.resolveIdentities, outboundQueueIdentityResolutionConfig.resolveIdentities) &&
             Objects.equals(this.selfUri, outboundQueueIdentityResolutionConfig.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, resolveIdentities, selfUri);
+    return Objects.hash(division, resolveIdentities, selfUri);
   }
 
   @Override
@@ -110,7 +101,6 @@ public class OutboundQueueIdentityResolutionConfig  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class OutboundQueueIdentityResolutionConfig {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    resolveIdentities: ").append(toIndentedString(resolveIdentities)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

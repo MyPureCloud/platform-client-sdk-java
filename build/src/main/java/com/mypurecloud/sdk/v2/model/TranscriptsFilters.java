@@ -79,11 +79,13 @@ public class TranscriptsFilters  implements Serializable {
   private MediaTypeEnum mediaType = null;
   private Long startTimeMs = null;
   private Long endTimeMs = null;
+  private List<String> programs = null;
   private List<String> queues = null;
   private List<String> flows = null;
 
   public TranscriptsFilters() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      programs = new ArrayList<String>();
       queues = new ArrayList<String>();
       flows = new ArrayList<String>();
     }
@@ -145,6 +147,24 @@ public class TranscriptsFilters  implements Serializable {
 
 
   /**
+   * list of programs ids to filter by
+   **/
+  public TranscriptsFilters programs(List<String> programs) {
+    this.programs = programs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "list of programs ids to filter by")
+  @JsonProperty("programs")
+  public List<String> getPrograms() {
+    return programs;
+  }
+  public void setPrograms(List<String> programs) {
+    this.programs = programs;
+  }
+
+
+  /**
    * list of queues ids to filter by
    **/
   public TranscriptsFilters queues(List<String> queues) {
@@ -193,13 +213,14 @@ public class TranscriptsFilters  implements Serializable {
     return Objects.equals(this.mediaType, transcriptsFilters.mediaType) &&
             Objects.equals(this.startTimeMs, transcriptsFilters.startTimeMs) &&
             Objects.equals(this.endTimeMs, transcriptsFilters.endTimeMs) &&
+            Objects.equals(this.programs, transcriptsFilters.programs) &&
             Objects.equals(this.queues, transcriptsFilters.queues) &&
             Objects.equals(this.flows, transcriptsFilters.flows);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, startTimeMs, endTimeMs, queues, flows);
+    return Objects.hash(mediaType, startTimeMs, endTimeMs, programs, queues, flows);
   }
 
   @Override
@@ -210,6 +231,7 @@ public class TranscriptsFilters  implements Serializable {
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    startTimeMs: ").append(toIndentedString(startTimeMs)).append("\n");
     sb.append("    endTimeMs: ").append(toIndentedString(endTimeMs)).append("\n");
+    sb.append("    programs: ").append(toIndentedString(programs)).append("\n");
     sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
     sb.append("    flows: ").append(toIndentedString(flows)).append("\n");
     sb.append("}");

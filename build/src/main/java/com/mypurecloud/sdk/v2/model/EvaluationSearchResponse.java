@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.EvaluationResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationSearchAggregationResponse;
+import com.mypurecloud.sdk.v2.model.EvaluationSearchItemResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -30,12 +30,12 @@ public class EvaluationSearchResponse  implements Serializable {
   
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<EvaluationResponse> results = null;
+  private List<EvaluationSearchItemResponse> results = null;
   private Map<String, EvaluationSearchAggregationResponse> aggregations = null;
 
   public EvaluationSearchResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      results = new ArrayList<EvaluationResponse>();
+      results = new ArrayList<EvaluationSearchItemResponse>();
     }
   }
 
@@ -56,7 +56,7 @@ public class EvaluationSearchResponse  implements Serializable {
 
   @ApiModelProperty(example = "null", value = "Results associated to the search response")
   @JsonProperty("results")
-  public List<EvaluationResponse> getResults() {
+  public List<EvaluationSearchItemResponse> getResults() {
     return results;
   }
 

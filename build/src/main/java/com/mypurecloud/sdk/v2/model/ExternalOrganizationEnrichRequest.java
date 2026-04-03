@@ -83,7 +83,6 @@ public class ExternalOrganizationEnrichRequest  implements Serializable {
   private ActionEnum action = null;
   private ExternalOrganization externalOrganization = null;
   private EnrichFieldRules fieldRules = null;
-  private String selfUri = null;
 
   public ExternalOrganizationEnrichRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -200,13 +199,6 @@ public class ExternalOrganizationEnrichRequest  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -222,13 +214,12 @@ public class ExternalOrganizationEnrichRequest  implements Serializable {
             Objects.equals(this.matchingIdentifiers, externalOrganizationEnrichRequest.matchingIdentifiers) &&
             Objects.equals(this.action, externalOrganizationEnrichRequest.action) &&
             Objects.equals(this.externalOrganization, externalOrganizationEnrichRequest.externalOrganization) &&
-            Objects.equals(this.fieldRules, externalOrganizationEnrichRequest.fieldRules) &&
-            Objects.equals(this.selfUri, externalOrganizationEnrichRequest.selfUri);
+            Objects.equals(this.fieldRules, externalOrganizationEnrichRequest.fieldRules);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, matchingIdentifiers, action, externalOrganization, fieldRules, selfUri);
+    return Objects.hash(id, division, matchingIdentifiers, action, externalOrganization, fieldRules);
   }
 
   @Override
@@ -242,7 +233,6 @@ public class ExternalOrganizationEnrichRequest  implements Serializable {
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    fieldRules: ").append(toIndentedString(fieldRules)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

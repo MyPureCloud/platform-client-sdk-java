@@ -1,0 +1,186 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.time.LocalDate;
+
+import java.io.Serializable;
+/**
+ * UpdateShiftTradeStateJobRequest
+ */
+
+public class UpdateShiftTradeStateJobRequest  implements Serializable {
+  
+  private LocalDate weekDate = null;
+
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The new state to set on the shift trade
+   */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNMATCHED("Unmatched"),
+    MATCHED("Matched"),
+    APPROVED("Approved"),
+    DENIED("Denied"),
+    EXPIRED("Expired"),
+    CANCELED("Canceled");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
+  private WfmVersionedEntityMetadata metadata = null;
+
+  public UpdateShiftTradeStateJobRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
+
+  
+  /**
+   * The start week date of this shift in the business unit time zone (yyyy-MM-dd format). Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+   **/
+  public UpdateShiftTradeStateJobRequest weekDate(LocalDate weekDate) {
+    this.weekDate = weekDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The start week date of this shift in the business unit time zone (yyyy-MM-dd format). Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @JsonProperty("weekDate")
+  public LocalDate getWeekDate() {
+    return weekDate;
+  }
+  public void setWeekDate(LocalDate weekDate) {
+    this.weekDate = weekDate;
+  }
+
+
+  /**
+   * The new state to set on the shift trade
+   **/
+  public UpdateShiftTradeStateJobRequest state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The new state to set on the shift trade")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+
+  /**
+   * Version metadata for the shift trade
+   **/
+  public UpdateShiftTradeStateJobRequest metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Version metadata for the shift trade")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    UpdateShiftTradeStateJobRequest updateShiftTradeStateJobRequest = (UpdateShiftTradeStateJobRequest) o;
+
+    return Objects.equals(this.weekDate, updateShiftTradeStateJobRequest.weekDate) &&
+            Objects.equals(this.state, updateShiftTradeStateJobRequest.state) &&
+            Objects.equals(this.metadata, updateShiftTradeStateJobRequest.metadata);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(weekDate, state, metadata);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class UpdateShiftTradeStateJobRequest {\n");
+    
+    sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

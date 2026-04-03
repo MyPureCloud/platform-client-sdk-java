@@ -655,7 +655,7 @@ public class RecordingApiAsync {
 
   /**
    * Gets a specific recording.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -689,7 +689,7 @@ public class RecordingApiAsync {
 
   /**
    * Gets a specific recording.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -954,7 +954,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get metadata for a specific recording. Does not return playable media.
+   * Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -988,7 +988,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get metadata for a specific recording. Does not return playable media.
+   * Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1030,7 +1030,7 @@ public class RecordingApiAsync {
 
   /**
    * Get all of a Conversation's Recordings.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1064,7 +1064,7 @@ public class RecordingApiAsync {
 
   /**
    * Get all of a Conversation's Recordings.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2680,7 +2680,7 @@ public class RecordingApiAsync {
 
   /**
    * Create annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2714,7 +2714,7 @@ public class RecordingApiAsync {
 
   /**
    * Create annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2754,7 +2754,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2788,7 +2788,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3655,7 +3655,7 @@ public class RecordingApiAsync {
 
   /**
    * Updates the retention records on a recording.
-   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3689,7 +3689,7 @@ public class RecordingApiAsync {
 
   /**
    * Updates the retention records on a recording.
-   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3730,7 +3730,7 @@ public class RecordingApiAsync {
 
   /**
    * Update annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3764,7 +3764,7 @@ public class RecordingApiAsync {
 
   /**
    * Update annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

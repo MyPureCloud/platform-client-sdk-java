@@ -662,7 +662,7 @@ public class RecordingApi {
 
   /**
    * Gets a specific recording.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE (optional, default to WEBM)
@@ -683,7 +683,7 @@ public class RecordingApi {
 
   /**
    * Gets a specific recording.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE (optional, default to WEBM)
@@ -728,7 +728,7 @@ public class RecordingApi {
 
   /**
    * Gets a specific recording.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param request The request object
    * @return Recording
    * @throws ApiException if the request fails on the server
@@ -747,7 +747,7 @@ public class RecordingApi {
 
   /**
    * Gets a specific recording.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1021,7 +1021,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get metadata for a specific recording. Does not return playable media.
+   * Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
@@ -1034,7 +1034,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get metadata for a specific recording. Does not return playable media.
+   * Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
@@ -1055,7 +1055,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get metadata for a specific recording. Does not return playable media.
+   * Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param request The request object
    * @return RecordingMetadata
@@ -1074,7 +1074,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get metadata for a specific recording. Does not return playable media.
+   * Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param request The request object
    * @return the response
@@ -1104,7 +1104,7 @@ public class RecordingApi {
 
   /**
    * Get all of a Conversation's Recordings.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param conversationId Conversation ID (required)
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
    * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional, default to WEBM)
@@ -1121,7 +1121,7 @@ public class RecordingApi {
 
   /**
    * Get all of a Conversation's Recordings.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param conversationId Conversation ID (required)
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
    * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional, default to WEBM)
@@ -1154,7 +1154,7 @@ public class RecordingApi {
 
   /**
    * Get all of a Conversation's Recordings.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param request The request object
    * @return List<Recording>
    * @throws ApiException if the request fails on the server
@@ -1173,7 +1173,7 @@ public class RecordingApi {
 
   /**
    * Get all of a Conversation's Recordings.
-   * 
+   * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3032,7 +3032,7 @@ public class RecordingApi {
 
   /**
    * Create annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param body annotation (required)
@@ -3046,7 +3046,7 @@ public class RecordingApi {
 
   /**
    * Create annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param body annotation (required)
@@ -3070,7 +3070,7 @@ public class RecordingApi {
 
   /**
    * Create annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param request The request object
    * @return Annotation
    * @throws ApiException if the request fails on the server
@@ -3089,7 +3089,7 @@ public class RecordingApi {
 
   /**
    * Create annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3117,7 +3117,7 @@ public class RecordingApi {
   }
 
   /**
-   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
    * 
    * @param body Job submission criteria (required)
    * @return BatchDownloadJobSubmissionResult
@@ -3129,7 +3129,7 @@ public class RecordingApi {
   }
 
   /**
-   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
    * 
    * @param body Job submission criteria (required)
    * @return BatchDownloadJobSubmissionResult
@@ -3147,7 +3147,7 @@ public class RecordingApi {
   }
 
   /**
-   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
    * 
    * @param request The request object
    * @return BatchDownloadJobSubmissionResult
@@ -3166,7 +3166,7 @@ public class RecordingApi {
   }
 
   /**
-   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
    * 
    * @param request The request object
    * @return the response
@@ -4044,7 +4044,7 @@ public class RecordingApi {
 
   /**
    * Updates the retention records on a recording.
-   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param body recording (required)
@@ -4059,7 +4059,7 @@ public class RecordingApi {
 
   /**
    * Updates the retention records on a recording.
-   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param body recording (required)
@@ -4086,7 +4086,7 @@ public class RecordingApi {
 
   /**
    * Updates the retention records on a recording.
-   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
    * @param request The request object
    * @return Recording
    * @throws ApiException if the request fails on the server
@@ -4105,7 +4105,7 @@ public class RecordingApi {
 
   /**
    * Updates the retention records on a recording.
-   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+   * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4134,7 +4134,7 @@ public class RecordingApi {
 
   /**
    * Update annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param annotationId Annotation ID (required)
@@ -4149,7 +4149,7 @@ public class RecordingApi {
 
   /**
    * Update annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param annotationId Annotation ID (required)
@@ -4176,7 +4176,7 @@ public class RecordingApi {
 
   /**
    * Update annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param request The request object
    * @return Annotation
    * @throws ApiException if the request fails on the server
@@ -4195,7 +4195,7 @@ public class RecordingApi {
 
   /**
    * Update annotation
-   * 
+   * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

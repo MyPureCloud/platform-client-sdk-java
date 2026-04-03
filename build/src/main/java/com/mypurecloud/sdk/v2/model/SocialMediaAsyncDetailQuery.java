@@ -45,7 +45,7 @@ public class SocialMediaAsyncDetailQuery  implements Serializable {
     }
   }
   /**
-   * Sorting of results based on time
+   * Deprecated: use 'sort' field instead. Sorting of results based on time
    */
  @JsonDeserialize(using = OrderEnumDeserializer.class)
   public enum OrderEnum {
@@ -178,14 +178,14 @@ public class SocialMediaAsyncDetailQuery  implements Serializable {
 
 
   /**
-   * Sorting of results based on time
+   * Deprecated: use 'sort' field instead. Sorting of results based on time
    **/
   public SocialMediaAsyncDetailQuery order(OrderEnum order) {
     this.order = order;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Sorting of results based on time")
+  @ApiModelProperty(example = "null", value = "Deprecated: use 'sort' field instead. Sorting of results based on time")
   @JsonProperty("order")
   public OrderEnum getOrder() {
     return order;

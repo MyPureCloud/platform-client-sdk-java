@@ -2283,7 +2283,7 @@ try {
 # **getIntegrationsCredentialsTypes**
 
 
-> [CredentialTypeListing](CredentialTypeListing) getIntegrationsCredentialsTypes()
+> [List&lt;CredentialType&gt;](CredentialType) getIntegrationsCredentialsTypes()
 
 List all credential types
 
@@ -2316,7 +2316,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 try {
-    CredentialTypeListing result = apiInstance.getIntegrationsCredentialsTypes();
+    List<CredentialType> result = apiInstance.getIntegrationsCredentialsTypes();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsCredentialsTypes");
@@ -2332,7 +2332,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**CredentialTypeListing**](CredentialTypeListing)
+[**List&lt;CredentialType&gt;**](CredentialType)
 
 
 # **getIntegrationsSpeechAudioconnector**
@@ -5864,4 +5864,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

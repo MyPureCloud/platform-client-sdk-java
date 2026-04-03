@@ -29,7 +29,6 @@ import java.io.Serializable;
 public class ActivityPlanRunJobResponse  implements Serializable {
   
   private String id = null;
-  private ActivityPlanReference activityPlan = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -81,6 +80,7 @@ public class ActivityPlanRunJobResponse  implements Serializable {
   private StatusEnum status = null;
   private List<ActivityPlanJobException> exceptions = null;
   private ErrorBody error = null;
+  private ActivityPlanReference activityPlan = null;
   private String selfUri = null;
 
   public ActivityPlanRunJobResponse() {
@@ -94,24 +94,6 @@ public class ActivityPlanRunJobResponse  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-
-  /**
-   * The activity plan associated with this job
-   **/
-  public ActivityPlanRunJobResponse activityPlan(ActivityPlanReference activityPlan) {
-    this.activityPlan = activityPlan;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The activity plan associated with this job")
-  @JsonProperty("activityPlan")
-  public ActivityPlanReference getActivityPlan() {
-    return activityPlan;
-  }
-  public void setActivityPlan(ActivityPlanReference activityPlan) {
-    this.activityPlan = activityPlan;
   }
 
 
@@ -169,6 +151,24 @@ public class ActivityPlanRunJobResponse  implements Serializable {
   }
 
 
+  /**
+   * The activity plan associated with this job
+   **/
+  public ActivityPlanRunJobResponse activityPlan(ActivityPlanReference activityPlan) {
+    this.activityPlan = activityPlan;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The activity plan associated with this job")
+  @JsonProperty("activityPlan")
+  public ActivityPlanReference getActivityPlan() {
+    return activityPlan;
+  }
+  public void setActivityPlan(ActivityPlanReference activityPlan) {
+    this.activityPlan = activityPlan;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -187,16 +187,16 @@ public class ActivityPlanRunJobResponse  implements Serializable {
     ActivityPlanRunJobResponse activityPlanRunJobResponse = (ActivityPlanRunJobResponse) o;
 
     return Objects.equals(this.id, activityPlanRunJobResponse.id) &&
-            Objects.equals(this.activityPlan, activityPlanRunJobResponse.activityPlan) &&
             Objects.equals(this.status, activityPlanRunJobResponse.status) &&
             Objects.equals(this.exceptions, activityPlanRunJobResponse.exceptions) &&
             Objects.equals(this.error, activityPlanRunJobResponse.error) &&
+            Objects.equals(this.activityPlan, activityPlanRunJobResponse.activityPlan) &&
             Objects.equals(this.selfUri, activityPlanRunJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, activityPlan, status, exceptions, error, selfUri);
+    return Objects.hash(id, status, exceptions, error, activityPlan, selfUri);
   }
 
   @Override
@@ -205,10 +205,10 @@ public class ActivityPlanRunJobResponse  implements Serializable {
     sb.append("class ActivityPlanRunJobResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    activityPlan: ").append(toIndentedString(activityPlan)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    exceptions: ").append(toIndentedString(exceptions)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    activityPlan: ").append(toIndentedString(activityPlan)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

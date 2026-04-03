@@ -34,7 +34,7 @@ import com.mypurecloud.sdk.v2.model.Credential;
 import com.mypurecloud.sdk.v2.model.CredentialInfo;
 import com.mypurecloud.sdk.v2.model.CredentialInfoCursorListing;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
-import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
+import com.mypurecloud.sdk.v2.model.CredentialType;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.DialogflowCXAgent;
@@ -2764,13 +2764,13 @@ public class IntegrationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CredentialTypeListing> getIntegrationsCredentialsTypesAsync(GetIntegrationsCredentialsTypesRequest request, final AsyncApiCallback<CredentialTypeListing> callback) {
+  public Future<List<CredentialType>> getIntegrationsCredentialsTypesAsync(GetIntegrationsCredentialsTypesRequest request, final AsyncApiCallback<List<CredentialType>> callback) {
     try {
-      final SettableFuture<CredentialTypeListing> future = SettableFuture.create();
+      final SettableFuture<List<CredentialType>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CredentialTypeListing>() {}, new AsyncApiCallback<ApiResponse<CredentialTypeListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<CredentialType>>() {}, new AsyncApiCallback<ApiResponse<List<CredentialType>>>() {
         @Override
-        public void onCompleted(ApiResponse<CredentialTypeListing> response) {
+        public void onCompleted(ApiResponse<List<CredentialType>> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2798,13 +2798,13 @@ public class IntegrationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CredentialTypeListing>> getIntegrationsCredentialsTypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CredentialTypeListing>> callback) {
+  public Future<ApiResponse<List<CredentialType>>> getIntegrationsCredentialsTypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<CredentialType>>> callback) {
     try {
-      final SettableFuture<ApiResponse<CredentialTypeListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<List<CredentialType>>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<CredentialTypeListing>() {}, new AsyncApiCallback<ApiResponse<CredentialTypeListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<List<CredentialType>>() {}, new AsyncApiCallback<ApiResponse<List<CredentialType>>>() {
         @Override
-        public void onCompleted(ApiResponse<CredentialTypeListing> response) {
+        public void onCompleted(ApiResponse<List<CredentialType>> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2812,7 +2812,7 @@ public class IntegrationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<CredentialTypeListing> response = (ApiResponse<CredentialTypeListing>)(ApiResponse<?>)exception;
+            ApiResponse<List<CredentialType>> response = (ApiResponse<List<CredentialType>>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2820,7 +2820,7 @@ public class IntegrationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<CredentialTypeListing> response = (ApiResponse<CredentialTypeListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<List<CredentialType>> response = (ApiResponse<List<CredentialType>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

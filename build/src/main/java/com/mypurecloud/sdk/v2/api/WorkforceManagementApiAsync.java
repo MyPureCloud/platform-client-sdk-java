@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAdminRequest;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAgentRequest;
+import com.mypurecloud.sdk.v2.model.AddShiftTradeJobRequest;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
@@ -97,6 +98,7 @@ import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
 import com.mypurecloud.sdk.v2.model.BuUpdateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.BuUserListing;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
@@ -140,6 +142,7 @@ import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffResponse;
+import com.mypurecloud.sdk.v2.model.EvaluateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
@@ -161,6 +164,7 @@ import com.mypurecloud.sdk.v2.model.LongTermRequirementsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.ManagementUnitAvailabilitySettingsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeJobRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.MinimumStaffingRequest;
@@ -182,6 +186,7 @@ import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesResponse;
+import com.mypurecloud.sdk.v2.model.QueryAgentShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesValidationJobResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
@@ -189,24 +194,37 @@ import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsRequ
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
 import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
+import com.mypurecloud.sdk.v2.model.QueryShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.QueryUserStaffingGroupListRequest;
 import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
+import com.mypurecloud.sdk.v2.model.QueryWeekSummaryListJobRequest;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
 import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
 import com.mypurecloud.sdk.v2.model.SearchAlternativeShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
+import com.mypurecloud.sdk.v2.model.SearchUnmatchedShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
 import com.mypurecloud.sdk.v2.model.SetTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
+import com.mypurecloud.sdk.v2.model.ShiftTradeAddTradeJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeBulkUpdateTradeStateBuJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeEvaluateTradesBuJobResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeMatchTradeJobResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeQueryAgentTradesJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeQueryTradesBuJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeQueryWeekSummariesBuJobResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeSearchUnmatchedTradesBuJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeUpdateTradeJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeUpdateTradeStateJobResponse;
 import com.mypurecloud.sdk.v2.model.StaffingGroupListing;
 import com.mypurecloud.sdk.v2.model.StaffingGroupResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffBalanceJobResponse;
@@ -239,6 +257,8 @@ import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
 import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.UpdateShiftTradeJobRequest;
+import com.mypurecloud.sdk.v2.model.UpdateShiftTradeStateJobRequest;
 import com.mypurecloud.sdk.v2.model.UpdateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanRequest;
@@ -356,6 +376,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSche
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitRequest;
@@ -419,6 +444,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsD
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeMatchJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeStateJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradesMineQueryJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShrinkageJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTeamAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffbalanceJobRequest;
@@ -497,6 +527,11 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest;
@@ -556,6 +591,11 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeMatchJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeStateJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradesMineQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTeamAdherenceHistoricalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTeamShrinkageJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffbalanceJobsRequest;
@@ -5394,6 +5434,381 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeEvaluateTradesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobAsync(GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest request, final AsyncApiCallback<ShiftTradeEvaluateTradesBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeEvaluateTradesBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeEvaluateTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeEvaluateTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = (ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = (ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeQueryTradesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingTradesQueryJobAsync(GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobRequest request, final AsyncApiCallback<ShiftTradeQueryTradesBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeQueryTradesBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeQueryTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> getWorkforcemanagementBusinessunitShifttradingTradesQueryJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeQueryTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = (ApiResponse<ShiftTradeQueryTradesBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = (ApiResponse<ShiftTradeQueryTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View results of bulk update trades states operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeBulkUpdateTradeStateBuJobResponse> getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobAsync(GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest request, final AsyncApiCallback<ShiftTradeBulkUpdateTradeStateBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeBulkUpdateTradeStateBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeBulkUpdateTradeStateBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View results of bulk update trades states operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeBulkUpdateTradeStateBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = (ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = (ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeSearchUnmatchedTradesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobAsync(GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobRequest request, final AsyncApiCallback<ShiftTradeSearchUnmatchedTradesBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeSearchUnmatchedTradesBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeSearchUnmatchedTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeSearchUnmatchedTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = (ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = (ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeQueryWeekSummariesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobAsync(GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobRequest request, final AsyncApiCallback<ShiftTradeQueryWeekSummariesBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeQueryWeekSummariesBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeQueryWeekSummariesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeQueryWeekSummariesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = (ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = (ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Gets a staffing group
    * 
    * @param request the request object
@@ -6370,7 +6785,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6404,7 +6819,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6895,7 +7310,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get short term forecasts
-   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6929,7 +7344,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get short term forecasts
-   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10113,6 +10528,381 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of update trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeUpdateTradeJobResponse> getWorkforcemanagementShifttradingTradeJobAsync(GetWorkforcemanagementShifttradingTradeJobRequest request, final AsyncApiCallback<ShiftTradeUpdateTradeJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeUpdateTradeJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeUpdateTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeUpdateTradeJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of update trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeUpdateTradeJobResponse>> getWorkforcemanagementShifttradingTradeJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeUpdateTradeJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeUpdateTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeUpdateTradeJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeUpdateTradeJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeUpdateTradeJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeMatchTradeJobResponse> getWorkforcemanagementShifttradingTradeMatchJobAsync(GetWorkforcemanagementShifttradingTradeMatchJobRequest request, final AsyncApiCallback<ShiftTradeMatchTradeJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeMatchTradeJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeMatchTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeMatchTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeMatchTradeJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeMatchTradeJobResponse>> getWorkforcemanagementShifttradingTradeMatchJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeMatchTradeJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeMatchTradeJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeMatchTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeMatchTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeMatchTradeJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeMatchTradeJobResponse> response = (ApiResponse<ShiftTradeMatchTradeJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeMatchTradeJobResponse> response = (ApiResponse<ShiftTradeMatchTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of update trade state operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeUpdateTradeStateJobResponse> getWorkforcemanagementShifttradingTradeStateJobAsync(GetWorkforcemanagementShifttradingTradeStateJobRequest request, final AsyncApiCallback<ShiftTradeUpdateTradeStateJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeUpdateTradeStateJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeUpdateTradeStateJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of update trade state operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> getWorkforcemanagementShifttradingTradeStateJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeUpdateTradeStateJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeStateJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeStateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of create trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeAddTradeJobResponse> getWorkforcemanagementShifttradingTradesJobAsync(GetWorkforcemanagementShifttradingTradesJobRequest request, final AsyncApiCallback<ShiftTradeAddTradeJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeAddTradeJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeAddTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeAddTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeAddTradeJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of create trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeAddTradeJobResponse>> getWorkforcemanagementShifttradingTradesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeAddTradeJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeAddTradeJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeAddTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeAddTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeAddTradeJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeAddTradeJobResponse> response = (ApiResponse<ShiftTradeAddTradeJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeAddTradeJobResponse> response = (ApiResponse<ShiftTradeAddTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeQueryAgentTradesJobResponse> getWorkforcemanagementShifttradingTradesMineQueryJobAsync(GetWorkforcemanagementShifttradingTradesMineQueryJobRequest request, final AsyncApiCallback<ShiftTradeQueryAgentTradesJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeQueryAgentTradesJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeQueryAgentTradesJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> getWorkforcemanagementShifttradingTradesMineQueryJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeQueryAgentTradesJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = (ApiResponse<ShiftTradeQueryAgentTradesJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = (ApiResponse<ShiftTradeQueryAgentTradesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -15977,6 +16767,381 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Queries and evaluates against shift trade configuration shift trades in a management unit per week
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeEvaluateTradesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsAsync(PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest request, final AsyncApiCallback<ShiftTradeEvaluateTradesBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeEvaluateTradesBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeEvaluateTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Queries and evaluates against shift trade configuration shift trades in a management unit per week
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsAsync(ApiRequest<EvaluateShiftTradeListJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeEvaluateTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = (ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = (ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Queries shift trades in a management unit per user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeQueryTradesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingTradesQueryJobsAsync(PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest request, final AsyncApiCallback<ShiftTradeQueryTradesBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeQueryTradesBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeQueryTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Queries shift trades in a management unit per user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> postWorkforcemanagementBusinessunitShifttradingTradesQueryJobsAsync(ApiRequest<QueryShiftTradeListJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeQueryTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = (ApiResponse<ShiftTradeQueryTradesBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = (ApiResponse<ShiftTradeQueryTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeBulkUpdateTradeStateBuJobResponse> postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsAsync(PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsRequest request, final AsyncApiCallback<ShiftTradeBulkUpdateTradeStateBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeBulkUpdateTradeStateBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeBulkUpdateTradeStateBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsAsync(ApiRequest<BulkUpdateShiftTradeListJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeBulkUpdateTradeStateBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = (ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = (ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start an async job to find potential shift trade matches for the current receiving user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeSearchUnmatchedTradesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsAsync(PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsRequest request, final AsyncApiCallback<ShiftTradeSearchUnmatchedTradesBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeSearchUnmatchedTradesBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeSearchUnmatchedTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start an async job to find potential shift trade matches for the current receiving user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsAsync(ApiRequest<SearchUnmatchedShiftTradeListJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeSearchUnmatchedTradesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = (ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = (ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves the summary of shift trades in a matched state per week
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeQueryWeekSummariesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsAsync(PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsRequest request, final AsyncApiCallback<ShiftTradeQueryWeekSummariesBuJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeQueryWeekSummariesBuJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeQueryWeekSummariesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves the summary of shift trades in a matched state per week
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsAsync(ApiRequest<QueryWeekSummaryListJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeQueryWeekSummariesBuJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = (ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = (ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Creates a new staffing group
    * 
    * @param request the request object
@@ -20394,6 +21559,381 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeUpdateTradeJobResponse> postWorkforcemanagementShifttradingTradeJobsAsync(PostWorkforcemanagementShifttradingTradeJobsRequest request, final AsyncApiCallback<ShiftTradeUpdateTradeJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeUpdateTradeJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeUpdateTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeUpdateTradeJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeUpdateTradeJobResponse>> postWorkforcemanagementShifttradingTradeJobsAsync(ApiRequest<UpdateShiftTradeJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeUpdateTradeJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeUpdateTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeUpdateTradeJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeUpdateTradeJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeUpdateTradeJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeMatchTradeJobResponse> postWorkforcemanagementShifttradingTradeMatchJobsAsync(PostWorkforcemanagementShifttradingTradeMatchJobsRequest request, final AsyncApiCallback<ShiftTradeMatchTradeJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeMatchTradeJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeMatchTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeMatchTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeMatchTradeJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeMatchTradeJobResponse>> postWorkforcemanagementShifttradingTradeMatchJobsAsync(ApiRequest<MatchShiftTradeJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeMatchTradeJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeMatchTradeJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeMatchTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeMatchTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeMatchTradeJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeMatchTradeJobResponse> response = (ApiResponse<ShiftTradeMatchTradeJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeMatchTradeJobResponse> response = (ApiResponse<ShiftTradeMatchTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update trade state by a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeUpdateTradeStateJobResponse> postWorkforcemanagementShifttradingTradeStateJobsAsync(PostWorkforcemanagementShifttradingTradeStateJobsRequest request, final AsyncApiCallback<ShiftTradeUpdateTradeStateJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeUpdateTradeStateJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeUpdateTradeStateJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update trade state by a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> postWorkforcemanagementShifttradingTradeStateJobsAsync(ApiRequest<UpdateShiftTradeStateJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeUpdateTradeStateJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeStateJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeStateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a shift trade job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeAddTradeJobResponse> postWorkforcemanagementShifttradingTradesJobsAsync(PostWorkforcemanagementShifttradingTradesJobsRequest request, final AsyncApiCallback<ShiftTradeAddTradeJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeAddTradeJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeAddTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeAddTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeAddTradeJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a shift trade job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeAddTradeJobResponse>> postWorkforcemanagementShifttradingTradesJobsAsync(ApiRequest<AddShiftTradeJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeAddTradeJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeAddTradeJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeAddTradeJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeAddTradeJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeAddTradeJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeAddTradeJobResponse> response = (ApiResponse<ShiftTradeAddTradeJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeAddTradeJobResponse> response = (ApiResponse<ShiftTradeAddTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve all my shift trades where I am either the initiating or receiving user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ShiftTradeQueryAgentTradesJobResponse> postWorkforcemanagementShifttradingTradesMineQueryJobsAsync(PostWorkforcemanagementShifttradingTradesMineQueryJobsRequest request, final AsyncApiCallback<ShiftTradeQueryAgentTradesJobResponse> callback) {
+    try {
+      final SettableFuture<ShiftTradeQueryAgentTradesJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShiftTradeQueryAgentTradesJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve all my shift trades where I am either the initiating or receiving user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> postWorkforcemanagementShifttradingTradesMineQueryJobsAsync(ApiRequest<QueryAgentShiftTradeListJobRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ShiftTradeQueryAgentTradesJobResponse>() {}, new AsyncApiCallback<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = (ApiResponse<ShiftTradeQueryAgentTradesJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = (ApiResponse<ShiftTradeQueryAgentTradesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

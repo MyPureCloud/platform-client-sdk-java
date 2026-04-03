@@ -225,6 +225,20 @@ public class GetUsersMeRequest {
 		}
 	}
 
+	private List<String> userCustomAttributeSchemaIds;
+	public List<String> getUserCustomAttributeSchemaIds() {
+		return this.userCustomAttributeSchemaIds;
+	}
+
+	public void setUserCustomAttributeSchemaIds(List<String> userCustomAttributeSchemaIds) {
+		this.userCustomAttributeSchemaIds = userCustomAttributeSchemaIds;
+	}
+
+	public GetUsersMeRequest withUserCustomAttributeSchemaIds(List<String> userCustomAttributeSchemaIds) {
+	    this.setUserCustomAttributeSchemaIds(userCustomAttributeSchemaIds);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -253,6 +267,9 @@ public class GetUsersMeRequest {
         
 
                 .withQueryParameters("integrationPresenceSource", "", integrationPresenceSource)
+        
+
+                .withQueryParameters("userCustomAttributeSchemaIds", "multi", userCustomAttributeSchemaIds)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -303,6 +320,11 @@ public class GetUsersMeRequest {
 		    request.setIntegrationPresenceSource(integrationPresenceSource.toString());
 
 		    return this;
+		}
+
+		public Builder withUserCustomAttributeSchemaIds(List<String> userCustomAttributeSchemaIds) {
+			request.setUserCustomAttributeSchemaIds(userCustomAttributeSchemaIds);
+			return this;
 		}
 
 

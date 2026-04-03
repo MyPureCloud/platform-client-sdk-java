@@ -28,6 +28,7 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACCESSATTRIBUTE | &quot;accessAttribute&quot; | 
 | CONVERSATIONEND | &quot;conversationEnd&quot; | 
 | CONVERSATIONID | &quot;conversationId&quot; | 
 | CONVERSATIONINITIATOR | &quot;conversationInitiator&quot; | 
@@ -47,6 +48,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; | 
 | NBOTINTERACTIONS | &quot;nBotInteractions&quot; | 
+| NCALLBACKATTEMPTS | &quot;nCallbackAttempts&quot; | 
+| NCALLBACKSCHEDULED | &quot;nCallbackScheduled&quot; | 
 | NCOBROWSESESSIONS | &quot;nCobrowseSessions&quot; | 
 | NCONNECTED | &quot;nConnected&quot; | 
 | NCONSULT | &quot;nConsult&quot; | 
@@ -131,4 +134,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

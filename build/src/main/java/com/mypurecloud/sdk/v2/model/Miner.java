@@ -79,7 +79,9 @@ public class Miner  implements Serializable {
     FI_FI("fi-fi"),
     SV_SE("sv-se"),
     NB_NO("nb-no"),
-    TR_TR("tr-tr");
+    TR_TR("tr-tr"),
+    HE_IL("he-il"),
+    ZU_ZA("zu-za");
 
     private String value;
 

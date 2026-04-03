@@ -24,7 +24,6 @@ import java.io.Serializable;
 
 public class OpenMessagingIdentityResolutionConfig  implements Serializable {
   
-  private String id = null;
   private WritableStarrableDivision division = null;
   private Boolean resolveIdentities = null;
   private IdentityResolutionExternalSource externalSource = null;
@@ -36,13 +35,6 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
   /**
    * The division to use when performing identity resolution.
    **/
@@ -114,8 +106,7 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
     }
     OpenMessagingIdentityResolutionConfig openMessagingIdentityResolutionConfig = (OpenMessagingIdentityResolutionConfig) o;
 
-    return Objects.equals(this.id, openMessagingIdentityResolutionConfig.id) &&
-            Objects.equals(this.division, openMessagingIdentityResolutionConfig.division) &&
+    return Objects.equals(this.division, openMessagingIdentityResolutionConfig.division) &&
             Objects.equals(this.resolveIdentities, openMessagingIdentityResolutionConfig.resolveIdentities) &&
             Objects.equals(this.externalSource, openMessagingIdentityResolutionConfig.externalSource) &&
             Objects.equals(this.selfUri, openMessagingIdentityResolutionConfig.selfUri);
@@ -123,7 +114,7 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, resolveIdentities, externalSource, selfUri);
+    return Objects.hash(division, resolveIdentities, externalSource, selfUri);
   }
 
   @Override
@@ -131,7 +122,6 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class OpenMessagingIdentityResolutionConfig {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    resolveIdentities: ").append(toIndentedString(resolveIdentities)).append("\n");
     sb.append("    externalSource: ").append(toIndentedString(externalSource)).append("\n");

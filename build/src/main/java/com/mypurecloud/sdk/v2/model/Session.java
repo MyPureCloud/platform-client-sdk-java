@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.CustomEventAttributeList;
 import com.mypurecloud.sdk.v2.model.Device;
 import com.mypurecloud.sdk.v2.model.JourneyApp;
 import com.mypurecloud.sdk.v2.model.JourneyCampaign;
+import com.mypurecloud.sdk.v2.model.JourneyCaseAssociation;
 import com.mypurecloud.sdk.v2.model.JourneyGeolocation;
 import com.mypurecloud.sdk.v2.model.JourneyPage;
 import com.mypurecloud.sdk.v2.model.NetworkConnectivity;
@@ -252,6 +253,60 @@ public class Session  implements Serializable {
   private Boolean authenticated = null;
   private List<String> divisionIds = null;
   private String lastScreen = null;
+  private List<JourneyCaseAssociation> caseAssociations = null;
+  private AddressableEntityRef caseEntity = null;
+  private String caseReference = null;
+
+  private static class CaseStatusEnumDeserializer extends StdDeserializer<CaseStatusEnum> {
+    public CaseStatusEnumDeserializer() {
+      super(CaseStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public CaseStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CaseStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The status of this case.
+   */
+ @JsonDeserialize(using = CaseStatusEnumDeserializer.class)
+  public enum CaseStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    OPEN("Open"),
+    INPROGRESS("InProgress"),
+    TERMINATED("Terminated"),
+    CLOSED("Closed");
+
+    private String value;
+
+    CaseStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CaseStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CaseStatusEnum value : CaseStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CaseStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CaseStatusEnum caseStatus = null;
   private String selfUri = null;
   private Date createdDate = null;
   private Date endedDate = null;
@@ -265,6 +320,7 @@ public class Session  implements Serializable {
       searchTerms = new ArrayList<String>();
       conversationChannels = new ArrayList<ConversationChannel>();
       divisionIds = new ArrayList<String>();
+      caseAssociations = new ArrayList<JourneyCaseAssociation>();
     }
   }
 
@@ -1025,6 +1081,78 @@ public class Session  implements Serializable {
   }
 
 
+  /**
+   * Cases associated with the session - conversation only.
+   **/
+  public Session caseAssociations(List<JourneyCaseAssociation> caseAssociations) {
+    this.caseAssociations = caseAssociations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Cases associated with the session - conversation only.")
+  @JsonProperty("caseAssociations")
+  public List<JourneyCaseAssociation> getCaseAssociations() {
+    return caseAssociations;
+  }
+  public void setCaseAssociations(List<JourneyCaseAssociation> caseAssociations) {
+    this.caseAssociations = caseAssociations;
+  }
+
+
+  /**
+   * The case this session refers to.
+   **/
+  public Session caseEntity(AddressableEntityRef caseEntity) {
+    this.caseEntity = caseEntity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The case this session refers to.")
+  @JsonProperty("caseEntity")
+  public AddressableEntityRef getCaseEntity() {
+    return caseEntity;
+  }
+  public void setCaseEntity(AddressableEntityRef caseEntity) {
+    this.caseEntity = caseEntity;
+  }
+
+
+  /**
+   * The reference for this case.
+   **/
+  public Session caseReference(String caseReference) {
+    this.caseReference = caseReference;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reference for this case.")
+  @JsonProperty("caseReference")
+  public String getCaseReference() {
+    return caseReference;
+  }
+  public void setCaseReference(String caseReference) {
+    this.caseReference = caseReference;
+  }
+
+
+  /**
+   * The status of this case.
+   **/
+  public Session caseStatus(CaseStatusEnum caseStatus) {
+    this.caseStatus = caseStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The status of this case.")
+  @JsonProperty("caseStatus")
+  public CaseStatusEnum getCaseStatus() {
+    return caseStatus;
+  }
+  public void setCaseStatus(CaseStatusEnum caseStatus) {
+    this.caseStatus = caseStatus;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -1156,6 +1284,10 @@ public class Session  implements Serializable {
             Objects.equals(this.authenticated, session.authenticated) &&
             Objects.equals(this.divisionIds, session.divisionIds) &&
             Objects.equals(this.lastScreen, session.lastScreen) &&
+            Objects.equals(this.caseAssociations, session.caseAssociations) &&
+            Objects.equals(this.caseEntity, session.caseEntity) &&
+            Objects.equals(this.caseReference, session.caseReference) &&
+            Objects.equals(this.caseStatus, session.caseStatus) &&
             Objects.equals(this.selfUri, session.selfUri) &&
             Objects.equals(this.createdDate, session.createdDate) &&
             Objects.equals(this.endedDate, session.endedDate) &&
@@ -1165,7 +1297,7 @@ public class Session  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalContact, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, app, sdkLibrary, networkConnectivity, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, lastUserDisconnectType, lastAcdOutcome, authenticated, divisionIds, lastScreen, selfUri, createdDate, endedDate, awayDate, idleDate);
+    return Objects.hash(id, externalContact, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, app, sdkLibrary, networkConnectivity, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, lastUserDisconnectType, lastAcdOutcome, authenticated, divisionIds, lastScreen, caseAssociations, caseEntity, caseReference, caseStatus, selfUri, createdDate, endedDate, awayDate, idleDate);
   }
 
   @Override
@@ -1215,6 +1347,10 @@ public class Session  implements Serializable {
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    lastScreen: ").append(toIndentedString(lastScreen)).append("\n");
+    sb.append("    caseAssociations: ").append(toIndentedString(caseAssociations)).append("\n");
+    sb.append("    caseEntity: ").append(toIndentedString(caseEntity)).append("\n");
+    sb.append("    caseReference: ").append(toIndentedString(caseReference)).append("\n");
+    sb.append("    caseStatus: ").append(toIndentedString(caseStatus)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    endedDate: ").append(toIndentedString(endedDate)).append("\n");

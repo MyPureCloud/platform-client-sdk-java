@@ -23,12 +23,19 @@ import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
+import com.mypurecloud.sdk.v2.model.CreateExternalEventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.model.DataRange;
 import com.mypurecloud.sdk.v2.model.DeploymentPing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateJobAsyncResponse;
 import com.mypurecloud.sdk.v2.model.EventListing;
+import com.mypurecloud.sdk.v2.model.ExternalEventsConfiguration;
+import com.mypurecloud.sdk.v2.model.ExternalEventsConfigurationListing;
+import com.mypurecloud.sdk.v2.model.ExternalEventsRequest;
+import com.mypurecloud.sdk.v2.model.ExternalEventsResponse;
 import com.mypurecloud.sdk.v2.model.FlowPaths;
 import com.mypurecloud.sdk.v2.model.FlowPathsQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
@@ -37,6 +44,10 @@ import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyEventDefinition;
 import com.mypurecloud.sdk.v2.model.JourneyEventDefinitionListing;
+import com.mypurecloud.sdk.v2.model.JourneyExternalEventsSchema;
+import com.mypurecloud.sdk.v2.model.JourneyExternalEventsSchemaListing;
+import com.mypurecloud.sdk.v2.model.JourneyJsonSchemaRequest;
+import com.mypurecloud.sdk.v2.model.JourneySchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.JourneyView;
@@ -65,10 +76,12 @@ import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.UpdateExternalEventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentResponse;
 import com.mypurecloud.sdk.v2.model.WebEventRequest;
@@ -78,6 +91,8 @@ import com.mypurecloud.sdk.v2.model.WebEventResponse;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsJourneysAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActiontemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneyExternaleventsConfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneyExternaleventsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomesPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneySegmentRequest;
@@ -96,6 +111,15 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyDeploymentCustomerPingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsConfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsConfigurationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemaVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyExternaleventsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesAttributionsJobRequest;
@@ -126,6 +150,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchJourneyExternaleventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyViewVersionJobRequest;
@@ -138,6 +163,9 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentActioneventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentAppeventsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentWebeventsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyExternaleventsConfigurationEventsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyExternaleventsConfigurationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyExternaleventsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyFlowsPathsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
@@ -148,6 +176,7 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsEncodingsValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutJourneyExternaleventsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutJourneyViewSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutJourneyViewVersionRequest;
 
@@ -380,6 +409,156 @@ public class JourneyApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteJourneyActiontemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an external events configuration.
+   * 
+   * @param configId The ID of the external event configuration. (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneyExternaleventsConfiguration(String configId) throws IOException, ApiException {
+     deleteJourneyExternaleventsConfiguration(createDeleteJourneyExternaleventsConfigurationRequest(configId));
+  }
+
+  /**
+   * Delete an external events configuration.
+   * 
+   * @param configId The ID of the external event configuration. (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneyExternaleventsConfigurationWithHttpInfo(String configId) throws IOException {
+    return deleteJourneyExternaleventsConfiguration(createDeleteJourneyExternaleventsConfigurationRequest(configId).withHttpInfo());
+  }
+
+  private DeleteJourneyExternaleventsConfigurationRequest createDeleteJourneyExternaleventsConfigurationRequest(String configId) {
+    return DeleteJourneyExternaleventsConfigurationRequest.builder()
+            .withConfigId(configId)
+
+            .build();
+  }
+
+  /**
+   * Delete an external events configuration.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneyExternaleventsConfiguration(DeleteJourneyExternaleventsConfigurationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an external events configuration.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneyExternaleventsConfiguration(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneyExternaleventsSchema(String schemaId) throws IOException, ApiException {
+     deleteJourneyExternaleventsSchema(createDeleteJourneyExternaleventsSchemaRequest(schemaId));
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneyExternaleventsSchemaWithHttpInfo(String schemaId) throws IOException {
+    return deleteJourneyExternaleventsSchema(createDeleteJourneyExternaleventsSchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private DeleteJourneyExternaleventsSchemaRequest createDeleteJourneyExternaleventsSchemaRequest(String schemaId) {
+    return DeleteJourneyExternaleventsSchemaRequest.builder()
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneyExternaleventsSchema(DeleteJourneyExternaleventsSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneyExternaleventsSchema(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1901,6 +2080,704 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DeploymentPing> response = (ApiResponse<DeploymentPing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an external events configuration
+   * 
+   * @param configId The ID of the external event configuration. (required)
+   * @return ExternalEventsConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsConfiguration getJourneyExternaleventsConfiguration(String configId) throws IOException, ApiException {
+    return  getJourneyExternaleventsConfiguration(createGetJourneyExternaleventsConfigurationRequest(configId));
+  }
+
+  /**
+   * Get an external events configuration
+   * 
+   * @param configId The ID of the external event configuration. (required)
+   * @return ExternalEventsConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsConfiguration> getJourneyExternaleventsConfigurationWithHttpInfo(String configId) throws IOException {
+    return getJourneyExternaleventsConfiguration(createGetJourneyExternaleventsConfigurationRequest(configId).withHttpInfo());
+  }
+
+  private GetJourneyExternaleventsConfigurationRequest createGetJourneyExternaleventsConfigurationRequest(String configId) {
+    return GetJourneyExternaleventsConfigurationRequest.builder()
+            .withConfigId(configId)
+
+            .build();
+  }
+
+  /**
+   * Get an external events configuration
+   * 
+   * @param request The request object
+   * @return ExternalEventsConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsConfiguration getJourneyExternaleventsConfiguration(GetJourneyExternaleventsConfigurationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalEventsConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalEventsConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an external events configuration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsConfiguration> getJourneyExternaleventsConfiguration(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalEventsConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all external event configurations.
+   * 
+   * @param pageSize Page size (optional, default to 20)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return ExternalEventsConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsConfigurationListing getJourneyExternaleventsConfigurations(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getJourneyExternaleventsConfigurations(createGetJourneyExternaleventsConfigurationsRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get all external event configurations.
+   * 
+   * @param pageSize Page size (optional, default to 20)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return ExternalEventsConfigurationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsConfigurationListing> getJourneyExternaleventsConfigurationsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getJourneyExternaleventsConfigurations(createGetJourneyExternaleventsConfigurationsRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetJourneyExternaleventsConfigurationsRequest createGetJourneyExternaleventsConfigurationsRequest(Integer pageSize, Integer pageNumber) {
+    return GetJourneyExternaleventsConfigurationsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Get all external event configurations.
+   * 
+   * @param request The request object
+   * @return ExternalEventsConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsConfigurationListing getJourneyExternaleventsConfigurations(GetJourneyExternaleventsConfigurationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalEventsConfigurationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalEventsConfigurationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all external event configurations.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsConfigurationListing> getJourneyExternaleventsConfigurations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalEventsConfigurationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsConfigurationListing> response = (ApiResponse<ExternalEventsConfigurationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsConfigurationListing> response = (ApiResponse<ExternalEventsConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return JourneyExternalEventsSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchema getJourneyExternaleventsSchema(String schemaId) throws IOException, ApiException {
+    return  getJourneyExternaleventsSchema(createGetJourneyExternaleventsSchemaRequest(schemaId));
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return JourneyExternalEventsSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchema> getJourneyExternaleventsSchemaWithHttpInfo(String schemaId) throws IOException {
+    return getJourneyExternaleventsSchema(createGetJourneyExternaleventsSchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private GetJourneyExternaleventsSchemaRequest createGetJourneyExternaleventsSchemaRequest(String schemaId) {
+    return GetJourneyExternaleventsSchemaRequest.builder()
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request The request object
+   * @return JourneyExternalEventsSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchema getJourneyExternaleventsSchema(GetJourneyExternaleventsSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyExternalEventsSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchema> getJourneyExternaleventsSchema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyExternalEventsSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return JourneyExternalEventsSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchema getJourneyExternaleventsSchemaVersion(String schemaId, String versionId) throws IOException, ApiException {
+    return  getJourneyExternaleventsSchemaVersion(createGetJourneyExternaleventsSchemaVersionRequest(schemaId, versionId));
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return JourneyExternalEventsSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchema> getJourneyExternaleventsSchemaVersionWithHttpInfo(String schemaId, String versionId) throws IOException {
+    return getJourneyExternaleventsSchemaVersion(createGetJourneyExternaleventsSchemaVersionRequest(schemaId, versionId).withHttpInfo());
+  }
+
+  private GetJourneyExternaleventsSchemaVersionRequest createGetJourneyExternaleventsSchemaVersionRequest(String schemaId, String versionId) {
+    return GetJourneyExternaleventsSchemaVersionRequest.builder()
+            .withSchemaId(schemaId)
+
+            .withVersionId(versionId)
+
+            .build();
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request The request object
+   * @return JourneyExternalEventsSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchema getJourneyExternaleventsSchemaVersion(GetJourneyExternaleventsSchemaVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyExternalEventsSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchema> getJourneyExternaleventsSchemaVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyExternalEventsSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all versions of a External Events schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return JourneyExternalEventsSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchemaListing getJourneyExternaleventsSchemaVersions(String schemaId) throws IOException, ApiException {
+    return  getJourneyExternaleventsSchemaVersions(createGetJourneyExternaleventsSchemaVersionsRequest(schemaId));
+  }
+
+  /**
+   * Get all versions of a External Events schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return JourneyExternalEventsSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchemaListing> getJourneyExternaleventsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
+    return getJourneyExternaleventsSchemaVersions(createGetJourneyExternaleventsSchemaVersionsRequest(schemaId).withHttpInfo());
+  }
+
+  private GetJourneyExternaleventsSchemaVersionsRequest createGetJourneyExternaleventsSchemaVersionsRequest(String schemaId) {
+    return GetJourneyExternaleventsSchemaVersionsRequest.builder()
+            .withSchemaId(schemaId)
+
+            .build();
+  }
+
+  /**
+   * Get all versions of a External Events schema
+   * 
+   * @param request The request object
+   * @return JourneyExternalEventsSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchemaListing getJourneyExternaleventsSchemaVersions(GetJourneyExternaleventsSchemaVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyExternalEventsSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all versions of a External Events schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchemaListing> getJourneyExternaleventsSchemaVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyExternalEventsSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchemaListing> response = (ApiResponse<JourneyExternalEventsSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchemaListing> response = (ApiResponse<JourneyExternalEventsSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @return JourneyExternalEventsSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchemaListing getJourneyExternaleventsSchemas() throws IOException, ApiException {
+    return  getJourneyExternaleventsSchemas(createGetJourneyExternaleventsSchemasRequest());
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @return JourneyExternalEventsSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchemaListing> getJourneyExternaleventsSchemasWithHttpInfo() throws IOException {
+    return getJourneyExternaleventsSchemas(createGetJourneyExternaleventsSchemasRequest().withHttpInfo());
+  }
+
+  private GetJourneyExternaleventsSchemasRequest createGetJourneyExternaleventsSchemasRequest() {
+    return GetJourneyExternaleventsSchemasRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request The request object
+   * @return JourneyExternalEventsSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchemaListing getJourneyExternaleventsSchemas(GetJourneyExternaleventsSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyExternalEventsSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchemaListing> getJourneyExternaleventsSchemas(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyExternalEventsSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchemaListing> response = (ApiResponse<JourneyExternalEventsSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchemaListing> response = (ApiResponse<JourneyExternalEventsSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a core type from which all schemas are built
+   * 
+   * @param coreTypeName Name of core type (required)
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getJourneyExternaleventsSchemasCoretype(String coreTypeName) throws IOException, ApiException {
+    return  getJourneyExternaleventsSchemasCoretype(createGetJourneyExternaleventsSchemasCoretypeRequest(coreTypeName));
+  }
+
+  /**
+   * Get a core type from which all schemas are built
+   * 
+   * @param coreTypeName Name of core type (required)
+   * @return Coretype
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getJourneyExternaleventsSchemasCoretypeWithHttpInfo(String coreTypeName) throws IOException {
+    return getJourneyExternaleventsSchemasCoretype(createGetJourneyExternaleventsSchemasCoretypeRequest(coreTypeName).withHttpInfo());
+  }
+
+  private GetJourneyExternaleventsSchemasCoretypeRequest createGetJourneyExternaleventsSchemasCoretypeRequest(String coreTypeName) {
+    return GetJourneyExternaleventsSchemasCoretypeRequest.builder()
+            .withCoreTypeName(coreTypeName)
+
+            .build();
+  }
+
+  /**
+   * Get a core type from which all schemas are built
+   * 
+   * @param request The request object
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getJourneyExternaleventsSchemasCoretype(GetJourneyExternaleventsSchemasCoretypeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a core type from which all schemas are built
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getJourneyExternaleventsSchemasCoretype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @return CoretypeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoretypeListing getJourneyExternaleventsSchemasCoretypes() throws IOException, ApiException {
+    return  getJourneyExternaleventsSchemasCoretypes(createGetJourneyExternaleventsSchemasCoretypesRequest());
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @return CoretypeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoretypeListing> getJourneyExternaleventsSchemasCoretypesWithHttpInfo() throws IOException {
+    return getJourneyExternaleventsSchemasCoretypes(createGetJourneyExternaleventsSchemasCoretypesRequest().withHttpInfo());
+  }
+
+  private GetJourneyExternaleventsSchemasCoretypesRequest createGetJourneyExternaleventsSchemasCoretypesRequest() {
+    return GetJourneyExternaleventsSchemasCoretypesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @param request The request object
+   * @return CoretypeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoretypeListing getJourneyExternaleventsSchemasCoretypes(GetJourneyExternaleventsSchemasCoretypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CoretypeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoretypeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of core types enabled for a specific namespace.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoretypeListing> getJourneyExternaleventsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CoretypeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getJourneyExternaleventsSchemasLimits() throws IOException, ApiException {
+    return  getJourneyExternaleventsSchemasLimits(createGetJourneyExternaleventsSchemasLimitsRequest());
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getJourneyExternaleventsSchemasLimitsWithHttpInfo() throws IOException {
+    return getJourneyExternaleventsSchemasLimits(createGetJourneyExternaleventsSchemasLimitsRequest().withHttpInfo());
+  }
+
+  private GetJourneyExternaleventsSchemasLimitsRequest createGetJourneyExternaleventsSchemasLimitsRequest() {
+    return GetJourneyExternaleventsSchemasLimitsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getJourneyExternaleventsSchemasLimits(GetJourneyExternaleventsSchemasLimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SchemaQuantityLimits> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getJourneyExternaleventsSchemasLimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchemaQuantityLimits>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4410,6 +5287,88 @@ public class JourneyApi {
   }
 
   /**
+   * Update an external events configuration.
+   * 
+   * @param configId The ID of the external event configuration. (required)
+   * @param body  (optional)
+   * @return ExternalEventsConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsConfiguration patchJourneyExternaleventsConfiguration(String configId, UpdateExternalEventsConfigurationRequest body) throws IOException, ApiException {
+    return  patchJourneyExternaleventsConfiguration(createPatchJourneyExternaleventsConfigurationRequest(configId, body));
+  }
+
+  /**
+   * Update an external events configuration.
+   * 
+   * @param configId The ID of the external event configuration. (required)
+   * @param body  (optional)
+   * @return ExternalEventsConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsConfiguration> patchJourneyExternaleventsConfigurationWithHttpInfo(String configId, UpdateExternalEventsConfigurationRequest body) throws IOException {
+    return patchJourneyExternaleventsConfiguration(createPatchJourneyExternaleventsConfigurationRequest(configId, body).withHttpInfo());
+  }
+
+  private PatchJourneyExternaleventsConfigurationRequest createPatchJourneyExternaleventsConfigurationRequest(String configId, UpdateExternalEventsConfigurationRequest body) {
+    return PatchJourneyExternaleventsConfigurationRequest.builder()
+            .withConfigId(configId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an external events configuration.
+   * 
+   * @param request The request object
+   * @return ExternalEventsConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsConfiguration patchJourneyExternaleventsConfiguration(PatchJourneyExternaleventsConfigurationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalEventsConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalEventsConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an external events configuration.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsConfiguration> patchJourneyExternaleventsConfiguration(ApiRequest<UpdateExternalEventsConfigurationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalEventsConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update an outcome.
    * 
    * @param outcomeId ID of the outcome. (required)
@@ -5383,6 +6342,244 @@ public class JourneyApi {
   }
 
   /**
+   * Create external events
+   * 
+   * @param configurationId The ID of the external event configuration. (required)
+   * @param body  (optional)
+   * @return ExternalEventsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsResponse postJourneyExternaleventsConfigurationEvents(String configurationId, ExternalEventsRequest body) throws IOException, ApiException {
+    return  postJourneyExternaleventsConfigurationEvents(createPostJourneyExternaleventsConfigurationEventsRequest(configurationId, body));
+  }
+
+  /**
+   * Create external events
+   * 
+   * @param configurationId The ID of the external event configuration. (required)
+   * @param body  (optional)
+   * @return ExternalEventsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsResponse> postJourneyExternaleventsConfigurationEventsWithHttpInfo(String configurationId, ExternalEventsRequest body) throws IOException {
+    return postJourneyExternaleventsConfigurationEvents(createPostJourneyExternaleventsConfigurationEventsRequest(configurationId, body).withHttpInfo());
+  }
+
+  private PostJourneyExternaleventsConfigurationEventsRequest createPostJourneyExternaleventsConfigurationEventsRequest(String configurationId, ExternalEventsRequest body) {
+    return PostJourneyExternaleventsConfigurationEventsRequest.builder()
+            .withConfigurationId(configurationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create external events
+   * 
+   * @param request The request object
+   * @return ExternalEventsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsResponse postJourneyExternaleventsConfigurationEvents(PostJourneyExternaleventsConfigurationEventsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalEventsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalEventsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create external events
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsResponse> postJourneyExternaleventsConfigurationEvents(ApiRequest<ExternalEventsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalEventsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsResponse> response = (ApiResponse<ExternalEventsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsResponse> response = (ApiResponse<ExternalEventsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an external events configuration.
+   * 
+   * @param body  (optional)
+   * @return ExternalEventsConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsConfiguration postJourneyExternaleventsConfigurations(CreateExternalEventsConfigurationRequest body) throws IOException, ApiException {
+    return  postJourneyExternaleventsConfigurations(createPostJourneyExternaleventsConfigurationsRequest(body));
+  }
+
+  /**
+   * Create an external events configuration.
+   * 
+   * @param body  (optional)
+   * @return ExternalEventsConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsConfiguration> postJourneyExternaleventsConfigurationsWithHttpInfo(CreateExternalEventsConfigurationRequest body) throws IOException {
+    return postJourneyExternaleventsConfigurations(createPostJourneyExternaleventsConfigurationsRequest(body).withHttpInfo());
+  }
+
+  private PostJourneyExternaleventsConfigurationsRequest createPostJourneyExternaleventsConfigurationsRequest(CreateExternalEventsConfigurationRequest body) {
+    return PostJourneyExternaleventsConfigurationsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an external events configuration.
+   * 
+   * @param request The request object
+   * @return ExternalEventsConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventsConfiguration postJourneyExternaleventsConfigurations(PostJourneyExternaleventsConfigurationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalEventsConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalEventsConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an external events configuration.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventsConfiguration> postJourneyExternaleventsConfigurations(ApiRequest<CreateExternalEventsConfigurationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalEventsConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventsConfiguration> response = (ApiResponse<ExternalEventsConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param body Schema create request body (required)
+   * @return JourneyExternalEventsSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchema postJourneyExternaleventsSchemas(JourneyJsonSchemaRequest body) throws IOException, ApiException {
+    return  postJourneyExternaleventsSchemas(createPostJourneyExternaleventsSchemasRequest(body));
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param body Schema create request body (required)
+   * @return JourneyExternalEventsSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchema> postJourneyExternaleventsSchemasWithHttpInfo(JourneyJsonSchemaRequest body) throws IOException {
+    return postJourneyExternaleventsSchemas(createPostJourneyExternaleventsSchemasRequest(body).withHttpInfo());
+  }
+
+  private PostJourneyExternaleventsSchemasRequest createPostJourneyExternaleventsSchemasRequest(JourneyJsonSchemaRequest body) {
+    return PostJourneyExternaleventsSchemasRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request The request object
+   * @return JourneyExternalEventsSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchema postJourneyExternaleventsSchemas(PostJourneyExternaleventsSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyExternalEventsSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchema> postJourneyExternaleventsSchemas(ApiRequest<JourneyJsonSchemaRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyExternalEventsSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for flow paths.
    * 
    * @param body  (optional)
@@ -6174,6 +7371,88 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param body Schema update request body (required)
+   * @return JourneyExternalEventsSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchema putJourneyExternaleventsSchema(String schemaId, JourneySchemaUpdateRequest body) throws IOException, ApiException {
+    return  putJourneyExternaleventsSchema(createPutJourneyExternaleventsSchemaRequest(schemaId, body));
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param body Schema update request body (required)
+   * @return JourneyExternalEventsSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchema> putJourneyExternaleventsSchemaWithHttpInfo(String schemaId, JourneySchemaUpdateRequest body) throws IOException {
+    return putJourneyExternaleventsSchema(createPutJourneyExternaleventsSchemaRequest(schemaId, body).withHttpInfo());
+  }
+
+  private PutJourneyExternaleventsSchemaRequest createPutJourneyExternaleventsSchemaRequest(String schemaId, JourneySchemaUpdateRequest body) {
+    return PutJourneyExternaleventsSchemaRequest.builder()
+            .withSchemaId(schemaId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request The request object
+   * @return JourneyExternalEventsSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyExternalEventsSchema putJourneyExternaleventsSchema(PutJourneyExternaleventsSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyExternalEventsSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyExternalEventsSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyExternalEventsSchema> putJourneyExternaleventsSchema(ApiRequest<JourneySchemaUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyExternalEventsSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyExternalEventsSchema> response = (ApiResponse<JourneyExternalEventsSchema>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

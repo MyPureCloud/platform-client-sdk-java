@@ -755,7 +755,6 @@ public class UsersApiAsync {
   /**
    * Delete a custom attributes record.
    * 
-   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -790,7 +789,6 @@ public class UsersApiAsync {
   /**
    * Delete a custom attributes record.
    * 
-   * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1282,7 +1280,6 @@ public class UsersApiAsync {
   /**
    * Delete a schema
    * 
-   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1317,7 +1314,6 @@ public class UsersApiAsync {
   /**
    * Delete a schema
    * 
-   * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2721,7 +2717,6 @@ public class UsersApiAsync {
   /**
    * Get custom attributes by schema id
    * 
-   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2756,7 +2751,6 @@ public class UsersApiAsync {
   /**
    * Get custom attributes by schema id
    * 
-   * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2798,7 +2792,6 @@ public class UsersApiAsync {
   /**
    * Get multiple custom attributes records by schema ids
    * 
-   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2833,7 +2826,6 @@ public class UsersApiAsync {
   /**
    * Get multiple custom attributes records by schema ids
    * 
-   * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4454,7 +4446,6 @@ public class UsersApiAsync {
   /**
    * Get a schema
    * 
-   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4489,7 +4480,6 @@ public class UsersApiAsync {
   /**
    * Get a schema
    * 
-   * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4531,7 +4521,6 @@ public class UsersApiAsync {
   /**
    * Get a specific version of a schema
    * 
-   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4566,7 +4555,6 @@ public class UsersApiAsync {
   /**
    * Get a specific version of a schema
    * 
-   * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4608,7 +4596,6 @@ public class UsersApiAsync {
   /**
    * Get all versions of a user schema
    * 
-   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4643,7 +4630,6 @@ public class UsersApiAsync {
   /**
    * Get all versions of a user schema
    * 
-   * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4685,7 +4671,6 @@ public class UsersApiAsync {
   /**
    * Get a list of schemas.
    * 
-   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4720,7 +4705,6 @@ public class UsersApiAsync {
   /**
    * Get a list of schemas.
    * 
-   * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4762,7 +4746,6 @@ public class UsersApiAsync {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4797,7 +4780,6 @@ public class UsersApiAsync {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4839,7 +4821,6 @@ public class UsersApiAsync {
   /**
    * Get the list of core types enabled for a specific namespace.
    * 
-   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4874,7 +4855,6 @@ public class UsersApiAsync {
   /**
    * Get the list of core types enabled for a specific namespace.
    * 
-   * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4916,7 +4896,6 @@ public class UsersApiAsync {
   /**
    * Get quantitative limits on schemas
    * 
-   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4951,7 +4930,6 @@ public class UsersApiAsync {
   /**
    * Get quantitative limits on schemas
    * 
-   * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5670,7 +5648,6 @@ public class UsersApiAsync {
   /**
    * Update a single custom attributes record by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5705,7 +5682,6 @@ public class UsersApiAsync {
   /**
    * Update a single custom attributes record by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5747,7 +5723,6 @@ public class UsersApiAsync {
   /**
    * Update multiple custom attributes records by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5782,7 +5757,6 @@ public class UsersApiAsync {
   /**
    * Update multiple custom attributes records by amending the data with only the provided fields.
    * 
-   * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7551,7 +7525,6 @@ public class UsersApiAsync {
   /**
    * Create a schema
    * 
-   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7586,7 +7559,6 @@ public class UsersApiAsync {
   /**
    * Create a schema
    * 
-   * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8382,7 +8354,6 @@ public class UsersApiAsync {
   /**
    * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
    * 
-   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8417,7 +8388,6 @@ public class UsersApiAsync {
   /**
    * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
    * 
-   * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9209,7 +9179,6 @@ public class UsersApiAsync {
   /**
    * Update a schema
    * 
-   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9244,7 +9213,6 @@ public class UsersApiAsync {
   /**
    * Update a schema
    * 
-   * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

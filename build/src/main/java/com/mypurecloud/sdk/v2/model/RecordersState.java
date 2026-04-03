@@ -171,6 +171,55 @@ public class RecordersState  implements Serializable {
   }
   private AgentExperienceStateEnum agentExperienceState = null;
 
+  private static class SnippetStateEnumDeserializer extends StdDeserializer<SnippetStateEnum> {
+    public SnippetStateEnumDeserializer() {
+      super(SnippetStateEnumDeserializer.class);
+    }
+
+    @Override
+    public SnippetStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SnippetStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Indicates the state of the snippet recording.
+   */
+ @JsonDeserialize(using = SnippetStateEnumDeserializer.class)
+  public enum SnippetStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVE("ACTIVE"),
+    PAUSED("PAUSED"),
+    NONE("NONE");
+
+    private String value;
+
+    SnippetStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SnippetStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SnippetStateEnum value : SnippetStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SnippetStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SnippetStateEnum snippetState = null;
+
   public RecordersState() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
     }
@@ -231,6 +280,24 @@ public class RecordersState  implements Serializable {
   }
 
 
+  /**
+   * Indicates the state of the snippet recording.
+   **/
+  public RecordersState snippetState(SnippetStateEnum snippetState) {
+    this.snippetState = snippetState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the state of the snippet recording.")
+  @JsonProperty("snippetState")
+  public SnippetStateEnum getSnippetState() {
+    return snippetState;
+  }
+  public void setSnippetState(SnippetStateEnum snippetState) {
+    this.snippetState = snippetState;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -243,12 +310,13 @@ public class RecordersState  implements Serializable {
 
     return Objects.equals(this.adhocState, recordersState.adhocState) &&
             Objects.equals(this.customerExperienceState, recordersState.customerExperienceState) &&
-            Objects.equals(this.agentExperienceState, recordersState.agentExperienceState);
+            Objects.equals(this.agentExperienceState, recordersState.agentExperienceState) &&
+            Objects.equals(this.snippetState, recordersState.snippetState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adhocState, customerExperienceState, agentExperienceState);
+    return Objects.hash(adhocState, customerExperienceState, agentExperienceState, snippetState);
   }
 
   @Override
@@ -259,6 +327,7 @@ public class RecordersState  implements Serializable {
     sb.append("    adhocState: ").append(toIndentedString(adhocState)).append("\n");
     sb.append("    customerExperienceState: ").append(toIndentedString(customerExperienceState)).append("\n");
     sb.append("    agentExperienceState: ").append(toIndentedString(agentExperienceState)).append("\n");
+    sb.append("    snippetState: ").append(toIndentedString(snippetState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

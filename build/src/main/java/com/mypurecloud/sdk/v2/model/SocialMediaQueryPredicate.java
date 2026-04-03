@@ -102,7 +102,9 @@ public class SocialMediaQueryPredicate  implements Serializable {
     DATAINGESTIONRULE("dataIngestionRule"),
     TEXT("text"),
     MODERATIONFLAG("moderationFlag"),
-    SOURCETYPE("sourceType");
+    SOURCETYPE("sourceType"),
+    VERIFIEDUSER("verifiedUser"),
+    FOLLOWERCOUNT("followerCount");
 
     private String value;
 

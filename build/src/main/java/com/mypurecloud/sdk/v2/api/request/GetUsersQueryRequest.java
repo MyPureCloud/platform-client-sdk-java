@@ -278,6 +278,20 @@ public class GetUsersQueryRequest {
 		}
 	}
 
+	private List<String> userCustomAttributeSchemaIds;
+	public List<String> getUserCustomAttributeSchemaIds() {
+		return this.userCustomAttributeSchemaIds;
+	}
+
+	public void setUserCustomAttributeSchemaIds(List<String> userCustomAttributeSchemaIds) {
+		this.userCustomAttributeSchemaIds = userCustomAttributeSchemaIds;
+	}
+
+	public GetUsersQueryRequest withUserCustomAttributeSchemaIds(List<String> userCustomAttributeSchemaIds) {
+	    this.setUserCustomAttributeSchemaIds(userCustomAttributeSchemaIds);
+	    return this;
+	} 
+
 	private String state;
 	public String getState() {
 		return this.state;
@@ -363,6 +377,9 @@ public class GetUsersQueryRequest {
                 .withQueryParameters("integrationPresenceSource", "", integrationPresenceSource)
         
 
+                .withQueryParameters("userCustomAttributeSchemaIds", "multi", userCustomAttributeSchemaIds)
+        
+
                 .withQueryParameters("state", "", state)
         
 		.withCustomHeaders(customHeaders)
@@ -438,6 +455,11 @@ public class GetUsersQueryRequest {
 		    request.setIntegrationPresenceSource(integrationPresenceSource.toString());
 
 		    return this;
+		}
+
+		public Builder withUserCustomAttributeSchemaIds(List<String> userCustomAttributeSchemaIds) {
+			request.setUserCustomAttributeSchemaIds(userCustomAttributeSchemaIds);
+			return this;
 		}
 
 		public Builder withState(String state) {

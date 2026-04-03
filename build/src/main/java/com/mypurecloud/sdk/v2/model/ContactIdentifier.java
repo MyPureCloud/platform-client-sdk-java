@@ -26,7 +26,6 @@ import java.io.Serializable;
 
 public class ContactIdentifier  implements Serializable {
   
-  private String id = null;
   private WritableStarrableDivision division = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -87,7 +86,6 @@ public class ContactIdentifier  implements Serializable {
   private String value = null;
   private Date dateCreated = null;
   private ExternalSource externalSource = null;
-  private String selfUri = null;
 
   public ContactIdentifier() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -95,13 +93,6 @@ public class ContactIdentifier  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
   /**
    * The division to which this entity belongs.
    **/
@@ -192,13 +183,6 @@ public class ContactIdentifier  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -209,18 +193,16 @@ public class ContactIdentifier  implements Serializable {
     }
     ContactIdentifier contactIdentifier = (ContactIdentifier) o;
 
-    return Objects.equals(this.id, contactIdentifier.id) &&
-            Objects.equals(this.division, contactIdentifier.division) &&
+    return Objects.equals(this.division, contactIdentifier.division) &&
             Objects.equals(this.type, contactIdentifier.type) &&
             Objects.equals(this.value, contactIdentifier.value) &&
             Objects.equals(this.dateCreated, contactIdentifier.dateCreated) &&
-            Objects.equals(this.externalSource, contactIdentifier.externalSource) &&
-            Objects.equals(this.selfUri, contactIdentifier.selfUri);
+            Objects.equals(this.externalSource, contactIdentifier.externalSource);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, type, value, dateCreated, externalSource, selfUri);
+    return Objects.hash(division, type, value, dateCreated, externalSource);
   }
 
   @Override
@@ -228,13 +210,11 @@ public class ContactIdentifier  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContactIdentifier {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    externalSource: ").append(toIndentedString(externalSource)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

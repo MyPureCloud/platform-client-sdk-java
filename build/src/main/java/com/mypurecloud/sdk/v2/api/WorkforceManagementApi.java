@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAdminRequest;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAgentRequest;
+import com.mypurecloud.sdk.v2.model.AddShiftTradeJobRequest;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
@@ -94,6 +95,7 @@ import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
 import com.mypurecloud.sdk.v2.model.BuUpdateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.BuUserListing;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
@@ -137,6 +139,7 @@ import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffResponse;
+import com.mypurecloud.sdk.v2.model.EvaluateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
@@ -158,6 +161,7 @@ import com.mypurecloud.sdk.v2.model.LongTermRequirementsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.ManagementUnitAvailabilitySettingsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeJobRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.MinimumStaffingRequest;
@@ -179,6 +183,7 @@ import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesResponse;
+import com.mypurecloud.sdk.v2.model.QueryAgentShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesValidationJobResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
@@ -186,24 +191,37 @@ import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsRequ
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
 import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
+import com.mypurecloud.sdk.v2.model.QueryShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.QueryUserStaffingGroupListRequest;
 import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
+import com.mypurecloud.sdk.v2.model.QueryWeekSummaryListJobRequest;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
 import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
 import com.mypurecloud.sdk.v2.model.SearchAlternativeShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
+import com.mypurecloud.sdk.v2.model.SearchUnmatchedShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
 import com.mypurecloud.sdk.v2.model.SetTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
+import com.mypurecloud.sdk.v2.model.ShiftTradeAddTradeJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeBulkUpdateTradeStateBuJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeEvaluateTradesBuJobResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeMatchTradeJobResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeQueryAgentTradesJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeQueryTradesBuJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeQueryWeekSummariesBuJobResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeSearchUnmatchedTradesBuJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeUpdateTradeJobResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeUpdateTradeStateJobResponse;
 import com.mypurecloud.sdk.v2.model.StaffingGroupListing;
 import com.mypurecloud.sdk.v2.model.StaffingGroupResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffBalanceJobResponse;
@@ -236,6 +254,8 @@ import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
 import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.UpdateShiftTradeJobRequest;
+import com.mypurecloud.sdk.v2.model.UpdateShiftTradeStateJobRequest;
 import com.mypurecloud.sdk.v2.model.UpdateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanRequest;
@@ -353,6 +373,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSche
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitRequest;
@@ -416,6 +441,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsD
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeMatchJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeStateJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradesMineQueryJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShrinkageJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTeamAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffbalanceJobRequest;
@@ -494,6 +524,11 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest;
@@ -553,6 +588,11 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeMatchJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeStateJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradesMineQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTeamAdherenceHistoricalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTeamShrinkageJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffbalanceJobsRequest;
@@ -5730,6 +5770,416 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeEvaluateTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeEvaluateTradesBuJobResponse getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(createGetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeEvaluateTradesBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(createGetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest createGetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeEvaluateTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeEvaluateTradesBuJobResponse getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeEvaluateTradesBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeEvaluateTradesBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = (ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = (ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeQueryTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryTradesBuJobResponse getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(createGetWorkforcemanagementBusinessunitShifttradingTradesQueryJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeQueryTradesBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryTradesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingTradesQueryJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(createGetWorkforcemanagementBusinessunitShifttradingTradesQueryJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobRequest createGetWorkforcemanagementBusinessunitShifttradingTradesQueryJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeQueryTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryTradesBuJobResponse getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeQueryTradesBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryTradesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeQueryTradesBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = (ApiResponse<ShiftTradeQueryTradesBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = (ApiResponse<ShiftTradeQueryTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View results of bulk update trades states operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeBulkUpdateTradeStateBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeBulkUpdateTradeStateBuJobResponse getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(createGetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * View results of bulk update trades states operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeBulkUpdateTradeStateBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(createGetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest createGetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View results of bulk update trades states operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeBulkUpdateTradeStateBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeBulkUpdateTradeStateBuJobResponse getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeBulkUpdateTradeStateBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View results of bulk update trades states operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeBulkUpdateTradeStateBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = (ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = (ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeSearchUnmatchedTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeSearchUnmatchedTradesBuJobResponse getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(createGetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeSearchUnmatchedTradesBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(createGetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobRequest createGetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeSearchUnmatchedTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeSearchUnmatchedTradesBuJobResponse getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeSearchUnmatchedTradesBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeSearchUnmatchedTradesBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = (ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = (ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeQueryWeekSummariesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryWeekSummariesBuJobResponse getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(createGetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeQueryWeekSummariesBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(createGetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobRequest createGetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeQueryWeekSummariesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryWeekSummariesBuJobResponse getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeQueryWeekSummariesBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeQueryWeekSummariesBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = (ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = (ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Gets a staffing group
    * 
    * @param businessUnitId The ID of the business unit (required)
@@ -6845,7 +7295,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param businessUnitId The ID of the business unit (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules (required)
    * @param includeOnlyPublished includeOnlyPublished (optional)
@@ -6860,7 +7310,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param businessUnitId The ID of the business unit (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules (required)
    * @param includeOnlyPublished includeOnlyPublished (optional)
@@ -6887,7 +7337,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request The request object
    * @return BuScheduleListing
    * @throws ApiException if the request fails on the server
@@ -6906,7 +7356,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7475,7 +7925,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get short term forecasts
-   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
    * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts (required)
    * @return BuShortTermForecastListing
@@ -7488,7 +7938,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get short term forecasts
-   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
    * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts (required)
    * @return BuShortTermForecastListing
@@ -7509,7 +7959,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get short term forecasts
-   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request The request object
    * @return BuShortTermForecastListing
    * @throws ApiException if the request fails on the server
@@ -7528,7 +7978,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get short term forecasts
-   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10983,6 +11433,408 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View result of update trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeUpdateTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeUpdateTradeJobResponse getWorkforcemanagementShifttradingTradeJob(String tradeId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementShifttradingTradeJob(createGetWorkforcemanagementShifttradingTradeJobRequest(tradeId, jobId));
+  }
+
+  /**
+   * View result of update trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeUpdateTradeJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeUpdateTradeJobResponse> getWorkforcemanagementShifttradingTradeJobWithHttpInfo(String tradeId, String jobId) throws IOException {
+    return getWorkforcemanagementShifttradingTradeJob(createGetWorkforcemanagementShifttradingTradeJobRequest(tradeId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementShifttradingTradeJobRequest createGetWorkforcemanagementShifttradingTradeJobRequest(String tradeId, String jobId) {
+    return GetWorkforcemanagementShifttradingTradeJobRequest.builder()
+            .withTradeId(tradeId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View result of update trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeUpdateTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeUpdateTradeJobResponse getWorkforcemanagementShifttradingTradeJob(GetWorkforcemanagementShifttradingTradeJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeUpdateTradeJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeUpdateTradeJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View result of update trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeUpdateTradeJobResponse> getWorkforcemanagementShifttradingTradeJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeUpdateTradeJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeUpdateTradeJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeUpdateTradeJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeMatchTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeMatchTradeJobResponse getWorkforcemanagementShifttradingTradeMatchJob(String tradeId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementShifttradingTradeMatchJob(createGetWorkforcemanagementShifttradingTradeMatchJobRequest(tradeId, jobId));
+  }
+
+  /**
+   * View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeMatchTradeJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeMatchTradeJobResponse> getWorkforcemanagementShifttradingTradeMatchJobWithHttpInfo(String tradeId, String jobId) throws IOException {
+    return getWorkforcemanagementShifttradingTradeMatchJob(createGetWorkforcemanagementShifttradingTradeMatchJobRequest(tradeId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementShifttradingTradeMatchJobRequest createGetWorkforcemanagementShifttradingTradeMatchJobRequest(String tradeId, String jobId) {
+    return GetWorkforcemanagementShifttradingTradeMatchJobRequest.builder()
+            .withTradeId(tradeId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeMatchTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeMatchTradeJobResponse getWorkforcemanagementShifttradingTradeMatchJob(GetWorkforcemanagementShifttradingTradeMatchJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeMatchTradeJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeMatchTradeJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeMatchTradeJobResponse> getWorkforcemanagementShifttradingTradeMatchJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeMatchTradeJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeMatchTradeJobResponse> response = (ApiResponse<ShiftTradeMatchTradeJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeMatchTradeJobResponse> response = (ApiResponse<ShiftTradeMatchTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View result of update trade state operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeUpdateTradeStateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeUpdateTradeStateJobResponse getWorkforcemanagementShifttradingTradeStateJob(String tradeId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementShifttradingTradeStateJob(createGetWorkforcemanagementShifttradingTradeStateJobRequest(tradeId, jobId));
+  }
+
+  /**
+   * View result of update trade state operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeUpdateTradeStateJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeUpdateTradeStateJobResponse> getWorkforcemanagementShifttradingTradeStateJobWithHttpInfo(String tradeId, String jobId) throws IOException {
+    return getWorkforcemanagementShifttradingTradeStateJob(createGetWorkforcemanagementShifttradingTradeStateJobRequest(tradeId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementShifttradingTradeStateJobRequest createGetWorkforcemanagementShifttradingTradeStateJobRequest(String tradeId, String jobId) {
+    return GetWorkforcemanagementShifttradingTradeStateJobRequest.builder()
+            .withTradeId(tradeId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View result of update trade state operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeUpdateTradeStateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeUpdateTradeStateJobResponse getWorkforcemanagementShifttradingTradeStateJob(GetWorkforcemanagementShifttradingTradeStateJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeUpdateTradeStateJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View result of update trade state operation. Only the user who started the operation can query the status.
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeUpdateTradeStateJobResponse> getWorkforcemanagementShifttradingTradeStateJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeUpdateTradeStateJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeStateJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeStateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View result of create trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeAddTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeAddTradeJobResponse getWorkforcemanagementShifttradingTradesJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementShifttradingTradesJob(createGetWorkforcemanagementShifttradingTradesJobRequest(jobId));
+  }
+
+  /**
+   * View result of create trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeAddTradeJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeAddTradeJobResponse> getWorkforcemanagementShifttradingTradesJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementShifttradingTradesJob(createGetWorkforcemanagementShifttradingTradesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementShifttradingTradesJobRequest createGetWorkforcemanagementShifttradingTradesJobRequest(String jobId) {
+    return GetWorkforcemanagementShifttradingTradesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View result of create trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeAddTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeAddTradeJobResponse getWorkforcemanagementShifttradingTradesJob(GetWorkforcemanagementShifttradingTradesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeAddTradeJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeAddTradeJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View result of create trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeAddTradeJobResponse> getWorkforcemanagementShifttradingTradesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeAddTradeJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeAddTradeJobResponse> response = (ApiResponse<ShiftTradeAddTradeJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeAddTradeJobResponse> response = (ApiResponse<ShiftTradeAddTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeQueryAgentTradesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryAgentTradesJobResponse getWorkforcemanagementShifttradingTradesMineQueryJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementShifttradingTradesMineQueryJob(createGetWorkforcemanagementShifttradingTradesMineQueryJobRequest(jobId));
+  }
+
+  /**
+   * View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return ShiftTradeQueryAgentTradesJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryAgentTradesJobResponse> getWorkforcemanagementShifttradingTradesMineQueryJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementShifttradingTradesMineQueryJob(createGetWorkforcemanagementShifttradingTradesMineQueryJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementShifttradingTradesMineQueryJobRequest createGetWorkforcemanagementShifttradingTradesMineQueryJobRequest(String jobId) {
+    return GetWorkforcemanagementShifttradingTradesMineQueryJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return ShiftTradeQueryAgentTradesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryAgentTradesJobResponse getWorkforcemanagementShifttradingTradesMineQueryJob(GetWorkforcemanagementShifttradingTradesMineQueryJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeQueryAgentTradesJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryAgentTradesJobResponse> getWorkforcemanagementShifttradingTradesMineQueryJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeQueryAgentTradesJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = (ApiResponse<ShiftTradeQueryAgentTradesJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = (ApiResponse<ShiftTradeQueryAgentTradesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -17427,6 +18279,452 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Queries and evaluates against shift trade configuration shift trades in a management unit per week
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeEvaluateTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeEvaluateTradesBuJobResponse postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(String businessUnitId, EvaluateShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(createPostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest(businessUnitId, body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Queries and evaluates against shift trade configuration shift trades in a management unit per week
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeEvaluateTradesBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsWithHttpInfo(String businessUnitId, EvaluateShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(createPostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest(businessUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest createPostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest(String businessUnitId, EvaluateShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Queries and evaluates against shift trade configuration shift trades in a management unit per week
+   * 
+   * @param request The request object
+   * @return ShiftTradeEvaluateTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeEvaluateTradesBuJobResponse postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeEvaluateTradesBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Queries and evaluates against shift trade configuration shift trades in a management unit per week
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(ApiRequest<EvaluateShiftTradeListJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeEvaluateTradesBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = (ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> response = (ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Queries shift trades in a management unit per user
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeQueryTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryTradesBuJobResponse postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(String businessUnitId, QueryShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(createPostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest(businessUnitId, body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Queries shift trades in a management unit per user
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeQueryTradesBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryTradesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingTradesQueryJobsWithHttpInfo(String businessUnitId, QueryShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(createPostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest(businessUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest createPostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest(String businessUnitId, QueryShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Queries shift trades in a management unit per user
+   * 
+   * @param request The request object
+   * @return ShiftTradeQueryTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryTradesBuJobResponse postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeQueryTradesBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Queries shift trades in a management unit per user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryTradesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(ApiRequest<QueryShiftTradeListJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeQueryTradesBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = (ApiResponse<ShiftTradeQueryTradesBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryTradesBuJobResponse> response = (ApiResponse<ShiftTradeQueryTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeBulkUpdateTradeStateBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeBulkUpdateTradeStateBuJobResponse postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(String businessUnitId, BulkUpdateShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(createPostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsRequest(businessUnitId, body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeBulkUpdateTradeStateBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsWithHttpInfo(String businessUnitId, BulkUpdateShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(createPostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsRequest(businessUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsRequest createPostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsRequest(String businessUnitId, BulkUpdateShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+   * 
+   * @param request The request object
+   * @return ShiftTradeBulkUpdateTradeStateBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeBulkUpdateTradeStateBuJobResponse postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeBulkUpdateTradeStateBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(ApiRequest<BulkUpdateShiftTradeListJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeBulkUpdateTradeStateBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = (ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> response = (ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start an async job to find potential shift trade matches for the current receiving user
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeSearchUnmatchedTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeSearchUnmatchedTradesBuJobResponse postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(String businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(createPostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsRequest(businessUnitId, body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Start an async job to find potential shift trade matches for the current receiving user
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeSearchUnmatchedTradesBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsWithHttpInfo(String businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(createPostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsRequest(businessUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsRequest createPostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsRequest(String businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Start an async job to find potential shift trade matches for the current receiving user
+   * 
+   * @param request The request object
+   * @return ShiftTradeSearchUnmatchedTradesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeSearchUnmatchedTradesBuJobResponse postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeSearchUnmatchedTradesBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start an async job to find potential shift trade matches for the current receiving user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(ApiRequest<SearchUnmatchedShiftTradeListJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeSearchUnmatchedTradesBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = (ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> response = (ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves the summary of shift trades in a matched state per week
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeQueryWeekSummariesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryWeekSummariesBuJobResponse postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(String businessUnitId, QueryWeekSummaryListJobRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(createPostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsRequest(businessUnitId, body, forceAsync));
+  }
+
+  /**
+   * Retrieves the summary of shift trades in a matched state per week
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeQueryWeekSummariesBuJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsWithHttpInfo(String businessUnitId, QueryWeekSummaryListJobRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(createPostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsRequest(businessUnitId, body, forceAsync).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsRequest createPostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsRequest(String businessUnitId, QueryWeekSummaryListJobRequest body, Boolean forceAsync) {
+    return PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .build();
+  }
+
+  /**
+   * Retrieves the summary of shift trades in a matched state per week
+   * 
+   * @param request The request object
+   * @return ShiftTradeQueryWeekSummariesBuJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryWeekSummariesBuJobResponse postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeQueryWeekSummariesBuJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves the summary of shift trades in a matched state per week
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(ApiRequest<QueryWeekSummaryListJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeQueryWeekSummariesBuJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = (ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> response = (ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Creates a new staffing group
    * 
    * @param businessUnitId The ID of the business unit (required)
@@ -22436,6 +23734,432 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating user
+   * 
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeUpdateTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeUpdateTradeJobResponse postWorkforcemanagementShifttradingTradeJobs(String tradeId, UpdateShiftTradeJobRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementShifttradingTradeJobs(createPostWorkforcemanagementShifttradingTradeJobsRequest(tradeId, body, forceAsync));
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating user
+   * 
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeUpdateTradeJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeUpdateTradeJobResponse> postWorkforcemanagementShifttradingTradeJobsWithHttpInfo(String tradeId, UpdateShiftTradeJobRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementShifttradingTradeJobs(createPostWorkforcemanagementShifttradingTradeJobsRequest(tradeId, body, forceAsync).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementShifttradingTradeJobsRequest createPostWorkforcemanagementShifttradingTradeJobsRequest(String tradeId, UpdateShiftTradeJobRequest body, Boolean forceAsync) {
+    return PostWorkforcemanagementShifttradingTradeJobsRequest.builder()
+            .withTradeId(tradeId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .build();
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating user
+   * 
+   * @param request The request object
+   * @return ShiftTradeUpdateTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeUpdateTradeJobResponse postWorkforcemanagementShifttradingTradeJobs(PostWorkforcemanagementShifttradingTradeJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeUpdateTradeJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeUpdateTradeJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeUpdateTradeJobResponse> postWorkforcemanagementShifttradingTradeJobs(ApiRequest<UpdateShiftTradeJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeUpdateTradeJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeUpdateTradeJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeUpdateTradeJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving user
+   * 
+   * @param tradeId The ID of the shift trade to match (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeMatchTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeMatchTradeJobResponse postWorkforcemanagementShifttradingTradeMatchJobs(String tradeId, MatchShiftTradeJobRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementShifttradingTradeMatchJobs(createPostWorkforcemanagementShifttradingTradeMatchJobsRequest(tradeId, body, forceAsync));
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving user
+   * 
+   * @param tradeId The ID of the shift trade to match (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeMatchTradeJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeMatchTradeJobResponse> postWorkforcemanagementShifttradingTradeMatchJobsWithHttpInfo(String tradeId, MatchShiftTradeJobRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementShifttradingTradeMatchJobs(createPostWorkforcemanagementShifttradingTradeMatchJobsRequest(tradeId, body, forceAsync).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementShifttradingTradeMatchJobsRequest createPostWorkforcemanagementShifttradingTradeMatchJobsRequest(String tradeId, MatchShiftTradeJobRequest body, Boolean forceAsync) {
+    return PostWorkforcemanagementShifttradingTradeMatchJobsRequest.builder()
+            .withTradeId(tradeId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .build();
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving user
+   * 
+   * @param request The request object
+   * @return ShiftTradeMatchTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeMatchTradeJobResponse postWorkforcemanagementShifttradingTradeMatchJobs(PostWorkforcemanagementShifttradingTradeMatchJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeMatchTradeJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeMatchTradeJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeMatchTradeJobResponse> postWorkforcemanagementShifttradingTradeMatchJobs(ApiRequest<MatchShiftTradeJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeMatchTradeJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeMatchTradeJobResponse> response = (ApiResponse<ShiftTradeMatchTradeJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeMatchTradeJobResponse> response = (ApiResponse<ShiftTradeMatchTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update trade state by a user
+   * 
+   * @param tradeId The ID of the shift trade to update state (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeUpdateTradeStateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeUpdateTradeStateJobResponse postWorkforcemanagementShifttradingTradeStateJobs(String tradeId, UpdateShiftTradeStateJobRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementShifttradingTradeStateJobs(createPostWorkforcemanagementShifttradingTradeStateJobsRequest(tradeId, body, forceAsync));
+  }
+
+  /**
+   * Update trade state by a user
+   * 
+   * @param tradeId The ID of the shift trade to update state (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeUpdateTradeStateJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeUpdateTradeStateJobResponse> postWorkforcemanagementShifttradingTradeStateJobsWithHttpInfo(String tradeId, UpdateShiftTradeStateJobRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementShifttradingTradeStateJobs(createPostWorkforcemanagementShifttradingTradeStateJobsRequest(tradeId, body, forceAsync).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementShifttradingTradeStateJobsRequest createPostWorkforcemanagementShifttradingTradeStateJobsRequest(String tradeId, UpdateShiftTradeStateJobRequest body, Boolean forceAsync) {
+    return PostWorkforcemanagementShifttradingTradeStateJobsRequest.builder()
+            .withTradeId(tradeId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .build();
+  }
+
+  /**
+   * Update trade state by a user
+   * 
+   * @param request The request object
+   * @return ShiftTradeUpdateTradeStateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeUpdateTradeStateJobResponse postWorkforcemanagementShifttradingTradeStateJobs(PostWorkforcemanagementShifttradingTradeStateJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeUpdateTradeStateJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update trade state by a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeUpdateTradeStateJobResponse> postWorkforcemanagementShifttradingTradeStateJobs(ApiRequest<UpdateShiftTradeStateJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeUpdateTradeStateJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeStateJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeUpdateTradeStateJobResponse> response = (ApiResponse<ShiftTradeUpdateTradeStateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add a shift trade job
+   * 
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeAddTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeAddTradeJobResponse postWorkforcemanagementShifttradingTradesJobs(AddShiftTradeJobRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementShifttradingTradesJobs(createPostWorkforcemanagementShifttradingTradesJobsRequest(body, forceAsync));
+  }
+
+  /**
+   * Add a shift trade job
+   * 
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @return ShiftTradeAddTradeJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeAddTradeJobResponse> postWorkforcemanagementShifttradingTradesJobsWithHttpInfo(AddShiftTradeJobRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementShifttradingTradesJobs(createPostWorkforcemanagementShifttradingTradesJobsRequest(body, forceAsync).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementShifttradingTradesJobsRequest createPostWorkforcemanagementShifttradingTradesJobsRequest(AddShiftTradeJobRequest body, Boolean forceAsync) {
+    return PostWorkforcemanagementShifttradingTradesJobsRequest.builder()
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .build();
+  }
+
+  /**
+   * Add a shift trade job
+   * 
+   * @param request The request object
+   * @return ShiftTradeAddTradeJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeAddTradeJobResponse postWorkforcemanagementShifttradingTradesJobs(PostWorkforcemanagementShifttradingTradesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeAddTradeJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeAddTradeJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a shift trade job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeAddTradeJobResponse> postWorkforcemanagementShifttradingTradesJobs(ApiRequest<AddShiftTradeJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeAddTradeJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeAddTradeJobResponse> response = (ApiResponse<ShiftTradeAddTradeJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeAddTradeJobResponse> response = (ApiResponse<ShiftTradeAddTradeJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve all my shift trades where I am either the initiating or receiving user
+   * 
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeQueryAgentTradesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryAgentTradesJobResponse postWorkforcemanagementShifttradingTradesMineQueryJobs(QueryAgentShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementShifttradingTradesMineQueryJobs(createPostWorkforcemanagementShifttradingTradesMineQueryJobsRequest(body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Retrieve all my shift trades where I am either the initiating or receiving user
+   * 
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return ShiftTradeQueryAgentTradesJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryAgentTradesJobResponse> postWorkforcemanagementShifttradingTradesMineQueryJobsWithHttpInfo(QueryAgentShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementShifttradingTradesMineQueryJobs(createPostWorkforcemanagementShifttradingTradesMineQueryJobsRequest(body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementShifttradingTradesMineQueryJobsRequest createPostWorkforcemanagementShifttradingTradesMineQueryJobsRequest(QueryAgentShiftTradeListJobRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementShifttradingTradesMineQueryJobsRequest.builder()
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Retrieve all my shift trades where I am either the initiating or receiving user
+   * 
+   * @param request The request object
+   * @return ShiftTradeQueryAgentTradesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeQueryAgentTradesJobResponse postWorkforcemanagementShifttradingTradesMineQueryJobs(PostWorkforcemanagementShifttradingTradesMineQueryJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeQueryAgentTradesJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all my shift trades where I am either the initiating or receiving user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeQueryAgentTradesJobResponse> postWorkforcemanagementShifttradingTradesMineQueryJobs(ApiRequest<QueryAgentShiftTradeListJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeQueryAgentTradesJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = (ApiResponse<ShiftTradeQueryAgentTradesJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeQueryAgentTradesJobResponse> response = (ApiResponse<ShiftTradeQueryAgentTradesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

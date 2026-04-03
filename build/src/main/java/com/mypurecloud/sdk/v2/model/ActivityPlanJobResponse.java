@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobException;
 import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceReference;
-import com.mypurecloud.sdk.v2.model.ActivityPlanReference;
+import com.mypurecloud.sdk.v2.model.ActivityPlanStructureWithOccurrenceSessionsUsersReference;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,7 +30,6 @@ import java.io.Serializable;
 public class ActivityPlanJobResponse  implements Serializable {
   
   private String id = null;
-  private ActivityPlanReference activityPlan = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -82,7 +81,7 @@ public class ActivityPlanJobResponse  implements Serializable {
   private StatusEnum status = null;
   private List<ActivityPlanJobException> exceptions = null;
   private ErrorBody error = null;
-  private ActivityPlanOccurrenceReference occurrence = null;
+  private ActivityPlanStructureWithOccurrenceSessionsUsersReference activityPlan = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -103,7 +102,11 @@ public class ActivityPlanJobResponse  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     RUNPLAN("RunPlan"),
-    DELETEOCCURRENCE("DeleteOccurrence");
+    DELETEACTIVITYPLAN("DeleteActivityPlan"),
+    DELETEOCCURRENCE("DeleteOccurrence"),
+    DELETEOCCURRENCES("DeleteOccurrences"),
+    DELETESESSIONS("DeleteSessions"),
+    DELETESESSIONUSERS("DeleteSessionUsers");
 
     private String value;
 
@@ -131,6 +134,7 @@ public class ActivityPlanJobResponse  implements Serializable {
     }
   }
   private TypeEnum type = null;
+  private ActivityPlanOccurrenceReference occurrence = null;
   private String selfUri = null;
 
   public ActivityPlanJobResponse() {
@@ -144,24 +148,6 @@ public class ActivityPlanJobResponse  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-
-  /**
-   * The activity plan associated with this job
-   **/
-  public ActivityPlanJobResponse activityPlan(ActivityPlanReference activityPlan) {
-    this.activityPlan = activityPlan;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The activity plan associated with this job")
-  @JsonProperty("activityPlan")
-  public ActivityPlanReference getActivityPlan() {
-    return activityPlan;
-  }
-  public void setActivityPlan(ActivityPlanReference activityPlan) {
-    this.activityPlan = activityPlan;
   }
 
 
@@ -220,20 +206,20 @@ public class ActivityPlanJobResponse  implements Serializable {
 
 
   /**
-   * The occurrence associated with this job if type == 'DeleteOccurrence'
+   * The activity plan associated with this job
    **/
-  public ActivityPlanJobResponse occurrence(ActivityPlanOccurrenceReference occurrence) {
-    this.occurrence = occurrence;
+  public ActivityPlanJobResponse activityPlan(ActivityPlanStructureWithOccurrenceSessionsUsersReference activityPlan) {
+    this.activityPlan = activityPlan;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The occurrence associated with this job if type == 'DeleteOccurrence'")
-  @JsonProperty("occurrence")
-  public ActivityPlanOccurrenceReference getOccurrence() {
-    return occurrence;
+  @ApiModelProperty(example = "null", required = true, value = "The activity plan associated with this job")
+  @JsonProperty("activityPlan")
+  public ActivityPlanStructureWithOccurrenceSessionsUsersReference getActivityPlan() {
+    return activityPlan;
   }
-  public void setOccurrence(ActivityPlanOccurrenceReference occurrence) {
-    this.occurrence = occurrence;
+  public void setActivityPlan(ActivityPlanStructureWithOccurrenceSessionsUsersReference activityPlan) {
+    this.activityPlan = activityPlan;
   }
 
 
@@ -255,6 +241,24 @@ public class ActivityPlanJobResponse  implements Serializable {
   }
 
 
+  /**
+   * The occurrence associated with this job if type == 'DeleteOccurrence'
+   **/
+  public ActivityPlanJobResponse occurrence(ActivityPlanOccurrenceReference occurrence) {
+    this.occurrence = occurrence;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The occurrence associated with this job if type == 'DeleteOccurrence'")
+  @JsonProperty("occurrence")
+  public ActivityPlanOccurrenceReference getOccurrence() {
+    return occurrence;
+  }
+  public void setOccurrence(ActivityPlanOccurrenceReference occurrence) {
+    this.occurrence = occurrence;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -273,18 +277,18 @@ public class ActivityPlanJobResponse  implements Serializable {
     ActivityPlanJobResponse activityPlanJobResponse = (ActivityPlanJobResponse) o;
 
     return Objects.equals(this.id, activityPlanJobResponse.id) &&
-            Objects.equals(this.activityPlan, activityPlanJobResponse.activityPlan) &&
             Objects.equals(this.status, activityPlanJobResponse.status) &&
             Objects.equals(this.exceptions, activityPlanJobResponse.exceptions) &&
             Objects.equals(this.error, activityPlanJobResponse.error) &&
-            Objects.equals(this.occurrence, activityPlanJobResponse.occurrence) &&
+            Objects.equals(this.activityPlan, activityPlanJobResponse.activityPlan) &&
             Objects.equals(this.type, activityPlanJobResponse.type) &&
+            Objects.equals(this.occurrence, activityPlanJobResponse.occurrence) &&
             Objects.equals(this.selfUri, activityPlanJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, activityPlan, status, exceptions, error, occurrence, type, selfUri);
+    return Objects.hash(id, status, exceptions, error, activityPlan, type, occurrence, selfUri);
   }
 
   @Override
@@ -293,12 +297,12 @@ public class ActivityPlanJobResponse  implements Serializable {
     sb.append("class ActivityPlanJobResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    activityPlan: ").append(toIndentedString(activityPlan)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    exceptions: ").append(toIndentedString(exceptions)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    occurrence: ").append(toIndentedString(occurrence)).append("\n");
+    sb.append("    activityPlan: ").append(toIndentedString(activityPlan)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    occurrence: ").append(toIndentedString(occurrence)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

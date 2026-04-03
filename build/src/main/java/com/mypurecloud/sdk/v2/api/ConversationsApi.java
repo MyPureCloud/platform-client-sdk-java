@@ -194,6 +194,7 @@ import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
 import com.mypurecloud.sdk.v2.model.SetRecordingState;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 import com.mypurecloud.sdk.v2.model.Settings;
+import com.mypurecloud.sdk.v2.model.SnippetRecordingRequest;
 import com.mypurecloud.sdk.v2.model.SocialMediaMessageData;
 import com.mypurecloud.sdk.v2.model.Suggestion;
 import com.mypurecloud.sdk.v2.model.SuggestionEngagement;
@@ -463,6 +464,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsul
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonitorRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantSnippetRecordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantVoiceConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsUserUserIdRequest;
@@ -19641,6 +19643,92 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start/stop the snippet recording for a participant
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body snippetRecordingRequest (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String postConversationsCallParticipantSnippetRecord(String conversationId, String participantId, SnippetRecordingRequest body) throws IOException, ApiException {
+    return  postConversationsCallParticipantSnippetRecord(createPostConversationsCallParticipantSnippetRecordRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Start/stop the snippet recording for a participant
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body snippetRecordingRequest (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> postConversationsCallParticipantSnippetRecordWithHttpInfo(String conversationId, String participantId, SnippetRecordingRequest body) throws IOException {
+    return postConversationsCallParticipantSnippetRecord(createPostConversationsCallParticipantSnippetRecordRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantSnippetRecordRequest createPostConversationsCallParticipantSnippetRecordRequest(String conversationId, String participantId, SnippetRecordingRequest body) {
+    return PostConversationsCallParticipantSnippetRecordRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Start/stop the snippet recording for a participant
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String postConversationsCallParticipantSnippetRecord(PostConversationsCallParticipantSnippetRecordRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start/stop the snippet recording for a participant
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> postConversationsCallParticipantSnippetRecord(ApiRequest<SnippetRecordingRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

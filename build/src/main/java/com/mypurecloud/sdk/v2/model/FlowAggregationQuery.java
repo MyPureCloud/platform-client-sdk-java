@@ -137,6 +137,7 @@ public class FlowAggregationQuery  implements Serializable {
     SELFSERVED("selfServed"),
     SESSIONDNIS("sessionDnis"),
     SESSIONID("sessionId"),
+    SKILLEXPRESSIONID("skillExpressionId"),
     STARTINGLANGUAGE("startingLanguage"),
     STATIONID("stationId"),
     TEAMID("teamId"),

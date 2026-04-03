@@ -30,6 +30,7 @@ public class AgentMaxUtilizationResponse  implements Serializable {
   
   private Map<String, MediaUtilization> utilization = null;
   private Map<String, LabelUtilizationResponse> labelUtilizations = null;
+  private Integer maxInboundCalls = null;
 
   private static class LevelEnumDeserializer extends StdDeserializer<LevelEnum> {
     public LevelEnumDeserializer() {
@@ -122,6 +123,24 @@ public class AgentMaxUtilizationResponse  implements Serializable {
 
 
   /**
+   * Max number of inbound voice calls.
+   **/
+  public AgentMaxUtilizationResponse maxInboundCalls(Integer maxInboundCalls) {
+    this.maxInboundCalls = maxInboundCalls;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Max number of inbound voice calls.")
+  @JsonProperty("maxInboundCalls")
+  public Integer getMaxInboundCalls() {
+    return maxInboundCalls;
+  }
+  public void setMaxInboundCalls(Integer maxInboundCalls) {
+    this.maxInboundCalls = maxInboundCalls;
+  }
+
+
+  /**
    **/
   public AgentMaxUtilizationResponse level(LevelEnum level) {
     this.level = level;
@@ -150,12 +169,13 @@ public class AgentMaxUtilizationResponse  implements Serializable {
 
     return Objects.equals(this.utilization, agentMaxUtilizationResponse.utilization) &&
             Objects.equals(this.labelUtilizations, agentMaxUtilizationResponse.labelUtilizations) &&
+            Objects.equals(this.maxInboundCalls, agentMaxUtilizationResponse.maxInboundCalls) &&
             Objects.equals(this.level, agentMaxUtilizationResponse.level);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(utilization, labelUtilizations, level);
+    return Objects.hash(utilization, labelUtilizations, maxInboundCalls, level);
   }
 
   @Override
@@ -165,6 +185,7 @@ public class AgentMaxUtilizationResponse  implements Serializable {
     
     sb.append("    utilization: ").append(toIndentedString(utilization)).append("\n");
     sb.append("    labelUtilizations: ").append(toIndentedString(labelUtilizations)).append("\n");
+    sb.append("    maxInboundCalls: ").append(toIndentedString(maxInboundCalls)).append("\n");
     sb.append("    level: ").append(toIndentedString(level)).append("\n");
     sb.append("}");
     return sb.toString();

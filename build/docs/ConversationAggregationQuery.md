@@ -99,6 +99,7 @@
 | SELFSERVED | &quot;selfServed&quot; |
 | SESSIONDNIS | &quot;sessionDnis&quot; |
 | SESSIONID | &quot;sessionId&quot; |
+| SKILLEXPRESSIONID | &quot;skillExpressionId&quot; |
 | STATIONID | &quot;stationId&quot; |
 | TEAMID | &quot;teamId&quot; |
 | USEDROUTING | &quot;usedRouting&quot; |
@@ -115,6 +116,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; |
 | NBOTINTERACTIONS | &quot;nBotInteractions&quot; |
+| NCALLBACKATTEMPTS | &quot;nCallbackAttempts&quot; |
+| NCALLBACKSCHEDULED | &quot;nCallbackScheduled&quot; |
 | NCOBROWSESESSIONS | &quot;nCobrowseSessions&quot; |
 | NCONNECTED | &quot;nConnected&quot; |
 | NCONSULT | &quot;nConsult&quot; |
@@ -151,6 +154,9 @@
 | TAVERAGEAGENTRESPONSETIME | &quot;tAverageAgentResponseTime&quot; |
 | TAVERAGECUSTOMERRESPONSETIME | &quot;tAverageCustomerResponseTime&quot; |
 | TBARGING | &quot;tBarging&quot; |
+| TCALLBACKABANDON | &quot;tCallbackAbandon&quot; |
+| TCALLBACKCONNECT | &quot;tCallbackConnect&quot; |
+| TCALLBACKNOTREACHED | &quot;tCallbackNotReached&quot; |
 | TCOACHING | &quot;tCoaching&quot; |
 | TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; |
 | TCONNECTED | &quot;tConnected&quot; |
@@ -200,4 +206,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:250.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_

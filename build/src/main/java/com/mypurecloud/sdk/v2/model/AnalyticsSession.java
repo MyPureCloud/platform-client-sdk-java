@@ -445,6 +445,7 @@ public class AnalyticsSession  implements Serializable {
   private String sessionDnis = null;
   private String sessionId = null;
   private Boolean sharingScreen = null;
+  private String skillExpressionId = null;
   private Boolean skipEnabled = null;
   private Boolean snippetRecording = null;
   private Integer timeoutSeconds = null;
@@ -1866,6 +1867,24 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
+   * Unique identifier for the skill requested for an interaction
+   **/
+  public AnalyticsSession skillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Unique identifier for the skill requested for an interaction")
+  @JsonProperty("skillExpressionId")
+  public String getSkillExpressionId() {
+    return skillExpressionId;
+  }
+  public void setSkillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+  }
+
+
+  /**
    * (Dialer) Whether the agent can skip the dialer contact
    **/
   public AnalyticsSession skipEnabled(Boolean skipEnabled) {
@@ -2183,6 +2202,7 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.sessionDnis, analyticsSession.sessionDnis) &&
             Objects.equals(this.sessionId, analyticsSession.sessionId) &&
             Objects.equals(this.sharingScreen, analyticsSession.sharingScreen) &&
+            Objects.equals(this.skillExpressionId, analyticsSession.skillExpressionId) &&
             Objects.equals(this.skipEnabled, analyticsSession.skipEnabled) &&
             Objects.equals(this.snippetRecording, analyticsSession.snippetRecording) &&
             Objects.equals(this.timeoutSeconds, analyticsSession.timeoutSeconds) &&
@@ -2200,7 +2220,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, engagementSource, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenMonitoredUserId, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, snippetRecording, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, engagementSource, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenMonitoredUserId, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skillExpressionId, skipEnabled, snippetRecording, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -2282,6 +2302,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    sessionDnis: ").append(toIndentedString(sessionDnis)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");
+    sb.append("    skillExpressionId: ").append(toIndentedString(skillExpressionId)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
     sb.append("    snippetRecording: ").append(toIndentedString(snippetRecording)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
