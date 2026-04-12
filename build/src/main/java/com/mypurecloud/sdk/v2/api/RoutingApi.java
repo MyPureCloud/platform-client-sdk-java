@@ -13767,7 +13767,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
    * 
    * @param userId User ID (required)
    * @param body utilization (required)
@@ -13780,7 +13780,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
    * 
    * @param userId User ID (required)
    * @param body utilization (required)
@@ -13801,7 +13801,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
    * 
    * @param request The request object
    * @return AgentMaxUtilizationResponse
@@ -13820,7 +13820,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
    * 
    * @param request The request object
    * @return the response
@@ -13849,7 +13849,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
    * 
    * @param body utilization (required)
    * @return UtilizationResponse
@@ -13861,7 +13861,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
    * 
    * @param body utilization (required)
    * @return UtilizationResponse
@@ -13879,7 +13879,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
    * 
    * @param request The request object
    * @return UtilizationResponse
@@ -13898,7 +13898,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
    * 
    * @param request The request object
    * @return the response

@@ -20,6 +20,10 @@ import com.mypurecloud.sdk.v2.model.AgentCopilotAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AgentCopilotAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AgentStateCountsRequest;
 import com.mypurecloud.sdk.v2.model.AgentStateQueryRequest;
+import com.mypurecloud.sdk.v2.model.AgentUtilizationAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.AgentUtilizationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.AgentUtilizationAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.AgentUtilizationAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateAgentResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateCountsResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateQueryResponse;
@@ -140,6 +144,7 @@ import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsActionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsAgentcopilotsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsAgentutilizationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsBotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsCasemanagementAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsAggregatesJobRequest;
@@ -162,6 +167,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobResult
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentcopilotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentcopilotsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentutilizationsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentutilizationsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowDivisionsReportingturnsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowReportingturnsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowSessionsRequest;
@@ -220,6 +227,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentcopilotsAggregatesJo
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentcopilotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusCountsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentutilizationsAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentutilizationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsCasemanagementAggregatesJobsRequest;
@@ -426,6 +435,85 @@ public class AnalyticsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAnalyticsAgentcopilotsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for agent utilization aggregates
+   * 
+   * deleteAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsAgentutilizationsAggregatesJob(String jobId) throws IOException, ApiException {
+     deleteAnalyticsAgentutilizationsAggregatesJob(createDeleteAnalyticsAgentutilizationsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Delete/cancel an async request for agent utilization aggregates
+   * 
+   * deleteAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsAgentutilizationsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return deleteAnalyticsAgentutilizationsAggregatesJob(createDeleteAnalyticsAgentutilizationsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteAnalyticsAgentutilizationsAggregatesJobRequest createDeleteAnalyticsAgentutilizationsAggregatesJobRequest(String jobId) {
+    return DeleteAnalyticsAgentutilizationsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Delete/cancel an async request for agent utilization aggregates
+   * 
+   * deleteAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsAgentutilizationsAggregatesJob(DeleteAnalyticsAgentutilizationsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for agent utilization aggregates
+   * 
+   * deleteAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsAgentutilizationsAggregatesJob(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2192,6 +2280,174 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentCopilotAsyncAggregateQueryResponse> response = (ApiResponse<AgentCopilotAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for agent utilization aggregates
+   * 
+   * getAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsAgentutilizationsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsAgentutilizationsAggregatesJob(createGetAnalyticsAgentutilizationsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for agent utilization aggregates
+   * 
+   * getAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsAgentutilizationsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsAgentutilizationsAggregatesJob(createGetAnalyticsAgentutilizationsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsAgentutilizationsAggregatesJobRequest createGetAnalyticsAgentutilizationsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsAgentutilizationsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for agent utilization aggregates
+   * 
+   * getAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsAgentutilizationsAggregatesJob(GetAnalyticsAgentutilizationsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for agent utilization aggregates
+   * 
+   * getAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsAgentutilizationsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsAgentutilizationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return AgentUtilizationAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentUtilizationAsyncAggregateQueryResponse getAnalyticsAgentutilizationsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsAgentutilizationsAggregatesJobResults(createGetAnalyticsAgentutilizationsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsAgentutilizationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return AgentUtilizationAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentUtilizationAsyncAggregateQueryResponse> getAnalyticsAgentutilizationsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsAgentutilizationsAggregatesJobResults(createGetAnalyticsAgentutilizationsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsAgentutilizationsAggregatesJobResultsRequest createGetAnalyticsAgentutilizationsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsAgentutilizationsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsAgentutilizationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AgentUtilizationAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentUtilizationAsyncAggregateQueryResponse getAnalyticsAgentutilizationsAggregatesJobResults(GetAnalyticsAgentutilizationsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentUtilizationAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentUtilizationAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsAgentutilizationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentUtilizationAsyncAggregateQueryResponse> getAnalyticsAgentutilizationsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentUtilizationAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentUtilizationAsyncAggregateQueryResponse> response = (ApiResponse<AgentUtilizationAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentUtilizationAsyncAggregateQueryResponse> response = (ApiResponse<AgentUtilizationAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7085,6 +7341,170 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsAgentStateQueryResponse> response = (ApiResponse<AnalyticsAgentStateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for agent utilization aggregates asynchronously
+   * 
+   * postAnalyticsAgentutilizationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsAgentutilizationsAggregatesJobs(AgentUtilizationAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsAgentutilizationsAggregatesJobs(createPostAnalyticsAgentutilizationsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for agent utilization aggregates asynchronously
+   * 
+   * postAnalyticsAgentutilizationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsAgentutilizationsAggregatesJobsWithHttpInfo(AgentUtilizationAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsAgentutilizationsAggregatesJobs(createPostAnalyticsAgentutilizationsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsAgentutilizationsAggregatesJobsRequest createPostAnalyticsAgentutilizationsAggregatesJobsRequest(AgentUtilizationAsyncAggregationQuery body) {
+    return PostAnalyticsAgentutilizationsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for agent utilization aggregates asynchronously
+   * 
+   * postAnalyticsAgentutilizationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsAgentutilizationsAggregatesJobs(PostAnalyticsAgentutilizationsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for agent utilization aggregates asynchronously
+   * 
+   * postAnalyticsAgentutilizationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsAgentutilizationsAggregatesJobs(ApiRequest<AgentUtilizationAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for agent utilization aggregates
+   * 
+   * postAnalyticsAgentutilizationsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AgentUtilizationAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentUtilizationAggregateQueryResponse postAnalyticsAgentutilizationsAggregatesQuery(AgentUtilizationAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsAgentutilizationsAggregatesQuery(createPostAnalyticsAgentutilizationsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for agent utilization aggregates
+   * 
+   * postAnalyticsAgentutilizationsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AgentUtilizationAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentUtilizationAggregateQueryResponse> postAnalyticsAgentutilizationsAggregatesQueryWithHttpInfo(AgentUtilizationAggregationQuery body) throws IOException {
+    return postAnalyticsAgentutilizationsAggregatesQuery(createPostAnalyticsAgentutilizationsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsAgentutilizationsAggregatesQueryRequest createPostAnalyticsAgentutilizationsAggregatesQueryRequest(AgentUtilizationAggregationQuery body) {
+    return PostAnalyticsAgentutilizationsAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for agent utilization aggregates
+   * 
+   * postAnalyticsAgentutilizationsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AgentUtilizationAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentUtilizationAggregateQueryResponse postAnalyticsAgentutilizationsAggregatesQuery(PostAnalyticsAgentutilizationsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentUtilizationAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentUtilizationAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for agent utilization aggregates
+   * 
+   * postAnalyticsAgentutilizationsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentUtilizationAggregateQueryResponse> postAnalyticsAgentutilizationsAggregatesQuery(ApiRequest<AgentUtilizationAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentUtilizationAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentUtilizationAggregateQueryResponse> response = (ApiResponse<AgentUtilizationAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentUtilizationAggregateQueryResponse> response = (ApiResponse<AgentUtilizationAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

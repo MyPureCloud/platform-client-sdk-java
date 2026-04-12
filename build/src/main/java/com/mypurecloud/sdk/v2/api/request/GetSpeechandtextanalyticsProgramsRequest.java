@@ -163,6 +163,20 @@ public class GetSpeechandtextanalyticsProgramsRequest {
 	    return this;
 	} 
 
+	private List<String> ids;
+	public List<String> getIds() {
+		return this.ids;
+	}
+
+	public void setIds(List<String> ids) {
+		this.ids = ids;
+	}
+
+	public GetSpeechandtextanalyticsProgramsRequest withIds(List<String> ids) {
+	    this.setIds(ids);
+	    return this;
+	} 
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -286,6 +300,9 @@ public class GetSpeechandtextanalyticsProgramsRequest {
                 .withQueryParameters("name", "", name)
         
 
+                .withQueryParameters("ids", "multi", ids)
+        
+
                 .withQueryParameters("sortBy", "", sortBy)
         
 
@@ -338,6 +355,11 @@ public class GetSpeechandtextanalyticsProgramsRequest {
 
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+
+		public Builder withIds(List<String> ids) {
+			request.setIds(ids);
 			return this;
 		}
 

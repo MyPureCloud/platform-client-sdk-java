@@ -13,23 +13,32 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.CreateScheduledTriggerRequest;
 import com.mypurecloud.sdk.v2.model.CreateTriggerRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ScheduledTrigger;
+import com.mypurecloud.sdk.v2.model.ScheduledTriggerEntityListing;
 import com.mypurecloud.sdk.v2.model.TestModeEventResults;
 import com.mypurecloud.sdk.v2.model.TestModeResults;
 import com.mypurecloud.sdk.v2.model.TopicCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.Trigger;
 import com.mypurecloud.sdk.v2.model.TriggerEntityListing;
+import com.mypurecloud.sdk.v2.model.UpdateScheduledTriggerRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTriggerRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteProcessautomationScheduledtriggerRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteProcessautomationTriggerRequest;
+import com.mypurecloud.sdk.v2.api.request.GetProcessautomationScheduledtriggerRequest;
+import com.mypurecloud.sdk.v2.api.request.GetProcessautomationScheduledtriggersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProcessautomationTriggerRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProcessautomationTriggersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProcessautomationTriggersTopicsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostProcessautomationScheduledtriggersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostProcessautomationTriggerTestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostProcessautomationTriggersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostProcessautomationTriggersTopicTestRequest;
+import com.mypurecloud.sdk.v2.api.request.PutProcessautomationScheduledtriggerRequest;
 import com.mypurecloud.sdk.v2.api.request.PutProcessautomationTriggerRequest;
 
 import java.io.IOException;
@@ -48,6 +57,81 @@ public class ProcessAutomationApiAsync {
 
   public ProcessAutomationApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete a Scheduled Trigger
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteProcessautomationScheduledtriggerAsync(DeleteProcessautomationScheduledtriggerRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Scheduled Trigger
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteProcessautomationScheduledtriggerAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -114,6 +198,156 @@ public class ProcessAutomationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a single Scheduled Trigger matching id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduledTrigger> getProcessautomationScheduledtriggerAsync(GetProcessautomationScheduledtriggerRequest request, final AsyncApiCallback<ScheduledTrigger> callback) {
+    try {
+      final SettableFuture<ScheduledTrigger> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduledTrigger>() {}, new AsyncApiCallback<ApiResponse<ScheduledTrigger>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduledTrigger> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a single Scheduled Trigger matching id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduledTrigger>> getProcessautomationScheduledtriggerAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScheduledTrigger>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduledTrigger>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduledTrigger>() {}, new AsyncApiCallback<ApiResponse<ScheduledTrigger>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduledTrigger> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduledTrigger> response = (ApiResponse<ScheduledTrigger>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduledTrigger> response = (ApiResponse<ScheduledTrigger>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves all scheduled triggers, optionally filtered by query parameters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduledTriggerEntityListing> getProcessautomationScheduledtriggersAsync(GetProcessautomationScheduledtriggersRequest request, final AsyncApiCallback<ScheduledTriggerEntityListing> callback) {
+    try {
+      final SettableFuture<ScheduledTriggerEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduledTriggerEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScheduledTriggerEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduledTriggerEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves all scheduled triggers, optionally filtered by query parameters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduledTriggerEntityListing>> getProcessautomationScheduledtriggersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScheduledTriggerEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduledTriggerEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduledTriggerEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScheduledTriggerEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduledTriggerEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduledTriggerEntityListing> response = (ApiResponse<ScheduledTriggerEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduledTriggerEntityListing> response = (ApiResponse<ScheduledTriggerEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -351,6 +585,81 @@ public class ProcessAutomationApiAsync {
   }
 
   /**
+   * Create a scheduled Trigger
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduledTrigger> postProcessautomationScheduledtriggersAsync(PostProcessautomationScheduledtriggersRequest request, final AsyncApiCallback<ScheduledTrigger> callback) {
+    try {
+      final SettableFuture<ScheduledTrigger> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduledTrigger>() {}, new AsyncApiCallback<ApiResponse<ScheduledTrigger>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduledTrigger> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a scheduled Trigger
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduledTrigger>> postProcessautomationScheduledtriggersAsync(ApiRequest<CreateScheduledTriggerRequest> request, final AsyncApiCallback<ApiResponse<ScheduledTrigger>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduledTrigger>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduledTrigger>() {}, new AsyncApiCallback<ApiResponse<ScheduledTrigger>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduledTrigger> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduledTrigger> response = (ApiResponse<ScheduledTrigger>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduledTrigger> response = (ApiResponse<ScheduledTrigger>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Test the matching of a Trigger based on provided event body
    * 
    * @param request the request object
@@ -564,6 +873,81 @@ public class ProcessAutomationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TestModeEventResults> response = (ApiResponse<TestModeEventResults>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a Scheduled Trigger
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduledTrigger> putProcessautomationScheduledtriggerAsync(PutProcessautomationScheduledtriggerRequest request, final AsyncApiCallback<ScheduledTrigger> callback) {
+    try {
+      final SettableFuture<ScheduledTrigger> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduledTrigger>() {}, new AsyncApiCallback<ApiResponse<ScheduledTrigger>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduledTrigger> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a Scheduled Trigger
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduledTrigger>> putProcessautomationScheduledtriggerAsync(ApiRequest<UpdateScheduledTriggerRequest> request, final AsyncApiCallback<ApiResponse<ScheduledTrigger>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduledTrigger>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduledTrigger>() {}, new AsyncApiCallback<ApiResponse<ScheduledTrigger>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduledTrigger> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduledTrigger> response = (ApiResponse<ScheduledTrigger>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduledTrigger> response = (ApiResponse<ScheduledTrigger>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

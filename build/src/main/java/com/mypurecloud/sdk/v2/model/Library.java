@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -81,6 +82,7 @@ public class Library  implements Serializable {
     }
   }
   private ResponseTypeEnum responseType = null;
+  private WritableDivision division = null;
   private String selfUri = null;
 
   public Library() {
@@ -164,6 +166,24 @@ public class Library  implements Serializable {
   }
 
 
+  /**
+   * The division to which this entity belongs.
+   **/
+  public Library division(WritableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableDivision division) {
+    this.division = division;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -187,12 +207,13 @@ public class Library  implements Serializable {
             Objects.equals(this.createdBy, library.createdBy) &&
             Objects.equals(this.dateCreated, library.dateCreated) &&
             Objects.equals(this.responseType, library.responseType) &&
+            Objects.equals(this.division, library.division) &&
             Objects.equals(this.selfUri, library.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, createdBy, dateCreated, responseType, selfUri);
+    return Objects.hash(id, name, version, createdBy, dateCreated, responseType, division, selfUri);
   }
 
   @Override
@@ -206,6 +227,7 @@ public class Library  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    responseType: ").append(toIndentedString(responseType)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

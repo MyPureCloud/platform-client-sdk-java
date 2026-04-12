@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanUpdate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;
+import com.mypurecloud.sdk.v2.model.IntakeSettingsUpdate;
 import com.mypurecloud.sdk.v2.model.ModelCase;
 import com.mypurecloud.sdk.v2.model.Stage;
 import com.mypurecloud.sdk.v2.model.StageListing;
@@ -79,6 +80,7 @@ import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanVersionsRequ
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesAssociationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanIntakesettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -2705,6 +2707,83 @@ public class CaseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CaseAssociationQueryEntityListing> response = (ApiResponse<CaseAssociationQueryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the intake settings for a Caseplan.
+   * 
+   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IntakeSettingsListing> putCasemanagementCaseplanIntakesettingsAsync(PutCasemanagementCaseplanIntakesettingsRequest request, final AsyncApiCallback<IntakeSettingsListing> callback) {
+    try {
+      final SettableFuture<IntakeSettingsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IntakeSettingsListing>() {}, new AsyncApiCallback<ApiResponse<IntakeSettingsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntakeSettingsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the intake settings for a Caseplan.
+   * 
+   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IntakeSettingsListing>> putCasemanagementCaseplanIntakesettingsAsync(ApiRequest<IntakeSettingsUpdate> request, final AsyncApiCallback<ApiResponse<IntakeSettingsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IntakeSettingsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IntakeSettingsListing>() {}, new AsyncApiCallback<ApiResponse<IntakeSettingsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntakeSettingsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntakeSettingsListing> response = (ApiResponse<IntakeSettingsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntakeSettingsListing> response = (ApiResponse<IntakeSettingsListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

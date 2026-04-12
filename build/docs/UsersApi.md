@@ -110,7 +110,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUsersSearchTeamsAssign**](UsersApi#postUsersSearchTeamsAssign) | Search users assigned to teams |
 | [**putRoutingDirectroutingbackupSettingsMe**](UsersApi#putRoutingDirectroutingbackupSettingsMe) | Update the user's Direct Routing Backup settings. |
 | [**putRoutingUserDirectroutingbackupSettings**](UsersApi#putRoutingUserDirectroutingbackupSettings) | Update the user's Direct Routing Backup settings. |
-| [**putRoutingUserUtilization**](UsersApi#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
+| [**putRoutingUserUtilization**](UsersApi#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values. |
 | [**putUserCallforwarding**](UsersApi#putUserCallforwarding) | Update a user's CallForwarding |
 | [**putUserCustomattributes**](UsersApi#putUserCustomattributes) | Create or update a single custom attributes record. Updating replaces all data with the provided fields. |
 | [**putUserOutofoffice**](UsersApi#putUserOutofoffice) | Update an OutOfOffice |
@@ -6660,7 +6660,7 @@ try {
 
 > [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse) putRoutingUserUtilization(userId, body)
 
-Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 
 Wraps PUT /api/v2/routing/users/{userId}/utilization  
 
@@ -7509,4 +7509,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_

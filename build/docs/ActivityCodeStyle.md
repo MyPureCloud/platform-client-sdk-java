@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **backgroundColor** | **String** | Background color for the activity code in hex format starting with # followed by 6 hexadecimal characters (0-9, a-f, A-F) |  [optional] |
-| **textColorTheme** | [**TextColorThemeEnum**](#Enum--TextColorThemeEnum) | Text color theme for the activity code |  [optional] |
+| **backgroundColor** | **String** | Background color for the activity code in hex format starting with # followed by 6 hexadecimal characters (0-9, a-f, A-F) |  |
+| **textColorTheme** | [**TextColorThemeEnum**](#Enum--TextColorThemeEnum) | Text color theme for the activity code |  |
 
 
 ## Enum: TextColorThemeEnum
@@ -20,4 +20,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_

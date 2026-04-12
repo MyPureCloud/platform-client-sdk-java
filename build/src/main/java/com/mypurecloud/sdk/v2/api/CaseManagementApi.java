@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanUpdate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;
+import com.mypurecloud.sdk.v2.model.IntakeSettingsUpdate;
 import com.mypurecloud.sdk.v2.model.ModelCase;
 import com.mypurecloud.sdk.v2.model.Stage;
 import com.mypurecloud.sdk.v2.model.StageListing;
@@ -76,6 +77,7 @@ import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanVersionsRequ
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesAssociationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanIntakesettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -3098,6 +3100,92 @@ public class CaseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CaseAssociationQueryEntityListing> response = (ApiResponse<CaseAssociationQueryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the intake settings for a Caseplan.
+   * 
+   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseplanId Caseplan ID (required)
+   * @param body Intake Settings (required)
+   * @return IntakeSettingsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IntakeSettingsListing putCasemanagementCaseplanIntakesettings(String caseplanId, IntakeSettingsUpdate body) throws IOException, ApiException {
+    return  putCasemanagementCaseplanIntakesettings(createPutCasemanagementCaseplanIntakesettingsRequest(caseplanId, body));
+  }
+
+  /**
+   * Update the intake settings for a Caseplan.
+   * 
+   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseplanId Caseplan ID (required)
+   * @param body Intake Settings (required)
+   * @return IntakeSettingsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IntakeSettingsListing> putCasemanagementCaseplanIntakesettingsWithHttpInfo(String caseplanId, IntakeSettingsUpdate body) throws IOException {
+    return putCasemanagementCaseplanIntakesettings(createPutCasemanagementCaseplanIntakesettingsRequest(caseplanId, body).withHttpInfo());
+  }
+
+  private PutCasemanagementCaseplanIntakesettingsRequest createPutCasemanagementCaseplanIntakesettingsRequest(String caseplanId, IntakeSettingsUpdate body) {
+    return PutCasemanagementCaseplanIntakesettingsRequest.builder()
+            .withCaseplanId(caseplanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the intake settings for a Caseplan.
+   * 
+   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IntakeSettingsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IntakeSettingsListing putCasemanagementCaseplanIntakesettings(PutCasemanagementCaseplanIntakesettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IntakeSettingsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IntakeSettingsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the intake settings for a Caseplan.
+   * 
+   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IntakeSettingsListing> putCasemanagementCaseplanIntakesettings(ApiRequest<IntakeSettingsUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IntakeSettingsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IntakeSettingsListing> response = (ApiResponse<IntakeSettingsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IntakeSettingsListing> response = (ApiResponse<IntakeSettingsListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

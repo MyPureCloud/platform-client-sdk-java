@@ -15,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationApp;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationBrowser;
+import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationCase;
+import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationCaseAssociation;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationConnectedQueue;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationConversation;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationConversationChannel;
@@ -248,6 +250,60 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private JourneySessionEventsNotificationNetworkConnectivity networkConnectivity = null;
   private List<String> divisionIds = null;
   private String lastScreen = null;
+  private List<JourneySessionEventsNotificationCaseAssociation> caseAssociations = null;
+  private JourneySessionEventsNotificationCase caseEntity = null;
+  private String caseReference = null;
+
+  private static class CaseStatusEnumDeserializer extends StdDeserializer<CaseStatusEnum> {
+    public CaseStatusEnumDeserializer() {
+      super(CaseStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public CaseStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CaseStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets caseStatus
+   */
+ @JsonDeserialize(using = CaseStatusEnumDeserializer.class)
+  public enum CaseStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    OPEN("Open"),
+    INPROGRESS("InProgress"),
+    TERMINATED("Terminated"),
+    CLOSED("Closed");
+
+    private String value;
+
+    CaseStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CaseStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CaseStatusEnum value : CaseStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CaseStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CaseStatusEnum caseStatus = null;
 
   public JourneySessionEventsNotificationSessionEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -256,6 +312,7 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
       searchTerms = new ArrayList<String>();
       conversationChannels = new ArrayList<JourneySessionEventsNotificationConversationChannel>();
       divisionIds = new ArrayList<String>();
+      caseAssociations = new ArrayList<JourneySessionEventsNotificationCaseAssociation>();
     }
   }
 
@@ -974,6 +1031,74 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   }
 
 
+  /**
+   **/
+  public JourneySessionEventsNotificationSessionEvent caseAssociations(List<JourneySessionEventsNotificationCaseAssociation> caseAssociations) {
+    this.caseAssociations = caseAssociations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("caseAssociations")
+  public List<JourneySessionEventsNotificationCaseAssociation> getCaseAssociations() {
+    return caseAssociations;
+  }
+  public void setCaseAssociations(List<JourneySessionEventsNotificationCaseAssociation> caseAssociations) {
+    this.caseAssociations = caseAssociations;
+  }
+
+
+  /**
+   **/
+  public JourneySessionEventsNotificationSessionEvent caseEntity(JourneySessionEventsNotificationCase caseEntity) {
+    this.caseEntity = caseEntity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("caseEntity")
+  public JourneySessionEventsNotificationCase getCaseEntity() {
+    return caseEntity;
+  }
+  public void setCaseEntity(JourneySessionEventsNotificationCase caseEntity) {
+    this.caseEntity = caseEntity;
+  }
+
+
+  /**
+   **/
+  public JourneySessionEventsNotificationSessionEvent caseReference(String caseReference) {
+    this.caseReference = caseReference;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("caseReference")
+  public String getCaseReference() {
+    return caseReference;
+  }
+  public void setCaseReference(String caseReference) {
+    this.caseReference = caseReference;
+  }
+
+
+  /**
+   **/
+  public JourneySessionEventsNotificationSessionEvent caseStatus(CaseStatusEnum caseStatus) {
+    this.caseStatus = caseStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("caseStatus")
+  public CaseStatusEnum getCaseStatus() {
+    return caseStatus;
+  }
+  public void setCaseStatus(CaseStatusEnum caseStatus) {
+    this.caseStatus = caseStatus;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1025,12 +1150,16 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
             Objects.equals(this.sdkLibrary, journeySessionEventsNotificationSessionEvent.sdkLibrary) &&
             Objects.equals(this.networkConnectivity, journeySessionEventsNotificationSessionEvent.networkConnectivity) &&
             Objects.equals(this.divisionIds, journeySessionEventsNotificationSessionEvent.divisionIds) &&
-            Objects.equals(this.lastScreen, journeySessionEventsNotificationSessionEvent.lastScreen);
+            Objects.equals(this.lastScreen, journeySessionEventsNotificationSessionEvent.lastScreen) &&
+            Objects.equals(this.caseAssociations, journeySessionEventsNotificationSessionEvent.caseAssociations) &&
+            Objects.equals(this.caseEntity, journeySessionEventsNotificationSessionEvent.caseEntity) &&
+            Objects.equals(this.caseReference, journeySessionEventsNotificationSessionEvent.caseReference) &&
+            Objects.equals(this.caseStatus, journeySessionEventsNotificationSessionEvent.caseStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, outcomeAchievements, segmentAssignments, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated, app, sdkLibrary, networkConnectivity, divisionIds, lastScreen);
+    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, outcomeAchievements, segmentAssignments, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated, app, sdkLibrary, networkConnectivity, divisionIds, lastScreen, caseAssociations, caseEntity, caseReference, caseStatus);
   }
 
   @Override
@@ -1080,6 +1209,10 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
     sb.append("    networkConnectivity: ").append(toIndentedString(networkConnectivity)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    lastScreen: ").append(toIndentedString(lastScreen)).append("\n");
+    sb.append("    caseAssociations: ").append(toIndentedString(caseAssociations)).append("\n");
+    sb.append("    caseEntity: ").append(toIndentedString(caseEntity)).append("\n");
+    sb.append("    caseReference: ").append(toIndentedString(caseReference)).append("\n");
+    sb.append("    caseStatus: ").append(toIndentedString(caseStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }

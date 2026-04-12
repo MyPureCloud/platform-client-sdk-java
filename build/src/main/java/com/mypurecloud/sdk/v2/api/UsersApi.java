@@ -8979,7 +8979,7 @@ public class UsersApi {
   }
 
   /**
-   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
    * 
    * @param userId User ID (required)
    * @param body utilization (required)
@@ -8992,7 +8992,7 @@ public class UsersApi {
   }
 
   /**
-   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
    * 
    * @param userId User ID (required)
    * @param body utilization (required)
@@ -9013,7 +9013,7 @@ public class UsersApi {
   }
 
   /**
-   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
    * 
    * @param request The request object
    * @return AgentMaxUtilizationResponse
@@ -9032,7 +9032,7 @@ public class UsersApi {
   }
 
   /**
-   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
    * 
    * @param request The request object
    * @return the response

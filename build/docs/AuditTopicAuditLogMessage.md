@@ -337,8 +337,8 @@
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
 | STAFFINGGROUP | &quot;StaffingGroup&quot; | 
 | CAPACITYPLAN | &quot;CapacityPlan&quot; | 
-| SCHEDULEBID | &quot;ScheduleBid&quot; | 
-| SCHEDULEBIDGROUP | &quot;ScheduleBidGroup&quot; | 
+| SCHEDULESETBID | &quot;ScheduleSetBid&quot; | 
+| SCHEDULESETBIDGROUP | &quot;ScheduleSetBidGroup&quot; | 
 | OPPORTUNITY | &quot;Opportunity&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | RESPONSE | &quot;Response&quot; | 
@@ -446,6 +446,7 @@
 | ORGANIZATIONSUSPENSION | &quot;OrganizationSuspension&quot; | 
 | OPERATIONALEVENT | &quot;OperationalEvent&quot; | 
 | SENDER | &quot;Sender&quot; | 
+| GCVBYOCBLOCK | &quot;GcvByocBlock&quot; | 
 | ALLOWANDBLOCKNUMBER | &quot;AllowAndBlockNumber&quot; | 
 | PARTICIPANT | &quot;Participant&quot; | 
 | CONTACTSCHEMA | &quot;ContactSchema&quot; | 
@@ -495,4 +496,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_

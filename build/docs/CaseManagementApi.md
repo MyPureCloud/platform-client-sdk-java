@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postCasemanagementCaseplans**](CaseManagementApi#postCasemanagementCaseplans) | Create a Caseplan. |
 | [**postCasemanagementCases**](CaseManagementApi#postCasemanagementCases) | Create a Case. |
 | [**postCasemanagementCasesAssociationsQuery**](CaseManagementApi#postCasemanagementCasesAssociationsQuery) | Query for case associations |
+| [**putCasemanagementCaseplanIntakesettings**](CaseManagementApi#putCasemanagementCaseplanIntakesettings) | Update the intake settings for a Caseplan. |
 {: class="table-striped"}
 
 
@@ -1060,7 +1061,7 @@ try {
 | **versionId** | **String**| Version ID | 
 | **stageplanId** | **String**| Stageplan ID | 
 | **stepplanId** | **String**| Stepplan ID | 
-| **expands** | [**List&lt;String&gt;**](String)| Which fields to expand. | [optional]<br />**Values**: stageplan, caseplan 
+| **expands** | [**List&lt;String&gt;**](String)| Which fields to expand. | [optional]<br />**Values**: stageplan, caseplan, worktype 
 {: class="table-striped"}
 
 
@@ -1133,7 +1134,7 @@ try {
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **expands** | [**List&lt;String&gt;**](String)| Which fields to expand. | [optional]<br />**Values**: caseplan, stageplan 
+| **expands** | [**List&lt;String&gt;**](String)| Which fields to expand. | [optional]<br />**Values**: caseplan, stageplan, worktype 
 {: class="table-striped"}
 
 
@@ -2225,4 +2226,67 @@ try {
 [**CaseAssociationQueryEntityListing**](CaseAssociationQueryEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_
+# **putCasemanagementCaseplanIntakesettings**
+
+
+> [IntakeSettingsListing](IntakeSettingsListing) putCasemanagementCaseplanIntakesettings(caseplanId, body)
+
+Update the intake settings for a Caseplan.
+
+putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings  
+
+Requires ANY permissions: 
+
+* caseManagement:caseplanIntakeSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseplanId = "caseplanId_example"; // String | Caseplan ID
+IntakeSettingsUpdate body = new IntakeSettingsUpdate(); // IntakeSettingsUpdate | Intake Settings
+try {
+    IntakeSettingsListing result = apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#putCasemanagementCaseplanIntakesettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseplanId** | **String**| Caseplan ID | 
+| **body** | [**IntakeSettingsUpdate**](IntakeSettingsUpdate)| Intake Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IntakeSettingsListing**](IntakeSettingsListing)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_

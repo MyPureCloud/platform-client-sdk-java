@@ -86,6 +86,7 @@ public class AuthorizationPolicy  implements Serializable {
   private Date dateModified = null;
   private Map<String, TypedAttribute> presetAttributes = null;
   private Boolean active = null;
+  private Boolean applyToClients = null;
   private String selfUri = null;
 
   public AuthorizationPolicy() {
@@ -239,6 +240,24 @@ public class AuthorizationPolicy  implements Serializable {
   }
 
 
+  /**
+   * Flag to determine whether policy applies to OAuth Clients
+   **/
+  public AuthorizationPolicy applyToClients(Boolean applyToClients) {
+    this.applyToClients = applyToClients;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag to determine whether policy applies to OAuth Clients")
+  @JsonProperty("applyToClients")
+  public Boolean getApplyToClients() {
+    return applyToClients;
+  }
+  public void setApplyToClients(Boolean applyToClients) {
+    this.applyToClients = applyToClients;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -266,12 +285,13 @@ public class AuthorizationPolicy  implements Serializable {
             Objects.equals(this.dateModified, authorizationPolicy.dateModified) &&
             Objects.equals(this.presetAttributes, authorizationPolicy.presetAttributes) &&
             Objects.equals(this.active, authorizationPolicy.active) &&
+            Objects.equals(this.applyToClients, authorizationPolicy.applyToClients) &&
             Objects.equals(this.selfUri, authorizationPolicy.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, targetResource, subject, effect, condition, description, dateModified, presetAttributes, active, selfUri);
+    return Objects.hash(id, name, targetResource, subject, effect, condition, description, dateModified, presetAttributes, active, applyToClients, selfUri);
   }
 
   @Override
@@ -289,6 +309,7 @@ public class AuthorizationPolicy  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    presetAttributes: ").append(toIndentedString(presetAttributes)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    applyToClients: ").append(toIndentedString(applyToClients)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -34,6 +34,7 @@
 | COMPOSERSCRIPT | &quot;COMPOSERSCRIPT&quot; | 
 | CONTACTLIST | &quot;CONTACTLIST&quot; | 
 | CONVERSATIONCUSTOMATTRIBUTESCHEMA | &quot;CONVERSATIONCUSTOMATTRIBUTESCHEMA&quot; | 
+| CONVERSATIONSUMMARYSETTING | &quot;CONVERSATIONSUMMARYSETTING&quot; | 
 | DATAACTION | &quot;DATAACTION&quot; | 
 | DATATABLE | &quot;DATATABLE&quot; | 
 | DECISIONTABLE | &quot;DECISIONTABLE&quot; | 
@@ -110,4 +111,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_

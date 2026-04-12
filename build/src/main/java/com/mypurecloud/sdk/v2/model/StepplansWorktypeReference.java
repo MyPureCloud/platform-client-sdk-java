@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class StepplansWorktypeReference  implements Serializable {
   
   private String id = null;
+  private String name = null;
   private String selfUri = null;
 
   public StepplansWorktypeReference() {
@@ -49,6 +50,23 @@ public class StepplansWorktypeReference  implements Serializable {
   }
 
 
+  /**
+   **/
+  public StepplansWorktypeReference name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -67,12 +85,13 @@ public class StepplansWorktypeReference  implements Serializable {
     StepplansWorktypeReference stepplansWorktypeReference = (StepplansWorktypeReference) o;
 
     return Objects.equals(this.id, stepplansWorktypeReference.id) &&
+            Objects.equals(this.name, stepplansWorktypeReference.name) &&
             Objects.equals(this.selfUri, stepplansWorktypeReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri);
+    return Objects.hash(id, name, selfUri);
   }
 
   @Override
@@ -81,6 +100,7 @@ public class StepplansWorktypeReference  implements Serializable {
     sb.append("class StepplansWorktypeReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

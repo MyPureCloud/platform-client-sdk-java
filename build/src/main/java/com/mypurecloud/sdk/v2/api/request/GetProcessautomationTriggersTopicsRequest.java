@@ -20,13 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateScheduledTriggerRequest;
 import com.mypurecloud.sdk.v2.model.CreateTriggerRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ScheduledTrigger;
+import com.mypurecloud.sdk.v2.model.ScheduledTriggerEntityListing;
 import com.mypurecloud.sdk.v2.model.TestModeEventResults;
 import com.mypurecloud.sdk.v2.model.TestModeResults;
 import com.mypurecloud.sdk.v2.model.TopicCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.Trigger;
 import com.mypurecloud.sdk.v2.model.TriggerEntityListing;
+import com.mypurecloud.sdk.v2.model.UpdateScheduledTriggerRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTriggerRequest;
 
 public class GetProcessautomationTriggersTopicsRequest {

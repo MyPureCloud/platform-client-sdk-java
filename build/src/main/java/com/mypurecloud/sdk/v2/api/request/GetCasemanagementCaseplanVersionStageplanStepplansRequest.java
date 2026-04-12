@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanUpdate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;
+import com.mypurecloud.sdk.v2.model.IntakeSettingsUpdate;
 import com.mypurecloud.sdk.v2.model.ModelCase;
 import com.mypurecloud.sdk.v2.model.Stage;
 import com.mypurecloud.sdk.v2.model.StageListing;
@@ -153,7 +154,8 @@ public class GetCasemanagementCaseplanVersionStageplanStepplansRequest {
 
 	public enum expandsValues { 
 		CASEPLAN("caseplan"),
-		STAGEPLAN("stageplan");
+		STAGEPLAN("stageplan"),
+		WORKTYPE("worktype");
 
 		private String value;
 

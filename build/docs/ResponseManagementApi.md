@@ -698,8 +698,6 @@ try {
 
 Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
 
-postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/responsemanagement/libraries/query  
 
 Requires ANY permissions: 
@@ -1244,4 +1242,4 @@ try {
 [**ResponseAsset**](ResponseAsset)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_

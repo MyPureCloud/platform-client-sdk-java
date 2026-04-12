@@ -66,6 +66,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private QueueConversationEventTopicConversationRoutingData conversationRoutingData = null;
   private Long alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
+  private String screenMonitoredParticipantId = null;
   private String coachedParticipantId = null;
   private String bargedParticipantId = null;
   private List<String> mediaRoles = null;
@@ -585,6 +586,24 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
 
   /**
+   * If this participant is a screen monitor, then this will be the id of the participant that is being screen monitored.
+   **/
+  public QueueConversationEventTopicParticipant screenMonitoredParticipantId(String screenMonitoredParticipantId) {
+    this.screenMonitoredParticipantId = screenMonitoredParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If this participant is a screen monitor, then this will be the id of the participant that is being screen monitored.")
+  @JsonProperty("screenMonitoredParticipantId")
+  public String getScreenMonitoredParticipantId() {
+    return screenMonitoredParticipantId;
+  }
+  public void setScreenMonitoredParticipantId(String screenMonitoredParticipantId) {
+    this.screenMonitoredParticipantId = screenMonitoredParticipantId;
+  }
+
+
+  /**
    * If this participant is a coach, then this will be the id of the participant that is being coached.
    **/
   public QueueConversationEventTopicParticipant coachedParticipantId(String coachedParticipantId) {
@@ -930,6 +949,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
             Objects.equals(this.conversationRoutingData, queueConversationEventTopicParticipant.conversationRoutingData) &&
             Objects.equals(this.alertingTimeoutMs, queueConversationEventTopicParticipant.alertingTimeoutMs) &&
             Objects.equals(this.monitoredParticipantId, queueConversationEventTopicParticipant.monitoredParticipantId) &&
+            Objects.equals(this.screenMonitoredParticipantId, queueConversationEventTopicParticipant.screenMonitoredParticipantId) &&
             Objects.equals(this.coachedParticipantId, queueConversationEventTopicParticipant.coachedParticipantId) &&
             Objects.equals(this.bargedParticipantId, queueConversationEventTopicParticipant.bargedParticipantId) &&
             Objects.equals(this.mediaRoles, queueConversationEventTopicParticipant.mediaRoles) &&
@@ -952,7 +972,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalContactInitialDivisionId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenMonitorings, screenshares, socialExpressions, videos, workflow);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalContactInitialDivisionId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, screenMonitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenMonitorings, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -984,6 +1004,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
+    sb.append("    screenMonitoredParticipantId: ").append(toIndentedString(screenMonitoredParticipantId)).append("\n");
     sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
     sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");

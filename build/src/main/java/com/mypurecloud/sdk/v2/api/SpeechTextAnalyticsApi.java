@@ -1827,14 +1827,15 @@ public class SpeechTextAnalyticsApi {
    * @param pageSize The page size for the listing (optional, default to 20)
    * @param state Program state. Defaults to Latest (optional)
    * @param name Case insensitive partial name to filter by (optional)
+   * @param ids Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)
    * @param sortBy Sort results by. Defaults to name (optional)
    * @param sortOrder Sort order. Defaults to asc (optional)
    * @return ProgramsEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ProgramsEntityListing getSpeechandtextanalyticsPrograms(String nextPage, Integer pageSize, String state, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state, name, sortBy, sortOrder));
+  public ProgramsEntityListing getSpeechandtextanalyticsPrograms(String nextPage, Integer pageSize, String state, String name, List<String> ids, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state, name, ids, sortBy, sortOrder));
   }
 
   /**
@@ -1844,16 +1845,17 @@ public class SpeechTextAnalyticsApi {
    * @param pageSize The page size for the listing (optional, default to 20)
    * @param state Program state. Defaults to Latest (optional)
    * @param name Case insensitive partial name to filter by (optional)
+   * @param ids Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)
    * @param sortBy Sort results by. Defaults to name (optional)
    * @param sortOrder Sort order. Defaults to asc (optional)
    * @return ProgramsEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ProgramsEntityListing> getSpeechandtextanalyticsProgramsWithHttpInfo(String nextPage, Integer pageSize, String state, String name, String sortBy, String sortOrder) throws IOException {
-    return getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ProgramsEntityListing> getSpeechandtextanalyticsProgramsWithHttpInfo(String nextPage, Integer pageSize, String state, String name, List<String> ids, String sortBy, String sortOrder) throws IOException {
+    return getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state, name, ids, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetSpeechandtextanalyticsProgramsRequest createGetSpeechandtextanalyticsProgramsRequest(String nextPage, Integer pageSize, String state, String name, String sortBy, String sortOrder) {
+  private GetSpeechandtextanalyticsProgramsRequest createGetSpeechandtextanalyticsProgramsRequest(String nextPage, Integer pageSize, String state, String name, List<String> ids, String sortBy, String sortOrder) {
     return GetSpeechandtextanalyticsProgramsRequest.builder()
             .withNextPage(nextPage)
 
@@ -1862,6 +1864,8 @@ public class SpeechTextAnalyticsApi {
             .withState(state)
 
             .withName(name)
+
+            .withIds(ids)
 
             .withSortBy(sortBy)
 

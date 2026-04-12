@@ -34,6 +34,7 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
   
   private WfmUserScheduleAdherenceUpdatedTeamTopicUserReference user = null;
   private String managementUnitId = null;
+  private String businessUnitId = null;
   private WfmUserScheduleAdherenceUpdatedTeamTopicUriReference team = null;
   private String scheduledActivityCategory = null;
   private WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReference scheduledActivityCode = null;
@@ -195,6 +196,23 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
   }
   public void setManagementUnitId(String managementUnitId) {
     this.managementUnitId = managementUnitId;
+  }
+
+
+  /**
+   **/
+  public WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate businessUnitId(String businessUnitId) {
+    this.businessUnitId = businessUnitId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("businessUnitId")
+  public String getBusinessUnitId() {
+    return businessUnitId;
+  }
+  public void setBusinessUnitId(String businessUnitId) {
+    this.businessUnitId = businessUnitId;
   }
 
 
@@ -516,6 +534,7 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
 
     return Objects.equals(this.user, wfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.user) &&
             Objects.equals(this.managementUnitId, wfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.managementUnitId) &&
+            Objects.equals(this.businessUnitId, wfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.businessUnitId) &&
             Objects.equals(this.team, wfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.team) &&
             Objects.equals(this.scheduledActivityCategory, wfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.scheduledActivityCategory) &&
             Objects.equals(this.scheduledActivityCode, wfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.scheduledActivityCode) &&
@@ -538,7 +557,7 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, managementUnitId, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceExplanation, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, suppressOnTimeReminder, nextActivityReminders);
+    return Objects.hash(user, managementUnitId, businessUnitId, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceExplanation, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, suppressOnTimeReminder, nextActivityReminders);
   }
 
   @Override
@@ -548,6 +567,7 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
     
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    managementUnitId: ").append(toIndentedString(managementUnitId)).append("\n");
+    sb.append("    businessUnitId: ").append(toIndentedString(businessUnitId)).append("\n");
     sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    scheduledActivityCategory: ").append(toIndentedString(scheduledActivityCategory)).append("\n");
     sb.append("    scheduledActivityCode: ").append(toIndentedString(scheduledActivityCode)).append("\n");

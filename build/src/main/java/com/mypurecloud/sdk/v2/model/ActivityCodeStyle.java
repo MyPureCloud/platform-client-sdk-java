@@ -87,7 +87,7 @@ public class ActivityCodeStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Background color for the activity code in hex format starting with # followed by 6 hexadecimal characters (0-9, a-f, A-F)")
+  @ApiModelProperty(example = "null", required = true, value = "Background color for the activity code in hex format starting with # followed by 6 hexadecimal characters (0-9, a-f, A-F)")
   @JsonProperty("backgroundColor")
   public String getBackgroundColor() {
     return backgroundColor;
@@ -105,7 +105,7 @@ public class ActivityCodeStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text color theme for the activity code")
+  @ApiModelProperty(example = "null", required = true, value = "Text color theme for the activity code")
   @JsonProperty("textColorTheme")
   public TextColorThemeEnum getTextColorTheme() {
     return textColorTheme;
