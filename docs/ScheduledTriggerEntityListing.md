@@ -1,0 +1,16 @@
+# ScheduledTriggerEntityListing
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **entities** | [**List&lt;ScheduledTrigger&gt;**](ScheduledTrigger) |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
+| **previousUri** | **String** |  |  [optional] |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_

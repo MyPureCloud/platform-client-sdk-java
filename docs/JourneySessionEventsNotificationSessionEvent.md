@@ -47,6 +47,10 @@
 | **networkConnectivity** | [**JourneySessionEventsNotificationNetworkConnectivity**](JourneySessionEventsNotificationNetworkConnectivity) |  |  [optional] |
 | **divisionIds** | **List&lt;String&gt;** |  |  [optional] |
 | **lastScreen** | **String** |  |  [optional] |
+| **caseAssociations** | [**List&lt;JourneySessionEventsNotificationCaseAssociation&gt;**](JourneySessionEventsNotificationCaseAssociation) |  |  [optional] |
+| **caseEntity** | [**JourneySessionEventsNotificationCase**](JourneySessionEventsNotificationCase) |  |  [optional] |
+| **caseReference** | **String** |  |  [optional] |
+| **caseStatus** | [**CaseStatusEnum**](#Enum--CaseStatusEnum) |  |  [optional] |
 
 
 ## Enum: OriginatingDirectionEnum
@@ -97,6 +101,18 @@
 | FLOWOUT | &quot;FlowOut&quot; | 
 
 
+## Enum: CaseStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| OPEN | &quot;Open&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| TERMINATED | &quot;Terminated&quot; | 
+| CLOSED | &quot;Closed&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_

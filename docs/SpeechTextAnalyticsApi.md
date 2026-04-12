@@ -1335,7 +1335,7 @@ try {
 # **getSpeechandtextanalyticsPrograms**
 
 
-> [ProgramsEntityListing](ProgramsEntityListing) getSpeechandtextanalyticsPrograms(nextPage, pageSize, state, name, sortBy, sortOrder)
+> [ProgramsEntityListing](ProgramsEntityListing) getSpeechandtextanalyticsPrograms(nextPage, pageSize, state, name, ids, sortBy, sortOrder)
 
 Get the list of Speech & Text Analytics programs
 
@@ -1371,10 +1371,11 @@ String nextPage = "nextPage_example"; // String | The key for listing the next p
 Integer pageSize = 20; // Integer | The page size for the listing
 String state = "state_example"; // String | Program state. Defaults to Latest
 String name = "name_example"; // String | Case insensitive partial name to filter by
+List<String> ids = Arrays.asList(null); // List<String> | Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed.
 String sortBy = "sortBy_example"; // String | Sort results by. Defaults to name
 String sortOrder = "sortOrder_example"; // String | Sort order. Defaults to asc
 try {
-    ProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsPrograms(nextPage, pageSize, state, name, sortBy, sortOrder);
+    ProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsPrograms(nextPage, pageSize, state, name, ids, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsPrograms");
@@ -1391,6 +1392,7 @@ try {
 | **pageSize** | **Integer**| The page size for the listing | [optional] [default to 20] 
 | **state** | **String**| Program state. Defaults to Latest | [optional]<br />**Values**: Latest, Published 
 | **name** | **String**| Case insensitive partial name to filter by | [optional] 
+| **ids** | [**List&lt;String&gt;**](String)| Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. | [optional] 
 | **sortBy** | **String**| Sort results by. Defaults to name | [optional]<br />**Values**: name 
 | **sortOrder** | **String**| Sort order. Defaults to asc | [optional]<br />**Values**: asc, desc 
 {: class="table-striped"}
@@ -3924,4 +3926,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:251.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_
