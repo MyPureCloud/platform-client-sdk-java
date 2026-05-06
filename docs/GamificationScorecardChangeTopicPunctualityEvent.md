@@ -8,9 +8,11 @@
 | **dateStart** | **String** |  |  [optional] |
 | **dateScheduleStart** | **String** |  |  [optional] |
 | **activityCode** | **String** |  |  [optional] |
+| **activityColor** | **String** |  |  [optional] |
+| **activityName** | **String** |  |  [optional] |
 | **points** | **Long** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_

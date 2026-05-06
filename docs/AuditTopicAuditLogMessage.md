@@ -317,6 +317,8 @@
 | ACTIVITYCODE | &quot;ActivityCode&quot; | 
 | ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
 | ACTIVITYPLANOCCURRENCE | &quot;ActivityPlanOccurrence&quot; | 
+| ACTIVITYPLANOCCURRENCESESSION | &quot;ActivityPlanOccurrenceSession&quot; | 
+| ACTIVITYPLANOCCURRENCESESSIONUSER | &quot;ActivityPlanOccurrenceSessionUser&quot; | 
 | ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
 | ALTERNATIVESHIFT | &quot;AlternativeShift&quot; | 
 | BUSINESSUNIT | &quot;BusinessUnit&quot; | 
@@ -483,6 +485,8 @@
 | DECISIONTABLE | &quot;DecisionTable&quot; | 
 | DECISIONTABLEVERSION | &quot;DecisionTableVersion&quot; | 
 | DECISIONTABLEROW | &quot;DecisionTableRow&quot; | 
+| DECISIONTABLEIMPORTJOB | &quot;DecisionTableImportJob&quot; | 
+| DECISIONTABLEEXPORTJOB | &quot;DecisionTableExportJob&quot; | 
 | ESCALATIONRULE | &quot;EscalationRule&quot; | 
 | RULES | &quot;Rules&quot; | 
 | CONTACT | &quot;Contact&quot; | 
@@ -496,4 +500,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_

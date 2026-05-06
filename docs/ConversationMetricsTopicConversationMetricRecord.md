@@ -80,6 +80,7 @@
 | **selfServed** | **Boolean** | Indicates whether all flow sessions were self serviced |  [optional] |
 | **sessionDnis** | **String** | Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred |  [optional] |
 | **sessionId** | **String** | The unique identifier of this session |  [optional] |
+| **skillExpressionId** | **String** | Unique identifier for the skill requested for an interaction |  [optional] |
 | **stationId** | **String** | Unique identifier for a phone |  [optional] |
 | **teamId** | **String** | The team ID the user is a member of |  [optional] |
 | **usedRouting** | [**UsedRoutingEnum**](#Enum--UsedRoutingEnum) | Complete routing method |  [optional] |
@@ -98,6 +99,9 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; | 
 | NBOTINTERACTIONS | &quot;nBotInteractions&quot; | 
+| NCALLBACKATTEMPTS | &quot;nCallbackAttempts&quot; | 
+| NCALLBACKSCHEDULED | &quot;nCallbackScheduled&quot; | 
+| NCFCOFFERED | &quot;nCfcOffered&quot; | 
 | NCOBROWSESESSIONS | &quot;nCobrowseSessions&quot; | 
 | NCONNECTED | &quot;nConnected&quot; | 
 | NCONSULT | &quot;nConsult&quot; | 
@@ -110,6 +114,7 @@
 | NOUTBOUNDATTEMPTED | &quot;nOutboundAttempted&quot; | 
 | NOUTBOUNDCONNECTED | &quot;nOutboundConnected&quot; | 
 | NOVERSLA | &quot;nOverSla&quot; | 
+| NTAKEOVER | &quot;nTakeover&quot; | 
 | NTRANSFERRED | &quot;nTransferred&quot; | 
 | OAUDIOMESSAGECOUNT | &quot;oAudioMessageCount&quot; | 
 | OEXTERNALAUDIOMESSAGECOUNT | &quot;oExternalAudioMessageCount&quot; | 
@@ -118,6 +123,7 @@
 | OMESSAGECOUNT | &quot;oMessageCount&quot; | 
 | OMESSAGESEGMENTCOUNT | &quot;oMessageSegmentCount&quot; | 
 | OMESSAGETURN | &quot;oMessageTurn&quot; | 
+| OSKILLEXPRESSIONAPPLICATIONS | &quot;oSkillExpressionApplications&quot; | 
 | TABANDON | &quot;tAbandon&quot; | 
 | TACD | &quot;tAcd&quot; | 
 | TACTIVECALLBACK | &quot;tActiveCallback&quot; | 
@@ -130,6 +136,10 @@
 | TAVERAGEAGENTRESPONSETIME | &quot;tAverageAgentResponseTime&quot; | 
 | TAVERAGECUSTOMERRESPONSETIME | &quot;tAverageCustomerResponseTime&quot; | 
 | TBARGING | &quot;tBarging&quot; | 
+| TCFCABANDON | &quot;tCfcAbandon&quot; | 
+| TCFCACD | &quot;tCfcAcd&quot; | 
+| TCFCANSWERED | &quot;tCfcAnswered&quot; | 
+| TCFCFLOWOUT | &quot;tCfcFlowOut&quot; | 
 | TCOACHING | &quot;tCoaching&quot; | 
 | TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; | 
 | TCONNECTED | &quot;tConnected&quot; | 
@@ -150,8 +160,10 @@
 | TPARK | &quot;tPark&quot; | 
 | TPARKCOMPLETE | &quot;tParkComplete&quot; | 
 | TSCREENMONITORING | &quot;tScreenMonitoring&quot; | 
+| TSNIPPETRECORD | &quot;tSnippetRecord&quot; | 
 | TTALK | &quot;tTalk&quot; | 
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; | 
+| TTRANSMITTING | &quot;tTransmitting&quot; | 
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; | 
 | TVOICEMAIL | &quot;tVoicemail&quot; | 
 
@@ -357,4 +369,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_

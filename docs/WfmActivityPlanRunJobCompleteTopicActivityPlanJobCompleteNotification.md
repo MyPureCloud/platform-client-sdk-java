@@ -1,4 +1,4 @@
-# WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification
+# WfmActivityPlanRunJobCompleteTopicActivityPlanJobCompleteNotification
 
 
 ## Properties
@@ -20,6 +20,10 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | RUNPLAN | &quot;RunPlan&quot; | 
 | DELETEOCCURRENCE | &quot;DeleteOccurrence&quot; | 
+| DELETEACTIVITYPLAN | &quot;DeleteActivityPlan&quot; | 
+| DELETEOCCURRENCES | &quot;DeleteOccurrences&quot; | 
+| DELETESESSIONS | &quot;DeleteSessions&quot; | 
+| DELETESESSIONUSERS | &quot;DeleteSessionUsers&quot; | 
 
 
 ## Enum: StatusEnum
@@ -34,4 +38,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_

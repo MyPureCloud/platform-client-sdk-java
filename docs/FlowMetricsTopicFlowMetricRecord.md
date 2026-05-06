@@ -90,6 +90,7 @@
 | **selfServed** | **Boolean** | Indicates whether the flow session was self serviced |  [optional] |
 | **sessionDnis** | **String** | Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred |  [optional] |
 | **sessionId** | **String** | The unique identifier of this session |  [optional] |
+| **skillExpressionId** | **String** | Unique identifier for the skill requested for an interaction |  [optional] |
 | **startingLanguage** | **String** | Flow starting language, e.g. en-us |  [optional] |
 | **stationId** | **String** | Unique identifier for a phone |  [optional] |
 | **teamId** | **String** | The team ID the user is a member of |  [optional] |
@@ -369,4 +370,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_

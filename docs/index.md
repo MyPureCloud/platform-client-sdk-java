@@ -8,7 +8,7 @@
 * **Documentation** https://mypurecloud.github.io/platform-client-sdk-java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
-Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:252.0.0
+Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:252.1.0
 
 ## Install Using maven
 
@@ -583,7 +583,7 @@ The Java SDK includes a helper class, `NotificationHandler`, to assist in managi
 
 **Create a new instance**
 
-The preferred way to create a `NotificationHandler` instance is to use its builder to construct a new instance. This comes with the advantage of being able to set listeners and add subscriptions before the websocket is opened.
+The preferred way to create a `NotificationHandler` instance is to use its builder to construct a new instance. This comes with the advantage of being able to set listeners and add subscriptions before the websocket is opened, and to automatically connect the websocket using *withAutoConnect* (see below).
 
 ```java
 NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
@@ -596,11 +596,12 @@ NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
             add(new UserPresenceListener(me.getId()));
             add(new ChannelMetadataListener());
         }})
+        // Automatically connect the websocket (do not set this if you want to manually connect the websocket)
         .withAutoConnect(false)
         .build();
 ```
 
-Alternatively, the `NotificationHandler` instance can be constructed with the default constructor and will connect to the websocket automatically. Listeners and subscriptions can then be managed from the instance regardless of how it was constructed. The following example is equivalent to the builder except that the socket will be connected in the constructor and the listeners and subscriptions will be added after it is connected:
+Alternatively, the `NotificationHandler` instance can be constructed with the default constructor. Listeners and subscriptions can then be managed from the instance regardless of how it was constructed. The following example is equivalent to the builder:
 
 ```java
 NotificationHandler notificationHandler = new NotificationHandler();
@@ -614,6 +615,32 @@ notificationHandler.addSubscriptions(new ArrayList<NotificationListener<?>>() { 
             add(new ChannelMetadataListener());
         }});
 ```
+
+**Method for connecting the socket**
+
+The NotificationHandler can connect using [the WebSocket connect() method](https://takahikokawasaki.github.io/nv-websocket-client/com/neovisionaries/ws/client/WebSocket.html#connect--) or using [the WebSocket connectAsynchronously() method](https://takahikokawasaki.github.io/nv-websocket-client/com/neovisionaries/ws/client/WebSocket.html#connectAsynchronously--).  
+By *default*, the NotificationHandler does not connect the socket automatically.
+
+**Connecting Automatically using builder's withAutoConnect**
+
+The parameter of the *AutoConnect* method controls the method used to connect the WebSocket.
+* `NotificationHandler notificationHandler = NotificationHandler.Builder.standard().withAutoConnect(false)` will automatically attempt to connect using the WebSocket.connect() method
+* `NotificationHandler notificationHandler = NotificationHandler.Builder.standard().withAutoConnect(true)` will automatically attempt to connect using the WebSocket.connectAsynchronously() method
+
+**Connecting Manually**
+
+`NotificationHandler notificationHandler = NotificationHandler.Builder.standard()....` (**without withAutoConnect**) and `NotificationHandler notificationHandler = new NotificationHandler();` will **NOT** connect the socket automatically.  
+You can then leverage the *connect(...)* method from the NotificationHandler class to connect the WebSocket.
+* `notificationHandler.connect(false)` will attempt to connect using the WebSocket connect() method
+* `notificationHandler.connect(true)` will attempt to connect using the WebSocket connectAsynchronously() method
+
+**Socket Connection Timeout**
+
+It is possible to define a timeout for the socket connection. By default, the timeout is set to 0 (i.e. infinite) for legacy reasons.
+
+Using builder (timeout in milliseconds): `NotificationHandler.Builder.standard().withSocketTimeout(15000)....`
+
+Using constructor (timeout in milliseconds): `notificationHandler.setSocketTimeout(15000);`
 
 **Send a ping**
 
