@@ -13,6 +13,7 @@
 | **address** | **String** |  |  [optional] |
 | **externalTag** | **String** |  |  [optional] |
 | **utilizationLabelId** | **String** |  |  [optional] |
+| **accessAttributes** | **List&lt;String&gt;** |  |  [optional] |
 | **securePause** | **Boolean** |  |  [optional] |
 | **inactivityTimeout** | [**Date**](Date) |  |  [optional] |
 | **associatedConversation** | [**ConversationEventTopicDomainEntityRef**](ConversationEventTopicDomainEntityRef) |  |  [optional] |
@@ -22,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_

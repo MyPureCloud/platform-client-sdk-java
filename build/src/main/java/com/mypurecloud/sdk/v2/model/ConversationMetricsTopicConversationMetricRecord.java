@@ -49,6 +49,9 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NBLINDTRANSFERRED("nBlindTransferred"),
     NBOTINTERACTIONS("nBotInteractions"),
+    NCALLBACKATTEMPTS("nCallbackAttempts"),
+    NCALLBACKSCHEDULED("nCallbackScheduled"),
+    NCFCOFFERED("nCfcOffered"),
     NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
     NCONSULT("nConsult"),
@@ -61,6 +64,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     NOUTBOUNDATTEMPTED("nOutboundAttempted"),
     NOUTBOUNDCONNECTED("nOutboundConnected"),
     NOVERSLA("nOverSla"),
+    NTAKEOVER("nTakeover"),
     NTRANSFERRED("nTransferred"),
     OAUDIOMESSAGECOUNT("oAudioMessageCount"),
     OEXTERNALAUDIOMESSAGECOUNT("oExternalAudioMessageCount"),
@@ -69,6 +73,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     OMESSAGECOUNT("oMessageCount"),
     OMESSAGESEGMENTCOUNT("oMessageSegmentCount"),
     OMESSAGETURN("oMessageTurn"),
+    OSKILLEXPRESSIONAPPLICATIONS("oSkillExpressionApplications"),
     TABANDON("tAbandon"),
     TACD("tAcd"),
     TACTIVECALLBACK("tActiveCallback"),
@@ -81,6 +86,10 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     TAVERAGEAGENTRESPONSETIME("tAverageAgentResponseTime"),
     TAVERAGECUSTOMERRESPONSETIME("tAverageCustomerResponseTime"),
     TBARGING("tBarging"),
+    TCFCABANDON("tCfcAbandon"),
+    TCFCACD("tCfcAcd"),
+    TCFCANSWERED("tCfcAnswered"),
+    TCFCFLOWOUT("tCfcFlowOut"),
     TCOACHING("tCoaching"),
     TCOACHINGCOMPLETE("tCoachingComplete"),
     TCONNECTED("tConnected"),
@@ -101,8 +110,10 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     TPARK("tPark"),
     TPARKCOMPLETE("tParkComplete"),
     TSCREENMONITORING("tScreenMonitoring"),
+    TSNIPPETRECORD("tSnippetRecord"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),
+    TTRANSMITTING("tTransmitting"),
     TUSERRESPONSETIME("tUserResponseTime"),
     TVOICEMAIL("tVoicemail");
 
@@ -807,6 +818,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private Boolean selfServed = null;
   private String sessionDnis = null;
   private String sessionId = null;
+  private String skillExpressionId = null;
   private String stationId = null;
   private String teamId = null;
 
@@ -2239,6 +2251,24 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
 
   /**
+   * Unique identifier for the skill requested for an interaction
+   **/
+  public ConversationMetricsTopicConversationMetricRecord skillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Unique identifier for the skill requested for an interaction")
+  @JsonProperty("skillExpressionId")
+  public String getSkillExpressionId() {
+    return skillExpressionId;
+  }
+  public void setSkillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+  }
+
+
+  /**
    * Unique identifier for a phone
    **/
   public ConversationMetricsTopicConversationMetricRecord stationId(String stationId) {
@@ -2485,6 +2515,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
             Objects.equals(this.selfServed, conversationMetricsTopicConversationMetricRecord.selfServed) &&
             Objects.equals(this.sessionDnis, conversationMetricsTopicConversationMetricRecord.sessionDnis) &&
             Objects.equals(this.sessionId, conversationMetricsTopicConversationMetricRecord.sessionId) &&
+            Objects.equals(this.skillExpressionId, conversationMetricsTopicConversationMetricRecord.skillExpressionId) &&
             Objects.equals(this.stationId, conversationMetricsTopicConversationMetricRecord.stationId) &&
             Objects.equals(this.teamId, conversationMetricsTopicConversationMetricRecord.teamId) &&
             Objects.equals(this.usedRouting, conversationMetricsTopicConversationMetricRecord.usedRouting) &&
@@ -2498,7 +2529,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, originatingSocialMediaPublic, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, originatingSocialMediaPublic, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, skillExpressionId, stationId, teamId, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
   }
 
   @Override
@@ -2581,6 +2612,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     sb.append("    selfServed: ").append(toIndentedString(selfServed)).append("\n");
     sb.append("    sessionDnis: ").append(toIndentedString(sessionDnis)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    skillExpressionId: ").append(toIndentedString(skillExpressionId)).append("\n");
     sb.append("    stationId: ").append(toIndentedString(stationId)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");

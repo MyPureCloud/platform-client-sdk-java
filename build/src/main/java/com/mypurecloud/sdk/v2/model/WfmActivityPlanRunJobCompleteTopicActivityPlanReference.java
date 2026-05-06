@@ -12,8 +12,11 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -23,9 +26,11 @@ import java.io.Serializable;
 public class WfmActivityPlanRunJobCompleteTopicActivityPlanReference  implements Serializable {
   
   private String id = null;
+  private List<WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference> occurrences = null;
 
   public WfmActivityPlanRunJobCompleteTopicActivityPlanReference() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      occurrences = new ArrayList<WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference>();
     }
   }
 
@@ -47,6 +52,23 @@ public class WfmActivityPlanRunJobCompleteTopicActivityPlanReference  implements
   }
 
 
+  /**
+   **/
+  public WfmActivityPlanRunJobCompleteTopicActivityPlanReference occurrences(List<WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference> occurrences) {
+    this.occurrences = occurrences;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("occurrences")
+  public List<WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference> getOccurrences() {
+    return occurrences;
+  }
+  public void setOccurrences(List<WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference> occurrences) {
+    this.occurrences = occurrences;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -57,12 +79,13 @@ public class WfmActivityPlanRunJobCompleteTopicActivityPlanReference  implements
     }
     WfmActivityPlanRunJobCompleteTopicActivityPlanReference wfmActivityPlanRunJobCompleteTopicActivityPlanReference = (WfmActivityPlanRunJobCompleteTopicActivityPlanReference) o;
 
-    return Objects.equals(this.id, wfmActivityPlanRunJobCompleteTopicActivityPlanReference.id);
+    return Objects.equals(this.id, wfmActivityPlanRunJobCompleteTopicActivityPlanReference.id) &&
+            Objects.equals(this.occurrences, wfmActivityPlanRunJobCompleteTopicActivityPlanReference.occurrences);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(id, occurrences);
   }
 
   @Override
@@ -71,6 +94,7 @@ public class WfmActivityPlanRunJobCompleteTopicActivityPlanReference  implements
     sb.append("class WfmActivityPlanRunJobCompleteTopicActivityPlanReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    occurrences: ").append(toIndentedString(occurrences)).append("\n");
     sb.append("}");
     return sb.toString();
   }

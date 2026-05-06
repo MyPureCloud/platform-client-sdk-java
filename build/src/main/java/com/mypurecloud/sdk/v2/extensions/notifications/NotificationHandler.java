@@ -29,6 +29,8 @@ public class NotificationHandler extends Object {
     private WebSocketListener webSocketListener = null;
     private ObjectMapper objectMapper = null;
 
+    private int socketTimeout = 0;
+
     public WebSocket getWebSocket() {
         return webSocket;
     }
@@ -37,6 +39,15 @@ public class NotificationHandler extends Object {
         return channel;
     }
 
+    public int getSocketTimeout() {
+        return this.socketTimeout;
+    }
+
+    public void setSocketTimeout(int socketTimeout) {
+        if (socketTimeout >= 0) {
+            this.socketTimeout = socketTimeout;
+        }
+    }
 
 
     public NotificationHandler() throws IOException, ApiException, WebSocketException {
@@ -81,6 +92,10 @@ public class NotificationHandler extends Object {
         if (builder.proxyHost != null)
             this.proxyHost = builder.proxyHost;
 
+        if (builder.socketTimeout >= 0)
+            this.socketTimeout = builder.socketTimeout;
+
+        // With connectAsync set to true or to false, the socket will automatically connect
         if (builder.connectAsync != null)
             this.connect(builder.connectAsync);
     }
@@ -94,6 +109,8 @@ public class NotificationHandler extends Object {
         private NotificationsApi notificationsApi;
         private ObjectMapper objectMapper;
         private String proxyHost;
+        
+        private int socketTimeout = 0;
 
         public static Builder standard() {
             Builder builder = new Builder();
@@ -105,6 +122,7 @@ public class NotificationHandler extends Object {
             builder.notificationsApi = null;
             builder.objectMapper = null;
             builder.proxyHost = null;
+            builder.socketTimeout = 0;
             return builder;
         }
 
@@ -128,8 +146,19 @@ public class NotificationHandler extends Object {
             return this;
         }
 
+        // Using withAutoConnect (true for async connect, false for standard connect), the socket will automatically connect
+        // To manually connect the socket, do not make use of withAutoConnect in builder
         public Builder withAutoConnect(Boolean connectAsync) {
             this.connectAsync = connectAsync;
+            return this;
+        }
+
+        // Socket timeout is set to 0 (infinite) by default.
+        // Use withSocketTimeout to define a timeout in milliseconds for socket connection
+        public Builder withSocketTimeout(int socketTimeout) {
+            if (socketTimeout >= 0) {
+                this.socketTimeout = socketTimeout;
+            }
             return this;
         }
 
@@ -267,6 +296,9 @@ public class NotificationHandler extends Object {
 
     private WebSocket createWebSocket() throws IOException {
         WebSocketFactory factory = new WebSocketFactory();
+        if (this.socketTimeout > 0) {
+            factory.setConnectionTimeout(this.socketTimeout);
+        }
 
         if (this.proxyHost != null)
             factory.getProxySettings().setServer(this.proxyHost);

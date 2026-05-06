@@ -16,8 +16,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.time.LocalDateTime;
 import java.util.Date;
-import org.joda.time.LocalDateTime;
 
 import java.io.Serializable;
 /**

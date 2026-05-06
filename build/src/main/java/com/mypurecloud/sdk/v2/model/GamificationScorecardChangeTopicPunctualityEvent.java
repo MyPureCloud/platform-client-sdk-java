@@ -25,6 +25,8 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
   private String dateStart = null;
   private String dateScheduleStart = null;
   private String activityCode = null;
+  private String activityColor = null;
+  private String activityName = null;
   private Long points = null;
 
   public GamificationScorecardChangeTopicPunctualityEvent() {
@@ -86,6 +88,40 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
 
   /**
    **/
+  public GamificationScorecardChangeTopicPunctualityEvent activityColor(String activityColor) {
+    this.activityColor = activityColor;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("activityColor")
+  public String getActivityColor() {
+    return activityColor;
+  }
+  public void setActivityColor(String activityColor) {
+    this.activityColor = activityColor;
+  }
+
+
+  /**
+   **/
+  public GamificationScorecardChangeTopicPunctualityEvent activityName(String activityName) {
+    this.activityName = activityName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("activityName")
+  public String getActivityName() {
+    return activityName;
+  }
+  public void setActivityName(String activityName) {
+    this.activityName = activityName;
+  }
+
+
+  /**
+   **/
   public GamificationScorecardChangeTopicPunctualityEvent points(Long points) {
     this.points = points;
     return this;
@@ -114,12 +150,14 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
     return Objects.equals(this.dateStart, gamificationScorecardChangeTopicPunctualityEvent.dateStart) &&
             Objects.equals(this.dateScheduleStart, gamificationScorecardChangeTopicPunctualityEvent.dateScheduleStart) &&
             Objects.equals(this.activityCode, gamificationScorecardChangeTopicPunctualityEvent.activityCode) &&
+            Objects.equals(this.activityColor, gamificationScorecardChangeTopicPunctualityEvent.activityColor) &&
+            Objects.equals(this.activityName, gamificationScorecardChangeTopicPunctualityEvent.activityName) &&
             Objects.equals(this.points, gamificationScorecardChangeTopicPunctualityEvent.points);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateStart, dateScheduleStart, activityCode, points);
+    return Objects.hash(dateStart, dateScheduleStart, activityCode, activityColor, activityName, points);
   }
 
   @Override
@@ -130,6 +168,8 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
     sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
     sb.append("    dateScheduleStart: ").append(toIndentedString(dateScheduleStart)).append("\n");
     sb.append("    activityCode: ").append(toIndentedString(activityCode)).append("\n");
+    sb.append("    activityColor: ").append(toIndentedString(activityColor)).append("\n");
+    sb.append("    activityName: ").append(toIndentedString(activityName)).append("\n");
     sb.append("    points: ").append(toIndentedString(points)).append("\n");
     sb.append("}");
     return sb.toString();

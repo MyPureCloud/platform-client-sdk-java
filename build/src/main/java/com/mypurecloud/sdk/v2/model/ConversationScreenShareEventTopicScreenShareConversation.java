@@ -33,6 +33,7 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
   private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
+  private List<String> accessAttributes = null;
   private Date inactivityTimeout = null;
   private List<ConversationScreenShareEventTopicConversationDivisionMembership> divisions = null;
 
@@ -40,6 +41,7 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<ConversationScreenShareEventTopicScreenShareMediaParticipant>();
       otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
       divisions = new ArrayList<ConversationScreenShareEventTopicConversationDivisionMembership>();
     }
   }
@@ -149,6 +151,23 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
 
   /**
    **/
+  public ConversationScreenShareEventTopicScreenShareConversation accessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("accessAttributes")
+  public List<String> getAccessAttributes() {
+    return accessAttributes;
+  }
+  public void setAccessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+  }
+
+
+  /**
+   **/
   public ConversationScreenShareEventTopicScreenShareConversation inactivityTimeout(Date inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
     return this;
@@ -197,13 +216,14 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
             Objects.equals(this.otherMediaUris, conversationScreenShareEventTopicScreenShareConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationScreenShareEventTopicScreenShareConversation.address) &&
             Objects.equals(this.utilizationLabelId, conversationScreenShareEventTopicScreenShareConversation.utilizationLabelId) &&
+            Objects.equals(this.accessAttributes, conversationScreenShareEventTopicScreenShareConversation.accessAttributes) &&
             Objects.equals(this.inactivityTimeout, conversationScreenShareEventTopicScreenShareConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, conversationScreenShareEventTopicScreenShareConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, inactivityTimeout, divisions);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, accessAttributes, inactivityTimeout, divisions);
   }
 
   @Override
@@ -217,6 +237,7 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    accessAttributes: ").append(toIndentedString(accessAttributes)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");

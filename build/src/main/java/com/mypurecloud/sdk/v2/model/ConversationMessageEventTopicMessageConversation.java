@@ -33,6 +33,7 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
   private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
+  private List<String> accessAttributes = null;
   private Date inactivityTimeout = null;
   private List<ConversationMessageEventTopicConversationDivisionMembership> divisions = null;
 
@@ -40,6 +41,7 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<ConversationMessageEventTopicMessageMediaParticipant>();
       otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
       divisions = new ArrayList<ConversationMessageEventTopicConversationDivisionMembership>();
     }
   }
@@ -149,6 +151,23 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
 
   /**
    **/
+  public ConversationMessageEventTopicMessageConversation accessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("accessAttributes")
+  public List<String> getAccessAttributes() {
+    return accessAttributes;
+  }
+  public void setAccessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+  }
+
+
+  /**
+   **/
   public ConversationMessageEventTopicMessageConversation inactivityTimeout(Date inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
     return this;
@@ -197,13 +216,14 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
             Objects.equals(this.otherMediaUris, conversationMessageEventTopicMessageConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationMessageEventTopicMessageConversation.address) &&
             Objects.equals(this.utilizationLabelId, conversationMessageEventTopicMessageConversation.utilizationLabelId) &&
+            Objects.equals(this.accessAttributes, conversationMessageEventTopicMessageConversation.accessAttributes) &&
             Objects.equals(this.inactivityTimeout, conversationMessageEventTopicMessageConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, conversationMessageEventTopicMessageConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, inactivityTimeout, divisions);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, accessAttributes, inactivityTimeout, divisions);
   }
 
   @Override
@@ -217,6 +237,7 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    accessAttributes: ").append(toIndentedString(accessAttributes)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");

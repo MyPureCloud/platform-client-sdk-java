@@ -34,6 +34,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
   private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
+  private List<String> accessAttributes = null;
   private Date inactivityTimeout = null;
   private List<QueueConversationCallEventTopicConversationDivisionMembership> divisions = null;
 
@@ -92,6 +93,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<QueueConversationCallEventTopicCallMediaParticipant>();
       otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
       divisions = new ArrayList<QueueConversationCallEventTopicConversationDivisionMembership>();
     }
   }
@@ -201,6 +203,23 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
 
   /**
    **/
+  public QueueConversationCallEventTopicCallConversation accessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("accessAttributes")
+  public List<String> getAccessAttributes() {
+    return accessAttributes;
+  }
+  public void setAccessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+  }
+
+
+  /**
+   **/
   public QueueConversationCallEventTopicCallConversation inactivityTimeout(Date inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
     return this;
@@ -300,6 +319,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
             Objects.equals(this.otherMediaUris, queueConversationCallEventTopicCallConversation.otherMediaUris) &&
             Objects.equals(this.address, queueConversationCallEventTopicCallConversation.address) &&
             Objects.equals(this.utilizationLabelId, queueConversationCallEventTopicCallConversation.utilizationLabelId) &&
+            Objects.equals(this.accessAttributes, queueConversationCallEventTopicCallConversation.accessAttributes) &&
             Objects.equals(this.inactivityTimeout, queueConversationCallEventTopicCallConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, queueConversationCallEventTopicCallConversation.divisions) &&
             Objects.equals(this.recordingState, queueConversationCallEventTopicCallConversation.recordingState) &&
@@ -309,7 +329,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, inactivityTimeout, divisions, recordingState, securePause, maxParticipants);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, accessAttributes, inactivityTimeout, divisions, recordingState, securePause, maxParticipants);
   }
 
   @Override
@@ -323,6 +343,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    accessAttributes: ").append(toIndentedString(accessAttributes)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");

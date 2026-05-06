@@ -37,6 +37,7 @@ public class ConversationEventTopicConversation  implements Serializable {
   private String address = null;
   private String externalTag = null;
   private String utilizationLabelId = null;
+  private List<String> accessAttributes = null;
   private Boolean securePause = null;
   private Date inactivityTimeout = null;
   private ConversationEventTopicDomainEntityRef associatedConversation = null;
@@ -47,6 +48,7 @@ public class ConversationEventTopicConversation  implements Serializable {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<ConversationEventTopicParticipant>();
       recentTransfers = new ArrayList<ConversationEventTopicTransferResponse>();
+      accessAttributes = new ArrayList<String>();
       consultationConversations = new ArrayList<ConversationEventTopicDomainEntityRef>();
       divisions = new ArrayList<ConversationEventTopicConversationDivisionMembership>();
     }
@@ -191,6 +193,23 @@ public class ConversationEventTopicConversation  implements Serializable {
 
   /**
    **/
+  public ConversationEventTopicConversation accessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("accessAttributes")
+  public List<String> getAccessAttributes() {
+    return accessAttributes;
+  }
+  public void setAccessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+  }
+
+
+  /**
+   **/
   public ConversationEventTopicConversation securePause(Boolean securePause) {
     this.securePause = securePause;
     return this;
@@ -292,6 +311,7 @@ public class ConversationEventTopicConversation  implements Serializable {
             Objects.equals(this.address, conversationEventTopicConversation.address) &&
             Objects.equals(this.externalTag, conversationEventTopicConversation.externalTag) &&
             Objects.equals(this.utilizationLabelId, conversationEventTopicConversation.utilizationLabelId) &&
+            Objects.equals(this.accessAttributes, conversationEventTopicConversation.accessAttributes) &&
             Objects.equals(this.securePause, conversationEventTopicConversation.securePause) &&
             Objects.equals(this.inactivityTimeout, conversationEventTopicConversation.inactivityTimeout) &&
             Objects.equals(this.associatedConversation, conversationEventTopicConversation.associatedConversation) &&
@@ -301,7 +321,7 @@ public class ConversationEventTopicConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, associatedConversation, consultationConversations, divisions);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, accessAttributes, securePause, inactivityTimeout, associatedConversation, consultationConversations, divisions);
   }
 
   @Override
@@ -317,6 +337,7 @@ public class ConversationEventTopicConversation  implements Serializable {
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    accessAttributes: ").append(toIndentedString(accessAttributes)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    associatedConversation: ").append(toIndentedString(associatedConversation)).append("\n");

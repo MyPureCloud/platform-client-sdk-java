@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.datatype.joda.JodaModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.ByteArrayInputStream;
@@ -20,6 +19,7 @@ import java.net.URLEncoder;
 import java.net.Proxy;
 import java.text.DateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.YearMonth;
 import java.util.*;
 import java.util.Map.Entry;
@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.connector.*;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 import com.mypurecloud.sdk.v2.Logger;
 import com.mypurecloud.sdk.v2.extensions.LocalDateSerializer;
+import com.mypurecloud.sdk.v2.extensions.LocalDateTimeSerializer;
 import com.mypurecloud.sdk.v2.extensions.YearMonthSerializer;
 
 import com.mypurecloud.sdk.v2.hooksmanager.HookManager;
@@ -183,7 +184,6 @@ public class ApiClient implements AutoCloseable {
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING);
         objectMapper.enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING);
-        objectMapper.registerModule(new JodaModule());
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.setDateFormat(dateFormat);
         SimpleModule yearMonthModule = new SimpleModule();
@@ -194,6 +194,9 @@ public class ApiClient implements AutoCloseable {
         localDateModule.addSerializer(LocalDate.class, new LocalDateSerializer());
         localDateModule.addDeserializer(LocalDate.class, new LocalDateDeserializer());
         objectMapper.registerModule(localDateModule);
+        SimpleModule localDateTimeModule = new SimpleModule();
+        localDateTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer());
+        objectMapper.registerModule(localDateTimeModule);
         return objectMapper;
     }
 
@@ -1177,7 +1180,7 @@ public class ApiClient implements AutoCloseable {
             this.gatewayConfiguration = new GatewayConfiguration();
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "252.0.0");
+            withDefaultHeader("purecloud-sdk", "252.1.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

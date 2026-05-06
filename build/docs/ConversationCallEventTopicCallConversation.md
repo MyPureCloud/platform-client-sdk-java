@@ -11,6 +11,7 @@
 | **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
 | **address** | **String** |  |  [optional] |
 | **utilizationLabelId** | **String** |  |  [optional] |
+| **accessAttributes** | **List&lt;String&gt;** |  |  [optional] |
 | **inactivityTimeout** | [**Date**](Date) |  |  [optional] |
 | **divisions** | [**List&lt;ConversationCallEventTopicConversationDivisionMembership&gt;**](ConversationCallEventTopicConversationDivisionMembership) |  |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#Enum--RecordingStateEnum) |  |  [optional] |
@@ -30,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_

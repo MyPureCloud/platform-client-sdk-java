@@ -33,6 +33,7 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
   private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
+  private List<String> accessAttributes = null;
   private Date inactivityTimeout = null;
   private List<ConversationEmailEventTopicConversationDivisionMembership> divisions = null;
 
@@ -40,6 +41,7 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<ConversationEmailEventTopicEmailMediaParticipant>();
       otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
       divisions = new ArrayList<ConversationEmailEventTopicConversationDivisionMembership>();
     }
   }
@@ -149,6 +151,23 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
 
   /**
    **/
+  public ConversationEmailEventTopicEmailConversation accessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("accessAttributes")
+  public List<String> getAccessAttributes() {
+    return accessAttributes;
+  }
+  public void setAccessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+  }
+
+
+  /**
+   **/
   public ConversationEmailEventTopicEmailConversation inactivityTimeout(Date inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
     return this;
@@ -197,13 +216,14 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
             Objects.equals(this.otherMediaUris, conversationEmailEventTopicEmailConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationEmailEventTopicEmailConversation.address) &&
             Objects.equals(this.utilizationLabelId, conversationEmailEventTopicEmailConversation.utilizationLabelId) &&
+            Objects.equals(this.accessAttributes, conversationEmailEventTopicEmailConversation.accessAttributes) &&
             Objects.equals(this.inactivityTimeout, conversationEmailEventTopicEmailConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, conversationEmailEventTopicEmailConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, inactivityTimeout, divisions);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, accessAttributes, inactivityTimeout, divisions);
   }
 
   @Override
@@ -217,6 +237,7 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    accessAttributes: ").append(toIndentedString(accessAttributes)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");

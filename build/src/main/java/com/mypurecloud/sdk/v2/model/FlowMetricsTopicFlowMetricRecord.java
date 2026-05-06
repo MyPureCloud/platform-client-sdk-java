@@ -929,6 +929,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   private Boolean selfServed = null;
   private String sessionDnis = null;
   private String sessionId = null;
+  private String skillExpressionId = null;
   private String startingLanguage = null;
   private String stationId = null;
   private String teamId = null;
@@ -2547,6 +2548,24 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
 
   /**
+   * Unique identifier for the skill requested for an interaction
+   **/
+  public FlowMetricsTopicFlowMetricRecord skillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Unique identifier for the skill requested for an interaction")
+  @JsonProperty("skillExpressionId")
+  public String getSkillExpressionId() {
+    return skillExpressionId;
+  }
+  public void setSkillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+  }
+
+
+  /**
    * Flow starting language, e.g. en-us
    **/
   public FlowMetricsTopicFlowMetricRecord startingLanguage(String startingLanguage) {
@@ -2893,6 +2912,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
             Objects.equals(this.selfServed, flowMetricsTopicFlowMetricRecord.selfServed) &&
             Objects.equals(this.sessionDnis, flowMetricsTopicFlowMetricRecord.sessionDnis) &&
             Objects.equals(this.sessionId, flowMetricsTopicFlowMetricRecord.sessionId) &&
+            Objects.equals(this.skillExpressionId, flowMetricsTopicFlowMetricRecord.skillExpressionId) &&
             Objects.equals(this.startingLanguage, flowMetricsTopicFlowMetricRecord.startingLanguage) &&
             Objects.equals(this.stationId, flowMetricsTopicFlowMetricRecord.stationId) &&
             Objects.equals(this.teamId, flowMetricsTopicFlowMetricRecord.teamId) &&
@@ -2911,7 +2931,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, errorCode, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowSubType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, errorCode, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowSubType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, skillExpressionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
   }
 
   @Override
@@ -3004,6 +3024,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     sb.append("    selfServed: ").append(toIndentedString(selfServed)).append("\n");
     sb.append("    sessionDnis: ").append(toIndentedString(sessionDnis)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    skillExpressionId: ").append(toIndentedString(skillExpressionId)).append("\n");
     sb.append("    startingLanguage: ").append(toIndentedString(startingLanguage)).append("\n");
     sb.append("    stationId: ").append(toIndentedString(stationId)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");

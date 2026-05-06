@@ -12,8 +12,11 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WfmActivityPlanJobCompleteTopicActivityPlanSessionReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -23,9 +26,11 @@ import java.io.Serializable;
 public class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference  implements Serializable {
   
   private String id = null;
+  private List<WfmActivityPlanJobCompleteTopicActivityPlanSessionReference> sessions = null;
 
   public WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sessions = new ArrayList<WfmActivityPlanJobCompleteTopicActivityPlanSessionReference>();
     }
   }
 
@@ -47,6 +52,23 @@ public class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference  imp
   }
 
 
+  /**
+   **/
+  public WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference sessions(List<WfmActivityPlanJobCompleteTopicActivityPlanSessionReference> sessions) {
+    this.sessions = sessions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sessions")
+  public List<WfmActivityPlanJobCompleteTopicActivityPlanSessionReference> getSessions() {
+    return sessions;
+  }
+  public void setSessions(List<WfmActivityPlanJobCompleteTopicActivityPlanSessionReference> sessions) {
+    this.sessions = sessions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -57,12 +79,13 @@ public class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference  imp
     }
     WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference wfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference = (WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference) o;
 
-    return Objects.equals(this.id, wfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.id);
+    return Objects.equals(this.id, wfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.id) &&
+            Objects.equals(this.sessions, wfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.sessions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(id, sessions);
   }
 
   @Override
@@ -71,6 +94,7 @@ public class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference  imp
     sb.append("class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

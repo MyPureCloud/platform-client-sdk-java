@@ -33,6 +33,7 @@ public class ConversationCallbackEventTopicCallbackConversation  implements Seri
   private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
+  private List<String> accessAttributes = null;
   private Date inactivityTimeout = null;
   private List<ConversationCallbackEventTopicConversationDivisionMembership> divisions = null;
 
@@ -40,6 +41,7 @@ public class ConversationCallbackEventTopicCallbackConversation  implements Seri
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<ConversationCallbackEventTopicCallbackMediaParticipant>();
       otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
       divisions = new ArrayList<ConversationCallbackEventTopicConversationDivisionMembership>();
     }
   }
@@ -149,6 +151,23 @@ public class ConversationCallbackEventTopicCallbackConversation  implements Seri
 
   /**
    **/
+  public ConversationCallbackEventTopicCallbackConversation accessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("accessAttributes")
+  public List<String> getAccessAttributes() {
+    return accessAttributes;
+  }
+  public void setAccessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+  }
+
+
+  /**
+   **/
   public ConversationCallbackEventTopicCallbackConversation inactivityTimeout(Date inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
     return this;
@@ -197,13 +216,14 @@ public class ConversationCallbackEventTopicCallbackConversation  implements Seri
             Objects.equals(this.otherMediaUris, conversationCallbackEventTopicCallbackConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationCallbackEventTopicCallbackConversation.address) &&
             Objects.equals(this.utilizationLabelId, conversationCallbackEventTopicCallbackConversation.utilizationLabelId) &&
+            Objects.equals(this.accessAttributes, conversationCallbackEventTopicCallbackConversation.accessAttributes) &&
             Objects.equals(this.inactivityTimeout, conversationCallbackEventTopicCallbackConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, conversationCallbackEventTopicCallbackConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, inactivityTimeout, divisions);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, accessAttributes, inactivityTimeout, divisions);
   }
 
   @Override
@@ -217,6 +237,7 @@ public class ConversationCallbackEventTopicCallbackConversation  implements Seri
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    accessAttributes: ").append(toIndentedString(accessAttributes)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");

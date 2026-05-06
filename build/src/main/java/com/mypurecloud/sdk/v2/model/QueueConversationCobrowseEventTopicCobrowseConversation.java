@@ -33,6 +33,7 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
   private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
+  private List<String> accessAttributes = null;
   private Date inactivityTimeout = null;
   private List<QueueConversationCobrowseEventTopicConversationDivisionMembership> divisions = null;
 
@@ -40,6 +41,7 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<QueueConversationCobrowseEventTopicCobrowseMediaParticipant>();
       otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
       divisions = new ArrayList<QueueConversationCobrowseEventTopicConversationDivisionMembership>();
     }
   }
@@ -149,6 +151,23 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
 
   /**
    **/
+  public QueueConversationCobrowseEventTopicCobrowseConversation accessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("accessAttributes")
+  public List<String> getAccessAttributes() {
+    return accessAttributes;
+  }
+  public void setAccessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+  }
+
+
+  /**
+   **/
   public QueueConversationCobrowseEventTopicCobrowseConversation inactivityTimeout(Date inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
     return this;
@@ -197,13 +216,14 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
             Objects.equals(this.otherMediaUris, queueConversationCobrowseEventTopicCobrowseConversation.otherMediaUris) &&
             Objects.equals(this.address, queueConversationCobrowseEventTopicCobrowseConversation.address) &&
             Objects.equals(this.utilizationLabelId, queueConversationCobrowseEventTopicCobrowseConversation.utilizationLabelId) &&
+            Objects.equals(this.accessAttributes, queueConversationCobrowseEventTopicCobrowseConversation.accessAttributes) &&
             Objects.equals(this.inactivityTimeout, queueConversationCobrowseEventTopicCobrowseConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, queueConversationCobrowseEventTopicCobrowseConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, inactivityTimeout, divisions);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, accessAttributes, inactivityTimeout, divisions);
   }
 
   @Override
@@ -217,6 +237,7 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    accessAttributes: ").append(toIndentedString(accessAttributes)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");

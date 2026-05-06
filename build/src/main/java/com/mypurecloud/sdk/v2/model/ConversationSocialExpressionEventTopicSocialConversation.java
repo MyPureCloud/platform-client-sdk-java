@@ -33,6 +33,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
   private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
+  private List<String> accessAttributes = null;
   private Date inactivityTimeout = null;
   private List<ConversationSocialExpressionEventTopicConversationDivisionMembership> divisions = null;
 
@@ -40,6 +41,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<ConversationSocialExpressionEventTopicSocialMediaParticipant>();
       otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
       divisions = new ArrayList<ConversationSocialExpressionEventTopicConversationDivisionMembership>();
     }
   }
@@ -149,6 +151,23 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
 
   /**
    **/
+  public ConversationSocialExpressionEventTopicSocialConversation accessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("accessAttributes")
+  public List<String> getAccessAttributes() {
+    return accessAttributes;
+  }
+  public void setAccessAttributes(List<String> accessAttributes) {
+    this.accessAttributes = accessAttributes;
+  }
+
+
+  /**
+   **/
   public ConversationSocialExpressionEventTopicSocialConversation inactivityTimeout(Date inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
     return this;
@@ -197,13 +216,14 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
             Objects.equals(this.otherMediaUris, conversationSocialExpressionEventTopicSocialConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationSocialExpressionEventTopicSocialConversation.address) &&
             Objects.equals(this.utilizationLabelId, conversationSocialExpressionEventTopicSocialConversation.utilizationLabelId) &&
+            Objects.equals(this.accessAttributes, conversationSocialExpressionEventTopicSocialConversation.accessAttributes) &&
             Objects.equals(this.inactivityTimeout, conversationSocialExpressionEventTopicSocialConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, conversationSocialExpressionEventTopicSocialConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, inactivityTimeout, divisions);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, accessAttributes, inactivityTimeout, divisions);
   }
 
   @Override
@@ -217,6 +237,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    accessAttributes: ").append(toIndentedString(accessAttributes)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
