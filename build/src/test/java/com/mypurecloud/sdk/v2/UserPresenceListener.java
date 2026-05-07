@@ -29,7 +29,6 @@ public class UserPresenceListener implements NotificationListener<PresenceEventU
 
     @Override
     public void onEvent(NotificationEvent<?> event) {
-        System.out.println("Received Notification");
         PresenceEventUserPresence notification = (PresenceEventUserPresence)event.getEventBody();
         systemPresence = notification.getPresenceDefinition().getSystemPresence();
         presenceId = notification.getPresenceDefinition().getId();
