@@ -22,6 +22,7 @@
 | STRING_LIST | &quot;STRING_LIST&quot; | 
 | TIME | &quot;TIME&quot; | 
 | RELATIVE_TIME | &quot;RELATIVE_TIME&quot; | 
+| DATE | &quot;DATE&quot; | 
 | TIME_RANGE | &quot;TIME_RANGE&quot; | 
 | DAY_RANGE | &quot;DAY_RANGE&quot; | 
 | IP_ADDRESS | &quot;IP_ADDRESS&quot; | 
@@ -30,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **emailColumnName** | **String** | The name of the contact column to evaluate for Email. |  [optional] |
 | **smsColumnName** | **String** | The name of the contact column to evaluate for SMS. |  [optional] |
+| **whatsAppColumnName** | **String** | The name of the contact column to evaluate for WhatsApp. |  [optional] |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The operator to use when comparing values. |  |
 | **value** | **String** | The period value to compare against the contact's data. |  |
 
@@ -22,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

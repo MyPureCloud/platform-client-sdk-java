@@ -16,6 +16,7 @@
 | **answerOptions** | [**List&lt;AnswerOption&gt;**](AnswerOption) | Options from which to choose an answer for this question. Only used by Multiple Choice type questions. |  [optional] |
 | **multipleSelectOptionQuestions** | [**List&lt;EvaluationQuestion&gt;**](EvaluationQuestion) | Only used by Multiple Select type questions. A list of multiple choice questions representing selectable options. |  [optional] |
 | **defaultAnswer** | [**DefaultAnswer**](DefaultAnswer) | The default selected answer for the question |  [optional] |
+| **automatedScoringFocus** | [**AutomatedScoringFocusEnum**](#Enum--AutomatedScoringFocusEnum) | Focus setting for automated scoring |  [optional] |
 | **isKill** | **Boolean** |  |  [optional] |
 | **isCritical** | **Boolean** |  |  [optional] |
 
@@ -32,6 +33,15 @@
 | READONLYTEXTBLOCKQUESTION | &quot;readOnlyTextBlockQuestion&quot; | 
 
 
+## Enum: AutomatedScoringFocusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| FULLINTERACTION | &quot;FullInteraction&quot; | 
+| EVALUATEDAGENT | &quot;EvaluatedAgent&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

@@ -117,6 +117,7 @@
 | NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; |
 | NBOTINTERACTIONS | &quot;nBotInteractions&quot; |
 | NCALLBACKATTEMPTS | &quot;nCallbackAttempts&quot; |
+| NCALLBACKOVERSLA | &quot;nCallbackOverSla&quot; |
 | NCALLBACKSCHEDULED | &quot;nCallbackScheduled&quot; |
 | NCOBROWSESESSIONS | &quot;nCobrowseSessions&quot; |
 | NCONNECTED | &quot;nConnected&quot; |
@@ -142,6 +143,7 @@
 | OMESSAGETURN | &quot;oMessageTurn&quot; |
 | OSERVICELEVEL | &quot;oServiceLevel&quot; |
 | OSERVICETARGET | &quot;oServiceTarget&quot; |
+| OSKILLEXPRESSIONAPPLICATIONS | &quot;oSkillExpressionApplications&quot; |
 | TABANDON | &quot;tAbandon&quot; |
 | TACD | &quot;tAcd&quot; |
 | TACTIVECALLBACK | &quot;tActiveCallback&quot; |
@@ -181,6 +183,7 @@
 | TSNIPPETRECORD | &quot;tSnippetRecord&quot; |
 | TTALK | &quot;tTalk&quot; |
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; |
+| TTRANSMITTING | &quot;tTransmitting&quot; |
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; |
 | TVOICEMAIL | &quot;tVoicemail&quot; |
 | TWAIT | &quot;tWait&quot; |
@@ -206,4 +209,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

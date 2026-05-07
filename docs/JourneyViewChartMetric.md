@@ -18,8 +18,12 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EVENTCOUNT | &quot;EventCount&quot; | 
 | CUSTOMERCOUNT | &quot;CustomerCount&quot; | 
+| MINIMUM | &quot;Minimum&quot; | 
+| MAXIMUM | &quot;Maximum&quot; | 
+| AVERAGE | &quot;Average&quot; | 
+| SUM | &quot;Sum&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

@@ -10,6 +10,7 @@
 | **filters** | [**List&lt;WorkitemFilter&gt;**](WorkitemFilter) | List of filter objects to be used in the search. Valid filter names are: 'divisionId', 'id', 'name', 'description', 'defaultWorkbinId', 'defaultDurationSeconds', 'defaultExpirationSeconds', 'defaultDueDurationSeconds', 'defaultPriority', 'defaultLanguageId', 'defaultTtlSeconds', 'assignmentEnabled', 'defaultQueueId', 'schemaId', 'schemaVersion', 'dateCreated', 'dateModified', 'modifiedBy' |  |
 | **attributes** | **List&lt;String&gt;** | List of entity attributes to be retrieved in the result. |  [optional] |
 | **after** | **String** | The cursor that points to the end of the set of entities that has been returned. |  [optional] |
+| **expands** | [**ExpandsEnum**](#Enum--ExpandsEnum) | List of entity attributes to be expanded in the result. |  [optional] |
 | **sort** | [**WorktypeQuerySort**](WorktypeQuerySort) | Sort |  [optional] |
 
 
@@ -21,6 +22,14 @@
 | COUNT | &quot;Count&quot; | 
 
 
+## Enum: ExpandsEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SCHEMA | &quot;schema&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **key** | [**KeyEnum**](#Enum--KeyEnum) | The key to filter on |  |
-| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The operator for comparison |  |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The operator for comparison. For DivisionId, only EQUALS and NOTEQUALS operators are supported. |  |
 | **value** | **String** | The target value to match |  [optional] |
 
 
@@ -36,4 +36,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

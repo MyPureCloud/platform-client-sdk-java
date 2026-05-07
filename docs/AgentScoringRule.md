@@ -14,6 +14,7 @@
 | **enabled** | **Boolean** | Whether the rule is enabled. |  |
 | **published** | **Boolean** | Whether the rule is published. |  [optional] |
 | **evaluator** | [**AddressableEntityRef**](AddressableEntityRef) | The evaluator for evaluations created by this rule. |  [optional] |
+| **agentToScore** | [**AgentToScoreEnum**](#Enum--AgentToScoreEnum) | Which agent(s) to score. Valid values: First, Last, Each. |  [optional] |
 | **dateCreated** | [**Date**](Date) | Date when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | [**Date**](Date) | Date when the rule was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -37,6 +38,16 @@
 | MANUAL | &quot;Manual&quot; | 
 
 
+## Enum: AgentToScoreEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| FIRST | &quot;First&quot; | 
+| LAST | &quot;Last&quot; | 
+| EACH | &quot;Each&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

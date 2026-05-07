@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteUserStationDefaultstation**](UsersApi#deleteUserStationDefaultstation) | Clear default station |
 | [**deleteUserVerifier**](UsersApi#deleteUserVerifier) | Delete a verifier |
 | [**deleteUsersCustomattributesSchema**](UsersApi#deleteUsersCustomattributesSchema) | Delete a schema |
+| [**deleteUsersStationsMeAssociatedstation**](UsersApi#deleteUsersStationsMeAssociatedstation) | Clear self associated station |
 | [**getAnalyticsUsersAggregatesJob**](UsersApi#getAnalyticsUsersAggregatesJob) | Get status for async query for user aggregates |
 | [**getAnalyticsUsersAggregatesJobResults**](UsersApi#getAnalyticsUsersAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsUsersDetailsJob**](UsersApi#getAnalyticsUsersDetailsJob) | Get status for async query for user details |
@@ -74,6 +75,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUsersMe**](UsersApi#getUsersMe) | Get current user details. |
 | [**getUsersQuery**](UsersApi#getUsersQuery) | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required |
 | [**getUsersSearch**](UsersApi#getUsersSearch) | Search users using the q64 value returned from a previous search |
+| [**getUsersStationsMe**](UsersApi#getUsersStationsMe) | Get station information for self |
 | [**patchUser**](UsersApi#patchUser) | Update user |
 | [**patchUserCallforwarding**](UsersApi#patchUserCallforwarding) | Patch a user's CallForwarding |
 | [**patchUserCustomattributes**](UsersApi#patchUserCustomattributes) | Update a single custom attributes record by amending the data with only the provided fields. |
@@ -124,6 +126,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | Set default station |
 | [**putUserVerifier**](UsersApi#putUserVerifier) | Update a verifier |
 | [**putUsersCustomattributesSchema**](UsersApi#putUsersCustomattributesSchema) | Update a schema |
+| [**putUsersStationsMeAssociatedstationStationId**](UsersApi#putUsersStationsMeAssociatedstationStationId) | Set self associated station |
 {: class="table-striped"}
 
 
@@ -790,8 +793,9 @@ Clear associated station
 
 Wraps DELETE /api/v2/users/{userId}/station/associatedstation  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* telephony:station:disassociate
 
 ### Example
 
@@ -1008,6 +1012,60 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **schemaId** | **String**| Schema ID | 
 {: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteUsersStationsMeAssociatedstation**
+
+
+> Void deleteUsersStationsMeAssociatedstation()
+
+Clear self associated station
+
+Wraps DELETE /api/v2/users/stations/me/associatedstation  
+
+Requires ANY permissions: 
+
+* telephony:station:disassociateSelf
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    apiInstance.deleteUsersStationsMeAssociatedstation();
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteUsersStationsMeAssociatedstation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
 
 
 ### Return type
@@ -2076,8 +2134,9 @@ Get a user's CallForwarding
 
 Wraps GET /api/v2/users/{userId}/callforwarding  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:callForwarding:view
 
 ### Example
 
@@ -3185,8 +3244,9 @@ Get station information for user
 
 Wraps GET /api/v2/users/{userId}/station  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* telephony:otherStationAssociation:view
 
 ### Example
 
@@ -3493,7 +3553,7 @@ try {
 # **getUsersChatsMe**
 
 
-> [ChatItemCursorListing](ChatItemCursorListing) getUsersChatsMe(excludeClosed, includePresence, after)
+> [ChatItemCursorListing](ChatItemCursorListing) getUsersChatsMe(excludeClosed, includePresence, includeRoomOwners, after)
 
 Get chats for a user
 
@@ -3528,9 +3588,10 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 Boolean excludeClosed = true; // Boolean | Whether or not to exclude closed chats
 Boolean includePresence = true; // Boolean | Whether or not to include user presence
+Boolean includeRoomOwners = true; // Boolean | Whether or not to include room owners
 String after = "after_example"; // String | The key to start after
 try {
-    ChatItemCursorListing result = apiInstance.getUsersChatsMe(excludeClosed, includePresence, after);
+    ChatItemCursorListing result = apiInstance.getUsersChatsMe(excludeClosed, includePresence, includeRoomOwners, after);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUsersChatsMe");
@@ -3545,6 +3606,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **excludeClosed** | **Boolean**| Whether or not to exclude closed chats | [optional] 
 | **includePresence** | **Boolean**| Whether or not to include user presence | [optional] 
+| **includeRoomOwners** | **Boolean**| Whether or not to include room owners | [optional] 
 | **after** | **String**| The key to start after | [optional] 
 {: class="table-striped"}
 
@@ -4320,8 +4382,6 @@ try {
 
 Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
 
-getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/users/query  
 
 Requires ANY permissions: 
@@ -4447,6 +4507,61 @@ try {
 ### Return type
 
 [**UsersSearchResponse**](UsersSearchResponse)
+
+
+# **getUsersStationsMe**
+
+
+> [UserStations](UserStations) getUsersStationsMe()
+
+Get station information for self
+
+Wraps GET /api/v2/users/stations/me  
+
+Requires ANY permissions: 
+
+* telephony:selfStationAssociation:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    UserStations result = apiInstance.getUsersStationsMe();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersStationsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**UserStations**](UserStations)
 
 
 # **patchUser**
@@ -7274,8 +7389,9 @@ Set associated station
 
 Wraps PUT /api/v2/users/{userId}/station/associatedstation/{stationId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* telephony:otherStationAssociation:edit
 
 ### Example
 
@@ -7509,4 +7625,62 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+# **putUsersStationsMeAssociatedstationStationId**
+
+
+> Void putUsersStationsMeAssociatedstationStationId(stationId)
+
+Set self associated station
+
+Wraps PUT /api/v2/users/stations/me/associatedstation/{stationId}  
+
+Requires ANY permissions: 
+
+* telephony:selfStationAssociation:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String stationId = "stationId_example"; // String | stationId
+try {
+    apiInstance.putUsersStationsMeAssociatedstationStationId(stationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#putUsersStationsMeAssociatedstationStationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **stationId** | **String**| stationId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

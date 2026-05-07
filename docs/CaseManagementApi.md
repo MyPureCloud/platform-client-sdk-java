@@ -36,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postCasemanagementCaseplanPublish**](CaseManagementApi#postCasemanagementCaseplanPublish) | Publish Caseplan. |
 | [**postCasemanagementCaseplanVersions**](CaseManagementApi#postCasemanagementCaseplanVersions) | Create Caseplan version. |
 | [**postCasemanagementCaseplans**](CaseManagementApi#postCasemanagementCaseplans) | Create a Caseplan. |
+| [**postCasemanagementCaseplansQuery**](CaseManagementApi#postCasemanagementCaseplansQuery) | Query for caseplans |
 | [**postCasemanagementCases**](CaseManagementApi#postCasemanagementCases) | Create a Case. |
 | [**postCasemanagementCasesAssociationsQuery**](CaseManagementApi#postCasemanagementCasesAssociationsQuery) | Query for case associations |
 | [**putCasemanagementCaseplanIntakesettings**](CaseManagementApi#putCasemanagementCaseplanIntakesettings) | Update the intake settings for a Caseplan. |
@@ -2104,6 +2105,67 @@ try {
 [**CaseplanCreateResponse**](CaseplanCreateResponse)
 
 
+# **postCasemanagementCaseplansQuery**
+
+
+> [CaseplanQueryEntityListing](CaseplanQueryEntityListing) postCasemanagementCaseplansQuery(body)
+
+Query for caseplans
+
+postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/casemanagement/caseplans/query  
+
+Requires ANY permissions: 
+
+* caseManagement:caseplan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+CaseplanQueryRequest body = new CaseplanQueryRequest(); // CaseplanQueryRequest | CaseplanQueryRequest
+try {
+    CaseplanQueryEntityListing result = apiInstance.postCasemanagementCaseplansQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#postCasemanagementCaseplansQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CaseplanQueryRequest**](CaseplanQueryRequest)| CaseplanQueryRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CaseplanQueryEntityListing**](CaseplanQueryEntityListing)
+
+
 # **postCasemanagementCases**
 
 
@@ -2289,4 +2351,4 @@ try {
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

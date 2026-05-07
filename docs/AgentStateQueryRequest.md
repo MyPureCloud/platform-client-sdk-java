@@ -26,6 +26,7 @@
 | SYSTEMPRESENCE | &quot;systemPresence&quot; | 
 | ROUTINGSTATUS | &quot;routingStatus&quot; | 
 | ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; | 
+| ADHERENCEDATE | &quot;adherenceDate&quot; | 
 
 
 ## Enum: UserOrderEnum
@@ -57,4 +58,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

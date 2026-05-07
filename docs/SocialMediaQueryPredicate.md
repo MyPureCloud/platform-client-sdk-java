@@ -40,6 +40,10 @@
 | SOURCETYPE | &quot;sourceType&quot; | 
 | VERIFIEDUSER | &quot;verifiedUser&quot; | 
 | FOLLOWERCOUNT | &quot;followerCount&quot; | 
+| LIKES | &quot;likes&quot; | 
+| SHARES | &quot;shares&quot; | 
+| COMMENTS | &quot;comments&quot; | 
+| VIEWS | &quot;views&quot; | 
 
 
 ## Enum: OperatorEnum
@@ -54,4 +58,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

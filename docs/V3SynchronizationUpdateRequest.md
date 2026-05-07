@@ -14,8 +14,9 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
+| CANCELLED | &quot;Cancelled&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

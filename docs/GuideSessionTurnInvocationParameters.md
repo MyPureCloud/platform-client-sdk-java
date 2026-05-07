@@ -20,8 +20,9 @@
 | NUMBER | &quot;Number&quot; | 
 | BOOLEAN | &quot;Boolean&quot; | 
 | DATE | &quot;Date&quot; | 
+| LIST | &quot;List&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

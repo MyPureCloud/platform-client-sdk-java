@@ -4581,6 +4581,8 @@ try {
 
 Query for worktypes
 
+Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
+
 Wraps POST /api/v2/taskmanagement/worktypes/query  
 
 Requires ALL permissions: 
@@ -4694,4 +4696,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

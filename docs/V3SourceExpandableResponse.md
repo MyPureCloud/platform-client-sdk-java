@@ -1,4 +1,4 @@
-# V3SourceDetailedWithErrorResponse
+# V3SourceExpandableResponse
 
 
 ## Properties
@@ -19,6 +19,7 @@
 | **scheduleSettings** | [**V3SourceScheduleSettings**](V3SourceScheduleSettings) | Settings that determine when the source starts a sync. |  [optional] |
 | **filters** | [**V3SourceFilter**](V3SourceFilter) | Filters that determine what documents are synced. |  [optional] |
 | **filterDetails** | [**V3SourceFilterDetails**](V3SourceFilterDetails) | Additional details to the source's filters. |  [optional] |
+| **connection** | [**ConnectionResponse**](ConnectionResponse) | The connection associated with the source. Needs to be expanded. |  [optional] |
 | **error** | [**ErrorBody**](ErrorBody) | Optional error details of an errored source. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -53,4 +54,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **user** | [**UserReference**](UserReference) | The user associated with this data |  [optional] |
 | **workPlan** | [**WorkPlanReference**](WorkPlanReference) | The work plan associated with this agent, if applicable |  [optional] |
 | **workPlanRotation** | [**WorkPlanRotationReference**](WorkPlanRotationReference) | The work plan rotation associated with this agent, if applicable |  [optional] |
@@ -21,4 +21,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

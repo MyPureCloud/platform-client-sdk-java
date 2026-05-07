@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **name** | **String** | The name of this time-off plan |  |
 | **activityCodeIds** | **List&lt;String&gt;** | The IDs of activity codes associated with this time-off plan |  |
 | **timeOffLimits** | [**List&lt;BuTimeOffLimitReference&gt;**](BuTimeOffLimitReference) | The IDs of time-off limits associated with this time-off plan |  [optional] |
@@ -36,4 +36,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

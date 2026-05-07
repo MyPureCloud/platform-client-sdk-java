@@ -18,8 +18,9 @@
 | MESSENGERHOMEHEADERSUBTITLE | &quot;MessengerHomeHeaderSubTitle&quot; | 
 | PUSHNOTIFICATIONTITLE | &quot;PushNotificationTitle&quot; | 
 | PUSHNOTIFICATIONBODY | &quot;PushNotificationBody&quot; | 
+| MESSENGERLAUNCHERBUTTONTEXT | &quot;MessengerLauncherButtonText&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_
