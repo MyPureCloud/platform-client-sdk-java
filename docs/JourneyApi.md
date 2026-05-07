@@ -5663,4 +5663,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.1.0_
