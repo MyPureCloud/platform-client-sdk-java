@@ -46,7 +46,8 @@ public class LocalizedLabels  implements Serializable {
     MESSENGERHOMEHEADERTITLE("MessengerHomeHeaderTitle"),
     MESSENGERHOMEHEADERSUBTITLE("MessengerHomeHeaderSubTitle"),
     PUSHNOTIFICATIONTITLE("PushNotificationTitle"),
-    PUSHNOTIFICATIONBODY("PushNotificationBody");
+    PUSHNOTIFICATIONBODY("PushNotificationBody"),
+    MESSENGERLAUNCHERBUTTONTEXT("MessengerLauncherButtonText");
 
     private String value;
 

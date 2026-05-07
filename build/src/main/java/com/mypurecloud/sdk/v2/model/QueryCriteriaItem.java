@@ -88,7 +88,7 @@ public class QueryCriteriaItem  implements Serializable {
     }
   }
   /**
-   * The operator for comparison
+   * The operator for comparison. For DivisionId, only EQUALS and NOTEQUALS operators are supported.
    */
  @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
@@ -153,14 +153,14 @@ public class QueryCriteriaItem  implements Serializable {
 
 
   /**
-   * The operator for comparison
+   * The operator for comparison. For DivisionId, only EQUALS and NOTEQUALS operators are supported.
    **/
   public QueryCriteriaItem operator(OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The operator for comparison")
+  @ApiModelProperty(example = "null", required = true, value = "The operator for comparison. For DivisionId, only EQUALS and NOTEQUALS operators are supported.")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;

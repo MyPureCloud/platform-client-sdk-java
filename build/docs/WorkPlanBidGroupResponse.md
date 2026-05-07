@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **workPlanBidGroup** | [**WorkPlanBidGroup**](WorkPlanBidGroup) | The work plan bid group |  [optional] |
 | **metadata** | [**WorkPlanBidMetadata**](WorkPlanBidMetadata) | The meta data of the bid group |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -13,4 +13,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

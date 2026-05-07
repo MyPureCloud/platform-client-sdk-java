@@ -117,9 +117,9 @@ import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
 import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
-import com.mypurecloud.sdk.v2.model.V3SourceDetailedWithErrorResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableListing;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
-import com.mypurecloud.sdk.v2.model.V3SourceWithErrorListing;
 import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
 import com.mypurecloud.sdk.v2.model.V3Synchronization;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
@@ -1378,30 +1378,38 @@ public class KnowledgeApi {
    * Get connection options
    * 
    * @param connectionId Connection ID (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of results per page. Minimum: 25, Maximum: 500. (optional, default to 200)
    * @param parentId The id of the parent option whose children to be listed. (optional)
    * @return ConnectionOptionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ConnectionOptionListing getKnowledgeConnectionOptions(String connectionId, String parentId) throws IOException, ApiException {
-    return  getKnowledgeConnectionOptions(createGetKnowledgeConnectionOptionsRequest(connectionId, parentId));
+  public ConnectionOptionListing getKnowledgeConnectionOptions(String connectionId, String after, String pageSize, String parentId) throws IOException, ApiException {
+    return  getKnowledgeConnectionOptions(createGetKnowledgeConnectionOptionsRequest(connectionId, after, pageSize, parentId));
   }
 
   /**
    * Get connection options
    * 
    * @param connectionId Connection ID (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of results per page. Minimum: 25, Maximum: 500. (optional, default to 200)
    * @param parentId The id of the parent option whose children to be listed. (optional)
    * @return ConnectionOptionListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConnectionOptionListing> getKnowledgeConnectionOptionsWithHttpInfo(String connectionId, String parentId) throws IOException {
-    return getKnowledgeConnectionOptions(createGetKnowledgeConnectionOptionsRequest(connectionId, parentId).withHttpInfo());
+  public ApiResponse<ConnectionOptionListing> getKnowledgeConnectionOptionsWithHttpInfo(String connectionId, String after, String pageSize, String parentId) throws IOException {
+    return getKnowledgeConnectionOptions(createGetKnowledgeConnectionOptionsRequest(connectionId, after, pageSize, parentId).withHttpInfo());
   }
 
-  private GetKnowledgeConnectionOptionsRequest createGetKnowledgeConnectionOptionsRequest(String connectionId, String parentId) {
+  private GetKnowledgeConnectionOptionsRequest createGetKnowledgeConnectionOptionsRequest(String connectionId, String after, String pageSize, String parentId) {
     return GetKnowledgeConnectionOptionsRequest.builder()
             .withConnectionId(connectionId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
 
             .withParentId(parentId)
 
@@ -4789,11 +4797,11 @@ public class KnowledgeApi {
    * 
    * @param sourceId Source ID (required)
    * @param expand Optional fields to expand for the Source. (optional)
-   * @return V3SourceDetailedWithErrorResponse
+   * @return V3SourceExpandableResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public V3SourceDetailedWithErrorResponse getKnowledgeSource(String sourceId, List<String> expand) throws IOException, ApiException {
+  public V3SourceExpandableResponse getKnowledgeSource(String sourceId, List<String> expand) throws IOException, ApiException {
     return  getKnowledgeSource(createGetKnowledgeSourceRequest(sourceId, expand));
   }
 
@@ -4802,10 +4810,10 @@ public class KnowledgeApi {
    * 
    * @param sourceId Source ID (required)
    * @param expand Optional fields to expand for the Source. (optional)
-   * @return V3SourceDetailedWithErrorResponse
+   * @return V3SourceExpandableResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<V3SourceDetailedWithErrorResponse> getKnowledgeSourceWithHttpInfo(String sourceId, List<String> expand) throws IOException {
+  public ApiResponse<V3SourceExpandableResponse> getKnowledgeSourceWithHttpInfo(String sourceId, List<String> expand) throws IOException {
     return getKnowledgeSource(createGetKnowledgeSourceRequest(sourceId, expand).withHttpInfo());
   }
 
@@ -4822,13 +4830,13 @@ public class KnowledgeApi {
    * Get source
    * 
    * @param request The request object
-   * @return V3SourceDetailedWithErrorResponse
+   * @return V3SourceExpandableResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public V3SourceDetailedWithErrorResponse getKnowledgeSource(GetKnowledgeSourceRequest request) throws IOException, ApiException {
+  public V3SourceExpandableResponse getKnowledgeSource(GetKnowledgeSourceRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<V3SourceDetailedWithErrorResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceDetailedWithErrorResponse>() {});
+      ApiResponse<V3SourceExpandableResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceExpandableResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4844,13 +4852,13 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<V3SourceDetailedWithErrorResponse> getKnowledgeSource(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<V3SourceExpandableResponse> getKnowledgeSource(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<V3SourceDetailedWithErrorResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<V3SourceExpandableResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<V3SourceDetailedWithErrorResponse> response = (ApiResponse<V3SourceDetailedWithErrorResponse>)(ApiResponse<?>)exception;
+      ApiResponse<V3SourceExpandableResponse> response = (ApiResponse<V3SourceExpandableResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4861,7 +4869,7 @@ public class KnowledgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<V3SourceDetailedWithErrorResponse> response = (ApiResponse<V3SourceDetailedWithErrorResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<V3SourceExpandableResponse> response = (ApiResponse<V3SourceExpandableResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5042,11 +5050,11 @@ public class KnowledgeApi {
    * List sources
    * 
    * @param expand Optional fields to expand for the Source. (optional)
-   * @return V3SourceWithErrorListing
+   * @return V3SourceExpandableListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public V3SourceWithErrorListing getKnowledgeSources(List<String> expand) throws IOException, ApiException {
+  public V3SourceExpandableListing getKnowledgeSources(List<String> expand) throws IOException, ApiException {
     return  getKnowledgeSources(createGetKnowledgeSourcesRequest(expand));
   }
 
@@ -5054,10 +5062,10 @@ public class KnowledgeApi {
    * List sources
    * 
    * @param expand Optional fields to expand for the Source. (optional)
-   * @return V3SourceWithErrorListing
+   * @return V3SourceExpandableListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<V3SourceWithErrorListing> getKnowledgeSourcesWithHttpInfo(List<String> expand) throws IOException {
+  public ApiResponse<V3SourceExpandableListing> getKnowledgeSourcesWithHttpInfo(List<String> expand) throws IOException {
     return getKnowledgeSources(createGetKnowledgeSourcesRequest(expand).withHttpInfo());
   }
 
@@ -5072,13 +5080,13 @@ public class KnowledgeApi {
    * List sources
    * 
    * @param request The request object
-   * @return V3SourceWithErrorListing
+   * @return V3SourceExpandableListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public V3SourceWithErrorListing getKnowledgeSources(GetKnowledgeSourcesRequest request) throws IOException, ApiException {
+  public V3SourceExpandableListing getKnowledgeSources(GetKnowledgeSourcesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<V3SourceWithErrorListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceWithErrorListing>() {});
+      ApiResponse<V3SourceExpandableListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceExpandableListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -5094,13 +5102,13 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<V3SourceWithErrorListing> getKnowledgeSources(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<V3SourceExpandableListing> getKnowledgeSources(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<V3SourceWithErrorListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<V3SourceExpandableListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<V3SourceWithErrorListing> response = (ApiResponse<V3SourceWithErrorListing>)(ApiResponse<?>)exception;
+      ApiResponse<V3SourceExpandableListing> response = (ApiResponse<V3SourceExpandableListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5111,7 +5119,7 @@ public class KnowledgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<V3SourceWithErrorListing> response = (ApiResponse<V3SourceWithErrorListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<V3SourceExpandableListing> response = (ApiResponse<V3SourceExpandableListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

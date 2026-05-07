@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the alternative shift job |  |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of job |  |
 | **downloadUrl** | **String** | The URL where completed results are available, only set if status == 'Complete' |  [optional] |
@@ -40,4 +40,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

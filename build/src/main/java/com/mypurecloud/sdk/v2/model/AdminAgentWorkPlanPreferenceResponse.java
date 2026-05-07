@@ -39,10 +39,21 @@ public class AdminAgentWorkPlanPreferenceResponse  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * The globally unique identifier for the object.
+   **/
+  public AdminAgentWorkPlanPreferenceResponse id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
 

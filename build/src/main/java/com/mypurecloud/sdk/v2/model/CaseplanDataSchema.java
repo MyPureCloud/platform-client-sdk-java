@@ -23,7 +23,6 @@ import java.io.Serializable;
 public class CaseplanDataSchema  implements Serializable {
   
   private String id = null;
-  private Integer version = null;
   private String selfUri = null;
 
   public CaseplanDataSchema() {
@@ -50,24 +49,6 @@ public class CaseplanDataSchema  implements Serializable {
   }
 
 
-  /**
-   * The version of the schema.
-   **/
-  public CaseplanDataSchema version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The version of the schema.")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -86,13 +67,12 @@ public class CaseplanDataSchema  implements Serializable {
     CaseplanDataSchema caseplanDataSchema = (CaseplanDataSchema) o;
 
     return Objects.equals(this.id, caseplanDataSchema.id) &&
-            Objects.equals(this.version, caseplanDataSchema.version) &&
             Objects.equals(this.selfUri, caseplanDataSchema.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, version, selfUri);
+    return Objects.hash(id, selfUri);
   }
 
   @Override
@@ -101,7 +81,6 @@ public class CaseplanDataSchema  implements Serializable {
     sb.append("class CaseplanDataSchema {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

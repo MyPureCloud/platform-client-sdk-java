@@ -12,12 +12,14 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.BatchConversationEventRequest;
 import com.mypurecloud.sdk.v2.model.BatchEventResponse;
+import com.mypurecloud.sdk.v2.model.BatchPredictiveRoutingCustomKpiAttributionEventRequest;
 import com.mypurecloud.sdk.v2.model.BatchUserPresenceEventRequest;
 import com.mypurecloud.sdk.v2.model.BatchUserRoutingStatusEventRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.PostEventsConversationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostEventsRoutingCustomkpiattributionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEventsUsersPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEventsUsersRoutingstatusRequest;
 
@@ -95,6 +97,88 @@ public class EventsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<BatchEventResponse> postEventsConversations(ApiRequest<BatchConversationEventRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BatchEventResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BatchEventResponse> response = (ApiResponse<BatchEventResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BatchEventResponse> response = (ApiResponse<BatchEventResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Publish Predictive Routing Custom Kpi Attribution Batch Events
+   * 
+   * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body batchRequest (required)
+   * @return BatchEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BatchEventResponse postEventsRoutingCustomkpiattributions(BatchPredictiveRoutingCustomKpiAttributionEventRequest body) throws IOException, ApiException {
+    return  postEventsRoutingCustomkpiattributions(createPostEventsRoutingCustomkpiattributionsRequest(body));
+  }
+
+  /**
+   * Publish Predictive Routing Custom Kpi Attribution Batch Events
+   * 
+   * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body batchRequest (required)
+   * @return BatchEventResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BatchEventResponse> postEventsRoutingCustomkpiattributionsWithHttpInfo(BatchPredictiveRoutingCustomKpiAttributionEventRequest body) throws IOException {
+    return postEventsRoutingCustomkpiattributions(createPostEventsRoutingCustomkpiattributionsRequest(body).withHttpInfo());
+  }
+
+  private PostEventsRoutingCustomkpiattributionsRequest createPostEventsRoutingCustomkpiattributionsRequest(BatchPredictiveRoutingCustomKpiAttributionEventRequest body) {
+    return PostEventsRoutingCustomkpiattributionsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Publish Predictive Routing Custom Kpi Attribution Batch Events
+   * 
+   * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BatchEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BatchEventResponse postEventsRoutingCustomkpiattributions(PostEventsRoutingCustomkpiattributionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BatchEventResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BatchEventResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Publish Predictive Routing Custom Kpi Attribution Batch Events
+   * 
+   * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BatchEventResponse> postEventsRoutingCustomkpiattributions(ApiRequest<BatchPredictiveRoutingCustomKpiAttributionEventRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<BatchEventResponse>() {});
     }

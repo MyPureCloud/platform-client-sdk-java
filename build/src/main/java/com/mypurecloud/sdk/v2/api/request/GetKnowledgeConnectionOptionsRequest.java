@@ -127,9 +127,9 @@ import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
 import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
-import com.mypurecloud.sdk.v2.model.V3SourceDetailedWithErrorResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableListing;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
-import com.mypurecloud.sdk.v2.model.V3SourceWithErrorListing;
 import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
 import com.mypurecloud.sdk.v2.model.V3Synchronization;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
@@ -150,6 +150,34 @@ public class GetKnowledgeConnectionOptionsRequest {
 
 	public GetKnowledgeConnectionOptionsRequest withConnectionId(String connectionId) {
 	    this.setConnectionId(connectionId);
+	    return this;
+	} 
+
+	private String after;
+	public String getAfter() {
+		return this.after;
+	}
+
+	public void setAfter(String after) {
+		this.after = after;
+	}
+
+	public GetKnowledgeConnectionOptionsRequest withAfter(String after) {
+	    this.setAfter(after);
+	    return this;
+	} 
+
+	private String pageSize;
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetKnowledgeConnectionOptionsRequest withPageSize(String pageSize) {
+	    this.setPageSize(pageSize);
 	    return this;
 	} 
 
@@ -198,6 +226,12 @@ public class GetKnowledgeConnectionOptionsRequest {
                 .withPathParameter("connectionId", connectionId)
         
 
+                .withQueryParameters("after", "", after)
+        
+
+                .withQueryParameters("pageSize", "", pageSize)
+        
+
                 .withQueryParameters("parentId", "", parentId)
         
 		.withCustomHeaders(customHeaders)
@@ -228,6 +262,16 @@ public class GetKnowledgeConnectionOptionsRequest {
 
 		public Builder withConnectionId(String connectionId) {
 			request.setConnectionId(connectionId);
+			return this;
+		}
+
+		public Builder withAfter(String after) {
+			request.setAfter(after);
+			return this;
+		}
+
+		public Builder withPageSize(String pageSize) {
+			request.setPageSize(pageSize);
 			return this;
 		}
 

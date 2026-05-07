@@ -5,18 +5,18 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The operator for this criteria |  |
+| **operators** | [**List<OperatorsEnum>**](#Enum--OperatorsEnum) | The allowed operators for this criteria |  |
 | **container** | [**ContainerEnum**](#Enum--ContainerEnum) | The container that the ids belong to |  |
 | **maxIdCount** | **Long** | Maximum number of ids that can be specified in this container |  [optional] |
 
 
-## Enum: OperatorEnum
+## Enum: OperatorsEnum
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| AND | &quot;And&quot; | 
-| NOT | &quot;Not&quot; | 
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| AND | &quot;And&quot; |
+| NOT | &quot;Not&quot; |
 
 
 ## Enum: ContainerEnum
@@ -39,4 +39,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

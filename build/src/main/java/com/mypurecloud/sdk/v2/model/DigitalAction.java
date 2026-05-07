@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.AppendToDncActionSettings;
 import com.mypurecloud.sdk.v2.model.MarkContactUncontactableActionSettings;
 import com.mypurecloud.sdk.v2.model.SetContentTemplateActionSettings;
 import com.mypurecloud.sdk.v2.model.SetSmsPhoneNumberActionSettings;
+import com.mypurecloud.sdk.v2.model.SetWhatsAppIntegrationActionSettings;
 import com.mypurecloud.sdk.v2.model.UpdateContactColumnActionSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,6 +35,7 @@ public class DigitalAction  implements Serializable {
   private Object markContactAddressUncontactableActionSettings = null;
   private SetContentTemplateActionSettings setContentTemplateActionSettings = null;
   private SetSmsPhoneNumberActionSettings setSmsPhoneNumberActionSettings = null;
+  private SetWhatsAppIntegrationActionSettings setWhatsAppIntegrationActionSettings = null;
 
   public DigitalAction() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -167,6 +169,24 @@ public class DigitalAction  implements Serializable {
   }
 
 
+  /**
+   * The settings for a 'set WhatsApp integration' action.
+   **/
+  public DigitalAction setWhatsAppIntegrationActionSettings(SetWhatsAppIntegrationActionSettings setWhatsAppIntegrationActionSettings) {
+    this.setWhatsAppIntegrationActionSettings = setWhatsAppIntegrationActionSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The settings for a 'set WhatsApp integration' action.")
+  @JsonProperty("setWhatsAppIntegrationActionSettings")
+  public SetWhatsAppIntegrationActionSettings getSetWhatsAppIntegrationActionSettings() {
+    return setWhatsAppIntegrationActionSettings;
+  }
+  public void setSetWhatsAppIntegrationActionSettings(SetWhatsAppIntegrationActionSettings setWhatsAppIntegrationActionSettings) {
+    this.setWhatsAppIntegrationActionSettings = setWhatsAppIntegrationActionSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -183,12 +203,13 @@ public class DigitalAction  implements Serializable {
             Objects.equals(this.markContactUncontactableActionSettings, digitalAction.markContactUncontactableActionSettings) &&
             Objects.equals(this.markContactAddressUncontactableActionSettings, digitalAction.markContactAddressUncontactableActionSettings) &&
             Objects.equals(this.setContentTemplateActionSettings, digitalAction.setContentTemplateActionSettings) &&
-            Objects.equals(this.setSmsPhoneNumberActionSettings, digitalAction.setSmsPhoneNumberActionSettings);
+            Objects.equals(this.setSmsPhoneNumberActionSettings, digitalAction.setSmsPhoneNumberActionSettings) &&
+            Objects.equals(this.setWhatsAppIntegrationActionSettings, digitalAction.setWhatsAppIntegrationActionSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(updateContactColumnActionSettings, doNotSendActionSettings, appendToDncActionSettings, markContactUncontactableActionSettings, markContactAddressUncontactableActionSettings, setContentTemplateActionSettings, setSmsPhoneNumberActionSettings);
+    return Objects.hash(updateContactColumnActionSettings, doNotSendActionSettings, appendToDncActionSettings, markContactUncontactableActionSettings, markContactAddressUncontactableActionSettings, setContentTemplateActionSettings, setSmsPhoneNumberActionSettings, setWhatsAppIntegrationActionSettings);
   }
 
   @Override
@@ -203,6 +224,7 @@ public class DigitalAction  implements Serializable {
     sb.append("    markContactAddressUncontactableActionSettings: ").append(toIndentedString(markContactAddressUncontactableActionSettings)).append("\n");
     sb.append("    setContentTemplateActionSettings: ").append(toIndentedString(setContentTemplateActionSettings)).append("\n");
     sb.append("    setSmsPhoneNumberActionSettings: ").append(toIndentedString(setSmsPhoneNumberActionSettings)).append("\n");
+    sb.append("    setWhatsAppIntegrationActionSettings: ").append(toIndentedString(setWhatsAppIntegrationActionSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

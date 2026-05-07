@@ -152,6 +152,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     NBLINDTRANSFERRED("nBlindTransferred"),
     NBOTINTERACTIONS("nBotInteractions"),
     NCALLBACKATTEMPTS("nCallbackAttempts"),
+    NCALLBACKOVERSLA("nCallbackOverSla"),
     NCALLBACKSCHEDULED("nCallbackScheduled"),
     NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
@@ -180,6 +181,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     OMESSAGECOUNT("oMessageCount"),
     OMESSAGESEGMENTCOUNT("oMessageSegmentCount"),
     OMESSAGETURN("oMessageTurn"),
+    OSKILLEXPRESSIONAPPLICATIONS("oSkillExpressionApplications"),
     TABANDON("tAbandon"),
     TACD("tAcd"),
     TACTIVECALLBACK("tActiveCallback"),
@@ -221,6 +223,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     TSNIPPETRECORD("tSnippetRecord"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),
+    TTRANSMITTING("tTransmitting"),
     TUSERRESPONSETIME("tUserResponseTime"),
     TVOICEMAIL("tVoicemail");
 

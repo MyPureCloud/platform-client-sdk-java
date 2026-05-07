@@ -204,14 +204,14 @@ public class ConversationProperties  implements Serializable {
 
 
   /**
-   * Indicates filtering for screenMonitored
+   * Deprecated: Use screenMonitored
    **/
   public ConversationProperties isScreenMonitored(Boolean isScreenMonitored) {
     this.isScreenMonitored = isScreenMonitored;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates filtering for screenMonitored")
+  @ApiModelProperty(example = "null", value = "Deprecated: Use screenMonitored")
   @JsonProperty("isScreenMonitored")
   public Boolean getIsScreenMonitored() {
     return isScreenMonitored;

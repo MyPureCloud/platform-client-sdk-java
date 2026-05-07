@@ -16,6 +16,7 @@
 | **dateModified** | [**Date**](Date) | Date of the last modification made to the connection. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | Current status of the connection. |  [optional] |
 | **error** | [**ErrorBody**](ErrorBody) | Optional error message of the connection. |  [optional] |
+| **dateExpiry** | [**Date**](Date) | Expiry date of the authentication credentials. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -40,4 +41,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

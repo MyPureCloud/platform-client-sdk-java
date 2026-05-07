@@ -8,7 +8,7 @@
 | **businessUnit** | [**BusinessUnitReference**](BusinessUnitReference) | The business unit to which the capacity plan belongs |  |
 | **capacityPlan** | [**CapacityPlanReference**](CapacityPlanReference) | The capacity plan for which requirements are generated |  |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the requirement generation of the capacity plan |  |
-| **referenceBusinessUnitDate** | [**LocalDate**](LocalDate) | The reference date for interval-based data for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **referenceBusinessUnitDate** | [**LocalDate**](LocalDate) | The reference date for interval-based data relative to the business unit time zone for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) | Granularity of the intervals |  |
 | **errorCode** | [**ErrorCodeEnum**](#Enum--ErrorCodeEnum) | The error code when status is 'Failed' |  [optional] |
 | **downloadUrl** | **String** | The URL to get the requirements results for the capacity plan. It will be populated if the status is 'Complete' |  [optional] |
@@ -49,4 +49,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

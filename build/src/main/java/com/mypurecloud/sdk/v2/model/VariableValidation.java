@@ -11,13 +11,6 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.JsonNode;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -26,7 +19,6 @@ import java.io.Serializable;
 
 public class VariableValidation  implements Serializable {
   
-  private Map<String, JsonNode> additionalProperties = null;
 
   public VariableValidation() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -34,23 +26,6 @@ public class VariableValidation  implements Serializable {
   }
 
   
-  /**
-   **/
-  public VariableValidation additionalProperties(Map<String, JsonNode> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, JsonNode> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, JsonNode> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -59,14 +34,13 @@ public class VariableValidation  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    VariableValidation variableValidation = (VariableValidation) o;
 
-    return Objects.equals(this.additionalProperties, variableValidation.additionalProperties);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalProperties);
+    return Objects.hash();
   }
 
   @Override
@@ -74,7 +48,6 @@ public class VariableValidation  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class VariableValidation {\n");
     
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

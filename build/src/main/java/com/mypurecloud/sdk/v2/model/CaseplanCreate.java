@@ -193,14 +193,14 @@ public class CaseplanCreate  implements Serializable {
 
 
   /**
-   * The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace.
+   * The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
    **/
   public CaseplanCreate dataSchemas(List<CaseplanDataSchema> dataSchemas) {
     this.dataSchemas = dataSchemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace.")
+  @ApiModelProperty(example = "null", value = "The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.")
   @JsonProperty("dataSchemas")
   public List<CaseplanDataSchema> getDataSchemas() {
     return dataSchemas;

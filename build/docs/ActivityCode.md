@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **name** | **String** | The name of the activity code. Default activity codes will be created with an empty name |  [optional] |
 | **isActive** | **Boolean** | Whether this activity code is active or has been deleted |  [optional] |
@@ -35,4 +35,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

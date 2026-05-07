@@ -129,6 +129,55 @@ public class AgentScoringRule  implements Serializable {
   private Boolean enabled = null;
   private Boolean published = null;
   private AddressableEntityRef evaluator = null;
+
+  private static class AgentToScoreEnumDeserializer extends StdDeserializer<AgentToScoreEnum> {
+    public AgentToScoreEnumDeserializer() {
+      super(AgentToScoreEnumDeserializer.class);
+    }
+
+    @Override
+    public AgentToScoreEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AgentToScoreEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Which agent(s) to score. Valid values: First, Last, Each.
+   */
+ @JsonDeserialize(using = AgentToScoreEnumDeserializer.class)
+  public enum AgentToScoreEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    FIRST("First"),
+    LAST("Last"),
+    EACH("Each");
+
+    private String value;
+
+    AgentToScoreEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AgentToScoreEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AgentToScoreEnum value : AgentToScoreEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AgentToScoreEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AgentToScoreEnum agentToScore = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;
@@ -270,6 +319,24 @@ public class AgentScoringRule  implements Serializable {
   }
 
 
+  /**
+   * Which agent(s) to score. Valid values: First, Last, Each.
+   **/
+  public AgentScoringRule agentToScore(AgentToScoreEnum agentToScore) {
+    this.agentToScore = agentToScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Which agent(s) to score. Valid values: First, Last, Each.")
+  @JsonProperty("agentToScore")
+  public AgentToScoreEnum getAgentToScore() {
+    return agentToScore;
+  }
+  public void setAgentToScore(AgentToScoreEnum agentToScore) {
+    this.agentToScore = agentToScore;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Date when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
@@ -310,6 +377,7 @@ public class AgentScoringRule  implements Serializable {
             Objects.equals(this.enabled, agentScoringRule.enabled) &&
             Objects.equals(this.published, agentScoringRule.published) &&
             Objects.equals(this.evaluator, agentScoringRule.evaluator) &&
+            Objects.equals(this.agentToScore, agentScoringRule.agentToScore) &&
             Objects.equals(this.dateCreated, agentScoringRule.dateCreated) &&
             Objects.equals(this.dateModified, agentScoringRule.dateModified) &&
             Objects.equals(this.selfUri, agentScoringRule.selfUri);
@@ -317,7 +385,7 @@ public class AgentScoringRule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, programId, samplingType, samplingPercentage, submissionType, evaluationFormContextId, enabled, published, evaluator, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, programId, samplingType, samplingPercentage, submissionType, evaluationFormContextId, enabled, published, evaluator, agentToScore, dateCreated, dateModified, selfUri);
   }
 
   @Override
@@ -334,6 +402,7 @@ public class AgentScoringRule  implements Serializable {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    evaluator: ").append(toIndentedString(evaluator)).append("\n");
+    sb.append("    agentToScore: ").append(toIndentedString(agentToScore)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

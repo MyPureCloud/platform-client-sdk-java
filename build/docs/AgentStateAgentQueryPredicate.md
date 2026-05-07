@@ -15,6 +15,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ACTIVEQUEUEID | &quot;activeQueueId&quot; | 
+| INACTIVEQUEUEID | &quot;inactiveQueueId&quot; | 
+| QUEUEID | &quot;queueId&quot; | 
 | ASSIGNEDSKILLID | &quot;assignedSkillId&quot; | 
 | ASSIGNEDLANGUAGEID | &quot;assignedLanguageId&quot; | 
 | DIVISIONID | &quot;divisionId&quot; | 
@@ -25,8 +27,16 @@
 | ROUTINGSTATUS | &quot;routingStatus&quot; | 
 | ISOUTOFOFFICE | &quot;isOutOfOffice&quot; | 
 | ONLINE | &quot;online&quot; | 
+| TEAMID | &quot;teamId&quot; | 
+| MANAGEMENTUNITID | &quot;managementUnitId&quot; | 
+| BUSINESSUNITID | &quot;businessUnitId&quot; | 
+| ADHERENCESTATE | &quot;adherenceState&quot; | 
+| ADHERENCEIMPACT | &quot;adherenceImpact&quot; | 
+| SCHEDULEDACTIVITYCODEID | &quot;scheduledActivityCodeId&quot; | 
+| SCHEDULEDACTIVITYCATEGORY | &quot;scheduledActivityCategory&quot; | 
+| ACTUALACTIVITYCATEGORY | &quot;actualActivityCategory&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

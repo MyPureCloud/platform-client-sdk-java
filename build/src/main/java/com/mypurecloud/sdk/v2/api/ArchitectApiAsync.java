@@ -215,6 +215,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsRevertRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsUnlockRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableExportJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportCsvJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
@@ -9414,11 +9415,87 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Begin an import process for importing rows into a datatable
+   * Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+   * Create an import job for importing rows from a CSV file. The caller can then poll for status of the import using the token returned in the response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataTableImportJob> postFlowsDatatableImportCsvJobsAsync(PostFlowsDatatableImportCsvJobsRequest request, final AsyncApiCallback<DataTableImportJob> callback) {
+    try {
+      final SettableFuture<DataTableImportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableImportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+   * Create an import job for importing rows from a CSV file. The caller can then poll for status of the import using the token returned in the response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataTableImportJob>> postFlowsDatatableImportCsvJobsAsync(ApiRequest<DataTableImportJob> request, final AsyncApiCallback<ApiResponse<DataTableImportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataTableImportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableImportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
    * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<DataTableImportJob> postFlowsDatatableImportJobsAsync(PostFlowsDatatableImportJobsRequest request, final AsyncApiCallback<DataTableImportJob> callback) {
     try {
@@ -9448,11 +9525,12 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Begin an import process for importing rows into a datatable
+   * Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
    * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<DataTableImportJob>> postFlowsDatatableImportJobsAsync(ApiRequest<DataTableImportJob> request, final AsyncApiCallback<ApiResponse<DataTableImportJob>> callback) {
     try {

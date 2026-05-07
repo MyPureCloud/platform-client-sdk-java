@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class IdentityResolutionAutomergeConfig  implements Serializable {
   
   private Boolean authenticatedWebMessaging = null;
+  private Boolean webTracking = null;
 
   public IdentityResolutionAutomergeConfig() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -48,6 +49,24 @@ public class IdentityResolutionAutomergeConfig  implements Serializable {
   }
 
 
+  /**
+   * Whether automerging is enabled for Web Tracking sessions in this channel.
+   **/
+  public IdentityResolutionAutomergeConfig webTracking(Boolean webTracking) {
+    this.webTracking = webTracking;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether automerging is enabled for Web Tracking sessions in this channel.")
+  @JsonProperty("webTracking")
+  public Boolean getWebTracking() {
+    return webTracking;
+  }
+  public void setWebTracking(Boolean webTracking) {
+    this.webTracking = webTracking;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -58,12 +77,13 @@ public class IdentityResolutionAutomergeConfig  implements Serializable {
     }
     IdentityResolutionAutomergeConfig identityResolutionAutomergeConfig = (IdentityResolutionAutomergeConfig) o;
 
-    return Objects.equals(this.authenticatedWebMessaging, identityResolutionAutomergeConfig.authenticatedWebMessaging);
+    return Objects.equals(this.authenticatedWebMessaging, identityResolutionAutomergeConfig.authenticatedWebMessaging) &&
+            Objects.equals(this.webTracking, identityResolutionAutomergeConfig.webTracking);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authenticatedWebMessaging);
+    return Objects.hash(authenticatedWebMessaging, webTracking);
   }
 
   @Override
@@ -72,6 +92,7 @@ public class IdentityResolutionAutomergeConfig  implements Serializable {
     sb.append("class IdentityResolutionAutomergeConfig {\n");
     
     sb.append("    authenticatedWebMessaging: ").append(toIndentedString(authenticatedWebMessaging)).append("\n");
+    sb.append("    webTracking: ").append(toIndentedString(webTracking)).append("\n");
     sb.append("}");
     return sb.toString();
   }

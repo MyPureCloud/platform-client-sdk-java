@@ -13,9 +13,10 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.VariableValidation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -48,7 +49,8 @@ public class Variable  implements Serializable {
     INTEGER("Integer"),
     NUMBER("Number"),
     BOOLEAN("Boolean"),
-    DATE("Date");
+    DATE("Date"),
+    LIST("List");
 
     private String value;
 
@@ -127,10 +129,13 @@ public class Variable  implements Serializable {
   }
   private ScopeEnum scope = null;
   private String description = null;
-  private VariableValidation validation = null;
+  private Object validation = null;
+  private Object listValues = null;
+  private List<Variable> listVariables = null;
 
   public Variable() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      listVariables = new ArrayList<Variable>();
     }
   }
 
@@ -210,18 +215,54 @@ public class Variable  implements Serializable {
   /**
    * The validation configuration for the variable. Optional - if not present, no validation is applied.
    **/
-  public Variable validation(VariableValidation validation) {
+  public Variable validation(Object validation) {
     this.validation = validation;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The validation configuration for the variable. Optional - if not present, no validation is applied.")
   @JsonProperty("validation")
-  public VariableValidation getValidation() {
+  public Object getValidation() {
     return validation;
   }
-  public void setValidation(VariableValidation validation) {
+  public void setValidation(Object validation) {
     this.validation = validation;
+  }
+
+
+  /**
+   * The values configuration for List variables. Only applicable when type is 'List'.
+   **/
+  public Variable listValues(Object listValues) {
+    this.listValues = listValues;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The values configuration for List variables. Only applicable when type is 'List'.")
+  @JsonProperty("listValues")
+  public Object getListValues() {
+    return listValues;
+  }
+  public void setListValues(Object listValues) {
+    this.listValues = listValues;
+  }
+
+
+  /**
+   * The variables that the list result will be stored in. Only applicable when type is 'List'.
+   **/
+  public Variable listVariables(List<Variable> listVariables) {
+    this.listVariables = listVariables;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The variables that the list result will be stored in. Only applicable when type is 'List'.")
+  @JsonProperty("listVariables")
+  public List<Variable> getListVariables() {
+    return listVariables;
+  }
+  public void setListVariables(List<Variable> listVariables) {
+    this.listVariables = listVariables;
   }
 
 
@@ -239,12 +280,14 @@ public class Variable  implements Serializable {
             Objects.equals(this.type, variable.type) &&
             Objects.equals(this.scope, variable.scope) &&
             Objects.equals(this.description, variable.description) &&
-            Objects.equals(this.validation, variable.validation);
+            Objects.equals(this.validation, variable.validation) &&
+            Objects.equals(this.listValues, variable.listValues) &&
+            Objects.equals(this.listVariables, variable.listVariables);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, scope, description, validation);
+    return Objects.hash(name, type, scope, description, validation, listValues, listVariables);
   }
 
   @Override
@@ -257,6 +300,8 @@ public class Variable  implements Serializable {
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    validation: ").append(toIndentedString(validation)).append("\n");
+    sb.append("    listValues: ").append(toIndentedString(listValues)).append("\n");
+    sb.append("    listVariables: ").append(toIndentedString(listVariables)).append("\n");
     sb.append("}");
     return sb.toString();
   }

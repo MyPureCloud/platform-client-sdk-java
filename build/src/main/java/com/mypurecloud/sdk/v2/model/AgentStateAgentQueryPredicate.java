@@ -43,6 +43,8 @@ public class AgentStateAgentQueryPredicate  implements Serializable {
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVEQUEUEID("activeQueueId"),
+    INACTIVEQUEUEID("inactiveQueueId"),
+    QUEUEID("queueId"),
     ASSIGNEDSKILLID("assignedSkillId"),
     ASSIGNEDLANGUAGEID("assignedLanguageId"),
     DIVISIONID("divisionId"),
@@ -52,7 +54,15 @@ public class AgentStateAgentQueryPredicate  implements Serializable {
     ORGANIZATIONPRESENCEID("organizationPresenceId"),
     ROUTINGSTATUS("routingStatus"),
     ISOUTOFOFFICE("isOutOfOffice"),
-    ONLINE("online");
+    ONLINE("online"),
+    TEAMID("teamId"),
+    MANAGEMENTUNITID("managementUnitId"),
+    BUSINESSUNITID("businessUnitId"),
+    ADHERENCESTATE("adherenceState"),
+    ADHERENCEIMPACT("adherenceImpact"),
+    SCHEDULEDACTIVITYCODEID("scheduledActivityCodeId"),
+    SCHEDULEDACTIVITYCATEGORY("scheduledActivityCategory"),
+    ACTUALACTIVITYCATEGORY("actualActivityCategory");
 
     private String value;
 

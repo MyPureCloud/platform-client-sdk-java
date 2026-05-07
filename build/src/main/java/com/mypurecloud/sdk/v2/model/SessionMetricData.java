@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.ComputedData;
 import com.mypurecloud.sdk.v2.model.HistoricalData;
 import com.mypurecloud.sdk.v2.model.ModelData;
 import com.mypurecloud.sdk.v2.model.ModelMetaData;
+import com.mypurecloud.sdk.v2.model.OutlierData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -30,6 +31,7 @@ public class SessionMetricData  implements Serializable {
   private ComputedData computed = null;
   private HistoricalData historical = null;
   private ModelMetaData modelMetaData = null;
+  private OutlierData outliers = null;
 
   public SessionMetricData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -92,20 +94,38 @@ public class SessionMetricData  implements Serializable {
 
 
   /**
-   * Contains forecast meta data
+   * Contains forecast metadata
    **/
   public SessionMetricData modelMetaData(ModelMetaData modelMetaData) {
     this.modelMetaData = modelMetaData;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Contains forecast meta data")
+  @ApiModelProperty(example = "null", value = "Contains forecast metadata")
   @JsonProperty("modelMetaData")
   public ModelMetaData getModelMetaData() {
     return modelMetaData;
   }
   public void setModelMetaData(ModelMetaData modelMetaData) {
     this.modelMetaData = modelMetaData;
+  }
+
+
+  /**
+   * Contains forecast outlier data
+   **/
+  public SessionMetricData outliers(OutlierData outliers) {
+    this.outliers = outliers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Contains forecast outlier data")
+  @JsonProperty("outliers")
+  public OutlierData getOutliers() {
+    return outliers;
+  }
+  public void setOutliers(OutlierData outliers) {
+    this.outliers = outliers;
   }
 
 
@@ -122,12 +142,13 @@ public class SessionMetricData  implements Serializable {
     return Objects.equals(this.model, sessionMetricData.model) &&
             Objects.equals(this.computed, sessionMetricData.computed) &&
             Objects.equals(this.historical, sessionMetricData.historical) &&
-            Objects.equals(this.modelMetaData, sessionMetricData.modelMetaData);
+            Objects.equals(this.modelMetaData, sessionMetricData.modelMetaData) &&
+            Objects.equals(this.outliers, sessionMetricData.outliers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(model, computed, historical, modelMetaData);
+    return Objects.hash(model, computed, historical, modelMetaData, outliers);
   }
 
   @Override
@@ -139,6 +160,7 @@ public class SessionMetricData  implements Serializable {
     sb.append("    computed: ").append(toIndentedString(computed)).append("\n");
     sb.append("    historical: ").append(toIndentedString(historical)).append("\n");
     sb.append("    modelMetaData: ").append(toIndentedString(modelMetaData)).append("\n");
+    sb.append("    outliers: ").append(toIndentedString(outliers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

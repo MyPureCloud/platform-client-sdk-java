@@ -161,6 +161,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     SEGMENTTYPE("segmentType"),
     SESSIONDNIS("sessionDnis"),
     SIPRESPONSECODE("sipResponseCode"),
+    SKILLEXPRESSIONID("skillExpressionId"),
     SNIPPETRECORDING("snippetRecording"),
     SUBJECT("subject"),
     TEAMID("teamId"),

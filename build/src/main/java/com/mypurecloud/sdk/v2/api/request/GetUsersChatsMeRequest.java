@@ -122,6 +122,20 @@ public class GetUsersChatsMeRequest {
 	    return this;
 	} 
 
+	private Boolean includeRoomOwners;
+	public Boolean getIncludeRoomOwners() {
+		return this.includeRoomOwners;
+	}
+
+	public void setIncludeRoomOwners(Boolean includeRoomOwners) {
+		this.includeRoomOwners = includeRoomOwners;
+	}
+
+	public GetUsersChatsMeRequest withIncludeRoomOwners(Boolean includeRoomOwners) {
+	    this.setIncludeRoomOwners(includeRoomOwners);
+	    return this;
+	} 
+
 	private String after;
 	public String getAfter() {
 		return this.after;
@@ -166,6 +180,9 @@ public class GetUsersChatsMeRequest {
                 .withQueryParameters("includePresence", "", includePresence)
         
 
+                .withQueryParameters("includeRoomOwners", "", includeRoomOwners)
+        
+
                 .withQueryParameters("after", "", after)
         
 		.withCustomHeaders(customHeaders)
@@ -196,6 +213,11 @@ public class GetUsersChatsMeRequest {
 
 		public Builder withIncludePresence(Boolean includePresence) {
 			request.setIncludePresence(includePresence);
+			return this;
+		}
+
+		public Builder withIncludeRoomOwners(Boolean includeRoomOwners) {
+			request.setIncludeRoomOwners(includeRoomOwners);
 			return this;
 		}
 

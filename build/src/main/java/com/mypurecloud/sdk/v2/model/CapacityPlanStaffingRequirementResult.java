@@ -243,14 +243,14 @@ public class CapacityPlanStaffingRequirementResult  implements Serializable {
 
 
   /**
-   * The reference date for interval-based data for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+   * The reference date for interval-based data relative to the business unit time zone for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
   public CapacityPlanStaffingRequirementResult referenceBusinessUnitDate(LocalDate referenceBusinessUnitDate) {
     this.referenceBusinessUnitDate = referenceBusinessUnitDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The reference date for interval-based data for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "null", required = true, value = "The reference date for interval-based data relative to the business unit time zone for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("referenceBusinessUnitDate")
   public LocalDate getReferenceBusinessUnitDate() {
     return referenceBusinessUnitDate;

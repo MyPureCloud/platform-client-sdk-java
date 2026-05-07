@@ -46,7 +46,11 @@ public class JourneyViewChartMetric  implements Serializable {
   public enum AggregateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EVENTCOUNT("EventCount"),
-    CUSTOMERCOUNT("CustomerCount");
+    CUSTOMERCOUNT("CustomerCount"),
+    MINIMUM("Minimum"),
+    MAXIMUM("Maximum"),
+    AVERAGE("Average"),
+    SUM("Sum");
 
     private String value;
 

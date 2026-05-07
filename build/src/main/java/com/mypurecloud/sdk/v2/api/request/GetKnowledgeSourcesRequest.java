@@ -127,9 +127,9 @@ import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
 import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
-import com.mypurecloud.sdk.v2.model.V3SourceDetailedWithErrorResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableListing;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
-import com.mypurecloud.sdk.v2.model.V3SourceWithErrorListing;
 import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
 import com.mypurecloud.sdk.v2.model.V3Synchronization;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
@@ -154,7 +154,8 @@ public class GetKnowledgeSourcesRequest {
 	} 
 
 	public enum expandValues { 
-		LASTSYNC("lastSync");
+		LASTSYNC("lastSync"),
+		CONNECTION("connection");
 
 		private String value;
 

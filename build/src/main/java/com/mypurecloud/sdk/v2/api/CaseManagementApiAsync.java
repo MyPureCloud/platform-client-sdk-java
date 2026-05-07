@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.CaseplanCreate;
 import com.mypurecloud.sdk.v2.model.CaseplanCreateResponse;
 import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaListing;
 import com.mypurecloud.sdk.v2.model.CaseplanListing;
+import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
+import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanUpdate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;
@@ -78,6 +80,7 @@ import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseTerminateJobsReq
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesAssociationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanIntakesettingsRequest;
@@ -2553,6 +2556,83 @@ public class CaseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CaseplanCreateResponse> response = (ApiResponse<CaseplanCreateResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for caseplans
+   * 
+   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CaseplanQueryEntityListing> postCasemanagementCaseplansQueryAsync(PostCasemanagementCaseplansQueryRequest request, final AsyncApiCallback<CaseplanQueryEntityListing> callback) {
+    try {
+      final SettableFuture<CaseplanQueryEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CaseplanQueryEntityListing>() {}, new AsyncApiCallback<ApiResponse<CaseplanQueryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseplanQueryEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for caseplans
+   * 
+   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CaseplanQueryEntityListing>> postCasemanagementCaseplansQueryAsync(ApiRequest<CaseplanQueryRequest> request, final AsyncApiCallback<ApiResponse<CaseplanQueryEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CaseplanQueryEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CaseplanQueryEntityListing>() {}, new AsyncApiCallback<ApiResponse<CaseplanQueryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseplanQueryEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseplanQueryEntityListing> response = (ApiResponse<CaseplanQueryEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseplanQueryEntityListing> response = (ApiResponse<CaseplanQueryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

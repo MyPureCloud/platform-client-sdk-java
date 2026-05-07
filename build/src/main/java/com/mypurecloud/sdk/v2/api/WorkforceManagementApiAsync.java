@@ -3559,13 +3559,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ActivityPlanRunJobResponse> getWorkforcemanagementBusinessunitActivityplanRunsJobAsync(GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest request, final AsyncApiCallback<ActivityPlanRunJobResponse> callback) {
+  public Future<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanRunsJobAsync(GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
     try {
-      final SettableFuture<ActivityPlanRunJobResponse> future = SettableFuture.create();
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanRunJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanRunJobResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ActivityPlanRunJobResponse> response) {
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3593,13 +3593,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ActivityPlanRunJobResponse>> getWorkforcemanagementBusinessunitActivityplanRunsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanRunJobResponse>> callback) {
+  public Future<ApiResponse<ActivityPlanJobResponse>> getWorkforcemanagementBusinessunitActivityplanRunsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<ActivityPlanRunJobResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanRunJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanRunJobResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ActivityPlanRunJobResponse> response) {
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3607,7 +3607,7 @@ public class WorkforceManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)exception;
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3615,7 +3615,7 @@ public class WorkforceManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -15648,13 +15648,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanRunsJobsAsync(PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+  public Future<ActivityPlanRunJobResponse> postWorkforcemanagementBusinessunitActivityplanRunsJobsAsync(PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest request, final AsyncApiCallback<ActivityPlanRunJobResponse> callback) {
     try {
-      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final SettableFuture<ActivityPlanRunJobResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanRunJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanRunJobResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+        public void onCompleted(ApiResponse<ActivityPlanRunJobResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -15682,13 +15682,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ActivityPlanJobResponse>> postWorkforcemanagementBusinessunitActivityplanRunsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+  public Future<ApiResponse<ActivityPlanRunJobResponse>> postWorkforcemanagementBusinessunitActivityplanRunsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanRunJobResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ActivityPlanRunJobResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanRunJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanRunJobResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+        public void onCompleted(ApiResponse<ActivityPlanRunJobResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -15696,7 +15696,7 @@ public class WorkforceManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -15704,7 +15704,7 @@ public class WorkforceManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

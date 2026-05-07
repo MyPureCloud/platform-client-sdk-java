@@ -26,6 +26,7 @@ public class KnowledgeRetrievedReference  implements Serializable {
   private String text = null;
   private String fileName = null;
   private String url = null;
+  private Boolean usedForGeneration = null;
 
   public KnowledgeRetrievedReference() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -105,6 +106,24 @@ public class KnowledgeRetrievedReference  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether a retrieved reference is used for answer generation
+   **/
+  public KnowledgeRetrievedReference usedForGeneration(Boolean usedForGeneration) {
+    this.usedForGeneration = usedForGeneration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether a retrieved reference is used for answer generation")
+  @JsonProperty("usedForGeneration")
+  public Boolean getUsedForGeneration() {
+    return usedForGeneration;
+  }
+  public void setUsedForGeneration(Boolean usedForGeneration) {
+    this.usedForGeneration = usedForGeneration;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -118,12 +137,13 @@ public class KnowledgeRetrievedReference  implements Serializable {
     return Objects.equals(this.confidence, knowledgeRetrievedReference.confidence) &&
             Objects.equals(this.text, knowledgeRetrievedReference.text) &&
             Objects.equals(this.fileName, knowledgeRetrievedReference.fileName) &&
-            Objects.equals(this.url, knowledgeRetrievedReference.url);
+            Objects.equals(this.url, knowledgeRetrievedReference.url) &&
+            Objects.equals(this.usedForGeneration, knowledgeRetrievedReference.usedForGeneration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(confidence, text, fileName, url);
+    return Objects.hash(confidence, text, fileName, url, usedForGeneration);
   }
 
   @Override
@@ -135,6 +155,7 @@ public class KnowledgeRetrievedReference  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    usedForGeneration: ").append(toIndentedString(usedForGeneration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

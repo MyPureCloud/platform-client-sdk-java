@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.BatchConversationEventRequest;
 import com.mypurecloud.sdk.v2.model.BatchEventResponse;
+import com.mypurecloud.sdk.v2.model.BatchPredictiveRoutingCustomKpiAttributionEventRequest;
 import com.mypurecloud.sdk.v2.model.BatchUserPresenceEventRequest;
 import com.mypurecloud.sdk.v2.model.BatchUserRoutingStatusEventRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;

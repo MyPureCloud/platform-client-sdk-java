@@ -81,6 +81,8 @@ public class RecordingJobsQuery  implements Serializable {
   private String integrationId = null;
   private Boolean includeRecordingsWithSensitiveData = null;
   private Boolean includeScreenRecordings = null;
+  private Boolean includePolicyBasedRecordings = null;
+  private Boolean includeSnippetRecordings = null;
   private Boolean clearExport = null;
   private AsyncConversationQuery conversationQuery = null;
   private String agedConversationInterval = null;
@@ -236,6 +238,42 @@ public class RecordingJobsQuery  implements Serializable {
 
 
   /**
+   * Whether to include policy-based recordings for the action, default value = true
+   **/
+  public RecordingJobsQuery includePolicyBasedRecordings(Boolean includePolicyBasedRecordings) {
+    this.includePolicyBasedRecordings = includePolicyBasedRecordings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to include policy-based recordings for the action, default value = true")
+  @JsonProperty("includePolicyBasedRecordings")
+  public Boolean getIncludePolicyBasedRecordings() {
+    return includePolicyBasedRecordings;
+  }
+  public void setIncludePolicyBasedRecordings(Boolean includePolicyBasedRecordings) {
+    this.includePolicyBasedRecordings = includePolicyBasedRecordings;
+  }
+
+
+  /**
+   * Whether to include snippet recordings for the action, default value = true
+   **/
+  public RecordingJobsQuery includeSnippetRecordings(Boolean includeSnippetRecordings) {
+    this.includeSnippetRecordings = includeSnippetRecordings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to include snippet recordings for the action, default value = true")
+  @JsonProperty("includeSnippetRecordings")
+  public Boolean getIncludeSnippetRecordings() {
+    return includeSnippetRecordings;
+  }
+  public void setIncludeSnippetRecordings(Boolean includeSnippetRecordings) {
+    this.includeSnippetRecordings = includeSnippetRecordings;
+  }
+
+
+  /**
    * For DELETE action, setting this to true will clear any pending exports for recordings. This field is only used for DELETE action. Default value = false
    **/
   public RecordingJobsQuery clearExport(Boolean clearExport) {
@@ -307,6 +345,8 @@ public class RecordingJobsQuery  implements Serializable {
             Objects.equals(this.integrationId, recordingJobsQuery.integrationId) &&
             Objects.equals(this.includeRecordingsWithSensitiveData, recordingJobsQuery.includeRecordingsWithSensitiveData) &&
             Objects.equals(this.includeScreenRecordings, recordingJobsQuery.includeScreenRecordings) &&
+            Objects.equals(this.includePolicyBasedRecordings, recordingJobsQuery.includePolicyBasedRecordings) &&
+            Objects.equals(this.includeSnippetRecordings, recordingJobsQuery.includeSnippetRecordings) &&
             Objects.equals(this.clearExport, recordingJobsQuery.clearExport) &&
             Objects.equals(this.conversationQuery, recordingJobsQuery.conversationQuery) &&
             Objects.equals(this.agedConversationInterval, recordingJobsQuery.agedConversationInterval);
@@ -314,7 +354,7 @@ public class RecordingJobsQuery  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, actionDate, actionAge, screenRecordingActionDate, screenRecordingActionAge, integrationId, includeRecordingsWithSensitiveData, includeScreenRecordings, clearExport, conversationQuery, agedConversationInterval);
+    return Objects.hash(action, actionDate, actionAge, screenRecordingActionDate, screenRecordingActionAge, integrationId, includeRecordingsWithSensitiveData, includeScreenRecordings, includePolicyBasedRecordings, includeSnippetRecordings, clearExport, conversationQuery, agedConversationInterval);
   }
 
   @Override
@@ -330,6 +370,8 @@ public class RecordingJobsQuery  implements Serializable {
     sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    includeRecordingsWithSensitiveData: ").append(toIndentedString(includeRecordingsWithSensitiveData)).append("\n");
     sb.append("    includeScreenRecordings: ").append(toIndentedString(includeScreenRecordings)).append("\n");
+    sb.append("    includePolicyBasedRecordings: ").append(toIndentedString(includePolicyBasedRecordings)).append("\n");
+    sb.append("    includeSnippetRecordings: ").append(toIndentedString(includeSnippetRecordings)).append("\n");
     sb.append("    clearExport: ").append(toIndentedString(clearExport)).append("\n");
     sb.append("    conversationQuery: ").append(toIndentedString(conversationQuery)).append("\n");
     sb.append("    agedConversationInterval: ").append(toIndentedString(agedConversationInterval)).append("\n");

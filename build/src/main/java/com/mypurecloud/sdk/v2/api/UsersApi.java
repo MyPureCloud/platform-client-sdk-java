@@ -98,6 +98,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequ
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUsersCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUsersStationsMeAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
@@ -153,6 +154,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersExternalidAuthorityNameExterna
 import com.mypurecloud.sdk.v2.api.request.GetUsersMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersStationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserCustomattributesRequest;
@@ -203,6 +205,7 @@ import com.mypurecloud.sdk.v2.api.request.PutUserStationAssociatedstationStation
 import com.mypurecloud.sdk.v2.api.request.PutUserStationDefaultstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUsersCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUsersStationsMeAssociatedstationStationIdRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1360,6 +1363,77 @@ public class UsersApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteUsersCustomattributesSchema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Clear self associated station
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUsersStationsMeAssociatedstation() throws IOException, ApiException {
+     deleteUsersStationsMeAssociatedstation(createDeleteUsersStationsMeAssociatedstationRequest());
+  }
+
+  /**
+   * Clear self associated station
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUsersStationsMeAssociatedstationWithHttpInfo() throws IOException {
+    return deleteUsersStationsMeAssociatedstation(createDeleteUsersStationsMeAssociatedstationRequest().withHttpInfo());
+  }
+
+  private DeleteUsersStationsMeAssociatedstationRequest createDeleteUsersStationsMeAssociatedstationRequest() {
+    return DeleteUsersStationsMeAssociatedstationRequest.builder()
+            .build();
+  }
+
+  /**
+   * Clear self associated station
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUsersStationsMeAssociatedstation(DeleteUsersStationsMeAssociatedstationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Clear self associated station
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUsersStationsMeAssociatedstation(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -4754,13 +4828,14 @@ public class UsersApi {
    * 
    * @param excludeClosed Whether or not to exclude closed chats (optional)
    * @param includePresence Whether or not to include user presence (optional)
+   * @param includeRoomOwners Whether or not to include room owners (optional)
    * @param after The key to start after (optional)
    * @return ChatItemCursorListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatItemCursorListing getUsersChatsMe(Boolean excludeClosed, Boolean includePresence, String after) throws IOException, ApiException {
-    return  getUsersChatsMe(createGetUsersChatsMeRequest(excludeClosed, includePresence, after));
+  public ChatItemCursorListing getUsersChatsMe(Boolean excludeClosed, Boolean includePresence, Boolean includeRoomOwners, String after) throws IOException, ApiException {
+    return  getUsersChatsMe(createGetUsersChatsMeRequest(excludeClosed, includePresence, includeRoomOwners, after));
   }
 
   /**
@@ -4768,19 +4843,22 @@ public class UsersApi {
    * 
    * @param excludeClosed Whether or not to exclude closed chats (optional)
    * @param includePresence Whether or not to include user presence (optional)
+   * @param includeRoomOwners Whether or not to include room owners (optional)
    * @param after The key to start after (optional)
    * @return ChatItemCursorListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatItemCursorListing> getUsersChatsMeWithHttpInfo(Boolean excludeClosed, Boolean includePresence, String after) throws IOException {
-    return getUsersChatsMe(createGetUsersChatsMeRequest(excludeClosed, includePresence, after).withHttpInfo());
+  public ApiResponse<ChatItemCursorListing> getUsersChatsMeWithHttpInfo(Boolean excludeClosed, Boolean includePresence, Boolean includeRoomOwners, String after) throws IOException {
+    return getUsersChatsMe(createGetUsersChatsMeRequest(excludeClosed, includePresence, includeRoomOwners, after).withHttpInfo());
   }
 
-  private GetUsersChatsMeRequest createGetUsersChatsMeRequest(Boolean excludeClosed, Boolean includePresence, String after) {
+  private GetUsersChatsMeRequest createGetUsersChatsMeRequest(Boolean excludeClosed, Boolean includePresence, Boolean includeRoomOwners, String after) {
     return GetUsersChatsMeRequest.builder()
             .withExcludeClosed(excludeClosed)
 
             .withIncludePresence(includePresence)
+
+            .withIncludeRoomOwners(includeRoomOwners)
 
             .withAfter(after)
 
@@ -5870,7 +5948,6 @@ public class UsersApi {
   /**
    * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
    * 
-   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param cursor Cursor token to retrieve next page (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
@@ -5889,7 +5966,6 @@ public class UsersApi {
   /**
    * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
    * 
-   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param cursor Cursor token to retrieve next page (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
@@ -5926,7 +6002,6 @@ public class UsersApi {
   /**
    * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
    * 
-   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserCursorEntityListing
    * @throws ApiException if the request fails on the server
@@ -5946,7 +6021,6 @@ public class UsersApi {
   /**
    * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
    * 
-   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6055,6 +6129,80 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get station information for self
+   * 
+   * @return UserStations
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserStations getUsersStationsMe() throws IOException, ApiException {
+    return  getUsersStationsMe(createGetUsersStationsMeRequest());
+  }
+
+  /**
+   * Get station information for self
+   * 
+   * @return UserStations
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserStations> getUsersStationsMeWithHttpInfo() throws IOException {
+    return getUsersStationsMe(createGetUsersStationsMeRequest().withHttpInfo());
+  }
+
+  private GetUsersStationsMeRequest createGetUsersStationsMeRequest() {
+    return GetUsersStationsMeRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get station information for self
+   * 
+   * @param request The request object
+   * @return UserStations
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserStations getUsersStationsMe(GetUsersStationsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserStations> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserStations>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get station information for self
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserStations> getUsersStationsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserStations>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserStations> response = (ApiResponse<UserStations>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserStations> response = (ApiResponse<UserStations>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10124,6 +10272,81 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Set self associated station
+   * 
+   * @param stationId stationId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putUsersStationsMeAssociatedstationStationId(String stationId) throws IOException, ApiException {
+     putUsersStationsMeAssociatedstationStationId(createPutUsersStationsMeAssociatedstationStationIdRequest(stationId));
+  }
+
+  /**
+   * Set self associated station
+   * 
+   * @param stationId stationId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putUsersStationsMeAssociatedstationStationIdWithHttpInfo(String stationId) throws IOException {
+    return putUsersStationsMeAssociatedstationStationId(createPutUsersStationsMeAssociatedstationStationIdRequest(stationId).withHttpInfo());
+  }
+
+  private PutUsersStationsMeAssociatedstationStationIdRequest createPutUsersStationsMeAssociatedstationStationIdRequest(String stationId) {
+    return PutUsersStationsMeAssociatedstationStationIdRequest.builder()
+            .withStationId(stationId)
+
+            .build();
+  }
+
+  /**
+   * Set self associated station
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putUsersStationsMeAssociatedstationStationId(PutUsersStationsMeAssociatedstationStationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Set self associated station
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putUsersStationsMeAssociatedstationStationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

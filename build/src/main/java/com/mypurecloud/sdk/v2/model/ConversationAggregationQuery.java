@@ -183,6 +183,7 @@ public class ConversationAggregationQuery  implements Serializable {
     NBLINDTRANSFERRED("nBlindTransferred"),
     NBOTINTERACTIONS("nBotInteractions"),
     NCALLBACKATTEMPTS("nCallbackAttempts"),
+    NCALLBACKOVERSLA("nCallbackOverSla"),
     NCALLBACKSCHEDULED("nCallbackScheduled"),
     NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
@@ -208,6 +209,7 @@ public class ConversationAggregationQuery  implements Serializable {
     OMESSAGETURN("oMessageTurn"),
     OSERVICELEVEL("oServiceLevel"),
     OSERVICETARGET("oServiceTarget"),
+    OSKILLEXPRESSIONAPPLICATIONS("oSkillExpressionApplications"),
     TABANDON("tAbandon"),
     TACD("tAcd"),
     TACTIVECALLBACK("tActiveCallback"),
@@ -247,6 +249,7 @@ public class ConversationAggregationQuery  implements Serializable {
     TSNIPPETRECORD("tSnippetRecord"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),
+    TTRANSMITTING("tTransmitting"),
     TUSERRESPONSETIME("tUserResponseTime"),
     TVOICEMAIL("tVoicemail"),
     TWAIT("tWait");

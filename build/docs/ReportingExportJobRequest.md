@@ -175,6 +175,7 @@
 | DIGITAL_PERFORMANCE_VIEW | &quot;DIGITAL_PERFORMANCE_VIEW&quot; | 
 | COPILOT_USAGE_VIEW | &quot;COPILOT_USAGE_VIEW&quot; | 
 | PREDICTIVE_ROUTING_THROUGHPUT_VIEW | &quot;PREDICTIVE_ROUTING_THROUGHPUT_VIEW&quot; | 
+| QUEUE_SKILL_EXPRESSION_PERFORMANCE_VIEW | &quot;QUEUE_SKILL_EXPRESSION_PERFORMANCE_VIEW&quot; | 
 
 
 ## Enum: CsvDelimiterEnum
@@ -199,4 +200,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

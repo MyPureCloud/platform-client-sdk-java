@@ -42,7 +42,8 @@ public class V3SynchronizationUpdateRequest  implements Serializable {
  @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    COMPLETED("Completed");
+    COMPLETED("Completed"),
+    CANCELLED("Cancelled");
 
     private String value;
 

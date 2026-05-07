@@ -78,6 +78,53 @@ public class WorktypeQueryRequest  implements Serializable {
   private List<WorkitemFilter> filters = null;
   private List<String> attributes = null;
   private String after = null;
+
+  private static class ExpandsEnumDeserializer extends StdDeserializer<ExpandsEnum> {
+    public ExpandsEnumDeserializer() {
+      super(ExpandsEnumDeserializer.class);
+    }
+
+    @Override
+    public ExpandsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ExpandsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * List of entity attributes to be expanded in the result.
+   */
+ @JsonDeserialize(using = ExpandsEnumDeserializer.class)
+  public enum ExpandsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SCHEMA("schema");
+
+    private String value;
+
+    ExpandsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ExpandsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ExpandsEnum value : ExpandsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ExpandsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ExpandsEnum expands = null;
   private WorktypeQuerySort sort = null;
 
   public WorktypeQueryRequest() {
@@ -179,6 +226,24 @@ public class WorktypeQueryRequest  implements Serializable {
 
 
   /**
+   * List of entity attributes to be expanded in the result.
+   **/
+  public WorktypeQueryRequest expands(ExpandsEnum expands) {
+    this.expands = expands;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of entity attributes to be expanded in the result.")
+  @JsonProperty("expands")
+  public ExpandsEnum getExpands() {
+    return expands;
+  }
+  public void setExpands(ExpandsEnum expands) {
+    this.expands = expands;
+  }
+
+
+  /**
    * Sort
    **/
   public WorktypeQueryRequest sort(WorktypeQuerySort sort) {
@@ -211,12 +276,13 @@ public class WorktypeQueryRequest  implements Serializable {
             Objects.equals(this.filters, worktypeQueryRequest.filters) &&
             Objects.equals(this.attributes, worktypeQueryRequest.attributes) &&
             Objects.equals(this.after, worktypeQueryRequest.after) &&
+            Objects.equals(this.expands, worktypeQueryRequest.expands) &&
             Objects.equals(this.sort, worktypeQueryRequest.sort);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pageSize, select, filters, attributes, after, sort);
+    return Objects.hash(pageSize, select, filters, attributes, after, expands, sort);
   }
 
   @Override
@@ -229,6 +295,7 @@ public class WorktypeQueryRequest  implements Serializable {
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    after: ").append(toIndentedString(after)).append("\n");
+    sb.append("    expands: ").append(toIndentedString(expands)).append("\n");
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("}");
     return sb.toString();

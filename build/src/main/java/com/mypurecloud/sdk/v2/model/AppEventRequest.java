@@ -41,6 +41,7 @@ public class AppEventRequest  implements Serializable {
   private String searchQuery = null;
   private Map<String, CustomEventAttribute> attributes = null;
   private Map<String, CustomEventAttribute> traits = null;
+  private String externalId = null;
   private String customerCookieId = null;
   private Date createdDate = null;
 
@@ -231,6 +232,24 @@ public class AppEventRequest  implements Serializable {
 
 
   /**
+   * An external identifier for the customer.
+   **/
+  public AppEventRequest externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An external identifier for the customer.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
+  /**
    * A UUID representing the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
    **/
   public AppEventRequest customerCookieId(String customerCookieId) {
@@ -286,13 +305,14 @@ public class AppEventRequest  implements Serializable {
             Objects.equals(this.searchQuery, appEventRequest.searchQuery) &&
             Objects.equals(this.attributes, appEventRequest.attributes) &&
             Objects.equals(this.traits, appEventRequest.traits) &&
+            Objects.equals(this.externalId, appEventRequest.externalId) &&
             Objects.equals(this.customerCookieId, appEventRequest.customerCookieId) &&
             Objects.equals(this.createdDate, appEventRequest.createdDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventName, screenName, app, device, sdkLibrary, networkConnectivity, referrerUrl, searchQuery, attributes, traits, customerCookieId, createdDate);
+    return Objects.hash(eventName, screenName, app, device, sdkLibrary, networkConnectivity, referrerUrl, searchQuery, attributes, traits, externalId, customerCookieId, createdDate);
   }
 
   @Override
@@ -310,6 +330,7 @@ public class AppEventRequest  implements Serializable {
     sb.append("    searchQuery: ").append(toIndentedString(searchQuery)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    traits: ").append(toIndentedString(traits)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    customerCookieId: ").append(toIndentedString(customerCookieId)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("}");

@@ -50,6 +50,7 @@ public class WebEventResponse  implements Serializable {
   private Map<String, CustomEventAttribute> attributes = null;
   private Map<String, CustomEventAttribute> traits = null;
   private Boolean authenticated = null;
+  private String externalId = null;
   private Date createdDate = null;
 
   public WebEventResponse() {
@@ -347,6 +348,24 @@ public class WebEventResponse  implements Serializable {
 
 
   /**
+   * An external identifier for the customer.
+   **/
+  public WebEventResponse externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An external identifier for the customer.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
+  /**
    * UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WebEventResponse createdDate(Date createdDate) {
@@ -390,12 +409,13 @@ public class WebEventResponse  implements Serializable {
             Objects.equals(this.attributes, webEventResponse.attributes) &&
             Objects.equals(this.traits, webEventResponse.traits) &&
             Objects.equals(this.authenticated, webEventResponse.authenticated) &&
+            Objects.equals(this.externalId, webEventResponse.externalId) &&
             Objects.equals(this.createdDate, webEventResponse.createdDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerId, eventName, customerIdType, page, userAgentString, browser, device, searchQuery, ipOrganization, geolocation, mktCampaign, session, referrer, attributes, traits, authenticated, createdDate);
+    return Objects.hash(customerId, eventName, customerIdType, page, userAgentString, browser, device, searchQuery, ipOrganization, geolocation, mktCampaign, session, referrer, attributes, traits, authenticated, externalId, createdDate);
   }
 
   @Override
@@ -419,6 +439,7 @@ public class WebEventResponse  implements Serializable {
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    traits: ").append(toIndentedString(traits)).append("\n");
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("}");
     return sb.toString();

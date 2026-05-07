@@ -141,21 +141,10 @@ public class SocialMediaAsyncDetailQuery  implements Serializable {
   }
 
 
-  /**
-   * List of topicIds to query in
-   **/
-  public SocialMediaAsyncDetailQuery topicIds(List<String> topicIds) {
-    this.topicIds = topicIds;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of topicIds to query in")
   @JsonProperty("topicIds")
   public List<String> getTopicIds() {
     return topicIds;
-  }
-  public void setTopicIds(List<String> topicIds) {
-    this.topicIds = topicIds;
   }
 
 

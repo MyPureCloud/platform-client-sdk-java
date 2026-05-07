@@ -104,7 +104,11 @@ public class SocialMediaQueryPredicate  implements Serializable {
     MODERATIONFLAG("moderationFlag"),
     SOURCETYPE("sourceType"),
     VERIFIEDUSER("verifiedUser"),
-    FOLLOWERCOUNT("followerCount");
+    FOLLOWERCOUNT("followerCount"),
+    LIKES("likes"),
+    SHARES("shares"),
+    COMMENTS("comments"),
+    VIEWS("views");
 
     private String value;
 

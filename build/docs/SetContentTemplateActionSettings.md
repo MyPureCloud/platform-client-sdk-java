@@ -7,8 +7,9 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **smsContentTemplateId** | **String** | A String containing the SMS contentTemplateId. |  |
 | **emailContentTemplateId** | **String** | A String containing the Email contentTemplateId. |  |
+| **whatsAppContentTemplateId** | **String** | A string containing the WhatsApp contentTemplateId. |  |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

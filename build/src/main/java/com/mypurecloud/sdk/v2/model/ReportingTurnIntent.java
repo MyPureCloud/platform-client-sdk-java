@@ -26,6 +26,7 @@ import java.io.Serializable;
 public class ReportingTurnIntent  implements Serializable {
   
   private String name = null;
+  private String id = null;
   private Double confidence = null;
   private List<ReportingTurnIntentSlot> slots = null;
 
@@ -51,6 +52,24 @@ public class ReportingTurnIntent  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  /**
+   * The ID of the intent detected during this reporting turn.
+   **/
+  public ReportingTurnIntent id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the intent detected during this reporting turn.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -101,13 +120,14 @@ public class ReportingTurnIntent  implements Serializable {
     ReportingTurnIntent reportingTurnIntent = (ReportingTurnIntent) o;
 
     return Objects.equals(this.name, reportingTurnIntent.name) &&
+            Objects.equals(this.id, reportingTurnIntent.id) &&
             Objects.equals(this.confidence, reportingTurnIntent.confidence) &&
             Objects.equals(this.slots, reportingTurnIntent.slots);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, confidence, slots);
+    return Objects.hash(name, id, confidence, slots);
   }
 
   @Override
@@ -116,6 +136,7 @@ public class ReportingTurnIntent  implements Serializable {
     sb.append("class ReportingTurnIntent {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    slots: ").append(toIndentedString(slots)).append("\n");
     sb.append("}");

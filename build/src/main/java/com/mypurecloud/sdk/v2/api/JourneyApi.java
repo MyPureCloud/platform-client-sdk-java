@@ -581,21 +581,23 @@ public class JourneyApi {
   }
 
   /**
-   * Delete an outcome.
-   * 
+   * Deprecated. Delete an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param outcomeId ID of the outcome. (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteJourneyOutcome(String outcomeId) throws IOException, ApiException {
      deleteJourneyOutcome(createDeleteJourneyOutcomeRequest(outcomeId));
   }
 
   /**
-   * Delete an outcome.
-   * 
+   * Deprecated. Delete an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param outcomeId ID of the outcome. (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteJourneyOutcomeWithHttpInfo(String outcomeId) throws IOException {
     return deleteJourneyOutcome(createDeleteJourneyOutcomeRequest(outcomeId).withHttpInfo());
@@ -609,11 +611,12 @@ public class JourneyApi {
   }
 
   /**
-   * Delete an outcome.
-   * 
+   * Deprecated. Delete an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteJourneyOutcome(DeleteJourneyOutcomeRequest request) throws IOException, ApiException {
     try {
@@ -627,11 +630,12 @@ public class JourneyApi {
   }
 
   /**
-   * Delete an outcome.
-   * 
+   * Deprecated. Delete an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteJourneyOutcome(ApiRequest<Void> request) throws IOException {
     try {
@@ -656,21 +660,23 @@ public class JourneyApi {
   }
 
   /**
-   * Delete an outcome predictor.
-   * 
+   * Deprecated. Delete an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param predictorId ID of predictor (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteJourneyOutcomesPredictor(String predictorId) throws IOException, ApiException {
      deleteJourneyOutcomesPredictor(createDeleteJourneyOutcomesPredictorRequest(predictorId));
   }
 
   /**
-   * Delete an outcome predictor.
-   * 
+   * Deprecated. Delete an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param predictorId ID of predictor (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteJourneyOutcomesPredictorWithHttpInfo(String predictorId) throws IOException {
     return deleteJourneyOutcomesPredictor(createDeleteJourneyOutcomesPredictorRequest(predictorId).withHttpInfo());
@@ -684,11 +690,12 @@ public class JourneyApi {
   }
 
   /**
-   * Delete an outcome predictor.
-   * 
+   * Deprecated. Delete an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteJourneyOutcomesPredictor(DeleteJourneyOutcomesPredictorRequest request) throws IOException, ApiException {
     try {
@@ -702,11 +709,12 @@ public class JourneyApi {
   }
 
   /**
-   * Delete an outcome predictor.
-   * 
+   * Deprecated. Delete an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteJourneyOutcomesPredictor(ApiRequest<Void> request) throws IOException {
     try {
@@ -1487,23 +1495,25 @@ public class JourneyApi {
   }
 
   /**
-   * Get status of job.
-   * 
+   * Deprecated. Get status of job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param jobId ID of the job. (required)
    * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public String getJourneyActionmapsEstimatesJob(String jobId) throws IOException, ApiException {
     return  getJourneyActionmapsEstimatesJob(createGetJourneyActionmapsEstimatesJobRequest(jobId));
   }
 
   /**
-   * Get status of job.
-   * 
+   * Deprecated. Get status of job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param jobId ID of the job. (required)
    * @return String
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<String> getJourneyActionmapsEstimatesJobWithHttpInfo(String jobId) throws IOException {
     return getJourneyActionmapsEstimatesJob(createGetJourneyActionmapsEstimatesJobRequest(jobId).withHttpInfo());
@@ -1517,12 +1527,13 @@ public class JourneyApi {
   }
 
   /**
-   * Get status of job.
-   * 
+   * Deprecated. Get status of job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public String getJourneyActionmapsEstimatesJob(GetJourneyActionmapsEstimatesJobRequest request) throws IOException, ApiException {
     try {
@@ -1536,11 +1547,12 @@ public class JourneyApi {
   }
 
   /**
-   * Get status of job.
-   * 
+   * Deprecated. Get status of job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<String> getJourneyActionmapsEstimatesJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -1565,23 +1577,25 @@ public class JourneyApi {
   }
 
   /**
-   * Get estimates from completed job.
-   * 
+   * Deprecated. Get estimates from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param jobId ID of the job. (required)
    * @return ActionMapEstimateResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActionMapEstimateResult getJourneyActionmapsEstimatesJobResults(String jobId) throws IOException, ApiException {
     return  getJourneyActionmapsEstimatesJobResults(createGetJourneyActionmapsEstimatesJobResultsRequest(jobId));
   }
 
   /**
-   * Get estimates from completed job.
-   * 
+   * Deprecated. Get estimates from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param jobId ID of the job. (required)
    * @return ActionMapEstimateResult
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActionMapEstimateResult> getJourneyActionmapsEstimatesJobResultsWithHttpInfo(String jobId) throws IOException {
     return getJourneyActionmapsEstimatesJobResults(createGetJourneyActionmapsEstimatesJobResultsRequest(jobId).withHttpInfo());
@@ -1595,12 +1609,13 @@ public class JourneyApi {
   }
 
   /**
-   * Get estimates from completed job.
-   * 
+   * Deprecated. Get estimates from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return ActionMapEstimateResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActionMapEstimateResult getJourneyActionmapsEstimatesJobResults(GetJourneyActionmapsEstimatesJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -1614,11 +1629,12 @@ public class JourneyApi {
   }
 
   /**
-   * Get estimates from completed job.
-   * 
+   * Deprecated. Get estimates from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActionMapEstimateResult> getJourneyActionmapsEstimatesJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -2783,23 +2799,25 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve a single outcome.
-   * 
+   * Deprecated. Retrieve a single outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param outcomeId ID of the outcome. (required)
    * @return Outcome
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Outcome getJourneyOutcome(String outcomeId) throws IOException, ApiException {
     return  getJourneyOutcome(createGetJourneyOutcomeRequest(outcomeId));
   }
 
   /**
-   * Retrieve a single outcome.
-   * 
+   * Deprecated. Retrieve a single outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param outcomeId ID of the outcome. (required)
    * @return Outcome
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Outcome> getJourneyOutcomeWithHttpInfo(String outcomeId) throws IOException {
     return getJourneyOutcome(createGetJourneyOutcomeRequest(outcomeId).withHttpInfo());
@@ -2813,12 +2831,13 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve a single outcome.
-   * 
+   * Deprecated. Retrieve a single outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return Outcome
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Outcome getJourneyOutcome(GetJourneyOutcomeRequest request) throws IOException, ApiException {
     try {
@@ -2832,11 +2851,12 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve a single outcome.
-   * 
+   * Deprecated. Retrieve a single outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Outcome> getJourneyOutcome(ApiRequest<Void> request) throws IOException {
     try {
@@ -2861,8 +2881,8 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all outcomes.
-   * 
+   * Deprecated. Retrieve all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
@@ -2872,14 +2892,15 @@ public class JourneyApi {
    * @return OutcomeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeListing getJourneyOutcomes(Integer pageNumber, Integer pageSize, String sortBy, List<String> outcomeIds, List<String> queryFields, String queryValue) throws IOException, ApiException {
     return  getJourneyOutcomes(createGetJourneyOutcomesRequest(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue));
   }
 
   /**
-   * Retrieve all outcomes.
-   * 
+   * Deprecated. Retrieve all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
@@ -2888,6 +2909,7 @@ public class JourneyApi {
    * @param queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
    * @return OutcomeListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeListing> getJourneyOutcomesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, List<String> outcomeIds, List<String> queryFields, String queryValue) throws IOException {
     return getJourneyOutcomes(createGetJourneyOutcomesRequest(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue).withHttpInfo());
@@ -2911,12 +2933,13 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all outcomes.
-   * 
+   * Deprecated. Retrieve all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return OutcomeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeListing getJourneyOutcomes(GetJourneyOutcomesRequest request) throws IOException, ApiException {
     try {
@@ -2930,11 +2953,12 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all outcomes.
-   * 
+   * Deprecated. Retrieve all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeListing> getJourneyOutcomes(ApiRequest<Void> request) throws IOException {
     try {
@@ -2959,25 +2983,27 @@ public class JourneyApi {
   }
 
   /**
-   * Get job status.
-   * 
+   * Deprecated. Get job status.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId ID of the job. (required)
    * @return OutcomeAttributionJobStateResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(String jobId) throws IOException, ApiException {
     return  getJourneyOutcomesAttributionsJob(createGetJourneyOutcomesAttributionsJobRequest(jobId));
   }
 
   /**
-   * Get job status.
-   * 
+   * Deprecated. Get job status.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId ID of the job. (required)
    * @return OutcomeAttributionJobStateResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeAttributionJobStateResponse> getJourneyOutcomesAttributionsJobWithHttpInfo(String jobId) throws IOException {
     return getJourneyOutcomesAttributionsJob(createGetJourneyOutcomesAttributionsJobRequest(jobId).withHttpInfo());
@@ -2991,13 +3017,14 @@ public class JourneyApi {
   }
 
   /**
-   * Get job status.
-   * 
+   * Deprecated. Get job status.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OutcomeAttributionJobStateResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(GetJourneyOutcomesAttributionsJobRequest request) throws IOException, ApiException {
     try {
@@ -3011,12 +3038,13 @@ public class JourneyApi {
   }
 
   /**
-   * Get job status.
-   * 
+   * Deprecated. Get job status.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeAttributionJobStateResponse> getJourneyOutcomesAttributionsJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -3041,25 +3069,27 @@ public class JourneyApi {
   }
 
   /**
-   * Get outcome attribution entities from completed job.
-   * 
+   * Deprecated. Get outcome attribution entities from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId ID of the job. (required)
    * @return OutcomeAttributionResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(String jobId) throws IOException, ApiException {
     return  getJourneyOutcomesAttributionsJobResults(createGetJourneyOutcomesAttributionsJobResultsRequest(jobId));
   }
 
   /**
-   * Get outcome attribution entities from completed job.
-   * 
+   * Deprecated. Get outcome attribution entities from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId ID of the job. (required)
    * @return OutcomeAttributionResponseListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeAttributionResponseListing> getJourneyOutcomesAttributionsJobResultsWithHttpInfo(String jobId) throws IOException {
     return getJourneyOutcomesAttributionsJobResults(createGetJourneyOutcomesAttributionsJobResultsRequest(jobId).withHttpInfo());
@@ -3073,13 +3103,14 @@ public class JourneyApi {
   }
 
   /**
-   * Get outcome attribution entities from completed job.
-   * 
+   * Deprecated. Get outcome attribution entities from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OutcomeAttributionResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(GetJourneyOutcomesAttributionsJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -3093,12 +3124,13 @@ public class JourneyApi {
   }
 
   /**
-   * Get outcome attribution entities from completed job.
-   * 
+   * Deprecated. Get outcome attribution entities from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeAttributionResponseListing> getJourneyOutcomesAttributionsJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -3123,23 +3155,25 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve a single outcome predictor.
-   * 
+   * Deprecated. Retrieve a single outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param predictorId ID of predictor (required)
    * @return OutcomePredictor
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomePredictor getJourneyOutcomesPredictor(String predictorId) throws IOException, ApiException {
     return  getJourneyOutcomesPredictor(createGetJourneyOutcomesPredictorRequest(predictorId));
   }
 
   /**
-   * Retrieve a single outcome predictor.
-   * 
+   * Deprecated. Retrieve a single outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param predictorId ID of predictor (required)
    * @return OutcomePredictor
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomePredictor> getJourneyOutcomesPredictorWithHttpInfo(String predictorId) throws IOException {
     return getJourneyOutcomesPredictor(createGetJourneyOutcomesPredictorRequest(predictorId).withHttpInfo());
@@ -3153,12 +3187,13 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve a single outcome predictor.
-   * 
+   * Deprecated. Retrieve a single outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return OutcomePredictor
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomePredictor getJourneyOutcomesPredictor(GetJourneyOutcomesPredictorRequest request) throws IOException, ApiException {
     try {
@@ -3172,11 +3207,12 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve a single outcome predictor.
-   * 
+   * Deprecated. Retrieve a single outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomePredictor> getJourneyOutcomesPredictor(ApiRequest<Void> request) throws IOException {
     try {
@@ -3201,21 +3237,23 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all outcome predictors.
-   * 
+   * Deprecated. Retrieve all outcome predictors.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @return OutcomePredictorListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomePredictorListing getJourneyOutcomesPredictors() throws IOException, ApiException {
     return  getJourneyOutcomesPredictors(createGetJourneyOutcomesPredictorsRequest());
   }
 
   /**
-   * Retrieve all outcome predictors.
-   * 
+   * Deprecated. Retrieve all outcome predictors.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @return OutcomePredictorListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomePredictorListing> getJourneyOutcomesPredictorsWithHttpInfo() throws IOException {
     return getJourneyOutcomesPredictors(createGetJourneyOutcomesPredictorsRequest().withHttpInfo());
@@ -3227,12 +3265,13 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all outcome predictors.
-   * 
+   * Deprecated. Retrieve all outcome predictors.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return OutcomePredictorListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomePredictorListing getJourneyOutcomesPredictors(GetJourneyOutcomesPredictorsRequest request) throws IOException, ApiException {
     try {
@@ -3246,11 +3285,12 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all outcome predictors.
-   * 
+   * Deprecated. Retrieve all outcome predictors.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomePredictorListing> getJourneyOutcomesPredictors(ApiRequest<Void> request) throws IOException {
     try {
@@ -3623,23 +3663,25 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve latest outcome score associated with a session for all outcomes.
-   * 
+   * Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param sessionId ID of the session. (required)
    * @return OutcomeScoresResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeScoresResult getJourneySessionOutcomescores(String sessionId) throws IOException, ApiException {
     return  getJourneySessionOutcomescores(createGetJourneySessionOutcomescoresRequest(sessionId));
   }
 
   /**
-   * Retrieve latest outcome score associated with a session for all outcomes.
-   * 
+   * Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param sessionId ID of the session. (required)
    * @return OutcomeScoresResult
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeScoresResult> getJourneySessionOutcomescoresWithHttpInfo(String sessionId) throws IOException {
     return getJourneySessionOutcomescores(createGetJourneySessionOutcomescoresRequest(sessionId).withHttpInfo());
@@ -3653,12 +3695,13 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve latest outcome score associated with a session for all outcomes.
-   * 
+   * Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return OutcomeScoresResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeScoresResult getJourneySessionOutcomescores(GetJourneySessionOutcomescoresRequest request) throws IOException, ApiException {
     try {
@@ -3672,11 +3715,12 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve latest outcome score associated with a session for all outcomes.
-   * 
+   * Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeScoresResult> getJourneySessionOutcomescores(ApiRequest<Void> request) throws IOException {
     try {
@@ -5369,25 +5413,27 @@ public class JourneyApi {
   }
 
   /**
-   * Update an outcome.
-   * 
+   * Deprecated. Update an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param outcomeId ID of the outcome. (required)
    * @param body  (optional)
    * @return Outcome
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Outcome patchJourneyOutcome(String outcomeId, PatchOutcome body) throws IOException, ApiException {
     return  patchJourneyOutcome(createPatchJourneyOutcomeRequest(outcomeId, body));
   }
 
   /**
-   * Update an outcome.
-   * 
+   * Deprecated. Update an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param outcomeId ID of the outcome. (required)
    * @param body  (optional)
    * @return Outcome
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Outcome> patchJourneyOutcomeWithHttpInfo(String outcomeId, PatchOutcome body) throws IOException {
     return patchJourneyOutcome(createPatchJourneyOutcomeRequest(outcomeId, body).withHttpInfo());
@@ -5403,12 +5449,13 @@ public class JourneyApi {
   }
 
   /**
-   * Update an outcome.
-   * 
+   * Deprecated. Update an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return Outcome
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Outcome patchJourneyOutcome(PatchJourneyOutcomeRequest request) throws IOException, ApiException {
     try {
@@ -5422,11 +5469,12 @@ public class JourneyApi {
   }
 
   /**
-   * Update an outcome.
-   * 
+   * Deprecated. Update an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Outcome> patchJourneyOutcome(ApiRequest<PatchOutcome> request) throws IOException {
     try {
@@ -5943,23 +5991,25 @@ public class JourneyApi {
   }
 
   /**
-   * Query for estimates
-   * 
+   * Deprecated. Query for estimates
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param body audience estimator request (required)
    * @return EstimateJobAsyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EstimateJobAsyncResponse postJourneyActionmapsEstimatesJobs(ActionMapEstimateRequest body) throws IOException, ApiException {
     return  postJourneyActionmapsEstimatesJobs(createPostJourneyActionmapsEstimatesJobsRequest(body));
   }
 
   /**
-   * Query for estimates
-   * 
+   * Deprecated. Query for estimates
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param body audience estimator request (required)
    * @return EstimateJobAsyncResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EstimateJobAsyncResponse> postJourneyActionmapsEstimatesJobsWithHttpInfo(ActionMapEstimateRequest body) throws IOException {
     return postJourneyActionmapsEstimatesJobs(createPostJourneyActionmapsEstimatesJobsRequest(body).withHttpInfo());
@@ -5973,12 +6023,13 @@ public class JourneyApi {
   }
 
   /**
-   * Query for estimates
-   * 
+   * Deprecated. Query for estimates
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return EstimateJobAsyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EstimateJobAsyncResponse postJourneyActionmapsEstimatesJobs(PostJourneyActionmapsEstimatesJobsRequest request) throws IOException, ApiException {
     try {
@@ -5992,11 +6043,12 @@ public class JourneyApi {
   }
 
   /**
-   * Query for estimates
-   * 
+   * Deprecated. Query for estimates
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EstimateJobAsyncResponse> postJourneyActionmapsEstimatesJobs(ApiRequest<ActionMapEstimateRequest> request) throws IOException {
     try {
@@ -6658,23 +6710,25 @@ public class JourneyApi {
   }
 
   /**
-   * Create an outcome.
-   * 
+   * Deprecated. Create an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param body  (optional)
    * @return Outcome
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Outcome postJourneyOutcomes(OutcomeRequest body) throws IOException, ApiException {
     return  postJourneyOutcomes(createPostJourneyOutcomesRequest(body));
   }
 
   /**
-   * Create an outcome.
-   * 
+   * Deprecated. Create an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param body  (optional)
    * @return Outcome
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Outcome> postJourneyOutcomesWithHttpInfo(OutcomeRequest body) throws IOException {
     return postJourneyOutcomes(createPostJourneyOutcomesRequest(body).withHttpInfo());
@@ -6688,12 +6742,13 @@ public class JourneyApi {
   }
 
   /**
-   * Create an outcome.
-   * 
+   * Deprecated. Create an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return Outcome
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Outcome postJourneyOutcomes(PostJourneyOutcomesRequest request) throws IOException, ApiException {
     try {
@@ -6707,11 +6762,12 @@ public class JourneyApi {
   }
 
   /**
-   * Create an outcome.
-   * 
+   * Deprecated. Create an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Outcome> postJourneyOutcomes(ApiRequest<OutcomeRequest> request) throws IOException {
     try {
@@ -6736,25 +6792,27 @@ public class JourneyApi {
   }
 
   /**
-   * Create Outcome Attributions
-   * 
+   * Deprecated. Create Outcome Attributions
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body outcome attribution request (optional)
    * @return OutcomeAttributionAsyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeAttributionAsyncResponse postJourneyOutcomesAttributionsJobs(OutcomeAttributionListing body) throws IOException, ApiException {
     return  postJourneyOutcomesAttributionsJobs(createPostJourneyOutcomesAttributionsJobsRequest(body));
   }
 
   /**
-   * Create Outcome Attributions
-   * 
+   * Deprecated. Create Outcome Attributions
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body outcome attribution request (optional)
    * @return OutcomeAttributionAsyncResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeAttributionAsyncResponse> postJourneyOutcomesAttributionsJobsWithHttpInfo(OutcomeAttributionListing body) throws IOException {
     return postJourneyOutcomesAttributionsJobs(createPostJourneyOutcomesAttributionsJobsRequest(body).withHttpInfo());
@@ -6768,13 +6826,14 @@ public class JourneyApi {
   }
 
   /**
-   * Create Outcome Attributions
-   * 
+   * Deprecated. Create Outcome Attributions
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OutcomeAttributionAsyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomeAttributionAsyncResponse postJourneyOutcomesAttributionsJobs(PostJourneyOutcomesAttributionsJobsRequest request) throws IOException, ApiException {
     try {
@@ -6788,12 +6847,13 @@ public class JourneyApi {
   }
 
   /**
-   * Create Outcome Attributions
-   * 
+   * Deprecated. Create Outcome Attributions
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomeAttributionAsyncResponse> postJourneyOutcomesAttributionsJobs(ApiRequest<OutcomeAttributionListing> request) throws IOException {
     try {
@@ -6818,23 +6878,25 @@ public class JourneyApi {
   }
 
   /**
-   * Create an outcome predictor.
-   * 
+   * Deprecated. Create an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param body  (optional)
    * @return OutcomePredictor
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomePredictor postJourneyOutcomesPredictors(OutcomePredictorRequest body) throws IOException, ApiException {
     return  postJourneyOutcomesPredictors(createPostJourneyOutcomesPredictorsRequest(body));
   }
 
   /**
-   * Create an outcome predictor.
-   * 
+   * Deprecated. Create an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param body  (optional)
    * @return OutcomePredictor
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomePredictor> postJourneyOutcomesPredictorsWithHttpInfo(OutcomePredictorRequest body) throws IOException {
     return postJourneyOutcomesPredictors(createPostJourneyOutcomesPredictorsRequest(body).withHttpInfo());
@@ -6848,12 +6910,13 @@ public class JourneyApi {
   }
 
   /**
-   * Create an outcome predictor.
-   * 
+   * Deprecated. Create an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return OutcomePredictor
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutcomePredictor postJourneyOutcomesPredictors(PostJourneyOutcomesPredictorsRequest request) throws IOException, ApiException {
     try {
@@ -6867,11 +6930,12 @@ public class JourneyApi {
   }
 
   /**
-   * Create an outcome predictor.
-   * 
+   * Deprecated. Create an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutcomePredictor> postJourneyOutcomesPredictors(ApiRequest<OutcomePredictorRequest> request) throws IOException {
     try {

@@ -134,6 +134,7 @@ public class ConnectionResponse  implements Serializable {
   }
   private StatusEnum status = null;
   private ErrorBody error = null;
+  private Date dateExpiry = null;
   private String selfUri = null;
 
   public ConnectionResponse() {
@@ -329,6 +330,24 @@ public class ConnectionResponse  implements Serializable {
   }
 
 
+  /**
+   * Expiry date of the authentication credentials. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public ConnectionResponse dateExpiry(Date dateExpiry) {
+    this.dateExpiry = dateExpiry;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Expiry date of the authentication credentials. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateExpiry")
+  public Date getDateExpiry() {
+    return dateExpiry;
+  }
+  public void setDateExpiry(Date dateExpiry) {
+    this.dateExpiry = dateExpiry;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -357,12 +376,13 @@ public class ConnectionResponse  implements Serializable {
             Objects.equals(this.dateModified, connectionResponse.dateModified) &&
             Objects.equals(this.status, connectionResponse.status) &&
             Objects.equals(this.error, connectionResponse.error) &&
+            Objects.equals(this.dateExpiry, connectionResponse.dateExpiry) &&
             Objects.equals(this.selfUri, connectionResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, integration, authenticationProperties, createdBy, modifiedBy, dateCreated, dateModified, status, error, selfUri);
+    return Objects.hash(id, name, type, integration, authenticationProperties, createdBy, modifiedBy, dateCreated, dateModified, status, error, dateExpiry, selfUri);
   }
 
   @Override
@@ -381,6 +401,7 @@ public class ConnectionResponse  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    dateExpiry: ").append(toIndentedString(dateExpiry)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

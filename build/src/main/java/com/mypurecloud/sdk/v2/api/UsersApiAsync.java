@@ -101,6 +101,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequ
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUsersCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUsersStationsMeAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
@@ -156,6 +157,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersExternalidAuthorityNameExterna
 import com.mypurecloud.sdk.v2.api.request.GetUsersMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersStationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserCustomattributesRequest;
@@ -206,6 +208,7 @@ import com.mypurecloud.sdk.v2.api.request.PutUserStationAssociatedstationStation
 import com.mypurecloud.sdk.v2.api.request.PutUserStationDefaultstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUsersCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUsersStationsMeAssociatedstationStationIdRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1319,6 +1322,81 @@ public class UsersApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteUsersCustomattributesSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Clear self associated station
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteUsersStationsMeAssociatedstationAsync(DeleteUsersStationsMeAssociatedstationRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Clear self associated station
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteUsersStationsMeAssociatedstationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -5346,7 +5424,6 @@ public class UsersApiAsync {
   /**
    * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
    * 
-   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5381,7 +5458,6 @@ public class UsersApiAsync {
   /**
    * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
    * 
-   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5484,6 +5560,81 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get station information for self
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserStations> getUsersStationsMeAsync(GetUsersStationsMeRequest request, final AsyncApiCallback<UserStations> callback) {
+    try {
+      final SettableFuture<UserStations> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserStations>() {}, new AsyncApiCallback<ApiResponse<UserStations>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserStations> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get station information for self
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserStations>> getUsersStationsMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserStations>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserStations>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserStations>() {}, new AsyncApiCallback<ApiResponse<UserStations>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserStations> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserStations> response = (ApiResponse<UserStations>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserStations> response = (ApiResponse<UserStations>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -9240,6 +9391,81 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set self associated station
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> putUsersStationsMeAssociatedstationStationIdAsync(PutUsersStationsMeAssociatedstationStationIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set self associated station
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> putUsersStationsMeAssociatedstationStationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

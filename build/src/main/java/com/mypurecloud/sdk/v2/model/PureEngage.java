@@ -142,6 +142,7 @@ public class PureEngage  implements Serializable {
   private String providerName = null;
   private Boolean displayOnLogin = null;
   private String metadataURL = null;
+  private Boolean forceAuthn = null;
   private Boolean autoProvisionUsers = null;
   private String selfUri = null;
 
@@ -433,6 +434,23 @@ public class PureEngage  implements Serializable {
 
   /**
    **/
+  public PureEngage forceAuthn(Boolean forceAuthn) {
+    this.forceAuthn = forceAuthn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("forceAuthn")
+  public Boolean getForceAuthn() {
+    return forceAuthn;
+  }
+  public void setForceAuthn(Boolean forceAuthn) {
+    this.forceAuthn = forceAuthn;
+  }
+
+
+  /**
+   **/
   public PureEngage autoProvisionUsers(Boolean autoProvisionUsers) {
     this.autoProvisionUsers = autoProvisionUsers;
     return this;
@@ -482,13 +500,14 @@ public class PureEngage  implements Serializable {
             Objects.equals(this.providerName, pureEngage.providerName) &&
             Objects.equals(this.displayOnLogin, pureEngage.displayOnLogin) &&
             Objects.equals(this.metadataURL, pureEngage.metadataURL) &&
+            Objects.equals(this.forceAuthn, pureEngage.forceAuthn) &&
             Objects.equals(this.autoProvisionUsers, pureEngage.autoProvisionUsers) &&
             Objects.equals(this.selfUri, pureEngage.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, metadataURL, autoProvisionUsers, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, metadataURL, forceAuthn, autoProvisionUsers, selfUri);
   }
 
   @Override
@@ -513,6 +532,7 @@ public class PureEngage  implements Serializable {
     sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
     sb.append("    displayOnLogin: ").append(toIndentedString(displayOnLogin)).append("\n");
     sb.append("    metadataURL: ").append(toIndentedString(metadataURL)).append("\n");
+    sb.append("    forceAuthn: ").append(toIndentedString(forceAuthn)).append("\n");
     sb.append("    autoProvisionUsers: ").append(toIndentedString(autoProvisionUsers)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

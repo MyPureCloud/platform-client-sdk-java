@@ -5722,7 +5722,7 @@ public class TaskManagementApiAsync {
 
   /**
    * Query for worktypes
-   * 
+   * Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5756,7 +5756,7 @@ public class TaskManagementApiAsync {
 
   /**
    * Query for worktypes
-   * 
+   * Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

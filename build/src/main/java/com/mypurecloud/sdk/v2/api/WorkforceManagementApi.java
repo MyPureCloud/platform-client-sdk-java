@@ -3709,11 +3709,11 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param activityPlanId The ID of the activity plan associated with the run job (required)
    * @param jobId The ID of the activity plan run job (required)
-   * @return ActivityPlanRunJobResponse
+   * @return ActivityPlanJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ActivityPlanRunJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(String businessUnitId, String activityPlanId, String jobId) throws IOException, ApiException {
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(String businessUnitId, String activityPlanId, String jobId) throws IOException, ApiException {
     return  getWorkforcemanagementBusinessunitActivityplanRunsJob(createGetWorkforcemanagementBusinessunitActivityplanRunsJobRequest(businessUnitId, activityPlanId, jobId));
   }
 
@@ -3723,10 +3723,10 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param activityPlanId The ID of the activity plan associated with the run job (required)
    * @param jobId The ID of the activity plan run job (required)
-   * @return ActivityPlanRunJobResponse
+   * @return ActivityPlanJobResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActivityPlanRunJobResponse> getWorkforcemanagementBusinessunitActivityplanRunsJobWithHttpInfo(String businessUnitId, String activityPlanId, String jobId) throws IOException {
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanRunsJobWithHttpInfo(String businessUnitId, String activityPlanId, String jobId) throws IOException {
     return getWorkforcemanagementBusinessunitActivityplanRunsJob(createGetWorkforcemanagementBusinessunitActivityplanRunsJobRequest(businessUnitId, activityPlanId, jobId).withHttpInfo());
   }
 
@@ -3745,13 +3745,13 @@ public class WorkforceManagementApi {
    * Gets an activity plan run job
    * 
    * @param request The request object
-   * @return ActivityPlanRunJobResponse
+   * @return ActivityPlanJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ActivityPlanRunJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest request) throws IOException, ApiException {
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ActivityPlanRunJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanRunJobResponse>() {});
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3767,13 +3767,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActivityPlanRunJobResponse> getWorkforcemanagementBusinessunitActivityplanRunsJob(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanRunsJob(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ActivityPlanRunJobResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)exception;
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -3784,7 +3784,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -17016,11 +17016,11 @@ public class WorkforceManagementApi {
    * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
    * @param businessUnitId The ID of the business unit (required)
    * @param activityPlanId The ID of the activity plan to run (required)
-   * @return ActivityPlanJobResponse
+   * @return ActivityPlanRunJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(String businessUnitId, String activityPlanId) throws IOException, ApiException {
+  public ActivityPlanRunJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(String businessUnitId, String activityPlanId) throws IOException, ApiException {
     return  postWorkforcemanagementBusinessunitActivityplanRunsJobs(createPostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest(businessUnitId, activityPlanId));
   }
 
@@ -17029,10 +17029,10 @@ public class WorkforceManagementApi {
    * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
    * @param businessUnitId The ID of the business unit (required)
    * @param activityPlanId The ID of the activity plan to run (required)
-   * @return ActivityPlanJobResponse
+   * @return ActivityPlanRunJobResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanRunsJobsWithHttpInfo(String businessUnitId, String activityPlanId) throws IOException {
+  public ApiResponse<ActivityPlanRunJobResponse> postWorkforcemanagementBusinessunitActivityplanRunsJobsWithHttpInfo(String businessUnitId, String activityPlanId) throws IOException {
     return postWorkforcemanagementBusinessunitActivityplanRunsJobs(createPostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest(businessUnitId, activityPlanId).withHttpInfo());
   }
 
@@ -17049,13 +17049,13 @@ public class WorkforceManagementApi {
    * Run an activity plan manually
    * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
    * @param request The request object
-   * @return ActivityPlanJobResponse
+   * @return ActivityPlanRunJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest request) throws IOException, ApiException {
+  public ActivityPlanRunJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      ApiResponse<ActivityPlanRunJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanRunJobResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -17071,13 +17071,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanRunsJobs(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<ActivityPlanRunJobResponse> postWorkforcemanagementBusinessunitActivityplanRunsJobs(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanRunJobResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -17088,7 +17088,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

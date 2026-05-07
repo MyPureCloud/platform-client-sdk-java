@@ -14,11 +14,11 @@
 | **isVoicemail** | **Boolean** | Indicates filtering for Voice mail |  [optional] |
 | **isFlagged** | **Boolean** | Indicates filtering for flagged |  [optional] |
 | **isMonitored** | **Boolean** | Indicates filtering for monitored |  [optional] |
-| **isScreenMonitored** | **Boolean** | Indicates filtering for screenMonitored |  [optional] |
+| **isScreenMonitored** | **Boolean** | Deprecated: Use screenMonitored |  [optional] |
 | **filterWrapUpNotes** | **Boolean** | Indicates filtering for WrapUpNotes |  [optional] |
 | **matchAll** | **Boolean** | Indicates comparison operation, TRUE indicates filters will use AND logic, FALSE indicates OR logic |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

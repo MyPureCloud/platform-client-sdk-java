@@ -142,6 +142,7 @@ public class CustomProvider  implements Serializable {
   private String providerName = null;
   private Boolean displayOnLogin = null;
   private String metadataURL = null;
+  private Boolean forceAuthn = null;
   private Boolean endpointCompression = null;
   private String selfUri = null;
 
@@ -433,6 +434,23 @@ public class CustomProvider  implements Serializable {
 
   /**
    **/
+  public CustomProvider forceAuthn(Boolean forceAuthn) {
+    this.forceAuthn = forceAuthn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("forceAuthn")
+  public Boolean getForceAuthn() {
+    return forceAuthn;
+  }
+  public void setForceAuthn(Boolean forceAuthn) {
+    this.forceAuthn = forceAuthn;
+  }
+
+
+  /**
+   **/
   public CustomProvider endpointCompression(Boolean endpointCompression) {
     this.endpointCompression = endpointCompression;
     return this;
@@ -482,13 +500,14 @@ public class CustomProvider  implements Serializable {
             Objects.equals(this.providerName, customProvider.providerName) &&
             Objects.equals(this.displayOnLogin, customProvider.displayOnLogin) &&
             Objects.equals(this.metadataURL, customProvider.metadataURL) &&
+            Objects.equals(this.forceAuthn, customProvider.forceAuthn) &&
             Objects.equals(this.endpointCompression, customProvider.endpointCompression) &&
             Objects.equals(this.selfUri, customProvider.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, metadataURL, endpointCompression, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, metadataURL, forceAuthn, endpointCompression, selfUri);
   }
 
   @Override
@@ -513,6 +532,7 @@ public class CustomProvider  implements Serializable {
     sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
     sb.append("    displayOnLogin: ").append(toIndentedString(displayOnLogin)).append("\n");
     sb.append("    metadataURL: ").append(toIndentedString(metadataURL)).append("\n");
+    sb.append("    forceAuthn: ").append(toIndentedString(forceAuthn)).append("\n");
     sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

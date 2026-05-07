@@ -6181,7 +6181,7 @@ public class TaskManagementApi {
 
   /**
    * Query for worktypes
-   * 
+   * Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
    * @param body QueryPostRequest (required)
    * @return WorktypeQueryEntityListing
    * @throws ApiException if the request fails on the server
@@ -6193,7 +6193,7 @@ public class TaskManagementApi {
 
   /**
    * Query for worktypes
-   * 
+   * Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
    * @param body QueryPostRequest (required)
    * @return WorktypeQueryEntityListing
    * @throws IOException if the request fails to be processed
@@ -6211,7 +6211,7 @@ public class TaskManagementApi {
 
   /**
    * Query for worktypes
-   * 
+   * Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
    * @param request The request object
    * @return WorktypeQueryEntityListing
    * @throws ApiException if the request fails on the server
@@ -6230,7 +6230,7 @@ public class TaskManagementApi {
 
   /**
    * Query for worktypes
-   * 
+   * Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

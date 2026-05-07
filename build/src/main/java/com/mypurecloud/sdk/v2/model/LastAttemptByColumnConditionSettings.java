@@ -25,6 +25,7 @@ public class LastAttemptByColumnConditionSettings  implements Serializable {
   
   private String emailColumnName = null;
   private String smsColumnName = null;
+  private String whatsAppColumnName = null;
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
     public OperatorEnumDeserializer() {
@@ -118,6 +119,24 @@ public class LastAttemptByColumnConditionSettings  implements Serializable {
 
 
   /**
+   * The name of the contact column to evaluate for WhatsApp.
+   **/
+  public LastAttemptByColumnConditionSettings whatsAppColumnName(String whatsAppColumnName) {
+    this.whatsAppColumnName = whatsAppColumnName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name of the contact column to evaluate for WhatsApp.")
+  @JsonProperty("whatsAppColumnName")
+  public String getWhatsAppColumnName() {
+    return whatsAppColumnName;
+  }
+  public void setWhatsAppColumnName(String whatsAppColumnName) {
+    this.whatsAppColumnName = whatsAppColumnName;
+  }
+
+
+  /**
    * The operator to use when comparing values.
    **/
   public LastAttemptByColumnConditionSettings operator(OperatorEnum operator) {
@@ -165,13 +184,14 @@ public class LastAttemptByColumnConditionSettings  implements Serializable {
 
     return Objects.equals(this.emailColumnName, lastAttemptByColumnConditionSettings.emailColumnName) &&
             Objects.equals(this.smsColumnName, lastAttemptByColumnConditionSettings.smsColumnName) &&
+            Objects.equals(this.whatsAppColumnName, lastAttemptByColumnConditionSettings.whatsAppColumnName) &&
             Objects.equals(this.operator, lastAttemptByColumnConditionSettings.operator) &&
             Objects.equals(this.value, lastAttemptByColumnConditionSettings.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(emailColumnName, smsColumnName, operator, value);
+    return Objects.hash(emailColumnName, smsColumnName, whatsAppColumnName, operator, value);
   }
 
   @Override
@@ -181,6 +201,7 @@ public class LastAttemptByColumnConditionSettings  implements Serializable {
     
     sb.append("    emailColumnName: ").append(toIndentedString(emailColumnName)).append("\n");
     sb.append("    smsColumnName: ").append(toIndentedString(smsColumnName)).append("\n");
+    sb.append("    whatsAppColumnName: ").append(toIndentedString(whatsAppColumnName)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");

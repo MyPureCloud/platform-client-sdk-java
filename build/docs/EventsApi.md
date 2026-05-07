@@ -5,6 +5,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**postEventsConversations**](EventsApi#postEventsConversations) | Publish Conversation Batch Events |
+| [**postEventsRoutingCustomkpiattributions**](EventsApi#postEventsRoutingCustomkpiattributions) | Publish Predictive Routing Custom Kpi Attribution Batch Events |
 | [**postEventsUsersPresence**](EventsApi#postEventsUsersPresence) | Publish User Presence Status Batch Events |
 | [**postEventsUsersRoutingstatus**](EventsApi#postEventsUsersRoutingstatus) | Publish Agent Routing Status Batch Events |
 {: class="table-striped"}
@@ -61,6 +62,67 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**BatchConversationEventRequest**](BatchConversationEventRequest)| batchRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BatchEventResponse**](BatchEventResponse)
+
+
+# **postEventsRoutingCustomkpiattributions**
+
+
+> [BatchEventResponse](BatchEventResponse) postEventsRoutingCustomkpiattributions(body)
+
+Publish Predictive Routing Custom Kpi Attribution Batch Events
+
+postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/events/routing/customkpiattributions  
+
+Requires ANY permissions: 
+
+* routing:customKpiAttribution:inject
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.EventsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+EventsApi apiInstance = new EventsApi();
+BatchPredictiveRoutingCustomKpiAttributionEventRequest body = new BatchPredictiveRoutingCustomKpiAttributionEventRequest(); // BatchPredictiveRoutingCustomKpiAttributionEventRequest | batchRequest
+try {
+    BatchEventResponse result = apiInstance.postEventsRoutingCustomkpiattributions(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling EventsApi#postEventsRoutingCustomkpiattributions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BatchPredictiveRoutingCustomKpiAttributionEventRequest**](BatchPredictiveRoutingCustomKpiAttributionEventRequest)| batchRequest | 
 {: class="table-striped"}
 
 
@@ -187,4 +249,4 @@ try {
 [**BatchEventResponse**](BatchEventResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

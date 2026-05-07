@@ -166,14 +166,14 @@ public class TimeOffRequest  implements Serializable {
 
   
   /**
-   * The id of the time off request
+   * The globally unique identifier for the object.
    **/
   public TimeOffRequest id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The id of the time off request")
+  @ApiModelProperty(example = "null", required = true, value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;

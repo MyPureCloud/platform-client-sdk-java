@@ -410,6 +410,8 @@ public class Message  implements Serializable {
     }
   }
   private EngagementSourceEnum engagementSource = null;
+  private Date resumeTime = null;
+  private Date parkTime = null;
 
   public Message() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -975,6 +977,42 @@ public class Message  implements Serializable {
   }
 
 
+  /**
+   * Represents the time when a parked message will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public Message resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the time when a parked message will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
+   * Represents the time when an message was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public Message parkTime(Date parkTime) {
+    this.parkTime = parkTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the time when an message was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("parkTime")
+  public Date getParkTime() {
+    return parkTime;
+  }
+  public void setParkTime(Date parkTime) {
+    this.parkTime = parkTime;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1015,12 +1053,14 @@ public class Message  implements Serializable {
             Objects.equals(this.agentAssistantId, message.agentAssistantId) &&
             Objects.equals(this.byoSmsIntegrationId, message.byoSmsIntegrationId) &&
             Objects.equals(this.queueMediaSettings, message.queueMediaSettings) &&
-            Objects.equals(this.engagementSource, message.engagementSource);
+            Objects.equals(this.engagementSource, message.engagementSource) &&
+            Objects.equals(this.resumeTime, message.resumeTime) &&
+            Objects.equals(this.parkTime, message.parkTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, authenticated, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, byoSmsIntegrationId, queueMediaSettings, engagementSource);
+    return Objects.hash(state, initialState, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, authenticated, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, byoSmsIntegrationId, queueMediaSettings, engagementSource, resumeTime, parkTime);
   }
 
   @Override
@@ -1059,6 +1099,8 @@ public class Message  implements Serializable {
     sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    engagementSource: ").append(toIndentedString(engagementSource)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
+    sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

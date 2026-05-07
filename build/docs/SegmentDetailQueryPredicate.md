@@ -99,6 +99,7 @@
 | SEGMENTTYPE | &quot;segmentType&quot; | 
 | SESSIONDNIS | &quot;sessionDnis&quot; | 
 | SIPRESPONSECODE | &quot;sipResponseCode&quot; | 
+| SKILLEXPRESSIONID | &quot;skillExpressionId&quot; | 
 | SNIPPETRECORDING | &quot;snippetRecording&quot; | 
 | SUBJECT | &quot;subject&quot; | 
 | TEAMID | &quot;teamId&quot; | 
@@ -144,4 +145,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

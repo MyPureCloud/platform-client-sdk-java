@@ -26,6 +26,9 @@ import java.io.Serializable;
 public class ConnectionOptionListing  implements Serializable {
   
   private List<ConnectionOption> entities = null;
+  private String nextUri = null;
+  private String selfUri = null;
+  private String previousUri = null;
 
   public ConnectionOptionListing() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -51,6 +54,57 @@ public class ConnectionOptionListing  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ConnectionOptionListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public ConnectionOptionListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public ConnectionOptionListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -61,12 +115,15 @@ public class ConnectionOptionListing  implements Serializable {
     }
     ConnectionOptionListing connectionOptionListing = (ConnectionOptionListing) o;
 
-    return Objects.equals(this.entities, connectionOptionListing.entities);
+    return Objects.equals(this.entities, connectionOptionListing.entities) &&
+            Objects.equals(this.nextUri, connectionOptionListing.nextUri) &&
+            Objects.equals(this.selfUri, connectionOptionListing.selfUri) &&
+            Objects.equals(this.previousUri, connectionOptionListing.previousUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities);
+    return Objects.hash(entities, nextUri, selfUri, previousUri);
   }
 
   @Override
@@ -75,6 +132,9 @@ public class ConnectionOptionListing  implements Serializable {
     sb.append("class ConnectionOptionListing {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

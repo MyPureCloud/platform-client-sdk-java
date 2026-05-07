@@ -24,6 +24,7 @@
 | **paymentResponse** | [**ConversationContentPaymentResponse**](ConversationContentPaymentResponse) | Payment response content. |  [optional] |
 | **push** | [**ConversationContentPush**](ConversationContentPush) | Push content. |  [optional] |
 | **form** | [**ConversationContentForm**](ConversationContentForm) | Form content. |  [optional] |
+| **notificationResponse** | [**ConversationContentNotificationResponse**](ConversationContentNotificationResponse) | Notification response content, e.g. an Apple Invitation acceptance. |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -52,9 +53,10 @@
 | FORM | &quot;Form&quot; | 
 | ROADSIDEASSISTANCE | &quot;RoadsideAssistance&quot; | 
 | RICHLINK | &quot;RichLink&quot; | 
+| NOTIFICATIONRESPONSE | &quot;NotificationResponse&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

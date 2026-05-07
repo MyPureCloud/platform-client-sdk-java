@@ -49,6 +49,7 @@ public class PolicyAttribute  implements Serializable {
     STRING_LIST("STRING_LIST"),
     TIME("TIME"),
     RELATIVE_TIME("RELATIVE_TIME"),
+    DATE("DATE"),
     TIME_RANGE("TIME_RANGE"),
     DAY_RANGE("DAY_RANGE"),
     IP_ADDRESS("IP_ADDRESS"),

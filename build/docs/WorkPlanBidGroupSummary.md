@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **name** | **String** | The name assigned to this bid group |  |
 | **managementUnit** | [**ManagementUnitReference**](ManagementUnitReference) | The management unit this bid group belongs to |  |
 | **agentCount** | **Integer** | The number of agents in this bid group |  |
@@ -16,4 +16,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

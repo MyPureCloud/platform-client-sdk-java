@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **timeOffLimit** | [**BuTimeOffLimitReference**](BuTimeOffLimitReference) | The ID of the time-off limit |  |
 | **startDate** | [**LocalDate**](LocalDate) | Start date of the requested date range, in ISO-8601 format. The end date is determined by the size of interval lists |  |
 | **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) | Granularity choice for time-off limit |  |
@@ -28,4 +28,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

@@ -89,6 +89,54 @@ public class EvaluationQuestion  implements Serializable {
   private List<AnswerOption> answerOptions = null;
   private List<EvaluationQuestion> multipleSelectOptionQuestions = null;
   private DefaultAnswer defaultAnswer = null;
+
+  private static class AutomatedScoringFocusEnumDeserializer extends StdDeserializer<AutomatedScoringFocusEnum> {
+    public AutomatedScoringFocusEnumDeserializer() {
+      super(AutomatedScoringFocusEnumDeserializer.class);
+    }
+
+    @Override
+    public AutomatedScoringFocusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AutomatedScoringFocusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Focus setting for automated scoring
+   */
+ @JsonDeserialize(using = AutomatedScoringFocusEnumDeserializer.class)
+  public enum AutomatedScoringFocusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    FULLINTERACTION("FullInteraction"),
+    EVALUATEDAGENT("EvaluatedAgent");
+
+    private String value;
+
+    AutomatedScoringFocusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AutomatedScoringFocusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AutomatedScoringFocusEnum value : AutomatedScoringFocusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AutomatedScoringFocusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AutomatedScoringFocusEnum automatedScoringFocus = null;
   private Boolean isKill = null;
   private Boolean isCritical = null;
 
@@ -281,6 +329,24 @@ public class EvaluationQuestion  implements Serializable {
 
 
   /**
+   * Focus setting for automated scoring
+   **/
+  public EvaluationQuestion automatedScoringFocus(AutomatedScoringFocusEnum automatedScoringFocus) {
+    this.automatedScoringFocus = automatedScoringFocus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Focus setting for automated scoring")
+  @JsonProperty("automatedScoringFocus")
+  public AutomatedScoringFocusEnum getAutomatedScoringFocus() {
+    return automatedScoringFocus;
+  }
+  public void setAutomatedScoringFocus(AutomatedScoringFocusEnum automatedScoringFocus) {
+    this.automatedScoringFocus = automatedScoringFocus;
+  }
+
+
+  /**
    **/
   public EvaluationQuestion isKill(Boolean isKill) {
     this.isKill = isKill;
@@ -335,13 +401,14 @@ public class EvaluationQuestion  implements Serializable {
             Objects.equals(this.answerOptions, evaluationQuestion.answerOptions) &&
             Objects.equals(this.multipleSelectOptionQuestions, evaluationQuestion.multipleSelectOptionQuestions) &&
             Objects.equals(this.defaultAnswer, evaluationQuestion.defaultAnswer) &&
+            Objects.equals(this.automatedScoringFocus, evaluationQuestion.automatedScoringFocus) &&
             Objects.equals(this.isKill, evaluationQuestion.isKill) &&
             Objects.equals(this.isCritical, evaluationQuestion.isCritical);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contextId, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, multipleSelectOptionQuestions, defaultAnswer, isKill, isCritical);
+    return Objects.hash(id, contextId, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, multipleSelectOptionQuestions, defaultAnswer, automatedScoringFocus, isKill, isCritical);
   }
 
   @Override
@@ -360,6 +427,7 @@ public class EvaluationQuestion  implements Serializable {
     sb.append("    answerOptions: ").append(toIndentedString(answerOptions)).append("\n");
     sb.append("    multipleSelectOptionQuestions: ").append(toIndentedString(multipleSelectOptionQuestions)).append("\n");
     sb.append("    defaultAnswer: ").append(toIndentedString(defaultAnswer)).append("\n");
+    sb.append("    automatedScoringFocus: ").append(toIndentedString(automatedScoringFocus)).append("\n");
     sb.append("    isKill: ").append(toIndentedString(isKill)).append("\n");
     sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
     sb.append("}");

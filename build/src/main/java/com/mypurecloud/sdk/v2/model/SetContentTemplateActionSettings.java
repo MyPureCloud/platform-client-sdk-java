@@ -24,6 +24,7 @@ public class SetContentTemplateActionSettings  implements Serializable {
   
   private String smsContentTemplateId = null;
   private String emailContentTemplateId = null;
+  private String whatsAppContentTemplateId = null;
 
   public SetContentTemplateActionSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -67,6 +68,24 @@ public class SetContentTemplateActionSettings  implements Serializable {
   }
 
 
+  /**
+   * A string containing the WhatsApp contentTemplateId.
+   **/
+  public SetContentTemplateActionSettings whatsAppContentTemplateId(String whatsAppContentTemplateId) {
+    this.whatsAppContentTemplateId = whatsAppContentTemplateId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "A string containing the WhatsApp contentTemplateId.")
+  @JsonProperty("whatsAppContentTemplateId")
+  public String getWhatsAppContentTemplateId() {
+    return whatsAppContentTemplateId;
+  }
+  public void setWhatsAppContentTemplateId(String whatsAppContentTemplateId) {
+    this.whatsAppContentTemplateId = whatsAppContentTemplateId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -78,12 +97,13 @@ public class SetContentTemplateActionSettings  implements Serializable {
     SetContentTemplateActionSettings setContentTemplateActionSettings = (SetContentTemplateActionSettings) o;
 
     return Objects.equals(this.smsContentTemplateId, setContentTemplateActionSettings.smsContentTemplateId) &&
-            Objects.equals(this.emailContentTemplateId, setContentTemplateActionSettings.emailContentTemplateId);
+            Objects.equals(this.emailContentTemplateId, setContentTemplateActionSettings.emailContentTemplateId) &&
+            Objects.equals(this.whatsAppContentTemplateId, setContentTemplateActionSettings.whatsAppContentTemplateId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(smsContentTemplateId, emailContentTemplateId);
+    return Objects.hash(smsContentTemplateId, emailContentTemplateId, whatsAppContentTemplateId);
   }
 
   @Override
@@ -93,6 +113,7 @@ public class SetContentTemplateActionSettings  implements Serializable {
     
     sb.append("    smsContentTemplateId: ").append(toIndentedString(smsContentTemplateId)).append("\n");
     sb.append("    emailContentTemplateId: ").append(toIndentedString(emailContentTemplateId)).append("\n");
+    sb.append("    whatsAppContentTemplateId: ").append(toIndentedString(whatsAppContentTemplateId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

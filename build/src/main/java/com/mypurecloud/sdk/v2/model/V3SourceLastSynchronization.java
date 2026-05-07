@@ -104,7 +104,8 @@ public class V3SourceLastSynchronization  implements Serializable {
     POSTPROCESSING("PostProcessing"),
     COMPLETED("Completed"),
     FAILED("Failed"),
-    UNKNOWN("Unknown");
+    UNKNOWN("Unknown"),
+    CANCELLED("Cancelled");
 
     private String value;
 

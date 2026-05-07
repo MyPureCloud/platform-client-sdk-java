@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async details job |
 | [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**getConversation**](ConversationsApi#getConversation) | Get conversation |
+| [**getConversationAssistantCopilotcontext**](ConversationsApi#getConversationAssistantCopilotcontext) | Get copilot context values for a conversation. |
 | [**getConversationCommunicationAgentchecklist**](ConversationsApi#getConversationCommunicationAgentchecklist) | Get checklist info for a single checklist. |
 | [**getConversationCommunicationAgentchecklistJob**](ConversationsApi#getConversationCommunicationAgentchecklistJob) | Get inference job status |
 | [**getConversationCommunicationAgentchecklists**](ConversationsApi#getConversationCommunicationAgentchecklists) | Get information of all checklists associated with a conversation. |
@@ -185,6 +186,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsMessageParticipant**](ConversationsApi#patchConversationsMessageParticipant) | Update conversation participant |
 | [**patchConversationsMessageParticipantAttributes**](ConversationsApi#patchConversationsMessageParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsMessageParticipantCommunication**](ConversationsApi#patchConversationsMessageParticipantCommunication) | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup. |
+| [**patchConversationsMessageParticipantParkingstate**](ConversationsApi#patchConversationsMessageParticipantParkingstate) | Update conversation by setting its parking state |
 | [**patchConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsAppleIntegrationId) | Update an Apple messaging integration |
 | [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsFacebookIntegrationId) | Update Facebook messaging integration |
 | [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId) | Update Instagram messaging integration |
@@ -1991,6 +1993,67 @@ try {
 [**Conversation**](Conversation)
 
 
+# **getConversationAssistantCopilotcontext**
+
+
+> [CopilotContextValues](CopilotContextValues) getConversationAssistantCopilotcontext(conversationId)
+
+Get copilot context values for a conversation.
+
+getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/assistant/copilotcontext  
+
+Requires ALL permissions: 
+
+* conversation:assistantCopilotContext:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID.
+try {
+    CopilotContextValues result = apiInstance.getConversationAssistantCopilotcontext(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationAssistantCopilotcontext");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CopilotContextValues**](CopilotContextValues)
+
+
 # **getConversationCommunicationAgentchecklist**
 
 
@@ -2851,7 +2914,7 @@ try {
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **type** | **String**| Suggestion type to filter by. | [optional]<br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer 
+| **type** | **String**| Suggestion type to filter by. | [optional]<br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer, ThirdPartySuggestion 
 | **state** | **String**| Suggestion state to filter Copilot suggestions. | [optional]<br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated 
 {: class="table-striped"}
 
@@ -11428,6 +11491,68 @@ try {
 ### Return type
 
 **Empty**
+
+
+# **patchConversationsMessageParticipantParkingstate**
+
+
+> Void patchConversationsMessageParticipantParkingstate(conversationId, participantId, body)
+
+Update conversation by setting its parking state
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate  
+
+Requires ANY permissions: 
+
+* conversation:message:park
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+ParkingStateRequest body = new ParkingStateRequest(); // ParkingStateRequest | Parking update request
+try {
+    apiInstance.patchConversationsMessageParticipantParkingstate(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessageParticipantParkingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ParkingStateRequest**](ParkingStateRequest)| Parking update request | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **patchConversationsMessagingIntegrationsAppleIntegrationId**
@@ -20222,4 +20347,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

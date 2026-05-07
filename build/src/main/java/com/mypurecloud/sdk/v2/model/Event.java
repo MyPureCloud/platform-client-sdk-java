@@ -157,14 +157,14 @@ public class Event  implements Serializable {
 
 
   /**
-   * Event where a customer has achieved a specific outcome or goal.
+   * Deprecated. Event where a customer has achieved a specific outcome or goal. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    **/
   public Event outcomeAchievedEvent(OutcomeAchievedEvent outcomeAchievedEvent) {
     this.outcomeAchievedEvent = outcomeAchievedEvent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Event where a customer has achieved a specific outcome or goal.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Event where a customer has achieved a specific outcome or goal. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/")
   @JsonProperty("outcomeAchievedEvent")
   public OutcomeAchievedEvent getOutcomeAchievedEvent() {
     return outcomeAchievedEvent;

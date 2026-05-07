@@ -26,11 +26,13 @@ public class LastResultOverallConditionSettings  implements Serializable {
   
   private List<String> emailWrapupCodes = null;
   private List<String> smsWrapupCodes = null;
+  private List<String> whatsAppWrapupCodes = null;
 
   public LastResultOverallConditionSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       emailWrapupCodes = new ArrayList<String>();
       smsWrapupCodes = new ArrayList<String>();
+      whatsAppWrapupCodes = new ArrayList<String>();
     }
   }
 
@@ -71,6 +73,24 @@ public class LastResultOverallConditionSettings  implements Serializable {
   }
 
 
+  /**
+   * A list of wrapup code identifiers to match for WhatsApp.
+   **/
+  public LastResultOverallConditionSettings whatsAppWrapupCodes(List<String> whatsAppWrapupCodes) {
+    this.whatsAppWrapupCodes = whatsAppWrapupCodes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of wrapup code identifiers to match for WhatsApp.")
+  @JsonProperty("whatsAppWrapupCodes")
+  public List<String> getWhatsAppWrapupCodes() {
+    return whatsAppWrapupCodes;
+  }
+  public void setWhatsAppWrapupCodes(List<String> whatsAppWrapupCodes) {
+    this.whatsAppWrapupCodes = whatsAppWrapupCodes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -82,12 +102,13 @@ public class LastResultOverallConditionSettings  implements Serializable {
     LastResultOverallConditionSettings lastResultOverallConditionSettings = (LastResultOverallConditionSettings) o;
 
     return Objects.equals(this.emailWrapupCodes, lastResultOverallConditionSettings.emailWrapupCodes) &&
-            Objects.equals(this.smsWrapupCodes, lastResultOverallConditionSettings.smsWrapupCodes);
+            Objects.equals(this.smsWrapupCodes, lastResultOverallConditionSettings.smsWrapupCodes) &&
+            Objects.equals(this.whatsAppWrapupCodes, lastResultOverallConditionSettings.whatsAppWrapupCodes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(emailWrapupCodes, smsWrapupCodes);
+    return Objects.hash(emailWrapupCodes, smsWrapupCodes, whatsAppWrapupCodes);
   }
 
   @Override
@@ -97,6 +118,7 @@ public class LastResultOverallConditionSettings  implements Serializable {
     
     sb.append("    emailWrapupCodes: ").append(toIndentedString(emailWrapupCodes)).append("\n");
     sb.append("    smsWrapupCodes: ").append(toIndentedString(smsWrapupCodes)).append("\n");
+    sb.append("    whatsAppWrapupCodes: ").append(toIndentedString(whatsAppWrapupCodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -142,6 +142,7 @@ public class ADFS  implements Serializable {
   private String providerName = null;
   private Boolean displayOnLogin = null;
   private String metadataURL = null;
+  private Boolean forceAuthn = null;
   private String selfUri = null;
 
   public ADFS() {
@@ -430,6 +431,23 @@ public class ADFS  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ADFS forceAuthn(Boolean forceAuthn) {
+    this.forceAuthn = forceAuthn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("forceAuthn")
+  public Boolean getForceAuthn() {
+    return forceAuthn;
+  }
+  public void setForceAuthn(Boolean forceAuthn) {
+    this.forceAuthn = forceAuthn;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -464,12 +482,13 @@ public class ADFS  implements Serializable {
             Objects.equals(this.providerName, ADFS.providerName) &&
             Objects.equals(this.displayOnLogin, ADFS.displayOnLogin) &&
             Objects.equals(this.metadataURL, ADFS.metadataURL) &&
+            Objects.equals(this.forceAuthn, ADFS.forceAuthn) &&
             Objects.equals(this.selfUri, ADFS.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, metadataURL, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, metadataURL, forceAuthn, selfUri);
   }
 
   @Override
@@ -494,6 +513,7 @@ public class ADFS  implements Serializable {
     sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
     sb.append("    displayOnLogin: ").append(toIndentedString(displayOnLogin)).append("\n");
     sb.append("    metadataURL: ").append(toIndentedString(metadataURL)).append("\n");
+    sb.append("    forceAuthn: ").append(toIndentedString(forceAuthn)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

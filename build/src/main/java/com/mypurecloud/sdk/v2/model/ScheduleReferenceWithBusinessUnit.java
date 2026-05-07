@@ -36,14 +36,14 @@ public class ScheduleReferenceWithBusinessUnit  implements Serializable {
 
   
   /**
-   * The unique identifier of the schedule
+   * The globally unique identifier for the object.
    **/
   public ScheduleReferenceWithBusinessUnit id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The unique identifier of the schedule")
+  @ApiModelProperty(example = "null", required = true, value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;

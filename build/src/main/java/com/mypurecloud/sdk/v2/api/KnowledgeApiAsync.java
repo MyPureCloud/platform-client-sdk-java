@@ -120,9 +120,9 @@ import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
 import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
-import com.mypurecloud.sdk.v2.model.V3SourceDetailedWithErrorResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableListing;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
-import com.mypurecloud.sdk.v2.model.V3SourceWithErrorListing;
 import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
 import com.mypurecloud.sdk.v2.model.V3Synchronization;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
@@ -4101,13 +4101,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<V3SourceDetailedWithErrorResponse> getKnowledgeSourceAsync(GetKnowledgeSourceRequest request, final AsyncApiCallback<V3SourceDetailedWithErrorResponse> callback) {
+  public Future<V3SourceExpandableResponse> getKnowledgeSourceAsync(GetKnowledgeSourceRequest request, final AsyncApiCallback<V3SourceExpandableResponse> callback) {
     try {
-      final SettableFuture<V3SourceDetailedWithErrorResponse> future = SettableFuture.create();
+      final SettableFuture<V3SourceExpandableResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceDetailedWithErrorResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceDetailedWithErrorResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceExpandableResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceExpandableResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<V3SourceDetailedWithErrorResponse> response) {
+        public void onCompleted(ApiResponse<V3SourceExpandableResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4135,13 +4135,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<V3SourceDetailedWithErrorResponse>> getKnowledgeSourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SourceDetailedWithErrorResponse>> callback) {
+  public Future<ApiResponse<V3SourceExpandableResponse>> getKnowledgeSourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SourceExpandableResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<V3SourceDetailedWithErrorResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<V3SourceExpandableResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<V3SourceDetailedWithErrorResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceDetailedWithErrorResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<V3SourceExpandableResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceExpandableResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<V3SourceDetailedWithErrorResponse> response) {
+        public void onCompleted(ApiResponse<V3SourceExpandableResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4149,7 +4149,7 @@ public class KnowledgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<V3SourceDetailedWithErrorResponse> response = (ApiResponse<V3SourceDetailedWithErrorResponse>)(ApiResponse<?>)exception;
+            ApiResponse<V3SourceExpandableResponse> response = (ApiResponse<V3SourceExpandableResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4157,7 +4157,7 @@ public class KnowledgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<V3SourceDetailedWithErrorResponse> response = (ApiResponse<V3SourceDetailedWithErrorResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<V3SourceExpandableResponse> response = (ApiResponse<V3SourceExpandableResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4326,13 +4326,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<V3SourceWithErrorListing> getKnowledgeSourcesAsync(GetKnowledgeSourcesRequest request, final AsyncApiCallback<V3SourceWithErrorListing> callback) {
+  public Future<V3SourceExpandableListing> getKnowledgeSourcesAsync(GetKnowledgeSourcesRequest request, final AsyncApiCallback<V3SourceExpandableListing> callback) {
     try {
-      final SettableFuture<V3SourceWithErrorListing> future = SettableFuture.create();
+      final SettableFuture<V3SourceExpandableListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceWithErrorListing>() {}, new AsyncApiCallback<ApiResponse<V3SourceWithErrorListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceExpandableListing>() {}, new AsyncApiCallback<ApiResponse<V3SourceExpandableListing>>() {
         @Override
-        public void onCompleted(ApiResponse<V3SourceWithErrorListing> response) {
+        public void onCompleted(ApiResponse<V3SourceExpandableListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4360,13 +4360,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<V3SourceWithErrorListing>> getKnowledgeSourcesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SourceWithErrorListing>> callback) {
+  public Future<ApiResponse<V3SourceExpandableListing>> getKnowledgeSourcesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SourceExpandableListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<V3SourceWithErrorListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<V3SourceExpandableListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<V3SourceWithErrorListing>() {}, new AsyncApiCallback<ApiResponse<V3SourceWithErrorListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<V3SourceExpandableListing>() {}, new AsyncApiCallback<ApiResponse<V3SourceExpandableListing>>() {
         @Override
-        public void onCompleted(ApiResponse<V3SourceWithErrorListing> response) {
+        public void onCompleted(ApiResponse<V3SourceExpandableListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4374,7 +4374,7 @@ public class KnowledgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<V3SourceWithErrorListing> response = (ApiResponse<V3SourceWithErrorListing>)(ApiResponse<?>)exception;
+            ApiResponse<V3SourceExpandableListing> response = (ApiResponse<V3SourceExpandableListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4382,7 +4382,7 @@ public class KnowledgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<V3SourceWithErrorListing> response = (ApiResponse<V3SourceWithErrorListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<V3SourceExpandableListing> response = (ApiResponse<V3SourceExpandableListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

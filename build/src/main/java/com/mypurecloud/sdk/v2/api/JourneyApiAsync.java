@@ -579,11 +579,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Delete an outcome.
-   * 
+   * Deprecated. Delete an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteJourneyOutcomeAsync(DeleteJourneyOutcomeRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -613,11 +614,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Delete an outcome.
-   * 
+   * Deprecated. Delete an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteJourneyOutcomeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -654,11 +656,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Delete an outcome predictor.
-   * 
+   * Deprecated. Delete an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteJourneyOutcomesPredictorAsync(DeleteJourneyOutcomesPredictorRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -688,11 +691,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Delete an outcome predictor.
-   * 
+   * Deprecated. Delete an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteJourneyOutcomesPredictorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -1408,11 +1412,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Get status of job.
-   * 
+   * Deprecated. Get status of job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<String> getJourneyActionmapsEstimatesJobAsync(GetJourneyActionmapsEstimatesJobRequest request, final AsyncApiCallback<String> callback) {
     try {
@@ -1442,11 +1447,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Get status of job.
-   * 
+   * Deprecated. Get status of job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<String>> getJourneyActionmapsEstimatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
@@ -1483,11 +1489,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Get estimates from completed job.
-   * 
+   * Deprecated. Get estimates from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ActionMapEstimateResult> getJourneyActionmapsEstimatesJobResultsAsync(GetJourneyActionmapsEstimatesJobResultsRequest request, final AsyncApiCallback<ActionMapEstimateResult> callback) {
     try {
@@ -1517,11 +1524,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Get estimates from completed job.
-   * 
+   * Deprecated. Get estimates from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ActionMapEstimateResult>> getJourneyActionmapsEstimatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActionMapEstimateResult>> callback) {
     try {
@@ -2608,11 +2616,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve a single outcome.
-   * 
+   * Deprecated. Retrieve a single outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Outcome> getJourneyOutcomeAsync(GetJourneyOutcomeRequest request, final AsyncApiCallback<Outcome> callback) {
     try {
@@ -2642,11 +2651,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve a single outcome.
-   * 
+   * Deprecated. Retrieve a single outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Outcome>> getJourneyOutcomeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Outcome>> callback) {
     try {
@@ -2683,11 +2693,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve all outcomes.
-   * 
+   * Deprecated. Retrieve all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OutcomeListing> getJourneyOutcomesAsync(GetJourneyOutcomesRequest request, final AsyncApiCallback<OutcomeListing> callback) {
     try {
@@ -2717,11 +2728,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve all outcomes.
-   * 
+   * Deprecated. Retrieve all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OutcomeListing>> getJourneyOutcomesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutcomeListing>> callback) {
     try {
@@ -2758,12 +2770,13 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Get job status.
-   * 
+   * Deprecated. Get job status.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OutcomeAttributionJobStateResponse> getJourneyOutcomesAttributionsJobAsync(GetJourneyOutcomesAttributionsJobRequest request, final AsyncApiCallback<OutcomeAttributionJobStateResponse> callback) {
     try {
@@ -2793,12 +2806,13 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Get job status.
-   * 
+   * Deprecated. Get job status.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OutcomeAttributionJobStateResponse>> getJourneyOutcomesAttributionsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutcomeAttributionJobStateResponse>> callback) {
     try {
@@ -2835,12 +2849,13 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Get outcome attribution entities from completed job.
-   * 
+   * Deprecated. Get outcome attribution entities from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OutcomeAttributionResponseListing> getJourneyOutcomesAttributionsJobResultsAsync(GetJourneyOutcomesAttributionsJobResultsRequest request, final AsyncApiCallback<OutcomeAttributionResponseListing> callback) {
     try {
@@ -2870,12 +2885,13 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Get outcome attribution entities from completed job.
-   * 
+   * Deprecated. Get outcome attribution entities from completed job.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OutcomeAttributionResponseListing>> getJourneyOutcomesAttributionsJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutcomeAttributionResponseListing>> callback) {
     try {
@@ -2912,11 +2928,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve a single outcome predictor.
-   * 
+   * Deprecated. Retrieve a single outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OutcomePredictor> getJourneyOutcomesPredictorAsync(GetJourneyOutcomesPredictorRequest request, final AsyncApiCallback<OutcomePredictor> callback) {
     try {
@@ -2946,11 +2963,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve a single outcome predictor.
-   * 
+   * Deprecated. Retrieve a single outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OutcomePredictor>> getJourneyOutcomesPredictorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutcomePredictor>> callback) {
     try {
@@ -2987,11 +3005,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve all outcome predictors.
-   * 
+   * Deprecated. Retrieve all outcome predictors.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OutcomePredictorListing> getJourneyOutcomesPredictorsAsync(GetJourneyOutcomesPredictorsRequest request, final AsyncApiCallback<OutcomePredictorListing> callback) {
     try {
@@ -3021,11 +3040,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve all outcome predictors.
-   * 
+   * Deprecated. Retrieve all outcome predictors.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OutcomePredictorListing>> getJourneyOutcomesPredictorsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutcomePredictorListing>> callback) {
     try {
@@ -3362,11 +3382,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve latest outcome score associated with a session for all outcomes.
-   * 
+   * Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OutcomeScoresResult> getJourneySessionOutcomescoresAsync(GetJourneySessionOutcomescoresRequest request, final AsyncApiCallback<OutcomeScoresResult> callback) {
     try {
@@ -3396,11 +3417,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve latest outcome score associated with a session for all outcomes.
-   * 
+   * Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OutcomeScoresResult>> getJourneySessionOutcomescoresAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutcomeScoresResult>> callback) {
     try {
@@ -4937,11 +4959,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Update an outcome.
-   * 
+   * Deprecated. Update an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Outcome> patchJourneyOutcomeAsync(PatchJourneyOutcomeRequest request, final AsyncApiCallback<Outcome> callback) {
     try {
@@ -4971,11 +4994,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Update an outcome.
-   * 
+   * Deprecated. Update an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Outcome>> patchJourneyOutcomeAsync(ApiRequest<PatchOutcome> request, final AsyncApiCallback<ApiResponse<Outcome>> callback) {
     try {
@@ -5464,11 +5488,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Query for estimates
-   * 
+   * Deprecated. Query for estimates
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<EstimateJobAsyncResponse> postJourneyActionmapsEstimatesJobsAsync(PostJourneyActionmapsEstimatesJobsRequest request, final AsyncApiCallback<EstimateJobAsyncResponse> callback) {
     try {
@@ -5498,11 +5523,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Query for estimates
-   * 
+   * Deprecated. Query for estimates
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<EstimateJobAsyncResponse>> postJourneyActionmapsEstimatesJobsAsync(ApiRequest<ActionMapEstimateRequest> request, final AsyncApiCallback<ApiResponse<EstimateJobAsyncResponse>> callback) {
     try {
@@ -6139,11 +6165,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Create an outcome.
-   * 
+   * Deprecated. Create an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Outcome> postJourneyOutcomesAsync(PostJourneyOutcomesRequest request, final AsyncApiCallback<Outcome> callback) {
     try {
@@ -6173,11 +6200,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Create an outcome.
-   * 
+   * Deprecated. Create an outcome.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Outcome>> postJourneyOutcomesAsync(ApiRequest<OutcomeRequest> request, final AsyncApiCallback<ApiResponse<Outcome>> callback) {
     try {
@@ -6214,12 +6242,13 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Create Outcome Attributions
-   * 
+   * Deprecated. Create Outcome Attributions
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OutcomeAttributionAsyncResponse> postJourneyOutcomesAttributionsJobsAsync(PostJourneyOutcomesAttributionsJobsRequest request, final AsyncApiCallback<OutcomeAttributionAsyncResponse> callback) {
     try {
@@ -6249,12 +6278,13 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Create Outcome Attributions
-   * 
+   * Deprecated. Create Outcome Attributions
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OutcomeAttributionAsyncResponse>> postJourneyOutcomesAttributionsJobsAsync(ApiRequest<OutcomeAttributionListing> request, final AsyncApiCallback<ApiResponse<OutcomeAttributionAsyncResponse>> callback) {
     try {
@@ -6291,11 +6321,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Create an outcome predictor.
-   * 
+   * Deprecated. Create an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OutcomePredictor> postJourneyOutcomesPredictorsAsync(PostJourneyOutcomesPredictorsRequest request, final AsyncApiCallback<OutcomePredictor> callback) {
     try {
@@ -6325,11 +6356,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Create an outcome predictor.
-   * 
+   * Deprecated. Create an outcome predictor.
+   * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OutcomePredictor>> postJourneyOutcomesPredictorsAsync(ApiRequest<OutcomePredictorRequest> request, final AsyncApiCallback<ApiResponse<OutcomePredictor>> callback) {
     try {

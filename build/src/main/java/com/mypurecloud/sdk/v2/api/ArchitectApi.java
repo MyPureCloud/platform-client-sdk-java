@@ -212,6 +212,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsRevertRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsUnlockRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableExportJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportCsvJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
@@ -10809,25 +10810,109 @@ public class ArchitectApi {
   }
 
   /**
-   * Begin an import process for importing rows into a datatable
-   * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+   * Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+   * Create an import job for importing rows from a CSV file. The caller can then poll for status of the import using the token returned in the response
    * @param datatableId id of datatable (required)
    * @param body import job information (required)
    * @return DataTableImportJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
+  public DataTableImportJob postFlowsDatatableImportCsvJobs(String datatableId, DataTableImportJob body) throws IOException, ApiException {
+    return  postFlowsDatatableImportCsvJobs(createPostFlowsDatatableImportCsvJobsRequest(datatableId, body));
+  }
+
+  /**
+   * Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+   * Create an import job for importing rows from a CSV file. The caller can then poll for status of the import using the token returned in the response
+   * @param datatableId id of datatable (required)
+   * @param body import job information (required)
+   * @return DataTableImportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableImportJob> postFlowsDatatableImportCsvJobsWithHttpInfo(String datatableId, DataTableImportJob body) throws IOException {
+    return postFlowsDatatableImportCsvJobs(createPostFlowsDatatableImportCsvJobsRequest(datatableId, body).withHttpInfo());
+  }
+
+  private PostFlowsDatatableImportCsvJobsRequest createPostFlowsDatatableImportCsvJobsRequest(String datatableId, DataTableImportJob body) {
+    return PostFlowsDatatableImportCsvJobsRequest.builder()
+            .withDatatableId(datatableId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+   * Create an import job for importing rows from a CSV file. The caller can then poll for status of the import using the token returned in the response
+   * @param request The request object
+   * @return DataTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableImportJob postFlowsDatatableImportCsvJobs(PostFlowsDatatableImportCsvJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataTableImportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTableImportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+   * Create an import job for importing rows from a CSV file. The caller can then poll for status of the import using the token returned in the response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableImportJob> postFlowsDatatableImportCsvJobs(ApiRequest<DataTableImportJob> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataTableImportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
+   * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+   * @param datatableId id of datatable (required)
+   * @param body import job information (required)
+   * @return DataTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+   */
   public DataTableImportJob postFlowsDatatableImportJobs(String datatableId, DataTableImportJob body) throws IOException, ApiException {
     return  postFlowsDatatableImportJobs(createPostFlowsDatatableImportJobsRequest(datatableId, body));
   }
 
   /**
-   * Begin an import process for importing rows into a datatable
+   * Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
    * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
    * @param datatableId id of datatable (required)
    * @param body import job information (required)
    * @return DataTableImportJob
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DataTableImportJob> postFlowsDatatableImportJobsWithHttpInfo(String datatableId, DataTableImportJob body) throws IOException {
     return postFlowsDatatableImportJobs(createPostFlowsDatatableImportJobsRequest(datatableId, body).withHttpInfo());
@@ -10843,12 +10928,13 @@ public class ArchitectApi {
   }
 
   /**
-   * Begin an import process for importing rows into a datatable
+   * Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
    * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
    * @param request The request object
    * @return DataTableImportJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DataTableImportJob postFlowsDatatableImportJobs(PostFlowsDatatableImportJobsRequest request) throws IOException, ApiException {
     try {
@@ -10862,11 +10948,12 @@ public class ArchitectApi {
   }
 
   /**
-   * Begin an import process for importing rows into a datatable
+   * Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
    * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DataTableImportJob> postFlowsDatatableImportJobs(ApiRequest<DataTableImportJob> request) throws IOException {
     try {

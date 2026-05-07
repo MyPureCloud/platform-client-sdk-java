@@ -83,6 +83,7 @@ import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
 import com.mypurecloud.sdk.v2.model.ConversationUtilizationLabelUpdate;
+import com.mypurecloud.sdk.v2.model.CopilotContextValues;
 import com.mypurecloud.sdk.v2.model.CopyAttachmentsRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
@@ -261,6 +262,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationAssistantCopilotcontextRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistsRequest;
@@ -414,6 +416,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantParkingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
@@ -2748,6 +2751,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get copilot context values for a conversation.
+   * 
+   * getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation ID. (required)
+   * @return CopilotContextValues
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CopilotContextValues getConversationAssistantCopilotcontext(String conversationId) throws IOException, ApiException {
+    return  getConversationAssistantCopilotcontext(createGetConversationAssistantCopilotcontextRequest(conversationId));
+  }
+
+  /**
+   * Get copilot context values for a conversation.
+   * 
+   * getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation ID. (required)
+   * @return CopilotContextValues
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CopilotContextValues> getConversationAssistantCopilotcontextWithHttpInfo(String conversationId) throws IOException {
+    return getConversationAssistantCopilotcontext(createGetConversationAssistantCopilotcontextRequest(conversationId).withHttpInfo());
+  }
+
+  private GetConversationAssistantCopilotcontextRequest createGetConversationAssistantCopilotcontextRequest(String conversationId) {
+    return GetConversationAssistantCopilotcontextRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get copilot context values for a conversation.
+   * 
+   * getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CopilotContextValues
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CopilotContextValues getConversationAssistantCopilotcontext(GetConversationAssistantCopilotcontextRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CopilotContextValues> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CopilotContextValues>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get copilot context values for a conversation.
+   * 
+   * getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CopilotContextValues> getConversationAssistantCopilotcontext(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CopilotContextValues>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CopilotContextValues> response = (ApiResponse<CopilotContextValues>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CopilotContextValues> response = (ApiResponse<CopilotContextValues>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -15482,6 +15567,89 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Parking update request (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsMessageParticipantParkingstate(String conversationId, String participantId, ParkingStateRequest body) throws IOException, ApiException {
+     patchConversationsMessageParticipantParkingstate(createPatchConversationsMessageParticipantParkingstateRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Parking update request (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsMessageParticipantParkingstateWithHttpInfo(String conversationId, String participantId, ParkingStateRequest body) throws IOException {
+    return patchConversationsMessageParticipantParkingstate(createPatchConversationsMessageParticipantParkingstateRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessageParticipantParkingstateRequest createPatchConversationsMessageParticipantParkingstateRequest(String conversationId, String participantId, ParkingStateRequest body) {
+    return PatchConversationsMessageParticipantParkingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsMessageParticipantParkingstate(PatchConversationsMessageParticipantParkingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsMessageParticipantParkingstate(ApiRequest<ParkingStateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

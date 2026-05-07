@@ -470,14 +470,14 @@ public class Session  implements Serializable {
 
 
   /**
-   * List of the outcome achievements by the customer in this session.
+   * Deprecated. List of the outcome achievements by the customer in this session. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    **/
   public Session outcomeAchievements(List<OutcomeAchievement> outcomeAchievements) {
     this.outcomeAchievements = outcomeAchievements;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of the outcome achievements by the customer in this session.")
+  @ApiModelProperty(example = "null", value = "Deprecated. List of the outcome achievements by the customer in this session. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/")
   @JsonProperty("outcomeAchievements")
   public List<OutcomeAchievement> getOutcomeAchievements() {
     return outcomeAchievements;

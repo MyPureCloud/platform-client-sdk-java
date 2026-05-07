@@ -135,7 +135,7 @@ public class ActionMap  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Trigger action map if any segment in the list is assigned to a given customer.")
+  @ApiModelProperty(example = "null", value = "Trigger action map if any segment in the list is assigned to a given customer.")
   @JsonProperty("triggerWithSegments")
   public List<String> getTriggerWithSegments() {
     return triggerWithSegments;
@@ -164,14 +164,14 @@ public class ActionMap  implements Serializable {
 
 
   /**
-   * (deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.
+   * Deprecated. Probability conditions for outcomes that must be satisfied to trigger the action map.
    **/
   public ActionMap triggerWithOutcomeProbabilityConditions(List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions) {
     this.triggerWithOutcomeProbabilityConditions = triggerWithOutcomeProbabilityConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "(deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Probability conditions for outcomes that must be satisfied to trigger the action map.")
   @JsonProperty("triggerWithOutcomeProbabilityConditions")
   public List<OutcomeProbabilityCondition> getTriggerWithOutcomeProbabilityConditions() {
     return triggerWithOutcomeProbabilityConditions;
@@ -182,14 +182,14 @@ public class ActionMap  implements Serializable {
 
 
   /**
-   * (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.
+   * Deprecated. Percentile conditions for outcomes that must be satisfied to trigger the action map.
    **/
   public ActionMap triggerWithOutcomePercentileConditions(List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions) {
     this.triggerWithOutcomePercentileConditions = triggerWithOutcomePercentileConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "(deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Percentile conditions for outcomes that must be satisfied to trigger the action map.")
   @JsonProperty("triggerWithOutcomePercentileConditions")
   public List<OutcomePercentileCondition> getTriggerWithOutcomePercentileConditions() {
     return triggerWithOutcomePercentileConditions;
@@ -200,14 +200,14 @@ public class ActionMap  implements Serializable {
 
 
   /**
-   * Quantile conditions for outcomes that must be satisfied to trigger the action map.
+   * Deprecated. Quantile conditions for outcomes that must be satisfied to trigger the action map. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    **/
   public ActionMap triggerWithOutcomeQuantileConditions(List<OutcomeQuantileCondition> triggerWithOutcomeQuantileConditions) {
     this.triggerWithOutcomeQuantileConditions = triggerWithOutcomeQuantileConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Quantile conditions for outcomes that must be satisfied to trigger the action map.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Quantile conditions for outcomes that must be satisfied to trigger the action map. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/")
   @JsonProperty("triggerWithOutcomeQuantileConditions")
   public List<OutcomeQuantileCondition> getTriggerWithOutcomeQuantileConditions() {
     return triggerWithOutcomeQuantileConditions;
@@ -225,7 +225,7 @@ public class ActionMap  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "URL conditions that a page must match for web actions to be displayable.")
+  @ApiModelProperty(example = "null", value = "URL conditions that a page must match for web actions to be displayable.")
   @JsonProperty("pageUrlConditions")
   public List<UrlCondition> getPageUrlConditions() {
     return pageUrlConditions;

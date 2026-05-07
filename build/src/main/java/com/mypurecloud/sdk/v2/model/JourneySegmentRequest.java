@@ -115,14 +115,14 @@ public class JourneySegmentRequest  implements Serializable {
 
 
   /**
-   * The hexadecimal color value of the segment.
+   * The hexadecimal color value of the segment. Defaults if not provided.
    **/
   public JourneySegmentRequest color(String color) {
     this.color = color;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The hexadecimal color value of the segment.")
+  @ApiModelProperty(example = "null", value = "The hexadecimal color value of the segment. Defaults if not provided.")
   @JsonProperty("color")
   public String getColor() {
     return color;
@@ -151,14 +151,14 @@ public class JourneySegmentRequest  implements Serializable {
 
 
   /**
-   * The context of the segment.
+   * The context of the segment. Defaults if not provided.
    **/
   public JourneySegmentRequest context(RequestContext context) {
     this.context = context;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The context of the segment.")
+  @ApiModelProperty(example = "null", value = "The context of the segment. Defaults if not provided.")
   @JsonProperty("context")
   public RequestContext getContext() {
     return context;
@@ -169,14 +169,14 @@ public class JourneySegmentRequest  implements Serializable {
 
 
   /**
-   * The pattern of rules defining the segment.
+   * The pattern of rules defining the segment. Defaults if not provided.
    **/
   public JourneySegmentRequest journey(RequestJourney journey) {
     this.journey = journey;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The pattern of rules defining the segment.")
+  @ApiModelProperty(example = "null", value = "The pattern of rules defining the segment. Defaults if not provided.")
   @JsonProperty("journey")
   public RequestJourney getJourney() {
     return journey;

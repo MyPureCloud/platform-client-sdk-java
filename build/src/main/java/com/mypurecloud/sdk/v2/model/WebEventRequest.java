@@ -41,6 +41,7 @@ public class WebEventRequest  implements Serializable {
   private String referrerUrl = null;
   private Map<String, CustomEventAttribute> attributes = null;
   private Map<String, CustomEventAttribute> traits = null;
+  private String externalId = null;
   private Date createdDate = null;
 
   public WebEventRequest() {
@@ -248,6 +249,24 @@ public class WebEventRequest  implements Serializable {
 
 
   /**
+   * An external identifier for the customer.
+   **/
+  public WebEventRequest externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An external identifier for the customer.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
+  /**
    * UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WebEventRequest createdDate(Date createdDate) {
@@ -286,12 +305,13 @@ public class WebEventRequest  implements Serializable {
             Objects.equals(this.referrerUrl, webEventRequest.referrerUrl) &&
             Objects.equals(this.attributes, webEventRequest.attributes) &&
             Objects.equals(this.traits, webEventRequest.traits) &&
+            Objects.equals(this.externalId, webEventRequest.externalId) &&
             Objects.equals(this.createdDate, webEventRequest.createdDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerCookieId, eventName, page, userAgentString, browser, device, searchQuery, ipAddress, referrerUrl, attributes, traits, createdDate);
+    return Objects.hash(customerCookieId, eventName, page, userAgentString, browser, device, searchQuery, ipAddress, referrerUrl, attributes, traits, externalId, createdDate);
   }
 
   @Override
@@ -310,6 +330,7 @@ public class WebEventRequest  implements Serializable {
     sb.append("    referrerUrl: ").append(toIndentedString(referrerUrl)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    traits: ").append(toIndentedString(traits)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -76,6 +76,7 @@ public class NotificationHandler extends Object {
         // Set channel
         if (builder.channel == null) {
             this.channel = notificationsApi.postNotificationsChannels(PostNotificationsChannelsRequest.builder().build());
+            System.out.println("Notification Handler - creating channel - " + this.channel.getConnectUri());
         } else {
             this.channel = builder.channel;
         }
@@ -203,8 +204,10 @@ public class NotificationHandler extends Object {
         @Override
         public void onEvent(NotificationEvent<?> event) {
             try {
+                System.out.println("Notification Handler - onEvent");
                 webSocket = webSocket.recreate();
             } catch (Exception ex) {
+                System.out.println("Notification Handler - onEvent Exception");
                 LOGGER.error(ex.getMessage(), ex);
             }
         }
@@ -235,7 +238,8 @@ public class NotificationHandler extends Object {
             }
         }
 
-        notificationsApi.postNotificationsChannelSubscriptions(this.channel.getId(), topics, false);
+        ChannelTopicEntityListing result = notificationsApi.postNotificationsChannelSubscriptions(this.channel.getId(), topics, false);
+        System.out.println(result);
     }
 
     public <T> void addHandlerNoSubscribe(NotificationListener<T> listener) {
@@ -308,24 +312,28 @@ public class NotificationHandler extends Object {
                 .addListener(new WebSocketAdapter() {
                     @Override
                     public void onStateChanged(WebSocket websocket, WebSocketState newState) throws Exception {
+                        System.out.println("WebSocketAdapter - onStateChanged");
                         if (webSocketListener != null)
                             webSocketListener.onStateChanged(newState);
                     }
 
                     @Override
                     public void onConnected(WebSocket websocket, Map<String, List<String>> headers) throws Exception {
+                        System.out.println("WebSocketAdapter - onConnected");
                         if (webSocketListener != null)
                             webSocketListener.onConnected();
                     }
 
                     @Override
                     public void onConnectError(WebSocket websocket, WebSocketException exception) throws Exception {
+                        System.out.println("WebSocketAdapter - onConnectError");
                         if (webSocketListener != null)
                             webSocketListener.onConnectError(exception);
                     }
 
                     @Override
                     public void onDisconnected(WebSocket websocket, WebSocketFrame serverCloseFrame, WebSocketFrame clientCloseFrame, boolean closedByServer) throws Exception {
+                        System.out.println("WebSocketAdapter - onDisconnected");
                         if (webSocketListener != null)
                             webSocketListener.onDisconnected(closedByServer);
                     }
@@ -333,6 +341,7 @@ public class NotificationHandler extends Object {
                     @Override
                     public void onTextMessage(WebSocket websocket, String message) {
                         try {
+                            System.out.println("WebSocketAdapter - onTextMessage");
                             if (LOGGER.isDebugEnabled()) {
                                 LOGGER.debug("---WEBSOCKET MESSAGE---\n"+message);
                             }
@@ -365,12 +374,14 @@ public class NotificationHandler extends Object {
 
                     @Override
                     public void onError(WebSocket websocket, WebSocketException cause) throws Exception {
+                        System.out.println("WebSocketAdapter - onError");
                         if (webSocketListener != null)
                             webSocketListener.onError(cause);
                     }
 
                     @Override
                     public void handleCallbackError(WebSocket websocket, Throwable cause) throws Exception {
+                        System.out.println("WebSocketAdapter - handleCallbackError");
                         if (webSocketListener != null)
                             webSocketListener.onCallbackError(cause);
                     }

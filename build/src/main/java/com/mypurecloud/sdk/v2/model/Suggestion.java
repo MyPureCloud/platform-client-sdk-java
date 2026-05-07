@@ -60,7 +60,8 @@ public class Suggestion  implements Serializable {
     KNOWLEDGESEARCH("KnowledgeSearch"),
     CANNEDRESPONSE("CannedResponse"),
     SCRIPT("Script"),
-    SUGGESTEDKNOWLEDGEANSWER("SuggestedKnowledgeAnswer");
+    SUGGESTEDKNOWLEDGEANSWER("SuggestedKnowledgeAnswer"),
+    THIRDPARTYSUGGESTION("ThirdPartySuggestion");
 
     private String value;
 

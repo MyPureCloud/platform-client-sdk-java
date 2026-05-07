@@ -72,14 +72,14 @@ public class CreateRoomRequest  implements Serializable {
 
 
   /**
-   * Users to add to the room
+   * Users to add to the room, limit of 25
    **/
   public CreateRoomRequest userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Users to add to the room")
+  @ApiModelProperty(example = "null", value = "Users to add to the room, limit of 25")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;

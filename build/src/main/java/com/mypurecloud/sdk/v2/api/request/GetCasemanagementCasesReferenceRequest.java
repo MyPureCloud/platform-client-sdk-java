@@ -35,6 +35,8 @@ import com.mypurecloud.sdk.v2.model.CaseplanCreate;
 import com.mypurecloud.sdk.v2.model.CaseplanCreateResponse;
 import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaListing;
 import com.mypurecloud.sdk.v2.model.CaseplanListing;
+import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
+import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanUpdate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;

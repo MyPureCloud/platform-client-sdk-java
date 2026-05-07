@@ -164,14 +164,14 @@ public class PatchActionMap  implements Serializable {
 
 
   /**
-   * (deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.
+   * Deprecated. Probability conditions for outcomes that must be satisfied to trigger the action map.
    **/
   public PatchActionMap triggerWithOutcomeProbabilityConditions(List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions) {
     this.triggerWithOutcomeProbabilityConditions = triggerWithOutcomeProbabilityConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "(deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Probability conditions for outcomes that must be satisfied to trigger the action map.")
   @JsonProperty("triggerWithOutcomeProbabilityConditions")
   public List<OutcomeProbabilityCondition> getTriggerWithOutcomeProbabilityConditions() {
     return triggerWithOutcomeProbabilityConditions;
@@ -182,14 +182,14 @@ public class PatchActionMap  implements Serializable {
 
 
   /**
-   * (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.
+   * Deprecated. Percentile conditions for outcomes that must be satisfied to trigger the action map.
    **/
   public PatchActionMap triggerWithOutcomePercentileConditions(List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions) {
     this.triggerWithOutcomePercentileConditions = triggerWithOutcomePercentileConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "(deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Percentile conditions for outcomes that must be satisfied to trigger the action map.")
   @JsonProperty("triggerWithOutcomePercentileConditions")
   public List<OutcomePercentileCondition> getTriggerWithOutcomePercentileConditions() {
     return triggerWithOutcomePercentileConditions;
@@ -200,14 +200,14 @@ public class PatchActionMap  implements Serializable {
 
 
   /**
-   * Quantile conditions for outcomes that must be satisfied to trigger the action map.
+   * Deprecated. Quantile conditions for outcomes that must be satisfied to trigger the action map. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
    **/
   public PatchActionMap triggerWithOutcomeQuantileConditions(List<OutcomeQuantileCondition> triggerWithOutcomeQuantileConditions) {
     this.triggerWithOutcomeQuantileConditions = triggerWithOutcomeQuantileConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Quantile conditions for outcomes that must be satisfied to trigger the action map.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Quantile conditions for outcomes that must be satisfied to trigger the action map. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/")
   @JsonProperty("triggerWithOutcomeQuantileConditions")
   public List<OutcomeQuantileCondition> getTriggerWithOutcomeQuantileConditions() {
     return triggerWithOutcomeQuantileConditions;

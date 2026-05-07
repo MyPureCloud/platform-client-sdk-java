@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **weekDate** | [**LocalDate**](LocalDate) | The start week date of this forecast in yyyy-MM-dd.  Must fall on the start day of week for the associated business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **weekCount** | **Integer** | The number of weeks this forecast covers |  [optional] |
 | **creationMethod** | [**CreationMethodEnum**](#Enum--CreationMethodEnum) | The method by which this forecast was created |  [optional] |
@@ -29,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

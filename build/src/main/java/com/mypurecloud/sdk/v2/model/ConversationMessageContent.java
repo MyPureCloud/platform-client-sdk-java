@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.ConversationContentForm;
 import com.mypurecloud.sdk.v2.model.ConversationContentInteractiveApplication;
 import com.mypurecloud.sdk.v2.model.ConversationContentListPicker;
 import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
+import com.mypurecloud.sdk.v2.model.ConversationContentNotificationResponse;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.ConversationContentPaymentRequest;
 import com.mypurecloud.sdk.v2.model.ConversationContentPaymentResponse;
@@ -84,6 +85,7 @@ public class ConversationMessageContent  implements Serializable {
     FORM("Form"),
     ROADSIDEASSISTANCE("RoadsideAssistance"),
     RICHLINK("RichLink"),
+    NOTIFICATIONRESPONSE("NotificationResponse"),
     UNKNOWN("Unknown");
 
     private String value;
@@ -130,6 +132,7 @@ public class ConversationMessageContent  implements Serializable {
   private ConversationContentPaymentResponse paymentResponse = null;
   private ConversationContentPush push = null;
   private ConversationContentForm form = null;
+  private ConversationContentNotificationResponse notificationResponse = null;
 
   public ConversationMessageContent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -480,6 +483,24 @@ public class ConversationMessageContent  implements Serializable {
   }
 
 
+  /**
+   * Notification response content, e.g. an Apple Invitation acceptance.
+   **/
+  public ConversationMessageContent notificationResponse(ConversationContentNotificationResponse notificationResponse) {
+    this.notificationResponse = notificationResponse;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Notification response content, e.g. an Apple Invitation acceptance.")
+  @JsonProperty("notificationResponse")
+  public ConversationContentNotificationResponse getNotificationResponse() {
+    return notificationResponse;
+  }
+  public void setNotificationResponse(ConversationContentNotificationResponse notificationResponse) {
+    this.notificationResponse = notificationResponse;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -508,12 +529,13 @@ public class ConversationMessageContent  implements Serializable {
             Objects.equals(this.paymentRequest, conversationMessageContent.paymentRequest) &&
             Objects.equals(this.paymentResponse, conversationMessageContent.paymentResponse) &&
             Objects.equals(this.push, conversationMessageContent.push) &&
-            Objects.equals(this.form, conversationMessageContent.form);
+            Objects.equals(this.form, conversationMessageContent.form) &&
+            Objects.equals(this.notificationResponse, conversationMessageContent.notificationResponse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel, text, quickReplyV2, reactions, datePicker, interactiveApplication, listPicker, paymentRequest, paymentResponse, push, form);
+    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel, text, quickReplyV2, reactions, datePicker, interactiveApplication, listPicker, paymentRequest, paymentResponse, push, form, notificationResponse);
   }
 
   @Override
@@ -540,6 +562,7 @@ public class ConversationMessageContent  implements Serializable {
     sb.append("    paymentResponse: ").append(toIndentedString(paymentResponse)).append("\n");
     sb.append("    push: ").append(toIndentedString(push)).append("\n");
     sb.append("    form: ").append(toIndentedString(form)).append("\n");
+    sb.append("    notificationResponse: ").append(toIndentedString(notificationResponse)).append("\n");
     sb.append("}");
     return sb.toString();
   }

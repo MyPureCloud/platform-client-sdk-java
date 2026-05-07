@@ -45,6 +45,7 @@ public class ConversationAggregationSort  implements Serializable {
     NBLINDTRANSFERRED("nBlindTransferred"),
     NBOTINTERACTIONS("nBotInteractions"),
     NCALLBACKATTEMPTS("nCallbackAttempts"),
+    NCALLBACKOVERSLA("nCallbackOverSla"),
     NCALLBACKSCHEDULED("nCallbackScheduled"),
     NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
@@ -69,6 +70,7 @@ public class ConversationAggregationSort  implements Serializable {
     OMESSAGESEGMENTCOUNT("oMessageSegmentCount"),
     OMESSAGETURN("oMessageTurn"),
     OSERVICETARGET("oServiceTarget"),
+    OSKILLEXPRESSIONAPPLICATIONS("oSkillExpressionApplications"),
     TABANDON("tAbandon"),
     TACD("tAcd"),
     TACTIVECALLBACK("tActiveCallback"),
@@ -107,6 +109,7 @@ public class ConversationAggregationSort  implements Serializable {
     TSNIPPETRECORD("tSnippetRecord"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),
+    TTRANSMITTING("tTransmitting"),
     TUSERRESPONSETIME("tUserResponseTime"),
     TVOICEMAIL("tVoicemail");
 

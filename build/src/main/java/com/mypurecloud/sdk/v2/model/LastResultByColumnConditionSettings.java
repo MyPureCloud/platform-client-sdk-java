@@ -28,11 +28,14 @@ public class LastResultByColumnConditionSettings  implements Serializable {
   private List<String> emailWrapupCodes = null;
   private String smsColumnName = null;
   private List<String> smsWrapupCodes = null;
+  private String whatsAppColumnName = null;
+  private List<String> whatsAppWrapupCodes = null;
 
   public LastResultByColumnConditionSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       emailWrapupCodes = new ArrayList<String>();
       smsWrapupCodes = new ArrayList<String>();
+      whatsAppWrapupCodes = new ArrayList<String>();
     }
   }
 
@@ -109,6 +112,42 @@ public class LastResultByColumnConditionSettings  implements Serializable {
   }
 
 
+  /**
+   * The name of the contact column to evaluate for WhatsApp.
+   **/
+  public LastResultByColumnConditionSettings whatsAppColumnName(String whatsAppColumnName) {
+    this.whatsAppColumnName = whatsAppColumnName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name of the contact column to evaluate for WhatsApp.")
+  @JsonProperty("whatsAppColumnName")
+  public String getWhatsAppColumnName() {
+    return whatsAppColumnName;
+  }
+  public void setWhatsAppColumnName(String whatsAppColumnName) {
+    this.whatsAppColumnName = whatsAppColumnName;
+  }
+
+
+  /**
+   * A list of wrapup code identifiers to match for WhatsApp.
+   **/
+  public LastResultByColumnConditionSettings whatsAppWrapupCodes(List<String> whatsAppWrapupCodes) {
+    this.whatsAppWrapupCodes = whatsAppWrapupCodes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of wrapup code identifiers to match for WhatsApp.")
+  @JsonProperty("whatsAppWrapupCodes")
+  public List<String> getWhatsAppWrapupCodes() {
+    return whatsAppWrapupCodes;
+  }
+  public void setWhatsAppWrapupCodes(List<String> whatsAppWrapupCodes) {
+    this.whatsAppWrapupCodes = whatsAppWrapupCodes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -122,12 +161,14 @@ public class LastResultByColumnConditionSettings  implements Serializable {
     return Objects.equals(this.emailColumnName, lastResultByColumnConditionSettings.emailColumnName) &&
             Objects.equals(this.emailWrapupCodes, lastResultByColumnConditionSettings.emailWrapupCodes) &&
             Objects.equals(this.smsColumnName, lastResultByColumnConditionSettings.smsColumnName) &&
-            Objects.equals(this.smsWrapupCodes, lastResultByColumnConditionSettings.smsWrapupCodes);
+            Objects.equals(this.smsWrapupCodes, lastResultByColumnConditionSettings.smsWrapupCodes) &&
+            Objects.equals(this.whatsAppColumnName, lastResultByColumnConditionSettings.whatsAppColumnName) &&
+            Objects.equals(this.whatsAppWrapupCodes, lastResultByColumnConditionSettings.whatsAppWrapupCodes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(emailColumnName, emailWrapupCodes, smsColumnName, smsWrapupCodes);
+    return Objects.hash(emailColumnName, emailWrapupCodes, smsColumnName, smsWrapupCodes, whatsAppColumnName, whatsAppWrapupCodes);
   }
 
   @Override
@@ -139,6 +180,8 @@ public class LastResultByColumnConditionSettings  implements Serializable {
     sb.append("    emailWrapupCodes: ").append(toIndentedString(emailWrapupCodes)).append("\n");
     sb.append("    smsColumnName: ").append(toIndentedString(smsColumnName)).append("\n");
     sb.append("    smsWrapupCodes: ").append(toIndentedString(smsWrapupCodes)).append("\n");
+    sb.append("    whatsAppColumnName: ").append(toIndentedString(whatsAppColumnName)).append("\n");
+    sb.append("    whatsAppWrapupCodes: ").append(toIndentedString(whatsAppWrapupCodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -86,6 +86,7 @@ import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
 import com.mypurecloud.sdk.v2.model.ConversationUtilizationLabelUpdate;
+import com.mypurecloud.sdk.v2.model.CopilotContextValues;
 import com.mypurecloud.sdk.v2.model.CopyAttachmentsRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
@@ -264,6 +265,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationAssistantCopilotcontextRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistsRequest;
@@ -417,6 +419,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantParkingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
@@ -2674,6 +2677,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get copilot context values for a conversation.
+   * 
+   * getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CopilotContextValues> getConversationAssistantCopilotcontextAsync(GetConversationAssistantCopilotcontextRequest request, final AsyncApiCallback<CopilotContextValues> callback) {
+    try {
+      final SettableFuture<CopilotContextValues> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CopilotContextValues>() {}, new AsyncApiCallback<ApiResponse<CopilotContextValues>>() {
+        @Override
+        public void onCompleted(ApiResponse<CopilotContextValues> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get copilot context values for a conversation.
+   * 
+   * getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CopilotContextValues>> getConversationAssistantCopilotcontextAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CopilotContextValues>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CopilotContextValues>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CopilotContextValues>() {}, new AsyncApiCallback<ApiResponse<CopilotContextValues>>() {
+        @Override
+        public void onCompleted(ApiResponse<CopilotContextValues> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CopilotContextValues> response = (ApiResponse<CopilotContextValues>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CopilotContextValues> response = (ApiResponse<CopilotContextValues>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -14197,6 +14277,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> patchConversationsMessageParticipantParkingstateAsync(PatchConversationsMessageParticipantParkingstateRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> patchConversationsMessageParticipantParkingstateAsync(ApiRequest<ParkingStateRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

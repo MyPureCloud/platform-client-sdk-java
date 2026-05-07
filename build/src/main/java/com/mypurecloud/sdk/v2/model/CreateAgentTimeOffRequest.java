@@ -116,14 +116,14 @@ public class CreateAgentTimeOffRequest  implements Serializable {
 
 
   /**
-   * The daily duration of this time off request in minutes
+   * Daily duration in minutes applied to all days of this time off request. Ignored if durationMinutes is specified. At least one of dailyDurationMinutes or durationMinutes is required
    **/
   public CreateAgentTimeOffRequest dailyDurationMinutes(Integer dailyDurationMinutes) {
     this.dailyDurationMinutes = dailyDurationMinutes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The daily duration of this time off request in minutes")
+  @ApiModelProperty(example = "null", value = "Daily duration in minutes applied to all days of this time off request. Ignored if durationMinutes is specified. At least one of dailyDurationMinutes or durationMinutes is required")
   @JsonProperty("dailyDurationMinutes")
   public Integer getDailyDurationMinutes() {
     return dailyDurationMinutes;
@@ -134,14 +134,14 @@ public class CreateAgentTimeOffRequest  implements Serializable {
 
 
   /**
-   * Daily durations for each day of this time off request in minutes
+   * Duration in minutes for each day of this time off request. Must match the size of fullDayManagementUnitDates or partialDayStartDateTimes. At least one of dailyDurationMinutes or durationMinutes is required
    **/
   public CreateAgentTimeOffRequest durationMinutes(List<Integer> durationMinutes) {
     this.durationMinutes = durationMinutes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Daily durations for each day of this time off request in minutes")
+  @ApiModelProperty(example = "null", value = "Duration in minutes for each day of this time off request. Must match the size of fullDayManagementUnitDates or partialDayStartDateTimes. At least one of dailyDurationMinutes or durationMinutes is required")
   @JsonProperty("durationMinutes")
   public List<Integer> getDurationMinutes() {
     return durationMinutes;
@@ -152,14 +152,14 @@ public class CreateAgentTimeOffRequest  implements Serializable {
 
 
   /**
-   * Payable minutes for each day of this time off request
+   * Payable minutes for each day of this time off request, representing scheduled paid time displaced by this request. Defaults to dailyDurationMinutes if not specified
    **/
   public CreateAgentTimeOffRequest payableMinutes(List<Integer> payableMinutes) {
     this.payableMinutes = payableMinutes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Payable minutes for each day of this time off request")
+  @ApiModelProperty(example = "null", value = "Payable minutes for each day of this time off request, representing scheduled paid time displaced by this request. Defaults to dailyDurationMinutes if not specified")
   @JsonProperty("payableMinutes")
   public List<Integer> getPayableMinutes() {
     return payableMinutes;

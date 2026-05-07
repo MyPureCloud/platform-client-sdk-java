@@ -25,6 +25,8 @@ import com.mypurecloud.sdk.v2.model.CaseplanCreate;
 import com.mypurecloud.sdk.v2.model.CaseplanCreateResponse;
 import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaListing;
 import com.mypurecloud.sdk.v2.model.CaseplanListing;
+import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
+import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanUpdate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;
@@ -75,6 +77,7 @@ import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseTerminateJobsReq
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesAssociationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanIntakesettingsRequest;
@@ -2936,6 +2939,88 @@ public class CaseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CaseplanCreateResponse> response = (ApiResponse<CaseplanCreateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for caseplans
+   * 
+   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body CaseplanQueryRequest (required)
+   * @return CaseplanQueryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseplanQueryEntityListing postCasemanagementCaseplansQuery(CaseplanQueryRequest body) throws IOException, ApiException {
+    return  postCasemanagementCaseplansQuery(createPostCasemanagementCaseplansQueryRequest(body));
+  }
+
+  /**
+   * Query for caseplans
+   * 
+   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body CaseplanQueryRequest (required)
+   * @return CaseplanQueryEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseplanQueryEntityListing> postCasemanagementCaseplansQueryWithHttpInfo(CaseplanQueryRequest body) throws IOException {
+    return postCasemanagementCaseplansQuery(createPostCasemanagementCaseplansQueryRequest(body).withHttpInfo());
+  }
+
+  private PostCasemanagementCaseplansQueryRequest createPostCasemanagementCaseplansQueryRequest(CaseplanQueryRequest body) {
+    return PostCasemanagementCaseplansQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for caseplans
+   * 
+   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CaseplanQueryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseplanQueryEntityListing postCasemanagementCaseplansQuery(PostCasemanagementCaseplansQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CaseplanQueryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CaseplanQueryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for caseplans
+   * 
+   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseplanQueryEntityListing> postCasemanagementCaseplansQuery(ApiRequest<CaseplanQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CaseplanQueryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseplanQueryEntityListing> response = (ApiResponse<CaseplanQueryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseplanQueryEntityListing> response = (ApiResponse<CaseplanQueryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

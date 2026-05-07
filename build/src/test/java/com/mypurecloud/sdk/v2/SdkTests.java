@@ -43,7 +43,7 @@ public class SdkTests {
     @Parameters({ "connector" })
     public void beforeTest(String connector) {
         this.connector = connector;
-        System.out.println("Before test");
+        System.out.println("Before test with connector " + this.connector);
     }
 
     @Test(priority = 1)
@@ -161,6 +161,7 @@ public class SdkTests {
     @Test(priority = 6)
     public void testNotifications() {
         try {
+            System.out.println("Using user with ID " + userId);
             // Set up notification handler
             UserPresenceListener listener = new UserPresenceListener(userId);
             NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
@@ -170,6 +171,7 @@ public class SdkTests {
 
             // Set presence to busy
             presenceApi.patchUserPresence(userId, "PURECLOUD", createUserPresence(busyPresenceId));
+            System.out.println("Requested presence update to busy");
 
             // Wait for notification
             Boolean presenceSet = false;
@@ -187,6 +189,7 @@ public class SdkTests {
 
             // Set presence to available
             presenceApi.patchUserPresence(userId, "PURECLOUD", createUserPresence(availablePresenceId));
+            System.out.println("Requested presence update to available");
 
             // Wait for notification
             presenceSet = false;
@@ -202,8 +205,10 @@ public class SdkTests {
             // Verify
             Assert.assertEquals(listener.getPresenceId(), availablePresenceId);
         } catch (ApiException ex) {
+            System.out.println("Notification Test API Exception");
             handleApiException(ex);
         } catch (Exception ex) {
+            System.out.println("Notification Test Exception");
             System.out.println(ex);
             Assert.fail();
         }

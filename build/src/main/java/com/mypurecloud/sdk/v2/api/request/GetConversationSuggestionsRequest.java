@@ -93,6 +93,7 @@ import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
 import com.mypurecloud.sdk.v2.model.ConversationUtilizationLabelUpdate;
+import com.mypurecloud.sdk.v2.model.CopilotContextValues;
 import com.mypurecloud.sdk.v2.model.CopyAttachmentsRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
@@ -321,7 +322,8 @@ public class GetConversationSuggestionsRequest {
 		KNOWLEDGESEARCH("KnowledgeSearch"),
 		CANNEDRESPONSE("CannedResponse"),
 		SCRIPT("Script"),
-		SUGGESTEDKNOWLEDGEANSWER("SuggestedKnowledgeAnswer");
+		SUGGESTEDKNOWLEDGEANSWER("SuggestedKnowledgeAnswer"),
+		THIRDPARTYSUGGESTION("ThirdPartySuggestion");
 
 		private String value;
 

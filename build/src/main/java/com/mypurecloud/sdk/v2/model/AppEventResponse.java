@@ -50,6 +50,7 @@ public class AppEventResponse  implements Serializable {
   private String searchQuery = null;
   private Map<String, CustomEventAttribute> attributes = null;
   private Map<String, CustomEventAttribute> traits = null;
+  private String externalId = null;
   private Date createdDate = null;
 
   public AppEventResponse() {
@@ -347,6 +348,24 @@ public class AppEventResponse  implements Serializable {
 
 
   /**
+   * An external identifier for the customer.
+   **/
+  public AppEventResponse externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An external identifier for the customer.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
+  /**
    * UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AppEventResponse createdDate(Date createdDate) {
@@ -390,12 +409,13 @@ public class AppEventResponse  implements Serializable {
             Objects.equals(this.searchQuery, appEventResponse.searchQuery) &&
             Objects.equals(this.attributes, appEventResponse.attributes) &&
             Objects.equals(this.traits, appEventResponse.traits) &&
+            Objects.equals(this.externalId, appEventResponse.externalId) &&
             Objects.equals(this.createdDate, appEventResponse.createdDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, customerId, customerIdType, eventName, screenName, app, device, ipOrganization, geolocation, sdkLibrary, networkConnectivity, mktCampaign, session, searchQuery, attributes, traits, createdDate);
+    return Objects.hash(id, customerId, customerIdType, eventName, screenName, app, device, ipOrganization, geolocation, sdkLibrary, networkConnectivity, mktCampaign, session, searchQuery, attributes, traits, externalId, createdDate);
   }
 
   @Override
@@ -419,6 +439,7 @@ public class AppEventResponse  implements Serializable {
     sb.append("    searchQuery: ").append(toIndentedString(searchQuery)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    traits: ").append(toIndentedString(traits)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -35,14 +35,14 @@ public class RequestJourney  implements Serializable {
 
   
   /**
-   * A list of zero or more patterns to match.
+   * A list of zero or more patterns to match. Defaults to an empty list if not provided.
    **/
   public RequestJourney patterns(List<RequestJourneyPattern> patterns) {
     this.patterns = patterns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of zero or more patterns to match.")
+  @ApiModelProperty(example = "null", value = "A list of zero or more patterns to match. Defaults to an empty list if not provided.")
   @JsonProperty("patterns")
   public List<RequestJourneyPattern> getPatterns() {
     return patterns;

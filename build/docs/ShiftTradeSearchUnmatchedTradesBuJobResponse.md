@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the job |  |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the job |  |
 | **downloadUrl** | **String** | The URL where completed results might be available for download in case the result body for that job type is too large |  [optional] |
@@ -44,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

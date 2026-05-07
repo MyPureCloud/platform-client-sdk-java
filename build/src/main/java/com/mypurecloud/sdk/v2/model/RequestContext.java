@@ -35,14 +35,14 @@ public class RequestContext  implements Serializable {
 
   
   /**
-   * A list of one or more patterns to match.
+   * A list of one or more patterns to match. Defaults to an empty list if not provided.
    **/
   public RequestContext patterns(List<RequestContextPattern> patterns) {
     this.patterns = patterns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of one or more patterns to match.")
+  @ApiModelProperty(example = "null", value = "A list of one or more patterns to match. Defaults to an empty list if not provided.")
   @JsonProperty("patterns")
   public List<RequestContextPattern> getPatterns() {
     return patterns;

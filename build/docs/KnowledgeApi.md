@@ -969,7 +969,7 @@ try {
 # **getKnowledgeConnectionOptions**
 
 
-> [ConnectionOptionListing](ConnectionOptionListing) getKnowledgeConnectionOptions(connectionId, parentId)
+> [ConnectionOptionListing](ConnectionOptionListing) getKnowledgeConnectionOptions(connectionId, after, pageSize, parentId)
 
 Get connection options
 
@@ -1002,9 +1002,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String connectionId = "connectionId_example"; // String | Connection ID
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "200"; // String | Number of results per page. Minimum: 25, Maximum: 500.
 String parentId = "parentId_example"; // String | The id of the parent option whose children to be listed.
 try {
-    ConnectionOptionListing result = apiInstance.getKnowledgeConnectionOptions(connectionId, parentId);
+    ConnectionOptionListing result = apiInstance.getKnowledgeConnectionOptions(connectionId, after, pageSize, parentId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeConnectionOptions");
@@ -1018,6 +1020,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **connectionId** | **String**| Connection ID | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of results per page. Minimum: 25, Maximum: 500. | [optional] [default to 200] 
 | **parentId** | **String**| The id of the parent option whose children to be listed. | [optional] 
 {: class="table-striped"}
 
@@ -3370,7 +3374,7 @@ try {
 # **getKnowledgeSource**
 
 
-> [V3SourceDetailedWithErrorResponse](V3SourceDetailedWithErrorResponse) getKnowledgeSource(sourceId, expand)
+> [V3SourceExpandableResponse](V3SourceExpandableResponse) getKnowledgeSource(sourceId, expand)
 
 Get source
 
@@ -3405,7 +3409,7 @@ KnowledgeApi apiInstance = new KnowledgeApi();
 String sourceId = "sourceId_example"; // String | Source ID
 List<String> expand = Arrays.asList(null); // List<String> | Optional fields to expand for the Source.
 try {
-    V3SourceDetailedWithErrorResponse result = apiInstance.getKnowledgeSource(sourceId, expand);
+    V3SourceExpandableResponse result = apiInstance.getKnowledgeSource(sourceId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeSource");
@@ -3419,13 +3423,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sourceId** | **String**| Source ID | 
-| **expand** | [**List&lt;String&gt;**](String)| Optional fields to expand for the Source. | [optional]<br />**Values**: lastSync, filterDetails 
+| **expand** | [**List&lt;String&gt;**](String)| Optional fields to expand for the Source. | [optional]<br />**Values**: lastSync, filterDetails, connection 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**V3SourceDetailedWithErrorResponse**](V3SourceDetailedWithErrorResponse)
+[**V3SourceExpandableResponse**](V3SourceExpandableResponse)
 
 
 # **getKnowledgeSourceSynchronization**
@@ -3557,7 +3561,7 @@ try {
 # **getKnowledgeSources**
 
 
-> [V3SourceWithErrorListing](V3SourceWithErrorListing) getKnowledgeSources(expand)
+> [V3SourceExpandableListing](V3SourceExpandableListing) getKnowledgeSources(expand)
 
 List sources
 
@@ -3591,7 +3595,7 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 List<String> expand = Arrays.asList(null); // List<String> | Optional fields to expand for the Source.
 try {
-    V3SourceWithErrorListing result = apiInstance.getKnowledgeSources(expand);
+    V3SourceExpandableListing result = apiInstance.getKnowledgeSources(expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeSources");
@@ -3604,13 +3608,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String)| Optional fields to expand for the Source. | [optional]<br />**Values**: lastSync 
+| **expand** | [**List&lt;String&gt;**](String)| Optional fields to expand for the Source. | [optional]<br />**Values**: lastSync, connection 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**V3SourceWithErrorListing**](V3SourceWithErrorListing)
+[**V3SourceExpandableListing**](V3SourceExpandableListing)
 
 
 # **getKnowledgeSourcesSynchronizations**
@@ -7435,4 +7439,4 @@ try {
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:252.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.0.0_

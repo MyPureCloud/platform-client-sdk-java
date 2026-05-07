@@ -53,7 +53,8 @@ public class AgentStateQueryRequest  implements Serializable {
     ROUTINGSTATUSDATE("routingStatusDate"),
     SYSTEMPRESENCE("systemPresence"),
     ROUTINGSTATUS("routingStatus"),
-    ORGANIZATIONPRESENCEID("organizationPresenceId");
+    ORGANIZATIONPRESENCEID("organizationPresenceId"),
+    ADHERENCEDATE("adherenceDate");
 
     private String value;
 
