@@ -82,6 +82,12 @@ public class WorkPlanConstraintsViolationMessage  implements Serializable {
     }
   }
 
+  public WorkPlanConstraintsViolationMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      fixableConstraintsMessages = new ArrayList<WorkPlanConstraintViolationMessage>();
+    }
+  }
+
   
   /**
    * Message for how to resolve a set of conflicted work plan constraints

@@ -41,6 +41,11 @@ public class TimeZoneMappingPreview  implements Serializable {
     }
   }
 
+  public TimeZoneMappingPreview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The associated ContactList

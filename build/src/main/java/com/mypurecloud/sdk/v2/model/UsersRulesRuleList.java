@@ -43,6 +43,12 @@ public class UsersRulesRuleList  implements Serializable, PagedResource<UsersRul
     }
   }
 
+  public UsersRulesRuleList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UsersRulesRule>();
+    }
+  }
+
   
   /**
    **/

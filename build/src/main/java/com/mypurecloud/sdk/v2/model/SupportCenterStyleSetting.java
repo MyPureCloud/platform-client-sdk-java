@@ -32,6 +32,11 @@ public class SupportCenterStyleSetting  implements Serializable {
     }
   }
 
+  public SupportCenterStyleSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Knowledge portal (previously support center) hero customizations

@@ -30,6 +30,11 @@ public class ParticipantInfo  implements Serializable {
     }
   }
 
+  public ParticipantInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The number of active participants in the video conference.

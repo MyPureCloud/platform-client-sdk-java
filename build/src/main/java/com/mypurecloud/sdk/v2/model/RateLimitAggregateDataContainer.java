@@ -36,6 +36,12 @@ public class RateLimitAggregateDataContainer  implements Serializable {
     }
   }
 
+  public RateLimitAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

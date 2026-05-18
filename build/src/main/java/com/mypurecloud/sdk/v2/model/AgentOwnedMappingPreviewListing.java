@@ -33,6 +33,12 @@ public class AgentOwnedMappingPreviewListing  implements Serializable {
     }
   }
 
+  public AgentOwnedMappingPreviewListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AgentOwnedMappingPreview>();
+    }
+  }
+
   
   /**
    **/

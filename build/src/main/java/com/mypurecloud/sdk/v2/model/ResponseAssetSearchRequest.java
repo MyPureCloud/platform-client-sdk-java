@@ -85,6 +85,12 @@ public class ResponseAssetSearchRequest  implements Serializable {
     }
   }
 
+  public ResponseAssetSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      query = new ArrayList<ResponseAssetFilter>();
+    }
+  }
+
   
   /**
    * The number of results per page. Default: 25, Maximum: 100.

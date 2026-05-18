@@ -148,6 +148,11 @@ public class WorkitemsEventsNotificationAssignmentSegment  implements Serializab
     }
   }
 
+  public WorkitemsEventsNotificationAssignmentSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

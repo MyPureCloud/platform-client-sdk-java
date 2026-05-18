@@ -43,6 +43,12 @@ public class InstagramIntegrationEntityListing  implements Serializable, PagedRe
     }
   }
 
+  public InstagramIntegrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<InstagramIntegration>();
+    }
+  }
+
   
   /**
    **/

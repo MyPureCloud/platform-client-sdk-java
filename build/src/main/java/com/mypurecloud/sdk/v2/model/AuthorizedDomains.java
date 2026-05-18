@@ -33,6 +33,12 @@ public class AuthorizedDomains  implements Serializable {
     }
   }
 
+  public AuthorizedDomains(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      outbound = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of authorized domains for outbound send.

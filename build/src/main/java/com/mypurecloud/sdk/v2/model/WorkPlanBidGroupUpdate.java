@@ -35,6 +35,11 @@ public class WorkPlanBidGroupUpdate  implements Serializable {
     }
   }
 
+  public WorkPlanBidGroupUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the work plan bid group

@@ -98,6 +98,11 @@ public class AgentStateSegmentTypeCount  implements Serializable {
     }
   }
 
+  public AgentStateSegmentTypeCount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Segment type

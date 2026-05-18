@@ -37,6 +37,12 @@ public class TimeOffBalanceResponse  implements Serializable {
     }
   }
 
+  public TimeOffBalanceResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      balanceMinutesPerDay = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The ID for activity code associated with time off balance

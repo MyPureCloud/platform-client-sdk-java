@@ -40,6 +40,12 @@ public class AssessmentForm  implements Serializable {
     }
   }
 
+  public AssessmentForm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questionGroups = new ArrayList<AssessmentFormQuestionGroup>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

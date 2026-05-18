@@ -87,6 +87,11 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
     }
   }
 
+  public ConversationScriptSuggestionsTopicSuggestionContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

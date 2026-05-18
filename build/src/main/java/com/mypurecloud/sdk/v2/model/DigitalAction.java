@@ -42,6 +42,11 @@ public class DigitalAction  implements Serializable {
     }
   }
 
+  public DigitalAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The settings for an 'update contact column' action.

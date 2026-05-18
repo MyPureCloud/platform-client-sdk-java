@@ -214,6 +214,12 @@ public class EvaluationSearchCriteriaDTO  implements Serializable {
     }
   }
 
+  public EvaluationSearchCriteriaDTO(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The type of query Operation to Perform

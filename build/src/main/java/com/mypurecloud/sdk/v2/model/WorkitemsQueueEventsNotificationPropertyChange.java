@@ -35,6 +35,13 @@ public class WorkitemsQueueEventsNotificationPropertyChange  implements Serializ
     }
   }
 
+  public WorkitemsQueueEventsNotificationPropertyChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      oldValues = new ArrayList<String>();
+      newValues = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

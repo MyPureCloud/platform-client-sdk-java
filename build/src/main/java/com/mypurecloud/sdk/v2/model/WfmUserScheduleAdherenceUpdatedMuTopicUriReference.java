@@ -30,6 +30,11 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUriReference  implements Seri
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedMuTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

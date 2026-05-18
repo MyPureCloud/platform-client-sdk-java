@@ -45,6 +45,11 @@ public class SocialMediaStatisticalSummary  implements Serializable {
     }
   }
 
+  public SocialMediaStatisticalSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

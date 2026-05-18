@@ -38,6 +38,12 @@ public class AgentIntegrationsResponse  implements Serializable {
     }
   }
 
+  public AgentIntegrationsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      associatedIntegrations = new ArrayList<AgentIntegrationAssociationResponse>();
+    }
+  }
+
   
   /**
    * The user associated with the integrations

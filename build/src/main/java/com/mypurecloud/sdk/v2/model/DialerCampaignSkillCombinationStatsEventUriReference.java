@@ -31,6 +31,11 @@ public class DialerCampaignSkillCombinationStatsEventUriReference  implements Se
     }
   }
 
+  public DialerCampaignSkillCombinationStatsEventUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

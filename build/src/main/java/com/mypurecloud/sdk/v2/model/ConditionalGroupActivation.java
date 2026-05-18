@@ -35,6 +35,12 @@ public class ConditionalGroupActivation  implements Serializable {
     }
   }
 
+  public ConditionalGroupActivation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      rules = new ArrayList<ConditionalGroupActivationRule>();
+    }
+  }
+
   
   /**
    * The pilot rule for this queue, which executes periodically to determine queue health

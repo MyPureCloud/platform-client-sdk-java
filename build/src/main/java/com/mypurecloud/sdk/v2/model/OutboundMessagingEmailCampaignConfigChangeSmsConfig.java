@@ -35,6 +35,11 @@ public class OutboundMessagingEmailCampaignConfigChangeSmsConfig  implements Ser
     }
   }
 
+  public OutboundMessagingEmailCampaignConfigChangeSmsConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Contact List column specifying the message to send to the contact.

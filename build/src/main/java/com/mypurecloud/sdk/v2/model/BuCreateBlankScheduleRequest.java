@@ -32,6 +32,11 @@ public class BuCreateBlankScheduleRequest  implements Serializable {
     }
   }
 
+  public BuCreateBlankScheduleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The description for the schedule

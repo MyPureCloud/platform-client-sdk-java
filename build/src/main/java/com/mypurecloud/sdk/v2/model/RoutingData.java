@@ -43,6 +43,15 @@ public class RoutingData  implements Serializable {
     }
   }
 
+  public RoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
+      scoredAgents = new ArrayList<ScoredAgent>();
+      routingFlags = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The identifier of the routing queue

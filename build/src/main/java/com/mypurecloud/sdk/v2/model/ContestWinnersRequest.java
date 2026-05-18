@@ -33,6 +33,12 @@ public class ContestWinnersRequest  implements Serializable {
     }
   }
 
+  public ContestWinnersRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The Contest Winner tier

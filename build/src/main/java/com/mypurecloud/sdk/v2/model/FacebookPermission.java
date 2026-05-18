@@ -82,6 +82,11 @@ public class FacebookPermission  implements Serializable {
     }
   }
 
+  public FacebookPermission(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Facebook permission name")
   @JsonProperty("name")

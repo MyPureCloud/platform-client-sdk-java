@@ -36,6 +36,13 @@ public class BulkSourceIntentsResponse  implements Serializable {
     }
   }
 
+  public BulkSourceIntentsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<BulkResults>();
+      errorResultIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Results of operation

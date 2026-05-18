@@ -30,6 +30,11 @@ public class PublishDraftInput  implements Serializable {
     }
   }
 
+  public PublishDraftInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The current draft version.

@@ -83,6 +83,11 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
     }
   }
 
+  public OutboundMessagingMessagingCampaignConfigChangeContactSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

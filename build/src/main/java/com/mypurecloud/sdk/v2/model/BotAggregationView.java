@@ -138,6 +138,11 @@ public class BotAggregationView  implements Serializable {
     }
   }
 
+  public BotAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

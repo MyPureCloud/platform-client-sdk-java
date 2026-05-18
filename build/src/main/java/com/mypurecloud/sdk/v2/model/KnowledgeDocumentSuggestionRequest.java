@@ -35,6 +35,11 @@ public class KnowledgeDocumentSuggestionRequest  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentSuggestionRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Query to get autocomplete suggestions for the matching knowledge documents.

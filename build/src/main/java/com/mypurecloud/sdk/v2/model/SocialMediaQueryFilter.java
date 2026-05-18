@@ -85,6 +85,13 @@ public class SocialMediaQueryFilter  implements Serializable {
     }
   }
 
+  public SocialMediaQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<SocialMediaQueryClause>();
+      predicates = new ArrayList<SocialMediaQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

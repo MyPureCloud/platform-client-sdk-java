@@ -40,6 +40,13 @@ public class DataExtractionFileSchemaListing  implements Serializable {
     }
   }
 
+  public DataExtractionFileSchemaListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DataExtractionFileSchema>();
+      enabledDataSchemas = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -51,6 +51,17 @@ public class ChatMediaPolicyConditions  implements Serializable {
     }
   }
 
+  public ChatMediaPolicyConditions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      forUsers = new ArrayList<PolicyUser>();
+      dateRanges = new ArrayList<String>();
+      forQueues = new ArrayList<Queue>();
+      wrapupCodes = new ArrayList<WrapupCode>();
+      languages = new ArrayList<Language>();
+      teams = new ArrayList<Team>();
+    }
+  }
+
   
   /**
    * List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].

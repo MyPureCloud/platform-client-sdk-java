@@ -135,6 +135,11 @@ public class TouchpointResponse  implements Serializable {
     }
   }
 
+  public TouchpointResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of conversation.

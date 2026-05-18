@@ -43,6 +43,12 @@ public class DIDNumberEntityListing  implements Serializable, PagedResource<DIDN
     }
   }
 
+  public DIDNumberEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DIDNumber>();
+    }
+  }
+
   
   /**
    **/

@@ -35,6 +35,12 @@ public class PatchCallbackResponse  implements Serializable {
     }
   }
 
+  public PatchCallbackResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackIdentifiers = new ArrayList<CallbackIdentifier>();
+    }
+  }
+
   
   /**
    * The conversation associated with the callback

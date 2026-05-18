@@ -43,6 +43,12 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     }
   }
 
+  public CommonCampaignEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CommonCampaign>();
+    }
+  }
+
   
   /**
    **/

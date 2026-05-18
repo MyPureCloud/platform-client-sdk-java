@@ -43,6 +43,12 @@ public class ImportTemplateEntityListing  implements Serializable, PagedResource
     }
   }
 
+  public ImportTemplateEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ImportTemplate>();
+    }
+  }
+
   
   /**
    **/

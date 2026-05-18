@@ -32,6 +32,11 @@ public class RetentionDuration  implements Serializable {
     }
   }
 
+  public RetentionDuration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

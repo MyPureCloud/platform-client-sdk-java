@@ -31,6 +31,11 @@ public class GuideVersionPublishJobRequest  implements Serializable {
     }
   }
 
+  public GuideVersionPublishJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The attributes of the guide version to update as part of this publish job.

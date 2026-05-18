@@ -35,6 +35,11 @@ public class CapacityPlanMetadata  implements Serializable {
     }
   }
 
+  public CapacityPlanMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "The user who modified the entity")
   @JsonProperty("modifiedBy")

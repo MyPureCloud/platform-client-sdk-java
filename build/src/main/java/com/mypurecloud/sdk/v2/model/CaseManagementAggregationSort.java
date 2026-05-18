@@ -133,6 +133,11 @@ public class CaseManagementAggregationSort  implements Serializable {
     }
   }
 
+  public CaseManagementAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

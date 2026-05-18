@@ -37,6 +37,13 @@ public class BuQueryAdherenceExplanationsRequest  implements Serializable {
     }
   }
 
+  public BuQueryAdherenceExplanationsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnitIds = new ArrayList<String>();
+      agentIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The start date of the range to query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

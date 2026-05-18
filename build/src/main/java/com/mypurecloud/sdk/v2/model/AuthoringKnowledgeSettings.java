@@ -80,6 +80,11 @@ public class AuthoringKnowledgeSettings  implements Serializable {
     }
   }
 
+  public AuthoringKnowledgeSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the knowledge settings to use

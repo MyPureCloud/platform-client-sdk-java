@@ -36,6 +36,12 @@ public class ConnectionOptionListing  implements Serializable {
     }
   }
 
+  public ConnectionOptionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ConnectionOption>();
+    }
+  }
+
   
   /**
    **/

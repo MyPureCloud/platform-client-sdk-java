@@ -30,6 +30,11 @@ public class WhatsAppColumn  implements Serializable {
     }
   }
 
+  public WhatsAppColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the whatsApp column.

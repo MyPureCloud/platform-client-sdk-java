@@ -33,6 +33,12 @@ public class CommunicationTranslationList  implements Serializable {
     }
   }
 
+  public CommunicationTranslationList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CommunicationTranslation>();
+    }
+  }
+
   
   /**
    **/

@@ -36,6 +36,11 @@ public class ProfileWithDateRange  implements Serializable {
     }
   }
 
+  public ProfileWithDateRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Profile ID

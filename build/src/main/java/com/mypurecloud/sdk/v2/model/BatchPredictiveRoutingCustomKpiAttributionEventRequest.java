@@ -34,6 +34,12 @@ public class BatchPredictiveRoutingCustomKpiAttributionEventRequest  implements 
     }
   }
 
+  public BatchPredictiveRoutingCustomKpiAttributionEventRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      customKpiAttributionEvents = new ArrayList<PredictiveRoutingCustomKpiAttributionEvent>();
+    }
+  }
+
   
   /**
    * PredictiveRoutingCustomKpiAttributionEvent events for this batch

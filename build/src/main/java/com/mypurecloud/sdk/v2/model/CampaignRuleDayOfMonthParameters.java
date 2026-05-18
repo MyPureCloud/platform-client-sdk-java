@@ -35,6 +35,12 @@ public class CampaignRuleDayOfMonthParameters  implements Serializable {
     }
   }
 
+  public CampaignRuleDayOfMonthParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inSet = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The operand for the \"before\" and \"after\" operators, can be either exact day (1-31) or \"LAST_DAY\"

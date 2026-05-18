@@ -84,6 +84,11 @@ public class CopilotAction  implements Serializable {
     }
   }
 
+  public CopilotAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of action.

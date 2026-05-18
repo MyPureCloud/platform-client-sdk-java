@@ -86,6 +86,14 @@ public class CoachingScheduleSlotsJobRequest  implements Serializable {
     }
   }
 
+  public CoachingScheduleSlotsJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attendeeIds = new ArrayList<String>();
+      facilitatorIds = new ArrayList<String>();
+      intervals = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The attendee IDs to fetch the slots for.

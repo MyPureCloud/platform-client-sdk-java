@@ -31,6 +31,11 @@ public class StorySetting  implements Serializable {
     }
   }
 
+  public StorySetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Setting relating to Story Mentions

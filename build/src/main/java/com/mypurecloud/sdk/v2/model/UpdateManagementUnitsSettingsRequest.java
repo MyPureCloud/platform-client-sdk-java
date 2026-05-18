@@ -29,6 +29,11 @@ public class UpdateManagementUnitsSettingsRequest  implements Serializable {
     }
   }
 
+  public UpdateManagementUnitsSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates whether agent availability is enabled for the management unit

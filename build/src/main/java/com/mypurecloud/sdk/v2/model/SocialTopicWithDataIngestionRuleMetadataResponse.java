@@ -91,6 +91,12 @@ public class SocialTopicWithDataIngestionRuleMetadataResponse  implements Serial
     }
   }
 
+  public SocialTopicWithDataIngestionRuleMetadataResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dataIngestionRulesMetadata = new ArrayList<DataIngestionRulesMetadata>();
+    }
+  }
+
   
   /**
    * ID of the social topic.

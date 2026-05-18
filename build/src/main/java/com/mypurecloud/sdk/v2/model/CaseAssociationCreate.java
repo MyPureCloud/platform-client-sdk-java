@@ -30,6 +30,11 @@ public class CaseAssociationCreate  implements Serializable {
     }
   }
 
+  public CaseAssociationCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the workitem to associate with the case.

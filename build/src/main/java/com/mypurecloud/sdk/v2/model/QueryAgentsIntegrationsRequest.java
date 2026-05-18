@@ -32,6 +32,12 @@ public class QueryAgentsIntegrationsRequest  implements Serializable {
     }
   }
 
+  public QueryAgentsIntegrationsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of the agents to query associated integrations

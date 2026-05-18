@@ -31,6 +31,11 @@ public class WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffs
     }
   }
 
+  public WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

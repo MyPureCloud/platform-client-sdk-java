@@ -30,6 +30,11 @@ public class GroupByAttribute  implements Serializable {
     }
   }
 
+  public GroupByAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Group by attribute")
   @JsonProperty("attribute")

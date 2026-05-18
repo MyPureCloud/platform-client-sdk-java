@@ -34,6 +34,11 @@ public class LimitDocs  implements Serializable {
     }
   }
 
+  public LimitDocs(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

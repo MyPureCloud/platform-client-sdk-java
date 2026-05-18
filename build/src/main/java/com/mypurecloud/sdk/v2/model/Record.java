@@ -31,6 +31,11 @@ public class Record  implements Serializable {
     }
   }
 
+  public Record(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the record.

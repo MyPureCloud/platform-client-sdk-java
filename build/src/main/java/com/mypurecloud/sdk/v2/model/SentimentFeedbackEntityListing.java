@@ -33,6 +33,12 @@ public class SentimentFeedbackEntityListing  implements Serializable {
     }
   }
 
+  public SentimentFeedbackEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SentimentFeedback>();
+    }
+  }
+
   
   /**
    **/

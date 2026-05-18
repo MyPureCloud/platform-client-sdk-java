@@ -38,6 +38,11 @@ public class CachedMediaItem  implements Serializable {
     }
   }
 
+  public CachedMediaItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The unique identifier for the cached media.")
   @JsonProperty("id")

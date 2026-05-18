@@ -43,6 +43,12 @@ public class ContactListTemplateEntityListing  implements Serializable, PagedRes
     }
   }
 
+  public ContactListTemplateEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContactListTemplate>();
+    }
+  }
+
   
   /**
    **/

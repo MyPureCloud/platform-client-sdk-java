@@ -37,6 +37,12 @@ public class CaseplanQueryEntityListing  implements Serializable {
     }
   }
 
+  public CaseplanQueryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Caseplan>();
+    }
+  }
+
   
   /**
    **/

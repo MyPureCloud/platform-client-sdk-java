@@ -31,6 +31,11 @@ public class GuideSessionTurnInvocationData  implements Serializable {
     }
   }
 
+  public GuideSessionTurnInvocationData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The action group of the invocation data.

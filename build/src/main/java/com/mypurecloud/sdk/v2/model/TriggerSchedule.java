@@ -35,6 +35,11 @@ public class TriggerSchedule  implements Serializable {
     }
   }
 
+  public TriggerSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Minutes on which the trigger should fire. Coma separated list of up to 2 values 0-59

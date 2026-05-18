@@ -35,6 +35,12 @@ public class DocumentBodyTableCellBlock  implements Serializable {
     }
   }
 
+  public DocumentBodyTableCellBlock(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentTableContentBlock>();
+    }
+  }
+
   
   /**
    * The properties for the table cell.

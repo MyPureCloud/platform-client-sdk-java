@@ -30,6 +30,11 @@ public class Category  implements Serializable {
     }
   }
 
+  public Category(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Category name

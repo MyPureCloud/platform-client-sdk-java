@@ -39,6 +39,11 @@ public class ErrorDetails  implements Serializable {
     }
   }
 
+  public ErrorDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

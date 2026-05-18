@@ -85,6 +85,13 @@ public class EvaluationAggregateQueryFilter  implements Serializable {
     }
   }
 
+  public EvaluationAggregateQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<EvaluationAggregateQueryClause>();
+      predicates = new ArrayList<EvaluationAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

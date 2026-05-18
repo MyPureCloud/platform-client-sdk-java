@@ -133,6 +133,11 @@ public class CreateRecognition  implements Serializable {
     }
   }
 
+  public CreateRecognition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The recipient of the recognition

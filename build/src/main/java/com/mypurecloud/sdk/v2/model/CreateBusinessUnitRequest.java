@@ -32,6 +32,11 @@ public class CreateBusinessUnitRequest  implements Serializable {
     }
   }
 
+  public CreateBusinessUnitRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the business unit

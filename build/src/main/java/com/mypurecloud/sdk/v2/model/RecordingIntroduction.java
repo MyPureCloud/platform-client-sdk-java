@@ -30,6 +30,11 @@ public class RecordingIntroduction  implements Serializable {
     }
   }
 
+  public RecordingIntroduction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text to show in the title.

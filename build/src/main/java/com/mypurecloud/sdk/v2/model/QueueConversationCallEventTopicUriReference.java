@@ -30,6 +30,11 @@ public class QueueConversationCallEventTopicUriReference  implements Serializabl
     }
   }
 
+  public QueueConversationCallEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

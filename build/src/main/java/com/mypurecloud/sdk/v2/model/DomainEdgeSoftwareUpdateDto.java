@@ -95,6 +95,11 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     }
   }
 
+  public DomainEdgeSoftwareUpdateDto(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Version

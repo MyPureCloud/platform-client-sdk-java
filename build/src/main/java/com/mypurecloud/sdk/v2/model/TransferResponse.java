@@ -139,6 +139,11 @@ public class TransferResponse  implements Serializable {
     }
   }
 
+  public TransferResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the command.

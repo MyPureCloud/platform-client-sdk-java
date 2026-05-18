@@ -140,6 +140,11 @@ public class KnowledgeGuestDocumentCopy  implements Serializable {
     }
   }
 
+  public KnowledgeGuestDocumentCopy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The variation of the document whose content was copied.

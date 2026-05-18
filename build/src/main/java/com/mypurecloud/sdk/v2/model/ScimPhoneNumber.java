@@ -89,6 +89,11 @@ public class ScimPhoneNumber  implements Serializable {
     }
   }
 
+  public ScimPhoneNumber(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext=xxxxx.

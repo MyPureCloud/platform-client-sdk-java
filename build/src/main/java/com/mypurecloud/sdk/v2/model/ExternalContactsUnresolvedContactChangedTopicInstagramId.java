@@ -35,6 +35,12 @@ public class ExternalContactsUnresolvedContactChangedTopicInstagramId  implement
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicInstagramId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<ExternalContactsUnresolvedContactChangedTopicInstagramScopedId>();
+    }
+  }
+
   
   /**
    **/

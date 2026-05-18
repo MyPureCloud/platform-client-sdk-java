@@ -144,6 +144,11 @@ public class SurveyAggregationView  implements Serializable {
     }
   }
 
+  public SurveyAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

@@ -43,6 +43,12 @@ public class ChatConversationEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public ChatConversationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ChatConversation>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,11 @@ public class SupportCenterGlobalStyle  implements Serializable {
     }
   }
 
+  public SupportCenterGlobalStyle(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Global background color, in hexadecimal format, eg #ffffff

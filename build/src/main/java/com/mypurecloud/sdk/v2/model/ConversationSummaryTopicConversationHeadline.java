@@ -32,6 +32,11 @@ public class ConversationSummaryTopicConversationHeadline  implements Serializab
     }
   }
 
+  public ConversationSummaryTopicConversationHeadline(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

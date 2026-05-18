@@ -31,6 +31,11 @@ public class TrunkInstanceTopicTrunkConnectedStatus  implements Serializable {
     }
   }
 
+  public TrunkInstanceTopicTrunkConnectedStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

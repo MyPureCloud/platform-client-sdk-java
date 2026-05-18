@@ -31,6 +31,11 @@ public class QueueConversationEventTopicInternalMessageDetails  implements Seria
     }
   }
 
+  public QueueConversationEventTopicInternalMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * UUID identifying the internal message media.

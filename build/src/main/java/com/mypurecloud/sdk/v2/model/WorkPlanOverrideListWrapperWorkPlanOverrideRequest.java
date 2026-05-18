@@ -34,6 +34,12 @@ public class WorkPlanOverrideListWrapperWorkPlanOverrideRequest  implements Seri
     }
   }
 
+  public WorkPlanOverrideListWrapperWorkPlanOverrideRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<WorkPlanOverrideRequest>();
+    }
+  }
+
   
   /**
    **/

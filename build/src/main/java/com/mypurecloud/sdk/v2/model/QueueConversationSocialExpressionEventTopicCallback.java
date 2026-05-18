@@ -285,6 +285,12 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicCallback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class TimeOffIntegrationStatusResponseListing  implements Serializable {
     }
   }
 
+  public TimeOffIntegrationStatusResponseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TimeOffIntegrationStatusResponse>();
+    }
+  }
+
   
   /**
    **/

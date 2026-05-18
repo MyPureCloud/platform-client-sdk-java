@@ -88,6 +88,12 @@ public class FixedAvailability  implements Serializable {
     }
   }
 
+  public FixedAvailability(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      daysOfWeek = new ArrayList<DaysOfWeekEnum>();
+    }
+  }
+
   
   /**
    * The range of time of day the activity can be scheduled

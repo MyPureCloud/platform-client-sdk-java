@@ -32,6 +32,11 @@ public class CallableWindow  implements Serializable {
     }
   }
 
+  public CallableWindow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The time interval to place outbound calls, for contacts that can be mapped to a time zone.

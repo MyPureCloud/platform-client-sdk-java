@@ -331,6 +331,14 @@ public class FlowOutcomeDetailEventTopicFlowOutcomeEvent  implements Serializabl
     }
   }
 
+  public FlowOutcomeDetailEventTopicFlowOutcomeEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      flowMilestones = new ArrayList<FlowOutcomeDetailEventTopicFlowMilestone>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

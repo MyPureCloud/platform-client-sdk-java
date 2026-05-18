@@ -83,6 +83,11 @@ public class TranscriptionSettings  implements Serializable {
     }
   }
 
+  public TranscriptionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Setting to enable/disable transcription capability

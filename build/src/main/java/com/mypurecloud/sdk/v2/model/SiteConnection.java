@@ -142,6 +142,14 @@ public class SiteConnection  implements Serializable {
     }
   }
 
+  public SiteConnection(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      edgeList = new ArrayList<ConnectedEdge>();
+      primaryCoreSites = new ArrayList<DomainEntityRef>();
+      secondaryCoreSites = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   /**
    **/

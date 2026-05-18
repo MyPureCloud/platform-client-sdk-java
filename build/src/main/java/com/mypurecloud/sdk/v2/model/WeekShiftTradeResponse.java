@@ -32,6 +32,11 @@ public class WeekShiftTradeResponse  implements Serializable {
     }
   }
 
+  public WeekShiftTradeResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The shift trade details

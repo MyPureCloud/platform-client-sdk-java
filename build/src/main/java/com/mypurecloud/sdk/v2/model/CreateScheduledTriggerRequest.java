@@ -35,6 +35,11 @@ public class CreateScheduledTriggerRequest  implements Serializable {
     }
   }
 
+  public CreateScheduledTriggerRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The target to invoke when the scheduled trigger fires

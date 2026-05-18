@@ -104,6 +104,12 @@ public class NumberPlan  implements Serializable {
     }
   }
 
+  public NumberPlan(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      numbers = new ArrayList<Number>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

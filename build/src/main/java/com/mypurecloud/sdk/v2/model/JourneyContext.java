@@ -34,6 +34,11 @@ public class JourneyContext  implements Serializable {
     }
   }
 
+  public JourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A subset of the Journey System's customer data at a point-in-time (for external linkage and internal usage/context)

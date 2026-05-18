@@ -39,6 +39,12 @@ public class AddShiftTradeJobRequest  implements Serializable {
     }
   }
 
+  public AddShiftTradeJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      acceptableIntervals = new ArrayList<RequiredDateRange>();
+    }
+  }
+
   
   /**
    * The shift that the initiating user wants to give up in this trade

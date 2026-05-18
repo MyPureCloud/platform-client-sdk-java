@@ -117,6 +117,11 @@ public class BillingInvoiceItem  implements Serializable {
     }
   }
 
+  public BillingInvoiceItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

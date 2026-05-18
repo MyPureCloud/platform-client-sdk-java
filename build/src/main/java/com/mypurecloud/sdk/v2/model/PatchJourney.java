@@ -33,6 +33,12 @@ public class PatchJourney  implements Serializable {
     }
   }
 
+  public PatchJourney(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      patterns = new ArrayList<PatchJourneyPattern>();
+    }
+  }
+
   
   /**
    * A list of zero or more patterns to match.

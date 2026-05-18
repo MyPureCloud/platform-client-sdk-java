@@ -42,6 +42,11 @@ public class ApiUsageRow  implements Serializable {
     }
   }
 
+  public ApiUsageRow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Client Id associated with this query result

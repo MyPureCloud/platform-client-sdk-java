@@ -31,6 +31,11 @@ public class IntegrationExport  implements Serializable {
     }
   }
 
+  public IntegrationExport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The aws-s3-recording-bulk-actions-integration that the policy uses for exports.

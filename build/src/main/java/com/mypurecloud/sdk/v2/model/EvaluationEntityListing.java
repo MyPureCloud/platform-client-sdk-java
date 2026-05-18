@@ -43,6 +43,12 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     }
   }
 
+  public EvaluationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Evaluation>();
+    }
+  }
+
   
   /**
    **/

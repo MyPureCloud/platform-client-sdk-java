@@ -30,6 +30,11 @@ public class PublishScriptRequestData  implements Serializable {
     }
   }
 
+  public PublishScriptRequestData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the script to publish

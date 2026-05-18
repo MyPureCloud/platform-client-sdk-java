@@ -35,6 +35,12 @@ public class ConversationVideoEventTopicConversationDivisionMembership  implemen
     }
   }
 
+  public ConversationVideoEventTopicConversationDivisionMembership(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ConversationVideoEventTopicDivisionEntityRef>();
+    }
+  }
+
   
   /**
    **/

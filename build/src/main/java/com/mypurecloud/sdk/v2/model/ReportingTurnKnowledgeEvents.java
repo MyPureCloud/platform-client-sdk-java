@@ -36,6 +36,13 @@ public class ReportingTurnKnowledgeEvents  implements Serializable {
     }
   }
 
+  public ReportingTurnKnowledgeEvents(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      search = new ArrayList<ReportingTurnKnowledgeSearchEvent>();
+      feedback = new ArrayList<ReportingTurnKnowledgeFeedbackEvent>();
+    }
+  }
+
   
   /**
    * The knowledge search data captured during this reporting turn.

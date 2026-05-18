@@ -40,6 +40,12 @@ public class DialerContactlistfilterConfigChangeFilterRange  implements Serializ
     }
   }
 
+  public DialerContactlistfilterConfigChangeFilterRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inSet = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Minimum end of the range

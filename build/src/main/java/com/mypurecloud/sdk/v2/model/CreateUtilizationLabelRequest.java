@@ -31,6 +31,11 @@ public class CreateUtilizationLabelRequest  implements Serializable {
     }
   }
 
+  public CreateUtilizationLabelRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The utilization label name.

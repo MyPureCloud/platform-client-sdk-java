@@ -150,6 +150,20 @@ public class TrustUser  implements Serializable {
     }
   }
 
+  public TrustUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      primaryContactInfo = new ArrayList<Contact>();
+      addresses = new ArrayList<Contact>();
+      images = new ArrayList<Image>();
+      certifications = new ArrayList<String>();
+      profileSkills = new ArrayList<String>();
+      locations = new ArrayList<Location>();
+      groups = new ArrayList<Group>();
+      skills = new ArrayList<UserRoutingSkill>();
+      languages = new ArrayList<UserRoutingLanguage>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

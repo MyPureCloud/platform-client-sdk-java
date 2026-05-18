@@ -174,6 +174,11 @@ public class Input  implements Serializable {
     }
   }
 
+  public Input(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the input field

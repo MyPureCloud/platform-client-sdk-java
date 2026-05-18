@@ -148,6 +148,12 @@ public class DncListCreate  implements Serializable {
     }
   }
 
+  public DncListCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dncCodes = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

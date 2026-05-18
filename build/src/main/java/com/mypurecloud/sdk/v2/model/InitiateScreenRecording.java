@@ -33,6 +33,11 @@ public class InitiateScreenRecording  implements Serializable {
     }
   }
 
+  public InitiateScreenRecording(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

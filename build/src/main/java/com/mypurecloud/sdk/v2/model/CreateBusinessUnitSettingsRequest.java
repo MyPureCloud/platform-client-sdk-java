@@ -89,6 +89,11 @@ public class CreateBusinessUnitSettingsRequest  implements Serializable {
     }
   }
 
+  public CreateBusinessUnitSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start day of week for this business unit

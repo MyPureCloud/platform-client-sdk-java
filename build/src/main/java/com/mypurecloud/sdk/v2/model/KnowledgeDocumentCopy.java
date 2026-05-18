@@ -142,6 +142,11 @@ public class KnowledgeDocumentCopy  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentCopy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The variation of the document whose content was copied.

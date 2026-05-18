@@ -39,6 +39,13 @@ public class ConversationChatEventTopicConversationRoutingData  implements Seria
     }
   }
 
+  public ConversationChatEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<ConversationChatEventTopicUriReference>();
+      scoredAgents = new ArrayList<ConversationChatEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

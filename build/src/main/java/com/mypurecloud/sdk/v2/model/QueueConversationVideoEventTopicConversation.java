@@ -54,6 +54,16 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     }
   }
 
+  public QueueConversationVideoEventTopicConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<QueueConversationVideoEventTopicParticipant>();
+      recentTransfers = new ArrayList<QueueConversationVideoEventTopicTransferResponse>();
+      accessAttributes = new ArrayList<String>();
+      consultationConversations = new ArrayList<QueueConversationVideoEventTopicDomainEntityRef>();
+      divisions = new ArrayList<QueueConversationVideoEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

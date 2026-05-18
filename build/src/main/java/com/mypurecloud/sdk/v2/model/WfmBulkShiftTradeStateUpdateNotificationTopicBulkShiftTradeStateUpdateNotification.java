@@ -84,6 +84,11 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     }
   }
 
+  public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

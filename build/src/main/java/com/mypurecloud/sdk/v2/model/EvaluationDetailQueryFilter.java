@@ -85,6 +85,13 @@ public class EvaluationDetailQueryFilter  implements Serializable {
     }
   }
 
+  public EvaluationDetailQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<EvaluationDetailQueryClause>();
+      predicates = new ArrayList<EvaluationDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

@@ -420,6 +420,13 @@ public class Message  implements Serializable {
     }
   }
 
+  public Message(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<Segment>();
+      messages = new ArrayList<MessageDetails>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

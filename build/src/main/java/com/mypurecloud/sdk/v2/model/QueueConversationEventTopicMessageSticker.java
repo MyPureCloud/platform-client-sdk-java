@@ -30,6 +30,11 @@ public class QueueConversationEventTopicMessageSticker  implements Serializable 
     }
   }
 
+  public QueueConversationEventTopicMessageSticker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the sticker, useful for retrieving it

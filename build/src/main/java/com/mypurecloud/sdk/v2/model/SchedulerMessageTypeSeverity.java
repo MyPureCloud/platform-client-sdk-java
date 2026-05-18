@@ -188,6 +188,11 @@ public class SchedulerMessageTypeSeverity  implements Serializable {
     }
   }
 
+  public SchedulerMessageTypeSeverity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the message

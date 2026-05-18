@@ -34,6 +34,12 @@ public class EventAggregatesResponse  implements Serializable {
     }
   }
 
+  public EventAggregatesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      eventDefinitionAggregates = new ArrayList<EventDefinitionAggregates>();
+    }
+  }
+
   
   /**
    * Interval for returned aggregates. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

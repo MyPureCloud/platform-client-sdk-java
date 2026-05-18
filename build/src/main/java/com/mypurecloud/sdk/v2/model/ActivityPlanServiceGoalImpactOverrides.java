@@ -34,6 +34,11 @@ public class ActivityPlanServiceGoalImpactOverrides  implements Serializable {
     }
   }
 
+  public ActivityPlanServiceGoalImpactOverrides(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Abandon rate service goal override for the associated activity plan

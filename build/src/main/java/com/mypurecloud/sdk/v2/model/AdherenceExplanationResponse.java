@@ -139,6 +139,11 @@ public class AdherenceExplanationResponse  implements Serializable {
     }
   }
 
+  public AdherenceExplanationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

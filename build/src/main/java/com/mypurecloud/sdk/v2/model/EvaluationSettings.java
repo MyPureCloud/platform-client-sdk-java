@@ -36,6 +36,12 @@ public class EvaluationSettings  implements Serializable {
     }
   }
 
+  public EvaluationSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      disputesAssignees = new ArrayList<EvaluationSettingsAssignee>();
+    }
+  }
+
   
   /**
    * Whether revisions are allowed for evaluations. When enabled, rescoring creates a new version of the evaluation and retracts the existing evaluation version. Does not apply for calibration evaluations.

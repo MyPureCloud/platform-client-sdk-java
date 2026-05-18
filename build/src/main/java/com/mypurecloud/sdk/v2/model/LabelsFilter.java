@@ -33,6 +33,12 @@ public class LabelsFilter  implements Serializable {
     }
   }
 
+  public LabelsFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LabelEntity>();
+    }
+  }
+
   
   /**
    * A list of labels to filter by. Articles matching any of the specified labels can be accessed.

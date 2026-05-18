@@ -149,6 +149,16 @@ public class AvailableTopic  implements Serializable {
     }
   }
 
+  public AvailableTopic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      permissionDetails = new ArrayList<PermissionDetails>();
+      requiresPermissions = new ArrayList<String>();
+      transports = new ArrayList<TransportsEnum>();
+      publicApiTemplateUriPaths = new ArrayList<String>();
+      topicParameters = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

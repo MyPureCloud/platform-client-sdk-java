@@ -82,6 +82,11 @@ public class RecipientAdditionalIdentifier  implements Serializable {
     }
   }
 
+  public RecipientAdditionalIdentifier(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "Type of the Identifier")
   @JsonProperty("type")

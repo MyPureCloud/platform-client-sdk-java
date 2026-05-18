@@ -37,6 +37,12 @@ public class QueueConversationEmailEventTopicWrapup  implements Serializable {
     }
   }
 
+  public QueueConversationEmailEventTopicWrapup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user configured wrap up code name.

@@ -86,6 +86,12 @@ public class ConversationActivityMetricValue  implements Serializable {
     }
   }
 
+  public ConversationActivityMetricValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entityIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Metric

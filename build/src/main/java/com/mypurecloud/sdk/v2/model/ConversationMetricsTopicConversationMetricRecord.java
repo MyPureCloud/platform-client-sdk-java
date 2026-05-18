@@ -899,6 +899,22 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     }
   }
 
+  public ConversationMetricsTopicConversationMetricRecord(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activeSkillIds = new ArrayList<String>();
+      destinationAddresses = new ArrayList<String>();
+      divisionIds = new ArrayList<String>();
+      eligibleAgentCounts = new ArrayList<Long>();
+      knowledgeBaseIds = new ArrayList<String>();
+      removedSkillIds = new ArrayList<String>();
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      waitingInteractionCounts = new ArrayList<Long>();
+      proposedAgents = new ArrayList<ConversationMetricsTopicConversationProposedAgent>();
+      scoredAgents = new ArrayList<ConversationMetricsTopicConversationScoredAgent>();
+    }
+  }
+
   
   /**
    * Metric name

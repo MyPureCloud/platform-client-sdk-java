@@ -43,6 +43,12 @@ public class MessageConversationEntityListing  implements Serializable, PagedRes
     }
   }
 
+  public MessageConversationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MessageConversation>();
+    }
+  }
+
   
   /**
    **/

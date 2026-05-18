@@ -36,6 +36,12 @@ public class ChatItemCursorListing  implements Serializable {
     }
   }
 
+  public ChatItemCursorListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ChatItem>();
+    }
+  }
+
   
   /**
    **/

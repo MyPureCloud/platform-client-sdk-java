@@ -32,6 +32,11 @@ public class ConversationCallbackEventTopicDetail  implements Serializable {
     }
   }
 
+  public ConversationCallbackEventTopicDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

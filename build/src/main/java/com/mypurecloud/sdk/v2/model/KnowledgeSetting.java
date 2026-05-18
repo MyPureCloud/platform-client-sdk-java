@@ -30,6 +30,11 @@ public class KnowledgeSetting  implements Serializable {
     }
   }
 
+  public KnowledgeSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the knowledge setting.

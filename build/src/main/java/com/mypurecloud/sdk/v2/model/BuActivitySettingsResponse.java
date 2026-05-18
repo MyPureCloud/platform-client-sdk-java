@@ -30,6 +30,11 @@ public class BuActivitySettingsResponse  implements Serializable {
     }
   }
 
+  public BuActivitySettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Default Activity Code settings

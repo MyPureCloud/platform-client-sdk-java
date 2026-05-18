@@ -184,6 +184,11 @@ public class ResolutionAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public ResolutionAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

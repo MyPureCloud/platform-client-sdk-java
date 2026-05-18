@@ -90,6 +90,12 @@ public class BuForecastStaffingRequirementsResultResponse  implements Serializab
     }
   }
 
+  public BuForecastStaffingRequirementsResultResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<BuForecastStaffingRequirementsResult>();
+    }
+  }
+
   
   /**
    * The ID of the business unit to which the forecast staffing requirements belongs

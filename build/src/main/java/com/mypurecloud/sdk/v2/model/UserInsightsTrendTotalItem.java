@@ -30,6 +30,11 @@ public class UserInsightsTrendTotalItem  implements Serializable {
     }
   }
 
+  public UserInsightsTrendTotalItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Trends for the metric

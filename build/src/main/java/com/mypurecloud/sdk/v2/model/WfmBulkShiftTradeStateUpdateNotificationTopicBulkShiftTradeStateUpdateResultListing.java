@@ -33,6 +33,12 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     }
   }
 
+  public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult>();
+    }
+  }
+
   
   /**
    **/

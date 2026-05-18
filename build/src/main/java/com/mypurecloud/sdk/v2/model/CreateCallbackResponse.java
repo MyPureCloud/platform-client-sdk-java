@@ -35,6 +35,12 @@ public class CreateCallbackResponse  implements Serializable {
     }
   }
 
+  public CreateCallbackResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackIdentifiers = new ArrayList<CallbackIdentifier>();
+    }
+  }
+
   
   /**
    * The conversation associated with the callback

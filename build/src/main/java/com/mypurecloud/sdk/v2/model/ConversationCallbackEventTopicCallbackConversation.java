@@ -46,6 +46,15 @@ public class ConversationCallbackEventTopicCallbackConversation  implements Seri
     }
   }
 
+  public ConversationCallbackEventTopicCallbackConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationCallbackEventTopicCallbackMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<ConversationCallbackEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

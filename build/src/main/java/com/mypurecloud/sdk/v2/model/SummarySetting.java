@@ -292,6 +292,13 @@ public class SummarySetting  implements Serializable {
     }
   }
 
+  public SummarySetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predefinedInsights = new ArrayList<PredefinedInsightsEnum>();
+      customEntities = new ArrayList<SummarySettingCustomEntity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

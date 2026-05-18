@@ -220,6 +220,11 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
     }
   }
 
+  public QueueConversationVideoEventTopicSocialExpression(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

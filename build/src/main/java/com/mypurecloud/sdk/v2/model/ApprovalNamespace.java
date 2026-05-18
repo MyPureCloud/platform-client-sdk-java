@@ -269,6 +269,11 @@ public class ApprovalNamespace  implements Serializable {
     }
   }
 
+  public ApprovalNamespace(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The namespace of the associated approvers.")
   @JsonProperty("namespace")

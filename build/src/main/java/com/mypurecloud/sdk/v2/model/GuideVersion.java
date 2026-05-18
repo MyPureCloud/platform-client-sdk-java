@@ -95,6 +95,12 @@ public class GuideVersion  implements Serializable {
     }
   }
 
+  public GuideVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      variables = new ArrayList<Variable>();
+    }
+  }
+
   
   /**
    **/

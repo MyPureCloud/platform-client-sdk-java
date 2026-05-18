@@ -29,6 +29,11 @@ public class GamificationScorecardChangeTopicMetric  implements Serializable {
     }
   }
 
+  public GamificationScorecardChangeTopicMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

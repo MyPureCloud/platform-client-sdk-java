@@ -36,6 +36,12 @@ public class ActionAggregateDataContainer  implements Serializable {
     }
   }
 
+  public ActionAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

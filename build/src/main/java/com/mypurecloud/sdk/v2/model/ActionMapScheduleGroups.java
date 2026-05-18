@@ -31,6 +31,11 @@ public class ActionMapScheduleGroups  implements Serializable {
     }
   }
 
+  public ActionMapScheduleGroups(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The actions map's associated schedule group.

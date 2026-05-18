@@ -32,6 +32,11 @@ public class UserStationChangeTopicUserStation  implements Serializable {
     }
   }
 
+  public UserStationChangeTopicUserStation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,11 @@ public class ScimServiceProviderConfigBulkFeature  implements Serializable {
     }
   }
 
+  public ScimServiceProviderConfigBulkFeature(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Indicates whether configuration options are supported.")
   @JsonProperty("supported")

@@ -78,6 +78,11 @@ public class CampaignRuleCampaignWaitTimeSettings  implements Serializable {
     }
   }
 
+  public CampaignRuleCampaignWaitTimeSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Campaign wait type

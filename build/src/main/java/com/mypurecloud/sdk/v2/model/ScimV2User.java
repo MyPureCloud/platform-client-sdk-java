@@ -58,6 +58,16 @@ public class ScimV2User  implements Serializable {
     }
   }
 
+  public ScimV2User(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+      phoneNumbers = new ArrayList<ScimPhoneNumber>();
+      emails = new ArrayList<ScimEmail>();
+      groups = new ArrayList<ScimV2GroupReference>();
+      roles = new ArrayList<ScimUserRole>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")
   @JsonProperty("id")

@@ -33,6 +33,12 @@ public class ExternalEventsRequest  implements Serializable {
     }
   }
 
+  public ExternalEventsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalEvent>();
+    }
+  }
+
   
   /**
    * External events to ingest.

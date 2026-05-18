@@ -31,6 +31,11 @@ public class V2FlowExecutionDataFlowidTopicInvokingQualityContext  implements Se
     }
   }
 
+  public V2FlowExecutionDataFlowidTopicInvokingQualityContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The identifier of the quality policy that invoked this flow.

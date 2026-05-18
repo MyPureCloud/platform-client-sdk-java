@@ -87,6 +87,12 @@ public class JourneyPattern  implements Serializable {
     }
   }
 
+  public JourneyPattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<Criteria>();
+    }
+  }
+
   
   /**
    * A list of one or more criteria to satisfy.

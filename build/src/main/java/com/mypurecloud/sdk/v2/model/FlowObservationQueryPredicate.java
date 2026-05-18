@@ -178,6 +178,11 @@ public class FlowObservationQueryPredicate  implements Serializable {
     }
   }
 
+  public FlowObservationQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

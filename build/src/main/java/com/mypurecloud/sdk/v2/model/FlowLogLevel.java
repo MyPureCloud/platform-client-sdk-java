@@ -84,6 +84,11 @@ public class FlowLogLevel  implements Serializable {
     }
   }
 
+  public FlowLogLevel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The logLevel for this characteristics set

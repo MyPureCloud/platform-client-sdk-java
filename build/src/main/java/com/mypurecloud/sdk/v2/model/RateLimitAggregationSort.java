@@ -127,6 +127,11 @@ public class RateLimitAggregationSort  implements Serializable {
     }
   }
 
+  public RateLimitAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

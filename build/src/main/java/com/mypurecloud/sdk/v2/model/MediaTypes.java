@@ -31,6 +31,11 @@ public class MediaTypes  implements Serializable {
     }
   }
 
+  public MediaTypes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specify allowed media types for inbound and outbound messages. If this field is empty, all inbound and outbound media will be blocked.

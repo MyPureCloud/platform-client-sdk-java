@@ -128,6 +128,11 @@ public class AgentUtilizationAggregationView  implements Serializable {
     }
   }
 
+  public AgentUtilizationAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

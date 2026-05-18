@@ -118,6 +118,13 @@ public class WebDeploymentConfigurationVersionResponse  implements Serializable 
     }
   }
 
+  public WebDeploymentConfigurationVersionResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      languages = new ArrayList<String>();
+      customI18nLabels = new ArrayList<CustomI18nLabels>();
+    }
+  }
+
   
   /**
    * The configuration version ID

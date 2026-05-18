@@ -78,6 +78,12 @@ public class ListWrapperAlternativeShiftBuSettingsGranularity  implements Serial
     }
   }
 
+  public ListWrapperAlternativeShiftBuSettingsGranularity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<ValuesEnum>();
+    }
+  }
+
   
   /**
    **/

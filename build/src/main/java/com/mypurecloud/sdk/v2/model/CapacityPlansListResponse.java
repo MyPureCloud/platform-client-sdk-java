@@ -33,6 +33,12 @@ public class CapacityPlansListResponse  implements Serializable {
     }
   }
 
+  public CapacityPlansListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CapacityPlanListItem>();
+    }
+  }
+
   
   /**
    **/

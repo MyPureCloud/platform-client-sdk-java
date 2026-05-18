@@ -32,6 +32,11 @@ public class ShiftTradeReceivingSideResponseItem  implements Serializable {
     }
   }
 
+  public ShiftTradeReceivingSideResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The receiving user that was matched in a shift trade

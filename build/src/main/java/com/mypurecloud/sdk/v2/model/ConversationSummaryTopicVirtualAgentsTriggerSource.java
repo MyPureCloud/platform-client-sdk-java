@@ -130,6 +130,11 @@ public class ConversationSummaryTopicVirtualAgentsTriggerSource  implements Seri
     }
   }
 
+  public ConversationSummaryTopicVirtualAgentsTriggerSource(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -82,6 +82,11 @@ public class QueueConversationSocialExpressionEventTopicVoicemail  implements Se
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicVoicemail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The voicemail id

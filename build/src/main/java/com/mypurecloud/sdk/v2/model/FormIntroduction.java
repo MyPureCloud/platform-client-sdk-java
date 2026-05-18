@@ -33,6 +33,11 @@ public class FormIntroduction  implements Serializable {
     }
   }
 
+  public FormIntroduction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Title of the introduction

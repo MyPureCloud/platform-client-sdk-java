@@ -33,6 +33,12 @@ public class BatchDownloadJobSubmission  implements Serializable {
     }
   }
 
+  public BatchDownloadJobSubmission(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      batchDownloadRequestList = new ArrayList<BatchDownloadRequest>();
+    }
+  }
+
   
   /**
    * List of up to 100 items requested

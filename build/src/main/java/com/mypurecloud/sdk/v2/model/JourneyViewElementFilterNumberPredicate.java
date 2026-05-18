@@ -82,6 +82,11 @@ public class JourneyViewElementFilterNumberPredicate  implements Serializable {
     }
   }
 
+  public JourneyViewElementFilterNumberPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * the element's attribute being filtered on

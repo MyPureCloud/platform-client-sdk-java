@@ -31,6 +31,11 @@ public class NluDomainVersionTrainingResponse  implements Serializable {
     }
   }
 
+  public NluDomainVersionTrainingResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "A message indicating result of the action.")
   @JsonProperty("message")

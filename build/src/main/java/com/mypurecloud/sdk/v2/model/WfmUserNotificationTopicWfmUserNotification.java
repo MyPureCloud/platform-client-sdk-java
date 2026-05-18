@@ -97,6 +97,12 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     }
   }
 
+  public WfmUserNotificationTopicWfmUserNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      otherNotificationIdsInGroup = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,11 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationReason
     }
   }
 
+  public V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

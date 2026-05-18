@@ -87,6 +87,12 @@ public class RoutingActivityMetricValue  implements Serializable {
     }
   }
 
+  public RoutingActivityMetricValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entityIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Metric

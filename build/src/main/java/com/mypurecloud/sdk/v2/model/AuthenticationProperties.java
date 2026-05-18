@@ -30,6 +30,11 @@ public class AuthenticationProperties  implements Serializable {
     }
   }
 
+  public AuthenticationProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

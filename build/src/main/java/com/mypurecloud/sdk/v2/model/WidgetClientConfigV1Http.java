@@ -78,6 +78,11 @@ public class WidgetClientConfigV1Http  implements Serializable {
     }
   }
 
+  public WidgetClientConfigV1Http(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -148,6 +148,13 @@ public class QueueConversationEventTopicMessageDetails  implements Serializable 
     }
   }
 
+  public QueueConversationEventTopicMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      media = new ArrayList<QueueConversationEventTopicMessageMedia>();
+      stickers = new ArrayList<QueueConversationEventTopicMessageSticker>();
+    }
+  }
+
   
   /**
    * UUID identifying the message media.

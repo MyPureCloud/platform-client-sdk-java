@@ -204,6 +204,18 @@ public class RecordingMessagingMessage  implements Serializable {
     }
   }
 
+  public RecordingMessagingMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messageMediaAttachments = new ArrayList<MessageMediaAttachment>();
+      messageStickerAttachments = new ArrayList<MessageStickerAttachment>();
+      quickReplies = new ArrayList<QuickReply>();
+      buttonResponses = new ArrayList<ButtonResponse>();
+      cards = new ArrayList<Card>();
+      events = new ArrayList<ConversationMessageEvent>();
+      messageReceipts = new ArrayList<RecordingMessageReceipt>();
+    }
+  }
+
   
   /**
    * The message sender session id.

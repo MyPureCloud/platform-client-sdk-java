@@ -84,6 +84,11 @@ public class DocumentContentBlock  implements Serializable {
     }
   }
 
+  public DocumentContentBlock(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the paragraph block.

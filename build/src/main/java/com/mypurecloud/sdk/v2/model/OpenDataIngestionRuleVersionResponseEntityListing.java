@@ -43,6 +43,12 @@ public class OpenDataIngestionRuleVersionResponseEntityListing  implements Seria
     }
   }
 
+  public OpenDataIngestionRuleVersionResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OpenDataIngestionRuleVersionResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class ConversationMetricsTopicConversationProposedAgent  implements Seria
     }
   }
 
+  public ConversationMetricsTopicConversationProposedAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Proposed agent rank for this conversation from predictive routing (lower is better)

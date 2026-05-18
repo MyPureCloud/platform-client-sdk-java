@@ -92,6 +92,11 @@ public class MediaEndpointStatistics  implements Serializable {
     }
   }
 
+  public MediaEndpointStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Trunk information utilized when creating the media endpoint

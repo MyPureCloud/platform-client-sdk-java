@@ -43,6 +43,12 @@ public class JourneyViewJobListing  implements Serializable, PagedResource<Journ
     }
   }
 
+  public JourneyViewJobListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<JourneyViewJob>();
+    }
+  }
+
   
   /**
    **/

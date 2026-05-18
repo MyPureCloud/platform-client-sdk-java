@@ -29,6 +29,11 @@ public class OutcomeRefRequest  implements Serializable {
     }
   }
 
+  public OutcomeRefRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of outcome.

@@ -82,6 +82,12 @@ public class ContactsExportFieldListFilter  implements Serializable {
     }
   }
 
+  public ContactsExportFieldListFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Field name to apply the filter

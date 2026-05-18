@@ -138,6 +138,12 @@ public class WorkitemFilter  implements Serializable {
     }
   }
 
+  public WorkitemFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Attribute name.

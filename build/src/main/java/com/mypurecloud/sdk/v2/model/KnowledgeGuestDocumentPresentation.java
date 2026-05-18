@@ -143,6 +143,12 @@ public class KnowledgeGuestDocumentPresentation  implements Serializable {
     }
   }
 
+  public KnowledgeGuestDocumentPresentation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      documents = new ArrayList<PresentedKnowledgeDocument>();
+    }
+  }
+
   
   /**
    * The presented documents

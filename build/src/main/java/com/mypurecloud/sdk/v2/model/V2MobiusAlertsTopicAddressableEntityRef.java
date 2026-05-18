@@ -29,6 +29,11 @@ public class V2MobiusAlertsTopicAddressableEntityRef  implements Serializable {
     }
   }
 
+  public V2MobiusAlertsTopicAddressableEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

@@ -82,6 +82,11 @@ public class ConversationProfile  implements Serializable {
     }
   }
 
+  public ConversationProfile(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The language code supported by the conversation profile belonging to a particular project for Dialogflow.

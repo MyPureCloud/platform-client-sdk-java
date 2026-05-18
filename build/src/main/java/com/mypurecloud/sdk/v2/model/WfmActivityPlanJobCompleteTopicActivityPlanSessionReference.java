@@ -33,6 +33,12 @@ public class WfmActivityPlanJobCompleteTopicActivityPlanSessionReference  implem
     }
   }
 
+  public WfmActivityPlanJobCompleteTopicActivityPlanSessionReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

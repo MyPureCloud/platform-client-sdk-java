@@ -32,6 +32,11 @@ public class JourneyAppEventsNotificationNetworkConnectivity  implements Seriali
     }
   }
 
+  public JourneyAppEventsNotificationNetworkConnectivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

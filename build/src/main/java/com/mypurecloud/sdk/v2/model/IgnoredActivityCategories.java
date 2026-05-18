@@ -85,6 +85,12 @@ public class IgnoredActivityCategories  implements Serializable {
     }
   }
 
+  public IgnoredActivityCategories(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<ValuesEnum>();
+    }
+  }
+
   
   /**
    * Activity categories list

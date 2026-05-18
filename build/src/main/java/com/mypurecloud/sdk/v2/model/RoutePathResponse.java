@@ -89,6 +89,12 @@ public class RoutePathResponse  implements Serializable {
     }
   }
 
+  public RoutePathResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<RoutingSkillReference>();
+    }
+  }
+
   
   /**
    * The ID of the queue associated with the route path

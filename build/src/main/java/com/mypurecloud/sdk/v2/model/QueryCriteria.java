@@ -203,6 +203,13 @@ public class QueryCriteria  implements Serializable {
     }
   }
 
+  public QueryCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteriaGroups = new ArrayList<CriteriaGroupsEnum>();
+      operators = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The is the name of the criteria that can be queried.

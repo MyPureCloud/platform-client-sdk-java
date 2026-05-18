@@ -32,6 +32,11 @@ public class ConversationVideoEventTopicDetail  implements Serializable {
     }
   }
 
+  public ConversationVideoEventTopicDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

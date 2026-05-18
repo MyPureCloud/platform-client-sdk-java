@@ -87,6 +87,11 @@ public class LearningModuleInformStep  implements Serializable {
     }
   }
 
+  public LearningModuleInformStep(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The learning module inform step type

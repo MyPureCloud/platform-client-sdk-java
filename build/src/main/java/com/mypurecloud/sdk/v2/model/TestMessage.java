@@ -40,6 +40,12 @@ public class TestMessage  implements Serializable {
     }
   }
 
+  public TestMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      to = new ArrayList<EmailAddress>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "After the message has been sent, this is the value of the Message-ID email header.")
   @JsonProperty("id")

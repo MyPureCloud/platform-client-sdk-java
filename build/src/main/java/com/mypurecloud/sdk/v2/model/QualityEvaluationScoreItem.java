@@ -97,6 +97,12 @@ public class QualityEvaluationScoreItem  implements Serializable {
     }
   }
 
+  public QualityEvaluationScoreItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The id of evaluation")
   @JsonProperty("evaluationId")

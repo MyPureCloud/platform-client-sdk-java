@@ -37,6 +37,12 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
     }
   }
 
+  public QueueConversationCallbackEventTopicDialerPreview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneNumberColumns = new ArrayList<QueueConversationCallbackEventTopicPhoneNumberColumn>();
+    }
+  }
+
   
   /**
    **/

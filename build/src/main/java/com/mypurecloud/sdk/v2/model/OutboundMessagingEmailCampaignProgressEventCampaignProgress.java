@@ -40,6 +40,11 @@ public class OutboundMessagingEmailCampaignProgressEventCampaignProgress  implem
     }
   }
 
+  public OutboundMessagingEmailCampaignProgressEventCampaignProgress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

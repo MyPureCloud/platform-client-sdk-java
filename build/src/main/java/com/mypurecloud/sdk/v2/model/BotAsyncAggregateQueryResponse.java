@@ -34,6 +34,12 @@ public class BotAsyncAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public BotAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<BotAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

@@ -80,6 +80,11 @@ public class ConversationChannelMetadata  implements Serializable {
     }
   }
 
+  public ConversationChannelMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Channel subtype")
   @JsonProperty("subType")

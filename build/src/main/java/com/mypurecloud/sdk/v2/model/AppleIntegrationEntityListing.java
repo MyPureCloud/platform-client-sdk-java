@@ -43,6 +43,12 @@ public class AppleIntegrationEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public AppleIntegrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AppleIntegration>();
+    }
+  }
+
   
   /**
    **/

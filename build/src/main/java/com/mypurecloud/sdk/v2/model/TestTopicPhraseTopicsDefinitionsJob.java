@@ -86,6 +86,13 @@ public class TestTopicPhraseTopicsDefinitionsJob  implements Serializable {
     }
   }
 
+  public TestTopicPhraseTopicsDefinitionsJob(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      testTopicPhraseResults = new ArrayList<TestTopicPhraseTestTopicPhraseResults>();
+      genAIPhrasesResults = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

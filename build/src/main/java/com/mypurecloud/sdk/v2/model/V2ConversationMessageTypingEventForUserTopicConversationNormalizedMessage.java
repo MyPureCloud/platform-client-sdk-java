@@ -131,6 +131,12 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     }
   }
 
+  public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationMessageEvent>();
+    }
+  }
+
   
   /**
    **/

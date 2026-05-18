@@ -33,6 +33,11 @@ public class EdgeMetricsTopicEdgeMetricProcessor  implements Serializable {
     }
   }
 
+  public EdgeMetricsTopicEdgeMetricProcessor(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

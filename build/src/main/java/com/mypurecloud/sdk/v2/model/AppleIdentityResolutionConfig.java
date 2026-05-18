@@ -32,6 +32,11 @@ public class AppleIdentityResolutionConfig  implements Serializable {
     }
   }
 
+  public AppleIdentityResolutionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to use when performing identity resolution.

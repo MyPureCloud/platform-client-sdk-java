@@ -80,6 +80,11 @@ public class WfmBuScheduleRunTopicSchedulerMessageSeverityCount  implements Seri
     }
   }
 
+  public WfmBuScheduleRunTopicSchedulerMessageSeverityCount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

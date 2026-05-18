@@ -36,6 +36,12 @@ public class OperationListing  implements Serializable {
     }
   }
 
+  public OperationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OperationResponse>();
+    }
+  }
+
   
   /**
    **/

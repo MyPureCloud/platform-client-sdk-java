@@ -89,6 +89,13 @@ public class DocumentationSearchRequest  implements Serializable {
     }
   }
 
+  public DocumentationSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      query = new ArrayList<DocumentationSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

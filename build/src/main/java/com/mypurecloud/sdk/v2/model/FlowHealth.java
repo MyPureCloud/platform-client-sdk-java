@@ -40,6 +40,12 @@ public class FlowHealth  implements Serializable {
     }
   }
 
+  public FlowHealth(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<FlowHealthIntentInfo>();
+    }
+  }
+
   
   /**
    * Info about given flow version.

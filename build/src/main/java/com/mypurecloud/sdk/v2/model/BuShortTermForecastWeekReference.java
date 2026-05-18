@@ -34,6 +34,11 @@ public class BuShortTermForecastWeekReference  implements Serializable {
     }
   }
 
+  public BuShortTermForecastWeekReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the forecast

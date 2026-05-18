@@ -77,6 +77,11 @@ public class V3SynchronizationUpdateRequest  implements Serializable {
     }
   }
 
+  public V3SynchronizationUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the synchronization.

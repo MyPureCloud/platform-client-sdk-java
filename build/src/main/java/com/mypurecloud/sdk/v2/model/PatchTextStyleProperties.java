@@ -81,6 +81,11 @@ public class PatchTextStyleProperties  implements Serializable {
     }
   }
 
+  public PatchTextStyleProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Color of the text. (eg. #FFFFFF)

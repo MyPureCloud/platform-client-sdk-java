@@ -30,6 +30,11 @@ public class JourneyOutcomeEventsNotificationExternalContact  implements Seriali
     }
   }
 
+  public JourneyOutcomeEventsNotificationExternalContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

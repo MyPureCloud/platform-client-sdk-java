@@ -31,6 +31,12 @@ public class WrapUpCodeConfig  implements Serializable {
     }
   }
 
+  public WrapUpCodeConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A set of valid Wrap Up Code UUIDs used to optimize a KPI.

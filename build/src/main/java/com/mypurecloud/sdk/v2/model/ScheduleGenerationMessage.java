@@ -143,6 +143,12 @@ public class ScheduleGenerationMessage  implements Serializable {
     }
   }
 
+  public ScheduleGenerationMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      arguments = new ArrayList<SchedulerMessageArgument>();
+    }
+  }
+
   
   /**
    * The type of the message

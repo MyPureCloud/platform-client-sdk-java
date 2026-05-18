@@ -81,6 +81,11 @@ public class ActivationTrigger  implements Serializable {
     }
   }
 
+  public ActivationTrigger(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Trigger type that activated this checklist.

@@ -31,6 +31,11 @@ public class WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType  implements 
     }
   }
 
+  public WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

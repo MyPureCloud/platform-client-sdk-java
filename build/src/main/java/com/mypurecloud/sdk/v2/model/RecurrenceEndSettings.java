@@ -31,6 +31,11 @@ public class RecurrenceEndSettings  implements Serializable {
     }
   }
 
+  public RecurrenceEndSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The end date of the recurrence for the activity plan, in ISO-8601 format. Only one of lastDate or noEndDate may be set

@@ -38,6 +38,13 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
     }
   }
 
+  public WfmHistoricalAdherenceQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+      teamIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Beginning of the date range to query in ISO-8601 format

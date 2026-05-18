@@ -190,6 +190,11 @@ public class DocumentBodyParagraphProperties  implements Serializable {
     }
   }
 
+  public DocumentBodyParagraphProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The font size for the paragraph. The valid values in 'em'.

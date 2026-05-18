@@ -30,6 +30,11 @@ public class DataExtractionFileUrl  implements Serializable {
     }
   }
 
+  public DataExtractionFileUrl(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier for the file

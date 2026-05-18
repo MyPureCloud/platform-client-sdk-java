@@ -37,6 +37,12 @@ public class MoveAgentsResponse  implements Serializable {
     }
   }
 
+  public MoveAgentsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<MoveAgentResponse>();
+    }
+  }
+
   
   /**
    * The user that made the request

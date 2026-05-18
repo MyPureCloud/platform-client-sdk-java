@@ -35,6 +35,13 @@ public class CreateStaffingGroupRequest  implements Serializable {
     }
   }
 
+  public CreateStaffingGroupRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the staffing group

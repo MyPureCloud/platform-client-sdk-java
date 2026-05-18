@@ -37,6 +37,13 @@ public class AnalyticsUserDetail  implements Serializable {
     }
   }
 
+  public AnalyticsUserDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      primaryPresence = new ArrayList<AnalyticsUserPresenceRecord>();
+      routingStatus = new ArrayList<AnalyticsRoutingStatusRecord>();
+    }
+  }
+
   
   /**
    * The identifier for the user

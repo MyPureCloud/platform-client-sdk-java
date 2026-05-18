@@ -101,6 +101,17 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     }
   }
 
+  public WfmIntradayDataUpdateTopicIntradayDataGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      forecastDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayForecastData>();
+      scheduleDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayScheduleData>();
+      historicalAgentDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData>();
+      historicalQueueDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData>();
+      performancePredictionAgentDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData>();
+      performancePredictionQueueDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData>();
+    }
+  }
+
   
   /**
    **/

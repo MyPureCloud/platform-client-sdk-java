@@ -50,6 +50,11 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     }
   }
 
+  public AdhocRecordingTopicRecordingDataV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -40,6 +40,12 @@ public class GuideSessionTurnRequest  implements Serializable {
     }
   }
 
+  public GuideSessionTurnRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inputVariables = new ArrayList<GuideSessionVariable>();
+    }
+  }
+
   
   /**
    * The input event for this turn.

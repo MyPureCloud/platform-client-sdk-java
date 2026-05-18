@@ -30,6 +30,11 @@ public class ValidationError  implements Serializable {
     }
   }
 
+  public ValidationError(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Line number for the error in CSV

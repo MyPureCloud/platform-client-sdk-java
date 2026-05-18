@@ -44,6 +44,12 @@ public class IVRDivisionViewEntityListing  implements Serializable, PagedResourc
     }
   }
 
+  public IVRDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<IVRDivisionView>();
+    }
+  }
+
   
   /**
    **/

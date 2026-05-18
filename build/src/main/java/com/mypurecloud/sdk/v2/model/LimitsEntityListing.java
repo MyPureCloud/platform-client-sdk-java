@@ -33,6 +33,12 @@ public class LimitsEntityListing  implements Serializable {
     }
   }
 
+  public LimitsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Limit>();
+    }
+  }
+
   
   /**
    **/

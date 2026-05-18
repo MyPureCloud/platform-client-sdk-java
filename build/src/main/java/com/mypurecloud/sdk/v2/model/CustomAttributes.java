@@ -46,6 +46,12 @@ public class CustomAttributes  implements Serializable {
     }
   }
 
+  public CustomAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      divisions = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The id of the Custom Attributes record.

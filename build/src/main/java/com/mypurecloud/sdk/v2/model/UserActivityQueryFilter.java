@@ -85,6 +85,13 @@ public class UserActivityQueryFilter  implements Serializable {
     }
   }
 
+  public UserActivityQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<UserActivityQueryClause>();
+      predicates = new ArrayList<UserActivityQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

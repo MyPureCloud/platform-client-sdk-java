@@ -30,6 +30,11 @@ public class ConversationEventTopicMessageMetadataEvent  implements Serializable
     }
   }
 
+  public ConversationEventTopicMessageMetadataEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element.

@@ -161,6 +161,15 @@ public class Conversation  implements Serializable {
     }
   }
 
+  public Conversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<Participant>();
+      conversationIds = new ArrayList<String>();
+      divisions = new ArrayList<ConversationDivisionMembership>();
+      recentTransfers = new ArrayList<TransferResponse>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

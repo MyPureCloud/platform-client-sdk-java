@@ -25,6 +25,11 @@ public class DialerCampaignRuleConfigChangeObject  implements Serializable {
     }
   }
 
+  public DialerCampaignRuleConfigChangeObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

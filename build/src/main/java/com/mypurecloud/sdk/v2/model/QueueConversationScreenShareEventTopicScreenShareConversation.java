@@ -46,6 +46,15 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
     }
   }
 
+  public QueueConversationScreenShareEventTopicScreenShareConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<QueueConversationScreenShareEventTopicScreenShareMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationScreenShareEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

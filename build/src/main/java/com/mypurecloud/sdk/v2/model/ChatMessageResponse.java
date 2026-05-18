@@ -52,6 +52,12 @@ public class ChatMessageResponse  implements Serializable {
     }
   }
 
+  public ChatMessageResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      reactions = new ArrayList<ChatReaction>();
+    }
+  }
+
   
   /**
    * The id of the message

@@ -34,6 +34,11 @@ public class Education  implements Serializable {
     }
   }
 
+  public Education(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

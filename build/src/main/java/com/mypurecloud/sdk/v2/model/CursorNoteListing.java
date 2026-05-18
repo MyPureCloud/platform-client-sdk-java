@@ -38,6 +38,12 @@ public class CursorNoteListing  implements Serializable {
     }
   }
 
+  public CursorNoteListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Note>();
+    }
+  }
+
   
   /**
    **/

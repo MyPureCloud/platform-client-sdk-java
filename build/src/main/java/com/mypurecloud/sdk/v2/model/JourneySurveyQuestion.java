@@ -138,6 +138,12 @@ public class JourneySurveyQuestion  implements Serializable {
     }
   }
 
+  public JourneySurveyQuestion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      choices = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Type of survey question.

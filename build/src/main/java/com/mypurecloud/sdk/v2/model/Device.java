@@ -88,6 +88,11 @@ public class Device  implements Serializable {
     }
   }
 
+  public Device(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Device category.

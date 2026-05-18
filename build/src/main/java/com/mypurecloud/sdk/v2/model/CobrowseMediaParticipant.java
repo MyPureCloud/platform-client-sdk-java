@@ -298,6 +298,13 @@ public class CobrowseMediaParticipant  implements Serializable {
     }
   }
 
+  public CobrowseMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      controlling = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The unique participant ID.

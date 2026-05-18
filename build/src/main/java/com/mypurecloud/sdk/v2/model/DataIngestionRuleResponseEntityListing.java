@@ -43,6 +43,12 @@ public class DataIngestionRuleResponseEntityListing  implements Serializable, Pa
     }
   }
 
+  public DataIngestionRuleResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DataIngestionRuleResponse>();
+    }
+  }
+
   
   /**
    **/

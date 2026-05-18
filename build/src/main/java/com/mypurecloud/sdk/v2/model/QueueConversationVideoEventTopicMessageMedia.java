@@ -33,6 +33,11 @@ public class QueueConversationVideoEventTopicMessageMedia  implements Serializab
     }
   }
 
+  public QueueConversationVideoEventTopicMessageMedia(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the media, useful for retrieving it

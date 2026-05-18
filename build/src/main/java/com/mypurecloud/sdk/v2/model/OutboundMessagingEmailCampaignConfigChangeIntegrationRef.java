@@ -30,6 +30,11 @@ public class OutboundMessagingEmailCampaignConfigChangeIntegrationRef  implement
     }
   }
 
+  public OutboundMessagingEmailCampaignConfigChangeIntegrationRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique integration id

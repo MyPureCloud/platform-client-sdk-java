@@ -31,6 +31,11 @@ public class SummaryGenerationConfig  implements Serializable {
     }
   }
 
+  public SummaryGenerationConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Copilot generated summary is enabled.

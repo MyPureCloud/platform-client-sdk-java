@@ -44,6 +44,12 @@ public class EmergencyGroupDivisionViewEntityListing  implements Serializable, P
     }
   }
 
+  public EmergencyGroupDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EmergencyGroupDivisionView>();
+    }
+  }
+
   
   /**
    **/

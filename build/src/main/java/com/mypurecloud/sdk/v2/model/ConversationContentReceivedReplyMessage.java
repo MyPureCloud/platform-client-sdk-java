@@ -34,6 +34,11 @@ public class ConversationContentReceivedReplyMessage  implements Serializable {
     }
   }
 
+  public ConversationContentReceivedReplyMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text to show in the header.

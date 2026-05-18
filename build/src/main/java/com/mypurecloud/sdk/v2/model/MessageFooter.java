@@ -77,6 +77,11 @@ public class MessageFooter  implements Serializable {
     }
   }
 
+  public MessageFooter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Defines the content type of the footer in message

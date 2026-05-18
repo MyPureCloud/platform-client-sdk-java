@@ -32,6 +32,11 @@ public class UserStaffingGroupResponse  implements Serializable {
     }
   }
 
+  public UserStaffingGroupResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user associated with the staffing group

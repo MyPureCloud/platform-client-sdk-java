@@ -41,6 +41,15 @@ public class CoachingSlotsResponse  implements Serializable {
     }
   }
 
+  public CoachingSlotsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      suggestedSlots = new ArrayList<CoachingSlot>();
+      attendeeSchedules = new ArrayList<UserAvailableTimes>();
+      facilitatorSchedules = new ArrayList<UserAvailableTimes>();
+      wfmScheduleActivities = new ArrayList<WfmScheduleActivity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "List of slots where coaching appointment can be scheduled")
   @JsonProperty("suggestedSlots")

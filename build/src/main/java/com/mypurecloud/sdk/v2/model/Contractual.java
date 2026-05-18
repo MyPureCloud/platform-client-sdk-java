@@ -30,6 +30,11 @@ public class Contractual  implements Serializable {
     }
   }
 
+  public Contractual(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The contract schema property key that describes the input value of this column.

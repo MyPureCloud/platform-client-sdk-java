@@ -43,6 +43,12 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     }
   }
 
+  public DevelopmentActivityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DevelopmentActivity>();
+    }
+  }
+
   
   /**
    **/

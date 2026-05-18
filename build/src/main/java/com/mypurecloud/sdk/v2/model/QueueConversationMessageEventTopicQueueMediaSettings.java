@@ -33,6 +33,11 @@ public class QueueConversationMessageEventTopicQueueMediaSettings  implements Se
     }
   }
 
+  public QueueConversationMessageEventTopicQueueMediaSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.

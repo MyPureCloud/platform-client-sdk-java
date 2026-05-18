@@ -30,6 +30,11 @@ public class GroupGreetingEventGreetingAudioFile  implements Serializable {
     }
   }
 
+  public GroupGreetingEventGreetingAudioFile(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

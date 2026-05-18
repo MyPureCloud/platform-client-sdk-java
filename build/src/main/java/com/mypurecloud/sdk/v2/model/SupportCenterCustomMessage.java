@@ -78,6 +78,11 @@ public class SupportCenterCustomMessage  implements Serializable {
     }
   }
 
+  public SupportCenterCustomMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Default value for the message

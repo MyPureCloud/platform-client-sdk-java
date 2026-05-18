@@ -43,6 +43,12 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     }
   }
 
+  public RecordingJobEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<RecordingJob>();
+    }
+  }
+
   
   /**
    **/

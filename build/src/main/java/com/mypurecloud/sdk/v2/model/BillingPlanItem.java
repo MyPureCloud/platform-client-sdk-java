@@ -119,6 +119,11 @@ public class BillingPlanItem  implements Serializable {
     }
   }
 
+  public BillingPlanItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Item number.

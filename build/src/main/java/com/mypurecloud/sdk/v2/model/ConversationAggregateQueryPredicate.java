@@ -260,6 +260,11 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public ConversationAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

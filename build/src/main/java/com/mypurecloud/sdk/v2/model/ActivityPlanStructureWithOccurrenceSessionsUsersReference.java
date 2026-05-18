@@ -35,6 +35,12 @@ public class ActivityPlanStructureWithOccurrenceSessionsUsersReference  implemen
     }
   }
 
+  public ActivityPlanStructureWithOccurrenceSessionsUsersReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      occurrences = new ArrayList<ActivityPlanOccurrenceSessionsUsersStructureReference>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

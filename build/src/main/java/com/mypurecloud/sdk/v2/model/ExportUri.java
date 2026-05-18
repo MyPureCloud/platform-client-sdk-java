@@ -31,6 +31,11 @@ public class ExportUri  implements Serializable {
     }
   }
 
+  public ExportUri(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

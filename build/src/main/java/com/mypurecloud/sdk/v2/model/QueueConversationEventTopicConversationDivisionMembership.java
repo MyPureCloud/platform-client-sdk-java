@@ -35,6 +35,12 @@ public class QueueConversationEventTopicConversationDivisionMembership  implemen
     }
   }
 
+  public QueueConversationEventTopicConversationDivisionMembership(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<QueueConversationEventTopicDivisionEntityRef>();
+    }
+  }
+
   
   /**
    * A reference to another domain entity.

@@ -31,6 +31,11 @@ public class SecondaryPresenceLookupItem  implements Serializable {
     }
   }
 
+  public SecondaryPresenceLookupItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The lookupId of secondary presence id

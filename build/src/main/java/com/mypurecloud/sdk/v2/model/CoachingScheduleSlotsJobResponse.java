@@ -90,6 +90,14 @@ public class CoachingScheduleSlotsJobResponse  implements Serializable {
     }
   }
 
+  public CoachingScheduleSlotsJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attendeeIds = new ArrayList<String>();
+      facilitatorIds = new ArrayList<String>();
+      results = new ArrayList<CoachingScheduleSlotsJobResult>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

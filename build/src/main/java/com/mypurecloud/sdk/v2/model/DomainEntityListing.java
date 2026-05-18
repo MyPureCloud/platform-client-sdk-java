@@ -43,6 +43,12 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     }
   }
 
+  public DomainEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DomainEntity>();
+    }
+  }
+
   
   /**
    **/

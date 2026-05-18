@@ -32,6 +32,11 @@ public class NluDetectionRequest  implements Serializable {
     }
   }
 
+  public NluDetectionRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The input subject to NLU detection.

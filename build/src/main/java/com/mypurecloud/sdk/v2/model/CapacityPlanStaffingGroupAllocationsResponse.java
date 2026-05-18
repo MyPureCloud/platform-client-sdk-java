@@ -34,6 +34,11 @@ public class CapacityPlanStaffingGroupAllocationsResponse  implements Serializab
     }
   }
 
+  public CapacityPlanStaffingGroupAllocationsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The capacity plan to which the staffing groups belong

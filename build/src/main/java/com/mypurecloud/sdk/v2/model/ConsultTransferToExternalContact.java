@@ -131,6 +131,11 @@ public class ConsultTransferToExternalContact  implements Serializable {
     }
   }
 
+  public ConsultTransferToExternalContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION

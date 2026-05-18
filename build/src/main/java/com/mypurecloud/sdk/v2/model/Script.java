@@ -49,6 +49,12 @@ public class Script  implements Serializable {
     }
   }
 
+  public Script(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pages = new ArrayList<Page>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

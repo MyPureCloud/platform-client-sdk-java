@@ -87,6 +87,14 @@ public class MatchShiftTradeResponse  implements Serializable {
     }
   }
 
+  public MatchShiftTradeResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      violations = new ArrayList<ShiftTradeMatchViolation>();
+      adminReviewViolations = new ArrayList<ShiftTradeMatchViolation>();
+      unevaluatedRules = new ArrayList<UnevaluatedRulesEnum>();
+    }
+  }
+
   
   /**
    * The associated shift trade

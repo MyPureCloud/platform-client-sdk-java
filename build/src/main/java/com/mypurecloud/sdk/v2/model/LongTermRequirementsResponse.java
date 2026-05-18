@@ -133,6 +133,11 @@ public class LongTermRequirementsResponse  implements Serializable {
     }
   }
 
+  public LongTermRequirementsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Status of the long term forecast

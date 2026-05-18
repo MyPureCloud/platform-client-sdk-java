@@ -87,6 +87,11 @@ public class V2IntegrationPresenceEventPresenceActivityEvent  implements Seriali
     }
   }
 
+  public V2IntegrationPresenceEventPresenceActivityEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

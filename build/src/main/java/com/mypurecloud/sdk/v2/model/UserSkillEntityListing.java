@@ -43,6 +43,12 @@ public class UserSkillEntityListing  implements Serializable, PagedResource<User
     }
   }
 
+  public UserSkillEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserRoutingSkill>();
+    }
+  }
+
   
   /**
    **/

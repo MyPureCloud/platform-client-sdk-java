@@ -25,6 +25,11 @@ public class OutboundMessagingMessagingCampaignConfigChangeObject  implements Se
     }
   }
 
+  public OutboundMessagingMessagingCampaignConfigChangeObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

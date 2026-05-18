@@ -43,6 +43,12 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     }
   }
 
+  public ContactListFilterEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContactListFilter>();
+    }
+  }
+
   
   /**
    **/

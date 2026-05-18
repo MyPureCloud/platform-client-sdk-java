@@ -33,6 +33,12 @@ public class MuRescheduleResultWrapper  implements Serializable {
     }
   }
 
+  public MuRescheduleResultWrapper(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentSchedules = new ArrayList<BuAgentScheduleRescheduleResponse>();
+    }
+  }
+
   
   /**
    * The list of agent schedules

@@ -81,6 +81,11 @@ public class GrammarLanguageFileMetadata  implements Serializable {
     }
   }
 
+  public GrammarLanguageFileMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the file as defined by the user

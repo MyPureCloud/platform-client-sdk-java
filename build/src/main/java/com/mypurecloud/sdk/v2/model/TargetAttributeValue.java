@@ -33,6 +33,12 @@ public class TargetAttributeValue  implements Serializable {
     }
   }
 
+  public TargetAttributeValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      policyAttributes = new ArrayList<PolicyAttribute>();
+    }
+  }
+
   
   /**
    **/

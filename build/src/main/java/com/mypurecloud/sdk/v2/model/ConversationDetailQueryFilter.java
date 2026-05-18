@@ -85,6 +85,13 @@ public class ConversationDetailQueryFilter  implements Serializable {
     }
   }
 
+  public ConversationDetailQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<ConversationDetailQueryClause>();
+      predicates = new ArrayList<ConversationDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

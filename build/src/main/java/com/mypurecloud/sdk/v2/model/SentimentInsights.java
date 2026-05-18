@@ -35,6 +35,13 @@ public class SentimentInsights  implements Serializable {
     }
   }
 
+  public SentimentInsights(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      positiveSentimentReasons = new ArrayList<SentimentInsightEntry>();
+      negativeSentimentReasons = new ArrayList<SentimentInsightEntry>();
+    }
+  }
+
   
   /**
    * The reasons for positive sentiment found in the conversation

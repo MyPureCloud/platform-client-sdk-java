@@ -293,6 +293,11 @@ public class DocumentBodyListItemProperties  implements Serializable {
     }
   }
 
+  public DocumentBodyListItemProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The background color for the list item. The valid values in hex color code representation. For example black color - #000000

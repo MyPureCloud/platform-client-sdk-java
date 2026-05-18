@@ -32,6 +32,11 @@ public class SupportCenterCategory  implements Serializable {
     }
   }
 
+  public SupportCenterCategory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -79,6 +79,11 @@ public class ReportingInterval  implements Serializable {
     }
   }
 
+  public ReportingInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The granularity of the reporting interval period

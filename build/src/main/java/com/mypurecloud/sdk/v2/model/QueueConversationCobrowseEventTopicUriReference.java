@@ -30,6 +30,11 @@ public class QueueConversationCobrowseEventTopicUriReference  implements Seriali
     }
   }
 
+  public QueueConversationCobrowseEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

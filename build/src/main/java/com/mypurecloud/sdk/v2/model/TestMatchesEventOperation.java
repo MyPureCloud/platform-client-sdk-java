@@ -38,6 +38,13 @@ public class TestMatchesEventOperation  implements Serializable {
     }
   }
 
+  public TestMatchesEventOperation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchedTriggers = new ArrayList<TestModeTrigger>();
+      unmatchedTriggers = new ArrayList<TestModeTrigger>();
+    }
+  }
+
   
   /**
    * The name of the processing step

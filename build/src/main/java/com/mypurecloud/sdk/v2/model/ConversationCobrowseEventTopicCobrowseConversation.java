@@ -46,6 +46,15 @@ public class ConversationCobrowseEventTopicCobrowseConversation  implements Seri
     }
   }
 
+  public ConversationCobrowseEventTopicCobrowseConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationCobrowseEventTopicCobrowseMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<ConversationCobrowseEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

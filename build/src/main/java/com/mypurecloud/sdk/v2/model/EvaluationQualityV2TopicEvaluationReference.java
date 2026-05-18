@@ -29,6 +29,11 @@ public class EvaluationQualityV2TopicEvaluationReference  implements Serializabl
     }
   }
 
+  public EvaluationQualityV2TopicEvaluationReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

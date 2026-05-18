@@ -38,6 +38,13 @@ public class BuAgentScheduleHistoryDroppedChange  implements Serializable {
     }
   }
 
+  public BuAgentScheduleHistoryDroppedChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shiftIds = new ArrayList<String>();
+      fullDayTimeOffMarkerDates = new ArrayList<LocalDate>();
+    }
+  }
+
   
   /**
    * The metadata of the change, including who and when the change was made

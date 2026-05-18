@@ -43,6 +43,12 @@ public class BotListing  implements Serializable, PagedResource<Bot> {
     }
   }
 
+  public BotListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Bot>();
+    }
+  }
+
   
   /**
    **/

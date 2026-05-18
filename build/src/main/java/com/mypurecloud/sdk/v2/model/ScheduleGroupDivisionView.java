@@ -34,6 +34,11 @@ public class ScheduleGroupDivisionView  implements Serializable {
     }
   }
 
+  public ScheduleGroupDivisionView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The schedule group identifier

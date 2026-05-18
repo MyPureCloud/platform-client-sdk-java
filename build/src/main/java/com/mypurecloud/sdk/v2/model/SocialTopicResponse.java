@@ -86,6 +86,11 @@ public class SocialTopicResponse  implements Serializable {
     }
   }
 
+  public SocialTopicResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the social topic.

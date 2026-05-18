@@ -46,6 +46,15 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
     }
   }
 
+  public QueueConversationCallbackEventTopicCallbackConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<QueueConversationCallbackEventTopicCallbackMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationCallbackEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

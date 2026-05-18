@@ -82,6 +82,12 @@ public class LearningAssignmentAggregateQueryRequestFilter  implements Serializa
     }
   }
 
+  public LearningAssignmentAggregateQueryRequestFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<LearningAssignmentAggregateQueryRequestClause>();
+    }
+  }
+
   
   /**
    * The logic used to combine the clauses

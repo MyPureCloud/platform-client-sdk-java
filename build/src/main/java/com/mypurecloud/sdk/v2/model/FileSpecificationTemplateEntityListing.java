@@ -43,6 +43,12 @@ public class FileSpecificationTemplateEntityListing  implements Serializable, Pa
     }
   }
 
+  public FileSpecificationTemplateEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FileSpecificationTemplate>();
+    }
+  }
+
   
   /**
    **/

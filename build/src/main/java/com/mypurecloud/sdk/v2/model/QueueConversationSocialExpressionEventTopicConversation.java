@@ -54,6 +54,16 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<QueueConversationSocialExpressionEventTopicParticipant>();
+      recentTransfers = new ArrayList<QueueConversationSocialExpressionEventTopicTransferResponse>();
+      accessAttributes = new ArrayList<String>();
+      consultationConversations = new ArrayList<QueueConversationSocialExpressionEventTopicDomainEntityRef>();
+      divisions = new ArrayList<QueueConversationSocialExpressionEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

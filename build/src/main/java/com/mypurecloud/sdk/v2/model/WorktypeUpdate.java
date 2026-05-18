@@ -51,6 +51,12 @@ public class WorktypeUpdate  implements Serializable {
     }
   }
 
+  public WorktypeUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      defaultSkillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the Worktype. Valid length between 3 and 256 characters.

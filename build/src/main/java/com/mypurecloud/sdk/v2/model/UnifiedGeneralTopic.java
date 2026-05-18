@@ -82,6 +82,11 @@ public class UnifiedGeneralTopic  implements Serializable {
     }
   }
 
+  public UnifiedGeneralTopic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

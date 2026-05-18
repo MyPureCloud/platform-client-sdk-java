@@ -34,6 +34,11 @@ public class DataIngestionRulesMetadata  implements Serializable {
     }
   }
 
+  public DataIngestionRulesMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Count of data ingestion rules by status

@@ -40,6 +40,11 @@ public class InboundDomainCreateRequest  implements Serializable {
     }
   }
 
+  public InboundDomainCreateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique Id of the domain such as: example.com

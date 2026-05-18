@@ -35,6 +35,12 @@ public class AgentWorkPlanListResponse  implements Serializable {
     }
   }
 
+  public AgentWorkPlanListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AgentWorkPlan>();
+    }
+  }
+
   
   /**
    **/

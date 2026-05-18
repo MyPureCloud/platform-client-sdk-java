@@ -35,6 +35,13 @@ public class DialerCampaignRuleConfigChangeCampaignRuleEntities  implements Seri
     }
   }
 
+  public DialerCampaignRuleConfigChangeCampaignRuleEntities(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      campaigns = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
+      sequences = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
+    }
+  }
+
   
   /**
    * A list of campaignIds to act on

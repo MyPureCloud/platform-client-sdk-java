@@ -79,6 +79,11 @@ public class DocumentQueryInterval  implements Serializable {
     }
   }
 
+  public DocumentQueryInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies the date field to be used for date and time range.

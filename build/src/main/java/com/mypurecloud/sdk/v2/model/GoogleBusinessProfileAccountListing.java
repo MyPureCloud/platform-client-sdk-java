@@ -33,6 +33,12 @@ public class GoogleBusinessProfileAccountListing  implements Serializable {
     }
   }
 
+  public GoogleBusinessProfileAccountListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<GoogleBusinessProfileAccount>();
+    }
+  }
+
   
   /**
    **/

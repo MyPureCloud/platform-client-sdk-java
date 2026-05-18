@@ -29,6 +29,11 @@ public class MoveManagementUnitRequest  implements Serializable {
     }
   }
 
+  public MoveManagementUnitRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the business unit to which to move the management unit

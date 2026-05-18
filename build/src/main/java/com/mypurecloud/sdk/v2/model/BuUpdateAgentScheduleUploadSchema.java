@@ -44,6 +44,13 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
     }
   }
 
+  public BuUpdateAgentScheduleUploadSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<BuUpdateAgentScheduleShift>();
+      fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+    }
+  }
+
   
   /**
    * The ID of the user to whom this agent schedule applies

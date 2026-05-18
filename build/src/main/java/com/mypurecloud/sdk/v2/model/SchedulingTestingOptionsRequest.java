@@ -33,6 +33,11 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
     }
   }
 
+  public SchedulingTestingOptionsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to enable fast scheduling

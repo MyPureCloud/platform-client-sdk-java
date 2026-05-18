@@ -36,6 +36,11 @@ public class NuanceBotVariable  implements Serializable {
     }
   }
 
+  public NuanceBotVariable(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The variable ID

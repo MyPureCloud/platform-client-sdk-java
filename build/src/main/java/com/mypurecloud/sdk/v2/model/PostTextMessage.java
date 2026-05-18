@@ -87,6 +87,12 @@ public class PostTextMessage  implements Serializable {
     }
   }
 
+  public PostTextMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      content = new ArrayList<ConversationMessageContent>();
+    }
+  }
+
   
   /**
    * Message type

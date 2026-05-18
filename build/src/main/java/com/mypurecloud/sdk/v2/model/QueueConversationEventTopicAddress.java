@@ -34,6 +34,11 @@ public class QueueConversationEventTopicAddress  implements Serializable {
     }
   }
 
+  public QueueConversationEventTopicAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * This will be nameRaw if present, or a locality lookup of the address field otherwise.

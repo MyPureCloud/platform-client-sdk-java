@@ -127,6 +127,11 @@ public class EngagementRequest  implements Serializable {
     }
   }
 
+  public EngagementRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Represents the visibility of summary

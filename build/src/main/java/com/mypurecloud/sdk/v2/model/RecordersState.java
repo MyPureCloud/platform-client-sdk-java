@@ -225,6 +225,11 @@ public class RecordersState  implements Serializable {
     }
   }
 
+  public RecordersState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates the state of the adhoc recorder.

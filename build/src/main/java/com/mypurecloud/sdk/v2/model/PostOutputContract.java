@@ -31,6 +31,11 @@ public class PostOutputContract  implements Serializable {
     }
   }
 
+  public PostOutputContract(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * JSON schema that defines the transformed, successful result that will be sent back to the caller.

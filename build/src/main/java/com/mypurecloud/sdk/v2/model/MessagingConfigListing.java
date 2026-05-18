@@ -43,6 +43,12 @@ public class MessagingConfigListing  implements Serializable, PagedResource<Mess
     }
   }
 
+  public MessagingConfigListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MessagingSetting>();
+    }
+  }
+
   
   /**
    **/

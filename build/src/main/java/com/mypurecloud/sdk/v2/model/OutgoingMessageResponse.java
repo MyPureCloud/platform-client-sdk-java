@@ -30,6 +30,11 @@ public class OutgoingMessageResponse  implements Serializable {
     }
   }
 
+  public OutgoingMessageResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The message ID.

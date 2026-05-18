@@ -139,6 +139,11 @@ public class QueueConversationEventTopicTransferResponse  implements Serializabl
     }
   }
 
+  public QueueConversationEventTopicTransferResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the command.

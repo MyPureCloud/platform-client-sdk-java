@@ -34,6 +34,12 @@ public class TtsSettings  implements Serializable {
     }
   }
 
+  public TtsSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      languageOverrides = new ArrayList<LanguageOverride>();
+    }
+  }
+
   
   /**
    * ID of the global default TTS engine

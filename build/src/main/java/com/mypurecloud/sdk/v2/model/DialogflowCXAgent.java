@@ -42,6 +42,13 @@ public class DialogflowCXAgent  implements Serializable {
     }
   }
 
+  public DialogflowCXAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      languages = new ArrayList<String>();
+      environments = new ArrayList<DialogflowCXEnvironment>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

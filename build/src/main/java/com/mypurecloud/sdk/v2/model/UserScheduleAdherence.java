@@ -379,6 +379,13 @@ public class UserScheduleAdherence  implements Serializable {
     }
   }
 
+  public UserScheduleAdherence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activeQueues = new ArrayList<QueueReference>();
+      nextActivityReminders = new ArrayList<UserNextActivityReminder>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

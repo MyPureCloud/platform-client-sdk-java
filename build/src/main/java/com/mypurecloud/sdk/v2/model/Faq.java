@@ -34,6 +34,11 @@ public class Faq  implements Serializable {
     }
   }
 
+  public Faq(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Question from the knowledge base that was matched to user request.")
   @JsonProperty("question")

@@ -36,6 +36,11 @@ public class HistoricalShrinkageAggregateResponse  implements Serializable {
     }
   }
 
+  public HistoricalShrinkageAggregateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Aggregated shrinkage value in seconds for scheduled activities

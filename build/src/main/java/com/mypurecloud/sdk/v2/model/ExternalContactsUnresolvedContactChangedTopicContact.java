@@ -134,6 +134,15 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      externalIds = new ArrayList<ExternalContactsUnresolvedContactChangedTopicExternalId>();
+      appleOpaqueIds = new ArrayList<ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId>();
+      mergeSet = new ArrayList<String>();
+      mergedFrom = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -35,6 +35,11 @@ public class JourneyAppEventsNotificationMktCampaign  implements Serializable {
     }
   }
 
+  public JourneyAppEventsNotificationMktCampaign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

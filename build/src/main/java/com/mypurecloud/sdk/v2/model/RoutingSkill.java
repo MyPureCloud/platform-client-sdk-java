@@ -84,6 +84,11 @@ public class RoutingSkill  implements Serializable {
     }
   }
 
+  public RoutingSkill(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

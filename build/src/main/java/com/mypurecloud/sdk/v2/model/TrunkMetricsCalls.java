@@ -30,6 +30,11 @@ public class TrunkMetricsCalls  implements Serializable {
     }
   }
 
+  public TrunkMetricsCalls(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -35,6 +35,12 @@ public class ConversationContentQuickReplyV2  implements Serializable {
     }
   }
 
+  public ConversationContentQuickReplyV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      actions = new ArrayList<ConversationContentQuickReply>();
+    }
+  }
+
   
   /**
    * Text to show as the title of the quick reply.

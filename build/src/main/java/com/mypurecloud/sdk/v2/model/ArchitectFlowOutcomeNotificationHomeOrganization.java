@@ -31,6 +31,11 @@ public class ArchitectFlowOutcomeNotificationHomeOrganization  implements Serial
     }
   }
 
+  public ArchitectFlowOutcomeNotificationHomeOrganization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

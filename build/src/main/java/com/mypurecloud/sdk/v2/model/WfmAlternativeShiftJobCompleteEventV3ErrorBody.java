@@ -35,6 +35,11 @@ public class WfmAlternativeShiftJobCompleteEventV3ErrorBody  implements Serializ
     }
   }
 
+  public WfmAlternativeShiftJobCompleteEventV3ErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

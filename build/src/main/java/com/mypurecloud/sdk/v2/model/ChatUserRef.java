@@ -40,6 +40,12 @@ public class ChatUserRef  implements Serializable {
     }
   }
 
+  public ChatUserRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      integrations = new ArrayList<Contact>();
+    }
+  }
+
   
   /**
    **/

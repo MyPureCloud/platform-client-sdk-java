@@ -87,6 +87,11 @@ public class OutboundPreviewCampaignPreContactVoiceAttributes  implements Serial
     }
   }
 
+  public OutboundPreviewCampaignPreContactVoiceAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

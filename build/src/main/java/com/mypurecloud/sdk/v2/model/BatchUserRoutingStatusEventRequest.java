@@ -34,6 +34,12 @@ public class BatchUserRoutingStatusEventRequest  implements Serializable {
     }
   }
 
+  public BatchUserRoutingStatusEventRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userRoutingStatusEvents = new ArrayList<UserRoutingStatusEvent>();
+    }
+  }
+
   
   /**
    * UserRoutingStatus events for this batch

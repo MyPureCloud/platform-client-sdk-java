@@ -92,6 +92,13 @@ public class UsersRulesRuleSettings  implements Serializable {
     }
   }
 
+  public UsersRulesRuleSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      allowedContainers = new ArrayList<AllowedContainersEnum>();
+      lockedCriteria = new ArrayList<UsersRulesLockedCriteriaSettingsCriteria>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The allowed containers for the rule")
   @JsonProperty("allowedContainers")

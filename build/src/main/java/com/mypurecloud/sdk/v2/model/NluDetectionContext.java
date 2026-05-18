@@ -32,6 +32,11 @@ public class NluDetectionContext  implements Serializable {
     }
   }
 
+  public NluDetectionContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Restrict detection to this intent.

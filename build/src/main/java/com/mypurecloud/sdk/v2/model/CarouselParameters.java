@@ -34,6 +34,12 @@ public class CarouselParameters  implements Serializable {
     }
   }
 
+  public CarouselParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      cardParameters = new ArrayList<CardParameters>();
+    }
+  }
+
   
   /**
    * A list of carousel cards with their respective template parameters

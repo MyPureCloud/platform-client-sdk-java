@@ -43,6 +43,12 @@ public class DialogflowCXAgentSummaryEntityListing  implements Serializable, Pag
     }
   }
 
+  public DialogflowCXAgentSummaryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DialogflowCXAgentSummary>();
+    }
+  }
+
   
   /**
    **/

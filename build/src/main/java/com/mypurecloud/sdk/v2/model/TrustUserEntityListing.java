@@ -43,6 +43,12 @@ public class TrustUserEntityListing  implements Serializable, PagedResource<Trus
     }
   }
 
+  public TrustUserEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TrustUser>();
+    }
+  }
+
   
   /**
    **/

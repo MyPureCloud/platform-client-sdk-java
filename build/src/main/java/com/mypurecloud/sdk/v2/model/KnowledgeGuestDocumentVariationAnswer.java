@@ -43,6 +43,12 @@ public class KnowledgeGuestDocumentVariationAnswer  implements Serializable {
     }
   }
 
+  public KnowledgeGuestDocumentVariationAnswer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contexts = new ArrayList<KnowledgeGuestDocumentVariationContext>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the variation.")
   @JsonProperty("id")

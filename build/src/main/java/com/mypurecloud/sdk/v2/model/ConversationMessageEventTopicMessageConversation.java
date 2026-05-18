@@ -46,6 +46,15 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
     }
   }
 
+  public ConversationMessageEventTopicMessageConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationMessageEventTopicMessageMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<ConversationMessageEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

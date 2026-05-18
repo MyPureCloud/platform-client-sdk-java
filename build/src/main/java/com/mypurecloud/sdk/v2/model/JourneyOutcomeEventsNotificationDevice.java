@@ -88,6 +88,11 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
     }
   }
 
+  public JourneyOutcomeEventsNotificationDevice(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

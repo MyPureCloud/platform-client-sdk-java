@@ -79,6 +79,11 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
     }
   }
 
+  public ConversationEventTopicDisconnectReason(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Disconnect reason protocol type.

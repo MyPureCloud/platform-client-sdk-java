@@ -33,6 +33,12 @@ public class ReverseWhitepagesLookupResult  implements Serializable {
     }
   }
 
+  public ReverseWhitepagesLookupResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contacts = new ArrayList<ExternalContact>();
+    }
+  }
+
   
   /**
    **/

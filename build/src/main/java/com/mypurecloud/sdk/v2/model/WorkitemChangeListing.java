@@ -37,6 +37,12 @@ public class WorkitemChangeListing  implements Serializable {
     }
   }
 
+  public WorkitemChangeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkitemsChangeWorkitemDelta>();
+    }
+  }
+
   
   /**
    **/

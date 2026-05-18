@@ -93,6 +93,11 @@ public class PatchAction  implements Serializable {
     }
   }
 
+  public PatchAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Media type of action.

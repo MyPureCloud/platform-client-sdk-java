@@ -34,6 +34,12 @@ public class AgentActionPayload  implements Serializable {
     }
   }
 
+  public AgentActionPayload(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      checklistItems = new ArrayList<AgentAction>();
+    }
+  }
+
   
   /**
    * Boolean flag to indicate if the agent action is in ACW stage.

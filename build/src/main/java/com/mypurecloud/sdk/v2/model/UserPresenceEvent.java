@@ -35,6 +35,11 @@ public class UserPresenceEvent  implements Serializable {
     }
   }
 
+  public UserPresenceEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

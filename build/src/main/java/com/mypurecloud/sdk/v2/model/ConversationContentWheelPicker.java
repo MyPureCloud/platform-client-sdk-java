@@ -35,6 +35,12 @@ public class ConversationContentWheelPicker  implements Serializable {
     }
   }
 
+  public ConversationContentWheelPicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      items = new ArrayList<ConversationContentWheelPickerItem>();
+    }
+  }
+
   
   /**
    * Optional unique identifier to help map component replies to form messages where multiple Wheel Pickers can be present.

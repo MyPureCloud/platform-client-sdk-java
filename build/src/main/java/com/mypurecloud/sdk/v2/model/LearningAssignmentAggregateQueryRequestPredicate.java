@@ -80,6 +80,11 @@ public class LearningAssignmentAggregateQueryRequestPredicate  implements Serial
     }
   }
 
+  public LearningAssignmentAggregateQueryRequestPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Each predicates specifies a dimension.

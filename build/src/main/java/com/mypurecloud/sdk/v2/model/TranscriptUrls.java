@@ -36,6 +36,12 @@ public class TranscriptUrls  implements Serializable {
     }
   }
 
+  public TranscriptUrls(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      urls = new ArrayList<SegmentUrl>();
+    }
+  }
+
   
   /**
    * The Conversation Reference

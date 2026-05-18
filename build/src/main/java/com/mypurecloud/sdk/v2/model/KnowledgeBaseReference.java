@@ -128,6 +128,11 @@ public class KnowledgeBaseReference  implements Serializable {
     }
   }
 
+  public KnowledgeBaseReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the knowledge base.

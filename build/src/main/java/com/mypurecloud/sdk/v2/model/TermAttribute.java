@@ -82,6 +82,11 @@ public class TermAttribute  implements Serializable {
     }
   }
 
+  public TermAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -39,6 +39,12 @@ public class BuRescheduleResult  implements Serializable {
     }
   }
 
+  public BuRescheduleResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentSchedules = new ArrayList<BuRescheduleAgentScheduleResult>();
+    }
+  }
+
   
   /**
    * The generation results.  Note the result will always be delivered via the generationResultsDownloadUrl; however the schema is included for documentation

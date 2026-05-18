@@ -83,6 +83,11 @@ public class QueryResponseMetric  implements Serializable {
     }
   }
 
+  public QueryResponseMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The metric this applies to

@@ -213,6 +213,11 @@ public class KnowledgeAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public KnowledgeAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

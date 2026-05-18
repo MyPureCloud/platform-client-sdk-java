@@ -30,6 +30,11 @@ public class WorkspaceSummary  implements Serializable {
     }
   }
 
+  public WorkspaceSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

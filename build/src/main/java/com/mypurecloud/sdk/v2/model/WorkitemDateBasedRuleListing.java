@@ -37,6 +37,12 @@ public class WorkitemDateBasedRuleListing  implements Serializable {
     }
   }
 
+  public WorkitemDateBasedRuleListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkitemDateBasedRule>();
+    }
+  }
+
   
   /**
    **/

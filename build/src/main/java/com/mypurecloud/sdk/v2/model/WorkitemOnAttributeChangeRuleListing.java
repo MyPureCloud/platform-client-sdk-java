@@ -37,6 +37,12 @@ public class WorkitemOnAttributeChangeRuleListing  implements Serializable {
     }
   }
 
+  public WorkitemOnAttributeChangeRuleListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkitemOnAttributeChangeRule>();
+    }
+  }
+
   
   /**
    **/

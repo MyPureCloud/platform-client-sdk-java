@@ -174,6 +174,11 @@ public class ConversationContentInput  implements Serializable {
     }
   }
 
+  public ConversationContentInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the input

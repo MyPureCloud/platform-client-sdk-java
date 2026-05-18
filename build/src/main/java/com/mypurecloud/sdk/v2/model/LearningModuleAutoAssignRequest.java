@@ -31,6 +31,11 @@ public class LearningModuleAutoAssignRequest  implements Serializable {
     }
   }
 
+  public LearningModuleAutoAssignRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the rule

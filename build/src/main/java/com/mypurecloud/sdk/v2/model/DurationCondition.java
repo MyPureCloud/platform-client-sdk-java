@@ -128,6 +128,11 @@ public class DurationCondition  implements Serializable {
     }
   }
 
+  public DurationCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

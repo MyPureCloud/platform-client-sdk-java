@@ -118,6 +118,12 @@ public class Phone  implements Serializable {
     }
   }
 
+  public Phone(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      lines = new ArrayList<Line>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

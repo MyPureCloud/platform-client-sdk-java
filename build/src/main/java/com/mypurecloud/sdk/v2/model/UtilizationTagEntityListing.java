@@ -43,6 +43,12 @@ public class UtilizationTagEntityListing  implements Serializable, PagedResource
     }
   }
 
+  public UtilizationTagEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UtilizationTag>();
+    }
+  }
+
   
   /**
    **/

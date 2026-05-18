@@ -32,6 +32,11 @@ public class AggregateMetricData  implements Serializable {
     }
   }
 
+  public AggregateMetricData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

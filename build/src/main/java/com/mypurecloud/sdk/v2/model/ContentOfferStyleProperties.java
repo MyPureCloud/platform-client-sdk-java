@@ -31,6 +31,11 @@ public class ContentOfferStyleProperties  implements Serializable {
     }
   }
 
+  public ContentOfferStyleProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Padding of the offer. (eg. 10px)

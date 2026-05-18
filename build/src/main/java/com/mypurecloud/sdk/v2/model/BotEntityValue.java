@@ -95,6 +95,12 @@ public class BotEntityValue  implements Serializable {
     }
   }
 
+  public BotEntityValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the entity.

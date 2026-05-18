@@ -88,6 +88,12 @@ public class SchedulingStatusResponse  implements Serializable {
     }
   }
 
+  public SchedulingStatusResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errorDetails = new ArrayList<SchedulingProcessingError>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The ID generated for the scheduling job.  Use to GET result when job is completed.")
   @JsonProperty("id")

@@ -36,6 +36,13 @@ public class BulkFetchNotesResponse  implements Serializable {
     }
   }
 
+  public BulkFetchNotesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<BulkResponseResultNoteEntityBulkEntityErrorEntity>();
+      errorIndexes = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.

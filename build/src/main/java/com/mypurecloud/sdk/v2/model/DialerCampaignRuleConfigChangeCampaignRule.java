@@ -49,6 +49,13 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     }
   }
 
+  public DialerCampaignRuleConfigChangeCampaignRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      campaignRuleConditions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleCondition>();
+      campaignRuleActions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleAction>();
+    }
+  }
+
   
   /**
    **/

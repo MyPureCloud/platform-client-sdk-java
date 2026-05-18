@@ -31,6 +31,11 @@ public class ContactPhoneNumberColumn  implements Serializable {
     }
   }
 
+  public ContactPhoneNumberColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the phone column.

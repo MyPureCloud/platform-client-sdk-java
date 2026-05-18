@@ -29,6 +29,11 @@ public class ExternalContactsContactChangedTopicAppleOpaqueId  implements Serial
     }
   }
 
+  public ExternalContactsContactChangedTopicAppleOpaqueId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

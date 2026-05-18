@@ -29,6 +29,11 @@ public class UpdateUtilizationLabelRequest  implements Serializable {
     }
   }
 
+  public UpdateUtilizationLabelRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The utilization label name.

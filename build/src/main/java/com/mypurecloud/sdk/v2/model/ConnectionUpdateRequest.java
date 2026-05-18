@@ -31,6 +31,11 @@ public class ConnectionUpdateRequest  implements Serializable {
     }
   }
 
+  public ConnectionUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique code that allows to be connected

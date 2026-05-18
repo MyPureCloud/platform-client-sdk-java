@@ -37,6 +37,12 @@ public class CustomAttributesPatchRequest  implements Serializable {
     }
   }
 
+  public CustomAttributesPatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      divisions = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Unique identifier for the Custom Attributes record. IDs are created by users.

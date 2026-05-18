@@ -290,6 +290,12 @@ public class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification  i
     }
   }
 
+  public WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      workPlanFieldsVisibleToAgents = new ArrayList<WorkPlanFieldsVisibleToAgentsEnum>();
+    }
+  }
+
   
   /**
    **/

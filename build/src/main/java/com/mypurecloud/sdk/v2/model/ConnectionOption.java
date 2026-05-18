@@ -30,6 +30,11 @@ public class ConnectionOption  implements Serializable {
     }
   }
 
+  public ConnectionOption(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the connection option.

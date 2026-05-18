@@ -39,6 +39,12 @@ public class PatchCallbackRequest  implements Serializable {
     }
   }
 
+  public PatchCallbackRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The conversationId.

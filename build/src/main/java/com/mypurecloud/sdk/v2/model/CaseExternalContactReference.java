@@ -30,6 +30,11 @@ public class CaseExternalContactReference  implements Serializable {
     }
   }
 
+  public CaseExternalContactReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

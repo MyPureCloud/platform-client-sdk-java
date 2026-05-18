@@ -43,6 +43,12 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     }
   }
 
+  public PolicyEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Policy>();
+    }
+  }
+
   
   /**
    **/

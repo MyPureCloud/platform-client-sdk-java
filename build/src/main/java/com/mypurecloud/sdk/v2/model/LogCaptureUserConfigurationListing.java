@@ -36,6 +36,12 @@ public class LogCaptureUserConfigurationListing  implements Serializable {
     }
   }
 
+  public LogCaptureUserConfigurationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LogCaptureUserConfiguration>();
+    }
+  }
+
   
   /**
    **/

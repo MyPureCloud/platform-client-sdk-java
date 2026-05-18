@@ -91,6 +91,14 @@ public class VoicemailSearchRequest  implements Serializable {
     }
   }
 
+  public VoicemailSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      expand = new ArrayList<String>();
+      query = new ArrayList<VoicemailSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

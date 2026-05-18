@@ -92,6 +92,12 @@ public class ConversationMessagingToRecipient  implements Serializable {
     }
   }
 
+  public ConversationMessagingToRecipient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      additionalIds = new ArrayList<ConversationRecipientAdditionalIdentifier>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Nickname or display name of the recipient.")
   @JsonProperty("nickname")

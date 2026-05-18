@@ -30,6 +30,11 @@ public class PatchUser  implements Serializable {
     }
   }
 
+  public PatchUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

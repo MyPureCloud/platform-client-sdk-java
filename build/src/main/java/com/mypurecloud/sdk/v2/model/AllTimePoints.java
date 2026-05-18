@@ -33,6 +33,11 @@ public class AllTimePoints  implements Serializable {
     }
   }
 
+  public AllTimePoints(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Queried user")
   @JsonProperty("user")

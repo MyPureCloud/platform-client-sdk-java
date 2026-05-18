@@ -33,6 +33,12 @@ public class ConversationAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public ConversationAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<ConversationAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

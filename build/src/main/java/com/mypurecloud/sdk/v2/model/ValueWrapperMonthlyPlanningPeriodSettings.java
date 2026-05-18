@@ -30,6 +30,11 @@ public class ValueWrapperMonthlyPlanningPeriodSettings  implements Serializable 
     }
   }
 
+  public ValueWrapperMonthlyPlanningPeriodSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field

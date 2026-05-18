@@ -34,6 +34,11 @@ public class DnclistDownloadReadyExportUri  implements Serializable {
     }
   }
 
+  public DnclistDownloadReadyExportUri(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

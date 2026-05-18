@@ -33,6 +33,12 @@ public class MediaIceStatistics  implements Serializable {
     }
   }
 
+  public MediaIceStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      selectedPairs = new ArrayList<MediaIceSelectedPair>();
+    }
+  }
+
   
   /**
    * The candidate pairs selected for the media stream

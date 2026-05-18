@@ -77,6 +77,11 @@ public class WebChatConfig  implements Serializable {
     }
   }
 
+  public WebChatConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * css class to be applied to the web chat widget.

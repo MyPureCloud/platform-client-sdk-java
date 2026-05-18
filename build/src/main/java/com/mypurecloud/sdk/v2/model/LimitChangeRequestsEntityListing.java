@@ -36,6 +36,12 @@ public class LimitChangeRequestsEntityListing  implements Serializable {
     }
   }
 
+  public LimitChangeRequestsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LimitChangeRequestDetails>();
+    }
+  }
+
   
   /**
    **/

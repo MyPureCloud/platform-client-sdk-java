@@ -31,6 +31,11 @@ public class PredictorWorkloadBalancing  implements Serializable {
     }
   }
 
+  public PredictorWorkloadBalancing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Flag to activate and deactivate workload balancing.

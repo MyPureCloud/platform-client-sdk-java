@@ -38,6 +38,12 @@ public class RecordingEventRecording  implements Serializable {
     }
   }
 
+  public RecordingEventRecording(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaUris = new ArrayList<RecordingEventMediaResult>();
+    }
+  }
+
   
   /**
    **/

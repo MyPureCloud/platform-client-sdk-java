@@ -31,6 +31,11 @@ public class AgentOwnedRouting  implements Serializable {
     }
   }
 
+  public AgentOwnedRouting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates if Agent Owned Callbacks are enabled for the queue

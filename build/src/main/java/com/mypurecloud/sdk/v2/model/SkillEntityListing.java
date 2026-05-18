@@ -43,6 +43,12 @@ public class SkillEntityListing  implements Serializable, PagedResource<RoutingS
     }
   }
 
+  public SkillEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<RoutingSkill>();
+    }
+  }
+
   
   /**
    **/

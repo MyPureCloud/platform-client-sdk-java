@@ -82,6 +82,12 @@ public class FlowObservationQueryClause  implements Serializable {
     }
   }
 
+  public FlowObservationQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<FlowObservationQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

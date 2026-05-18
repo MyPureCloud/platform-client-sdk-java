@@ -33,6 +33,12 @@ public class BatchEventResponse  implements Serializable {
     }
   }
 
+  public BatchEventResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errors = new ArrayList<EventError>();
+    }
+  }
+
   
   /**
    * A list of validation or server errors that occurred for posted events.

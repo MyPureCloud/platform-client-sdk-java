@@ -34,6 +34,11 @@ public class WorkPlanBidMetadata  implements Serializable {
     }
   }
 
+  public WorkPlanBidMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user who created the associated entity

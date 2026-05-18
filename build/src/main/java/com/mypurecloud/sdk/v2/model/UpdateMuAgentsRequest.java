@@ -33,6 +33,12 @@ public class UpdateMuAgentsRequest  implements Serializable {
     }
   }
 
+  public UpdateMuAgentsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UpdateMuAgentRequest>();
+    }
+  }
+
   
   /**
    * List of agents to update

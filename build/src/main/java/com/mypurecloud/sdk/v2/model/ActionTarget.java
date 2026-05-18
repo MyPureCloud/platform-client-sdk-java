@@ -147,6 +147,13 @@ public class ActionTarget  implements Serializable {
     }
   }
 
+  public ActionTarget(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userData = new ArrayList<KeyValue>();
+      supportedMediaTypes = new ArrayList<SupportedMediaTypesEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

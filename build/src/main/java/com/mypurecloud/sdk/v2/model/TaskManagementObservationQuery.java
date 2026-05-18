@@ -135,6 +135,14 @@ public class TaskManagementObservationQuery  implements Serializable {
     }
   }
 
+  public TaskManagementObservationQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      groupBy = new ArrayList<GroupByEnum>();
+      metrics = new ArrayList<TaskManagementQueryMetric>();
+      expands = new ArrayList<ExpandsEnum>();
+    }
+  }
+
   
   /**
    * Dimension(s) to group by. Determines how the results will be grouped in the response.

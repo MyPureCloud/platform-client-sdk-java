@@ -40,6 +40,12 @@ public class ContentDatePicker  implements Serializable {
     }
   }
 
+  public ContentDatePicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      availableTimes = new ArrayList<ContentDatePickerAvailableTime>();
+    }
+  }
+
   
   /**
    * Text to show in the title.

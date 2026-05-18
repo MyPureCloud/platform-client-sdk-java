@@ -84,6 +84,11 @@ public class QueueConversationVideoEventTopicAfterCallWork  implements Serializa
     }
   }
 
+  public QueueConversationVideoEventTopicAfterCallWork(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The communication's after-call work state.

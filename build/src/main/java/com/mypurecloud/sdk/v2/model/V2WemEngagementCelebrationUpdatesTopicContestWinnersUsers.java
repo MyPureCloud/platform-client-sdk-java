@@ -30,6 +30,11 @@ public class V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers  implemen
     }
   }
 
+  public V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

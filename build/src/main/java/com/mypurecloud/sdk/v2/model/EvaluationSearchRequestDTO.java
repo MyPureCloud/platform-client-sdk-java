@@ -138,6 +138,13 @@ public class EvaluationSearchRequestDTO  implements Serializable {
     }
   }
 
+  public EvaluationSearchRequestDTO(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      query = new ArrayList<EvaluationSearchCriteriaDTO>();
+      aggregations = new ArrayList<EvaluationSearchAggregationDTO>();
+    }
+  }
+
   
   /**
    **/

@@ -39,6 +39,13 @@ public class ScimUserListResponse  implements Serializable {
     }
   }
 
+  public ScimUserListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+      resources = new ArrayList<ScimV2User>();
+    }
+  }
+
   
   /**
    * The list of supported schemas.

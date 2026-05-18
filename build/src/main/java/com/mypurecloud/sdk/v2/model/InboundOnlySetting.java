@@ -77,6 +77,11 @@ public class InboundOnlySetting  implements Serializable {
     }
   }
 
+  public InboundOnlySetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

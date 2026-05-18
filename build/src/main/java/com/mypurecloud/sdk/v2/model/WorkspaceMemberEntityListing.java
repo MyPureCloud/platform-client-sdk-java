@@ -43,6 +43,12 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     }
   }
 
+  public WorkspaceMemberEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkspaceMember>();
+    }
+  }
+
   
   /**
    **/

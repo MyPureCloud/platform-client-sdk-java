@@ -82,6 +82,11 @@ public class WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody  impleme
     }
   }
 
+  public WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

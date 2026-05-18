@@ -81,6 +81,12 @@ public class CannedResponseLibraries  implements Serializable {
     }
   }
 
+  public CannedResponseLibraries(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      libraryIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Set of canned response library IDs associated with the queue only when mode is SelectedOnly.

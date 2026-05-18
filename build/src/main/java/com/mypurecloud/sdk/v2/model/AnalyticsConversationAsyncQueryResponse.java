@@ -36,6 +36,12 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
     }
   }
 
+  public AnalyticsConversationAsyncQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversations = new ArrayList<AnalyticsConversation>();
+    }
+  }
+
   
   /**
    **/

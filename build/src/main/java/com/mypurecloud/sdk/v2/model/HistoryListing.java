@@ -169,6 +169,13 @@ public class HistoryListing  implements Serializable {
     }
   }
 
+  public HistoryListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errorDetails = new ArrayList<Detail>();
+      entities = new ArrayList<HistoryEntry>();
+    }
+  }
+
   
   /**
    **/

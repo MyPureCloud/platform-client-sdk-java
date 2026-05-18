@@ -30,6 +30,11 @@ public class DialerCampaignRuleConfigChangeUriReference  implements Serializable
     }
   }
 
+  public DialerCampaignRuleConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

@@ -40,6 +40,13 @@ public class BillingPlan  implements Serializable {
     }
   }
 
+  public BillingPlan(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      organizations = new ArrayList<NamedEntity>();
+      items = new ArrayList<BillingPlanItem>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -86,6 +86,12 @@ public class CommonAlertBulkUpdateRequest  implements Serializable {
     }
   }
 
+  public CommonAlertBulkUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alertIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The action to take

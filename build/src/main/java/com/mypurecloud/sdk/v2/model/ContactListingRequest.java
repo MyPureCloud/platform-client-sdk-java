@@ -38,6 +38,12 @@ public class ContactListingRequest  implements Serializable {
     }
   }
 
+  public ContactListingRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contactSorts = new ArrayList<ContactSort>();
+    }
+  }
+
   
   /**
    * Contact List Filter ID.

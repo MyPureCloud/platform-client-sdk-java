@@ -43,6 +43,12 @@ public class NluDomainListing  implements Serializable, PagedResource<NluDomain>
     }
   }
 
+  public NluDomainListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<NluDomain>();
+    }
+  }
+
   
   /**
    **/

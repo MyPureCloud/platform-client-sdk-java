@@ -30,6 +30,11 @@ public class JourneyViewJobNotificationTopicJourneyView  implements Serializable
     }
   }
 
+  public JourneyViewJobNotificationTopicJourneyView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

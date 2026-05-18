@@ -134,6 +134,12 @@ public class Pattern  implements Serializable {
     }
   }
 
+  public Pattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      daysOfWeek = new ArrayList<DaysOfWeekEnum>();
+    }
+  }
+
   
   /**
    * Pattern type (Daily/Weekly)

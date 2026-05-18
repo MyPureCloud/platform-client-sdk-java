@@ -82,6 +82,11 @@ public class ConversationEventCoBrowse  implements Serializable {
     }
   }
 
+  public ConversationEventCoBrowse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of CoBrowse event.

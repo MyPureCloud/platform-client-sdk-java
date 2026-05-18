@@ -43,6 +43,13 @@ public class ScimConfigResourceType  implements Serializable {
     }
   }
 
+  public ScimConfigResourceType(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+      schemaExtensions = new ArrayList<ScimConfigResourceTypeSchemaExtension>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")
   @JsonProperty("id")

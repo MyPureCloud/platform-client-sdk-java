@@ -31,6 +31,11 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlot  implements Serializ
     }
   }
 
+  public DialerOutboundSettingsConfigChangeAtzmTimeSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The earliest time to dial a contact

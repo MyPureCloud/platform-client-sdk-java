@@ -151,6 +151,12 @@ public class CustomerInteractionCenter  implements Serializable {
     }
   }
 
+  public CustomerInteractionCenter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      certificates = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -30,6 +30,11 @@ public class TrunkRecordingEnabledCount  implements Serializable {
     }
   }
 
+  public TrunkRecordingEnabledCount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The amount of trunks that have recording enabled

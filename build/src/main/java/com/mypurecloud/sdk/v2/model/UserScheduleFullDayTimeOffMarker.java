@@ -34,6 +34,11 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     }
   }
 
+  public UserScheduleFullDayTimeOffMarker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format.

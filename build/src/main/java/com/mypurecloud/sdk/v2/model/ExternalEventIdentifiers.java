@@ -33,6 +33,12 @@ public class ExternalEventIdentifiers  implements Serializable {
     }
   }
 
+  public ExternalEventIdentifiers(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      externalIds = new ArrayList<ExternalEventExternalId>();
+    }
+  }
+
   
   /**
    * The list of identifiers of the contact

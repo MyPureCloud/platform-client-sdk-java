@@ -44,6 +44,11 @@ public class Outcome  implements Serializable {
     }
   }
 
+  public Outcome(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the outcome.

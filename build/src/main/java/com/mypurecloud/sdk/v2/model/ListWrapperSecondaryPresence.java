@@ -33,6 +33,12 @@ public class ListWrapperSecondaryPresence  implements Serializable {
     }
   }
 
+  public ListWrapperSecondaryPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<SecondaryPresence>();
+    }
+  }
+
   
   /**
    **/

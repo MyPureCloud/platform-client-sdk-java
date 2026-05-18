@@ -34,6 +34,11 @@ public class OpenActionFields  implements Serializable {
     }
   }
 
+  public OpenActionFields(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The specific type of the open action.

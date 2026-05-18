@@ -37,6 +37,12 @@ public class Recognitions  implements Serializable {
     }
   }
 
+  public Recognitions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Recognition>();
+    }
+  }
+
   
   /**
    **/

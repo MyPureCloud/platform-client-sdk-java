@@ -36,6 +36,12 @@ public class GuideSessionTurnInvocationResponse  implements Serializable {
     }
   }
 
+  public GuideSessionTurnInvocationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      parameters = new ArrayList<GuideSessionTurnInvocationParameters>();
+    }
+  }
+
   
   /**
    * The action ID of the invocation data.

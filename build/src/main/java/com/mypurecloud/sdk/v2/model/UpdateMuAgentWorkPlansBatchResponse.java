@@ -33,6 +33,12 @@ public class UpdateMuAgentWorkPlansBatchResponse  implements Serializable {
     }
   }
 
+  public UpdateMuAgentWorkPlansBatchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      failures = new ArrayList<UpdateMuAgentWorkPlanFailureResponse>();
+    }
+  }
+
   
   /**
    * The work plan update failures

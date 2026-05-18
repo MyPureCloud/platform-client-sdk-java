@@ -31,6 +31,11 @@ public class TokenInfoClonedUser  implements Serializable {
     }
   }
 
+  public TokenInfoClonedUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "User id of the original native user")
   @JsonProperty("id")

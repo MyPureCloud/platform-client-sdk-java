@@ -310,6 +310,11 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     }
   }
 
+  public ConversationDetailQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

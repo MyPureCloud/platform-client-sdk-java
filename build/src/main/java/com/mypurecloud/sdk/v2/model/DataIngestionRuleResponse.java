@@ -94,6 +94,12 @@ public class DataIngestionRuleResponse  implements Serializable {
     }
   }
 
+  public DataIngestionRuleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      countries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * ID of the data ingestion rule.

@@ -32,6 +32,11 @@ public class BulkJobTerminateResult  implements Serializable {
     }
   }
 
+  public BulkJobTerminateResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Error details if the operation failed.

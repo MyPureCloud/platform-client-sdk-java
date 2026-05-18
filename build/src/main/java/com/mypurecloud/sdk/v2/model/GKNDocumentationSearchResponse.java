@@ -42,6 +42,13 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     }
   }
 
+  public GKNDocumentationSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+      results = new ArrayList<GKNDocumentationResult>();
+    }
+  }
+
   
   /**
    * The total number of results found

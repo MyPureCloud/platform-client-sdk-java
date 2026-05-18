@@ -35,6 +35,11 @@ public class JourneyCampaign  implements Serializable {
     }
   }
 
+  public JourneyCampaign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Differentiate ads or links that point to the same URL (e.g. textlink).

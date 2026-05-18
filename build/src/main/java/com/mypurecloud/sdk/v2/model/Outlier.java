@@ -83,6 +83,11 @@ public class Outlier  implements Serializable {
     }
   }
 
+  public Outlier(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Timestamp of the outlier. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

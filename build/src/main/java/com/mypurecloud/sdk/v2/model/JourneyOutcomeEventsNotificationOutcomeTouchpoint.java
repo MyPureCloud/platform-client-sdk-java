@@ -38,6 +38,12 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpoint  implements Seria
     }
   }
 
+  public JourneyOutcomeEventsNotificationOutcomeTouchpoint(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      channels = new ArrayList<JourneyOutcomeEventsNotificationOutcomeTouchpointChannel>();
+    }
+  }
+
   
   /**
    **/

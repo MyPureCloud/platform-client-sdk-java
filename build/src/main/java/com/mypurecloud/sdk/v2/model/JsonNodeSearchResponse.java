@@ -42,6 +42,12 @@ public class JsonNodeSearchResponse  implements Serializable {
     }
   }
 
+  public JsonNodeSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The total number of results found

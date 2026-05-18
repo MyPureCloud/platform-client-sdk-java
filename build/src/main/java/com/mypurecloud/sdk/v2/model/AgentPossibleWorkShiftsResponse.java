@@ -39,6 +39,13 @@ public class AgentPossibleWorkShiftsResponse  implements Serializable {
     }
   }
 
+  public AgentPossibleWorkShiftsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pattern = new ArrayList<Integer>();
+      weeklyPossibleWorkShifts = new ArrayList<PossibleWorkShiftsForWeek>();
+    }
+  }
+
   
   /**
    * Start date of requested effective work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

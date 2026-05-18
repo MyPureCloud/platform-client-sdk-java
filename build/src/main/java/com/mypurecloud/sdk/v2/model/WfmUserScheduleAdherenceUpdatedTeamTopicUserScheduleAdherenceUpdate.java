@@ -164,6 +164,13 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activeQueues = new ArrayList<WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference>();
+      nextActivityReminders = new ArrayList<WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder>();
+    }
+  }
+
   
   /**
    **/

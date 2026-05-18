@@ -31,6 +31,11 @@ public class EmailCampaignScheduleConfigChangeUriReference  implements Serializa
     }
   }
 
+  public EmailCampaignScheduleConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

@@ -33,6 +33,12 @@ public class SMSAvailablePhoneNumberEntityListing  implements Serializable {
     }
   }
 
+  public SMSAvailablePhoneNumberEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SmsAvailablePhoneNumber>();
+    }
+  }
+
   
   /**
    **/

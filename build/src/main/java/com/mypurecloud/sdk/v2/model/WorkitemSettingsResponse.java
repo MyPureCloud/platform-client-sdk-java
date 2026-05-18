@@ -30,6 +30,11 @@ public class WorkitemSettingsResponse  implements Serializable {
     }
   }
 
+  public WorkitemSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The worktype information for the workitem settings.

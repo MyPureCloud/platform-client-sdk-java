@@ -30,6 +30,11 @@ public class ExternalContactsUnresolvedContactChangedTopicTicker  implements Ser
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicTicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

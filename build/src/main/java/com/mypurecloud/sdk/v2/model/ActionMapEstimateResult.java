@@ -36,6 +36,12 @@ public class ActionMapEstimateResult  implements Serializable {
     }
   }
 
+  public ActionMapEstimateResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      perSegmentCounts = new ArrayList<SegmentEstimateCount>();
+    }
+  }
+
   
   /**
    * Number of sessions qualified for Action map.

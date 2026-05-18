@@ -185,6 +185,11 @@ public class GcuccTeamsCalendarEventsGCUCCTeamsCalendarEventV2  implements Seria
     }
   }
 
+  public GcuccTeamsCalendarEventsGCUCCTeamsCalendarEventV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

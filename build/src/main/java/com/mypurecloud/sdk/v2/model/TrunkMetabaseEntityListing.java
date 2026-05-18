@@ -44,6 +44,12 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public TrunkMetabaseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Metabase>();
+    }
+  }
+
   
   /**
    **/

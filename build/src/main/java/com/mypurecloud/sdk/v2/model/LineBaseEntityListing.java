@@ -44,6 +44,12 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     }
   }
 
+  public LineBaseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LineBase>();
+    }
+  }
+
   
   /**
    **/

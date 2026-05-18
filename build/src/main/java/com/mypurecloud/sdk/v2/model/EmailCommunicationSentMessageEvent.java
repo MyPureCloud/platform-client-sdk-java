@@ -33,6 +33,11 @@ public class EmailCommunicationSentMessageEvent  implements Serializable {
     }
   }
 
+  public EmailCommunicationSentMessageEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

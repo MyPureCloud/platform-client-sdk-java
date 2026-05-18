@@ -43,6 +43,12 @@ public class CoachingAnnotationList  implements Serializable, PagedResource<Coac
     }
   }
 
+  public CoachingAnnotationList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CoachingAnnotation>();
+    }
+  }
+
   
   /**
    **/

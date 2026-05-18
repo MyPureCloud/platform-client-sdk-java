@@ -30,6 +30,11 @@ public class ExternalContactsRelationshipChangedTopicTicker  implements Serializ
     }
   }
 
+  public ExternalContactsRelationshipChangedTopicTicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

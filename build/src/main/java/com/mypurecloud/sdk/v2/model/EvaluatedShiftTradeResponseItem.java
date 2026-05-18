@@ -32,6 +32,11 @@ public class EvaluatedShiftTradeResponseItem  implements Serializable {
     }
   }
 
+  public EvaluatedShiftTradeResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The evaluated shift trade

@@ -128,6 +128,11 @@ public class ShiftTradeExternalActivityRule  implements Serializable {
     }
   }
 
+  public ShiftTradeExternalActivityRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The external activity type to which to apply this rule

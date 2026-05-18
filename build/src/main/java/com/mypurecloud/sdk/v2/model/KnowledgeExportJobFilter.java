@@ -130,6 +130,12 @@ public class KnowledgeExportJobFilter  implements Serializable {
     }
   }
 
+  public KnowledgeExportJobFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      exclude = new ArrayList<ExcludeEnum>();
+    }
+  }
+
   
   /**
    * Filters for narrowing down which documents to export.

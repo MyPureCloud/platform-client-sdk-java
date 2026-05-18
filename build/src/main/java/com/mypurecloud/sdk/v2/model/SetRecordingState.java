@@ -78,6 +78,11 @@ public class SetRecordingState  implements Serializable {
     }
   }
 
+  public SetRecordingState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.

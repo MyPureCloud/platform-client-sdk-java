@@ -29,6 +29,11 @@ public class NamedEntityAnnotation  implements Serializable {
     }
   }
 
+  public NamedEntityAnnotation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the annotated named entity.

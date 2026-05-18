@@ -36,6 +36,11 @@ public class MessagingSettingRequest  implements Serializable {
     }
   }
 
+  public MessagingSettingRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

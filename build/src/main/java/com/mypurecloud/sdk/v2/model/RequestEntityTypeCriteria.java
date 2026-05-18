@@ -140,6 +140,12 @@ public class RequestEntityTypeCriteria  implements Serializable {
     }
   }
 
+  public RequestEntityTypeCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The criteria key.

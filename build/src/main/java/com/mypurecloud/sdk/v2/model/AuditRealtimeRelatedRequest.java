@@ -35,6 +35,12 @@ public class AuditRealtimeRelatedRequest  implements Serializable {
     }
   }
 
+  public AuditRealtimeRelatedRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<AuditQuerySort>();
+    }
+  }
+
   
   /**
    * The id of the audit of which related audits will be retrieved.

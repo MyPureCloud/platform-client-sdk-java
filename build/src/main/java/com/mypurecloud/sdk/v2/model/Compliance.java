@@ -39,6 +39,14 @@ public class Compliance  implements Serializable {
     }
   }
 
+  public Compliance(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      stopSettings = new ArrayList<StopSettings>();
+      optInSettings = new ArrayList<OptInSettings>();
+      helpSettings = new ArrayList<HelpSettings>();
+    }
+  }
+
   
   /**
    * List of configurations for 'StopSettings' compliance

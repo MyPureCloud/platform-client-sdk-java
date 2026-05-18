@@ -77,6 +77,11 @@ public class AssistantQueueUsersJobsRequest  implements Serializable {
     }
   }
 
+  public AssistantQueueUsersJobsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Action to perform by the job.

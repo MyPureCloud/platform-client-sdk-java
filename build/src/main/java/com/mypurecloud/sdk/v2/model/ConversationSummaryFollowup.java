@@ -31,6 +31,11 @@ public class ConversationSummaryFollowup  implements Serializable {
     }
   }
 
+  public ConversationSummaryFollowup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The AI confidence value.

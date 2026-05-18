@@ -90,6 +90,14 @@ public class ConversationParticipantSearchRequest  implements Serializable {
     }
   }
 
+  public ConversationParticipantSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      returnFields = new ArrayList<String>();
+      query = new ArrayList<ConversationParticipantSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

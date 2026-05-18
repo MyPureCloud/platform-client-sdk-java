@@ -197,6 +197,11 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggest
     }
   }
 
+  public ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

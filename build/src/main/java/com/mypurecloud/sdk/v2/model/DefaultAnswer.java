@@ -30,6 +30,11 @@ public class DefaultAnswer  implements Serializable {
     }
   }
 
+  public DefaultAnswer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Selected default answer id for the question.

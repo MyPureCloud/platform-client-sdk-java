@@ -149,6 +149,13 @@ public class MessageDetails  implements Serializable {
     }
   }
 
+  public MessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      media = new ArrayList<MessageMedia>();
+      stickers = new ArrayList<MessageSticker>();
+    }
+  }
+
   
   /**
    * UUID identifying the message media.

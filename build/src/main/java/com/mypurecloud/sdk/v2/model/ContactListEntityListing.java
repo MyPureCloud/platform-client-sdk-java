@@ -43,6 +43,12 @@ public class ContactListEntityListing  implements Serializable, PagedResource<Co
     }
   }
 
+  public ContactListEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContactList>();
+    }
+  }
+
   
   /**
    **/

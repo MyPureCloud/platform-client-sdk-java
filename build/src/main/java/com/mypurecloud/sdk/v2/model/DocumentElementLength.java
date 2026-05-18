@@ -79,6 +79,11 @@ public class DocumentElementLength  implements Serializable {
     }
   }
 
+  public DocumentElementLength(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The length value of the element in the selected unit.

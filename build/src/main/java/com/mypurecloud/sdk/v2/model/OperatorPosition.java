@@ -30,6 +30,11 @@ public class OperatorPosition  implements Serializable {
     }
   }
 
+  public OperatorPosition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Number of seconds (for voice interactions) from operand match

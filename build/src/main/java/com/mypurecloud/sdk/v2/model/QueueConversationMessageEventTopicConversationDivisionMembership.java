@@ -35,6 +35,12 @@ public class QueueConversationMessageEventTopicConversationDivisionMembership  i
     }
   }
 
+  public QueueConversationMessageEventTopicConversationDivisionMembership(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<QueueConversationMessageEventTopicDivisionEntityRef>();
+    }
+  }
+
   
   /**
    **/

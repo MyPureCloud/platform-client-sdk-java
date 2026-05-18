@@ -43,6 +43,12 @@ public class GrammarListing  implements Serializable, PagedResource<Grammar> {
     }
   }
 
+  public GrammarListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Grammar>();
+    }
+  }
+
   
   /**
    **/

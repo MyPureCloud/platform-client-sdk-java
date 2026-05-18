@@ -79,6 +79,11 @@ public class CallToAction  implements Serializable {
     }
   }
 
+  public CallToAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text displayed on the call to action button.

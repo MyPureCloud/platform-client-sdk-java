@@ -33,6 +33,12 @@ public class PredictorModelFeatureListing  implements Serializable {
     }
   }
 
+  public PredictorModelFeatureListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<PredictorModelFeature>();
+    }
+  }
+
   
   /**
    **/

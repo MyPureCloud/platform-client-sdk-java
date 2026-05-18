@@ -141,6 +141,11 @@ public class ConversationMessageMetadataEvent  implements Serializable {
     }
   }
 
+  public ConversationMessageMetadataEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element

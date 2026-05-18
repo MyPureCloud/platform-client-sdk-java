@@ -29,6 +29,11 @@ public class SignedData  implements Serializable {
     }
   }
 
+  public SignedData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -39,6 +39,12 @@ public class EvaluationSearchResponse  implements Serializable {
     }
   }
 
+  public EvaluationSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<EvaluationSearchItemResponse>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Number of records according to the page size")
   @JsonProperty("pageSize")

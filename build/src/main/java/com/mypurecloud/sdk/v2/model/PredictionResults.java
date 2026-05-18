@@ -138,6 +138,11 @@ public class PredictionResults  implements Serializable {
     }
   }
 
+  public PredictionResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates the media type scope of this estimated wait time

@@ -36,6 +36,11 @@ public class FacetStatistics  implements Serializable {
     }
   }
 
+  public FacetStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

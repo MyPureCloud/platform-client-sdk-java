@@ -47,6 +47,15 @@ public class ChatConversation  implements Serializable {
     }
   }
 
+  public ChatConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ChatMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      recentTransfers = new ArrayList<TransferResponse>();
+      divisions = new ArrayList<ConversationDivisionMembership>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

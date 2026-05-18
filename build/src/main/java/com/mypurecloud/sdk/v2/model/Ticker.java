@@ -30,6 +30,11 @@ public class Ticker  implements Serializable {
     }
   }
 
+  public Ticker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ticker symbol for this organization. Example: ININ, AAPL, MSFT, etc.

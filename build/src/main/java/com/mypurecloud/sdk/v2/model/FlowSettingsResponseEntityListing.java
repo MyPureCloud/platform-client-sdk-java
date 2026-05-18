@@ -43,6 +43,12 @@ public class FlowSettingsResponseEntityListing  implements Serializable, PagedRe
     }
   }
 
+  public FlowSettingsResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FlowSettingsResponse>();
+    }
+  }
+
   
   /**
    **/

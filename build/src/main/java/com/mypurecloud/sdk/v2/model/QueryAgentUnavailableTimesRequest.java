@@ -31,6 +31,11 @@ public class QueryAgentUnavailableTimesRequest  implements Serializable {
     }
   }
 
+  public QueryAgentUnavailableTimesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The earliest date to retrieve agent unavailability times. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

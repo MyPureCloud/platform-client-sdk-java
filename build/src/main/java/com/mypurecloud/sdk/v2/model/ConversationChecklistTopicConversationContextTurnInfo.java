@@ -79,6 +79,11 @@ public class ConversationChecklistTopicConversationContextTurnInfo  implements S
     }
   }
 
+  public ConversationChecklistTopicConversationContextTurnInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

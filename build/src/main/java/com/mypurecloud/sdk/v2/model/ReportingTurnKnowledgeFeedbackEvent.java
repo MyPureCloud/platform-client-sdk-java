@@ -38,6 +38,12 @@ public class ReportingTurnKnowledgeFeedbackEvent  implements Serializable {
     }
   }
 
+  public ReportingTurnKnowledgeFeedbackEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      documents = new ArrayList<ReportingTurnKnowledgeDocument>();
+    }
+  }
+
   
   /**
    * The ID of this knowledge search.

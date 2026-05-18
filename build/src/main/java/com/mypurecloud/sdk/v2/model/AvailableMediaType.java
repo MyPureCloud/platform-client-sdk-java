@@ -33,6 +33,12 @@ public class AvailableMediaType  implements Serializable {
     }
   }
 
+  public AvailableMediaType(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      availableSubTypes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Name of the available media type

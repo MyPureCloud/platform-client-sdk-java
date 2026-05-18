@@ -88,6 +88,13 @@ public class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequest
     }
   }
 
+  public WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequestComplete(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity>();
+      disallowedEntities = new ArrayList<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity>();
+    }
+  }
+
   
   /**
    **/

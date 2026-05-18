@@ -86,6 +86,11 @@ public class ScimServiceProviderConfigAuthenticationScheme  implements Serializa
     }
   }
 
+  public ScimServiceProviderConfigAuthenticationScheme(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "The name of the authentication scheme, for example, HTTP Basic.")
   @JsonProperty("name")

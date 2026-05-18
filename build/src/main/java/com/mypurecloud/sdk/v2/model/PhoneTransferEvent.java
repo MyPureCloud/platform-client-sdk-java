@@ -86,6 +86,11 @@ public class PhoneTransferEvent  implements Serializable {
     }
   }
 
+  public PhoneTransferEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

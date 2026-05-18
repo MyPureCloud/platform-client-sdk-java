@@ -31,6 +31,11 @@ public class JourneyWebEventsNotificationSession  implements Serializable {
     }
   }
 
+  public JourneyWebEventsNotificationSession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -4,7 +4,7 @@
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
   <name>platform-client-v2</name>
-  <version>253.1.0</version>
+  <version>253.2.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
 
@@ -137,7 +137,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-        <version>3.3.1</version>
+        <version>3.4.0</version>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -256,6 +256,11 @@
       <artifactId>commons-configuration2</artifactId>
       <version>${commons-configuration-version}</version>
     </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>${commons-codec-version}</version>
+    </dependency>
     <!-- HTTP client: apache httpclient -->
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
@@ -348,24 +353,25 @@
   </dependencies>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <slf4j-version>2.0.17</slf4j-version>
+    <slf4j-version>2.0.18</slf4j-version>
     <swagger-annotations-version>1.6.16</swagger-annotations-version>
+    <commons-codec-version>1.15</commons-codec-version>
     <jersey-version>1.19.1</jersey-version>
-    <jackson-version>2.21.2</jackson-version>
+    <jackson-version>2.21.3</jackson-version>
     <jackson-annotations-version>2.21</jackson-annotations-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
     <testng-version>7.10.2</testng-version>
     <apache-httpclient-version>4.5.14</apache-httpclient-version>
     <okhttpclient-version>4.12.0</okhttpclient-version>
-    <ning-asynchttpclient-version>3.0.9</ning-asynchttpclient-version>
+    <ning-asynchttpclient-version>3.0.10</ning-asynchttpclient-version>
     <nv-websocket-client-version>2.14</nv-websocket-client-version>
     <guava-version>33.6.0-jre</guava-version>
     <mockito.version>5.23.0</mockito.version>
-    <commons-configuration-version>2.13.0</commons-configuration-version>
-    <io-netty-version>4.2.12.Final</io-netty-version>
+    <commons-configuration-version>2.15.0</commons-configuration-version>
+    <io-netty-version>4.2.13.Final</io-netty-version>
 
     <name>platform-client-v2</name>
-    <version>253.1.0</version>
+    <version>253.2.0</version>
     <description>A Java package to interface with the PureCloud Platform API</description>
     <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
   </properties>

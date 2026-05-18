@@ -42,6 +42,12 @@ public class JourneyViewElement  implements Serializable {
     }
   }
 
+  public JourneyViewElement(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      followedBy = new ArrayList<JourneyViewLink>();
+    }
+  }
+
   
   /**
    * The unique identifier of the element within the elements list

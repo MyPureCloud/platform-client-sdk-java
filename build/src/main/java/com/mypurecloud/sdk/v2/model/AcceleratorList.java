@@ -43,6 +43,12 @@ public class AcceleratorList  implements Serializable, PagedResource<Accelerator
     }
   }
 
+  public AcceleratorList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AcceleratorMetadata>();
+    }
+  }
+
   
   /**
    **/

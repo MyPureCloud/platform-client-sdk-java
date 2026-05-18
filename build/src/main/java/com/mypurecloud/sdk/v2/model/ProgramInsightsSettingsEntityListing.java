@@ -43,6 +43,12 @@ public class ProgramInsightsSettingsEntityListing  implements Serializable, Page
     }
   }
 
+  public ProgramInsightsSettingsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ProgramInsightsSettings>();
+    }
+  }
+
   
   /**
    **/

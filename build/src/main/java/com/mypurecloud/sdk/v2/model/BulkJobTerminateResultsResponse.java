@@ -36,6 +36,13 @@ public class BulkJobTerminateResultsResponse  implements Serializable {
     }
   }
 
+  public BulkJobTerminateResultsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<BulkJobTerminateResult>();
+      errorIndexes = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * A list of the results from the bulk operation.

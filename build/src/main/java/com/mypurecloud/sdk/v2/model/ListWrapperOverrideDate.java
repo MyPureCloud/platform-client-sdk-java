@@ -33,6 +33,12 @@ public class ListWrapperOverrideDate  implements Serializable {
     }
   }
 
+  public ListWrapperOverrideDate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<OverrideDate>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,11 @@ public class ShiftTradeShiftResponseItem  implements Serializable {
     }
   }
 
+  public ShiftTradeShiftResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the shift

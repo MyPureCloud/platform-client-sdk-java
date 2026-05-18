@@ -38,6 +38,12 @@ public class AlternativeShiftAgentScheduledShift  implements Serializable {
     }
   }
 
+  public AlternativeShiftAgentScheduledShift(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activities = new ArrayList<BuAgentScheduleActivity>();
+    }
+  }
+
   
   /**
    * The number of days since start of schedule

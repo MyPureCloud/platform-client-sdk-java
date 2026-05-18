@@ -34,6 +34,11 @@ public class ExternalContactsContactChangedTopicContactAddress  implements Seria
     }
   }
 
+  public ExternalContactsContactChangedTopicContactAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

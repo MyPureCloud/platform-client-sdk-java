@@ -86,6 +86,12 @@ public class WhatsappCampaignScheduleConfigChangeRecurrencePattern  implements S
     }
   }
 
+  public WhatsappCampaignScheduleConfigChangeRecurrencePattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      daysOfWeek = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

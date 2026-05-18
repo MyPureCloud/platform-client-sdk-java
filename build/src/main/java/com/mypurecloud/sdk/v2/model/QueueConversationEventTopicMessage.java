@@ -340,6 +340,12 @@ public class QueueConversationEventTopicMessage  implements Serializable {
     }
   }
 
+  public QueueConversationEventTopicMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messages = new ArrayList<QueueConversationEventTopicMessageDetails>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

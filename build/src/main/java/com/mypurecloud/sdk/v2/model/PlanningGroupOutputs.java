@@ -39,6 +39,15 @@ public class PlanningGroupOutputs  implements Serializable {
     }
   }
 
+  public PlanningGroupOutputs(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      serviceLevelPerInterval = new ArrayList<Double>();
+      occupancyPerInterval = new ArrayList<Double>();
+      averageSpeedOfAnswerSecondsPerInterval = new ArrayList<Double>();
+      abandonRatePerInterval = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * The ID for for the associated planning group result

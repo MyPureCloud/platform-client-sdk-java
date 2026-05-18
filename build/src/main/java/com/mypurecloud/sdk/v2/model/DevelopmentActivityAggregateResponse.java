@@ -33,6 +33,12 @@ public class DevelopmentActivityAggregateResponse  implements Serializable {
     }
   }
 
+  public DevelopmentActivityAggregateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<DevelopmentActivityAggregateQueryResponseGroupedData>();
+    }
+  }
+
   
   /**
    * The results of the query

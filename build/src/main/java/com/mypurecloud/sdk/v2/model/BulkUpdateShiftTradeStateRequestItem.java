@@ -84,6 +84,11 @@ public class BulkUpdateShiftTradeStateRequestItem  implements Serializable {
     }
   }
 
+  public BulkUpdateShiftTradeStateRequestItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

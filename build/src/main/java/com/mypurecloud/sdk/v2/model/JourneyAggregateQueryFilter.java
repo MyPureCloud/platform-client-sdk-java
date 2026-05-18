@@ -85,6 +85,13 @@ public class JourneyAggregateQueryFilter  implements Serializable {
     }
   }
 
+  public JourneyAggregateQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<JourneyAggregateQueryClause>();
+      predicates = new ArrayList<JourneyAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

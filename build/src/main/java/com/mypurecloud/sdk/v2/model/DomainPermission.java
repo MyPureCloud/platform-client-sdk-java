@@ -34,6 +34,11 @@ public class DomainPermission  implements Serializable {
     }
   }
 
+  public DomainPermission(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

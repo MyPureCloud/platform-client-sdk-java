@@ -34,6 +34,12 @@ public class PlanningGroupToStaffingGroupsResponse  implements Serializable {
     }
   }
 
+  public PlanningGroupToStaffingGroupsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staffingGroups = new ArrayList<StaffingGroupReference>();
+    }
+  }
+
   
   /**
    * The ID of the planning group

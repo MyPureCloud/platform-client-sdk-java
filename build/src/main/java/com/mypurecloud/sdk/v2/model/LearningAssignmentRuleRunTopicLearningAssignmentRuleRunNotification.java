@@ -34,6 +34,12 @@ public class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
     }
   }
 
+  public LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LearningAssignmentRuleRunTopicLearningAssignmentsCreated>();
+    }
+  }
+
   
   /**
    **/

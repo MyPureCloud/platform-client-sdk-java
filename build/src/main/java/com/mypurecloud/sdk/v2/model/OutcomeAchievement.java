@@ -32,6 +32,11 @@ public class OutcomeAchievement  implements Serializable {
     }
   }
 
+  public OutcomeAchievement(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The outcome that was achieved.

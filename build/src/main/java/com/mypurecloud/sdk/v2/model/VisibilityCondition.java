@@ -81,6 +81,12 @@ public class VisibilityCondition  implements Serializable {
     }
   }
 
+  public VisibilityCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<Object>();
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,11 @@ public class ConversationSummaryTopicVirtualAgentsConversationHeadline  implemen
     }
   }
 
+  public ConversationSummaryTopicVirtualAgentsConversationHeadline(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

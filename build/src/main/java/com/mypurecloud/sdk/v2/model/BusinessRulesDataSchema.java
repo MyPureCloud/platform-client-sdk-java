@@ -96,6 +96,12 @@ public class BusinessRulesDataSchema  implements Serializable {
     }
   }
 
+  public BusinessRulesDataSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      appliesTo = new ArrayList<AppliesToEnum>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the schema.  Only required if a schema is used for custom fields during external entity creation or updates.

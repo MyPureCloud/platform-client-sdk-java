@@ -42,6 +42,12 @@ public class Relationship  implements Serializable {
     }
   }
 
+  public Relationship(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      externalDataSources = new ArrayList<ExternalDataSource>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

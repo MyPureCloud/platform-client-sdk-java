@@ -36,6 +36,12 @@ public class GeneratedGuideContent  implements Serializable {
     }
   }
 
+  public GeneratedGuideContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      variables = new ArrayList<Variable>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The generated instruction content, which can be used when creating a guide version.")
   @JsonProperty("instruction")

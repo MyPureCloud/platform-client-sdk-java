@@ -33,6 +33,12 @@ public class SpeechTextAnalyticsConversationSummaryListing  implements Serializa
     }
   }
 
+  public SpeechTextAnalyticsConversationSummaryListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SpeechTextAnalyticsConversationSummary>();
+    }
+  }
+
   
   /**
    **/

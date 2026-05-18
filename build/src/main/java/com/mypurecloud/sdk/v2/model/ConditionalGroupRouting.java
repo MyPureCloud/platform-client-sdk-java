@@ -33,6 +33,12 @@ public class ConditionalGroupRouting  implements Serializable {
     }
   }
 
+  public ConditionalGroupRouting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      rules = new ArrayList<ConditionalGroupRoutingRule>();
+    }
+  }
+
   
   /**
    * The set of rules to be executed for each conversation

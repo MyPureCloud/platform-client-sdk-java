@@ -39,6 +39,13 @@ public class BuImportShortTermForecastSchema  implements Serializable {
     }
   }
 
+  public BuImportShortTermForecastSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      planningGroups = new ArrayList<ForecastPlanningGroupData>();
+      longTermPlanningGroups = new ArrayList<LongTermForecastPlanningGroupData>();
+    }
+  }
+
   
   /**
    * The description for the forecast

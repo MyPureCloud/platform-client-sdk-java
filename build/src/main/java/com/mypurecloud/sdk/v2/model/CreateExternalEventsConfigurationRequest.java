@@ -33,6 +33,11 @@ public class CreateExternalEventsConfigurationRequest  implements Serializable {
     }
   }
 
+  public CreateExternalEventsConfigurationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the external event configuration.

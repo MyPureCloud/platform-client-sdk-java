@@ -31,6 +31,11 @@ public class WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffset
     }
   }
 
+  public WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

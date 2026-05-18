@@ -32,6 +32,11 @@ public class CreateSurveyRequest  implements Serializable {
     }
   }
 
+  public CreateSurveyRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The conversation to create the survey for.

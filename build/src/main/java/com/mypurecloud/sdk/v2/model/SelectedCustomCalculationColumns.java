@@ -32,6 +32,11 @@ public class SelectedCustomCalculationColumns  implements Serializable {
     }
   }
 
+  public SelectedCustomCalculationColumns(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Custom calculation added as a column

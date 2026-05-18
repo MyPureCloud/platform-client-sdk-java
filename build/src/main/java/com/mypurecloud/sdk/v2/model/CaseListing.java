@@ -36,6 +36,12 @@ public class CaseListing  implements Serializable {
     }
   }
 
+  public CaseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ModelCase>();
+    }
+  }
+
   
   /**
    **/

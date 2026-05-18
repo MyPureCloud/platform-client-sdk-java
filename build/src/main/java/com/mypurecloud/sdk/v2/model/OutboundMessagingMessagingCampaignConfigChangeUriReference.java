@@ -31,6 +31,11 @@ public class OutboundMessagingMessagingCampaignConfigChangeUriReference  impleme
     }
   }
 
+  public OutboundMessagingMessagingCampaignConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

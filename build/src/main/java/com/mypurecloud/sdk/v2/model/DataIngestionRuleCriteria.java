@@ -82,6 +82,11 @@ public class DataIngestionRuleCriteria  implements Serializable {
     }
   }
 
+  public DataIngestionRuleCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The effective platform for the data ingestion rule.

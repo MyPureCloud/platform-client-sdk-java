@@ -84,6 +84,11 @@ public class WebMessagingButtonResponse  implements Serializable {
     }
   }
 
+  public WebMessagingButtonResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * An ID assigned to the button response (Deprecated).

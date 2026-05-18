@@ -37,6 +37,12 @@ public class NluDomainVersionQualityReport  implements Serializable {
     }
   }
 
+  public NluDomainVersionQualityReport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      confusionMatrix = new ArrayList<NluConfusionMatrixRow>();
+    }
+  }
+
   
   /**
    * The domain and version details of the quality report

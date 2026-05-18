@@ -43,6 +43,12 @@ public class AgentScoringRuleEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public AgentScoringRuleEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AgentScoringRule>();
+    }
+  }
+
   
   /**
    **/

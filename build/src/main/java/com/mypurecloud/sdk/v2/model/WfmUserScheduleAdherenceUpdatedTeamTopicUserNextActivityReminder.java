@@ -31,6 +31,11 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder  i
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

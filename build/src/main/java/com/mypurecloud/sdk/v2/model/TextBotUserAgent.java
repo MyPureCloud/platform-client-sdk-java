@@ -94,6 +94,11 @@ public class TextBotUserAgent  implements Serializable {
     }
   }
 
+  public TextBotUserAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the user agent.

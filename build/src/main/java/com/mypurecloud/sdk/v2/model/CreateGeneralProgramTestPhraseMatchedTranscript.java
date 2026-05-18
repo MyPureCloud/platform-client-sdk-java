@@ -91,6 +91,12 @@ public class CreateGeneralProgramTestPhraseMatchedTranscript  implements Seriali
     }
   }
 
+  public CreateGeneralProgramTestPhraseMatchedTranscript(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      detectedPhrases = new ArrayList<CreateGeneralProgramTestPhraseDetectedPhrase>();
+    }
+  }
+
   
   /**
    **/

@@ -37,6 +37,14 @@ public class Adjacents  implements Serializable {
     }
   }
 
+  public Adjacents(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      superiors = new ArrayList<User>();
+      siblings = new ArrayList<User>();
+      directReports = new ArrayList<User>();
+    }
+  }
+
   
   /**
    **/

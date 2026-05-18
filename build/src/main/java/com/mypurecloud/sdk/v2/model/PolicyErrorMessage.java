@@ -40,6 +40,12 @@ public class PolicyErrorMessage  implements Serializable {
     }
   }
 
+  public PolicyErrorMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userParams = new ArrayList<UserParam>();
+    }
+  }
+
   
   /**
    **/

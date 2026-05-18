@@ -35,6 +35,12 @@ public class PerformancePredictionUploadSchema  implements Serializable {
     }
   }
 
+  public PerformancePredictionUploadSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      onQueueTimes = new ArrayList<MuAgentQueueTimeRequest>();
+    }
+  }
+
   
   /**
    * Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results

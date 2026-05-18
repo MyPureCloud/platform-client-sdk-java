@@ -33,6 +33,12 @@ public class ShiftTradePreviewResponse  implements Serializable {
     }
   }
 
+  public ShiftTradePreviewResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activities = new ArrayList<ShiftTradeActivityPreviewResponse>();
+    }
+  }
+
   
   /**
    * List of activities that will make up the new shift if this shift trade is approved

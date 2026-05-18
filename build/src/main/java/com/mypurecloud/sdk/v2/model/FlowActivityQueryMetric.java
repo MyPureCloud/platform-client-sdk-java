@@ -77,6 +77,11 @@ public class FlowActivityQueryMetric  implements Serializable {
     }
   }
 
+  public FlowActivityQueryMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The requested metric

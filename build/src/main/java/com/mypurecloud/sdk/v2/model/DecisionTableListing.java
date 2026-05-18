@@ -36,6 +36,12 @@ public class DecisionTableListing  implements Serializable {
     }
   }
 
+  public DecisionTableListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DecisionTable>();
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class V3SynchronizationStatistics  implements Serializable {
     }
   }
 
+  public V3SynchronizationStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The total number of items added, updated or removed in the synchronization.

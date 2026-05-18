@@ -86,6 +86,12 @@ public class IntentFeedback  implements Serializable {
     }
   }
 
+  public IntentFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DetectedNamedEntity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The name of the detected intent.")
   @JsonProperty("name")

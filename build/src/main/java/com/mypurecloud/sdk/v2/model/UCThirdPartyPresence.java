@@ -34,6 +34,11 @@ public class UCThirdPartyPresence  implements Serializable {
     }
   }
 
+  public UCThirdPartyPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Primary Email address of the associated Genesys Cloud user.

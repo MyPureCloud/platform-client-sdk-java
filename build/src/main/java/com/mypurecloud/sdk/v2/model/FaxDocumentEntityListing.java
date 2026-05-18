@@ -43,6 +43,12 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     }
   }
 
+  public FaxDocumentEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FaxDocument>();
+    }
+  }
+
   
   /**
    **/

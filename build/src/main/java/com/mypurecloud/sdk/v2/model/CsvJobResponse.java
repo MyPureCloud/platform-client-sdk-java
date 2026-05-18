@@ -30,6 +30,11 @@ public class CsvJobResponse  implements Serializable {
     }
   }
 
+  public CsvJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Job for the import

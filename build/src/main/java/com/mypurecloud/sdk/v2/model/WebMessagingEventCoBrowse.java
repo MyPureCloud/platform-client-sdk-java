@@ -82,6 +82,11 @@ public class WebMessagingEventCoBrowse  implements Serializable {
     }
   }
 
+  public WebMessagingEventCoBrowse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of Cobrowse event.

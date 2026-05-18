@@ -33,6 +33,12 @@ public class Usage  implements Serializable {
     }
   }
 
+  public Usage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<UsageItem>();
+    }
+  }
+
   
   /**
    **/

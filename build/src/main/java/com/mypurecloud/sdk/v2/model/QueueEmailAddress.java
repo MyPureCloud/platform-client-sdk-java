@@ -32,6 +32,11 @@ public class QueueEmailAddress  implements Serializable {
     }
   }
 
+  public QueueEmailAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

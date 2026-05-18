@@ -132,6 +132,12 @@ public class UserSearchRulePart  implements Serializable {
     }
   }
 
+  public UserSearchRulePart(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The operation for this part

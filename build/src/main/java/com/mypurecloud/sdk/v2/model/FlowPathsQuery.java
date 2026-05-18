@@ -88,6 +88,12 @@ public class FlowPathsQuery  implements Serializable {
     }
   }
 
+  public FlowPathsQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      flows = new ArrayList<FlowPathsFlowFilter>();
+    }
+  }
+
   
   /**
    * Category (use case) of the paths within a given domain.

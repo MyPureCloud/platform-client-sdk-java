@@ -174,6 +174,12 @@ public class KnowledgeSourcesSearchRequest  implements Serializable {
     }
   }
 
+  public KnowledgeSourcesSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationTurns = new ArrayList<KnowledgeConversationTurn>();
+    }
+  }
+
   
   /**
    * Input query to search content on the knowledge setting.

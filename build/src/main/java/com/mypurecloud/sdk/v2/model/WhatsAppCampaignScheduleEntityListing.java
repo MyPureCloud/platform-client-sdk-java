@@ -43,6 +43,12 @@ public class WhatsAppCampaignScheduleEntityListing  implements Serializable, Pag
     }
   }
 
+  public WhatsAppCampaignScheduleEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WhatsAppCampaignSchedule>();
+    }
+  }
+
   
   /**
    **/

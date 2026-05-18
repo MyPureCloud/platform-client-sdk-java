@@ -30,6 +30,11 @@ public class GoogleBusinessProfileAccount  implements Serializable {
     }
   }
 
+  public GoogleBusinessProfileAccount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "ID of the Google Business Profile account")
   @JsonProperty("id")

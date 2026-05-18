@@ -32,6 +32,11 @@ public class InsightsSummaryOverallItem  implements Serializable {
     }
   }
 
+  public InsightsSummaryOverallItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Insights data in the comparative period

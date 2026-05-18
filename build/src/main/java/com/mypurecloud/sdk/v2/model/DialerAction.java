@@ -198,6 +198,12 @@ public class DialerAction  implements Serializable {
     }
   }
 
+  public DialerAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
+    }
+  }
+
   
   /**
    * The type of this DialerAction.

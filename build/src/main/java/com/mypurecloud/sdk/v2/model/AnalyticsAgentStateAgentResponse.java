@@ -153,6 +153,12 @@ public class AnalyticsAgentStateAgentResponse  implements Serializable {
     }
   }
 
+  public AnalyticsAgentStateAgentResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sessions = new ArrayList<AnalyticsAgentStateAgentSessionResult>();
+    }
+  }
+
   
   /**
    * User Id - only returned if division is covered by agentStateNames permission

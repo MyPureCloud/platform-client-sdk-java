@@ -36,6 +36,12 @@ public class ScheduledTriggerEntityListing  implements Serializable {
     }
   }
 
+  public ScheduledTriggerEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ScheduledTrigger>();
+    }
+  }
+
   
   /**
    **/

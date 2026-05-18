@@ -87,6 +87,11 @@ public class DevelopmentActivityAggregateQueryResponseMetric  implements Seriali
     }
   }
 
+  public DevelopmentActivityAggregateQueryResponseMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The metric this applies to

@@ -85,6 +85,11 @@ public class WebMessagingEvent  implements Serializable {
     }
   }
 
+  public WebMessagingEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element

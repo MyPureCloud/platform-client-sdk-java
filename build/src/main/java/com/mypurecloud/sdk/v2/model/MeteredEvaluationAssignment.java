@@ -40,6 +40,12 @@ public class MeteredEvaluationAssignment  implements Serializable {
     }
   }
 
+  public MeteredEvaluationAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      evaluators = new ArrayList<User>();
+    }
+  }
+
   
   /**
    **/

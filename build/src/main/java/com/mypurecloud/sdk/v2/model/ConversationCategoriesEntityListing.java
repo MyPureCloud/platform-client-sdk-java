@@ -43,6 +43,12 @@ public class ConversationCategoriesEntityListing  implements Serializable, Paged
     }
   }
 
+  public ConversationCategoriesEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ConversationCategory>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,11 @@ public class LearningModuleSummary  implements Serializable {
     }
   }
 
+  public LearningModuleSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The total number of assignments assigned for a learning module

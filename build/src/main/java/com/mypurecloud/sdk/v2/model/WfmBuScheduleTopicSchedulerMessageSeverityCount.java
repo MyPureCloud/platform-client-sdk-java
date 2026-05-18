@@ -80,6 +80,11 @@ public class WfmBuScheduleTopicSchedulerMessageSeverityCount  implements Seriali
     }
   }
 
+  public WfmBuScheduleTopicSchedulerMessageSeverityCount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

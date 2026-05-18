@@ -97,6 +97,16 @@ public class UserDetailsQuery  implements Serializable {
     }
   }
 
+  public UserDetailsQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userFilters = new ArrayList<UserDetailQueryFilter>();
+      presenceFilters = new ArrayList<PresenceDetailQueryFilter>();
+      routingStatusFilters = new ArrayList<RoutingStatusDetailQueryFilter>();
+      presenceAggregations = new ArrayList<AnalyticsQueryAggregation>();
+      routingStatusAggregations = new ArrayList<AnalyticsQueryAggregation>();
+    }
+  }
+
   
   /**
    * Specifies the date and time range of data being queried. Conversations MUST have started within this time range to potentially be included within the result set. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

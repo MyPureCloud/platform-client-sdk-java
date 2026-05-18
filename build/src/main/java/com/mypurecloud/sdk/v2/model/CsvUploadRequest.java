@@ -30,6 +30,11 @@ public class CsvUploadRequest  implements Serializable {
     }
   }
 
+  public CsvUploadRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the file to upload

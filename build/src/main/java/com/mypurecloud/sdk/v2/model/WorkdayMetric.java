@@ -43,6 +43,13 @@ public class WorkdayMetric  implements Serializable {
     }
   }
 
+  public WorkdayMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      punctualityEvents = new ArrayList<PunctualityEvent>();
+      evaluationDetails = new ArrayList<QualityEvaluationScoreItem>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Gamification metric")
   @JsonProperty("metric")

@@ -29,6 +29,11 @@ public class WorkitemTerminate  implements Serializable {
     }
   }
 
+  public WorkitemTerminate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the status the workitem should be updated to when terminating. The status must be a 'Closed' category status.

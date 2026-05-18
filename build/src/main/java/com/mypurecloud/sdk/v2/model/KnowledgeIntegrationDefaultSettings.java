@@ -29,6 +29,11 @@ public class KnowledgeIntegrationDefaultSettings  implements Serializable {
     }
   }
 
+  public KnowledgeIntegrationDefaultSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The default base URL setting for the integration.

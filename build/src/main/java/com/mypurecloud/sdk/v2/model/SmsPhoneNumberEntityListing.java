@@ -43,6 +43,12 @@ public class SmsPhoneNumberEntityListing  implements Serializable, PagedResource
     }
   }
 
+  public SmsPhoneNumberEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SmsPhoneNumber>();
+    }
+  }
+
   
   /**
    **/

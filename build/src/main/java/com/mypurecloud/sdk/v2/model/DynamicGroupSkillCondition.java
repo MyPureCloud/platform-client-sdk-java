@@ -86,6 +86,13 @@ public class DynamicGroupSkillCondition  implements Serializable {
     }
   }
 
+  public DynamicGroupSkillCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routingSkillConditions = new ArrayList<DynamicGroupRoutingSkillCondition>();
+      languageSkillConditions = new ArrayList<DynamicGroupLanguageSkillCondition>();
+    }
+  }
+
   
   /**
    * Routing skill conditions that will be used for building the query

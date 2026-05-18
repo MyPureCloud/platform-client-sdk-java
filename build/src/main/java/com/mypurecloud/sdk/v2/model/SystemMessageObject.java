@@ -25,6 +25,11 @@ public class SystemMessageObject  implements Serializable {
     }
   }
 
+  public SystemMessageObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

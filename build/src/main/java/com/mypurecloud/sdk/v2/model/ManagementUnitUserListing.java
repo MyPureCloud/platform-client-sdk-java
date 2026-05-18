@@ -35,6 +35,12 @@ public class ManagementUnitUserListing  implements Serializable {
     }
   }
 
+  public ManagementUnitUserListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<UserReference>();
+    }
+  }
+
   
   /**
    * The management unit associated with the users

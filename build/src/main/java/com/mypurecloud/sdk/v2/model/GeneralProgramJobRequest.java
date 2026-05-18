@@ -164,6 +164,11 @@ public class GeneralProgramJobRequest  implements Serializable {
     }
   }
 
+  public GeneralProgramJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The dialect of the topics to link with the general program, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard

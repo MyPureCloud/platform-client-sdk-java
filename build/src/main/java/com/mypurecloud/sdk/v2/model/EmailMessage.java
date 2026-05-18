@@ -152,6 +152,15 @@ public class EmailMessage  implements Serializable {
     }
   }
 
+  public EmailMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      to = new ArrayList<EmailAddress>();
+      cc = new ArrayList<EmailAddress>();
+      bcc = new ArrayList<EmailAddress>();
+      attachments = new ArrayList<Attachment>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

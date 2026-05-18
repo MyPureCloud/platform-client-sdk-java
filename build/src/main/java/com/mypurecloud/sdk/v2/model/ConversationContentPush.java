@@ -90,6 +90,12 @@ public class ConversationContentPush  implements Serializable {
     }
   }
 
+  public ConversationContentPush(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      failedMessages = new ArrayList<ConversationPushFailedMessageReferences>();
+    }
+  }
+
   
   /**
    * The device type used to send the push notification

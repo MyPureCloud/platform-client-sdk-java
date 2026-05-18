@@ -104,6 +104,15 @@ public class CampaignRule  implements Serializable {
     }
   }
 
+  public CampaignRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      campaignRuleConditions = new ArrayList<CampaignRuleCondition>();
+      campaignRuleActions = new ArrayList<CampaignRuleAction>();
+      conditionGroups = new ArrayList<CampaignRuleConditionGroup>();
+      warnings = new ArrayList<CampaignRuleWarning>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

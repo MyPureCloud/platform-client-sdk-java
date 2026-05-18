@@ -195,6 +195,11 @@ public class SummaryAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public SummaryAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

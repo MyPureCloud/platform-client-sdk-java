@@ -220,6 +220,11 @@ public class QueueConversationSocialExpressionEventTopicScreenShare  implements 
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicScreenShare(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

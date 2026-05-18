@@ -83,6 +83,11 @@ public class MessageEvaluation  implements Serializable {
     }
   }
 
+  public MessageEvaluation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the contact column that was wrapped up

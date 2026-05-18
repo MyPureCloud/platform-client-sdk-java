@@ -54,6 +54,11 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     }
   }
 
+  public JourneyWebEventsNotificationWebMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

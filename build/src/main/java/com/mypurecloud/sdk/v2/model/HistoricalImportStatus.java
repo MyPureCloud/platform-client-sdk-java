@@ -141,6 +141,11 @@ public class HistoricalImportStatus  implements Serializable {
     }
   }
 
+  public HistoricalImportStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Request id of the historical import in the organization")
   @JsonProperty("requestId")

@@ -36,6 +36,12 @@ public class MinerListing  implements Serializable {
     }
   }
 
+  public MinerListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Miner>();
+    }
+  }
+
   
   /**
    **/

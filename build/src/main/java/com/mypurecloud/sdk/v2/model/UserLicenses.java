@@ -33,6 +33,12 @@ public class UserLicenses  implements Serializable {
     }
   }
 
+  public UserLicenses(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      licenses = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

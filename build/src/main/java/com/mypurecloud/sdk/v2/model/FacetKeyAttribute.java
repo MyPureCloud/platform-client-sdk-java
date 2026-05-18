@@ -31,6 +31,11 @@ public class FacetKeyAttribute  implements Serializable {
     }
   }
 
+  public FacetKeyAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

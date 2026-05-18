@@ -81,6 +81,11 @@ public class ContentCardAction  implements Serializable {
     }
   }
 
+  public ContentCardAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of action.

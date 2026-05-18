@@ -32,6 +32,12 @@ public class Permissions  implements Serializable {
     }
   }
 
+  public Permissions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of permission ids.

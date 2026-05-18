@@ -34,6 +34,12 @@ public class MetaData  implements Serializable {
     }
   }
 
+  public MetaData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pairingTrust = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

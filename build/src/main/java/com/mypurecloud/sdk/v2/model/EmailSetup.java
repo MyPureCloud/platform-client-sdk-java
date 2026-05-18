@@ -29,6 +29,11 @@ public class EmailSetup  implements Serializable {
     }
   }
 
+  public EmailSetup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The root PureCloud domain that all sub-domains are created from.

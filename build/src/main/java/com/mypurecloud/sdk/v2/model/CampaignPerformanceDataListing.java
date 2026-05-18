@@ -33,6 +33,12 @@ public class CampaignPerformanceDataListing  implements Serializable {
     }
   }
 
+  public CampaignPerformanceDataListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CampaignPerformanceData>();
+    }
+  }
+
   
   /**
    **/

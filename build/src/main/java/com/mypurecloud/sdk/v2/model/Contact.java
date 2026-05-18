@@ -138,6 +138,11 @@ public class Contact  implements Serializable {
     }
   }
 
+  public Contact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Email address or phone number for this contact type

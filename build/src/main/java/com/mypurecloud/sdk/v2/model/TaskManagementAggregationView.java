@@ -157,6 +157,11 @@ public class TaskManagementAggregationView  implements Serializable {
     }
   }
 
+  public TaskManagementAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

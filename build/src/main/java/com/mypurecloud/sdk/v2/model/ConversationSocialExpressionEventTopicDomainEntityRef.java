@@ -31,6 +31,11 @@ public class ConversationSocialExpressionEventTopicDomainEntityRef  implements S
     }
   }
 
+  public ConversationSocialExpressionEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -82,6 +82,11 @@ public class WfmIntradayDataUpdateTopicIntradayMetric  implements Serializable {
     }
   }
 
+  public WfmIntradayDataUpdateTopicIntradayMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

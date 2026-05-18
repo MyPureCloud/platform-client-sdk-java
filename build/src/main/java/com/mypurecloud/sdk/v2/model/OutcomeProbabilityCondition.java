@@ -31,6 +31,11 @@ public class OutcomeProbabilityCondition  implements Serializable {
     }
   }
 
+  public OutcomeProbabilityCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The outcome ID.

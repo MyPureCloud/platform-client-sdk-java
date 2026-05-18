@@ -30,6 +30,11 @@ public class RecordingAnnotationFlow  implements Serializable {
     }
   }
 
+  public RecordingAnnotationFlow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow name

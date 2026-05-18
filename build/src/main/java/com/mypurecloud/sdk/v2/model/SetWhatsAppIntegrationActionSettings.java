@@ -29,6 +29,11 @@ public class SetWhatsAppIntegrationActionSettings  implements Serializable {
     }
   }
 
+  public SetWhatsAppIntegrationActionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the WhatsApp integration.

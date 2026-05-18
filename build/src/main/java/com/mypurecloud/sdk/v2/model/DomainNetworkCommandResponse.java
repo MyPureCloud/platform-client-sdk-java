@@ -33,6 +33,11 @@ public class DomainNetworkCommandResponse  implements Serializable {
     }
   }
 
+  public DomainNetworkCommandResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

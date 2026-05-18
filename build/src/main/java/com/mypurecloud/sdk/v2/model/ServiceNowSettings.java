@@ -36,6 +36,13 @@ public class ServiceNowSettings  implements Serializable {
     }
   }
 
+  public ServiceNowSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      knowledgeBaseIds = new ArrayList<String>();
+      categories = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Filter source by knowledge base ids.

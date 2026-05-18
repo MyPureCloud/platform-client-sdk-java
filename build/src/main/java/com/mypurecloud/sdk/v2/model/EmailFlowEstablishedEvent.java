@@ -37,6 +37,11 @@ public class EmailFlowEstablishedEvent  implements Serializable {
     }
   }
 
+  public EmailFlowEstablishedEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

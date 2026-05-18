@@ -82,6 +82,12 @@ public class FlowActivityQueryClause  implements Serializable {
     }
   }
 
+  public FlowActivityQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<FlowActivityQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

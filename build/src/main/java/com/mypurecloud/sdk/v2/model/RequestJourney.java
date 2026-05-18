@@ -33,6 +33,12 @@ public class RequestJourney  implements Serializable {
     }
   }
 
+  public RequestJourney(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      patterns = new ArrayList<RequestJourneyPattern>();
+    }
+  }
+
   
   /**
    * A list of zero or more patterns to match. Defaults to an empty list if not provided.

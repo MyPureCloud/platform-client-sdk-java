@@ -30,6 +30,11 @@ public class QueueConversationSocialExpressionEventTopicMessageMetadataContent  
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicMessageMetadataContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element.

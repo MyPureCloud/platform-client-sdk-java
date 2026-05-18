@@ -29,6 +29,11 @@ public class ExternalContactsRelationshipChangedTopicUser  implements Serializab
     }
   }
 
+  public ExternalContactsRelationshipChangedTopicUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

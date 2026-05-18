@@ -35,6 +35,12 @@ public class AgentMuScheduleShift  implements Serializable {
     }
   }
 
+  public AgentMuScheduleShift(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activities = new ArrayList<AgentScheduleShiftActivity>();
+    }
+  }
+
   
   /**
    * The start offset of the shift, relative to referenceStartDate at the top level

@@ -30,6 +30,11 @@ public class ConversationPushFailedMessageReferences  implements Serializable {
     }
   }
 
+  public ConversationPushFailedMessageReferences(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique ID of the message.

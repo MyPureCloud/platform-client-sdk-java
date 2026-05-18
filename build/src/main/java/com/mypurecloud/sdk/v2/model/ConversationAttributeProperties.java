@@ -31,6 +31,11 @@ public class ConversationAttributeProperties  implements Serializable {
     }
   }
 
+  public ConversationAttributeProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Schema that defines attributes.

@@ -34,6 +34,12 @@ public class BuForecastGenerationPlanningGroupResult  implements Serializable {
     }
   }
 
+  public BuForecastGenerationPlanningGroupResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metricResults = new ArrayList<BuForecastTimeSeriesResult>();
+    }
+  }
+
   
   /**
    * The ID of the planning group

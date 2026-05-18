@@ -34,6 +34,11 @@ public class QueueConversationEmailEventTopicJourneyContext  implements Serializ
     }
   }
 
+  public QueueConversationEmailEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

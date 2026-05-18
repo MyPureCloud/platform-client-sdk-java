@@ -32,6 +32,11 @@ public class DocumentBodyImage  implements Serializable {
     }
   }
 
+  public DocumentBodyImage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The URL for the image.

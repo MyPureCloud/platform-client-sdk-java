@@ -30,6 +30,11 @@ public class BulkError  implements Serializable {
     }
   }
 
+  public BulkError(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Error message of the bulk operation result.

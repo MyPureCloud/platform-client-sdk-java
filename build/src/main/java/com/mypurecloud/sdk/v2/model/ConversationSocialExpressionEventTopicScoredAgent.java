@@ -31,6 +31,11 @@ public class ConversationSocialExpressionEventTopicScoredAgent  implements Seria
     }
   }
 
+  public ConversationSocialExpressionEventTopicScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

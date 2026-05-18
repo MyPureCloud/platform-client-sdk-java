@@ -33,6 +33,12 @@ public class UnifiedGeneralTopicEntityListing  implements Serializable {
     }
   }
 
+  public UnifiedGeneralTopicEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UnifiedGeneralTopic>();
+    }
+  }
+
   
   /**
    **/

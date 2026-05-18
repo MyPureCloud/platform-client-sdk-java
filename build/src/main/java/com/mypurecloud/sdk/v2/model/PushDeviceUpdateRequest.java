@@ -30,6 +30,11 @@ public class PushDeviceUpdateRequest  implements Serializable {
     }
   }
 
+  public PushDeviceUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The preferred language of the user (eg. en-us, de, fr)

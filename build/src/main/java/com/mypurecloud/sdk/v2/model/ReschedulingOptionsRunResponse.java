@@ -45,6 +45,13 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     }
   }
 
+  public ReschedulingOptionsRunResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnits = new ArrayList<ReschedulingManagementUnitResponse>();
+      activityCodeIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The existing schedule to which this reschedule run applies

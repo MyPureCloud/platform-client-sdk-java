@@ -42,6 +42,15 @@ public class SendMessagingTemplateRequest  implements Serializable {
     }
   }
 
+  public SendMessagingTemplateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      parameters = new ArrayList<TemplateParameter>();
+      headerParameters = new ArrayList<TemplateParameter>();
+      bodyParameters = new ArrayList<TemplateParameter>();
+      buttonUrlParameters = new ArrayList<TemplateParameter>();
+    }
+  }
+
   
   /**
    * Unique identifier for a Response Management response to fetch and apply pre-configured message content when sending outbound responses.

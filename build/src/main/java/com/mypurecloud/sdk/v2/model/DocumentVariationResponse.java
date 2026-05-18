@@ -46,6 +46,12 @@ public class DocumentVariationResponse  implements Serializable {
     }
   }
 
+  public DocumentVariationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contexts = new ArrayList<DocumentVariationContext>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the variation.")
   @JsonProperty("id")

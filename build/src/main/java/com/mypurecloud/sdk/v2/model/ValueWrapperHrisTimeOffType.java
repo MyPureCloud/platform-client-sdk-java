@@ -30,6 +30,11 @@ public class ValueWrapperHrisTimeOffType  implements Serializable {
     }
   }
 
+  public ValueWrapperHrisTimeOffType(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field

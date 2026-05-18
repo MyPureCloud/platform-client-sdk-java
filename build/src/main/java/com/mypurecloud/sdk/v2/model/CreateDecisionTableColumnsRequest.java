@@ -36,6 +36,13 @@ public class CreateDecisionTableColumnsRequest  implements Serializable {
     }
   }
 
+  public CreateDecisionTableColumnsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inputs = new ArrayList<DecisionTableInputColumnRequest>();
+      outputs = new ArrayList<DecisionTableOutputColumnRequest>();
+    }
+  }
+
   
   /**
    * The input columns of the decision table.

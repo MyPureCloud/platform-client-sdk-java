@@ -772,6 +772,17 @@ public class Widget  implements Serializable {
     }
   }
 
+  public Widget(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<MetricsEnum>();
+      periods = new ArrayList<PeriodsEnum>();
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      warnings = new ArrayList<Warning>();
+      selectedStatuses = new ArrayList<SelectedStatusesEnum>();
+      selectedSegmentTypes = new ArrayList<SelectedSegmentTypesEnum>();
+    }
+  }
+
   
   /**
    * The row number for the specific dashboard widget configuration.

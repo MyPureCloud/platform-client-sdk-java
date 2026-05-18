@@ -32,6 +32,11 @@ public class FormListPickerItem  implements Serializable {
     }
   }
 
+  public FormListPickerItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the item

@@ -30,6 +30,11 @@ public class ActivityPlanOccurrenceReference  implements Serializable {
     }
   }
 
+  public ActivityPlanOccurrenceReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

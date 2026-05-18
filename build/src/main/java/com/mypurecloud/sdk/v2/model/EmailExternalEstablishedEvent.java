@@ -39,6 +39,11 @@ public class EmailExternalEstablishedEvent  implements Serializable {
     }
   }
 
+  public EmailExternalEstablishedEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

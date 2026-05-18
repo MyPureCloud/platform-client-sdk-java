@@ -33,6 +33,12 @@ public class FlowObservationQueryResponse  implements Serializable {
     }
   }
 
+  public FlowObservationQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<FlowObservationDataContainer>();
+    }
+  }
+
   
   /**
    **/

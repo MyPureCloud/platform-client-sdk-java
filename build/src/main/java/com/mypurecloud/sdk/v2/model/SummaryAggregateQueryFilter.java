@@ -85,6 +85,13 @@ public class SummaryAggregateQueryFilter  implements Serializable {
     }
   }
 
+  public SummaryAggregateQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<SummaryAggregateQueryClause>();
+      predicates = new ArrayList<SummaryAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

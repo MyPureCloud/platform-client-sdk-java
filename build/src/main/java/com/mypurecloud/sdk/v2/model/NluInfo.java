@@ -39,6 +39,12 @@ public class NluInfo  implements Serializable {
     }
   }
 
+  public NluInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<Intent>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("domain")

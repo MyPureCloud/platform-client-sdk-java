@@ -32,6 +32,11 @@ public class UpdateManagementUnitRequest  implements Serializable {
     }
   }
 
+  public UpdateManagementUnitRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The new name of the management unit

@@ -31,6 +31,11 @@ public class UpdateUserAssignmentsRequest  implements Serializable {
     }
   }
 
+  public UpdateUserAssignmentsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the user assigned to the staffing group.

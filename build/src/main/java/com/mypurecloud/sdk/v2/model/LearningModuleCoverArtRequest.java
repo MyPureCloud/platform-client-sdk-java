@@ -29,6 +29,11 @@ public class LearningModuleCoverArtRequest  implements Serializable {
     }
   }
 
+  public LearningModuleCoverArtRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The key identifier for the cover art

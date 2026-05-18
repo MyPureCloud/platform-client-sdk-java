@@ -88,6 +88,11 @@ public class JourneySessionEventsNotificationDevice  implements Serializable {
     }
   }
 
+  public JourneySessionEventsNotificationDevice(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

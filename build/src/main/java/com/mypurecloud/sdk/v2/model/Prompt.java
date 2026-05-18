@@ -39,6 +39,12 @@ public class Prompt  implements Serializable {
     }
   }
 
+  public Prompt(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      resources = new ArrayList<PromptAsset>();
+    }
+  }
+
   
   /**
    * The prompt identifier

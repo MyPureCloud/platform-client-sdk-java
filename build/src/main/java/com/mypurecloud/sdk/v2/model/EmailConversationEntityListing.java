@@ -43,6 +43,12 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     }
   }
 
+  public EmailConversationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EmailConversation>();
+    }
+  }
+
   
   /**
    **/

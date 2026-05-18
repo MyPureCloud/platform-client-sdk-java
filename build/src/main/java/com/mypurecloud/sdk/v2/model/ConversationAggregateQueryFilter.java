@@ -85,6 +85,13 @@ public class ConversationAggregateQueryFilter  implements Serializable {
     }
   }
 
+  public ConversationAggregateQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<ConversationAggregateQueryClause>();
+      predicates = new ArrayList<ConversationAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

@@ -84,6 +84,11 @@ public class EndTransferEvent  implements Serializable {
     }
   }
 
+  public EndTransferEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

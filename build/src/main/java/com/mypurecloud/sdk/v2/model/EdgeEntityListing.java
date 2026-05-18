@@ -44,6 +44,12 @@ public class EdgeEntityListing  implements Serializable, PagedResource<Edge> {
     }
   }
 
+  public EdgeEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Edge>();
+    }
+  }
+
   
   /**
    **/

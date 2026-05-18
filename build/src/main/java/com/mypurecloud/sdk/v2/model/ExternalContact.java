@@ -142,6 +142,17 @@ public class ExternalContact  implements Serializable {
     }
   }
 
+  public ExternalContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      appleOpaqueIds = new ArrayList<AppleOpaqueId>();
+      externalIds = new ArrayList<ExternalId>();
+      identifiers = new ArrayList<ContactIdentifier>();
+      externalDataSources = new ArrayList<ExternalDataSource>();
+      mergeSet = new ArrayList<ContactAddressableEntityRef>();
+      mergedFrom = new ArrayList<ContactAddressableEntityRef>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

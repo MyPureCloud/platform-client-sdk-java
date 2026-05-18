@@ -38,6 +38,11 @@ public class EffectiveConfiguration  implements Serializable {
     }
   }
 
+  public EffectiveConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Key-value configuration settings described by the schema in the propertiesSchemaUri field.

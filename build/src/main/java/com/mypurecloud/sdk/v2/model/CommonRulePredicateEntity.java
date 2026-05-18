@@ -86,6 +86,11 @@ public class CommonRulePredicateEntity  implements Serializable {
     }
   }
 
+  public CommonRulePredicateEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies the type of entity being evaluated

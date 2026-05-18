@@ -34,6 +34,12 @@ public class OutlierData  implements Serializable {
     }
   }
 
+  public OutlierData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadUrls = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of URLs to fetch the result of the outliers data. This field is populated only if session state is 'Complete' and outliers are present

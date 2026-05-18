@@ -32,6 +32,12 @@ public class HistoricalImportDeleteFilesJobRequest  implements Serializable {
     }
   }
 
+  public HistoricalImportDeleteFilesJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requestIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of requestIds to be deleted. Max number of RequestIds should be 100

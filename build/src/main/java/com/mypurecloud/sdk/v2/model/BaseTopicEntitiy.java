@@ -31,6 +31,11 @@ public class BaseTopicEntitiy  implements Serializable {
     }
   }
 
+  public BaseTopicEntitiy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

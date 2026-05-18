@@ -36,6 +36,12 @@ public class StepplanListing  implements Serializable {
     }
   }
 
+  public StepplanListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Stepplan>();
+    }
+  }
+
   
   /**
    **/

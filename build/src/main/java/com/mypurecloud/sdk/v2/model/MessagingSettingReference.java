@@ -43,6 +43,11 @@ public class MessagingSettingReference  implements Serializable {
     }
   }
 
+  public MessagingSettingReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The messaging Setting unique identifier associated with this integration

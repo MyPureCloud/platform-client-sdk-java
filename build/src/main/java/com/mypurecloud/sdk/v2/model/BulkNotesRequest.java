@@ -33,6 +33,12 @@ public class BulkNotesRequest  implements Serializable {
     }
   }
 
+  public BulkNotesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Note>();
+    }
+  }
+
   
   /**
    **/

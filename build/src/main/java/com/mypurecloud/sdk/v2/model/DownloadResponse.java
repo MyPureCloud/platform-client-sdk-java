@@ -87,6 +87,12 @@ public class DownloadResponse  implements Serializable {
     }
   }
 
+  public DownloadResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      thumbnails = new ArrayList<DocumentThumbnail>();
+    }
+  }
+
   
   /**
    **/

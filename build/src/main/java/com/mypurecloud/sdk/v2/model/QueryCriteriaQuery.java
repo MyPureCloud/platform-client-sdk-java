@@ -34,6 +34,12 @@ public class QueryCriteriaQuery  implements Serializable {
     }
   }
 
+  public QueryCriteriaQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      query = new ArrayList<QueryCriteriaGroup>();
+    }
+  }
+
   
   /**
    * List of criteria groups that will be AND'd together

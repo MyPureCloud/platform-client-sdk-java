@@ -90,6 +90,12 @@ public class OrganizationPublicApiUsageResultsResponse  implements Serializable 
     }
   }
 
+  public OrganizationPublicApiUsageResultsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OrganizationPublicApiUsage>();
+    }
+  }
+
   
   /**
    **/

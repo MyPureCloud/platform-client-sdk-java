@@ -85,6 +85,11 @@ public class OpenSocialMediaMessageContent  implements Serializable {
     }
   }
 
+  public OpenSocialMediaMessageContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element.

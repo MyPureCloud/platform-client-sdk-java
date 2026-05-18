@@ -36,6 +36,12 @@ public class UnansweredPhraseGroupPatchRequestBody  implements Serializable {
     }
   }
 
+  public UnansweredPhraseGroupPatchRequestBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phraseAssociations = new ArrayList<PhraseAssociations>();
+    }
+  }
+
   
   /**
    * List of phrases and documents to be linked

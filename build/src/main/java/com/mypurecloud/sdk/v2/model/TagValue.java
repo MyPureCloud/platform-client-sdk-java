@@ -36,6 +36,12 @@ public class TagValue  implements Serializable {
     }
   }
 
+  public TagValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      acl = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

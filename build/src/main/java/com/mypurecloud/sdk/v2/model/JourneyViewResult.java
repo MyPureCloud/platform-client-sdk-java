@@ -37,6 +37,13 @@ public class JourneyViewResult  implements Serializable {
     }
   }
 
+  public JourneyViewResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      elements = new ArrayList<JourneyViewResultElement>();
+      charts = new ArrayList<JourneyViewChartResult>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The elements within the journey view result")
   @JsonProperty("elements")

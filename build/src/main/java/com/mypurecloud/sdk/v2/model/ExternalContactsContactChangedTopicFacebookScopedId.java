@@ -29,6 +29,11 @@ public class ExternalContactsContactChangedTopicFacebookScopedId  implements Ser
     }
   }
 
+  public ExternalContactsContactChangedTopicFacebookScopedId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class AuditTopicAddressableEntityRef  implements Serializable {
     }
   }
 
+  public AuditTopicAddressableEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

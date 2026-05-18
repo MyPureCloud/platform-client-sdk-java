@@ -43,6 +43,11 @@ public class CampaignStats  implements Serializable {
     }
   }
 
+  public CampaignStats(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Information regarding the campaign's connect rate")
   @JsonProperty("contactRate")

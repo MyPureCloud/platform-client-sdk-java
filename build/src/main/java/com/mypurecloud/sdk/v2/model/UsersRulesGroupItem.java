@@ -140,6 +140,12 @@ public class UsersRulesGroupItem  implements Serializable {
     }
   }
 
+  public UsersRulesGroupItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<UsersRulesValue>();
+    }
+  }
+
   
   /**
    * The internal ID for this group

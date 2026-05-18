@@ -44,6 +44,12 @@ public class BuUpdateAgentScheduleShift  implements Serializable {
     }
   }
 
+  public BuUpdateAgentScheduleShift(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activities = new ArrayList<BuAgentScheduleActivity>();
+    }
+  }
+
   
   /**
    * The ID of the shift

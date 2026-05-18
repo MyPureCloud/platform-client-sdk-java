@@ -30,6 +30,11 @@ public class WorkitemStatusFilter  implements Serializable {
     }
   }
 
+  public WorkitemStatusFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Worktype ID belonging to the selected workitem status

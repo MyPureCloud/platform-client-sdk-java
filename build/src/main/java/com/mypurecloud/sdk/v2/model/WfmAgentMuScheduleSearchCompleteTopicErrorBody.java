@@ -35,6 +35,11 @@ public class WfmAgentMuScheduleSearchCompleteTopicErrorBody  implements Serializ
     }
   }
 
+  public WfmAgentMuScheduleSearchCompleteTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

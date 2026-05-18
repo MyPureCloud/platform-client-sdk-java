@@ -31,6 +31,11 @@ public class WorkdayPointsTrendItem  implements Serializable {
     }
   }
 
+  public WorkdayPointsTrendItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "workday date for the points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateWorkday")

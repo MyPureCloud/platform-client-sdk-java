@@ -105,6 +105,13 @@ public class BuShortTermForecast  implements Serializable {
     }
   }
 
+  public BuShortTermForecast(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sourceDays = new ArrayList<ForecastSourceDayPointer>();
+      modifications = new ArrayList<BuForecastModificationResponse>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

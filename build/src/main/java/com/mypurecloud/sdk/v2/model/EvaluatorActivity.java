@@ -40,6 +40,11 @@ public class EvaluatorActivity  implements Serializable {
     }
   }
 
+  public EvaluatorActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

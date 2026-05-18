@@ -368,6 +368,13 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     }
   }
 
+  public ConversationCallbackEventTopicCallbackMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

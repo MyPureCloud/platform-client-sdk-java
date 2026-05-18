@@ -30,6 +30,11 @@ public class PolicyConditionResult  implements Serializable {
     }
   }
 
+  public PolicyConditionResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The condition name

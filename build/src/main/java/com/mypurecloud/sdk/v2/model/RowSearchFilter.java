@@ -33,6 +33,12 @@ public class RowSearchFilter  implements Serializable {
     }
   }
 
+  public RowSearchFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<RowSearchPredicate>();
+    }
+  }
+
   
   /**
    * The predicates that each row matches in the search results must match

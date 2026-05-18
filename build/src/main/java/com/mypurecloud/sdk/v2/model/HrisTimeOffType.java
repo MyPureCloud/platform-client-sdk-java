@@ -32,6 +32,11 @@ public class HrisTimeOffType  implements Serializable {
     }
   }
 
+  public HrisTimeOffType(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the time off type configured in integration.

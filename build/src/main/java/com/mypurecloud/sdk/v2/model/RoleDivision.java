@@ -30,6 +30,11 @@ public class RoleDivision  implements Serializable {
     }
   }
 
+  public RoleDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Role to be associated with the given division which forms a grant

@@ -79,6 +79,11 @@ public class ExternalOrganizationIdentifierClaimRequest  implements Serializable
     }
   }
 
+  public ExternalOrganizationIdentifierClaimRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The operation to perform claim/release

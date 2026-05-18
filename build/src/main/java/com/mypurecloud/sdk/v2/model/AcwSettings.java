@@ -81,6 +81,11 @@ public class AcwSettings  implements Serializable {
     }
   }
 
+  public AcwSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * This field controls how the UI prompts the agent for a wrapup.

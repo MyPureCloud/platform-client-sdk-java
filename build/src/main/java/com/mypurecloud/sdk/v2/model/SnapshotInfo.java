@@ -34,6 +34,11 @@ public class SnapshotInfo  implements Serializable {
     }
   }
 
+  public SnapshotInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Version of the snapshot

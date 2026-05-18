@@ -289,6 +289,13 @@ public class LimitChangeRequestDetails  implements Serializable {
     }
   }
 
+  public LimitChangeRequestDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      statusHistory = new ArrayList<StatusChange>();
+      approvalNamespaces = new ArrayList<ApprovalNamespace>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

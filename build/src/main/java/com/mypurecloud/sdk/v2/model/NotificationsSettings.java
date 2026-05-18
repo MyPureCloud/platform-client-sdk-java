@@ -79,6 +79,11 @@ public class NotificationsSettings  implements Serializable {
     }
   }
 
+  public NotificationsSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The toggle to enable or disable notifications. When enabled, PushNotificationTitle and PushNotificationBody localization keys are required.

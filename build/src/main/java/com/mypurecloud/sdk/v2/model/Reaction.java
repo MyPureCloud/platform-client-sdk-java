@@ -81,6 +81,11 @@ public class Reaction  implements Serializable {
     }
   }
 
+  public Reaction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Parameter for this reaction. For transfer_flow, this would be the outbound flow id.

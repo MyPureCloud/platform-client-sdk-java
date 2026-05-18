@@ -80,6 +80,11 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatEntity  impleme
     }
   }
 
+  public CollaborateChatGroupMessageEventTopicCollaborateChatEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

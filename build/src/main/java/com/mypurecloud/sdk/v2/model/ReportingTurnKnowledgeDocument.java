@@ -32,6 +32,11 @@ public class ReportingTurnKnowledgeDocument  implements Serializable {
     }
   }
 
+  public ReportingTurnKnowledgeDocument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the knowledge document.

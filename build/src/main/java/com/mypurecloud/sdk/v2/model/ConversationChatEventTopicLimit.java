@@ -142,6 +142,11 @@ public class ConversationChatEventTopicLimit  implements Serializable {
     }
   }
 
+  public ConversationChatEventTopicLimit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

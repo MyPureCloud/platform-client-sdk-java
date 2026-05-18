@@ -200,6 +200,11 @@ public class AgentCopilotAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public AgentCopilotAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

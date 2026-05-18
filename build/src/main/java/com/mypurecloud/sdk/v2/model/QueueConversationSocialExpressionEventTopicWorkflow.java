@@ -30,6 +30,11 @@ public class QueueConversationSocialExpressionEventTopicWorkflow  implements Ser
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicWorkflow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the workflow

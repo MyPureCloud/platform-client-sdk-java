@@ -37,6 +37,12 @@ public class WebMessagingMessageEntityList  implements Serializable {
     }
   }
 
+  public WebMessagingMessageEntityList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WebMessagingMessage>();
+    }
+  }
+
   
   /**
    **/

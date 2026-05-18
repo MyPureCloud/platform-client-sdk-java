@@ -47,6 +47,12 @@ public class UserRecording  implements Serializable {
     }
   }
 
+  public UserRecording(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      thumbnails = new ArrayList<DocumentThumbnail>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

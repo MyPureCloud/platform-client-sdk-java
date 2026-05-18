@@ -30,6 +30,11 @@ public class ConversationEventTopicMessageMetadataContent  implements Serializab
     }
   }
 
+  public ConversationEventTopicMessageMetadataContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element.

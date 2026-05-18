@@ -32,6 +32,11 @@ public class FormMessage  implements Serializable {
     }
   }
 
+  public FormMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Title of the message

@@ -94,6 +94,12 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     }
   }
 
+  public TranscriptionTopicTranscriptResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alternatives = new ArrayList<TranscriptionTopicTranscriptAlternative>();
+    }
+  }
+
   
   /**
    **/

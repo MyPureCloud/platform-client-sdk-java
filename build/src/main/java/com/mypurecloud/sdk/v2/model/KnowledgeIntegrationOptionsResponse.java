@@ -33,6 +33,12 @@ public class KnowledgeIntegrationOptionsResponse  implements Serializable {
     }
   }
 
+  public KnowledgeIntegrationOptionsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      filters = new ArrayList<KnowledgeIntegrationFilter>();
+    }
+  }
+
   
   /**
    * Filter setting options available for a knowledge source.

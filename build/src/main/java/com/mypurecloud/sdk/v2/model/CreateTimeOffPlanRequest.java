@@ -90,6 +90,13 @@ public class CreateTimeOffPlanRequest  implements Serializable {
     }
   }
 
+  public CreateTimeOffPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activityCodeIds = new ArrayList<String>();
+      timeOffLimitIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of this time off plan.

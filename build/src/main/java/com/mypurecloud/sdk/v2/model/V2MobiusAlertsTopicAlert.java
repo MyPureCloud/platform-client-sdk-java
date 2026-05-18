@@ -110,6 +110,12 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
     }
   }
 
+  public V2MobiusAlertsTopicAlert(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      notifications = new ArrayList<V2MobiusAlertsTopicAlertNotification>();
+    }
+  }
+
   
   /**
    **/

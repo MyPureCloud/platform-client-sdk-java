@@ -29,6 +29,11 @@ public class ColumnStatus  implements Serializable {
     }
   }
 
+  public ColumnStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates whether or not an individual contact method column is contactable.

@@ -108,6 +108,12 @@ public class CampaignInteraction  implements Serializable {
     }
   }
 
+  public CampaignInteraction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class BulkResult  implements Serializable {
     }
   }
 
+  public BulkResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Error details if the operation failed.

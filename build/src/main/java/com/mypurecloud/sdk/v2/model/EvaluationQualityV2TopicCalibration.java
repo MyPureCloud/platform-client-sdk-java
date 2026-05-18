@@ -29,6 +29,11 @@ public class EvaluationQualityV2TopicCalibration  implements Serializable {
     }
   }
 
+  public EvaluationQualityV2TopicCalibration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

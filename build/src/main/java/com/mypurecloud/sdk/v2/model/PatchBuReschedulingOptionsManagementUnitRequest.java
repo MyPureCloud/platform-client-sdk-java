@@ -30,6 +30,11 @@ public class PatchBuReschedulingOptionsManagementUnitRequest  implements Seriali
     }
   }
 
+  public PatchBuReschedulingOptionsManagementUnitRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The management unit portion of the rescheduling run to update

@@ -35,6 +35,11 @@ public class ExternalContactsUnresolvedContactChangedTopicPhoneNumber  implement
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicPhoneNumber(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

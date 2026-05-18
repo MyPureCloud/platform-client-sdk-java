@@ -33,6 +33,11 @@ public class DecisionTableInputColumn  implements Serializable {
     }
   }
 
+  public DecisionTableInputColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The id of the column.")
   @JsonProperty("id")

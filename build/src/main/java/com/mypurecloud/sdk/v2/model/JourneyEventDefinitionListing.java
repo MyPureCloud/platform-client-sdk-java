@@ -35,6 +35,12 @@ public class JourneyEventDefinitionListing  implements Serializable {
     }
   }
 
+  public JourneyEventDefinitionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<JourneyEventDefinition>();
+    }
+  }
+
   
   /**
    **/

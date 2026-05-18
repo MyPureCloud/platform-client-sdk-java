@@ -31,6 +31,11 @@ public class OpenInboundMessageContent  implements Serializable {
     }
   }
 
+  public OpenInboundMessageContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Attachment content.

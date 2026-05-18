@@ -32,6 +32,11 @@ public class HelpLink  implements Serializable {
     }
   }
 
+  public HelpLink(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "URI of the help resource")
   @JsonProperty("uri")

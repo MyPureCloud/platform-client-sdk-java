@@ -61,6 +61,21 @@ public class DocumentationResult  implements Serializable {
     }
   }
 
+  public DocumentationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      categories = new ArrayList<Integer>();
+      service = new ArrayList<Integer>();
+      facetFeature = new ArrayList<Integer>();
+      facetRole = new ArrayList<Integer>();
+      facetService = new ArrayList<Integer>();
+      faqCategories = new ArrayList<Integer>();
+      releasenoteCategory = new ArrayList<Integer>();
+      releasenoteTag = new ArrayList<Integer>();
+      serviceArea = new ArrayList<Integer>();
+      videoCategories = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

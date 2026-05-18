@@ -96,6 +96,13 @@ public class OAuthAuthorization  implements Serializable {
     }
   }
 
+  public OAuthAuthorization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      scope = new ArrayList<String>();
+      roles = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

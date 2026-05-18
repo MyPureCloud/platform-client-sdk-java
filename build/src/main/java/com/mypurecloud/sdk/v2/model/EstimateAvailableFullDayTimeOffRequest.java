@@ -31,6 +31,11 @@ public class EstimateAvailableFullDayTimeOffRequest  implements Serializable {
     }
   }
 
+  public EstimateAvailableFullDayTimeOffRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Date in yyyy-MM-dd format for full day request. Should be interpreted in the business unit's configured time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

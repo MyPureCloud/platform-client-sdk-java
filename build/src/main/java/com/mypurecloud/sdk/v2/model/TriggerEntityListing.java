@@ -36,6 +36,12 @@ public class TriggerEntityListing  implements Serializable {
     }
   }
 
+  public TriggerEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Trigger>();
+    }
+  }
+
   
   /**
    **/

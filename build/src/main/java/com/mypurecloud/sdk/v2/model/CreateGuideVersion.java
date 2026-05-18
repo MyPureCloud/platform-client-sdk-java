@@ -38,6 +38,12 @@ public class CreateGuideVersion  implements Serializable {
     }
   }
 
+  public CreateGuideVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      variables = new ArrayList<Variable>();
+    }
+  }
+
   
   /**
    * The instruction given to this version of the guide, for how it should behave when interacting with a User.

@@ -35,6 +35,11 @@ public class WfmVersionedEntityMetadata  implements Serializable {
     }
   }
 
+  public WfmVersionedEntityMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The version of the associated entity.  Used to prevent conflicts on concurrent edits

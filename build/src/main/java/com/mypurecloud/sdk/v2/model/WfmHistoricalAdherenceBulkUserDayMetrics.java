@@ -39,6 +39,11 @@ public class WfmHistoricalAdherenceBulkUserDayMetrics  implements Serializable {
     }
   }
 
+  public WfmHistoricalAdherenceBulkUserDayMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start of day offset in seconds relative to query start time

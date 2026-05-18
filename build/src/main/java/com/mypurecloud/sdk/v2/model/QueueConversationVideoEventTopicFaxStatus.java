@@ -37,6 +37,11 @@ public class QueueConversationVideoEventTopicFaxStatus  implements Serializable 
     }
   }
 
+  public QueueConversationVideoEventTopicFaxStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The fax direction, either \"send\" or \"receive\".

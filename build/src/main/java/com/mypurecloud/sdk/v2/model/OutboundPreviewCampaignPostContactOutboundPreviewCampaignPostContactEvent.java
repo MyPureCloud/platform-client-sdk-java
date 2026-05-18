@@ -105,6 +105,11 @@ public class OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContac
     }
   }
 
+  public OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

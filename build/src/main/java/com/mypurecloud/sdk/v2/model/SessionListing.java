@@ -36,6 +36,12 @@ public class SessionListing  implements Serializable {
     }
   }
 
+  public SessionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Session>();
+    }
+  }
+
   
   /**
    **/

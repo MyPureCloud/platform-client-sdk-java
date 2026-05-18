@@ -29,6 +29,11 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion  i
     }
   }
 
+  public ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

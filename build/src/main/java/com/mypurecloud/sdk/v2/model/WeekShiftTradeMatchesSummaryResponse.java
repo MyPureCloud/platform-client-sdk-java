@@ -32,6 +32,11 @@ public class WeekShiftTradeMatchesSummaryResponse  implements Serializable {
     }
   }
 
+  public WeekShiftTradeMatchesSummaryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The schedule week date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

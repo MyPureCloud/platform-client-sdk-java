@@ -32,6 +32,11 @@ public class MatchShiftTradeRequest  implements Serializable {
     }
   }
 
+  public MatchShiftTradeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the schedule with which the shift trade is associated

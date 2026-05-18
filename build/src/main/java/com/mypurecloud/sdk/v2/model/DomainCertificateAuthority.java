@@ -197,6 +197,13 @@ public class DomainCertificateAuthority  implements Serializable {
     }
   }
 
+  public DomainCertificateAuthority(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      services = new ArrayList<ServicesEnum>();
+      certificateDetails = new ArrayList<CertificateDetails>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

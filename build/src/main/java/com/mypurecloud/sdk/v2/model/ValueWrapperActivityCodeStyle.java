@@ -30,6 +30,11 @@ public class ValueWrapperActivityCodeStyle  implements Serializable {
     }
   }
 
+  public ValueWrapperActivityCodeStyle(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field

@@ -78,6 +78,11 @@ public class MessageHeader  implements Serializable {
     }
   }
 
+  public MessageHeader(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Defines the content type of the Header in message

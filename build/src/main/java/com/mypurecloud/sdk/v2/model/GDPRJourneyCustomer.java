@@ -30,6 +30,11 @@ public class GDPRJourneyCustomer  implements Serializable {
     }
   }
 
+  public GDPRJourneyCustomer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the customerId within the Journey System (e.g. cookie). Required if `id` is defined.

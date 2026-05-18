@@ -29,6 +29,11 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserReference  implements Ser
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedMuTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

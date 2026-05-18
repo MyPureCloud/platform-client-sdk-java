@@ -31,6 +31,11 @@ public class PublishTopicTestPhraseDetectedPhrase  implements Serializable {
     }
   }
 
+  public PublishTopicTestPhraseDetectedPhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -185,6 +185,12 @@ public class EventMessage  implements Serializable {
     }
   }
 
+  public EventMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      resourceURIs = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

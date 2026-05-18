@@ -43,6 +43,12 @@ public class EvaluationFormResponseEntityListing  implements Serializable, Paged
     }
   }
 
+  public EvaluationFormResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EvaluationFormResponse>();
+    }
+  }
+
   
   /**
    **/

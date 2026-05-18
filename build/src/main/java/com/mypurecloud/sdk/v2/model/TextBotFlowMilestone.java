@@ -32,6 +32,11 @@ public class TextBotFlowMilestone  implements Serializable {
     }
   }
 
+  public TextBotFlowMilestone(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Milestone's ID.

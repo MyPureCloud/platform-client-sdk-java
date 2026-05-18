@@ -86,6 +86,13 @@ public class CommonRuleConditions  implements Serializable {
     }
   }
 
+  public CommonRuleConditions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<CommonRuleConditions>();
+      predicates = new ArrayList<CommonRulePredicate>();
+    }
+  }
+
   
   /**
    * The list of predicates groups to be evaluated

@@ -31,6 +31,11 @@ public class OutcomePercentileCondition  implements Serializable {
     }
   }
 
+  public OutcomePercentileCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The outcome ID.

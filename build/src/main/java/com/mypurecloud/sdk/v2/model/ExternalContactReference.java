@@ -32,6 +32,11 @@ public class ExternalContactReference  implements Serializable {
     }
   }
 
+  public ExternalContactReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

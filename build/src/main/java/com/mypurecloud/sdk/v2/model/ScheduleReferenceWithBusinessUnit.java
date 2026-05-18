@@ -34,6 +34,11 @@ public class ScheduleReferenceWithBusinessUnit  implements Serializable {
     }
   }
 
+  public ScheduleReferenceWithBusinessUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

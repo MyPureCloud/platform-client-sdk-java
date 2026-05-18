@@ -33,6 +33,12 @@ public class WorkPlanPatternResponse  implements Serializable {
     }
   }
 
+  public WorkPlanPatternResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      workPlans = new ArrayList<WorkPlanReference>();
+    }
+  }
+
   
   /**
    * List of work plans in order of rotation on a weekly basis

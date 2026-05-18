@@ -43,6 +43,12 @@ public class Geolocation  implements Serializable {
     }
   }
 
+  public Geolocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      locations = new ArrayList<LocationDefinition>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

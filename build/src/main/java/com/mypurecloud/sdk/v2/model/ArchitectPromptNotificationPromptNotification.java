@@ -33,6 +33,11 @@ public class ArchitectPromptNotificationPromptNotification  implements Serializa
     }
   }
 
+  public ArchitectPromptNotificationPromptNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The prompt ID

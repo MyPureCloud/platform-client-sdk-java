@@ -43,6 +43,12 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     }
   }
 
+  public DocumentEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Document>();
+    }
+  }
+
   
   /**
    **/

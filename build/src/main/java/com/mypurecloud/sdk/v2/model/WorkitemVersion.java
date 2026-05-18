@@ -198,6 +198,14 @@ public class WorkitemVersion  implements Serializable {
     }
   }
 
+  public WorkitemVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<RoutingSkillReference>();
+      preferredAgents = new ArrayList<UserReference>();
+      scoredAgents = new ArrayList<WorkitemScoredAgent>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

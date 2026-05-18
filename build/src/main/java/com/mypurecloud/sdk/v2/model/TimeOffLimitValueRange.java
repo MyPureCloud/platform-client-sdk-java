@@ -93,6 +93,15 @@ public class TimeOffLimitValueRange  implements Serializable {
     }
   }
 
+  public TimeOffLimitValueRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      limitMinutesPerInterval = new ArrayList<Integer>();
+      allocatedMinutesPerInterval = new ArrayList<Integer>();
+      waitlistedMinutesPerInterval = new ArrayList<Integer>();
+      waitlistedRequestsPerInterval = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The ID of the time off limit

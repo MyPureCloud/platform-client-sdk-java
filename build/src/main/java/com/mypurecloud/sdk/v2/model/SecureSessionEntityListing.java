@@ -33,6 +33,12 @@ public class SecureSessionEntityListing  implements Serializable {
     }
   }
 
+  public SecureSessionEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SecureSession>();
+    }
+  }
+
   
   /**
    **/

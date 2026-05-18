@@ -34,6 +34,11 @@ public class UserCustomAttributesUpdateRequest  implements Serializable {
     }
   }
 
+  public UserCustomAttributesUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the schema that dictates which attributes can be included.

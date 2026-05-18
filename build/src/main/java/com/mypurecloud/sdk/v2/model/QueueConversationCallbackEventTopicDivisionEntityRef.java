@@ -32,6 +32,11 @@ public class QueueConversationCallbackEventTopicDivisionEntityRef  implements Se
     }
   }
 
+  public QueueConversationCallbackEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

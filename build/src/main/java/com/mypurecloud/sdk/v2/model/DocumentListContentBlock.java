@@ -88,6 +88,11 @@ public class DocumentListContentBlock  implements Serializable {
     }
   }
 
+  public DocumentListContentBlock(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the list block.

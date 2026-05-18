@@ -40,6 +40,11 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
     }
   }
 
+  public DialerCampaignProgressEventCampaignProgress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -45,6 +45,12 @@ public class KnowledgeSettingsResponse  implements Serializable {
     }
   }
 
+  public KnowledgeSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sources = new ArrayList<V3SourceRef>();
+    }
+  }
+
   
   /**
    * Knowledge Setting Id.

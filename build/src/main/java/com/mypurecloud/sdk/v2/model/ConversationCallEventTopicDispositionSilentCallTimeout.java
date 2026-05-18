@@ -33,6 +33,11 @@ public class ConversationCallEventTopicDispositionSilentCallTimeout  implements 
     }
   }
 
+  public ConversationCallEventTopicDispositionSilentCallTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured Silent Call timeout value.

@@ -43,6 +43,12 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     }
   }
 
+  public CampaignRuleEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CampaignRule>();
+    }
+  }
+
   
   /**
    **/

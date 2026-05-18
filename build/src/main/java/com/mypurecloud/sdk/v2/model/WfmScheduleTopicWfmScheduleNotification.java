@@ -133,6 +133,11 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
     }
   }
 
+  public WfmScheduleTopicWfmScheduleNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

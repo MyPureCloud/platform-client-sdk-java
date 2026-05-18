@@ -45,6 +45,13 @@ public class EmailInitialConfiguration  implements Serializable {
     }
   }
 
+  public EmailInitialConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      cc = new ArrayList<String>();
+      bcc = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * An email address that this email is to.

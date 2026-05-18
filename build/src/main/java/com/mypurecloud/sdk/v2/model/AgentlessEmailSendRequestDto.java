@@ -87,6 +87,12 @@ public class AgentlessEmailSendRequestDto  implements Serializable {
     }
   }
 
+  public AgentlessEmailSendRequestDto(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      toAddresses = new ArrayList<EmailAddress>();
+    }
+  }
+
   
   /**
    * The type of email domain used to send the agentless message.

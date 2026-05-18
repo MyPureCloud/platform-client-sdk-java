@@ -29,6 +29,11 @@ public class WfmBuScheduleRunTopicUserReference  implements Serializable {
     }
   }
 
+  public WfmBuScheduleRunTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

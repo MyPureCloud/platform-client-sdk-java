@@ -83,6 +83,11 @@ public class CopilotContextValue  implements Serializable {
     }
   }
 
+  public CopilotContextValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the context.

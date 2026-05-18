@@ -37,6 +37,11 @@ public class RequestConfig  implements Serializable {
     }
   }
 
+  public RequestConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * URL that may include placeholders for requests to 3rd party service. This value is read only for Function Integrations and will be set when a draft is created.

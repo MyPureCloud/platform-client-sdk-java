@@ -35,6 +35,11 @@ public class ContactImportJobMetadata  implements Serializable {
     }
   }
 
+  public ContactImportJobMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

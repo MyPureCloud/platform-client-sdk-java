@@ -35,6 +35,12 @@ public class DraftTopicRequest  implements Serializable {
     }
   }
 
+  public DraftTopicRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phrases = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Id for a topic.

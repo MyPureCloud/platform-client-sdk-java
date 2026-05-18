@@ -82,6 +82,12 @@ public class SurveyAggregateQueryClause  implements Serializable {
     }
   }
 
+  public SurveyAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<SurveyAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

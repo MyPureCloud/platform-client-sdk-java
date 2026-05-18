@@ -34,6 +34,12 @@ public class StopSettings  implements Serializable {
     }
   }
 
+  public StopSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      keyword = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of keywords for compliance

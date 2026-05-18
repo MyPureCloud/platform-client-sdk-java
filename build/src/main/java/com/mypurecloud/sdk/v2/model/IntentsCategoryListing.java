@@ -43,6 +43,12 @@ public class IntentsCategoryListing  implements Serializable, PagedResource<Inte
     }
   }
 
+  public IntentsCategoryListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<IntentsCategory>();
+    }
+  }
+
   
   /**
    **/

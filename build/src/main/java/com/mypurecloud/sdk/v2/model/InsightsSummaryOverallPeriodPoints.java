@@ -32,6 +32,11 @@ public class InsightsSummaryOverallPeriodPoints  implements Serializable {
     }
   }
 
+  public InsightsSummaryOverallPeriodPoints(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Points scored

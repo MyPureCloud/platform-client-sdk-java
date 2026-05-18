@@ -127,6 +127,11 @@ public class ResolutionAggregationSort  implements Serializable {
     }
   }
 
+  public ResolutionAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

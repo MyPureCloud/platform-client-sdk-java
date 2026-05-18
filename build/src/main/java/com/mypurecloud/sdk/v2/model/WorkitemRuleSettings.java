@@ -29,6 +29,11 @@ public class WorkitemRuleSettings  implements Serializable {
     }
   }
 
+  public WorkitemRuleSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * When set to true, the worktypes flow rules will be processed. Default value is false.

@@ -37,6 +37,11 @@ public class KnowledgeDocumentVersion  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Globally unique identifier for the document version.")
   @JsonProperty("id")

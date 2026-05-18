@@ -193,6 +193,12 @@ public class QueueConversationVideoEventTopicInternalMessage  implements Seriali
     }
   }
 
+  public QueueConversationVideoEventTopicInternalMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messages = new ArrayList<QueueConversationVideoEventTopicInternalMessageDetails>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

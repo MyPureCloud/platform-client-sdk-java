@@ -52,6 +52,16 @@ public class CrossPlatformPolicyActions  implements Serializable {
     }
   }
 
+  public CrossPlatformPolicyActions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      assignEvaluations = new ArrayList<EvaluationAssignment>();
+      assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
+      assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
+      assignCalibrations = new ArrayList<CalibrationAssignment>();
+      mediaTranscriptions = new ArrayList<MediaTranscription>();
+    }
+  }
+
   
   /**
    * true to retain the recording associated with the conversation. Default = true

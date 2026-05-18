@@ -36,6 +36,12 @@ public class AcceleratorInput  implements Serializable {
     }
   }
 
+  public AcceleratorInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      parameters = new ArrayList<AcceleratorParameter>();
+    }
+  }
+
   
   /**
    * Set this true to test the job without making any changes. Defaults to false.

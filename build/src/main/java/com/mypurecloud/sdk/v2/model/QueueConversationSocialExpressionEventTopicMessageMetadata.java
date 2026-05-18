@@ -38,6 +38,13 @@ public class QueueConversationSocialExpressionEventTopicMessageMetadata  impleme
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicMessageMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<QueueConversationSocialExpressionEventTopicMessageMetadataEvent>();
+      content = new ArrayList<QueueConversationSocialExpressionEventTopicMessageMetadataContent>();
+    }
+  }
+
   
   /**
    * Message type.

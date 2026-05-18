@@ -82,6 +82,12 @@ public class KnowledgeAggregateQueryClause  implements Serializable {
     }
   }
 
+  public KnowledgeAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<KnowledgeAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

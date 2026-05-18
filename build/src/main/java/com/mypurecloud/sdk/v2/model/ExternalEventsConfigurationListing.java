@@ -43,6 +43,12 @@ public class ExternalEventsConfigurationListing  implements Serializable, PagedR
     }
   }
 
+  public ExternalEventsConfigurationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalEventsConfiguration>();
+    }
+  }
+
   
   /**
    **/

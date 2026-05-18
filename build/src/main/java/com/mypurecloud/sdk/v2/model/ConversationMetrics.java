@@ -92,6 +92,12 @@ public class ConversationMetrics  implements Serializable {
     }
   }
 
+  public ConversationMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      empathyScores = new ArrayList<EmpathyScore>();
+    }
+  }
+
   
   /**
    * The Conversation Reference

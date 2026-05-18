@@ -32,6 +32,12 @@ public class DownloadServiceRequest  implements Serializable {
     }
   }
 
+  public DownloadServiceRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      files = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of file names to download

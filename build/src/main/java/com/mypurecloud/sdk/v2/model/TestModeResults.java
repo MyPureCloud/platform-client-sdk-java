@@ -36,6 +36,11 @@ public class TestModeResults  implements Serializable {
     }
   }
 
+  public TestModeResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Information about the validation of the schema of the event body passed in to test mode

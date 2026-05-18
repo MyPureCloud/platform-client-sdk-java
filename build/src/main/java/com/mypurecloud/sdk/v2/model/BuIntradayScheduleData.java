@@ -29,6 +29,11 @@ public class BuIntradayScheduleData  implements Serializable {
     }
   }
 
+  public BuIntradayScheduleData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The total on-queue time in seconds for all agents in this group

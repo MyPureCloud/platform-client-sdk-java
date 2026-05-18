@@ -276,6 +276,13 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     }
   }
 
+  public FlowStartDetailEventTopicFlowStartEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

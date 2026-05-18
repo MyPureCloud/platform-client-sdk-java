@@ -31,6 +31,11 @@ public class MessagingCampaignScheduleConfigChangeUriReference  implements Seria
     }
   }
 
+  public MessagingCampaignScheduleConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

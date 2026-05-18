@@ -83,6 +83,12 @@ public class InactivityTimeoutGroupBundle  implements Serializable {
     }
   }
 
+  public InactivityTimeoutGroupBundle(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      groups = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The priority of the group bundle (1-5).

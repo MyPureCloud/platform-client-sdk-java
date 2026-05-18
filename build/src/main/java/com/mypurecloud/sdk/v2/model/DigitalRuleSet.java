@@ -42,6 +42,12 @@ public class DigitalRuleSet  implements Serializable {
     }
   }
 
+  public DigitalRuleSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      rules = new ArrayList<DigitalRule>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

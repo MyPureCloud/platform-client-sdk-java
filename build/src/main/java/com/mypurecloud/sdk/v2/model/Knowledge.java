@@ -31,6 +31,11 @@ public class Knowledge  implements Serializable {
     }
   }
 
+  public Knowledge(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not knowledge base is enabled

@@ -269,6 +269,12 @@ public class RecordingMetadata  implements Serializable {
     }
   }
 
+  public RecordingMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      annotations = new ArrayList<Annotation>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

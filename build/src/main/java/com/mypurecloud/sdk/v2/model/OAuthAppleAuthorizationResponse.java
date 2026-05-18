@@ -31,6 +31,11 @@ public class OAuthAppleAuthorizationResponse  implements Serializable {
     }
   }
 
+  public OAuthAppleAuthorizationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The redirected url

@@ -90,6 +90,13 @@ public class EdgeInterface  implements Serializable {
     }
   }
 
+  public EdgeInterface(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      endpoints = new ArrayList<DomainEntityRef>();
+      lineTypes = new ArrayList<LineTypesEnum>();
+    }
+  }
+
   
   /**
    **/

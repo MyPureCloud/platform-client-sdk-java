@@ -40,6 +40,15 @@ public class UserAuthorization  implements Serializable {
     }
   }
 
+  public UserAuthorization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      roles = new ArrayList<DomainRole>();
+      unusedRoles = new ArrayList<DomainRole>();
+      permissions = new ArrayList<String>();
+      permissionPolicies = new ArrayList<ResourcePermissionPolicy>();
+    }
+  }
+
   
   /**
    **/

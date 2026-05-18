@@ -64,6 +64,15 @@ public class IntegrationType  implements Serializable {
     }
   }
 
+  public IntegrationType(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      images = new ArrayList<Image>();
+      helpLinks = new ArrayList<HelpLink>();
+      userPermissions = new ArrayList<String>();
+      vendorOAuthClientIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of the integration type.

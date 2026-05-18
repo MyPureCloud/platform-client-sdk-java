@@ -88,6 +88,12 @@ public class DynamicGroupRoutingSkillCondition  implements Serializable {
     }
   }
 
+  public DynamicGroupRoutingSkillCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      childConditions = new ArrayList<DynamicGroupSkillCondition>();
+    }
+  }
+
   
   /**
    * The routing skill to be used in the skill condition query

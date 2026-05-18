@@ -34,6 +34,11 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
     }
   }
 
+  public DialerAttemptLimitsConfigChangeRecallEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The number of recall attempts to make

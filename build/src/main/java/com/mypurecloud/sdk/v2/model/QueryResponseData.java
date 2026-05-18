@@ -34,6 +34,12 @@ public class QueryResponseData  implements Serializable {
     }
   }
 
+  public QueryResponseData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<QueryResponseMetric>();
+    }
+  }
+
   
   /**
    * Interval with start and end represented as ISO-8601 string. i.e: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'/yyyy-MM-dd'T'HH:mm:ss.SSS'Z'

@@ -34,6 +34,12 @@ public class LanguageSupportInfoRecord  implements Serializable {
     }
   }
 
+  public LanguageSupportInfoRecord(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      featureSupport = new ArrayList<FeatureSupport>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Language of the copilot, e.g. 'en-US'.")
   @JsonProperty("language")

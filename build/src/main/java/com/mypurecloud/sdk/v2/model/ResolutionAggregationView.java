@@ -126,6 +126,11 @@ public class ResolutionAggregationView  implements Serializable {
     }
   }
 
+  public ResolutionAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

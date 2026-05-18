@@ -36,6 +36,12 @@ public class EvaluationAggregateDataContainer  implements Serializable {
     }
   }
 
+  public EvaluationAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

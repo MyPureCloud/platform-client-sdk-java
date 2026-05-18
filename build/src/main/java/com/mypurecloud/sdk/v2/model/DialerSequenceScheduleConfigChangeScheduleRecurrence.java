@@ -44,6 +44,12 @@ public class DialerSequenceScheduleConfigChangeScheduleRecurrence  implements Se
     }
   }
 
+  public DialerSequenceScheduleConfigChangeScheduleRecurrence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alterations = new ArrayList<DialerSequenceScheduleConfigChangeAlteration>();
+    }
+  }
+
   
   /**
    * the recurrence id

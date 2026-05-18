@@ -30,6 +30,11 @@ public class SummarySettingCustomEntity  implements Serializable {
     }
   }
 
+  public SummarySettingCustomEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Label how the entity should be called.

@@ -43,6 +43,12 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     }
   }
 
+  public PhysicalInterfaceEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DomainPhysicalInterface>();
+    }
+  }
+
   
   /**
    **/

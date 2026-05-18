@@ -93,6 +93,11 @@ public class ActionMapAction  implements Serializable {
     }
   }
 
+  public ActionMapAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Action template associated with the action map.

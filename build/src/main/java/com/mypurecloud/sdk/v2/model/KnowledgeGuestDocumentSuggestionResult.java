@@ -29,6 +29,11 @@ public class KnowledgeGuestDocumentSuggestionResult  implements Serializable {
     }
   }
 
+  public KnowledgeGuestDocumentSuggestionResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Matched phrase to the autocomplete suggestions query.

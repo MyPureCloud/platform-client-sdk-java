@@ -32,6 +32,11 @@ public class OutboundMessagingEmailCampaignConfigChangeReplyToEmailAddress  impl
     }
   }
 
+  public OutboundMessagingEmailCampaignConfigChangeReplyToEmailAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

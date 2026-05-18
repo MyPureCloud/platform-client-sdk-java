@@ -32,6 +32,11 @@ public class VideoConferenceUpdateTopicVideoConference  implements Serializable 
     }
   }
 
+  public VideoConferenceUpdateTopicVideoConference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

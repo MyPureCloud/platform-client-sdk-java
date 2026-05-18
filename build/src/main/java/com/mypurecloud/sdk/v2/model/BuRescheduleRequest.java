@@ -95,6 +95,14 @@ public class BuRescheduleRequest  implements Serializable {
     }
   }
 
+  public BuRescheduleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentIds = new ArrayList<String>();
+      activityCodeIds = new ArrayList<String>();
+      managementUnitIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The start of the range to reschedule.  Defaults to the beginning of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

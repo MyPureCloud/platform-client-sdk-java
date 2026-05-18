@@ -143,6 +143,13 @@ public class ScheduleGenerationWarning  implements Serializable {
     }
   }
 
+  public ScheduleGenerationWarning(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      unableToScheduleRequiredDays = new ArrayList<UnableToScheduleRequiredDaysEnum>();
+      noNeedDays = new ArrayList<NoNeedDaysEnum>();
+    }
+  }
+
   
   /**
    * ID of the user in the warning

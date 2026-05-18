@@ -35,6 +35,13 @@ public class KnowledgeParseJobRequestImport  implements Serializable {
     }
   }
 
+  public KnowledgeParseJobRequestImport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      edits = new ArrayList<KnowledgeParseRecord>();
+      excludes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Override of the result of the parse.

@@ -89,6 +89,13 @@ public class ContactImportSettings  implements Serializable {
     }
   }
 
+  public ContactImportSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchingCriteria = new ArrayList<MatchingCriteriaEnum>();
+      importFields = new ArrayList<ContactImportField>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

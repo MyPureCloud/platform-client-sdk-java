@@ -47,6 +47,13 @@ public class QueueConversationMessageEventTopicErrorBody  implements Serializabl
     }
   }
 
+  public QueueConversationMessageEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<QueueConversationMessageEventTopicDetail>();
+      errors = new ArrayList<QueueConversationMessageEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

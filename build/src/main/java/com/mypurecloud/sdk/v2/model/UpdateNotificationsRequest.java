@@ -33,6 +33,12 @@ public class UpdateNotificationsRequest  implements Serializable {
     }
   }
 
+  public UpdateNotificationsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WfmUserNotification>();
+    }
+  }
+
   
   /**
    * The notifications to update

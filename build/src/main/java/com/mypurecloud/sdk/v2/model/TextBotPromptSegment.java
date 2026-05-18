@@ -87,6 +87,12 @@ public class TextBotPromptSegment  implements Serializable {
     }
   }
 
+  public TextBotPromptSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      content = new ArrayList<ConversationMessageContent>();
+    }
+  }
+
   
   /**
    * The text of this prompt segment.

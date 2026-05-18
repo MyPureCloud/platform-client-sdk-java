@@ -40,6 +40,12 @@ public class CaseCreate  implements Serializable {
     }
   }
 
+  public CaseCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intake = new ArrayList<Intake>();
+    }
+  }
+
   
   /**
    * The ID of the caseplan to create the case from.

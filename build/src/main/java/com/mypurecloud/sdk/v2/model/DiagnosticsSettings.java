@@ -29,6 +29,11 @@ public class DiagnosticsSettings  implements Serializable {
     }
   }
 
+  public DiagnosticsSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to report on low max calls per agent alerts.

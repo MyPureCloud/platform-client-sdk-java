@@ -29,6 +29,11 @@ public class FaxTopicWorkspaceData  implements Serializable {
     }
   }
 
+  public FaxTopicWorkspaceData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

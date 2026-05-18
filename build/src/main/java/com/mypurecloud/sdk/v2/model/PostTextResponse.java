@@ -93,6 +93,12 @@ public class PostTextResponse  implements Serializable {
     }
   }
 
+  public PostTextResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      replyMessages = new ArrayList<PostTextMessage>();
+    }
+  }
+
   
   /**
    * The state of the bot after completion of the request

@@ -32,6 +32,11 @@ public class SnapshotMetaDataResult  implements Serializable {
     }
   }
 
+  public SnapshotMetaDataResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Information about the snapshot

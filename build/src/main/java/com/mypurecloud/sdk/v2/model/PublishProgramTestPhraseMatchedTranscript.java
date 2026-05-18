@@ -91,6 +91,12 @@ public class PublishProgramTestPhraseMatchedTranscript  implements Serializable 
     }
   }
 
+  public PublishProgramTestPhraseMatchedTranscript(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      detectedPhrases = new ArrayList<PublishProgramTestPhraseDetectedPhrase>();
+    }
+  }
+
   
   /**
    **/

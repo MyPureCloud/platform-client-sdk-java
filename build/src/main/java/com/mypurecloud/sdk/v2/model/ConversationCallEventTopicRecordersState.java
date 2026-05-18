@@ -32,6 +32,11 @@ public class ConversationCallEventTopicRecordersState  implements Serializable {
     }
   }
 
+  public ConversationCallEventTopicRecordersState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates the state of the adhoc recorder.

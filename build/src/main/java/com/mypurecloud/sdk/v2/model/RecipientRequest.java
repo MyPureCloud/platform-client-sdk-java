@@ -30,6 +30,11 @@ public class RecipientRequest  implements Serializable {
     }
   }
 
+  public RecipientRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.

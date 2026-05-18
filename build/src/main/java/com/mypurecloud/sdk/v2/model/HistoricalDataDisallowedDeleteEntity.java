@@ -80,6 +80,11 @@ public class HistoricalDataDisallowedDeleteEntity  implements Serializable {
     }
   }
 
+  public HistoricalDataDisallowedDeleteEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The requestId associated with this disallowed entity

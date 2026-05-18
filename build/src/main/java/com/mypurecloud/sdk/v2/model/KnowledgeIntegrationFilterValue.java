@@ -30,6 +30,11 @@ public class KnowledgeIntegrationFilterValue  implements Serializable {
     }
   }
 
+  public KnowledgeIntegrationFilterValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The key that can be used as a value of a filter setting in a knowledge source.

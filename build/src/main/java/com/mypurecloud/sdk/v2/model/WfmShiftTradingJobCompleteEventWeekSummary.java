@@ -31,6 +31,11 @@ public class WfmShiftTradingJobCompleteEventWeekSummary  implements Serializable
     }
   }
 
+  public WfmShiftTradingJobCompleteEventWeekSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

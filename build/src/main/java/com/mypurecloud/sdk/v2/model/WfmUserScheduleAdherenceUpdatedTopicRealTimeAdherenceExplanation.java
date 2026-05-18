@@ -82,6 +82,11 @@ public class WfmUserScheduleAdherenceUpdatedTopicRealTimeAdherenceExplanation  i
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTopicRealTimeAdherenceExplanation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

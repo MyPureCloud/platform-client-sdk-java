@@ -36,6 +36,12 @@ public class DevelopmentActivityAggregateQueryResponseGroupedData  implements Se
     }
   }
 
+  public DevelopmentActivityAggregateQueryResponseGroupedData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<DevelopmentActivityAggregateQueryResponseData>();
+    }
+  }
+
   
   /**
    * The group values for this data

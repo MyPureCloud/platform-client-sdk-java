@@ -31,6 +31,11 @@ public class WorkitemsAttributeChangeInstant  implements Serializable {
     }
   }
 
+  public WorkitemsAttributeChangeInstant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * New property value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

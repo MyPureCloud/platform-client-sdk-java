@@ -30,6 +30,11 @@ public class CallCommand  implements Serializable {
     }
   }
 
+  public CallCommand(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The phone number to dial for this call.

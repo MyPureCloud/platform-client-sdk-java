@@ -273,6 +273,12 @@ public class ConversationEventTopicEmail  implements Serializable {
     }
   }
 
+  public ConversationEventTopicEmail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      draftAttachments = new ArrayList<ConversationEventTopicAttachment>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

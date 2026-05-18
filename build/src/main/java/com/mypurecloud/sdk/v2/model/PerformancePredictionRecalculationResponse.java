@@ -82,6 +82,11 @@ public class PerformancePredictionRecalculationResponse  implements Serializable
     }
   }
 
+  public PerformancePredictionRecalculationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The operationId for which to listen

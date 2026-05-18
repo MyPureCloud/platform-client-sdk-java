@@ -38,6 +38,13 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     }
   }
 
+  public DomainOrganizationRoleUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      permissions = new ArrayList<String>();
+      permissionPolicies = new ArrayList<DomainPermissionPolicy>();
+    }
+  }
+
   
   /**
    * role id

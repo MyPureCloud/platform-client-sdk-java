@@ -86,6 +86,11 @@ public class UserNextActivityReminder  implements Serializable {
     }
   }
 
+  public UserNextActivityReminder(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Upcoming activity for which the user is scheduled")
   @JsonProperty("activityCategory")

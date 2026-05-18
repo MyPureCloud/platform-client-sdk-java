@@ -145,6 +145,11 @@ public class EventAction  implements Serializable {
     }
   }
 
+  public EventAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the action.

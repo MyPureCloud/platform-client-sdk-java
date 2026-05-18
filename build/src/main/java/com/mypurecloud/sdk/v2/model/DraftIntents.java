@@ -35,6 +35,12 @@ public class DraftIntents  implements Serializable {
     }
   }
 
+  public DraftIntents(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      utterances = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Id for an intent.

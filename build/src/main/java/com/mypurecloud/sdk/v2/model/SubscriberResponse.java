@@ -33,6 +33,12 @@ public class SubscriberResponse  implements Serializable {
     }
   }
 
+  public SubscriberResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messageReturned = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Suggested valid addresses

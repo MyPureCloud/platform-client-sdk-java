@@ -132,6 +132,11 @@ public class DocumentBodyListBlockProperties  implements Serializable {
     }
   }
 
+  public DocumentBodyListBlockProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of icon for the unordered list.

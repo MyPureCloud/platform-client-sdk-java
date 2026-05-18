@@ -35,6 +35,13 @@ public class WorkitemsEventsNotificationPropertyChange  implements Serializable 
     }
   }
 
+  public WorkitemsEventsNotificationPropertyChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      oldValues = new ArrayList<String>();
+      newValues = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

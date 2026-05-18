@@ -35,6 +35,12 @@ public class AgentDirectRoutingBackupSettings  implements Serializable {
     }
   }
 
+  public AgentDirectRoutingBackupSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      backedUpUsers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * ID of queue to be used as backup. If queueId and userId are both specified, queue behaves as secondary backup.

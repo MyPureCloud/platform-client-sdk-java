@@ -29,6 +29,11 @@ public class ExternalContactsRelationshipChangedTopicDivision  implements Serial
     }
   }
 
+  public ExternalContactsRelationshipChangedTopicDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

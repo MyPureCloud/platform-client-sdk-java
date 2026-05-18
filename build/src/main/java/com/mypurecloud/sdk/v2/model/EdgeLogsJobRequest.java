@@ -31,6 +31,11 @@ public class EdgeLogsJobRequest  implements Serializable {
     }
   }
 
+  public EdgeLogsJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A relative directory to the root Edge log folder to query from.

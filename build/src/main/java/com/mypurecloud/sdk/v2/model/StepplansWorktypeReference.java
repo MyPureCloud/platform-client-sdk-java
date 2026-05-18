@@ -31,6 +31,11 @@ public class StepplansWorktypeReference  implements Serializable {
     }
   }
 
+  public StepplansWorktypeReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the worktype.

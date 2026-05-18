@@ -32,6 +32,11 @@ public class DataAction  implements Serializable {
     }
   }
 
+  public DataAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the data action.

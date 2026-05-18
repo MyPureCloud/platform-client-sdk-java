@@ -31,6 +31,11 @@ public class DateRangeWithOptionalEnd  implements Serializable {
     }
   }
 
+  public DateRangeWithOptionalEnd(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start date for work plan rotation or an agent, interpreted in the business unit's time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

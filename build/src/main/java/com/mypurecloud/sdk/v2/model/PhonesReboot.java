@@ -33,6 +33,12 @@ public class PhonesReboot  implements Serializable {
     }
   }
 
+  public PhonesReboot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of phone Ids to reboot.

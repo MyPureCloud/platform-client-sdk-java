@@ -41,6 +41,12 @@ public class PropertyDefinition  implements Serializable {
     }
   }
 
+  public PropertyDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      type = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

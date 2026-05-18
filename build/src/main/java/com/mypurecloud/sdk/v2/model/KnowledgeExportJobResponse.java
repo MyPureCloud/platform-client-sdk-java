@@ -153,6 +153,11 @@ public class KnowledgeExportJobResponse  implements Serializable {
     }
   }
 
+  public KnowledgeExportJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the export job.

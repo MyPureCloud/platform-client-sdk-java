@@ -33,6 +33,12 @@ public class UserObservationQueryResponse  implements Serializable {
     }
   }
 
+  public UserObservationQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<UserObservationDataContainer>();
+    }
+  }
+
   
   /**
    **/

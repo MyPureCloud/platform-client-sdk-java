@@ -32,6 +32,11 @@ public class FlowHealthIntentVersionInfo  implements Serializable {
     }
   }
 
+  public FlowHealthIntentVersionInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "NLU Version Info for this flow version.")
   @JsonProperty("nluVersion")

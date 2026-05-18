@@ -29,6 +29,11 @@ public class CampaignRuleCampaignRunTimeSettings  implements Serializable {
     }
   }
 
+  public CampaignRuleCampaignRunTimeSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * When true counts all campaign running time, otherwise only running time that a campaign was not waiting. Default: true

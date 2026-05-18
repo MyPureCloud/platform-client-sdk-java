@@ -215,6 +215,14 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     }
   }
 
+  public UserStartDetailEventTopicUserStartEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

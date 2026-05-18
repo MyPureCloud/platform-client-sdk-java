@@ -84,6 +84,12 @@ public class SupportedDialectsTranscriptionEngine  implements Serializable {
     }
   }
 
+  public SupportedDialectsTranscriptionEngine(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dialects = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

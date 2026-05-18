@@ -31,6 +31,11 @@ public class QueueConversationEventTopicTransferDestination  implements Serializ
     }
   }
 
+  public QueueConversationEventTopicTransferDestination(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the user if the command destination is a user.

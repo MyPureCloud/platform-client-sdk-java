@@ -82,6 +82,11 @@ public class AsyncIntradayResponse  implements Serializable {
     }
   }
 
+  public AsyncIntradayResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the operation

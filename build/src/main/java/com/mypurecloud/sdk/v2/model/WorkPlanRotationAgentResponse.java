@@ -33,6 +33,11 @@ public class WorkPlanRotationAgentResponse  implements Serializable {
     }
   }
 
+  public WorkPlanRotationAgentResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user associated with this work plan rotation

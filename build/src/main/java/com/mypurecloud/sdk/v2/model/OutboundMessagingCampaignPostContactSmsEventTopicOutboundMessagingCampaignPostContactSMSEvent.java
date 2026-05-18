@@ -141,6 +141,11 @@ public class OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingC
     }
   }
 
+  public OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

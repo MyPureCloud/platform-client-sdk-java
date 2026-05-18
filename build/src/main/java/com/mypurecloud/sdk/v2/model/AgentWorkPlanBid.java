@@ -142,6 +142,12 @@ public class AgentWorkPlanBid  implements Serializable {
     }
   }
 
+  public AgentWorkPlanBid(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      workPlanFieldsVisibleToAgents = new ArrayList<WorkPlanFieldsVisibleToAgentsEnum>();
+    }
+  }
+
   
   /**
    * The ID of the work plan bid

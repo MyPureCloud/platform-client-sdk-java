@@ -31,6 +31,11 @@ public class OutboundMessagingCampaignPreContactWhatsappEventTopicWhatsAppAttrib
     }
   }
 
+  public OutboundMessagingCampaignPreContactWhatsappEventTopicWhatsAppAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

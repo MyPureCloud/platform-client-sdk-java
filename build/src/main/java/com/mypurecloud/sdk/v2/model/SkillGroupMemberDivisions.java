@@ -34,6 +34,13 @@ public class SkillGroupMemberDivisions  implements Serializable {
     }
   }
 
+  public SkillGroupMemberDivisions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      addDivisionIds = new ArrayList<String>();
+      removeDivisionIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

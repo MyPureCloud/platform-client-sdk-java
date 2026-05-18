@@ -29,6 +29,11 @@ public class ManagementUnitAvailabilitySettingsResponse  implements Serializable
     }
   }
 
+  public ManagementUnitAvailabilitySettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates whether agent availability is enabled for the management unit

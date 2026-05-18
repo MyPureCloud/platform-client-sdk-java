@@ -87,6 +87,11 @@ public class SuggestionContext  implements Serializable {
     }
   }
 
+  public SuggestionContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The queue used to assign the interaction to the user, if any.")
   @JsonProperty("queue")

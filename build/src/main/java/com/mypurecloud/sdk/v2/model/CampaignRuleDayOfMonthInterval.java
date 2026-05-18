@@ -30,6 +30,11 @@ public class CampaignRuleDayOfMonthInterval  implements Serializable {
     }
   }
 
+  public CampaignRuleDayOfMonthInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The minimal day of month (exact day: 1-31) for the \"between\" operator

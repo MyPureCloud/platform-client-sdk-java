@@ -198,6 +198,14 @@ public class Group  implements Serializable {
     }
   }
 
+  public Group(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      images = new ArrayList<Image>();
+      addresses = new ArrayList<GroupContact>();
+      owners = new ArrayList<User>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

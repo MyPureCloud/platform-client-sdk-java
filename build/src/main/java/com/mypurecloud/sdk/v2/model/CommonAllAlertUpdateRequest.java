@@ -81,6 +81,11 @@ public class CommonAllAlertUpdateRequest  implements Serializable {
     }
   }
 
+  public CommonAllAlertUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The action to take

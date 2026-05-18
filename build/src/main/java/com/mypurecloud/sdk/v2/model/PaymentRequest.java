@@ -86,6 +86,13 @@ public class PaymentRequest  implements Serializable {
     }
   }
 
+  public PaymentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      lineItems = new ArrayList<PaymentLineItem>();
+      shippingOptions = new ArrayList<PaymentLineItem>();
+    }
+  }
+
   
   /**
    * The payment platform being used (e.g. Apple Pay)

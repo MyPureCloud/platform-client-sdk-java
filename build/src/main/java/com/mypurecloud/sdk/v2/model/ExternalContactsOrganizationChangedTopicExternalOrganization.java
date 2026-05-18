@@ -60,6 +60,14 @@ public class ExternalContactsOrganizationChangedTopicExternalOrganization  imple
     }
   }
 
+  public ExternalContactsOrganizationChangedTopicExternalOrganization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+      websites = new ArrayList<String>();
+      tickers = new ArrayList<ExternalContactsOrganizationChangedTopicTicker>();
+    }
+  }
+
   
   /**
    **/

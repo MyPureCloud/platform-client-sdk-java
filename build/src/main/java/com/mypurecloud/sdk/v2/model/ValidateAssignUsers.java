@@ -32,6 +32,12 @@ public class ValidateAssignUsers  implements Serializable {
     }
   }
 
+  public ValidateAssignUsers(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      membersToAssign = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of user ids to assign to a performance profile

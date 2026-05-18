@@ -30,6 +30,11 @@ public class EvaluationCreateCalibration  implements Serializable {
     }
   }
 
+  public EvaluationCreateCalibration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

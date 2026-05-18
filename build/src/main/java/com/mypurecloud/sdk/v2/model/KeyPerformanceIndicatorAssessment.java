@@ -86,6 +86,12 @@ public class KeyPerformanceIndicatorAssessment  implements Serializable {
     }
   }
 
+  public KeyPerformanceIndicatorAssessment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      checks = new ArrayList<Check>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Name of the key performance indicator assessed.")
   @JsonProperty("kpi")

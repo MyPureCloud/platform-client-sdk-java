@@ -40,6 +40,12 @@ public class SipSearchResult  implements Serializable {
     }
   }
 
+  public SipSearchResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<HomerRecord>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

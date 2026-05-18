@@ -88,6 +88,11 @@ public class EscalationRuleRequest  implements Serializable {
     }
   }
 
+  public EscalationRuleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the escalation rule.

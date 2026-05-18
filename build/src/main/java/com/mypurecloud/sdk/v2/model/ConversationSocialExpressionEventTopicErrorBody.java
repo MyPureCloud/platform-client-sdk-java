@@ -47,6 +47,13 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     }
   }
 
+  public ConversationSocialExpressionEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<ConversationSocialExpressionEventTopicDetail>();
+      errors = new ArrayList<ConversationSocialExpressionEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

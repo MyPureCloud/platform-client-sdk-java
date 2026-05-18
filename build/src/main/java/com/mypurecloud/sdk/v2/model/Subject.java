@@ -81,6 +81,11 @@ public class Subject  implements Serializable {
     }
   }
 
+  public Subject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

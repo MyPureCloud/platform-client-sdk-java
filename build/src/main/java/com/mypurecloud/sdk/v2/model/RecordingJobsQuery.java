@@ -92,6 +92,11 @@ public class RecordingJobsQuery  implements Serializable {
     }
   }
 
+  public RecordingJobsQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.

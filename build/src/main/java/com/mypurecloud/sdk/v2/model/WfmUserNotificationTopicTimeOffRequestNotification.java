@@ -90,6 +90,13 @@ public class WfmUserNotificationTopicTimeOffRequestNotification  implements Seri
     }
   }
 
+  public WfmUserNotificationTopicTimeOffRequestNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      partialDayStartDateTimes = new ArrayList<Date>();
+      fullDayManagementUnitDates = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

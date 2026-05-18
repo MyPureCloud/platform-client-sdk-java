@@ -32,6 +32,12 @@ public class ChatReactionUpdate  implements Serializable {
     }
   }
 
+  public ChatReactionUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      reactions = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Reactions to update

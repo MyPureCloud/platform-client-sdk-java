@@ -82,6 +82,12 @@ public class AgentUtilizationAggregateQueryClause  implements Serializable {
     }
   }
 
+  public AgentUtilizationAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<AgentUtilizationAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

@@ -84,6 +84,11 @@ public class FollowersFilter  implements Serializable {
     }
   }
 
+  public FollowersFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The comparison operator for follower count filtering.

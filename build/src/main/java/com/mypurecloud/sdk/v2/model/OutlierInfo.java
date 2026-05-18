@@ -30,6 +30,11 @@ public class OutlierInfo  implements Serializable {
     }
   }
 
+  public OutlierInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Boolean to identify if an outlier or not.

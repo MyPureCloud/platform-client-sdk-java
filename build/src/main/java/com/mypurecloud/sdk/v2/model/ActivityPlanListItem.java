@@ -194,6 +194,12 @@ public class ActivityPlanListItem  implements Serializable {
     }
   }
 
+  public ActivityPlanListItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnits = new ArrayList<ManagementUnitReference>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

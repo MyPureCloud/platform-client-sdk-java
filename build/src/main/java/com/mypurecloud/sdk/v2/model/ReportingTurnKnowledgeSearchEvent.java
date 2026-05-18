@@ -37,6 +37,12 @@ public class ReportingTurnKnowledgeSearchEvent  implements Serializable {
     }
   }
 
+  public ReportingTurnKnowledgeSearchEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      documents = new ArrayList<ReportingTurnKnowledgeDocument>();
+    }
+  }
+
   
   /**
    * The ID of this knowledge search.

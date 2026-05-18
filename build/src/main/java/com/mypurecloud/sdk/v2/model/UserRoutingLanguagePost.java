@@ -33,6 +33,11 @@ public class UserRoutingLanguagePost  implements Serializable {
     }
   }
 
+  public UserRoutingLanguagePost(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the existing routing language to add to the user

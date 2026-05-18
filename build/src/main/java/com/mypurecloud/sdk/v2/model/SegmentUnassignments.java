@@ -33,6 +33,12 @@ public class SegmentUnassignments  implements Serializable {
     }
   }
 
+  public SegmentUnassignments(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<SegmentForUnassignment>();
+    }
+  }
+
   
   /**
    * The segments to be unassigned.

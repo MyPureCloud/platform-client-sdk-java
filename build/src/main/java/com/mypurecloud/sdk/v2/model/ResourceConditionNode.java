@@ -137,6 +137,13 @@ public class ResourceConditionNode  implements Serializable {
     }
   }
 
+  public ResourceConditionNode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      operands = new ArrayList<ResourceConditionValue>();
+      terms = new ArrayList<ResourceConditionNode>();
+    }
+  }
+
   
   /**
    **/

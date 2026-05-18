@@ -30,6 +30,11 @@ public class NluDetectionInput  implements Serializable {
     }
   }
 
+  public NluDetectionInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The text to perform NLU detection on.

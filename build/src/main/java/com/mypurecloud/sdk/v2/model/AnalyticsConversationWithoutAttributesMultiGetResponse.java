@@ -33,6 +33,12 @@ public class AnalyticsConversationWithoutAttributesMultiGetResponse  implements 
     }
   }
 
+  public AnalyticsConversationWithoutAttributesMultiGetResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversations = new ArrayList<AnalyticsConversationWithoutAttributes>();
+    }
+  }
+
   
   /**
    **/

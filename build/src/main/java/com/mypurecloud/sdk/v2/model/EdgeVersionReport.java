@@ -31,6 +31,11 @@ public class EdgeVersionReport  implements Serializable {
     }
   }
 
+  public EdgeVersionReport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

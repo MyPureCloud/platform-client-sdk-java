@@ -43,6 +43,12 @@ public class CredentialInfoListing  implements Serializable, PagedResource<Crede
     }
   }
 
+  public CredentialInfoListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CredentialInfo>();
+    }
+  }
+
   
   /**
    **/

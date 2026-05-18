@@ -33,6 +33,12 @@ public class UserSearchRule  implements Serializable {
     }
   }
 
+  public UserSearchRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      parts = new ArrayList<UserSearchRulePart>();
+    }
+  }
+
   
   /**
    * The parts of this rule; the results of these are ANDed together.

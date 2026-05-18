@@ -30,6 +30,11 @@ public class FlowMetricsTopicFlowScoredAgent  implements Serializable {
     }
   }
 
+  public FlowMetricsTopicFlowScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Assigned agent score for this conversation (0 - 100, higher being better)

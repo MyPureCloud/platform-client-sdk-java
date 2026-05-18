@@ -25,6 +25,11 @@ public class DynamicUtilizationRule  implements Serializable {
     }
   }
 
+  public DynamicUtilizationRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

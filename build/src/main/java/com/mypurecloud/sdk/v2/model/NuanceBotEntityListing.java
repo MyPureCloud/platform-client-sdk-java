@@ -44,6 +44,12 @@ public class NuanceBotEntityListing  implements Serializable, PagedResource<Nuan
     }
   }
 
+  public NuanceBotEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<NuanceBot>();
+    }
+  }
+
   
   /**
    **/

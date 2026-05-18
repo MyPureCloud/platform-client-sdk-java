@@ -95,6 +95,11 @@ public class JourneySegment  implements Serializable {
     }
   }
 
+  public JourneySegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the segment.

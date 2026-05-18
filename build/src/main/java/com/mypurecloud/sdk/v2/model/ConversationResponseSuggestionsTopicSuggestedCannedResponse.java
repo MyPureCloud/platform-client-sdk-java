@@ -30,6 +30,11 @@ public class ConversationResponseSuggestionsTopicSuggestedCannedResponse  implem
     }
   }
 
+  public ConversationResponseSuggestionsTopicSuggestedCannedResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

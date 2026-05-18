@@ -29,6 +29,11 @@ public class WfmAgentScheduleUpdateTopicUserReference  implements Serializable {
     }
   }
 
+  public WfmAgentScheduleUpdateTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

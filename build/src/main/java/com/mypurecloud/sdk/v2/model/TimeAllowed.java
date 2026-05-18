@@ -35,6 +35,12 @@ public class TimeAllowed  implements Serializable {
     }
   }
 
+  public TimeAllowed(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      timeSlots = new ArrayList<TimeSlot>();
+    }
+  }
+
   
   /**
    **/

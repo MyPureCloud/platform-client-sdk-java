@@ -29,6 +29,11 @@ public class CreateRoutingSkill  implements Serializable {
     }
   }
 
+  public CreateRoutingSkill(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the skill.

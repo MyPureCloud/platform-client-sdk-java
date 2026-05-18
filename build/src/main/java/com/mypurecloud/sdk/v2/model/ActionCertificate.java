@@ -174,6 +174,11 @@ public class ActionCertificate  implements Serializable {
     }
   }
 
+  public ActionCertificate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Signing Authority for the certificate

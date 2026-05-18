@@ -92,6 +92,12 @@ public class SkillGroup  implements Serializable {
     }
   }
 
+  public SkillGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillConditions = new ArrayList<SkillGroupCondition>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

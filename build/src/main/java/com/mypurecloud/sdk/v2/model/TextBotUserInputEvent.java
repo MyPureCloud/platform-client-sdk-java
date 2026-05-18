@@ -82,6 +82,12 @@ public class TextBotUserInputEvent  implements Serializable {
     }
   }
 
+  public TextBotUserInputEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alternatives = new ArrayList<TextBotUserInputAlternative>();
+    }
+  }
+
   
   /**
    * The input mode.

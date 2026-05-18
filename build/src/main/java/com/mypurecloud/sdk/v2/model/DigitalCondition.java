@@ -45,6 +45,11 @@ public class DigitalCondition  implements Serializable {
     }
   }
 
+  public DigitalCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * If true, inverts the result of evaluating this condition. Default is false.

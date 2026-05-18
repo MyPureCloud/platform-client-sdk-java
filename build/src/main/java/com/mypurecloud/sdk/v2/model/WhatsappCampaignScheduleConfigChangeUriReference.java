@@ -31,6 +31,11 @@ public class WhatsappCampaignScheduleConfigChangeUriReference  implements Serial
     }
   }
 
+  public WhatsappCampaignScheduleConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

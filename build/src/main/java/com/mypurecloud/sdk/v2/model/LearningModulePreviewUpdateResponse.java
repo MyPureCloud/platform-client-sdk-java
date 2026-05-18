@@ -32,6 +32,11 @@ public class LearningModulePreviewUpdateResponse  implements Serializable {
     }
   }
 
+  public LearningModulePreviewUpdateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Learning Module id

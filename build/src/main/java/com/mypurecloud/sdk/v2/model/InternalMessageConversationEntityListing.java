@@ -43,6 +43,12 @@ public class InternalMessageConversationEntityListing  implements Serializable, 
     }
   }
 
+  public InternalMessageConversationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<InternalMessageConversation>();
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class EvaluationCreateConversation  implements Serializable {
     }
   }
 
+  public EvaluationCreateConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

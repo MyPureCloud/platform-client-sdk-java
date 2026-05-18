@@ -137,6 +137,11 @@ public class KnowledgeGuestDocumentView  implements Serializable {
     }
   }
 
+  public KnowledgeGuestDocumentView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The variation of the viewed document.

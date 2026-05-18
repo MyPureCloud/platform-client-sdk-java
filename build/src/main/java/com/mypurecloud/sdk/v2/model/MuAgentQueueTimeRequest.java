@@ -34,6 +34,12 @@ public class MuAgentQueueTimeRequest  implements Serializable {
     }
   }
 
+  public MuAgentQueueTimeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentOnQueueTimes = new ArrayList<AgentQueueTimeRequest>();
+    }
+  }
+
   
   /**
    * ID of the management unit

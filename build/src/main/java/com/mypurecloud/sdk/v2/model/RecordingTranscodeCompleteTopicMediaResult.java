@@ -36,6 +36,12 @@ public class RecordingTranscodeCompleteTopicMediaResult  implements Serializable
     }
   }
 
+  public RecordingTranscodeCompleteTopicMediaResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      waveformData = new ArrayList<BigDecimal>();
+    }
+  }
+
   
   /**
    **/

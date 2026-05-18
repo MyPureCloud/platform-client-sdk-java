@@ -80,6 +80,11 @@ public class CreateShareRequestMember  implements Serializable {
     }
   }
 
+  public CreateShareRequestMember(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

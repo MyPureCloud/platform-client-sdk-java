@@ -78,6 +78,11 @@ public class EdgeChangeTopicEdge  implements Serializable {
     }
   }
 
+  public EdgeChangeTopicEdge(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

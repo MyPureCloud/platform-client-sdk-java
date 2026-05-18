@@ -30,6 +30,11 @@ public class LearningModulePublishRequest  implements Serializable {
     }
   }
 
+  public LearningModulePublishRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether the terms and conditions were accepted

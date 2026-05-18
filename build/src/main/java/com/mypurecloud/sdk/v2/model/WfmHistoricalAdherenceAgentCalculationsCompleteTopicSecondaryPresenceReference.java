@@ -29,6 +29,11 @@ public class WfmHistoricalAdherenceAgentCalculationsCompleteTopicSecondaryPresen
     }
   }
 
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicSecondaryPresenceReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

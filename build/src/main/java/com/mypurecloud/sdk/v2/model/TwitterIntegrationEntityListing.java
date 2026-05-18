@@ -43,6 +43,12 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     }
   }
 
+  public TwitterIntegrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TwitterIntegration>();
+    }
+  }
+
   
   /**
    **/

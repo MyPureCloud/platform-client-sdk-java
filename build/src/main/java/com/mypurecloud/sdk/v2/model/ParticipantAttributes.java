@@ -32,6 +32,11 @@ public class ParticipantAttributes  implements Serializable {
     }
   }
 
+  public ParticipantAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The map of attribute keys to values.

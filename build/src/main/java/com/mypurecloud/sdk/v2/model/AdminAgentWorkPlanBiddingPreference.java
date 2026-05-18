@@ -89,6 +89,12 @@ public class AdminAgentWorkPlanBiddingPreference  implements Serializable {
     }
   }
 
+  public AdminAgentWorkPlanBiddingPreference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      priorities = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The agent to whom this work plan bidding preference applies

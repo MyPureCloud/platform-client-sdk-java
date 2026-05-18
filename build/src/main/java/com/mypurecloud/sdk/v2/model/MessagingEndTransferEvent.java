@@ -84,6 +84,11 @@ public class MessagingEndTransferEvent  implements Serializable {
     }
   }
 
+  public MessagingEndTransferEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

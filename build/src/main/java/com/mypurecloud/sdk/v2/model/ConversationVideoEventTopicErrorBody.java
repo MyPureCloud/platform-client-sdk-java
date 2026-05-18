@@ -47,6 +47,13 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     }
   }
 
+  public ConversationVideoEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<ConversationVideoEventTopicDetail>();
+      errors = new ArrayList<ConversationVideoEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

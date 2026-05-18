@@ -30,6 +30,11 @@ public class AssignedSegment  implements Serializable {
     }
   }
 
+  public AssignedSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the segment assigned.

@@ -85,6 +85,11 @@ public class QualityAuditQueryFilter  implements Serializable {
     }
   }
 
+  public QualityAuditQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the property to filter.

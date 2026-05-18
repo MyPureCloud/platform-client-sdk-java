@@ -37,6 +37,11 @@ public class CertificateDetails  implements Serializable {
     }
   }
 
+  public CertificateDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Information about the issuer of the certificate.  The value of this property is a comma separated key=value format.  Each key is one of the attribute names supported by X.500.

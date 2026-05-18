@@ -30,6 +30,11 @@ public class DomainRole  implements Serializable {
     }
   }
 
+  public DomainRole(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the role

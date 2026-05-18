@@ -30,6 +30,11 @@ public class QueueReference  implements Serializable {
     }
   }
 
+  public QueueReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

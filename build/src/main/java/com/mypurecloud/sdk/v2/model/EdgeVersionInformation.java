@@ -29,6 +29,11 @@ public class EdgeVersionInformation  implements Serializable {
     }
   }
 
+  public EdgeVersionInformation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class PatchContext  implements Serializable {
     }
   }
 
+  public PatchContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      patterns = new ArrayList<PatchContextPattern>();
+    }
+  }
+
   
   /**
    * A list of one or more patterns to match.

@@ -247,6 +247,18 @@ public class ClientPublicApiUsageQueryRequest  implements Serializable {
     }
   }
 
+  public ClientPublicApiUsageQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sortBy = new ArrayList<UsageQuerySortBy>();
+      metrics = new ArrayList<MetricsEnum>();
+      templateUris = new ArrayList<String>();
+      httpMethods = new ArrayList<HttpMethodsEnum>();
+      platforms = new ArrayList<String>();
+      groupBy = new ArrayList<GroupByEnum>();
+      organizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Specify the interval to query on. Start and end are inclusive. Start date cannot be more than a year ago. End date cannot be more than 90 days after the start. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

@@ -81,6 +81,11 @@ public class RichLinkHeader  implements Serializable {
     }
   }
 
+  public RichLinkHeader(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the Rich Link header type.

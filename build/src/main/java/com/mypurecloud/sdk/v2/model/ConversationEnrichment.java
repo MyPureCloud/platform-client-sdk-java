@@ -33,6 +33,11 @@ public class ConversationEnrichment  implements Serializable {
     }
   }
 
+  public ConversationEnrichment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Detected language of this message.

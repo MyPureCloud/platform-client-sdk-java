@@ -85,6 +85,13 @@ public class UserDetailQueryFilter  implements Serializable {
     }
   }
 
+  public UserDetailQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<UserDetailQueryClause>();
+      predicates = new ArrayList<UserDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

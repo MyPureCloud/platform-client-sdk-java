@@ -33,6 +33,12 @@ public class KnowledgeParseJobRequest  implements Serializable {
     }
   }
 
+  public KnowledgeParseJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      hints = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Upload key

@@ -84,6 +84,12 @@ public class ProgramTranscriptionEngine  implements Serializable {
     }
   }
 
+  public ProgramTranscriptionEngine(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dialects = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

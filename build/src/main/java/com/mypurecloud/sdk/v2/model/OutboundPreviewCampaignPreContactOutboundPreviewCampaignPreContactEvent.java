@@ -102,6 +102,11 @@ public class OutboundPreviewCampaignPreContactOutboundPreviewCampaignPreContactE
     }
   }
 
+  public OutboundPreviewCampaignPreContactOutboundPreviewCampaignPreContactEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

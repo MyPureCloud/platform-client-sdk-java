@@ -33,6 +33,12 @@ public class BulkJobAddRequest  implements Serializable {
     }
   }
 
+  public BulkJobAddRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkitemCommonCreate>();
+    }
+  }
+
   
   /**
    * The list of workitem entities to create.

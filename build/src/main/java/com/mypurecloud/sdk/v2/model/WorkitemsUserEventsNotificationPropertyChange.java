@@ -35,6 +35,13 @@ public class WorkitemsUserEventsNotificationPropertyChange  implements Serializa
     }
   }
 
+  public WorkitemsUserEventsNotificationPropertyChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      oldValues = new ArrayList<String>();
+      newValues = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

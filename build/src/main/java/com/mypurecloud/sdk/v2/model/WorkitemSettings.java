@@ -29,6 +29,11 @@ public class WorkitemSettings  implements Serializable {
     }
   }
 
+  public WorkitemSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The UUID of the Worktype.

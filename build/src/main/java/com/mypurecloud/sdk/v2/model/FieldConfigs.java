@@ -32,6 +32,11 @@ public class FieldConfigs  implements Serializable {
     }
   }
 
+  public FieldConfigs(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

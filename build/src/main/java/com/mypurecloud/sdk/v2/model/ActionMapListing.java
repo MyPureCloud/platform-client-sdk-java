@@ -43,6 +43,12 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     }
   }
 
+  public ActionMapListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ActionMap>();
+    }
+  }
+
   
   /**
    **/

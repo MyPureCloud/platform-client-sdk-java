@@ -148,6 +148,13 @@ public class ConversationEventTopicMessageDetails  implements Serializable {
     }
   }
 
+  public ConversationEventTopicMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      media = new ArrayList<ConversationEventTopicMessageMedia>();
+      stickers = new ArrayList<ConversationEventTopicMessageSticker>();
+    }
+  }
+
   
   /**
    * UUID identifying the message media.

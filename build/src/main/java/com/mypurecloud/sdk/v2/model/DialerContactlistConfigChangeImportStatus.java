@@ -89,6 +89,12 @@ public class DialerContactlistConfigChangeImportStatus  implements Serializable 
     }
   }
 
+  public DialerContactlistConfigChangeImportStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      targetContactListIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * current status of the import

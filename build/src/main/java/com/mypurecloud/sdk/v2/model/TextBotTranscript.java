@@ -31,6 +31,11 @@ public class TextBotTranscript  implements Serializable {
     }
   }
 
+  public TextBotTranscript(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The text of the transcript item.

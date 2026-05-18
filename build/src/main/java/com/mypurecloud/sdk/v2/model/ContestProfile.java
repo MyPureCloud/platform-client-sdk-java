@@ -31,6 +31,11 @@ public class ContestProfile  implements Serializable {
     }
   }
 
+  public ContestProfile(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

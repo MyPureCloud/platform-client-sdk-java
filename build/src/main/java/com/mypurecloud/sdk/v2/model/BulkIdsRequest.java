@@ -33,6 +33,12 @@ public class BulkIdsRequest  implements Serializable {
     }
   }
 
+  public BulkIdsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalContactsEntity>();
+    }
+  }
+
   
   /**
    **/

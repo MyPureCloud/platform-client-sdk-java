@@ -91,6 +91,11 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
     }
   }
 
+  public JourneyOutcomeEventsNotificationOutcomeEventsNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

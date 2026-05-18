@@ -50,6 +50,15 @@ public class DomainOrganizationRoleCreate  implements Serializable {
     }
   }
 
+  public DomainOrganizationRoleCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      permissions = new ArrayList<String>();
+      unusedPermissions = new ArrayList<String>();
+      permissionPolicies = new ArrayList<DomainPermissionPolicy>();
+      addonLicenses = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * role id

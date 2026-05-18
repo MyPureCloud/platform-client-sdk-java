@@ -36,6 +36,12 @@ public class NluFeedbackRequest  implements Serializable {
     }
   }
 
+  public NluFeedbackRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<IntentFeedback>();
+    }
+  }
+
   
   /**
    * The feedback text.

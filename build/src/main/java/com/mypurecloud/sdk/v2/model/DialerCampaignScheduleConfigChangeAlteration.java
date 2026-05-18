@@ -83,6 +83,11 @@ public class DialerCampaignScheduleConfigChangeAlteration  implements Serializab
     }
   }
 
+  public DialerCampaignScheduleConfigChangeAlteration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

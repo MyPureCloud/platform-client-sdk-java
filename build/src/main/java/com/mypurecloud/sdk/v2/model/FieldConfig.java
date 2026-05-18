@@ -89,6 +89,12 @@ public class FieldConfig  implements Serializable {
     }
   }
 
+  public FieldConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sections = new ArrayList<Section>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

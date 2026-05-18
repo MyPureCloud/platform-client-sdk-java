@@ -38,6 +38,12 @@ public class UnansweredPhraseGroup  implements Serializable {
     }
   }
 
+  public UnansweredPhraseGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phrases = new ArrayList<UnansweredPhrase>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

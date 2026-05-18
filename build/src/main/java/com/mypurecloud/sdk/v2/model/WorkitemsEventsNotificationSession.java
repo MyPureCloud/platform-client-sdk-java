@@ -137,6 +137,12 @@ public class WorkitemsEventsNotificationSession  implements Serializable {
     }
   }
 
+  public WorkitemsEventsNotificationSession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      assignmentSegments = new ArrayList<WorkitemsEventsNotificationAssignmentSegment>();
+    }
+  }
+
   
   /**
    **/

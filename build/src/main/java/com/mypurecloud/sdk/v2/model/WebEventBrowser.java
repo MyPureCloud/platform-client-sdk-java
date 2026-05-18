@@ -31,6 +31,11 @@ public class WebEventBrowser  implements Serializable {
     }
   }
 
+  public WebEventBrowser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Browser family (e.g. Chrome, Safari, Firefox).

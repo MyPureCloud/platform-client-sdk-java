@@ -43,6 +43,12 @@ public class UserQueueEntityListing  implements Serializable, PagedResource<User
     }
   }
 
+  public UserQueueEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserQueue>();
+    }
+  }
+
   
   /**
    **/

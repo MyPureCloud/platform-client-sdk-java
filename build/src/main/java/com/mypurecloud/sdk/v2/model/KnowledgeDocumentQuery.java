@@ -184,6 +184,11 @@ public class KnowledgeDocumentQuery  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Page size of the returned results.

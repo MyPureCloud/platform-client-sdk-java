@@ -81,6 +81,12 @@ public class CopilotContextFilter  implements Serializable {
     }
   }
 
+  public CopilotContextFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Operator to apply for multiple context values, default: MatchAll.

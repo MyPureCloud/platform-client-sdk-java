@@ -37,6 +37,13 @@ public class ConversationMessageEventTopicMessageMetadata  implements Serializab
     }
   }
 
+  public ConversationMessageEventTopicMessageMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<ConversationMessageEventTopicMessageMetadataEvent>();
+      content = new ArrayList<ConversationMessageEventTopicMessageMetadataContent>();
+    }
+  }
+
   
   /**
    * Message type.

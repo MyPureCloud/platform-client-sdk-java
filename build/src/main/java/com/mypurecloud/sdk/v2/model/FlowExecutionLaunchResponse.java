@@ -34,6 +34,11 @@ public class FlowExecutionLaunchResponse  implements Serializable {
     }
   }
 
+  public FlowExecutionLaunchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow execution ID

@@ -82,6 +82,12 @@ public class SurveyDetailQueryClause  implements Serializable {
     }
   }
 
+  public SurveyDetailQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<SurveyDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

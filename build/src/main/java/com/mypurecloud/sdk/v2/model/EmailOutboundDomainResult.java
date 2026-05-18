@@ -136,6 +136,11 @@ public class EmailOutboundDomainResult  implements Serializable {
     }
   }
 
+  public EmailOutboundDomainResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

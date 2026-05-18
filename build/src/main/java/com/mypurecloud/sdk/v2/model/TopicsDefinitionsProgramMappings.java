@@ -40,6 +40,13 @@ public class TopicsDefinitionsProgramMappings  implements Serializable {
     }
   }
 
+  public TopicsDefinitionsProgramMappings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queues = new ArrayList<AddressableEntityRef>();
+      flows = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   /**
    **/

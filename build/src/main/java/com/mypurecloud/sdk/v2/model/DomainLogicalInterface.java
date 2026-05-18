@@ -231,6 +231,16 @@ public class DomainLogicalInterface  implements Serializable {
     }
   }
 
+  public DomainLogicalInterface(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routes = new ArrayList<DomainNetworkRoute>();
+      addresses = new ArrayList<DomainNetworkAddress>();
+      commandResponses = new ArrayList<DomainNetworkCommandResponse>();
+      externalTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
+      phoneTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

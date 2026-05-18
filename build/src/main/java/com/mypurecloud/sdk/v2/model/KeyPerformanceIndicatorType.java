@@ -132,6 +132,12 @@ public class KeyPerformanceIndicatorType  implements Serializable {
     }
   }
 
+  public KeyPerformanceIndicatorType(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sources = new ArrayList<SourcesEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The id the Key Performance Indicator Type.")
   @JsonProperty("id")

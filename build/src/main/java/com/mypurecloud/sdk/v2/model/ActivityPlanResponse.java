@@ -210,6 +210,13 @@ public class ActivityPlanResponse  implements Serializable {
     }
   }
 
+  public ActivityPlanResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnits = new ArrayList<ManagementUnitReference>();
+      fixedAvailability = new ArrayList<FixedAvailability>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

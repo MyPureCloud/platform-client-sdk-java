@@ -35,6 +35,11 @@ public class EdgeLogicalInterfacesChangeTopicErrorInfo  implements Serializable 
     }
   }
 
+  public EdgeLogicalInterfacesChangeTopicErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

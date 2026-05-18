@@ -30,6 +30,11 @@ public class DocumentContentHighlightIndex  implements Serializable {
     }
   }
 
+  public DocumentContentHighlightIndex(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Highlight text start index.

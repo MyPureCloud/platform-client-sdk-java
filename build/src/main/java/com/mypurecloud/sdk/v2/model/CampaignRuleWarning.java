@@ -92,6 +92,11 @@ public class CampaignRuleWarning  implements Serializable {
     }
   }
 
+  public CampaignRuleWarning(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Warning code for this warning.

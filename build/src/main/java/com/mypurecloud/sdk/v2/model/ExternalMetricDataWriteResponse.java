@@ -37,6 +37,13 @@ public class ExternalMetricDataWriteResponse  implements Serializable {
     }
   }
 
+  public ExternalMetricDataWriteResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      processedEntities = new ArrayList<ExternalMetricDataProcessedItem>();
+      unprocessedEntities = new ArrayList<ExternalMetricDataUnprocessedItem>();
+    }
+  }
+
   
   /**
    * The list of processed entities

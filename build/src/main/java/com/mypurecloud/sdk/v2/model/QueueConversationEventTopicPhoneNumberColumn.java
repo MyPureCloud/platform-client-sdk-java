@@ -30,6 +30,11 @@ public class QueueConversationEventTopicPhoneNumberColumn  implements Serializab
     }
   }
 
+  public QueueConversationEventTopicPhoneNumberColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

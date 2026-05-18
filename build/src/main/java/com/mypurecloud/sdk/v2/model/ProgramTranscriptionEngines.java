@@ -41,6 +41,12 @@ public class ProgramTranscriptionEngines  implements Serializable {
     }
   }
 
+  public ProgramTranscriptionEngines(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      transcriptionEngines = new ArrayList<ProgramTranscriptionEngine>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

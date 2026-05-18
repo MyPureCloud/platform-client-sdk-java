@@ -114,6 +114,16 @@ public class OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign  imp
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dncLists = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeUriReference>();
+      contactListFilters = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeUriReference>();
+      contactSorts = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeContactSort>();
+      ruleSets = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeUriReference>();
+      errors = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeErrorDetail>();
+    }
+  }
+
   
   /**
    **/

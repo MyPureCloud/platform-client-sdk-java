@@ -34,6 +34,11 @@ public class WebDeploymentFlowEntityRef  implements Serializable {
     }
   }
 
+  public WebDeploymentFlowEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Flow ID

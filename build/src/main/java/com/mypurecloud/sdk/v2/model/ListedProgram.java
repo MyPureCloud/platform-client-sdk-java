@@ -42,6 +42,12 @@ public class ListedProgram  implements Serializable {
     }
   }
 
+  public ListedProgram(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

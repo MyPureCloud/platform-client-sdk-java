@@ -30,6 +30,11 @@ public class QueueConversationMessageEventTopicMessageMetadataEvent  implements 
     }
   }
 
+  public QueueConversationMessageEventTopicMessageMetadataEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element.

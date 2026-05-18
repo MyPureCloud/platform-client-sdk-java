@@ -30,6 +30,11 @@ public class SecondaryPresence  implements Serializable {
     }
   }
 
+  public SecondaryPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

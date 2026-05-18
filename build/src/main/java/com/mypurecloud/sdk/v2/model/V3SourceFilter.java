@@ -33,6 +33,12 @@ public class V3SourceFilter  implements Serializable {
     }
   }
 
+  public V3SourceFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      folders = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The site from which to sync data.

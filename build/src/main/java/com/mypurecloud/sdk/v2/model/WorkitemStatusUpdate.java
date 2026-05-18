@@ -38,6 +38,12 @@ public class WorkitemStatusUpdate  implements Serializable {
     }
   }
 
+  public WorkitemStatusUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      destinationStatusIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the Status. Valid length between 3 and 256 characters.

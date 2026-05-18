@@ -29,6 +29,11 @@ public class ConversationUtilizationLabelUpdate  implements Serializable {
     }
   }
 
+  public ConversationUtilizationLabelUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The utilization label associated with the conversation.

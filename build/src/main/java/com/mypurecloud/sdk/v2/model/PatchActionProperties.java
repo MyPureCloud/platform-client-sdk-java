@@ -34,6 +34,11 @@ public class PatchActionProperties  implements Serializable {
     }
   }
 
+  public PatchActionProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Prompt message shown to user, used for webchat type action.

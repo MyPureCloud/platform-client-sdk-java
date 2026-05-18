@@ -29,6 +29,11 @@ public class TrunkMetricsTopicTrunkMetricsQoS  implements Serializable {
     }
   }
 
+  public TrunkMetricsTopicTrunkMetricsQoS(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

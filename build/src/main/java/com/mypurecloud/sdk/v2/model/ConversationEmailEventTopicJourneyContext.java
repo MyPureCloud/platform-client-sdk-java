@@ -34,6 +34,11 @@ public class ConversationEmailEventTopicJourneyContext  implements Serializable 
     }
   }
 
+  public ConversationEmailEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -100,6 +100,11 @@ public class WebMessagingContent  implements Serializable {
     }
   }
 
+  public WebMessagingContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Type of this content element. If contentType = \"Attachment\" only one item is allowed.")
   @JsonProperty("contentType")

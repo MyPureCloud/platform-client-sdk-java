@@ -39,6 +39,12 @@ public class PersistentConnectionChangeTopicErrorInfo  implements Serializable {
     }
   }
 
+  public PersistentConnectionChangeTopicErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      nestedErrorDetails = new ArrayList<PersistentConnectionChangeTopicErrorInfoDetails>();
+    }
+  }
+
   
   /**
    **/

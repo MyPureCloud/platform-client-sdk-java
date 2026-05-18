@@ -89,6 +89,12 @@ public class LocationUpdateDefinition  implements Serializable {
     }
   }
 
+  public LocationUpdateDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      path = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the Location. Required for creates, not required for updates

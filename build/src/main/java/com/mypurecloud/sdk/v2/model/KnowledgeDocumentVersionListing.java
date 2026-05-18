@@ -36,6 +36,12 @@ public class KnowledgeDocumentVersionListing  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentVersionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<KnowledgeDocumentVersion>();
+    }
+  }
+
   
   /**
    **/

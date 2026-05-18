@@ -104,6 +104,12 @@ public class Endpoint  implements Serializable {
     }
   }
 
+  public Endpoint(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dids = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

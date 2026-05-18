@@ -31,6 +31,11 @@ public class ImportScriptStatusResponse  implements Serializable {
     }
   }
 
+  public ImportScriptStatusResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

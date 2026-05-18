@@ -177,6 +177,11 @@ public class UserObservationQueryPredicate  implements Serializable {
     }
   }
 
+  public UserObservationQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

@@ -41,6 +41,12 @@ public class EvaluationSearchAggregationResponse  implements Serializable {
     }
   }
 
+  public EvaluationSearchAggregationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      buckets = new ArrayList<EvaluationSearchAggregationBucket>();
+    }
+  }
+
   
   /**
    * Simple aggregation value (for SUM, COUNT, AVERAGE, etc.)

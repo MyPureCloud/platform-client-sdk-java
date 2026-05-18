@@ -456,6 +456,18 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     }
   }
 
+  public AcdEndDetailEventTopicAcdEndEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedSkillExpressionIds = new ArrayList<String>();
+      requestedRoutingUserIds = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

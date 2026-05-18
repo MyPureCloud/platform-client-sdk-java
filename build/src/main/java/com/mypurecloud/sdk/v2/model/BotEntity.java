@@ -91,6 +91,11 @@ public class BotEntity  implements Serializable {
     }
   }
 
+  public BotEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the entity.

@@ -60,6 +60,14 @@ public class ExternalContactsContactChangedTopicExternalOrganization  implements
     }
   }
 
+  public ExternalContactsContactChangedTopicExternalOrganization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+      websites = new ArrayList<String>();
+      tickers = new ArrayList<ExternalContactsContactChangedTopicTicker>();
+    }
+  }
+
   
   /**
    **/

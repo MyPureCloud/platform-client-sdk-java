@@ -33,6 +33,12 @@ public class ContestScoresGroupTrendList  implements Serializable {
     }
   }
 
+  public ContestScoresGroupTrendList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContestScoresGroupTrend>();
+    }
+  }
+
   
   /**
    **/

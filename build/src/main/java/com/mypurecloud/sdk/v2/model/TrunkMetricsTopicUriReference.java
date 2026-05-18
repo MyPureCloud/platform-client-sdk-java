@@ -30,6 +30,11 @@ public class TrunkMetricsTopicUriReference  implements Serializable {
     }
   }
 
+  public TrunkMetricsTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

@@ -33,6 +33,11 @@ public class KnowledgeDocumentSuggestionResultDocument  implements Serializable 
     }
   }
 
+  public KnowledgeDocumentSuggestionResultDocument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the document.

@@ -33,6 +33,11 @@ public class BuShortTermForecastReference  implements Serializable {
     }
   }
 
+  public BuShortTermForecastReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

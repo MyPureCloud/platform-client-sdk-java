@@ -37,6 +37,11 @@ public class QueueMediaSettings  implements Serializable {
     }
   }
 
+  public QueueMediaSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The queue media settings for call interactions.

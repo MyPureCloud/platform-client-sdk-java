@@ -43,6 +43,13 @@ public class AlternativeShiftOffersViewResponseTemplate  implements Serializable
     }
   }
 
+  public AlternativeShiftOffersViewResponseTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<AlternativeShiftAgentScheduledShift>();
+      alternativeDays = new ArrayList<AlternativeShiftAgentScheduledShift>();
+    }
+  }
+
   
   /**
    * The unique identifier of the async list job that created this file

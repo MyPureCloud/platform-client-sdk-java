@@ -36,6 +36,11 @@ public class JourneyCaseAssociation  implements Serializable {
     }
   }
 
+  public JourneyCaseAssociation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the association.

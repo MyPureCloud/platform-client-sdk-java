@@ -82,6 +82,12 @@ public class AdditionalMatchCriteria  implements Serializable {
     }
   }
 
+  public AdditionalMatchCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topics = new ArrayList<TopicCriteria>();
+    }
+  }
+
   
   /**
    * List of topics with specific data ingestion rules to filter messages for escalation.

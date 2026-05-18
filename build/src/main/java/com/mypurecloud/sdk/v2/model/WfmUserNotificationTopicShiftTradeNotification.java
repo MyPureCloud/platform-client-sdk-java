@@ -90,6 +90,11 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
     }
   }
 
+  public WfmUserNotificationTopicShiftTradeNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -37,6 +37,13 @@ public class TextBotsRichMediaInputEvent  implements Serializable {
     }
   }
 
+  public TextBotsRichMediaInputEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inputs = new ArrayList<ConversationMessageContent>();
+      messages = new ArrayList<ConversationMessageEvent>();
+    }
+  }
+
   
   /**
    * The Rich Media content inputs.

@@ -33,6 +33,11 @@ public class DispositionAmdTimeout  implements Serializable {
     }
   }
 
+  public DispositionAmdTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured AMD timeout value.

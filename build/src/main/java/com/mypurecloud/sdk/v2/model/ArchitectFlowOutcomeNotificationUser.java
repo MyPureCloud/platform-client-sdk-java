@@ -33,6 +33,11 @@ public class ArchitectFlowOutcomeNotificationUser  implements Serializable {
     }
   }
 
+  public ArchitectFlowOutcomeNotificationUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the user.

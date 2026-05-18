@@ -30,6 +30,11 @@ public class ArchitectFlowNotificationFlowVersion  implements Serializable {
     }
   }
 
+  public ArchitectFlowNotificationFlowVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The version ID

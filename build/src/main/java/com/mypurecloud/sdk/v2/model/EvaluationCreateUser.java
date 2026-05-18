@@ -30,6 +30,11 @@ public class EvaluationCreateUser  implements Serializable {
     }
   }
 
+  public EvaluationCreateUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

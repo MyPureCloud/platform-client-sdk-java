@@ -30,6 +30,11 @@ public class RoutingSkillReference  implements Serializable {
     }
   }
 
+  public RoutingSkillReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

@@ -32,6 +32,11 @@ public class ConversationCallbackEventTopicDivisionEntityRef  implements Seriali
     }
   }
 
+  public ConversationCallbackEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

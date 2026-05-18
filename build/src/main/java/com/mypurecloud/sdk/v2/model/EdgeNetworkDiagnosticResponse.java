@@ -30,6 +30,11 @@ public class EdgeNetworkDiagnosticResponse  implements Serializable {
     }
   }
 
+  public EdgeNetworkDiagnosticResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * UUID of each executed command on edge

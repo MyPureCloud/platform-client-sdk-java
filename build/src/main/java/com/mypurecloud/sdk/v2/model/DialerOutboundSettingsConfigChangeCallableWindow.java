@@ -32,6 +32,11 @@ public class DialerOutboundSettingsConfigChangeCallableWindow  implements Serial
     }
   }
 
+  public DialerOutboundSettingsConfigChangeCallableWindow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

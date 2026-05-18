@@ -79,6 +79,11 @@ public class SchedulingProcessingError  implements Serializable {
     }
   }
 
+  public SchedulingProcessingError(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "An internal code representing the type of error. BadJson for 'Unable to parse json.' NotFound for 'Resource not found.' Fail for 'An unexpected server error occured.'")
   @JsonProperty("internalErrorCode")

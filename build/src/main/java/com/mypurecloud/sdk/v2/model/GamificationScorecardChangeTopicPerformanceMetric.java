@@ -41,6 +41,13 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
     }
   }
 
+  public GamificationScorecardChangeTopicPerformanceMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      punctualityEvents = new ArrayList<GamificationScorecardChangeTopicPunctualityEvent>();
+      evaluationDetails = new ArrayList<GamificationScorecardChangeTopicEvaluationDetail>();
+    }
+  }
+
   
   /**
    **/

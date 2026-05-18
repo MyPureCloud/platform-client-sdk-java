@@ -100,6 +100,15 @@ public class WorkitemQueryJobCreate  implements Serializable {
     }
   }
 
+  public WorkitemQueryJobCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      filters = new ArrayList<WorkitemQueryJobFilter>();
+      queryFilters = new ArrayList<WorkitemQueryJobQueryFilters>();
+      expands = new ArrayList<ExpandsEnum>();
+      attributes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The total page size requested. Default 25

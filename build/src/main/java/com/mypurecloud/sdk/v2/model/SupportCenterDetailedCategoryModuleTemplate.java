@@ -31,6 +31,11 @@ public class SupportCenterDetailedCategoryModuleTemplate  implements Serializabl
     }
   }
 
+  public SupportCenterDetailedCategoryModuleTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether this template is active or not

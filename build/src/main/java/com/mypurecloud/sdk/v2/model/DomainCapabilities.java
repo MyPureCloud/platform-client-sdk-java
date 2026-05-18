@@ -34,6 +34,11 @@ public class DomainCapabilities  implements Serializable {
     }
   }
 
+  public DomainCapabilities(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * True if this address family on the interface is enabled.

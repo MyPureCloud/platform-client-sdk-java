@@ -29,6 +29,11 @@ public class UpdateSkillDivisionRequest  implements Serializable {
     }
   }
 
+  public UpdateSkillDivisionRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to which this skill will belong

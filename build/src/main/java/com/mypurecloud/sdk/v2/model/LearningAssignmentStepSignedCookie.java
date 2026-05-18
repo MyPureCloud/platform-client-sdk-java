@@ -33,6 +33,11 @@ public class LearningAssignmentStepSignedCookie  implements Serializable {
     }
   }
 
+  public LearningAssignmentStepSignedCookie(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The base URL for the signed cookie")
   @JsonProperty("url")

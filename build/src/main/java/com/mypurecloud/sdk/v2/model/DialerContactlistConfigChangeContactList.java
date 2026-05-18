@@ -58,6 +58,15 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     }
   }
 
+  public DialerContactlistConfigChangeContactList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      columnNames = new ArrayList<String>();
+      phoneColumns = new ArrayList<DialerContactlistConfigChangeContactPhoneNumberColumn>();
+      emailColumns = new ArrayList<DialerContactlistConfigChangeEmailColumn>();
+      previewModeAcceptedValues = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * the contact column names

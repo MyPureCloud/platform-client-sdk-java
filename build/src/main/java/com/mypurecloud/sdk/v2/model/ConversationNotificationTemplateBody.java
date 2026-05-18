@@ -35,6 +35,12 @@ public class ConversationNotificationTemplateBody  implements Serializable {
     }
   }
 
+  public ConversationNotificationTemplateBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      parameters = new ArrayList<ConversationNotificationTemplateParameter>();
+    }
+  }
+
   
   /**
    * Body text. For WhatsApp, ignored.

@@ -34,6 +34,11 @@ public class DialerSequenceScheduleConfigChangeScheduleInterval  implements Seri
     }
   }
 
+  public DialerSequenceScheduleConfigChangeScheduleInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ

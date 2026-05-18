@@ -33,6 +33,12 @@ public class WfmIntegrationListing  implements Serializable {
     }
   }
 
+  public WfmIntegrationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WfmIntegrationResponse>();
+    }
+  }
+
   
   /**
    **/

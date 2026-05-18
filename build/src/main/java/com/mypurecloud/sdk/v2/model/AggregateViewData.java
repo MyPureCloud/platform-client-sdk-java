@@ -31,6 +31,11 @@ public class AggregateViewData  implements Serializable {
     }
   }
 
+  public AggregateViewData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

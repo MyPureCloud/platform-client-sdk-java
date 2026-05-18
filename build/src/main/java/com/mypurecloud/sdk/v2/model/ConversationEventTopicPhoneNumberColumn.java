@@ -30,6 +30,11 @@ public class ConversationEventTopicPhoneNumberColumn  implements Serializable {
     }
   }
 
+  public ConversationEventTopicPhoneNumberColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

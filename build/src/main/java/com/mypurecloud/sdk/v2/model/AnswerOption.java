@@ -86,6 +86,12 @@ public class AnswerOption  implements Serializable {
     }
   }
 
+  public AnswerOption(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      assistanceConditions = new ArrayList<AssistanceCondition>();
+    }
+  }
+
   
   /**
    **/

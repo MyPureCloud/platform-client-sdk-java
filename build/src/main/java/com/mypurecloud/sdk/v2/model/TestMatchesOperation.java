@@ -37,6 +37,12 @@ public class TestMatchesOperation  implements Serializable {
     }
   }
 
+  public TestMatchesOperation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<MatchCriteriaTestResult>();
+    }
+  }
+
   
   /**
    * The name of the processing step

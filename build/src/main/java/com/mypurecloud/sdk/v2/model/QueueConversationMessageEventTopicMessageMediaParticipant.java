@@ -424,6 +424,13 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     }
   }
 
+  public QueueConversationMessageEventTopicMessageMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      messages = new ArrayList<QueueConversationMessageEventTopicMessageDetails>();
+    }
+  }
+
   
   /**
    **/

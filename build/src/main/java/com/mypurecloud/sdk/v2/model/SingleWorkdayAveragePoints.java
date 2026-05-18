@@ -35,6 +35,11 @@ public class SingleWorkdayAveragePoints  implements Serializable {
     }
   }
 
+  public SingleWorkdayAveragePoints(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Queried target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateWorkday")

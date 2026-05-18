@@ -162,6 +162,13 @@ public class CreateWorkPlan  implements Serializable {
     }
   }
 
+  public CreateWorkPlan(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<CreateWorkPlanShift>();
+      agents = new ArrayList<UserReference>();
+    }
+  }
+
   
   /**
    * Name of this work plan

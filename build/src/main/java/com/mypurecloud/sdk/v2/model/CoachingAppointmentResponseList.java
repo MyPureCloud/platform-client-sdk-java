@@ -43,6 +43,12 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     }
   }
 
+  public CoachingAppointmentResponseList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CoachingAppointmentResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -8583,4 +8583,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_

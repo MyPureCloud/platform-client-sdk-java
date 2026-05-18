@@ -31,6 +31,11 @@ public class EdgeMetricsDisk  implements Serializable {
     }
   }
 
+  public EdgeMetricsDisk(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Available memory in bytes.

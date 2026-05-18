@@ -93,6 +93,11 @@ public class ResponseSet  implements Serializable {
     }
   }
 
+  public ResponseSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

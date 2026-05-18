@@ -82,6 +82,11 @@ public class JourneyViewChartDisplayAttributes  implements Serializable {
     }
   }
 
+  public JourneyViewChartDisplayAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of chart to display

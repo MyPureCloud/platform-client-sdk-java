@@ -30,6 +30,11 @@ public class EvaluationQualityV2TopicEvaluationScoringSet  implements Serializab
     }
   }
 
+  public EvaluationQualityV2TopicEvaluationScoringSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

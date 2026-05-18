@@ -31,6 +31,11 @@ public class AgentAdherenceScheduledActivity  implements Serializable {
     }
   }
 
+  public AgentAdherenceScheduledActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the activity code from the schedule

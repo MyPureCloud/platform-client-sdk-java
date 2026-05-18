@@ -31,6 +31,11 @@ public class GenerateMeetingIdRequest  implements Serializable {
     }
   }
 
+  public GenerateMeetingIdRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The conferenceId for which to generate a meetingId

@@ -37,6 +37,12 @@ public class ConfusionIntentDetails  implements Serializable {
     }
   }
 
+  public ConfusionIntentDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      utterances = new ArrayList<ConfusionUtterance>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

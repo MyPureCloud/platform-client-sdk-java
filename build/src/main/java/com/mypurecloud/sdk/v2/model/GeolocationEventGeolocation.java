@@ -33,6 +33,11 @@ public class GeolocationEventGeolocation  implements Serializable {
     }
   }
 
+  public GeolocationEventGeolocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

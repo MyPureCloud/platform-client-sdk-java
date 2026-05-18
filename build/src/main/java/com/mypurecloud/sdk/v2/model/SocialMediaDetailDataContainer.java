@@ -34,6 +34,12 @@ public class SocialMediaDetailDataContainer  implements Serializable {
     }
   }
 
+  public SocialMediaDetailDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messages = new ArrayList<SocialMediaDetailMessageContainer>();
+    }
+  }
+
   
   /**
    **/

@@ -137,6 +137,11 @@ public class TaskManagementQueryMetric  implements Serializable {
     }
   }
 
+  public TaskManagementQueryMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The requested metric name

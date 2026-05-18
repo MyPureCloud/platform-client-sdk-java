@@ -37,6 +37,12 @@ public class ConversationThirdPartyActionSuggestionsTopicSuggestedIntent  implem
     }
   }
 
+  public ConversationThirdPartyActionSuggestionsTopicSuggestedIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      detectedSlots = new ArrayList<ConversationThirdPartyActionSuggestionsTopicSuggestedIntentSlot>();
+    }
+  }
+
   
   /**
    **/

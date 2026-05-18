@@ -80,6 +80,11 @@ public class CreateGuide  implements Serializable {
     }
   }
 
+  public CreateGuide(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the guide.

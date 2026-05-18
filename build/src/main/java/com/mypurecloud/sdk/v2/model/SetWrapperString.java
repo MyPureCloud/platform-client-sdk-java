@@ -31,6 +31,12 @@ public class SetWrapperString  implements Serializable {
     }
   }
 
+  public SetWrapperString(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

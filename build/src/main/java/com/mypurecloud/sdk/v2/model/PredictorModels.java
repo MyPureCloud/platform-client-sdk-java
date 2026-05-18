@@ -35,6 +35,13 @@ public class PredictorModels  implements Serializable {
     }
   }
 
+  public PredictorModels(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<PredictorModel>();
+      predictorModels = new ArrayList<PredictorModel>();
+    }
+  }
+
   
   /**
    **/

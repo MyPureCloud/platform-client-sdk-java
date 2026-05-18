@@ -30,6 +30,11 @@ public class WorkitemScoredAgentDelta  implements Serializable {
     }
   }
 
+  public WorkitemScoredAgentDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

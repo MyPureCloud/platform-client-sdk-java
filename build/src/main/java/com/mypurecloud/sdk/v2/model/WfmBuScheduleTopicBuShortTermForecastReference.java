@@ -31,6 +31,11 @@ public class WfmBuScheduleTopicBuShortTermForecastReference  implements Serializ
     }
   }
 
+  public WfmBuScheduleTopicBuShortTermForecastReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

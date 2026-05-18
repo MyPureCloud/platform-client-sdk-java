@@ -90,6 +90,11 @@ public class TextBotFlowTurnRequest  implements Serializable {
     }
   }
 
+  public TextBotFlowTurnRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The reference to a previous turn if appropriate, used to avoid race conditions.

@@ -37,6 +37,12 @@ public class CategoryEntityListing  implements Serializable {
     }
   }
 
+  public CategoryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Category>();
+    }
+  }
+
   
   /**
    **/

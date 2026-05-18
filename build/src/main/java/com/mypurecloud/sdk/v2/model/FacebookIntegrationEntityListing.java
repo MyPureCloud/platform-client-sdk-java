@@ -43,6 +43,12 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     }
   }
 
+  public FacebookIntegrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FacebookIntegration>();
+    }
+  }
+
   
   /**
    **/

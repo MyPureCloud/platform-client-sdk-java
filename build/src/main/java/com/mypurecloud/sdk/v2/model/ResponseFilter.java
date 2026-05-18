@@ -87,6 +87,12 @@ public class ResponseFilter  implements Serializable {
     }
   }
 
+  public ResponseFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Field to filter on. Allowed values are 'name', 'libraryId', 'text.contentType', 'messagingTemplate' and 'responseType'

@@ -87,6 +87,12 @@ public class PatchJourneyPattern  implements Serializable {
     }
   }
 
+  public PatchJourneyPattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<PatchCriteria>();
+    }
+  }
+
   
   /**
    * A list of one or more criteria to satisfy.

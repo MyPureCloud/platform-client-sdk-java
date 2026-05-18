@@ -33,6 +33,11 @@ public class CampaignOutboundLinesAllocation  implements Serializable {
     }
   }
 
+  public CampaignOutboundLinesAllocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Campaign

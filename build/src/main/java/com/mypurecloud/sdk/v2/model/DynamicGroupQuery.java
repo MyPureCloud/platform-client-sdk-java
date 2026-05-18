@@ -33,6 +33,12 @@ public class DynamicGroupQuery  implements Serializable {
     }
   }
 
+  public DynamicGroupQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillConditions = new ArrayList<DynamicGroupSkillCondition>();
+    }
+  }
+
   
   /**
    * The skill conditions that need to be used for this dynamic group

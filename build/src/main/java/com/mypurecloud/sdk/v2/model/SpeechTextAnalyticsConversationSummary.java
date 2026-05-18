@@ -134,6 +134,11 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
     }
   }
 
+  public SpeechTextAnalyticsConversationSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of summary

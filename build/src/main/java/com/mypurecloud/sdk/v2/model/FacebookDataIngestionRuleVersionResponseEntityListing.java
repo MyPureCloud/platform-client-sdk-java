@@ -43,6 +43,12 @@ public class FacebookDataIngestionRuleVersionResponseEntityListing  implements S
     }
   }
 
+  public FacebookDataIngestionRuleVersionResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FacebookDataIngestionRuleVersionResponse>();
+    }
+  }
+
   
   /**
    **/

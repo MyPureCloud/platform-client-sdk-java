@@ -30,6 +30,11 @@ public class UpdateExternalEventsConfigurationRequest  implements Serializable {
     }
   }
 
+  public UpdateExternalEventsConfigurationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the external event configuration.

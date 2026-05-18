@@ -222,6 +222,12 @@ public class Video  implements Serializable {
     }
   }
 
+  public Video(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      msids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

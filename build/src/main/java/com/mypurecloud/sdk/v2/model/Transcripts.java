@@ -38,6 +38,15 @@ public class Transcripts  implements Serializable {
     }
   }
 
+  public Transcripts(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      exactMatch = new ArrayList<String>();
+      contains = new ArrayList<String>();
+      doesNotContain = new ArrayList<String>();
+      notSimilarTo = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of transcript contents which needs to satisfy exact match criteria

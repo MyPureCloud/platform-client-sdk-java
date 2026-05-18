@@ -29,6 +29,11 @@ public class ContestCompleteDataScore  implements Serializable {
     }
   }
 
+  public ContestCompleteDataScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Contest score

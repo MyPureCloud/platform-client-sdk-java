@@ -30,6 +30,11 @@ public class LicenseOrgToggle  implements Serializable {
     }
   }
 
+  public LicenseOrgToggle(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

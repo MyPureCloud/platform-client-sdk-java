@@ -43,6 +43,12 @@ public class SocialEscalationResponseEntityListing  implements Serializable, Pag
     }
   }
 
+  public SocialEscalationResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EscalationRuleResponse>();
+    }
+  }
+
   
   /**
    **/

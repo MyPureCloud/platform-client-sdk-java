@@ -36,6 +36,12 @@ public class BusinessRulesDataSchemaListing  implements Serializable {
     }
   }
 
+  public BusinessRulesDataSchemaListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BusinessRulesDataSchema>();
+    }
+  }
+
   
   /**
    **/

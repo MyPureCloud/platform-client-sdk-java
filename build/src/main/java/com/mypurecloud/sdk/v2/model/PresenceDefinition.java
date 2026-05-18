@@ -31,6 +31,11 @@ public class PresenceDefinition  implements Serializable {
     }
   }
 
+  public PresenceDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * description

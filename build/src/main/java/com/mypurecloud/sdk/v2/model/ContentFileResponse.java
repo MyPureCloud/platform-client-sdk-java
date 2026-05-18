@@ -82,6 +82,11 @@ public class ContentFileResponse  implements Serializable {
     }
   }
 
+  public ContentFileResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the file

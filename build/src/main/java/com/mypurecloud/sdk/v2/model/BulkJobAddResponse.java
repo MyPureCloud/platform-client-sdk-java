@@ -36,6 +36,13 @@ public class BulkJobAddResponse  implements Serializable {
     }
   }
 
+  public BulkJobAddResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<BulkJobAddResult>();
+      errorIndexes = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * A list of the results from the bulk operation.

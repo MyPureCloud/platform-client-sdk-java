@@ -137,6 +137,12 @@ public class LearningModuleRuleParts  implements Serializable {
     }
   }
 
+  public LearningModuleRuleParts(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      value = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The learning module rule operation

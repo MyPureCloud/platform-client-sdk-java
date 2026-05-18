@@ -78,6 +78,11 @@ public class AutoSearchConfig  implements Serializable {
     }
   }
 
+  public AutoSearchConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Auto search configuration type.

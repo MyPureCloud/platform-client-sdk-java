@@ -38,6 +38,12 @@ public class ObservationMetricData  implements Serializable {
     }
   }
 
+  public ObservationMetricData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      observations = new ArrayList<ObservationValue>();
+    }
+  }
+
   
   /**
    **/

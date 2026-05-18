@@ -33,6 +33,11 @@ public class QueryResult  implements Serializable {
     }
   }
 
+  public QueryResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

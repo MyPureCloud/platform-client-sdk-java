@@ -34,6 +34,11 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
     }
   }
 
+  public GamificationScorecardChangeTopicPunctualityEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,12 @@ public class TranscriptAsyncAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public TranscriptAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<TranscriptAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

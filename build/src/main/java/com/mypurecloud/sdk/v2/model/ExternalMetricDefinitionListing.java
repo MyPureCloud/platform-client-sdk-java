@@ -43,6 +43,12 @@ public class ExternalMetricDefinitionListing  implements Serializable, PagedReso
     }
   }
 
+  public ExternalMetricDefinitionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalMetricDefinition>();
+    }
+  }
+
   
   /**
    **/

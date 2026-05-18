@@ -32,6 +32,11 @@ public class AppleAuthentication  implements Serializable {
     }
   }
 
+  public AppleAuthentication(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Apple Messages for Business OAuth client id.

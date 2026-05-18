@@ -38,6 +38,12 @@ public class WorkbinQueryEntityListing  implements Serializable {
     }
   }
 
+  public WorkbinQueryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Workbin>();
+    }
+  }
+
   
   /**
    **/

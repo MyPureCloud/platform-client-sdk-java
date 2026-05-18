@@ -89,6 +89,12 @@ public class ImportTemplateImportStatusImportStatus  implements Serializable {
     }
   }
 
+  public ImportTemplateImportStatusImportStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      targetContactListIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * current status of the import

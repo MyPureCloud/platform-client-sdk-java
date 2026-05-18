@@ -90,6 +90,11 @@ public class ServiceNowSourceResponse  implements Serializable {
     }
   }
 
+  public ServiceNowSourceResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

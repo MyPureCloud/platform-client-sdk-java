@@ -85,6 +85,11 @@ public class AiScoring  implements Serializable {
     }
   }
 
+  public AiScoring(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The type of error that occurred while processing AI scores. It is null where there is no error.")
   @JsonProperty("failureType")

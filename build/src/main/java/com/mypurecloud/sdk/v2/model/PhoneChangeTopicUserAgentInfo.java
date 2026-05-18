@@ -31,6 +31,11 @@ public class PhoneChangeTopicUserAgentInfo  implements Serializable {
     }
   }
 
+  public PhoneChangeTopicUserAgentInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

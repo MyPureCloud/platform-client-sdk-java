@@ -36,6 +36,12 @@ public class UserSkillGroupEntityListing  implements Serializable {
     }
   }
 
+  public UserSkillGroupEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SkillGroup>();
+    }
+  }
+
   
   /**
    **/

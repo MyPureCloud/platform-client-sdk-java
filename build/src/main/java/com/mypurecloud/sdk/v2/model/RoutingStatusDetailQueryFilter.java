@@ -85,6 +85,13 @@ public class RoutingStatusDetailQueryFilter  implements Serializable {
     }
   }
 
+  public RoutingStatusDetailQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<RoutingStatusDetailQueryClause>();
+      predicates = new ArrayList<RoutingStatusDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

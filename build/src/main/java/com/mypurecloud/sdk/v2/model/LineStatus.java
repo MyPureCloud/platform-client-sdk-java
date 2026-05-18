@@ -37,6 +37,12 @@ public class LineStatus  implements Serializable {
     }
   }
 
+  public LineStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contactAddresses = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The id of this line

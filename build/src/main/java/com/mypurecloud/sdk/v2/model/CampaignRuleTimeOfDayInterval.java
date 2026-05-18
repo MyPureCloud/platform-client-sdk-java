@@ -30,6 +30,11 @@ public class CampaignRuleTimeOfDayInterval  implements Serializable {
     }
   }
 
+  public CampaignRuleTimeOfDayInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS

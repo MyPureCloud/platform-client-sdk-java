@@ -139,6 +139,11 @@ public class EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefiniti
     }
   }
 
+  public EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

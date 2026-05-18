@@ -84,6 +84,11 @@ public class SourceLastSync  implements Serializable {
     }
   }
 
+  public SourceLastSync(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * State of the last synchronization.

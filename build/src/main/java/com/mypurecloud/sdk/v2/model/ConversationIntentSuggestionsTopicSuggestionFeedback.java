@@ -78,6 +78,11 @@ public class ConversationIntentSuggestionsTopicSuggestionFeedback  implements Se
     }
   }
 
+  public ConversationIntentSuggestionsTopicSuggestionFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

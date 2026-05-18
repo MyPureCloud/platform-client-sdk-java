@@ -29,6 +29,11 @@ public class WfmBuScheduleTopicManagementUnit  implements Serializable {
     }
   }
 
+  public WfmBuScheduleTopicManagementUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class TimeOffRequestLookup  implements Serializable {
     }
   }
 
+  public TimeOffRequestLookup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the time off request

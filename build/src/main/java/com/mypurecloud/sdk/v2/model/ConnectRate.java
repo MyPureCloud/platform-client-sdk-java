@@ -31,6 +31,11 @@ public class ConnectRate  implements Serializable {
     }
   }
 
+  public ConnectRate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Number of call attempts made")
   @JsonProperty("attempts")

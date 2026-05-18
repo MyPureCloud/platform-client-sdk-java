@@ -41,6 +41,12 @@ public class UpdateScheduleUploadSchema  implements Serializable {
     }
   }
 
+  public UpdateScheduleUploadSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentSchedules = new ArrayList<BuUpdateAgentScheduleUploadSchema>();
+    }
+  }
+
   
   /**
    * The description to set for the schedule

@@ -33,6 +33,11 @@ public class QueueConversationVideoEventTopicDispositionSilentCallTimeout  imple
     }
   }
 
+  public QueueConversationVideoEventTopicDispositionSilentCallTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured Silent Call timeout value.

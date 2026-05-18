@@ -32,6 +32,11 @@ public class QueueConversationScreenShareEventTopicDivisionEntityRef  implements
     }
   }
 
+  public QueueConversationScreenShareEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

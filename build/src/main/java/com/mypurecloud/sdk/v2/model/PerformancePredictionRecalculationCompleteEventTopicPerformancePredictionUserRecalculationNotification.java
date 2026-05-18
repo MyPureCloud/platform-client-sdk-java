@@ -83,6 +83,11 @@ public class PerformancePredictionRecalculationCompleteEventTopicPerformancePred
     }
   }
 
+  public PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

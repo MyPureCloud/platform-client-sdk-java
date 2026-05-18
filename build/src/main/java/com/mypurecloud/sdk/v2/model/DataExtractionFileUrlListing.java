@@ -33,6 +33,12 @@ public class DataExtractionFileUrlListing  implements Serializable {
     }
   }
 
+  public DataExtractionFileUrlListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DataExtractionFileUrl>();
+    }
+  }
+
   
   /**
    **/

@@ -37,6 +37,12 @@ public class GuestCategoryResponseListing  implements Serializable {
     }
   }
 
+  public GuestCategoryResponseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<GuestResponseCategory>();
+    }
+  }
+
   
   /**
    **/

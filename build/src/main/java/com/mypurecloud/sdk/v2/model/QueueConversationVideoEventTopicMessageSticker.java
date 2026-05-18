@@ -30,6 +30,11 @@ public class QueueConversationVideoEventTopicMessageSticker  implements Serializ
     }
   }
 
+  public QueueConversationVideoEventTopicMessageSticker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the sticker, useful for retrieving it

@@ -80,6 +80,11 @@ public class AddAdherenceExplanationAgentRequest  implements Serializable {
     }
   }
 
+  public AddAdherenceExplanationAgentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the adherence explanation

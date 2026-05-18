@@ -29,6 +29,11 @@ public class WfmMoveAgentsCompleteTopicManagementUnit  implements Serializable {
     }
   }
 
+  public WfmMoveAgentsCompleteTopicManagementUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

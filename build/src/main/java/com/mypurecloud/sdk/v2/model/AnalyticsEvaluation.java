@@ -98,6 +98,11 @@ public class AnalyticsEvaluation  implements Serializable {
     }
   }
 
+  public AnalyticsEvaluation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable

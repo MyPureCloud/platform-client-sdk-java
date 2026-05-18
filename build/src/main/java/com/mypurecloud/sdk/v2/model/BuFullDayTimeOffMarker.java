@@ -38,6 +38,11 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     }
   }
 
+  public BuFullDayTimeOffMarker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The date of the time off marker, interpreted in the business unit's time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

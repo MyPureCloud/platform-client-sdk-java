@@ -43,6 +43,12 @@ public class CustomerSourceIntentListing  implements Serializable, PagedResource
     }
   }
 
+  public CustomerSourceIntentListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CustomerSourceIntent>();
+    }
+  }
+
   
   /**
    **/

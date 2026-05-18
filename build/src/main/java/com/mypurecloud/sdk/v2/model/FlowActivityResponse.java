@@ -104,6 +104,12 @@ public class FlowActivityResponse  implements Serializable {
     }
   }
 
+  public FlowActivityResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<FlowActivityData>();
+    }
+  }
+
   
   /**
    * Query results

@@ -32,6 +32,11 @@ public class DefaultAnswersTo  implements Serializable {
     }
   }
 
+  public DefaultAnswersTo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * True, when answer should default to highest score

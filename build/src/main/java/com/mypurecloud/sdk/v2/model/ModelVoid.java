@@ -25,6 +25,11 @@ public class ModelVoid  implements Serializable {
     }
   }
 
+  public ModelVoid(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

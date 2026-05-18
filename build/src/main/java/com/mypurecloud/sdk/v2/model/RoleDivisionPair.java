@@ -30,6 +30,11 @@ public class RoleDivisionPair  implements Serializable {
     }
   }
 
+  public RoleDivisionPair(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the role

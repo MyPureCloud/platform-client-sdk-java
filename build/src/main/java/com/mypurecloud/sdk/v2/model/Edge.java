@@ -382,6 +382,12 @@ public class Edge  implements Serializable {
     }
   }
 
+  public Edge(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      interfaces = new ArrayList<EdgeInterface>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

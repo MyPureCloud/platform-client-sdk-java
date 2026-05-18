@@ -364,6 +364,13 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     }
   }
 
+  public ConversationEmailEventTopicEmailMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      draftAttachments = new ArrayList<ConversationEmailEventTopicAttachment>();
+    }
+  }
+
   
   /**
    **/

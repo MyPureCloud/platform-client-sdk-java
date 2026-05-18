@@ -34,6 +34,13 @@ public class WorkitemsAttributeChangeList  implements Serializable {
     }
   }
 
+  public WorkitemsAttributeChangeList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      newValue = new ArrayList<Object>();
+      oldValue = new ArrayList<Object>();
+    }
+  }
+
   
   /**
    * New property value

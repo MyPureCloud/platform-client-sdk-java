@@ -35,6 +35,12 @@ public class FilterPreviewResponse  implements Serializable {
     }
   }
 
+  public FilterPreviewResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      preview = new ArrayList<DialerContact>();
+    }
+  }
+
   
   /**
    **/

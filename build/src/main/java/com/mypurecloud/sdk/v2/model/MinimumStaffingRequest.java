@@ -81,6 +81,11 @@ public class MinimumStaffingRequest  implements Serializable {
     }
   }
 
+  public MinimumStaffingRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether the setting is turned on or off

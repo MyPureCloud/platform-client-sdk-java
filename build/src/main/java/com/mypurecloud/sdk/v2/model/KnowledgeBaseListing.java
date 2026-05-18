@@ -36,6 +36,12 @@ public class KnowledgeBaseListing  implements Serializable {
     }
   }
 
+  public KnowledgeBaseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<KnowledgeBase>();
+    }
+  }
+
   
   /**
    **/

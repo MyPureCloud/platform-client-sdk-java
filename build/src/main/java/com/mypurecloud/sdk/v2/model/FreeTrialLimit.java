@@ -32,6 +32,11 @@ public class FreeTrialLimit  implements Serializable {
     }
   }
 
+  public FreeTrialLimit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

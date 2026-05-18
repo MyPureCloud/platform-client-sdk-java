@@ -43,6 +43,12 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     }
   }
 
+  public GreetingListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Greeting>();
+    }
+  }
+
   
   /**
    **/

@@ -80,6 +80,11 @@ public class EvaluationSettingsAssignee  implements Serializable {
     }
   }
 
+  public EvaluationSettingsAssignee(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user the dispute should be assigned to

@@ -35,6 +35,12 @@ public class EmergencyCallFlow  implements Serializable {
     }
   }
 
+  public EmergencyCallFlow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ivrs = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   /**
    * The call flow to execute in an emergency.

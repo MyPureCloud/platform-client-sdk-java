@@ -32,6 +32,11 @@ public class UserInsightsTrendMetricItem  implements Serializable {
     }
   }
 
+  public UserInsightsTrendMetricItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The gamification metric for the trend

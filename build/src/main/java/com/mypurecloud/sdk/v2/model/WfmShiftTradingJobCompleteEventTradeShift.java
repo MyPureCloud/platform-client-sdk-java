@@ -35,6 +35,11 @@ public class WfmShiftTradingJobCompleteEventTradeShift  implements Serializable 
     }
   }
 
+  public WfmShiftTradingJobCompleteEventTradeShift(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

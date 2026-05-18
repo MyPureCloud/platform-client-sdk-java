@@ -39,6 +39,12 @@ public class CallForwardingEventCallForwarding  implements Serializable {
     }
   }
 
+  public CallForwardingEventCallForwarding(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      calls = new ArrayList<CallForwardingEventCall>();
+    }
+  }
+
   
   /**
    **/

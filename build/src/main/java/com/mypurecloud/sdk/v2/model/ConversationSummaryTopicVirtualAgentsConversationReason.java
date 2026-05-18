@@ -32,6 +32,11 @@ public class ConversationSummaryTopicVirtualAgentsConversationReason  implements
     }
   }
 
+  public ConversationSummaryTopicVirtualAgentsConversationReason(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

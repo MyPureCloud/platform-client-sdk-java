@@ -38,6 +38,11 @@ public class InitialConfiguration  implements Serializable {
     }
   }
 
+  public InitialConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates the initial audio state for the communication.

@@ -83,6 +83,11 @@ public class MessagingCampaignScheduleConfigChangeAlteration  implements Seriali
     }
   }
 
+  public MessagingCampaignScheduleConfigChangeAlteration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -38,6 +38,12 @@ public class CursorExternalSourceListing  implements Serializable {
     }
   }
 
+  public CursorExternalSourceListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalSource>();
+    }
+  }
+
   
   /**
    **/

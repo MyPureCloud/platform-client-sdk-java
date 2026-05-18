@@ -34,6 +34,11 @@ public class IVRDivisionView  implements Serializable {
     }
   }
 
+  public IVRDivisionView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ivr identifier

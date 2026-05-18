@@ -37,6 +37,11 @@ public class CreateWebChatConversationRequest  implements Serializable {
     }
   }
 
+  public CreateWebChatConversationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The organization identifier.

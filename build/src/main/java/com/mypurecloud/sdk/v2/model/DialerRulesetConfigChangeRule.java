@@ -91,6 +91,13 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     }
   }
 
+  public DialerRulesetConfigChangeRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conditions = new ArrayList<DialerRulesetConfigChangeCondition>();
+      actions = new ArrayList<DialerRulesetConfigChangeAction>();
+    }
+  }
+
   
   /**
    * The list of rule conditions; all must evaluate to true to trigger the rule actions

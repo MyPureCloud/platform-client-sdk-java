@@ -31,6 +31,11 @@ public class WorkitemDateBasedRuleUpdate  implements Serializable {
     }
   }
 
+  public WorkitemDateBasedRuleUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the rule.

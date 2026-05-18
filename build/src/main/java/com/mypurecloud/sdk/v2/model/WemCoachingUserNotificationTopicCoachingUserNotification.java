@@ -186,6 +186,11 @@ public class WemCoachingUserNotificationTopicCoachingUserNotification  implement
     }
   }
 
+  public WemCoachingUserNotificationTopicCoachingUserNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

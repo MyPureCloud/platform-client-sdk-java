@@ -183,6 +183,11 @@ public class UserActivityQueryPredicate  implements Serializable {
     }
   }
 
+  public UserActivityQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

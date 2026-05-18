@@ -31,6 +31,11 @@ public class ContestDisqualifiedAgents  implements Serializable {
     }
   }
 
+  public ContestDisqualifiedAgents(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

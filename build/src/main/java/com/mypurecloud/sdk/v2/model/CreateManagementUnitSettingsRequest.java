@@ -38,6 +38,11 @@ public class CreateManagementUnitSettingsRequest  implements Serializable {
     }
   }
 
+  public CreateManagementUnitSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Adherence settings for this management unit

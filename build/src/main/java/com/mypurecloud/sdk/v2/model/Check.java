@@ -137,6 +137,11 @@ public class Check  implements Serializable {
     }
   }
 
+  public Check(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The result of a check executed. This indicates if the check was successful or not.")
   @JsonProperty("result")

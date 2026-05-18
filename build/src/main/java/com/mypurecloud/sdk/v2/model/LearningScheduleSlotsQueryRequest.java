@@ -35,6 +35,12 @@ public class LearningScheduleSlotsQueryRequest  implements Serializable {
     }
   }
 
+  public LearningScheduleSlotsQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Range of time to get slots for scheduling learning activities. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

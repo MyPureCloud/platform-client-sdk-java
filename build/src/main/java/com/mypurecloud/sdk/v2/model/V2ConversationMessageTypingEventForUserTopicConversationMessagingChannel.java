@@ -91,6 +91,11 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     }
   }
 
+  public V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

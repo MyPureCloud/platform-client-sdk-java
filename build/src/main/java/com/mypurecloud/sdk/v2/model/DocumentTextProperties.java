@@ -85,6 +85,11 @@ public class DocumentTextProperties  implements Serializable {
     }
   }
 
+  public DocumentTextProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The font size for the text. The valid values in 'em'.

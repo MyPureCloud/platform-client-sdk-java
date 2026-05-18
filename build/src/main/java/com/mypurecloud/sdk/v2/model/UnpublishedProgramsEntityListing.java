@@ -37,6 +37,12 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
     }
   }
 
+  public UnpublishedProgramsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Program>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,11 @@ public class RecordingSettings  implements Serializable {
     }
   }
 
+  public RecordingSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Maximum number of simultaneous screen recording streams

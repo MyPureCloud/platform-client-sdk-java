@@ -34,6 +34,11 @@ public class ContactAddress  implements Serializable {
     }
   }
 
+  public ContactAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Max: 200 characters. Leading and trailing whitespace stripped.

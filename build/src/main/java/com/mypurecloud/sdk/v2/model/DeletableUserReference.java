@@ -31,6 +31,11 @@ public class DeletableUserReference  implements Serializable {
     }
   }
 
+  public DeletableUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

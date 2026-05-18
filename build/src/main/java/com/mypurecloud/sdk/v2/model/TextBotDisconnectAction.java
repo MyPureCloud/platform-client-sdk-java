@@ -89,6 +89,12 @@ public class TextBotDisconnectAction  implements Serializable {
     }
   }
 
+  public TextBotDisconnectAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      flowOutcomes = new ArrayList<TextBotFlowOutcome>();
+    }
+  }
+
   
   /**
    * The reason for the disconnect.

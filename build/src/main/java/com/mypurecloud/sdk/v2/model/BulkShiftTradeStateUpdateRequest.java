@@ -33,6 +33,12 @@ public class BulkShiftTradeStateUpdateRequest  implements Serializable {
     }
   }
 
+  public BulkShiftTradeStateUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BulkUpdateShiftTradeStateRequestItem>();
+    }
+  }
+
   
   /**
    * The shift trades to update

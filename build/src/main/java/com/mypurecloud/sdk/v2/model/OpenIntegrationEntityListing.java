@@ -43,6 +43,12 @@ public class OpenIntegrationEntityListing  implements Serializable, PagedResourc
     }
   }
 
+  public OpenIntegrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OpenIntegration>();
+    }
+  }
+
   
   /**
    **/

@@ -29,6 +29,11 @@ public class EventAggregatesQueryRequest  implements Serializable {
     }
   }
 
+  public EventAggregatesQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Date and time range to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

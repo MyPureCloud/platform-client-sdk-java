@@ -78,6 +78,11 @@ public class KnowledgeConversationTurn  implements Serializable {
     }
   }
 
+  public KnowledgeConversationTurn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The participant type.

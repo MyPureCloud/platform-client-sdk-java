@@ -31,6 +31,11 @@ public class UnavailableTimesManagementUnitSettings  implements Serializable {
     }
   }
 
+  public UnavailableTimesManagementUnitSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The management unit to which these settings apply

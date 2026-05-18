@@ -140,6 +140,12 @@ public class ConversationMessageContent  implements Serializable {
     }
   }
 
+  public ConversationMessageContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      reactions = new ArrayList<ConversationContentReaction>();
+    }
+  }
+
   
   /**
    * Type of this content element.

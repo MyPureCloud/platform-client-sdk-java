@@ -34,6 +34,12 @@ public class ShrinkageOverrides  implements Serializable {
     }
   }
 
+  public ShrinkageOverrides(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<ShrinkageOverride>();
+    }
+  }
+
   
   /**
    * Set true to clear the shrinkage interval overrides

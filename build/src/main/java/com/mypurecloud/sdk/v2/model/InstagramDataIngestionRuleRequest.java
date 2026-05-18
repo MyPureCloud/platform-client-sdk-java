@@ -31,6 +31,11 @@ public class InstagramDataIngestionRuleRequest  implements Serializable {
     }
   }
 
+  public InstagramDataIngestionRuleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the data ingestion rule.

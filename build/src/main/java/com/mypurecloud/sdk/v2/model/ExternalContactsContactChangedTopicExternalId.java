@@ -31,6 +31,11 @@ public class ExternalContactsContactChangedTopicExternalId  implements Serializa
     }
   }
 
+  public ExternalContactsContactChangedTopicExternalId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

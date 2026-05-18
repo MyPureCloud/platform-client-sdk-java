@@ -36,6 +36,11 @@ public class MessageMediaUploadData  implements Serializable {
     }
   }
 
+  public MessageMediaUploadData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique media ID

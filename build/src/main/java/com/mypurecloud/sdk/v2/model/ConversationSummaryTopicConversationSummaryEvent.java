@@ -219,6 +219,16 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
     }
   }
 
+  public ConversationSummaryTopicConversationSummaryEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationSummaryTopicConversationSummaryParticipant>();
+      communicationIds = new ArrayList<String>();
+      followupActions = new ArrayList<ConversationSummaryTopicConversationFollowupAction>();
+      extractedEntities = new ArrayList<ConversationSummaryTopicSummaryExtractedCustomEntity>();
+      wrapUpCodes = new ArrayList<ConversationSummaryTopicConversationWrapUpCode>();
+    }
+  }
+
   
   /**
    **/

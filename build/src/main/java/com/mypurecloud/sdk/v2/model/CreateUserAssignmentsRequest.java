@@ -33,6 +33,12 @@ public class CreateUserAssignmentsRequest  implements Serializable {
     }
   }
 
+  public CreateUserAssignmentsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      assignments = new ArrayList<AssignmentEffectiveDateRange>();
+    }
+  }
+
   
   /**
    * The ID of the user assigned to the staffing group.

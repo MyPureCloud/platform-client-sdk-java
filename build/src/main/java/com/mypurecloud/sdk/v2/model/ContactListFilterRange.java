@@ -35,6 +35,12 @@ public class ContactListFilterRange  implements Serializable {
     }
   }
 
+  public ContactListFilterRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inSet = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The minimum value of the range. Required for the operator BETWEEN.

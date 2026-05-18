@@ -44,6 +44,12 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     }
   }
 
+  public ExtensionEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Extension>();
+    }
+  }
+
   
   /**
    **/

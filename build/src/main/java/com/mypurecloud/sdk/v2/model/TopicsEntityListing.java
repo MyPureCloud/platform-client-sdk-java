@@ -38,6 +38,12 @@ public class TopicsEntityListing  implements Serializable {
     }
   }
 
+  public TopicsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ListedTopic>();
+    }
+  }
+
   
   /**
    **/

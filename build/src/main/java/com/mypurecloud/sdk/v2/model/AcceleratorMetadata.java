@@ -137,6 +137,12 @@ public class AcceleratorMetadata  implements Serializable {
     }
   }
 
+  public AcceleratorMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -85,6 +85,13 @@ public class ContestsFinalizeRequest  implements Serializable {
     }
   }
 
+  public ContestsFinalizeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      winners = new ArrayList<ContestWinnersRequest>();
+      disqualifiedAgents = new ArrayList<ContestDisqualifiedAgents>();
+    }
+  }
+
   
   /**
    * The Contest finalization status

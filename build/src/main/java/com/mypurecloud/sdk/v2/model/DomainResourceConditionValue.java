@@ -87,6 +87,11 @@ public class DomainResourceConditionValue  implements Serializable {
     }
   }
 
+  public DomainResourceConditionValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

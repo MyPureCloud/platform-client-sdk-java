@@ -237,6 +237,12 @@ public class ScreenMonitoring  implements Serializable {
     }
   }
 
+  public ScreenMonitoring(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<Segment>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

@@ -38,6 +38,12 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
     }
   }
 
+  public RecordingTranscodeCompleteTopicRecording(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaUris = new ArrayList<RecordingTranscodeCompleteTopicMediaResult>();
+    }
+  }
+
   
   /**
    **/

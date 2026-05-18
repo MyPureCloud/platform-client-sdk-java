@@ -36,6 +36,12 @@ public class AssistantQueueListing  implements Serializable {
     }
   }
 
+  public AssistantQueueListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AssistantQueue>();
+    }
+  }
+
   
   /**
    **/

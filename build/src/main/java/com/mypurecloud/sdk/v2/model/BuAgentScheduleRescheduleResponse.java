@@ -42,6 +42,14 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
     }
   }
 
+  public BuAgentScheduleRescheduleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<BuAgentScheduleShift>();
+      fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+      workPlansPerWeek = new ArrayList<WorkPlanReference>();
+    }
+  }
+
   
   /**
    * The user to whom this agent schedule applies

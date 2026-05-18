@@ -81,6 +81,11 @@ public class WfmHistoricalShrinkageRequest  implements Serializable {
     }
   }
 
+  public WfmHistoricalShrinkageRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Beginning of the date range to query in ISO-8601 format

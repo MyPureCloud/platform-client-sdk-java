@@ -34,6 +34,12 @@ public class AvailableTimeOffRequest  implements Serializable {
     }
   }
 
+  public AvailableTimeOffRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dateRanges = new ArrayList<LocalDateRange>();
+    }
+  }
+
   
   /**
    * The ID for activity code to query available time off minutes

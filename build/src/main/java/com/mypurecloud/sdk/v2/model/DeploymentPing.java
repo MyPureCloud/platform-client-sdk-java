@@ -34,6 +34,12 @@ public class DeploymentPing  implements Serializable {
     }
   }
 
+  public DeploymentPing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      actions = new ArrayList<DeploymentWebAction>();
+    }
+  }
+
   
   /**
    * Collection of actions to be offered or displayed to the visitor.

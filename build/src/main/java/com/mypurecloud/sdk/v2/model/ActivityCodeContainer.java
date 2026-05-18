@@ -35,6 +35,11 @@ public class ActivityCodeContainer  implements Serializable {
     }
   }
 
+  public ActivityCodeContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Map of activity code id to activity code

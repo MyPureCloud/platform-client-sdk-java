@@ -30,6 +30,11 @@ public class V2WebMessagingUndeliveredMessageTopicMessage  implements Serializab
     }
   }
 
+  public V2WebMessagingUndeliveredMessageTopicMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

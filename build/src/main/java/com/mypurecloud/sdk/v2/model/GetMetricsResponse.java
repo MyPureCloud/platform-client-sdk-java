@@ -35,6 +35,12 @@ public class GetMetricsResponse  implements Serializable {
     }
   }
 
+  public GetMetricsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Metrics>();
+    }
+  }
+
   
   /**
    **/

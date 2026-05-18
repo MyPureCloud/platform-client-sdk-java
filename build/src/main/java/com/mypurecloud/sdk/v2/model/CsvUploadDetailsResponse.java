@@ -32,6 +32,11 @@ public class CsvUploadDetailsResponse  implements Serializable {
     }
   }
 
+  public CsvUploadDetailsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id for the upload

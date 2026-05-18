@@ -30,6 +30,11 @@ public class CategoryEntity  implements Serializable {
     }
   }
 
+  public CategoryEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Id of the category.

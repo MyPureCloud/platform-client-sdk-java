@@ -115,6 +115,11 @@ public class KnowledgeGenerationSetting  implements Serializable {
     }
   }
 
+  public KnowledgeGenerationSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates if answer generation is enabled for the setting.

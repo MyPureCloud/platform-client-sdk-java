@@ -138,6 +138,12 @@ public class WebChatGuestMediaRequest  implements Serializable {
     }
   }
 
+  public WebChatGuestMediaRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<TypesEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

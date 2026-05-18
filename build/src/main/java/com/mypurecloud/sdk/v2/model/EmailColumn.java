@@ -31,6 +31,11 @@ public class EmailColumn  implements Serializable {
     }
   }
 
+  public EmailColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the email column.

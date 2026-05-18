@@ -192,6 +192,11 @@ public class CallbackMediaSettings  implements Serializable {
     }
   }
 
+  public CallbackMediaSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates if auto-answer is enabled for the given media type or subtype (default is false).  Subtype settings take precedence over media type settings.

@@ -216,6 +216,11 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public JourneyAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

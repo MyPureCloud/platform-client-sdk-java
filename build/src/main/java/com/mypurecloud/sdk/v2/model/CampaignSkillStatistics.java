@@ -30,6 +30,11 @@ public class CampaignSkillStatistics  implements Serializable {
     }
   }
 
+  public CampaignSkillStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Number of available skill combinations for the campaign")
   @JsonProperty("skillCombinations")

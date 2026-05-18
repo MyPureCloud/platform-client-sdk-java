@@ -38,6 +38,12 @@ public class EmailConfig  implements Serializable {
     }
   }
 
+  public EmailConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      emailColumns = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The contact list columns specifying the email address(es) of the contact.

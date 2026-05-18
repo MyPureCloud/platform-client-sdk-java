@@ -91,6 +91,14 @@ public class SiteSearchRequest  implements Serializable {
     }
   }
 
+  public SiteSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      expand = new ArrayList<String>();
+      query = new ArrayList<SiteSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

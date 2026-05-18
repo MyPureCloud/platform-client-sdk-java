@@ -89,6 +89,13 @@ public class GKNDocumentationSearchRequest  implements Serializable {
     }
   }
 
+  public GKNDocumentationSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      query = new ArrayList<GKNDocumentationSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

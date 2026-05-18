@@ -120,6 +120,12 @@ public class Format  implements Serializable {
     }
   }
 
+  public Format(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      flags = new ArrayList<FlagsEnum>();
+    }
+  }
+
   
   /**
    * The Set of prompt segment format flags i.e. each entry is a part of describing the overall format. E.g. \"format\": { \"flags\": [StringPlayChars] }

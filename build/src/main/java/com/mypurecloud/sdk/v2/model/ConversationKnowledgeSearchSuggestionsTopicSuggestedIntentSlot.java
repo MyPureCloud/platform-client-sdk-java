@@ -33,6 +33,11 @@ public class ConversationKnowledgeSearchSuggestionsTopicSuggestedIntentSlot  imp
     }
   }
 
+  public ConversationKnowledgeSearchSuggestionsTopicSuggestedIntentSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

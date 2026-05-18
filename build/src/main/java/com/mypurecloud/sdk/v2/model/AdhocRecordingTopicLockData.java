@@ -33,6 +33,11 @@ public class AdhocRecordingTopicLockData  implements Serializable {
     }
   }
 
+  public AdhocRecordingTopicLockData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

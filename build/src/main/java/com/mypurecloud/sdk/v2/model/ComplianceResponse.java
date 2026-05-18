@@ -29,6 +29,11 @@ public class ComplianceResponse  implements Serializable {
     }
   }
 
+  public ComplianceResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Message response

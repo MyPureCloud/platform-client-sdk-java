@@ -31,6 +31,11 @@ public class UploadMediaRequest  implements Serializable {
     }
   }
 
+  public UploadMediaRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the media file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|

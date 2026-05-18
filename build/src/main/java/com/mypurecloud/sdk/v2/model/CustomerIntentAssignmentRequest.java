@@ -84,6 +84,11 @@ public class CustomerIntentAssignmentRequest  implements Serializable {
     }
   }
 
+  public CustomerIntentAssignmentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the source of assignment

@@ -34,6 +34,11 @@ public class TranscriptionTopicTranscriptWord  implements Serializable {
     }
   }
 
+  public TranscriptionTopicTranscriptWord(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

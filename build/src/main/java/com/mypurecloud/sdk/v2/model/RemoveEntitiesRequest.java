@@ -33,6 +33,12 @@ public class RemoveEntitiesRequest  implements Serializable {
     }
   }
 
+  public RemoveEntitiesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<RemoveEntity>();
+    }
+  }
+
   
   /**
    * List of entities to be removed

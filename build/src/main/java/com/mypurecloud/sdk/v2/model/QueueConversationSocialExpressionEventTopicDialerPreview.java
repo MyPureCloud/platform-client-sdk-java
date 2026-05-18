@@ -38,6 +38,12 @@ public class QueueConversationSocialExpressionEventTopicDialerPreview  implement
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicDialerPreview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneNumberColumns = new ArrayList<QueueConversationSocialExpressionEventTopicPhoneNumberColumn>();
+    }
+  }
+
   
   /**
    **/

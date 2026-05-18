@@ -38,6 +38,11 @@ public class QueueMember  implements Serializable {
     }
   }
 
+  public QueueMember(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The queue member's id.

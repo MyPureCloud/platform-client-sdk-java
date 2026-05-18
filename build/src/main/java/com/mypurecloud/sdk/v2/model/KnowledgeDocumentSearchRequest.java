@@ -246,6 +246,12 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      answerMode = new ArrayList<AnswerModeEnum>();
+    }
+  }
+
   
   /**
    * Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.

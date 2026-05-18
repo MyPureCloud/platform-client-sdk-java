@@ -80,6 +80,11 @@ public class RecordingTemplateHeader  implements Serializable {
     }
   }
 
+  public RecordingTemplateHeader(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Template header type.

@@ -41,6 +41,12 @@ public class NluFeedbackResponse  implements Serializable {
     }
   }
 
+  public NluFeedbackResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<IntentFeedback>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

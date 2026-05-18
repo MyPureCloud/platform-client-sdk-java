@@ -29,6 +29,11 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference  i
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

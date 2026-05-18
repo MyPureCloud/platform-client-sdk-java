@@ -33,6 +33,11 @@ public class EmailCommunicationAnsweredEvent  implements Serializable {
     }
   }
 
+  public EmailCommunicationAnsweredEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

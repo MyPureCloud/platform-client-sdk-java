@@ -83,6 +83,11 @@ public class ScimV2GroupReference  implements Serializable {
     }
   }
 
+  public ScimV2GroupReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The type of SCIM resource.")
   @JsonProperty("type")

@@ -30,6 +30,11 @@ public class QueueConversationCallbackEventTopicPhoneNumberColumn  implements Se
     }
   }
 
+  public QueueConversationCallbackEventTopicPhoneNumberColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

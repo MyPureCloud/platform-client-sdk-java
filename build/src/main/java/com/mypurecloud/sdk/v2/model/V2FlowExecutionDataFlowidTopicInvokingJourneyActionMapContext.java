@@ -31,6 +31,11 @@ public class V2FlowExecutionDataFlowidTopicInvokingJourneyActionMapContext  impl
     }
   }
 
+  public V2FlowExecutionDataFlowidTopicInvokingJourneyActionMapContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The identifier of the journey action map that invoked this flow.

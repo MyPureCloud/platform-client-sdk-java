@@ -32,6 +32,12 @@ public class TrusteeAuthorization  implements Serializable {
     }
   }
 
+  public TrusteeAuthorization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      permissions = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Permissions that the trustee user has in the trustor organization")
   @JsonProperty("permissions")

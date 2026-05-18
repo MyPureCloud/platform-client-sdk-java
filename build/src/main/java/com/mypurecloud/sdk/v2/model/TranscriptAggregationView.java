@@ -136,6 +136,11 @@ public class TranscriptAggregationView  implements Serializable {
     }
   }
 
+  public TranscriptAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

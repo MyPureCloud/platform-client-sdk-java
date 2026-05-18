@@ -36,6 +36,12 @@ public class DocumentVariationResponseListing  implements Serializable {
     }
   }
 
+  public DocumentVariationResponseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DocumentVariationResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,11 @@ public class FlowMilestone  implements Serializable {
     }
   }
 
+  public FlowMilestone(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The flow milestone identifier")
   @JsonProperty("id")

@@ -33,6 +33,12 @@ public class EstimatedWaitTimePredictions  implements Serializable {
     }
   }
 
+  public EstimatedWaitTimePredictions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<PredictionResults>();
+    }
+  }
+
   
   /**
    * Returned upon a successful estimated wait time request.

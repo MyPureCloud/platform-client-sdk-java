@@ -81,6 +81,11 @@ public class ResourceConditionValue  implements Serializable {
     }
   }
 
+  public ResourceConditionValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

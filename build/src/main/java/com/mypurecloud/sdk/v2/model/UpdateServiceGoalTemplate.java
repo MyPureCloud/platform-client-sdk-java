@@ -39,6 +39,11 @@ public class UpdateServiceGoalTemplate  implements Serializable {
     }
   }
 
+  public UpdateServiceGoalTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the service goal template.

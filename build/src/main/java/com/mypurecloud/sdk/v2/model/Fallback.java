@@ -34,6 +34,12 @@ public class Fallback  implements Serializable {
     }
   }
 
+  public Fallback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      actions = new ArrayList<CopilotFallbackAction>();
+    }
+  }
+
   
   /**
    * Fallback actions are enabled.

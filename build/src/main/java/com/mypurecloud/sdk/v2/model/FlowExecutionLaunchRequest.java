@@ -36,6 +36,11 @@ public class FlowExecutionLaunchRequest  implements Serializable {
     }
   }
 
+  public FlowExecutionLaunchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the flow to launch.

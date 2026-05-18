@@ -34,6 +34,11 @@ public class MediaRtpStatistics  implements Serializable {
     }
   }
 
+  public MediaRtpStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Number of packets received, including all invalid, duplicate, and discarded packets

@@ -34,6 +34,11 @@ public class TrunkInstanceTopicTrunkMetricsOptions  implements Serializable {
     }
   }
 
+  public TrunkInstanceTopicTrunkMetricsOptions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

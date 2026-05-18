@@ -90,6 +90,11 @@ public class AnalyticsSurvey  implements Serializable {
     }
   }
 
+  public AnalyticsSurvey(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

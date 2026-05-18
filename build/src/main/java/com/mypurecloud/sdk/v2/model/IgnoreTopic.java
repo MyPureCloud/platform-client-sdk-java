@@ -129,6 +129,11 @@ public class IgnoreTopic  implements Serializable {
     }
   }
 
+  public IgnoreTopic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text of the topic to be ignored

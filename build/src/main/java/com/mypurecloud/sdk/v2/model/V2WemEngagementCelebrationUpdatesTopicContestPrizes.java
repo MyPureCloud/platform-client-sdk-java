@@ -31,6 +31,11 @@ public class V2WemEngagementCelebrationUpdatesTopicContestPrizes  implements Ser
     }
   }
 
+  public V2WemEngagementCelebrationUpdatesTopicContestPrizes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

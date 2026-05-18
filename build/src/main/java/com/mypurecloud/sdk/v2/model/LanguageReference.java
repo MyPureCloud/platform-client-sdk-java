@@ -30,6 +30,11 @@ public class LanguageReference  implements Serializable {
     }
   }
 
+  public LanguageReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

@@ -36,6 +36,11 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
     }
   }
 
+  public ConversationCallEventTopicFaxStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class MetadataDocumentation  implements Serializable {
     }
   }
 
+  public MetadataDocumentation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "description of the documentation")
   @JsonProperty("description")

@@ -31,6 +31,11 @@ public class CampaignOutboundLinesReservation  implements Serializable {
     }
   }
 
+  public CampaignOutboundLinesReservation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Campaign

@@ -32,6 +32,11 @@ public class JourneyApp  implements Serializable {
     }
   }
 
+  public JourneyApp(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the application (e.g. mybankingapp).

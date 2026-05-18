@@ -87,6 +87,11 @@ public class OutboundPreviewCampaignPostContactVoiceAttributes  implements Seria
     }
   }
 
+  public OutboundPreviewCampaignPostContactVoiceAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

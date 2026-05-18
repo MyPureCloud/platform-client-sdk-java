@@ -40,6 +40,12 @@ public class CallableTimeSet  implements Serializable {
     }
   }
 
+  public CallableTimeSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callableTimes = new ArrayList<CallableTime>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

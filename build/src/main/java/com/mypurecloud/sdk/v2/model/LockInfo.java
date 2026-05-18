@@ -87,6 +87,11 @@ public class LockInfo  implements Serializable {
     }
   }
 
+  public LockInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

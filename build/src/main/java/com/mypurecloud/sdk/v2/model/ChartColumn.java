@@ -80,6 +80,11 @@ public class ChartColumn  implements Serializable {
     }
   }
 
+  public ChartColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Column Id

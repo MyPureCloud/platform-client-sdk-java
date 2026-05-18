@@ -142,6 +142,11 @@ public class QueueConversationScreenShareEventTopicLimit  implements Serializabl
     }
   }
 
+  public QueueConversationScreenShareEventTopicLimit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

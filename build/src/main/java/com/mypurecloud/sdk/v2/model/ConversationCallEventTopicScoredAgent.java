@@ -31,6 +31,11 @@ public class ConversationCallEventTopicScoredAgent  implements Serializable {
     }
   }
 
+  public ConversationCallEventTopicScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

@@ -30,6 +30,11 @@ public class CustomerIntentReference  implements Serializable {
     }
   }
 
+  public CustomerIntentReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the customer intent.

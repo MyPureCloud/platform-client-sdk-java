@@ -33,6 +33,12 @@ public class OutlierResultTemplate  implements Serializable {
     }
   }
 
+  public OutlierResultTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OutlierResultBody>();
+    }
+  }
+
   
   /**
    * Outliers result bodies for planning groups

@@ -39,6 +39,13 @@ public class DataActionConditionSettings  implements Serializable {
     }
   }
 
+  public DataActionConditionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<DigitalDataActionConditionPredicate>();
+      contactColumnToDataActionFieldMappings = new ArrayList<DataActionContactColumnFieldMapping>();
+    }
+  }
+
   
   /**
    * The Data Action Id to use for this condition.

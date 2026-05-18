@@ -35,6 +35,12 @@ public class KnowledgeSyncJobReport  implements Serializable {
     }
   }
 
+  public KnowledgeSyncJobReport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errors = new ArrayList<ErrorBody>();
+    }
+  }
+
   
   /**
    * List of errors occurred during processing sync.

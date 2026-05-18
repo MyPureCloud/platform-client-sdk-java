@@ -91,6 +91,11 @@ public class UpdateBusinessUnitSettingsRequest  implements Serializable {
     }
   }
 
+  public UpdateBusinessUnitSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The start day of week for this business unit")
   @JsonProperty("startDayOfWeek")

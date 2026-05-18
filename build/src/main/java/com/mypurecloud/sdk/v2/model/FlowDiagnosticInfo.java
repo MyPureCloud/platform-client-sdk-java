@@ -29,6 +29,11 @@ public class FlowDiagnosticInfo  implements Serializable {
     }
   }
 
+  public FlowDiagnosticInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The step number of the survey invite flow where the error occurred.

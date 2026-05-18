@@ -79,6 +79,11 @@ public class WrapupDelta  implements Serializable {
     }
   }
 
+  public WrapupDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

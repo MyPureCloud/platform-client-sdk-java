@@ -34,6 +34,12 @@ public class AgentWorkPlans  implements Serializable {
     }
   }
 
+  public AgentWorkPlans(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      workPlanLookupKeysPerWeek = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The user (agent) for whom the work plans were requested

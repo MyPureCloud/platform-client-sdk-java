@@ -30,6 +30,11 @@ public class JourneyWebActionEventsNotificationEmergencyGroup  implements Serial
     }
   }
 
+  public JourneyWebActionEventsNotificationEmergencyGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

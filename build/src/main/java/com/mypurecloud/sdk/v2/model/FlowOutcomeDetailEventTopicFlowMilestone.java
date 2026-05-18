@@ -30,6 +30,11 @@ public class FlowOutcomeDetailEventTopicFlowMilestone  implements Serializable {
     }
   }
 
+  public FlowOutcomeDetailEventTopicFlowMilestone(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

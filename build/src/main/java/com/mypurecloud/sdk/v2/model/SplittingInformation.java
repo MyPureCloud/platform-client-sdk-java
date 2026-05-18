@@ -82,6 +82,11 @@ public class SplittingInformation  implements Serializable {
     }
   }
 
+  public SplittingInformation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The splitting criteria type

@@ -46,6 +46,15 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
     }
   }
 
+  public ConversationSocialExpressionEventTopicSocialConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationSocialExpressionEventTopicSocialMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<ConversationSocialExpressionEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

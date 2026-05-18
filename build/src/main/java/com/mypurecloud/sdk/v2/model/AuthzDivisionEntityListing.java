@@ -43,6 +43,12 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public AuthzDivisionEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AuthzDivision>();
+    }
+  }
+
   
   /**
    **/

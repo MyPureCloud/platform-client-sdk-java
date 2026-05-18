@@ -86,6 +86,12 @@ public class DialerSequenceScheduleConfigChangeRecurrencePattern  implements Ser
     }
   }
 
+  public DialerSequenceScheduleConfigChangeRecurrencePattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      daysOfWeek = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

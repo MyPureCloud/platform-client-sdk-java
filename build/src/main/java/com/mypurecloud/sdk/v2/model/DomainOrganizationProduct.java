@@ -29,6 +29,11 @@ public class DomainOrganizationProduct  implements Serializable {
     }
   }
 
+  public DomainOrganizationProduct(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

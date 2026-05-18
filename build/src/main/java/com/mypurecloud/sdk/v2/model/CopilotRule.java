@@ -36,6 +36,13 @@ public class CopilotRule  implements Serializable {
     }
   }
 
+  public CopilotRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conditions = new ArrayList<CopilotCondition>();
+      actions = new ArrayList<CopilotAction>();
+    }
+  }
+
   
   /**
    * List of conditions to execute actions, must have at least 1 element and maximum 100 elements. Operator in case of multiple conditions: 'OR'.

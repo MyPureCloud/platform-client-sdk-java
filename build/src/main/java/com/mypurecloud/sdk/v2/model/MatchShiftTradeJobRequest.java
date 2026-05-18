@@ -35,6 +35,11 @@ public class MatchShiftTradeJobRequest  implements Serializable {
     }
   }
 
+  public MatchShiftTradeJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start week date of the initiating shift in the business unit time zone (yyyy-MM-dd format). Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

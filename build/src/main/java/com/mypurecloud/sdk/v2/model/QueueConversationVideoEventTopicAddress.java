@@ -34,6 +34,11 @@ public class QueueConversationVideoEventTopicAddress  implements Serializable {
     }
   }
 
+  public QueueConversationVideoEventTopicAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * This will be nameRaw if present, or a locality lookup of the address field otherwise.

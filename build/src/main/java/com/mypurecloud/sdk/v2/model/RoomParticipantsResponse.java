@@ -33,6 +33,12 @@ public class RoomParticipantsResponse  implements Serializable {
     }
   }
 
+  public RoomParticipantsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<RoomParticipantResponse>();
+    }
+  }
+
   
   /**
    * list of room participants

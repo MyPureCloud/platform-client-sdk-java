@@ -360,6 +360,12 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     }
   }
 
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

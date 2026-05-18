@@ -43,6 +43,12 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     }
   }
 
+  public InboundRouteEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<InboundRoute>();
+    }
+  }
+
   
   /**
    **/

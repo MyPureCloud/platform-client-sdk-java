@@ -30,6 +30,11 @@ public class UsageExecutionResult  implements Serializable {
     }
   }
 
+  public UsageExecutionResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the query execution

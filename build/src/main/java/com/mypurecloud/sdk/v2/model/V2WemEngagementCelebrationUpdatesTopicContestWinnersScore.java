@@ -30,6 +30,11 @@ public class V2WemEngagementCelebrationUpdatesTopicContestWinnersScore  implemen
     }
   }
 
+  public V2WemEngagementCelebrationUpdatesTopicContestWinnersScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

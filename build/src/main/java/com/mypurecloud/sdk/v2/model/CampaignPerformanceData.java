@@ -153,6 +153,11 @@ public class CampaignPerformanceData  implements Serializable {
     }
   }
 
+  public CampaignPerformanceData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Identifier of the campaign

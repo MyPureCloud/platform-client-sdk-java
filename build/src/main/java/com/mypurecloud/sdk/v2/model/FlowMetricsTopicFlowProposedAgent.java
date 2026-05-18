@@ -30,6 +30,11 @@ public class FlowMetricsTopicFlowProposedAgent  implements Serializable {
     }
   }
 
+  public FlowMetricsTopicFlowProposedAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Proposed agent rank for this conversation from predictive routing (lower is better)

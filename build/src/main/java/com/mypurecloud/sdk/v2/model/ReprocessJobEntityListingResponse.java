@@ -44,6 +44,12 @@ public class ReprocessJobEntityListingResponse  implements Serializable, PagedRe
     }
   }
 
+  public ReprocessJobEntityListingResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ReprocessJobResponse>();
+    }
+  }
+
   
   /**
    **/

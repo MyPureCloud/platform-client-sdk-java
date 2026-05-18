@@ -37,6 +37,12 @@ public class V2WemEngagementCelebrationUpdatesTopicContestWinners  implements Se
     }
   }
 
+  public V2WemEngagementCelebrationUpdatesTopicContestWinners(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers>();
+    }
+  }
+
   
   /**
    **/

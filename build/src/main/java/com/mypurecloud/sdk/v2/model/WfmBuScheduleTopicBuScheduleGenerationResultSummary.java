@@ -36,6 +36,12 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
     }
   }
 
+  public WfmBuScheduleTopicBuScheduleGenerationResultSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messageSeverityCounts = new ArrayList<WfmBuScheduleTopicSchedulerMessageSeverityCount>();
+    }
+  }
+
   
   /**
    **/

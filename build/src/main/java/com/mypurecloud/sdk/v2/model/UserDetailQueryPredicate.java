@@ -177,6 +177,11 @@ public class UserDetailQueryPredicate  implements Serializable {
     }
   }
 
+  public UserDetailQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

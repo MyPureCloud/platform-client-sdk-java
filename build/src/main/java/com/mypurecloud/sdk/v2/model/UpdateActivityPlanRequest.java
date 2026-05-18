@@ -137,6 +137,11 @@ public class UpdateActivityPlanRequest  implements Serializable {
     }
   }
 
+  public UpdateActivityPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the activity plan

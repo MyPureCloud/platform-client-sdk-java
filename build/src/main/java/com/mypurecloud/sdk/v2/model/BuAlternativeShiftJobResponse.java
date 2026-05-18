@@ -140,6 +140,11 @@ public class BuAlternativeShiftJobResponse  implements Serializable {
     }
   }
 
+  public BuAlternativeShiftJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

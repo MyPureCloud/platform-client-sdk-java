@@ -31,6 +31,11 @@ public class ArchitectFlowOutcomeNotificationClient  implements Serializable {
     }
   }
 
+  public ArchitectFlowOutcomeNotificationClient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the client.

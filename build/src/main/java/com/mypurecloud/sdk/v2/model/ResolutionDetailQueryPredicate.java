@@ -177,6 +177,11 @@ public class ResolutionDetailQueryPredicate  implements Serializable {
     }
   }
 
+  public ResolutionDetailQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

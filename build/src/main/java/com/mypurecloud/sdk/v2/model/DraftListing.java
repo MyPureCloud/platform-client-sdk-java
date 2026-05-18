@@ -36,6 +36,12 @@ public class DraftListing  implements Serializable {
     }
   }
 
+  public DraftListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Draft>();
+    }
+  }
+
   
   /**
    **/

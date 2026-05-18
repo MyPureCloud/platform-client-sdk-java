@@ -33,6 +33,12 @@ public class TextMessageListing  implements Serializable {
     }
   }
 
+  public TextMessageListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MessageData>();
+    }
+  }
+
   
   /**
    **/

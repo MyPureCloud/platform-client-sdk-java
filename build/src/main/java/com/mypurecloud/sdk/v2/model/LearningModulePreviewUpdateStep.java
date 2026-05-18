@@ -137,6 +137,12 @@ public class LearningModulePreviewUpdateStep  implements Serializable {
     }
   }
 
+  public LearningModulePreviewUpdateStep(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      structure = new ArrayList<LearningModulePreviewUpdateScoStructure>();
+    }
+  }
+
   
   /**
    * The id of the step

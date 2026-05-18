@@ -90,6 +90,11 @@ public class MediaStatisticsTrunkInfo  implements Serializable {
     }
   }
 
+  public MediaStatisticsTrunkInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

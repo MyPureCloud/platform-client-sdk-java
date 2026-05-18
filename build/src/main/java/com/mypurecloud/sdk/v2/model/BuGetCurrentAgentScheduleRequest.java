@@ -31,6 +31,11 @@ public class BuGetCurrentAgentScheduleRequest  implements Serializable {
     }
   }
 
+  public BuGetCurrentAgentScheduleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

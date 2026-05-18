@@ -37,6 +37,12 @@ public class UserAsyncAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public UserAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<UserAggregateDataContainer>();
+    }
+  }
+
   
   /**
    * A mapping from system presence to a list of organization presence ids

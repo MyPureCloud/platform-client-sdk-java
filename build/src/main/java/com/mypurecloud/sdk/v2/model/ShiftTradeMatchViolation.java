@@ -120,6 +120,11 @@ public class ShiftTradeMatchViolation  implements Serializable {
     }
   }
 
+  public ShiftTradeMatchViolation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of constraint violation

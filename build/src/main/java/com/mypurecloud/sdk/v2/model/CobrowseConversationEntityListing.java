@@ -43,6 +43,12 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     }
   }
 
+  public CobrowseConversationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CobrowseConversation>();
+    }
+  }
+
   
   /**
    **/

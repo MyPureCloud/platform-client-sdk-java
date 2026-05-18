@@ -31,6 +31,11 @@ public class QueueConversationCobrowseEventTopicJourneyActionMap  implements Ser
     }
   }
 
+  public QueueConversationCobrowseEventTopicJourneyActionMap(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the actionMap in the Journey System which triggered this action

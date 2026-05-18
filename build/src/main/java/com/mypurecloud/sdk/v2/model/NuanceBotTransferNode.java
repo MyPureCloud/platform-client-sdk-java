@@ -86,6 +86,12 @@ public class NuanceBotTransferNode  implements Serializable {
     }
   }
 
+  public NuanceBotTransferNode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requestVariables = new ArrayList<NuanceBotVariable>();
+    }
+  }
+
   
   /**
    * The transfer node ID

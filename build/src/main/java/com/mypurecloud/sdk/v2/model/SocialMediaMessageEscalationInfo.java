@@ -81,6 +81,11 @@ public class SocialMediaMessageEscalationInfo  implements Serializable {
     }
   }
 
+  public SocialMediaMessageEscalationInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

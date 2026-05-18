@@ -40,6 +40,13 @@ public class ConversationActivityData  implements Serializable {
     }
   }
 
+  public ConversationActivityData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<ConversationActivityMetricValue>();
+      entities = new ArrayList<ConversationActivityEntityData>();
+    }
+  }
+
   
   /**
    * A mapping from grouping dimension to value

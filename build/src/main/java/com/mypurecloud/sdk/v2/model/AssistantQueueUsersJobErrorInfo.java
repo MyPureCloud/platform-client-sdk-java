@@ -30,6 +30,11 @@ public class AssistantQueueUsersJobErrorInfo  implements Serializable {
     }
   }
 
+  public AssistantQueueUsersJobErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -79,6 +79,11 @@ public class RmsAssetAddressableRef  implements Serializable {
     }
   }
 
+  public RmsAssetAddressableRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

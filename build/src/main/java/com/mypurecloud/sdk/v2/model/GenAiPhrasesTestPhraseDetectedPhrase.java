@@ -31,6 +31,11 @@ public class GenAiPhrasesTestPhraseDetectedPhrase  implements Serializable {
     }
   }
 
+  public GenAiPhrasesTestPhraseDetectedPhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

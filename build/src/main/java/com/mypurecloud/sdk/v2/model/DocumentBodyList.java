@@ -35,6 +35,12 @@ public class DocumentBodyList  implements Serializable {
     }
   }
 
+  public DocumentBodyList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentBodyListBlock>();
+    }
+  }
+
   
   /**
    * Properties for the UnorderedList or OrderedList.

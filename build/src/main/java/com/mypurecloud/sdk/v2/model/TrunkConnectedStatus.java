@@ -31,6 +31,11 @@ public class TrunkConnectedStatus  implements Serializable {
     }
   }
 
+  public TrunkConnectedStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

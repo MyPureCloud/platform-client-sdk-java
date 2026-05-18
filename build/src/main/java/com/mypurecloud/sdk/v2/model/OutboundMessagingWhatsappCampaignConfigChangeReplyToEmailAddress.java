@@ -32,6 +32,11 @@ public class OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAddress  i
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

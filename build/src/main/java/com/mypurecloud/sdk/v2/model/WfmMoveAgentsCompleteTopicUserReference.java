@@ -29,6 +29,11 @@ public class WfmMoveAgentsCompleteTopicUserReference  implements Serializable {
     }
   }
 
+  public WfmMoveAgentsCompleteTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

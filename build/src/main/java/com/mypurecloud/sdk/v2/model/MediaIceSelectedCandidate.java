@@ -80,6 +80,11 @@ public class MediaIceSelectedCandidate  implements Serializable {
     }
   }
 
+  public MediaIceSelectedCandidate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * IP address and port of the candidate

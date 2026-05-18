@@ -43,6 +43,12 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     }
   }
 
+  public ClientAppEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ClientApp>();
+    }
+  }
+
   
   /**
    **/

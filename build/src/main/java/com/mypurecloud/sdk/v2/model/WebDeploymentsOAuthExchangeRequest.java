@@ -33,6 +33,11 @@ public class WebDeploymentsOAuthExchangeRequest  implements Serializable {
     }
   }
 
+  public WebDeploymentsOAuthExchangeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The WebDeployment ID

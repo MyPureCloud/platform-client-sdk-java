@@ -33,6 +33,12 @@ public class ExternalEventsResponse  implements Serializable {
     }
   }
 
+  public ExternalEventsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      unprocessedEntities = new ArrayList<UnprocessedExternalEvent>();
+    }
+  }
+
   
   /**
    * List of events that failed processing.

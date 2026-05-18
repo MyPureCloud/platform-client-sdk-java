@@ -91,6 +91,12 @@ public class ContactsExport  implements Serializable {
     }
   }
 
+  public ContactsExport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      divisionIds = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

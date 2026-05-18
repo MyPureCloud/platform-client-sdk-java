@@ -30,6 +30,11 @@ public class DynamicLineBalancingSettingsPatchRequest  implements Serializable {
     }
   }
 
+  public DynamicLineBalancingSettingsPatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates that this campaign is subject of dynamic line balancing

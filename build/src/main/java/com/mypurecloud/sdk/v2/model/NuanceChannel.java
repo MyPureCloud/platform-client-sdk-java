@@ -36,6 +36,12 @@ public class NuanceChannel  implements Serializable {
     }
   }
 
+  public NuanceChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      modes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The channel ID

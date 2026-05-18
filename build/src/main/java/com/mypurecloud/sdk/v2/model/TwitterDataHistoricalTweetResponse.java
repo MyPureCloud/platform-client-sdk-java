@@ -32,6 +32,11 @@ public class TwitterDataHistoricalTweetResponse  implements Serializable {
     }
   }
 
+  public TwitterDataHistoricalTweetResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The count of matching tweets using the searchTerms.

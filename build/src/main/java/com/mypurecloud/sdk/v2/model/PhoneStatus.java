@@ -189,6 +189,12 @@ public class PhoneStatus  implements Serializable {
     }
   }
 
+  public PhoneStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      lineStatuses = new ArrayList<LineStatus>();
+    }
+  }
+
   
   /**
    **/

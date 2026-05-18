@@ -81,6 +81,11 @@ public class LearningModuleJobRequest  implements Serializable {
     }
   }
 
+  public LearningModuleJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type for the learning module job

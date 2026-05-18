@@ -37,6 +37,11 @@ public class FlowCharacteristics  implements Serializable {
     }
   }
 
+  public FlowCharacteristics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to report execution data about individual actions, menus, states, tasks, etc. etc. that ran during execution of the flow.

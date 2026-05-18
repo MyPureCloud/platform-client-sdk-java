@@ -34,6 +34,12 @@ public class UserAssignmentsResponse  implements Serializable {
     }
   }
 
+  public UserAssignmentsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      assignments = new ArrayList<AssignmentEffectiveDateRange>();
+    }
+  }
+
   
   /**
    * User assigned to the staffing group.

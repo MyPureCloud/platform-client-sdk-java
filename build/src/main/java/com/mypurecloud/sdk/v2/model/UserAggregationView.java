@@ -128,6 +128,11 @@ public class UserAggregationView  implements Serializable {
     }
   }
 
+  public UserAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

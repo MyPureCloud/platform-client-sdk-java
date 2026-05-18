@@ -78,6 +78,11 @@ public class CampaignRuleExecutionSettings  implements Serializable {
     }
   }
 
+  public CampaignRuleExecutionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Execution control frequency

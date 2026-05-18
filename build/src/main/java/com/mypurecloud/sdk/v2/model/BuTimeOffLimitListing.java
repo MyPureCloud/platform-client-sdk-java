@@ -33,6 +33,12 @@ public class BuTimeOffLimitListing  implements Serializable {
     }
   }
 
+  public BuTimeOffLimitListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BuTimeOffLimitResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class PlanningGroupToStaffingGroupsListing  implements Serializable {
     }
   }
 
+  public PlanningGroupToStaffingGroupsListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<PlanningGroupToStaffingGroupsResponse>();
+    }
+  }
+
   
   /**
    **/

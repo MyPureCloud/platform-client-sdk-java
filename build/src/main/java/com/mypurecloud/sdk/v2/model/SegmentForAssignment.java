@@ -29,6 +29,11 @@ public class SegmentForAssignment  implements Serializable {
     }
   }
 
+  public SegmentForAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the segment to be assigned.

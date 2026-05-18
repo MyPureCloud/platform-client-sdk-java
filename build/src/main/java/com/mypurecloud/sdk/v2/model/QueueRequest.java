@@ -235,6 +235,13 @@ public class QueueRequest  implements Serializable {
     }
   }
 
+  public QueueRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routingRules = new ArrayList<RoutingRule>();
+      memberGroups = new ArrayList<MemberGroup>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

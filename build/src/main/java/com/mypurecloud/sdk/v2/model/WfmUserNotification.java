@@ -96,6 +96,12 @@ public class WfmUserNotification  implements Serializable {
     }
   }
 
+  public WfmUserNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      otherNotificationIdsInGroup = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The immutable globally unique identifier for the object.

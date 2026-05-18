@@ -36,6 +36,11 @@ public class DeploymentIdentityResolutionConfig  implements Serializable {
     }
   }
 
+  public DeploymentIdentityResolutionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to use when performing identity resolution.

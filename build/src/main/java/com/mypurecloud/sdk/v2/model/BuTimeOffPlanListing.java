@@ -34,6 +34,12 @@ public class BuTimeOffPlanListing  implements Serializable {
     }
   }
 
+  public BuTimeOffPlanListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BuTimeOffPlanResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -40,6 +40,13 @@ public class UserSchedule  implements Serializable {
     }
   }
 
+  public UserSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<UserScheduleShift>();
+      fullDayTimeOffMarkers = new ArrayList<UserScheduleFullDayTimeOffMarker>();
+    }
+  }
+
   
   /**
    * The shifts that belong to this schedule

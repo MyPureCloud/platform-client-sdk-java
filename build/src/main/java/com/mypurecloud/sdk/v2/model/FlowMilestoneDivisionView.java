@@ -33,6 +33,11 @@ public class FlowMilestoneDivisionView  implements Serializable {
     }
   }
 
+  public FlowMilestoneDivisionView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow milestone identifier

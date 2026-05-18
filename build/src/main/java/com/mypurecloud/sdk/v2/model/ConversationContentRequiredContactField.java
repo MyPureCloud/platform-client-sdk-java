@@ -80,6 +80,11 @@ public class ConversationContentRequiredContactField  implements Serializable {
     }
   }
 
+  public ConversationContentRequiredContactField(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the contact field

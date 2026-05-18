@@ -81,6 +81,11 @@ public class ConversationContentRichLinkHeader  implements Serializable {
     }
   }
 
+  public ConversationContentRichLinkHeader(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the Rich Link header type.

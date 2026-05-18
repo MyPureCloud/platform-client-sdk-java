@@ -86,6 +86,13 @@ public class CreateGeneralProgramTopicsDefinitionsJob  implements Serializable {
     }
   }
 
+  public CreateGeneralProgramTopicsDefinitionsJob(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      testTopicPhraseResults = new ArrayList<CreateGeneralProgramTestTopicPhraseResults>();
+      genAIPhrasesResults = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

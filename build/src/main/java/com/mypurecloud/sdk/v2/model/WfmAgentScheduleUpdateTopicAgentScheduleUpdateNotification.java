@@ -38,6 +38,12 @@ public class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification  impleme
     }
   }
 
+  public WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      updates = new ArrayList<WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate>();
+    }
+  }
+
   
   /**
    **/

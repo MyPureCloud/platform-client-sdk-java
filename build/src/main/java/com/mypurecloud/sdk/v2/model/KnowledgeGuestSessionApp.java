@@ -78,6 +78,11 @@ public class KnowledgeGuestSessionApp  implements Serializable {
     }
   }
 
+  public KnowledgeGuestSessionApp(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * App deployment ID.

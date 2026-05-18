@@ -34,6 +34,11 @@ public class MessagingHoldUpdatedEvent  implements Serializable {
     }
   }
 
+  public MessagingHoldUpdatedEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

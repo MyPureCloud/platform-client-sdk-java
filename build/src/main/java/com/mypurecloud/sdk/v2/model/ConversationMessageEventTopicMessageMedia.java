@@ -33,6 +33,11 @@ public class ConversationMessageEventTopicMessageMedia  implements Serializable 
     }
   }
 
+  public ConversationMessageEventTopicMessageMedia(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the media, useful for retrieving it

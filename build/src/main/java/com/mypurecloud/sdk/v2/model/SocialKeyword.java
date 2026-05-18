@@ -34,6 +34,13 @@ public class SocialKeyword  implements Serializable {
     }
   }
 
+  public SocialKeyword(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      includes = new ArrayList<String>();
+      excludes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of keywords that must be included

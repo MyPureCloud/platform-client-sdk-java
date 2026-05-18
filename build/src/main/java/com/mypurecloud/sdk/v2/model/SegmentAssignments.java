@@ -33,6 +33,12 @@ public class SegmentAssignments  implements Serializable {
     }
   }
 
+  public SegmentAssignments(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<SegmentForAssignment>();
+    }
+  }
+
   
   /**
    * The segments to be assigned.

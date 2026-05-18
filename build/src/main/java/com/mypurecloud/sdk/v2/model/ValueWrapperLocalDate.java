@@ -30,6 +30,11 @@ public class ValueWrapperLocalDate  implements Serializable {
     }
   }
 
+  public ValueWrapperLocalDate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

@@ -115,6 +115,12 @@ public class ReportingTurn  implements Serializable {
     }
   }
 
+  public ReportingTurn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      botPrompts = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The chosen user input associated with this reporting turn.

@@ -33,6 +33,12 @@ public class AssistantQueueUsersQueryRequest  implements Serializable {
     }
   }
 
+  public AssistantQueueUsersQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AssistantQueueUser>();
+    }
+  }
+
   
   /**
    * List of users to query. Maximum users to query is 100 per request.

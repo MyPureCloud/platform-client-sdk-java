@@ -30,6 +30,11 @@ public class ExternalEventExternalId  implements Serializable {
     }
   }
 
+  public ExternalEventExternalId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value of the identifier.

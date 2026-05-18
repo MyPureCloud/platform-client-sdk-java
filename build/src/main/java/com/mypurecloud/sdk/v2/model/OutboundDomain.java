@@ -87,6 +87,11 @@ public class OutboundDomain  implements Serializable {
     }
   }
 
+  public OutboundDomain(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique Id of the domain such as: example.com

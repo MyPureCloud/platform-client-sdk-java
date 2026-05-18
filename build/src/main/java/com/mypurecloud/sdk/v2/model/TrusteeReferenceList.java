@@ -33,6 +33,12 @@ public class TrusteeReferenceList  implements Serializable {
     }
   }
 
+  public TrusteeReferenceList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   /**
    **/

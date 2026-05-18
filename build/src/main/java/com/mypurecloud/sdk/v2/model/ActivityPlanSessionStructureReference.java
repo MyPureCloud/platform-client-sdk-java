@@ -35,6 +35,12 @@ public class ActivityPlanSessionStructureReference  implements Serializable {
     }
   }
 
+  public ActivityPlanSessionStructureReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<UserReference>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

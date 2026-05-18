@@ -29,6 +29,11 @@ public class DeleteRetention  implements Serializable {
     }
   }
 
+  public DeleteRetention(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

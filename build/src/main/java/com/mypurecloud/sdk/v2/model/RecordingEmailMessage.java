@@ -48,6 +48,15 @@ public class RecordingEmailMessage  implements Serializable {
     }
   }
 
+  public RecordingEmailMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      to = new ArrayList<EmailAddress>();
+      cc = new ArrayList<EmailAddress>();
+      bcc = new ArrayList<EmailAddress>();
+      attachments = new ArrayList<EmailAttachment>();
+    }
+  }
+
   
   /**
    **/

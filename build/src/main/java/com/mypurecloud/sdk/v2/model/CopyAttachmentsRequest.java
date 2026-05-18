@@ -35,6 +35,12 @@ public class CopyAttachmentsRequest  implements Serializable {
     }
   }
 
+  public CopyAttachmentsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attachments = new ArrayList<Attachment>();
+    }
+  }
+
   
   /**
    * A reference to the email message within the current conversation that owns the attachments to be copied

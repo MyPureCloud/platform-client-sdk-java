@@ -191,6 +191,11 @@ public class UpdateWorkPlanBid  implements Serializable {
     }
   }
 
+  public UpdateWorkPlanBid(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the work plan bid

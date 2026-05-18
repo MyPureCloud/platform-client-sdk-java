@@ -34,6 +34,12 @@ public class CommunicationTranslation  implements Serializable {
     }
   }
 
+  public CommunicationTranslation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      transcripts = new ArrayList<TranscriptTranslation>();
+    }
+  }
+
   
   /**
    * Communication Id

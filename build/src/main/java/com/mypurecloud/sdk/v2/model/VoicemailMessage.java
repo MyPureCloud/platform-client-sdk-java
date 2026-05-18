@@ -59,6 +59,12 @@ public class VoicemailMessage  implements Serializable {
     }
   }
 
+  public VoicemailMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      copiedTo = new ArrayList<VoicemailCopyRecord>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

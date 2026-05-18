@@ -99,6 +99,11 @@ public class FlowRuntimeExecution  implements Serializable {
     }
   }
 
+  public FlowRuntimeExecution(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow execution ID

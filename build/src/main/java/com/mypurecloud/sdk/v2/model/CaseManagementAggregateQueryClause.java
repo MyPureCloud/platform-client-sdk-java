@@ -82,6 +82,12 @@ public class CaseManagementAggregateQueryClause  implements Serializable {
     }
   }
 
+  public CaseManagementAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<CaseManagementAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

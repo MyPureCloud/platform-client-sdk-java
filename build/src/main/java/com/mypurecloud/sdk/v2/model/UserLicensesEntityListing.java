@@ -37,6 +37,12 @@ public class UserLicensesEntityListing  implements Serializable {
     }
   }
 
+  public UserLicensesEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserLicenses>();
+    }
+  }
+
   
   /**
    **/

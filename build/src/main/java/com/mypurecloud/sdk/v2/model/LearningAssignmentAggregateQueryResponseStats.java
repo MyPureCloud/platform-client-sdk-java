@@ -33,6 +33,11 @@ public class LearningAssignmentAggregateQueryResponseStats  implements Serializa
     }
   }
 
+  public LearningAssignmentAggregateQueryResponseStats(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The count for this metric

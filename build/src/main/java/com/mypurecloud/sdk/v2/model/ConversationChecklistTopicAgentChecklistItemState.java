@@ -136,6 +136,11 @@ public class ConversationChecklistTopicAgentChecklistItemState  implements Seria
     }
   }
 
+  public ConversationChecklistTopicAgentChecklistItemState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

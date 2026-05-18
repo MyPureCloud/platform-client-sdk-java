@@ -34,6 +34,12 @@ public class Timeseries  implements Serializable {
     }
   }
 
+  public Timeseries(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      weeks = new ArrayList<Weeks>();
+    }
+  }
+
   
   /**
    * The planning group ID

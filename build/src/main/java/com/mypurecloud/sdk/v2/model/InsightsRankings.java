@@ -92,6 +92,13 @@ public class InsightsRankings  implements Serializable {
     }
   }
 
+  public InsightsRankings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      leaders = new ArrayList<InsightsSummaryUserItem>();
+      trailers = new ArrayList<InsightsSummaryUserItem>();
+    }
+  }
+
   
   /**
    * The performance profile

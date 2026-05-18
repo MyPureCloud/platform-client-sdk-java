@@ -30,6 +30,11 @@ public class ConversationEnrichmentLanguage  implements Serializable {
     }
   }
 
+  public ConversationEnrichmentLanguage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The IETF detected language code of this message.

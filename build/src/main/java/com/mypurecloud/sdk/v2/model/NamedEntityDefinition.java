@@ -30,6 +30,11 @@ public class NamedEntityDefinition  implements Serializable {
     }
   }
 
+  public NamedEntityDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the entity.

@@ -91,6 +91,12 @@ public class RoutingTransferEvent  implements Serializable {
     }
   }
 
+  public RoutingTransferEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

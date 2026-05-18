@@ -36,6 +36,13 @@ public class ScimV2PatchRequest  implements Serializable {
     }
   }
 
+  public ScimV2PatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+      operations = new ArrayList<ScimV2PatchOperation>();
+    }
+  }
+
   
   /**
    * The list of schemas used in the PATCH request.

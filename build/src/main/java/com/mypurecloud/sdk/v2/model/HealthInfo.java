@@ -138,6 +138,13 @@ public class HealthInfo  implements Serializable {
     }
   }
 
+  public HealthInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staticValidationResults = new ArrayList<StaticValidationResultsEnum>();
+      utterances = new ArrayList<FlowHealthIntentUtterance>();
+    }
+  }
+
   
   /**
    * Status of health computation for this intent.

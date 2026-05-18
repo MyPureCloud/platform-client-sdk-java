@@ -85,6 +85,11 @@ public class AgentMaxUtilizationResponse  implements Serializable {
     }
   }
 
+  public AgentMaxUtilizationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Map of media type to utilization settings.

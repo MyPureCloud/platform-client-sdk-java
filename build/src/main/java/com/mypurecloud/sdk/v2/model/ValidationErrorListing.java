@@ -33,6 +33,12 @@ public class ValidationErrorListing  implements Serializable {
     }
   }
 
+  public ValidationErrorListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ValidationErrorResponse>();
+    }
+  }
+
   
   /**
    **/

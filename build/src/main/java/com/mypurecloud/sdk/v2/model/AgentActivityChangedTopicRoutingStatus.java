@@ -82,6 +82,11 @@ public class AgentActivityChangedTopicRoutingStatus  implements Serializable {
     }
   }
 
+  public AgentActivityChangedTopicRoutingStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates the Routing State of the agent.

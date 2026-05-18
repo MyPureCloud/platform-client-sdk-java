@@ -88,6 +88,11 @@ public class JourneySegmentAssignmentEventsNotificationSegmentAssignmentEventsNo
     }
   }
 
+  public JourneySegmentAssignmentEventsNotificationSegmentAssignmentEventsNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

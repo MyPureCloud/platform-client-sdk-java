@@ -38,6 +38,12 @@ public class ContactImportJobEntityListing  implements Serializable {
     }
   }
 
+  public ContactImportJobEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContactImportJobResponse>();
+    }
+  }
+
   
   /**
    **/

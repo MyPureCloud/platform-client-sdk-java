@@ -30,6 +30,11 @@ public class WfmServiceGoalImpact  implements Serializable {
     }
   }
 
+  public WfmServiceGoalImpact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The maximum allowed percent increase from the configured goal

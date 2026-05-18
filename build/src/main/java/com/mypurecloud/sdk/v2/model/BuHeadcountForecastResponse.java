@@ -31,6 +31,11 @@ public class BuHeadcountForecastResponse  implements Serializable {
     }
   }
 
+  public BuHeadcountForecastResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The headcount forecast, null when downloadUrl is provided

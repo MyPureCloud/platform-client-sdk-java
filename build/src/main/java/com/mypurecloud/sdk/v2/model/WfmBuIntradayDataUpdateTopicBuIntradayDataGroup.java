@@ -95,6 +95,14 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
     }
   }
 
+  public WfmBuIntradayDataUpdateTopicBuIntradayDataGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      forecastDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayForecastData>();
+      scheduleDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayScheduleData>();
+      performancePredictionDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData>();
+    }
+  }
+
   
   /**
    **/

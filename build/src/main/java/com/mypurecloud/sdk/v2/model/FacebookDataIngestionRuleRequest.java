@@ -31,6 +31,11 @@ public class FacebookDataIngestionRuleRequest  implements Serializable {
     }
   }
 
+  public FacebookDataIngestionRuleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the data ingestion rule.

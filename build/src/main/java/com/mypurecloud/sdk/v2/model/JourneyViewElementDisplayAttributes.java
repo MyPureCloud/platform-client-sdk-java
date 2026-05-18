@@ -32,6 +32,11 @@ public class JourneyViewElementDisplayAttributes  implements Serializable {
     }
   }
 
+  public JourneyViewElementDisplayAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The horizontal position (x-coordinate) of the element on the journey view canvas

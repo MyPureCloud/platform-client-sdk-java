@@ -40,6 +40,11 @@ public class ManagementUnitSettingsResponse  implements Serializable {
     }
   }
 
+  public ManagementUnitSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Adherence settings for this management unit

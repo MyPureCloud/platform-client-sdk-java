@@ -40,6 +40,12 @@ public class WfmHistoricalAdherenceBulkResult  implements Serializable {
     }
   }
 
+  public WfmHistoricalAdherenceBulkResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userResults = new ArrayList<WfmHistoricalAdherenceBulkUserResult>();
+    }
+  }
+
   
   /**
    * Beginning of the date range for this result in ISO-8601 format

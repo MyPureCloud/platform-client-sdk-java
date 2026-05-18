@@ -34,6 +34,12 @@ public class SocialMediaAsyncAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public SocialMediaAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<SocialMediaAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

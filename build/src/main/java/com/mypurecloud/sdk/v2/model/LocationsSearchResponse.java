@@ -42,6 +42,13 @@ public class LocationsSearchResponse  implements Serializable {
     }
   }
 
+  public LocationsSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+      results = new ArrayList<LocationDefinition>();
+    }
+  }
+
   
   /**
    * The total number of results found

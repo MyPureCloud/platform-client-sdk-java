@@ -43,6 +43,12 @@ public class ResponseSetEntityListing  implements Serializable, PagedResource<Re
     }
   }
 
+  public ResponseSetEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ResponseSet>();
+    }
+  }
+
   
   /**
    **/

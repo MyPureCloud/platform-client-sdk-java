@@ -39,6 +39,12 @@ public class BulkEntityErrorNote  implements Serializable {
     }
   }
 
+  public BulkEntityErrorNote(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<BulkErrorDetail>();
+    }
+  }
+
   
   /**
    * An error code for the specific error condition.

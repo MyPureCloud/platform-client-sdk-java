@@ -30,6 +30,11 @@ public class ConversationSummaryExtractedEntity  implements Serializable {
     }
   }
 
+  public ConversationSummaryExtractedEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The label for the extracted entity

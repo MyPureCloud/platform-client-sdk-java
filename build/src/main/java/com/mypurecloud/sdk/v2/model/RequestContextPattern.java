@@ -33,6 +33,12 @@ public class RequestContextPattern  implements Serializable {
     }
   }
 
+  public RequestContextPattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<RequestEntityTypeCriteria>();
+    }
+  }
+
   
   /**
    * A list of one or more criteria to satisfy.

@@ -29,6 +29,11 @@ public class ExternalContactsContactNoteChangedTopicDivision  implements Seriali
     }
   }
 
+  public ExternalContactsContactNoteChangedTopicDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

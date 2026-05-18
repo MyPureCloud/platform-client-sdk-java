@@ -33,6 +33,11 @@ public class ConversationSecureAttributes  implements Serializable {
     }
   }
 
+  public ConversationSecureAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The map of attribute keys to values.

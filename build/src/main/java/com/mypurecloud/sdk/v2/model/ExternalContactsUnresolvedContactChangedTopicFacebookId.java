@@ -34,6 +34,12 @@ public class ExternalContactsUnresolvedContactChangedTopicFacebookId  implements
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicFacebookId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<ExternalContactsUnresolvedContactChangedTopicFacebookScopedId>();
+    }
+  }
+
   
   /**
    **/

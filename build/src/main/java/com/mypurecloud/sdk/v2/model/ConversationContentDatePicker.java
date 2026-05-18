@@ -93,6 +93,12 @@ public class ConversationContentDatePicker  implements Serializable {
     }
   }
 
+  public ConversationContentDatePicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      availableTimes = new ArrayList<ConversationContentDatePickerAvailableTime>();
+    }
+  }
+
   
   /**
    * Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.

@@ -30,6 +30,11 @@ public class JourneyViewElementFilterRangeData  implements Serializable {
     }
   }
 
+  public JourneyViewElementFilterRangeData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * An ISO 8601 time duration. Only one of number or duration must be specified.

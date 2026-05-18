@@ -34,6 +34,11 @@ public class BotVersionSummary  implements Serializable {
     }
   }
 
+  public BotVersionSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the bot.

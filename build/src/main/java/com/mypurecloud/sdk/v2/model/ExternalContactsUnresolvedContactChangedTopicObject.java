@@ -25,6 +25,11 @@ public class ExternalContactsUnresolvedContactChangedTopicObject  implements Ser
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

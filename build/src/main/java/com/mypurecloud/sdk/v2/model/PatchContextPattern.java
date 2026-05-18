@@ -33,6 +33,12 @@ public class PatchContextPattern  implements Serializable {
     }
   }
 
+  public PatchContextPattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<PatchEntityTypeCriteria>();
+    }
+  }
+
   
   /**
    * A list of one or more criteria to satisfy.

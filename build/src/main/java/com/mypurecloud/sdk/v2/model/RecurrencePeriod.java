@@ -78,6 +78,11 @@ public class RecurrencePeriod  implements Serializable {
     }
   }
 
+  public RecurrencePeriod(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The period of the activity plan in granularity units

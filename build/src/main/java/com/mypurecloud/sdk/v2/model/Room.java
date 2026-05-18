@@ -97,6 +97,13 @@ public class Room  implements Serializable {
     }
   }
 
+  public Room(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      owners = new ArrayList<UserReference>();
+      pinnedMessages = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The jid of the room if adhoc, the id of the group for group rooms")
   @JsonProperty("id")

@@ -31,6 +31,11 @@ public class ConversationEventTopicInternalMessageDetails  implements Serializab
     }
   }
 
+  public ConversationEventTopicInternalMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * UUID identifying the internal message media.

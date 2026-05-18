@@ -88,6 +88,12 @@ public class FlowHealthIntentUtterance  implements Serializable {
     }
   }
 
+  public FlowHealthIntentUtterance(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staticValidationResults = new ArrayList<StaticValidationResultsEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

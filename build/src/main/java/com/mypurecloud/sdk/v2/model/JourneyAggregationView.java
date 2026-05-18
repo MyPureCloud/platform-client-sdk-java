@@ -147,6 +147,11 @@ public class JourneyAggregationView  implements Serializable {
     }
   }
 
+  public JourneyAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

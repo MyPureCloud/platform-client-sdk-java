@@ -35,6 +35,11 @@ public class WebDeploymentsOAuthRequestParameters  implements Serializable {
     }
   }
 
+  public WebDeploymentsOAuthRequestParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The authorization code to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest

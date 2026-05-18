@@ -33,6 +33,11 @@ public class NuanceEnvironment  implements Serializable {
     }
   }
 
+  public NuanceEnvironment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The environment ID

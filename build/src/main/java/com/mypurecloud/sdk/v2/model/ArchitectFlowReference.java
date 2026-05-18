@@ -98,6 +98,11 @@ public class ArchitectFlowReference  implements Serializable {
     }
   }
 
+  public ArchitectFlowReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow identifier.

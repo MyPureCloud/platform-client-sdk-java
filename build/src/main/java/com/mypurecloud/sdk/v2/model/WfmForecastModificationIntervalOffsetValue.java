@@ -30,6 +30,11 @@ public class WfmForecastModificationIntervalOffsetValue  implements Serializable
     }
   }
 
+  public WfmForecastModificationIntervalOffsetValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The number of intervals past referenceStartDate to which to apply this modification

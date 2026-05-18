@@ -38,6 +38,13 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
     }
   }
 
+  public BuAgentScheduleSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<BuAgentScheduleShift>();
+      fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+    }
+  }
+
   
   /**
    * The user to whom this agent schedule applies

@@ -33,6 +33,11 @@ public class AgentActivityChangedTopicPresence  implements Serializable {
     }
   }
 
+  public AgentActivityChangedTopicPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

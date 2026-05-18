@@ -36,6 +36,11 @@ public class ParticipantMetrics  implements Serializable {
     }
   }
 
+  public ParticipantMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Percentage of Agent duration in the conversation

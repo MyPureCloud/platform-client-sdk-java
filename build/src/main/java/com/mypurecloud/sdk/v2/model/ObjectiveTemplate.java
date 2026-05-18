@@ -36,6 +36,12 @@ public class ObjectiveTemplate  implements Serializable {
     }
   }
 
+  public ObjectiveTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      zones = new ArrayList<ObjectiveZone>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

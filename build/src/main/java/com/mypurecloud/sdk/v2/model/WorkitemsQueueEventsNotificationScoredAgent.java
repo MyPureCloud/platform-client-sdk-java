@@ -30,6 +30,11 @@ public class WorkitemsQueueEventsNotificationScoredAgent  implements Serializabl
     }
   }
 
+  public WorkitemsQueueEventsNotificationScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

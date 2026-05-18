@@ -29,6 +29,11 @@ public class ExternalContactsContactChangedTopicDivision  implements Serializabl
     }
   }
 
+  public ExternalContactsContactChangedTopicDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

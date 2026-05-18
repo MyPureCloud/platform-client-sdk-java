@@ -79,6 +79,11 @@ public class OpenInboundStructuredResponseNormalizedMessageContent  implements S
     }
   }
 
+  public OpenInboundStructuredResponseNormalizedMessageContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element

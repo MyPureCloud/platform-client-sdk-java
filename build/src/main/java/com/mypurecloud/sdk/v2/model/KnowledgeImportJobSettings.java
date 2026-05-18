@@ -35,6 +35,12 @@ public class KnowledgeImportJobSettings  implements Serializable {
     }
   }
 
+  public KnowledgeImportJobSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      labelIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * If enabled import creates a new document even if update is available.

@@ -43,6 +43,12 @@ public class BotConnectorBotVersionSummaryEntityListing  implements Serializable
     }
   }
 
+  public BotConnectorBotVersionSummaryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BotVersionSummary>();
+    }
+  }
+
   
   /**
    **/

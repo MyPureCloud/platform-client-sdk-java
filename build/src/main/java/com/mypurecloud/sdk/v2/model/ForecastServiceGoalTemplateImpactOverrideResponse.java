@@ -32,6 +32,11 @@ public class ForecastServiceGoalTemplateImpactOverrideResponse  implements Seria
     }
   }
 
+  public ForecastServiceGoalTemplateImpactOverrideResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Allowed service level percent increase and decrease; undefined if the goal is not enabled

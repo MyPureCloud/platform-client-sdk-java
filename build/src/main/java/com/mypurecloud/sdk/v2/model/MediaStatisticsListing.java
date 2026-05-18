@@ -33,6 +33,12 @@ public class MediaStatisticsListing  implements Serializable {
     }
   }
 
+  public MediaStatisticsListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MediaStatistics>();
+    }
+  }
+
   
   /**
    **/

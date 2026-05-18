@@ -137,6 +137,12 @@ public class ArchitectExportJobStateResponse  implements Serializable {
     }
   }
 
+  public ArchitectExportJobStateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messages = new ArrayList<ArchitectJobMessage>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

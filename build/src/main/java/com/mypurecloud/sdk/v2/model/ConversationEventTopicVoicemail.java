@@ -82,6 +82,11 @@ public class ConversationEventTopicVoicemail  implements Serializable {
     }
   }
 
+  public ConversationEventTopicVoicemail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The voicemail id

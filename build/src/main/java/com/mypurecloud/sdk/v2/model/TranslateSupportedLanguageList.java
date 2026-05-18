@@ -33,6 +33,12 @@ public class TranslateSupportedLanguageList  implements Serializable {
     }
   }
 
+  public TranslateSupportedLanguageList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TranslateSupportedLanguage>();
+    }
+  }
+
   
   /**
    **/

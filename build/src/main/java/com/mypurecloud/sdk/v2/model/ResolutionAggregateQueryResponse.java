@@ -33,6 +33,12 @@ public class ResolutionAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public ResolutionAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<ResolutionAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

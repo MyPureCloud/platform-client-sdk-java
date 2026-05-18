@@ -39,6 +39,11 @@ public class CampaignProgress  implements Serializable {
     }
   }
 
+  public CampaignProgress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Identifier of the campaign

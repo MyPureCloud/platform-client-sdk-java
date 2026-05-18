@@ -32,6 +32,11 @@ public class VideoConferenceDetails  implements Serializable {
     }
   }
 
+  public VideoConferenceDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The conferenceId.

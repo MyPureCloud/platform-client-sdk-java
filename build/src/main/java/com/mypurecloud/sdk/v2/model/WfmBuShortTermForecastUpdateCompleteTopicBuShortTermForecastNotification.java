@@ -82,6 +82,11 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotific
     }
   }
 
+  public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

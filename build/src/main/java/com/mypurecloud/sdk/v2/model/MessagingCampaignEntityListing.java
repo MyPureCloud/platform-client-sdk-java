@@ -43,6 +43,12 @@ public class MessagingCampaignEntityListing  implements Serializable, PagedResou
     }
   }
 
+  public MessagingCampaignEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MessagingCampaign>();
+    }
+  }
+
   
   /**
    **/

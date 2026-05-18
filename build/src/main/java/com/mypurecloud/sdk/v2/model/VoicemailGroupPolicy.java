@@ -94,6 +94,11 @@ public class VoicemailGroupPolicy  implements Serializable {
     }
   }
 
+  public VoicemailGroupPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

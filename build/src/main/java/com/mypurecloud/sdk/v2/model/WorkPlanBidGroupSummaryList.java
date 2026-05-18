@@ -33,6 +33,12 @@ public class WorkPlanBidGroupSummaryList  implements Serializable {
     }
   }
 
+  public WorkPlanBidGroupSummaryList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      workPlanBidGroupSummaryList = new ArrayList<WorkPlanBidGroupSummary>();
+    }
+  }
+
   
   /**
    * List of work plan bid group summary

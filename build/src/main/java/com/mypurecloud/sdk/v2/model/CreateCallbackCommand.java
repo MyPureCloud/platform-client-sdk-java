@@ -46,6 +46,12 @@ public class CreateCallbackCommand  implements Serializable {
     }
   }
 
+  public CreateCallbackCommand(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The identifier of the script to be used for the callback

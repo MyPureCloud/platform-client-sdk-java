@@ -40,6 +40,11 @@ public class ConversationProperties  implements Serializable {
     }
   }
 
+  public ConversationProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates filtering for waiting

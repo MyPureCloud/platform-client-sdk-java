@@ -82,6 +82,11 @@ public class ConsultTransferToAgent  implements Serializable {
     }
   }
 
+  public ConsultTransferToAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION

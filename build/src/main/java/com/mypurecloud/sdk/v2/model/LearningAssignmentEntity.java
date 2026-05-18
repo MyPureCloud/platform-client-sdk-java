@@ -29,6 +29,11 @@ public class LearningAssignmentEntity  implements Serializable {
     }
   }
 
+  public LearningAssignmentEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

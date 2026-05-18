@@ -43,6 +43,12 @@ public class CallHistoryConversationEntityListing  implements Serializable, Page
     }
   }
 
+  public CallHistoryConversationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CallHistoryConversation>();
+    }
+  }
+
   
   /**
    **/

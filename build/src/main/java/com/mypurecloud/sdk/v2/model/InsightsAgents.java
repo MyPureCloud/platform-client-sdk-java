@@ -90,6 +90,12 @@ public class InsightsAgents  implements Serializable {
     }
   }
 
+  public InsightsAgents(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<InsightsAgentItem>();
+    }
+  }
+
   
   /**
    * The performance profile

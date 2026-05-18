@@ -30,6 +30,11 @@ public class CopyDecisionTableRequest  implements Serializable {
     }
   }
 
+  public CopyDecisionTableRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the newly created decision table. Must be unique

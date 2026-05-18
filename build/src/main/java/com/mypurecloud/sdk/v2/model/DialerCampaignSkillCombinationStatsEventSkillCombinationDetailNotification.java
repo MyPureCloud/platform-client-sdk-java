@@ -36,6 +36,12 @@ public class DialerCampaignSkillCombinationStatsEventSkillCombinationDetailNotif
     }
   }
 
+  public DialerCampaignSkillCombinationStatsEventSkillCombinationDetailNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillCombination = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Array of skill identifiers that make up this skill combination

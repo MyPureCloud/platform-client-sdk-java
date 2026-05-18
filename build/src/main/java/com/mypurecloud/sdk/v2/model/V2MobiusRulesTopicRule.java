@@ -146,6 +146,12 @@ public class V2MobiusRulesTopicRule  implements Serializable {
     }
   }
 
+  public V2MobiusRulesTopicRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      notifications = new ArrayList<V2MobiusRulesTopicAlertNotification>();
+    }
+  }
+
   
   /**
    **/

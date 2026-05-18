@@ -77,6 +77,11 @@ public class WorkflowTargetSettings  implements Serializable {
     }
   }
 
+  public WorkflowTargetSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The data format to use when invoking target.

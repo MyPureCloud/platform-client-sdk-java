@@ -39,6 +39,12 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
     }
   }
 
+  public UserRoutingStatusErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userParams = new ArrayList<UserRoutingStatusUserParam>();
+    }
+  }
+
   
   /**
    * A code unique to this error. Typically prefixed with the service that originated the error. For example CONFIG_USER_NOT_FOUND

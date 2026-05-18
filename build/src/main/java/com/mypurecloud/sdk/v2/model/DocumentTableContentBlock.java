@@ -94,6 +94,11 @@ public class DocumentTableContentBlock  implements Serializable {
     }
   }
 
+  public DocumentTableContentBlock(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the block for the table cell. This determines which body block object (paragraph, list, video, image or table) would have a value.

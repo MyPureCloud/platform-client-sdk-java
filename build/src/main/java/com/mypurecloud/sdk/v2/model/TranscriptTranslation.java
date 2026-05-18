@@ -35,6 +35,12 @@ public class TranscriptTranslation  implements Serializable {
     }
   }
 
+  public TranscriptTranslation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phrases = new ArrayList<PhraseTranslation>();
+    }
+  }
+
   
   /**
    * Transcript Id

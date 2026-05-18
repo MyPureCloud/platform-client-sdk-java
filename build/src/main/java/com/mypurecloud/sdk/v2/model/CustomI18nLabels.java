@@ -35,6 +35,12 @@ public class CustomI18nLabels  implements Serializable {
     }
   }
 
+  public CustomI18nLabels(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      localizedLabels = new ArrayList<LocalizedLabels>();
+    }
+  }
+
   
   /**
    * Language of localized labels in homescreen app (eg. en-us, de-de) and push notification

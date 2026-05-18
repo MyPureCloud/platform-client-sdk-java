@@ -33,6 +33,12 @@ public class BulkOrganizationsEnrichRequest  implements Serializable {
     }
   }
 
+  public BulkOrganizationsEnrichRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalOrganizationEnrichRequest>();
+    }
+  }
+
   
   /**
    **/

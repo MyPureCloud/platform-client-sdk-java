@@ -34,6 +34,13 @@ public class DashboardsSharedWith  implements Serializable {
     }
   }
 
+  public DashboardsSharedWith(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+      teamIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of user ids to share the dashboard with

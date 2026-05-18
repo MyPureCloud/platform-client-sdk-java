@@ -31,6 +31,11 @@ public class BuSchedulerSettingsRequest  implements Serializable {
     }
   }
 
+  public BuSchedulerSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates whether to provide consistent service level smoothing in schedule generation for this business unit

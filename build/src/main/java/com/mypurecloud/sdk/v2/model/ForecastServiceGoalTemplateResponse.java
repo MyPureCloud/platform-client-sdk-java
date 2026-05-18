@@ -36,6 +36,11 @@ public class ForecastServiceGoalTemplateResponse  implements Serializable {
     }
   }
 
+  public ForecastServiceGoalTemplateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The service level goal for this forecast

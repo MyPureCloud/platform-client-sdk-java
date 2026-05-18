@@ -149,6 +149,13 @@ public class FileSpecificationTemplate  implements Serializable {
     }
   }
 
+  public FileSpecificationTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      columnInformation = new ArrayList<Column>();
+      preprocessingRules = new ArrayList<PreprocessingRule>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

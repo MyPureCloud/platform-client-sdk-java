@@ -33,6 +33,11 @@ public class ActionContractInput  implements Serializable {
     }
   }
 
+  public ActionContractInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Execution input contract

@@ -33,6 +33,12 @@ public class BusinessUnitListing  implements Serializable {
     }
   }
 
+  public BusinessUnitListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BusinessUnitListItem>();
+    }
+  }
+
   
   /**
    **/

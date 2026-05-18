@@ -85,6 +85,13 @@ public class ResolutionDetailQueryFilter  implements Serializable {
     }
   }
 
+  public ResolutionDetailQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<ResolutionDetailQueryClause>();
+      predicates = new ArrayList<ResolutionDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

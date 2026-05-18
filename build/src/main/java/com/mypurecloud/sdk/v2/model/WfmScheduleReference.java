@@ -34,6 +34,11 @@ public class WfmScheduleReference  implements Serializable {
     }
   }
 
+  public WfmScheduleReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the WFM schedule

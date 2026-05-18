@@ -85,6 +85,13 @@ public class FlowExecutionAggregateQueryFilter  implements Serializable {
     }
   }
 
+  public FlowExecutionAggregateQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<FlowExecutionAggregateQueryClause>();
+      predicates = new ArrayList<FlowExecutionAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

@@ -35,6 +35,13 @@ public class CsvUploadPreviewResponse  implements Serializable {
     }
   }
 
+  public CsvUploadPreviewResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      headers = new ArrayList<String>();
+      entries = new ArrayList<List<String>>();
+    }
+  }
+
   
   /**
    * Id for the upload

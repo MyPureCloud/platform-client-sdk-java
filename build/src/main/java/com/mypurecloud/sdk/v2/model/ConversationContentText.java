@@ -78,6 +78,11 @@ public class ConversationContentText  implements Serializable {
     }
   }
 
+  public ConversationContentText(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of text content (Deprecated).

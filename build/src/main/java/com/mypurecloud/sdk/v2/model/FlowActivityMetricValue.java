@@ -81,6 +81,12 @@ public class FlowActivityMetricValue  implements Serializable {
     }
   }
 
+  public FlowActivityMetricValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entityIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Metric

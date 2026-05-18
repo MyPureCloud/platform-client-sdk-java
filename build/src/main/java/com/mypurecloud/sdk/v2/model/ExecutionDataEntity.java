@@ -33,6 +33,11 @@ public class ExecutionDataEntity  implements Serializable {
     }
   }
 
+  public ExecutionDataEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the execution requested

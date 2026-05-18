@@ -149,6 +149,14 @@ public class ContestsCreateRequest  implements Serializable {
     }
   }
 
+  public ContestsCreateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<ContestMetrics>();
+      prizes = new ArrayList<ContestPrizes>();
+      participantIds = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

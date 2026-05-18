@@ -87,6 +87,11 @@ public class LearningAssessment  implements Serializable {
     }
   }
 
+  public LearningAssessment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The Id of the assessment")
   @JsonProperty("assessmentId")

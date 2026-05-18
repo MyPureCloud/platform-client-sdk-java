@@ -91,6 +91,11 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
     }
   }
 
+  public DocumentBodyTableCaptionItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the caption item.

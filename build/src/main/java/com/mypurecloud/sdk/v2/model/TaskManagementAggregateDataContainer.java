@@ -36,6 +36,12 @@ public class TaskManagementAggregateDataContainer  implements Serializable {
     }
   }
 
+  public TaskManagementAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

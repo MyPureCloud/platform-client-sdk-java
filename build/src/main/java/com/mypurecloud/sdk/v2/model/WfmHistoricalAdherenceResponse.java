@@ -86,6 +86,12 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     }
   }
 
+  public WfmHistoricalAdherenceResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadUrls = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The query ID to listen for

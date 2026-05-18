@@ -93,6 +93,12 @@ public class WorkdayPointsTrend  implements Serializable {
     }
   }
 
+  public WorkdayPointsTrend(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      trend = new ArrayList<WorkdayPointsTrendItem>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The start workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateStartWorkday")

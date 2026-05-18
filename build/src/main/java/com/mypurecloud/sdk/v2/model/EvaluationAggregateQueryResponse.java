@@ -33,6 +33,12 @@ public class EvaluationAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public EvaluationAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<EvaluationAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

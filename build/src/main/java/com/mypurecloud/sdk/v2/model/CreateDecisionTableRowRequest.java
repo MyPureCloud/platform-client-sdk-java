@@ -35,6 +35,11 @@ public class CreateDecisionTableRowRequest  implements Serializable {
     }
   }
 
+  public CreateDecisionTableRowRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The absolute position of this row in the decision table. Must be an integerstarting from 1, must be positive and less than or equal to the size of the table. If not provided row will be append to the end of the table. 

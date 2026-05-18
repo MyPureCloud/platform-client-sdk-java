@@ -79,6 +79,11 @@ public class MediaTranscription  implements Serializable {
     }
   }
 
+  public MediaTranscription(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

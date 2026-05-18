@@ -33,6 +33,11 @@ public class WorkitemsAttributeChangeMap  implements Serializable {
     }
   }
 
+  public WorkitemsAttributeChangeMap(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * New property value

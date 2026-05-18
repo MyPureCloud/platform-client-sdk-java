@@ -34,6 +34,11 @@ public class QueueConversationSocialExpressionEventTopicDispositionAmdTimeout  i
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicDispositionAmdTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured AMD timeout value.

@@ -34,6 +34,12 @@ public class ExternalContactsUnresolvedContactChangedTopicLineId  implements Ser
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicLineId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<ExternalContactsUnresolvedContactChangedTopicLineUserId>();
+    }
+  }
+
   
   /**
    **/

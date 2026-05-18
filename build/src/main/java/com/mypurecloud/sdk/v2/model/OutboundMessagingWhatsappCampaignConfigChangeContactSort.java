@@ -83,6 +83,11 @@ public class OutboundMessagingWhatsappCampaignConfigChangeContactSort  implement
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeContactSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

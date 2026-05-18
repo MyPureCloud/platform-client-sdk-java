@@ -29,6 +29,11 @@ public class ModelConfig  implements Serializable {
     }
   }
 
+  public ModelConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Use the latest model for summarization.

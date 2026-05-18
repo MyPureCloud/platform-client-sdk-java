@@ -82,6 +82,11 @@ public class ImportForecastResponse  implements Serializable {
     }
   }
 
+  public ImportForecastResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the operation

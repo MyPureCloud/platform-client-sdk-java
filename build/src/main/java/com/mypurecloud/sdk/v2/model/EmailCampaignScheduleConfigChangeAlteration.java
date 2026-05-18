@@ -83,6 +83,11 @@ public class EmailCampaignScheduleConfigChangeAlteration  implements Serializabl
     }
   }
 
+  public EmailCampaignScheduleConfigChangeAlteration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

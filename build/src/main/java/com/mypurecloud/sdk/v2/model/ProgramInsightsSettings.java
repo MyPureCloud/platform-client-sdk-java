@@ -31,6 +31,11 @@ public class ProgramInsightsSettings  implements Serializable {
     }
   }
 
+  public ProgramInsightsSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the program

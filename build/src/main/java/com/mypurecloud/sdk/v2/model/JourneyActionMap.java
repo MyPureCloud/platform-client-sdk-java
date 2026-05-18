@@ -30,6 +30,11 @@ public class JourneyActionMap  implements Serializable {
     }
   }
 
+  public JourneyActionMap(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the actionMap in the Journey System which triggered this action

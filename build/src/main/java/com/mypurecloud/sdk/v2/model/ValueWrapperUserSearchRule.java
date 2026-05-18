@@ -30,6 +30,11 @@ public class ValueWrapperUserSearchRule  implements Serializable {
     }
   }
 
+  public ValueWrapperUserSearchRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field

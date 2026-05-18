@@ -85,6 +85,13 @@ public class AgentStateSessionFilter  implements Serializable {
     }
   }
 
+  public AgentStateSessionFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<AgentStateSessionQueryClause>();
+      predicates = new ArrayList<AgentStateSessionQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

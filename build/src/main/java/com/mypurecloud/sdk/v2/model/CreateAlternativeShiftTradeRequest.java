@@ -85,6 +85,13 @@ public class CreateAlternativeShiftTradeRequest  implements Serializable {
     }
   }
 
+  public CreateAlternativeShiftTradeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dropShiftReferenceKeys = new ArrayList<String>();
+      pickupShiftReferenceKeys = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of this alternative shift job

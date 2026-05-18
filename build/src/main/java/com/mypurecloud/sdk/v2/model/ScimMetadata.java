@@ -85,6 +85,11 @@ public class ScimMetadata  implements Serializable {
     }
   }
 
+  public ScimMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The type of SCIM resource.")
   @JsonProperty("resourceType")

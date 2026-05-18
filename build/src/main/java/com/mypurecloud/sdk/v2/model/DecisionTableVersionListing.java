@@ -36,6 +36,12 @@ public class DecisionTableVersionListing  implements Serializable {
     }
   }
 
+  public DecisionTableVersionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DecisionTableVersion>();
+    }
+  }
+
   
   /**
    **/

@@ -35,6 +35,12 @@ public class KnowledgeAnswerDocumentsResponse  implements Serializable {
     }
   }
 
+  public KnowledgeAnswerDocumentsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<KnowledgeAnswerDocumentResponse>();
+    }
+  }
+
   
   /**
    * The results with answers if the answerMode request property is not set or contains \"AnswerHighlight\". Empty array otherwise.

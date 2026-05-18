@@ -43,6 +43,13 @@ public class RecordingForm  implements Serializable {
     }
   }
 
+  public RecordingForm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      formPages = new ArrayList<RecordingFormPage>();
+      response = new ArrayList<RecordingFormResponseComponent>();
+    }
+  }
+
   
   /**
    * The introduction component, used to give an intro into what the form entails.

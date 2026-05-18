@@ -78,6 +78,11 @@ public class RecordingFormResponseContent  implements Serializable {
     }
   }
 
+  public RecordingFormResponseContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element.

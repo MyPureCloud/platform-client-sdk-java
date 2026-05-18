@@ -78,6 +78,11 @@ public class UserActivityQueryMetric  implements Serializable {
     }
   }
 
+  public UserActivityQueryMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The requested metric

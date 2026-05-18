@@ -82,6 +82,12 @@ public class UserActivityQueryClause  implements Serializable {
     }
   }
 
+  public UserActivityQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<UserActivityQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

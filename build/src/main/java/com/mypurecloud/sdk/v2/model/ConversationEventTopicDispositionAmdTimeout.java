@@ -34,6 +34,11 @@ public class ConversationEventTopicDispositionAmdTimeout  implements Serializabl
     }
   }
 
+  public ConversationEventTopicDispositionAmdTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured AMD timeout value.

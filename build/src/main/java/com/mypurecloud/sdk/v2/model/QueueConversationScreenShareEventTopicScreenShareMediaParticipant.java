@@ -359,6 +359,12 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     }
   }
 
+  public QueueConversationScreenShareEventTopicScreenShareMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

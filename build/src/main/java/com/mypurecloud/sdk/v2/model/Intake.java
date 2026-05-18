@@ -32,6 +32,11 @@ public class Intake  implements Serializable {
     }
   }
 
+  public Intake(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The intake data containing key-value pairs.

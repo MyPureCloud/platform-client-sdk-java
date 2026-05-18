@@ -43,6 +43,12 @@ public class DecisionTableRowListing  implements Serializable, PagedResource<Dec
     }
   }
 
+  public DecisionTableRowListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DecisionTableRow>();
+    }
+  }
+
   
   /**
    **/

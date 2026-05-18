@@ -32,6 +32,11 @@ public class QueueConversationCallEventTopicRecordersState  implements Serializa
     }
   }
 
+  public QueueConversationCallEventTopicRecordersState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates the state of the adhoc recorder.

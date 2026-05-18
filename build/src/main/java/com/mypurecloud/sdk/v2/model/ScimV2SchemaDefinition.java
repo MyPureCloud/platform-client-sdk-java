@@ -39,6 +39,12 @@ public class ScimV2SchemaDefinition  implements Serializable {
     }
   }
 
+  public ScimV2SchemaDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attributes = new ArrayList<ScimV2SchemaAttribute>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")
   @JsonProperty("id")

@@ -323,6 +323,11 @@ public class GetRulesQuery  implements Serializable {
     }
   }
 
+  public GetRulesQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The rule type of the alerts the query will return

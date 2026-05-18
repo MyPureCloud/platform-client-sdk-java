@@ -100,6 +100,13 @@ public class MatchCriteriaTestResult  implements Serializable {
     }
   }
 
+  public MatchCriteriaTestResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<JsonNode>();
+      jsonPathExtraction = new ArrayList<MatchTestResult>();
+    }
+  }
+
   
   /**
    * The Goessner json path of the field to match

@@ -42,6 +42,13 @@ public class HistoricalShrinkageResult  implements Serializable {
     }
   }
 
+  public HistoricalShrinkageResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shrinkageForActivityCategories = new ArrayList<HistoricalShrinkageActivityCategoryResponse>();
+      businessUnitIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Beginning of the date range that was queried, in ISO-8601 format

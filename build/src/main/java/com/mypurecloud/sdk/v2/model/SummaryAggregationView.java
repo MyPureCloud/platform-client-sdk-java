@@ -128,6 +128,11 @@ public class SummaryAggregationView  implements Serializable {
     }
   }
 
+  public SummaryAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

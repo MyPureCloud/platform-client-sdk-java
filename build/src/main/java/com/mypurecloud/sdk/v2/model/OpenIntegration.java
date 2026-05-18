@@ -101,6 +101,11 @@ public class OpenIntegration  implements Serializable {
     }
   }
 
+  public OpenIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "A unique Integration Id.")
   @JsonProperty("id")

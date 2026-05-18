@@ -30,6 +30,11 @@ public class LearningAssignmentRuleRunTopicLearningModuleReference  implements S
     }
   }
 
+  public LearningAssignmentRuleRunTopicLearningModuleReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

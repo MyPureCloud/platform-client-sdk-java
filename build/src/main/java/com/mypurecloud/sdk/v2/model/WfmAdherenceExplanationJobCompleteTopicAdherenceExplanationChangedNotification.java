@@ -138,6 +138,11 @@ public class WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationChangedN
     }
   }
 
+  public WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationChangedNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

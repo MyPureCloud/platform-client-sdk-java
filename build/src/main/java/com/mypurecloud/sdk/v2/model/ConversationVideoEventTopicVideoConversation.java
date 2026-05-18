@@ -46,6 +46,15 @@ public class ConversationVideoEventTopicVideoConversation  implements Serializab
     }
   }
 
+  public ConversationVideoEventTopicVideoConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationVideoEventTopicVideoMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<ConversationVideoEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

@@ -36,6 +36,12 @@ public class Listing  implements Serializable {
     }
   }
 
+  public Listing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CsvSettings>();
+    }
+  }
+
   
   /**
    **/

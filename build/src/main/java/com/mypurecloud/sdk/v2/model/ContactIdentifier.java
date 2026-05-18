@@ -92,6 +92,11 @@ public class ContactIdentifier  implements Serializable {
     }
   }
 
+  public ContactIdentifier(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to which this entity belongs.

@@ -87,6 +87,11 @@ public class WebEventDevice  implements Serializable {
     }
   }
 
+  public WebEventDevice(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Device category.

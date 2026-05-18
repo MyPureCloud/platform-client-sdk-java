@@ -97,6 +97,11 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
     }
   }
 
+  public JourneyAppEventsNotificationAppEventsNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,12 @@ public class BotList  implements Serializable {
     }
   }
 
+  public BotList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      chatBots = new ArrayList<BotConnectorBot>();
+    }
+  }
+
   
   /**
    * A list of botConnector Bots. Max 50

@@ -32,6 +32,11 @@ public class QueueConversationCallEventTopicDivisionEntityRef  implements Serial
     }
   }
 
+  public QueueConversationCallEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

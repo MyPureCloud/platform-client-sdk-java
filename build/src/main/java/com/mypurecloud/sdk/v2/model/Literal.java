@@ -91,6 +91,12 @@ public class Literal  implements Serializable {
     }
   }
 
+  public Literal(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      strings = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A string value

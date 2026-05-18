@@ -132,6 +132,12 @@ public class GuideSessionInputEvent  implements Serializable {
     }
   }
 
+  public GuideSessionInputEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      invocations = new ArrayList<GuideSessionTurnInvocationData>();
+    }
+  }
+
   
   /**
    * The type of input event.

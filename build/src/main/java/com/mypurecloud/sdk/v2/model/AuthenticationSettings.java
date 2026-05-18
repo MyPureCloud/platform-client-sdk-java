@@ -32,6 +32,11 @@ public class AuthenticationSettings  implements Serializable {
     }
   }
 
+  public AuthenticationSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicate if these auth is required for this deployment. If, for example, this flag is set to true then webmessaging sessions can not send messages unless the end-user is authenticated.

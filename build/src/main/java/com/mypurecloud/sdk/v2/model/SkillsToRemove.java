@@ -31,6 +31,11 @@ public class SkillsToRemove  implements Serializable {
     }
   }
 
+  public SkillsToRemove(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

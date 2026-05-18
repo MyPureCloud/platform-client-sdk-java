@@ -142,6 +142,11 @@ public class KnowledgeDocumentView  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The variation of the viewed document.

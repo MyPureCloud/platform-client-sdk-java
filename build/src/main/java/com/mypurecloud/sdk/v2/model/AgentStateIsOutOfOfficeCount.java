@@ -30,6 +30,11 @@ public class AgentStateIsOutOfOfficeCount  implements Serializable {
     }
   }
 
+  public AgentStateIsOutOfOfficeCount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The out of office state

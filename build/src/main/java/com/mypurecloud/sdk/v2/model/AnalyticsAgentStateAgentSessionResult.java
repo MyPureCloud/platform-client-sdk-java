@@ -213,6 +213,12 @@ public class AnalyticsAgentStateAgentSessionResult  implements Serializable {
     }
   }
 
+  public AnalyticsAgentStateAgentSessionResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requestedRoutingSkillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Conversation Id

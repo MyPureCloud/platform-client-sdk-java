@@ -45,6 +45,11 @@ public class KnowledgeImportJobStatistics  implements Serializable {
     }
   }
 
+  public KnowledgeImportJobStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Number of documents will be created by the import.

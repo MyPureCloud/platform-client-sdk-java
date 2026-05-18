@@ -30,6 +30,11 @@ public class ConversationNotificationTemplateFooter  implements Serializable {
     }
   }
 
+  public ConversationNotificationTemplateFooter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Footer text. For WhatsApp, ignored.

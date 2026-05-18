@@ -25,6 +25,11 @@ public class ConversationChannelLocation  implements Serializable {
     }
   }
 
+  public ConversationChannelLocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

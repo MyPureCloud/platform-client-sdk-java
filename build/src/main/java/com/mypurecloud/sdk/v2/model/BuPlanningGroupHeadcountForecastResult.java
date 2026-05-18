@@ -36,6 +36,13 @@ public class BuPlanningGroupHeadcountForecastResult  implements Serializable {
     }
   }
 
+  public BuPlanningGroupHeadcountForecastResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requiredPerInterval = new ArrayList<Double>();
+      requiredWithoutShrinkagePerInterval = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * Required headcount per interval, referenced against the reference start date

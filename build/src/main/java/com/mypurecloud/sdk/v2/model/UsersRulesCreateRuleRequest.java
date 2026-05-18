@@ -85,6 +85,12 @@ public class UsersRulesCreateRuleRequest  implements Serializable {
     }
   }
 
+  public UsersRulesCreateRuleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<UsersRulesCriteria>();
+    }
+  }
+
   
   /**
    * The name of the rule

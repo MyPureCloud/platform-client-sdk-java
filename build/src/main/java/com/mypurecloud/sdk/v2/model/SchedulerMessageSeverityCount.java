@@ -80,6 +80,11 @@ public class SchedulerMessageSeverityCount  implements Serializable {
     }
   }
 
+  public SchedulerMessageSeverityCount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The schedule message severity

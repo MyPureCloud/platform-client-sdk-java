@@ -35,6 +35,11 @@ public class LongTermRequirementsServiceGoal  implements Serializable {
     }
   }
 
+  public LongTermRequirementsServiceGoal(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Toggle for target average speed of answer from service goals

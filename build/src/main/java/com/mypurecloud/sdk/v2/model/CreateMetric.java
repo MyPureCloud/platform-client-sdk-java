@@ -86,6 +86,11 @@ public class CreateMetric  implements Serializable {
     }
   }
 
+  public CreateMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of associated metric definition

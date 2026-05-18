@@ -30,6 +30,11 @@ public class AgentWorkPlanActivity  implements Serializable {
     }
   }
 
+  public AgentWorkPlanActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Length of the activity in minutes

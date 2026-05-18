@@ -36,6 +36,12 @@ public class BillingInvoiceItemListing  implements Serializable {
     }
   }
 
+  public BillingInvoiceItemListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BillingInvoiceItem>();
+    }
+  }
+
   
   /**
    **/

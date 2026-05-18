@@ -89,6 +89,12 @@ public class GuideContentGenerationJob  implements Serializable {
     }
   }
 
+  public GuideContentGenerationJob(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errors = new ArrayList<ErrorBody>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

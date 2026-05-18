@@ -31,6 +31,11 @@ public class Member  implements Serializable {
     }
   }
 
+  public Member(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user's id

@@ -142,6 +142,11 @@ public class ShiftTradeQueryTradesBuJobResponse  implements Serializable {
     }
   }
 
+  public ShiftTradeQueryTradesBuJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

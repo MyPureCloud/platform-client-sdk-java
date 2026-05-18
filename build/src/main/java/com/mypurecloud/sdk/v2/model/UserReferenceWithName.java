@@ -31,6 +31,11 @@ public class UserReferenceWithName  implements Serializable {
     }
   }
 
+  public UserReferenceWithName(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

@@ -29,6 +29,11 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserReference  implements Seria
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

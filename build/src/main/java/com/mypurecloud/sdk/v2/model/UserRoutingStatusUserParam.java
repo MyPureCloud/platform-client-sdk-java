@@ -34,6 +34,11 @@ public class UserRoutingStatusUserParam  implements Serializable {
     }
   }
 
+  public UserRoutingStatusUserParam(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

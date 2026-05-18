@@ -39,6 +39,11 @@ public class ExternalContactsRelationshipChangedTopicRelationship  implements Se
     }
   }
 
+  public ExternalContactsRelationshipChangedTopicRelationship(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

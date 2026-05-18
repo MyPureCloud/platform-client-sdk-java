@@ -35,6 +35,11 @@ public class ConsultTransferEvent  implements Serializable {
     }
   }
 
+  public ConsultTransferEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

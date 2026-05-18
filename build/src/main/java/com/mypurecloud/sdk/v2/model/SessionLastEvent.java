@@ -32,6 +32,11 @@ public class SessionLastEvent  implements Serializable {
     }
   }
 
+  public SessionLastEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the last event.

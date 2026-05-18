@@ -30,6 +30,11 @@ public class Activation  implements Serializable {
     }
   }
 
+  public Activation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of activation.

@@ -32,6 +32,12 @@ public class IpAddressAuthentication  implements Serializable {
     }
   }
 
+  public IpAddressAuthentication(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      networkWhitelist = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

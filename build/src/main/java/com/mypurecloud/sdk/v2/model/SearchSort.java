@@ -79,6 +79,11 @@ public class SearchSort  implements Serializable {
     }
   }
 
+  public SearchSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The sort order for results

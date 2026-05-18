@@ -39,6 +39,12 @@ public class MuAgentsWorkPlansResult  implements Serializable {
     }
   }
 
+  public MuAgentsWorkPlansResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AgentWorkPlans>();
+    }
+  }
+
   
   /**
    **/

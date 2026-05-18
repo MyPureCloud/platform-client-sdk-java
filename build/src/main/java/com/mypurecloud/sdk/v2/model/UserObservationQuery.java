@@ -130,6 +130,13 @@ public class UserObservationQuery  implements Serializable {
     }
   }
 
+  public UserObservationQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<MetricsEnum>();
+      detailMetrics = new ArrayList<DetailMetricsEnum>();
+    }
+  }
+
   
   /**
    * Filter to return a subset of observations. Expresses boolean logical predicates as well as dimensional filters

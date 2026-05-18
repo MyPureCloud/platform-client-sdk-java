@@ -161,6 +161,12 @@ public class IncomingMessageRequest  implements Serializable {
     }
   }
 
+  public IncomingMessageRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      channels = new ArrayList<ChannelsEnum>();
+    }
+  }
+
   
   /**
    * The unique id of the bot.

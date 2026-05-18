@@ -91,6 +91,14 @@ public class ContestCompleteData  implements Serializable {
     }
   }
 
+  public ContestCompleteData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<ContestDataMetrics>();
+      prizes = new ArrayList<ContestDataPrizes>();
+      winners = new ArrayList<ContestDataWinners>();
+    }
+  }
+
   
   /**
    * End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

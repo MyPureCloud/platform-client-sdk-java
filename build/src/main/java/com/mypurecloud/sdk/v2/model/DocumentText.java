@@ -86,6 +86,12 @@ public class DocumentText  implements Serializable {
     }
   }
 
+  public DocumentText(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      marks = new ArrayList<MarksEnum>();
+    }
+  }
+
   
   /**
    * Text.

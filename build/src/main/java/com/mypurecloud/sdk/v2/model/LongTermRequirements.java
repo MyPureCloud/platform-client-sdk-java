@@ -40,6 +40,13 @@ public class LongTermRequirements  implements Serializable {
     }
   }
 
+  public LongTermRequirements(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      months = new ArrayList<YearMonth>();
+      requirementResults = new ArrayList<PlanningGroupRequirementOutput>();
+    }
+  }
+
   
   /**
    * Forecast metadata

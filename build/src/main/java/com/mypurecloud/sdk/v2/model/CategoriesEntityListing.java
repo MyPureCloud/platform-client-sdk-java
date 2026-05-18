@@ -43,6 +43,12 @@ public class CategoriesEntityListing  implements Serializable, PagedResource<Sta
     }
   }
 
+  public CategoriesEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<StaCategory>();
+    }
+  }
+
   
   /**
    **/

@@ -43,6 +43,12 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     }
   }
 
+  public NluDomainVersionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<NluDomainVersion>();
+    }
+  }
+
   
   /**
    **/

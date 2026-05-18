@@ -43,6 +43,12 @@ public class WebChatMemberInfoEntityList  implements Serializable, PagedResource
     }
   }
 
+  public WebChatMemberInfoEntityList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WebChatMemberInfo>();
+    }
+  }
+
   
   /**
    **/

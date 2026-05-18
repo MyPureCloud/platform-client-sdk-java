@@ -85,6 +85,12 @@ public class SalesforceSettings  implements Serializable {
     }
   }
 
+  public SalesforceSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      categories = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Filter source by channel.

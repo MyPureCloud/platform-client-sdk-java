@@ -36,6 +36,11 @@ public class AssessmentQuestionScore  implements Serializable {
     }
   }
 
+  public AssessmentQuestionScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "True if this was a failed Kill question")
   @JsonProperty("failedKillQuestion")

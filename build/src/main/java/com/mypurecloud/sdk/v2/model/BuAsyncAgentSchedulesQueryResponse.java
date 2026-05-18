@@ -84,6 +84,11 @@ public class BuAsyncAgentSchedulesQueryResponse  implements Serializable {
     }
   }
 
+  public BuAsyncAgentSchedulesQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the operation

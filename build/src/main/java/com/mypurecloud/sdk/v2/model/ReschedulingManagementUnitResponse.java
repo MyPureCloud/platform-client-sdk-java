@@ -31,6 +31,11 @@ public class ReschedulingManagementUnitResponse  implements Serializable {
     }
   }
 
+  public ReschedulingManagementUnitResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The management unit

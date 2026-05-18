@@ -33,6 +33,11 @@ public class MessagingConferResponse  implements Serializable {
     }
   }
 
+  public MessagingConferResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * conversation ID.

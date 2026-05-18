@@ -37,6 +37,12 @@ public class RecordingTemplateCard  implements Serializable {
     }
   }
 
+  public RecordingTemplateCard(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      buttons = new ArrayList<RecordingTemplateButton>();
+    }
+  }
+
   
   /**
    * The template header.

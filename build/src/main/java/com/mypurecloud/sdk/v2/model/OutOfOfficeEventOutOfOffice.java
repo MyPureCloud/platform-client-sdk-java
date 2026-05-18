@@ -35,6 +35,11 @@ public class OutOfOfficeEventOutOfOffice  implements Serializable {
     }
   }
 
+  public OutOfOfficeEventOutOfOffice(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

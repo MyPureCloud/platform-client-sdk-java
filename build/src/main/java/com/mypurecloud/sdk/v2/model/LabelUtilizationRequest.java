@@ -32,6 +32,12 @@ public class LabelUtilizationRequest  implements Serializable {
     }
   }
 
+  public LabelUtilizationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      interruptingLabelIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Defines the maximum number of interactions with this label that an agent can handle at one time.

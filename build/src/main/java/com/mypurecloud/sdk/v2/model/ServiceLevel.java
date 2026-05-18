@@ -30,6 +30,11 @@ public class ServiceLevel  implements Serializable {
     }
   }
 
+  public ServiceLevel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The desired Service Level. A value between 0 and 1.

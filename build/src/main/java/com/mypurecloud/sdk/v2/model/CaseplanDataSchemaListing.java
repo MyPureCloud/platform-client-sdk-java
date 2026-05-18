@@ -33,6 +33,12 @@ public class CaseplanDataSchemaListing  implements Serializable {
     }
   }
 
+  public CaseplanDataSchemaListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CaseplanDataSchema>();
+    }
+  }
+
   
   /**
    **/

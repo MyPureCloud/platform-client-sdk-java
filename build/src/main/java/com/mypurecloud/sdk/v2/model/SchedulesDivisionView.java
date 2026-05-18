@@ -34,6 +34,11 @@ public class SchedulesDivisionView  implements Serializable {
     }
   }
 
+  public SchedulesDivisionView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The schedule identifier

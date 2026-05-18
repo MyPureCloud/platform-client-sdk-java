@@ -40,6 +40,11 @@ public class OutboundMessagingWhatsappCampaignProgressEventCampaignProgress  imp
     }
   }
 
+  public OutboundMessagingWhatsappCampaignProgressEventCampaignProgress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

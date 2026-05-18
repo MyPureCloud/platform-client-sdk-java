@@ -43,6 +43,12 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     }
   }
 
+  public FailedRecordingEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<RecordingJobFailedRecording>();
+    }
+  }
+
   
   /**
    **/

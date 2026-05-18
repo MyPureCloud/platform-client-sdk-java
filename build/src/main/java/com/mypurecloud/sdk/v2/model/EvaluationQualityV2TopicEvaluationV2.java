@@ -176,6 +176,13 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     }
   }
 
+  public EvaluationQualityV2TopicEvaluationV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      divisionIds = new ArrayList<String>();
+      mediaType = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

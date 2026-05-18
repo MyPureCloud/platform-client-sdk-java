@@ -270,6 +270,12 @@ public class ConversationChat  implements Serializable {
     }
   }
 
+  public ConversationChat(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<Segment>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

@@ -80,6 +80,11 @@ public class SocialHandle  implements Serializable {
     }
   }
 
+  public SocialHandle(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Social Handle Type

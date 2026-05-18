@@ -35,6 +35,12 @@ public class AdditionalMessage  implements Serializable {
     }
   }
 
+  public AdditionalMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The body of the text message.  Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.

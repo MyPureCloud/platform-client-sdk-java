@@ -83,6 +83,11 @@ public class V2QueueObservationMetricCountData  implements Serializable {
     }
   }
 
+  public V2QueueObservationMetricCountData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The observation metric

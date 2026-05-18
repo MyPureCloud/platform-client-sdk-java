@@ -43,6 +43,12 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     }
   }
 
+  public OrphanRecordingListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OrphanRecording>();
+    }
+  }
+
   
   /**
    **/

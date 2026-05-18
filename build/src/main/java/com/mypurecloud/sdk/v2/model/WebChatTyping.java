@@ -35,6 +35,11 @@ public class WebChatTyping  implements Serializable {
     }
   }
 
+  public WebChatTyping(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The event identifier of this typing indicator event (useful to guard against event re-delivery

@@ -37,6 +37,11 @@ public class Location  implements Serializable {
     }
   }
 
+  public Location(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the location

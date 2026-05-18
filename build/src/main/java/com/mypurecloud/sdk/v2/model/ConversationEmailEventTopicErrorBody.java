@@ -47,6 +47,13 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     }
   }
 
+  public ConversationEmailEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<ConversationEmailEventTopicDetail>();
+      errors = new ArrayList<ConversationEmailEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

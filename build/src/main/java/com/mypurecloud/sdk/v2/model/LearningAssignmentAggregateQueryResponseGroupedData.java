@@ -36,6 +36,12 @@ public class LearningAssignmentAggregateQueryResponseGroupedData  implements Ser
     }
   }
 
+  public LearningAssignmentAggregateQueryResponseGroupedData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<LearningAssignmentAggregateQueryResponseData>();
+    }
+  }
+
   
   /**
    * The group values for this data

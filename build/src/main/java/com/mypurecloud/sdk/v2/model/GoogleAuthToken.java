@@ -38,6 +38,12 @@ public class GoogleAuthToken  implements Serializable {
     }
   }
 
+  public GoogleAuthToken(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      scopes = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "ID of the Google OAuth 2 access token. The token cannot be accessed via Genesys API, only referenced by this property. When the token is not referenced by any integration, it is deleted after 24 hours.")
   @JsonProperty("id")

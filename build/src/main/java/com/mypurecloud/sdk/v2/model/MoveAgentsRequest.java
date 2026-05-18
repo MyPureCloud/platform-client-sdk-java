@@ -32,6 +32,12 @@ public class MoveAgentsRequest  implements Serializable {
     }
   }
 
+  public MoveAgentsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of user ids to move

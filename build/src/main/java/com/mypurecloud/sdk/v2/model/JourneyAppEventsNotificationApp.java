@@ -32,6 +32,11 @@ public class JourneyAppEventsNotificationApp  implements Serializable {
     }
   }
 
+  public JourneyAppEventsNotificationApp(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

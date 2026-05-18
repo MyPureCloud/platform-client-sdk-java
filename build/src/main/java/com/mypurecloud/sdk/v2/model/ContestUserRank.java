@@ -32,6 +32,11 @@ public class ContestUserRank  implements Serializable {
     }
   }
 
+  public ContestUserRank(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

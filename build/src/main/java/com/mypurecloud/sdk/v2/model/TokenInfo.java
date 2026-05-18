@@ -41,6 +41,12 @@ public class TokenInfo  implements Serializable {
     }
   }
 
+  public TokenInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      authorizedScope = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The current organization")
   @JsonProperty("organization")

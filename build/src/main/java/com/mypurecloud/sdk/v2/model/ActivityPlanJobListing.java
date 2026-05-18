@@ -33,6 +33,12 @@ public class ActivityPlanJobListing  implements Serializable {
     }
   }
 
+  public ActivityPlanJobListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ActivityPlanJobResponse>();
+    }
+  }
+
   
   /**
    **/

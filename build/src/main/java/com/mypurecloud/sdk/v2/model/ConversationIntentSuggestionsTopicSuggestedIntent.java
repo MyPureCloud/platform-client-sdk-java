@@ -37,6 +37,12 @@ public class ConversationIntentSuggestionsTopicSuggestedIntent  implements Seria
     }
   }
 
+  public ConversationIntentSuggestionsTopicSuggestedIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      detectedSlots = new ArrayList<ConversationIntentSuggestionsTopicSuggestedIntentSlot>();
+    }
+  }
+
   
   /**
    **/

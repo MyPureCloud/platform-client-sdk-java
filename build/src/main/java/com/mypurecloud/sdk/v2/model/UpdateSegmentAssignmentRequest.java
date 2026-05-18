@@ -32,6 +32,11 @@ public class UpdateSegmentAssignmentRequest  implements Serializable {
     }
   }
 
+  public UpdateSegmentAssignmentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The segment assignments to apply.

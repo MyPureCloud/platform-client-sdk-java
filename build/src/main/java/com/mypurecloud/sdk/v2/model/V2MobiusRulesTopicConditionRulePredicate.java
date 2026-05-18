@@ -247,6 +247,11 @@ public class V2MobiusRulesTopicConditionRulePredicate  implements Serializable {
     }
   }
 
+  public V2MobiusRulesTopicConditionRulePredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

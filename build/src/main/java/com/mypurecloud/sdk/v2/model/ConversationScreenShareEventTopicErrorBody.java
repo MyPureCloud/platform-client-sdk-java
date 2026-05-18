@@ -47,6 +47,13 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     }
   }
 
+  public ConversationScreenShareEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<ConversationScreenShareEventTopicDetail>();
+      errors = new ArrayList<ConversationScreenShareEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

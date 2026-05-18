@@ -33,6 +33,11 @@ public class ArchitectPromptNotificationUser  implements Serializable {
     }
   }
 
+  public ArchitectPromptNotificationUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the user.

@@ -39,6 +39,13 @@ public class ScimV2SchemaListResponse  implements Serializable {
     }
   }
 
+  public ScimV2SchemaListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+      resources = new ArrayList<ScimV2SchemaDefinition>();
+    }
+  }
+
   
   /**
    * The list of supported schemas.

@@ -31,6 +31,11 @@ public class HeadcountInterval  implements Serializable {
     }
   }
 
+  public HeadcountInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start date-time for this headcount interval in ISO-8601 format, must be within the 8 day schedule

@@ -117,6 +117,16 @@ public class MessagingCampaign  implements Serializable {
     }
   }
 
+  public MessagingCampaign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dncLists = new ArrayList<DomainEntityRef>();
+      contactSorts = new ArrayList<ContactSort>();
+      ruleSets = new ArrayList<DomainEntityRef>();
+      contactListFilters = new ArrayList<DomainEntityRef>();
+      errors = new ArrayList<RestErrorDetail>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

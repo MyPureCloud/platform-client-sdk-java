@@ -33,6 +33,11 @@ public class FormDatePicker  implements Serializable {
     }
   }
 
+  public FormDatePicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the date picker

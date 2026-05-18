@@ -37,6 +37,13 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     }
   }
 
+  public AnalyticsConversationQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversations = new ArrayList<AnalyticsConversationWithoutAttributes>();
+      aggregations = new ArrayList<AggregationResult>();
+    }
+  }
+
   
   /**
    **/

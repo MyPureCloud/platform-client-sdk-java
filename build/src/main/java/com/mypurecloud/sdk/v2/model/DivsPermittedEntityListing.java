@@ -44,6 +44,12 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public DivsPermittedEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AuthzDivision>();
+    }
+  }
+
   
   /**
    **/

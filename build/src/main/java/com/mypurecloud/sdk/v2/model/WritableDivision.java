@@ -31,6 +31,11 @@ public class WritableDivision  implements Serializable {
     }
   }
 
+  public WritableDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

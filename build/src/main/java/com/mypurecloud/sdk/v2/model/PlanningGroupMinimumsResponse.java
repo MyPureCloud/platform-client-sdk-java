@@ -35,6 +35,12 @@ public class PlanningGroupMinimumsResponse  implements Serializable {
     }
   }
 
+  public PlanningGroupMinimumsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dayOfWeekMinimums = new ArrayList<DayOfWeekMinimums>();
+    }
+  }
+
   
   /**
    * The planning group to which the day of week minimum staff values apply

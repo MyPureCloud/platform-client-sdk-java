@@ -35,6 +35,12 @@ public class AssessmentJobListing  implements Serializable {
     }
   }
 
+  public AssessmentJobListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BenefitAssessmentJob>();
+    }
+  }
+
   
   /**
    **/

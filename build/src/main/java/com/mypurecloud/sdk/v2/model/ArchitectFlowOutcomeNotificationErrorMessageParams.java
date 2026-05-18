@@ -33,6 +33,11 @@ public class ArchitectFlowOutcomeNotificationErrorMessageParams  implements Seri
     }
   }
 
+  public ArchitectFlowOutcomeNotificationErrorMessageParams(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

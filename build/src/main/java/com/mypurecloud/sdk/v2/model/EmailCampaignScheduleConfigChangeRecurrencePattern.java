@@ -86,6 +86,12 @@ public class EmailCampaignScheduleConfigChangeRecurrencePattern  implements Seri
     }
   }
 
+  public EmailCampaignScheduleConfigChangeRecurrencePattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      daysOfWeek = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

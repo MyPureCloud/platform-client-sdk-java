@@ -33,6 +33,12 @@ public class OrgWhitelistSettings  implements Serializable {
     }
   }
 
+  public OrgWhitelistSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      domainWhitelist = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

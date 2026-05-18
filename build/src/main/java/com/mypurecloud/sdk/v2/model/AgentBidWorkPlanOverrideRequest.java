@@ -81,6 +81,11 @@ public class AgentBidWorkPlanOverrideRequest  implements Serializable {
     }
   }
 
+  public AgentBidWorkPlanOverrideRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of agent

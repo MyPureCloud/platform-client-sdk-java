@@ -30,6 +30,11 @@ public class BuCreateTimeOffLimitRequest  implements Serializable {
     }
   }
 
+  public BuCreateTimeOffLimitRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the staffing group to which this time-off limit is associated. It can be either management unit or business unit level staffing group. One of managementUnitId or staffingGroupId must be set. This must not be set if managementUnitId has value

@@ -43,6 +43,11 @@ public class MessagingSetting  implements Serializable {
     }
   }
 
+  public MessagingSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "The messaging Setting unique identifier associated with this integration")
   @JsonProperty("id")

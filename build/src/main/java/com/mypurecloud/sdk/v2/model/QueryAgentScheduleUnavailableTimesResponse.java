@@ -34,6 +34,12 @@ public class QueryAgentScheduleUnavailableTimesResponse  implements Serializable
     }
   }
 
+  public QueryAgentScheduleUnavailableTimesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      scheduleGenerationUnavailableTimes = new ArrayList<AgentScheduleUnavailableTime>();
+    }
+  }
+
   
   /**
    * Indicates whether the unavailability times were considered in schedule generation. Returns false when no schedule exists

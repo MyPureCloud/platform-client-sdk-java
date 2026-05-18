@@ -35,6 +35,11 @@ public class PerformancePredictionCompleteEventTopicErrorBody  implements Serial
     }
   }
 
+  public PerformancePredictionCompleteEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

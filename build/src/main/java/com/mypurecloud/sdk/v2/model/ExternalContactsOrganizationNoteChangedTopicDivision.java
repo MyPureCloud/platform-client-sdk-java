@@ -29,6 +29,11 @@ public class ExternalContactsOrganizationNoteChangedTopicDivision  implements Se
     }
   }
 
+  public ExternalContactsOrganizationNoteChangedTopicDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

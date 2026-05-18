@@ -92,6 +92,12 @@ public class WorkdayValuesMetricItem  implements Serializable {
     }
   }
 
+  public WorkdayValuesMetricItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      trend = new ArrayList<WorkdayValuesTrendItem>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Gamification metric for the average and the trend")
   @JsonProperty("metric")

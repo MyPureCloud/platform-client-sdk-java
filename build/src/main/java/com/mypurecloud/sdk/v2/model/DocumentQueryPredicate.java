@@ -146,6 +146,13 @@ public class DocumentQueryPredicate  implements Serializable {
     }
   }
 
+  public DocumentQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      fields = new ArrayList<FieldsEnum>();
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Specifies the document fields to be matched against.

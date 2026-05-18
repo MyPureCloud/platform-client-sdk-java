@@ -130,6 +130,11 @@ public class OpenSocialMediaReactionsChannel  implements Serializable {
     }
   }
 
+  public OpenSocialMediaReactionsChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The topic ID.")
   @JsonProperty("id")

@@ -29,6 +29,11 @@ public class CreateRoomResponse  implements Serializable {
     }
   }
 
+  public CreateRoomResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The jid of the room

@@ -91,6 +91,12 @@ public class GenAiPhrasesTestPhraseMatchedTranscript  implements Serializable {
     }
   }
 
+  public GenAiPhrasesTestPhraseMatchedTranscript(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      detectedPhrases = new ArrayList<GenAiPhrasesTestPhraseDetectedPhrase>();
+    }
+  }
+
   
   /**
    **/

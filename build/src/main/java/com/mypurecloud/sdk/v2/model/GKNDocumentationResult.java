@@ -32,6 +32,11 @@ public class GKNDocumentationResult  implements Serializable {
     }
   }
 
+  public GKNDocumentationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The text or html content for the documentation entity. Will be returned in responses for certain entities.

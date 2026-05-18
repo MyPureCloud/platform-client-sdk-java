@@ -35,6 +35,12 @@ public class ConversationSocialExpressionEventTopicConversationDivisionMembershi
     }
   }
 
+  public ConversationSocialExpressionEventTopicConversationDivisionMembership(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ConversationSocialExpressionEventTopicDivisionEntityRef>();
+    }
+  }
+
   
   /**
    **/

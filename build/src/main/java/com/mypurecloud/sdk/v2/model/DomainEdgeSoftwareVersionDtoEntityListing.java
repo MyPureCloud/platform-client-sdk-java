@@ -43,6 +43,12 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     }
   }
 
+  public DomainEdgeSoftwareVersionDtoEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DomainEdgeSoftwareVersionDto>();
+    }
+  }
+
   
   /**
    **/

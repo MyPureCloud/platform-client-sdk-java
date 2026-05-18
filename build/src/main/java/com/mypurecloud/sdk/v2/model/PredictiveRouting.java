@@ -30,6 +30,11 @@ public class PredictiveRouting  implements Serializable {
     }
   }
 
+  public PredictiveRouting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A switch used to determine if agent skills will be considered.

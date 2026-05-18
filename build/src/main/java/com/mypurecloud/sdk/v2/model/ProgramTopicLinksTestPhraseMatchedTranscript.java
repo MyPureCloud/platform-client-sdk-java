@@ -91,6 +91,12 @@ public class ProgramTopicLinksTestPhraseMatchedTranscript  implements Serializab
     }
   }
 
+  public ProgramTopicLinksTestPhraseMatchedTranscript(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      detectedPhrases = new ArrayList<ProgramTopicLinksTestPhraseDetectedPhrase>();
+    }
+  }
+
   
   /**
    **/

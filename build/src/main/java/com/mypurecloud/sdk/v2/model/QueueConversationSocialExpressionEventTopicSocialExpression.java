@@ -220,6 +220,11 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicSocialExpression(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

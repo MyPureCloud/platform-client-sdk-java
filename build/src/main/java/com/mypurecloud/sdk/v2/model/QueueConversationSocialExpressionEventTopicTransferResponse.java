@@ -139,6 +139,11 @@ public class QueueConversationSocialExpressionEventTopicTransferResponse  implem
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicTransferResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the command.

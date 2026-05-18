@@ -187,6 +187,14 @@ public class AgentUtilizationAsyncAggregationQuery  implements Serializable {
     }
   }
 
+  public AgentUtilizationAsyncAggregationQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      groupBy = new ArrayList<GroupByEnum>();
+      metrics = new ArrayList<MetricsEnum>();
+      views = new ArrayList<AgentUtilizationAggregationView>();
+    }
+  }
+
   
   /**
    * Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

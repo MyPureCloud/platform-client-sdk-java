@@ -34,6 +34,12 @@ public class StaffingGroupListing  implements Serializable {
     }
   }
 
+  public StaffingGroupListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<StaffingGroupResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -40,6 +40,12 @@ public class CreateWebChatRequest  implements Serializable {
     }
   }
 
+  public CreateWebChatRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of the queue to use for routing the chat conversation.

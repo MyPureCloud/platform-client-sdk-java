@@ -36,6 +36,12 @@ public class TeamMemberEntityListing  implements Serializable {
     }
   }
 
+  public TeamMemberEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserReferenceWithName>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,11 @@ public class ActionProperties  implements Serializable {
     }
   }
 
+  public ActionProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Prompt message shown to user, used for webchat type action.

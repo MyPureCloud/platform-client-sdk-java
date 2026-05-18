@@ -45,6 +45,12 @@ public class Trigger  implements Serializable {
     }
   }
 
+  public Trigger(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchCriteria = new ArrayList<MatchCriteria>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

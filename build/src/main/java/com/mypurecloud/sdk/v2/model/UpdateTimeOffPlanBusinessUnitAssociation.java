@@ -31,6 +31,11 @@ public class UpdateTimeOffPlanBusinessUnitAssociation  implements Serializable {
     }
   }
 
+  public UpdateTimeOffPlanBusinessUnitAssociation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The IDs of management units to which this time-off plan applies. This must not be set if staffingGroupIds is populated

@@ -345,6 +345,12 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicCall(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      disconnectReasons = new ArrayList<QueueConversationSocialExpressionEventTopicDisconnectReason>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

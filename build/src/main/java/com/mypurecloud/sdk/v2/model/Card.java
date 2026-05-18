@@ -37,6 +37,12 @@ public class Card  implements Serializable {
     }
   }
 
+  public Card(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      actions = new ArrayList<CardAction>();
+    }
+  }
+
   
   /**
    * Text to show in the title.

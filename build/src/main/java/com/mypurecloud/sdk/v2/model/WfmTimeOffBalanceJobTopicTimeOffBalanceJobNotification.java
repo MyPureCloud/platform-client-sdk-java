@@ -86,6 +86,12 @@ public class WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification  implements 
     }
   }
 
+  public WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WfmTimeOffBalanceJobTopicTimeOffBalance>();
+    }
+  }
+
   
   /**
    **/

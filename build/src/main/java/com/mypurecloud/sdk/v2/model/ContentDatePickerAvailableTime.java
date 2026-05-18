@@ -32,6 +32,11 @@ public class ContentDatePickerAvailableTime  implements Serializable {
     }
   }
 
+  public ContentDatePickerAvailableTime(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The duration of the scheduling event in seconds.

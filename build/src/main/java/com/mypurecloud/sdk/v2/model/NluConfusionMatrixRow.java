@@ -34,6 +34,12 @@ public class NluConfusionMatrixRow  implements Serializable {
     }
   }
 
+  public NluConfusionMatrixRow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      columns = new ArrayList<NluConfusionMatrixColumn>();
+    }
+  }
+
   
   /**
    * The name of the intent for the row.

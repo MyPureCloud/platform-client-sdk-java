@@ -197,6 +197,11 @@ public class BuForecastTimeSeriesResult  implements Serializable {
     }
   }
 
+  public BuForecastTimeSeriesResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The metric this result applies to

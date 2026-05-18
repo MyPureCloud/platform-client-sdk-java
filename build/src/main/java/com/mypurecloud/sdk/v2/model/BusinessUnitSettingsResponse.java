@@ -91,6 +91,11 @@ public class BusinessUnitSettingsResponse  implements Serializable {
     }
   }
 
+  public BusinessUnitSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start day of week for this business unit

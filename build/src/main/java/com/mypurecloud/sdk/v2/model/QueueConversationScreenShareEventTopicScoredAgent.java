@@ -31,6 +31,11 @@ public class QueueConversationScreenShareEventTopicScoredAgent  implements Seria
     }
   }
 
+  public QueueConversationScreenShareEventTopicScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

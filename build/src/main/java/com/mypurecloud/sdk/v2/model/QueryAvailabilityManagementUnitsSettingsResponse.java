@@ -33,6 +33,12 @@ public class QueryAvailabilityManagementUnitsSettingsResponse  implements Serial
     }
   }
 
+  public QueryAvailabilityManagementUnitsSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnits = new ArrayList<UnavailableTimesManagementUnitSettings>();
+    }
+  }
+
   
   /**
    * List of unavailable times settings, per management unit

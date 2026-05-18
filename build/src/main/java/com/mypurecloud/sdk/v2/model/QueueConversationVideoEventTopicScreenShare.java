@@ -220,6 +220,11 @@ public class QueueConversationVideoEventTopicScreenShare  implements Serializabl
     }
   }
 
+  public QueueConversationVideoEventTopicScreenShare(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

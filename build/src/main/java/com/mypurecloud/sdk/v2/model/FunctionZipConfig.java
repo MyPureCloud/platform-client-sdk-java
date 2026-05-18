@@ -89,6 +89,11 @@ public class FunctionZipConfig  implements Serializable {
     }
   }
 
+  public FunctionZipConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Status of zip upload.")
   @JsonProperty("status")

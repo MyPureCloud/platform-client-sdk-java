@@ -30,6 +30,11 @@ public class GuideSessionVariable  implements Serializable {
     }
   }
 
+  public GuideSessionVariable(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the variable.

@@ -1016,6 +1016,23 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     }
   }
 
+  public FlowMetricsTopicFlowMetricRecord(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activeSkillIds = new ArrayList<String>();
+      destinationAddresses = new ArrayList<String>();
+      divisionIds = new ArrayList<String>();
+      eligibleAgentCounts = new ArrayList<Long>();
+      flowMilestoneIds = new ArrayList<String>();
+      removedSkillIds = new ArrayList<String>();
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      waitingInteractionCounts = new ArrayList<Long>();
+      proposedAgents = new ArrayList<FlowMetricsTopicFlowProposedAgent>();
+      outcomes = new ArrayList<FlowMetricsTopicFlowOutcome>();
+      scoredAgents = new ArrayList<FlowMetricsTopicFlowScoredAgent>();
+    }
+  }
+
   
   /**
    * Metric name

@@ -33,6 +33,12 @@ public class StaffingGroupFullTimeEquivalentContribution  implements Serializabl
     }
   }
 
+  public StaffingGroupFullTimeEquivalentContribution(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      plannedFullTimeEquivalentContribution = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * The staffing group ID receiving full time equivalent agents from the planning group

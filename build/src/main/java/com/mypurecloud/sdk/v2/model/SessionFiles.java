@@ -33,6 +33,11 @@ public class SessionFiles  implements Serializable {
     }
   }
 
+  public SessionFiles(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Metadata for the requested session

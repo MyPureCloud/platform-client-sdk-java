@@ -199,6 +199,14 @@ public class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification  impl
     }
   }
 
+  public WfmBuShortTermForecastCopyCompleteTopicBuForecastModification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue>();
+      secondaryValues = new ArrayList<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

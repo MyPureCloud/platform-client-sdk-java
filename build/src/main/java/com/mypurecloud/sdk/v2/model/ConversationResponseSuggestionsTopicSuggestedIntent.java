@@ -37,6 +37,12 @@ public class ConversationResponseSuggestionsTopicSuggestedIntent  implements Ser
     }
   }
 
+  public ConversationResponseSuggestionsTopicSuggestedIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      detectedSlots = new ArrayList<ConversationResponseSuggestionsTopicSuggestedIntentSlot>();
+    }
+  }
+
   
   /**
    **/

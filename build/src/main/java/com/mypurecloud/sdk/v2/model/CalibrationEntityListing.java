@@ -43,6 +43,12 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     }
   }
 
+  public CalibrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Calibration>();
+    }
+  }
+
   
   /**
    **/

@@ -36,6 +36,12 @@ public class SiteConnections  implements Serializable {
     }
   }
 
+  public SiteConnections(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      siteConnections = new ArrayList<SiteConnection>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

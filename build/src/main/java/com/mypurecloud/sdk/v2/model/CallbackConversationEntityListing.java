@@ -43,6 +43,12 @@ public class CallbackConversationEntityListing  implements Serializable, PagedRe
     }
   }
 
+  public CallbackConversationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CallbackConversation>();
+    }
+  }
+
   
   /**
    **/

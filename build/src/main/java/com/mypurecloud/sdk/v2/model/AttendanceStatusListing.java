@@ -33,6 +33,12 @@ public class AttendanceStatusListing  implements Serializable {
     }
   }
 
+  public AttendanceStatusListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AttendanceStatus>();
+    }
+  }
+
   
   /**
    **/

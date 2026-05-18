@@ -31,6 +31,11 @@ public class RecordingFormResponseComponent  implements Serializable {
     }
   }
 
+  public RecordingFormResponseComponent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the component in the original message.

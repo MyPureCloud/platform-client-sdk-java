@@ -90,6 +90,14 @@ public class WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobCompl
     }
   }
 
+  public WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobComplete(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attendeeIds = new ArrayList<String>();
+      facilitatorIds = new ArrayList<String>();
+      results = new ArrayList<WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobResults>();
+    }
+  }
+
   
   /**
    **/

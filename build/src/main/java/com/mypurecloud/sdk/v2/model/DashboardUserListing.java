@@ -43,6 +43,12 @@ public class DashboardUserListing  implements Serializable, PagedResource<Dashbo
     }
   }
 
+  public DashboardUserListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DashboardUser>();
+    }
+  }
+
   
   /**
    **/

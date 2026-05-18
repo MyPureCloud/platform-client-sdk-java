@@ -32,6 +32,11 @@ public class HistoricalImportStatusJobResponse  implements Serializable {
     }
   }
 
+  public HistoricalImportStatusJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The job id for the import request")
   @JsonProperty("id")

@@ -38,6 +38,12 @@ public class TaskManagementObservationQueryResponse  implements Serializable {
     }
   }
 
+  public TaskManagementObservationQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<TaskManagementObservationResult>();
+    }
+  }
+
   
   /**
    * Query results grouped by the specified dimensions supplied in the groupBy parameter. Each result contains metrics for a specific group combination.

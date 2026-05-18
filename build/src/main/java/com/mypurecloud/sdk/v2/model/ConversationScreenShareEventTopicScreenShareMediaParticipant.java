@@ -359,6 +359,12 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     }
   }
 
+  public ConversationScreenShareEventTopicScreenShareMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

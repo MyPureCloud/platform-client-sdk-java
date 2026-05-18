@@ -30,6 +30,11 @@ public class TextBotFlowLaunchResponse  implements Serializable {
     }
   }
 
+  public TextBotFlowLaunchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The session ID of the bot flow, used to send to subsequent turn requests

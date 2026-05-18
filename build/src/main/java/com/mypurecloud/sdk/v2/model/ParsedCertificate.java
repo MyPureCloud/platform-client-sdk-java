@@ -34,6 +34,12 @@ public class ParsedCertificate  implements Serializable {
     }
   }
 
+  public ParsedCertificate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      certificateDetails = new ArrayList<CertificateDetails>();
+    }
+  }
+
   
   /**
    * The details of the certificates that were parsed correctly.

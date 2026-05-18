@@ -300,6 +300,13 @@ public class EmailMediaParticipant  implements Serializable {
     }
   }
 
+  public EmailMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      draftAttachments = new ArrayList<Attachment>();
+    }
+  }
+
   
   /**
    * The unique participant ID.

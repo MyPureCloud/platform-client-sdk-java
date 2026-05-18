@@ -129,6 +129,11 @@ public class RequestMapping  implements Serializable {
     }
   }
 
+  public RequestMapping(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the Integration Action Attribute to supply the value for

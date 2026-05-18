@@ -35,6 +35,12 @@ public class ChunkSearchRegisterRequest  implements Serializable {
     }
   }
 
+  public ChunkSearchRegisterRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      selectedAnswers = new ArrayList<SelectedAnswer>();
+    }
+  }
+
   
   /**
    * The unique identifier of this session

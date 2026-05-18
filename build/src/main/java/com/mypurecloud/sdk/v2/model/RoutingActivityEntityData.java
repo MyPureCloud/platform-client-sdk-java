@@ -39,6 +39,11 @@ public class RoutingActivityEntityData  implements Serializable {
     }
   }
 
+  public RoutingActivityEntityData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

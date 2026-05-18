@@ -96,6 +96,11 @@ public class MediaParticipantRequest  implements Serializable {
     }
   }
 
+  public MediaParticipantRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Wrap-up to assign to this participant.

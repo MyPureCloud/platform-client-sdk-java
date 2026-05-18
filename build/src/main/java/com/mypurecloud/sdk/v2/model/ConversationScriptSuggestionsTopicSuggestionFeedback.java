@@ -78,6 +78,11 @@ public class ConversationScriptSuggestionsTopicSuggestionFeedback  implements Se
     }
   }
 
+  public ConversationScriptSuggestionsTopicSuggestionFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

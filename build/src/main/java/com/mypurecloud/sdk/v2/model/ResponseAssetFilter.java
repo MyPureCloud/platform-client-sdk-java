@@ -91,6 +91,13 @@ public class ResponseAssetFilter  implements Serializable {
     }
   }
 
+  public ResponseAssetFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+      fields = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The end value of the range. This field is used for range search types. Accepts numbers and date in ISO8601 format

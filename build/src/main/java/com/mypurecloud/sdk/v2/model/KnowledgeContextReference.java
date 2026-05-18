@@ -30,6 +30,11 @@ public class KnowledgeContextReference  implements Serializable {
     }
   }
 
+  public KnowledgeContextReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the knowledge context.

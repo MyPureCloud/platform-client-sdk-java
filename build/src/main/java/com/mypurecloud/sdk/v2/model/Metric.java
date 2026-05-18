@@ -96,6 +96,11 @@ public class Metric  implements Serializable {
     }
   }
 
+  public Metric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

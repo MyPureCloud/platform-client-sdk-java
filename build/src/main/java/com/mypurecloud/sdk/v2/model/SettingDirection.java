@@ -125,6 +125,11 @@ public class SettingDirection  implements Serializable {
     }
   }
 
+  public SettingDirection(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Status for the Inbound Direction

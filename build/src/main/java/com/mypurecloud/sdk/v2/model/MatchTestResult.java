@@ -32,6 +32,11 @@ public class MatchTestResult  implements Serializable {
     }
   }
 
+  public MatchTestResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value of the field being matched

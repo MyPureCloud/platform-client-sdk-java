@@ -34,6 +34,11 @@ public class ConversationScreenShareEventTopicJourneyContext  implements Seriali
     }
   }
 
+  public ConversationScreenShareEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

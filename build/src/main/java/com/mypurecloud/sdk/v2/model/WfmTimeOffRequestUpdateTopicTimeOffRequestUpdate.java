@@ -165,6 +165,17 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     }
   }
 
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      partialDayStartDateTimes = new ArrayList<String>();
+      fullDayManagementUnitDates = new ArrayList<String>();
+      fullDayEarliestStartOffsetMinutes = new ArrayList<Long>();
+      fullDayLatestEndOffsetMinutes = new ArrayList<Long>();
+      durationMinutes = new ArrayList<Long>();
+      payableMinutes = new ArrayList<Long>();
+    }
+  }
+
   
   /**
    **/

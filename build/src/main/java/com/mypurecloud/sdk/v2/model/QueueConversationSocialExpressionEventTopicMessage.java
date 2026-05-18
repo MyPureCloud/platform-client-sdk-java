@@ -340,6 +340,12 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessageDetails>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

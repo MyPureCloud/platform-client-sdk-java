@@ -33,6 +33,11 @@ public class QueueConversationChatEventTopicQueueMediaSettings  implements Seria
     }
   }
 
+  public QueueConversationChatEventTopicQueueMediaSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.

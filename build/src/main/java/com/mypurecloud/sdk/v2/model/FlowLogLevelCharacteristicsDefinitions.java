@@ -37,6 +37,13 @@ public class FlowLogLevelCharacteristicsDefinitions  implements Serializable {
     }
   }
 
+  public FlowLogLevelCharacteristicsDefinitions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      logLevels = new ArrayList<FlowLogLevel>();
+      characteristics = new ArrayList<FlowLogLevelCharacteristicsDefinition>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "A list of flow log levels available to the organization.")
   @JsonProperty("logLevels")

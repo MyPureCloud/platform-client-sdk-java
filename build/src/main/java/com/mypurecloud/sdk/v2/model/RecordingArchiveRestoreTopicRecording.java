@@ -38,6 +38,12 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
     }
   }
 
+  public RecordingArchiveRestoreTopicRecording(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaUris = new ArrayList<RecordingArchiveRestoreTopicMediaResult>();
+    }
+  }
+
   
   /**
    **/

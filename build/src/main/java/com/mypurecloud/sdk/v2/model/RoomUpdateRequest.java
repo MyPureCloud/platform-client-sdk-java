@@ -36,6 +36,13 @@ public class RoomUpdateRequest  implements Serializable {
     }
   }
 
+  public RoomUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pinnedMessageIds = new ArrayList<String>();
+      ownerIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Room's description

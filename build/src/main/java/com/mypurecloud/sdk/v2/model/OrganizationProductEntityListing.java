@@ -37,6 +37,12 @@ public class OrganizationProductEntityListing  implements Serializable {
     }
   }
 
+  public OrganizationProductEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DomainOrganizationProduct>();
+    }
+  }
+
   
   /**
    **/

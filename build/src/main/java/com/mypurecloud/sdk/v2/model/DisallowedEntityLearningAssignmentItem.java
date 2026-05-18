@@ -31,6 +31,11 @@ public class DisallowedEntityLearningAssignmentItem  implements Serializable {
     }
   }
 
+  public DisallowedEntityLearningAssignmentItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The error code associated with this disallowed entity

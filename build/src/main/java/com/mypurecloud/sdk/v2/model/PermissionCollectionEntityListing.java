@@ -43,6 +43,12 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     }
   }
 
+  public PermissionCollectionEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DomainPermissionCollection>();
+    }
+  }
+
   
   /**
    **/

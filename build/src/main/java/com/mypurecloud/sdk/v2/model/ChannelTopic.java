@@ -84,6 +84,12 @@ public class ChannelTopic  implements Serializable {
     }
   }
 
+  public ChannelTopic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      missingPermissions = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

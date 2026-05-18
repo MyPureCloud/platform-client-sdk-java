@@ -35,6 +35,12 @@ public class ContactsExportRequest  implements Serializable {
     }
   }
 
+  public ContactsExportRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contactIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Contact List Filter ID.

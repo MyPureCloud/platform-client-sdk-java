@@ -95,6 +95,13 @@ public class JourneyViewChart  implements Serializable {
     }
   }
 
+  public JourneyViewChart(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      groupByAttributes = new ArrayList<JourneyViewChartGroupByAttribute>();
+      metrics = new ArrayList<JourneyViewChartMetric>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

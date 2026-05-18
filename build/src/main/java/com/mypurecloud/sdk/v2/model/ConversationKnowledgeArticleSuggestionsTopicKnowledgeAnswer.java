@@ -31,6 +31,11 @@ public class ConversationKnowledgeArticleSuggestionsTopicKnowledgeAnswer  implem
     }
   }
 
+  public ConversationKnowledgeArticleSuggestionsTopicKnowledgeAnswer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

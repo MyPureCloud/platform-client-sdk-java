@@ -31,6 +31,11 @@ public class ContactImportJobRequest  implements Serializable {
     }
   }
 
+  public ContactImportJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Settings id

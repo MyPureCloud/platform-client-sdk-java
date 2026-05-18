@@ -31,6 +31,11 @@ public class ConversationSummaryTopicConversationSummary  implements Serializabl
     }
   }
 
+  public ConversationSummaryTopicConversationSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

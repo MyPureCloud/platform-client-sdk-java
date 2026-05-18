@@ -82,6 +82,12 @@ public class QueryRequestFilter  implements Serializable {
     }
   }
 
+  public QueryRequestFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<QueryRequestClause>();
+    }
+  }
+
   
   /**
    * The logic used to combine the clauses

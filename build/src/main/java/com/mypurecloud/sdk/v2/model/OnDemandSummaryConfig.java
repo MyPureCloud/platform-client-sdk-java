@@ -29,6 +29,11 @@ public class OnDemandSummaryConfig  implements Serializable {
     }
   }
 
+  public OnDemandSummaryConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * On demand summary is enabled.

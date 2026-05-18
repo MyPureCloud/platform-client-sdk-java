@@ -68,6 +68,11 @@ public class WorkitemDelta  implements Serializable {
     }
   }
 
+  public WorkitemDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

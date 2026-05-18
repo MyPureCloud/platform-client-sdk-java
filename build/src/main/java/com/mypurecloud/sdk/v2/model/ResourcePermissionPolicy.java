@@ -44,6 +44,13 @@ public class ResourcePermissionPolicy  implements Serializable {
     }
   }
 
+  public ResourcePermissionPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      namedResources = new ArrayList<String>();
+      actionSet = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

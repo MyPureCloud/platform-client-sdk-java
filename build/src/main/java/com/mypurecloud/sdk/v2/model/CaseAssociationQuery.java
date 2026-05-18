@@ -32,6 +32,11 @@ public class CaseAssociationQuery  implements Serializable {
     }
   }
 
+  public CaseAssociationQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The number of entities to return in the response.

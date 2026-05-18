@@ -90,6 +90,12 @@ public class DailyPossibleShift  implements Serializable {
     }
   }
 
+  public DailyPossibleShift(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intervalScheduleProbabilities = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * Day of the shift

@@ -36,6 +36,12 @@ public class PredictorListing  implements Serializable {
     }
   }
 
+  public PredictorListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Predictor>();
+    }
+  }
+
   
   /**
    **/

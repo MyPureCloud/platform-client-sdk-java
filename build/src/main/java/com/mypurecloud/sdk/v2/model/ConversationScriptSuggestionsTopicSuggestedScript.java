@@ -34,6 +34,11 @@ public class ConversationScriptSuggestionsTopicSuggestedScript  implements Seria
     }
   }
 
+  public ConversationScriptSuggestionsTopicSuggestedScript(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

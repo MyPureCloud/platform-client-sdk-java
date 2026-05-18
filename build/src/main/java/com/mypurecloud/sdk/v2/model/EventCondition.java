@@ -144,6 +144,12 @@ public class EventCondition  implements Serializable {
     }
   }
 
+  public EventCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The event key.

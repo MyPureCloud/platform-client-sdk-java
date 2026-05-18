@@ -37,6 +37,13 @@ public class DocumentUpload  implements Serializable {
     }
   }
 
+  public DocumentUpload(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+      tagIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the document

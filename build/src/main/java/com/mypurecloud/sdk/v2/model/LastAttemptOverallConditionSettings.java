@@ -131,6 +131,12 @@ public class LastAttemptOverallConditionSettings  implements Serializable {
     }
   }
 
+  public LastAttemptOverallConditionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+    }
+  }
+
   
   /**
    * A list of media types to evaluate.

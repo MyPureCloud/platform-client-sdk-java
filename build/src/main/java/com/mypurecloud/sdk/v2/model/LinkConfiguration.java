@@ -29,6 +29,11 @@ public class LinkConfiguration  implements Serializable {
     }
   }
 
+  public LinkConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 400 characters.

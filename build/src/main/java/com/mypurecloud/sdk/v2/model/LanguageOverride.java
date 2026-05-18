@@ -31,6 +31,11 @@ public class LanguageOverride  implements Serializable {
     }
   }
 
+  public LanguageOverride(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The language code of the language being overridden

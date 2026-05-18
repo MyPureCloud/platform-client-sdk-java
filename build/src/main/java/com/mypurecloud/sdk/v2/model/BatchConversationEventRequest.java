@@ -127,6 +127,43 @@ public class BatchConversationEventRequest  implements Serializable {
     }
   }
 
+  public BatchConversationEventRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      endTransferEvents = new ArrayList<EndTransferEvent>();
+      phoneTransferEvents = new ArrayList<PhoneTransferEvent>();
+      progressTransferEvents = new ArrayList<ProgressTransferEvent>();
+      routingTransferEvents = new ArrayList<RoutingTransferEvent>();
+      userTransferEvents = new ArrayList<UserTransferEvent>();
+      communicationAnsweredEvents = new ArrayList<CommunicationAnsweredEvent>();
+      communicationDispositionAppliedEvents = new ArrayList<CommunicationDispositionAppliedEvent>();
+      holdUpdatedEvents = new ArrayList<HoldUpdatedEvent>();
+      externalEstablishedEvents = new ArrayList<ExternalEstablishedEvent>();
+      ivrEstablishedEvents = new ArrayList<IvrEstablishedEvent>();
+      phoneEstablishedEvents = new ArrayList<PhoneEstablishedEvent>();
+      routingEstablishedEvents = new ArrayList<RoutingEstablishedEvent>();
+      userEstablishedEvents = new ArrayList<UserEstablishedEvent>();
+      audioUpdatedEvents = new ArrayList<AudioUpdatedEvent>();
+      communicationEndedEvents = new ArrayList<CommunicationEndedEvent>();
+      consultTransferEvents = new ArrayList<ConsultTransferEvent>();
+      progressConsultTransferEvents = new ArrayList<ProgressConsultTransferEvent>();
+      endConsultTransferEvents = new ArrayList<EndConsultTransferEvent>();
+      emailBeginTransmittingEvents = new ArrayList<EmailBeginTransmittingEvent>();
+      emailCommunicationEndedEvents = new ArrayList<EmailCommunicationEndedEvent>();
+      emailExternalEstablishedEvents = new ArrayList<EmailExternalEstablishedEvent>();
+      emailFlowEstablishedEvents = new ArrayList<EmailFlowEstablishedEvent>();
+      emailRoutingEstablishedEvents = new ArrayList<EmailRoutingEstablishedEvent>();
+      emailUserEstablishedEvents = new ArrayList<EmailUserEstablishedEvent>();
+      emailCommunicationAnsweredEvents = new ArrayList<EmailCommunicationAnsweredEvent>();
+      emailCommunicationDispositionAppliedEvents = new ArrayList<EmailCommunicationDispositionAppliedEvent>();
+      emailCommunicationSentMessageEvents = new ArrayList<EmailCommunicationSentMessageEvent>();
+      emailHoldUpdatedEvents = new ArrayList<EmailHoldUpdatedEvent>();
+      emailEndTransferEvents = new ArrayList<EmailEndTransferEvent>();
+      emailProgressTransferEvents = new ArrayList<EmailProgressTransferEvent>();
+      emailRoutingTransferEvents = new ArrayList<EmailRoutingTransferEvent>();
+      emailUserTransferEvents = new ArrayList<EmailUserTransferEvent>();
+    }
+  }
+
   
   /**
    * Voice - EndTransfer events for this batch

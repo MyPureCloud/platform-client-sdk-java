@@ -43,6 +43,12 @@ public class TtsEngineEntityListing  implements Serializable, PagedResource<TtsE
     }
   }
 
+  public TtsEngineEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TtsEngineEntity>();
+    }
+  }
+
   
   /**
    **/

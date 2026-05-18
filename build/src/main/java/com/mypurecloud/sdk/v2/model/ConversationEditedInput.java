@@ -31,6 +31,11 @@ public class ConversationEditedInput  implements Serializable {
     }
   }
 
+  public ConversationEditedInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The text of the edited input.

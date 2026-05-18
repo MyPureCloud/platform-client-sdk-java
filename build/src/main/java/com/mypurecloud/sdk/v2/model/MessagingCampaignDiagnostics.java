@@ -30,6 +30,11 @@ public class MessagingCampaignDiagnostics  implements Serializable {
     }
   }
 
+  public MessagingCampaignDiagnostics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Current number of time zone rescheduled messages on the campaign")
   @JsonProperty("timeZoneRescheduledContactsCount")

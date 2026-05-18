@@ -42,6 +42,12 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
     }
   }
 
+  public DialerCallabletimesetConfigChangeCallableTimeSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callableTimes = new ArrayList<DialerCallabletimesetConfigChangeCallableTime>();
+    }
+  }
+
   
   /**
    * The list of callable times

@@ -29,6 +29,11 @@ public class Markdown  implements Serializable {
     }
   }
 
+  public Markdown(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not markdown is enabled

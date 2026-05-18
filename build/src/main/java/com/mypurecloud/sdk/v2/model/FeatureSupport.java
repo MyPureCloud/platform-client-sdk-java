@@ -79,6 +79,11 @@ public class FeatureSupport  implements Serializable {
     }
   }
 
+  public FeatureSupport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Feature name.")
   @JsonProperty("feature")

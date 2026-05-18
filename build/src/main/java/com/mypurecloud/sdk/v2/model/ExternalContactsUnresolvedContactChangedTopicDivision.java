@@ -29,6 +29,11 @@ public class ExternalContactsUnresolvedContactChangedTopicDivision  implements S
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

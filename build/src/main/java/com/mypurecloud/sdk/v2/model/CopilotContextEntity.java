@@ -35,6 +35,12 @@ public class CopilotContextEntity  implements Serializable {
     }
   }
 
+  public CopilotContextEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contextValues = new ArrayList<CopilotContextValueItem>();
+    }
+  }
+
   
   /**
    * The assistant associated with this context.

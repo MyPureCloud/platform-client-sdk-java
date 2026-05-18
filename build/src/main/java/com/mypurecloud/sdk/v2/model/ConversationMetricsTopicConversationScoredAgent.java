@@ -30,6 +30,11 @@ public class ConversationMetricsTopicConversationScoredAgent  implements Seriali
     }
   }
 
+  public ConversationMetricsTopicConversationScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Assigned agent score for this conversation (0 - 100, higher being better)

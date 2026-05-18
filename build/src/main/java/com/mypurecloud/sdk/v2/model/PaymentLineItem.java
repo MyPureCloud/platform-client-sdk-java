@@ -30,6 +30,11 @@ public class PaymentLineItem  implements Serializable {
     }
   }
 
+  public PaymentLineItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The display name for the item.

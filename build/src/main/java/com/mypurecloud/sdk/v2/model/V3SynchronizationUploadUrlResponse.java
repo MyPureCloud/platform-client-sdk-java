@@ -33,6 +33,11 @@ public class V3SynchronizationUploadUrlResponse  implements Serializable {
     }
   }
 
+  public V3SynchronizationUploadUrlResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Pre-signed URL to PUT the file to.

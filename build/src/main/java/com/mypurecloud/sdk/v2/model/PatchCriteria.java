@@ -93,6 +93,12 @@ public class PatchCriteria  implements Serializable {
     }
   }
 
+  public PatchCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The criteria key.

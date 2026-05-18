@@ -82,6 +82,11 @@ public class WorkitemsUserEventsNotificationDelta  implements Serializable {
     }
   }
 
+  public WorkitemsUserEventsNotificationDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

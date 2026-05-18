@@ -78,6 +78,11 @@ public class WorkitemWrapupUpdate  implements Serializable {
     }
   }
 
+  public WorkitemWrapupUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Action to be performed for the wrapup code.

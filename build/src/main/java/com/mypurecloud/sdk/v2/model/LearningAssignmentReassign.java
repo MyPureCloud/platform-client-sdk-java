@@ -32,6 +32,11 @@ public class LearningAssignmentReassign  implements Serializable {
     }
   }
 
+  public LearningAssignmentReassign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The recommended completion date of assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

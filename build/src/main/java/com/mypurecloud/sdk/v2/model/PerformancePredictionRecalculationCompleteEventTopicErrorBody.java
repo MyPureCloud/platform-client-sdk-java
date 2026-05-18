@@ -35,6 +35,11 @@ public class PerformancePredictionRecalculationCompleteEventTopicErrorBody  impl
     }
   }
 
+  public PerformancePredictionRecalculationCompleteEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -40,6 +40,13 @@ public class QueueConversationSocialExpressionEventTopicConversationRoutingData 
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<QueueConversationSocialExpressionEventTopicUriReference>();
+      scoredAgents = new ArrayList<QueueConversationSocialExpressionEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    **/

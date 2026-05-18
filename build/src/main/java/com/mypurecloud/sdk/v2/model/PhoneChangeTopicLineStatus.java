@@ -37,6 +37,12 @@ public class PhoneChangeTopicLineStatus  implements Serializable {
     }
   }
 
+  public PhoneChangeTopicLineStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contactAddresses = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

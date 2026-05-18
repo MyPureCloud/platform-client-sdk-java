@@ -31,6 +31,11 @@ public class ContestDataWinnersUsers  implements Serializable {
     }
   }
 
+  public ContestDataWinnersUsers(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

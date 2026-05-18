@@ -31,6 +31,11 @@ public class ArchitectPromptNotificationClient  implements Serializable {
     }
   }
 
+  public ArchitectPromptNotificationClient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the client.

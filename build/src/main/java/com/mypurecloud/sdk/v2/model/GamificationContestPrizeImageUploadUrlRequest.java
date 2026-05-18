@@ -129,6 +129,11 @@ public class GamificationContestPrizeImageUploadUrlRequest  implements Serializa
     }
   }
 
+  public GamificationContestPrizeImageUploadUrlRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|

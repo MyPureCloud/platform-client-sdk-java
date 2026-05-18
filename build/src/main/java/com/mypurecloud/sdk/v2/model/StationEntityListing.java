@@ -44,6 +44,12 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     }
   }
 
+  public StationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Station>();
+    }
+  }
+
   
   /**
    **/

@@ -57,6 +57,17 @@ public class PolicyActions  implements Serializable {
     }
   }
 
+  public PolicyActions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      assignEvaluations = new ArrayList<EvaluationAssignment>();
+      assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
+      assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
+      assignCalibrations = new ArrayList<CalibrationAssignment>();
+      assignSurveys = new ArrayList<SurveyAssignment>();
+      mediaTranscriptions = new ArrayList<MediaTranscription>();
+    }
+  }
+
   
   /**
    * true to retain the recording associated with the conversation. Default = true

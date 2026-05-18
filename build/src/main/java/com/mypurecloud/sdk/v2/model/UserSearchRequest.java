@@ -141,6 +141,14 @@ public class UserSearchRequest  implements Serializable {
     }
   }
 
+  public UserSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      expand = new ArrayList<String>();
+      query = new ArrayList<UserSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

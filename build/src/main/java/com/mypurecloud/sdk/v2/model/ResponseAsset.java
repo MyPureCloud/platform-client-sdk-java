@@ -46,6 +46,12 @@ public class ResponseAsset  implements Serializable {
     }
   }
 
+  public ResponseAsset(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      responses = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -44,6 +44,13 @@ public class CaseplanCreate  implements Serializable {
     }
   }
 
+  public CaseplanCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dataSchemas = new ArrayList<CaseplanDataSchema>();
+      intakeSettings = new ArrayList<IntakeSetting>();
+    }
+  }
+
   
   /**
    * The name of the Caseplan. Valid length between 3 and 256 characters.

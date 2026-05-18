@@ -35,6 +35,12 @@ public class ExternalContactsContactChangedTopicInstagramId  implements Serializ
     }
   }
 
+  public ExternalContactsContactChangedTopicInstagramId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<ExternalContactsContactChangedTopicInstagramScopedId>();
+    }
+  }
+
   
   /**
    **/

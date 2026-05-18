@@ -82,6 +82,12 @@ public class QueryRequestClause  implements Serializable {
     }
   }
 
+  public QueryRequestClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<QueryRequestPredicate>();
+    }
+  }
+
   
   /**
    * The logic used to combine the predicates

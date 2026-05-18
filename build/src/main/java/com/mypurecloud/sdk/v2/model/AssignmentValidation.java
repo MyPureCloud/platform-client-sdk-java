@@ -41,6 +41,15 @@ public class AssignmentValidation  implements Serializable {
     }
   }
 
+  public AssignmentValidation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      membersNotAssigned = new ArrayList<UserReference>();
+      membersAlreadyAssigned = new ArrayList<UserReference>();
+      membersAlreadyAssignedToOther = new ArrayList<OtherProfileAssignment>();
+      invalidMemberAssignments = new ArrayList<InvalidAssignment>();
+    }
+  }
+
   
   /**
    * The list of users that are not assigned to any custom performance profile

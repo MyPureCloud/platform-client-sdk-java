@@ -34,6 +34,12 @@ public class JourneyAsyncAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public JourneyAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<JourneyAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

@@ -45,6 +45,14 @@ public class IntentDefinition  implements Serializable {
     }
   }
 
+  public IntentDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entityTypeBindings = new ArrayList<NamedEntityTypeBinding>();
+      entityNameReferences = new ArrayList<String>();
+      utterances = new ArrayList<NluUtterance>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "ID of the intent.")
   @JsonProperty("id")

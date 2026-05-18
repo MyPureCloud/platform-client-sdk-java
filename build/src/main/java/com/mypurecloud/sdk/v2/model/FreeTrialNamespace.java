@@ -35,6 +35,12 @@ public class FreeTrialNamespace  implements Serializable {
     }
   }
 
+  public FreeTrialNamespace(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      limits = new ArrayList<FreeTrialLimit>();
+    }
+  }
+
   
   /**
    **/

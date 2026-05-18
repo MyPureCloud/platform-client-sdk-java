@@ -85,6 +85,13 @@ public class FlowActivityQueryFilter  implements Serializable {
     }
   }
 
+  public FlowActivityQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<FlowActivityQueryClause>();
+      predicates = new ArrayList<FlowActivityQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

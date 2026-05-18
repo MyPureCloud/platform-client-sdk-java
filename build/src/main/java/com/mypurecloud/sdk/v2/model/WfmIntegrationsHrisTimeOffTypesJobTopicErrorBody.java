@@ -35,6 +35,11 @@ public class WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody  implements Serial
     }
   }
 
+  public WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

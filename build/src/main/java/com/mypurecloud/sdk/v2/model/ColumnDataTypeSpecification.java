@@ -82,6 +82,11 @@ public class ColumnDataTypeSpecification  implements Serializable {
     }
   }
 
+  public ColumnDataTypeSpecification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The column name of a column selected for dynamic queueing

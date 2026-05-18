@@ -87,6 +87,12 @@ public class TextBotFlowOutcome  implements Serializable {
     }
   }
 
+  public TextBotFlowOutcome(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      milestones = new ArrayList<TextBotFlowMilestone>();
+    }
+  }
+
   
   /**
    * The Flow Outcome ID.

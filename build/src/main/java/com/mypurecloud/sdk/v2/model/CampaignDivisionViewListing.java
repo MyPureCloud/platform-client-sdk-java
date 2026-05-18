@@ -43,6 +43,12 @@ public class CampaignDivisionViewListing  implements Serializable, PagedResource
     }
   }
 
+  public CampaignDivisionViewListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CampaignDivisionView>();
+    }
+  }
+
   
   /**
    **/

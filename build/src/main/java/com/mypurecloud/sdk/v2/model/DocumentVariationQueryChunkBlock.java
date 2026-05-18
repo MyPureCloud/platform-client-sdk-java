@@ -30,6 +30,11 @@ public class DocumentVariationQueryChunkBlock  implements Serializable {
     }
   }
 
+  public DocumentVariationQueryChunkBlock(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the chunk.

@@ -78,6 +78,11 @@ public class WorkitemOnAttributeChangeConditionUpdate  implements Serializable {
     }
   }
 
+  public WorkitemOnAttributeChangeConditionUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the workitem attribute whose change will be evaluated as part of the rule.

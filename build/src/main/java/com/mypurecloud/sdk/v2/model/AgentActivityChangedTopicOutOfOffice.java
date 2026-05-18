@@ -31,6 +31,11 @@ public class AgentActivityChangedTopicOutOfOffice  implements Serializable {
     }
   }
 
+  public AgentActivityChangedTopicOutOfOffice(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

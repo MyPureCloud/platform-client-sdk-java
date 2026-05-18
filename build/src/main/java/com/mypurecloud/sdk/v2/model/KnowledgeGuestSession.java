@@ -39,6 +39,12 @@ public class KnowledgeGuestSession  implements Serializable {
     }
   }
 
+  public KnowledgeGuestSession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contexts = new ArrayList<KnowledgeGuestSessionContext>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Session ID.")
   @JsonProperty("id")

@@ -43,6 +43,12 @@ public class ActionCertificateListing  implements Serializable, PagedResource<Ac
     }
   }
 
+  public ActionCertificateListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ActionCertificate>();
+    }
+  }
+
   
   /**
    **/

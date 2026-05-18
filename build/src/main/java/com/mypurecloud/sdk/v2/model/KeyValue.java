@@ -30,6 +30,11 @@ public class KeyValue  implements Serializable {
     }
   }
 
+  public KeyValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Key for free-form data.

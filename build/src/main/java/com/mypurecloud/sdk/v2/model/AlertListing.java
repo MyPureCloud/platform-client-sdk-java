@@ -43,6 +43,12 @@ public class AlertListing  implements Serializable, PagedResource<CommonAlert> {
     }
   }
 
+  public AlertListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CommonAlert>();
+    }
+  }
+
   
   /**
    **/

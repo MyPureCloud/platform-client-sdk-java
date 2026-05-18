@@ -33,6 +33,12 @@ public class RateLimitAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public RateLimitAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<RateLimitAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

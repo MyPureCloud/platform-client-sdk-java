@@ -32,6 +32,12 @@ public class NTPSettings  implements Serializable {
     }
   }
 
+  public NTPSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      servers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of NTP servers, in priority order

@@ -36,6 +36,12 @@ public class SpeechTextAnalyticsSettingsResponse  implements Serializable {
     }
   }
 
+  public SpeechTextAnalyticsSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      expectedDialects = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Setting to choose name for the default program for topic detection

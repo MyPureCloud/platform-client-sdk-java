@@ -459,6 +459,13 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     }
   }
 
+  public FlowEndDetailEventTopicFlowEndEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

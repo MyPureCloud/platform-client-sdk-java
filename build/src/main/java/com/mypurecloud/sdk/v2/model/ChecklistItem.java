@@ -135,6 +135,11 @@ public class ChecklistItem  implements Serializable {
     }
   }
 
+  public ChecklistItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the checklist item.

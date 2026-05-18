@@ -43,6 +43,12 @@ public class QueueEntityListing  implements Serializable, PagedResource<Queue> {
     }
   }
 
+  public QueueEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Queue>();
+    }
+  }
+
   
   /**
    **/

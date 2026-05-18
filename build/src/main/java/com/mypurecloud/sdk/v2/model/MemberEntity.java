@@ -29,6 +29,11 @@ public class MemberEntity  implements Serializable {
     }
   }
 
+  public MemberEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -44,6 +44,12 @@ public class OutboundRouteEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public OutboundRouteEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OutboundRoute>();
+    }
+  }
+
   
   /**
    **/

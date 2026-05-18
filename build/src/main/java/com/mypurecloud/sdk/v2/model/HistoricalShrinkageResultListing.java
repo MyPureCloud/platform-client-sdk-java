@@ -33,6 +33,12 @@ public class HistoricalShrinkageResultListing  implements Serializable {
     }
   }
 
+  public HistoricalShrinkageResultListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<HistoricalShrinkageResult>();
+    }
+  }
+
   
   /**
    **/

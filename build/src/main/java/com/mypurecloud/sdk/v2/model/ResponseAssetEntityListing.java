@@ -35,6 +35,13 @@ public class ResponseAssetEntityListing  implements Serializable {
     }
   }
 
+  public ResponseAssetEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ResponseAsset>();
+      notFound = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of response assets

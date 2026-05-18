@@ -83,6 +83,11 @@ public class OutboundDomainPatchRequest  implements Serializable {
     }
   }
 
+  public OutboundDomainPatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The custom SMTP server integration to use when sending outbound emails from this domain.

@@ -44,6 +44,11 @@ public class KnowledgeSyncJobStatistics  implements Serializable {
     }
   }
 
+  public KnowledgeSyncJobStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Number of documents will be created by the sync.

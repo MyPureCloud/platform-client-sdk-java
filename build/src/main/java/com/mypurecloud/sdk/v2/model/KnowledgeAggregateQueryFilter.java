@@ -85,6 +85,13 @@ public class KnowledgeAggregateQueryFilter  implements Serializable {
     }
   }
 
+  public KnowledgeAggregateQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<KnowledgeAggregateQueryClause>();
+      predicates = new ArrayList<KnowledgeAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

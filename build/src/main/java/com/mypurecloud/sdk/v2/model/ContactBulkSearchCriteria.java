@@ -82,6 +82,12 @@ public class ContactBulkSearchCriteria  implements Serializable {
     }
   }
 
+  public ContactBulkSearchCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<ContactListFilterClause>();
+    }
+  }
+
   
   /**
    * Groups of conditions to filter the contacts by.

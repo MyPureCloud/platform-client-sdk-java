@@ -43,6 +43,12 @@ public class GuideEntityListing  implements Serializable, PagedResource<Guide> {
     }
   }
 
+  public GuideEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Guide>();
+    }
+  }
+
   
   /**
    **/

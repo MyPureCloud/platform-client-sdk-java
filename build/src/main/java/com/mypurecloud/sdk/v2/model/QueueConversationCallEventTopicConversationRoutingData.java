@@ -39,6 +39,13 @@ public class QueueConversationCallEventTopicConversationRoutingData  implements 
     }
   }
 
+  public QueueConversationCallEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<QueueConversationCallEventTopicUriReference>();
+      scoredAgents = new ArrayList<QueueConversationCallEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

@@ -31,6 +31,11 @@ public class OccurrenceDetails  implements Serializable {
     }
   }
 
+  public OccurrenceDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The date of the next start or end occurrence for the recurrence as an ISO-8601 string

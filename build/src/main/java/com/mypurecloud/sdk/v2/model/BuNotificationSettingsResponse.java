@@ -30,6 +30,11 @@ public class BuNotificationSettingsResponse  implements Serializable {
     }
   }
 
+  public BuNotificationSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Schedule notification settings

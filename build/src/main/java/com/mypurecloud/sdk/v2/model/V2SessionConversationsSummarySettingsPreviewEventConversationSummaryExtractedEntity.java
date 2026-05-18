@@ -30,6 +30,11 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationSummar
     }
   }
 
+  public V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

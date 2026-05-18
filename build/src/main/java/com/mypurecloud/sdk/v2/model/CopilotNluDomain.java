@@ -33,6 +33,11 @@ public class CopilotNluDomain  implements Serializable {
     }
   }
 
+  public CopilotNluDomain(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the NLU domain.

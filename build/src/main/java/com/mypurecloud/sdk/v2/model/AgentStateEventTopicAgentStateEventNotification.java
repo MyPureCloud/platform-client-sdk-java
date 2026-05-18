@@ -214,6 +214,12 @@ public class AgentStateEventTopicAgentStateEventNotification  implements Seriali
     }
   }
 
+  public AgentStateEventTopicAgentStateEventNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requestedSkillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

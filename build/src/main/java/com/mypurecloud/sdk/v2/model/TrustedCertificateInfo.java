@@ -31,6 +31,11 @@ public class TrustedCertificateInfo  implements Serializable {
     }
   }
 
+  public TrustedCertificateInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The description of the certificate

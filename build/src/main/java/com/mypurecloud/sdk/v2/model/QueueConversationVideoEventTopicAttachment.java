@@ -33,6 +33,11 @@ public class QueueConversationVideoEventTopicAttachment  implements Serializable
     }
   }
 
+  public QueueConversationVideoEventTopicAttachment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier for the attachment.

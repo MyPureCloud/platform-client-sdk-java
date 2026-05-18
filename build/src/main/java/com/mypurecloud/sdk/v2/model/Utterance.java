@@ -29,6 +29,11 @@ public class Utterance  implements Serializable {
     }
   }
 
+  public Utterance(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Utterance text

@@ -285,6 +285,12 @@ public class ConversationEventTopicCallback  implements Serializable {
     }
   }
 
+  public ConversationEventTopicCallback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

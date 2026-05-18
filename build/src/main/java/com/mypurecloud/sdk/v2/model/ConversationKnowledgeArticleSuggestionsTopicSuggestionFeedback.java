@@ -78,6 +78,11 @@ public class ConversationKnowledgeArticleSuggestionsTopicSuggestionFeedback  imp
     }
   }
 
+  public ConversationKnowledgeArticleSuggestionsTopicSuggestionFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

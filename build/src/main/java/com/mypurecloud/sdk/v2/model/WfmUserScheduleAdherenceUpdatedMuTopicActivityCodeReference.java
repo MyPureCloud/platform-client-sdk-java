@@ -34,6 +34,12 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference  implem
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      secondaryPresences = new ArrayList<WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference>();
+    }
+  }
+
   
   /**
    **/

@@ -82,6 +82,12 @@ public class SummaryAggregateQueryClause  implements Serializable {
     }
   }
 
+  public SummaryAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<SummaryAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

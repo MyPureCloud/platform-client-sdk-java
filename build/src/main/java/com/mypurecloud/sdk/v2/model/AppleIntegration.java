@@ -106,6 +106,11 @@ public class AppleIntegration  implements Serializable {
     }
   }
 
+  public AppleIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "A unique integration Id.")
   @JsonProperty("id")

@@ -31,6 +31,11 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationSummar
     }
   }
 
+  public V2SessionConversationsSummarySettingsPreviewEventConversationSummaryMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

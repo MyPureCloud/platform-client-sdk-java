@@ -29,6 +29,11 @@ public class ActivityPlanAbandonRateImpactOverride  implements Serializable {
     }
   }
 
+  public ActivityPlanAbandonRateImpactOverride(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Allowed abandon rate increase percent, from 0.0 to 100.0

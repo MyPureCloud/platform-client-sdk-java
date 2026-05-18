@@ -37,6 +37,11 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
     }
   }
 
+  public QueueUserEventTopicQueueMember(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

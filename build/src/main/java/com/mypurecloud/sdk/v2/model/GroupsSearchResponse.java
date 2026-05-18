@@ -42,6 +42,13 @@ public class GroupsSearchResponse  implements Serializable {
     }
   }
 
+  public GroupsSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+      results = new ArrayList<Group>();
+    }
+  }
+
   
   /**
    * The total number of results found

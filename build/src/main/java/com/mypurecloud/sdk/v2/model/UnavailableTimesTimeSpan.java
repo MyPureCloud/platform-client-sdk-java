@@ -31,6 +31,11 @@ public class UnavailableTimesTimeSpan  implements Serializable {
     }
   }
 
+  public UnavailableTimesTimeSpan(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start date of the time span. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

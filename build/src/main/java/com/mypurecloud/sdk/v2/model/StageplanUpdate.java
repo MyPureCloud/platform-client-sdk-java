@@ -30,6 +30,11 @@ public class StageplanUpdate  implements Serializable {
     }
   }
 
+  public StageplanUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the Stageplan. Valid length between 3 and 256 characters.

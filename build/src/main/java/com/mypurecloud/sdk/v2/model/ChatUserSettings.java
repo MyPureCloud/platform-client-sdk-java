@@ -31,6 +31,11 @@ public class ChatUserSettings  implements Serializable {
     }
   }
 
+  public ChatUserSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Settings for mobile devices

@@ -43,6 +43,12 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     }
   }
 
+  public CertificateAuthorityEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DomainCertificateAuthority>();
+    }
+  }
+
   
   /**
    **/

@@ -40,6 +40,12 @@ public class Bot  implements Serializable {
     }
   }
 
+  public Bot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      versions = new ArrayList<BotVersion>();
+    }
+  }
+
   
   /**
    * This is a string type that should denote a unique ID of the bot for calling purposes by the Genesys service (EG a UUID).

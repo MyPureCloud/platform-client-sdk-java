@@ -37,6 +37,11 @@ public class SegmentAssignment  implements Serializable {
     }
   }
 
+  public SegmentAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Date when the segment was assigned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

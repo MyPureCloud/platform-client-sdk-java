@@ -79,6 +79,11 @@ public class ContactSort  implements Serializable {
     }
   }
 
+  public ContactSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

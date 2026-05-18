@@ -30,6 +30,11 @@ public class QueueConversationScreenShareEventTopicUriReference  implements Seri
     }
   }
 
+  public QueueConversationScreenShareEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

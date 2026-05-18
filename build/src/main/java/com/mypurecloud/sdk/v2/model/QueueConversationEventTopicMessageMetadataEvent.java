@@ -30,6 +30,11 @@ public class QueueConversationEventTopicMessageMetadataEvent  implements Seriali
     }
   }
 
+  public QueueConversationEventTopicMessageMetadataEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element.

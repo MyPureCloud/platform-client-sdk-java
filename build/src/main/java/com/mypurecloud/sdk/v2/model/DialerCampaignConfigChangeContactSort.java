@@ -84,6 +84,11 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
     }
   }
 
+  public DialerCampaignConfigChangeContactSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

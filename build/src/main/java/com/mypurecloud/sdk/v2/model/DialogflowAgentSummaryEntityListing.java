@@ -43,6 +43,12 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     }
   }
 
+  public DialogflowAgentSummaryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DialogflowAgentSummary>();
+    }
+  }
+
   
   /**
    **/

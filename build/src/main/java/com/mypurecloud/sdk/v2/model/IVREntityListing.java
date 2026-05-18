@@ -44,6 +44,12 @@ public class IVREntityListing  implements Serializable, PagedResource<IVR> {
     }
   }
 
+  public IVREntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<IVR>();
+    }
+  }
+
   
   /**
    **/

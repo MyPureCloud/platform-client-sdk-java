@@ -33,6 +33,11 @@ public class ArchitectFlowOutcomeNotificationFlowOutcomeNotification  implements
     }
   }
 
+  public ArchitectFlowOutcomeNotificationFlowOutcomeNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow outcome ID

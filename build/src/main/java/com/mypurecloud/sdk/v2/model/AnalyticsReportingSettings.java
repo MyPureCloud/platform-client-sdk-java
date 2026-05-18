@@ -31,6 +31,11 @@ public class AnalyticsReportingSettings  implements Serializable {
     }
   }
 
+  public AnalyticsReportingSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indication of whether or not personal data is masked in data export and the Analytics/Reporting UI

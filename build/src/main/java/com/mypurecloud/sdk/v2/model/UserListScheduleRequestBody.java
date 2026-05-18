@@ -36,6 +36,12 @@ public class UserListScheduleRequestBody  implements Serializable {
     }
   }
 
+  public UserListScheduleRequestBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user ids for which to fetch schedules

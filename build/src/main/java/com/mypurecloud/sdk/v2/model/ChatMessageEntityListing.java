@@ -33,6 +33,12 @@ public class ChatMessageEntityListing  implements Serializable {
     }
   }
 
+  public ChatMessageEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ChatMessageResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -29,6 +29,11 @@ public class SupportCenterDetailedCategoryModuleSidebar  implements Serializable
     }
   }
 
+  public SupportCenterDetailedCategoryModuleSidebar(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether sidebar is enabled or not

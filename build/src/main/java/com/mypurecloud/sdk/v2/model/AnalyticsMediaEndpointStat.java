@@ -43,6 +43,12 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     }
   }
 
+  public AnalyticsMediaEndpointStat(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      codecs = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The MIME type(s) of the audio encodings used by the audio streams belonging to this endpoint

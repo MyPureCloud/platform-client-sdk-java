@@ -55,6 +55,16 @@ public class ScimV2CreateUser  implements Serializable {
     }
   }
 
+  public ScimV2CreateUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+      phoneNumbers = new ArrayList<ScimPhoneNumber>();
+      emails = new ArrayList<ScimEmail>();
+      groups = new ArrayList<ScimV2GroupReference>();
+      roles = new ArrayList<ScimUserRole>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")

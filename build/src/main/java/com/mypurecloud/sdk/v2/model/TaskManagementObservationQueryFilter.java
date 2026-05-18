@@ -33,6 +33,12 @@ public class TaskManagementObservationQueryFilter  implements Serializable {
     }
   }
 
+  public TaskManagementObservationQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<TaskManagementObservationPredicate>();
+    }
+  }
+
   
   /**
    * List of predicates that define the filter conditions. Each predicate specifies a dimension and value to filter by. A single queueId predicate is always required.

@@ -286,6 +286,16 @@ public class FlowsQueryCriteriaResponse  implements Serializable {
     }
   }
 
+  public FlowsQueryCriteriaResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<QueryCriteria>();
+      flowTypes = new ArrayList<FlowTypesEnum>();
+      actionTypes = new ArrayList<ActionTypesEnum>();
+      errorCodes = new ArrayList<String>();
+      warningCodes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The is a list of allowed criteria to query on.

@@ -35,6 +35,12 @@ public class InstagramId  implements Serializable {
     }
   }
 
+  public InstagramId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<InstagramScopedId>();
+    }
+  }
+
   
   /**
    * The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with. Max 1 id.

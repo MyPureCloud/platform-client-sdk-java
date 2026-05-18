@@ -133,6 +133,11 @@ public class TestTopicPhraseTopic  implements Serializable {
     }
   }
 
+  public TestTopicPhraseTopic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The topic phrase to test

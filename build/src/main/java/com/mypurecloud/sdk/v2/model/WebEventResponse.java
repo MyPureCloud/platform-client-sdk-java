@@ -58,6 +58,11 @@ public class WebEventResponse  implements Serializable {
     }
   }
 
+  public WebEventResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Identifier of the customer in the source of the event.

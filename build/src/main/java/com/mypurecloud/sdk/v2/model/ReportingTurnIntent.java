@@ -36,6 +36,12 @@ public class ReportingTurnIntent  implements Serializable {
     }
   }
 
+  public ReportingTurnIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      slots = new ArrayList<ReportingTurnIntentSlot>();
+    }
+  }
+
   
   /**
    * The name of the intent detected during this reporting turn.

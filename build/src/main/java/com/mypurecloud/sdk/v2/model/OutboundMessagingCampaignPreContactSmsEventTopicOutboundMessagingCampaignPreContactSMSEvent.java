@@ -155,6 +155,11 @@ public class OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCa
     }
   }
 
+  public OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

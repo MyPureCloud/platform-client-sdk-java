@@ -88,6 +88,12 @@ public class OverallBestPointsItem  implements Serializable {
     }
   }
 
+  public OverallBestPointsItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<UserReference>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Best points aggregation interval granularity")
   @JsonProperty("granularityType")

@@ -78,6 +78,11 @@ public class TaskManagementObservationPredicate  implements Serializable {
     }
   }
 
+  public TaskManagementObservationPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The dimension to filter on

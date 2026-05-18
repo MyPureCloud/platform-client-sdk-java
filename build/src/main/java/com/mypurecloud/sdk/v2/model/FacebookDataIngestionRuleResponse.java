@@ -95,6 +95,12 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
     }
   }
 
+  public FacebookDataIngestionRuleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      countries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * ID of the Facebook data ingestion rule.

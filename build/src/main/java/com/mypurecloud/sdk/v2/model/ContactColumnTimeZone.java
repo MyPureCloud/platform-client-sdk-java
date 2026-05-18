@@ -78,6 +78,11 @@ public class ContactColumnTimeZone  implements Serializable {
     }
   }
 
+  public ContactColumnTimeZone(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Time zone that the column matched to. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London

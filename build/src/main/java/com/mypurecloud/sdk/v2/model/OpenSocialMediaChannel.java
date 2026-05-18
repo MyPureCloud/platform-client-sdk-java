@@ -135,6 +135,11 @@ public class OpenSocialMediaChannel  implements Serializable {
     }
   }
 
+  public OpenSocialMediaChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The topic ID.")
   @JsonProperty("id")

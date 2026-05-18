@@ -34,6 +34,12 @@ public class ConditionalGroupActivationPilotRule  implements Serializable {
     }
   }
 
+  public ConditionalGroupActivationPilotRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conditions = new ArrayList<ConditionalGroupActivationCondition>();
+    }
+  }
+
   
   /**
    * The list of conditions used in this rule

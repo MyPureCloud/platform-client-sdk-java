@@ -35,6 +35,11 @@ public class FunctionUploadResponse  implements Serializable {
     }
   }
 
+  public FunctionUploadResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Presigned URL to PUT the file to")
   @JsonProperty("url")

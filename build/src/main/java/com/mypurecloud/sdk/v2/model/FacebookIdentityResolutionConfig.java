@@ -32,6 +32,11 @@ public class FacebookIdentityResolutionConfig  implements Serializable {
     }
   }
 
+  public FacebookIdentityResolutionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to use when performing identity resolution.

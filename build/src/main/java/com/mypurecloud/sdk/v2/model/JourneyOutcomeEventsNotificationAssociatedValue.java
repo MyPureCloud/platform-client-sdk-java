@@ -79,6 +79,11 @@ public class JourneyOutcomeEventsNotificationAssociatedValue  implements Seriali
     }
   }
 
+  public JourneyOutcomeEventsNotificationAssociatedValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

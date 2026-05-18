@@ -33,6 +33,11 @@ public class ArchitectDependencyTrackingBuildNotificationUser  implements Serial
     }
   }
 
+  public ArchitectDependencyTrackingBuildNotificationUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the user.

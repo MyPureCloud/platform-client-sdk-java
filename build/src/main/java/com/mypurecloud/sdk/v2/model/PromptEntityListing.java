@@ -43,6 +43,12 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     }
   }
 
+  public PromptEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Prompt>();
+    }
+  }
+
   
   /**
    **/

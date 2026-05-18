@@ -153,6 +153,12 @@ public class FlowPathsElement  implements Serializable {
     }
   }
 
+  public FlowPathsElement(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      flows = new ArrayList<FlowPathsFlowDetails>();
+    }
+  }
+
   
   /**
    * Unique identifier of the parent element. Will be null for the root element.

@@ -38,6 +38,11 @@ public class TextBotFlowLaunchRequest  implements Serializable {
     }
   }
 
+  public TextBotFlowLaunchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies which Bot Flow to launch.

@@ -33,6 +33,12 @@ public class AvailableTimeOffResponse  implements Serializable {
     }
   }
 
+  public AvailableTimeOffResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<AvailableTimeOffRange>();
+    }
+  }
+
   
   /**
    **/

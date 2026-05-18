@@ -37,6 +37,14 @@ public class SuggestSearchRequest  implements Serializable {
     }
   }
 
+  public SuggestSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      expand = new ArrayList<String>();
+      types = new ArrayList<String>();
+      query = new ArrayList<SuggestSearchCriteria>();
+    }
+  }
+
   
   /**
    * Provides more details about a specified resource

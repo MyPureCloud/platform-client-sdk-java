@@ -34,6 +34,11 @@ public class DialerCampaignConfigChangeRestErrorDetail  implements Serializable 
     }
   }
 
+  public DialerCampaignConfigChangeRestErrorDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * name of the error

@@ -374,6 +374,14 @@ public class ConversationActivityEntityData  implements Serializable {
     }
   }
 
+  public ConversationActivityEntityData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      scoredAgents = new ArrayList<ConversationActivityScoredAgent>();
+    }
+  }
+
   
   /**
    * The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

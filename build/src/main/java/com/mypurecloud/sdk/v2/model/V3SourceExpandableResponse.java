@@ -196,6 +196,11 @@ public class V3SourceExpandableResponse  implements Serializable {
     }
   }
 
+  public V3SourceExpandableResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

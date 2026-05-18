@@ -285,6 +285,12 @@ public class QueueConversationEventTopicCallback  implements Serializable {
     }
   }
 
+  public QueueConversationEventTopicCallback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

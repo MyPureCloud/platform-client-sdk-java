@@ -81,6 +81,11 @@ public class LongTermRequirementsErrorDetail  implements Serializable {
     }
   }
 
+  public LongTermRequirementsErrorDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The error code

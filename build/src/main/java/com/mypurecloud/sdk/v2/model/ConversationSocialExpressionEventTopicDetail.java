@@ -32,6 +32,11 @@ public class ConversationSocialExpressionEventTopicDetail  implements Serializab
     }
   }
 
+  public ConversationSocialExpressionEventTopicDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

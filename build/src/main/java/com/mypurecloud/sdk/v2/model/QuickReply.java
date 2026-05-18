@@ -80,6 +80,11 @@ public class QuickReply  implements Serializable {
     }
   }
 
+  public QuickReply(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text to show inside the quick reply. This is also used as the response text after clicking on the quick reply.

@@ -83,6 +83,12 @@ public class DocumentBodyListBlock  implements Serializable {
     }
   }
 
+  public DocumentBodyListBlock(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentListContentBlock>();
+    }
+  }
+
   
   /**
    * The type of the list block.

@@ -38,6 +38,13 @@ public class QueueConversationVideoEventTopicMessageMetadata  implements Seriali
     }
   }
 
+  public QueueConversationVideoEventTopicMessageMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<QueueConversationVideoEventTopicMessageMetadataEvent>();
+      content = new ArrayList<QueueConversationVideoEventTopicMessageMetadataContent>();
+    }
+  }
+
   
   /**
    * Message type.

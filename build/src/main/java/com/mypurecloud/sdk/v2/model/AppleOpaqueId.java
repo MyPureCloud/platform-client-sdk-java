@@ -29,6 +29,11 @@ public class AppleOpaqueId  implements Serializable {
     }
   }
 
+  public AppleOpaqueId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Max: 255 characters. Leading and trailing whitespace stripped.

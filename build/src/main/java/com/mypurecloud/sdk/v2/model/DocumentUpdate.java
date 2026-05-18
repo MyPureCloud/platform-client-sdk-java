@@ -46,6 +46,17 @@ public class DocumentUpdate  implements Serializable {
     }
   }
 
+  public DocumentUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      addTags = new ArrayList<String>();
+      removeTags = new ArrayList<String>();
+      addTagIds = new ArrayList<String>();
+      removeTagIds = new ArrayList<String>();
+      updateAttributes = new ArrayList<DocumentAttribute>();
+      removeAttributes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

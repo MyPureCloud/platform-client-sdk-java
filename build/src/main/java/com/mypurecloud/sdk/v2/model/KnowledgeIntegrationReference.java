@@ -30,6 +30,11 @@ public class KnowledgeIntegrationReference  implements Serializable {
     }
   }
 
+  public KnowledgeIntegrationReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the integration.

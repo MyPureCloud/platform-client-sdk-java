@@ -87,6 +87,11 @@ public class ExternalMetricDataUnprocessedItem  implements Serializable {
     }
   }
 
+  public ExternalMetricDataUnprocessedItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user ID. Must provide either userId or userEmail, but not both.

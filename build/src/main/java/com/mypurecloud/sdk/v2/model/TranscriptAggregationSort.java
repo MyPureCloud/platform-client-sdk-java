@@ -137,6 +137,11 @@ public class TranscriptAggregationSort  implements Serializable {
     }
   }
 
+  public TranscriptAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

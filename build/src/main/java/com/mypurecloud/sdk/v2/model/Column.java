@@ -32,6 +32,11 @@ public class Column  implements Serializable {
     }
   }
 
+  public Column(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Column name. Mandatory for Fixed position/length file format.

@@ -33,6 +33,12 @@ public class AgentCopilotAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public AgentCopilotAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<AgentCopilotAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

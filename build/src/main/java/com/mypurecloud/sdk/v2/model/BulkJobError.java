@@ -30,6 +30,11 @@ public class BulkJobError  implements Serializable {
     }
   }
 
+  public BulkJobError(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Error message of the bulk operation result.

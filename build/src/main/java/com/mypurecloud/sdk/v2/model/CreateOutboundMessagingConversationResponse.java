@@ -30,6 +30,11 @@ public class CreateOutboundMessagingConversationResponse  implements Serializabl
     }
   }
 
+  public CreateOutboundMessagingConversationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The created outbound messaging conversation ID.")
   @JsonProperty("id")

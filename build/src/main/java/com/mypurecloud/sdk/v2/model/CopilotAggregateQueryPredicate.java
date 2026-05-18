@@ -183,6 +183,11 @@ public class CopilotAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public CopilotAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

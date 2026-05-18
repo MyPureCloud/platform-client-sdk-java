@@ -30,6 +30,11 @@ public class KnowledgeBaseUpdateRequest  implements Serializable {
     }
   }
 
+  public KnowledgeBaseUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Knowledge base name

@@ -30,6 +30,11 @@ public class UserProfilesInDateRangeRequest  implements Serializable {
     }
   }
 
+  public UserProfilesInDateRangeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start work day in ISO-8601 format used in the date range.

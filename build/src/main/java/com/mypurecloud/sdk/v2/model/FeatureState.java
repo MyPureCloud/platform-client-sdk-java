@@ -29,6 +29,11 @@ public class FeatureState  implements Serializable {
     }
   }
 
+  public FeatureState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

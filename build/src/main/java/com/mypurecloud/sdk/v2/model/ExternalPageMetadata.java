@@ -30,6 +30,11 @@ public class ExternalPageMetadata  implements Serializable {
     }
   }
 
+  public ExternalPageMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the external page

@@ -93,6 +93,13 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     }
   }
 
+  public AuditQueryExecutionStatusResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      filters = new ArrayList<AuditQueryFilter>();
+      sort = new ArrayList<AuditQuerySort>();
+    }
+  }
+
   
   /**
    * Id of the audit query execution request.

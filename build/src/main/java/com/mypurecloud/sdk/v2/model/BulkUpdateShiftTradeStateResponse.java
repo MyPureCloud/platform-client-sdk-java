@@ -82,6 +82,11 @@ public class BulkUpdateShiftTradeStateResponse  implements Serializable {
     }
   }
 
+  public BulkUpdateShiftTradeStateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the operation

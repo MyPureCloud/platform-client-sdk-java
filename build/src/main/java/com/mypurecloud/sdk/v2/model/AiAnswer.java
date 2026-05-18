@@ -81,6 +81,11 @@ public class AiAnswer  implements Serializable {
     }
   }
 
+  public AiAnswer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier of the suggested AI answer.

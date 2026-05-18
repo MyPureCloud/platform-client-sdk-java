@@ -31,6 +31,11 @@ public class BulkErrorDetail  implements Serializable {
     }
   }
 
+  public BulkErrorDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the field which experienced an error.

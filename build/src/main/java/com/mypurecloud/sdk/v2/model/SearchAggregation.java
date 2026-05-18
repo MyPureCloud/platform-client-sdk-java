@@ -139,6 +139,12 @@ public class SearchAggregation  implements Serializable {
     }
   }
 
+  public SearchAggregation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      order = new ArrayList<OrderEnum>();
+    }
+  }
+
   
   /**
    * The field used for aggregation

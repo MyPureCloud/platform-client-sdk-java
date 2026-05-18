@@ -30,6 +30,11 @@ public class ConversationMessageEventTopicUriReference  implements Serializable 
     }
   }
 
+  public ConversationMessageEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

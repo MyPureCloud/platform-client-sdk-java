@@ -151,6 +151,12 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     }
   }
 
+  public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blockingPageUrlConditions = new ArrayList<JourneyWebActionEventsNotificationActionMapPageUrlCondition>();
+    }
+  }
+
   
   /**
    **/

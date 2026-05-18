@@ -34,6 +34,12 @@ public class KnowledgeAnswerGenerationResponse  implements Serializable {
     }
   }
 
+  public KnowledgeAnswerGenerationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      documents = new ArrayList<AnswerGenerationDocument>();
+    }
+  }
+
   
   /**
    * The AI-generated answer.

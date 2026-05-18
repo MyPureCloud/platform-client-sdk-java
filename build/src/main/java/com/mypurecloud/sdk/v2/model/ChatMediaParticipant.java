@@ -294,6 +294,12 @@ public class ChatMediaParticipant  implements Serializable {
     }
   }
 
+  public ChatMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The unique participant ID.

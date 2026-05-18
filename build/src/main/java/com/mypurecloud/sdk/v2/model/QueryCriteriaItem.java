@@ -133,6 +133,11 @@ public class QueryCriteriaItem  implements Serializable {
     }
   }
 
+  public QueryCriteriaItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The key to filter on

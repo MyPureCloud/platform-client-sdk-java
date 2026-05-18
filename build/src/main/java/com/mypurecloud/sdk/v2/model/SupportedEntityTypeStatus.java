@@ -78,6 +78,11 @@ public class SupportedEntityTypeStatus  implements Serializable {
     }
   }
 
+  public SupportedEntityTypeStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The configuration status of restricted lists

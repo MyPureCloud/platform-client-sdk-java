@@ -91,6 +91,14 @@ public class TranscriptsFilters  implements Serializable {
     }
   }
 
+  public TranscriptsFilters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      programs = new ArrayList<String>();
+      queues = new ArrayList<String>();
+      flows = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The media type of the transcripts, default value is all 

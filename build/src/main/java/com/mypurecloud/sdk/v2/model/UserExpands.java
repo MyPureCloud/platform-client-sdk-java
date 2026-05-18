@@ -43,6 +43,11 @@ public class UserExpands  implements Serializable {
     }
   }
 
+  public UserExpands(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "ACD routing status")
   @JsonProperty("routingStatus")

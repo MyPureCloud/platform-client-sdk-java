@@ -43,6 +43,11 @@ public class StatisticalSummary  implements Serializable {
     }
   }
 
+  public StatisticalSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

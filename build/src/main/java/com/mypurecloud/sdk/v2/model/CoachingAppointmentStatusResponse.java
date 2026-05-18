@@ -85,6 +85,11 @@ public class CoachingAppointmentStatusResponse  implements Serializable {
     }
   }
 
+  public CoachingAppointmentStatusResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The coaching appointment this status belongs to")
   @JsonProperty("appointment")

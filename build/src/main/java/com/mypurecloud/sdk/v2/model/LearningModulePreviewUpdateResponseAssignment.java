@@ -94,6 +94,12 @@ public class LearningModulePreviewUpdateResponseAssignment  implements Serializa
     }
   }
 
+  public LearningModulePreviewUpdateResponseAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      steps = new ArrayList<LearningModulePreviewUpdateStep>();
+    }
+  }
+
   
   /**
    * The Learning Assignment state

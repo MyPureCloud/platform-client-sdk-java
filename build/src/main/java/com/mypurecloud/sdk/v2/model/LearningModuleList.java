@@ -45,6 +45,12 @@ public class LearningModuleList  implements Serializable, PagedResource<Learning
     }
   }
 
+  public LearningModuleList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LearningModule>();
+    }
+  }
+
   
   /**
    **/

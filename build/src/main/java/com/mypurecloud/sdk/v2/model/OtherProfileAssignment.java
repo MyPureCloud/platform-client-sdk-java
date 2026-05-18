@@ -32,6 +32,11 @@ public class OtherProfileAssignment  implements Serializable {
     }
   }
 
+  public OtherProfileAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

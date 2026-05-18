@@ -38,6 +38,12 @@ public class DatePicker  implements Serializable {
     }
   }
 
+  public DatePicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      datePickerAvailableDateTimes = new ArrayList<DatePickerAvailableDateTime>();
+    }
+  }
+
   
   /**
    * Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.

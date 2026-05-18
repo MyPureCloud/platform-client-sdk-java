@@ -46,6 +46,15 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
     }
   }
 
+  public ConversationEmailEventTopicEmailConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationEmailEventTopicEmailMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<ConversationEmailEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

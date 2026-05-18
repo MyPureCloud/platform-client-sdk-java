@@ -37,6 +37,11 @@ public class ConversationEventTopicFaxStatus  implements Serializable {
     }
   }
 
+  public ConversationEventTopicFaxStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The fax direction, either \"send\" or \"receive\".

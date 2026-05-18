@@ -31,6 +31,11 @@ public class PhoneChangeTopicEdgeReference  implements Serializable {
     }
   }
 
+  public PhoneChangeTopicEdgeReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

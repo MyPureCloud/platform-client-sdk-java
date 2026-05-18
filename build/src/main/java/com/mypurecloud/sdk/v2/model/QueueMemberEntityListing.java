@@ -39,6 +39,12 @@ public class QueueMemberEntityListing  implements Serializable {
     }
   }
 
+  public QueueMemberEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<QueueMember>();
+    }
+  }
+
   
   /**
    **/

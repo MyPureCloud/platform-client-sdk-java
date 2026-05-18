@@ -50,6 +50,11 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     }
   }
 
+  public JourneyWebEventsNotificationWebActionMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class UpdateTimeOffLimitRequest  implements Serializable {
     }
   }
 
+  public UpdateTimeOffLimitRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The default time off limit value in minutes per granularity

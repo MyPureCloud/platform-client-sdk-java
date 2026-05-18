@@ -30,6 +30,11 @@ public class CampaignPerformanceDataProgress  implements Serializable {
     }
   }
 
+  public CampaignPerformanceDataProgress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Percentage of contacts processed during the campaign

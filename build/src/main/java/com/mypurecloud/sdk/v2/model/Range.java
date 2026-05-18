@@ -80,6 +80,11 @@ public class Range  implements Serializable {
     }
   }
 
+  public Range(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Range type (NoEnd: without an end date. EndDate: with an end date. Numbered: with a specific number of occurrences)

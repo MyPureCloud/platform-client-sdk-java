@@ -106,6 +106,16 @@ public class WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAd
     }
   }
 
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceAgentResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      exceptionInfo = new ArrayList<WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo>();
+      dayMetrics = new ArrayList<WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceAgentDayMetrics>();
+      actuals = new ArrayList<WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceActuals>();
+      scheduledActivities = new ArrayList<WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceScheduledActivity>();
+      secondaryPresenceLookupItems = new ArrayList<WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmSecondaryPresenceLookupItem>();
+    }
+  }
+
   
   /**
    **/

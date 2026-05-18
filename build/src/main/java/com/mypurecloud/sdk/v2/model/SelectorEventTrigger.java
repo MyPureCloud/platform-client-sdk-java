@@ -31,6 +31,11 @@ public class SelectorEventTrigger  implements Serializable {
     }
   }
 
+  public SelectorEventTrigger(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Element that triggers event.

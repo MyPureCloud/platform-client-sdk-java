@@ -31,6 +31,11 @@ public class ExternalContactsUnresolvedContactChangedTopicExternalId  implements
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicExternalId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

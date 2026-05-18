@@ -30,6 +30,11 @@ public class OutboundMessagingWhatsappCampaignConfigChangeIntegrationRef  implem
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeIntegrationRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique integration id

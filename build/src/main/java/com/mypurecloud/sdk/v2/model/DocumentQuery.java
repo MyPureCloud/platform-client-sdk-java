@@ -82,6 +82,12 @@ public class DocumentQuery  implements Serializable {
     }
   }
 
+  public DocumentQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<DocumentQueryClause>();
+    }
+  }
+
   
   /**
    * Documents filter clauses/criteria. Limit of 20 clauses.

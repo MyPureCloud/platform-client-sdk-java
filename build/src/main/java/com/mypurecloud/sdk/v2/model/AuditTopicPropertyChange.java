@@ -35,6 +35,13 @@ public class AuditTopicPropertyChange  implements Serializable {
     }
   }
 
+  public AuditTopicPropertyChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      oldValues = new ArrayList<String>();
+      newValues = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

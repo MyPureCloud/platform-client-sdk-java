@@ -86,6 +86,11 @@ public class PersistentConnectionChangeTopicPersistentConnectionChangeEvent  imp
     }
   }
 
+  public PersistentConnectionChangeTopicPersistentConnectionChangeEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

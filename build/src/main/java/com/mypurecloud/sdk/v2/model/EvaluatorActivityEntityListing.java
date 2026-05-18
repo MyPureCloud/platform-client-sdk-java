@@ -43,6 +43,12 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     }
   }
 
+  public EvaluatorActivityEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EvaluatorActivity>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class AuditTopicDomainEntityRef  implements Serializable {
     }
   }
 
+  public AuditTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class QueueConversationVideoEventTopicMessageMetadataContent  implements 
     }
   }
 
+  public QueueConversationVideoEventTopicMessageMetadataContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element.

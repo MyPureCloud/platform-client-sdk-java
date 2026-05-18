@@ -126,6 +126,11 @@ public class EscalationTarget  implements Serializable {
     }
   }
 
+  public EscalationTarget(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Defines the target that the message will be escalated to.

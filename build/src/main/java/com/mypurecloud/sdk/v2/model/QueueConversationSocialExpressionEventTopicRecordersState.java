@@ -33,6 +33,11 @@ public class QueueConversationSocialExpressionEventTopicRecordersState  implemen
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicRecordersState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates the state of the adhoc recorder.

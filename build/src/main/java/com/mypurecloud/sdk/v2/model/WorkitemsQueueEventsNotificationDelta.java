@@ -82,6 +82,11 @@ public class WorkitemsQueueEventsNotificationDelta  implements Serializable {
     }
   }
 
+  public WorkitemsQueueEventsNotificationDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

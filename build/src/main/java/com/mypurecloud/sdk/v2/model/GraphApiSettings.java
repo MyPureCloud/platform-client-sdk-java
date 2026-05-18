@@ -84,6 +84,11 @@ public class GraphApiSettings  implements Serializable {
     }
   }
 
+  public GraphApiSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Graph API server integration to use for emails.

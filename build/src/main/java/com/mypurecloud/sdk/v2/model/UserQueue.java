@@ -235,6 +235,13 @@ public class UserQueue  implements Serializable {
     }
   }
 
+  public UserQueue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routingRules = new ArrayList<RoutingRule>();
+      memberGroups = new ArrayList<MemberGroup>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

@@ -36,6 +36,12 @@ public class RecordingArchiveRestoreTopicMediaResult  implements Serializable {
     }
   }
 
+  public RecordingArchiveRestoreTopicMediaResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      waveformData = new ArrayList<BigDecimal>();
+    }
+  }
+
   
   /**
    **/

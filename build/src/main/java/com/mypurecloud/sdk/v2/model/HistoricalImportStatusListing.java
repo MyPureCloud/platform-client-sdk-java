@@ -34,6 +34,12 @@ public class HistoricalImportStatusListing  implements Serializable {
     }
   }
 
+  public HistoricalImportStatusListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<HistoricalImportStatus>();
+    }
+  }
+
   
   /**
    **/

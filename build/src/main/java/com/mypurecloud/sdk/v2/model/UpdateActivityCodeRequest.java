@@ -97,6 +97,11 @@ public class UpdateActivityCodeRequest  implements Serializable {
     }
   }
 
+  public UpdateActivityCodeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the activity code

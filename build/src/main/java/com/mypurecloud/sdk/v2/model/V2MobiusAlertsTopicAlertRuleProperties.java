@@ -82,6 +82,11 @@ public class V2MobiusAlertsTopicAlertRuleProperties  implements Serializable {
     }
   }
 
+  public V2MobiusAlertsTopicAlertRuleProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

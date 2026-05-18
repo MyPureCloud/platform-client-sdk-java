@@ -29,6 +29,11 @@ public class WfmBuShortTermForecastGenerateProgressTopicUserReference  implement
     }
   }
 
+  public WfmBuShortTermForecastGenerateProgressTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

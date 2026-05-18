@@ -33,6 +33,12 @@ public class SupportCenterLabelFilter  implements Serializable {
     }
   }
 
+  public SupportCenterLabelFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      labels = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   /**
    * Labels to filter by.

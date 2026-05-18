@@ -33,6 +33,12 @@ public class AssistantQueueUsersBulkRemoveRequest  implements Serializable {
     }
   }
 
+  public AssistantQueueUsersBulkRemoveRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AssistantQueueUser>();
+    }
+  }
+
   
   /**
    * List of users to de-assign assistant form. Maximum users to remove is 100 per request.

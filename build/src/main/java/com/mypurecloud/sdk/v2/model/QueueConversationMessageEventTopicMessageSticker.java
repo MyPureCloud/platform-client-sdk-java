@@ -30,6 +30,11 @@ public class QueueConversationMessageEventTopicMessageSticker  implements Serial
     }
   }
 
+  public QueueConversationMessageEventTopicMessageSticker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the sticker, useful for retrieving it

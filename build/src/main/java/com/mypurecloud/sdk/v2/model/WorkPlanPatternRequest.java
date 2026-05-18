@@ -32,6 +32,12 @@ public class WorkPlanPatternRequest  implements Serializable {
     }
   }
 
+  public WorkPlanPatternRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      workPlanIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of work plan IDs in order of rotation on a weekly basis. Values in the list cannot be null or empty

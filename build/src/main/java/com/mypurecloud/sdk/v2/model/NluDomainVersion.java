@@ -156,6 +156,14 @@ public class NluDomainVersion  implements Serializable {
     }
   }
 
+  public NluDomainVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<IntentDefinition>();
+      entityTypes = new ArrayList<NamedEntityTypeDefinition>();
+      entities = new ArrayList<NamedEntityDefinition>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

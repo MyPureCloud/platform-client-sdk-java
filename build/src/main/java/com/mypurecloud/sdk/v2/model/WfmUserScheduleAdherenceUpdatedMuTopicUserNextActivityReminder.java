@@ -31,6 +31,11 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder  imp
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

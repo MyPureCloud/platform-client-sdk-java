@@ -30,6 +30,11 @@ public class WfmIntradayDataUpdateTopicIntradayScheduleData  implements Serializ
     }
   }
 
+  public WfmIntradayDataUpdateTopicIntradayScheduleData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -84,6 +84,12 @@ public class ShiftStartVariance  implements Serializable {
     }
   }
 
+  public ShiftStartVariance(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      applicableDays = new ArrayList<ApplicableDaysEnum>();
+    }
+  }
+
   
   /**
    * Days for which shift start variance is configured

@@ -196,6 +196,11 @@ public class EvaluationAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public EvaluationAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

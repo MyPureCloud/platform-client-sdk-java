@@ -81,6 +81,11 @@ public class TextStyleProperties  implements Serializable {
     }
   }
 
+  public TextStyleProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Color of the text. (eg. #FFFFFF)

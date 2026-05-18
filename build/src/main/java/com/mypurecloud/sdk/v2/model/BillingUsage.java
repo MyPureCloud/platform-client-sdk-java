@@ -35,6 +35,12 @@ public class BillingUsage  implements Serializable {
     }
   }
 
+  public BillingUsage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      resources = new ArrayList<BillingUsageResource>();
+    }
+  }
+
   
   /**
    * Identifies the billable usage.

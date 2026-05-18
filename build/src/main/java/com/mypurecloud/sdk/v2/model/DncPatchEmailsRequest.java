@@ -82,6 +82,12 @@ public class DncPatchEmailsRequest  implements Serializable {
     }
   }
 
+  public DncPatchEmailsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      emailAddresses = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The action to perform

@@ -138,6 +138,12 @@ public class LearningModulePreviewGetScoStructure  implements Serializable {
     }
   }
 
+  public LearningModulePreviewGetScoStructure(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      children = new ArrayList<LearningModulePreviewGetScoStructure>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The id of this SCO in the course manifest")
   @JsonProperty("id")

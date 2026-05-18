@@ -176,6 +176,13 @@ public class FlowVersion  implements Serializable {
     }
   }
 
+  public FlowVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      supportedLanguages = new ArrayList<SupportedLanguage>();
+      compatibleFlowTypes = new ArrayList<CompatibleFlowTypesEnum>();
+    }
+  }
+
   
   /**
    * The flow version identifier

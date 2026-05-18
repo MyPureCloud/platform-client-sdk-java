@@ -43,6 +43,12 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     }
   }
 
+  public TranscriptionTopicTranscriptionMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      transcripts = new ArrayList<TranscriptionTopicTranscriptResult>();
+    }
+  }
+
   
   /**
    **/

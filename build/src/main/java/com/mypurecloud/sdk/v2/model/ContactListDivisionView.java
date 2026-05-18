@@ -49,6 +49,15 @@ public class ContactListDivisionView  implements Serializable {
     }
   }
 
+  public ContactListDivisionView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      columnNames = new ArrayList<String>();
+      phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
+      emailColumns = new ArrayList<EmailColumn>();
+      whatsAppColumns = new ArrayList<WhatsAppColumn>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

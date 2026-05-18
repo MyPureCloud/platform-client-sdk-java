@@ -105,6 +105,13 @@ public class BusinessUnitActivityCode  implements Serializable {
     }
   }
 
+  public BusinessUnitActivityCode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      secondaryPresences = new ArrayList<SecondaryPresence>();
+      planningGroups = new ArrayList<PlanningGroupReference>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

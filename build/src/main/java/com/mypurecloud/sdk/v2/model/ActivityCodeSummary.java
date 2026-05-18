@@ -36,6 +36,12 @@ public class ActivityCodeSummary  implements Serializable {
     }
   }
 
+  public ActivityCodeSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      secondaryPresences = new ArrayList<SecondaryPresence>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

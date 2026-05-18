@@ -77,6 +77,11 @@ public class OutboundOnlySetting  implements Serializable {
     }
   }
 
+  public OutboundOnlySetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Status for the Outbound Direction

@@ -36,6 +36,13 @@ public class TeamMemberAddListingResponse  implements Serializable {
     }
   }
 
+  public TeamMemberAddListingResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserReference>();
+      failures = new ArrayList<TeamAddMemberFailure>();
+    }
+  }
+
   
   /**
    **/

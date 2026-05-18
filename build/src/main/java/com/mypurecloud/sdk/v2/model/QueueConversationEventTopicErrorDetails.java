@@ -39,6 +39,11 @@ public class QueueConversationEventTopicErrorDetails  implements Serializable {
     }
   }
 
+  public QueueConversationEventTopicErrorDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The HTTP status code for this message (400, 401, 403, 404, 500, etc.

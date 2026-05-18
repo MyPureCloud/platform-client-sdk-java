@@ -32,6 +32,11 @@ public class TextBotFlowLocation  implements Serializable {
     }
   }
 
+  public TextBotFlowLocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the action that was active when the event of interest happened.

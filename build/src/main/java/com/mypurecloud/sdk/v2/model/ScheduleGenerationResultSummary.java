@@ -36,6 +36,12 @@ public class ScheduleGenerationResultSummary  implements Serializable {
     }
   }
 
+  public ScheduleGenerationResultSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messageSeverityCounts = new ArrayList<SchedulerMessageSeverityCount>();
+    }
+  }
+
   
   /**
    * Whether the schedule generation run failed

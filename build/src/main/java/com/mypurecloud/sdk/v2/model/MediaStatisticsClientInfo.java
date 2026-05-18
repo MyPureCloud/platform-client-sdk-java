@@ -31,6 +31,11 @@ public class MediaStatisticsClientInfo  implements Serializable {
     }
   }
 
+  public MediaStatisticsClientInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the application that created the media session.

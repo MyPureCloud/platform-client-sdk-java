@@ -82,6 +82,12 @@ public class DncPatchPhoneNumbersRequest  implements Serializable {
     }
   }
 
+  public DncPatchPhoneNumbersRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The action to perform

@@ -42,6 +42,12 @@ public class EvaluationQuestionScore  implements Serializable {
     }
   }
 
+  public EvaluationQuestionScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      multipleSelectQuestionOptionScores = new ArrayList<EvaluationQuestionScore>();
+    }
+  }
+
   
   /**
    **/

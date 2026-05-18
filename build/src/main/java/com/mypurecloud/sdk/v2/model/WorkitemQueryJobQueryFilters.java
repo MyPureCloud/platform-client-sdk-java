@@ -129,6 +129,12 @@ public class WorkitemQueryJobQueryFilters  implements Serializable {
     }
   }
 
+  public WorkitemQueryJobQueryFilters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<WorkitemQueryJobQueryFiltersCriteria>();
+    }
+  }
+
   
   /**
    * Name of the attribute to filter.

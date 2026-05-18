@@ -35,6 +35,11 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
     }
   }
 
+  public DialerCallabletimesetConfigChangeTimeSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start time of this time slot

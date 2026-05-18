@@ -86,6 +86,12 @@ public class PermissionDetails  implements Serializable {
     }
   }
 
+  public PermissionDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      permissions = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The type of permission requirement

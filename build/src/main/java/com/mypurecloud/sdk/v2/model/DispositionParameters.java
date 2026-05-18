@@ -30,6 +30,11 @@ public class DispositionParameters  implements Serializable {
     }
   }
 
+  public DispositionParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ALSD evaluation inputs and output (isPersonalLikely) of the ALSD detector the last time it ran on the call (could be multiple times)

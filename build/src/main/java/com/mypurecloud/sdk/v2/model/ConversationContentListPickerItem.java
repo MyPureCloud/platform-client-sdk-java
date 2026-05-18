@@ -33,6 +33,11 @@ public class ConversationContentListPickerItem  implements Serializable {
     }
   }
 
+  public ConversationContentListPickerItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the list picker item

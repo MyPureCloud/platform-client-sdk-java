@@ -91,6 +91,11 @@ public class FlowPaths  implements Serializable {
     }
   }
 
+  public FlowPaths(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Category (use case) of the paths within a given domain.

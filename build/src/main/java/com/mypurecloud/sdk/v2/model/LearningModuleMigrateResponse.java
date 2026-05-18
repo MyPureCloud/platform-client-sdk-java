@@ -31,6 +31,11 @@ public class LearningModuleMigrateResponse  implements Serializable {
     }
   }
 
+  public LearningModuleMigrateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The autoAssign Response

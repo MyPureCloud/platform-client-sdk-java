@@ -30,6 +30,11 @@ public class DialogflowProject  implements Serializable {
     }
   }
 
+  public DialogflowProject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

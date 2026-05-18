@@ -33,6 +33,12 @@ public class BulkJobTerminateRequest  implements Serializable {
     }
   }
 
+  public BulkJobTerminateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BulkJobEntity>();
+    }
+  }
+
   
   /**
    * The list of bulk job entities to terminate.

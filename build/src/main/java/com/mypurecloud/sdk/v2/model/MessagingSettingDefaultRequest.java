@@ -29,6 +29,11 @@ public class MessagingSettingDefaultRequest  implements Serializable {
     }
   }
 
+  public MessagingSettingDefaultRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Messaging Setting ID to be used as the default for this Organization.

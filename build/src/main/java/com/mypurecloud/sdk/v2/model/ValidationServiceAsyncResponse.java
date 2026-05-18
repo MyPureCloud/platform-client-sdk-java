@@ -30,6 +30,11 @@ public class ValidationServiceAsyncResponse  implements Serializable {
     }
   }
 
+  public ValidationServiceAsyncResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Property denoting the job id of the import job")
   @JsonProperty("id")

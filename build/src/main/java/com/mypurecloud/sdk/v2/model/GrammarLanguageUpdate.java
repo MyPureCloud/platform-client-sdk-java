@@ -31,6 +31,11 @@ public class GrammarLanguageUpdate  implements Serializable {
     }
   }
 
+  public GrammarLanguageUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Additional information about the associated voice file

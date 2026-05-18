@@ -81,6 +81,11 @@ public class ConversationInsight  implements Serializable {
     }
   }
 
+  public ConversationInsight(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of insight

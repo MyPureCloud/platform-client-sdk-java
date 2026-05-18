@@ -30,6 +30,11 @@ public class WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData  i
     }
   }
 
+  public WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

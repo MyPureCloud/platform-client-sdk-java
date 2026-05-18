@@ -38,6 +38,12 @@ public class CursorContactListing  implements Serializable {
     }
   }
 
+  public CursorContactListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalContact>();
+    }
+  }
+
   
   /**
    **/

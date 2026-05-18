@@ -43,6 +43,12 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     }
   }
 
+  public BotConnectorBotSummaryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BotSummary>();
+    }
+  }
+
   
   /**
    **/

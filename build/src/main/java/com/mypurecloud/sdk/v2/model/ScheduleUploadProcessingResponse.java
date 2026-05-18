@@ -82,6 +82,11 @@ public class ScheduleUploadProcessingResponse  implements Serializable {
     }
   }
 
+  public ScheduleUploadProcessingResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the operation

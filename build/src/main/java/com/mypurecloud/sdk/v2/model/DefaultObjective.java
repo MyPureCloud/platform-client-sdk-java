@@ -198,6 +198,16 @@ public class DefaultObjective  implements Serializable {
     }
   }
 
+  public DefaultObjective(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      zones = new ArrayList<ObjectiveZone>();
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      queues = new ArrayList<AddressableEntityRef>();
+      topics = new ArrayList<AddressableEntityRef>();
+      evaluationFormContextIds = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

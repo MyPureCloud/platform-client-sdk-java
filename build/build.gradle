@@ -2,7 +2,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 
 group = 'com.mypurecloud'
-version = '253.1.0'
+version = '253.2.0'
 
 buildscript {
     repositories {
@@ -95,7 +95,7 @@ if(hasProperty('target') && target == 'android') {
 
 ext {
     swagger_annotations_version = "1.6.16"
-    jackson_version = "2.21.1"
+    jackson_version = "2.21.3"
     jackson_annotations_version = "2.21"
     jersey_version = "1.19.1"
     junit_version = "4.12"

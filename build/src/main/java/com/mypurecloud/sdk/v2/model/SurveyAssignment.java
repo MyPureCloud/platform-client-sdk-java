@@ -35,6 +35,11 @@ public class SurveyAssignment  implements Serializable {
     }
   }
 
+  public SurveyAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The survey form used for this survey.

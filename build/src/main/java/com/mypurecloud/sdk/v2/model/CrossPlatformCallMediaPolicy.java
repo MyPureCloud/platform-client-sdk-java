@@ -32,6 +32,11 @@ public class CrossPlatformCallMediaPolicy  implements Serializable {
     }
   }
 
+  public CrossPlatformCallMediaPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Actions applied when specified conditions are met

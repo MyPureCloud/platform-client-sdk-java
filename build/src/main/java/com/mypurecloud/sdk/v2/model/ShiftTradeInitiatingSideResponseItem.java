@@ -36,6 +36,11 @@ public class ShiftTradeInitiatingSideResponseItem  implements Serializable {
     }
   }
 
+  public ShiftTradeInitiatingSideResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user who initiated this trade

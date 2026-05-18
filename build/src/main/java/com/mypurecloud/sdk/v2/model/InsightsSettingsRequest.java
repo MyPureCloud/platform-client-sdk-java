@@ -29,6 +29,11 @@ public class InsightsSettingsRequest  implements Serializable {
     }
   }
 
+  public InsightsSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The AI Insights setting

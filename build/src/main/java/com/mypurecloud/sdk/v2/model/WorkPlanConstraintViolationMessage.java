@@ -86,6 +86,12 @@ public class WorkPlanConstraintViolationMessage  implements Serializable {
     }
   }
 
+  public WorkPlanConstraintViolationMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      arguments = new ArrayList<UnavailableTimesViolationMessageArgument>();
+    }
+  }
+
   
   /**
    * Type of the work plan constraint in this message.

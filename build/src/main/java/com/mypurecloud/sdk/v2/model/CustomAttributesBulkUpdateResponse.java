@@ -32,6 +32,11 @@ public class CustomAttributesBulkUpdateResponse  implements Serializable {
     }
   }
 
+  public CustomAttributesBulkUpdateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Custom Attributes record.

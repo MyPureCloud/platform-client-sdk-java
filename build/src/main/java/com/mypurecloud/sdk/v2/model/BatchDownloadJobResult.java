@@ -33,6 +33,11 @@ public class BatchDownloadJobResult  implements Serializable {
     }
   }
 
+  public BatchDownloadJobResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Conversation id of the result

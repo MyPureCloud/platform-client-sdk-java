@@ -35,6 +35,11 @@ public class AuditTopicMessageInfo  implements Serializable {
     }
   }
 
+  public AuditTopicMessageInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

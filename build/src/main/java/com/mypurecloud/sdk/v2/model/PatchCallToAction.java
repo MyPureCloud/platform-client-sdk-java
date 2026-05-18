@@ -79,6 +79,11 @@ public class PatchCallToAction  implements Serializable {
     }
   }
 
+  public PatchCallToAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text displayed on the call to action button.

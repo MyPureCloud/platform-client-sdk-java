@@ -33,6 +33,12 @@ public class WorkPlanRotationListResponse  implements Serializable {
     }
   }
 
+  public WorkPlanRotationListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkPlanRotationResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,11 @@ public class AggregationResultEntry  implements Serializable {
     }
   }
 
+  public AggregationResultEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

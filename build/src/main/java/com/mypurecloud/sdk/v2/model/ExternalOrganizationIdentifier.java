@@ -83,6 +83,11 @@ public class ExternalOrganizationIdentifier  implements Serializable {
     }
   }
 
+  public ExternalOrganizationIdentifier(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to which this entity belongs.

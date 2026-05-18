@@ -47,6 +47,15 @@ public class MessageConversation  implements Serializable {
     }
   }
 
+  public MessageConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<MessageMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      recentTransfers = new ArrayList<TransferResponse>();
+      divisions = new ArrayList<ConversationDivisionMembership>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

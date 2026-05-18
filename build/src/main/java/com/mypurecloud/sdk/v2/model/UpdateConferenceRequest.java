@@ -32,6 +32,12 @@ public class UpdateConferenceRequest  implements Serializable {
     }
   }
 
+  public UpdateConferenceRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A list of conversations to merge into this conversation to create a conference.

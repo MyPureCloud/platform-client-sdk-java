@@ -36,6 +36,11 @@ public class ValidationLimits  implements Serializable {
     }
   }
 
+  public ValidationLimits(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

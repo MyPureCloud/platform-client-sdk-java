@@ -30,6 +30,11 @@ public class EmailErrorInfo  implements Serializable {
     }
   }
 
+  public EmailErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Error Message")
   @JsonProperty("message")

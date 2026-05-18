@@ -30,6 +30,11 @@ public class Intent  implements Serializable {
     }
   }
 
+  public Intent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

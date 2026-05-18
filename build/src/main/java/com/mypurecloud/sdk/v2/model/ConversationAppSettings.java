@@ -45,6 +45,11 @@ public class ConversationAppSettings  implements Serializable {
     }
   }
 
+  public ConversationAppSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The toggle to enable or disable conversations

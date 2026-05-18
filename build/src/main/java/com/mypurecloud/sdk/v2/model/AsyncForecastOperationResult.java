@@ -83,6 +83,11 @@ public class AsyncForecastOperationResult  implements Serializable {
     }
   }
 
+  public AsyncForecastOperationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the operation

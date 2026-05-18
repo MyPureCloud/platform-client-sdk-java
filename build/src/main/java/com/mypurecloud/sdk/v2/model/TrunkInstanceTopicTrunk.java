@@ -41,6 +41,13 @@ public class TrunkInstanceTopicTrunk  implements Serializable {
     }
   }
 
+  public TrunkInstanceTopicTrunk(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      optionsStatus = new ArrayList<TrunkInstanceTopicTrunkMetricsOptions>();
+      registersStatus = new ArrayList<TrunkInstanceTopicTrunkMetricsRegisters>();
+    }
+  }
+
   
   /**
    **/

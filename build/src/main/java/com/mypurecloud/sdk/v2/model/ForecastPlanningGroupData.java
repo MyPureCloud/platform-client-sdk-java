@@ -35,6 +35,13 @@ public class ForecastPlanningGroupData  implements Serializable {
     }
   }
 
+  public ForecastPlanningGroupData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      offeredPerInterval = new ArrayList<Double>();
+      averageHandleTimeSecondsPerInterval = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration

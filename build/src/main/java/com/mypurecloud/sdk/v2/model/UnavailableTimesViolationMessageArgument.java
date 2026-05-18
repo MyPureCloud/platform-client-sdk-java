@@ -82,6 +82,11 @@ public class UnavailableTimesViolationMessageArgument  implements Serializable {
     }
   }
 
+  public UnavailableTimesViolationMessageArgument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Argument type

@@ -33,6 +33,12 @@ public class AgentsBidAssignedWorkPlanOverrideRequest  implements Serializable {
     }
   }
 
+  public AgentsBidAssignedWorkPlanOverrideRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentWorkPlanOverrides = new ArrayList<AgentBidWorkPlanOverrideRequest>();
+    }
+  }
+
   
   /**
    * The list of agent work plan overrides

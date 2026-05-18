@@ -29,6 +29,11 @@ public class ImportStatusRequest  implements Serializable {
     }
   }
 
+  public ImportStatusRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * New status for existing import operation

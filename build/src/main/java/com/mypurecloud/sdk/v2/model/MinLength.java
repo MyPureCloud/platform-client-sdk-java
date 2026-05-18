@@ -30,6 +30,11 @@ public class MinLength  implements Serializable {
     }
   }
 
+  public MinLength(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A non-negative integer for a text-based schema field denoting the minimum smallest length a string field can contain for a schema instance.

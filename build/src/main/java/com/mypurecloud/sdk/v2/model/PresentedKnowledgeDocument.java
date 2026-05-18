@@ -83,6 +83,11 @@ public class PresentedKnowledgeDocument  implements Serializable {
     }
   }
 
+  public PresentedKnowledgeDocument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the document.

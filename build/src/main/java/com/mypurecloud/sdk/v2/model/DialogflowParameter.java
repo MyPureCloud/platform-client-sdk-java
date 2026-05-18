@@ -30,6 +30,11 @@ public class DialogflowParameter  implements Serializable {
     }
   }
 
+  public DialogflowParameter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The parameter name

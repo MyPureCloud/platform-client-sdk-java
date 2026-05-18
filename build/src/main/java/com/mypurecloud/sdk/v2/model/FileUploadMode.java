@@ -81,6 +81,12 @@ public class FileUploadMode  implements Serializable {
     }
   }
 
+  public FileUploadMode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      fileTypes = new ArrayList<FileTypesEnum>();
+    }
+  }
+
   
   /**
    * A list of supported content types for uploading files.

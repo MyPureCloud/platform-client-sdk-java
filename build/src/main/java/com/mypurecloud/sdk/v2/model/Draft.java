@@ -44,6 +44,13 @@ public class Draft  implements Serializable {
     }
   }
 
+  public Draft(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<DraftIntents>();
+      topics = new ArrayList<DraftTopics>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -38,6 +38,12 @@ public class CreatePredictorRequest  implements Serializable {
     }
   }
 
+  public CreatePredictorRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queueIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The queue IDs associated with the predictor.

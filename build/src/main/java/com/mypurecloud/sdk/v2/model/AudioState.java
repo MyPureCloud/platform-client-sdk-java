@@ -30,6 +30,11 @@ public class AudioState  implements Serializable {
     }
   }
 
+  public AudioState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates that this communication's audio allows its participant to hear others.

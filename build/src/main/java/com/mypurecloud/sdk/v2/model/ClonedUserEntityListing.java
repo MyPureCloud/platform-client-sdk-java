@@ -35,6 +35,12 @@ public class ClonedUserEntityListing  implements Serializable {
     }
   }
 
+  public ClonedUserEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ClonedUser>();
+    }
+  }
+
   
   /**
    **/

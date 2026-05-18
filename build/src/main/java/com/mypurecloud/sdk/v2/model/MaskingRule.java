@@ -139,6 +139,12 @@ public class MaskingRule  implements Serializable {
     }
   }
 
+  public MaskingRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      integrations = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

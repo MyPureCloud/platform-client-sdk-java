@@ -34,6 +34,13 @@ public class AvailableTranslations  implements Serializable {
     }
   }
 
+  public AvailableTranslations(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      orgSpecific = new ArrayList<String>();
+      builtin = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

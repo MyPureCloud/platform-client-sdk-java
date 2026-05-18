@@ -84,6 +84,11 @@ public class DocumentBodyVideoProperties  implements Serializable {
     }
   }
 
+  public DocumentBodyVideoProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The background color for the video. The valid values in hex color code representation. For example black color - #000000

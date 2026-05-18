@@ -51,6 +51,14 @@ public class CreateCallRequest  implements Serializable {
     }
   }
 
+  public CreateCallRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routingSkillsIds = new ArrayList<String>();
+      conversationIds = new ArrayList<String>();
+      participants = new ArrayList<Destination>();
+    }
+  }
+
   
   /**
    * The phone number to dial.

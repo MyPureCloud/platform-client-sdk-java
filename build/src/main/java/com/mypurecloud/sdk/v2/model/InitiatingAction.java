@@ -30,6 +30,11 @@ public class InitiatingAction  implements Serializable {
     }
   }
 
+  public InitiatingAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the audit initiating the transaction

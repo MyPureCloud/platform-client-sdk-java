@@ -135,6 +135,11 @@ public class FlowAggregationSort  implements Serializable {
     }
   }
 
+  public FlowAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

@@ -30,6 +30,11 @@ public class SdkLibrary  implements Serializable {
     }
   }
 
+  public SdkLibrary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the SDK.

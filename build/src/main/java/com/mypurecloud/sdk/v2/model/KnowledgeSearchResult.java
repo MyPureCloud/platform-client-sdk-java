@@ -34,6 +34,12 @@ public class KnowledgeSearchResult  implements Serializable {
     }
   }
 
+  public KnowledgeSearchResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      retrievedReferences = new ArrayList<KnowledgeRetrievedReference>();
+    }
+  }
+
   
   /**
    * The generated answer for search query.

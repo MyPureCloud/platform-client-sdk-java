@@ -31,6 +31,11 @@ public class ValidationServiceRequest  implements Serializable {
     }
   }
 
+  public ValidationServiceRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The last day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

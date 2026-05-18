@@ -144,6 +144,11 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     }
   }
 
+  public DialerContactlistfilterConfigChangeFilterPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The contact list column

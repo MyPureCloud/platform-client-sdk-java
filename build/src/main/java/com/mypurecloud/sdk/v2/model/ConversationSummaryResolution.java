@@ -32,6 +32,11 @@ public class ConversationSummaryResolution  implements Serializable {
     }
   }
 
+  public ConversationSummaryResolution(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The AI confidence value.

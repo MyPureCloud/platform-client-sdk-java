@@ -32,6 +32,11 @@ public class GroupSettings  implements Serializable {
     }
   }
 
+  public GroupSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The minimum size of a group for a session

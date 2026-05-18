@@ -32,6 +32,12 @@ public class ResponseAssetBulkRequest  implements Serializable {
     }
   }
 
+  public ResponseAssetBulkRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      assetIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of Response Asset IDs (max 50)

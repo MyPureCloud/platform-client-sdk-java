@@ -30,6 +30,11 @@ public class ExternalContactsSettings  implements Serializable {
     }
   }
 
+  public ExternalContactsSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

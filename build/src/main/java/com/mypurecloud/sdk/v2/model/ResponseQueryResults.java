@@ -31,6 +31,11 @@ public class ResponseQueryResults  implements Serializable {
     }
   }
 
+  public ResponseQueryResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Contains the query results

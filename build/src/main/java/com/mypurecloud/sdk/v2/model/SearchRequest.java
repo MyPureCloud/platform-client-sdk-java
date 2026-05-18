@@ -98,6 +98,17 @@ public class SearchRequest  implements Serializable {
     }
   }
 
+  public SearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      returnFields = new ArrayList<String>();
+      expand = new ArrayList<String>();
+      types = new ArrayList<String>();
+      query = new ArrayList<SearchCriteria>();
+      aggregations = new ArrayList<SearchAggregation>();
+    }
+  }
+
   
   /**
    * The sort order for results

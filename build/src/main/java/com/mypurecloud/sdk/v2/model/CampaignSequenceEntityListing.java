@@ -43,6 +43,12 @@ public class CampaignSequenceEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public CampaignSequenceEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CampaignSequence>();
+    }
+  }
+
   
   /**
    **/

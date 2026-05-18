@@ -29,6 +29,11 @@ public class SetUuiDataRequest  implements Serializable {
     }
   }
 
+  public SetUuiDataRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value of the uuiData to set.

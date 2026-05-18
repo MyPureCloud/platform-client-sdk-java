@@ -31,6 +31,11 @@ public class Humanize  implements Serializable {
     }
   }
 
+  public Humanize(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether or not humanize conversations setting is enabled

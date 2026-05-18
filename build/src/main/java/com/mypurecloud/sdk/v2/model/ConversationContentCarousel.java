@@ -34,6 +34,12 @@ public class ConversationContentCarousel  implements Serializable {
     }
   }
 
+  public ConversationContentCarousel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      cards = new ArrayList<ConversationContentCard>();
+    }
+  }
+
   
   /**
    * An array of card objects.

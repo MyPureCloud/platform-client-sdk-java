@@ -30,6 +30,11 @@ public class EmailAddress  implements Serializable {
     }
   }
 
+  public EmailAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

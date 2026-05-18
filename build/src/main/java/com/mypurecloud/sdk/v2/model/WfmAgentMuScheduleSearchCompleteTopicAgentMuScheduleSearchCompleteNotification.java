@@ -83,6 +83,11 @@ public class WfmAgentMuScheduleSearchCompleteTopicAgentMuScheduleSearchCompleteN
     }
   }
 
+  public WfmAgentMuScheduleSearchCompleteTopicAgentMuScheduleSearchCompleteNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

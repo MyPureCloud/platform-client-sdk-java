@@ -143,6 +143,12 @@ public class ActivityPlanJobResponse  implements Serializable {
     }
   }
 
+  public ActivityPlanJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      exceptions = new ArrayList<ActivityPlanJobException>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

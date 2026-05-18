@@ -38,6 +38,12 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
     }
   }
 
+  public QueueConversationVideoEventTopicDialerPreview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneNumberColumns = new ArrayList<QueueConversationVideoEventTopicPhoneNumberColumn>();
+    }
+  }
+
   
   /**
    **/

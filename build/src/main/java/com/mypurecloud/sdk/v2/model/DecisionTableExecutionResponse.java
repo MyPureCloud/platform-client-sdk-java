@@ -39,6 +39,13 @@ public class DecisionTableExecutionResponse  implements Serializable {
     }
   }
 
+  public DecisionTableExecutionResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topMatchRows = new ArrayList<DecisionTableRowEntityRef>();
+      rowExecutionOutputs = new ArrayList<DecisionTableRowExecutionOutput>();
+    }
+  }
+
   
   /**
    * The decision table version entity that was executed.

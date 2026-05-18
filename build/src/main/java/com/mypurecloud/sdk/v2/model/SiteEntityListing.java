@@ -44,6 +44,12 @@ public class SiteEntityListing  implements Serializable, PagedResource<Site> {
     }
   }
 
+  public SiteEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Site>();
+    }
+  }
+
   
   /**
    **/

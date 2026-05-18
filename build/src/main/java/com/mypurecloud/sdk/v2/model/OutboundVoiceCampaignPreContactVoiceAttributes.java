@@ -87,6 +87,11 @@ public class OutboundVoiceCampaignPreContactVoiceAttributes  implements Serializ
     }
   }
 
+  public OutboundVoiceCampaignPreContactVoiceAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

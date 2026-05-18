@@ -83,6 +83,12 @@ public class HrisTimeOffTypesJobResponse  implements Serializable {
     }
   }
 
+  public HrisTimeOffTypesJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<HrisTimeOffTypeResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -42,6 +42,13 @@ public class V2StaTopicsDetectedTopicTopicsDetectedMessage  implements Serializa
     }
   }
 
+  public V2StaTopicsDetectedTopicTopicsDetectedMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topics = new ArrayList<V2StaTopicsDetectedTopicTopicDetected>();
+      participants = new ArrayList<V2StaTopicsDetectedTopicParticipant>();
+    }
+  }
+
   
   /**
    **/

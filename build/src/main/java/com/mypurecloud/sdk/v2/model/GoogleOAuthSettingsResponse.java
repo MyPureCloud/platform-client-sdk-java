@@ -33,6 +33,12 @@ public class GoogleOAuthSettingsResponse  implements Serializable {
     }
   }
 
+  public GoogleOAuthSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      scopes = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "ID of the Genesys-owned Google API client")
   @JsonProperty("clientId")

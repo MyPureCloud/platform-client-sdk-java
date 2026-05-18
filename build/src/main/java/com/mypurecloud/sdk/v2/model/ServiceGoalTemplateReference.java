@@ -30,6 +30,11 @@ public class ServiceGoalTemplateReference  implements Serializable {
     }
   }
 
+  public ServiceGoalTemplateReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

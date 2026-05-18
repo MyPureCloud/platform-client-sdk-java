@@ -31,6 +31,11 @@ public class ConversationPushNotificationMessageLabel  implements Serializable {
     }
   }
 
+  public ConversationPushNotificationMessageLabel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Title to use in the push for each language configured in the deploymentId

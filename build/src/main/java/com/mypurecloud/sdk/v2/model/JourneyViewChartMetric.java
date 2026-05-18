@@ -85,6 +85,11 @@ public class JourneyViewChartMetric  implements Serializable {
     }
   }
 
+  public JourneyViewChartMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier of the metric within the chart

@@ -35,6 +35,12 @@ public class PublishTopicTestTopicPhraseResults  implements Serializable {
     }
   }
 
+  public PublishTopicTestTopicPhraseResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchedTranscripts = new ArrayList<PublishTopicTestPhraseMatchedTranscript>();
+    }
+  }
+
   
   /**
    **/

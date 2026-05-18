@@ -35,6 +35,12 @@ public class BuSetTimeOffLimitValuesRequest  implements Serializable {
     }
   }
 
+  public BuSetTimeOffLimitValuesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<BuTimeOffLimitRange>();
+    }
+  }
+
   
   /**
    **/

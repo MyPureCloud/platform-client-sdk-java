@@ -33,6 +33,11 @@ public class ConversationEventTopicDispositionSilentCallTimeout  implements Seri
     }
   }
 
+  public ConversationEventTopicDispositionSilentCallTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured Silent Call timeout value.

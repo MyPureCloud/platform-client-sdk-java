@@ -187,6 +187,11 @@ public class CapacityPlanStaffingRequirementResult  implements Serializable {
     }
   }
 
+  public CapacityPlanStaffingRequirementResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The business unit to which the capacity plan belongs

@@ -33,6 +33,12 @@ public class WorkPlanBidListResponse  implements Serializable {
     }
   }
 
+  public WorkPlanBidListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkPlanBid>();
+    }
+  }
+
   
   /**
    **/

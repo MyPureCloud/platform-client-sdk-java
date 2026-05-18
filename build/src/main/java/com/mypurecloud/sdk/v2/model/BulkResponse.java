@@ -36,6 +36,13 @@ public class BulkResponse  implements Serializable {
     }
   }
 
+  public BulkResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<BulkResult>();
+      errorIndexes = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * A list of the results from the bulk operation.

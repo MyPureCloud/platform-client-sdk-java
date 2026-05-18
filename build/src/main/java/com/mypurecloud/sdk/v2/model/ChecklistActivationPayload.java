@@ -181,6 +181,11 @@ public class ChecklistActivationPayload  implements Serializable {
     }
   }
 
+  public ChecklistActivationPayload(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Trigger type that activated this checklist.

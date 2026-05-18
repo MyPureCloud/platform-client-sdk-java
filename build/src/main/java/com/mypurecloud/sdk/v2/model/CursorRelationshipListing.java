@@ -38,6 +38,12 @@ public class CursorRelationshipListing  implements Serializable {
     }
   }
 
+  public CursorRelationshipListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Relationship>();
+    }
+  }
+
   
   /**
    **/

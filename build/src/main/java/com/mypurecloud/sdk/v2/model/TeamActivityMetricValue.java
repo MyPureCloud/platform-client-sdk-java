@@ -85,6 +85,12 @@ public class TeamActivityMetricValue  implements Serializable {
     }
   }
 
+  public TeamActivityMetricValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entityIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Metric

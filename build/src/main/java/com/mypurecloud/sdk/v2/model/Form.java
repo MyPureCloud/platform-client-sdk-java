@@ -41,6 +41,12 @@ public class Form  implements Serializable {
     }
   }
 
+  public Form(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      formPages = new ArrayList<FormPage>();
+    }
+  }
+
   
   /**
    * Description of the form

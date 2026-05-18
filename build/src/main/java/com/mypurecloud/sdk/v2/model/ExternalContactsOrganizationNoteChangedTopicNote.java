@@ -87,6 +87,11 @@ public class ExternalContactsOrganizationNoteChangedTopicNote  implements Serial
     }
   }
 
+  public ExternalContactsOrganizationNoteChangedTopicNote(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

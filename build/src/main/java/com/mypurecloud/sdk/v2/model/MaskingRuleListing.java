@@ -33,6 +33,12 @@ public class MaskingRuleListing  implements Serializable {
     }
   }
 
+  public MaskingRuleListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MaskingRule>();
+    }
+  }
+
   
   /**
    **/

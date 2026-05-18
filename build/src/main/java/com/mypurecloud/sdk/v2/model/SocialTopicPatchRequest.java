@@ -31,6 +31,11 @@ public class SocialTopicPatchRequest  implements Serializable {
     }
   }
 
+  public SocialTopicPatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the social topic.

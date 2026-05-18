@@ -39,6 +39,12 @@ public class BulkEntityErrorContactEnrichRequest  implements Serializable {
     }
   }
 
+  public BulkEntityErrorContactEnrichRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<BulkErrorDetail>();
+    }
+  }
+
   
   /**
    * An error code for the specific error condition.

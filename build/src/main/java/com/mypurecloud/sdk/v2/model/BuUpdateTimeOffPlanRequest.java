@@ -96,6 +96,11 @@ public class BuUpdateTimeOffPlanRequest  implements Serializable {
     }
   }
 
+  public BuUpdateTimeOffPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of this time-off plan

@@ -36,6 +36,13 @@ public class LearningAssignmentBulkRemoveResponse  implements Serializable {
     }
   }
 
+  public LearningAssignmentBulkRemoveResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LearningAssignmentEntity>();
+      disallowedEntities = new ArrayList<DisallowedEntityLearningAssignmentReference>();
+    }
+  }
+
   
   /**
    * The learning assignments that were removed successfully

@@ -25,6 +25,11 @@ public class CarouselCard  implements Serializable {
     }
   }
 
+  public CarouselCard(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

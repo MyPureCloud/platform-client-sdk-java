@@ -156,6 +156,13 @@ public class FlowActivityQuery  implements Serializable {
     }
   }
 
+  public FlowActivityQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<FlowActivityQueryMetric>();
+      groupBy = new ArrayList<GroupByEnum>();
+    }
+  }
+
   
   /**
    * List of requested metrics

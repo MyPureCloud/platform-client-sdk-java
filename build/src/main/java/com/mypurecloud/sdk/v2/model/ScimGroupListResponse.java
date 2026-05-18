@@ -39,6 +39,13 @@ public class ScimGroupListResponse  implements Serializable {
     }
   }
 
+  public ScimGroupListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+      resources = new ArrayList<ScimV2Group>();
+    }
+  }
+
   
   /**
    * The list of supported schemas.

@@ -32,6 +32,11 @@ public class JourneySessionEventsNotificationOutcomeAchievement  implements Seri
     }
   }
 
+  public JourneySessionEventsNotificationOutcomeAchievement(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

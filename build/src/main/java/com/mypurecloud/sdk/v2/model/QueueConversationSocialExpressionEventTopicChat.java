@@ -221,6 +221,11 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicChat(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

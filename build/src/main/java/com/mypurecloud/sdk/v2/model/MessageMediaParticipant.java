@@ -362,6 +362,13 @@ public class MessageMediaParticipant  implements Serializable {
     }
   }
 
+  public MessageMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      messages = new ArrayList<MessageDetails>();
+    }
+  }
+
   
   /**
    * The unique participant ID.

@@ -41,6 +41,11 @@ public class JourneySegmentRequest  implements Serializable {
     }
   }
 
+  public JourneySegmentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether or not the segment is active.

@@ -46,6 +46,12 @@ public class RoutingEstablishedEvent  implements Serializable {
     }
   }
 
+  public RoutingEstablishedEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

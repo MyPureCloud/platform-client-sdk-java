@@ -89,6 +89,12 @@ public class SubjectDivisionGrants  implements Serializable {
     }
   }
 
+  public SubjectDivisionGrants(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      divisions = new ArrayList<Division>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

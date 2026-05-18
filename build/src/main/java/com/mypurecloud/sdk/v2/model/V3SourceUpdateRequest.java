@@ -80,6 +80,11 @@ public class V3SourceUpdateRequest  implements Serializable {
     }
   }
 
+  public V3SourceUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the source.

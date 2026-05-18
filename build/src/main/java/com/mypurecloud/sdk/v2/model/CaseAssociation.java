@@ -94,6 +94,11 @@ public class CaseAssociation  implements Serializable {
     }
   }
 
+  public CaseAssociation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the association.

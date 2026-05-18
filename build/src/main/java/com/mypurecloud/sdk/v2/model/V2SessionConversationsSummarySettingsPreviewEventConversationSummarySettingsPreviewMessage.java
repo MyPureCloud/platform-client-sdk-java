@@ -151,6 +151,13 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationSummar
     }
   }
 
+  public V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      followupActions = new ArrayList<V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction>();
+      extractedEntities = new ArrayList<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity>();
+    }
+  }
+
   
   /**
    **/

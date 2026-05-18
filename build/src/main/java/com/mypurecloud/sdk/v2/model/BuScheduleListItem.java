@@ -41,6 +41,11 @@ public class BuScheduleListItem  implements Serializable {
     }
   }
 
+  public BuScheduleListItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the schedule

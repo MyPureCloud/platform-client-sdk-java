@@ -41,6 +41,12 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
     }
   }
 
+  public AgentActivityChangedTopicAgentActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activeQueueIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

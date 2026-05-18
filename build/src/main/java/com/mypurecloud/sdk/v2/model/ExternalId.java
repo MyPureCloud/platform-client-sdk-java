@@ -31,6 +31,11 @@ public class ExternalId  implements Serializable {
     }
   }
 
+  public ExternalId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The external source of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.

@@ -31,6 +31,11 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalAgentData  implements S
     }
   }
 
+  public WfmIntradayDataUpdateTopicIntradayHistoricalAgentData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

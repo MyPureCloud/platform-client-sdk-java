@@ -29,6 +29,11 @@ public class SegmentForUnassignment  implements Serializable {
     }
   }
 
+  public SegmentForUnassignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the segment to be unassigned.

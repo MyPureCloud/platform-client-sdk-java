@@ -35,6 +35,12 @@ public class DocumentBodyParagraph  implements Serializable {
     }
   }
 
+  public DocumentBodyParagraph(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentContentBlock>();
+    }
+  }
+
   
   /**
    * The list of blocks for the paragraph.

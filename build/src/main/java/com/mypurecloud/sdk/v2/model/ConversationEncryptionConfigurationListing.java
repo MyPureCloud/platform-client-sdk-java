@@ -35,6 +35,12 @@ public class ConversationEncryptionConfigurationListing  implements Serializable
     }
   }
 
+  public ConversationEncryptionConfigurationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ConversationEncryptionConfiguration>();
+    }
+  }
+
   
   /**
    **/

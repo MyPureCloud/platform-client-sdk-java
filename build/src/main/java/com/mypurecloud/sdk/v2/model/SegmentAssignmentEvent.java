@@ -30,6 +30,11 @@ public class SegmentAssignmentEvent  implements Serializable {
     }
   }
 
+  public SegmentAssignmentEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The segment which was assigned.

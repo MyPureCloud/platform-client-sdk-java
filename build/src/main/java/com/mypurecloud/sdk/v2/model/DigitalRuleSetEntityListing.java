@@ -43,6 +43,12 @@ public class DigitalRuleSetEntityListing  implements Serializable, PagedResource
     }
   }
 
+  public DigitalRuleSetEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DigitalRuleSet>();
+    }
+  }
+
   
   /**
    **/

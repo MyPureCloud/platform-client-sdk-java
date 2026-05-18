@@ -43,6 +43,12 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     }
   }
 
+  public FlowOutcomeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FlowOutcome>();
+    }
+  }
+
   
   /**
    **/

@@ -85,6 +85,13 @@ public class ActionAggregateQueryFilter  implements Serializable {
     }
   }
 
+  public ActionAggregateQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<ActionAggregateQueryClause>();
+      predicates = new ArrayList<ActionAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

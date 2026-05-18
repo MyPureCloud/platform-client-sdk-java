@@ -33,6 +33,11 @@ public class TextBotInputOutputData  implements Serializable {
     }
   }
 
+  public TextBotInputOutputData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The input/output variables using the format as appropriate for the variable data type in the flow definition.

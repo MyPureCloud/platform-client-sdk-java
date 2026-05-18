@@ -33,6 +33,11 @@ public class ConversationContentLineItem  implements Serializable {
     }
   }
 
+  public ConversationContentLineItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The display name for the item.

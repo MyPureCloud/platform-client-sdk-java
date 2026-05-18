@@ -38,6 +38,12 @@ public class ContactBulkEditRequest  implements Serializable {
     }
   }
 
+  public ContactBulkEditRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contactIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Contact List Filter ID.

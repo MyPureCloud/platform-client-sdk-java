@@ -32,6 +32,11 @@ public class ChatMediaPolicy  implements Serializable {
     }
   }
 
+  public ChatMediaPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Actions applied when specified conditions are met

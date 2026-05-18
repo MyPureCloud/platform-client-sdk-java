@@ -34,6 +34,11 @@ public class ContactableStatus  implements Serializable {
     }
   }
 
+  public ContactableStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates whether or not the entire contact is contactable for the associated media type.

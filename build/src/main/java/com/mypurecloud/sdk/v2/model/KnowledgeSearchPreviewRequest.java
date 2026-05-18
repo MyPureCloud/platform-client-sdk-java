@@ -40,6 +40,13 @@ public class KnowledgeSearchPreviewRequest  implements Serializable {
     }
   }
 
+  public KnowledgeSearchPreviewRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sources = new ArrayList<V3SourceRef>();
+      conversationTurns = new ArrayList<KnowledgeConversationTurn>();
+    }
+  }
+
   
   /**
    * Query to search content in the knowledge sources.

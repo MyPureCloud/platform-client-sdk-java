@@ -36,6 +36,12 @@ public class WeekScheduleGenerationResult  implements Serializable {
     }
   }
 
+  public WeekScheduleGenerationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentWarnings = new ArrayList<ScheduleGenerationWarning>();
+    }
+  }
+
   
   /**
    * Whether the schedule generation failed

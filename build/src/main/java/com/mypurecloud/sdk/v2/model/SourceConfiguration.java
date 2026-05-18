@@ -31,6 +31,11 @@ public class SourceConfiguration  implements Serializable {
     }
   }
 
+  public SourceConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Identifies the external platform that is the source of the conversation.

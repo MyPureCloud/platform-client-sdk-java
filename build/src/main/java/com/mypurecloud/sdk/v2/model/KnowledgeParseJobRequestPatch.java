@@ -32,6 +32,12 @@ public class KnowledgeParseJobRequestPatch  implements Serializable {
     }
   }
 
+  public KnowledgeParseJobRequestPatch(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      hints = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Hinted titles for the parser.

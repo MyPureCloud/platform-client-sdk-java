@@ -83,6 +83,11 @@ public class ReplaceResponse  implements Serializable {
     }
   }
 
+  public ReplaceResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

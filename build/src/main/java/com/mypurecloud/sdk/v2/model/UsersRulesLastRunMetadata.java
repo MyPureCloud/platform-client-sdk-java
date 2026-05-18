@@ -34,6 +34,11 @@ public class UsersRulesLastRunMetadata  implements Serializable {
     }
   }
 
+  public UsersRulesLastRunMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the run

@@ -36,6 +36,12 @@ public class SummaryAggregateDataContainer  implements Serializable {
     }
   }
 
+  public SummaryAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

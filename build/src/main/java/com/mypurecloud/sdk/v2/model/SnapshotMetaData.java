@@ -31,6 +31,11 @@ public class SnapshotMetaData  implements Serializable {
     }
   }
 
+  public SnapshotMetaData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * URL to fetch the snapshot meta data information

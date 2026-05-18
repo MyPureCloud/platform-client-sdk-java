@@ -39,6 +39,13 @@ public class ConversationMessageEventTopicConversationRoutingData  implements Se
     }
   }
 
+  public ConversationMessageEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<ConversationMessageEventTopicUriReference>();
+      scoredAgents = new ArrayList<ConversationMessageEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

@@ -35,6 +35,12 @@ public class AiScoringSettings  implements Serializable {
     }
   }
 
+  public AiScoringSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questionGroupSettings = new ArrayList<QuestionGroupSettings>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

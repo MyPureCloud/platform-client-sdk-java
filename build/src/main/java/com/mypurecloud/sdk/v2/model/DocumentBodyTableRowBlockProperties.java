@@ -186,6 +186,11 @@ public class DocumentBodyTableRowBlockProperties  implements Serializable {
     }
   }
 
+  public DocumentBodyTableRowBlockProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the table row.

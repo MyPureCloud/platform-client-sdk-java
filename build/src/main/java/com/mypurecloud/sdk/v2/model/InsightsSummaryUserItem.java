@@ -38,6 +38,12 @@ public class InsightsSummaryUserItem  implements Serializable {
     }
   }
 
+  public InsightsSummaryUserItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metricData = new ArrayList<InsightsSummaryMetricItem>();
+    }
+  }
+
   
   /**
    * Queried user

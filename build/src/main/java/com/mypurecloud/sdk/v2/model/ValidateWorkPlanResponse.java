@@ -33,6 +33,11 @@ public class ValidateWorkPlanResponse  implements Serializable {
     }
   }
 
+  public ValidateWorkPlanResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The work plan reference associated with this response

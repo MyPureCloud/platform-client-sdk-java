@@ -38,6 +38,12 @@ public class SurveyQuestionGroupScore  implements Serializable {
     }
   }
 
+  public SurveyQuestionGroupScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questionScores = new ArrayList<SurveyQuestionScore>();
+    }
+  }
+
   
   /**
    **/

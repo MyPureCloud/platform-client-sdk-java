@@ -35,6 +35,12 @@ public class JourneyExternalEventsSchemaListing  implements Serializable {
     }
   }
 
+  public JourneyExternalEventsSchemaListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<JourneyExternalEventsSchema>();
+    }
+  }
+
   
   /**
    **/

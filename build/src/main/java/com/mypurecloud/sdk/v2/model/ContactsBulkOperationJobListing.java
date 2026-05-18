@@ -35,6 +35,12 @@ public class ContactsBulkOperationJobListing  implements Serializable {
     }
   }
 
+  public ContactsBulkOperationJobListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContactsBulkOperationJob>();
+    }
+  }
+
   
   /**
    **/

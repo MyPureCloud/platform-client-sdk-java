@@ -46,6 +46,11 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     }
   }
 
+  public ContentManagementWorkspaceDocumentsTopicDocumentDataV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

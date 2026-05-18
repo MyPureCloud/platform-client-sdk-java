@@ -33,6 +33,12 @@ public class Context  implements Serializable {
     }
   }
 
+  public Context(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      patterns = new ArrayList<ContextPattern>();
+    }
+  }
+
   
   /**
    * A list of one or more patterns to match.

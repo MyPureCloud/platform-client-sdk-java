@@ -42,6 +42,15 @@ public class CreateAgentTimeOffRequest  implements Serializable {
     }
   }
 
+  public CreateAgentTimeOffRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      fullDayManagementUnitDates = new ArrayList<String>();
+      partialDayStartDateTimes = new ArrayList<Date>();
+      durationMinutes = new ArrayList<Integer>();
+      payableMinutes = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category

@@ -30,6 +30,11 @@ public class SipDownloadResponse  implements Serializable {
     }
   }
 
+  public SipDownloadResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * unique id of the downloaded file

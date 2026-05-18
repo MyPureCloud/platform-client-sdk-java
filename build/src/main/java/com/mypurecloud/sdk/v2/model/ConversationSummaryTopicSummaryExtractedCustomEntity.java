@@ -30,6 +30,11 @@ public class ConversationSummaryTopicSummaryExtractedCustomEntity  implements Se
     }
   }
 
+  public ConversationSummaryTopicSummaryExtractedCustomEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

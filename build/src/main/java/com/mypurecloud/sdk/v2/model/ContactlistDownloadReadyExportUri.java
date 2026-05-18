@@ -34,6 +34,11 @@ public class ContactlistDownloadReadyExportUri  implements Serializable {
     }
   }
 
+  public ContactlistDownloadReadyExportUri(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

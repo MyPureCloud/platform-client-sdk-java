@@ -58,6 +58,11 @@ public class AppEventResponse  implements Serializable {
     }
   }
 
+  public AppEventResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * System-generated UUID for the event.

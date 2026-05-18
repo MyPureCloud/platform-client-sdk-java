@@ -163,6 +163,11 @@ public class Limit  implements Serializable {
     }
   }
 
+  public Limit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

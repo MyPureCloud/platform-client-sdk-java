@@ -37,6 +37,12 @@ public class ConversationKnowledgeSearchSuggestionsTopicSuggestedIntent  impleme
     }
   }
 
+  public ConversationKnowledgeSearchSuggestionsTopicSuggestedIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      detectedSlots = new ArrayList<ConversationKnowledgeSearchSuggestionsTopicSuggestedIntentSlot>();
+    }
+  }
+
   
   /**
    **/

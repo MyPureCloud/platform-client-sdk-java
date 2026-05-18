@@ -34,6 +34,12 @@ public class KnowledgeDocumentBulkUpdateEntity  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentBulkUpdateEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      labelIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

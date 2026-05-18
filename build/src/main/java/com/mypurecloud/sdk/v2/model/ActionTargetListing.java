@@ -43,6 +43,12 @@ public class ActionTargetListing  implements Serializable, PagedResource<ActionT
     }
   }
 
+  public ActionTargetListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ActionTarget>();
+    }
+  }
+
   
   /**
    **/

@@ -40,6 +40,12 @@ public class OpenInboundNormalizedMessage  implements Serializable {
     }
   }
 
+  public OpenInboundNormalizedMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      content = new ArrayList<OpenInboundMessageContent>();
+    }
+  }
+
   
   /**
    * Channel-specific information that describes the message and the message channel/provider.

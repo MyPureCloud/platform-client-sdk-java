@@ -30,6 +30,11 @@ public class QueueConversationVideoEventTopicWorkflow  implements Serializable {
     }
   }
 
+  public QueueConversationVideoEventTopicWorkflow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the workflow

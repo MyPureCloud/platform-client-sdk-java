@@ -31,6 +31,11 @@ public class IdleEventTrigger  implements Serializable {
     }
   }
 
+  public IdleEventTrigger(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of event triggered after period of inactivity.

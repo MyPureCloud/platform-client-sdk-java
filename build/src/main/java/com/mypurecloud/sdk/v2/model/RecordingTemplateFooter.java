@@ -29,6 +29,11 @@ public class RecordingTemplateFooter  implements Serializable {
     }
   }
 
+  public RecordingTemplateFooter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Footer text.

@@ -43,6 +43,12 @@ public class GetContestsEssentialsListing  implements Serializable, PagedResourc
     }
   }
 
+  public GetContestsEssentialsListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContestsEssentials>();
+    }
+  }
+
   
   /**
    **/

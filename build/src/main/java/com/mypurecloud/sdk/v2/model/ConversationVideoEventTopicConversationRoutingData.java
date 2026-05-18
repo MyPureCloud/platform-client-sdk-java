@@ -39,6 +39,13 @@ public class ConversationVideoEventTopicConversationRoutingData  implements Seri
     }
   }
 
+  public ConversationVideoEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<ConversationVideoEventTopicUriReference>();
+      scoredAgents = new ArrayList<ConversationVideoEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

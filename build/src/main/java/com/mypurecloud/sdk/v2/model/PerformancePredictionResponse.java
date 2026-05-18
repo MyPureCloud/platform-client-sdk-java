@@ -86,6 +86,11 @@ public class PerformancePredictionResponse  implements Serializable {
     }
   }
 
+  public PerformancePredictionResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

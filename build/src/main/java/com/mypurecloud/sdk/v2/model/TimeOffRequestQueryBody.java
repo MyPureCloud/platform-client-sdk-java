@@ -144,6 +144,15 @@ public class TimeOffRequestQueryBody  implements Serializable {
     }
   }
 
+  public TimeOffRequestQueryBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<String>();
+      userIds = new ArrayList<String>();
+      statuses = new ArrayList<StatusesEnum>();
+      substatuses = new ArrayList<SubstatusesEnum>();
+    }
+  }
+
   
   /**
    * The set of ids to filter time off requests

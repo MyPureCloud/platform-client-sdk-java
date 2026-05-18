@@ -34,6 +34,11 @@ public class CustomerIntentAssignmentResponse  implements Serializable {
     }
   }
 
+  public CustomerIntentAssignmentResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Customer intent assigned")
   @JsonProperty("customerIntent")

@@ -92,6 +92,11 @@ public class EdgeLogsJobResponse  implements Serializable {
     }
   }
 
+  public EdgeLogsJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The created job id.

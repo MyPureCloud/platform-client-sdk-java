@@ -78,6 +78,11 @@ public class PatchAssociatedValueField  implements Serializable {
     }
   }
 
+  public PatchAssociatedValueField(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The data type of the value field.

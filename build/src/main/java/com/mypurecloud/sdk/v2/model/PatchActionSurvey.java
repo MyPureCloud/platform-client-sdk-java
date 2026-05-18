@@ -33,6 +33,12 @@ public class PatchActionSurvey  implements Serializable {
     }
   }
 
+  public PatchActionSurvey(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questions = new ArrayList<PatchSurveyQuestion>();
+    }
+  }
+
   
   /**
    * Questions shown to the user.

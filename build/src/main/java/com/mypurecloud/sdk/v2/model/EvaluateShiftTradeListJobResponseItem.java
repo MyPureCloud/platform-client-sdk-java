@@ -33,6 +33,12 @@ public class EvaluateShiftTradeListJobResponseItem  implements Serializable {
     }
   }
 
+  public EvaluateShiftTradeListJobResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EvaluatedShiftTradeResponseItem>();
+    }
+  }
+
   
   /**
    **/

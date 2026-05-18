@@ -31,6 +31,11 @@ public class UserChatSettings  implements Serializable {
     }
   }
 
+  public UserChatSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether or not to enable muting notifications

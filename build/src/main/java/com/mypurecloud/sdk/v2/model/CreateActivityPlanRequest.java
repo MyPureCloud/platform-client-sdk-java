@@ -198,6 +198,13 @@ public class CreateActivityPlanRequest  implements Serializable {
     }
   }
 
+  public CreateActivityPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnitIds = new ArrayList<String>();
+      fixedAvailability = new ArrayList<FixedAvailability>();
+    }
+  }
+
   
   /**
    * The name of the activity plan

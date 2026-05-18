@@ -31,6 +31,11 @@ public class QueueConversationCallbackEventTopicScoredAgent  implements Serializ
     }
   }
 
+  public QueueConversationCallbackEventTopicScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

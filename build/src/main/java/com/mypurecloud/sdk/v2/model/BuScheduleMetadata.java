@@ -46,6 +46,12 @@ public class BuScheduleMetadata  implements Serializable {
     }
   }
 
+  public BuScheduleMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnits = new ArrayList<BuManagementUnitScheduleSummary>();
+    }
+  }
+
   
   /**
    * The ID of the schedule

@@ -35,6 +35,11 @@ public class ExternalContactsOrganizationChangedTopicPhoneNumber  implements Ser
     }
   }
 
+  public ExternalContactsOrganizationChangedTopicPhoneNumber(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

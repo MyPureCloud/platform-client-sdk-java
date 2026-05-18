@@ -31,6 +31,11 @@ public class ScimServiceProviderConfigFilterFeature  implements Serializable {
     }
   }
 
+  public ScimServiceProviderConfigFilterFeature(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Indicates whether configuration options are supported.")
   @JsonProperty("supported")

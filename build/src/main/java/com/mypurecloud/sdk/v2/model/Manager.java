@@ -31,6 +31,11 @@ public class Manager  implements Serializable {
     }
   }
 
+  public Manager(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the manager.

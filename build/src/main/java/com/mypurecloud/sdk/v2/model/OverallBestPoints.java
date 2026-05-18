@@ -37,6 +37,12 @@ public class OverallBestPoints  implements Serializable {
     }
   }
 
+  public OverallBestPoints(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      bestPoints = new ArrayList<OverallBestPointsItem>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The requested division")
   @JsonProperty("division")

@@ -39,6 +39,12 @@ public class Wrapup  implements Serializable {
     }
   }
 
+  public Wrapup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user configured wrap up code id.

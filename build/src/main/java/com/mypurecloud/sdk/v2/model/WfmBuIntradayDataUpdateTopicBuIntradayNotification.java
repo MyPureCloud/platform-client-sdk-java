@@ -31,6 +31,11 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayNotification  implements Seri
     }
   }
 
+  public WfmBuIntradayDataUpdateTopicBuIntradayNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

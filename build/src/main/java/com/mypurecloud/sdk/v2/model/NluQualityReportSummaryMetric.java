@@ -30,6 +30,11 @@ public class NluQualityReportSummaryMetric  implements Serializable {
     }
   }
 
+  public NluQualityReportSummaryMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the metric. e.g. recall, f1_score

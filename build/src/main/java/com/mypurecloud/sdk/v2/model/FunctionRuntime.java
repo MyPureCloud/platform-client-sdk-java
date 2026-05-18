@@ -83,6 +83,11 @@ public class FunctionRuntime  implements Serializable {
     }
   }
 
+  public FunctionRuntime(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Name of the function runtime.")
   @JsonProperty("name")

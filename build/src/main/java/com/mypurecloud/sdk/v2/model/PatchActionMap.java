@@ -65,6 +65,17 @@ public class PatchActionMap  implements Serializable {
     }
   }
 
+  public PatchActionMap(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      triggerWithSegments = new ArrayList<String>();
+      triggerWithEventConditions = new ArrayList<EventCondition>();
+      triggerWithOutcomeProbabilityConditions = new ArrayList<OutcomeProbabilityCondition>();
+      triggerWithOutcomePercentileConditions = new ArrayList<OutcomePercentileCondition>();
+      triggerWithOutcomeQuantileConditions = new ArrayList<OutcomeQuantileCondition>();
+      pageUrlConditions = new ArrayList<UrlCondition>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

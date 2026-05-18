@@ -102,6 +102,11 @@ public class InstagramIntegration  implements Serializable {
     }
   }
 
+  public InstagramIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "A unique Integration ID.")
   @JsonProperty("id")

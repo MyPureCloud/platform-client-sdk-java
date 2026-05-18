@@ -32,6 +32,11 @@ public class LearningAssessmentScoringRequest  implements Serializable {
     }
   }
 
+  public LearningAssessmentScoringRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The assessment form to score against

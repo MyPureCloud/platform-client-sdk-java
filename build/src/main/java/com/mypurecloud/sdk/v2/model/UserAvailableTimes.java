@@ -35,6 +35,12 @@ public class UserAvailableTimes  implements Serializable {
     }
   }
 
+  public UserAvailableTimes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      availableTimes = new ArrayList<AvailableTime>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "User reference")
   @JsonProperty("user")

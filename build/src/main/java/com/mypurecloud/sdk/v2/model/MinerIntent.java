@@ -39,6 +39,12 @@ public class MinerIntent  implements Serializable {
     }
   }
 
+  public MinerIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      utterances = new ArrayList<Utterance>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

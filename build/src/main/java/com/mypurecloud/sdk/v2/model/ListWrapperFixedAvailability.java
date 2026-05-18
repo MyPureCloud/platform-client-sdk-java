@@ -33,6 +33,12 @@ public class ListWrapperFixedAvailability  implements Serializable {
     }
   }
 
+  public ListWrapperFixedAvailability(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<FixedAvailability>();
+    }
+  }
+
   
   /**
    **/

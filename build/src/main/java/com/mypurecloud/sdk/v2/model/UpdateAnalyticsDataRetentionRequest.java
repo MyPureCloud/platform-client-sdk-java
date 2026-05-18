@@ -29,6 +29,11 @@ public class UpdateAnalyticsDataRetentionRequest  implements Serializable {
     }
   }
 
+  public UpdateAnalyticsDataRetentionRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Analytics data retention period in days to set for the organization.

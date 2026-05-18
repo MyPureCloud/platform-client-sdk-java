@@ -35,6 +35,11 @@ public class ProgressConsultTransferEvent  implements Serializable {
     }
   }
 
+  public ProgressConsultTransferEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

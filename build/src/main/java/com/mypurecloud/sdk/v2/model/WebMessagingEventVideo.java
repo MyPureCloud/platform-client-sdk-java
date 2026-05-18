@@ -82,6 +82,11 @@ public class WebMessagingEventVideo  implements Serializable {
     }
   }
 
+  public WebMessagingEventVideo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of Video event.

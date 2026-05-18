@@ -33,6 +33,12 @@ public class SegmentAssignmentListing  implements Serializable {
     }
   }
 
+  public SegmentAssignmentListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SegmentAssignment>();
+    }
+  }
+
   
   /**
    **/

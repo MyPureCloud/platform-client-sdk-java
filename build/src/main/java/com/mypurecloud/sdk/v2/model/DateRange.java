@@ -30,6 +30,11 @@ public class DateRange  implements Serializable {
     }
   }
 
+  public DateRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The inclusive start of a date range in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone.

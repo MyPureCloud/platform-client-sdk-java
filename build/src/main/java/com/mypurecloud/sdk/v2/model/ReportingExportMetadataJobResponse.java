@@ -226,6 +226,15 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     }
   }
 
+  public ReportingExportMetadataJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requiredFilters = new ArrayList<String>();
+      supportedFilters = new ArrayList<String>();
+      requiredColumnIds = new ArrayList<String>();
+      availableColumnIds = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

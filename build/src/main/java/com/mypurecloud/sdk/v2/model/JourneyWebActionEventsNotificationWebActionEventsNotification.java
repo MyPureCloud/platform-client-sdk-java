@@ -91,6 +91,11 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     }
   }
 
+  public JourneyWebActionEventsNotificationWebActionEventsNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

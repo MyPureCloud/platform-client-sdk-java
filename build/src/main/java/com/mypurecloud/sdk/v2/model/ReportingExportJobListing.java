@@ -43,6 +43,12 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     }
   }
 
+  public ReportingExportJobListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ReportingExportJobResponse>();
+    }
+  }
+
   
   /**
    **/

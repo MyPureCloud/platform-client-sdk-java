@@ -147,6 +147,13 @@ public class EvaluationQuestion  implements Serializable {
     }
   }
 
+  public EvaluationQuestion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      answerOptions = new ArrayList<AnswerOption>();
+      multipleSelectOptionQuestions = new ArrayList<EvaluationQuestion>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class ComplexVariableInfo  implements Serializable {
     }
   }
 
+  public ComplexVariableInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The variable type ID

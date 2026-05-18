@@ -79,6 +79,11 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     }
   }
 
+  public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

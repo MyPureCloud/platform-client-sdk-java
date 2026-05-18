@@ -82,6 +82,12 @@ public class WfmActivityPlanRunJobCompleteTopicActivityPlanJobException  impleme
     }
   }
 
+  public WfmActivityPlanRunJobCompleteTopicActivityPlanJobException(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      occurrences = new ArrayList<WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference>();
+    }
+  }
+
   
   /**
    **/

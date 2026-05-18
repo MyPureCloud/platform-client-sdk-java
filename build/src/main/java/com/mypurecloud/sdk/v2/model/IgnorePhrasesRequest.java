@@ -33,6 +33,12 @@ public class IgnorePhrasesRequest  implements Serializable {
     }
   }
 
+  public IgnorePhrasesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phrases = new ArrayList<IgnorePhrase>();
+    }
+  }
+
   
   /**
    * List of phrases to be ignored

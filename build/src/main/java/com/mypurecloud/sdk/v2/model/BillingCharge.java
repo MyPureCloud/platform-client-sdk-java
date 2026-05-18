@@ -44,6 +44,12 @@ public class BillingCharge  implements Serializable {
     }
   }
 
+  public BillingCharge(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      organizations = new ArrayList<NamedEntity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

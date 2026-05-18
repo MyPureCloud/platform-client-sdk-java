@@ -101,6 +101,13 @@ public class UnifiedCommunicationsIntegration  implements Serializable {
     }
   }
 
+  public UnifiedCommunicationsIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userPermissions = new ArrayList<String>();
+      oauthScopes = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -132,6 +132,11 @@ public class AgentCopilotAggregationSort  implements Serializable {
     }
   }
 
+  public AgentCopilotAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

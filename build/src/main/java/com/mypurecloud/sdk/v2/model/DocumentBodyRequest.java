@@ -33,6 +33,12 @@ public class DocumentBodyRequest  implements Serializable {
     }
   }
 
+  public DocumentBodyRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentBodyBlock>();
+    }
+  }
+
   
   /**
    * The list of building blocks for the document body.

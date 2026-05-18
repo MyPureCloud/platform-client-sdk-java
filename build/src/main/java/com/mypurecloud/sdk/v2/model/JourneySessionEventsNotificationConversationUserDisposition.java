@@ -32,6 +32,11 @@ public class JourneySessionEventsNotificationConversationUserDisposition  implem
     }
   }
 
+  public JourneySessionEventsNotificationConversationUserDisposition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

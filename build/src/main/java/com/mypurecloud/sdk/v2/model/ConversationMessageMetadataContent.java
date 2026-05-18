@@ -156,6 +156,11 @@ public class ConversationMessageMetadataContent  implements Serializable {
     }
   }
 
+  public ConversationMessageMetadataContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element.

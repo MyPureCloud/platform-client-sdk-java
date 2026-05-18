@@ -142,6 +142,11 @@ public class ConversationVideoEventTopicLimit  implements Serializable {
     }
   }
 
+  public ConversationVideoEventTopicLimit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

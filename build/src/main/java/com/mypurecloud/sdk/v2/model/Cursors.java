@@ -30,6 +30,11 @@ public class Cursors  implements Serializable {
     }
   }
 
+  public Cursors(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

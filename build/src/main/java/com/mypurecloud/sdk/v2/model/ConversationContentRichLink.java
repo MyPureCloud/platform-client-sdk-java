@@ -35,6 +35,11 @@ public class ConversationContentRichLink  implements Serializable {
     }
   }
 
+  public ConversationContentRichLink(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Header for the Rich Link.

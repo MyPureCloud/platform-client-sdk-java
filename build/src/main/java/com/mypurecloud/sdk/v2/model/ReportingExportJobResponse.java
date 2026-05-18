@@ -560,6 +560,14 @@ public class ReportingExportJobResponse  implements Serializable {
     }
   }
 
+  public ReportingExportJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      selectedColumns = new ArrayList<SelectedColumns>();
+      recipientEmails = new ArrayList<String>();
+      chartColumns = new ArrayList<ChartColumn>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

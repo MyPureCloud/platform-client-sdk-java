@@ -30,6 +30,11 @@ public class AlternativeShiftAsyncResponse  implements Serializable {
     }
   }
 
+  public AlternativeShiftAsyncResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The job related to the async request

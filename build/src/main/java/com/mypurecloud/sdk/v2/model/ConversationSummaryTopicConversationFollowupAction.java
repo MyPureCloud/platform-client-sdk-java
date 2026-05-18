@@ -32,6 +32,11 @@ public class ConversationSummaryTopicConversationFollowupAction  implements Seri
     }
   }
 
+  public ConversationSummaryTopicConversationFollowupAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

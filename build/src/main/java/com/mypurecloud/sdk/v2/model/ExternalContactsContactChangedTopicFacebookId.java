@@ -34,6 +34,12 @@ public class ExternalContactsContactChangedTopicFacebookId  implements Serializa
     }
   }
 
+  public ExternalContactsContactChangedTopicFacebookId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<ExternalContactsContactChangedTopicFacebookScopedId>();
+    }
+  }
+
   
   /**
    **/

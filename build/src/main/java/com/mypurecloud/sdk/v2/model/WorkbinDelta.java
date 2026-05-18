@@ -34,6 +34,11 @@ public class WorkbinDelta  implements Serializable {
     }
   }
 
+  public WorkbinDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

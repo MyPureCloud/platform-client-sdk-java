@@ -43,6 +43,12 @@ public class SummarySettingEntityListing  implements Serializable, PagedResource
     }
   }
 
+  public SummarySettingEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SummarySetting>();
+    }
+  }
+
   
   /**
    **/

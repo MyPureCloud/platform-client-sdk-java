@@ -31,6 +31,11 @@ public class ArchitectPromptNotificationHomeOrganization  implements Serializabl
     }
   }
 
+  public ArchitectPromptNotificationHomeOrganization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

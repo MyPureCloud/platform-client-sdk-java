@@ -83,6 +83,12 @@ public class WebChatRoutingTarget  implements Serializable {
     }
   }
 
+  public WebChatRoutingTarget(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The target type of the routing target, such as 'QUEUE'.

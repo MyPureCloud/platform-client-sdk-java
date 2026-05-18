@@ -98,6 +98,13 @@ public class OutgoingMessageRequest  implements Serializable {
     }
   }
 
+  public OutgoingMessageRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      replyMessages = new ArrayList<ReplyMessage>();
+      entities = new ArrayList<BotEntityValue>();
+    }
+  }
+
   
   /**
    * The unique id of the bot.

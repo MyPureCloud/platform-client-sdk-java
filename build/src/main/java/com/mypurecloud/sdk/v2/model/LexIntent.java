@@ -36,6 +36,11 @@ public class LexIntent  implements Serializable {
     }
   }
 
+  public LexIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The intent name

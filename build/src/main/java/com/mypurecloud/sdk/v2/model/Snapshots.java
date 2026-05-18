@@ -30,6 +30,11 @@ public class Snapshots  implements Serializable {
     }
   }
 
+  public Snapshots(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The snapshot Id

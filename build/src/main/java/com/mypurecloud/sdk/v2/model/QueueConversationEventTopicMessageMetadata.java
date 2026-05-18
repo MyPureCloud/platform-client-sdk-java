@@ -38,6 +38,13 @@ public class QueueConversationEventTopicMessageMetadata  implements Serializable
     }
   }
 
+  public QueueConversationEventTopicMessageMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<QueueConversationEventTopicMessageMetadataEvent>();
+      content = new ArrayList<QueueConversationEventTopicMessageMetadataContent>();
+    }
+  }
+
   
   /**
    * Message type.

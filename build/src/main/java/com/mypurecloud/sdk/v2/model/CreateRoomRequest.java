@@ -34,6 +34,12 @@ public class CreateRoomRequest  implements Serializable {
     }
   }
 
+  public CreateRoomRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Room's description

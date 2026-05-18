@@ -33,6 +33,11 @@ public class EdgeMetricsProcessor  implements Serializable {
     }
   }
 
+  public EdgeMetricsProcessor(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Percent time processor was active.

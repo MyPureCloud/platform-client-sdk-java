@@ -312,6 +312,11 @@ public class CommonRulePredicate  implements Serializable {
     }
   }
 
+  public CommonRulePredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of metric being evaluated.

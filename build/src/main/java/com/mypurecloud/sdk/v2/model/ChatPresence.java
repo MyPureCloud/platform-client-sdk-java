@@ -93,6 +93,11 @@ public class ChatPresence  implements Serializable {
     }
   }
 
+  public ChatPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

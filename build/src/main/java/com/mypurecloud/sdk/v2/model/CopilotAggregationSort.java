@@ -130,6 +130,11 @@ public class CopilotAggregationSort  implements Serializable {
     }
   }
 
+  public CopilotAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

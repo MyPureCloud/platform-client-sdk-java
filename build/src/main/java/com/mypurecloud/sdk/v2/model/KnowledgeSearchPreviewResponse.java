@@ -33,6 +33,11 @@ public class KnowledgeSearchPreviewResponse  implements Serializable {
     }
   }
 
+  public KnowledgeSearchPreviewResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Query to search content in the knowledge base.

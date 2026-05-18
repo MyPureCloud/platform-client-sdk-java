@@ -30,6 +30,11 @@ public class IdentityResolutionExternalSource  implements Serializable {
     }
   }
 
+  public IdentityResolutionExternalSource(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

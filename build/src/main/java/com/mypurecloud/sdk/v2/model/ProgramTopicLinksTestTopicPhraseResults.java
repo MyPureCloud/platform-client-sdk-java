@@ -35,6 +35,12 @@ public class ProgramTopicLinksTestTopicPhraseResults  implements Serializable {
     }
   }
 
+  public ProgramTopicLinksTestTopicPhraseResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchedTranscripts = new ArrayList<ProgramTopicLinksTestPhraseMatchedTranscript>();
+    }
+  }
+
   
   /**
    **/

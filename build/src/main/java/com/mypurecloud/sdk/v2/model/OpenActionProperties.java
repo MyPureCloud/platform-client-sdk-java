@@ -33,6 +33,11 @@ public class OpenActionProperties  implements Serializable {
     }
   }
 
+  public OpenActionProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The specific type of the open action.

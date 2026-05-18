@@ -82,6 +82,12 @@ public class RateLimitAggregateQueryClause  implements Serializable {
     }
   }
 
+  public RateLimitAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<RateLimitAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

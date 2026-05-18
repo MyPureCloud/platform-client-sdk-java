@@ -34,6 +34,11 @@ public class UploadUrlResponse  implements Serializable {
     }
   }
 
+  public UploadUrlResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Presigned URL to PUT the file to")
   @JsonProperty("url")

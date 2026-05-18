@@ -82,6 +82,12 @@ public class PresenceDetailQueryClause  implements Serializable {
     }
   }
 
+  public PresenceDetailQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<PresenceDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

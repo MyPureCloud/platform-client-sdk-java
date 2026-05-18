@@ -33,6 +33,11 @@ public class SupportedContentReference  implements Serializable {
     }
   }
 
+  public SupportedContentReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The SupportedContent unique identifier associated with this integration or phone number

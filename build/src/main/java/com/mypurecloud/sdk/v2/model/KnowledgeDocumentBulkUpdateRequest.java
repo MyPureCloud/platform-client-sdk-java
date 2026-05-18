@@ -33,6 +33,12 @@ public class KnowledgeDocumentBulkUpdateRequest  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentBulkUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<KnowledgeDocumentBulkUpdateEntity>();
+    }
+  }
+
   
   /**
    * List of unique identifiers referencing documents that are to be updated

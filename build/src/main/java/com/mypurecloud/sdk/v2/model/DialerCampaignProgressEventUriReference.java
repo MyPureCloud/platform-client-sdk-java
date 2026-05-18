@@ -31,6 +31,11 @@ public class DialerCampaignProgressEventUriReference  implements Serializable {
     }
   }
 
+  public DialerCampaignProgressEventUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

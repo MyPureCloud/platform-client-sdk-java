@@ -43,6 +43,12 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     }
   }
 
+  public ActionTemplateListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ActionTemplate>();
+    }
+  }
+
   
   /**
    **/

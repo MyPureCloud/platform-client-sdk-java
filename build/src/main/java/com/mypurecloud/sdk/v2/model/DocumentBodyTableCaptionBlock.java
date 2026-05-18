@@ -33,6 +33,12 @@ public class DocumentBodyTableCaptionBlock  implements Serializable {
     }
   }
 
+  public DocumentBodyTableCaptionBlock(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentBodyTableCaptionItem>();
+    }
+  }
+
   
   /**
    * The list of building blocks for the caption property.

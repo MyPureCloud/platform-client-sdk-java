@@ -151,6 +151,17 @@ public class ConversationQuery  implements Serializable {
     }
   }
 
+  public ConversationQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationFilters = new ArrayList<ConversationDetailQueryFilter>();
+      segmentFilters = new ArrayList<SegmentDetailQueryFilter>();
+      evaluationFilters = new ArrayList<EvaluationDetailQueryFilter>();
+      surveyFilters = new ArrayList<SurveyDetailQueryFilter>();
+      resolutionFilters = new ArrayList<ResolutionDetailQueryFilter>();
+      aggregations = new ArrayList<AnalyticsQueryAggregation>();
+    }
+  }
+
   
   /**
    * Filters that target conversation-level data

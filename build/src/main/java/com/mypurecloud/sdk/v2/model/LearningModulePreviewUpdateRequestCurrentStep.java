@@ -33,6 +33,11 @@ public class LearningModulePreviewUpdateRequestCurrentStep  implements Serializa
     }
   }
 
+  public LearningModulePreviewUpdateRequestCurrentStep(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of this step

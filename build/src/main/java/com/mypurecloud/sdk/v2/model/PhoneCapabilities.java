@@ -90,6 +90,12 @@ public class PhoneCapabilities  implements Serializable {
     }
   }
 
+  public PhoneCapabilities(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaCodecs = new ArrayList<MediaCodecsEnum>();
+    }
+  }
+
   
   /**
    **/

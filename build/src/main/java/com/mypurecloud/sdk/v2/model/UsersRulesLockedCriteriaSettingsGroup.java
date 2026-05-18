@@ -138,6 +138,12 @@ public class UsersRulesLockedCriteriaSettingsGroup  implements Serializable {
     }
   }
 
+  public UsersRulesLockedCriteriaSettingsGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      operators = new ArrayList<OperatorsEnum>();
+    }
+  }
+
   
   /**
    * The allowed operators for this criteria

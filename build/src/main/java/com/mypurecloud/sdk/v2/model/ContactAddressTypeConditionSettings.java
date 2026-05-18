@@ -80,6 +80,11 @@ public class ContactAddressTypeConditionSettings  implements Serializable {
     }
   }
 
+  public ContactAddressTypeConditionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The operator to use when comparing the address types.

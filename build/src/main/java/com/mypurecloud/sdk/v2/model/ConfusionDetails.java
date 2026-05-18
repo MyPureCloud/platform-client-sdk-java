@@ -33,6 +33,12 @@ public class ConfusionDetails  implements Serializable {
     }
   }
 
+  public ConfusionDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<ConfusionIntentDetails>();
+    }
+  }
+
   
   /**
    * Confusion details between this utterance and other intents.

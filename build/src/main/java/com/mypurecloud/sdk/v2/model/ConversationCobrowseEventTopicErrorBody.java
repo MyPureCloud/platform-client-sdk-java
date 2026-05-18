@@ -47,6 +47,13 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     }
   }
 
+  public ConversationCobrowseEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<ConversationCobrowseEventTopicDetail>();
+      errors = new ArrayList<ConversationCobrowseEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

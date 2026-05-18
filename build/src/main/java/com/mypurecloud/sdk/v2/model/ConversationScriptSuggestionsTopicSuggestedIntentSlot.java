@@ -33,6 +33,11 @@ public class ConversationScriptSuggestionsTopicSuggestedIntentSlot  implements S
     }
   }
 
+  public ConversationScriptSuggestionsTopicSuggestedIntentSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

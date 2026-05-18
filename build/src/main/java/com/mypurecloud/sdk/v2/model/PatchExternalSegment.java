@@ -29,6 +29,11 @@ public class PatchExternalSegment  implements Serializable {
     }
   }
 
+  public PatchExternalSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name for the external segment in the system where it originates from.

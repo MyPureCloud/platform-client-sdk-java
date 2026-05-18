@@ -42,6 +42,13 @@ public class SuggestionKnowledgeSearch  implements Serializable {
     }
   }
 
+  public SuggestionKnowledgeSearch(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      snippets = new ArrayList<String>();
+      variations = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The article title.")
   @JsonProperty("title")

@@ -43,6 +43,12 @@ public class UserProfileEntityListing  implements Serializable, PagedResource<Us
     }
   }
 
+  public UserProfileEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserProfile>();
+    }
+  }
+
   
   /**
    **/

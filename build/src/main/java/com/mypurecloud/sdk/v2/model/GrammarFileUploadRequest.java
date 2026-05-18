@@ -77,6 +77,11 @@ public class GrammarFileUploadRequest  implements Serializable {
     }
   }
 
+  public GrammarFileUploadRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

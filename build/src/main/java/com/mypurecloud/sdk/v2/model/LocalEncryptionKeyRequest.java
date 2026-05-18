@@ -31,6 +31,11 @@ public class LocalEncryptionKeyRequest  implements Serializable {
     }
   }
 
+  public LocalEncryptionKeyRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The local configuration id that contains metadata on private local service

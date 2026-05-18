@@ -142,6 +142,14 @@ public class WorkitemQueryPostRequest  implements Serializable {
     }
   }
 
+  public WorkitemQueryPostRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      filters = new ArrayList<WorkitemFilter>();
+      attributes = new ArrayList<String>();
+      expands = new ArrayList<ExpandsEnum>();
+    }
+  }
+
   
   /**
    * Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.

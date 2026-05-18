@@ -108,6 +108,12 @@ public class WorkPlanShift  implements Serializable {
     }
   }
 
+  public WorkPlanShift(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activities = new ArrayList<WorkPlanActivity>();
+    }
+  }
+
   
   /**
    * Name of the shift

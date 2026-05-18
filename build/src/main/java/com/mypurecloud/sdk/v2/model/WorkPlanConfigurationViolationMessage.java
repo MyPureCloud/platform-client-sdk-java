@@ -168,6 +168,12 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     }
   }
 
+  public WorkPlanConfigurationViolationMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      arguments = new ArrayList<WorkPlanValidationMessageArgument>();
+    }
+  }
+
   
   /**
    * Type of configuration violation message for this work plan

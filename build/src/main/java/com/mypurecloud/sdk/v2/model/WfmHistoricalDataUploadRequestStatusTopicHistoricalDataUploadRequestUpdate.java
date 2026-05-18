@@ -141,6 +141,11 @@ public class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadReques
     }
   }
 
+  public WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

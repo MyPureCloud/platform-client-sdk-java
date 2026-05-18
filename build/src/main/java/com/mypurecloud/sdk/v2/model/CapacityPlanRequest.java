@@ -41,6 +41,12 @@ public class CapacityPlanRequest  implements Serializable {
     }
   }
 
+  public CapacityPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staffingGroupAllocations = new ArrayList<CreateStaffingGroupAllocation>();
+    }
+  }
+
   
   /**
    * The name of the capacity plan

@@ -38,6 +38,11 @@ public class ExecutionDataGlobalSettingsResponse  implements Serializable {
     }
   }
 
+  public ExecutionDataGlobalSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

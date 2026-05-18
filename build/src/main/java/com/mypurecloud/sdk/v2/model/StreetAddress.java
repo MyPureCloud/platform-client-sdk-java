@@ -36,6 +36,11 @@ public class StreetAddress  implements Serializable {
     }
   }
 
+  public StreetAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * 2 Letter Country code, like US or GB

@@ -31,6 +31,11 @@ public class QueueConversationCobrowseEventTopicScoredAgent  implements Serializ
     }
   }
 
+  public QueueConversationCobrowseEventTopicScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

@@ -32,6 +32,11 @@ public class JourneySessionEventsNotificationNetworkConnectivity  implements Ser
     }
   }
 
+  public JourneySessionEventsNotificationNetworkConnectivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

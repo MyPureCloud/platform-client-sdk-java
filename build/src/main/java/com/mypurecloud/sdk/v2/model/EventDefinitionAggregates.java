@@ -31,6 +31,11 @@ public class EventDefinitionAggregates  implements Serializable {
     }
   }
 
+  public EventDefinitionAggregates(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Event definition.

@@ -44,6 +44,12 @@ public class ContactListingResponse  implements Serializable, PagedResource<Dial
     }
   }
 
+  public ContactListingResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DialerContact>();
+    }
+  }
+
   
   /**
    **/

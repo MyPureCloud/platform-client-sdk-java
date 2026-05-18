@@ -38,6 +38,12 @@ public class WebMessagingRecipient  implements Serializable {
     }
   }
 
+  public WebMessagingRecipient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      additionalIds = new ArrayList<RecipientAdditionalIdentifier>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "First name of the recipient.")
   @JsonProperty("firstName")

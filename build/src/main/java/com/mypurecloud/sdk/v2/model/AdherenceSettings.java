@@ -37,6 +37,11 @@ public class AdherenceSettings  implements Serializable {
     }
   }
 
+  public AdherenceSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The threshold in minutes where an alert will be triggered when an agent is considered severely out of adherence

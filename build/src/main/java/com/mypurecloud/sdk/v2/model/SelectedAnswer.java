@@ -30,6 +30,11 @@ public class SelectedAnswer  implements Serializable {
     }
   }
 
+  public SelectedAnswer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The search result document chosen as the answer.

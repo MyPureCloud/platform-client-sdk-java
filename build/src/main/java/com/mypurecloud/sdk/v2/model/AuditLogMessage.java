@@ -158,6 +158,14 @@ public class AuditLogMessage  implements Serializable {
     }
   }
 
+  public AuditLogMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      remoteIp = new ArrayList<String>();
+      propertyChanges = new ArrayList<PropertyChange>();
+      entityChanges = new ArrayList<EntityChange>();
+    }
+  }
+
   
   /**
    * Id of the audit message.

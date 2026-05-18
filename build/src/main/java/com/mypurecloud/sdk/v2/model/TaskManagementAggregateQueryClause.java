@@ -82,6 +82,12 @@ public class TaskManagementAggregateQueryClause  implements Serializable {
     }
   }
 
+  public TaskManagementAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<TaskManagementAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

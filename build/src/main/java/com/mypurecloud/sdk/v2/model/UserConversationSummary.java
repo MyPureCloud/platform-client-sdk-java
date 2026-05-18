@@ -37,6 +37,11 @@ public class UserConversationSummary  implements Serializable {
     }
   }
 
+  public UserConversationSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

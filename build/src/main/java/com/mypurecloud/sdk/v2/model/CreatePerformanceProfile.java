@@ -46,6 +46,13 @@ public class CreatePerformanceProfile  implements Serializable {
     }
   }
 
+  public CreatePerformanceProfile(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metricOrders = new ArrayList<String>();
+      reportingIntervals = new ArrayList<ReportingInterval>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

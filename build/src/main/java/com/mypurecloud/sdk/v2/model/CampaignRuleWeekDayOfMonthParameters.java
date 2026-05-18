@@ -32,6 +32,11 @@ public class CampaignRuleWeekDayOfMonthParameters  implements Serializable {
     }
   }
 
+  public CampaignRuleWeekDayOfMonthParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The operand for the \"equals\", \"before\" and \"after\" operators

@@ -220,6 +220,11 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
     }
   }
 
+  public ConversationEventTopicSocialExpression(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

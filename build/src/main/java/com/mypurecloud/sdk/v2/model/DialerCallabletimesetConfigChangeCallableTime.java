@@ -37,6 +37,12 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
     }
   }
 
+  public DialerCallabletimesetConfigChangeCallableTime(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      timeSlots = new ArrayList<DialerCallabletimesetConfigChangeTimeSlot>();
+    }
+  }
+
   
   /**
    * The time slots

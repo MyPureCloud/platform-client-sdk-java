@@ -29,6 +29,11 @@ public class UpdatedSettingsResponse  implements Serializable {
     }
   }
 
+  public UpdatedSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

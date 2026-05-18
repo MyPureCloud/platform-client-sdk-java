@@ -37,6 +37,12 @@ public class TopicsDefinitionsProgramsMappingsEntityListing  implements Serializ
     }
   }
 
+  public TopicsDefinitionsProgramsMappingsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TopicsDefinitionsProgramMappings>();
+    }
+  }
+
   
   /**
    **/

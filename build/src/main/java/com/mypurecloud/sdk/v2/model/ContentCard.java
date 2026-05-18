@@ -39,6 +39,12 @@ public class ContentCard  implements Serializable {
     }
   }
 
+  public ContentCard(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      actions = new ArrayList<ContentCardAction>();
+    }
+  }
+
   
   /**
    * Text to show in the title.

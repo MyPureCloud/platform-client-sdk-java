@@ -206,6 +206,11 @@ public class WhatsAppIntegration  implements Serializable {
     }
   }
 
+  public WhatsAppIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "A unique Integration Id.")
   @JsonProperty("id")

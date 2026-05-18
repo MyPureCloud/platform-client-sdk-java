@@ -30,6 +30,11 @@ public class BuAverageSpeedOfAnswer  implements Serializable {
     }
   }
 
+  public BuAverageSpeedOfAnswer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to include average speed of answer (ASA) in the associated configuration

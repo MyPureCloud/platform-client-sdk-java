@@ -42,6 +42,13 @@ public class StaffingGroupResponse  implements Serializable {
     }
   }
 
+  public StaffingGroupResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<UserReference>();
+      planningGroups = new ArrayList<PlanningGroupReference>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

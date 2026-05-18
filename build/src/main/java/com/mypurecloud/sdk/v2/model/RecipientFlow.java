@@ -29,6 +29,11 @@ public class RecipientFlow  implements Serializable {
     }
   }
 
+  public RecipientFlow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow identifier

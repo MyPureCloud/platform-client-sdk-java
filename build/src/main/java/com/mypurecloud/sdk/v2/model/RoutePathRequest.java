@@ -88,6 +88,12 @@ public class RoutePathRequest  implements Serializable {
     }
   }
 
+  public RoutePathRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of the queue to associate with the route path

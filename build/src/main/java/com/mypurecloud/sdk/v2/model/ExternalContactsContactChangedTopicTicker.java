@@ -30,6 +30,11 @@ public class ExternalContactsContactChangedTopicTicker  implements Serializable 
     }
   }
 
+  public ExternalContactsContactChangedTopicTicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

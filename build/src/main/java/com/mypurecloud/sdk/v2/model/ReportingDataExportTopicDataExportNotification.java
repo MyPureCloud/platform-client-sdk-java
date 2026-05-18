@@ -402,6 +402,11 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     }
   }
 
+  public ReportingDataExportTopicDataExportNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

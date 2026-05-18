@@ -31,6 +31,11 @@ public class KnowledgeDocumentBulkVersionAddEntity  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentBulkVersionAddEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

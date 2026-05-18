@@ -46,6 +46,13 @@ public class SequenceSchedule  implements Serializable {
     }
   }
 
+  public SequenceSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intervals = new ArrayList<ScheduleInterval>();
+      recurrences = new ArrayList<Reoccurrence>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

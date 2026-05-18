@@ -31,6 +31,11 @@ public class V2FlowExecutionDataFlowidTopicInvokingFlowContext  implements Seria
     }
   }
 
+  public V2FlowExecutionDataFlowidTopicInvokingFlowContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow execution identifier whose runtime that invoked this.

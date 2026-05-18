@@ -33,6 +33,11 @@ public class BuQueryAdherenceExplanationsResponse  implements Serializable {
     }
   }
 
+  public BuQueryAdherenceExplanationsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The asynchronous job handling the query

@@ -33,6 +33,11 @@ public class UserAppConfigurationInfo  implements Serializable {
     }
   }
 
+  public UserAppConfigurationInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The current, active configuration for the integration.")
   @JsonProperty("current")

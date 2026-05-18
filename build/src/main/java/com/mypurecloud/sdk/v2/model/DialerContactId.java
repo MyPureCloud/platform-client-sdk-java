@@ -30,6 +30,11 @@ public class DialerContactId  implements Serializable {
     }
   }
 
+  public DialerContactId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -36,6 +36,13 @@ public class QueryFacetInfo  implements Serializable {
     }
   }
 
+  public QueryFacetInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attributes = new ArrayList<FacetKeyAttribute>();
+      facets = new ArrayList<FacetEntry>();
+    }
+  }
+
   
   /**
    **/

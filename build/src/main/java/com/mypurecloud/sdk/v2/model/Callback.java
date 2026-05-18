@@ -285,6 +285,13 @@ public class Callback  implements Serializable {
     }
   }
 
+  public Callback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<Segment>();
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

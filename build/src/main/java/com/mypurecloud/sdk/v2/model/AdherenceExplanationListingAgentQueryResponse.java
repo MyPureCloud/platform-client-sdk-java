@@ -33,6 +33,12 @@ public class AdherenceExplanationListingAgentQueryResponse  implements Serializa
     }
   }
 
+  public AdherenceExplanationListingAgentQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AdherenceExplanationResponse>();
+    }
+  }
+
   
   /**
    **/

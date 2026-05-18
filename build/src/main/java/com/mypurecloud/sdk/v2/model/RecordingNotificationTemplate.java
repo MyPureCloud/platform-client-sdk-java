@@ -41,6 +41,12 @@ public class RecordingNotificationTemplate  implements Serializable {
     }
   }
 
+  public RecordingNotificationTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      buttons = new ArrayList<RecordingTemplateButton>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

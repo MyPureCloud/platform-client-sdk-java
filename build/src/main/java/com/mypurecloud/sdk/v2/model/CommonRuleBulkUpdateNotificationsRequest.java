@@ -135,6 +135,14 @@ public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
     }
   }
 
+  public CommonRuleBulkUpdateNotificationsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ruleIds = new ArrayList<String>();
+      typesToAdd = new ArrayList<TypesToAddEnum>();
+      typesToRemove = new ArrayList<TypesToRemoveEnum>();
+    }
+  }
+
   
   /**
    * The user supplied rules ids to be updated

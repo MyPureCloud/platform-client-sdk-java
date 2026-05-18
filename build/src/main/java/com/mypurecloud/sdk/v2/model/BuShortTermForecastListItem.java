@@ -89,6 +89,11 @@ public class BuShortTermForecastListItem  implements Serializable {
     }
   }
 
+  public BuShortTermForecastListItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

@@ -89,6 +89,12 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     }
   }
 
+  public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      additionalIds = new ArrayList<V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier>();
+    }
+  }
+
   
   /**
    **/

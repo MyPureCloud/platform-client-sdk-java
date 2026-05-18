@@ -80,6 +80,11 @@ public class ConversationEnrichmentSentimentV2  implements Serializable {
     }
   }
 
+  public ConversationEnrichmentSentimentV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Detected Sentiment tag

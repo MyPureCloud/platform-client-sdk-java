@@ -30,6 +30,11 @@ public class DynamicContactQueueingSettings  implements Serializable {
     }
   }
 
+  public DynamicContactQueueingSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to sort contacts dynamically

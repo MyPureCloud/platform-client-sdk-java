@@ -34,6 +34,11 @@ public class TrunkMetricsRegisters  implements Serializable {
     }
   }
 
+  public TrunkMetricsRegisters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Server proxy address that this registers array element represents.

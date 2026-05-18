@@ -164,6 +164,15 @@ public class TimeOffRequest  implements Serializable {
     }
   }
 
+  public TimeOffRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      partialDayStartDateTimes = new ArrayList<Date>();
+      fullDayManagementUnitDates = new ArrayList<String>();
+      durationMinutes = new ArrayList<Integer>();
+      payableMinutes = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

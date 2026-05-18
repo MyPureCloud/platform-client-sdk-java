@@ -39,6 +39,11 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     }
   }
 
+  public HistoricalAdherenceDayMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start of day offset in seconds relative to query start time

@@ -85,6 +85,13 @@ public class UserObservationQueryFilter  implements Serializable {
     }
   }
 
+  public UserObservationQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<UserObservationQueryClause>();
+      predicates = new ArrayList<UserObservationQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

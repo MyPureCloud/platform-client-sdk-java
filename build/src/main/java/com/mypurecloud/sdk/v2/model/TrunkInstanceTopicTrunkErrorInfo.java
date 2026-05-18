@@ -32,6 +32,11 @@ public class TrunkInstanceTopicTrunkErrorInfo  implements Serializable {
     }
   }
 
+  public TrunkInstanceTopicTrunkErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

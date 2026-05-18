@@ -43,6 +43,12 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     }
   }
 
+  public DncListDivisionViewListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DncListDivisionView>();
+    }
+  }
+
   
   /**
    **/

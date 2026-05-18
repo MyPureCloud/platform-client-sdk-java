@@ -36,6 +36,12 @@ public class PerformancePredictionOutputs  implements Serializable {
     }
   }
 
+  public PerformancePredictionOutputs(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      planningGroupResults = new ArrayList<PlanningGroupOutputs>();
+    }
+  }
+
   
   /**
    * Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results

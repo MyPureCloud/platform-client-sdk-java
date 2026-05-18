@@ -29,6 +29,11 @@ public class UploadUrlRequestBody  implements Serializable {
     }
   }
 
+  public UploadUrlRequestBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The expected content length (in bytes) of the gzip-encoded data that will be PUT to the returned signed URL

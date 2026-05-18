@@ -34,6 +34,12 @@ public class V2QueueObservationMetricCountGroup  implements Serializable {
     }
   }
 
+  public V2QueueObservationMetricCountGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<V2QueueObservationMetricCountData>();
+    }
+  }
+
   
   /**
    * MediaType for this set of observations

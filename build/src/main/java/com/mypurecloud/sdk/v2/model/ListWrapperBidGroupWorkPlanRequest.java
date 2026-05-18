@@ -33,6 +33,12 @@ public class ListWrapperBidGroupWorkPlanRequest  implements Serializable {
     }
   }
 
+  public ListWrapperBidGroupWorkPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<BidGroupWorkPlanRequest>();
+    }
+  }
+
   
   /**
    **/

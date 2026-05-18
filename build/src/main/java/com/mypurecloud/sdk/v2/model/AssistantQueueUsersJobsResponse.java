@@ -82,6 +82,11 @@ public class AssistantQueueUsersJobsResponse  implements Serializable {
     }
   }
 
+  public AssistantQueueUsersJobsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

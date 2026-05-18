@@ -35,6 +35,13 @@ public class TimeOffBalanceRequest  implements Serializable {
     }
   }
 
+  public TimeOffBalanceRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activityCodeIds = new ArrayList<String>();
+      dateRanges = new ArrayList<LocalDateRange>();
+    }
+  }
+
   
   /**
    * The set of activity code IDs for which to query available time off balances

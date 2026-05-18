@@ -29,6 +29,11 @@ public class UrlResponse  implements Serializable {
     }
   }
 
+  public UrlResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

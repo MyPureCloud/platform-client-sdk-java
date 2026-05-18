@@ -30,6 +30,11 @@ public class CsvMappingEntry  implements Serializable {
     }
   }
 
+  public CsvMappingEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * CSV field to map data from

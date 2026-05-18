@@ -33,6 +33,12 @@ public class WorkdayMetricListing  implements Serializable {
     }
   }
 
+  public WorkdayMetricListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkdayMetric>();
+    }
+  }
+
   
   /**
    **/

@@ -36,6 +36,11 @@ public class FlowOutcome  implements Serializable {
     }
   }
 
+  public FlowOutcome(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow outcome identifier

@@ -47,6 +47,11 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     }
   }
 
+  public JourneyOutcomeEventsNotificationOutcomeAchievedMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

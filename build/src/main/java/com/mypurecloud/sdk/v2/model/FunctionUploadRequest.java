@@ -31,6 +31,11 @@ public class FunctionUploadRequest  implements Serializable {
     }
   }
 
+  public FunctionUploadRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )

@@ -31,6 +31,11 @@ public class RequiredDateRange  implements Serializable {
     }
   }
 
+  public RequiredDateRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start of a date range in ISO-8601 format

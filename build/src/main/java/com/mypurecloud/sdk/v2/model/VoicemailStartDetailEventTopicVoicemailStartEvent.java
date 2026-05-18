@@ -152,6 +152,13 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     }
   }
 
+  public VoicemailStartDetailEventTopicVoicemailStartEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -38,6 +38,11 @@ public class GuestMemberInfo  implements Serializable {
     }
   }
 
+  public GuestMemberInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The display name to use for the guest member in the conversation.

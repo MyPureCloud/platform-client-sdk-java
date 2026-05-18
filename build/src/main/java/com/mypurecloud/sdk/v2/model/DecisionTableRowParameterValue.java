@@ -30,6 +30,11 @@ public class DecisionTableRowParameterValue  implements Serializable {
     }
   }
 
+  public DecisionTableRowParameterValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A literal parameter value

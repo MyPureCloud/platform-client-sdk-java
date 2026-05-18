@@ -80,6 +80,11 @@ public class Warning  implements Serializable {
     }
   }
 
+  public Warning(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the warning configuration.

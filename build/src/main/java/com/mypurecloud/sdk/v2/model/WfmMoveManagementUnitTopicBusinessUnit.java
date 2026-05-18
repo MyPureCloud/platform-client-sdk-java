@@ -29,6 +29,11 @@ public class WfmMoveManagementUnitTopicBusinessUnit  implements Serializable {
     }
   }
 
+  public WfmMoveManagementUnitTopicBusinessUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

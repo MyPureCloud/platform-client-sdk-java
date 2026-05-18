@@ -31,6 +31,11 @@ public class PatchContentOfferStyleProperties  implements Serializable {
     }
   }
 
+  public PatchContentOfferStyleProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Padding of the offer. (eg. 10px)

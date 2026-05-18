@@ -29,6 +29,11 @@ public class WebDeploymentHeadlessMode  implements Serializable {
     }
   }
 
+  public WebDeploymentHeadlessMode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether or not Headless Mode is enabled

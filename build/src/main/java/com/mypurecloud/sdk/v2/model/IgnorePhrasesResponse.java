@@ -31,6 +31,11 @@ public class IgnorePhrasesResponse  implements Serializable {
     }
   }
 
+  public IgnorePhrasesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Total number of phrases in current org

@@ -92,6 +92,12 @@ public class LearningModulePreviewGetResponseAssignment  implements Serializable
     }
   }
 
+  public LearningModulePreviewGetResponseAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      steps = new ArrayList<LearningModulePreviewGetResponseStep>();
+    }
+  }
+
   
   /**
    * The Learning Assignment state

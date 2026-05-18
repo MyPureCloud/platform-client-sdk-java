@@ -35,6 +35,11 @@ public class SelfAgentGreeting  implements Serializable {
     }
   }
 
+  public SelfAgentGreeting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The ID of the associated user.")
   @JsonProperty("id")

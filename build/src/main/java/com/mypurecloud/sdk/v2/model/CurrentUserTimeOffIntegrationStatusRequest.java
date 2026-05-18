@@ -32,6 +32,12 @@ public class CurrentUserTimeOffIntegrationStatusRequest  implements Serializable
     }
   }
 
+  public CurrentUserTimeOffIntegrationStatusRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      timeOffRequestIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A list of time off request IDs

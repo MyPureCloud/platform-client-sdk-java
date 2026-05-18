@@ -37,6 +37,12 @@ public class Grammar  implements Serializable {
     }
   }
 
+  public Grammar(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      languages = new ArrayList<GrammarLanguage>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -31,6 +31,11 @@ public class LongTermRequirementsServiceGoalDetail  implements Serializable {
     }
   }
 
+  public LongTermRequirementsServiceGoalDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Service goal template ID

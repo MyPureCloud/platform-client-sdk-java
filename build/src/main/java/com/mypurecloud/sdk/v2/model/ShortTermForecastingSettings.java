@@ -29,6 +29,11 @@ public class ShortTermForecastingSettings  implements Serializable {
     }
   }
 
+  public ShortTermForecastingSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The number of weeks to consider by default when generating a volume forecast

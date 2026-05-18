@@ -38,6 +38,12 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicWrapup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user configured wrap up code name.

@@ -31,6 +31,11 @@ public class ValidateAddressResponse  implements Serializable {
     }
   }
 
+  public ValidateAddressResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Was the passed in address valid

@@ -43,6 +43,12 @@ public class IgnoredMinedPhraseListing  implements Serializable, PagedResource<I
     }
   }
 
+  public IgnoredMinedPhraseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<IgnoredMinedEntity>();
+    }
+  }
+
   
   /**
    **/

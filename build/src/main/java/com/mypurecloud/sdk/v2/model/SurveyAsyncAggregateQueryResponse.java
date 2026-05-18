@@ -34,6 +34,12 @@ public class SurveyAsyncAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public SurveyAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<SurveyAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

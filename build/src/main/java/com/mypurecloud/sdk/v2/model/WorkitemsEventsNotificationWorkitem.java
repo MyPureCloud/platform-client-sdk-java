@@ -260,6 +260,17 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
     }
   }
 
+  public WorkitemsEventsNotificationWorkitem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      changes = new ArrayList<WorkitemsEventsNotificationDelta>();
+      propertyChanges = new ArrayList<WorkitemsEventsNotificationPropertyChange>();
+      sessions = new ArrayList<WorkitemsEventsNotificationSession>();
+      skillIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
+      scoredAgents = new ArrayList<WorkitemsEventsNotificationScoredAgent>();
+    }
+  }
+
   
   /**
    **/

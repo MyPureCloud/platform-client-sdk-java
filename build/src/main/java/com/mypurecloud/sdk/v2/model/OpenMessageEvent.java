@@ -79,6 +79,11 @@ public class OpenMessageEvent  implements Serializable {
     }
   }
 
+  public OpenMessageEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element

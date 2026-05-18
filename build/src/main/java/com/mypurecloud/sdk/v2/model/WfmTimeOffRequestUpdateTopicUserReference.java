@@ -29,6 +29,11 @@ public class WfmTimeOffRequestUpdateTopicUserReference  implements Serializable 
     }
   }
 
+  public WfmTimeOffRequestUpdateTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

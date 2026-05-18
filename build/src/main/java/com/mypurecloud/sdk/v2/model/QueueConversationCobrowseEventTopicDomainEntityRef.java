@@ -31,6 +31,11 @@ public class QueueConversationCobrowseEventTopicDomainEntityRef  implements Seri
     }
   }
 
+  public QueueConversationCobrowseEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

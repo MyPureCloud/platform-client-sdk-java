@@ -30,6 +30,11 @@ public class SupportedLanguage  implements Serializable {
     }
   }
 
+  public SupportedLanguage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Architect supported language tag, e.g. en-us, es-us")
   @JsonProperty("language")

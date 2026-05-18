@@ -392,6 +392,13 @@ public class ShiftTradeSettings  implements Serializable {
     }
   }
 
+  public ShiftTradeSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activityCategoryRules = new ArrayList<ShiftTradeActivityRule>();
+      externalActivityRules = new ArrayList<ShiftTradeExternalActivityRule>();
+    }
+  }
+
   
   /**
    * Whether shift trading is enabled for this management unit

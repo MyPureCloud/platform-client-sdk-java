@@ -35,6 +35,12 @@ public class ConversationDataSchemaListing  implements Serializable {
     }
   }
 
+  public ConversationDataSchemaListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ConversationDataSchema>();
+    }
+  }
+
   
   /**
    **/

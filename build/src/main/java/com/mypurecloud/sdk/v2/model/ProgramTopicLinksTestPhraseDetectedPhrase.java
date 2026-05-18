@@ -31,6 +31,11 @@ public class ProgramTopicLinksTestPhraseDetectedPhrase  implements Serializable 
     }
   }
 
+  public ProgramTopicLinksTestPhraseDetectedPhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

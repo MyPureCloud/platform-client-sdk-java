@@ -25,6 +25,11 @@ public class AuditQueryResponse  implements Serializable {
     }
   }
 
+  public AuditQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

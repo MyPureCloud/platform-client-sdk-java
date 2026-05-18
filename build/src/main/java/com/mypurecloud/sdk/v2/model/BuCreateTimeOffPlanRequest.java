@@ -96,6 +96,13 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
     }
   }
 
+  public BuCreateTimeOffPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activityCodeIds = new ArrayList<String>();
+      restrictedActivityCodeIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of this time-off plan

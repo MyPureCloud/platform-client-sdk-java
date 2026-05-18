@@ -29,6 +29,11 @@ public class ContextEntity  implements Serializable {
     }
   }
 
+  public ContextEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the entity.

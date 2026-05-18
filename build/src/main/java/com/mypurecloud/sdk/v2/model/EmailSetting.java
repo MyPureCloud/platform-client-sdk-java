@@ -34,6 +34,11 @@ public class EmailSetting  implements Serializable {
     }
   }
 
+  public EmailSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "The globally unique identifier for the settings.")
   @JsonProperty("id")

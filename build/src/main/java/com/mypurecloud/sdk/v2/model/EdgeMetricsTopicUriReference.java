@@ -30,6 +30,11 @@ public class EdgeMetricsTopicUriReference  implements Serializable {
     }
   }
 
+  public EdgeMetricsTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

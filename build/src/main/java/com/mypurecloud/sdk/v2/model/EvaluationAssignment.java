@@ -32,6 +32,11 @@ public class EvaluationAssignment  implements Serializable {
     }
   }
 
+  public EvaluationAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

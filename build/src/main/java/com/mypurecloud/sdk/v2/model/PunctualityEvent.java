@@ -40,6 +40,11 @@ public class PunctualityEvent  implements Serializable {
     }
   }
 
+  public PunctualityEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The scheduled activity start time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateScheduleStart")

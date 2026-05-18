@@ -38,6 +38,11 @@ public class JourneyExternalEventsSchema  implements Serializable {
     }
   }
 
+  public JourneyExternalEventsSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the schema.

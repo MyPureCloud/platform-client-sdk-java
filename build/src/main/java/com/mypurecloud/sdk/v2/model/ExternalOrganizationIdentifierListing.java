@@ -33,6 +33,12 @@ public class ExternalOrganizationIdentifierListing  implements Serializable {
     }
   }
 
+  public ExternalOrganizationIdentifierListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalOrganizationIdentifier>();
+    }
+  }
+
   
   /**
    **/

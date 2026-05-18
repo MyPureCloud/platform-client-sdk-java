@@ -36,6 +36,12 @@ public class CredentialInfoCursorListing  implements Serializable {
     }
   }
 
+  public CredentialInfoCursorListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CredentialInfo>();
+    }
+  }
+
   
   /**
    **/

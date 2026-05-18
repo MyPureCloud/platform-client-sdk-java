@@ -82,6 +82,12 @@ public class WfmIntradayPlanningGroupListing  implements Serializable {
     }
   }
 
+  public WfmIntradayPlanningGroupListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ForecastPlanningGroupResponse>();
+    }
+  }
+
   
   /**
    **/

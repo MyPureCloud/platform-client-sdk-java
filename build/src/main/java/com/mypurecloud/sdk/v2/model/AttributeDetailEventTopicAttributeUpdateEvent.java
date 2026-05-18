@@ -43,6 +43,14 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
     }
   }
 
+  public AttributeDetailEventTopicAttributeUpdateEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+      communications = new ArrayList<AttributeDetailEventTopicCommunication>();
+    }
+  }
+
   
   /**
    **/

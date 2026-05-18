@@ -30,6 +30,11 @@ public class CampaignLinesUtilization  implements Serializable {
     }
   }
 
+  public CampaignLinesUtilization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Number of outbound lines assigned to the campaign

@@ -35,6 +35,12 @@ public class BotConnectorIntent  implements Serializable {
     }
   }
 
+  public BotConnectorIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BotEntity>();
+    }
+  }
+
   
   /**
    * The name of this intent.

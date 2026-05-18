@@ -52,6 +52,12 @@ public class FaxDocument  implements Serializable {
     }
   }
 
+  public FaxDocument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      thumbnails = new ArrayList<DocumentThumbnail>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

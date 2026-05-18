@@ -33,6 +33,12 @@ public class MediaResult  implements Serializable {
     }
   }
 
+  public MediaResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      waveformData = new ArrayList<Float>();
+    }
+  }
+
   
   /**
    **/

@@ -37,6 +37,12 @@ public class OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig  imple
     }
   }
 
+  public OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      whatsAppColumns = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The Contact List columns specifying the phone number to send a message to.

@@ -30,6 +30,11 @@ public class DialerSequenceConfigChangeUriReference  implements Serializable {
     }
   }
 
+  public DialerSequenceConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

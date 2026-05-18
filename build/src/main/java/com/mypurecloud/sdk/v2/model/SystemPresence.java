@@ -31,6 +31,11 @@ public class SystemPresence  implements Serializable {
     }
   }
 
+  public SystemPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

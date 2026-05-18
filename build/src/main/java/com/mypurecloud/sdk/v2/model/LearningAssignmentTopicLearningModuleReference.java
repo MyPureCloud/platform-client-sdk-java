@@ -30,6 +30,11 @@ public class LearningAssignmentTopicLearningModuleReference  implements Serializ
     }
   }
 
+  public LearningAssignmentTopicLearningModuleReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

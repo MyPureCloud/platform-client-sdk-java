@@ -29,6 +29,11 @@ public class PolicyUpdate  implements Serializable {
     }
   }
 
+  public PolicyUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -90,6 +90,12 @@ public class KnowledgeDocumentGuestSearch  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentGuestSearch(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<KnowledgeDocumentGuestSearchResult>();
+    }
+  }
+
   
   /**
    * Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.

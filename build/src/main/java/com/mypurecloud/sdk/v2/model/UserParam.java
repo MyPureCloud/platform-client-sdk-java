@@ -30,6 +30,11 @@ public class UserParam  implements Serializable {
     }
   }
 
+  public UserParam(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

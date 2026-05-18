@@ -29,6 +29,11 @@ public class ThirdPartySuggestion  implements Serializable {
     }
   }
 
+  public ThirdPartySuggestion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The third party suggestion text.

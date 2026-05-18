@@ -189,6 +189,11 @@ public class ChecklistInferenceJobResponse  implements Serializable {
     }
   }
 
+  public ChecklistInferenceJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the inference job.

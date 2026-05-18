@@ -77,6 +77,11 @@ public class DictionaryFeedbackExamplePhrase  implements Serializable {
     }
   }
 
+  public DictionaryFeedbackExamplePhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Example Phrase text. At least 3 words and up to 20 words

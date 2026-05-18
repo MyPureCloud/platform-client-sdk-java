@@ -82,6 +82,11 @@ public class BuAsyncScheduleResponse  implements Serializable {
     }
   }
 
+  public BuAsyncScheduleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the operation

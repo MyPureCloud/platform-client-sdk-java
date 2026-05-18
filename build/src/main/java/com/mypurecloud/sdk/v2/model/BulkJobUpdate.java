@@ -77,6 +77,11 @@ public class BulkJobUpdate  implements Serializable {
     }
   }
 
+  public BulkJobUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The destination state of the bulk job.

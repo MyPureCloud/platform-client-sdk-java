@@ -35,6 +35,11 @@ public class FlowHealthErrorInfo  implements Serializable {
     }
   }
 
+  public FlowHealthErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

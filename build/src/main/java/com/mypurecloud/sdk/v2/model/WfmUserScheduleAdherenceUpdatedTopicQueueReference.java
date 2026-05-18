@@ -29,6 +29,11 @@ public class WfmUserScheduleAdherenceUpdatedTopicQueueReference  implements Seri
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTopicQueueReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

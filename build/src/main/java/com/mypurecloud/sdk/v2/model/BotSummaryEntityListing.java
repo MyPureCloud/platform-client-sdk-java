@@ -43,6 +43,12 @@ public class BotSummaryEntityListing  implements Serializable, PagedResource<Bot
     }
   }
 
+  public BotSummaryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BotConnectorSummary>();
+    }
+  }
+
   
   /**
    **/

@@ -46,6 +46,11 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     }
   }
 
+  public ContentManagementSingleDocumentTopicDocumentDataV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

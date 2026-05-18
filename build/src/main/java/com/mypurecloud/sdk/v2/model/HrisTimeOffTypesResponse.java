@@ -35,6 +35,12 @@ public class HrisTimeOffTypesResponse  implements Serializable {
     }
   }
 
+  public HrisTimeOffTypesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<HrisTimeOffTypeResponse>();
+    }
+  }
+
   
   /**
    * The asynchronous job handling the query

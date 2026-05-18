@@ -35,6 +35,12 @@ public class OrganizationPresenceDefinitionEntityListing  implements Serializabl
     }
   }
 
+  public OrganizationPresenceDefinitionEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OrganizationPresenceDefinition>();
+    }
+  }
+
   
   /**
    **/

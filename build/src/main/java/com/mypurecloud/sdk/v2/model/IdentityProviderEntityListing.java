@@ -43,6 +43,12 @@ public class IdentityProviderEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public IdentityProviderEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SAMLProvider>();
+    }
+  }
+
   
   /**
    **/

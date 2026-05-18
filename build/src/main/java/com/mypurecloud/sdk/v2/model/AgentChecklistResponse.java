@@ -198,6 +198,13 @@ public class AgentChecklistResponse  implements Serializable {
     }
   }
 
+  public AgentChecklistResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      checklistItems = new ArrayList<ChecklistItem>();
+      activationTriggers = new ArrayList<ActivationTrigger>();
+    }
+  }
+
   
   /**
    * ID of the checklist.

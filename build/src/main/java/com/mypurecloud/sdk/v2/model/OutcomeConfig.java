@@ -31,6 +31,12 @@ public class OutcomeConfig  implements Serializable {
     }
   }
 
+  public OutcomeConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A set of valid Outcome UUIDs used to optimize a KPI.

@@ -29,6 +29,11 @@ public class AssistantQueueUser  implements Serializable {
     }
   }
 
+  public AssistantQueueUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the user.

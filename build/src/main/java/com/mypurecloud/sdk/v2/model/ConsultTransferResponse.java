@@ -29,6 +29,11 @@ public class ConsultTransferResponse  implements Serializable {
     }
   }
 
+  public ConsultTransferResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Participant ID to whom the call is being transferred.

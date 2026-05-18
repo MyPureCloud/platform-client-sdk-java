@@ -36,6 +36,12 @@ public class PropertyIndexRequest  implements Serializable {
     }
   }
 
+  public PropertyIndexRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      properties = new ArrayList<AnalyticsProperty>();
+    }
+  }
+
   
   /**
    * Attach properties to a segment in the indicated session

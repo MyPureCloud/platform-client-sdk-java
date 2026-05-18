@@ -34,6 +34,11 @@ public class LearningAssignmentCreate  implements Serializable {
     }
   }
 
+  public LearningAssignmentCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * If True, adds the assignment to their schedule

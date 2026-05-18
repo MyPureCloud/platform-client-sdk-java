@@ -33,6 +33,11 @@ public class OpenSocialMediaPublicMetadata  implements Serializable {
     }
   }
 
+  public OpenSocialMediaPublicMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the root public message.

@@ -33,6 +33,12 @@ public class ConnectionListing  implements Serializable {
     }
   }
 
+  public ConnectionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ConnectionResponse>();
+    }
+  }
+
   
   /**
    **/

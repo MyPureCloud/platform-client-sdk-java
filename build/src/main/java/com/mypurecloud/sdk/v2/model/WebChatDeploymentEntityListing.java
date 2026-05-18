@@ -35,6 +35,12 @@ public class WebChatDeploymentEntityListing  implements Serializable {
     }
   }
 
+  public WebChatDeploymentEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WebChatDeployment>();
+    }
+  }
+
   
   /**
    **/

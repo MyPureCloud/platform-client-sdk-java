@@ -30,6 +30,11 @@ public class ValueWrapperDate  implements Serializable {
     }
   }
 
+  public ValueWrapperDate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

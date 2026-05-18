@@ -36,6 +36,12 @@ public class ConversationContentListPickerSection  implements Serializable {
     }
   }
 
+  public ConversationContentListPickerSection(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      items = new ArrayList<ConversationContentListPickerItem>();
+    }
+  }
+
   
   /**
    * Required title for the section.

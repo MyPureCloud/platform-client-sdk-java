@@ -82,6 +82,12 @@ public class ActivityPlanJobException  implements Serializable {
     }
   }
 
+  public ActivityPlanJobException(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      occurrences = new ArrayList<ActivityPlanOccurrenceReference>();
+    }
+  }
+
   
   /**
    * The type of error

@@ -39,6 +39,12 @@ public class ConversationJsonSchemaDocument  implements Serializable {
     }
   }
 
+  public ConversationJsonSchemaDocument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      required = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The JSON Schema specification link. The only value currently supported is \"http://json-schema.org/draft-04/schema#\".

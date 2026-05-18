@@ -31,6 +31,11 @@ public class RecordingJobFailedRecording  implements Serializable {
     }
   }
 
+  public RecordingJobFailedRecording(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Conversation")
   @JsonProperty("conversation")

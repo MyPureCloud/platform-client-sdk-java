@@ -96,6 +96,11 @@ public class TwitterIntegration  implements Serializable {
     }
   }
 
+  public TwitterIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "A unique Integration ID")
   @JsonProperty("id")

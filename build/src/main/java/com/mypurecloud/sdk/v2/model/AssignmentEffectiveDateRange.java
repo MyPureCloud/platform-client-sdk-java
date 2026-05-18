@@ -31,6 +31,11 @@ public class AssignmentEffectiveDateRange  implements Serializable {
     }
   }
 
+  public AssignmentEffectiveDateRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Effective start date of the user assignment in ISO-8601 format or empty value. Empty value means no limit on start-date.

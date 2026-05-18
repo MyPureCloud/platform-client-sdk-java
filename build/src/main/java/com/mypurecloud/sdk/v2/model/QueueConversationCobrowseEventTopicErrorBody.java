@@ -47,6 +47,13 @@ public class QueueConversationCobrowseEventTopicErrorBody  implements Serializab
     }
   }
 
+  public QueueConversationCobrowseEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<QueueConversationCobrowseEventTopicDetail>();
+      errors = new ArrayList<QueueConversationCobrowseEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

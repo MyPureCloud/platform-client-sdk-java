@@ -32,6 +32,11 @@ public class MetadataPresentation  implements Serializable {
     }
   }
 
+  public MetadataPresentation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "title for a set of data to be gathered")
   @JsonProperty("title")

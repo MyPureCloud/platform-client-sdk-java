@@ -30,6 +30,11 @@ public class Number  implements Serializable {
     }
   }
 
+  public Number(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

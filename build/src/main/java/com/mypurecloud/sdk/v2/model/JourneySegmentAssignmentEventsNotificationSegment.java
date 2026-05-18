@@ -30,6 +30,11 @@ public class JourneySegmentAssignmentEventsNotificationSegment  implements Seria
     }
   }
 
+  public JourneySegmentAssignmentEventsNotificationSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -36,6 +36,12 @@ public class ReportingTurnsResponse  implements Serializable {
     }
   }
 
+  public ReportingTurnsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ReportingTurn>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class WritableStarrableDivision  implements Serializable {
     }
   }
 
+  public WritableStarrableDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

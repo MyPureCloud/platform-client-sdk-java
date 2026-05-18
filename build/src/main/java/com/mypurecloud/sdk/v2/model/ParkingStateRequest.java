@@ -89,6 +89,11 @@ public class ParkingStateRequest  implements Serializable {
     }
   }
 
+  public ParkingStateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * State to set the participant.

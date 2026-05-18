@@ -82,6 +82,12 @@ public class ResolutionAggregateQueryClause  implements Serializable {
     }
   }
 
+  public ResolutionAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<ResolutionAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

@@ -33,6 +33,12 @@ public class GuideVersionResources  implements Serializable {
     }
   }
 
+  public GuideVersionResources(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dataActions = new ArrayList<DataAction>();
+    }
+  }
+
   
   /**
    * The data actions associated with this version of the guide.

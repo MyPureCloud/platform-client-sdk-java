@@ -79,6 +79,11 @@ public class PaymentResponse  implements Serializable {
     }
   }
 
+  public PaymentResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Reference to the ID of the original payment request message this response is for.

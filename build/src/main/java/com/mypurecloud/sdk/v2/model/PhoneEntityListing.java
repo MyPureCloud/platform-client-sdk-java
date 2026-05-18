@@ -44,6 +44,12 @@ public class PhoneEntityListing  implements Serializable, PagedResource<Phone> {
     }
   }
 
+  public PhoneEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Phone>();
+    }
+  }
+
   
   /**
    **/

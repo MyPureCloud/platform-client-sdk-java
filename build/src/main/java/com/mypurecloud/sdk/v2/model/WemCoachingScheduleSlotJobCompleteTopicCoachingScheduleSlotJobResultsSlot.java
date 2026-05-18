@@ -31,6 +31,11 @@ public class WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobResul
     }
   }
 
+  public WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobResultsSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

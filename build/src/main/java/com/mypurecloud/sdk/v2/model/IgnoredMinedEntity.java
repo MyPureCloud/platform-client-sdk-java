@@ -133,6 +133,11 @@ public class IgnoredMinedEntity  implements Serializable {
     }
   }
 
+  public IgnoredMinedEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the ignored entity

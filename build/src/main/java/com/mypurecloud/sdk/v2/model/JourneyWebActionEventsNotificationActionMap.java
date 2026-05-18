@@ -30,6 +30,11 @@ public class JourneyWebActionEventsNotificationActionMap  implements Serializabl
     }
   }
 
+  public JourneyWebActionEventsNotificationActionMap(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

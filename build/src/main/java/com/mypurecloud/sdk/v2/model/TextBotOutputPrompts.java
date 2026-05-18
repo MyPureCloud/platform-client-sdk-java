@@ -32,6 +32,11 @@ public class TextBotOutputPrompts  implements Serializable {
     }
   }
 
+  public TextBotOutputPrompts(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ISO code of the output language for this prompt item.

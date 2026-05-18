@@ -50,6 +50,11 @@ public class JourneyWebActionEventsNotificationWebActionMessage  implements Seri
     }
   }
 
+  public JourneyWebActionEventsNotificationWebActionMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class Journey  implements Serializable {
     }
   }
 
+  public Journey(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      patterns = new ArrayList<JourneyPattern>();
+    }
+  }
+
   
   /**
    * A list of zero or more patterns to match.

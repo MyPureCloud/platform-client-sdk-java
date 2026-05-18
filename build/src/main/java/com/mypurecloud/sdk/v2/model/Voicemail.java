@@ -81,6 +81,11 @@ public class Voicemail  implements Serializable {
     }
   }
 
+  public Voicemail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The voicemail id

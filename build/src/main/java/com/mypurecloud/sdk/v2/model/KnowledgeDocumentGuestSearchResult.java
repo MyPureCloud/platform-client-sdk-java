@@ -31,6 +31,11 @@ public class KnowledgeDocumentGuestSearchResult  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentGuestSearchResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The confidence associated with a document with respect to a search query.

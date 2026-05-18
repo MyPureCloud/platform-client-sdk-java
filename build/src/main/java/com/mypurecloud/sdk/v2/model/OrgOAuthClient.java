@@ -147,6 +147,13 @@ public class OrgOAuthClient  implements Serializable {
     }
   }
 
+  public OrgOAuthClient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      scope = new ArrayList<String>();
+      roleDivisions = new ArrayList<RoleDivision>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

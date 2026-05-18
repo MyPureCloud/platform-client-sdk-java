@@ -29,6 +29,11 @@ public class WrapupCodePredictionConfig  implements Serializable {
     }
   }
 
+  public WrapupCodePredictionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Copilot generated wrapup code prediction is enabled.

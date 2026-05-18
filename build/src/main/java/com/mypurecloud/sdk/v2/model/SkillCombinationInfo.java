@@ -34,6 +34,12 @@ public class SkillCombinationInfo  implements Serializable {
     }
   }
 
+  public SkillCombinationInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillCombination = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A skill combination in the contact queue

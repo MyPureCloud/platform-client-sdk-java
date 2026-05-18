@@ -31,6 +31,11 @@ public class WorkitemsAttributeChangeWrapupDelta  implements Serializable {
     }
   }
 
+  public WorkitemsAttributeChangeWrapupDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * New property value

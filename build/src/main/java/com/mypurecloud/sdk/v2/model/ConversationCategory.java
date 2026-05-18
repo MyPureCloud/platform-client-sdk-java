@@ -83,6 +83,11 @@ public class ConversationCategory  implements Serializable {
     }
   }
 
+  public ConversationCategory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the category

@@ -32,6 +32,11 @@ public class InstagramIdentityResolutionConfig  implements Serializable {
     }
   }
 
+  public InstagramIdentityResolutionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to use when performing identity resolution.

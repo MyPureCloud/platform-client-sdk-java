@@ -47,6 +47,13 @@ public class Coretype  implements Serializable {
     }
   }
 
+  public Coretype(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      validationFields = new ArrayList<String>();
+      itemValidationFields = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

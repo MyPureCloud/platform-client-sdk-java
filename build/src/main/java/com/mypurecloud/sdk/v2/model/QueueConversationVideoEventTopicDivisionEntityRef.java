@@ -32,6 +32,11 @@ public class QueueConversationVideoEventTopicDivisionEntityRef  implements Seria
     }
   }
 
+  public QueueConversationVideoEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

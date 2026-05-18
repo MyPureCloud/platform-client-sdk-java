@@ -83,6 +83,11 @@ public class ReportingTurnBotFlowInvocationEvent  implements Serializable {
     }
   }
 
+  public ReportingTurnBotFlowInvocationEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Represents the type of invocation event which occurred.

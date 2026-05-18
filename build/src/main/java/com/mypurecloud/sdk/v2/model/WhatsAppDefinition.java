@@ -41,6 +41,12 @@ public class WhatsAppDefinition  implements Serializable {
     }
   }
 
+  public WhatsAppDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      buttons = new ArrayList<Button>();
+    }
+  }
+
   
   /**
    * The messaging template name.

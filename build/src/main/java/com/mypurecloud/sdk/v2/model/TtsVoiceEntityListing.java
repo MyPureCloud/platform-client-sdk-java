@@ -43,6 +43,12 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     }
   }
 
+  public TtsVoiceEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TtsVoiceEntity>();
+    }
+  }
+
   
   /**
    **/

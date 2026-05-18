@@ -31,6 +31,11 @@ public class ScimUserRoutingLanguage  implements Serializable {
     }
   }
 
+  public ScimUserRoutingLanguage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The case-sensitive name of a routing language configured in Genesys Cloud.

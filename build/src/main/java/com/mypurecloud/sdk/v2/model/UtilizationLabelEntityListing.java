@@ -43,6 +43,12 @@ public class UtilizationLabelEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public UtilizationLabelEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UtilizationLabel>();
+    }
+  }
+
   
   /**
    **/

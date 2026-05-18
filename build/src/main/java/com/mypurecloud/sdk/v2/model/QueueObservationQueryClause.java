@@ -82,6 +82,12 @@ public class QueueObservationQueryClause  implements Serializable {
     }
   }
 
+  public QueueObservationQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<QueueObservationQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

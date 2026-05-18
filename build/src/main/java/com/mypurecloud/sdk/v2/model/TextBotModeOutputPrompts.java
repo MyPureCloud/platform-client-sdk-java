@@ -34,6 +34,12 @@ public class TextBotModeOutputPrompts  implements Serializable {
     }
   }
 
+  public TextBotModeOutputPrompts(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<TextBotPromptSegment>();
+    }
+  }
+
   
   /**
    * The list of prompt segments.

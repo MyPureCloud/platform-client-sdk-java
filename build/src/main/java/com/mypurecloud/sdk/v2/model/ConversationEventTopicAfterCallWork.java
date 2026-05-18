@@ -84,6 +84,11 @@ public class ConversationEventTopicAfterCallWork  implements Serializable {
     }
   }
 
+  public ConversationEventTopicAfterCallWork(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The communication's after-call work state.

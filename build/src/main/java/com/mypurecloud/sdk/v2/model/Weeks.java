@@ -33,6 +33,12 @@ public class Weeks  implements Serializable {
     }
   }
 
+  public Weeks(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * The week offset from data start date

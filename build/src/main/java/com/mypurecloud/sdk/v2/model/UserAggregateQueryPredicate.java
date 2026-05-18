@@ -177,6 +177,11 @@ public class UserAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public UserAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

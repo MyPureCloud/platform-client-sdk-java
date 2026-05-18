@@ -87,6 +87,11 @@ public class V2MobiusRulesTopicEntityProperties  implements Serializable {
     }
   }
 
+  public V2MobiusRulesTopicEntityProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

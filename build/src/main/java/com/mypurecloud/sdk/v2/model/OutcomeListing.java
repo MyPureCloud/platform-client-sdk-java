@@ -43,6 +43,12 @@ public class OutcomeListing  implements Serializable, PagedResource<Outcome> {
     }
   }
 
+  public OutcomeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Outcome>();
+    }
+  }
+
   
   /**
    **/

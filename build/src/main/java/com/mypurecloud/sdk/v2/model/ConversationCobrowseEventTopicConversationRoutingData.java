@@ -39,6 +39,13 @@ public class ConversationCobrowseEventTopicConversationRoutingData  implements S
     }
   }
 
+  public ConversationCobrowseEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<ConversationCobrowseEventTopicUriReference>();
+      scoredAgents = new ArrayList<ConversationCobrowseEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

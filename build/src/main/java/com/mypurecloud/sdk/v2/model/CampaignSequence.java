@@ -93,6 +93,12 @@ public class CampaignSequence  implements Serializable {
     }
   }
 
+  public CampaignSequence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      campaigns = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

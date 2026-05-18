@@ -202,6 +202,11 @@ public class CampaignRuleParameters  implements Serializable {
     }
   }
 
+  public CampaignRuleParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The operator for comparison. Required for a CampaignRuleCondition.

@@ -43,6 +43,12 @@ public class EncryptionKeyEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public EncryptionKeyEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EncryptionKey>();
+    }
+  }
+
   
   /**
    **/

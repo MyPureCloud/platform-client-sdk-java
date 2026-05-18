@@ -221,6 +221,11 @@ public class QueueConversationVideoEventTopicChat  implements Serializable {
     }
   }
 
+  public QueueConversationVideoEventTopicChat(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

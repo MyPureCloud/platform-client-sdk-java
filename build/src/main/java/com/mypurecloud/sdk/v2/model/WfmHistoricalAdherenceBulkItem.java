@@ -37,6 +37,12 @@ public class WfmHistoricalAdherenceBulkItem  implements Serializable {
     }
   }
 
+  public WfmHistoricalAdherenceBulkItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of the management unit to query

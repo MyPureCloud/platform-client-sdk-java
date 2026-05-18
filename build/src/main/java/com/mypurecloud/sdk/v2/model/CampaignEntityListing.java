@@ -43,6 +43,12 @@ public class CampaignEntityListing  implements Serializable, PagedResource<Campa
     }
   }
 
+  public CampaignEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Campaign>();
+    }
+  }
+
   
   /**
    **/

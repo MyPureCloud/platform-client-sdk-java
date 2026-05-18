@@ -83,6 +83,11 @@ public class AfterCallWork  implements Serializable {
     }
   }
 
+  public AfterCallWork(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

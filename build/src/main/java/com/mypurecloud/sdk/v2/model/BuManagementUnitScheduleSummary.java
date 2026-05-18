@@ -38,6 +38,12 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
     }
   }
 
+  public BuManagementUnitScheduleSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agents = new ArrayList<UserReference>();
+    }
+  }
+
   
   /**
    * The management unit to which this summary applies

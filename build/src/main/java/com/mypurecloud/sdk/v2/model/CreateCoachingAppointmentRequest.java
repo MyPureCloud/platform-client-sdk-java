@@ -50,6 +50,15 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     }
   }
 
+  public CreateCoachingAppointmentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attendeeIds = new ArrayList<String>();
+      conversationIds = new ArrayList<String>();
+      documentIds = new ArrayList<String>();
+      externalLinks = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of coaching appointment.

@@ -30,6 +30,11 @@ public class JourneySessionEventsNotificationConversation  implements Serializab
     }
   }
 
+  public JourneySessionEventsNotificationConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

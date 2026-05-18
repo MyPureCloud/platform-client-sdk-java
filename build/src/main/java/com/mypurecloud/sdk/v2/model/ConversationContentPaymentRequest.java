@@ -93,6 +93,14 @@ public class ConversationContentPaymentRequest  implements Serializable {
     }
   }
 
+  public ConversationContentPaymentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      lineItems = new ArrayList<ConversationContentLineItem>();
+      shippingOptions = new ArrayList<ConversationContentLineItem>();
+      requiredContactFields = new ArrayList<ConversationContentRequiredContactField>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "The payment platform being used (e.g. Apple Pay)")
   @JsonProperty("paymentPlatform")

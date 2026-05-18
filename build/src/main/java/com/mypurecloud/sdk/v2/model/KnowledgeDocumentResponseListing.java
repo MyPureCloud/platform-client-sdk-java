@@ -36,6 +36,12 @@ public class KnowledgeDocumentResponseListing  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentResponseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<KnowledgeDocumentResponse>();
+    }
+  }
+
   
   /**
    **/

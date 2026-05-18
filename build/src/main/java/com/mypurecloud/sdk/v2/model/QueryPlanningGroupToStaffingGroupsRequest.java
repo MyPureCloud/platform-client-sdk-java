@@ -34,6 +34,13 @@ public class QueryPlanningGroupToStaffingGroupsRequest  implements Serializable 
     }
   }
 
+  public QueryPlanningGroupToStaffingGroupsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      planningGroupIds = new ArrayList<String>();
+      staffingGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of planning group IDs to request capacity group associations

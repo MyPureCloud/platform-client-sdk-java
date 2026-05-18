@@ -85,6 +85,12 @@ public class IdleTokenTimeout  implements Serializable {
     }
   }
 
+  public IdleTokenTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inactivityTimeoutGroupBundles = new ArrayList<InactivityTimeoutGroupBundle>();
+    }
+  }
+
   
   /**
    * Token timeout length in seconds. Must be at least 5 minutes and 8 hours or less (if HIPAA is disabled) or 15 minutes or less (if HIPAA is enabled).

@@ -38,6 +38,11 @@ public class ConversationMessageEventTopicErrorDetails  implements Serializable 
     }
   }
 
+  public ConversationMessageEventTopicErrorDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The HTTP status code for this message (400, 401, 403, 404, 500, etc.

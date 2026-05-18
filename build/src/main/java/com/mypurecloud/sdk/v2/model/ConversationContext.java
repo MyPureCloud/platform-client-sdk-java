@@ -79,6 +79,11 @@ public class ConversationContext  implements Serializable {
     }
   }
 
+  public ConversationContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the conversation turn.

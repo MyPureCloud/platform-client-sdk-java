@@ -85,6 +85,11 @@ public class ImapSettings  implements Serializable {
     }
   }
 
+  public ImapSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The IMAP server integration to use for ingesting emails.

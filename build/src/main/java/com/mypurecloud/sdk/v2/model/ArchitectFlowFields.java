@@ -35,6 +35,12 @@ public class ArchitectFlowFields  implements Serializable {
     }
   }
 
+  public ArchitectFlowFields(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      flowRequestMappings = new ArrayList<RequestMapping>();
+    }
+  }
+
   
   /**
    * The architect flow.

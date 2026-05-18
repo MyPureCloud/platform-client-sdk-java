@@ -29,6 +29,11 @@ public class ContextIntent  implements Serializable {
     }
   }
 
+  public ContextIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the intent.

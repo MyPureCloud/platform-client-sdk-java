@@ -30,6 +30,11 @@ public class BulkResults  implements Serializable {
     }
   }
 
+  public BulkResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of source intent

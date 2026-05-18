@@ -133,6 +133,11 @@ public class UserState  implements Serializable {
     }
   }
 
+  public UserState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * User's current state.

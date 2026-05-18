@@ -83,6 +83,12 @@ public class RuleSetDiagnostic  implements Serializable {
     }
   }
 
+  public RuleSetDiagnostic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      warnings = new ArrayList<WarningsEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "A campaign rule set")
   @JsonProperty("ruleSet")

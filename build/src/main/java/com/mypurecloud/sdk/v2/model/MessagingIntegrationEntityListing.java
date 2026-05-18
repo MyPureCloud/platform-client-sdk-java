@@ -43,6 +43,12 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     }
   }
 
+  public MessagingIntegrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MessagingIntegration>();
+    }
+  }
+
   
   /**
    **/

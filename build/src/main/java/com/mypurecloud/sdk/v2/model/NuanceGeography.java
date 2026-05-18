@@ -31,6 +31,11 @@ public class NuanceGeography  implements Serializable {
     }
   }
 
+  public NuanceGeography(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The geography ID

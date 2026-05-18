@@ -80,6 +80,11 @@ public class WorkitemDateBasedConditionUpdate  implements Serializable {
     }
   }
 
+  public WorkitemDateBasedConditionUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the workitem date attribute.

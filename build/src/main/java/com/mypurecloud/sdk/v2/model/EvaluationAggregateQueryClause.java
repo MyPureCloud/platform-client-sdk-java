@@ -82,6 +82,12 @@ public class EvaluationAggregateQueryClause  implements Serializable {
     }
   }
 
+  public EvaluationAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<EvaluationAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

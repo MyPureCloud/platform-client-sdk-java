@@ -79,6 +79,11 @@ public class IdentifierClaimRequest  implements Serializable {
     }
   }
 
+  public IdentifierClaimRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The operation to perform claim/release

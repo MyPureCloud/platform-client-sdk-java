@@ -169,6 +169,11 @@ public class Dependency  implements Serializable {
     }
   }
 
+  public Dependency(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The dependency identifier

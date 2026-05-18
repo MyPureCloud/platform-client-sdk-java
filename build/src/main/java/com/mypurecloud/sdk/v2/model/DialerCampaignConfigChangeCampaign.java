@@ -180,6 +180,17 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     }
   }
 
+  public DialerCampaignConfigChangeCampaign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneColumns = new ArrayList<DialerCampaignConfigChangePhoneColumn>();
+      dncLists = new ArrayList<DialerCampaignConfigChangeUriReference>();
+      errors = new ArrayList<DialerCampaignConfigChangeRestErrorDetail>();
+      ruleSets = new ArrayList<DialerCampaignConfigChangeUriReference>();
+      contactSorts = new ArrayList<DialerCampaignConfigChangeContactSort>();
+      contactListFilters = new ArrayList<DialerCampaignConfigChangeUriReference>();
+    }
+  }
+
   
   /**
    **/

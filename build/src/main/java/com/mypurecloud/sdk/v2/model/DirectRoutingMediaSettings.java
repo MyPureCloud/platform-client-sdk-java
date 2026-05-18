@@ -29,6 +29,11 @@ public class DirectRoutingMediaSettings  implements Serializable {
     }
   }
 
+  public DirectRoutingMediaSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Toggle that enables using an agent's Direct Routing address outbound on behalf of queue for this media type.

@@ -85,6 +85,11 @@ public class MessagingCampaignScheduleConfigChangeRecurrenceRange  implements Se
     }
   }
 
+  public MessagingCampaignScheduleConfigChangeRecurrenceRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

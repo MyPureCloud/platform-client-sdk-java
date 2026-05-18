@@ -30,6 +30,11 @@ public class QueueConversationSocialExpressionEventTopicDomainEntityRef  impleme
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

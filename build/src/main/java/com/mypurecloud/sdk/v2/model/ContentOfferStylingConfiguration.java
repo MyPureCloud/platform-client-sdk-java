@@ -40,6 +40,11 @@ public class ContentOfferStylingConfiguration  implements Serializable {
     }
   }
 
+  public ContentOfferStylingConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Properties for customizing the positioning of the content offer.

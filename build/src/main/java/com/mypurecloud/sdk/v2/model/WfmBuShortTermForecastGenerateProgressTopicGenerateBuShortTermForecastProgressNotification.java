@@ -83,6 +83,11 @@ public class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForec
     }
   }
 
+  public WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

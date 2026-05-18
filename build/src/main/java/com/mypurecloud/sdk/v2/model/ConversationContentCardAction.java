@@ -82,6 +82,11 @@ public class ConversationContentCardAction  implements Serializable {
     }
   }
 
+  public ConversationContentCardAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of action.

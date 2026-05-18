@@ -32,6 +32,11 @@ public class AnalyticsSessionMetric  implements Serializable {
     }
   }
 
+  public AnalyticsSessionMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

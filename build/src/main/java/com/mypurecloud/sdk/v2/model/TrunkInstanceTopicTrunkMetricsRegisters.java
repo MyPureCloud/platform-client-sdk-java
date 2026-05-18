@@ -34,6 +34,11 @@ public class TrunkInstanceTopicTrunkMetricsRegisters  implements Serializable {
     }
   }
 
+  public TrunkInstanceTopicTrunkMetricsRegisters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,11 @@ public class AutoAnswerSettings  implements Serializable {
     }
   }
 
+  public AutoAnswerSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Map of conversation media type enabled status.

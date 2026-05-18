@@ -30,6 +30,11 @@ public class ValidateAddressRequest  implements Serializable {
     }
   }
 
+  public ValidateAddressRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Address schema

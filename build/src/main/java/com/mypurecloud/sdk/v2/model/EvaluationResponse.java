@@ -231,6 +231,14 @@ public class EvaluationResponse  implements Serializable {
     }
   }
 
+  public EvaluationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaType = new ArrayList<MediaTypeEnum>();
+      divisionIds = new ArrayList<String>();
+      authorizedActions = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

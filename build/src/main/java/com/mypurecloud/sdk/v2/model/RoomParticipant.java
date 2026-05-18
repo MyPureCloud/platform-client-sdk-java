@@ -29,6 +29,11 @@ public class RoomParticipant  implements Serializable {
     }
   }
 
+  public RoomParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * participantJid

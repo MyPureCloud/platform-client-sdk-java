@@ -29,6 +29,11 @@ public class SharedEntity  implements Serializable {
     }
   }
 
+  public SharedEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class GroupEmailPolicy  implements Serializable {
     }
   }
 
+  public GroupEmailPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

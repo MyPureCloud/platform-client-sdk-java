@@ -30,6 +30,11 @@ public class FaxConfig  implements Serializable {
     }
   }
 
+  public FaxConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to enable email notifications for this organization

@@ -36,6 +36,14 @@ public class QueryShiftTradeListJobRequest  implements Serializable {
     }
   }
 
+  public QueryShiftTradeListJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnitIds = new ArrayList<String>();
+      weekDates = new ArrayList<LocalDate>();
+      userIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of management units from which to query shift trades

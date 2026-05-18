@@ -32,6 +32,11 @@ public class MessagingIdentityResolutionConfig  implements Serializable {
     }
   }
 
+  public MessagingIdentityResolutionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to use when performing identity resolution.

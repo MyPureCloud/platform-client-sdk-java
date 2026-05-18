@@ -437,6 +437,14 @@ public class FlowActivityEntityData  implements Serializable {
     }
   }
 
+  public FlowActivityEntityData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      scoredAgents = new ArrayList<FlowActivityScoredAgent>();
+    }
+  }
+
   
   /**
    * The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

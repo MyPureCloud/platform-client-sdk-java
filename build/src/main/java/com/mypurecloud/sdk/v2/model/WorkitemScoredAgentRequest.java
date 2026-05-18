@@ -30,6 +30,11 @@ public class WorkitemScoredAgentRequest  implements Serializable {
     }
   }
 
+  public WorkitemScoredAgentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * An agents ID. Must be a valid UUID.

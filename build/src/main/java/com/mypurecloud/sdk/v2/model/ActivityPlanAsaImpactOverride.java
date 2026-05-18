@@ -29,6 +29,11 @@ public class ActivityPlanAsaImpactOverride  implements Serializable {
     }
   }
 
+  public ActivityPlanAsaImpactOverride(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Allowed average speed of answer increase percent, from 0.0 to 100.0

@@ -30,6 +30,11 @@ public class IntentReference  implements Serializable {
     }
   }
 
+  public IntentReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "ID of the intent.")
   @JsonProperty("id")

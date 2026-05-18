@@ -91,6 +91,14 @@ public class LocationSearchRequest  implements Serializable {
     }
   }
 
+  public LocationSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      expand = new ArrayList<String>();
+      query = new ArrayList<LocationSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

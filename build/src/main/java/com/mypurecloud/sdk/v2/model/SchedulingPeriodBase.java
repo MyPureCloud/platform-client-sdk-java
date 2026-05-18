@@ -30,6 +30,11 @@ public class SchedulingPeriodBase  implements Serializable {
     }
   }
 
+  public SchedulingPeriodBase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The latest date the associated activity plan can end, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

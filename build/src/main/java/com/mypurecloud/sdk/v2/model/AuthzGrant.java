@@ -35,6 +35,11 @@ public class AuthzGrant  implements Serializable {
     }
   }
 
+  public AuthzGrant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class DecisionTableRowEntityRef  implements Serializable {
     }
   }
 
+  public DecisionTableRowEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

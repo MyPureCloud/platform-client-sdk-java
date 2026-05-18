@@ -35,6 +35,11 @@ public class GoogleDialogflowCustomSettings  implements Serializable {
     }
   }
 
+  public GoogleDialogflowCustomSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * If set this environment will be used to initiate the dialogflow bot, otherwise the default configuration will be used.  See https://cloud.google.com/dialogflow/docs/agents-versions

@@ -40,6 +40,11 @@ public class MutableUserPresence  implements Serializable {
     }
   }
 
+  public MutableUserPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user's id

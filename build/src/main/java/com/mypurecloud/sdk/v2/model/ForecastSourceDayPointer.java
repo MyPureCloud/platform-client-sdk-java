@@ -87,6 +87,11 @@ public class ForecastSourceDayPointer  implements Serializable {
     }
   }
 
+  public ForecastSourceDayPointer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The forecast day of week for this source data

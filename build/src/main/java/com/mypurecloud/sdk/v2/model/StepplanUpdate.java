@@ -82,6 +82,11 @@ public class StepplanUpdate  implements Serializable {
     }
   }
 
+  public StepplanUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the Stepplan. Valid length between 3 and 256 characters.

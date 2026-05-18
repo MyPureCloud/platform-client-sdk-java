@@ -34,6 +34,11 @@ public class ContestMetricScoreRanked  implements Serializable {
     }
   }
 
+  public ContestMetricScoreRanked(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The gamification metric for the data

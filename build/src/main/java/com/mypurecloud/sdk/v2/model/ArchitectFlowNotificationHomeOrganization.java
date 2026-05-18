@@ -31,6 +31,11 @@ public class ArchitectFlowNotificationHomeOrganization  implements Serializable 
     }
   }
 
+  public ArchitectFlowNotificationHomeOrganization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

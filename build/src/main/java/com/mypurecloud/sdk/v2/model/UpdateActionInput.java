@@ -33,6 +33,11 @@ public class UpdateActionInput  implements Serializable {
     }
   }
 
+  public UpdateActionInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Category of action, Can be up to 256 characters long

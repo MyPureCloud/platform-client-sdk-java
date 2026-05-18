@@ -83,6 +83,11 @@ public class UpdateContactColumnActionSettings  implements Serializable {
     }
   }
 
+  public UpdateContactColumnActionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A mapping of contact columns to their new values.

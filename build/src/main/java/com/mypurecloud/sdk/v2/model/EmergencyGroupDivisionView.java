@@ -34,6 +34,11 @@ public class EmergencyGroupDivisionView  implements Serializable {
     }
   }
 
+  public EmergencyGroupDivisionView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The emergency group identifier

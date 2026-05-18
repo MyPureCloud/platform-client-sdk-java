@@ -44,6 +44,12 @@ public class ScheduleDivisionViewEntityListing  implements Serializable, PagedRe
     }
   }
 
+  public ScheduleDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SchedulesDivisionView>();
+    }
+  }
+
   
   /**
    **/

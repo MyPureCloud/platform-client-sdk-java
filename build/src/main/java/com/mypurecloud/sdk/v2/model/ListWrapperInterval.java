@@ -32,6 +32,12 @@ public class ListWrapperInterval  implements Serializable {
     }
   }
 
+  public ListWrapperInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

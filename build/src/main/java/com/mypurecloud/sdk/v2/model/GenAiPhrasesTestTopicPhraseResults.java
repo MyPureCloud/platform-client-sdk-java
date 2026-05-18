@@ -35,6 +35,12 @@ public class GenAiPhrasesTestTopicPhraseResults  implements Serializable {
     }
   }
 
+  public GenAiPhrasesTestTopicPhraseResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchedTranscripts = new ArrayList<GenAiPhrasesTestPhraseMatchedTranscript>();
+    }
+  }
+
   
   /**
    **/

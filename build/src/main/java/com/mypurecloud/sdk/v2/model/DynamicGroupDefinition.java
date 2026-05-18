@@ -35,6 +35,11 @@ public class DynamicGroupDefinition  implements Serializable {
     }
   }
 
+  public DynamicGroupDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The group the dynamic group definition belongs to

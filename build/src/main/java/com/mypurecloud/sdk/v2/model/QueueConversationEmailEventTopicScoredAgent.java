@@ -31,6 +31,11 @@ public class QueueConversationEmailEventTopicScoredAgent  implements Serializabl
     }
   }
 
+  public QueueConversationEmailEventTopicScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

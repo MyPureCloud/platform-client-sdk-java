@@ -84,6 +84,11 @@ public class RecordingRetention  implements Serializable {
     }
   }
 
+  public RecordingRetention(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

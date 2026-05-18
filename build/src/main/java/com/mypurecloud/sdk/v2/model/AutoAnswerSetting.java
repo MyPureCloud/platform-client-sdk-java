@@ -29,6 +29,11 @@ public class AutoAnswerSetting  implements Serializable {
     }
   }
 
+  public AutoAnswerSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The media type status.

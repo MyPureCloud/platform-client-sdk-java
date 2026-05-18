@@ -87,6 +87,11 @@ public class RecordingFormPageComponent  implements Serializable {
     }
   }
 
+  public RecordingFormPageComponent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this form component element.

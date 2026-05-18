@@ -32,6 +32,11 @@ public class BuListAlternativeShiftTradesResponse  implements Serializable {
     }
   }
 
+  public BuListAlternativeShiftTradesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The asynchronous job handling the request. Null if result returns synchronously

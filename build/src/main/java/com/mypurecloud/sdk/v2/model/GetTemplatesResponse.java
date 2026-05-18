@@ -35,6 +35,12 @@ public class GetTemplatesResponse  implements Serializable {
     }
   }
 
+  public GetTemplatesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ObjectiveTemplate>();
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,11 @@ public class ButtonComponent  implements Serializable {
     }
   }
 
+  public ButtonComponent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text to show inside the button.

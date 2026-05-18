@@ -41,6 +41,13 @@ public class TranscriptionTopicTranscriptAlternative  implements Serializable {
     }
   }
 
+  public TranscriptionTopicTranscriptAlternative(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      words = new ArrayList<TranscriptionTopicTranscriptWord>();
+      decoratedWords = new ArrayList<TranscriptionTopicTranscriptWord>();
+    }
+  }
+
   
   /**
    **/

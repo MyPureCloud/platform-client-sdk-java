@@ -53,6 +53,12 @@ public class WorkitemCommonCreate  implements Serializable {
     }
   }
 
+  public WorkitemCommonCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the Workitem. Valid length between 3 and 256 characters.

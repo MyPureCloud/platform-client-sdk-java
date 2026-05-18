@@ -29,6 +29,11 @@ public class ConversationUser  implements Serializable {
     }
   }
 
+  public ConversationUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for this user.

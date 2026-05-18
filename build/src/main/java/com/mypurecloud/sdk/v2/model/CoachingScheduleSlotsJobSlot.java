@@ -32,6 +32,11 @@ public class CoachingScheduleSlotsJobSlot  implements Serializable {
     }
   }
 
+  public CoachingScheduleSlotsJobSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start date and time of the slot. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

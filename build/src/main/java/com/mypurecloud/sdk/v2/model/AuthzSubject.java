@@ -37,6 +37,12 @@ public class AuthzSubject  implements Serializable {
     }
   }
 
+  public AuthzSubject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      grants = new ArrayList<AuthzGrant>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

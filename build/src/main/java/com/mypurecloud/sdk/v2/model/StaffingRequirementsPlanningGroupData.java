@@ -37,6 +37,14 @@ public class StaffingRequirementsPlanningGroupData  implements Serializable {
     }
   }
 
+  public StaffingRequirementsPlanningGroupData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staffingRequirementsPerInterval = new ArrayList<Double>();
+      minimumStaffPerInterval = new ArrayList<Double>();
+      effectiveStaffPerInterval = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * The ID of the planning group to which this data applies

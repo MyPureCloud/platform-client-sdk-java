@@ -29,6 +29,11 @@ public class WfmAdherenceExplanationJobCompleteTopicBusinessUnit  implements Ser
     }
   }
 
+  public WfmAdherenceExplanationJobCompleteTopicBusinessUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

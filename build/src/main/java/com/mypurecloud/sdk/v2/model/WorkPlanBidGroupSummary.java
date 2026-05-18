@@ -36,6 +36,11 @@ public class WorkPlanBidGroupSummary  implements Serializable {
     }
   }
 
+  public WorkPlanBidGroupSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

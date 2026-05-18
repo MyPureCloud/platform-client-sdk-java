@@ -46,6 +46,12 @@ public class EvaluationQuestionGroup  implements Serializable {
     }
   }
 
+  public EvaluationQuestionGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questions = new ArrayList<EvaluationQuestion>();
+    }
+  }
+
   
   /**
    **/

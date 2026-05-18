@@ -37,6 +37,12 @@ public class ContestScoresGroupTrend  implements Serializable {
     }
   }
 
+  public ContestScoresGroupTrend(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metricScores = new ArrayList<ContestMetricScore>();
+    }
+  }
+
   
   /**
    * Workday of the contest score. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

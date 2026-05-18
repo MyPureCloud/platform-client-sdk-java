@@ -82,6 +82,12 @@ public class UserActivityMetricValue  implements Serializable {
     }
   }
 
+  public UserActivityMetricValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entityIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Metric

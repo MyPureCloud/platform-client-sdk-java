@@ -36,6 +36,12 @@ public class AgentChecklistInfo  implements Serializable {
     }
   }
 
+  public AgentChecklistInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      checklistItems = new ArrayList<ChecklistItem>();
+    }
+  }
+
   
   /**
    * ID of the checklist.

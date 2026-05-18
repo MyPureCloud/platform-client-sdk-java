@@ -30,6 +30,11 @@ public class TypedAttribute  implements Serializable {
     }
   }
 
+  public TypedAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

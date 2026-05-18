@@ -142,6 +142,11 @@ public class ConversationSocialExpressionEventTopicLimit  implements Serializabl
     }
   }
 
+  public ConversationSocialExpressionEventTopicLimit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

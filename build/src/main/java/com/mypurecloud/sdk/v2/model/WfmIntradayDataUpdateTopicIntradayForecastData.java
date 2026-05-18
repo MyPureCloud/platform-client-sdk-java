@@ -32,6 +32,11 @@ public class WfmIntradayDataUpdateTopicIntradayForecastData  implements Serializ
     }
   }
 
+  public WfmIntradayDataUpdateTopicIntradayForecastData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

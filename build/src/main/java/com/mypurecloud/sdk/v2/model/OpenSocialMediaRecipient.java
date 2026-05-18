@@ -90,6 +90,12 @@ public class OpenSocialMediaRecipient  implements Serializable {
     }
   }
 
+  public OpenSocialMediaRecipient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      additionalIds = new ArrayList<OpenSocialMediaRecipientAdditionalIdentifier>();
+    }
+  }
+
   
   /**
    * The recipient ID specific to the provider.

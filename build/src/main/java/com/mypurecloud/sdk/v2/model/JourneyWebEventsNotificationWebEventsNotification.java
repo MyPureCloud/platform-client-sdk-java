@@ -97,6 +97,11 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     }
   }
 
+  public JourneyWebEventsNotificationWebEventsNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

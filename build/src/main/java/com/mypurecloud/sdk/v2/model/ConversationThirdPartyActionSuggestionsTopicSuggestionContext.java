@@ -87,6 +87,11 @@ public class ConversationThirdPartyActionSuggestionsTopicSuggestionContext  impl
     }
   }
 
+  public ConversationThirdPartyActionSuggestionsTopicSuggestionContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

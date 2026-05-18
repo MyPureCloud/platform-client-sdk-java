@@ -33,6 +33,11 @@ public class UnprocessedSegmentAssignments  implements Serializable {
     }
   }
 
+  public UnprocessedSegmentAssignments(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The segment assignments to apply.

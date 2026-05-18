@@ -34,6 +34,13 @@ public class ProcessScheduleUpdateUploadRequest  implements Serializable {
     }
   }
 
+  public ProcessScheduleUpdateUploadRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      teamIds = new ArrayList<String>();
+      managementUnitIdsForAddedTeamUsers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The uploadKey provided by the request to get an upload URL

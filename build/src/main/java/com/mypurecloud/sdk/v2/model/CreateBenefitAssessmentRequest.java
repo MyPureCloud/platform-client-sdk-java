@@ -32,6 +32,12 @@ public class CreateBenefitAssessmentRequest  implements Serializable {
     }
   }
 
+  public CreateBenefitAssessmentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queueIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of queue ids that are to be assessed for Predictive Routing benefit.

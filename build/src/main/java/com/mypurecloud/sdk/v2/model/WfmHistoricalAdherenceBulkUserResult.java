@@ -93,6 +93,14 @@ public class WfmHistoricalAdherenceBulkUserResult  implements Serializable {
     }
   }
 
+  public WfmHistoricalAdherenceBulkUserResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      exceptionInfo = new ArrayList<HistoricalAdherenceExceptionInfo>();
+      actuals = new ArrayList<HistoricalAdherenceActuals>();
+      dayMetrics = new ArrayList<WfmHistoricalAdherenceBulkUserDayMetrics>();
+    }
+  }
+
   
   /**
    * The ID of the user for whom the adherence is queried

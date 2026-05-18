@@ -32,6 +32,12 @@ public class Actions  implements Serializable {
     }
   }
 
+  public Actions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillsToRemove = new ArrayList<SkillsToRemove>();
+    }
+  }
+
   
   /**
    **/

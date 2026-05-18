@@ -43,6 +43,12 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public LogicalInterfaceEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DomainLogicalInterface>();
+    }
+  }
+
   
   /**
    **/

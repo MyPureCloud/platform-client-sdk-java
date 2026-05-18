@@ -29,6 +29,11 @@ public class WfmBuShortTermForecastCopyCompleteTopicUserReference  implements Se
     }
   }
 
+  public WfmBuShortTermForecastCopyCompleteTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

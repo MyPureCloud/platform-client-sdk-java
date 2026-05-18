@@ -30,6 +30,11 @@ public class FaxTopicUserData  implements Serializable {
     }
   }
 
+  public FaxTopicUserData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

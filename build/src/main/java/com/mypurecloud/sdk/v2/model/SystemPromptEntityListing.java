@@ -43,6 +43,12 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     }
   }
 
+  public SystemPromptEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SystemPrompt>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class OneOnOne  implements Serializable {
     }
   }
 
+  public OneOnOne(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pinnedMessages = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   /**
    * Room's pinned messages

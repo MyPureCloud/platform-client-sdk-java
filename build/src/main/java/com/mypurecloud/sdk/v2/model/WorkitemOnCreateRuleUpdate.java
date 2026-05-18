@@ -29,6 +29,11 @@ public class WorkitemOnCreateRuleUpdate  implements Serializable {
     }
   }
 
+  public WorkitemOnCreateRuleUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the rule.

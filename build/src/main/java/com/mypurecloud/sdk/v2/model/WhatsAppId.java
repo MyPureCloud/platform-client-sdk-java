@@ -32,6 +32,11 @@ public class WhatsAppId  implements Serializable {
     }
   }
 
+  public WhatsAppId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The phone number associated with this WhatsApp account. Requires 'E164 without a leading plus' phone number.

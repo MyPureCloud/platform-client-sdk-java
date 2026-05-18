@@ -37,6 +37,11 @@ public class SurveyQuestionScore  implements Serializable {
     }
   }
 
+  public SurveyQuestionScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

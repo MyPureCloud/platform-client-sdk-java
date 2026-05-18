@@ -30,6 +30,11 @@ public class RecallEntry  implements Serializable {
     }
   }
 
+  public RecallEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

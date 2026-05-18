@@ -31,6 +31,11 @@ public class QueueConversationVideoEventTopicScoredAgent  implements Serializabl
     }
   }
 
+  public QueueConversationVideoEventTopicScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

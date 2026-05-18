@@ -35,6 +35,12 @@ public class FlattenedJsonSchemaDocument  implements Serializable {
     }
   }
 
+  public FlattenedJsonSchemaDocument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      arrayProperties = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

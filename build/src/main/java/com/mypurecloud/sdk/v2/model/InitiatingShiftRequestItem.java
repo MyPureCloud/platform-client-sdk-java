@@ -33,6 +33,11 @@ public class InitiatingShiftRequestItem  implements Serializable {
     }
   }
 
+  public InitiatingShiftRequestItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the shift that the initiating user wants to give up in this trade

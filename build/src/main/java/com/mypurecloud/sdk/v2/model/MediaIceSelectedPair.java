@@ -32,6 +32,11 @@ public class MediaIceSelectedPair  implements Serializable {
     }
   }
 
+  public MediaIceSelectedPair(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The remote candidate that was chosen

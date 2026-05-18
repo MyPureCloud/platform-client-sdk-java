@@ -32,6 +32,11 @@ public class KnowledgeDocumentReference  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the document.

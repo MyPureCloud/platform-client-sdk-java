@@ -30,6 +30,11 @@ public class ContentSetting  implements Serializable {
     }
   }
 
+  public ContentSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Settings relating to facebook and instagram stories feature

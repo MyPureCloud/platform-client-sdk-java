@@ -31,6 +31,11 @@ public class TrunkMetricsNetworkTypeIp  implements Serializable {
     }
   }
 
+  public TrunkMetricsNetworkTypeIp(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Assigned IP Address for the interface

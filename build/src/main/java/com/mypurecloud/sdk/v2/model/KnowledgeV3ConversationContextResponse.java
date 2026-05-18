@@ -84,6 +84,11 @@ public class KnowledgeV3ConversationContextResponse  implements Serializable {
     }
   }
 
+  public KnowledgeV3ConversationContextResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The conversation.

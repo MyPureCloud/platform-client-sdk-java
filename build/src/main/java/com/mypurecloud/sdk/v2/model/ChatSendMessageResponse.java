@@ -29,6 +29,11 @@ public class ChatSendMessageResponse  implements Serializable {
     }
   }
 
+  public ChatSendMessageResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the created message

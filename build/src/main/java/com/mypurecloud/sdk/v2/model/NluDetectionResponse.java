@@ -34,6 +34,11 @@ public class NluDetectionResponse  implements Serializable {
     }
   }
 
+  public NluDetectionResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The NLU domain version which performed the detection.")
   @JsonProperty("version")

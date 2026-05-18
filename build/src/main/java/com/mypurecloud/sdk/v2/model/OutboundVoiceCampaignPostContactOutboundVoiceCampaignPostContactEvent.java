@@ -104,6 +104,11 @@ public class OutboundVoiceCampaignPostContactOutboundVoiceCampaignPostContactEve
     }
   }
 
+  public OutboundVoiceCampaignPostContactOutboundVoiceCampaignPostContactEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

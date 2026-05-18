@@ -29,6 +29,11 @@ public class ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId  impleme
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

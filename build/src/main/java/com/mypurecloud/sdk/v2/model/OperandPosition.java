@@ -127,6 +127,11 @@ public class OperandPosition  implements Serializable {
     }
   }
 
+  public OperandPosition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Defines starting point of a position range - number of seconds or words from the start or from the end of the interaction

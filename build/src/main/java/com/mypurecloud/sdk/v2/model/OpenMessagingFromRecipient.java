@@ -85,6 +85,11 @@ public class OpenMessagingFromRecipient  implements Serializable {
     }
   }
 
+  public OpenMessagingFromRecipient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Nickname or display name of the recipient.

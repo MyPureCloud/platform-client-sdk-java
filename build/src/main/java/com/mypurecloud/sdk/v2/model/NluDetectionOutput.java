@@ -36,6 +36,13 @@ public class NluDetectionOutput  implements Serializable {
     }
   }
 
+  public NluDetectionOutput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<DetectedIntent>();
+      dialogActs = new ArrayList<DetectedDialogAct>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The detected intents.")
   @JsonProperty("intents")

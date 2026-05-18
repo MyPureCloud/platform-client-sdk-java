@@ -29,6 +29,11 @@ public class InternalMessageRequest  implements Serializable {
     }
   }
 
+  public InternalMessageRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The body of the text message.

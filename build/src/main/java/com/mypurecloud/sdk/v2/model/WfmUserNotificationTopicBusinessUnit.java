@@ -29,6 +29,11 @@ public class WfmUserNotificationTopicBusinessUnit  implements Serializable {
     }
   }
 
+  public WfmUserNotificationTopicBusinessUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

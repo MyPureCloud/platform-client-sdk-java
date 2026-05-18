@@ -30,6 +30,11 @@ public class AvailabilityRange  implements Serializable {
     }
   }
 
+  public AvailabilityRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The earliest time of day the activity can be scheduled to begin, in minutes from midnight in the configured time zone of the business unit

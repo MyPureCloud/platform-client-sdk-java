@@ -30,6 +30,11 @@ public class NluConfusionMatrixColumn  implements Serializable {
     }
   }
 
+  public NluConfusionMatrixColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the intent for the column.

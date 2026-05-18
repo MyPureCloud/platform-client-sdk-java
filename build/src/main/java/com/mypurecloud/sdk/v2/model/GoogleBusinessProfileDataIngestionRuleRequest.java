@@ -33,6 +33,11 @@ public class GoogleBusinessProfileDataIngestionRuleRequest  implements Serializa
     }
   }
 
+  public GoogleBusinessProfileDataIngestionRuleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the data ingestion rule.

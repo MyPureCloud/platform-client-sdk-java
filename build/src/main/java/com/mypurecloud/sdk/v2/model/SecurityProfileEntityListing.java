@@ -43,6 +43,12 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     }
   }
 
+  public SecurityProfileEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SecurityProfile>();
+    }
+  }
+
   
   /**
    **/

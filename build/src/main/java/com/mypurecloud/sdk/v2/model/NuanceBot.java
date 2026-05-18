@@ -57,6 +57,16 @@ public class NuanceBot  implements Serializable {
     }
   }
 
+  public NuanceBot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      credentials = new ArrayList<NuanceBotCredentials>();
+      variables = new ArrayList<NuanceBotVariable>();
+      transferNodes = new ArrayList<NuanceBotTransferNode>();
+      locales = new ArrayList<String>();
+      channels = new ArrayList<NuanceChannel>();
+    }
+  }
+
   
   /**
    * Nuance bot Id

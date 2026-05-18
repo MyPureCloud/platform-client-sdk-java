@@ -81,6 +81,11 @@ public class WorkitemsUserEventsNotificationCustomAttribute  implements Serializ
     }
   }
 
+  public WorkitemsUserEventsNotificationCustomAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

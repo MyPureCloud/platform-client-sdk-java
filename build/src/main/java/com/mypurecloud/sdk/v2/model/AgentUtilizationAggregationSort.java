@@ -129,6 +129,11 @@ public class AgentUtilizationAggregationSort  implements Serializable {
     }
   }
 
+  public AgentUtilizationAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

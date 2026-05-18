@@ -100,6 +100,11 @@ public class CampaignRuleCondition  implements Serializable {
     }
   }
 
+  public CampaignRuleCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

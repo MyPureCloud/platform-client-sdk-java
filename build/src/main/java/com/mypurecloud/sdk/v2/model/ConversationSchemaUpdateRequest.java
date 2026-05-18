@@ -33,6 +33,11 @@ public class ConversationSchemaUpdateRequest  implements Serializable {
     }
   }
 
+  public ConversationSchemaUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The schema's version, a positive integer.

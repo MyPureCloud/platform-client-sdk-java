@@ -198,6 +198,11 @@ public class FlowActivityQueryPredicate  implements Serializable {
     }
   }
 
+  public FlowActivityQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

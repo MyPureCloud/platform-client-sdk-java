@@ -82,6 +82,12 @@ public class UserObservationQueryClause  implements Serializable {
     }
   }
 
+  public UserObservationQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<UserObservationQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

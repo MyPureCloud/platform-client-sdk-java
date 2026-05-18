@@ -89,6 +89,12 @@ public class UserActivityResponse  implements Serializable {
     }
   }
 
+  public UserActivityResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<UserActivityData>();
+    }
+  }
+
   
   /**
    * Query results

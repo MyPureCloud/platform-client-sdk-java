@@ -89,6 +89,11 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     }
   }
 
+  public DialerOutboundSettingsConfigChangeOutboundSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The maximum number of calls that can be placed per agent on any campaign

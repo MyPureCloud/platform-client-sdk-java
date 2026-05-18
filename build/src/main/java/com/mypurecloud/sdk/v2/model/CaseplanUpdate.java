@@ -36,6 +36,11 @@ public class CaseplanUpdate  implements Serializable {
     }
   }
 
+  public CaseplanUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the Caseplan. Valid length between 3 and 256 characters.

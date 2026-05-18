@@ -337,6 +337,12 @@ public class KeyPerformanceIndicator  implements Serializable {
     }
   }
 
+  public KeyPerformanceIndicator(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queues = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

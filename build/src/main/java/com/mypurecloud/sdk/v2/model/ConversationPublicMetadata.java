@@ -32,6 +32,11 @@ public class ConversationPublicMetadata  implements Serializable {
     }
   }
 
+  public ConversationPublicMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the root public message.

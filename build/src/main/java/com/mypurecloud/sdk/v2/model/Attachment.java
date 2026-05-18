@@ -34,6 +34,11 @@ public class Attachment  implements Serializable {
     }
   }
 
+  public Attachment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier for the attachment.

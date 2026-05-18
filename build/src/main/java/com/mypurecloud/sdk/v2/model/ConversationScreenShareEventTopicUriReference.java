@@ -30,6 +30,11 @@ public class ConversationScreenShareEventTopicUriReference  implements Serializa
     }
   }
 
+  public ConversationScreenShareEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

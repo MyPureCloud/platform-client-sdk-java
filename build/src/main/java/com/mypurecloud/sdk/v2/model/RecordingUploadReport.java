@@ -82,6 +82,11 @@ public class RecordingUploadReport  implements Serializable {
     }
   }
 
+  public RecordingUploadReport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The report id.

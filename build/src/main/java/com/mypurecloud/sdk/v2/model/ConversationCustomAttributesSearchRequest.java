@@ -88,6 +88,13 @@ public class ConversationCustomAttributesSearchRequest  implements Serializable 
     }
   }
 
+  public ConversationCustomAttributesSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      expand = new ArrayList<String>();
+      sort = new ArrayList<SearchSort>();
+    }
+  }
+
   
   /**
    * Expand your search with bulk lookups

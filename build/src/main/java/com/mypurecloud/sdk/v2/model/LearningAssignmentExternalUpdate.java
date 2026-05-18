@@ -83,6 +83,11 @@ public class LearningAssignmentExternalUpdate  implements Serializable {
     }
   }
 
+  public LearningAssignmentExternalUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Learning Assignment state

@@ -86,6 +86,11 @@ public class ReplacementTerm  implements Serializable {
     }
   }
 
+  public ReplacementTerm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Replacement term type

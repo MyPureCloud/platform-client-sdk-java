@@ -32,6 +32,11 @@ public class WfmServiceGoalImpactSettings  implements Serializable {
     }
   }
 
+  public WfmServiceGoalImpactSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Allowed service level percent increase and decrease

@@ -37,6 +37,12 @@ public class ResponseQueryRequest  implements Serializable {
     }
   }
 
+  public ResponseQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      filters = new ArrayList<ResponseFilter>();
+    }
+  }
+
   
   /**
    * Query phrase to search response text and name. If not set will match all.

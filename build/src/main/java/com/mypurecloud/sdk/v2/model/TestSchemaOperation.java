@@ -36,6 +36,12 @@ public class TestSchemaOperation  implements Serializable {
     }
   }
 
+  public TestSchemaOperation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the processing step

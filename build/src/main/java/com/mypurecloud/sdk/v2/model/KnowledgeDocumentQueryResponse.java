@@ -37,6 +37,12 @@ public class KnowledgeDocumentQueryResponse  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<KnowledgeDocumentQueryResult>();
+    }
+  }
+
   
   /**
    * Page size of the returned results.

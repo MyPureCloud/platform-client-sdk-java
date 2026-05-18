@@ -31,6 +31,11 @@ public class ConversationEventTopicTransferDestination  implements Serializable 
     }
   }
 
+  public ConversationEventTopicTransferDestination(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the user if the command destination is a user.

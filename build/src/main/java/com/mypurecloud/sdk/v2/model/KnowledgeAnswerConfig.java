@@ -29,6 +29,11 @@ public class KnowledgeAnswerConfig  implements Serializable {
     }
   }
 
+  public KnowledgeAnswerConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Knowledge answer is enabled.

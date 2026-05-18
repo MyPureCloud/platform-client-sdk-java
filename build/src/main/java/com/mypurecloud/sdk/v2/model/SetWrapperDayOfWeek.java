@@ -83,6 +83,12 @@ public class SetWrapperDayOfWeek  implements Serializable {
     }
   }
 
+  public SetWrapperDayOfWeek(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<ValuesEnum>();
+    }
+  }
+
   
   /**
    **/

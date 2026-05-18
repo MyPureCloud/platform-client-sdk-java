@@ -29,6 +29,11 @@ public class UserGreetingEventGreetingOwner  implements Serializable {
     }
   }
 
+  public UserGreetingEventGreetingOwner(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

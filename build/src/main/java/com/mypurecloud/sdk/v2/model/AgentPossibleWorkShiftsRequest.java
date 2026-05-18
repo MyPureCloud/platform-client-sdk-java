@@ -31,6 +31,11 @@ public class AgentPossibleWorkShiftsRequest  implements Serializable {
     }
   }
 
+  public AgentPossibleWorkShiftsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start date of requested effective work plan, day of week will be in line with business unit start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

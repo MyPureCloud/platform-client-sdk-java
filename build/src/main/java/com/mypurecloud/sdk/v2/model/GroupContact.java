@@ -127,6 +127,11 @@ public class GroupContact  implements Serializable {
     }
   }
 
+  public GroupContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Phone number for this contact type

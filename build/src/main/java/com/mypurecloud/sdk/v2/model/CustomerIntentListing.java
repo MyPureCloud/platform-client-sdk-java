@@ -43,6 +43,12 @@ public class CustomerIntentListing  implements Serializable, PagedResource<Custo
     }
   }
 
+  public CustomerIntentListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CustomerIntentResponse>();
+    }
+  }
+
   
   /**
    **/

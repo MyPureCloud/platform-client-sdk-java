@@ -85,6 +85,13 @@ public class AgentCopilotAggregateQueryFilter  implements Serializable {
     }
   }
 
+  public AgentCopilotAggregateQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<AgentCopilotAggregateQueryClause>();
+      predicates = new ArrayList<AgentCopilotAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

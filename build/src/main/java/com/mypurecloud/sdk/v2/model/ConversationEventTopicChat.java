@@ -221,6 +221,11 @@ public class ConversationEventTopicChat  implements Serializable {
     }
   }
 
+  public ConversationEventTopicChat(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

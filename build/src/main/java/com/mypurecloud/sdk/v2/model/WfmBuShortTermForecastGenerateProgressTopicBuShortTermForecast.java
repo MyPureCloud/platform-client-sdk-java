@@ -99,6 +99,13 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     }
   }
 
+  public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sourceDays = new ArrayList<WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer>();
+      modifications = new ArrayList<WfmBuShortTermForecastGenerateProgressTopicBuForecastModification>();
+    }
+  }
+
   
   /**
    **/

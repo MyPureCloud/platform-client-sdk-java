@@ -31,6 +31,11 @@ public class SegmentUrl  implements Serializable {
     }
   }
 
+  public SegmentUrl(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Recording Reference

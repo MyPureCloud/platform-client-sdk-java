@@ -77,6 +77,11 @@ public class SuggestionFeedback  implements Serializable {
     }
   }
 
+  public SuggestionFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The rating value of the suggestion feedback.

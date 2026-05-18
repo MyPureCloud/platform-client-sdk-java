@@ -43,6 +43,12 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     }
   }
 
+  public NluFeedbackListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<NluFeedbackResponse>();
+    }
+  }
+
   
   /**
    **/

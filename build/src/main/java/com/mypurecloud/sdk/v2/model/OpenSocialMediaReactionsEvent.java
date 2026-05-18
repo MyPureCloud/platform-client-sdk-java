@@ -34,6 +34,12 @@ public class OpenSocialMediaReactionsEvent  implements Serializable {
     }
   }
 
+  public OpenSocialMediaReactionsEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      reactions = new ArrayList<ContentReaction>();
+    }
+  }
+
   
   /**
    * List of reactions for this event.

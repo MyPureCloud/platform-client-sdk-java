@@ -154,6 +154,23 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      calls = new ArrayList<QueueConversationSocialExpressionEventTopicCall>();
+      callbacks = new ArrayList<QueueConversationSocialExpressionEventTopicCallback>();
+      chats = new ArrayList<QueueConversationSocialExpressionEventTopicChat>();
+      cobrowsesessions = new ArrayList<QueueConversationSocialExpressionEventTopicCobrowse>();
+      emails = new ArrayList<QueueConversationSocialExpressionEventTopicEmail>();
+      messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessage>();
+      internalMessages = new ArrayList<QueueConversationSocialExpressionEventTopicInternalMessage>();
+      screenMonitorings = new ArrayList<QueueConversationSocialExpressionEventTopicScreenMonitoring>();
+      screenshares = new ArrayList<QueueConversationSocialExpressionEventTopicScreenShare>();
+      socialExpressions = new ArrayList<QueueConversationSocialExpressionEventTopicSocialExpression>();
+      videos = new ArrayList<QueueConversationSocialExpressionEventTopicVideo>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this conversation.

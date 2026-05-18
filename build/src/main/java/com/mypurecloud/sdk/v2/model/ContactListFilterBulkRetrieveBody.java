@@ -32,6 +32,12 @@ public class ContactListFilterBulkRetrieveBody  implements Serializable {
     }
   }
 
+  public ContactListFilterBulkRetrieveBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of the Contact List Filters to retrieve.

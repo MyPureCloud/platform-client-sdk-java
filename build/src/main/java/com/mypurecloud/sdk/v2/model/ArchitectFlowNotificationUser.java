@@ -33,6 +33,11 @@ public class ArchitectFlowNotificationUser  implements Serializable {
     }
   }
 
+  public ArchitectFlowNotificationUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the user.

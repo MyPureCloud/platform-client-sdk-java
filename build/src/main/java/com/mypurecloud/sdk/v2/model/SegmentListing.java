@@ -43,6 +43,12 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     }
   }
 
+  public SegmentListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<JourneySegment>();
+    }
+  }
+
   
   /**
    **/

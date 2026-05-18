@@ -87,6 +87,11 @@ public class ConversationKnowledgeSearchSuggestionsTopicSuggestionContext  imple
     }
   }
 
+  public ConversationKnowledgeSearchSuggestionsTopicSuggestionContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

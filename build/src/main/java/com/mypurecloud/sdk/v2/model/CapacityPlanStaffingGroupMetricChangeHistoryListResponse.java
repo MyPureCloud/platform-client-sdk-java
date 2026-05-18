@@ -33,6 +33,12 @@ public class CapacityPlanStaffingGroupMetricChangeHistoryListResponse  implement
     }
   }
 
+  public CapacityPlanStaffingGroupMetricChangeHistoryListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<StaffingGroupMetricChangeResponse>();
+    }
+  }
+
   
   /**
    **/

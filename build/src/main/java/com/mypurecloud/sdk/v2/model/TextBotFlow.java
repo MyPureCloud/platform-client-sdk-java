@@ -30,6 +30,11 @@ public class TextBotFlow  implements Serializable {
     }
   }
 
+  public TextBotFlow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Bot Flow ID.

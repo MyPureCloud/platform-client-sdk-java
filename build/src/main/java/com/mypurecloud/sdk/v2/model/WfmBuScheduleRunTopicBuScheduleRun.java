@@ -97,6 +97,12 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     }
   }
 
+  public WfmBuScheduleRunTopicBuScheduleRun(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messageSeverityCounts = new ArrayList<WfmBuScheduleRunTopicSchedulerMessageSeverityCount>();
+    }
+  }
+
   
   /**
    **/

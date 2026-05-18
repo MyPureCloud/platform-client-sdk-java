@@ -45,6 +45,12 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     }
   }
 
+  public LearningAssignmentUserListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LearningAssignmentUser>();
+    }
+  }
+
   
   /**
    **/

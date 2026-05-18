@@ -43,6 +43,12 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
     }
   }
 
+  public TwitterDataIngestionRuleVersionResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TwitterDataIngestionRuleVersionResponse>();
+    }
+  }
+
   
   /**
    **/

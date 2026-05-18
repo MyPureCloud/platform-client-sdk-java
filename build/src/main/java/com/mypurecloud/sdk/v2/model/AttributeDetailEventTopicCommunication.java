@@ -87,6 +87,11 @@ public class AttributeDetailEventTopicCommunication  implements Serializable {
     }
   }
 
+  public AttributeDetailEventTopicCommunication(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -36,6 +36,11 @@ public class PerformancePredictionRecalculationUploadResponse  implements Serial
     }
   }
 
+  public PerformancePredictionRecalculationUploadResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The key to pass to the secondary request to start processing of the upload

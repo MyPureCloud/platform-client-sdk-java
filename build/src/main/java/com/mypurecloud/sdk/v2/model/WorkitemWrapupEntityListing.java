@@ -36,6 +36,12 @@ public class WorkitemWrapupEntityListing  implements Serializable {
     }
   }
 
+  public WorkitemWrapupEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkitemWrapup>();
+    }
+  }
+
   
   /**
    **/

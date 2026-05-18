@@ -30,6 +30,11 @@ public class LocaleFlowVersionInfo  implements Serializable {
     }
   }
 
+  public LocaleFlowVersionInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * NLU Version Info for this flow version.

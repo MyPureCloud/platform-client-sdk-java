@@ -34,6 +34,11 @@ public class CreateDecisionTableRequest  implements Serializable {
     }
   }
 
+  public CreateDecisionTableRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The decision table name.

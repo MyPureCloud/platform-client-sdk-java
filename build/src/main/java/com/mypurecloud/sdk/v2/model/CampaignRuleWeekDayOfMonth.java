@@ -31,6 +31,11 @@ public class CampaignRuleWeekDayOfMonth  implements Serializable {
     }
   }
 
+  public CampaignRuleWeekDayOfMonth(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Day of week (1-7)

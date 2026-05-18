@@ -40,6 +40,15 @@ public class CapacityPlanningPlanningGroupAllocation  implements Serializable {
     }
   }
 
+  public CapacityPlanningPlanningGroupAllocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requiredStaffFullTimeEquivalentCount = new ArrayList<Double>();
+      staffingGroupFullTimeEquivalentContributions = new ArrayList<StaffingGroupFullTimeEquivalentContribution>();
+      totalPlannedFullTimeEquivalentCount = new ArrayList<Double>();
+      overUnderFullTimeEquivalentCount = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * The planning group ID to which the capacity planning allocations apply

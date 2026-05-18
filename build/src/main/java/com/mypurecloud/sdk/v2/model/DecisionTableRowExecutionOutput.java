@@ -34,6 +34,11 @@ public class DecisionTableRowExecutionOutput  implements Serializable {
     }
   }
 
+  public DecisionTableRowExecutionOutput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique rule identifier.

@@ -344,6 +344,12 @@ public class Miner  implements Serializable {
     }
   }
 
+  public Miner(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queueIds = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

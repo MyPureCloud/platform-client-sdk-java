@@ -29,6 +29,11 @@ public class DynamicGroupQueryPreview  implements Serializable {
     }
   }
 
+  public DynamicGroupQueryPreview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Number of Users that match the DynamicGroupQuery

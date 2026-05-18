@@ -79,6 +79,11 @@ public class SchedulerMessageArgument  implements Serializable {
     }
   }
 
+  public SchedulerMessageArgument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of this message parameter

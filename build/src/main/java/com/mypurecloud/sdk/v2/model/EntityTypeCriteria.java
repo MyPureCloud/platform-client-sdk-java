@@ -140,6 +140,12 @@ public class EntityTypeCriteria  implements Serializable {
     }
   }
 
+  public EntityTypeCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The criteria key.

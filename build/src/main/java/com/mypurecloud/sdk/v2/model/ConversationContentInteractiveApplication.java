@@ -34,6 +34,11 @@ public class ConversationContentInteractiveApplication  implements Serializable 
     }
   }
 
+  public ConversationContentInteractiveApplication(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the message app.

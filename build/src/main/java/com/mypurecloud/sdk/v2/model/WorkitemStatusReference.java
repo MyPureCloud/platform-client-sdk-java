@@ -31,6 +31,11 @@ public class WorkitemStatusReference  implements Serializable {
     }
   }
 
+  public WorkitemStatusReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

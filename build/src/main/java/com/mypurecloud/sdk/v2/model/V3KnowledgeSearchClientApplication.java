@@ -80,6 +80,11 @@ public class V3KnowledgeSearchClientApplication  implements Serializable {
     }
   }
 
+  public V3KnowledgeSearchClientApplication(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Application type.

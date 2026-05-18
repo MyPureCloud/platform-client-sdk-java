@@ -36,6 +36,12 @@ public class TimeOffRequestList  implements Serializable {
     }
   }
 
+  public TimeOffRequestList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      timeOffRequests = new ArrayList<TimeOffRequestResponse>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

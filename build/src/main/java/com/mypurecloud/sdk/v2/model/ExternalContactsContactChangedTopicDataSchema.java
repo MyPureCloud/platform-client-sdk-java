@@ -30,6 +30,11 @@ public class ExternalContactsContactChangedTopicDataSchema  implements Serializa
     }
   }
 
+  public ExternalContactsContactChangedTopicDataSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

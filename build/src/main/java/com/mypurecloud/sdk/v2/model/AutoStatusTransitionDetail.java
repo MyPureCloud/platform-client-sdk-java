@@ -34,6 +34,11 @@ public class AutoStatusTransitionDetail  implements Serializable {
     }
   }
 
+  public AutoStatusTransitionDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Next status of auto status transition.

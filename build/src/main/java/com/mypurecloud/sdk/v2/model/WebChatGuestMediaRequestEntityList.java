@@ -33,6 +33,12 @@ public class WebChatGuestMediaRequestEntityList  implements Serializable {
     }
   }
 
+  public WebChatGuestMediaRequestEntityList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WebChatGuestMediaRequest>();
+    }
+  }
+
   
   /**
    **/

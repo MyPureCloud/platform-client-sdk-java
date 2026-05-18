@@ -35,6 +35,12 @@ public class ListPickerSection  implements Serializable {
     }
   }
 
+  public ListPickerSection(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      items = new ArrayList<ListPickerItem>();
+    }
+  }
+
   
   /**
    * List of items to choose from in the section

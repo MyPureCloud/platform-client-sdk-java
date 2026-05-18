@@ -32,6 +32,11 @@ public class NuanceApplication  implements Serializable {
     }
   }
 
+  public NuanceApplication(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The application ID

@@ -33,6 +33,12 @@ public class TimeOffLimitListing  implements Serializable {
     }
   }
 
+  public TimeOffLimitListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TimeOffLimit>();
+    }
+  }
+
   
   /**
    **/

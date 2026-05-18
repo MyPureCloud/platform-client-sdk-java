@@ -32,6 +32,11 @@ public class CrossPlatformEmailMediaPolicy  implements Serializable {
     }
   }
 
+  public CrossPlatformEmailMediaPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Actions applied when specified conditions are met

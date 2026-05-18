@@ -32,6 +32,11 @@ public class ArchitectPromptNotificationErrorDetail  implements Serializable {
     }
   }
 
+  public ArchitectPromptNotificationErrorDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

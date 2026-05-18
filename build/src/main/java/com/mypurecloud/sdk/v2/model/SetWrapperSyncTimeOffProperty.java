@@ -79,6 +79,12 @@ public class SetWrapperSyncTimeOffProperty  implements Serializable {
     }
   }
 
+  public SetWrapperSyncTimeOffProperty(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<ValuesEnum>();
+    }
+  }
+
   
   /**
    **/

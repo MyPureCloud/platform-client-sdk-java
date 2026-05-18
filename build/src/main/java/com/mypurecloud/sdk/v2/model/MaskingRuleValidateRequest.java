@@ -30,6 +30,11 @@ public class MaskingRuleValidateRequest  implements Serializable {
     }
   }
 
+  public MaskingRuleValidateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text to mask.

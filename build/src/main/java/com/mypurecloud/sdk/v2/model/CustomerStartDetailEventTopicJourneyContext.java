@@ -32,6 +32,11 @@ public class CustomerStartDetailEventTopicJourneyContext  implements Serializabl
     }
   }
 
+  public CustomerStartDetailEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

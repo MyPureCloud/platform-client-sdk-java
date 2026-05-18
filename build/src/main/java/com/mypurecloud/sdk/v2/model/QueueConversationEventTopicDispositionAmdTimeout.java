@@ -34,6 +34,11 @@ public class QueueConversationEventTopicDispositionAmdTimeout  implements Serial
     }
   }
 
+  public QueueConversationEventTopicDispositionAmdTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured AMD timeout value.

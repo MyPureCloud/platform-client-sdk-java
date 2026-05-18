@@ -35,6 +35,11 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
     }
   }
 
+  public ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The organization's new dependency tracking build status

@@ -41,6 +41,12 @@ public class JourneyPage  implements Serializable {
     }
   }
 
+  public JourneyPage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      breadcrumb = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The page URL.

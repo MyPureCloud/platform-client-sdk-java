@@ -43,6 +43,12 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     }
   }
 
+  public DialerEventEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EventLog>();
+    }
+  }
+
   
   /**
    **/

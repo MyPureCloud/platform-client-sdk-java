@@ -29,6 +29,11 @@ public class BulkJobEntity  implements Serializable {
     }
   }
 
+  public BulkJobEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the bulk job entity.

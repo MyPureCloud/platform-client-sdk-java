@@ -25,6 +25,11 @@ public class OutboundMessagingEmailCampaignConfigChangeObject  implements Serial
     }
   }
 
+  public OutboundMessagingEmailCampaignConfigChangeObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

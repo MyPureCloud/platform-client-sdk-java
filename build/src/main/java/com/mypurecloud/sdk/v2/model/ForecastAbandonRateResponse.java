@@ -29,6 +29,11 @@ public class ForecastAbandonRateResponse  implements Serializable {
     }
   }
 
+  public ForecastAbandonRateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The target percent abandon rate goal

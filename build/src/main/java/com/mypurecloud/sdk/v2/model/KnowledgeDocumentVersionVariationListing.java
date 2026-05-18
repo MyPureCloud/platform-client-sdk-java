@@ -36,6 +36,12 @@ public class KnowledgeDocumentVersionVariationListing  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentVersionVariationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<KnowledgeDocumentVersionVariation>();
+    }
+  }
+
   
   /**
    **/

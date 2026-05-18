@@ -46,6 +46,15 @@ public class CampaignDiagnosticSummary  implements Serializable {
     }
   }
 
+  public CampaignDiagnosticSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      campaignStates = new ArrayList<CampaignDiagnosticCampaignState>();
+      campaignInfo = new ArrayList<CampaignDiagnosticWindow>();
+      campaignHealthStates = new ArrayList<CampaignDiagnosticCampaignHealthState>();
+      configChanges = new ArrayList<CampaignDiagnosticConfigChange>();
+    }
+  }
+
   
   /**
    * Campaign ID

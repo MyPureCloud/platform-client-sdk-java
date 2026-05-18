@@ -134,6 +134,11 @@ public class WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationJobNotif
     }
   }
 
+  public WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationJobNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

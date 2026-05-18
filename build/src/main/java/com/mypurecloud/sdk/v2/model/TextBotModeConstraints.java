@@ -31,6 +31,11 @@ public class TextBotModeConstraints  implements Serializable {
     }
   }
 
+  public TextBotModeConstraints(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Mode constraints that apply to text scenarios.

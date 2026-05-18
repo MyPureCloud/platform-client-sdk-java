@@ -92,6 +92,12 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatMessage  implem
     }
   }
 
+  public CollaborateChatGroupMessageEventTopicCollaborateChatMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mentions = new ArrayList<CollaborateChatGroupMessageEventTopicCollaborateChatEntity>();
+    }
+  }
+
   
   /**
    **/

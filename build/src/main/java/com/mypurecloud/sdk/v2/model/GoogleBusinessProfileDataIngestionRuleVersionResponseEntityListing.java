@@ -43,6 +43,12 @@ public class GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing 
     }
   }
 
+  public GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<GoogleBusinessProfileDataIngestionRuleVersionResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -191,6 +191,18 @@ public class Campaign  implements Serializable {
     }
   }
 
+  public Campaign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneColumns = new ArrayList<PhoneColumn>();
+      dncLists = new ArrayList<DomainEntityRef>();
+      errors = new ArrayList<RestErrorDetail>();
+      ruleSets = new ArrayList<DomainEntityRef>();
+      contactSorts = new ArrayList<ContactSort>();
+      contactListFilters = new ArrayList<DomainEntityRef>();
+      skillColumns = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

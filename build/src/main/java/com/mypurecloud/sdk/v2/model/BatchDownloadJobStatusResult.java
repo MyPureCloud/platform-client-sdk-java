@@ -88,6 +88,12 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     }
   }
 
+  public BatchDownloadJobStatusResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<BatchDownloadJobResult>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

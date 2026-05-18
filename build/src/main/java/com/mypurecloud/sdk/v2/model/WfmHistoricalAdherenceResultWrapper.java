@@ -37,6 +37,12 @@ public class WfmHistoricalAdherenceResultWrapper  implements Serializable {
     }
   }
 
+  public WfmHistoricalAdherenceResultWrapper(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<HistoricalAdherenceQueryResult>();
+    }
+  }
+
   
   /**
    * The operation ID of the historical adherence query

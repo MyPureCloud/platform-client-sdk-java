@@ -32,6 +32,12 @@ public class TeamMembers  implements Serializable {
     }
   }
 
+  public TeamMembers(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      memberIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A list of the ids of the members to add or remove

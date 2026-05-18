@@ -89,6 +89,12 @@ public class RecordingMessageReceipt  implements Serializable {
     }
   }
 
+  public RecordingMessageReceipt(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      reasons = new ArrayList<RecordingMessageReceiptReason>();
+    }
+  }
+
   
   /**
    * The id of the message receipt. Message receipts will have the same ID as the message they reference.

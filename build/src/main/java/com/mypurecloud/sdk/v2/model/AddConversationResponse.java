@@ -32,6 +32,11 @@ public class AddConversationResponse  implements Serializable {
     }
   }
 
+  public AddConversationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The conversation reference")
   @JsonProperty("conversation")

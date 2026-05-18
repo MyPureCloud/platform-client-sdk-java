@@ -302,6 +302,13 @@ public class InternalMessageMediaParticipant  implements Serializable {
     }
   }
 
+  public InternalMessageMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      messages = new ArrayList<InternalMessageDetails>();
+    }
+  }
+
   
   /**
    * The unique participant ID.

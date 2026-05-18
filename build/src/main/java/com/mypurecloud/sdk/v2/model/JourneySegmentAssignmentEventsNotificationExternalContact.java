@@ -30,6 +30,11 @@ public class JourneySegmentAssignmentEventsNotificationExternalContact  implemen
     }
   }
 
+  public JourneySegmentAssignmentEventsNotificationExternalContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

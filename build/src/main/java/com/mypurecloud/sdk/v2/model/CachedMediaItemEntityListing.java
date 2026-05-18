@@ -43,6 +43,12 @@ public class CachedMediaItemEntityListing  implements Serializable, PagedResourc
     }
   }
 
+  public CachedMediaItemEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CachedMediaItem>();
+    }
+  }
+
   
   /**
    **/

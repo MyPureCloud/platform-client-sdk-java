@@ -78,6 +78,11 @@ public class ExternalDataSource  implements Serializable {
     }
   }
 
+  public ExternalDataSource(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The platform that was the source of the data.  Example: a CRM like SALESFORCE.

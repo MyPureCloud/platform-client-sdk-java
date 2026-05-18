@@ -35,6 +35,11 @@ public class StatEventQueueTopicMetricStats  implements Serializable {
     }
   }
 
+  public StatEventQueueTopicMetricStats(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

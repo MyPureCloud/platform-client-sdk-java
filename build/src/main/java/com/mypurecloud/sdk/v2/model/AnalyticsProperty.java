@@ -83,6 +83,11 @@ public class AnalyticsProperty  implements Serializable {
     }
   }
 
+  public AnalyticsProperty(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property.

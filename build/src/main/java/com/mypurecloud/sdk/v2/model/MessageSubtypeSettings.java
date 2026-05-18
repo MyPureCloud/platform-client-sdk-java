@@ -30,6 +30,11 @@ public class MessageSubtypeSettings  implements Serializable {
     }
   }
 
+  public MessageSubtypeSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates if auto-answer is enabled for the given media type or subtype (default is false).  Subtype settings take precedence over media type settings.

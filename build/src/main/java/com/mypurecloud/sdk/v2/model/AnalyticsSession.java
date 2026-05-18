@@ -533,6 +533,25 @@ public class AnalyticsSession  implements Serializable {
     }
   }
 
+  public AnalyticsSession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activeSkillIds = new ArrayList<String>();
+      bcc = new ArrayList<String>();
+      callbackNumbers = new ArrayList<String>();
+      cc = new ArrayList<String>();
+      destinationAddresses = new ArrayList<String>();
+      eligibleAgentCounts = new ArrayList<Integer>();
+      removedSkillIds = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      waitingInteractionCounts = new ArrayList<Integer>();
+      agentGroups = new ArrayList<AnalyticsAgentGroup>();
+      proposedAgents = new ArrayList<AnalyticsProposedAgent>();
+      mediaEndpointStats = new ArrayList<AnalyticsMediaEndpointStat>();
+      metrics = new ArrayList<AnalyticsSessionMetric>();
+      segments = new ArrayList<AnalyticsConversationSegment>();
+    }
+  }
+
   
   /**
    * ID(s) of Skill(s) that are active on the conversation

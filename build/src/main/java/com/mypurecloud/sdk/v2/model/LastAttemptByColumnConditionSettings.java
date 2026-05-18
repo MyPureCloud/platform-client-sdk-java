@@ -81,6 +81,11 @@ public class LastAttemptByColumnConditionSettings  implements Serializable {
     }
   }
 
+  public LastAttemptByColumnConditionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the contact column to evaluate for Email.

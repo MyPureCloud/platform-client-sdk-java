@@ -32,6 +32,11 @@ public class ShiftTradeWeekSummaryResponseItem  implements Serializable {
     }
   }
 
+  public ShiftTradeWeekSummaryResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The schedule week date in the business unit time zone (yyyy-MM-dd format). Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

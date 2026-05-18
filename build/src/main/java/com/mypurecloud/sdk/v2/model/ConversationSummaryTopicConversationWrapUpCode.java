@@ -33,6 +33,11 @@ public class ConversationSummaryTopicConversationWrapUpCode  implements Serializ
     }
   }
 
+  public ConversationSummaryTopicConversationWrapUpCode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class WfmUserEntityListing  implements Serializable {
     }
   }
 
+  public WfmUserEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserReference>();
+    }
+  }
+
   
   /**
    **/

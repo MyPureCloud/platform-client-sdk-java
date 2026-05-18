@@ -44,6 +44,12 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     }
   }
 
+  public DIDEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DID>();
+    }
+  }
+
   
   /**
    **/

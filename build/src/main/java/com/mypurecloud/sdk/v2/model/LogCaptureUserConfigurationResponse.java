@@ -33,6 +33,11 @@ public class LogCaptureUserConfigurationResponse  implements Serializable {
     }
   }
 
+  public LogCaptureUserConfigurationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The ID of the user for which log capture is configured.")
   @JsonProperty("id")

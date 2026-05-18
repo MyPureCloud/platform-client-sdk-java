@@ -38,6 +38,13 @@ public class ConversationEventTopicMessageMetadata  implements Serializable {
     }
   }
 
+  public ConversationEventTopicMessageMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<ConversationEventTopicMessageMetadataEvent>();
+      content = new ArrayList<ConversationEventTopicMessageMetadataContent>();
+    }
+  }
+
   
   /**
    * Message type.

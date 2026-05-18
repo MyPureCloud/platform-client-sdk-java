@@ -25,6 +25,11 @@ public class SocialMediaQuerySort  implements Serializable {
     }
   }
 
+  public SocialMediaQuerySort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

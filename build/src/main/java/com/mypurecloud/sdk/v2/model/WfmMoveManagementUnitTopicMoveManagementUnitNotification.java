@@ -81,6 +81,11 @@ public class WfmMoveManagementUnitTopicMoveManagementUnitNotification  implement
     }
   }
 
+  public WfmMoveManagementUnitTopicMoveManagementUnitNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -46,6 +46,14 @@ public class GDPRSubject  implements Serializable {
     }
   }
 
+  public GDPRSubject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      addresses = new ArrayList<String>();
+      phoneNumbers = new ArrayList<String>();
+      emailAddresses = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

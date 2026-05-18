@@ -89,6 +89,12 @@ public class RoutingActivityResponse  implements Serializable {
     }
   }
 
+  public RoutingActivityResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<RoutingActivityData>();
+    }
+  }
+
   
   /**
    * Query results

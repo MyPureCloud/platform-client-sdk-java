@@ -85,6 +85,13 @@ public class TeamActivityQueryFilter  implements Serializable {
     }
   }
 
+  public TeamActivityQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<TeamActivityQueryClause>();
+      predicates = new ArrayList<TeamActivityQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

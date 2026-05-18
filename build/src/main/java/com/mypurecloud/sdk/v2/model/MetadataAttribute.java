@@ -29,6 +29,11 @@ public class MetadataAttribute  implements Serializable {
     }
   }
 
+  public MetadataAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The value of the metadata attribute.")
   @JsonProperty("value")

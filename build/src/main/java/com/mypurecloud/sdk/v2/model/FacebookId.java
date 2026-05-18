@@ -34,6 +34,12 @@ public class FacebookId  implements Serializable {
     }
   }
 
+  public FacebookId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<FacebookScopedId>();
+    }
+  }
+
   
   /**
    * The set of scopedIds that this person has. Each scopedId is specific to a page or app that the user interacts with. Max: 1 Id

@@ -39,6 +39,12 @@ public class PlanningGroup  implements Serializable {
     }
   }
 
+  public PlanningGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routePaths = new ArrayList<RoutePathResponse>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

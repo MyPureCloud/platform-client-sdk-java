@@ -216,6 +216,14 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     }
   }
 
+  public WrapupDetailEventTopicWrapupEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

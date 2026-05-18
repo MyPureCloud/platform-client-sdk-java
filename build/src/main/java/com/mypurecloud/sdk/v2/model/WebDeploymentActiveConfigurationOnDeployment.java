@@ -33,6 +33,11 @@ public class WebDeploymentActiveConfigurationOnDeployment  implements Serializab
     }
   }
 
+  public WebDeploymentActiveConfigurationOnDeployment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The active configuration on a deployment

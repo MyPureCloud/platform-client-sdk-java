@@ -34,6 +34,12 @@ public class SocialMediaAsyncDetailQueryResponse  implements Serializable {
     }
   }
 
+  public SocialMediaAsyncDetailQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<SocialMediaDetailDataContainer>();
+    }
+  }
+
   
   /**
    **/

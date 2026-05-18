@@ -34,6 +34,12 @@ public class ChatReaction  implements Serializable {
     }
   }
 
+  public ChatReaction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   /**
    * The emoji string for the reaction

@@ -83,6 +83,11 @@ public class GuideSessionTurnInvocationParameters  implements Serializable {
     }
   }
 
+  public GuideSessionTurnInvocationParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the parameter.

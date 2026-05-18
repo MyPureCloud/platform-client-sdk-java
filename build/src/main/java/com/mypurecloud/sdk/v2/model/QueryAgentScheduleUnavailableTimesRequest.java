@@ -31,6 +31,11 @@ public class QueryAgentScheduleUnavailableTimesRequest  implements Serializable 
     }
   }
 
+  public QueryAgentScheduleUnavailableTimesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the agent for whom to fetch unavailable times

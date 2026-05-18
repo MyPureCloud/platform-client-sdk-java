@@ -32,6 +32,12 @@ public class IgnoredActivityCodeIds  implements Serializable {
     }
   }
 
+  public IgnoredActivityCodeIds(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of activity code IDs

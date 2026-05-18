@@ -40,6 +40,13 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
     }
   }
 
+  public ConversationEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<ConversationEventTopicUriReference>();
+      scoredAgents = new ArrayList<ConversationEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    **/

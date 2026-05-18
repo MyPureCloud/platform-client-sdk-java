@@ -35,6 +35,11 @@ public class SuggestionScript  implements Serializable {
     }
   }
 
+  public SuggestionScript(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The suggested script.")
   @JsonProperty("script")

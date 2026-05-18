@@ -36,6 +36,11 @@ public class PredictiveRoutingCustomKpiAttributionEvent  implements Serializable
     }
   }
 
+  public PredictiveRoutingCustomKpiAttributionEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (UUID) eventId for this event

@@ -33,6 +33,11 @@ public class BuRescheduleAgentScheduleResult  implements Serializable {
     }
   }
 
+  public BuRescheduleAgentScheduleResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The management unit to which this part of the result applies

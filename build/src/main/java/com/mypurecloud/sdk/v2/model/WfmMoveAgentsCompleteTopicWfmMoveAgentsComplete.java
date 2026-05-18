@@ -37,6 +37,12 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete  implements Seriali
     }
   }
 
+  public WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<WfmMoveAgentsCompleteTopicWfmMoveAgentData>();
+    }
+  }
+
   
   /**
    **/

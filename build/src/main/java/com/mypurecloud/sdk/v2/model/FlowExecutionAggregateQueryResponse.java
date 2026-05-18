@@ -33,6 +33,12 @@ public class FlowExecutionAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public FlowExecutionAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<FlowExecutionAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,12 @@ public class AdditionalSocialMediaMessage  implements Serializable {
     }
   }
 
+  public AdditionalSocialMediaMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The body of the text message.  Maximum character count is 2000 characters.

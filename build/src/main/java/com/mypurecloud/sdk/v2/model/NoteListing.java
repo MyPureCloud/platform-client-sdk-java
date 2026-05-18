@@ -44,6 +44,12 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     }
   }
 
+  public NoteListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Note>();
+    }
+  }
+
   
   /**
    **/

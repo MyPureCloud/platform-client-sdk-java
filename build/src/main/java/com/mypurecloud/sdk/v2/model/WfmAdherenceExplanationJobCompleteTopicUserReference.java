@@ -29,6 +29,11 @@ public class WfmAdherenceExplanationJobCompleteTopicUserReference  implements Se
     }
   }
 
+  public WfmAdherenceExplanationJobCompleteTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

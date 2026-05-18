@@ -36,6 +36,12 @@ public class QueueObservationDataContainer  implements Serializable {
     }
   }
 
+  public QueueObservationDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<ObservationMetricData>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

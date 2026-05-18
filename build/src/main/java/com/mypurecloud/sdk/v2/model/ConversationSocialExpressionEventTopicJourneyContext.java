@@ -34,6 +34,11 @@ public class ConversationSocialExpressionEventTopicJourneyContext  implements Se
     }
   }
 
+  public ConversationSocialExpressionEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

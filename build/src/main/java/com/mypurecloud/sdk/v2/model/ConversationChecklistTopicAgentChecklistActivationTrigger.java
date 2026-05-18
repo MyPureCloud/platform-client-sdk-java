@@ -82,6 +82,11 @@ public class ConversationChecklistTopicAgentChecklistActivationTrigger  implemen
     }
   }
 
+  public ConversationChecklistTopicAgentChecklistActivationTrigger(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

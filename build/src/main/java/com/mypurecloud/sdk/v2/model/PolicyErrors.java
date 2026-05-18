@@ -33,6 +33,12 @@ public class PolicyErrors  implements Serializable {
     }
   }
 
+  public PolicyErrors(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      policyErrorMessages = new ArrayList<PolicyErrorMessage>();
+    }
+  }
+
   
   /**
    **/

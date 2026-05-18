@@ -37,6 +37,14 @@ public class CoachingSlotsRequest  implements Serializable {
     }
   }
 
+  public CoachingSlotsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attendeeIds = new ArrayList<String>();
+      facilitatorIds = new ArrayList<String>();
+      interruptibleAppointmentIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Range of time to get slots for scheduling coaching appointments. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

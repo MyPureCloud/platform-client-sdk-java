@@ -33,6 +33,11 @@ public class V2StaTopicsDetectedTopicParticipant  implements Serializable {
     }
   }
 
+  public V2StaTopicsDetectedTopicParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -79,6 +79,11 @@ public class ConversationFormResponseContent  implements Serializable {
     }
   }
 
+  public ConversationFormResponseContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element.

@@ -29,6 +29,11 @@ public class ContactCenterSettings  implements Serializable {
     }
   }
 
+  public ContactCenterSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Strip skills from transfer

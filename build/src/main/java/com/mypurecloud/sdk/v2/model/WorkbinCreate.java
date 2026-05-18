@@ -31,6 +31,11 @@ public class WorkbinCreate  implements Serializable {
     }
   }
 
+  public WorkbinCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Workbin name. Valid length between 3 and 256 characters.

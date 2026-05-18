@@ -32,6 +32,11 @@ public class CrossPlatformMessageMediaPolicy  implements Serializable {
     }
   }
 
+  public CrossPlatformMessageMediaPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Actions applied when specified conditions are met

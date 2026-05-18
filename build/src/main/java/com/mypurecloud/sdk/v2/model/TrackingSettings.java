@@ -39,6 +39,14 @@ public class TrackingSettings  implements Serializable {
     }
   }
 
+  public TrackingSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      excludedQueryParameters = new ArrayList<String>();
+      searchQueryParameters = new ArrayList<String>();
+      ipFilters = new ArrayList<IpFilter>();
+    }
+  }
+
   
   /**
    * List of parameters to be excluded from the query string.

@@ -29,6 +29,11 @@ public class TranscriptUrl  implements Serializable {
     }
   }
 
+  public TranscriptUrl(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The pre-signed S3 URL of the transcript

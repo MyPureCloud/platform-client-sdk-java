@@ -30,6 +30,11 @@ public class ConversationSchemaReference  implements Serializable {
     }
   }
 
+  public ConversationSchemaReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the schema.

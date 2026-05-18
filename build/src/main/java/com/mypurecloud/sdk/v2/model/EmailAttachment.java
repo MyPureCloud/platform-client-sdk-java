@@ -33,6 +33,11 @@ public class EmailAttachment  implements Serializable {
     }
   }
 
+  public EmailAttachment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

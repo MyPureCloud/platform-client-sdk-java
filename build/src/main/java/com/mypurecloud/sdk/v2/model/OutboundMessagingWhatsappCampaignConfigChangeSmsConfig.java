@@ -35,6 +35,11 @@ public class OutboundMessagingWhatsappCampaignConfigChangeSmsConfig  implements 
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeSmsConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Contact List column specifying the message to send to the contact.

@@ -137,6 +137,13 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     }
   }
 
+  public BuSchedulingSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
+      syncTimeOffProperties = new ArrayList<SyncTimeOffPropertiesEnum>();
+    }
+  }
+
   
   /**
    * Schedule generation message severity configuration

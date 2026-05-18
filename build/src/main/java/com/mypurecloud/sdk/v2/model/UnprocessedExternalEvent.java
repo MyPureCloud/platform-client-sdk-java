@@ -34,6 +34,11 @@ public class UnprocessedExternalEvent  implements Serializable {
     }
   }
 
+  public UnprocessedExternalEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The event that failed processing.

@@ -85,6 +85,11 @@ public class SourceIntent  implements Serializable {
     }
   }
 
+  public SourceIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the source intent

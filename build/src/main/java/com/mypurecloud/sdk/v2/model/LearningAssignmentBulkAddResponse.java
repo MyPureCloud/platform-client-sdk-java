@@ -36,6 +36,13 @@ public class LearningAssignmentBulkAddResponse  implements Serializable {
     }
   }
 
+  public LearningAssignmentBulkAddResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LearningAssignment>();
+      disallowedEntities = new ArrayList<DisallowedEntityLearningAssignmentItem>();
+    }
+  }
+
   
   /**
    * The learning assignments that were assigned correctly

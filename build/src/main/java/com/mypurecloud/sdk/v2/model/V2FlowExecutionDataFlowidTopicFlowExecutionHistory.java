@@ -109,6 +109,14 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
     }
   }
 
+  public V2FlowExecutionDataFlowidTopicFlowExecutionHistory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errors = new ArrayList<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>();
+      execution = new ArrayList<V2FlowExecutionDataFlowidTopicFlowExecutionItem>();
+      warnings = new ArrayList<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>();
+    }
+  }
+
   
   /**
    * The execution identifier which represents this unique instance of the flow that ran.

@@ -49,6 +49,13 @@ public class KnowledgeDocumentSearchVariation  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentSearchVariation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contexts = new ArrayList<DocumentVariationContext>();
+      chunks = new ArrayList<DocumentVariationSearchChunkBlock>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the variation.")
   @JsonProperty("id")

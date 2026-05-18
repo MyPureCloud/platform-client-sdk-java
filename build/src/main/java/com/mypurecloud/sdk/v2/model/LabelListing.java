@@ -36,6 +36,12 @@ public class LabelListing  implements Serializable {
     }
   }
 
+  public LabelListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LabelResponse>();
+    }
+  }
+
   
   /**
    **/

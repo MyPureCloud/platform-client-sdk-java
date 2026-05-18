@@ -43,6 +43,12 @@ public class TrustorEntityListing  implements Serializable, PagedResource<Trusto
     }
   }
 
+  public TrustorEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Trustor>();
+    }
+  }
+
   
   /**
    **/

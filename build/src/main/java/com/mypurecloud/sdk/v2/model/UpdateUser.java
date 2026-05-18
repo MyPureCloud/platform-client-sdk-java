@@ -115,6 +115,18 @@ public class UpdateUser  implements Serializable {
     }
   }
 
+  public UpdateUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      primaryContactInfo = new ArrayList<Contact>();
+      addresses = new ArrayList<Contact>();
+      images = new ArrayList<Image>();
+      profileSkills = new ArrayList<String>();
+      locations = new ArrayList<Location>();
+      groups = new ArrayList<Group>();
+      certifications = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

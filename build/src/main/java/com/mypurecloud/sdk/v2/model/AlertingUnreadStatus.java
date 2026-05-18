@@ -29,6 +29,11 @@ public class AlertingUnreadStatus  implements Serializable {
     }
   }
 
+  public AlertingUnreadStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * True is alert is unread, false if it has not been.

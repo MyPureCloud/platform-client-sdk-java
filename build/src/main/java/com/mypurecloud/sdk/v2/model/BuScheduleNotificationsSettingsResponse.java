@@ -34,6 +34,12 @@ public class BuScheduleNotificationsSettingsResponse  implements Serializable {
     }
   }
 
+  public BuScheduleNotificationsSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activityCategorySettings = new ArrayList<BuScheduleNotificationsCategorySettings>();
+    }
+  }
+
   
   /**
    * The number of minutes prior to the scheduled event to display an early reminder notification

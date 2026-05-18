@@ -30,6 +30,11 @@ public class ContentManagementWorkspaceDocumentsTopicUserData  implements Serial
     }
   }
 
+  public ContentManagementWorkspaceDocumentsTopicUserData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

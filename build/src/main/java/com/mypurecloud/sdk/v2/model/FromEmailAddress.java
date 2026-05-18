@@ -32,6 +32,11 @@ public class FromEmailAddress  implements Serializable {
     }
   }
 
+  public FromEmailAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The OutboundDomain used for the email address.

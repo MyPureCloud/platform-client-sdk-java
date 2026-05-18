@@ -79,6 +79,11 @@ public class UpdateKpiRequest  implements Serializable {
     }
   }
 
+  public UpdateKpiRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the Key Performance Indicator.

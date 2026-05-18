@@ -30,6 +30,11 @@ public class SearchDecisionTableRowsRequest  implements Serializable {
     }
   }
 
+  public SearchDecisionTableRowsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The filter criteria for searching decision table rows

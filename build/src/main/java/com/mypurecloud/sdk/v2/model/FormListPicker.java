@@ -35,6 +35,12 @@ public class FormListPicker  implements Serializable {
     }
   }
 
+  public FormListPicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sections = new ArrayList<FormListPickerSection>();
+    }
+  }
+
   
   /**
    * Unique identifier for the list picker

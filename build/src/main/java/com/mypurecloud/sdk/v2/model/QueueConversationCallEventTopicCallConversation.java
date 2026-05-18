@@ -98,6 +98,15 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     }
   }
 
+  public QueueConversationCallEventTopicCallConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<QueueConversationCallEventTopicCallMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationCallEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

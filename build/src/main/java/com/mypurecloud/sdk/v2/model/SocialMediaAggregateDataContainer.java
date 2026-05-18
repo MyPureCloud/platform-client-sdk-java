@@ -36,6 +36,12 @@ public class SocialMediaAggregateDataContainer  implements Serializable {
     }
   }
 
+  public SocialMediaAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<SocialMediaStatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

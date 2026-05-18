@@ -36,6 +36,12 @@ public class NluOrganization  implements Serializable {
     }
   }
 
+  public NluOrganization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      supportedLanguagesInfo = new ArrayList<SupportedLanguagesInfoDefinition>();
+    }
+  }
+
   
   /**
    * The NLU limits defined for this Organization

@@ -289,6 +289,14 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     }
   }
 
+  public UserEndDetailEventTopicUserEndEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

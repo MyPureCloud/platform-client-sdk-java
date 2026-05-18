@@ -143,6 +143,11 @@ public class WebChatMemberInfo  implements Serializable {
     }
   }
 
+  public WebChatMemberInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The communicationId of this member.

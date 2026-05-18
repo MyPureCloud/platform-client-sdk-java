@@ -34,6 +34,13 @@ public class ProgramMappingsRequest  implements Serializable {
     }
   }
 
+  public ProgramMappingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queueIds = new ArrayList<String>();
+      flowIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The program queues

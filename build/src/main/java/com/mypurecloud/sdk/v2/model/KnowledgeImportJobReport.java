@@ -35,6 +35,12 @@ public class KnowledgeImportJobReport  implements Serializable {
     }
   }
 
+  public KnowledgeImportJobReport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errors = new ArrayList<KnowledgeImportJobError>();
+    }
+  }
+
   
   /**
    * List of errors occurred during processing import.

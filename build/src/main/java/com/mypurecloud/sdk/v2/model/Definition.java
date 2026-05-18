@@ -39,6 +39,12 @@ public class Definition  implements Serializable {
     }
   }
 
+  public Definition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      type = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

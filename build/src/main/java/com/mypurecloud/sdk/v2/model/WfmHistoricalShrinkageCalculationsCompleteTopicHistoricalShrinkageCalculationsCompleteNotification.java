@@ -84,6 +84,12 @@ public class WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageC
     }
   }
 
+  public WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadUrls = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

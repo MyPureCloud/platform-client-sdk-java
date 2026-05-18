@@ -45,6 +45,12 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     }
   }
 
+  public AssessmentFormQuestionGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questions = new ArrayList<AssessmentFormQuestion>();
+    }
+  }
+
   
   /**
    * The ID of the question group,

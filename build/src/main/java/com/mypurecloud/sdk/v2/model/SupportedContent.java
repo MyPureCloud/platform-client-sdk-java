@@ -41,6 +41,11 @@ public class SupportedContent  implements Serializable {
     }
   }
 
+  public SupportedContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "A unique supported content Id.")
   @JsonProperty("id")

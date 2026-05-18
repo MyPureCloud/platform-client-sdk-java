@@ -97,6 +97,12 @@ public class GoogleBusinessProfileDataIngestionRuleVersionResponse  implements S
     }
   }
 
+  public GoogleBusinessProfileDataIngestionRuleVersionResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      countries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * ID of the data ingestion rule.

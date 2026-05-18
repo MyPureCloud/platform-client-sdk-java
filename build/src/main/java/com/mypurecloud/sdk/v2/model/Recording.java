@@ -320,6 +320,16 @@ public class Recording  implements Serializable {
     }
   }
 
+  public Recording(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      annotations = new ArrayList<Annotation>();
+      transcript = new ArrayList<ChatMessage>();
+      emailTranscript = new ArrayList<RecordingEmailMessage>();
+      messagingTranscript = new ArrayList<RecordingMessagingMessage>();
+      users = new ArrayList<User>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

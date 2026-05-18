@@ -39,6 +39,14 @@ public class Biography  implements Serializable {
     }
   }
 
+  public Biography(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      interests = new ArrayList<String>();
+      hobbies = new ArrayList<String>();
+      education = new ArrayList<Education>();
+    }
+  }
+
   
   /**
    * Personal detailed description

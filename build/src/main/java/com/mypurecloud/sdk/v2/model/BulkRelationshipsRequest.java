@@ -33,6 +33,12 @@ public class BulkRelationshipsRequest  implements Serializable {
     }
   }
 
+  public BulkRelationshipsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Relationship>();
+    }
+  }
+
   
   /**
    **/

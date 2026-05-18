@@ -167,6 +167,14 @@ public class WorkitemUpdate  implements Serializable {
     }
   }
 
+  public WorkitemUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
+      skillIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the Workitem. Valid length between 3 and 256 characters.

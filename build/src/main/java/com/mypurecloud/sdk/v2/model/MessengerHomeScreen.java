@@ -30,6 +30,11 @@ public class MessengerHomeScreen  implements Serializable {
     }
   }
 
+  public MessengerHomeScreen(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not homescreen is enabled

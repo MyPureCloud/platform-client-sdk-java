@@ -34,6 +34,11 @@ public class ExternalContactsUnresolvedContactChangedTopicContactAddress  implem
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicContactAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

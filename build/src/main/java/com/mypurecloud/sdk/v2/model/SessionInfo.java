@@ -34,6 +34,11 @@ public class SessionInfo  implements Serializable {
     }
   }
 
+  public SessionInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Version of the continuous forecast session

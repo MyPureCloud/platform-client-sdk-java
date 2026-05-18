@@ -30,6 +30,11 @@ public class BatchDownloadRequest  implements Serializable {
     }
   }
 
+  public BatchDownloadRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Conversation id requested

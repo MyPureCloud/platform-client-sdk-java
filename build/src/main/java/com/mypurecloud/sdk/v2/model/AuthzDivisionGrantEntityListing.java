@@ -37,6 +37,12 @@ public class AuthzDivisionGrantEntityListing  implements Serializable {
     }
   }
 
+  public AuthzDivisionGrantEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AuthzGrant>();
+    }
+  }
+
   
   /**
    **/

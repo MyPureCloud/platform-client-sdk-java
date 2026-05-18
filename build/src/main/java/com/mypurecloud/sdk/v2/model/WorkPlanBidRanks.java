@@ -32,6 +32,11 @@ public class WorkPlanBidRanks  implements Serializable {
     }
   }
 
+  public WorkPlanBidRanks(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the user.

@@ -36,6 +36,12 @@ public class MinedIntentsListing  implements Serializable {
     }
   }
 
+  public MinedIntentsListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MinerIntent>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class ContactIdentifierListing  implements Serializable {
     }
   }
 
+  public ContactIdentifierListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContactIdentifier>();
+    }
+  }
+
   
   /**
    **/

@@ -79,6 +79,11 @@ public class TranscriptionTopicTranscriptionRequestStatus  implements Serializab
     }
   }
 
+  public TranscriptionTopicTranscriptionRequestStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

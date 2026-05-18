@@ -41,6 +41,11 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     }
   }
 
+  public VoicemailOrganizationPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Whether voicemail is enabled for this organization")
   @JsonProperty("enabled")

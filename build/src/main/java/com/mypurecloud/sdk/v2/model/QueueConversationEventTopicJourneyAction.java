@@ -32,6 +32,11 @@ public class QueueConversationEventTopicJourneyAction  implements Serializable {
     }
   }
 
+  public QueueConversationEventTopicJourneyAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of an action from the Journey System (an action is spawned from an actionMap)

@@ -103,6 +103,12 @@ public class ContestsEssentials  implements Serializable {
     }
   }
 
+  public ContestsEssentials(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<ContestMetrics>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

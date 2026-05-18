@@ -156,6 +156,11 @@ public class ReportingTurnAction  implements Serializable {
     }
   }
 
+  public ReportingTurnAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the action in the bot flow.

@@ -31,6 +31,11 @@ public class SuggestionKnowledgeAnswer  implements Serializable {
     }
   }
 
+  public SuggestionKnowledgeAnswer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The most relevant answer")
   @JsonProperty("answer")

@@ -36,6 +36,12 @@ public class CategoryResponseListing  implements Serializable {
     }
   }
 
+  public CategoryResponseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CategoryResponse>();
+    }
+  }
+
   
   /**
    **/

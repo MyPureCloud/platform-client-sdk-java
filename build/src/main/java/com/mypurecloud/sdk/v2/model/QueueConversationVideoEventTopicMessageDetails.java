@@ -148,6 +148,13 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     }
   }
 
+  public QueueConversationVideoEventTopicMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      media = new ArrayList<QueueConversationVideoEventTopicMessageMedia>();
+      stickers = new ArrayList<QueueConversationVideoEventTopicMessageSticker>();
+    }
+  }
+
   
   /**
    * UUID identifying the message media.

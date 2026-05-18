@@ -30,6 +30,11 @@ public class OutboundMessagingEmailCampaignConfigChangeResponseRef  implements S
     }
   }
 
+  public OutboundMessagingEmailCampaignConfigChangeResponseRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique response id

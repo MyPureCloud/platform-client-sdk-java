@@ -86,6 +86,12 @@ public class WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotificat
     }
   }
 
+  public WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType>();
+    }
+  }
+
   
   /**
    **/

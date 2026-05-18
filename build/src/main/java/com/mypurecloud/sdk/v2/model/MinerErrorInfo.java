@@ -35,6 +35,11 @@ public class MinerErrorInfo  implements Serializable {
     }
   }
 
+  public MinerErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

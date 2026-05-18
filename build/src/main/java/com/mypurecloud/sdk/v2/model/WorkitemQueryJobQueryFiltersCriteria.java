@@ -82,6 +82,12 @@ public class WorkitemQueryJobQueryFiltersCriteria  implements Serializable {
     }
   }
 
+  public WorkitemQueryJobQueryFiltersCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<WorkitemQueryJobQueryFiltersPredicate>();
+    }
+  }
+
   
   /**
    * Query filter logical operator to join predicates.

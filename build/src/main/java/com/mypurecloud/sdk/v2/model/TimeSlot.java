@@ -31,6 +31,11 @@ public class TimeSlot  implements Serializable {
     }
   }
 
+  public TimeSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * start time in xx:xx:xx.xxx format

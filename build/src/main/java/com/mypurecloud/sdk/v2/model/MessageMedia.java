@@ -33,6 +33,11 @@ public class MessageMedia  implements Serializable {
     }
   }
 
+  public MessageMedia(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the media, useful for retrieving it

@@ -140,6 +140,12 @@ public class ContactListFilter  implements Serializable {
     }
   }
 
+  public ContactListFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<ContactListFilterClause>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

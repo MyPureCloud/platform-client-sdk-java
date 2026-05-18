@@ -33,6 +33,11 @@ public class NuanceBotCredentials  implements Serializable {
     }
   }
 
+  public NuanceBotCredentials(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The application ID

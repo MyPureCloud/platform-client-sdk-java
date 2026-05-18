@@ -35,6 +35,12 @@ public class CoretypeListing  implements Serializable {
     }
   }
 
+  public CoretypeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Coretype>();
+    }
+  }
+
   
   /**
    **/

@@ -193,6 +193,12 @@ public class QueueConversationSocialExpressionEventTopicInternalMessage  impleme
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicInternalMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messages = new ArrayList<QueueConversationSocialExpressionEventTopicInternalMessageDetails>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

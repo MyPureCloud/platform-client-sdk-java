@@ -31,6 +31,11 @@ public class ExternalContactsContactChangedTopicMergeOperation  implements Seria
     }
   }
 
+  public ExternalContactsContactChangedTopicMergeOperation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

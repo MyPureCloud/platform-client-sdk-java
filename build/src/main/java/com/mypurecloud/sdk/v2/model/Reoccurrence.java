@@ -43,6 +43,12 @@ public class Reoccurrence  implements Serializable {
     }
   }
 
+  public Reoccurrence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alterations = new ArrayList<Alteration>();
+    }
+  }
+
   
   /**
    **/

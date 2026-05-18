@@ -31,6 +31,11 @@ public class ConversationVideoEventTopicDomainEntityRef  implements Serializable
     }
   }
 
+  public ConversationVideoEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

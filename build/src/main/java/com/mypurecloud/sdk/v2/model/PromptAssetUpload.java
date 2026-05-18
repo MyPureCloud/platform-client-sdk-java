@@ -33,6 +33,11 @@ public class PromptAssetUpload  implements Serializable {
     }
   }
 
+  public PromptAssetUpload(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Pre-signed URL to PUT the file to")
   @JsonProperty("url")

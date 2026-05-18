@@ -95,6 +95,12 @@ public class InstagramDataIngestionRuleResponse  implements Serializable {
     }
   }
 
+  public InstagramDataIngestionRuleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      countries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * ID of the Instagram data ingestion rule.

@@ -205,6 +205,14 @@ public class AlternativeShiftTradeResponse  implements Serializable {
     }
   }
 
+  public AlternativeShiftTradeResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      existingShifts = new ArrayList<AlternativeShiftAgentScheduledShift>();
+      offeredShifts = new ArrayList<AlternativeShiftAgentScheduledShift>();
+      violations = new ArrayList<ViolationsEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

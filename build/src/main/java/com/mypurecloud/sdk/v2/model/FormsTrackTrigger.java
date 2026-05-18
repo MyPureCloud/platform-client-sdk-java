@@ -33,6 +33,11 @@ public class FormsTrackTrigger  implements Serializable {
     }
   }
 
+  public FormsTrackTrigger(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Form element that triggers the form submitted or abandoned event.

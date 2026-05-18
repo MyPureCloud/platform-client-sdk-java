@@ -78,6 +78,11 @@ public class TranscriptionConfig  implements Serializable {
     }
   }
 
+  public TranscriptionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the vendor used for speech transcription.

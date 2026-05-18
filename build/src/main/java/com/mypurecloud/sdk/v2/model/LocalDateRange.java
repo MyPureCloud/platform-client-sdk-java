@@ -31,6 +31,11 @@ public class LocalDateRange  implements Serializable {
     }
   }
 
+  public LocalDateRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The inclusive start of a date range in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

@@ -31,6 +31,11 @@ public class BotSlot  implements Serializable {
     }
   }
 
+  public BotSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the slot. This can be up to 100 characters long and must be comprised of displayable characters without leading or trailing whitespace

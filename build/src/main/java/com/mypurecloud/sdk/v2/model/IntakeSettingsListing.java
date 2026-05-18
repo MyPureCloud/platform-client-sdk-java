@@ -33,6 +33,12 @@ public class IntakeSettingsListing  implements Serializable {
     }
   }
 
+  public IntakeSettingsListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<IntakeSetting>();
+    }
+  }
+
   
   /**
    **/

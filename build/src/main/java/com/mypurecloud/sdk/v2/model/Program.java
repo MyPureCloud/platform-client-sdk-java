@@ -47,6 +47,13 @@ public class Program  implements Serializable {
     }
   }
 
+  public Program(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topics = new ArrayList<BaseTopicEntitiy>();
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

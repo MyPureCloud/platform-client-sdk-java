@@ -43,6 +43,12 @@ public class IgnoredMinedTopicListing  implements Serializable, PagedResource<Ig
     }
   }
 
+  public IgnoredMinedTopicListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<IgnoredMinedEntity>();
+    }
+  }
+
   
   /**
    **/

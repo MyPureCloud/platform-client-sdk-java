@@ -39,6 +39,12 @@ public class UpdateGuideVersion  implements Serializable {
     }
   }
 
+  public UpdateGuideVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      variables = new ArrayList<Variable>();
+    }
+  }
+
   
   /**
    * The instruction given to this version of the guide, for how it should behave when interacting with a User.

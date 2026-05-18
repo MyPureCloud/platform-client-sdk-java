@@ -31,6 +31,11 @@ public class ArchitectDependencyTrackingBuildNotificationClient  implements Seri
     }
   }
 
+  public ArchitectDependencyTrackingBuildNotificationClient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the client.

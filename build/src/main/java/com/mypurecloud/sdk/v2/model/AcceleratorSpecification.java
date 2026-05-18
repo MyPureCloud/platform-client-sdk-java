@@ -149,6 +149,16 @@ public class AcceleratorSpecification  implements Serializable {
     }
   }
 
+  public AcceleratorSpecification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+      permissions = new ArrayList<String>();
+      products = new ArrayList<String>();
+      documentation = new ArrayList<MetadataDocumentation>();
+      presentation = new ArrayList<MetadataPresentation>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

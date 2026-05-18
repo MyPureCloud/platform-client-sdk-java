@@ -31,6 +31,11 @@ public class QueueConversationEventTopicTransferModifedBy  implements Serializab
     }
   }
 
+  public QueueConversationEventTopicTransferModifedBy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the user if the updater is an internal user.

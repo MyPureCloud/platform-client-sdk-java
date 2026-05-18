@@ -90,6 +90,11 @@ public class SalesforceSourceResponse  implements Serializable {
     }
   }
 
+  public SalesforceSourceResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

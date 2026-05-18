@@ -42,6 +42,13 @@ public class UsersSearchResponse  implements Serializable {
     }
   }
 
+  public UsersSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+      results = new ArrayList<User>();
+    }
+  }
+
   
   /**
    * The total number of results found

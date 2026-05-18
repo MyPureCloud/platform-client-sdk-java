@@ -30,6 +30,11 @@ public class CampaignRuleDayOfWeekInterval  implements Serializable {
     }
   }
 
+  public CampaignRuleDayOfWeekInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The minimum value of the interval in 1-7 (Monday-Sunday). Required for the \"between\" operator

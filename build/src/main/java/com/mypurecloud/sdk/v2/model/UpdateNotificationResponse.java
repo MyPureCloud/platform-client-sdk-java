@@ -30,6 +30,11 @@ public class UpdateNotificationResponse  implements Serializable {
     }
   }
 
+  public UpdateNotificationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The mutableGroupId of the notification

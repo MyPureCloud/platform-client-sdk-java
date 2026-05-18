@@ -30,6 +30,11 @@ public class DomainPhysicalCapabilities  implements Serializable {
     }
   }
 
+  public DomainPhysicalCapabilities(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

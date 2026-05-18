@@ -34,6 +34,12 @@ public class QuestionGroupSettings  implements Serializable {
     }
   }
 
+  public QuestionGroupSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questionSettings = new ArrayList<QuestionSettings>();
+    }
+  }
+
   
   /**
    * The context id of the question group in the form.

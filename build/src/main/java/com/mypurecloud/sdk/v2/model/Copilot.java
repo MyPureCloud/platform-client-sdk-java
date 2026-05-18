@@ -96,6 +96,11 @@ public class Copilot  implements Serializable {
     }
   }
 
+  public Copilot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Copilot is enabled.")
   @JsonProperty("enabled")

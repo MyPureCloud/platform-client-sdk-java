@@ -151,6 +151,12 @@ public class IdentityNow  implements Serializable {
     }
   }
 
+  public IdentityNow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      certificates = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

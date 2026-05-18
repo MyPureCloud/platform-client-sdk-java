@@ -204,6 +204,11 @@ public class BotAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public BotAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

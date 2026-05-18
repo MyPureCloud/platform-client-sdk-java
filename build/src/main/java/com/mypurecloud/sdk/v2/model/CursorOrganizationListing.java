@@ -38,6 +38,12 @@ public class CursorOrganizationListing  implements Serializable {
     }
   }
 
+  public CursorOrganizationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalOrganization>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,11 @@ public class DialerContactlistConfigChangeEmailColumn  implements Serializable {
     }
   }
 
+  public DialerContactlistConfigChangeEmailColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the email address column

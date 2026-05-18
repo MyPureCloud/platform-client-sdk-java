@@ -34,6 +34,12 @@ public class SocialMediaStatisticalResponse  implements Serializable {
     }
   }
 
+  public SocialMediaStatisticalResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<SocialMediaAggregateMetricData>();
+    }
+  }
+
   
   /**
    **/

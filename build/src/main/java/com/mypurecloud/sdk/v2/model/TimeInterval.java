@@ -32,6 +32,11 @@ public class TimeInterval  implements Serializable {
     }
   }
 
+  public TimeInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

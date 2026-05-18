@@ -86,6 +86,12 @@ public class ConversationNotificationTemplateHeader  implements Serializable {
     }
   }
 
+  public ConversationNotificationTemplateHeader(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      parameters = new ArrayList<ConversationNotificationTemplateParameter>();
+    }
+  }
+
   
   /**
    * Template header type.

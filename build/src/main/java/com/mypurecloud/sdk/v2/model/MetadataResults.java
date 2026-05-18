@@ -34,6 +34,12 @@ public class MetadataResults  implements Serializable {
     }
   }
 
+  public MetadataResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MetadataResultEntity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "list of resources")
   @JsonProperty("entities")

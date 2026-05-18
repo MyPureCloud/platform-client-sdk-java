@@ -53,6 +53,13 @@ public class Calibration  implements Serializable {
     }
   }
 
+  public Calibration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      evaluations = new ArrayList<Evaluation>();
+      evaluators = new ArrayList<User>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

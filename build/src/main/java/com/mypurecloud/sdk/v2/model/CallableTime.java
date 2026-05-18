@@ -34,6 +34,12 @@ public class CallableTime  implements Serializable {
     }
   }
 
+  public CallableTime(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      timeSlots = new ArrayList<CampaignTimeSlot>();
+    }
+  }
+
   
   /**
    * The time intervals for which it is acceptable to place outbound calls.

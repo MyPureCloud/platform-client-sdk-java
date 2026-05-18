@@ -36,6 +36,12 @@ public class Section  implements Serializable {
     }
   }
 
+  public Section(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      fieldList = new ArrayList<FieldList>();
+    }
+  }
+
   
   /**
    **/

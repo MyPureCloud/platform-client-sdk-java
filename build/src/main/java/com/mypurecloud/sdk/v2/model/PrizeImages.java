@@ -29,6 +29,11 @@ public class PrizeImages  implements Serializable {
     }
   }
 
+  public PrizeImages(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The Contest Prize image url")
   @JsonProperty("imageUrl")

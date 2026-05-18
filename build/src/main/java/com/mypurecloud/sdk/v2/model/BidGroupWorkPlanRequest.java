@@ -33,6 +33,11 @@ public class BidGroupWorkPlanRequest  implements Serializable {
     }
   }
 
+  public BidGroupWorkPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the work plan used in the bid group

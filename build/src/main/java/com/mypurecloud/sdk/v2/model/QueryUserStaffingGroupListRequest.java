@@ -31,6 +31,12 @@ public class QueryUserStaffingGroupListRequest  implements Serializable {
     }
   }
 
+  public QueryUserStaffingGroupListRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The set of user IDs to fetch associated staffing groups

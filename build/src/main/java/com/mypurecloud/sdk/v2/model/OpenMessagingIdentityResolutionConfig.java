@@ -34,6 +34,11 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
     }
   }
 
+  public OpenMessagingIdentityResolutionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to use when performing identity resolution.

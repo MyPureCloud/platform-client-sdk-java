@@ -180,6 +180,11 @@ public class FlowExecutionAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public FlowExecutionAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

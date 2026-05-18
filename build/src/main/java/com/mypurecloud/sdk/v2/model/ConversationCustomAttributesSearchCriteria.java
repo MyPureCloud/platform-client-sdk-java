@@ -141,6 +141,14 @@ public class ConversationCustomAttributesSearchCriteria  implements Serializable
     }
   }
 
+  public ConversationCustomAttributesSearchCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+      group = new ArrayList<ConversationCustomAttributesSearchCriteria>();
+      fields = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The end value of the range. This field is used for range search types.

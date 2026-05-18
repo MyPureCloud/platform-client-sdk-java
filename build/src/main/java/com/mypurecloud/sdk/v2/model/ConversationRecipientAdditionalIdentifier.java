@@ -84,6 +84,11 @@ public class ConversationRecipientAdditionalIdentifier  implements Serializable 
     }
   }
 
+  public ConversationRecipientAdditionalIdentifier(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "Type of the Identifier")
   @JsonProperty("type")

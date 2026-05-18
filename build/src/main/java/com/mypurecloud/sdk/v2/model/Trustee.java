@@ -41,6 +41,11 @@ public class Trustee  implements Serializable {
     }
   }
 
+  public Trustee(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Organization Id for this trust.")
   @JsonProperty("id")

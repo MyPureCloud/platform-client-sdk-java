@@ -30,6 +30,11 @@ public class V3SourceSiteDetails  implements Serializable {
     }
   }
 
+  public V3SourceSiteDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The site's id.

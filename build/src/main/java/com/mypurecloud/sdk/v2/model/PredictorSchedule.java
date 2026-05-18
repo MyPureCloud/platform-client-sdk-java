@@ -79,6 +79,11 @@ public class PredictorSchedule  implements Serializable {
     }
   }
 
+  public PredictorSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The predictor schedule type.

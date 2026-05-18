@@ -81,6 +81,11 @@ public class LearningScheduleSlotsJobResult  implements Serializable {
     }
   }
 
+  public LearningScheduleSlotsJobResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The interval of the job. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

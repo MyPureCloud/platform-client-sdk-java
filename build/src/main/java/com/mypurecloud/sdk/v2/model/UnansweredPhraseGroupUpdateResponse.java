@@ -35,6 +35,12 @@ public class UnansweredPhraseGroupUpdateResponse  implements Serializable {
     }
   }
 
+  public UnansweredPhraseGroupUpdateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phraseAssociations = new ArrayList<PhraseAssociations>();
+    }
+  }
+
   
   /**
    * List of phrases and documents linked in the patch request

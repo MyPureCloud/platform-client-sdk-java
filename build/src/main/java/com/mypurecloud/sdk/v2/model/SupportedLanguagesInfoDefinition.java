@@ -86,6 +86,12 @@ public class SupportedLanguagesInfoDefinition  implements Serializable {
     }
   }
 
+  public SupportedLanguagesInfoDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      supportedEntityTypes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The given supported Language

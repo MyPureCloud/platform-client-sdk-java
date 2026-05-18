@@ -31,6 +31,11 @@ public class DialerContactlistfilterConfigChangeUriReference  implements Seriali
     }
   }
 
+  public DialerContactlistfilterConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

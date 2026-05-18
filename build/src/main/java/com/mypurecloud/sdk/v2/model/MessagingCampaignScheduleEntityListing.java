@@ -43,6 +43,12 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     }
   }
 
+  public MessagingCampaignScheduleEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MessagingCampaignSchedule>();
+    }
+  }
+
   
   /**
    **/

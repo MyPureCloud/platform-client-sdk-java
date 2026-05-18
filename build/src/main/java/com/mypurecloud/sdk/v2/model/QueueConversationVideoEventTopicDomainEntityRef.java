@@ -30,6 +30,11 @@ public class QueueConversationVideoEventTopicDomainEntityRef  implements Seriali
     }
   }
 
+  public QueueConversationVideoEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

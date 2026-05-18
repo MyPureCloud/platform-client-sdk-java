@@ -196,6 +196,11 @@ public class ConversationAggregationSort  implements Serializable {
     }
   }
 
+  public ConversationAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

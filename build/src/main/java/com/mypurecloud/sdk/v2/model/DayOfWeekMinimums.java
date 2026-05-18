@@ -84,6 +84,12 @@ public class DayOfWeekMinimums  implements Serializable {
     }
   }
 
+  public DayOfWeekMinimums(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      daysOfWeek = new ArrayList<DaysOfWeekEnum>();
+    }
+  }
+
   
   /**
    * The minimum staff value to be applied to this planning group

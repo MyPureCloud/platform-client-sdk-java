@@ -82,6 +82,11 @@ public class TimeOffLimit  implements Serializable {
     }
   }
 
+  public TimeOffLimit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

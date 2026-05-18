@@ -33,6 +33,12 @@ public class AgentsIntegrationsListing  implements Serializable {
     }
   }
 
+  public AgentsIntegrationsListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AgentIntegrationsResponse>();
+    }
+  }
+
   
   /**
    **/

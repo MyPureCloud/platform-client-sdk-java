@@ -92,6 +92,13 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
     }
   }
 
+  public WfmBuIntradayDataUpdateTopicBuIntradayResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intradayDataGroupings = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup>();
+      categories = new ArrayList<CategoriesEnum>();
+    }
+  }
+
   
   /**
    **/

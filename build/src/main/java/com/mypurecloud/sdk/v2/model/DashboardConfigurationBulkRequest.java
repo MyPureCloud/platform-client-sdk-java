@@ -32,6 +32,12 @@ public class DashboardConfigurationBulkRequest  implements Serializable {
     }
   }
 
+  public DashboardConfigurationBulkRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dashboardConfigurationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user supplied dashboard configuration ids

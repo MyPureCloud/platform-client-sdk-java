@@ -89,6 +89,13 @@ public class AssessmentScoringSet  implements Serializable {
     }
   }
 
+  public AssessmentScoringSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questionGroupScores = new ArrayList<AssessmentQuestionGroupScore>();
+      failureReasons = new ArrayList<FailureReasonsEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The total score of the answers")
   @JsonProperty("totalScore")

@@ -84,6 +84,11 @@ public class ConditionalGroupActivationCondition  implements Serializable {
     }
   }
 
+  public ConditionalGroupActivationCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Instructs this condition to evaluate a simple queue-level metric

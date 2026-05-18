@@ -43,6 +43,12 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     }
   }
 
+  public DirectoryUserDevicesListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserDevice>();
+    }
+  }
+
   
   /**
    **/

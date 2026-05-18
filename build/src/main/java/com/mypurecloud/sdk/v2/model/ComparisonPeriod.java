@@ -40,6 +40,12 @@ public class ComparisonPeriod  implements Serializable {
     }
   }
 
+  public ComparisonPeriod(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      kpiResults = new ArrayList<KpiResult>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

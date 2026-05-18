@@ -25,6 +25,11 @@ public class AutomatedAnswer  implements Serializable {
     }
   }
 
+  public AutomatedAnswer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

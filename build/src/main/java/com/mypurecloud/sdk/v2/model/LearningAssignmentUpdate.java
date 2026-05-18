@@ -83,6 +83,11 @@ public class LearningAssignmentUpdate  implements Serializable {
     }
   }
 
+  public LearningAssignmentUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Learning Assignment state

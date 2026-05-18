@@ -29,6 +29,11 @@ public class GeneralTopic  implements Serializable {
     }
   }
 
+  public GeneralTopic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

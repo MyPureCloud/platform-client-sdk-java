@@ -37,6 +37,11 @@ public class SmsAddress  implements Serializable {
     }
   }
 
+  public SmsAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The id of this address.")
   @JsonProperty("id")

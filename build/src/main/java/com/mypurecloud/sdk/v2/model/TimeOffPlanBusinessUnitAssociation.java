@@ -35,6 +35,13 @@ public class TimeOffPlanBusinessUnitAssociation  implements Serializable {
     }
   }
 
+  public TimeOffPlanBusinessUnitAssociation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnits = new ArrayList<ManagementUnitReference>();
+      staffingGroups = new ArrayList<StaffingGroupReference>();
+    }
+  }
+
   
   /**
    * Management units to which this time-off plan applies. This must not be set if staffingGroups is populated

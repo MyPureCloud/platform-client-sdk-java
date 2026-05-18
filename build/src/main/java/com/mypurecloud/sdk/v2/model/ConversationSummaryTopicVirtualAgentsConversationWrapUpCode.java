@@ -33,6 +33,11 @@ public class ConversationSummaryTopicVirtualAgentsConversationWrapUpCode  implem
     }
   }
 
+  public ConversationSummaryTopicVirtualAgentsConversationWrapUpCode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

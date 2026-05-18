@@ -33,6 +33,11 @@ public class QueueConversationScreenShareEventTopicQueueMediaSettings  implement
     }
   }
 
+  public QueueConversationScreenShareEventTopicQueueMediaSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.

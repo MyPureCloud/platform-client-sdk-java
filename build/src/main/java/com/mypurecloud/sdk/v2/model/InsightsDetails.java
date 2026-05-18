@@ -94,6 +94,12 @@ public class InsightsDetails  implements Serializable {
     }
   }
 
+  public InsightsDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metricData = new ArrayList<InsightsDetailsMetricItem>();
+    }
+  }
+
   
   /**
    * The performance profile

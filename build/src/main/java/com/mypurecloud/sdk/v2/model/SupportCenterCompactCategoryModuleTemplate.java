@@ -29,6 +29,11 @@ public class SupportCenterCompactCategoryModuleTemplate  implements Serializable
     }
   }
 
+  public SupportCenterCompactCategoryModuleTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether this template is active or not

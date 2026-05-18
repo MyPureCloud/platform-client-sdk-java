@@ -273,6 +273,12 @@ public class QueueConversationSocialExpressionEventTopicEmail  implements Serial
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicEmail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      draftAttachments = new ArrayList<QueueConversationSocialExpressionEventTopicAttachment>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

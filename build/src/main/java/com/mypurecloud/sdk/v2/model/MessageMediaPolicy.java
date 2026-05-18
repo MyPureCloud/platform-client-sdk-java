@@ -32,6 +32,11 @@ public class MessageMediaPolicy  implements Serializable {
     }
   }
 
+  public MessageMediaPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Actions applied when specified conditions are met

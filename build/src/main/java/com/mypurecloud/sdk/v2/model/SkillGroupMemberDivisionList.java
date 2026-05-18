@@ -33,6 +33,12 @@ public class SkillGroupMemberDivisionList  implements Serializable {
     }
   }
 
+  public SkillGroupMemberDivisionList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Division>();
+    }
+  }
+
   
   /**
    **/

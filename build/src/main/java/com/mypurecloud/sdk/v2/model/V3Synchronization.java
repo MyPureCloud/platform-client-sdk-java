@@ -248,6 +248,11 @@ public class V3Synchronization  implements Serializable {
     }
   }
 
+  public V3Synchronization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

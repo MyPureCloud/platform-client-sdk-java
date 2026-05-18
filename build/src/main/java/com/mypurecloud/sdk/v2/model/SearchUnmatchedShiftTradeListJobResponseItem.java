@@ -33,6 +33,12 @@ public class SearchUnmatchedShiftTradeListJobResponseItem  implements Serializab
     }
   }
 
+  public SearchUnmatchedShiftTradeListJobResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      trades = new ArrayList<SearchUnmatchedShiftTradeResponseItem>();
+    }
+  }
+
   
   /**
    * The shift trades that match the search criteria

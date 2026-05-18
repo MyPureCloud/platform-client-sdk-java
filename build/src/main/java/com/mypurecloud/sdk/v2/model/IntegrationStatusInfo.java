@@ -86,6 +86,11 @@ public class IntegrationStatusInfo  implements Serializable {
     }
   }
 
+  public IntegrationStatusInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Machine-readable status as reported by the integration.")
   @JsonProperty("code")

@@ -44,6 +44,12 @@ public class ScheduleGroupDivisionViewEntityListing  implements Serializable, Pa
     }
   }
 
+  public ScheduleGroupDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ScheduleGroupDivisionView>();
+    }
+  }
+
   
   /**
    **/

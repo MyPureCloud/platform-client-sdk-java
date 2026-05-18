@@ -43,6 +43,12 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     }
   }
 
+  public DomainEntityListingSurveyForm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SurveyForm>();
+    }
+  }
+
   
   /**
    **/

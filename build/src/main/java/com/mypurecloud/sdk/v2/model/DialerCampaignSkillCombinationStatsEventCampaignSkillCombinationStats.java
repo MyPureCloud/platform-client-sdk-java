@@ -39,6 +39,12 @@ public class DialerCampaignSkillCombinationStatsEventCampaignSkillCombinationSta
     }
   }
 
+  public DialerCampaignSkillCombinationStatsEventCampaignSkillCombinationStats(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillCombinationDetails = new ArrayList<DialerCampaignSkillCombinationStatsEventSkillCombinationDetailNotification>();
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class ForecastServiceLevelResponse  implements Serializable {
     }
   }
 
+  public ForecastServiceLevelResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The percent of calls to answer in the number of seconds defined

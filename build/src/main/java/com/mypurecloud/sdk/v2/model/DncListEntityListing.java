@@ -43,6 +43,12 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     }
   }
 
+  public DncListEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DncList>();
+    }
+  }
+
   
   /**
    **/

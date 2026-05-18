@@ -32,6 +32,12 @@ public class ListWrapperInteger  implements Serializable {
     }
   }
 
+  public ListWrapperInteger(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    **/

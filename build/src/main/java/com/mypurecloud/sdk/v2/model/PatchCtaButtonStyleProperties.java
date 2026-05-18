@@ -82,6 +82,11 @@ public class PatchCtaButtonStyleProperties  implements Serializable {
     }
   }
 
+  public PatchCtaButtonStyleProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Color of the text. (eg. #FFFFFF)

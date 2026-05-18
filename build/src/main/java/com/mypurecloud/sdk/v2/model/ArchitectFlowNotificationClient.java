@@ -31,6 +31,11 @@ public class ArchitectFlowNotificationClient  implements Serializable {
     }
   }
 
+  public ArchitectFlowNotificationClient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the client.

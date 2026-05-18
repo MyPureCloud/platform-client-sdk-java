@@ -138,6 +138,12 @@ public class LexBotAlias  implements Serializable {
     }
   }
 
+  public LexBotAlias(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<LexIntent>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

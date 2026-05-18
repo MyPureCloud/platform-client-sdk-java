@@ -151,6 +151,13 @@ public class OutboundRoute  implements Serializable {
     }
   }
 
+  public OutboundRoute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      classificationTypes = new ArrayList<String>();
+      externalTrunkBases = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

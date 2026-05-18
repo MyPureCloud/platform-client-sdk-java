@@ -32,6 +32,11 @@ public class ComputedData  implements Serializable {
     }
   }
 
+  public ComputedData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Weekly time series for forecast data

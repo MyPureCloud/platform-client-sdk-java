@@ -35,6 +35,11 @@ public class DialerContactlistConfigChangeContactPhoneNumberColumn  implements S
     }
   }
 
+  public DialerContactlistConfigChangeContactPhoneNumberColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * name of the phone column

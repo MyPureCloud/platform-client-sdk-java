@@ -37,6 +37,13 @@ public class QueueConversationMessageEventTopicMessageMetadata  implements Seria
     }
   }
 
+  public QueueConversationMessageEventTopicMessageMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<QueueConversationMessageEventTopicMessageMetadataEvent>();
+      content = new ArrayList<QueueConversationMessageEventTopicMessageMetadataContent>();
+    }
+  }
+
   
   /**
    * Message type.

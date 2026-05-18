@@ -140,6 +140,13 @@ public class BuIntradayResponse  implements Serializable {
     }
   }
 
+  public BuIntradayResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      categories = new ArrayList<CategoriesEnum>();
+      intradayDataGroupings = new ArrayList<BuIntradayDataGroup>();
+    }
+  }
+
   
   /**
    * The start of the date range for which this data applies.  This is also the start reference point for the intervals represented in the various arrays. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

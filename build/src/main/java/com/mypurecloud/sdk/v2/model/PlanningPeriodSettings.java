@@ -31,6 +31,11 @@ public class PlanningPeriodSettings  implements Serializable {
     }
   }
 
+  public PlanningPeriodSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Planning period length in weeks

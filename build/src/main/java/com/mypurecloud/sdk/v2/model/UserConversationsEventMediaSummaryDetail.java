@@ -30,6 +30,11 @@ public class UserConversationsEventMediaSummaryDetail  implements Serializable {
     }
   }
 
+  public UserConversationsEventMediaSummaryDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

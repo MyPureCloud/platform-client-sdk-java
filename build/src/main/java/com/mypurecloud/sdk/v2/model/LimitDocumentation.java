@@ -34,6 +34,12 @@ public class LimitDocumentation  implements Serializable {
     }
   }
 
+  public LimitDocumentation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      namespaces = new ArrayList<NamespaceDocs>();
+    }
+  }
+
   
   /**
    **/

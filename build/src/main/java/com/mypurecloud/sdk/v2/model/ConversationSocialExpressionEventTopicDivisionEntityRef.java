@@ -32,6 +32,11 @@ public class ConversationSocialExpressionEventTopicDivisionEntityRef  implements
     }
   }
 
+  public ConversationSocialExpressionEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

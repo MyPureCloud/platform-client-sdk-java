@@ -32,6 +32,11 @@ public class Destination  implements Serializable {
     }
   }
 
+  public Destination(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Address or phone number.

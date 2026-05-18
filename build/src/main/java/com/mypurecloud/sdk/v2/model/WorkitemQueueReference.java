@@ -31,6 +31,11 @@ public class WorkitemQueueReference  implements Serializable {
     }
   }
 
+  public WorkitemQueueReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

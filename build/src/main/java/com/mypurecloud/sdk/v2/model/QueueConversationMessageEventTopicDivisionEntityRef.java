@@ -32,6 +32,11 @@ public class QueueConversationMessageEventTopicDivisionEntityRef  implements Ser
     }
   }
 
+  public QueueConversationMessageEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

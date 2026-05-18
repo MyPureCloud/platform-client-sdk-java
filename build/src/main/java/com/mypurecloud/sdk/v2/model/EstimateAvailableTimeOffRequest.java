@@ -38,6 +38,13 @@ public class EstimateAvailableTimeOffRequest  implements Serializable {
     }
   }
 
+  public EstimateAvailableTimeOffRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      fullDayDates = new ArrayList<EstimateAvailableFullDayTimeOffRequest>();
+      partialDayDates = new ArrayList<EstimateAvailablePartialDayTimeOffRequest>();
+    }
+  }
+
   
   /**
    * Full day dates. partialDayDates must be empty if this field is populated

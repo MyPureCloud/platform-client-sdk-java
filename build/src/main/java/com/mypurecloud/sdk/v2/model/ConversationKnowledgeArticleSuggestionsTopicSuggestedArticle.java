@@ -43,6 +43,13 @@ public class ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle  imple
     }
   }
 
+  public ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      snippets = new ArrayList<String>();
+      variationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

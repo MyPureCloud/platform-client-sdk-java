@@ -81,6 +81,11 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
     }
   }
 
+  public ContinuousForecastGetSessionResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Latest session ID of the business unit

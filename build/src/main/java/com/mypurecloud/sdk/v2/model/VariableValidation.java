@@ -25,6 +25,11 @@ public class VariableValidation  implements Serializable {
     }
   }
 
+  public VariableValidation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

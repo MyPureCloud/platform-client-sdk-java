@@ -36,6 +36,12 @@ public class SuggestionListing  implements Serializable {
     }
   }
 
+  public SuggestionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Suggestion>();
+    }
+  }
+
   
   /**
    **/

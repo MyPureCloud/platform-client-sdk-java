@@ -31,6 +31,11 @@ public class QueueConversationSocialExpressionEventTopicUriReference  implements
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

@@ -151,6 +151,11 @@ public class KnowledgeConversationContext  implements Serializable {
     }
   }
 
+  public KnowledgeConversationContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier of the conversation.

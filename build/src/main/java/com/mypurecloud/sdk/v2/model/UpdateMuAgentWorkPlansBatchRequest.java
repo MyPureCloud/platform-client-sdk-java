@@ -33,6 +33,12 @@ public class UpdateMuAgentWorkPlansBatchRequest  implements Serializable {
     }
   }
 
+  public UpdateMuAgentWorkPlansBatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UpdateMuAgentWorkPlanRequest>();
+    }
+  }
+
   
   /**
    **/

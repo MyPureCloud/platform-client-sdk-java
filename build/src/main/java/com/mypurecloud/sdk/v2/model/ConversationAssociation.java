@@ -89,6 +89,11 @@ public class ConversationAssociation  implements Serializable {
     }
   }
 
+  public ConversationAssociation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * An external contact ID.  If not supplied, implies the conversation should be disassociated with any external contact.

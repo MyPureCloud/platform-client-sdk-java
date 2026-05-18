@@ -31,6 +31,11 @@ public class TextBotUserInputAlternative  implements Serializable {
     }
   }
 
+  public TextBotUserInputAlternative(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user input transcript.

@@ -36,6 +36,12 @@ public class FlowExecutionAggregateDataContainer  implements Serializable {
     }
   }
 
+  public FlowExecutionAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

@@ -30,6 +30,11 @@ public class AgentActivityChangedTopicOrganizationPresence  implements Serializa
     }
   }
 
+  public AgentActivityChangedTopicOrganizationPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

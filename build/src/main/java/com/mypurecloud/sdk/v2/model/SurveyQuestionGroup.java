@@ -40,6 +40,12 @@ public class SurveyQuestionGroup  implements Serializable {
     }
   }
 
+  public SurveyQuestionGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questions = new ArrayList<SurveyQuestion>();
+    }
+  }
+
   
   /**
    **/

@@ -82,6 +82,11 @@ public class CtaButtonStyleProperties  implements Serializable {
     }
   }
 
+  public CtaButtonStyleProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Color of the text. (eg. #FFFFFF)

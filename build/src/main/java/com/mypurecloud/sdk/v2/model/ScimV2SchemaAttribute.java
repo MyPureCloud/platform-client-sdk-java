@@ -294,6 +294,14 @@ public class ScimV2SchemaAttribute  implements Serializable {
     }
   }
 
+  public ScimV2SchemaAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      subAttributes = new ArrayList<ScimV2SchemaAttribute>();
+      canonicalValues = new ArrayList<String>();
+      referenceTypes = new ArrayList<ReferenceTypesEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The name of the attribute.")
   @JsonProperty("name")

@@ -89,6 +89,12 @@ public class CreateUser  implements Serializable {
     }
   }
 
+  public CreateUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      addresses = new ArrayList<Contact>();
+    }
+  }
+
   
   /**
    * User's full name

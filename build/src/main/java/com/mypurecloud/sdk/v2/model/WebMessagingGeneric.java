@@ -39,6 +39,12 @@ public class WebMessagingGeneric  implements Serializable {
     }
   }
 
+  public WebMessagingGeneric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      components = new ArrayList<ButtonComponent>();
+    }
+  }
+
   
   /**
    * Text to show in the title.

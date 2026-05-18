@@ -79,6 +79,12 @@ public class ListWrapperAgentWorkPlanField  implements Serializable {
     }
   }
 
+  public ListWrapperAgentWorkPlanField(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<ValuesEnum>();
+    }
+  }
+
   
   /**
    **/

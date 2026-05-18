@@ -31,6 +31,11 @@ public class FaxSummary  implements Serializable {
     }
   }
 
+  public FaxSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

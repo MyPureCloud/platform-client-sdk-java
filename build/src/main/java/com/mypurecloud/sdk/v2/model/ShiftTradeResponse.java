@@ -107,6 +107,12 @@ public class ShiftTradeResponse  implements Serializable {
     }
   }
 
+  public ShiftTradeResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      acceptableIntervals = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of this shift trade

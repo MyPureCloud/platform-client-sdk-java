@@ -32,6 +32,11 @@ public class KnowledgeParseRecord  implements Serializable {
     }
   }
 
+  public KnowledgeParseRecord(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique id for the parsed data.

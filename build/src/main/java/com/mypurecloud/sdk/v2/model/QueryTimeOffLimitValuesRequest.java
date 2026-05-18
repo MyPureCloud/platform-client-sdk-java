@@ -35,6 +35,12 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
     }
   }
 
+  public QueryTimeOffLimitValuesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dateRanges = new ArrayList<LocalDateRange>();
+    }
+  }
+
   
   /**
    * The time off limit object id to retrieve values for. Required if activityCodeId is not specified

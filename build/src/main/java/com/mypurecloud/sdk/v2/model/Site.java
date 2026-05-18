@@ -174,6 +174,19 @@ public class Site  implements Serializable {
     }
   }
 
+  public Site(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      primarySites = new ArrayList<DomainEntityRef>();
+      secondarySites = new ArrayList<DomainEntityRef>();
+      primaryEdges = new ArrayList<Edge>();
+      secondaryEdges = new ArrayList<Edge>();
+      addresses = new ArrayList<Contact>();
+      edges = new ArrayList<Edge>();
+      siteConnections = new ArrayList<SiteConnection>();
+      mediaRegions = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

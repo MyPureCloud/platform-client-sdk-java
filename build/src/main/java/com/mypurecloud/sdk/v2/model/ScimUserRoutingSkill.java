@@ -31,6 +31,11 @@ public class ScimUserRoutingSkill  implements Serializable {
     }
   }
 
+  public ScimUserRoutingSkill(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The case-sensitive name of a routing skill configured in Genesys Cloud.

@@ -33,6 +33,12 @@ public class CopilotContextValues  implements Serializable {
     }
   }
 
+  public CopilotContextValues(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CopilotContextEntity>();
+    }
+  }
+
   
   /**
    * List of copilot context entities grouped by assistant.

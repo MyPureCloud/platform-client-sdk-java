@@ -29,6 +29,11 @@ public class WorkitemManualAssign  implements Serializable {
     }
   }
 
+  public WorkitemManualAssign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for this user.

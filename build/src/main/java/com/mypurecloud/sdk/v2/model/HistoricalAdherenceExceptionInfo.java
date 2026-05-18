@@ -304,6 +304,12 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     }
   }
 
+  public HistoricalAdherenceExceptionInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      scheduledSecondaryPresenceLookupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Exception start offset in seconds relative to query start time

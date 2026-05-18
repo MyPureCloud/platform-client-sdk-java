@@ -29,6 +29,11 @@ public class AdhocRecordingTopicConversationData  implements Serializable {
     }
   }
 
+  public AdhocRecordingTopicConversationData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

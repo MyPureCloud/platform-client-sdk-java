@@ -36,6 +36,11 @@ public class MediaPolicies  implements Serializable {
     }
   }
 
+  public MediaPolicies(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Conditions and actions for calls

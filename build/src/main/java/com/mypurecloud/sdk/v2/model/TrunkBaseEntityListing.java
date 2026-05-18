@@ -44,6 +44,12 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     }
   }
 
+  public TrunkBaseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TrunkBase>();
+    }
+  }
+
   
   /**
    **/

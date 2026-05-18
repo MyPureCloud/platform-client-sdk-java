@@ -29,6 +29,11 @@ public class ContactEnrichOptions  implements Serializable {
     }
   }
 
+  public ContactEnrichOptions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * If true, any matched contact will have its type updated to Curated. If false, any matched contact will keep its original type in the operation.

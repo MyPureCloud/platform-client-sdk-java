@@ -31,6 +31,11 @@ public class ServiceGoalTemplateImpactOverride  implements Serializable {
     }
   }
 
+  public ServiceGoalTemplateImpactOverride(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether service goal overrides are enabled for this service goal template

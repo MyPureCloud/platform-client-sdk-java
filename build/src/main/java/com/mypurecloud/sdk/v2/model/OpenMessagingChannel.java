@@ -134,6 +134,11 @@ public class OpenMessagingChannel  implements Serializable {
     }
   }
 
+  public OpenMessagingChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The Messaging Platform integration ID.")
   @JsonProperty("id")

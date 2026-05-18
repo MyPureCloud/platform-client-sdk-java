@@ -30,6 +30,11 @@ public class UpdateGuide  implements Serializable {
     }
   }
 
+  public UpdateGuide(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the guide.

@@ -118,6 +118,12 @@ public class WorkPlanConstraintMessage  implements Serializable {
     }
   }
 
+  public WorkPlanConstraintMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      arguments = new ArrayList<WorkPlanValidationMessageArgument>();
+    }
+  }
+
   
   /**
    * Type of the work plan constraint in this message

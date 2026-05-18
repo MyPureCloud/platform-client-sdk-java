@@ -43,6 +43,12 @@ public class EmailMessagePreviewListing  implements Serializable, PagedResource<
     }
   }
 
+  public EmailMessagePreviewListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EmailMessagePreview>();
+    }
+  }
+
   
   /**
    **/

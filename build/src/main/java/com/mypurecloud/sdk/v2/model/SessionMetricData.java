@@ -38,6 +38,11 @@ public class SessionMetricData  implements Serializable {
     }
   }
 
+  public SessionMetricData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Model to be used for internal evaluation purposes

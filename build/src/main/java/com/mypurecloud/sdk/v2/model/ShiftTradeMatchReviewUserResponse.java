@@ -34,6 +34,11 @@ public class ShiftTradeMatchReviewUserResponse  implements Serializable {
     }
   }
 
+  public ShiftTradeMatchReviewUserResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The minimum weekly paid minutes for this user per the work plan tied to the agent schedule

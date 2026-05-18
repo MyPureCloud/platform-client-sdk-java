@@ -29,6 +29,11 @@ public class ReprocessInteractionsByJobIdResponse  implements Serializable {
     }
   }
 
+  public ReprocessInteractionsByJobIdResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

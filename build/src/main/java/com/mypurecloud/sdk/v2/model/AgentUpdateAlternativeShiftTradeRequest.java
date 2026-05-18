@@ -78,6 +78,11 @@ public class AgentUpdateAlternativeShiftTradeRequest  implements Serializable {
     }
   }
 
+  public AgentUpdateAlternativeShiftTradeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The new state of this alternative shift trade

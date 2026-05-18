@@ -32,6 +32,11 @@ public class NetworkConnectivity  implements Serializable {
     }
   }
 
+  public NetworkConnectivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the network carrier.

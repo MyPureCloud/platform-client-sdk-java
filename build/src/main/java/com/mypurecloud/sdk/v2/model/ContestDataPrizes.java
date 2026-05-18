@@ -31,6 +31,11 @@ public class ContestDataPrizes  implements Serializable {
     }
   }
 
+  public ContestDataPrizes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Tier of the prize

@@ -131,6 +131,11 @@ public class SmsProvisioningStatus  implements Serializable {
     }
   }
 
+  public SmsProvisioningStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Provisioning action

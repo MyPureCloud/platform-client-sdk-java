@@ -85,6 +85,11 @@ public class DialerResponsesetConfigChangeReaction  implements Serializable {
     }
   }
 
+  public DialerResponsesetConfigChangeReaction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

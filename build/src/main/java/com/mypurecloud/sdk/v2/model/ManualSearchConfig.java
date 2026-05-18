@@ -30,6 +30,11 @@ public class ManualSearchConfig  implements Serializable {
     }
   }
 
+  public ManualSearchConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Articles with answer highlights.

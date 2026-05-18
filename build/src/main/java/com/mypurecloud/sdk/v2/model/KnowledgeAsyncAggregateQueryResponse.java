@@ -34,6 +34,12 @@ public class KnowledgeAsyncAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public KnowledgeAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<KnowledgeAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

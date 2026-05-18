@@ -33,6 +33,11 @@ public class ContestMetrics  implements Serializable {
     }
   }
 
+  public ContestMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

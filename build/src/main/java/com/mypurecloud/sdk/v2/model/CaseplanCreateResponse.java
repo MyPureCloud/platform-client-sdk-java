@@ -106,6 +106,13 @@ public class CaseplanCreateResponse  implements Serializable {
     }
   }
 
+  public CaseplanCreateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dataSchemas = new ArrayList<CaseplanDataSchema>();
+      intakeSettings = new ArrayList<IntakeSetting>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -90,6 +90,12 @@ public class ProgramJob  implements Serializable {
     }
   }
 
+  public ProgramJob(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      programs = new ArrayList<BaseProgramEntity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

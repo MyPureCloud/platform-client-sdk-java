@@ -43,6 +43,12 @@ public class SmsAddressEntityListing  implements Serializable, PagedResource<Sms
     }
   }
 
+  public SmsAddressEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SmsAddress>();
+    }
+  }
+
   
   /**
    **/

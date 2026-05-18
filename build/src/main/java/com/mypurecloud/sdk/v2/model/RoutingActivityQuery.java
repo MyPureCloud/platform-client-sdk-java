@@ -133,6 +133,13 @@ public class RoutingActivityQuery  implements Serializable {
     }
   }
 
+  public RoutingActivityQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<RoutingActivityQueryMetric>();
+      groupBy = new ArrayList<GroupByEnum>();
+    }
+  }
+
   
   /**
    * List of requested metrics

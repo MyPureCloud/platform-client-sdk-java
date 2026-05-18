@@ -46,6 +46,12 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
     }
   }
 
+  public CreateCallbackOnConversationCommand(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The identifier of the script to be used for the callback

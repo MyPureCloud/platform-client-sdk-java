@@ -37,6 +37,12 @@ public class AssignedWrapupCode  implements Serializable {
     }
   }
 
+  public AssignedWrapupCode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user configured wrap up code id.

@@ -34,6 +34,11 @@ public class DialerCampaignConfigChangePhoneColumn  implements Serializable {
     }
   }
 
+  public DialerCampaignConfigChangePhoneColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the phone column

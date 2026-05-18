@@ -43,6 +43,12 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     }
   }
 
+  public LearningAssignmentsDomainEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LearningAssignment>();
+    }
+  }
+
   
   /**
    **/

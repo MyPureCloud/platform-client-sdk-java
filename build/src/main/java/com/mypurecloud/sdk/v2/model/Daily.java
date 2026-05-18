@@ -34,6 +34,12 @@ public class Daily  implements Serializable {
     }
   }
 
+  public Daily(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadResult = new ArrayList<Timeseries>();
+    }
+  }
+
   
   /**
    * Download URL to fetch the result of daily time series. This field is populated only if session state is Complete

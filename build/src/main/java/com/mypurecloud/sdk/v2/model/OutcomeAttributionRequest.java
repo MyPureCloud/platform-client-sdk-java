@@ -39,6 +39,12 @@ public class OutcomeAttributionRequest  implements Serializable {
     }
   }
 
+  public OutcomeAttributionRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      touchpoints = new ArrayList<Touchpoint>();
+    }
+  }
+
   
   /**
    * ID of Outcome.

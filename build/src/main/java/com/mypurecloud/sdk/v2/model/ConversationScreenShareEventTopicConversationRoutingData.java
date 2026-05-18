@@ -39,6 +39,13 @@ public class ConversationScreenShareEventTopicConversationRoutingData  implement
     }
   }
 
+  public ConversationScreenShareEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<ConversationScreenShareEventTopicUriReference>();
+      scoredAgents = new ArrayList<ConversationScreenShareEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

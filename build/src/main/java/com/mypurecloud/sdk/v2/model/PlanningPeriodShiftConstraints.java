@@ -31,6 +31,11 @@ public class PlanningPeriodShiftConstraints  implements Serializable {
     }
   }
 
+  public PlanningPeriodShiftConstraints(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether shifts per planning period is enabled. This field is non-nullable on the response

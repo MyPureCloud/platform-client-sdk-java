@@ -82,6 +82,11 @@ public class KnowledgeImportJobRequest  implements Serializable {
     }
   }
 
+  public KnowledgeImportJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Upload key

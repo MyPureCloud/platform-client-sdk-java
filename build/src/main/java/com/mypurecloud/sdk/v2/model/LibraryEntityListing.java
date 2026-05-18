@@ -43,6 +43,12 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     }
   }
 
+  public LibraryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Library>();
+    }
+  }
+
   
   /**
    **/

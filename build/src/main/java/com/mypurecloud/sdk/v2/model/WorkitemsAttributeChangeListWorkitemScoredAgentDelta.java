@@ -35,6 +35,13 @@ public class WorkitemsAttributeChangeListWorkitemScoredAgentDelta  implements Se
     }
   }
 
+  public WorkitemsAttributeChangeListWorkitemScoredAgentDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      newValue = new ArrayList<WorkitemScoredAgentDelta>();
+      oldValue = new ArrayList<WorkitemScoredAgentDelta>();
+    }
+  }
+
   
   /**
    * New property value

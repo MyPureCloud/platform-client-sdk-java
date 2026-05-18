@@ -29,6 +29,11 @@ public class TargetPerformanceProfile  implements Serializable {
     }
   }
 
+  public TargetPerformanceProfile(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The target destination performanceProfileId for the linked metric.

@@ -40,6 +40,11 @@ public class PatchContentOfferStylingConfiguration  implements Serializable {
     }
   }
 
+  public PatchContentOfferStylingConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Properties for customizing the positioning of the content offer.

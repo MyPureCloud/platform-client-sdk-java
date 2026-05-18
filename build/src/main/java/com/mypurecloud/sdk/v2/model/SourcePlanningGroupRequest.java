@@ -31,6 +31,11 @@ public class SourcePlanningGroupRequest  implements Serializable {
     }
   }
 
+  public SourcePlanningGroupRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the planning group

@@ -79,6 +79,11 @@ public class LauncherButtonSettings  implements Serializable {
     }
   }
 
+  public LauncherButtonSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The visibility settings for the button

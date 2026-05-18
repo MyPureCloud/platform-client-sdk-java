@@ -39,6 +39,12 @@ public class MinerTopicPhrase  implements Serializable {
     }
   }
 
+  public MinerTopicPhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      utterances = new ArrayList<Utterance>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

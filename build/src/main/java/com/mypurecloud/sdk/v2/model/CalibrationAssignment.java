@@ -37,6 +37,12 @@ public class CalibrationAssignment  implements Serializable {
     }
   }
 
+  public CalibrationAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      evaluators = new ArrayList<User>();
+    }
+  }
+
   
   /**
    **/

@@ -29,6 +29,11 @@ public class FlowPathsFlowFilter  implements Serializable {
     }
   }
 
+  public FlowPathsFlowFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The identifier of the flow.

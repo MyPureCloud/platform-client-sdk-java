@@ -30,6 +30,11 @@ public class OutboundMessagingWhatsappCampaignConfigChangeSmsPhoneNumberRef  imp
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeSmsPhoneNumberRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique phone number

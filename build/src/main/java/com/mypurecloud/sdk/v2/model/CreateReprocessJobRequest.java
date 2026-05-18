@@ -91,6 +91,14 @@ public class CreateReprocessJobRequest  implements Serializable {
     }
   }
 
+  public CreateReprocessJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      programs = new ArrayList<String>();
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      dialects = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name given for the job.

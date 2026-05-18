@@ -29,6 +29,11 @@ public class ForecastAverageSpeedOfAnswerResponse  implements Serializable {
     }
   }
 
+  public ForecastAverageSpeedOfAnswerResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * the average speed of answer goal in seconds

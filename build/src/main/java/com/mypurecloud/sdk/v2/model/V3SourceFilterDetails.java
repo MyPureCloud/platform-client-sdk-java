@@ -35,6 +35,12 @@ public class V3SourceFilterDetails  implements Serializable {
     }
   }
 
+  public V3SourceFilterDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      folders = new ArrayList<V3SourceFolderDetails>();
+    }
+  }
+
   
   /**
    * Details about the site associated with the Fabric Source.

@@ -33,6 +33,11 @@ public class CreateWebChatConversationResponse  implements Serializable {
     }
   }
 
+  public CreateWebChatConversationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Chat Conversation identifier

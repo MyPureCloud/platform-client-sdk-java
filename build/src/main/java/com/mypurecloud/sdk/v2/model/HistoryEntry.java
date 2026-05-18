@@ -98,6 +98,11 @@ public class HistoryEntry  implements Serializable {
     }
   }
 
+  public HistoryEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The action performed

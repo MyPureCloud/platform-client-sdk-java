@@ -87,6 +87,11 @@ public class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext  impl
     }
   }
 
+  public ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

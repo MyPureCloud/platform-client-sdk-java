@@ -32,6 +32,11 @@ public class DocumentThumbnail  implements Serializable {
     }
   }
 
+  public DocumentThumbnail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

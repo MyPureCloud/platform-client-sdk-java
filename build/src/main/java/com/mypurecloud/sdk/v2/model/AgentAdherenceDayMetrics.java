@@ -39,6 +39,11 @@ public class AgentAdherenceDayMetrics  implements Serializable {
     }
   }
 
+  public AgentAdherenceDayMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start of day offset in seconds relative to query start time

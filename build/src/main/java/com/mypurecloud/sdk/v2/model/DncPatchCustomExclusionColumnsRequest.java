@@ -82,6 +82,12 @@ public class DncPatchCustomExclusionColumnsRequest  implements Serializable {
     }
   }
 
+  public DncPatchCustomExclusionColumnsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      customExclusionColumnEntries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The action to perform

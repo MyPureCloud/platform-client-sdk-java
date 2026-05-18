@@ -31,6 +31,11 @@ public class ScimConfigResourceTypeSchemaExtension  implements Serializable {
     }
   }
 
+  public ScimConfigResourceTypeSchemaExtension(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The URI of an extended schema, for example, \"urn:edu:2.0:Staff\". Must be equal to the \"id\" attribute of a schema.")
   @JsonProperty("schema")

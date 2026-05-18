@@ -133,6 +133,11 @@ public class ShiftTradeActivityRule  implements Serializable {
     }
   }
 
+  public ShiftTradeActivityRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The activity category to which to apply this rule

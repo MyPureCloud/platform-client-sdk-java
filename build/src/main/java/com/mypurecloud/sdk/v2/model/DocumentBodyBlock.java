@@ -91,6 +91,11 @@ public class DocumentBodyBlock  implements Serializable {
     }
   }
 
+  public DocumentBodyBlock(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.

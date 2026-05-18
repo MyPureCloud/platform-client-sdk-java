@@ -136,6 +136,12 @@ public class MinerExecuteRequest  implements Serializable {
     }
   }
 
+  public MinerExecuteRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queueIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Start date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

@@ -87,6 +87,11 @@ public class OpenContentAttachment  implements Serializable {
     }
   }
 
+  public OpenContentAttachment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Provider specific ID for attachment. For example, middleware media UUID.

@@ -129,6 +129,11 @@ public class CopilotAggregationView  implements Serializable {
     }
   }
 
+  public CopilotAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

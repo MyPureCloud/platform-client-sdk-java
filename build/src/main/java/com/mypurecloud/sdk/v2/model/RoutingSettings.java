@@ -29,6 +29,11 @@ public class RoutingSettings  implements Serializable {
     }
   }
 
+  public RoutingSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Reset agent score when agent presence changes from off-queue to on-queue

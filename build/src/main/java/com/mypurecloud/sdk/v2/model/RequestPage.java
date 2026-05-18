@@ -32,6 +32,11 @@ public class RequestPage  implements Serializable {
     }
   }
 
+  public RequestPage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The page URL.

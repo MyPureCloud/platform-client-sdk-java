@@ -37,6 +37,12 @@ public class ExpandableWebDeploymentEntityListing  implements Serializable {
     }
   }
 
+  public ExpandableWebDeploymentEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExpandableWebDeployment>();
+    }
+  }
+
   
   /**
    **/

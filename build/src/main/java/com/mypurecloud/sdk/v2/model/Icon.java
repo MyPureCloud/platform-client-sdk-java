@@ -30,6 +30,11 @@ public class Icon  implements Serializable {
     }
   }
 
+  public Icon(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Icon URL for the launcher button

@@ -31,6 +31,11 @@ public class DomainEntityRef  implements Serializable {
     }
   }
 
+  public DomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

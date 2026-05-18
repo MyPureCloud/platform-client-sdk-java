@@ -132,6 +132,11 @@ public class ButtonResponse  implements Serializable {
     }
   }
 
+  public ButtonResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Button response type that captures Button and QuickReply type responses

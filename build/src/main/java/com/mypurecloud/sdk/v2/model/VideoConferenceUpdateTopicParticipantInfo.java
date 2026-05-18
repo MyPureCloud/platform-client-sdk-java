@@ -30,6 +30,11 @@ public class VideoConferenceUpdateTopicParticipantInfo  implements Serializable 
     }
   }
 
+  public VideoConferenceUpdateTopicParticipantInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,12 @@ public class CommonRuleBulkDeleteRequest  implements Serializable {
     }
   }
 
+  public CommonRuleBulkDeleteRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ruleIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user supplied rule ids to be deleted

@@ -226,6 +226,12 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicVideo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      msids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

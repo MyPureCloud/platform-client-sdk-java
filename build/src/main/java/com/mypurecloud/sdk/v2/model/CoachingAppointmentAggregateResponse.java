@@ -33,6 +33,12 @@ public class CoachingAppointmentAggregateResponse  implements Serializable {
     }
   }
 
+  public CoachingAppointmentAggregateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<QueryResponseGroupedData>();
+    }
+  }
+
   
   /**
    * The results of the query

@@ -30,6 +30,11 @@ public class IdentityResolutionQueueConfig  implements Serializable {
     }
   }
 
+  public IdentityResolutionQueueConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

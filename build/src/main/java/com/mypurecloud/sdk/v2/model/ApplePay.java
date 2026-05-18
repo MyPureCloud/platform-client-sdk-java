@@ -143,6 +143,13 @@ public class ApplePay  implements Serializable {
     }
   }
 
+  public ApplePay(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      paymentCapabilities = new ArrayList<PaymentCapabilitiesEnum>();
+      supportedPaymentNetworks = new ArrayList<SupportedPaymentNetworksEnum>();
+    }
+  }
+
   
   /**
    * The name of the store.

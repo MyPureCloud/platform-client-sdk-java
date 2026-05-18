@@ -38,6 +38,12 @@ public class DictionaryFeedbackEntityListing  implements Serializable {
     }
   }
 
+  public DictionaryFeedbackEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ListedDictionaryFeedback>();
+    }
+  }
+
   
   /**
    **/

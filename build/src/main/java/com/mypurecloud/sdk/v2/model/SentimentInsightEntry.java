@@ -30,6 +30,11 @@ public class SentimentInsightEntry  implements Serializable {
     }
   }
 
+  public SentimentInsightEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The title given to the insight

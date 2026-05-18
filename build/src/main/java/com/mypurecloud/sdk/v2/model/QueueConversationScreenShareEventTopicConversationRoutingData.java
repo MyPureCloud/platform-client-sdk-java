@@ -39,6 +39,13 @@ public class QueueConversationScreenShareEventTopicConversationRoutingData  impl
     }
   }
 
+  public QueueConversationScreenShareEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<QueueConversationScreenShareEventTopicUriReference>();
+      scoredAgents = new ArrayList<QueueConversationScreenShareEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

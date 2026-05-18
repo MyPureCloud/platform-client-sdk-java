@@ -38,6 +38,13 @@ public class AgentMuScheduleItem  implements Serializable {
     }
   }
 
+  public AgentMuScheduleItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<AgentMuScheduleShift>();
+      fullDayTimeOffMarkerDates = new ArrayList<LocalDate>();
+    }
+  }
+
   
   /**
    * The agent to whom this schedule applies. Note: selfUri will not be populated if retrieving result via downloadUrl

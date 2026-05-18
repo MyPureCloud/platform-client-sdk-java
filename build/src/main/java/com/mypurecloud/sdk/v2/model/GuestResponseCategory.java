@@ -38,6 +38,11 @@ public class GuestResponseCategory  implements Serializable {
     }
   }
 
+  public GuestResponseCategory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

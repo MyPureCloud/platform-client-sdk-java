@@ -33,6 +33,12 @@ public class WaitlistPositionListing  implements Serializable {
     }
   }
 
+  public WaitlistPositionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WaitlistPosition>();
+    }
+  }
+
   
   /**
    **/

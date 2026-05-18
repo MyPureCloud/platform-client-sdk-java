@@ -80,6 +80,11 @@ public class ExportDetails  implements Serializable {
     }
   }
 
+  public ExportDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow to export. If you do not provide the flow ID, you must provide both the name and type.

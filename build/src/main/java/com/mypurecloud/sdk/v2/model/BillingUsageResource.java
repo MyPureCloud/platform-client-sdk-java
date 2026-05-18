@@ -31,6 +31,11 @@ public class BillingUsageResource  implements Serializable {
     }
   }
 
+  public BillingUsageResource(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Identifies the resource (e.g. license user, device).

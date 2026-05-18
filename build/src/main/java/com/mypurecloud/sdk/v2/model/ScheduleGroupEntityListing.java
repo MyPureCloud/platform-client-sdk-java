@@ -44,6 +44,12 @@ public class ScheduleGroupEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public ScheduleGroupEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ScheduleGroup>();
+    }
+  }
+
   
   /**
    **/

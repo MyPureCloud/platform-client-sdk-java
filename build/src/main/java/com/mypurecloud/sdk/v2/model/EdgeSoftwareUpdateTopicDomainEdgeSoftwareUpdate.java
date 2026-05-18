@@ -89,6 +89,11 @@ public class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate  implements Seriali
     }
   }
 
+  public EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

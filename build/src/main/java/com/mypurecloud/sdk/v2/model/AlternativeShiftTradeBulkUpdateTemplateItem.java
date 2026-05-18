@@ -135,6 +135,11 @@ public class AlternativeShiftTradeBulkUpdateTemplateItem  implements Serializabl
     }
   }
 
+  public AlternativeShiftTradeBulkUpdateTemplateItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of this alternative shift trade

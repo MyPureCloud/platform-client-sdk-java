@@ -37,6 +37,13 @@ public class CallableContactsDiagnostic  implements Serializable {
     }
   }
 
+  public CallableContactsDiagnostic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dncLists = new ArrayList<DomainEntityRef>();
+      ruleSets = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Attempt limits for the campaign's contact list")
   @JsonProperty("attemptLimits")

@@ -147,6 +147,11 @@ public class KnowledgeV3ConversationContext  implements Serializable {
     }
   }
 
+  public KnowledgeV3ConversationContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier of the conversation.

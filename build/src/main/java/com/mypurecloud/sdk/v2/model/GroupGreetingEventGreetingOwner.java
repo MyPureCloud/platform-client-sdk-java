@@ -29,6 +29,11 @@ public class GroupGreetingEventGreetingOwner  implements Serializable {
     }
   }
 
+  public GroupGreetingEventGreetingOwner(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

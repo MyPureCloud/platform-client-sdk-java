@@ -32,6 +32,12 @@ public class CreateBenefitAssessmentJobRequest  implements Serializable {
     }
   }
 
+  public CreateBenefitAssessmentJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      divisionIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of division ids for routing queues that are to be assessed for Predictive Routing benefit.

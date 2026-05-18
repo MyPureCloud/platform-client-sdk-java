@@ -29,6 +29,11 @@ public class MaxParticipants  implements Serializable {
     }
   }
 
+  public MaxParticipants(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The maximum number of participants that are allowed on a conversation.

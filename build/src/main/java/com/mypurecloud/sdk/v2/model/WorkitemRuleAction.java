@@ -76,6 +76,11 @@ public class WorkitemRuleAction  implements Serializable {
     }
   }
 
+  public WorkitemRuleAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

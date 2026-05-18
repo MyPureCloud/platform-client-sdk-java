@@ -29,6 +29,11 @@ public class CapacityPlanningRequirementsResultTopicCapacityPlanReference  imple
     }
   }
 
+  public CapacityPlanningRequirementsResultTopicCapacityPlanReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

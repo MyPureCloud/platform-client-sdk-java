@@ -90,6 +90,11 @@ public class ShiftTradeNotification  implements Serializable {
     }
   }
 
+  public ShiftTradeNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start week date of the initiating shift of the shift trade in yyyy-MM-dd format

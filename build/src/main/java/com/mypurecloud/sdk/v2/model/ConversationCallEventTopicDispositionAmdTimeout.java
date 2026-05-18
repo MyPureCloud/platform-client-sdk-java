@@ -34,6 +34,11 @@ public class ConversationCallEventTopicDispositionAmdTimeout  implements Seriali
     }
   }
 
+  public ConversationCallEventTopicDispositionAmdTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured AMD timeout value.

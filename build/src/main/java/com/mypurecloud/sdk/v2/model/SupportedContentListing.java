@@ -43,6 +43,12 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     }
   }
 
+  public SupportedContentListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SupportedContent>();
+    }
+  }
+
   
   /**
    **/

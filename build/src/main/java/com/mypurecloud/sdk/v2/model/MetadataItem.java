@@ -33,6 +33,11 @@ public class MetadataItem  implements Serializable {
     }
   }
 
+  public MetadataItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The text contents of the metadata

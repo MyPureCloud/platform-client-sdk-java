@@ -35,6 +35,12 @@ public class ValidationResult  implements Serializable {
     }
   }
 
+  public ValidationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errors = new ArrayList<ValidationError>();
+    }
+  }
+
   
   /**
    * Separator valid in the upload

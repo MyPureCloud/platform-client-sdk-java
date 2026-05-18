@@ -314,6 +314,13 @@ public class QualityAuditLogMessage  implements Serializable {
     }
   }
 
+  public QualityAuditLogMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      remoteIps = new ArrayList<String>();
+      propertyChanges = new ArrayList<PropertyChange>();
+    }
+  }
+
   
   /**
    * Id of the audit message.

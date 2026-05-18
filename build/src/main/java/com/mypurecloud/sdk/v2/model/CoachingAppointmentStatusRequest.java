@@ -78,6 +78,11 @@ public class CoachingAppointmentStatusRequest  implements Serializable {
     }
   }
 
+  public CoachingAppointmentStatusRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the coaching appointment

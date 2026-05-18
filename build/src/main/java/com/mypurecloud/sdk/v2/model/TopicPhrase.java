@@ -31,6 +31,11 @@ public class TopicPhrase  implements Serializable {
     }
   }
 
+  public TopicPhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

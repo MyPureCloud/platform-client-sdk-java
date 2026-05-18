@@ -36,6 +36,11 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     }
   }
 
+  public UserTokensTopicTokenNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

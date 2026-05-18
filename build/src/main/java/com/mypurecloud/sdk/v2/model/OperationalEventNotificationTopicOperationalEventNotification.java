@@ -41,6 +41,11 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
     }
   }
 
+  public OperationalEventNotificationTopicOperationalEventNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

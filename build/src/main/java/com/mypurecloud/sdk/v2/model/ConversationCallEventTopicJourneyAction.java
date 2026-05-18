@@ -32,6 +32,11 @@ public class ConversationCallEventTopicJourneyAction  implements Serializable {
     }
   }
 
+  public ConversationCallEventTopicJourneyAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of an action from the Journey System (an action is spawned from an actionMap)

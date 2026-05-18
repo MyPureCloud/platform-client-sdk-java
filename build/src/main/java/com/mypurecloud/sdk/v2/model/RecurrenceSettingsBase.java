@@ -30,6 +30,11 @@ public class RecurrenceSettingsBase  implements Serializable {
     }
   }
 
+  public RecurrenceSettingsBase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Settings controlling when to end the recurrence for the activity plan

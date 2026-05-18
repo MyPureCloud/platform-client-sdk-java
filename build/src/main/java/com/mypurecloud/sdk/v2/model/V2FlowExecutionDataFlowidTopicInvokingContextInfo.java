@@ -39,6 +39,11 @@ public class V2FlowExecutionDataFlowidTopicInvokingContextInfo  implements Seria
     }
   }
 
+  public V2FlowExecutionDataFlowidTopicInvokingContextInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,11 @@ public class ConversationUserDisposition  implements Serializable {
     }
   }
 
+  public ConversationUserDisposition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * User-defined wrap-up code for the conversation.

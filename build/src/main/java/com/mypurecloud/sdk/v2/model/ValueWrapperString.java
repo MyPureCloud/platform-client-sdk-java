@@ -29,6 +29,11 @@ public class ValueWrapperString  implements Serializable {
     }
   }
 
+  public ValueWrapperString(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field

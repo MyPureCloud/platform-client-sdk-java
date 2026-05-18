@@ -33,6 +33,11 @@ public class OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddress  impl
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The friendly name of the email address.

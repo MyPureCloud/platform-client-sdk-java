@@ -90,6 +90,11 @@ public class KnowledgeDocumentChunkRequest  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentChunkRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Query to search chunks in the knowledge base.

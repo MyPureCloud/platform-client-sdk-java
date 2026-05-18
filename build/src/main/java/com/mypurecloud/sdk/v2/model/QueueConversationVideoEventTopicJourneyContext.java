@@ -35,6 +35,11 @@ public class QueueConversationVideoEventTopicJourneyContext  implements Serializ
     }
   }
 
+  public QueueConversationVideoEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

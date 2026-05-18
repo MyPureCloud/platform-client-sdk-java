@@ -35,6 +35,13 @@ public class BuPlanningGroupHeadcountForecastUploadSchema  implements Serializab
     }
   }
 
+  public BuPlanningGroupHeadcountForecastUploadSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requiredPerInterval = new ArrayList<Double>();
+      requiredWithoutShrinkagePerInterval = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * Required headcount per interval, referenced against the reference start date

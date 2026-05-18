@@ -33,6 +33,11 @@ public class ArchitectPromptNotificationErrorMessageParams  implements Serializa
     }
   }
 
+  public ArchitectPromptNotificationErrorMessageParams(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

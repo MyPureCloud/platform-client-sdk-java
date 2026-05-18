@@ -34,6 +34,11 @@ public class PhoneChangeTopicPhone  implements Serializable {
     }
   }
 
+  public PhoneChangeTopicPhone(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

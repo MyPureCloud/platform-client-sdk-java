@@ -44,6 +44,12 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     }
   }
 
+  public DIDPoolEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DIDPool>();
+    }
+  }
+
   
   /**
    **/

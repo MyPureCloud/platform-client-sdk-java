@@ -33,6 +33,11 @@ public class NumericRange  implements Serializable {
     }
   }
 
+  public NumericRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Greater than

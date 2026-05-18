@@ -30,6 +30,11 @@ public class ExternalContactsUnresolvedContactChangedTopicDataSchema  implements
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicDataSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

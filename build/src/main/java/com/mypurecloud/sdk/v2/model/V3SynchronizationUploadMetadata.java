@@ -34,6 +34,12 @@ public class V3SynchronizationUploadMetadata  implements Serializable {
     }
   }
 
+  public V3SynchronizationUploadMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<FabricTag>();
+    }
+  }
+
   
   /**
    * The origin URI of the file to upload

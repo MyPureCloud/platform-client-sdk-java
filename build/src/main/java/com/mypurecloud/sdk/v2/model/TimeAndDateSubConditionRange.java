@@ -33,6 +33,12 @@ public class TimeAndDateSubConditionRange  implements Serializable {
     }
   }
 
+  public TimeAndDateSubConditionRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inSet = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The minimum value of the range. Required for the operator BETWEEN. Format depends on type: timeOfDay: HH:mm, dayOfWeek: 1-7 (Monday-Sunday), dayOfMonth: 1-31, specificDate: yyyy-MM-dd (if includeYear=true) or MM-dd (if includeYear=false).

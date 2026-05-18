@@ -44,6 +44,12 @@ public class ExtensionPoolDivisionViewEntityListing  implements Serializable, Pa
     }
   }
 
+  public ExtensionPoolDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExtensionPoolDivisionView>();
+    }
+  }
+
   
   /**
    **/

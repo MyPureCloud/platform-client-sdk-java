@@ -31,6 +31,11 @@ public class TagQueryRequest  implements Serializable {
     }
   }
 
+  public TagQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

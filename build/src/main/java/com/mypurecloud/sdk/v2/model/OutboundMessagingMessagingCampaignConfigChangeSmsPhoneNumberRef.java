@@ -30,6 +30,11 @@ public class OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef  im
     }
   }
 
+  public OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique phone number

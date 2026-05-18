@@ -29,6 +29,11 @@ public class CustomAttributesIdResponse  implements Serializable {
     }
   }
 
+  public CustomAttributesIdResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the newly created or updated Custom Attributes record.

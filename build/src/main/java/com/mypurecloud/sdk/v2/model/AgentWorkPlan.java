@@ -43,6 +43,12 @@ public class AgentWorkPlan  implements Serializable {
     }
   }
 
+  public AgentWorkPlan(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<AgentWorkPlanShift>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -31,6 +31,11 @@ public class SetContentTemplateActionSettings  implements Serializable {
     }
   }
 
+  public SetContentTemplateActionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A String containing the SMS contentTemplateId.

@@ -78,6 +78,11 @@ public class CoachingAnnotationCreateRequest  implements Serializable {
     }
   }
 
+  public CoachingAnnotationCreateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The text of the annotation.

@@ -91,6 +91,11 @@ public class TextBotFlowTurnResponse  implements Serializable {
     }
   }
 
+  public TextBotFlowTurnResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the bot flow turn. If additional turns are needed, supply this ID as the previous turn in your next turn request.

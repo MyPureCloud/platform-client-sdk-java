@@ -31,6 +31,11 @@ public class MaskingRuleValidateResponse  implements Serializable {
     }
   }
 
+  public MaskingRuleValidateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "is masking rule definition valid?")
   @JsonProperty("valid")

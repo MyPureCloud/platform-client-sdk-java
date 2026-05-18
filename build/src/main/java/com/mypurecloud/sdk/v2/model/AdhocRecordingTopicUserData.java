@@ -30,6 +30,11 @@ public class AdhocRecordingTopicUserData  implements Serializable {
     }
   }
 
+  public AdhocRecordingTopicUserData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

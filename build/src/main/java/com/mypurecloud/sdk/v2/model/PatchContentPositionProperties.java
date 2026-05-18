@@ -32,6 +32,11 @@ public class PatchContentPositionProperties  implements Serializable {
     }
   }
 
+  public PatchContentPositionProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Top positioning offset.

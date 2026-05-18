@@ -33,6 +33,11 @@ public class CustomAttributesBulkUpdateResponseMap  implements Serializable {
     }
   }
 
+  public CustomAttributesBulkUpdateResponseMap(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The map of Custom Attributes record ids to their results after updating.

@@ -33,6 +33,11 @@ public class UserRoutingStatusUserRoutingStatus  implements Serializable {
     }
   }
 
+  public UserRoutingStatusUserRoutingStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier of the user.

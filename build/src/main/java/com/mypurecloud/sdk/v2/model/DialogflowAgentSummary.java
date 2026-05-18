@@ -36,6 +36,11 @@ public class DialogflowAgentSummary  implements Serializable {
     }
   }
 
+  public DialogflowAgentSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

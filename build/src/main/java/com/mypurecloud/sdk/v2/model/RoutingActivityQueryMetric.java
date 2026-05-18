@@ -82,6 +82,11 @@ public class RoutingActivityQueryMetric  implements Serializable {
     }
   }
 
+  public RoutingActivityQueryMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The requested metric

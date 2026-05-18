@@ -36,6 +36,12 @@ public class EventQueryResponse  implements Serializable {
     }
   }
 
+  public EventQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OperationalEvent>();
+    }
+  }
+
   
   /**
    **/

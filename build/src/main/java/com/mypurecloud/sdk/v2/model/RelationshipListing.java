@@ -44,6 +44,12 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     }
   }
 
+  public RelationshipListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Relationship>();
+    }
+  }
+
   
   /**
    **/

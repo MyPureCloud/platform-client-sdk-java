@@ -35,6 +35,12 @@ public class GetProfilesResponse  implements Serializable {
     }
   }
 
+  public GetProfilesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<PerformanceProfile>();
+    }
+  }
+
   
   /**
    **/

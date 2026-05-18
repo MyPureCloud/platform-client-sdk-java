@@ -32,6 +32,11 @@ public class LearningAssignmentUserQuery  implements Serializable {
     }
   }
 
+  public LearningAssignmentUserQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Learning module rule object

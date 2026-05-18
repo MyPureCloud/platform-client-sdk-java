@@ -254,6 +254,15 @@ public class ConversationNormalizedMessage  implements Serializable {
     }
   }
 
+  public ConversationNormalizedMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      content = new ArrayList<ConversationMessageContent>();
+      events = new ArrayList<ConversationMessageEvent>();
+      reasons = new ArrayList<ConversationReason>();
+      relatedMessages = new ArrayList<ConversationNormalizedMessage>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Unique ID of the message. Message receipts will have the same ID as the message they reference.")
   @JsonProperty("id")

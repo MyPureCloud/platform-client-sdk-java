@@ -32,6 +32,11 @@ public class EvaluationFormAndScoringSet  implements Serializable {
     }
   }
 
+  public EvaluationFormAndScoringSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

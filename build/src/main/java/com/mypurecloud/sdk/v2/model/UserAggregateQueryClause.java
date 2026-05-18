@@ -82,6 +82,12 @@ public class UserAggregateQueryClause  implements Serializable {
     }
   }
 
+  public UserAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<UserAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

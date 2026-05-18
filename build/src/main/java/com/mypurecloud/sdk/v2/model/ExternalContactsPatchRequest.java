@@ -33,6 +33,12 @@ public class ExternalContactsPatchRequest  implements Serializable {
     }
   }
 
+  public ExternalContactsPatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      changes = new ArrayList<ContactsPatchChange>();
+    }
+  }
+
   
   /**
    * A list of changes to apply to the provided contact entity

@@ -80,6 +80,11 @@ public class ScimEmail  implements Serializable {
     }
   }
 
+  public ScimEmail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The email address. Is immutable if \"type\" is set to \"other\".

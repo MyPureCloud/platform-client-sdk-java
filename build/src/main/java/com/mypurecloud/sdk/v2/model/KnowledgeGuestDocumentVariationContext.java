@@ -34,6 +34,12 @@ public class KnowledgeGuestDocumentVariationContext  implements Serializable {
     }
   }
 
+  public KnowledgeGuestDocumentVariationContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   /**
    * The knowledge context associated with the variation.

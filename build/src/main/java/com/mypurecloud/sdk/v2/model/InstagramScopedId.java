@@ -30,6 +30,11 @@ public class InstagramScopedId  implements Serializable {
     }
   }
 
+  public InstagramScopedId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique page/app-specific scopedId for the user. Max: 255 characters. Leading and trailing whitespace stripped.

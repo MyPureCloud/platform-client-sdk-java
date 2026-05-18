@@ -124,6 +124,11 @@ public class AuditQuerySort  implements Serializable {
     }
   }
 
+  public AuditQuerySort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the property to sort.

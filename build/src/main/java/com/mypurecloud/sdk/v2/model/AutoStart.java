@@ -29,6 +29,11 @@ public class AutoStart  implements Serializable {
     }
   }
 
+  public AutoStart(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not auto start is enabled

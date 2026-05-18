@@ -87,6 +87,12 @@ public class RequestJourneyPattern  implements Serializable {
     }
   }
 
+  public RequestJourneyPattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<RequestCriteria>();
+    }
+  }
+
   
   /**
    * A list of one or more criteria to satisfy.

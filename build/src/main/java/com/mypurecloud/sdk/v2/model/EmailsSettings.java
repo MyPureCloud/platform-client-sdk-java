@@ -29,6 +29,11 @@ public class EmailsSettings  implements Serializable {
     }
   }
 
+  public EmailsSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -73,6 +73,17 @@ public class ExternalOrganization  implements Serializable {
     }
   }
 
+  public ExternalOrganization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+      websites = new ArrayList<String>();
+      tickers = new ArrayList<Ticker>();
+      identifiers = new ArrayList<ExternalOrganizationIdentifier>();
+      externalIds = new ArrayList<ExternalId>();
+      externalDataSources = new ArrayList<ExternalDataSource>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

@@ -90,6 +90,11 @@ public class BotSearchResponse  implements Serializable {
     }
   }
 
+  public BotSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the bot

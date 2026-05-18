@@ -25,6 +25,11 @@ public class StatusInfo  implements Serializable {
     }
   }
 
+  public StatusInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

@@ -29,6 +29,11 @@ public class FacebookAppCredentials  implements Serializable {
     }
   }
 
+  public FacebookAppCredentials(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "Genesys Cloud Facebook App Id")
   @JsonProperty("id")

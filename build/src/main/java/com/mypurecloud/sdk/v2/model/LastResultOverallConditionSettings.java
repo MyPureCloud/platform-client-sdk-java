@@ -36,6 +36,14 @@ public class LastResultOverallConditionSettings  implements Serializable {
     }
   }
 
+  public LastResultOverallConditionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      emailWrapupCodes = new ArrayList<String>();
+      smsWrapupCodes = new ArrayList<String>();
+      whatsAppWrapupCodes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A list of wrapup code identifiers to match for Email.

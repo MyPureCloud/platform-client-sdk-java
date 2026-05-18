@@ -29,6 +29,11 @@ public class WfmAgentAdherenceExplanationChangedAgentTopicBusinessUnit  implemen
     }
   }
 
+  public WfmAgentAdherenceExplanationChangedAgentTopicBusinessUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

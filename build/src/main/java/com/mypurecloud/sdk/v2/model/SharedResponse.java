@@ -35,6 +35,11 @@ public class SharedResponse  implements Serializable {
     }
   }
 
+  public SharedResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -29,6 +29,11 @@ public class LearningAssignmentTopicUserReference  implements Serializable {
     }
   }
 
+  public LearningAssignmentTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

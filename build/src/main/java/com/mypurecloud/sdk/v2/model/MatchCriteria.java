@@ -95,6 +95,12 @@ public class MatchCriteria  implements Serializable {
     }
   }
 
+  public MatchCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<JsonNode>();
+    }
+  }
+
   
   /**
    * The Goessner json path of the field to match

@@ -32,6 +32,11 @@ public class SnapshotMetricData  implements Serializable {
     }
   }
 
+  public SnapshotMetricData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Weekly time series for snapshot data

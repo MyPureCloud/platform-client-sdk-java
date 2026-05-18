@@ -31,6 +31,11 @@ public class ConversationSummaryReason  implements Serializable {
     }
   }
 
+  public ConversationSummaryReason(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The AI confidence value.

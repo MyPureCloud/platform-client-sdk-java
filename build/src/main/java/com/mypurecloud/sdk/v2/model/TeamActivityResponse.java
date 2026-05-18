@@ -89,6 +89,12 @@ public class TeamActivityResponse  implements Serializable {
     }
   }
 
+  public TeamActivityResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<TeamActivityData>();
+    }
+  }
+
   
   /**
    * Query results

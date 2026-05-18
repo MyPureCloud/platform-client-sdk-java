@@ -32,6 +32,11 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone  impleme
     }
   }
 
+  public DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The time zone to use for contacts that cannot be mapped

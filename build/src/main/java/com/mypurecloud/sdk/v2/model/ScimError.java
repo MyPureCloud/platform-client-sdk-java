@@ -92,6 +92,12 @@ public class ScimError  implements Serializable {
     }
   }
 
+  public ScimError(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The list of schemas for the SCIM error.")
   @JsonProperty("schemas")

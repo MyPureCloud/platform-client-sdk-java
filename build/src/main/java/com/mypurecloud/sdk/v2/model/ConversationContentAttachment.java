@@ -88,6 +88,11 @@ public class ConversationContentAttachment  implements Serializable {
     }
   }
 
+  public ConversationContentAttachment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Provider specific ID for attachment.

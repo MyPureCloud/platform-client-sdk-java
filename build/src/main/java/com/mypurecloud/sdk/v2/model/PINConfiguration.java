@@ -30,6 +30,11 @@ public class PINConfiguration  implements Serializable {
     }
   }
 
+  public PINConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

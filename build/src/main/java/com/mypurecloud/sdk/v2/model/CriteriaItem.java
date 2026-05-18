@@ -153,6 +153,11 @@ public class CriteriaItem  implements Serializable {
     }
   }
 
+  public CriteriaItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the criteria to be checked.

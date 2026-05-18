@@ -32,6 +32,12 @@ public class SearchShiftTradesRequest  implements Serializable {
     }
   }
 
+  public SearchShiftTradesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      receivingShiftIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of the schedule for which to search for available shift trades

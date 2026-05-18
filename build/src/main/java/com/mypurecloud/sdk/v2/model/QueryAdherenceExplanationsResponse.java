@@ -33,6 +33,11 @@ public class QueryAdherenceExplanationsResponse  implements Serializable {
     }
   }
 
+  public QueryAdherenceExplanationsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The asynchronous job handling the query

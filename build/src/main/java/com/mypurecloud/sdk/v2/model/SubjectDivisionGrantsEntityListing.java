@@ -43,6 +43,12 @@ public class SubjectDivisionGrantsEntityListing  implements Serializable, PagedR
     }
   }
 
+  public SubjectDivisionGrantsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SubjectDivisionGrants>();
+    }
+  }
+
   
   /**
    **/

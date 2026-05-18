@@ -43,6 +43,12 @@ public class CommonRuleContainer  implements Serializable, PagedResource<CommonR
     }
   }
 
+  public CommonRuleContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CommonRule>();
+    }
+  }
+
   
   /**
    **/

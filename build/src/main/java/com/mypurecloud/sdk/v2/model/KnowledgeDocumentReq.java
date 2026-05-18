@@ -42,6 +42,13 @@ public class KnowledgeDocumentReq  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentReq(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alternatives = new ArrayList<KnowledgeDocumentAlternative>();
+      labelIds = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

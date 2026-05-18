@@ -84,6 +84,12 @@ public class VerificationResult  implements Serializable {
     }
   }
 
+  public VerificationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      records = new ArrayList<Record>();
+    }
+  }
+
   
   /**
    * The verification status.

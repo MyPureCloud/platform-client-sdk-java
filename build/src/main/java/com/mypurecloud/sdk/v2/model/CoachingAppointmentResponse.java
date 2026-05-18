@@ -111,6 +111,15 @@ public class CoachingAppointmentResponse  implements Serializable {
     }
   }
 
+  public CoachingAppointmentResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attendees = new ArrayList<UserReference>();
+      conversations = new ArrayList<ConversationReference>();
+      documents = new ArrayList<DocumentReference>();
+      externalLinks = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

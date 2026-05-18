@@ -97,6 +97,12 @@ public class EdgeLogsJob  implements Serializable {
     }
   }
 
+  public EdgeLogsJob(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      files = new ArrayList<EdgeLogsJobFile>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

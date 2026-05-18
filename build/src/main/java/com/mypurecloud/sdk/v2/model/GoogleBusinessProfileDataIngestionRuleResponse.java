@@ -97,6 +97,12 @@ public class GoogleBusinessProfileDataIngestionRuleResponse  implements Serializ
     }
   }
 
+  public GoogleBusinessProfileDataIngestionRuleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      countries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * ID of the data ingestion rule.

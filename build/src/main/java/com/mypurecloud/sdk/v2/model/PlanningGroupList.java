@@ -35,6 +35,12 @@ public class PlanningGroupList  implements Serializable {
     }
   }
 
+  public PlanningGroupList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<PlanningGroup>();
+    }
+  }
+
   
   /**
    **/

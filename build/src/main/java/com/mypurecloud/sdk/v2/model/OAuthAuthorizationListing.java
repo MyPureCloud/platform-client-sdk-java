@@ -35,6 +35,12 @@ public class OAuthAuthorizationListing  implements Serializable {
     }
   }
 
+  public OAuthAuthorizationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OAuthAuthorization>();
+    }
+  }
+
   
   /**
    **/

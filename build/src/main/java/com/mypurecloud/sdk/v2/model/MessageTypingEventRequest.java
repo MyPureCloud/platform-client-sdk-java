@@ -32,6 +32,11 @@ public class MessageTypingEventRequest  implements Serializable {
     }
   }
 
+  public MessageTypingEventRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Typing event

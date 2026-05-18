@@ -93,6 +93,11 @@ public class EscalationRuleResponse  implements Serializable {
     }
   }
 
+  public EscalationRuleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the escalation rule.

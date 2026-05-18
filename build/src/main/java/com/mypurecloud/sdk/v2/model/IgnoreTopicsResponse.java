@@ -31,6 +31,11 @@ public class IgnoreTopicsResponse  implements Serializable {
     }
   }
 
+  public IgnoreTopicsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Total number of topics in current org

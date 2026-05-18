@@ -48,6 +48,13 @@ public class WhatsappCampaignScheduleConfigChangeWhatsAppCampaignSchedule  imple
     }
   }
 
+  public WhatsappCampaignScheduleConfigChangeWhatsAppCampaignSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intervals = new ArrayList<WhatsappCampaignScheduleConfigChangeScheduleInterval>();
+      recurrences = new ArrayList<WhatsappCampaignScheduleConfigChangeScheduleRecurrence>();
+    }
+  }
+
   
   /**
    * a list of start and end times

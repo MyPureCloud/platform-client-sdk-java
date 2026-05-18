@@ -79,6 +79,11 @@ public class WorkitemQueryJobSort  implements Serializable {
     }
   }
 
+  public WorkitemQueryJobSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specify an attribute for sorting.

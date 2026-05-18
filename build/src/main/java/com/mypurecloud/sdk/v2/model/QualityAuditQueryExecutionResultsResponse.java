@@ -36,6 +36,12 @@ public class QualityAuditQueryExecutionResultsResponse  implements Serializable 
     }
   }
 
+  public QualityAuditQueryExecutionResultsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<QualityAuditLogMessage>();
+    }
+  }
+
   
   /**
    * Id of the audit query execution request.

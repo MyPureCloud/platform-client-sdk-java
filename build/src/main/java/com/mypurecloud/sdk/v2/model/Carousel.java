@@ -27,6 +27,11 @@ public class Carousel  implements Serializable {
     }
   }
 
+  public Carousel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

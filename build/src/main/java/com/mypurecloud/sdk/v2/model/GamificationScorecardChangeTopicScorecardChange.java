@@ -38,6 +38,12 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
     }
   }
 
+  public GamificationScorecardChangeTopicScorecardChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      performanceMetrics = new ArrayList<GamificationScorecardChangeTopicPerformanceMetric>();
+    }
+  }
+
   
   /**
    **/

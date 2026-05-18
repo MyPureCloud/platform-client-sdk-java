@@ -42,6 +42,12 @@ public class Leaderboard  implements Serializable {
     }
   }
 
+  public Leaderboard(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      leaders = new ArrayList<LeaderboardItem>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The targeted division for this leaderboard")
   @JsonProperty("division")

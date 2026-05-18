@@ -134,6 +134,12 @@ public class LearningAssignmentStepScoStructure  implements Serializable {
     }
   }
 
+  public LearningAssignmentStepScoStructure(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      children = new ArrayList<LearningAssignmentStepScoStructure>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The id of this SCO in the course manifest")
   @JsonProperty("id")

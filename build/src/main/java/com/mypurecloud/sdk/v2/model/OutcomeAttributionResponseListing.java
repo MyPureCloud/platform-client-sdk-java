@@ -33,6 +33,12 @@ public class OutcomeAttributionResponseListing  implements Serializable {
     }
   }
 
+  public OutcomeAttributionResponseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OutcomeAttributionResultsResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -240,6 +240,11 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     }
   }
 
+  public EvaluationDetailQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

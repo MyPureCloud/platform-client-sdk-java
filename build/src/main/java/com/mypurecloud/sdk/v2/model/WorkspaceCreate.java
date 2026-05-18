@@ -31,6 +31,11 @@ public class WorkspaceCreate  implements Serializable {
     }
   }
 
+  public WorkspaceCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The workspace name

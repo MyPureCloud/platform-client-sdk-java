@@ -29,6 +29,11 @@ public class ExternalContactsOrganizationChangedTopicDivision  implements Serial
     }
   }
 
+  public ExternalContactsOrganizationChangedTopicDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

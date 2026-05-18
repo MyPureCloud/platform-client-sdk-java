@@ -199,6 +199,11 @@ public class ConversationIntentSuggestionsTopicIntentSuggestionEvent  implements
     }
   }
 
+  public ConversationIntentSuggestionsTopicIntentSuggestionEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

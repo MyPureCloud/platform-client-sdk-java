@@ -36,6 +36,12 @@ public class ResolutionAggregateDataContainer  implements Serializable {
     }
   }
 
+  public ResolutionAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

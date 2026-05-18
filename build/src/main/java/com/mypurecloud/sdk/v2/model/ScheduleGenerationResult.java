@@ -39,6 +39,13 @@ public class ScheduleGenerationResult  implements Serializable {
     }
   }
 
+  public ScheduleGenerationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messages = new ArrayList<ScheduleGenerationMessage>();
+      messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
+    }
+  }
+
   
   /**
    * Whether the schedule generation run failed

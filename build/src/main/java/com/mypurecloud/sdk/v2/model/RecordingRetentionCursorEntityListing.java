@@ -36,6 +36,12 @@ public class RecordingRetentionCursorEntityListing  implements Serializable {
     }
   }
 
+  public RecordingRetentionCursorEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<RecordingRetention>();
+    }
+  }
+
   
   /**
    **/

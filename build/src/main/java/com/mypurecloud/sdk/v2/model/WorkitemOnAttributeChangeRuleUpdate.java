@@ -31,6 +31,11 @@ public class WorkitemOnAttributeChangeRuleUpdate  implements Serializable {
     }
   }
 
+  public WorkitemOnAttributeChangeRuleUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the rule.

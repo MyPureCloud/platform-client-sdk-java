@@ -32,6 +32,11 @@ public class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuFo
     }
   }
 
+  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

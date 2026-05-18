@@ -32,6 +32,11 @@ public class ConversationContentDatePickerAvailableTime  implements Serializable
     }
   }
 
+  public ConversationContentDatePickerAvailableTime(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The duration of the scheduling event in seconds.

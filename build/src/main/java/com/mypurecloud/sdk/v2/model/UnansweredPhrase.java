@@ -31,6 +31,11 @@ public class UnansweredPhrase  implements Serializable {
     }
   }
 
+  public UnansweredPhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of an unanswered phrase

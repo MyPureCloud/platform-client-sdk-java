@@ -141,6 +141,13 @@ public class GuideSessionTurnResponse  implements Serializable {
     }
   }
 
+  public GuideSessionTurnResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      outputVariables = new ArrayList<GuideSessionVariable>();
+      invocations = new ArrayList<GuideSessionTurnInvocationResponse>();
+    }
+  }
+
   
   /**
    * The response content for this turn.

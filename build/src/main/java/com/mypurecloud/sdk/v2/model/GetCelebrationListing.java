@@ -43,6 +43,12 @@ public class GetCelebrationListing  implements Serializable, PagedResource<Celeb
     }
   }
 
+  public GetCelebrationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Celebration>();
+    }
+  }
+
   
   /**
    **/

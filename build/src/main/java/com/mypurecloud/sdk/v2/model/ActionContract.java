@@ -33,6 +33,11 @@ public class ActionContract  implements Serializable {
     }
   }
 
+  public ActionContract(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The output to expect when executing this action.

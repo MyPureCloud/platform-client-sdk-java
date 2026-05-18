@@ -131,6 +131,11 @@ public class AlternativeShiftJobReference  implements Serializable {
     }
   }
 
+  public AlternativeShiftJobReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

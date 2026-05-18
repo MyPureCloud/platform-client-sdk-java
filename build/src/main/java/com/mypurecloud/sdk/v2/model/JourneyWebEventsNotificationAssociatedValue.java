@@ -79,6 +79,11 @@ public class JourneyWebEventsNotificationAssociatedValue  implements Serializabl
     }
   }
 
+  public JourneyWebEventsNotificationAssociatedValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -38,6 +38,13 @@ public class AdminAgentWorkPlanPreferenceResponse  implements Serializable {
     }
   }
 
+  public AdminAgentWorkPlanPreferenceResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      workPlans = new ArrayList<WorkPlanReference>();
+      agentWorkPlanBidPreferences = new ArrayList<AdminAgentWorkPlanBiddingPreference>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

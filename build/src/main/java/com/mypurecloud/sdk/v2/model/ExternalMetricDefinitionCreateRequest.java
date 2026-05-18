@@ -132,6 +132,11 @@ public class ExternalMetricDefinitionCreateRequest  implements Serializable {
     }
   }
 
+  public ExternalMetricDefinitionCreateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the External Metric Definition

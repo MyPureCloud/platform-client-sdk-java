@@ -32,6 +32,11 @@ public class ContactBulkSearchParameters  implements Serializable {
     }
   }
 
+  public ContactBulkSearchParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Contact List Filter ID. Either this property or criteria is required.

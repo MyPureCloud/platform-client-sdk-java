@@ -39,6 +39,11 @@ public class JourneyAppEventsNotificationGeoLocation  implements Serializable {
     }
   }
 
+  public JourneyAppEventsNotificationGeoLocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

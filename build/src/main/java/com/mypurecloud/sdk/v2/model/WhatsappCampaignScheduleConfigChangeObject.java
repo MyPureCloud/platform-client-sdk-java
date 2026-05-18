@@ -25,6 +25,11 @@ public class WhatsappCampaignScheduleConfigChangeObject  implements Serializable
     }
   }
 
+  public WhatsappCampaignScheduleConfigChangeObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

@@ -43,6 +43,12 @@ public class CommonCampaignDivisionViewEntityListing  implements Serializable, P
     }
   }
 
+  public CommonCampaignDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CommonCampaignDivisionView>();
+    }
+  }
+
   
   /**
    **/

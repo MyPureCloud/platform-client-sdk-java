@@ -81,6 +81,11 @@ public class SuggestionEngagement  implements Serializable {
     }
   }
 
+  public SuggestionEngagement(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of engagement with the suggestion.

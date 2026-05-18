@@ -36,6 +36,12 @@ public class TopicCursorEntityListing  implements Serializable {
     }
   }
 
+  public TopicCursorEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -201,6 +201,11 @@ public class MessagingIntegration  implements Serializable {
     }
   }
 
+  public MessagingIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "A unique Integration Id")
   @JsonProperty("id")

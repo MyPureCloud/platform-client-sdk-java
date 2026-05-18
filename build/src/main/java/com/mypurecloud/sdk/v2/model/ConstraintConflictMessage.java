@@ -35,6 +35,12 @@ public class ConstraintConflictMessage  implements Serializable {
     }
   }
 
+  public ConstraintConflictMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conflictedConstraintMessages = new ArrayList<WorkPlanConstraintMessage>();
+    }
+  }
+
   
   /**
    * Message for how to resolve a set of conflicted work plan constraints

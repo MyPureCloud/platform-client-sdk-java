@@ -137,6 +137,11 @@ public class CampaignDiagnosticCampaignState  implements Serializable {
     }
   }
 
+  public CampaignDiagnosticCampaignState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Campaign status

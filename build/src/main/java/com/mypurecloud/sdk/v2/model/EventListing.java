@@ -36,6 +36,12 @@ public class EventListing  implements Serializable {
     }
   }
 
+  public EventListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Event>();
+    }
+  }
+
   
   /**
    **/

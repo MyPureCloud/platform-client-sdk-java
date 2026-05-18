@@ -30,6 +30,11 @@ public class ChangeMyPasswordRequest  implements Serializable {
     }
   }
 
+  public ChangeMyPasswordRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The new password

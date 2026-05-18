@@ -31,6 +31,11 @@ public class WfmBuIntradayDataUpdateTopicBuShortTermForecastReference  implement
     }
   }
 
+  public WfmBuIntradayDataUpdateTopicBuShortTermForecastReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

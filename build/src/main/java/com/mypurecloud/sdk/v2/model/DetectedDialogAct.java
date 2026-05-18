@@ -30,6 +30,11 @@ public class DetectedDialogAct  implements Serializable {
     }
   }
 
+  public DetectedDialogAct(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The name of the detected dialog act.")
   @JsonProperty("name")

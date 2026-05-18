@@ -32,6 +32,11 @@ public class TrunkErrorInfo  implements Serializable {
     }
   }
 
+  public TrunkErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

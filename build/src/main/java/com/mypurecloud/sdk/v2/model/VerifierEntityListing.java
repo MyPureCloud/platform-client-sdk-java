@@ -35,6 +35,12 @@ public class VerifierEntityListing  implements Serializable {
     }
   }
 
+  public VerifierEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Verifier>();
+    }
+  }
+
   
   /**
    **/

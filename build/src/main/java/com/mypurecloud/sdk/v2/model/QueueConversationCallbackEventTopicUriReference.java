@@ -30,6 +30,11 @@ public class QueueConversationCallbackEventTopicUriReference  implements Seriali
     }
   }
 
+  public QueueConversationCallbackEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

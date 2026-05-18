@@ -79,6 +79,11 @@ public class DisconnectReason  implements Serializable {
     }
   }
 
+  public DisconnectReason(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Disconnect reason protocol type.

@@ -30,6 +30,11 @@ public class ConversationEventTopicTransferInitiator  implements Serializable {
     }
   }
 
+  public ConversationEventTopicTransferInitiator(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the user who initiated the command if it was initiated by a user.

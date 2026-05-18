@@ -29,6 +29,11 @@ public class ActivityPlanServiceLevelImpactOverride  implements Serializable {
     }
   }
 
+  public ActivityPlanServiceLevelImpactOverride(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Allowed service level decrease percent, from 0.0 to 100.0

@@ -83,6 +83,11 @@ public class JourneyAppEventsNotificationSegmentAssignmentMessage  implements Se
     }
   }
 
+  public JourneyAppEventsNotificationSegmentAssignmentMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

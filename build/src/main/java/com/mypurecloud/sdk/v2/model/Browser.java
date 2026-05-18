@@ -39,6 +39,11 @@ public class Browser  implements Serializable {
     }
   }
 
+  public Browser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Browser family (e.g. Chrome, Safari, Firefox).

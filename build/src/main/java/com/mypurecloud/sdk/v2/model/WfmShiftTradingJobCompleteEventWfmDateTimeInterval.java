@@ -30,6 +30,11 @@ public class WfmShiftTradingJobCompleteEventWfmDateTimeInterval  implements Seri
     }
   }
 
+  public WfmShiftTradingJobCompleteEventWfmDateTimeInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

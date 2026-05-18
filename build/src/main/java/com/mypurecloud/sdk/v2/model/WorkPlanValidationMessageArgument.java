@@ -98,6 +98,11 @@ public class WorkPlanValidationMessageArgument  implements Serializable {
     }
   }
 
+  public WorkPlanValidationMessageArgument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the argument associated with violation messages

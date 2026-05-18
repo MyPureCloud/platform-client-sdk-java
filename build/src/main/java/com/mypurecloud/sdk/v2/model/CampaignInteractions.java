@@ -43,6 +43,16 @@ public class CampaignInteractions  implements Serializable {
     }
   }
 
+  public CampaignInteractions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pendingInteractions = new ArrayList<CampaignInteraction>();
+      proceedingInteractions = new ArrayList<CampaignInteraction>();
+      previewingInteractions = new ArrayList<CampaignInteraction>();
+      interactingInteractions = new ArrayList<CampaignInteraction>();
+      scheduledInteractions = new ArrayList<CampaignInteraction>();
+    }
+  }
+
   
   /**
    **/

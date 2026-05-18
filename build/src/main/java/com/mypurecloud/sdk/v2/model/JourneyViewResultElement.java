@@ -38,6 +38,12 @@ public class JourneyViewResultElement  implements Serializable {
     }
   }
 
+  public JourneyViewResultElement(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      followedBy = new ArrayList<JourneyViewResultLink>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

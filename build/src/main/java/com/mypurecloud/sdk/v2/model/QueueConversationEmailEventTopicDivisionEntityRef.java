@@ -32,6 +32,11 @@ public class QueueConversationEmailEventTopicDivisionEntityRef  implements Seria
     }
   }
 
+  public QueueConversationEmailEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

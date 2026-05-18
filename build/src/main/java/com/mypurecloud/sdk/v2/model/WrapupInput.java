@@ -40,6 +40,12 @@ public class WrapupInput  implements Serializable {
     }
   }
 
+  public WrapupInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user configured wrap up code id.

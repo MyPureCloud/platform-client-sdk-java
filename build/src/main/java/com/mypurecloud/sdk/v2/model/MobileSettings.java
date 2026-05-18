@@ -31,6 +31,11 @@ public class MobileSettings  implements Serializable {
     }
   }
 
+  public MobileSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Settings for a user's mobile notifications

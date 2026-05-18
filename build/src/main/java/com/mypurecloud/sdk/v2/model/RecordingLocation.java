@@ -33,6 +33,11 @@ public class RecordingLocation  implements Serializable {
     }
   }
 
+  public RecordingLocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * URL of the Location.

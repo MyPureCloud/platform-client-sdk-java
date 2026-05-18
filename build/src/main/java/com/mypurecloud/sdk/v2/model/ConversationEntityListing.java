@@ -43,6 +43,12 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     }
   }
 
+  public ConversationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Conversation>();
+    }
+  }
+
   
   /**
    **/

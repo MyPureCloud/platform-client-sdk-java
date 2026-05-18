@@ -129,6 +129,11 @@ public class IgnorePhrase  implements Serializable {
     }
   }
 
+  public IgnorePhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text of the phrase to be ignored

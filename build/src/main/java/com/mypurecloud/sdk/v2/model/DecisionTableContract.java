@@ -34,6 +34,11 @@ public class DecisionTableContract  implements Serializable {
     }
   }
 
+  public DecisionTableContract(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * DSS schema entity defining source properties for the decision table contract schemas

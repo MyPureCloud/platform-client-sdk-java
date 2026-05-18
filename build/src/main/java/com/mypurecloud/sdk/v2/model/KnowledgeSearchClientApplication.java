@@ -84,6 +84,11 @@ public class KnowledgeSearchClientApplication  implements Serializable {
     }
   }
 
+  public KnowledgeSearchClientApplication(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Application type.

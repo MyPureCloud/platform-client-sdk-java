@@ -25,6 +25,11 @@ public class DialerDnclistConfigChangeObject  implements Serializable {
     }
   }
 
+  public DialerDnclistConfigChangeObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

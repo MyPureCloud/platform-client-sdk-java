@@ -34,6 +34,12 @@ public class ContentCarousel  implements Serializable {
     }
   }
 
+  public ContentCarousel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      cards = new ArrayList<ContentCard>();
+    }
+  }
+
   
   /**
    * An array of card objects.

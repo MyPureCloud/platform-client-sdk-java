@@ -54,6 +54,15 @@ public class WfmAgent  implements Serializable {
     }
   }
 
+  public WfmAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      workPlanOverrides = new ArrayList<WorkPlanOverride>();
+      queues = new ArrayList<QueueReference>();
+      languages = new ArrayList<LanguageReference>();
+      skills = new ArrayList<RoutingSkillReference>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

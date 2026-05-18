@@ -31,6 +31,11 @@ public class PersistentConnectionChangeTopicErrorLocation  implements Serializab
     }
   }
 
+  public PersistentConnectionChangeTopicErrorLocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

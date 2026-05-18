@@ -76,6 +76,11 @@ public class CelebrationStateParam  implements Serializable {
     }
   }
 
+  public CelebrationStateParam(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The state of the celebration

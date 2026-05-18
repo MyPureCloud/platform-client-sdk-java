@@ -41,6 +41,11 @@ public class PatchSegment  implements Serializable {
     }
   }
 
+  public PatchSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether or not the segment is active.

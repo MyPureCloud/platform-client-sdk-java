@@ -29,6 +29,11 @@ public class DataSchemaRef  implements Serializable {
     }
   }
 
+  public DataSchemaRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

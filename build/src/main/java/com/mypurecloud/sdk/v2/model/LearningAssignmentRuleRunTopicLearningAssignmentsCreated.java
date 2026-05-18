@@ -30,6 +30,11 @@ public class LearningAssignmentRuleRunTopicLearningAssignmentsCreated  implement
     }
   }
 
+  public LearningAssignmentRuleRunTopicLearningAssignmentsCreated(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

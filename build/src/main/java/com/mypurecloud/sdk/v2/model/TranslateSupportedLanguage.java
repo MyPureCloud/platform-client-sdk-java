@@ -30,6 +30,11 @@ public class TranslateSupportedLanguage  implements Serializable {
     }
   }
 
+  public TranslateSupportedLanguage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Supported translation language name, natively spelled (ex. Español)

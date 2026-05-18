@@ -85,6 +85,12 @@ public class DecisionTableColumnDefaultRowValue  implements Serializable {
     }
   }
 
+  public DecisionTableColumnDefaultRowValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A default string value for this column, will be cast to appropriate type according to the relevant contract schema property.

@@ -33,6 +33,12 @@ public class UnavailableTimeListing  implements Serializable {
     }
   }
 
+  public UnavailableTimeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UnavailableTime>();
+    }
+  }
+
   
   /**
    **/

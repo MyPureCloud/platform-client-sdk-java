@@ -31,6 +31,11 @@ public class NluConfig  implements Serializable {
     }
   }
 
+  public NluConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * NLU domain.

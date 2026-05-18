@@ -33,6 +33,11 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     }
   }
 
+  public EdgeAutoUpdateConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The timezone of the window in which any updates to the edges assigned to the site can be applied. The minimum size of the window is 2 hours.

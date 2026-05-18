@@ -30,6 +30,11 @@ public class DataActionContactColumnFieldMapping  implements Serializable {
     }
   }
 
+  public DataActionContactColumnFieldMapping(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of a contact column whose data will be passed to the data action

@@ -33,6 +33,12 @@ public class ChecklistInferenceJobPayload  implements Serializable {
     }
   }
 
+  public ChecklistInferenceJobPayload(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationContext = new ArrayList<ConversationContext>();
+    }
+  }
+
   
   /**
    * List of conversations on which checklist evaluation is to be done.

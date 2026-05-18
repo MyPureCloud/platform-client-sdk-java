@@ -37,6 +37,11 @@ public class AppEventResponseSession  implements Serializable {
     }
   }
 
+  public AppEventResponseSession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the app session.

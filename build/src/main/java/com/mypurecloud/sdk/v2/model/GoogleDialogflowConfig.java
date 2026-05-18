@@ -34,6 +34,12 @@ public class GoogleDialogflowConfig  implements Serializable {
     }
   }
 
+  public GoogleDialogflowConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationProfiles = new ArrayList<ConversationProfile>();
+    }
+  }
+
   
   /**
    * The integration identifier with which the assistant will fetch transcriptions and knowledge suggestions.

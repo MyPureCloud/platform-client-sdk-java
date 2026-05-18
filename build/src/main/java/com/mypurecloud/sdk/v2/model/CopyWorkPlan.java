@@ -29,6 +29,11 @@ public class CopyWorkPlan  implements Serializable {
     }
   }
 
+  public CopyWorkPlan(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the copied work plan

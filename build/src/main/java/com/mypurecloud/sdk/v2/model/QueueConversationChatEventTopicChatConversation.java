@@ -46,6 +46,15 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
     }
   }
 
+  public QueueConversationChatEventTopicChatConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<QueueConversationChatEventTopicChatMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationChatEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

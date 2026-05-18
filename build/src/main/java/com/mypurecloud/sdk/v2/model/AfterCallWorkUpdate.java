@@ -29,6 +29,11 @@ public class AfterCallWorkUpdate  implements Serializable {
     }
   }
 
+  public AfterCallWorkUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates whether or not after-call work must be completed for the communication. Can only be updated for connected communications.

@@ -89,6 +89,11 @@ public class JourneySessionEventsNotificationReferrer  implements Serializable {
     }
   }
 
+  public JourneySessionEventsNotificationReferrer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

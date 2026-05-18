@@ -34,6 +34,12 @@ public class PossibleWorkShiftsForWeek  implements Serializable {
     }
   }
 
+  public PossibleWorkShiftsForWeek(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dailyPossibleShifts = new ArrayList<DailyPossibleShift>();
+    }
+  }
+
   
   /**
    * ID of this possible weekly shift

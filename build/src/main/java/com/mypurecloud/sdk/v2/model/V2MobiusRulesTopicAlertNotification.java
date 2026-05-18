@@ -85,6 +85,12 @@ public class V2MobiusRulesTopicAlertNotification  implements Serializable {
     }
   }
 
+  public V2MobiusRulesTopicAlertNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      notificationTypes = new ArrayList<NotificationTypesEnum>();
+    }
+  }
+
   
   /**
    **/

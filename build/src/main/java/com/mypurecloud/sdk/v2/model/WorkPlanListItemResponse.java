@@ -168,6 +168,13 @@ public class WorkPlanListItemResponse  implements Serializable {
     }
   }
 
+  public WorkPlanListItemResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<WorkPlanShift>();
+      agents = new ArrayList<DeletableUserReference>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

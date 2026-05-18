@@ -32,6 +32,11 @@ public class ListPickerItem  implements Serializable {
     }
   }
 
+  public ListPickerItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the list picker item

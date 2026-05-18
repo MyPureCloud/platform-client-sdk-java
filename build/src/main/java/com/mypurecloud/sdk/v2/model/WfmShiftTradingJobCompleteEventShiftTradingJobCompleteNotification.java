@@ -143,6 +143,11 @@ public class WfmShiftTradingJobCompleteEventShiftTradingJobCompleteNotification 
     }
   }
 
+  public WfmShiftTradingJobCompleteEventShiftTradingJobCompleteNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

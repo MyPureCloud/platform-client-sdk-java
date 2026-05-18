@@ -29,6 +29,11 @@ public class CrossPlatformPolicyUpdate  implements Serializable {
     }
   }
 
+  public CrossPlatformPolicyUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

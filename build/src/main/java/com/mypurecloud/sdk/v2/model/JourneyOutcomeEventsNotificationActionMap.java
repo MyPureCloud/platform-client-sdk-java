@@ -30,6 +30,11 @@ public class JourneyOutcomeEventsNotificationActionMap  implements Serializable 
     }
   }
 
+  public JourneyOutcomeEventsNotificationActionMap(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

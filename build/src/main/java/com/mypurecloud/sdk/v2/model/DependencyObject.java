@@ -176,6 +176,13 @@ public class DependencyObject  implements Serializable {
     }
   }
 
+  public DependencyObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      consumedResources = new ArrayList<Dependency>();
+      consumingResources = new ArrayList<Dependency>();
+    }
+  }
+
   
   /**
    * The dependency identifier

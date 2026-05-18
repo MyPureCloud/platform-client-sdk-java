@@ -31,6 +31,11 @@ public class AppleIMessageApp  implements Serializable {
     }
   }
 
+  public AppleIMessageApp(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Application Name.

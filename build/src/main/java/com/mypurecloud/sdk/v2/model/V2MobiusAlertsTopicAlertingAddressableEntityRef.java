@@ -30,6 +30,11 @@ public class V2MobiusAlertsTopicAlertingAddressableEntityRef  implements Seriali
     }
   }
 
+  public V2MobiusAlertsTopicAlertingAddressableEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

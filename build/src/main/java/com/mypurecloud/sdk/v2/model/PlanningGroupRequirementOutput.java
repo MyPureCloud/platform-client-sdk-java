@@ -38,6 +38,13 @@ public class PlanningGroupRequirementOutput  implements Serializable {
     }
   }
 
+  public PlanningGroupRequirementOutput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intervals = new ArrayList<Integer>();
+      errorDetails = new ArrayList<LongTermRequirementsErrorDetail>();
+    }
+  }
+
   
   /**
    * The ID of the planning group to which this output applies

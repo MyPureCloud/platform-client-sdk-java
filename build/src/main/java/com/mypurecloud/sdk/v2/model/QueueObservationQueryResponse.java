@@ -36,6 +36,12 @@ public class QueueObservationQueryResponse  implements Serializable {
     }
   }
 
+  public QueueObservationQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<QueueObservationDataContainer>();
+    }
+  }
+
   
   /**
    * A mapping from system presence to a list of organization presence ids

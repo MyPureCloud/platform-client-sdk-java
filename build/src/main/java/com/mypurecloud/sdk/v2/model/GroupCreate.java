@@ -197,6 +197,14 @@ public class GroupCreate  implements Serializable {
     }
   }
 
+  public GroupCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      images = new ArrayList<Image>();
+      addresses = new ArrayList<GroupContact>();
+      ownerIds = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

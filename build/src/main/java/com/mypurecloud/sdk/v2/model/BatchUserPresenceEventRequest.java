@@ -34,6 +34,12 @@ public class BatchUserPresenceEventRequest  implements Serializable {
     }
   }
 
+  public BatchUserPresenceEventRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userPresenceEvents = new ArrayList<UserPresenceEvent>();
+    }
+  }
+
   
   /**
    * UserPresence events for this batch

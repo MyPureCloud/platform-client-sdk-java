@@ -217,6 +217,13 @@ public class AssignedLearningModule  implements Serializable {
     }
   }
 
+  public AssignedLearningModule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      currentAssignments = new ArrayList<LearningAssignment>();
+      informSteps = new ArrayList<LearningModuleInformStep>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

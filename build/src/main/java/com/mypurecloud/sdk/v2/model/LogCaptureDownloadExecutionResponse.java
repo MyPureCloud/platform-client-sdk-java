@@ -85,6 +85,11 @@ public class LogCaptureDownloadExecutionResponse  implements Serializable {
     }
   }
 
+  public LogCaptureDownloadExecutionResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of file download job.

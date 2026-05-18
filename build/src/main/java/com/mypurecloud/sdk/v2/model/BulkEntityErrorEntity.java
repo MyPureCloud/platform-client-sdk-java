@@ -39,6 +39,12 @@ public class BulkEntityErrorEntity  implements Serializable {
     }
   }
 
+  public BulkEntityErrorEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<BulkErrorDetail>();
+    }
+  }
+
   
   /**
    * An error code for the specific error condition.

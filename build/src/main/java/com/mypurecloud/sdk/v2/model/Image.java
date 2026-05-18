@@ -30,6 +30,11 @@ public class Image  implements Serializable {
     }
   }
 
+  public Image(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Height and/or width of image. ex: 640x480 or x128

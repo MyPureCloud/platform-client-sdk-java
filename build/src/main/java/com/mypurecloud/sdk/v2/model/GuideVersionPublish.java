@@ -77,6 +77,11 @@ public class GuideVersionPublish  implements Serializable {
     }
   }
 
+  public GuideVersionPublish(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The desired state of the guide version being published.

@@ -30,6 +30,11 @@ public class CalendarUrlResponse  implements Serializable {
     }
   }
 
+  public CalendarUrlResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The calendar url for the user to subscribe with supported clients

@@ -32,6 +32,11 @@ public class ProvisionInfo  implements Serializable {
     }
   }
 
+  public ProvisionInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The time at which this phone was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

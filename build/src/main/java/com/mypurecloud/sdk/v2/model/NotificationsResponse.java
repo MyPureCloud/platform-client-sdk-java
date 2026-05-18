@@ -33,6 +33,12 @@ public class NotificationsResponse  implements Serializable {
     }
   }
 
+  public NotificationsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WfmUserNotification>();
+    }
+  }
+
   
   /**
    **/

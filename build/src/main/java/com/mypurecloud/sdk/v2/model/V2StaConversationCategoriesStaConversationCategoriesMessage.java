@@ -88,6 +88,13 @@ public class V2StaConversationCategoriesStaConversationCategoriesMessage  implem
     }
   }
 
+  public V2StaConversationCategoriesStaConversationCategoriesMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      transcriptIds = new ArrayList<String>();
+      categoryIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

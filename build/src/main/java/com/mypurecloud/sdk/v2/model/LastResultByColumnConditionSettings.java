@@ -39,6 +39,14 @@ public class LastResultByColumnConditionSettings  implements Serializable {
     }
   }
 
+  public LastResultByColumnConditionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      emailWrapupCodes = new ArrayList<String>();
+      smsWrapupCodes = new ArrayList<String>();
+      whatsAppWrapupCodes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the contact column to evaluate for Email.

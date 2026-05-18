@@ -82,6 +82,11 @@ public class AgentStateSessionQueryPredicate  implements Serializable {
     }
   }
 
+  public AgentStateSessionQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Left hand side for dimension predicates

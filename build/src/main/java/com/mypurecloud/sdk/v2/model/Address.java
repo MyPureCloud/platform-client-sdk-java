@@ -33,6 +33,11 @@ public class Address  implements Serializable {
     }
   }
 
+  public Address(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * This will be nameRaw if present, or a locality lookup of the address field otherwise.

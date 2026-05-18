@@ -29,6 +29,11 @@ public class ChatBadgeTopicBadgeEntity  implements Serializable {
     }
   }
 
+  public ChatBadgeTopicBadgeEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

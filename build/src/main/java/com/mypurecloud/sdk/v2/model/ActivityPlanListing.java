@@ -33,6 +33,12 @@ public class ActivityPlanListing  implements Serializable {
     }
   }
 
+  public ActivityPlanListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ActivityPlanListItem>();
+    }
+  }
+
   
   /**
    **/

@@ -84,6 +84,11 @@ public class ConversationThreadingWindowSetting  implements Serializable {
     }
   }
 
+  public ConversationThreadingWindowSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of messenger

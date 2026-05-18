@@ -33,6 +33,12 @@ public class AlternativeShiftTradesViewResponseTemplate  implements Serializable
     }
   }
 
+  public AlternativeShiftTradesViewResponseTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AlternativeShiftTradeResponse>();
+    }
+  }
+
   
   /**
    **/

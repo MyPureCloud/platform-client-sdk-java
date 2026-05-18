@@ -85,6 +85,11 @@ public class ManualEscalationResponse  implements Serializable {
     }
   }
 
+  public ManualEscalationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Id of the message that got escalated.

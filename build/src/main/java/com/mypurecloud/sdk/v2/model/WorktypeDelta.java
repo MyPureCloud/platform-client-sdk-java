@@ -57,6 +57,11 @@ public class WorktypeDelta  implements Serializable {
     }
   }
 
+  public WorktypeDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

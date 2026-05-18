@@ -44,6 +44,12 @@ public class MessagingCampaignScheduleConfigChangeScheduleRecurrence  implements
     }
   }
 
+  public MessagingCampaignScheduleConfigChangeScheduleRecurrence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alterations = new ArrayList<MessagingCampaignScheduleConfigChangeAlteration>();
+    }
+  }
+
   
   /**
    * the recurrence id

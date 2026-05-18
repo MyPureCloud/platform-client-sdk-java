@@ -43,6 +43,12 @@ public class GroupEntityListing  implements Serializable, PagedResource<Group> {
     }
   }
 
+  public GroupEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Group>();
+    }
+  }
+
   
   /**
    **/

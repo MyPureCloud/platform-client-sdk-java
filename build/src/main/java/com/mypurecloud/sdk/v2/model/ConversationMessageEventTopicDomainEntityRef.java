@@ -31,6 +31,11 @@ public class ConversationMessageEventTopicDomainEntityRef  implements Serializab
     }
   }
 
+  public ConversationMessageEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

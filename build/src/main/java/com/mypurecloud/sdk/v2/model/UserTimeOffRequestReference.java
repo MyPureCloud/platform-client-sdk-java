@@ -32,6 +32,11 @@ public class UserTimeOffRequestReference  implements Serializable {
     }
   }
 
+  public UserTimeOffRequestReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the time off request

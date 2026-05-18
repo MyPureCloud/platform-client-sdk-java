@@ -36,6 +36,12 @@ public class WhatsAppConfig  implements Serializable {
     }
   }
 
+  public WhatsAppConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      whatsAppColumns = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The contact list columns specifying the WhatsApp address(es) of the contact.

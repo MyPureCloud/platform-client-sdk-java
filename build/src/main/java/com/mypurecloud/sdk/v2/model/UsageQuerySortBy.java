@@ -78,6 +78,11 @@ public class UsageQuerySortBy  implements Serializable {
     }
   }
 
+  public UsageQuerySortBy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the field you want to specify to sort by.

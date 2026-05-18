@@ -79,6 +79,11 @@ public class JourneyWebEventsNotificationCustomEventAttribute  implements Serial
     }
   }
 
+  public JourneyWebEventsNotificationCustomEventAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

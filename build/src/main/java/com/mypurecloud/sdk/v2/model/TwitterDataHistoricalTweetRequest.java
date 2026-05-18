@@ -33,6 +33,12 @@ public class TwitterDataHistoricalTweetRequest  implements Serializable {
     }
   }
 
+  public TwitterDataHistoricalTweetRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      countries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Search terms to use in the query

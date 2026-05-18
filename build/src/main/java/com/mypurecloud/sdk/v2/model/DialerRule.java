@@ -88,6 +88,13 @@ public class DialerRule  implements Serializable {
     }
   }
 
+  public DialerRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conditions = new ArrayList<Condition>();
+      actions = new ArrayList<DialerAction>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The identifier of the rule.")
   @JsonProperty("id")

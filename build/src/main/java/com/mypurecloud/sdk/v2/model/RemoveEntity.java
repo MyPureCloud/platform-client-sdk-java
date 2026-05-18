@@ -29,6 +29,11 @@ public class RemoveEntity  implements Serializable {
     }
   }
 
+  public RemoveEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier of the entity to be removed

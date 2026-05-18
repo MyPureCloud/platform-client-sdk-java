@@ -79,6 +79,11 @@ public class ExternalSegment  implements Serializable {
     }
   }
 
+  public ExternalSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Identifier for the external segment in the system where it originates from.

@@ -32,6 +32,11 @@ public class LeaderboardItem  implements Serializable {
     }
   }
 
+  public LeaderboardItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The user object for this leaderboard rank")
   @JsonProperty("user")

@@ -82,6 +82,12 @@ public class AgentStateAgentQueryClause  implements Serializable {
     }
   }
 
+  public AgentStateAgentQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<AgentStateAgentQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

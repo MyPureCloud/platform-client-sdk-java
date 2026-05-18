@@ -38,6 +38,13 @@ public class UsersRulesUpdateRuleRequest  implements Serializable {
     }
   }
 
+  public UsersRulesUpdateRuleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<UsersRulesCriteria>();
+      lockedCriteria = new ArrayList<UsersRulesCriteria>();
+    }
+  }
+
   
   /**
    * The name of the rule

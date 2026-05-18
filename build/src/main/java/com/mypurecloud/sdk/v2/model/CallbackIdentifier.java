@@ -79,6 +79,11 @@ public class CallbackIdentifier  implements Serializable {
     }
   }
 
+  public CallbackIdentifier(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the associated callback participant

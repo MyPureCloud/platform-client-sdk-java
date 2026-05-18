@@ -140,6 +140,12 @@ public class PatchEntityTypeCriteria  implements Serializable {
     }
   }
 
+  public PatchEntityTypeCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The criteria key.

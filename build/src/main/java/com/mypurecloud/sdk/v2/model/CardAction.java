@@ -82,6 +82,11 @@ public class CardAction  implements Serializable {
     }
   }
 
+  public CardAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of action.

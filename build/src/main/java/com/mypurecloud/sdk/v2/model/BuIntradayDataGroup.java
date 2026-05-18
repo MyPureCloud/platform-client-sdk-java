@@ -95,6 +95,14 @@ public class BuIntradayDataGroup  implements Serializable {
     }
   }
 
+  public BuIntradayDataGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      forecastDataPerInterval = new ArrayList<BuIntradayForecastData>();
+      scheduleDataPerInterval = new ArrayList<BuIntradayScheduleData>();
+      performancePredictionDataPerInterval = new ArrayList<IntradayPerformancePredictionData>();
+    }
+  }
+
   
   /**
    * The media type associated with this intraday group

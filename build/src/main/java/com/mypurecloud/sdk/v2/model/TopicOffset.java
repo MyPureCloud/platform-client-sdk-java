@@ -30,6 +30,11 @@ public class TopicOffset  implements Serializable {
     }
   }
 
+  public TopicOffset(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Count of words before the topic ")
   @JsonProperty("wordCount")

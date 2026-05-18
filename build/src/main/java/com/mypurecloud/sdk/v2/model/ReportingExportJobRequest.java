@@ -380,6 +380,14 @@ public class ReportingExportJobRequest  implements Serializable {
     }
   }
 
+  public ReportingExportJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      selectedColumns = new ArrayList<SelectedColumns>();
+      recipientEmails = new ArrayList<String>();
+      chartColumns = new ArrayList<ChartColumn>();
+    }
+  }
+
   
   /**
    * The user supplied name of the export request

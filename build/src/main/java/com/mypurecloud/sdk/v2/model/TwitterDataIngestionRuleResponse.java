@@ -95,6 +95,12 @@ public class TwitterDataIngestionRuleResponse  implements Serializable {
     }
   }
 
+  public TwitterDataIngestionRuleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      countries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * ID of the data ingestion rule.

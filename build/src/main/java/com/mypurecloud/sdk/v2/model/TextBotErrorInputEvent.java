@@ -31,6 +31,11 @@ public class TextBotErrorInputEvent  implements Serializable {
     }
   }
 
+  public TextBotErrorInputEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The error code.

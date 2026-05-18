@@ -37,6 +37,12 @@ public class ForecastPlanningGroupResponse  implements Serializable {
     }
   }
 
+  public ForecastPlanningGroupResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routePaths = new ArrayList<RoutePathResponse>();
+    }
+  }
+
   
   /**
    * The ID of the planning group

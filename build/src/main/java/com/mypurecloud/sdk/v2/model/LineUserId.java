@@ -30,6 +30,11 @@ public class LineUserId  implements Serializable {
     }
   }
 
+  public LineUserId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique channel-specific userId for the user. Max: 255 characters.

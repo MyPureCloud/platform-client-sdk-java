@@ -32,6 +32,11 @@ public class ContinuousForecastSnapshotResponse  implements Serializable {
     }
   }
 
+  public ContinuousForecastSnapshotResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Session Id of the continuous forecast

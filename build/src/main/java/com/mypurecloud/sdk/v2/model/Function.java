@@ -38,6 +38,11 @@ public class Function  implements Serializable {
     }
   }
 
+  public Function(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Function identifier.")
   @JsonProperty("id")

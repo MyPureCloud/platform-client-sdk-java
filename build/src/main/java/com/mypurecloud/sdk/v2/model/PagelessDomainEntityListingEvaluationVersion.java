@@ -35,6 +35,12 @@ public class PagelessDomainEntityListingEvaluationVersion  implements Serializab
     }
   }
 
+  public PagelessDomainEntityListingEvaluationVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EvaluationVersion>();
+    }
+  }
+
   
   /**
    **/

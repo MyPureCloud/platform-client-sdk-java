@@ -45,6 +45,13 @@ public class EvaluationScoringSet  implements Serializable {
     }
   }
 
+  public EvaluationScoringSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questionGroupScores = new ArrayList<EvaluationQuestionGroupScore>();
+      transcriptTopics = new ArrayList<TranscriptTopic>();
+    }
+  }
+
   
   /**
    * Score of all questions

@@ -36,6 +36,12 @@ public class FlowObservationDataContainer  implements Serializable {
     }
   }
 
+  public FlowObservationDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<ObservationMetricData>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

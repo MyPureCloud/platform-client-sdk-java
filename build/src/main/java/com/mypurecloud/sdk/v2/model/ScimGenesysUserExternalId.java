@@ -31,6 +31,11 @@ public class ScimGenesysUserExternalId  implements Serializable {
     }
   }
 
+  public ScimGenesysUserExternalId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Authority, or scope, of \"externalId\". Allows multiple external identifiers to be defined. Represents the source of the external identifier.

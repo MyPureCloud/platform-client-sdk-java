@@ -31,6 +31,11 @@ public class ScrollPercentageEventTrigger  implements Serializable {
     }
   }
 
+  public ScrollPercentageEventTrigger(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Percentage of a webpage at which an event is triggered.

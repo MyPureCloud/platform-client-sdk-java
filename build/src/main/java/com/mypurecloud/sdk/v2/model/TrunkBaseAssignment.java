@@ -31,6 +31,11 @@ public class TrunkBaseAssignment  implements Serializable {
     }
   }
 
+  public TrunkBaseAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The address family to use with the trunk base settings. 2=IPv4, 23=IPv6

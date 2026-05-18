@@ -349,6 +349,13 @@ public class Call  implements Serializable {
     }
   }
 
+  public Call(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<Segment>();
+      disconnectReasons = new ArrayList<DisconnectReason>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

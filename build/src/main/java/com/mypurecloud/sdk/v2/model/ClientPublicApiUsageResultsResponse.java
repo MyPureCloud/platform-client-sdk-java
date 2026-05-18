@@ -90,6 +90,12 @@ public class ClientPublicApiUsageResultsResponse  implements Serializable {
     }
   }
 
+  public ClientPublicApiUsageResultsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ClientPublicApiUsage>();
+    }
+  }
+
   
   /**
    **/

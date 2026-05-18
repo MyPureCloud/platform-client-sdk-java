@@ -33,6 +33,12 @@ public class MemberListing  implements Serializable {
     }
   }
 
+  public MemberListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Member>();
+    }
+  }
+
   
   /**
    **/

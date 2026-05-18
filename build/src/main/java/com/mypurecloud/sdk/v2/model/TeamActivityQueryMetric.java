@@ -80,6 +80,11 @@ public class TeamActivityQueryMetric  implements Serializable {
     }
   }
 
+  public TeamActivityQueryMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The requested metric

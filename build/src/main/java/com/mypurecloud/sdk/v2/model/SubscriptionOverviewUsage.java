@@ -40,6 +40,11 @@ public class SubscriptionOverviewUsage  implements Serializable {
     }
   }
 
+  public SubscriptionOverviewUsage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Product charge name

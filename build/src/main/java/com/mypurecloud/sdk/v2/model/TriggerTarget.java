@@ -80,6 +80,11 @@ public class TriggerTarget  implements Serializable {
     }
   }
 
+  public TriggerTarget(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The entity type to target

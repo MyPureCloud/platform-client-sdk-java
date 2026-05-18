@@ -102,6 +102,14 @@ public class LocationDefinition  implements Serializable {
     }
   }
 
+  public LocationDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      path = new ArrayList<String>();
+      profileImage = new ArrayList<LocationImage>();
+      floorplanImage = new ArrayList<LocationImage>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

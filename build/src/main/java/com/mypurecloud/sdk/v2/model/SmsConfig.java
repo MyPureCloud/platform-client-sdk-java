@@ -34,6 +34,11 @@ public class SmsConfig  implements Serializable {
     }
   }
 
+  public SmsConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Contact List column specifying the message to send to the contact.

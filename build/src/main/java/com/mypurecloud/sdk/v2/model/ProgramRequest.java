@@ -36,6 +36,13 @@ public class ProgramRequest  implements Serializable {
     }
   }
 
+  public ProgramRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topicIds = new ArrayList<String>();
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The program name

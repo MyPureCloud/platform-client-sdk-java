@@ -43,6 +43,12 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     }
   }
 
+  public FlowMilestoneDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FlowMilestoneDivisionView>();
+    }
+  }
+
   
   /**
    **/

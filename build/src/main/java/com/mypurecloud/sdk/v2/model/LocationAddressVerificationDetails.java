@@ -84,6 +84,11 @@ public class LocationAddressVerificationDetails  implements Serializable {
     }
   }
 
+  public LocationAddressVerificationDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Status of address verification process

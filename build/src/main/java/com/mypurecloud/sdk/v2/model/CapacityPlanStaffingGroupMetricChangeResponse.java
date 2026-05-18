@@ -97,6 +97,12 @@ public class CapacityPlanStaffingGroupMetricChangeResponse  implements Serializa
     }
   }
 
+  public CapacityPlanStaffingGroupMetricChangeResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staffingGroups = new ArrayList<StaffingGroupReference>();
+    }
+  }
+
   
   /**
    * The number of weeks to which the metric change applies

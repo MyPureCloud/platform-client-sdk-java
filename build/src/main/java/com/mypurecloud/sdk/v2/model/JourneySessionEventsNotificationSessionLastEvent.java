@@ -32,6 +32,11 @@ public class JourneySessionEventsNotificationSessionLastEvent  implements Serial
     }
   }
 
+  public JourneySessionEventsNotificationSessionLastEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

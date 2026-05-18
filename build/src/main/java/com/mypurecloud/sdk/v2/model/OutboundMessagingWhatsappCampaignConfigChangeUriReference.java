@@ -31,6 +31,11 @@ public class OutboundMessagingWhatsappCampaignConfigChangeUriReference  implemen
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

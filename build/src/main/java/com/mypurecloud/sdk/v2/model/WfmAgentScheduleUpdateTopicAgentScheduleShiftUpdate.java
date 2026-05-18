@@ -83,6 +83,12 @@ public class WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate  implements Ser
     }
   }
 
+  public WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shiftStartDates = new ArrayList<Date>();
+    }
+  }
+
   
   /**
    **/

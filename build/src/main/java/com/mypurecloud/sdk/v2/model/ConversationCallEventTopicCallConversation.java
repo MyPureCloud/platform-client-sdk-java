@@ -98,6 +98,15 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
     }
   }
 
+  public ConversationCallEventTopicCallConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationCallEventTopicCallMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<ConversationCallEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

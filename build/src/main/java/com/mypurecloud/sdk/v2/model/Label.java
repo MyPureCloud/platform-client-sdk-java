@@ -31,6 +31,11 @@ public class Label  implements Serializable {
     }
   }
 
+  public Label(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the label

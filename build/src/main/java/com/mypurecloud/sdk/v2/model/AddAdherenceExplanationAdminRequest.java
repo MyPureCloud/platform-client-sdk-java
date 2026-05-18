@@ -129,6 +129,11 @@ public class AddAdherenceExplanationAdminRequest  implements Serializable {
     }
   }
 
+  public AddAdherenceExplanationAdminRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the adherence explanation

@@ -33,6 +33,11 @@ public class BusinessRulesSchemaUpdateRequest  implements Serializable {
     }
   }
 
+  public BusinessRulesSchemaUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The schema's version, a positive integer. Required for updates.

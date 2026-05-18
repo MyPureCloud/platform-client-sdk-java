@@ -29,6 +29,11 @@ public class AnswerGenerationConfig  implements Serializable {
     }
   }
 
+  public AnswerGenerationConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Answer generation is enabled.

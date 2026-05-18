@@ -81,6 +81,11 @@ public class DomainNetworkRoute  implements Serializable {
     }
   }
 
+  public DomainNetworkRoute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The IPv4 or IPv6 route prefix in CIDR notation.

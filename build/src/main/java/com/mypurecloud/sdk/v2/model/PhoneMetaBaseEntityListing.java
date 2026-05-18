@@ -44,6 +44,12 @@ public class PhoneMetaBaseEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public PhoneMetaBaseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Metabase>();
+    }
+  }
+
   
   /**
    **/

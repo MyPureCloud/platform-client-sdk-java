@@ -43,6 +43,12 @@ public class CallConversationEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public CallConversationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CallConversation>();
+    }
+  }
+
   
   /**
    **/

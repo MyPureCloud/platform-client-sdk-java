@@ -41,6 +41,12 @@ public class UserScheduleShift  implements Serializable {
     }
   }
 
+  public UserScheduleShift(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activities = new ArrayList<UserScheduleActivity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The schedule to which this shift belongs")
   @JsonProperty("weekSchedule")

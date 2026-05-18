@@ -33,6 +33,11 @@ public class FlowOutcomeDivisionView  implements Serializable {
     }
   }
 
+  public FlowOutcomeDivisionView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow outcome identifier

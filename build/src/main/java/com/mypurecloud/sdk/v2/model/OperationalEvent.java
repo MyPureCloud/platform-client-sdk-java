@@ -41,6 +41,11 @@ public class OperationalEvent  implements Serializable {
     }
   }
 
+  public OperationalEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The event that occurred.

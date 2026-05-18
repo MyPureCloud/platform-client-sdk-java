@@ -36,6 +36,12 @@ public class FormListPickerSection  implements Serializable {
     }
   }
 
+  public FormListPickerSection(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      items = new ArrayList<FormListPickerItem>();
+    }
+  }
+
   
   /**
    * Title of the section

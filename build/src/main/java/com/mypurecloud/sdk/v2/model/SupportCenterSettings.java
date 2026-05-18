@@ -98,6 +98,14 @@ public class SupportCenterSettings  implements Serializable {
     }
   }
 
+  public SupportCenterSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      customMessages = new ArrayList<SupportCenterCustomMessage>();
+      screens = new ArrayList<SupportCenterScreen>();
+      enabledCategories = new ArrayList<SupportCenterCategory>();
+    }
+  }
+
   
   /**
    * Whether or not knowledge portal (previously support center) is enabled

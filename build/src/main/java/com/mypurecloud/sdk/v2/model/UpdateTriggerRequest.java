@@ -42,6 +42,12 @@ public class UpdateTriggerRequest  implements Serializable {
     }
   }
 
+  public UpdateTriggerRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchCriteria = new ArrayList<MatchCriteria>();
+    }
+  }
+
   
   /**
    * Version of this trigger

@@ -30,6 +30,11 @@ public class EvaluationCreateEvalForm  implements Serializable {
     }
   }
 
+  public EvaluationCreateEvalForm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

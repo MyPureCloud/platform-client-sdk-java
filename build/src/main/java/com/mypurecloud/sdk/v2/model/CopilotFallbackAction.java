@@ -84,6 +84,11 @@ public class CopilotFallbackAction  implements Serializable {
     }
   }
 
+  public CopilotFallbackAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of action.

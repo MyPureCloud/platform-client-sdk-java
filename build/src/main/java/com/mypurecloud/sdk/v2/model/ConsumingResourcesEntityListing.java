@@ -43,6 +43,12 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     }
   }
 
+  public ConsumingResourcesEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Dependency>();
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class PhraseAssociations  implements Serializable {
     }
   }
 
+  public PhraseAssociations(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the phrase to be linked

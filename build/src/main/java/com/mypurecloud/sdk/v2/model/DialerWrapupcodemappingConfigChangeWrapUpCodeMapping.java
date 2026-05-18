@@ -89,6 +89,12 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
     }
   }
 
+  public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      defaultSet = new ArrayList<DefaultSetEnum>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

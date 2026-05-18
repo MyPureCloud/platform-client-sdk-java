@@ -37,6 +37,11 @@ public class CampaignPatchRequest  implements Serializable {
     }
   }
 
+  public CampaignPatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The number of outbound lines to be concurrently dialed.

@@ -39,6 +39,12 @@ public class PolicyAttributeSet  implements Serializable {
     }
   }
 
+  public PolicyAttributeSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      policyAttributes = new ArrayList<PolicyAttribute>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -32,6 +32,11 @@ public class GenesysBotConnector  implements Serializable {
     }
   }
 
+  public GenesysBotConnector(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * User defined name/value parameters passed to the BotConnector bot.

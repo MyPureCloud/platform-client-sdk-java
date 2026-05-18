@@ -33,6 +33,12 @@ public class ShiftTradeMatchResponseItem  implements Serializable {
     }
   }
 
+  public ShiftTradeMatchResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shiftIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of the receiving shift trades which match the initiating shift trade

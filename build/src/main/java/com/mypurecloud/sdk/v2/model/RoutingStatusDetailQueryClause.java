@@ -82,6 +82,12 @@ public class RoutingStatusDetailQueryClause  implements Serializable {
     }
   }
 
+  public RoutingStatusDetailQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<RoutingStatusDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

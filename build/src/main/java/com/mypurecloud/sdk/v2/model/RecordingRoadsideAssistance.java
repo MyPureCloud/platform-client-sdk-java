@@ -34,6 +34,11 @@ public class RecordingRoadsideAssistance  implements Serializable {
     }
   }
 
+  public RecordingRoadsideAssistance(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Roadside Assistance message text.

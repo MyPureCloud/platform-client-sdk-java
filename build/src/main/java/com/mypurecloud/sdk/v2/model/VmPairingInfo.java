@@ -33,6 +33,11 @@ public class VmPairingInfo  implements Serializable {
     }
   }
 
+  public VmPairingInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * This is to be used to complete the setup process of a locally deployed virtual edge device.

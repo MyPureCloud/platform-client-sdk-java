@@ -33,6 +33,11 @@ public class ContactCallbackRequest  implements Serializable {
     }
   }
 
+  public ContactCallbackRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Campaign identifier

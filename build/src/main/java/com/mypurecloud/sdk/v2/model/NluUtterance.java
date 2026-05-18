@@ -83,6 +83,12 @@ public class NluUtterance  implements Serializable {
     }
   }
 
+  public NluUtterance(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<NluUtteranceSegment>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "ID of the utterance.")
   @JsonProperty("id")

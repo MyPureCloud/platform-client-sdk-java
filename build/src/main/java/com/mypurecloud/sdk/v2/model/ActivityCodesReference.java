@@ -32,6 +32,12 @@ public class ActivityCodesReference  implements Serializable {
     }
   }
 
+  public ActivityCodesReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of activity codes

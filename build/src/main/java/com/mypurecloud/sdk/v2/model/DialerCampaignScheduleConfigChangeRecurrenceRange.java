@@ -85,6 +85,11 @@ public class DialerCampaignScheduleConfigChangeRecurrenceRange  implements Seria
     }
   }
 
+  public DialerCampaignScheduleConfigChangeRecurrenceRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

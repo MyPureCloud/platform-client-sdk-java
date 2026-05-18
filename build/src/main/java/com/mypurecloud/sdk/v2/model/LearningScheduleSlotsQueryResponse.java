@@ -36,6 +36,13 @@ public class LearningScheduleSlotsQueryResponse  implements Serializable {
     }
   }
 
+  public LearningScheduleSlotsQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      suggestedSlots = new ArrayList<LearningSlot>();
+      wfmScheduleActivities = new ArrayList<LearningSlotWfmScheduleActivity>();
+    }
+  }
+
   
   /**
    * List of slots where Learning activity can be scheduled

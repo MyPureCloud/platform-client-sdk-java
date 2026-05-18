@@ -32,6 +32,11 @@ public class EmployerInfo  implements Serializable {
     }
   }
 
+  public EmployerInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

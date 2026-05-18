@@ -85,6 +85,11 @@ public class OpenMessagingToRecipient  implements Serializable {
     }
   }
 
+  public OpenMessagingToRecipient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Nickname or display name of the recipient.")
   @JsonProperty("nickname")

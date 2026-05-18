@@ -90,6 +90,12 @@ public class ExternalOrganizationEnrichRequest  implements Serializable {
     }
   }
 
+  public ExternalOrganizationEnrichRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchingIdentifiers = new ArrayList<ExternalOrganizationIdentifier>();
+    }
+  }
+
   
   /**
    * A user-specified tracker string, only useful in the Bulk-Enrich API. If one Bulk-Enrich operation in a request fails, the requested operation will be repeated in the Bulk API response, including this id field, allowing associating request and response operations.

@@ -43,6 +43,12 @@ public class WrapupCodeEntityListing  implements Serializable, PagedResource<Wra
     }
   }
 
+  public WrapupCodeEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WrapupCode>();
+    }
+  }
+
   
   /**
    **/

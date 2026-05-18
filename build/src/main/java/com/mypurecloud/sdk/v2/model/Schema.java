@@ -37,6 +37,12 @@ public class Schema  implements Serializable {
     }
   }
 
+  public Schema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      type = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "A core type's title")
   @JsonProperty("title")

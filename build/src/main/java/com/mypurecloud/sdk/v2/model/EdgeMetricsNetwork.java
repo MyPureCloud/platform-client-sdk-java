@@ -33,6 +33,11 @@ public class EdgeMetricsNetwork  implements Serializable {
     }
   }
 
+  public EdgeMetricsNetwork(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Identifier for the network adapter.

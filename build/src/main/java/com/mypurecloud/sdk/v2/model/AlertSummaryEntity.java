@@ -87,6 +87,11 @@ public class AlertSummaryEntity  implements Serializable {
     }
   }
 
+  public AlertSummaryEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies the type of entity being evaluated

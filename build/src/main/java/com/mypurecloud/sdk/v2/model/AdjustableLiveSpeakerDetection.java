@@ -85,6 +85,11 @@ public class AdjustableLiveSpeakerDetection  implements Serializable {
     }
   }
 
+  public AdjustableLiveSpeakerDetection(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Modes to tune between speed to live speaker detection vs accuracy.

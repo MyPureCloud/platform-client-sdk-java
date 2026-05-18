@@ -36,6 +36,11 @@ public class UtilizationRequest  implements Serializable {
     }
   }
 
+  public UtilizationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Map of media type to utilization settings.

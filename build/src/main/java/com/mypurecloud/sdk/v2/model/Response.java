@@ -158,6 +158,15 @@ public class Response  implements Serializable {
     }
   }
 
+  public Response(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      libraries = new ArrayList<DomainEntityRef>();
+      texts = new ArrayList<ResponseText>();
+      substitutions = new ArrayList<ResponseSubstitution>();
+      assets = new ArrayList<RmsAssetAddressableRef>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

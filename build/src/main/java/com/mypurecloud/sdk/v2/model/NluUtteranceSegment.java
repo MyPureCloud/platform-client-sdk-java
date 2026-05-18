@@ -31,6 +31,11 @@ public class NluUtteranceSegment  implements Serializable {
     }
   }
 
+  public NluUtteranceSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The text of the segment.

@@ -126,6 +126,11 @@ public class FlowExecutionAggregationView  implements Serializable {
     }
   }
 
+  public FlowExecutionAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

@@ -33,6 +33,11 @@ public class ReportingTurnKnowledge  implements Serializable {
     }
   }
 
+  public ReportingTurnKnowledge(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Knowledge Base ID that the captured knowledge data relates to.

@@ -136,6 +136,11 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     }
   }
 
+  public WfmUserNotificationTopicAdherenceExplanationNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class BotMessengerProfile  implements Serializable {
     }
   }
 
+  public BotMessengerProfile(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the Bot

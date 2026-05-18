@@ -35,6 +35,12 @@ public class FileUploadSettings  implements Serializable {
     }
   }
 
+  public FileUploadSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      modes = new ArrayList<FileUploadMode>();
+    }
+  }
+
   
   /**
    * whether or not attachments are enabled

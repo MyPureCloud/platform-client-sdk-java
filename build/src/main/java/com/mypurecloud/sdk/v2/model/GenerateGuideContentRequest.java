@@ -31,6 +31,11 @@ public class GenerateGuideContentRequest  implements Serializable {
     }
   }
 
+  public GenerateGuideContentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The description that you wish to use to generate the guide content from.

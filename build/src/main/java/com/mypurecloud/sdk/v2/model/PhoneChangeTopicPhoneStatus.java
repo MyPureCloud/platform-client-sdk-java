@@ -90,6 +90,12 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
     }
   }
 
+  public PhoneChangeTopicPhoneStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      lineStatuses = new ArrayList<PhoneChangeTopicLineStatus>();
+    }
+  }
+
   
   /**
    **/

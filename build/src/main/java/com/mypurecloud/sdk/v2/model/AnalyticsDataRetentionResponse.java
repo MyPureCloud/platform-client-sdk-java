@@ -32,6 +32,11 @@ public class AnalyticsDataRetentionResponse  implements Serializable {
     }
   }
 
+  public AnalyticsDataRetentionResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Analytics data retention period in days for the organization.

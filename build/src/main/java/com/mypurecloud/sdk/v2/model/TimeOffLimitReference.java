@@ -30,6 +30,11 @@ public class TimeOffLimitReference  implements Serializable {
     }
   }
 
+  public TimeOffLimitReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

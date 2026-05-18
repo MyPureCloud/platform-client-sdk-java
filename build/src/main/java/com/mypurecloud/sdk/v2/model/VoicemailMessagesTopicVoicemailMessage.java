@@ -49,6 +49,12 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     }
   }
 
+  public VoicemailMessagesTopicVoicemailMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      copiedTo = new ArrayList<VoicemailMessagesTopicVoicemailCopyRecord>();
+    }
+  }
+
   
   /**
    **/

@@ -147,6 +147,11 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     }
   }
 
+  public LearningAssignmentTopicLearningAssignmentNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

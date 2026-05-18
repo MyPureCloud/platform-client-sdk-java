@@ -77,6 +77,11 @@ public class DataIngestionRuleStatusPatchRequest  implements Serializable {
     }
   }
 
+  public DataIngestionRuleStatusPatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the data ingestion rule.

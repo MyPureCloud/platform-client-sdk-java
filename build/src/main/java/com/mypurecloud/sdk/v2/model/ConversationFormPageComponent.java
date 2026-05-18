@@ -88,6 +88,11 @@ public class ConversationFormPageComponent  implements Serializable {
     }
   }
 
+  public ConversationFormPageComponent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this form component element

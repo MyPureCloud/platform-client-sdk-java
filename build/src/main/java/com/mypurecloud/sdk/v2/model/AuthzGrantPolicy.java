@@ -34,6 +34,12 @@ public class AuthzGrantPolicy  implements Serializable {
     }
   }
 
+  public AuthzGrantPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      actions = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

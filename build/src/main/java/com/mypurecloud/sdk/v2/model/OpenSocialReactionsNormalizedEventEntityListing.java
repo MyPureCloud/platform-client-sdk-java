@@ -43,6 +43,12 @@ public class OpenSocialReactionsNormalizedEventEntityListing  implements Seriali
     }
   }
 
+  public OpenSocialReactionsNormalizedEventEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OpenSocialMediaReactionsNormalizedEvent>();
+    }
+  }
+
   
   /**
    **/

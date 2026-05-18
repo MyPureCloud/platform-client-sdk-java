@@ -31,6 +31,11 @@ public class CampaignRuleWeekDayOfMonthInterval  implements Serializable {
     }
   }
 
+  public CampaignRuleWeekDayOfMonthInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The minimum value of the interval. Required for the \"between\" operator

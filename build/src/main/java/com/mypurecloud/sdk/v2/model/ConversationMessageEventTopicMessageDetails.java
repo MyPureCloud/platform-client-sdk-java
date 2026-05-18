@@ -149,6 +149,13 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     }
   }
 
+  public ConversationMessageEventTopicMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      media = new ArrayList<ConversationMessageEventTopicMessageMedia>();
+      stickers = new ArrayList<ConversationMessageEventTopicMessageSticker>();
+    }
+  }
+
   
   /**
    **/

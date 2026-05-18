@@ -145,6 +145,11 @@ public class ConversationMessagingChannel  implements Serializable {
     }
   }
 
+  public ConversationMessagingChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The integration ID.")
   @JsonProperty("id")

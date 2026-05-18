@@ -36,6 +36,11 @@ public class DNCListUploadUrlRequest  implements Serializable {
     }
   }
 
+  public DNCListUploadUrlRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 600 seconds

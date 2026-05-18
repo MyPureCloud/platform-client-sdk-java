@@ -79,6 +79,11 @@ public class TeamAddMemberFailure  implements Serializable {
     }
   }
 
+  public TeamAddMemberFailure(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

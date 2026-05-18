@@ -35,6 +35,11 @@ public class UpdateAlternativeShiftBuSettingsRequest  implements Serializable {
     }
   }
 
+  public UpdateAlternativeShiftBuSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The granularity at which alternative shifts is allowed. An empty list as the wrapped value will indicate alternative shifts is disabled

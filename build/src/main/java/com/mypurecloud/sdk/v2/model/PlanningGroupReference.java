@@ -30,6 +30,11 @@ public class PlanningGroupReference  implements Serializable {
     }
   }
 
+  public PlanningGroupReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

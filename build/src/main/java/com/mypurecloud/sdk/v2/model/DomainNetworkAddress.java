@@ -129,6 +129,11 @@ public class DomainNetworkAddress  implements Serializable {
     }
   }
 
+  public DomainNetworkAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of address.

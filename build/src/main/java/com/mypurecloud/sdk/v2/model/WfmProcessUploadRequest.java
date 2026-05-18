@@ -29,6 +29,11 @@ public class WfmProcessUploadRequest  implements Serializable {
     }
   }
 
+  public WfmProcessUploadRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The uploadKey provided by the request to get an upload URL

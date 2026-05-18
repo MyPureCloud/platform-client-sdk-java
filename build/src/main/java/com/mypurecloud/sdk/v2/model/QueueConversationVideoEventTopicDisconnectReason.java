@@ -79,6 +79,11 @@ public class QueueConversationVideoEventTopicDisconnectReason  implements Serial
     }
   }
 
+  public QueueConversationVideoEventTopicDisconnectReason(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Disconnect reason protocol type.

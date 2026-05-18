@@ -34,6 +34,12 @@ public class ConversationNotificationTemplateCarousel  implements Serializable {
     }
   }
 
+  public ConversationNotificationTemplateCarousel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      cards = new ArrayList<ConversationNotificationTemplateCard>();
+    }
+  }
+
   
   /**
    * An array of template card objects.

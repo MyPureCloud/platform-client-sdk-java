@@ -159,6 +159,11 @@ public class BotFlowSession  implements Serializable {
     }
   }
 
+  public BotFlowSession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the bot session.

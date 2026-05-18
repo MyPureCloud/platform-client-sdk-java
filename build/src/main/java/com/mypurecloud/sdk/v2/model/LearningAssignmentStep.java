@@ -144,6 +144,12 @@ public class LearningAssignmentStep  implements Serializable {
     }
   }
 
+  public LearningAssignmentStep(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      structure = new ArrayList<LearningAssignmentStepScoStructure>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The ID of the learning assignment step")
   @JsonProperty("id")

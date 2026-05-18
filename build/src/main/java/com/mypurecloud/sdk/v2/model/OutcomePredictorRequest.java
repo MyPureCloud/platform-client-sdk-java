@@ -30,6 +30,11 @@ public class OutcomePredictorRequest  implements Serializable {
     }
   }
 
+  public OutcomePredictorRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The outcome for which this predictor will provide predictions.

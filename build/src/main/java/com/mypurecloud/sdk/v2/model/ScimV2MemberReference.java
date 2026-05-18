@@ -83,6 +83,11 @@ public class ScimV2MemberReference  implements Serializable {
     }
   }
 
+  public ScimV2MemberReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The type of SCIM resource.")
   @JsonProperty("type")

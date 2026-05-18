@@ -93,6 +93,15 @@ public class TranscriptSearchRequest  implements Serializable {
     }
   }
 
+  public TranscriptSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      returnFields = new ArrayList<String>();
+      types = new ArrayList<String>();
+      query = new ArrayList<TranscriptSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

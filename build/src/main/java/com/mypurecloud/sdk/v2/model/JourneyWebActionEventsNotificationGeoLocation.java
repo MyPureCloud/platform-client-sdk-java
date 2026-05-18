@@ -39,6 +39,11 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     }
   }
 
+  public JourneyWebActionEventsNotificationGeoLocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

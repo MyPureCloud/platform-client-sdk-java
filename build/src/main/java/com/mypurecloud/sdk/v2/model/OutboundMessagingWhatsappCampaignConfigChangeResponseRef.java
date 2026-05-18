@@ -30,6 +30,11 @@ public class OutboundMessagingWhatsappCampaignConfigChangeResponseRef  implement
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeResponseRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique response id

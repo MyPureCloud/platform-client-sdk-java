@@ -41,6 +41,12 @@ public class CreateTriggerRequest  implements Serializable {
     }
   }
 
+  public CreateTriggerRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchCriteria = new ArrayList<MatchCriteria>();
+    }
+  }
+
   
   /**
    * The target to invoke when a matching event is received

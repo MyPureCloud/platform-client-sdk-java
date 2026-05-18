@@ -37,6 +37,11 @@ public class UserGreetingEventGreeting  implements Serializable {
     }
   }
 
+  public UserGreetingEventGreeting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

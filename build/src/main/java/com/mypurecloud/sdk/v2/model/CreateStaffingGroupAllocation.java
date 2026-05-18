@@ -32,6 +32,11 @@ public class CreateStaffingGroupAllocation  implements Serializable {
     }
   }
 
+  public CreateStaffingGroupAllocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the staffing group used in this capacity plan

@@ -35,6 +35,11 @@ public class InsightsSummaryMetricItem  implements Serializable {
     }
   }
 
+  public InsightsSummaryMetricItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The gamification metric for the data

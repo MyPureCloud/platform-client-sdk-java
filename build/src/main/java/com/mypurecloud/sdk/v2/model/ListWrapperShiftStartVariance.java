@@ -33,6 +33,12 @@ public class ListWrapperShiftStartVariance  implements Serializable {
     }
   }
 
+  public ListWrapperShiftStartVariance(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<ShiftStartVariance>();
+    }
+  }
+
   
   /**
    **/

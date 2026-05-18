@@ -32,6 +32,11 @@ public class UserExternalIdentifier  implements Serializable {
     }
   }
 
+  public UserExternalIdentifier(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Authority or System of Record which owns the External Identifier

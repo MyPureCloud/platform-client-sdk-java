@@ -34,6 +34,12 @@ public class ExternalContactsContactChangedTopicLineId  implements Serializable 
     }
   }
 
+  public ExternalContactsContactChangedTopicLineId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<ExternalContactsContactChangedTopicLineUserId>();
+    }
+  }
+
   
   /**
    **/

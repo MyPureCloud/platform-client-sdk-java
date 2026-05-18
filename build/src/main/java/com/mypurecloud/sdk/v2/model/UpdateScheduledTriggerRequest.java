@@ -36,6 +36,11 @@ public class UpdateScheduledTriggerRequest  implements Serializable {
     }
   }
 
+  public UpdateScheduledTriggerRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Version of this scheduled trigger

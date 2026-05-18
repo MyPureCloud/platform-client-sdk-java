@@ -183,6 +183,11 @@ public class TeamActivityQueryPredicate  implements Serializable {
     }
   }
 
+  public TeamActivityQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

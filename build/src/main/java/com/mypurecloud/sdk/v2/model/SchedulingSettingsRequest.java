@@ -90,6 +90,11 @@ public class SchedulingSettingsRequest  implements Serializable {
     }
   }
 
+  public SchedulingSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Max occupancy percent for deferred work

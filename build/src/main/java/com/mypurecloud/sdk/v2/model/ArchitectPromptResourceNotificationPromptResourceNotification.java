@@ -35,6 +35,11 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
     }
   }
 
+  public ArchitectPromptResourceNotificationPromptResourceNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the prompt that this notification is for.

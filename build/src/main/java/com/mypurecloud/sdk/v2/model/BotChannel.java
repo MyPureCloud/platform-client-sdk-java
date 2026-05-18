@@ -181,6 +181,13 @@ public class BotChannel  implements Serializable {
     }
   }
 
+  public BotChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inputModes = new ArrayList<InputModesEnum>();
+      outputModes = new ArrayList<OutputModesEnum>();
+    }
+  }
+
   
   /**
    * The name of the channel.

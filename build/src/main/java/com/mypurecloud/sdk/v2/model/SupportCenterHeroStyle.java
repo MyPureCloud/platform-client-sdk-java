@@ -32,6 +32,11 @@ public class SupportCenterHeroStyle  implements Serializable {
     }
   }
 
+  public SupportCenterHeroStyle(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Background color for hero section, in hexadecimal format, eg #ffffff

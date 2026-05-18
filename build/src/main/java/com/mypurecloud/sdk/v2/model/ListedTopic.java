@@ -194,6 +194,12 @@ public class ListedTopic  implements Serializable {
     }
   }
 
+  public ListedTopic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

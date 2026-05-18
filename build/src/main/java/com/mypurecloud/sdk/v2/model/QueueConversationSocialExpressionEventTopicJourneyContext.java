@@ -35,6 +35,11 @@ public class QueueConversationSocialExpressionEventTopicJourneyContext  implemen
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

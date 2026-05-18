@@ -30,6 +30,11 @@ public class V2WemEngagementCelebrationUpdatesTopicContestMetrics  implements Se
     }
   }
 
+  public V2WemEngagementCelebrationUpdatesTopicContestMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

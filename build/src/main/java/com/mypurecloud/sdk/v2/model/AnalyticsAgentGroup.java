@@ -79,6 +79,11 @@ public class AnalyticsAgentGroup  implements Serializable {
     }
   }
 
+  public AnalyticsAgentGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Conditional group routing agent group identifier

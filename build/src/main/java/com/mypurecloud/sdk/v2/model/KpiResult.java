@@ -83,6 +83,11 @@ public class KpiResult  implements Serializable {
     }
   }
 
+  public KpiResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)")
   @JsonProperty("kpiTotalOn")

@@ -30,6 +30,11 @@ public class ChatFavorite  implements Serializable {
     }
   }
 
+  public ChatFavorite(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The guid id of the favorite

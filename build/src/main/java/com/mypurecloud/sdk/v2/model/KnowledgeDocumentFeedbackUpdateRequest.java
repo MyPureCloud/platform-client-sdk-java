@@ -174,6 +174,11 @@ public class KnowledgeDocumentFeedbackUpdateRequest  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentFeedbackUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Feedback rating.

@@ -212,6 +212,13 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     }
   }
 
+  public OutboundDetailEventTopicOutboundInitEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

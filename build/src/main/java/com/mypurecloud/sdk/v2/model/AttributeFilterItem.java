@@ -89,6 +89,12 @@ public class AttributeFilterItem  implements Serializable {
     }
   }
 
+  public AttributeFilterItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

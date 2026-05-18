@@ -30,6 +30,11 @@ public class ValueWrapperShiftTradeTargetRequestItem  implements Serializable {
     }
   }
 
+  public ValueWrapperShiftTradeTargetRequestItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field

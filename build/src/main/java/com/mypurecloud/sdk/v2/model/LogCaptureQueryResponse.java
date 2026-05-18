@@ -35,6 +35,12 @@ public class LogCaptureQueryResponse  implements Serializable {
     }
   }
 
+  public LogCaptureQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LogEntry>();
+    }
+  }
+
   
   /**
    **/

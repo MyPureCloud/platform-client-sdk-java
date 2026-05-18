@@ -32,6 +32,11 @@ public class DecisionTableInputColumnRequest  implements Serializable {
     }
   }
 
+  public DecisionTableInputColumnRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The default row value for this column that will complete the condition expression where no value is provided by a row.

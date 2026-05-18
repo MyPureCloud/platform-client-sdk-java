@@ -37,6 +37,12 @@ public class ConversationVideoEventTopicWrapup  implements Serializable {
     }
   }
 
+  public ConversationVideoEventTopicWrapup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user configured wrap up code name.

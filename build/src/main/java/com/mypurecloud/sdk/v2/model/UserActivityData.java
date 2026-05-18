@@ -40,6 +40,13 @@ public class UserActivityData  implements Serializable {
     }
   }
 
+  public UserActivityData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<UserActivityMetricValue>();
+      entities = new ArrayList<UserActivityEntityData>();
+    }
+  }
+
   
   /**
    * A mapping from grouping dimension to value

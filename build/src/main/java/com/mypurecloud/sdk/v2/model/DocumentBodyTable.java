@@ -35,6 +35,12 @@ public class DocumentBodyTable  implements Serializable {
     }
   }
 
+  public DocumentBodyTable(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      rows = new ArrayList<DocumentBodyTableRowBlock>();
+    }
+  }
+
   
   /**
    * The properties for the table.

@@ -33,6 +33,11 @@ public class OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes 
     }
   }
 
+  public OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

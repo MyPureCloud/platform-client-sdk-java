@@ -30,6 +30,11 @@ public class OutboundMessagingEmailCampaignConfigChangeErrorDetail  implements S
     }
   }
 
+  public OutboundMessagingEmailCampaignConfigChangeErrorDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the error code.

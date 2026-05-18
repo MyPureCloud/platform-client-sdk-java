@@ -30,6 +30,11 @@ public class ChecklistInferenceJobCreationResponse  implements Serializable {
     }
   }
 
+  public ChecklistInferenceJobCreationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the inference job.

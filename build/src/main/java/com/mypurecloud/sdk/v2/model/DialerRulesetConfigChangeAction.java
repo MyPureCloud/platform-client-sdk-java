@@ -36,6 +36,11 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
     }
   }
 
+  public DialerRulesetConfigChangeAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of the action

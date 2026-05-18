@@ -82,6 +82,11 @@ public class LocaleInfo  implements Serializable {
     }
   }
 
+  public LocaleInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Status of health computation for this flow version.

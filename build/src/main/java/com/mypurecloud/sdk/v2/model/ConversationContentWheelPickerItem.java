@@ -32,6 +32,11 @@ public class ConversationContentWheelPickerItem  implements Serializable {
     }
   }
 
+  public ConversationContentWheelPickerItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the wheel picker item

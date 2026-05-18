@@ -33,6 +33,11 @@ public class ContentManagementWorkspaceDocumentsTopicLockData  implements Serial
     }
   }
 
+  public ContentManagementWorkspaceDocumentsTopicLockData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

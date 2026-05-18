@@ -42,6 +42,11 @@ public class CreateWorkPlanActivity  implements Serializable {
     }
   }
 
+  public CreateWorkPlanActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the activity code associated with this activity

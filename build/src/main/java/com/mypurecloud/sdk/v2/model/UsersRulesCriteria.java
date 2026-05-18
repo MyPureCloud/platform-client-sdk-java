@@ -82,6 +82,12 @@ public class UsersRulesCriteria  implements Serializable {
     }
   }
 
+  public UsersRulesCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      group = new ArrayList<UsersRulesGroupItem>();
+    }
+  }
+
   
   /**
    * The internal ID for this criteria

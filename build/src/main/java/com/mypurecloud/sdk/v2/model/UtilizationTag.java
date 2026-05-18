@@ -31,6 +31,11 @@ public class UtilizationTag  implements Serializable {
     }
   }
 
+  public UtilizationTag(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

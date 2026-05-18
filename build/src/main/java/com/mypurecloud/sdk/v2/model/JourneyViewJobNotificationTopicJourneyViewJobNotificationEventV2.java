@@ -90,6 +90,11 @@ public class JourneyViewJobNotificationTopicJourneyViewJobNotificationEventV2  i
     }
   }
 
+  public JourneyViewJobNotificationTopicJourneyViewJobNotificationEventV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

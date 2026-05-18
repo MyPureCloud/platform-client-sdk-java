@@ -83,6 +83,11 @@ public class RecordingTemplateButton  implements Serializable {
     }
   }
 
+  public RecordingTemplateButton(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies the type of the button.

@@ -32,6 +32,11 @@ public class CurrentUserScheduleRequestBody  implements Serializable {
     }
   }
 
+  public CurrentUserScheduleRequestBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Beginning of the range of schedules to fetch, in ISO-8601 format

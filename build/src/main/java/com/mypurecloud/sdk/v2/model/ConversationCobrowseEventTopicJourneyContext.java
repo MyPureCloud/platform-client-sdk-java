@@ -34,6 +34,11 @@ public class ConversationCobrowseEventTopicJourneyContext  implements Serializab
     }
   }
 
+  public ConversationCobrowseEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -136,6 +136,11 @@ public class WfmUserNotificationTopicAlternativeShiftNotification  implements Se
     }
   }
 
+  public WfmUserNotificationTopicAlternativeShiftNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

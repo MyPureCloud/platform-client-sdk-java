@@ -35,6 +35,12 @@ public class SearchUnmatchedShiftTradeResponseItem  implements Serializable {
     }
   }
 
+  public SearchUnmatchedShiftTradeResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      receivingShiftMatches = new ArrayList<ShiftTradeMatchResponseItem>();
+    }
+  }
+
   
   /**
    * A trade which matches search criteria

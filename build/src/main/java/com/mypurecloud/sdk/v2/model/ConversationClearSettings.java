@@ -29,6 +29,11 @@ public class ConversationClearSettings  implements Serializable {
     }
   }
 
+  public ConversationClearSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not conversation clear setting is enabled

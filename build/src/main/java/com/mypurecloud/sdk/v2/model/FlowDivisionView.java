@@ -112,6 +112,12 @@ public class FlowDivisionView  implements Serializable {
     }
   }
 
+  public FlowDivisionView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      supportedLanguages = new ArrayList<SupportedLanguage>();
+    }
+  }
+
   
   /**
    * The flow identifier

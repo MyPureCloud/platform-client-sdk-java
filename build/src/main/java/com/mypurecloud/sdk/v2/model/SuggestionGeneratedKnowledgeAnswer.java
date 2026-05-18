@@ -35,6 +35,12 @@ public class SuggestionGeneratedKnowledgeAnswer  implements Serializable {
     }
   }
 
+  public SuggestionGeneratedKnowledgeAnswer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      suggestedSearchChunks = new ArrayList<SuggestedSearchChunk>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The search id.")
   @JsonProperty("searchId")

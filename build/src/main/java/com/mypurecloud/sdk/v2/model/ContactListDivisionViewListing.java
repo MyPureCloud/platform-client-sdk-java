@@ -43,6 +43,12 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     }
   }
 
+  public ContactListDivisionViewListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContactListDivisionView>();
+    }
+  }
+
   
   /**
    **/

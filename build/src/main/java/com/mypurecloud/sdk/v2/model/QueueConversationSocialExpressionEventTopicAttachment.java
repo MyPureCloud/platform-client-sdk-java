@@ -33,6 +33,11 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicAttachment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier for the attachment.

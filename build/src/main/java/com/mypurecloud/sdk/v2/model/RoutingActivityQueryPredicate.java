@@ -183,6 +183,11 @@ public class RoutingActivityQueryPredicate  implements Serializable {
     }
   }
 
+  public RoutingActivityQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

@@ -32,6 +32,11 @@ public class SocialMediaAggregateMetricData  implements Serializable {
     }
   }
 
+  public SocialMediaAggregateMetricData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

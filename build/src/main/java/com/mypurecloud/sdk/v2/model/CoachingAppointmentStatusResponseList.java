@@ -37,6 +37,12 @@ public class CoachingAppointmentStatusResponseList  implements Serializable {
     }
   }
 
+  public CoachingAppointmentStatusResponseList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CoachingAppointmentStatusResponse>();
+    }
+  }
+
   
   /**
    **/

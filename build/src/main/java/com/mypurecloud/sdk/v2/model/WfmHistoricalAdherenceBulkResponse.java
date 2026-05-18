@@ -36,6 +36,12 @@ public class WfmHistoricalAdherenceBulkResponse  implements Serializable {
     }
   }
 
+  public WfmHistoricalAdherenceBulkResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadUrls = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A reference to the job that was started by the request

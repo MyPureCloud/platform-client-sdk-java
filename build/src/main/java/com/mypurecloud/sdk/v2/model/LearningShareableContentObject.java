@@ -289,6 +289,11 @@ public class LearningShareableContentObject  implements Serializable {
     }
   }
 
+  public LearningShareableContentObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the SCO from the course manifest.

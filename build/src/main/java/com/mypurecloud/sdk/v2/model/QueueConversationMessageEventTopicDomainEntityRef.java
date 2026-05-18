@@ -31,6 +31,11 @@ public class QueueConversationMessageEventTopicDomainEntityRef  implements Seria
     }
   }
 
+  public QueueConversationMessageEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

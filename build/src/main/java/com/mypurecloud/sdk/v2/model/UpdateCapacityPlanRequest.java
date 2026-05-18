@@ -39,6 +39,11 @@ public class UpdateCapacityPlanRequest  implements Serializable {
     }
   }
 
+  public UpdateCapacityPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the capacity plan

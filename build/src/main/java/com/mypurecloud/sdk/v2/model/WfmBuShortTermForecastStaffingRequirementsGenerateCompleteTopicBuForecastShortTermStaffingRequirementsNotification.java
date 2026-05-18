@@ -91,6 +91,12 @@ public class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuFo
     }
   }
 
+  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults>();
+    }
+  }
+
   
   /**
    **/

@@ -40,6 +40,13 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
     }
   }
 
+  public DialerCampaignRuleConfigChangeCampaignRuleActionEntities(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      campaigns = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
+      sequences = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
+    }
+  }
+
   
   /**
    * Whether this action should act on the entity that triggered it

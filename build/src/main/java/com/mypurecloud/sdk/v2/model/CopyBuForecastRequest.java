@@ -31,6 +31,11 @@ public class CopyBuForecastRequest  implements Serializable {
     }
   }
 
+  public CopyBuForecastRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The description for the forecast

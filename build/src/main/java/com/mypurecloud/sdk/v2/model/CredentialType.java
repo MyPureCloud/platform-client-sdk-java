@@ -37,6 +37,13 @@ public class CredentialType  implements Serializable {
     }
   }
 
+  public CredentialType(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      displayOrder = new ArrayList<String>();
+      required = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

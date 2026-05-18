@@ -41,6 +41,13 @@ public class RoutingConversationAttributesResponse  implements Serializable {
     }
   }
 
+  public RoutingConversationAttributesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<RoutingSkill>();
+      scoredAgents = new ArrayList<ScoredAgent>();
+    }
+  }
+
   
   /**
    * Current priority value on in-queue conversation. Range:[-25000000, 25000000]

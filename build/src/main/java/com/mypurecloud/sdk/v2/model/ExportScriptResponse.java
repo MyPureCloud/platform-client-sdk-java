@@ -29,6 +29,11 @@ public class ExportScriptResponse  implements Serializable {
     }
   }
 
+  public ExportScriptResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

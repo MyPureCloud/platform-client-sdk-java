@@ -30,6 +30,11 @@ public class EdgeMetricsTopicEdgeMetricSubsystemMedia  implements Serializable {
     }
   }
 
+  public EdgeMetricsTopicEdgeMetricSubsystemMedia(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

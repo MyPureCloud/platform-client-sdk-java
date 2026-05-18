@@ -291,6 +291,11 @@ public class DocumentBodyTableCellBlockProperties  implements Serializable {
     }
   }
 
+  public DocumentBodyTableCellBlockProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the table cell.

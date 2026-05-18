@@ -35,6 +35,12 @@ public class SurveyScoringSet  implements Serializable {
     }
   }
 
+  public SurveyScoringSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questionGroupScores = new ArrayList<SurveyQuestionGroupScore>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,11 @@ public class TwitterId  implements Serializable {
     }
   }
 
+  public TwitterId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * twitter user.id_str. Max: 255 characters

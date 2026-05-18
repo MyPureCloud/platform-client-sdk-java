@@ -34,6 +34,13 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
     }
   }
 
+  public BuQueryAgentSchedulesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+      teamIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of the management unit to query

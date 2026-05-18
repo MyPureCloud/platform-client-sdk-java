@@ -36,6 +36,11 @@ public class FaxStatus  implements Serializable {
     }
   }
 
+  public FaxStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The fax direction, either \"send\" or \"receive\".

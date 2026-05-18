@@ -31,6 +31,11 @@ public class V2ConversationMessageTypingEventForWorkflowTopicMessageData  implem
     }
   }
 
+  public V2ConversationMessageTypingEventForWorkflowTopicMessageData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

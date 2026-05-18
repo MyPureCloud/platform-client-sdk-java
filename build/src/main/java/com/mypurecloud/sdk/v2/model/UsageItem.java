@@ -81,6 +81,11 @@ public class UsageItem  implements Serializable {
     }
   }
 
+  public UsageItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

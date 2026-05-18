@@ -39,6 +39,11 @@ public class OutcomeRequest  implements Serializable {
     }
   }
 
+  public OutcomeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether or not the outcome is active.

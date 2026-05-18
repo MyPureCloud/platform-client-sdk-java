@@ -32,6 +32,12 @@ public class AdditionalLanguagesSynonyms  implements Serializable {
     }
   }
 
+  public AdditionalLanguagesSynonyms(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      synonyms = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Synonyms for additional language")
   @JsonProperty("synonyms")

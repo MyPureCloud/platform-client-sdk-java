@@ -133,6 +133,11 @@ public class WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNot
     }
   }
 
+  public WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

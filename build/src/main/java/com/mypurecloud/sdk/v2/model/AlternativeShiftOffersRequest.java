@@ -32,6 +32,11 @@ public class AlternativeShiftOffersRequest  implements Serializable {
     }
   }
 
+  public AlternativeShiftOffersRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The existing schedule being used to find alternative shift offers

@@ -30,6 +30,11 @@ public class WebDeploymentsRefreshJWTRequest  implements Serializable {
     }
   }
 
+  public WebDeploymentsRefreshJWTRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Refresh token used to issue a new JWT.

@@ -48,6 +48,13 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     }
   }
 
+  public DialerCampaignScheduleConfigChangeCampaignSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intervals = new ArrayList<DialerCampaignScheduleConfigChangeScheduleInterval>();
+      recurrences = new ArrayList<DialerCampaignScheduleConfigChangeScheduleRecurrence>();
+    }
+  }
+
   
   /**
    * a list of start and end times

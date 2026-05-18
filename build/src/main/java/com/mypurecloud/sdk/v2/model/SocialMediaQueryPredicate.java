@@ -193,6 +193,11 @@ public class SocialMediaQueryPredicate  implements Serializable {
     }
   }
 
+  public SocialMediaQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

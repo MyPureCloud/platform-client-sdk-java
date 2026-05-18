@@ -94,6 +94,12 @@ public class InsightsSummary  implements Serializable {
     }
   }
 
+  public InsightsSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<InsightsSummaryUserItem>();
+    }
+  }
+
   
   /**
    **/

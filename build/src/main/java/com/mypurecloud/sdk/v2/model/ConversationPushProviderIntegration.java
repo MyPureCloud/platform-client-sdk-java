@@ -79,6 +79,11 @@ public class ConversationPushProviderIntegration  implements Serializable {
     }
   }
 
+  public ConversationPushProviderIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Genesys Cloud Integration ID

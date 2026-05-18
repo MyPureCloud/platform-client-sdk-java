@@ -29,6 +29,11 @@ public class MessengerStyles  implements Serializable {
     }
   }
 
+  public MessengerStyles(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The primary color of messenger in hexadecimal

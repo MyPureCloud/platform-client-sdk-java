@@ -29,6 +29,11 @@ public class WemCoachingUserNotificationTopicCoachingAppointmentReference  imple
     }
   }
 
+  public WemCoachingUserNotificationTopicCoachingAppointmentReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

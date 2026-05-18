@@ -30,6 +30,11 @@ public class Facet  implements Serializable {
     }
   }
 
+  public Facet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the field on which to facet.

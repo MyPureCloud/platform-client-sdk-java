@@ -34,6 +34,12 @@ public class CampaignRuleConditionGroup  implements Serializable {
     }
   }
 
+  public CampaignRuleConditionGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conditions = new ArrayList<CampaignRuleCondition>();
+    }
+  }
+
   
   /**
    * Whether or not this condition group should be evaluated as true if any of sub conditions is matched

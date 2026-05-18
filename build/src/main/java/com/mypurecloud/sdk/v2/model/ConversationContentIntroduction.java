@@ -33,6 +33,11 @@ public class ConversationContentIntroduction  implements Serializable {
     }
   }
 
+  public ConversationContentIntroduction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text to show in the title.

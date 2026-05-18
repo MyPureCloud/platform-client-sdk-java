@@ -141,6 +141,12 @@ public class LearningModulePreviewGetResponseStep  implements Serializable {
     }
   }
 
+  public LearningModulePreviewGetResponseStep(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      structure = new ArrayList<LearningModulePreviewGetScoStructure>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The id of the step")
   @JsonProperty("id")

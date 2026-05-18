@@ -34,6 +34,12 @@ public class AdminBulkUpdateAlternativeShiftTradeStateRequest  implements Serial
     }
   }
 
+  public AdminBulkUpdateAlternativeShiftTradeStateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AdminBulkUpdateAlternativeShiftTradeState>();
+    }
+  }
+
   
   /**
    **/

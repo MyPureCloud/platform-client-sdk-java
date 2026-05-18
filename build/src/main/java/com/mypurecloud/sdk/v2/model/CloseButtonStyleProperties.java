@@ -30,6 +30,11 @@ public class CloseButtonStyleProperties  implements Serializable {
     }
   }
 
+  public CloseButtonStyleProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Color of button. (eg. #FF0000)

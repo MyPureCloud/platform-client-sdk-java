@@ -87,6 +87,12 @@ public class AlertablePresences  implements Serializable {
     }
   }
 
+  public AlertablePresences(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alertablePresences = new ArrayList<AlertablePresencesEnum>();
+    }
+  }
+
   
   /**
    * The list of alertable system presences.

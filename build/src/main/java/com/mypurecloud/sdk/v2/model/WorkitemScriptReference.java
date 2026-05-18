@@ -31,6 +31,11 @@ public class WorkitemScriptReference  implements Serializable {
     }
   }
 
+  public WorkitemScriptReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

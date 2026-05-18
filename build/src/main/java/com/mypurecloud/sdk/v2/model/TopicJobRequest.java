@@ -32,6 +32,12 @@ public class TopicJobRequest  implements Serializable {
     }
   }
 
+  public TopicJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topicIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ids of the topics used for this job

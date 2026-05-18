@@ -33,6 +33,11 @@ public class AgentQueryAdherenceExplanationsResponse  implements Serializable {
     }
   }
 
+  public AgentQueryAdherenceExplanationsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The asynchronous job handling the query

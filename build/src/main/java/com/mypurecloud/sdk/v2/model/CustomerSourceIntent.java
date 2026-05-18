@@ -32,6 +32,11 @@ public class CustomerSourceIntent  implements Serializable {
     }
   }
 
+  public CustomerSourceIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Source intent data

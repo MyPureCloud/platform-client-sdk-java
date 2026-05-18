@@ -33,6 +33,11 @@ public class LearningScheduleSlotsJobSchedule  implements Serializable {
     }
   }
 
+  public LearningScheduleSlotsJobSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

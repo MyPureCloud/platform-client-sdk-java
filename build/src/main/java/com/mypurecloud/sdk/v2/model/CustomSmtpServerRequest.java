@@ -29,6 +29,11 @@ public class CustomSmtpServerRequest  implements Serializable {
     }
   }
 
+  public CustomSmtpServerRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the integration that contains the SMTP configuration. 

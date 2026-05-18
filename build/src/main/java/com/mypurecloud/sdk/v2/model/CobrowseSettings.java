@@ -91,6 +91,15 @@ public class CobrowseSettings  implements Serializable {
     }
   }
 
+  public CobrowseSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      maskSelectors = new ArrayList<String>();
+      channels = new ArrayList<ChannelsEnum>();
+      readonlySelectors = new ArrayList<String>();
+      pauseCriteria = new ArrayList<PauseCriteria>();
+    }
+  }
+
   
   /**
    * Whether or not cobrowse is enabled

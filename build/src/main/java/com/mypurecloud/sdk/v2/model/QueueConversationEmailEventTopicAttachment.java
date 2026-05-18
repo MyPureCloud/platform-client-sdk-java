@@ -33,6 +33,11 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
     }
   }
 
+  public QueueConversationEmailEventTopicAttachment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier for the attachment.

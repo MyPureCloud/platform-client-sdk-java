@@ -31,6 +31,11 @@ public class BuServiceLevel  implements Serializable {
     }
   }
 
+  public BuServiceLevel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to include service level targets in the associated configuration

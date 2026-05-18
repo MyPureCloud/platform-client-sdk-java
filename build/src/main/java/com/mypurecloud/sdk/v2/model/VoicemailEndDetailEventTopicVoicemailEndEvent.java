@@ -221,6 +221,13 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     }
   }
 
+  public VoicemailEndDetailEventTopicVoicemailEndEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class StaffingRequirementResultResponseTemplate  implements Serializable 
     }
   }
 
+  public StaffingRequirementResultResponseTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requirementResults = new ArrayList<PlanningGroupRequirementOutput>();
+    }
+  }
+
   
   /**
    * List of staffing requirement results

@@ -39,6 +39,11 @@ public class WrapupCodeRequest  implements Serializable {
     }
   }
 
+  public WrapupCodeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

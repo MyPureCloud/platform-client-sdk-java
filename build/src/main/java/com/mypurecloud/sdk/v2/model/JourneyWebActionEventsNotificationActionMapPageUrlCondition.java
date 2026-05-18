@@ -94,6 +94,12 @@ public class JourneyWebActionEventsNotificationActionMapPageUrlCondition  implem
     }
   }
 
+  public JourneyWebActionEventsNotificationActionMapPageUrlCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

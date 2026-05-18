@@ -29,6 +29,11 @@ public class ExternalContactsUnresolvedContactChangedTopicLineUserId  implements
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicLineUserId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

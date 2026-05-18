@@ -31,6 +31,11 @@ public class V3SourceFolderDetails  implements Serializable {
     }
   }
 
+  public V3SourceFolderDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The folder's id.

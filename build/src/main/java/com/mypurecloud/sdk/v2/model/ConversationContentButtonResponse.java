@@ -84,6 +84,11 @@ public class ConversationContentButtonResponse  implements Serializable {
     }
   }
 
+  public ConversationContentButtonResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Reference to the ID of the original message (e.g., list picker) this button response is replying to.

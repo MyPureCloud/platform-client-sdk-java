@@ -45,6 +45,12 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     }
   }
 
+  public DialerRulesetConfigChangeRuleSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      rules = new ArrayList<DialerRulesetConfigChangeRule>();
+    }
+  }
+
   
   /**
    **/

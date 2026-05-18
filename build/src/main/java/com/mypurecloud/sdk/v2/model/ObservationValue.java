@@ -210,6 +210,14 @@ public class ObservationValue  implements Serializable {
     }
   }
 
+  public ObservationValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      scoredAgents = new ArrayList<AnalyticsScoredAgent>();
+    }
+  }
+
   
   /**
    * The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

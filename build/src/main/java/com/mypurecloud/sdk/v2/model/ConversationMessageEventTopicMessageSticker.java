@@ -30,6 +30,11 @@ public class ConversationMessageEventTopicMessageSticker  implements Serializabl
     }
   }
 
+  public ConversationMessageEventTopicMessageSticker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the sticker, useful for retrieving it

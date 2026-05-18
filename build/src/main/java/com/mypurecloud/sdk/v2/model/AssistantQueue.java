@@ -87,6 +87,12 @@ public class AssistantQueue  implements Serializable {
     }
   }
 
+  public AssistantQueue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the queue.

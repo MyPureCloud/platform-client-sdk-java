@@ -32,6 +32,11 @@ public class DependencyType  implements Serializable {
     }
   }
 
+  public DependencyType(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The dependency type identifier

@@ -30,6 +30,11 @@ public class TaskManagementErrorDetails  implements Serializable {
     }
   }
 
+  public TaskManagementErrorDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * System defined error code for the error.

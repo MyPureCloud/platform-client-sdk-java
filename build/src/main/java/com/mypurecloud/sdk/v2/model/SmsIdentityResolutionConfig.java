@@ -32,6 +32,11 @@ public class SmsIdentityResolutionConfig  implements Serializable {
     }
   }
 
+  public SmsIdentityResolutionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to use when performing identity resolution.

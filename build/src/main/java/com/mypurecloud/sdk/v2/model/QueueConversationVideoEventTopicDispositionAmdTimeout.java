@@ -34,6 +34,11 @@ public class QueueConversationVideoEventTopicDispositionAmdTimeout  implements S
     }
   }
 
+  public QueueConversationVideoEventTopicDispositionAmdTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured AMD timeout value.

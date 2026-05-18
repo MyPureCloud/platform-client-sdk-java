@@ -133,6 +133,11 @@ public class CaseManagementAggregationView  implements Serializable {
     }
   }
 
+  public CaseManagementAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

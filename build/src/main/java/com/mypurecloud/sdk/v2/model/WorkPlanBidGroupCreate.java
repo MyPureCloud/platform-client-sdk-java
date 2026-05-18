@@ -39,6 +39,14 @@ public class WorkPlanBidGroupCreate  implements Serializable {
     }
   }
 
+  public WorkPlanBidGroupCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentIds = new ArrayList<String>();
+      workPlans = new ArrayList<BidGroupWorkPlanRequest>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the work plan bid group

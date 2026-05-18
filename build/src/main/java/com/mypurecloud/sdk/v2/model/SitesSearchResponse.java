@@ -42,6 +42,13 @@ public class SitesSearchResponse  implements Serializable {
     }
   }
 
+  public SitesSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+      results = new ArrayList<Site>();
+    }
+  }
+
   
   /**
    * The total number of results found

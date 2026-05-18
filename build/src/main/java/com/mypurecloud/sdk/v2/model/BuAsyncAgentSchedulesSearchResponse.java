@@ -84,6 +84,11 @@ public class BuAsyncAgentSchedulesSearchResponse  implements Serializable {
     }
   }
 
+  public BuAsyncAgentSchedulesSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the operation

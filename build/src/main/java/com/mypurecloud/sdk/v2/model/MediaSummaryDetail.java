@@ -30,6 +30,11 @@ public class MediaSummaryDetail  implements Serializable {
     }
   }
 
+  public MediaSummaryDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

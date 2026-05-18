@@ -43,6 +43,12 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public AttemptLimitsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AttemptLimits>();
+    }
+  }
+
   
   /**
    **/

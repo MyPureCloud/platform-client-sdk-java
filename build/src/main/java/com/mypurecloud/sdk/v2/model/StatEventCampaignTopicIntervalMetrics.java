@@ -34,6 +34,12 @@ public class StatEventCampaignTopicIntervalMetrics  implements Serializable {
     }
   }
 
+  public StatEventCampaignTopicIntervalMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<StatEventCampaignTopicMetricStats>();
+    }
+  }
+
   
   /**
    **/

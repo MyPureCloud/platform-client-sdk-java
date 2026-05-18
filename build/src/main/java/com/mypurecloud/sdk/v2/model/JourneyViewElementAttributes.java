@@ -79,6 +79,11 @@ public class JourneyViewElementAttributes  implements Serializable {
     }
   }
 
+  public JourneyViewElementAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the element (e.g. Event)

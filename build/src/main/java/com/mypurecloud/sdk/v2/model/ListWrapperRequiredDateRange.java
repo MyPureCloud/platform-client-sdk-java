@@ -33,6 +33,12 @@ public class ListWrapperRequiredDateRange  implements Serializable {
     }
   }
 
+  public ListWrapperRequiredDateRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<RequiredDateRange>();
+    }
+  }
+
   
   /**
    **/

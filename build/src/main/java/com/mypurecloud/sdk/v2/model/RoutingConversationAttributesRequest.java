@@ -38,6 +38,13 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     }
   }
 
+  public RoutingConversationAttributesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+      requestScoredAgents = new ArrayList<RequestScoredAgent>();
+    }
+  }
+
   
   /**
    * Priority for the conversation.  Each point of priority is equivalent to one minute of time in queue.  Range:[-25000000, 25000000].  To reset, specify 0.

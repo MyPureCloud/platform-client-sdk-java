@@ -102,6 +102,11 @@ public class KnowledgeSyncJobResponse  implements Serializable {
     }
   }
 
+  public KnowledgeSyncJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the sync job.

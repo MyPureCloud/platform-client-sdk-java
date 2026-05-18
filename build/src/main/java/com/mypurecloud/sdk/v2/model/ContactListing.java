@@ -44,6 +44,12 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     }
   }
 
+  public ContactListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalContact>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class EstimateAvailablePartialDayTimeOffRequest  implements Serializable 
     }
   }
 
+  public EstimateAvailablePartialDayTimeOffRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start date-time in ISO-8601 format for partial day request

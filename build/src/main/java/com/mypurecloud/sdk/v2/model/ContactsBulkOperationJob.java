@@ -134,6 +134,11 @@ public class ContactsBulkOperationJob  implements Serializable {
     }
   }
 
+  public ContactsBulkOperationJob(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique job identifier.")
   @JsonProperty("id")

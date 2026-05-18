@@ -36,6 +36,11 @@ public class JourneyViewElementFilterRange  implements Serializable {
     }
   }
 
+  public JourneyViewElementFilterRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * comparator: less than

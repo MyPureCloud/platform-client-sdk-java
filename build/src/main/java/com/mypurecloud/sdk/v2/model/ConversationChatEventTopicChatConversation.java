@@ -46,6 +46,15 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
     }
   }
 
+  public ConversationChatEventTopicChatConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationChatEventTopicChatMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<ConversationChatEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

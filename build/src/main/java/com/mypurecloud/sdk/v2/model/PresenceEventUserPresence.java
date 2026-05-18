@@ -36,6 +36,11 @@ public class PresenceEventUserPresence  implements Serializable {
     }
   }
 
+  public PresenceEventUserPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

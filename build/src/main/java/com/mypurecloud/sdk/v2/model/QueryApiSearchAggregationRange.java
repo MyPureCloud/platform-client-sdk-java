@@ -30,6 +30,11 @@ public class QueryApiSearchAggregationRange  implements Serializable {
     }
   }
 
+  public QueryApiSearchAggregationRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

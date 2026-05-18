@@ -30,6 +30,11 @@ public class V2IntegrationPresenceEventOrganizationPresence  implements Serializ
     }
   }
 
+  public V2IntegrationPresenceEventOrganizationPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

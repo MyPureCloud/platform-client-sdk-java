@@ -30,6 +30,11 @@ public class ConversationMessageEventTopicMessageMetadataContent  implements Ser
     }
   }
 
+  public ConversationMessageEventTopicMessageMetadataContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element.

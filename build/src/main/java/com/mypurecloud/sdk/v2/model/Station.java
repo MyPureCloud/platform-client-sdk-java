@@ -93,6 +93,11 @@ public class Station  implements Serializable {
     }
   }
 
+  public Station(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

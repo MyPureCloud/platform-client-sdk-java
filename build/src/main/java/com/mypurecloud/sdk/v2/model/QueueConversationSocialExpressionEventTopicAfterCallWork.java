@@ -84,6 +84,11 @@ public class QueueConversationSocialExpressionEventTopicAfterCallWork  implement
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicAfterCallWork(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The communication's after-call work state.

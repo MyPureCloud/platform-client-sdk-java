@@ -45,6 +45,12 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     }
   }
 
+  public WfmBuScheduleTopicBuScheduleMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnits = new ArrayList<WfmBuScheduleTopicBuManagementUnitScheduleSummary>();
+    }
+  }
+
   
   /**
    **/

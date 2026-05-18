@@ -32,6 +32,11 @@ public class QueueConversationScreenShareEventTopicDetail  implements Serializab
     }
   }
 
+  public QueueConversationScreenShareEventTopicDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

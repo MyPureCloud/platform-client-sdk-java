@@ -29,6 +29,11 @@ public class PlanningGroupModel  implements Serializable {
     }
   }
 
+  public PlanningGroupModel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Planning group id

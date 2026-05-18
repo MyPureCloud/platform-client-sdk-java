@@ -83,6 +83,12 @@ public class LocaleHealth  implements Serializable {
     }
   }
 
+  public LocaleHealth(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staticValidationResults = new ArrayList<StaticValidationResultsEnum>();
+    }
+  }
+
   
   /**
    * Overall health score for the intent.

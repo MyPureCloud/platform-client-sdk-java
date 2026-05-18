@@ -30,6 +30,11 @@ public class EmpathyScore  implements Serializable {
     }
   }
 
+  public EmpathyScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Empathy score of the agent involved in the conversation

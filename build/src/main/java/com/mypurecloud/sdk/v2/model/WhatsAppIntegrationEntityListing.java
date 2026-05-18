@@ -43,6 +43,12 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     }
   }
 
+  public WhatsAppIntegrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WhatsAppIntegration>();
+    }
+  }
+
   
   /**
    **/

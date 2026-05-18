@@ -97,6 +97,14 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     }
   }
 
+  public UpdateCoachingAppointmentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationIds = new ArrayList<String>();
+      documentIds = new ArrayList<String>();
+      externalLinks = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of coaching appointment.

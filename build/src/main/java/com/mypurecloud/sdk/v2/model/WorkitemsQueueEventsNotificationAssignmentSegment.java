@@ -148,6 +148,11 @@ public class WorkitemsQueueEventsNotificationAssignmentSegment  implements Seria
     }
   }
 
+  public WorkitemsQueueEventsNotificationAssignmentSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

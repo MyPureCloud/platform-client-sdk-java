@@ -32,6 +32,12 @@ public class BulkRemoveSourceIntentsRequest  implements Serializable {
     }
   }
 
+  public BulkRemoveSourceIntentsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      items = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of ids to delete

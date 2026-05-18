@@ -33,6 +33,12 @@ public class CaseManagementAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public CaseManagementAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<CaseManagementAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

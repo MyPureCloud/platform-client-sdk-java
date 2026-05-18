@@ -30,6 +30,11 @@ public class UpdateSegmentAssignmentResponse  implements Serializable {
     }
   }
 
+  public UpdateSegmentAssignmentResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The segment assignments and unassignments which could not be processed.

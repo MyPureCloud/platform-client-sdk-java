@@ -81,6 +81,11 @@ public class Signature  implements Serializable {
     }
   }
 
+  public Signature(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A toggle to enable the signature on email send.

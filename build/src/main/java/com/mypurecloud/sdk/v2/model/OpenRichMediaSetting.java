@@ -31,6 +31,11 @@ public class OpenRichMediaSetting  implements Serializable {
     }
   }
 
+  public OpenRichMediaSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Setting relating to quick replies

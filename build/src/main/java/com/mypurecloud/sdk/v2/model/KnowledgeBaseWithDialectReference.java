@@ -117,6 +117,11 @@ public class KnowledgeBaseWithDialectReference  implements Serializable {
     }
   }
 
+  public KnowledgeBaseWithDialectReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the knowledge base.

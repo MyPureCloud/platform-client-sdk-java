@@ -33,6 +33,11 @@ public class TemporalUnit  implements Serializable {
     }
   }
 
+  public TemporalUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

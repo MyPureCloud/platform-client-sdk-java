@@ -39,6 +39,11 @@ public class JourneySessionEventsNotificationGeoLocation  implements Serializabl
     }
   }
 
+  public JourneySessionEventsNotificationGeoLocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

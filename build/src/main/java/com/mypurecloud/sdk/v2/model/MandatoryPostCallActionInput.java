@@ -30,6 +30,11 @@ public class MandatoryPostCallActionInput  implements Serializable {
     }
   }
 
+  public MandatoryPostCallActionInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The destination phone number or phone id to send the flow to after completion.  If null or blank will not update.

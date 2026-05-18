@@ -81,6 +81,11 @@ public class ConversationSummaryTopicConversationSummaryParticipant  implements 
     }
   }
 
+  public ConversationSummaryTopicConversationSummaryParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

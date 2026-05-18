@@ -31,6 +31,11 @@ public class Domains  implements Serializable {
     }
   }
 
+  public Domains(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The authorized domains settings for email processing.

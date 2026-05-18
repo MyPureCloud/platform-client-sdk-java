@@ -34,6 +34,12 @@ public class AdditionalLanguagesIntent  implements Serializable {
     }
   }
 
+  public AdditionalLanguagesIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      utterances = new ArrayList<NluUtterance>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "ID of the intent for respective additional language")
   @JsonProperty("id")

@@ -178,6 +178,11 @@ public class PresenceDetailQueryPredicate  implements Serializable {
     }
   }
 
+  public PresenceDetailQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

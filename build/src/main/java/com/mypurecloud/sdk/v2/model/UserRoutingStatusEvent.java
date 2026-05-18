@@ -85,6 +85,11 @@ public class UserRoutingStatusEvent  implements Serializable {
     }
   }
 
+  public UserRoutingStatusEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (UUID) eventId for this event

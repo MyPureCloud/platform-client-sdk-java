@@ -277,6 +277,11 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public FlowAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

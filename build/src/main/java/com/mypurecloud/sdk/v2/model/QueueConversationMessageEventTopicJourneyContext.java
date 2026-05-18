@@ -34,6 +34,11 @@ public class QueueConversationMessageEventTopicJourneyContext  implements Serial
     }
   }
 
+  public QueueConversationMessageEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

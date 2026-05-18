@@ -78,6 +78,11 @@ public class CreateTimeOffLimitRequest  implements Serializable {
     }
   }
 
+  public CreateTimeOffLimitRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Granularity choice for time off limit. If not specified, 'Daily' is assumed

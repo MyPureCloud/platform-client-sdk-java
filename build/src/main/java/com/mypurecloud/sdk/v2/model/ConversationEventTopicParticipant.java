@@ -154,6 +154,23 @@ public class ConversationEventTopicParticipant  implements Serializable {
     }
   }
 
+  public ConversationEventTopicParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      calls = new ArrayList<ConversationEventTopicCall>();
+      callbacks = new ArrayList<ConversationEventTopicCallback>();
+      chats = new ArrayList<ConversationEventTopicChat>();
+      cobrowsesessions = new ArrayList<ConversationEventTopicCobrowse>();
+      emails = new ArrayList<ConversationEventTopicEmail>();
+      messages = new ArrayList<ConversationEventTopicMessage>();
+      internalMessages = new ArrayList<ConversationEventTopicInternalMessage>();
+      screenMonitorings = new ArrayList<ConversationEventTopicScreenMonitoring>();
+      screenshares = new ArrayList<ConversationEventTopicScreenShare>();
+      socialExpressions = new ArrayList<ConversationEventTopicSocialExpression>();
+      videos = new ArrayList<ConversationEventTopicVideo>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this conversation.

@@ -33,6 +33,11 @@ public class KnowledgeAnswerDocumentResponse  implements Serializable {
     }
   }
 
+  public KnowledgeAnswerDocumentResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The document id.

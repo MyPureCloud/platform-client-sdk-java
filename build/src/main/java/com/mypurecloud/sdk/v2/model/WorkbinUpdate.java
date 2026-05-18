@@ -30,6 +30,11 @@ public class WorkbinUpdate  implements Serializable {
     }
   }
 
+  public WorkbinUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Workbin name. Valid length between 3 and 256 characters.

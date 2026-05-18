@@ -33,6 +33,12 @@ public class BotSearchResponseEntityListing  implements Serializable {
     }
   }
 
+  public BotSearchResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BotSearchResponse>();
+    }
+  }
+
   
   /**
    **/

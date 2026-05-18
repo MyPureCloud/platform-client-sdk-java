@@ -30,6 +30,11 @@ public class SummarySettingParticipantLabels  implements Serializable {
     }
   }
 
+  public SummarySettingParticipantLabels(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specify how to refer the internal participant of the interaction.

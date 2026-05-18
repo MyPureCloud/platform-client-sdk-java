@@ -30,6 +30,11 @@ public class JourneySessionEventsNotificationConnectedQueue  implements Serializ
     }
   }
 
+  public JourneySessionEventsNotificationConnectedQueue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

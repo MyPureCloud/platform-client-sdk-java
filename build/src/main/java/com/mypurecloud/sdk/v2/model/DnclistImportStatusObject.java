@@ -25,6 +25,11 @@ public class DnclistImportStatusObject  implements Serializable {
     }
   }
 
+  public DnclistImportStatusObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

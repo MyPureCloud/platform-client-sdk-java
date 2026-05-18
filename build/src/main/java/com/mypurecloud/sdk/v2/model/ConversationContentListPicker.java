@@ -38,6 +38,12 @@ public class ConversationContentListPicker  implements Serializable {
     }
   }
 
+  public ConversationContentListPicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sections = new ArrayList<ConversationContentListPickerSection>();
+    }
+  }
+
   
   /**
    * Optional unique identifier to help map component replies to form messages where multiple ListPickers can be present.

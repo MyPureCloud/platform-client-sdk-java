@@ -82,6 +82,12 @@ public class FlowExecutionAggregateQueryClause  implements Serializable {
     }
   }
 
+  public FlowExecutionAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<FlowExecutionAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

@@ -35,6 +35,12 @@ public class DocumentBodyTableRowBlockWithHighlight  implements Serializable {
     }
   }
 
+  public DocumentBodyTableRowBlockWithHighlight(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      cells = new ArrayList<DocumentBodyTableCellBlockWithHighlight>();
+    }
+  }
+
   
   /**
    * The properties for the table rows.

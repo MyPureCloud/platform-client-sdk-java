@@ -34,6 +34,12 @@ public class ActionMapEstimateRequest  implements Serializable {
     }
   }
 
+  public ActionMapEstimateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segmentIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of Segment IDs.

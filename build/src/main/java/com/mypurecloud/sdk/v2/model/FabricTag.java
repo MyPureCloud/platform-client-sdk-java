@@ -29,6 +29,11 @@ public class FabricTag  implements Serializable {
     }
   }
 
+  public FabricTag(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the tag

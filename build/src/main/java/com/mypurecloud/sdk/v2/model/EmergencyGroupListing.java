@@ -43,6 +43,12 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     }
   }
 
+  public EmergencyGroupListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EmergencyGroup>();
+    }
+  }
+
   
   /**
    **/

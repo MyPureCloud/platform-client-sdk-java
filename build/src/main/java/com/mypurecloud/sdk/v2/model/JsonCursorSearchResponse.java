@@ -36,6 +36,12 @@ public class JsonCursorSearchResponse  implements Serializable {
     }
   }
 
+  public JsonCursorSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Resource types the search was performed against

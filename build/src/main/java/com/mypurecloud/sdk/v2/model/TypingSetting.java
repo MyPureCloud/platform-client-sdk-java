@@ -30,6 +30,11 @@ public class TypingSetting  implements Serializable {
     }
   }
 
+  public TypingSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Should typing indication Events be sent

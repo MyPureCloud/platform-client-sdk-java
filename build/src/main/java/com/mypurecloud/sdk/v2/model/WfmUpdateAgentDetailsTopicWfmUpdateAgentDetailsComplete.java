@@ -79,6 +79,11 @@ public class WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete  implements
     }
   }
 
+  public WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

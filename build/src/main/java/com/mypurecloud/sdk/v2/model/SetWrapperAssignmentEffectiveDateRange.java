@@ -32,6 +32,12 @@ public class SetWrapperAssignmentEffectiveDateRange  implements Serializable {
     }
   }
 
+  public SetWrapperAssignmentEffectiveDateRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<AssignmentEffectiveDateRange>();
+    }
+  }
+
   
   /**
    **/

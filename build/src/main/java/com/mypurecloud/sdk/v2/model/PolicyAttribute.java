@@ -89,6 +89,11 @@ public class PolicyAttribute  implements Serializable {
     }
   }
 
+  public PolicyAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

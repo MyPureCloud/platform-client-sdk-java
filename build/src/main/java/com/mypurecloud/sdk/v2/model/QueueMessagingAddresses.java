@@ -32,6 +32,11 @@ public class QueueMessagingAddresses  implements Serializable {
     }
   }
 
+  public QueueMessagingAddresses(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

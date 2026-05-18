@@ -173,6 +173,11 @@ public class KnowledgeSourcesSearchResponse  implements Serializable {
     }
   }
 
+  public KnowledgeSourcesSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Query to search content in the knowledge base.

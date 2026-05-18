@@ -81,6 +81,11 @@ public class CreateWebChatMessageRequest  implements Serializable {
     }
   }
 
+  public CreateWebChatMessageRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The message body. Note that message bodies are limited to 4,000 characters.

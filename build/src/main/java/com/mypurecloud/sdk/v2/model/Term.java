@@ -79,6 +79,11 @@ public class Term  implements Serializable {
     }
   }
 
+  public Term(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Find term in interaction

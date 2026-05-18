@@ -197,6 +197,11 @@ public class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent  
     }
   }
 
+  public ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

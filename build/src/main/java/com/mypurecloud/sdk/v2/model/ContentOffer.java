@@ -139,6 +139,11 @@ public class ContentOffer  implements Serializable {
     }
   }
 
+  public ContentOffer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * URL for image displayed to the customer when displaying content offer.

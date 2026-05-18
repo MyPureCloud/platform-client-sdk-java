@@ -87,6 +87,11 @@ public class OutboundVoiceCampaignPostContactVoiceAttributes  implements Seriali
     }
   }
 
+  public OutboundVoiceCampaignPostContactVoiceAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

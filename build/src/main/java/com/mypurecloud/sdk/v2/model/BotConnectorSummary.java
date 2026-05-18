@@ -38,6 +38,12 @@ public class BotConnectorSummary  implements Serializable {
     }
   }
 
+  public BotConnectorSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      versions = new ArrayList<BotConnectorVersionSummary>();
+    }
+  }
+
   
   /**
    * The id of the bot.

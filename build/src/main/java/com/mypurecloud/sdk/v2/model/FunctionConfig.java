@@ -39,6 +39,12 @@ public class FunctionConfig  implements Serializable {
     }
   }
 
+  public FunctionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      uploadExceptionHistory = new ArrayList<FunctionZipConfig>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Action identifier.")
   @JsonProperty("id")

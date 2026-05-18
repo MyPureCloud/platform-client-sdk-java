@@ -37,6 +37,12 @@ public class LearningModuleCoverArtResponse  implements Serializable {
     }
   }
 
+  public LearningModuleCoverArtResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      thumbnails = new ArrayList<LearningCoverArtThumbnail>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -35,6 +35,13 @@ public class QuarterHourly  implements Serializable {
     }
   }
 
+  public QuarterHourly(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadUrls = new ArrayList<String>();
+      downloadResult = new ArrayList<Timeseries>();
+    }
+  }
+
   
   /**
    * List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete

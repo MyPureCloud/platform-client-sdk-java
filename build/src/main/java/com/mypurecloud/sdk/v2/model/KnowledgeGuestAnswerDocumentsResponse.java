@@ -33,6 +33,12 @@ public class KnowledgeGuestAnswerDocumentsResponse  implements Serializable {
     }
   }
 
+  public KnowledgeGuestAnswerDocumentsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<KnowledgeGuestAnswerDocumentResponse>();
+    }
+  }
+
   
   /**
    * The results with answers.

@@ -200,6 +200,11 @@ public class SurveyAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public SurveyAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

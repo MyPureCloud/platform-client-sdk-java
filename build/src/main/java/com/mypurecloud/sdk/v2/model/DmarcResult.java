@@ -136,6 +136,12 @@ public class DmarcResult  implements Serializable {
     }
   }
 
+  public DmarcResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      records = new ArrayList<Record>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "The DMARC status of this domain")
   @JsonProperty("status")

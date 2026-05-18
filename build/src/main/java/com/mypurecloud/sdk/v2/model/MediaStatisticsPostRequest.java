@@ -83,6 +83,11 @@ public class MediaStatisticsPostRequest  implements Serializable {
     }
   }
 
+  public MediaStatisticsPostRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Source type of media endpoint

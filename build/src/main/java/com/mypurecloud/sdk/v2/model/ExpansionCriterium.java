@@ -77,6 +77,11 @@ public class ExpansionCriterium  implements Serializable {
     }
   }
 
+  public ExpansionCriterium(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -82,6 +82,11 @@ public class LocalizedLabels  implements Serializable {
     }
   }
 
+  public LocalizedLabels(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Contains localized label key used in messenger homescreen and push notification. PushNotificationTitle and PushNotificationBody keys are required when notifications are enabled.

@@ -31,6 +31,11 @@ public class QueueConversationSocialExpressionEventTopicScoredAgent  implements 
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UriReference for a resource

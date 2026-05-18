@@ -34,6 +34,11 @@ public class ConversationContentLocation  implements Serializable {
     }
   }
 
+  public ConversationContentLocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * URL of the Location.

@@ -36,6 +36,11 @@ public class UtilizationResponse  implements Serializable {
     }
   }
 
+  public UtilizationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Map of media type to utilization settings.

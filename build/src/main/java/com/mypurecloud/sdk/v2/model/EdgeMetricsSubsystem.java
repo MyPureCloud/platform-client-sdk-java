@@ -31,6 +31,11 @@ public class EdgeMetricsSubsystem  implements Serializable {
     }
   }
 
+  public EdgeMetricsSubsystem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Delay in milliseconds.

@@ -123,6 +123,12 @@ public class BillingWallet  implements Serializable {
     }
   }
 
+  public BillingWallet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      organizations = new ArrayList<NamedEntity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

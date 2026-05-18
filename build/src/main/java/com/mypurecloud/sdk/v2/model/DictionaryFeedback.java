@@ -193,6 +193,13 @@ public class DictionaryFeedback  implements Serializable {
     }
   }
 
+  public DictionaryFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      examplePhrases = new ArrayList<DictionaryFeedbackExamplePhrase>();
+      soundsLike = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

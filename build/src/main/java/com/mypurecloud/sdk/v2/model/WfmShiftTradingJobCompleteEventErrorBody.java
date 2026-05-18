@@ -35,6 +35,11 @@ public class WfmShiftTradingJobCompleteEventErrorBody  implements Serializable {
     }
   }
 
+  public WfmShiftTradingJobCompleteEventErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -81,6 +81,12 @@ public class AssistanceCondition  implements Serializable {
     }
   }
 
+  public AssistanceCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topicIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.

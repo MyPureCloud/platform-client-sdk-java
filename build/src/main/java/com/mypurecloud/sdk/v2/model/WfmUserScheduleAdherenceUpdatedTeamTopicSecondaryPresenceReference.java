@@ -29,6 +29,11 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicSecondaryPresenceReference 
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTeamTopicSecondaryPresenceReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

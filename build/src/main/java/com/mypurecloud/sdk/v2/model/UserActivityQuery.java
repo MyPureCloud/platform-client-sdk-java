@@ -133,6 +133,13 @@ public class UserActivityQuery  implements Serializable {
     }
   }
 
+  public UserActivityQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<UserActivityQueryMetric>();
+      groupBy = new ArrayList<GroupByEnum>();
+    }
+  }
+
   
   /**
    * List of requested metrics

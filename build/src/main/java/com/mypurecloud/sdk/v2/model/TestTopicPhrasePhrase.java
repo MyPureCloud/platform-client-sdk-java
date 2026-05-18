@@ -82,6 +82,11 @@ public class TestTopicPhrasePhrase  implements Serializable {
     }
   }
 
+  public TestTopicPhrasePhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The phrase text

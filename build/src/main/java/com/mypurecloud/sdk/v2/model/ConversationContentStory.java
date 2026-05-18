@@ -80,6 +80,11 @@ public class ConversationContentStory  implements Serializable {
     }
   }
 
+  public ConversationContentStory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of ephemeral story attachment.

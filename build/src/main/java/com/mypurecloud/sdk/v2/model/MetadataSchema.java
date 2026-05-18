@@ -40,6 +40,13 @@ public class MetadataSchema  implements Serializable {
     }
   }
 
+  public MetadataSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      properties = new ArrayList<Map<String, MetadataProperty>>();
+      required = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "title for the data gathering page")
   @JsonProperty("title")

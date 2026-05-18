@@ -38,6 +38,13 @@ public class AuditQueryRequest  implements Serializable {
     }
   }
 
+  public AuditQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      filters = new ArrayList<AuditQueryFilter>();
+      sort = new ArrayList<AuditQuerySort>();
+    }
+  }
+
   
   /**
    * Date and time range of data to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ

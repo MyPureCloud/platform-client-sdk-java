@@ -94,6 +94,11 @@ public class MessagingInitialConfiguration  implements Serializable {
     }
   }
 
+  public MessagingInitialConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended.

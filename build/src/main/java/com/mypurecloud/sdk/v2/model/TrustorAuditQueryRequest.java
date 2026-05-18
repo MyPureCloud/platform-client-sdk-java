@@ -43,6 +43,14 @@ public class TrustorAuditQueryRequest  implements Serializable {
     }
   }
 
+  public TrustorAuditQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      trusteeUserIds = new ArrayList<String>();
+      facets = new ArrayList<Facet>();
+      filters = new ArrayList<Filter>();
+    }
+  }
+
   
   /**
    * Limit returned audits to this trustor organizationId.

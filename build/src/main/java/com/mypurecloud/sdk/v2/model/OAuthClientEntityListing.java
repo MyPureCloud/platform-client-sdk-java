@@ -43,6 +43,12 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     }
   }
 
+  public OAuthClientEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OAuthClient>();
+    }
+  }
+
   
   /**
    **/

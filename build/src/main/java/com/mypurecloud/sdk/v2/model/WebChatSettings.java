@@ -29,6 +29,11 @@ public class WebChatSettings  implements Serializable {
     }
   }
 
+  public WebChatSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

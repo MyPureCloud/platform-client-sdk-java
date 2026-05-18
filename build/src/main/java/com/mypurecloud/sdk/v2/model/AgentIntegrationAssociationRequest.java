@@ -31,6 +31,11 @@ public class AgentIntegrationAssociationRequest  implements Serializable {
     }
   }
 
+  public AgentIntegrationAssociationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the agent in external system

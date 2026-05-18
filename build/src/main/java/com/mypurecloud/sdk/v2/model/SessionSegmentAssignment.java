@@ -32,6 +32,11 @@ public class SessionSegmentAssignment  implements Serializable {
     }
   }
 
+  public SessionSegmentAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The segment that was assigned.

@@ -43,6 +43,12 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     }
   }
 
+  public MessagingCampaignDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MessagingCampaignDivisionView>();
+    }
+  }
+
   
   /**
    **/

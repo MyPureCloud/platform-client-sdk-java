@@ -43,6 +43,12 @@ public class OpenSocialNormalizedMessageEntityListing  implements Serializable, 
     }
   }
 
+  public OpenSocialNormalizedMessageEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OpenSocialMediaNormalizedMessage>();
+    }
+  }
+
   
   /**
    **/

@@ -91,6 +91,11 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     }
   }
 
+  public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

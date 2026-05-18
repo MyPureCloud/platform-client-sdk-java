@@ -37,6 +37,13 @@ public class StatisticalResponse  implements Serializable {
     }
   }
 
+  public StatisticalResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<AggregateMetricData>();
+      views = new ArrayList<AggregateViewData>();
+    }
+  }
+
   
   /**
    **/

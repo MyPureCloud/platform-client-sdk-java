@@ -43,6 +43,12 @@ public class OutboundDomainEntityListing  implements Serializable, PagedResource
     }
   }
 
+  public OutboundDomainEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OutboundDomain>();
+    }
+  }
+
   
   /**
    **/

@@ -87,6 +87,11 @@ public class ConversationIntentSuggestionsTopicSuggestionContext  implements Ser
     }
   }
 
+  public ConversationIntentSuggestionsTopicSuggestionContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

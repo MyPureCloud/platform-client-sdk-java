@@ -30,6 +30,11 @@ public class Header  implements Serializable {
     }
   }
 
+  public Header(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the header

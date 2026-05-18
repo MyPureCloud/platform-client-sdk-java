@@ -39,6 +39,13 @@ public class ConversationCallbackEventTopicConversationRoutingData  implements S
     }
   }
 
+  public ConversationCallbackEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<ConversationCallbackEventTopicUriReference>();
+      scoredAgents = new ArrayList<ConversationCallbackEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

@@ -31,6 +31,11 @@ public class PhoneBaseSettings  implements Serializable {
     }
   }
 
+  public PhoneBaseSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for this phone base settings

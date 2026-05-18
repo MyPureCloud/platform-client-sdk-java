@@ -31,6 +31,11 @@ public class PatchWebMessagingOfferFields  implements Serializable {
     }
   }
 
+  public PatchWebMessagingOfferFields(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text value to be used when inviting a visitor to engage with a web messaging offer.

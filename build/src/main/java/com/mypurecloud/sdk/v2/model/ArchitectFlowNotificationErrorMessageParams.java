@@ -33,6 +33,11 @@ public class ArchitectFlowNotificationErrorMessageParams  implements Serializabl
     }
   }
 
+  public ArchitectFlowNotificationErrorMessageParams(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

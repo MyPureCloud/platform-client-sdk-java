@@ -90,6 +90,11 @@ public class DocumentListContentBlockWithHighlight  implements Serializable {
     }
   }
 
+  public DocumentListContentBlockWithHighlight(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the list block.

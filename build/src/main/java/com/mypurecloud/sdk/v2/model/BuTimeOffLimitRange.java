@@ -34,6 +34,12 @@ public class BuTimeOffLimitRange  implements Serializable {
     }
   }
 
+  public BuTimeOffLimitRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      limitMinutesPerDay = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * Start date of the range. The end date is determined by the size of 'limitMinutesPerDay'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

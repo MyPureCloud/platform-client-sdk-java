@@ -42,6 +42,15 @@ public class AnalyticsAgentStateCountsResponse  implements Serializable {
     }
   }
 
+  public AnalyticsAgentStateCountsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segmentCounts = new ArrayList<AgentStateSegmentTypeCount>();
+      presenceCounts = new ArrayList<AgentStatePresenceCount>();
+      routingStatusCounts = new ArrayList<AgentStateRoutingStatusCount>();
+      isOutOfOfficeCounts = new ArrayList<AgentStateIsOutOfOfficeCount>();
+    }
+  }
+
   
   /**
    * List of count by segment types

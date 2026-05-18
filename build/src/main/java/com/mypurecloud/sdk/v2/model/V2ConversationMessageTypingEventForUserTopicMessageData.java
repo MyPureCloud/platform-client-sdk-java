@@ -31,6 +31,11 @@ public class V2ConversationMessageTypingEventForUserTopicMessageData  implements
     }
   }
 
+  public V2ConversationMessageTypingEventForUserTopicMessageData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

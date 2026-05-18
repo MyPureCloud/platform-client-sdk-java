@@ -89,6 +89,11 @@ public class UsersRulesDependent  implements Serializable {
     }
   }
 
+  public UsersRulesDependent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The rule associated with this dependent")
   @JsonProperty("rule")

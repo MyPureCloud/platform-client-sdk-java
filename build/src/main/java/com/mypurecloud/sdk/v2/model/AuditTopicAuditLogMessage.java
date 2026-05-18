@@ -645,6 +645,13 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     }
   }
 
+  public AuditTopicAuditLogMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      remoteIp = new ArrayList<String>();
+      propertyChanges = new ArrayList<AuditTopicPropertyChange>();
+    }
+  }
+
   
   /**
    **/

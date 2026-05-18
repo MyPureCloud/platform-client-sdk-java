@@ -185,6 +185,11 @@ public class OrganizationCallMetrics  implements Serializable {
     }
   }
 
+  public OrganizationCallMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The current usage percentage of the organization's call capacity.

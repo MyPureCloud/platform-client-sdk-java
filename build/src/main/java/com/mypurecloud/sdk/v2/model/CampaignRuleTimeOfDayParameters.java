@@ -31,6 +31,11 @@ public class CampaignRuleTimeOfDayParameters  implements Serializable {
     }
   }
 
+  public CampaignRuleTimeOfDayParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The operand for the \"between\" operator

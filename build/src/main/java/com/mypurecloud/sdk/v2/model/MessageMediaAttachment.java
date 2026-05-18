@@ -82,6 +82,11 @@ public class MessageMediaAttachment  implements Serializable {
     }
   }
 
+  public MessageMediaAttachment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the media, useful for retrieving it

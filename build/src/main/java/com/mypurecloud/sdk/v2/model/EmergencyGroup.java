@@ -99,6 +99,12 @@ public class EmergencyGroup  implements Serializable {
     }
   }
 
+  public EmergencyGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      emergencyCallFlows = new ArrayList<EmergencyCallFlow>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -37,6 +37,12 @@ public class AgentWorkPlanBids  implements Serializable {
     }
   }
 
+  public AgentWorkPlanBids(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentWorkPlanBids = new ArrayList<AgentWorkPlanBid>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

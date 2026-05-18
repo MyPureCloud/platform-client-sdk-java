@@ -304,6 +304,13 @@ public class CallbackMediaParticipant  implements Serializable {
     }
   }
 
+  public CallbackMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The unique participant ID.

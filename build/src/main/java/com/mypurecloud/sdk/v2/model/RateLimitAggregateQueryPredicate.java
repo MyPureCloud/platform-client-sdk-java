@@ -183,6 +183,11 @@ public class RateLimitAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public RateLimitAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

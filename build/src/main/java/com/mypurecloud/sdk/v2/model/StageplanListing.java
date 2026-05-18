@@ -36,6 +36,12 @@ public class StageplanListing  implements Serializable {
     }
   }
 
+  public StageplanListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Stageplan>();
+    }
+  }
+
   
   /**
    **/

@@ -142,6 +142,14 @@ public class TopicRequest  implements Serializable {
     }
   }
 
+  public TopicRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      programIds = new ArrayList<String>();
+      tags = new ArrayList<String>();
+      phrases = new ArrayList<Phrase>();
+    }
+  }
+
   
   /**
    * The topic name

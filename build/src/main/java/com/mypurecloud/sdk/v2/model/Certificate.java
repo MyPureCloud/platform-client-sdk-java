@@ -30,6 +30,11 @@ public class Certificate  implements Serializable {
     }
   }
 
+  public Certificate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The certificate to parse.

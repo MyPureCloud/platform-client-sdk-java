@@ -30,6 +30,11 @@ public class ContactAddressableEntityRef  implements Serializable {
     }
   }
 
+  public ContactAddressableEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

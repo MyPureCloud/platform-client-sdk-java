@@ -32,6 +32,12 @@ public class EntityListing  implements Serializable {
     }
   }
 
+  public EntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Object>();
+    }
+  }
+
   
   /**
    **/

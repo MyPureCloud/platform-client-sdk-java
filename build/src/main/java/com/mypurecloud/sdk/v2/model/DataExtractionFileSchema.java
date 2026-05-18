@@ -33,6 +33,11 @@ public class DataExtractionFileSchema  implements Serializable {
     }
   }
 
+  public DataExtractionFileSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier for the file

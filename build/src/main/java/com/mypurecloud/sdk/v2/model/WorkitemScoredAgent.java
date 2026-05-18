@@ -31,6 +31,11 @@ public class WorkitemScoredAgent  implements Serializable {
     }
   }
 
+  public WorkitemScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The agent

@@ -32,6 +32,11 @@ public class SharepointAuthenticationProperties  implements Serializable {
     }
   }
 
+  public SharepointAuthenticationProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The authentication URL for the connection.

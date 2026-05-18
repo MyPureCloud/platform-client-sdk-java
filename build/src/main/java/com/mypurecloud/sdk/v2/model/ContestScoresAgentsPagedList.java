@@ -39,6 +39,12 @@ public class ContestScoresAgentsPagedList  implements Serializable {
     }
   }
 
+  public ContestScoresAgentsPagedList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContestScoresAgents>();
+    }
+  }
+
   
   /**
    **/

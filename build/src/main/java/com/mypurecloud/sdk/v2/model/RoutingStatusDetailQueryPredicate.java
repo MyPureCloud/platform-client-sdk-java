@@ -177,6 +177,11 @@ public class RoutingStatusDetailQueryPredicate  implements Serializable {
     }
   }
 
+  public RoutingStatusDetailQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

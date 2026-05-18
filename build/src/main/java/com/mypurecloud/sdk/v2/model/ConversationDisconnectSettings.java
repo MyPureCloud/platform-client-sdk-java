@@ -78,6 +78,11 @@ public class ConversationDisconnectSettings  implements Serializable {
     }
   }
 
+  public ConversationDisconnectSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not conversation disconnect setting is enabled

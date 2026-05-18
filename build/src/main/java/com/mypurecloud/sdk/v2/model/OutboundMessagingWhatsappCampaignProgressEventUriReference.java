@@ -31,6 +31,11 @@ public class OutboundMessagingWhatsappCampaignProgressEventUriReference  impleme
     }
   }
 
+  public OutboundMessagingWhatsappCampaignProgressEventUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

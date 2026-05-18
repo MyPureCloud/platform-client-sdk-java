@@ -37,6 +37,11 @@ public class UpdateDraftInput  implements Serializable {
     }
   }
 
+  public UpdateDraftInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Category of action, Can be up to 256 characters long

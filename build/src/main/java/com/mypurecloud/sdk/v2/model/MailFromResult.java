@@ -85,6 +85,12 @@ public class MailFromResult  implements Serializable {
     }
   }
 
+  public MailFromResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      records = new ArrayList<Record>();
+    }
+  }
+
   
   /**
    * The verification status.

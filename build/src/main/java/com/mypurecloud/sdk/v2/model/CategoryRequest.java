@@ -82,6 +82,11 @@ public class CategoryRequest  implements Serializable {
     }
   }
 
+  public CategoryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the category

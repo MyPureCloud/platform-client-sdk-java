@@ -129,6 +129,11 @@ public class WorkitemsEventsNotificationWrapup  implements Serializable {
     }
   }
 
+  public WorkitemsEventsNotificationWrapup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

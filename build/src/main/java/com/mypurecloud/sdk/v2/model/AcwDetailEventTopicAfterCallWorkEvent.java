@@ -217,6 +217,14 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     }
   }
 
+  public AcwDetailEventTopicAfterCallWorkEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

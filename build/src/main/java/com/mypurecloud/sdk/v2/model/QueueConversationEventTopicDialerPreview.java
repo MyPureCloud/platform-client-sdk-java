@@ -38,6 +38,12 @@ public class QueueConversationEventTopicDialerPreview  implements Serializable {
     }
   }
 
+  public QueueConversationEventTopicDialerPreview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneNumberColumns = new ArrayList<QueueConversationEventTopicPhoneNumberColumn>();
+    }
+  }
+
   
   /**
    **/

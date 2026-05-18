@@ -54,6 +54,16 @@ public class ConversationEventTopicConversation  implements Serializable {
     }
   }
 
+  public ConversationEventTopicConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationEventTopicParticipant>();
+      recentTransfers = new ArrayList<ConversationEventTopicTransferResponse>();
+      accessAttributes = new ArrayList<String>();
+      consultationConversations = new ArrayList<ConversationEventTopicDomainEntityRef>();
+      divisions = new ArrayList<ConversationEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

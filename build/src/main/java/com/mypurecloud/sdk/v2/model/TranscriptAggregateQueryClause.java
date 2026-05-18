@@ -82,6 +82,12 @@ public class TranscriptAggregateQueryClause  implements Serializable {
     }
   }
 
+  public TranscriptAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<TranscriptAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

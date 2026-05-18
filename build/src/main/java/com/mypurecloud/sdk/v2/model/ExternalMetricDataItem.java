@@ -85,6 +85,11 @@ public class ExternalMetricDataItem  implements Serializable {
     }
   }
 
+  public ExternalMetricDataItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user ID. Must provide either userId or userEmail, but not both.

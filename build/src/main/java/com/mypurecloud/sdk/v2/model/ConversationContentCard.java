@@ -39,6 +39,12 @@ public class ConversationContentCard  implements Serializable {
     }
   }
 
+  public ConversationContentCard(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      actions = new ArrayList<ConversationContentCardAction>();
+    }
+  }
+
   
   /**
    * Text to show in the title.

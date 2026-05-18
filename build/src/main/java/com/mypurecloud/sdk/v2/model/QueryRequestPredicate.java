@@ -79,6 +79,11 @@ public class QueryRequestPredicate  implements Serializable {
     }
   }
 
+  public QueryRequestPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The dimension to be filtered

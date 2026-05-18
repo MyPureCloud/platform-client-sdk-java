@@ -50,6 +50,11 @@ public class WebActionEvent  implements Serializable {
     }
   }
 
+  public WebActionEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The action that triggered the event.

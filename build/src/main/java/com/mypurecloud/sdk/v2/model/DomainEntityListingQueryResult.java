@@ -43,6 +43,12 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     }
   }
 
+  public DomainEntityListingQueryResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<QueryResult>();
+    }
+  }
+
   
   /**
    **/

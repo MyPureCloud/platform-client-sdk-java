@@ -34,6 +34,12 @@ public class SearchShiftTradesResponse  implements Serializable {
     }
   }
 
+  public SearchShiftTradesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      trades = new ArrayList<SearchShiftTradeResponse>();
+    }
+  }
+
   
   /**
    * The shift trades that match the search criteria

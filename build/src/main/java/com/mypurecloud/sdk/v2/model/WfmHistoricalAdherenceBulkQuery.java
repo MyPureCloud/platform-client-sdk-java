@@ -34,6 +34,12 @@ public class WfmHistoricalAdherenceBulkQuery  implements Serializable {
     }
   }
 
+  public WfmHistoricalAdherenceBulkQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      items = new ArrayList<WfmHistoricalAdherenceBulkItem>();
+    }
+  }
+
   
   /**
    * The historical adherence items to query

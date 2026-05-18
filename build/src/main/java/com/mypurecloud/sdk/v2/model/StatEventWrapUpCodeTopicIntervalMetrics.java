@@ -34,6 +34,12 @@ public class StatEventWrapUpCodeTopicIntervalMetrics  implements Serializable {
     }
   }
 
+  public StatEventWrapUpCodeTopicIntervalMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<StatEventWrapUpCodeTopicMetricStats>();
+    }
+  }
+
   
   /**
    **/

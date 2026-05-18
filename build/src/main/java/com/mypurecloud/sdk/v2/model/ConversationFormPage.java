@@ -36,6 +36,12 @@ public class ConversationFormPage  implements Serializable {
     }
   }
 
+  public ConversationFormPage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pageComponents = new ArrayList<ConversationFormPageComponent>();
+    }
+  }
+
   
   /**
    * Text to show in the title.

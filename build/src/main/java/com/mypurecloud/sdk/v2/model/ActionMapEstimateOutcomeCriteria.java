@@ -33,6 +33,11 @@ public class ActionMapEstimateOutcomeCriteria  implements Serializable {
     }
   }
 
+  public ActionMapEstimateOutcomeCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of outcome.

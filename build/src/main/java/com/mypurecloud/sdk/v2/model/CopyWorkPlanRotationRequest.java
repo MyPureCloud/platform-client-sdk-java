@@ -29,6 +29,11 @@ public class CopyWorkPlanRotationRequest  implements Serializable {
     }
   }
 
+  public CopyWorkPlanRotationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name to apply to the new copy of the work plan rotation

@@ -34,6 +34,12 @@ public class AuditQueryService  implements Serializable {
     }
   }
 
+  public AuditQueryService(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AuditQueryEntity>();
+    }
+  }
+
   
   /**
    * Name of the Service

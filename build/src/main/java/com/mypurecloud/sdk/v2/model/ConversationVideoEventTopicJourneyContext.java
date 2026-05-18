@@ -34,6 +34,11 @@ public class ConversationVideoEventTopicJourneyContext  implements Serializable 
     }
   }
 
+  public ConversationVideoEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

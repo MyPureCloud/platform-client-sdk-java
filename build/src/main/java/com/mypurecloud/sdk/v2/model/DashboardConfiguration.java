@@ -99,6 +99,12 @@ public class DashboardConfiguration  implements Serializable {
     }
   }
 
+  public DashboardConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      widgets = new ArrayList<Widget>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

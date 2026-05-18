@@ -82,6 +82,11 @@ public class AuditQueryFilter  implements Serializable {
     }
   }
 
+  public AuditQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the property to filter.

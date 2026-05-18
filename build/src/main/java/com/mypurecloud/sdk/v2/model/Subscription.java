@@ -30,6 +30,11 @@ public class Subscription  implements Serializable {
     }
   }
 
+  public Subscription(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The subscription id

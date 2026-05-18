@@ -29,6 +29,11 @@ public class CreateUploadSourceUrlJobRequest  implements Serializable {
     }
   }
 
+  public CreateUploadSourceUrlJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The URL of the content to upload.

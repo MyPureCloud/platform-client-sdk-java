@@ -36,6 +36,12 @@ public class OpenInboundNormalizedEvent  implements Serializable {
     }
   }
 
+  public OpenInboundNormalizedEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<OpenEvent>();
+    }
+  }
+
   
   /**
    * Channel-specific information that describes the message and the message channel/provider.

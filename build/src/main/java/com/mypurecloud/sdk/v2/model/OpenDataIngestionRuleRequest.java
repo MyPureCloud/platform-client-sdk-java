@@ -32,6 +32,11 @@ public class OpenDataIngestionRuleRequest  implements Serializable {
     }
   }
 
+  public OpenDataIngestionRuleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the data ingestion rule.

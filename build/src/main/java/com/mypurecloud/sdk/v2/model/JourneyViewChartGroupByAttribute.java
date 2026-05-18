@@ -31,6 +31,11 @@ public class JourneyViewChartGroupByAttribute  implements Serializable {
     }
   }
 
+  public JourneyViewChartGroupByAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The element in the list of elements which is being grouped by

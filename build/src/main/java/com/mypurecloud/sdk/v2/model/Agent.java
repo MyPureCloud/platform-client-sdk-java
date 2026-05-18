@@ -29,6 +29,11 @@ public class Agent  implements Serializable {
     }
   }
 
+  public Agent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The current stage for this agent

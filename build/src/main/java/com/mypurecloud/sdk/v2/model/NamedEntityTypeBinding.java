@@ -30,6 +30,11 @@ public class NamedEntityTypeBinding  implements Serializable {
     }
   }
 
+  public NamedEntityTypeBinding(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The named entity type of the binding. It can be a built-in one such as builtin:number or a custom entity type such as BeverageType.

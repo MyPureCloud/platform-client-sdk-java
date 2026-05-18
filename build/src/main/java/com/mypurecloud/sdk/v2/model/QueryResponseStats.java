@@ -29,6 +29,11 @@ public class QueryResponseStats  implements Serializable {
     }
   }
 
+  public QueryResponseStats(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The count for this metric

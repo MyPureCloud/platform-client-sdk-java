@@ -220,6 +220,11 @@ public class QueueConversationEventTopicSocialExpression  implements Serializabl
     }
   }
 
+  public QueueConversationEventTopicSocialExpression(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

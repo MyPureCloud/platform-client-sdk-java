@@ -32,6 +32,11 @@ public class JourneySessionEventsNotificationCaseAssociation  implements Seriali
     }
   }
 
+  public JourneySessionEventsNotificationCaseAssociation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

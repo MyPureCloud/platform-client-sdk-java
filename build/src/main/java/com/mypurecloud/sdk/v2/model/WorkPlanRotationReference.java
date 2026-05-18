@@ -30,6 +30,11 @@ public class WorkPlanRotationReference  implements Serializable {
     }
   }
 
+  public WorkPlanRotationReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

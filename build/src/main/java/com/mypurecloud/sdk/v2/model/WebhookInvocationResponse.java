@@ -29,6 +29,11 @@ public class WebhookInvocationResponse  implements Serializable {
     }
   }
 
+  public WebhookInvocationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the Webhook Invocation

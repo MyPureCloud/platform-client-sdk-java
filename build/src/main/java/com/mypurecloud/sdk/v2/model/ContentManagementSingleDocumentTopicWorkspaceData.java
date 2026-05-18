@@ -29,6 +29,11 @@ public class ContentManagementSingleDocumentTopicWorkspaceData  implements Seria
     }
   }
 
+  public ContentManagementSingleDocumentTopicWorkspaceData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -38,6 +38,14 @@ public class BulkUpdateShiftTradeListJobRequest  implements Serializable {
     }
   }
 
+  public BulkUpdateShiftTradeListJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnitIds = new ArrayList<String>();
+      weekDates = new ArrayList<LocalDate>();
+      entities = new ArrayList<BulkUpdateShiftTradeStateRequestItem>();
+    }
+  }
+
   
   /**
    * The IDs of the management units from which to update shift trades

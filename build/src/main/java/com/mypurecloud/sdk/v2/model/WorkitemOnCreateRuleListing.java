@@ -37,6 +37,12 @@ public class WorkitemOnCreateRuleListing  implements Serializable {
     }
   }
 
+  public WorkitemOnCreateRuleListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkitemOnCreateRule>();
+    }
+  }
+
   
   /**
    **/

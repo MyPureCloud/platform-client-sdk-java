@@ -87,6 +87,11 @@ public class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer
     }
   }
 
+  public WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,11 @@ public class ContestRequesingParticipantDailyInfo  implements Serializable {
     }
   }
 
+  public ContestRequesingParticipantDailyInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Workday of the contest info. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

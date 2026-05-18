@@ -37,6 +37,12 @@ public class ProgramsEntityListing  implements Serializable {
     }
   }
 
+  public ProgramsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ListedProgram>();
+    }
+  }
+
   
   /**
    **/

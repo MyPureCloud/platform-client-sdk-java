@@ -33,6 +33,11 @@ public class ContentManagementSingleDocumentTopicLockData  implements Serializab
     }
   }
 
+  public ContentManagementSingleDocumentTopicLockData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

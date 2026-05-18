@@ -40,6 +40,13 @@ public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implemen
     }
   }
 
+  public JourneyOutcomeEventsNotificationOutcomeAttributionMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      outcomeTouchpoints = new ArrayList<JourneyOutcomeEventsNotificationOutcomeTouchpoint>();
+      segmentAssignments = new ArrayList<JourneyOutcomeEventsNotificationSegment>();
+    }
+  }
+
   
   /**
    **/

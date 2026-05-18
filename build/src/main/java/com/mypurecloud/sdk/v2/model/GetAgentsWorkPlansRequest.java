@@ -35,6 +35,12 @@ public class GetAgentsWorkPlansRequest  implements Serializable {
     }
   }
 
+  public GetAgentsWorkPlansRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of agent IDs

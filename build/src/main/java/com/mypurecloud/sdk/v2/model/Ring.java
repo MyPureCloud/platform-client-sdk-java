@@ -38,6 +38,13 @@ public class Ring  implements Serializable {
     }
   }
 
+  public Ring(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      expansionCriteria = new ArrayList<ExpansionCriterium>();
+      memberGroups = new ArrayList<MemberGroup>();
+    }
+  }
+
   
   /**
    * The conditions that will trigger conversations to move to the next bullseye ring.

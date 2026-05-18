@@ -36,6 +36,12 @@ public class SurveyAggregateDataContainer  implements Serializable {
     }
   }
 
+  public SurveyAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

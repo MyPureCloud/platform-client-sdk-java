@@ -134,6 +134,12 @@ public class DocumentationV2SearchAggregation  implements Serializable {
     }
   }
 
+  public DocumentationV2SearchAggregation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      order = new ArrayList<OrderEnum>();
+    }
+  }
+
   
   /**
    * The field used for aggregation

@@ -29,6 +29,11 @@ public class TopicDuration  implements Serializable {
     }
   }
 
+  public TopicDuration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The total duration of the topic phrase within the conversation")
   @JsonProperty("totalMilliseconds")

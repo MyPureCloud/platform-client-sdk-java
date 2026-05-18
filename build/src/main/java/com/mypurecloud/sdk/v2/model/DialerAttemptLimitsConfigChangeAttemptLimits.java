@@ -93,6 +93,11 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     }
   }
 
+  public DialerAttemptLimitsConfigChangeAttemptLimits(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

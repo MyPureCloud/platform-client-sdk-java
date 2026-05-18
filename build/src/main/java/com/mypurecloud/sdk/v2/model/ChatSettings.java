@@ -30,6 +30,11 @@ public class ChatSettings  implements Serializable {
     }
   }
 
+  public ChatSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Retention time for messages in days, expressed as int in the range [10,3650]

@@ -85,6 +85,13 @@ public class UsersRulesQueryRuleRequest  implements Serializable {
     }
   }
 
+  public UsersRulesQueryRuleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<UsersRulesCriteria>();
+      userIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The type of the rule

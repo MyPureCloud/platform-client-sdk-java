@@ -39,6 +39,12 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
     }
   }
 
+  public WfmBuScheduleTopicBuManagementUnitScheduleSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agents = new ArrayList<WfmBuScheduleTopicUserReference>();
+    }
+  }
+
   
   /**
    **/

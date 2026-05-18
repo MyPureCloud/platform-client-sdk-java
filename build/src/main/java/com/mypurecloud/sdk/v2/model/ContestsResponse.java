@@ -216,6 +216,16 @@ public class ContestsResponse  implements Serializable {
     }
   }
 
+  public ContestsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<ContestMetrics>();
+      prizes = new ArrayList<ContestPrizes>();
+      participants = new ArrayList<UserReference>();
+      winners = new ArrayList<ContestWinners>();
+      disqualifiedAgents = new ArrayList<ContestDisqualifiedAgents>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

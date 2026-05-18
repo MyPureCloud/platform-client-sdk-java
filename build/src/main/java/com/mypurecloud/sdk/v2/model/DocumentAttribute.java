@@ -34,6 +34,12 @@ public class DocumentAttribute  implements Serializable {
     }
   }
 
+  public DocumentAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

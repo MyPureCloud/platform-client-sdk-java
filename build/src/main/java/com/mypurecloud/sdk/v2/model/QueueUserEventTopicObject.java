@@ -25,6 +25,11 @@ public class QueueUserEventTopicObject  implements Serializable {
     }
   }
 
+  public QueueUserEventTopicObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

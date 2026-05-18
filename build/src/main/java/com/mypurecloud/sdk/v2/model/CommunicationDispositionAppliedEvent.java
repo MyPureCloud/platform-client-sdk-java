@@ -39,6 +39,12 @@ public class CommunicationDispositionAppliedEvent  implements Serializable {
     }
   }
 
+  public CommunicationDispositionAppliedEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

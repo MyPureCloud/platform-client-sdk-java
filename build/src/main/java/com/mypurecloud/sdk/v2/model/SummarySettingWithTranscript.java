@@ -32,6 +32,11 @@ public class SummarySettingWithTranscript  implements Serializable {
     }
   }
 
+  public SummarySettingWithTranscript(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Example transcript to preview with the setting.

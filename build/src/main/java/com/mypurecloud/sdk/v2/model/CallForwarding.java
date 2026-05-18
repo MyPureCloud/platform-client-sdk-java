@@ -92,6 +92,12 @@ public class CallForwarding  implements Serializable {
     }
   }
 
+  public CallForwarding(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      calls = new ArrayList<CallRoute>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

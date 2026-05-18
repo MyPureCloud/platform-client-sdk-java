@@ -34,6 +34,11 @@ public class TrunkMetricsOptions  implements Serializable {
     }
   }
 
+  public TrunkMetricsOptions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Server proxy address that this options array element represents.

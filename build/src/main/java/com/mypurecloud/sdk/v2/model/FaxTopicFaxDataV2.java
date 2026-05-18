@@ -49,6 +49,11 @@ public class FaxTopicFaxDataV2  implements Serializable {
     }
   }
 
+  public FaxTopicFaxDataV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

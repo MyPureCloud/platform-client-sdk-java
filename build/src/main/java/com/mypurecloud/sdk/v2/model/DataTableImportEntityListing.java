@@ -37,6 +37,12 @@ public class DataTableImportEntityListing  implements Serializable {
     }
   }
 
+  public DataTableImportEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DataTableImportJob>();
+    }
+  }
+
   
   /**
    **/

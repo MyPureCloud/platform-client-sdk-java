@@ -81,6 +81,12 @@ public class MarkContactUncontactableActionSettings  implements Serializable {
     }
   }
 
+  public MarkContactUncontactableActionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+    }
+  }
+
   
   /**
    * A list of media types to evaluate.

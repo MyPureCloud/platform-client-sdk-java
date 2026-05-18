@@ -43,6 +43,13 @@ public class TrustRequest  implements Serializable {
     }
   }
 
+  public TrustRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<OrgUser>();
+      groups = new ArrayList<TrustGroup>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -33,6 +33,12 @@ public class BulkContactsEnrichRequest  implements Serializable {
     }
   }
 
+  public BulkContactsEnrichRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContactEnrichRequest>();
+    }
+  }
+
   
   /**
    **/

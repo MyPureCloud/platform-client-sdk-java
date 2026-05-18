@@ -91,6 +91,12 @@ public class HistoricalShrinkageActivityCategoryResponse  implements Serializabl
     }
   }
 
+  public HistoricalShrinkageActivityCategoryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shrinkageForActivityCodes = new ArrayList<HistoricalShrinkageActivityCodeResponse>();
+    }
+  }
+
   
   /**
    * Activity category for which shrinkage data is provided

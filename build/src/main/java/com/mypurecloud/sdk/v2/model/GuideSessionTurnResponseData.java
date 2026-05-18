@@ -29,6 +29,11 @@ public class GuideSessionTurnResponseData  implements Serializable {
     }
   }
 
+  public GuideSessionTurnResponseData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The text response content.

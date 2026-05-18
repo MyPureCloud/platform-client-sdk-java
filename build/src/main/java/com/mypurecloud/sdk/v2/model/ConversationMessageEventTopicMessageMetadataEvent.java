@@ -30,6 +30,11 @@ public class ConversationMessageEventTopicMessageMetadataEvent  implements Seria
     }
   }
 
+  public ConversationMessageEventTopicMessageMetadataEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element.

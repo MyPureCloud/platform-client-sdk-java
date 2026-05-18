@@ -43,6 +43,12 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     }
   }
 
+  public TagValueEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TagValue>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class UsersRulesValue  implements Serializable {
     }
   }
 
+  public UsersRulesValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The contextId for this group

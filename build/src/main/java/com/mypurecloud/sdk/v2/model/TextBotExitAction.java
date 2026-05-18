@@ -92,6 +92,12 @@ public class TextBotExitAction  implements Serializable {
     }
   }
 
+  public TextBotExitAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      flowOutcomes = new ArrayList<TextBotFlowOutcome>();
+    }
+  }
+
   
   /**
    * The reason for the exit.

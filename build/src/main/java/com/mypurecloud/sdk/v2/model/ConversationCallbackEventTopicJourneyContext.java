@@ -34,6 +34,11 @@ public class ConversationCallbackEventTopicJourneyContext  implements Serializab
     }
   }
 
+  public ConversationCallbackEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

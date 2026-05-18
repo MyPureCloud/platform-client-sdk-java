@@ -33,6 +33,12 @@ public class LearningAssignmentAggregateResponse  implements Serializable {
     }
   }
 
+  public LearningAssignmentAggregateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<LearningAssignmentAggregateQueryResponseGroupedData>();
+    }
+  }
+
   
   /**
    * The results of the query

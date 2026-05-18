@@ -358,6 +358,12 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     }
   }
 
+  public QueueConversationChatEventTopicChatMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

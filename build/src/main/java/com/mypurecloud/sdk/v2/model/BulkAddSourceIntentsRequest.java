@@ -33,6 +33,12 @@ public class BulkAddSourceIntentsRequest  implements Serializable {
     }
   }
 
+  public BulkAddSourceIntentsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      items = new ArrayList<SourceIntent>();
+    }
+  }
+
   
   /**
    * List of items to add

@@ -30,6 +30,11 @@ public class ScheduleInterval  implements Serializable {
     }
   }
 
+  public ScheduleInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The scheduled start time as an ISO-8601 string, i.e yyyy-MM-ddTHH:mm:ss.SSSZ

@@ -95,6 +95,12 @@ public class WorkitemStatus  implements Serializable {
     }
   }
 
+  public WorkitemStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      destinationStatuses = new ArrayList<WorkitemStatusReference>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

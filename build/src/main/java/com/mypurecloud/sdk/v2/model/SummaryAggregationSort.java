@@ -129,6 +129,11 @@ public class SummaryAggregationSort  implements Serializable {
     }
   }
 
+  public SummaryAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

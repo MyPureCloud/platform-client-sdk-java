@@ -89,6 +89,11 @@ public class Referrer  implements Serializable {
     }
   }
 
+  public Referrer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Referrer URL.

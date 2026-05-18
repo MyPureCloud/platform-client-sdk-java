@@ -32,6 +32,11 @@ public class CsvJobRequest  implements Serializable {
     }
   }
 
+  public CsvJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Upload for the csv job

@@ -33,6 +33,11 @@ public class ConversationThirdPartyActionSuggestionsTopicSuggestedIntentSlot  im
     }
   }
 
+  public ConversationThirdPartyActionSuggestionsTopicSuggestedIntentSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

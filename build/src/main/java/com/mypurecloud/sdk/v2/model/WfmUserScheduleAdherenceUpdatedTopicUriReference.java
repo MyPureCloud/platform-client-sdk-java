@@ -30,6 +30,11 @@ public class WfmUserScheduleAdherenceUpdatedTopicUriReference  implements Serial
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

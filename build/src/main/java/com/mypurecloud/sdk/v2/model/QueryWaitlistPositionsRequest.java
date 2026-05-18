@@ -33,6 +33,12 @@ public class QueryWaitlistPositionsRequest  implements Serializable {
     }
   }
 
+  public QueryWaitlistPositionsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      timeOffRequests = new ArrayList<UserTimeOffRequestReference>();
+    }
+  }
+
   
   /**
    * The list of the time off request ids for which to fetch the daily waitlist positions

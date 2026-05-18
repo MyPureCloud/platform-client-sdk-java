@@ -43,6 +43,12 @@ public class MessageMediaListing  implements Serializable, PagedResource<Message
     }
   }
 
+  public MessageMediaListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MessageMediaData>();
+    }
+  }
+
   
   /**
    **/

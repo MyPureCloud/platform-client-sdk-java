@@ -31,6 +31,11 @@ public class InitiatingAlternativeShift  implements Serializable {
     }
   }
 
+  public InitiatingAlternativeShift(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the shift from a user's schedule

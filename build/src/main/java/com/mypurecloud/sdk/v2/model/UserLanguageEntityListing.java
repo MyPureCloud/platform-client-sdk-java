@@ -43,6 +43,12 @@ public class UserLanguageEntityListing  implements Serializable, PagedResource<U
     }
   }
 
+  public UserLanguageEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserRoutingLanguage>();
+    }
+  }
+
   
   /**
    **/

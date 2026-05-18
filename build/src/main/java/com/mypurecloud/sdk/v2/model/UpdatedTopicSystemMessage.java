@@ -137,6 +137,11 @@ public class UpdatedTopicSystemMessage  implements Serializable {
     }
   }
 
+  public UpdatedTopicSystemMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

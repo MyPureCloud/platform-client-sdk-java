@@ -34,6 +34,12 @@ public class QueryCapacityPlanStaffingGroupMetricChangeHistory  implements Seria
     }
   }
 
+  public QueryCapacityPlanStaffingGroupMetricChangeHistory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staffingGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of the staffing groups for which to fetch the metric change history

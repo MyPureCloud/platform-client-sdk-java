@@ -31,6 +31,11 @@ public class WorkitemFlowReference  implements Serializable {
     }
   }
 
+  public WorkitemFlowReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

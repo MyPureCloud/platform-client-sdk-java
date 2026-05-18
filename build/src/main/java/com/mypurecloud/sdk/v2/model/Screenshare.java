@@ -219,6 +219,12 @@ public class Screenshare  implements Serializable {
     }
   }
 
+  public Screenshare(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<Segment>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

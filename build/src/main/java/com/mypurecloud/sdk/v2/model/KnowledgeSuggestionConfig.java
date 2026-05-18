@@ -87,6 +87,12 @@ public class KnowledgeSuggestionConfig  implements Serializable {
     }
   }
 
+  public KnowledgeSuggestionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      knowledgeBases = new ArrayList<KnowledgeBaseWithDialectReference>();
+    }
+  }
+
   
   /**
    * The name of vendor used for knowledge suggestions.

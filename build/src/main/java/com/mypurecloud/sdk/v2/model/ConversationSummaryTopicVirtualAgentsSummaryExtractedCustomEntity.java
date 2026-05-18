@@ -30,6 +30,11 @@ public class ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity  
     }
   }
 
+  public ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

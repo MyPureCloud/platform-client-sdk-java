@@ -86,6 +86,13 @@ public class SkillGroupCondition  implements Serializable {
     }
   }
 
+  public SkillGroupCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routingSkillConditions = new ArrayList<SkillGroupRoutingCondition>();
+      languageSkillConditions = new ArrayList<SkillGroupLanguageCondition>();
+    }
+  }
+
   
   /**
    * Routing skill conditions that will be used for building the query

@@ -32,6 +32,11 @@ public class TweetUsage  implements Serializable {
     }
   }
 
+  public TweetUsage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Ingestion limit

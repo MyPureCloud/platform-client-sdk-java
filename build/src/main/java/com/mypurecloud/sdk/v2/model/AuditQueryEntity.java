@@ -33,6 +33,12 @@ public class AuditQueryEntity  implements Serializable {
     }
   }
 
+  public AuditQueryEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      actions = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Name of the Entity

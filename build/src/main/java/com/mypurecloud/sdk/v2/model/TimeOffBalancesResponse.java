@@ -35,6 +35,12 @@ public class TimeOffBalancesResponse  implements Serializable {
     }
   }
 
+  public TimeOffBalancesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TimeOffBalanceResponse>();
+    }
+  }
+
   
   /**
    * The asynchronous job handling the query

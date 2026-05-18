@@ -30,6 +30,11 @@ public class CriteriaCategoryInfo  implements Serializable {
     }
   }
 
+  public CriteriaCategoryInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

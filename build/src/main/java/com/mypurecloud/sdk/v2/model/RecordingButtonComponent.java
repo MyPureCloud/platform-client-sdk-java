@@ -33,6 +33,11 @@ public class RecordingButtonComponent  implements Serializable {
     }
   }
 
+  public RecordingButtonComponent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

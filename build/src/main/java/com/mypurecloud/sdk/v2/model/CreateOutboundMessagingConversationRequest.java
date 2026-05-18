@@ -83,6 +83,11 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
     }
   }
 
+  public CreateOutboundMessagingConversationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the queue to be associated with the message. This will determine the fromAddress of the message, unless useUserFromAddress is true and the queue is configured to use the agent's Direct Routing address as the fromAddress.

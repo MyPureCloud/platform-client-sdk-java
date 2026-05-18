@@ -33,6 +33,11 @@ public class ConversationSummaryWrapupCode  implements Serializable {
     }
   }
 
+  public ConversationSummaryWrapupCode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the wrapup code.

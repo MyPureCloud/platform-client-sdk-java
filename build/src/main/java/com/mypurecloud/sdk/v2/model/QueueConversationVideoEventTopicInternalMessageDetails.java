@@ -31,6 +31,11 @@ public class QueueConversationVideoEventTopicInternalMessageDetails  implements 
     }
   }
 
+  public QueueConversationVideoEventTopicInternalMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * UUID identifying the internal message media.

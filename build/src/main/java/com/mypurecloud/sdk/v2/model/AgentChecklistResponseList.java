@@ -36,6 +36,12 @@ public class AgentChecklistResponseList  implements Serializable {
     }
   }
 
+  public AgentChecklistResponseList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AgentChecklistResponse>();
+    }
+  }
+
   
   /**
    **/

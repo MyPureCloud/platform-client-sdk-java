@@ -89,6 +89,11 @@ public class DataActionConditionPredicate  implements Serializable {
     }
   }
 
+  public DataActionConditionPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of an output field from the data action's output to use for this condition

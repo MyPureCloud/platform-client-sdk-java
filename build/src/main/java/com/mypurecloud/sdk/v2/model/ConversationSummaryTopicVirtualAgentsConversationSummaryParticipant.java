@@ -81,6 +81,11 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant
     }
   }
 
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

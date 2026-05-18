@@ -364,6 +364,13 @@ public class QueueConversationEmailEventTopicEmailMediaParticipant  implements S
     }
   }
 
+  public QueueConversationEmailEventTopicEmailMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      draftAttachments = new ArrayList<QueueConversationEmailEventTopicAttachment>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class TimeOffPlanListing  implements Serializable {
     }
   }
 
+  public TimeOffPlanListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TimeOffPlan>();
+    }
+  }
+
   
   /**
    **/

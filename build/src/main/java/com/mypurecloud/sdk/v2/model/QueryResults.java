@@ -32,6 +32,11 @@ public class QueryResults  implements Serializable {
     }
   }
 
+  public QueryResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

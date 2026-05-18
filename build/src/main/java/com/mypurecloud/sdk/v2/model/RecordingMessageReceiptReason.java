@@ -89,6 +89,11 @@ public class RecordingMessageReceiptReason  implements Serializable {
     }
   }
 
+  public RecordingMessageReceiptReason(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The reason code for the failed message receipt

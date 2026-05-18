@@ -127,6 +127,11 @@ public class ActionAggregationSort  implements Serializable {
     }
   }
 
+  public ActionAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

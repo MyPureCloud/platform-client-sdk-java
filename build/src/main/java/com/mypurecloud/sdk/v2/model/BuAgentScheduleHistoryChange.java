@@ -40,6 +40,13 @@ public class BuAgentScheduleHistoryChange  implements Serializable {
     }
   }
 
+  public BuAgentScheduleHistoryChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shifts = new ArrayList<BuAgentScheduleShift>();
+      fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+    }
+  }
+
   
   /**
    * The metadata of the change, including who and when the change was made

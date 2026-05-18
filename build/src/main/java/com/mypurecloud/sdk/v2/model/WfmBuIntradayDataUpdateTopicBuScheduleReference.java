@@ -31,6 +31,11 @@ public class WfmBuIntradayDataUpdateTopicBuScheduleReference  implements Seriali
     }
   }
 
+  public WfmBuIntradayDataUpdateTopicBuScheduleReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -196,6 +196,11 @@ public class ConversationActivityQueryPredicate  implements Serializable {
     }
   }
 
+  public ConversationActivityQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

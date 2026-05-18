@@ -35,6 +35,11 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
     }
   }
 
+  public ExternalOrganizationTrustorLink(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to which this entity belongs.

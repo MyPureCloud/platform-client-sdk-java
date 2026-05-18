@@ -30,6 +30,11 @@ public class JourneyWebActionEventsNotificationExternalContact  implements Seria
     }
   }
 
+  public JourneyWebActionEventsNotificationExternalContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

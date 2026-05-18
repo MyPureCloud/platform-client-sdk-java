@@ -78,6 +78,11 @@ public class AssociatedValueField  implements Serializable {
     }
   }
 
+  public AssociatedValueField(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The data type of the value field.

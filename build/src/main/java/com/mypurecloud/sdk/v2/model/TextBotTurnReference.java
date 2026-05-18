@@ -30,6 +30,11 @@ public class TextBotTurnReference  implements Serializable {
     }
   }
 
+  public TextBotTurnReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the turn.

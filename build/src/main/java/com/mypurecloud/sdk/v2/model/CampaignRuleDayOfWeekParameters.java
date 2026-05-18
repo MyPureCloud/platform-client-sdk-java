@@ -34,6 +34,12 @@ public class CampaignRuleDayOfWeekParameters  implements Serializable {
     }
   }
 
+  public CampaignRuleDayOfWeekParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inSet = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The operand for the \"in\" operator, each value in 1-7 (Monday-Sunday) format

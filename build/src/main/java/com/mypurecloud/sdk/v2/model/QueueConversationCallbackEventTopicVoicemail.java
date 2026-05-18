@@ -81,6 +81,11 @@ public class QueueConversationCallbackEventTopicVoicemail  implements Serializab
     }
   }
 
+  public QueueConversationCallbackEventTopicVoicemail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The voicemail id

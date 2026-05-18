@@ -79,6 +79,11 @@ public class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity
     }
   }
 
+  public WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

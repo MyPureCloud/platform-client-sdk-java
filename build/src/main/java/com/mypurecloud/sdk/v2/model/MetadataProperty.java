@@ -39,6 +39,12 @@ public class MetadataProperty  implements Serializable {
     }
   }
 
+  public MetadataProperty(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      _enum = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "the data type of the input property")
   @JsonProperty("type")

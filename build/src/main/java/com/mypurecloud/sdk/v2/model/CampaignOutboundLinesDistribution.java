@@ -44,6 +44,13 @@ public class CampaignOutboundLinesDistribution  implements Serializable {
     }
   }
 
+  public CampaignOutboundLinesDistribution(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      campaignsWithReservedLines = new ArrayList<CampaignOutboundLinesReservation>();
+      campaignsWithDynamicallyAllocatedLines = new ArrayList<CampaignOutboundLinesAllocation>();
+    }
+  }
+
   
   /**
    * The Campaign for which dialing group distribution information was requested

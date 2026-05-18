@@ -84,6 +84,12 @@ public class ListWrapperAlternativeShiftBuSettingsActivityCategory  implements S
     }
   }
 
+  public ListWrapperAlternativeShiftBuSettingsActivityCategory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<ValuesEnum>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class PostInputContract  implements Serializable {
     }
   }
 
+  public PostInputContract(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * JSON Schema that defines the body of the request that the client (edge/architect/postman) is sending to the service, on the /execute path.

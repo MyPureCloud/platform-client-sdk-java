@@ -34,6 +34,11 @@ public class AnalyticsFlowOutcome  implements Serializable {
     }
   }
 
+  public AnalyticsFlowOutcome(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Combination of unique flow outcome identifier and its value separated by colon

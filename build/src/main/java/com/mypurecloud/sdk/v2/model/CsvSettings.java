@@ -36,6 +36,12 @@ public class CsvSettings  implements Serializable {
     }
   }
 
+  public CsvSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mappings = new ArrayList<CsvMappingEntry>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

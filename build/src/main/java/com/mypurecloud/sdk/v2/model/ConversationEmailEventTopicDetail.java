@@ -32,6 +32,11 @@ public class ConversationEmailEventTopicDetail  implements Serializable {
     }
   }
 
+  public ConversationEmailEventTopicDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

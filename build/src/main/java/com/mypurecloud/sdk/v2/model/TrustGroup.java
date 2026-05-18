@@ -200,6 +200,14 @@ public class TrustGroup  implements Serializable {
     }
   }
 
+  public TrustGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      images = new ArrayList<Image>();
+      addresses = new ArrayList<GroupContact>();
+      owners = new ArrayList<User>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -33,6 +33,12 @@ public class GroupMembersUpdate  implements Serializable {
     }
   }
 
+  public GroupMembersUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      memberIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A list of the ids of the members to add. A maximum of 50 members are allowed per request.

@@ -32,6 +32,11 @@ public class CopyVoicemailMessage  implements Serializable {
     }
   }
 
+  public CopyVoicemailMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the VoicemailMessage to copy

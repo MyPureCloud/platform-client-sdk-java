@@ -91,6 +91,12 @@ public class WorkitemQueryJobQueryFiltersPredicate  implements Serializable {
     }
   }
 
+  public WorkitemQueryJobQueryFiltersPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<Object>();
+    }
+  }
+
   
   /**
    * Property name.

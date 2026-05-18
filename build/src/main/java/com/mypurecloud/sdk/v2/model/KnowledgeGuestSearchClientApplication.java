@@ -84,6 +84,11 @@ public class KnowledgeGuestSearchClientApplication  implements Serializable {
     }
   }
 
+  public KnowledgeGuestSearchClientApplication(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Application type.

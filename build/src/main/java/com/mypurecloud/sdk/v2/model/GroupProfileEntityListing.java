@@ -43,6 +43,12 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     }
   }
 
+  public GroupProfileEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<GroupProfile>();
+    }
+  }
+
   
   /**
    **/

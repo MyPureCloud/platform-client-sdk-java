@@ -186,6 +186,11 @@ public class ListedDictionaryFeedback  implements Serializable {
     }
   }
 
+  public ListedDictionaryFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

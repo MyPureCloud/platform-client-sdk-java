@@ -33,6 +33,12 @@ public class LanguageSupportResponse  implements Serializable {
     }
   }
 
+  public LanguageSupportResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      languages = new ArrayList<LanguageSupportInfoRecord>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "List of feature support information by language.")
   @JsonProperty("languages")

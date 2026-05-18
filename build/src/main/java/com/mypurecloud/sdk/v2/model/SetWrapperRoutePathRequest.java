@@ -32,6 +32,12 @@ public class SetWrapperRoutePathRequest  implements Serializable {
     }
   }
 
+  public SetWrapperRoutePathRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<RoutePathRequest>();
+    }
+  }
+
   
   /**
    **/

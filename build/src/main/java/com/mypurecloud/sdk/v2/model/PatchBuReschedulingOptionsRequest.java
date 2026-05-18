@@ -33,6 +33,12 @@ public class PatchBuReschedulingOptionsRequest  implements Serializable {
     }
   }
 
+  public PatchBuReschedulingOptionsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnits = new ArrayList<PatchBuReschedulingOptionsManagementUnitRequest>();
+    }
+  }
+
   
   /**
    * Per-management unit rescheduling options to update

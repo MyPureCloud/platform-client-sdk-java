@@ -89,6 +89,13 @@ public class BillingContractPeriodDetail  implements Serializable {
     }
   }
 
+  public BillingContractPeriodDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      charges = new ArrayList<BillingCharge>();
+      wallets = new ArrayList<BillingWallet>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

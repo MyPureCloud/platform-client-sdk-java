@@ -33,6 +33,11 @@ public class ConversationSummaryTopicVirtualAgentsConversationResolution  implem
     }
   }
 
+  public ConversationSummaryTopicVirtualAgentsConversationResolution(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

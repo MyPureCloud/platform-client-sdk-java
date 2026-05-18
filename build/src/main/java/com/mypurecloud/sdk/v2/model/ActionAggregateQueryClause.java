@@ -82,6 +82,12 @@ public class ActionAggregateQueryClause  implements Serializable {
     }
   }
 
+  public ActionAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<ActionAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

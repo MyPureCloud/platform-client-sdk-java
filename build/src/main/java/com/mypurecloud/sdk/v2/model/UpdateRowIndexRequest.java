@@ -30,6 +30,11 @@ public class UpdateRowIndexRequest  implements Serializable {
     }
   }
 
+  public UpdateRowIndexRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The row UUID.

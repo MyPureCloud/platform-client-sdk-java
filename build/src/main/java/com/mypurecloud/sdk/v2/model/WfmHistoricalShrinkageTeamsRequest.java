@@ -81,6 +81,11 @@ public class WfmHistoricalShrinkageTeamsRequest  implements Serializable {
     }
   }
 
+  public WfmHistoricalShrinkageTeamsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Beginning of the date range to query in ISO-8601 format

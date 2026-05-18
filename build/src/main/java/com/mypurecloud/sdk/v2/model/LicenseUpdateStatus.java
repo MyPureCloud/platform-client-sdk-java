@@ -31,6 +31,11 @@ public class LicenseUpdateStatus  implements Serializable {
     }
   }
 
+  public LicenseUpdateStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class CategoriesFilter  implements Serializable {
     }
   }
 
+  public CategoriesFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CategoryEntity>();
+    }
+  }
+
   
   /**
    * A list of categories to filter by. Articles matching any of the specified categories can be accessed.

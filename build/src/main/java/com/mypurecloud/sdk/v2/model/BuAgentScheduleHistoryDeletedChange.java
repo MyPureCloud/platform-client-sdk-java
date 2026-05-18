@@ -35,6 +35,13 @@ public class BuAgentScheduleHistoryDeletedChange  implements Serializable {
     }
   }
 
+  public BuAgentScheduleHistoryDeletedChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shiftIds = new ArrayList<String>();
+      fullDayTimeOffMarkerDates = new ArrayList<LocalDate>();
+    }
+  }
+
   
   /**
    * The IDs of deleted shifts

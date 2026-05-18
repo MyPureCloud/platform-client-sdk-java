@@ -33,6 +33,11 @@ public class ConversationResponseSuggestionsTopicSuggestedIntentSlot  implements
     }
   }
 
+  public ConversationResponseSuggestionsTopicSuggestedIntentSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

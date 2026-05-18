@@ -88,6 +88,13 @@ public class HistoricalImportDeleteFilesJobResponse  implements Serializable {
     }
   }
 
+  public HistoricalImportDeleteFilesJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<HistoricalDataDeleteEntity>();
+      disallowedEntities = new ArrayList<HistoricalDataDisallowedDeleteEntity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The Job Id Request")
   @JsonProperty("id")

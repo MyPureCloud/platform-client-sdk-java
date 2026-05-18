@@ -32,6 +32,11 @@ public class SurveyFormAndScoringSet  implements Serializable {
     }
   }
 
+  public SurveyFormAndScoringSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

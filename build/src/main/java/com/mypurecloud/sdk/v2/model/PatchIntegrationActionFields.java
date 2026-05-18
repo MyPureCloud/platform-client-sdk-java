@@ -35,6 +35,12 @@ public class PatchIntegrationActionFields  implements Serializable {
     }
   }
 
+  public PatchIntegrationActionFields(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requestMappings = new ArrayList<RequestMapping>();
+    }
+  }
+
   
   /**
    * Reference to the Integration Action to be used when integrationAction type is qualified

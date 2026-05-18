@@ -128,6 +128,11 @@ public class KnowledgeBaseCreateRequest  implements Serializable {
     }
   }
 
+  public KnowledgeBaseCreateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Knowledge base name

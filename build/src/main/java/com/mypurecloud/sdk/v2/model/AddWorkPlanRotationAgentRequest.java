@@ -32,6 +32,11 @@ public class AddWorkPlanRotationAgentRequest  implements Serializable {
     }
   }
 
+  public AddWorkPlanRotationAgentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of an agent in this work plan rotation

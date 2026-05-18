@@ -32,6 +32,11 @@ public class NamedEntityTypeDefinition  implements Serializable {
     }
   }
 
+  public NamedEntityTypeDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the entity type.

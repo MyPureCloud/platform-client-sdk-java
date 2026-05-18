@@ -142,6 +142,11 @@ public class QueueConversationCobrowseEventTopicLimit  implements Serializable {
     }
   }
 
+  public QueueConversationCobrowseEventTopicLimit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

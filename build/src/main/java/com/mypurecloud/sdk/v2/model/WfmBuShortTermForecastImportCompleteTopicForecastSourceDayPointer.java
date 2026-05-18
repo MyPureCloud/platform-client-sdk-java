@@ -87,6 +87,11 @@ public class WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer  
     }
   }
 
+  public WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

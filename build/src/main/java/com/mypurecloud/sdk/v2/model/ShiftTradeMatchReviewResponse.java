@@ -88,6 +88,14 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
     }
   }
 
+  public ShiftTradeMatchReviewResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      violations = new ArrayList<ShiftTradeMatchViolation>();
+      adminReviewViolations = new ArrayList<ShiftTradeMatchViolation>();
+      unevaluatedRules = new ArrayList<UnevaluatedRulesEnum>();
+    }
+  }
+
   
   /**
    * Details for the initiatingUser side of the shift trade

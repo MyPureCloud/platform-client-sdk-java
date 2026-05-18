@@ -33,6 +33,12 @@ public class TwitterOAuthSettings  implements Serializable {
     }
   }
 
+  public TwitterOAuthSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      scopes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The client id of the twitter app the requesting org will use to signup

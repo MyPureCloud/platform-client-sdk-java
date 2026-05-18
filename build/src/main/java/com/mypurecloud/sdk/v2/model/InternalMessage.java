@@ -197,6 +197,13 @@ public class InternalMessage  implements Serializable {
     }
   }
 
+  public InternalMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<Segment>();
+      messages = new ArrayList<InternalMessageDetails>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

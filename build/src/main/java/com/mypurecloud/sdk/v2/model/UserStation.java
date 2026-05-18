@@ -41,6 +41,11 @@ public class UserStation  implements Serializable {
     }
   }
 
+  public UserStation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "A globally unique identifier for this station")
   @JsonProperty("id")

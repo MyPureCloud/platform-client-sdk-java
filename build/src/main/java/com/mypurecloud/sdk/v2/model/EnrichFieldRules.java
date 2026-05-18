@@ -132,6 +132,12 @@ public class EnrichFieldRules  implements Serializable {
     }
   }
 
+  public EnrichFieldRules(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      rules = new ArrayList<EnrichFieldRule>();
+    }
+  }
+
   
   /**
    * Default behavior for combining data from the submitted request with any entity found in the database. The default behavior if unspecified is `PreferProvided`, meaning any non-null fields in the submitted request will override data in the database, but all null fields will remain unchanged. Omitting a field in the request payload means that it will be treated as null.

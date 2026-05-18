@@ -32,6 +32,11 @@ public class QueueConversationCallEventTopicDetail  implements Serializable {
     }
   }
 
+  public QueueConversationCallEventTopicDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

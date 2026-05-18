@@ -30,6 +30,11 @@ public class ReviewAssessmentResults  implements Serializable {
     }
   }
 
+  public ReviewAssessmentResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * If true, learning assignment results can be seen in detail by assignees

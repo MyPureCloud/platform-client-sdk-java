@@ -139,6 +139,11 @@ public class IpAddressRange  implements Serializable {
     }
   }
 
+  public IpAddressRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

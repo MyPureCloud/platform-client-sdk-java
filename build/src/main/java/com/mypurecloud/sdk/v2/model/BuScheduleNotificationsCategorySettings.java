@@ -85,6 +85,11 @@ public class BuScheduleNotificationsCategorySettings  implements Serializable {
     }
   }
 
+  public BuScheduleNotificationsCategorySettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The activity category

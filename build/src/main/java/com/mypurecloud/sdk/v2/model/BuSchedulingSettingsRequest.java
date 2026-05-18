@@ -89,6 +89,12 @@ public class BuSchedulingSettingsRequest  implements Serializable {
     }
   }
 
+  public BuSchedulingSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
+    }
+  }
+
   
   /**
    * Schedule generation message severity configuration

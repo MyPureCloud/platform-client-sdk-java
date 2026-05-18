@@ -133,6 +133,12 @@ public class CreateShareRequest  implements Serializable {
     }
   }
 
+  public CreateShareRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      members = new ArrayList<CreateShareRequestMember>();
+    }
+  }
+
   
   /**
    * The share entity type

@@ -34,6 +34,12 @@ public class TopicCriteria  implements Serializable {
     }
   }
 
+  public TopicCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dataIngestionRules = new ArrayList<DataIngestionRuleCriteria>();
+    }
+  }
+
   
   /**
    * The ID of the topic.

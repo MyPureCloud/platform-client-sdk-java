@@ -30,6 +30,11 @@ public class AtzmTimeSlot  implements Serializable {
     }
   }
 
+  public AtzmTimeSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The earliest time to dial a contact. Valid format is HH:mm

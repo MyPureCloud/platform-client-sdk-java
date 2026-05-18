@@ -31,6 +31,11 @@ public class ExternalContactsUnresolvedContactChangedTopicWhatsAppId  implements
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicWhatsAppId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

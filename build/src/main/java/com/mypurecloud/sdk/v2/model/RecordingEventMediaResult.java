@@ -36,6 +36,12 @@ public class RecordingEventMediaResult  implements Serializable {
     }
   }
 
+  public RecordingEventMediaResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      waveformData = new ArrayList<BigDecimal>();
+    }
+  }
+
   
   /**
    **/

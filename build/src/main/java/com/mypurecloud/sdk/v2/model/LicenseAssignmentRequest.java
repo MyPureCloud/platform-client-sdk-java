@@ -34,6 +34,13 @@ public class LicenseAssignmentRequest  implements Serializable {
     }
   }
 
+  public LicenseAssignmentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIdsAdd = new ArrayList<String>();
+      userIdsRemove = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The id of the license to assign/unassign.

@@ -33,6 +33,12 @@ public class CustomAttributesListing  implements Serializable {
     }
   }
 
+  public CustomAttributesListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<CustomAttributes>();
+    }
+  }
+
   
   /**
    **/

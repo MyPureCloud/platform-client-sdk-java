@@ -37,6 +37,11 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
     }
   }
 
+  public UserConversationsEventUserConversationSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

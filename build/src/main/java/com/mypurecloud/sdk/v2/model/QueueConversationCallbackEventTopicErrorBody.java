@@ -47,6 +47,13 @@ public class QueueConversationCallbackEventTopicErrorBody  implements Serializab
     }
   }
 
+  public QueueConversationCallbackEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<QueueConversationCallbackEventTopicDetail>();
+      errors = new ArrayList<QueueConversationCallbackEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

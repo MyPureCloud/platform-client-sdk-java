@@ -199,6 +199,18 @@ public class AnalyticsConversationSegment  implements Serializable {
     }
   }
 
+  public AnalyticsConversationSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      q850ResponseCodes = new ArrayList<Long>();
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutingUserIds = new ArrayList<String>();
+      sipResponseCodes = new ArrayList<Long>();
+      wrapUpTags = new ArrayList<String>();
+      scoredAgents = new ArrayList<AnalyticsScoredAgent>();
+      properties = new ArrayList<AnalyticsProperty>();
+    }
+  }
+
   
   /**
    * Flag indicating if audio is muted or not (true/false)

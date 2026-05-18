@@ -31,6 +31,11 @@ public class DocumentChunkReference  implements Serializable {
     }
   }
 
+  public DocumentChunkReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the document.

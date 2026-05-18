@@ -126,6 +126,11 @@ public class RateLimitAggregationView  implements Serializable {
     }
   }
 
+  public RateLimitAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

@@ -30,6 +30,11 @@ public class QueueConversationVideoEventTopicMessageMetadataEvent  implements Se
     }
   }
 
+  public QueueConversationVideoEventTopicMessageMetadataEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element.

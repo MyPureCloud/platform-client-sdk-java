@@ -89,6 +89,12 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
     }
   }
 
+  public V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      additionalIds = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier>();
+    }
+  }
+
   
   /**
    **/

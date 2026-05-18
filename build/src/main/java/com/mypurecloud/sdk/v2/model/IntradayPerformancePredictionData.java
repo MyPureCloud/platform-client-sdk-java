@@ -31,6 +31,11 @@ public class IntradayPerformancePredictionData  implements Serializable {
     }
   }
 
+  public IntradayPerformancePredictionData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Percentage of interactions that meets service level target as defined in the matching service goal templates

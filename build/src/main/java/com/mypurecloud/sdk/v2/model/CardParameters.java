@@ -37,6 +37,13 @@ public class CardParameters  implements Serializable {
     }
   }
 
+  public CardParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      bodyParameters = new ArrayList<TemplateParameter>();
+      buttonUrlParameters = new ArrayList<TemplateParameter>();
+    }
+  }
+
   
   /**
    * Index of the card in the carousel template

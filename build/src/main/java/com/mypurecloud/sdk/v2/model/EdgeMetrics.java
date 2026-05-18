@@ -50,6 +50,16 @@ public class EdgeMetrics  implements Serializable {
     }
   }
 
+  public EdgeMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      processors = new ArrayList<EdgeMetricsProcessor>();
+      memory = new ArrayList<EdgeMetricsMemory>();
+      disks = new ArrayList<EdgeMetricsDisk>();
+      subsystems = new ArrayList<EdgeMetricsSubsystem>();
+      networks = new ArrayList<EdgeMetricsNetwork>();
+    }
+  }
+
   
   /**
    **/

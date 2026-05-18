@@ -193,6 +193,11 @@ public class TaskManagementAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public TaskManagementAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

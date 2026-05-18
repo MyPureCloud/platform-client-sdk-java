@@ -43,6 +43,12 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     }
   }
 
+  public LocationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LocationDefinition>();
+    }
+  }
+
   
   /**
    **/

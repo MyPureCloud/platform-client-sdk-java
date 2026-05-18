@@ -84,6 +84,13 @@ public class LearningScheduleSlotsJobRequest  implements Serializable {
     }
   }
 
+  public LearningScheduleSlotsJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+      intervals = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The user IDs to fetch the slots for.

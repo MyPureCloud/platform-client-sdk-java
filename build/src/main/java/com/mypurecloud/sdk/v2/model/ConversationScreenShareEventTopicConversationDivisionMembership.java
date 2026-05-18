@@ -35,6 +35,12 @@ public class ConversationScreenShareEventTopicConversationDivisionMembership  im
     }
   }
 
+  public ConversationScreenShareEventTopicConversationDivisionMembership(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ConversationScreenShareEventTopicDivisionEntityRef>();
+    }
+  }
+
   
   /**
    **/

@@ -36,6 +36,12 @@ public class TestTargetOperation  implements Serializable {
     }
   }
 
+  public TestTargetOperation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the processing step

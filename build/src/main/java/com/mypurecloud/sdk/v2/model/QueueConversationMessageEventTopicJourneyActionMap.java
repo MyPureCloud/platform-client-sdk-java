@@ -31,6 +31,11 @@ public class QueueConversationMessageEventTopicJourneyActionMap  implements Seri
     }
   }
 
+  public QueueConversationMessageEventTopicJourneyActionMap(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the actionMap in the Journey System which triggered this action

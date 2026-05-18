@@ -90,6 +90,12 @@ public class AgentWorkPlanBiddingPreferenceResponse  implements Serializable {
     }
   }
 
+  public AgentWorkPlanBiddingPreferenceResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentWorkPlanBidPreferences = new ArrayList<AgentWorkPlanBiddingPreference>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

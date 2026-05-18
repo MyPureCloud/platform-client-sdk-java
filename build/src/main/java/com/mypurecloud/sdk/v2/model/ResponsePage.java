@@ -37,6 +37,11 @@ public class ResponsePage  implements Serializable {
     }
   }
 
+  public ResponsePage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The page URL.

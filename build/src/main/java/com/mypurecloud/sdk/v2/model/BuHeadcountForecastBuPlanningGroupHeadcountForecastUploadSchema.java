@@ -35,6 +35,12 @@ public class BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema  im
     }
   }
 
+  public BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BuPlanningGroupHeadcountForecastUploadSchema>();
+    }
+  }
+
   
   /**
    **/

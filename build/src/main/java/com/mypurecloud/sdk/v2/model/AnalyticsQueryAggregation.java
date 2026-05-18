@@ -85,6 +85,12 @@ public class AnalyticsQueryAggregation  implements Serializable {
     }
   }
 
+  public AnalyticsQueryAggregation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ranges = new ArrayList<AggregationRange>();
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

@@ -33,6 +33,12 @@ public class IgnoreTopicsRequest  implements Serializable {
     }
   }
 
+  public IgnoreTopicsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topics = new ArrayList<IgnoreTopic>();
+    }
+  }
+
   
   /**
    * List of topics to be ignored

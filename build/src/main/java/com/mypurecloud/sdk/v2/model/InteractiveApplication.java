@@ -30,6 +30,11 @@ public class InteractiveApplication  implements Serializable {
     }
   }
 
+  public InteractiveApplication(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the message app.

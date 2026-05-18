@@ -149,6 +149,20 @@ public class PolicyUser  implements Serializable {
     }
   }
 
+  public PolicyUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      primaryContactInfo = new ArrayList<Contact>();
+      addresses = new ArrayList<Contact>();
+      images = new ArrayList<Image>();
+      certifications = new ArrayList<String>();
+      profileSkills = new ArrayList<String>();
+      locations = new ArrayList<Location>();
+      groups = new ArrayList<Group>();
+      skills = new ArrayList<UserRoutingSkill>();
+      languages = new ArrayList<UserRoutingLanguage>();
+    }
+  }
+
   
   /**
    * User ID

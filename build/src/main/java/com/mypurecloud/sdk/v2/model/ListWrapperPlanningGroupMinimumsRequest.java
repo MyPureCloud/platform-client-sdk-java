@@ -33,6 +33,12 @@ public class ListWrapperPlanningGroupMinimumsRequest  implements Serializable {
     }
   }
 
+  public ListWrapperPlanningGroupMinimumsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<PlanningGroupMinimumsRequest>();
+    }
+  }
+
   
   /**
    **/

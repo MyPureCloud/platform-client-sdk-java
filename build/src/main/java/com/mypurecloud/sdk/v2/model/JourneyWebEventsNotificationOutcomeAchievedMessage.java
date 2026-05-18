@@ -47,6 +47,11 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     }
   }
 
+  public JourneyWebEventsNotificationOutcomeAchievedMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -92,6 +92,11 @@ public class InboundDomain  implements Serializable {
     }
   }
 
+  public InboundDomain(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique Id of the domain such as: example.com

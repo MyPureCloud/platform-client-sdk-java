@@ -138,6 +138,12 @@ public class PatchSurveyQuestion  implements Serializable {
     }
   }
 
+  public PatchSurveyQuestion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      choices = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Type of survey question.

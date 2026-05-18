@@ -31,6 +31,11 @@ public class V2FlowExecutionDataFlowidTopicInvokingWorkitemContext  implements S
     }
   }
 
+  public V2FlowExecutionDataFlowidTopicInvokingWorkitemContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The identifier of the workitem that invoked this flow.

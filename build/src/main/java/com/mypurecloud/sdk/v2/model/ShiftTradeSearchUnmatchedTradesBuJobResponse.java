@@ -142,6 +142,11 @@ public class ShiftTradeSearchUnmatchedTradesBuJobResponse  implements Serializab
     }
   }
 
+  public ShiftTradeSearchUnmatchedTradesBuJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

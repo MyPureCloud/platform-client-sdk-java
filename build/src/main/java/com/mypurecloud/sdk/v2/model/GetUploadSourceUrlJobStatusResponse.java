@@ -84,6 +84,11 @@ public class GetUploadSourceUrlJobStatusResponse  implements Serializable {
     }
   }
 
+  public GetUploadSourceUrlJobStatusResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the upload from URL job.

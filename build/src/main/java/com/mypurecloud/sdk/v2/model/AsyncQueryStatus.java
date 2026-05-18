@@ -86,6 +86,11 @@ public class AsyncQueryStatus  implements Serializable {
     }
   }
 
+  public AsyncQueryStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The current state of the asynchronous query

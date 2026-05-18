@@ -47,6 +47,13 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     }
   }
 
+  public QueueConversationEmailEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<QueueConversationEmailEventTopicDetail>();
+      errors = new ArrayList<QueueConversationEmailEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

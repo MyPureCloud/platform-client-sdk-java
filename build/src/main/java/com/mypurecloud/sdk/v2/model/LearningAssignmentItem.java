@@ -30,6 +30,11 @@ public class LearningAssignmentItem  implements Serializable {
     }
   }
 
+  public LearningAssignmentItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Learning Module ID associated with this assignment

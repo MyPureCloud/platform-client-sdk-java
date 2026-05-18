@@ -32,6 +32,12 @@ public class ContactListTemplateBulkRetrieveBody  implements Serializable {
     }
   }
 
+  public ContactListTemplateBulkRetrieveBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of the Contact List Templates to retrieve.

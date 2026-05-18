@@ -316,6 +316,17 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
     }
   }
 
+  public JourneySessionEventsNotificationSessionEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      outcomeAchievements = new ArrayList<JourneySessionEventsNotificationOutcomeAchievement>();
+      segmentAssignments = new ArrayList<JourneySessionEventsNotificationSegmentAssignment>();
+      searchTerms = new ArrayList<String>();
+      conversationChannels = new ArrayList<JourneySessionEventsNotificationConversationChannel>();
+      divisionIds = new ArrayList<String>();
+      caseAssociations = new ArrayList<JourneySessionEventsNotificationCaseAssociation>();
+    }
+  }
+
   
   /**
    **/

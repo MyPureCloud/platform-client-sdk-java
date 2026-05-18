@@ -29,6 +29,11 @@ public class MessagingConferWithUserRequest  implements Serializable {
     }
   }
 
+  public MessagingConferWithUserRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user ID of the target.

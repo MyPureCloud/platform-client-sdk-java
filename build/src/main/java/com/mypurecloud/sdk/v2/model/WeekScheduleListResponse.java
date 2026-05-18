@@ -33,6 +33,12 @@ public class WeekScheduleListResponse  implements Serializable {
     }
   }
 
+  public WeekScheduleListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WeekScheduleListItemResponse>();
+    }
+  }
+
   
   /**
    **/

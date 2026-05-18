@@ -40,6 +40,12 @@ public class ImportScheduleUploadSchema  implements Serializable {
     }
   }
 
+  public ImportScheduleUploadSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentSchedules = new ArrayList<BuImportAgentScheduleUploadSchema>();
+    }
+  }
+
   
   /**
    * The description for the imported schedule

@@ -34,6 +34,12 @@ public class UpdateAgentWorkPlanBiddingPreference  implements Serializable {
     }
   }
 
+  public UpdateAgentWorkPlanBiddingPreference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentWorkPlanBidPreferences = new ArrayList<AgentWorkPlanBiddingPreferenceRequest>();
+    }
+  }
+
   
   /**
    * Whether the preference is submitted

@@ -43,6 +43,12 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public FlowDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FlowDivisionView>();
+    }
+  }
+
   
   /**
    **/

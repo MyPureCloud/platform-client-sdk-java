@@ -79,6 +79,11 @@ public class QueueConversationSocialExpressionEventTopicDisconnectReason  implem
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicDisconnectReason(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Disconnect reason protocol type.

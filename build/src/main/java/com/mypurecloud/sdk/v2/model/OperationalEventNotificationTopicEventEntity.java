@@ -31,6 +31,11 @@ public class OperationalEventNotificationTopicEventEntity  implements Serializab
     }
   }
 
+  public OperationalEventNotificationTopicEventEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

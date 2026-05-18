@@ -29,6 +29,11 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicQueueReference  implements Se
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedMuTopicQueueReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

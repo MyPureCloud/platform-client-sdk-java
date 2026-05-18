@@ -31,6 +31,11 @@ public class UpdateVerifierRequest  implements Serializable {
     }
   }
 
+  public UpdateVerifierRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the verifier.

@@ -47,6 +47,12 @@ public class AgentActivity  implements Serializable {
     }
   }
 
+  public AgentActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentEvaluatorActivityList = new ArrayList<AgentEvaluatorActivity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

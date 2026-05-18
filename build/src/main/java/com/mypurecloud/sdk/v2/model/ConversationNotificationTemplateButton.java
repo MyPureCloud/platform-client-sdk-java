@@ -89,6 +89,12 @@ public class ConversationNotificationTemplateButton  implements Serializable {
     }
   }
 
+  public ConversationNotificationTemplateButton(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      parameters = new ArrayList<ConversationNotificationTemplateParameter>();
+    }
+  }
+
   
   /**
    * Specifies the type of the button.

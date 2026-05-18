@@ -94,6 +94,12 @@ public class FacetEntry  implements Serializable {
     }
   }
 
+  public FacetEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      terms = new ArrayList<FacetTerm>();
+    }
+  }
+
   
   /**
    **/

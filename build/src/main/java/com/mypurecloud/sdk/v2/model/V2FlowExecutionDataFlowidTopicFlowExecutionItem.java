@@ -38,6 +38,11 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionItem  implements Seriali
     }
   }
 
+  public V2FlowExecutionDataFlowidTopicFlowExecutionItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of executionItem that was executed.

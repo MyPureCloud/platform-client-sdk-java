@@ -85,6 +85,13 @@ public class PresenceDetailQueryFilter  implements Serializable {
     }
   }
 
+  public PresenceDetailQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<PresenceDetailQueryClause>();
+      predicates = new ArrayList<PresenceDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

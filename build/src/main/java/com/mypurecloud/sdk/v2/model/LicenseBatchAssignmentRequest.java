@@ -33,6 +33,12 @@ public class LicenseBatchAssignmentRequest  implements Serializable {
     }
   }
 
+  public LicenseBatchAssignmentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      assignments = new ArrayList<LicenseAssignmentRequest>();
+    }
+  }
+
   
   /**
    * The list of license assignment updates to make.

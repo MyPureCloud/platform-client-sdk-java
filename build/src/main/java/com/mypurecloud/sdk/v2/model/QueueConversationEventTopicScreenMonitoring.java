@@ -231,6 +231,11 @@ public class QueueConversationEventTopicScreenMonitoring  implements Serializabl
     }
   }
 
+  public QueueConversationEventTopicScreenMonitoring(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

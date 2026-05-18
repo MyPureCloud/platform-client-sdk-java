@@ -36,6 +36,12 @@ public class PolicyTestResult  implements Serializable {
     }
   }
 
+  public PolicyTestResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      policyConditionResults = new ArrayList<PolicyConditionResult>();
+    }
+  }
+
   
   /**
    * The ID of the policy being tested.

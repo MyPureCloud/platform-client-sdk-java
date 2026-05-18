@@ -36,6 +36,11 @@ public class UserScheduleActivity  implements Serializable {
     }
   }
 
+  public UserScheduleActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id for the activity code.  Look up a map of activity codes with the activities route

@@ -81,6 +81,11 @@ public class RecordingUploadReportRequest  implements Serializable {
     }
   }
 
+  public RecordingUploadReportRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Report will include uploads since this date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

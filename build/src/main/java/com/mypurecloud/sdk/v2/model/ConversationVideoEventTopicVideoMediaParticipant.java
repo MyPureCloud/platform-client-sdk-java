@@ -363,6 +363,13 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     }
   }
 
+  public ConversationVideoEventTopicVideoMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      msids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

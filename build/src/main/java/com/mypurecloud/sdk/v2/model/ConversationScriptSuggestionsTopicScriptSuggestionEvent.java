@@ -197,6 +197,11 @@ public class ConversationScriptSuggestionsTopicScriptSuggestionEvent  implements
     }
   }
 
+  public ConversationScriptSuggestionsTopicScriptSuggestionEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

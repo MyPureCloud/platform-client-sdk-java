@@ -34,6 +34,11 @@ public class AgentChecklistItem  implements Serializable {
     }
   }
 
+  public AgentChecklistItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "ID of the checklist item.")
   @JsonProperty("id")

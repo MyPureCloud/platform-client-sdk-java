@@ -33,6 +33,12 @@ public class ShiftTradeListResponse  implements Serializable {
     }
   }
 
+  public ShiftTradeListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ShiftTradeResponse>();
+    }
+  }
+
   
   /**
    **/

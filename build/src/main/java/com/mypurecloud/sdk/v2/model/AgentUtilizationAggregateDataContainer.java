@@ -36,6 +36,12 @@ public class AgentUtilizationAggregateDataContainer  implements Serializable {
     }
   }
 
+  public AgentUtilizationAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

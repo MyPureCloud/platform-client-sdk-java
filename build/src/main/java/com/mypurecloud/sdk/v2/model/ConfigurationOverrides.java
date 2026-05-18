@@ -29,6 +29,11 @@ public class ConfigurationOverrides  implements Serializable {
     }
   }
 
+  public ConfigurationOverrides(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates whether or not the contact will be placed in front of the queue or at the end of the queue.

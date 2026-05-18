@@ -90,6 +90,11 @@ public class UpdateTimeOffPlanRequest  implements Serializable {
     }
   }
 
+  public UpdateTimeOffPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of this time off plan.

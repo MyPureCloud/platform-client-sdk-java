@@ -38,6 +38,11 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
     }
   }
 
+  public ArchitectFlowNotificationFlowNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The flow ID

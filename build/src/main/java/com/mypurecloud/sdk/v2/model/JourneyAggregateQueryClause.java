@@ -82,6 +82,12 @@ public class JourneyAggregateQueryClause  implements Serializable {
     }
   }
 
+  public JourneyAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<JourneyAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

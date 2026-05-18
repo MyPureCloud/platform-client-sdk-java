@@ -35,6 +35,12 @@ public class AgentMuScheduleResult  implements Serializable {
     }
   }
 
+  public AgentMuScheduleResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentSchedules = new ArrayList<AgentMuScheduleItem>();
+    }
+  }
+
   
   /**
    * The reference start date to use when calculating offsets for shifts and activities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

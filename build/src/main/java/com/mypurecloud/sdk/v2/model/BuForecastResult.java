@@ -37,6 +37,12 @@ public class BuForecastResult  implements Serializable {
     }
   }
 
+  public BuForecastResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      planningGroups = new ArrayList<ForecastPlanningGroupData>();
+    }
+  }
+
   
   /**
    * The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

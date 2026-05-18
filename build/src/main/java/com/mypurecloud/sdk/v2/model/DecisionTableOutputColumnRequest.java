@@ -32,6 +32,11 @@ public class DecisionTableOutputColumnRequest  implements Serializable {
     }
   }
 
+  public DecisionTableOutputColumnRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The default row value for this column that will be used for an output value where no value  is provided by a row.

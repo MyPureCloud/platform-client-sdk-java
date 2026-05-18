@@ -36,6 +36,11 @@ public class ResponseConfig  implements Serializable {
     }
   }
 
+  public ResponseConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Map 'attribute name' and 'JSON path' pairs used to extract data from REST response.

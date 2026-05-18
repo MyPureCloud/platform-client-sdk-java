@@ -35,6 +35,12 @@ public class RestErrorDetail  implements Serializable {
     }
   }
 
+  public RestErrorDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userParams = new ArrayList<UserParam>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "name of the error")
   @JsonProperty("error")

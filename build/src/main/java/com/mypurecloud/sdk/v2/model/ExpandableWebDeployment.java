@@ -105,6 +105,13 @@ public class ExpandableWebDeployment  implements Serializable {
     }
   }
 
+  public ExpandableWebDeployment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      allowedDomains = new ArrayList<String>();
+      pushIntegrations = new ArrayList<PushIntegration>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The deployment ID")
   @JsonProperty("id")

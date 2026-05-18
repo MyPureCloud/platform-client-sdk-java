@@ -43,6 +43,12 @@ public class DependencyObjectEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public DependencyObjectEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DependencyObject>();
+    }
+  }
+
   
   /**
    **/

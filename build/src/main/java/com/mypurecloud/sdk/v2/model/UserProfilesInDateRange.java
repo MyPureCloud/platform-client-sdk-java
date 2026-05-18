@@ -38,6 +38,12 @@ public class UserProfilesInDateRange  implements Serializable {
     }
   }
 
+  public UserProfilesInDateRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      profiles = new ArrayList<ProfileWithDateRange>();
+    }
+  }
+
   
   /**
    * The query agent

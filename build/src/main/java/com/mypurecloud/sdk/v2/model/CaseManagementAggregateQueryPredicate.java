@@ -183,6 +183,11 @@ public class CaseManagementAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public CaseManagementAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

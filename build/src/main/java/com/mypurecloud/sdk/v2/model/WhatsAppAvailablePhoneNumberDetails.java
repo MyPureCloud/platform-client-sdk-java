@@ -31,6 +31,11 @@ public class WhatsAppAvailablePhoneNumberDetails  implements Serializable {
     }
   }
 
+  public WhatsAppAvailablePhoneNumberDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "The verified name associated with this phone number.")
   @JsonProperty("name")

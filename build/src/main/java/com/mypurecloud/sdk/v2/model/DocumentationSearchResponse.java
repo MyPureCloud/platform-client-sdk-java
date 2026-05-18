@@ -42,6 +42,13 @@ public class DocumentationSearchResponse  implements Serializable {
     }
   }
 
+  public DocumentationSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+      results = new ArrayList<DocumentationResult>();
+    }
+  }
+
   
   /**
    * The total number of results found

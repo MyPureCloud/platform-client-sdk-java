@@ -31,6 +31,11 @@ public class V2MobiusRulesTopicAlertNotificationRecipient  implements Serializab
     }
   }
 
+  public V2MobiusRulesTopicAlertNotificationRecipient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

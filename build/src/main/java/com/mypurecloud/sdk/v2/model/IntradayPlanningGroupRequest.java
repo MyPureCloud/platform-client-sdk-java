@@ -85,6 +85,13 @@ public class IntradayPlanningGroupRequest  implements Serializable {
     }
   }
 
+  public IntradayPlanningGroupRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      categories = new ArrayList<CategoriesEnum>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Requested date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

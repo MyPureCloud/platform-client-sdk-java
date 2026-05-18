@@ -94,6 +94,11 @@ public class CampaignRuleAction  implements Serializable {
     }
   }
 
+  public CampaignRuleAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,11 @@ public class ResponseSubstitution  implements Serializable {
     }
   }
 
+  public ResponseSubstitution(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Response substitution identifier.

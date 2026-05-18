@@ -83,6 +83,12 @@ public class BuAgentScheduleUpdate  implements Serializable {
     }
   }
 
+  public BuAgentScheduleUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shiftStartDates = new ArrayList<Date>();
+    }
+  }
+
   
   /**
    * The type of update

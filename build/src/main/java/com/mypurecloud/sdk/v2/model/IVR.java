@@ -102,6 +102,12 @@ public class IVR  implements Serializable {
     }
   }
 
+  public IVR(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dnis = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

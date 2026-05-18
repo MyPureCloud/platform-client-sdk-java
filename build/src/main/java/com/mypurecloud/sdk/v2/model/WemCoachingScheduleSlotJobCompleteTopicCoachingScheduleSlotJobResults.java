@@ -83,6 +83,11 @@ public class WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobResul
     }
   }
 
+  public WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

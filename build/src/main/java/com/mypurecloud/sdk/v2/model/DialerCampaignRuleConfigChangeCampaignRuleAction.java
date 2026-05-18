@@ -89,6 +89,11 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
     }
   }
 
+  public DialerCampaignRuleConfigChangeCampaignRuleAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the action

@@ -83,6 +83,11 @@ public class OutboundMessagingEmailCampaignConfigChangeContactSort  implements S
     }
   }
 
+  public OutboundMessagingEmailCampaignConfigChangeContactSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

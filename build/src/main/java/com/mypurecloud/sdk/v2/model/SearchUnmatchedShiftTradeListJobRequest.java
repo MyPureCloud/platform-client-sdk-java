@@ -38,6 +38,14 @@ public class SearchUnmatchedShiftTradeListJobRequest  implements Serializable {
     }
   }
 
+  public SearchUnmatchedShiftTradeListJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnitIds = new ArrayList<String>();
+      weekDates = new ArrayList<LocalDate>();
+      receivingShiftIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of management units from which to query shift trades

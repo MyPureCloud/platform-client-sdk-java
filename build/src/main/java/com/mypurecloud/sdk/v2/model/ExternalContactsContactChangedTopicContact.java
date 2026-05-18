@@ -134,6 +134,15 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
     }
   }
 
+  public ExternalContactsContactChangedTopicContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      externalIds = new ArrayList<ExternalContactsContactChangedTopicExternalId>();
+      appleOpaqueIds = new ArrayList<ExternalContactsContactChangedTopicAppleOpaqueId>();
+      mergeSet = new ArrayList<String>();
+      mergedFrom = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

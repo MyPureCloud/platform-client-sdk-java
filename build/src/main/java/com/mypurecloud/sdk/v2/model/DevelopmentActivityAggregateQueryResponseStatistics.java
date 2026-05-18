@@ -33,6 +33,11 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
     }
   }
 
+  public DevelopmentActivityAggregateQueryResponseStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The count for this metric

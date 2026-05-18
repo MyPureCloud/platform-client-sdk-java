@@ -33,6 +33,12 @@ public class CallRoute  implements Serializable {
     }
   }
 
+  public CallRoute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      targets = new ArrayList<CallTarget>();
+    }
+  }
+
   
   /**
    * A list of CallTargets to be called when the CallRoute is executed

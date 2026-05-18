@@ -36,6 +36,12 @@ public class SearchUpdateRequest  implements Serializable {
     }
   }
 
+  public SearchUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      selectedAnswers = new ArrayList<SelectedAnswer>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The unique identifier of this session")
   @JsonProperty("sessionId")

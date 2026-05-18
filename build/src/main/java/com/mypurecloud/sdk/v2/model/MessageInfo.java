@@ -35,6 +35,11 @@ public class MessageInfo  implements Serializable {
     }
   }
 
+  public MessageInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Key that can be used to localize the message.

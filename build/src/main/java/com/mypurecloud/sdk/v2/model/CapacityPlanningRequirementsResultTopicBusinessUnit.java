@@ -29,6 +29,11 @@ public class CapacityPlanningRequirementsResultTopicBusinessUnit  implements Ser
     }
   }
 
+  public CapacityPlanningRequirementsResultTopicBusinessUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

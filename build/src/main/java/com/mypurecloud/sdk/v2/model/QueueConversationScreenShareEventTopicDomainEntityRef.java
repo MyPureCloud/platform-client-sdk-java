@@ -31,6 +31,11 @@ public class QueueConversationScreenShareEventTopicDomainEntityRef  implements S
     }
   }
 
+  public QueueConversationScreenShareEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

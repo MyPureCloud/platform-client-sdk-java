@@ -231,6 +231,11 @@ public class QueueConversationSocialExpressionEventTopicScreenMonitoring  implem
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicScreenMonitoring(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

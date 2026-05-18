@@ -33,6 +33,11 @@ public class UpdateMuAgentWorkPlanRequest  implements Serializable {
     }
   }
 
+  public UpdateMuAgentWorkPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The agent id for whom the work plan is updated

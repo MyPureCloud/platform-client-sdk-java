@@ -30,6 +30,11 @@ public class ContentManagementSingleDocumentTopicUserData  implements Serializab
     }
   }
 
+  public ContentManagementSingleDocumentTopicUserData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

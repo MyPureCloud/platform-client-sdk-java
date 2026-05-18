@@ -36,6 +36,12 @@ public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
     }
   }
 
+  public AnalyticsUserDetailsAsyncQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userDetails = new ArrayList<AnalyticsUserDetail>();
+    }
+  }
+
   
   /**
    **/

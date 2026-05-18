@@ -29,6 +29,11 @@ public class DisableSiteConnectionsRequest  implements Serializable {
     }
   }
 
+  public DisableSiteConnectionsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

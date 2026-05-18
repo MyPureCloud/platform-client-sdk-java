@@ -41,6 +41,12 @@ public class SessionMetaDataResult  implements Serializable {
     }
   }
 
+  public SessionMetaDataResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      snapshots = new ArrayList<Snapshots>();
+    }
+  }
+
   
   /**
    * Information about the continuous forecast session

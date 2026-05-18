@@ -31,6 +31,11 @@ public class WorkitemsAttributeChangeWorkitemRuleSettings  implements Serializab
     }
   }
 
+  public WorkitemsAttributeChangeWorkitemRuleSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * New property value

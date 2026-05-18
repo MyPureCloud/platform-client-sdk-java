@@ -31,6 +31,11 @@ public class DatePickerAvailableDateTime  implements Serializable {
     }
   }
 
+  public DatePickerAvailableDateTime(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The duration of the scheduling event in seconds.

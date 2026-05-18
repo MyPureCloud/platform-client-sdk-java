@@ -82,6 +82,12 @@ public class LearningAssignmentAggregateQueryRequestClause  implements Serializa
     }
   }
 
+  public LearningAssignmentAggregateQueryRequestClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<LearningAssignmentAggregateQueryRequestPredicate>();
+    }
+  }
+
   
   /**
    * The logic used to combine the predicates

@@ -39,6 +39,11 @@ public class CampaignRuleDateTimeConditionParameters  implements Serializable {
     }
   }
 
+  public CampaignRuleDateTimeConditionParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * If true, inverts the result of evaluating this sub-condition. Default is false

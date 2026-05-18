@@ -44,6 +44,15 @@ public class TrusteeAuditQueryRequest  implements Serializable {
     }
   }
 
+  public TrusteeAuditQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      trusteeOrganizationIds = new ArrayList<String>();
+      trusteeUserIds = new ArrayList<String>();
+      facets = new ArrayList<Facet>();
+      filters = new ArrayList<Filter>();
+    }
+  }
+
   
   /**
    * Limit returned audits to these trustee organizationIds.

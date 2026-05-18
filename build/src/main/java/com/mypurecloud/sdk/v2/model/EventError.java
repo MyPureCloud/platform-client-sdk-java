@@ -31,6 +31,11 @@ public class EventError  implements Serializable {
     }
   }
 
+  public EventError(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The eventId (V4 UUID) for the event that encountered an error.

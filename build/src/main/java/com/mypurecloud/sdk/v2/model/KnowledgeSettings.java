@@ -79,6 +79,11 @@ public class KnowledgeSettings  implements Serializable {
     }
   }
 
+  public KnowledgeSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the knowledge settings to use

@@ -32,6 +32,11 @@ public class ArticlesFilter  implements Serializable {
     }
   }
 
+  public ArticlesFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The labels filter.

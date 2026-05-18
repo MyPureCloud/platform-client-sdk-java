@@ -85,6 +85,12 @@ public class WfmHistoricalShrinkageResponse  implements Serializable {
     }
   }
 
+  public WfmHistoricalShrinkageResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadUrls = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The operationId for which to listen

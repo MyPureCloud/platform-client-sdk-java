@@ -37,6 +37,12 @@ public class BuForecastStaffingRequirementsResult  implements Serializable {
     }
   }
 
+  public BuForecastStaffingRequirementsResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      planningGroupStaffingRequirements = new ArrayList<StaffingRequirementsPlanningGroupData>();
+    }
+  }
+
   
   /**
    * The week number represented by this response

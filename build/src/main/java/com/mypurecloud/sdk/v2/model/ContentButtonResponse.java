@@ -82,6 +82,11 @@ public class ContentButtonResponse  implements Serializable {
     }
   }
 
+  public ContentButtonResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * An ID assigned to the button response (Deprecated).

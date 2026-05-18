@@ -140,6 +140,13 @@ public class CreateShareResponse  implements Serializable {
     }
   }
 
+  public CreateShareResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      succeeded = new ArrayList<Share>();
+      failed = new ArrayList<Share>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

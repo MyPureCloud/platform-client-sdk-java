@@ -82,6 +82,11 @@ public class ConversationEventVideo  implements Serializable {
     }
   }
 
+  public ConversationEventVideo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of Video event.

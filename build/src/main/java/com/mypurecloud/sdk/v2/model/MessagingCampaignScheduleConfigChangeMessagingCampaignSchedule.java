@@ -48,6 +48,13 @@ public class MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule  imp
     }
   }
 
+  public MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intervals = new ArrayList<MessagingCampaignScheduleConfigChangeScheduleInterval>();
+      recurrences = new ArrayList<MessagingCampaignScheduleConfigChangeScheduleRecurrence>();
+    }
+  }
+
   
   /**
    * a list of start and end times

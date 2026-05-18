@@ -36,6 +36,12 @@ public class AssessmentListing  implements Serializable {
     }
   }
 
+  public AssessmentListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BenefitAssessment>();
+    }
+  }
+
   
   /**
    **/

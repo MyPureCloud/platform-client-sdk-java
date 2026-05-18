@@ -49,6 +49,11 @@ public class WebEventRequest  implements Serializable {
     }
   }
 
+  public WebEventRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A UUID representing the customer making the request.

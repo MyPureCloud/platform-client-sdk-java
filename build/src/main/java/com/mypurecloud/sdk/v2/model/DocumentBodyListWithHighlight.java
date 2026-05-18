@@ -35,6 +35,12 @@ public class DocumentBodyListWithHighlight  implements Serializable {
     }
   }
 
+  public DocumentBodyListWithHighlight(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentBodyListBlockWithHighlight>();
+    }
+  }
+
   
   /**
    * Properties for the UnorderedList or OrderedList.

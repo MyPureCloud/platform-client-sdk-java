@@ -33,6 +33,11 @@ public class ChatBadgeTopicChatBadge  implements Serializable {
     }
   }
 
+  public ChatBadgeTopicChatBadge(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class AgentWorkPlanBiddingPreferenceRequest  implements Serializable {
     }
   }
 
+  public AgentWorkPlanBiddingPreferenceRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the work plan that belongs to agent's bid group

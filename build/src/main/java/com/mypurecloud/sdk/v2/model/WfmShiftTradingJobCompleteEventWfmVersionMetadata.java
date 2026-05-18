@@ -31,6 +31,11 @@ public class WfmShiftTradingJobCompleteEventWfmVersionMetadata  implements Seria
     }
   }
 
+  public WfmShiftTradingJobCompleteEventWfmVersionMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

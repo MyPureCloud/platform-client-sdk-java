@@ -35,6 +35,11 @@ public class SuggestedSearchChunk  implements Serializable {
     }
   }
 
+  public SuggestedSearchChunk(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The document title.")
   @JsonProperty("title")

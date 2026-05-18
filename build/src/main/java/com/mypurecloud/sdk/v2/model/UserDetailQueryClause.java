@@ -82,6 +82,12 @@ public class UserDetailQueryClause  implements Serializable {
     }
   }
 
+  public UserDetailQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<UserDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

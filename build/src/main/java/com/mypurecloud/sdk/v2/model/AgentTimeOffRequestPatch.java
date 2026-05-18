@@ -78,6 +78,11 @@ public class AgentTimeOffRequestPatch  implements Serializable {
     }
   }
 
+  public AgentTimeOffRequestPatch(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether this request has been read by the agent

@@ -30,6 +30,11 @@ public class ValueWrapperActivityPlanServiceGoalImpactOverrides  implements Seri
     }
   }
 
+  public ValueWrapperActivityPlanServiceGoalImpactOverrides(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field

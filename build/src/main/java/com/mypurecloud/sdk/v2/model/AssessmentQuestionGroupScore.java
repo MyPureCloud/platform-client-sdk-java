@@ -48,6 +48,12 @@ public class AssessmentQuestionGroupScore  implements Serializable {
     }
   }
 
+  public AssessmentQuestionGroupScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questionScores = new ArrayList<AssessmentQuestionScore>();
+    }
+  }
+
   
   /**
    * The ID of the question group

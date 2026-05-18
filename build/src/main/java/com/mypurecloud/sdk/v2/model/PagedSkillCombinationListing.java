@@ -37,6 +37,12 @@ public class PagedSkillCombinationListing  implements Serializable {
     }
   }
 
+  public PagedSkillCombinationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SkillCombinationInfo>();
+    }
+  }
+
   
   /**
    **/

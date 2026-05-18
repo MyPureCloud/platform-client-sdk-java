@@ -35,6 +35,11 @@ public class InsightsDetailsMetricPeriodPoints  implements Serializable {
     }
   }
 
+  public InsightsDetailsMetricPeriodPoints(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Points scored

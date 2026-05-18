@@ -34,6 +34,12 @@ public class WeekShiftTradeListResponse  implements Serializable {
     }
   }
 
+  public WeekShiftTradeListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WeekShiftTradeResponse>();
+    }
+  }
+
   
   /**
    **/

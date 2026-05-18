@@ -267,6 +267,15 @@ public class Condition  implements Serializable {
     }
   }
 
+  public Condition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      codes = new ArrayList<String>();
+      contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
+      predicates = new ArrayList<DataActionConditionPredicate>();
+      subConditions = new ArrayList<TimeAndDateSubCondition>();
+    }
+  }
+
   
   /**
    * The type of the condition.

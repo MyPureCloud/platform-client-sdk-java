@@ -82,6 +82,12 @@ public class RoutingActivityQueryClause  implements Serializable {
     }
   }
 
+  public RoutingActivityQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<RoutingActivityQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

@@ -30,6 +30,11 @@ public class UserGreetingEventGreetingAudioFile  implements Serializable {
     }
   }
 
+  public UserGreetingEventGreetingAudioFile(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class UserTokensTopicUriReference  implements Serializable {
     }
   }
 
+  public UserTokensTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

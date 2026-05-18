@@ -41,6 +41,12 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     }
   }
 
+  public JourneyWebEventsNotificationPage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      breadcrumb = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

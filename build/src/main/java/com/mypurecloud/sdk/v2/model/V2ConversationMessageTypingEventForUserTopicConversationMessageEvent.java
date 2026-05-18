@@ -79,6 +79,11 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessageEven
     }
   }
 
+  public V2ConversationMessageTypingEventForUserTopicConversationMessageEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

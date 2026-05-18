@@ -32,6 +32,11 @@ public class UpdateDecisionTableRequest  implements Serializable {
     }
   }
 
+  public UpdateDecisionTableRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The decision table name.

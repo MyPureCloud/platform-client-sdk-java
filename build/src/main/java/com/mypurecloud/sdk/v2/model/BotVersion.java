@@ -37,6 +37,13 @@ public class BotVersion  implements Serializable {
     }
   }
 
+  public BotVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      supportedLanguages = new ArrayList<String>();
+      intents = new ArrayList<BotConnectorIntent>();
+    }
+  }
+
   
   /**
    * The name of the version.

@@ -33,6 +33,11 @@ public class FaxTopicLockData  implements Serializable {
     }
   }
 
+  public FaxTopicLockData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

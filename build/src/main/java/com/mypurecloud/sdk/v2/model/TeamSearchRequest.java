@@ -89,6 +89,13 @@ public class TeamSearchRequest  implements Serializable {
     }
   }
 
+  public TeamSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      query = new ArrayList<TeamSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

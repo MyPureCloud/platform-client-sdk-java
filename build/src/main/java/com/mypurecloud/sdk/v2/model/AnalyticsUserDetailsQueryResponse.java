@@ -37,6 +37,13 @@ public class AnalyticsUserDetailsQueryResponse  implements Serializable {
     }
   }
 
+  public AnalyticsUserDetailsQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userDetails = new ArrayList<AnalyticsUserDetail>();
+      aggregations = new ArrayList<AggregationResult>();
+    }
+  }
+
   
   /**
    **/

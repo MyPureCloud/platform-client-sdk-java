@@ -200,6 +200,12 @@ public class DevelopmentActivity  implements Serializable {
     }
   }
 
+  public DevelopmentActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      attendees = new ArrayList<UserReference>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

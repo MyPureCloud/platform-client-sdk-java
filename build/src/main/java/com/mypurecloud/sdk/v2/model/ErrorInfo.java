@@ -30,6 +30,11 @@ public class ErrorInfo  implements Serializable {
     }
   }
 
+  public ErrorInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

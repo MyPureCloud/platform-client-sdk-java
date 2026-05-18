@@ -35,6 +35,11 @@ public class StatEventCampaignTopicMetricStats  implements Serializable {
     }
   }
 
+  public StatEventCampaignTopicMetricStats(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

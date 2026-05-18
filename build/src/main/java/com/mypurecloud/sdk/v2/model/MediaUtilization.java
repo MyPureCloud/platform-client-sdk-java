@@ -34,6 +34,12 @@ public class MediaUtilization  implements Serializable {
     }
   }
 
+  public MediaUtilization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      interruptableMediaTypes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Defines the maximum number of conversations of this type that an agent can handle at one time.

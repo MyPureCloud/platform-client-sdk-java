@@ -88,6 +88,13 @@ public class DigitalRule  implements Serializable {
     }
   }
 
+  public DigitalRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conditions = new ArrayList<DigitalCondition>();
+      actions = new ArrayList<DigitalAction>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The identifier of the rule.")
   @JsonProperty("id")

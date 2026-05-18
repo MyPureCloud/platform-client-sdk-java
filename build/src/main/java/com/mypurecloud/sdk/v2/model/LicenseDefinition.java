@@ -39,6 +39,13 @@ public class LicenseDefinition  implements Serializable {
     }
   }
 
+  public LicenseDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      prerequisites = new ArrayList<AddressableLicenseDefinition>();
+      comprises = new ArrayList<LicenseDefinition>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

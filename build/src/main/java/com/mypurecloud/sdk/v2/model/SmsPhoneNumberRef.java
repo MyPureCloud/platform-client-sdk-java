@@ -30,6 +30,11 @@ public class SmsPhoneNumberRef  implements Serializable {
     }
   }
 
+  public SmsPhoneNumberRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234

@@ -8,7 +8,7 @@
 * **Documentation** https://mypurecloud.github.io/platform-client-sdk-java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
-Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:253.1.0
+Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:253.2.0
 
 ## Install Using maven
 
@@ -489,6 +489,33 @@ With `ApiClient.LEGACY_EMPTY_LIST = true;` (default value)
 With `ApiClient.LEGACY_EMPTY_LIST = false;`
 * The class property will be initialized with `null`;
 * E.g. **ConversationQuery class** - `List<SegmentDetailQueryFilter> segmentFilters = null;`
+
+```java
+import com.mypurecloud.sdk.v2.model.CreateUser;
+...
+// Global parameter is set to initialize properties of type array with null value (instead of an empty ArrayList)
+ApiClient.LEGACY_EMPTY_LIST = false;
+...
+// body (CreateUser class instance) - the class properties of type array will be initialized with a null value
+CreateUser body = new CreateUser();
+...
+```
+
+An additional constructor, for the model classes, is also available to facilitate the choice of initialization between empty `ArrayList` or `null` value.  
+The additional constructor leverages an **initWithEmptyList** parameter:
+* set to true to initialize properties of type array with an empty ArrayList,
+* set to false to initialize them with null value.  
+E.g. **public CreateUser(Boolean initWithEmptyList)**
+
+```java
+import com.mypurecloud.sdk.v2.model.CreateUser;
+...
+// bodyWithNull (CreateUser class instance) - the class properties of type array will be initialized with a null value
+CreateUser bodyWithNull = new CreateUser(false);
+// bodyWithEmptyList (CreateUser class instance) - the class properties of type array will be initialized with an empty ArrayList
+CreateUser bodyWithEmptyList = new CreateUser(true);
+...
+```
 
 #### Managing updates in Platform API Enumerations
 

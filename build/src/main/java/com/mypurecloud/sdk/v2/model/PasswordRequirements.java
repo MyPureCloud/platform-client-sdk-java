@@ -36,6 +36,11 @@ public class PasswordRequirements  implements Serializable {
     }
   }
 
+  public PasswordRequirements(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

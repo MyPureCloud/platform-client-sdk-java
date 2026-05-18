@@ -94,6 +94,11 @@ public class ChatMessage  implements Serializable {
     }
   }
 
+  public ChatMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The message body

@@ -30,6 +30,11 @@ public class ScimUserRole  implements Serializable {
     }
   }
 
+  public ScimUserRole(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The role of the Genesys Cloud user.

@@ -34,6 +34,11 @@ public class UpdatePlanningGroupRequest  implements Serializable {
     }
   }
 
+  public UpdatePlanningGroupRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the planning group

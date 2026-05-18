@@ -78,6 +78,11 @@ public class PushIntegration  implements Serializable {
     }
   }
 
+  public PushIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The mobile push integration id associated with the deployment

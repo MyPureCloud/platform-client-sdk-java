@@ -41,6 +41,14 @@ public class StaffingGroupAllocationsResponseTemplate  implements Serializable {
     }
   }
 
+  public StaffingGroupAllocationsResponseTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staffingGroupAllocations = new ArrayList<StaffingGroupAllocation>();
+      months = new ArrayList<YearMonth>();
+      planningGroupAllocations = new ArrayList<CapacityPlanningPlanningGroupAllocation>();
+    }
+  }
+
   
   /**
    * List of staffing group allocations

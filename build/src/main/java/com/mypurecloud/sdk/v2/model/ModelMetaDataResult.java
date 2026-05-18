@@ -35,6 +35,12 @@ public class ModelMetaDataResult  implements Serializable {
     }
   }
 
+  public ModelMetaDataResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      planningGroups = new ArrayList<PlanningGroupModel>();
+    }
+  }
+
   
   /**
    * Information about the continuous forecast session

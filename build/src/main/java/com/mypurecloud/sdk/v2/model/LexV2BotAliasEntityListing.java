@@ -43,6 +43,12 @@ public class LexV2BotAliasEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public LexV2BotAliasEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<LexV2BotAlias>();
+    }
+  }
+
   
   /**
    **/

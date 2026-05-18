@@ -25,6 +25,11 @@ public class DialerCampaignProgressEventObject  implements Serializable {
     }
   }
 
+  public DialerCampaignProgressEventObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

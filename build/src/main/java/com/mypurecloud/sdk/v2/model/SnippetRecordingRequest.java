@@ -78,6 +78,11 @@ public class SnippetRecordingRequest  implements Serializable {
     }
   }
 
+  public SnippetRecordingRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of recording to apply to the participant.

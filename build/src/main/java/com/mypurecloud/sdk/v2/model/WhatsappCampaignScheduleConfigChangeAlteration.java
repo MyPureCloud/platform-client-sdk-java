@@ -83,6 +83,11 @@ public class WhatsappCampaignScheduleConfigChangeAlteration  implements Serializ
     }
   }
 
+  public WhatsappCampaignScheduleConfigChangeAlteration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

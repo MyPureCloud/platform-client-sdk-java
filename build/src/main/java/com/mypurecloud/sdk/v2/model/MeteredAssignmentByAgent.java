@@ -40,6 +40,12 @@ public class MeteredAssignmentByAgent  implements Serializable {
     }
   }
 
+  public MeteredAssignmentByAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      evaluators = new ArrayList<User>();
+    }
+  }
+
   
   /**
    **/

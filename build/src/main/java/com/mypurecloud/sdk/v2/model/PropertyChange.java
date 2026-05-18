@@ -35,6 +35,13 @@ public class PropertyChange  implements Serializable {
     }
   }
 
+  public PropertyChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      oldValues = new ArrayList<String>();
+      newValues = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The property that was changed

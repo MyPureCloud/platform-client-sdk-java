@@ -95,6 +95,15 @@ public class AdminTimeOffRequestPatch  implements Serializable {
     }
   }
 
+  public AdminTimeOffRequestPatch(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      fullDayManagementUnitDates = new ArrayList<String>();
+      partialDayStartDateTimes = new ArrayList<Date>();
+      durationMinutes = new ArrayList<Integer>();
+      payableMinutes = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The status of this time off request

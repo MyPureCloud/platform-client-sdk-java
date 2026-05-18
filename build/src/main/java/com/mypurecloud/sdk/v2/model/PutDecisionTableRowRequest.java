@@ -34,6 +34,11 @@ public class PutDecisionTableRowRequest  implements Serializable {
     }
   }
 
+  public PutDecisionTableRowRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The full updated input values of the row. The key for this map is the column ID the row value relates. Column IDs are available from the decision table entity

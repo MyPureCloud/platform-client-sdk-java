@@ -90,6 +90,11 @@ public class Reason  implements Serializable {
     }
   }
 
+  public Reason(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The reason code for the failed message receipt.

@@ -33,6 +33,12 @@ public class ChannelTopicEntityListing  implements Serializable {
     }
   }
 
+  public ChannelTopicEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ChannelTopic>();
+    }
+  }
+
   
   /**
    **/

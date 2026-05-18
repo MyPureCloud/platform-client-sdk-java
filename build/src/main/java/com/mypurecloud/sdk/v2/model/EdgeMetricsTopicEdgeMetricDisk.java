@@ -31,6 +31,11 @@ public class EdgeMetricsTopicEdgeMetricDisk  implements Serializable {
     }
   }
 
+  public EdgeMetricsTopicEdgeMetricDisk(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

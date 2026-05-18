@@ -33,6 +33,11 @@ public class BuAgentSchedulePublishedScheduleReference  implements Serializable 
     }
   }
 
+  public BuAgentSchedulePublishedScheduleReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the schedule

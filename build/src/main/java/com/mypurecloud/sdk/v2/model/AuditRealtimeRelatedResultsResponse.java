@@ -33,6 +33,12 @@ public class AuditRealtimeRelatedResultsResponse  implements Serializable {
     }
   }
 
+  public AuditRealtimeRelatedResultsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AuditLogMessage>();
+    }
+  }
+
   
   /**
    **/

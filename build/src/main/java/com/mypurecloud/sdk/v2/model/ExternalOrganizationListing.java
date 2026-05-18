@@ -44,6 +44,12 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     }
   }
 
+  public ExternalOrganizationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExternalOrganization>();
+    }
+  }
+
   
   /**
    **/

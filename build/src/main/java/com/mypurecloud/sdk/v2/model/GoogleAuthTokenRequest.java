@@ -30,6 +30,11 @@ public class GoogleAuthTokenRequest  implements Serializable {
     }
   }
 
+  public GoogleAuthTokenRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * One-time authorization code from Google. See docs: https://developers.google.com/identity/protocols/oauth2

@@ -41,6 +41,11 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     }
   }
 
+  public DialerResponsesetConfigChangeResponseSet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}

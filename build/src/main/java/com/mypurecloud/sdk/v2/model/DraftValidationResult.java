@@ -35,6 +35,12 @@ public class DraftValidationResult  implements Serializable {
     }
   }
 
+  public DraftValidationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errors = new ArrayList<ErrorBody>();
+    }
+  }
+
   
   /**
    * Indicates if configuration is valid

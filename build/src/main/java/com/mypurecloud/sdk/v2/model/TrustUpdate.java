@@ -31,6 +31,11 @@ public class TrustUpdate  implements Serializable {
     }
   }
 
+  public TrustUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * If disabled no trustee user will have access, even if they were previously added.

@@ -29,6 +29,11 @@ public class ExternalContactsUnresolvedContactChangedTopicInstagramScopedId  imp
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicInstagramScopedId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

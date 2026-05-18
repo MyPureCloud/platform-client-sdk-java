@@ -34,6 +34,11 @@ public class ExternalContactsOrganizationChangedTopicContactAddress  implements 
     }
   }
 
+  public ExternalContactsOrganizationChangedTopicContactAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

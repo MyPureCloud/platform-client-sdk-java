@@ -36,6 +36,12 @@ public class MinerTopicsListing  implements Serializable {
     }
   }
 
+  public MinerTopicsListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<MinerTopic>();
+    }
+  }
+
   
   /**
    **/

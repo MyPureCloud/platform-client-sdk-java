@@ -85,6 +85,11 @@ public class V2WfmMainForecastExportHistoricalEventMainForecastExportNotificatio
     }
   }
 
+  public V2WfmMainForecastExportHistoricalEventMainForecastExportNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

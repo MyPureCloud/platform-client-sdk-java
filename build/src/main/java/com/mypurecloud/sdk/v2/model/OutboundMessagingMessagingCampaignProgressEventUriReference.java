@@ -31,6 +31,11 @@ public class OutboundMessagingMessagingCampaignProgressEventUriReference  implem
     }
   }
 
+  public OutboundMessagingMessagingCampaignProgressEventUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

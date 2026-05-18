@@ -35,6 +35,12 @@ public class WidgetDeploymentEntityListing  implements Serializable {
     }
   }
 
+  public WidgetDeploymentEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WidgetDeployment>();
+    }
+  }
+
   
   /**
    **/

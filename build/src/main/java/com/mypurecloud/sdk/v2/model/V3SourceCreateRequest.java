@@ -131,6 +131,11 @@ public class V3SourceCreateRequest  implements Serializable {
     }
   }
 
+  public V3SourceCreateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the source.

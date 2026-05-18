@@ -85,6 +85,13 @@ public class RoutingActivityQueryFilter  implements Serializable {
     }
   }
 
+  public RoutingActivityQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<RoutingActivityQueryClause>();
+      predicates = new ArrayList<RoutingActivityQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

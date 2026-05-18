@@ -89,6 +89,11 @@ public class MessengerSettings  implements Serializable {
     }
   }
 
+  public MessengerSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether or not messenger is enabled

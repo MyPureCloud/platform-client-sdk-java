@@ -32,6 +32,11 @@ public class UserVideoSettings  implements Serializable {
     }
   }
 
+  public UserVideoSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not user camera is allowed

@@ -39,6 +39,11 @@ public class ExternalEventsConfiguration  implements Serializable {
     }
   }
 
+  public ExternalEventsConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier for the external event configuration.

@@ -31,6 +31,11 @@ public class DialerContactlistConfigChangeUriReference  implements Serializable 
     }
   }
 
+  public DialerContactlistConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

@@ -32,6 +32,11 @@ public class QueueConversationCallbackEventTopicJourneyAction  implements Serial
     }
   }
 
+  public QueueConversationCallbackEventTopicJourneyAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of an action from the Journey System (an action is spawned from an actionMap)

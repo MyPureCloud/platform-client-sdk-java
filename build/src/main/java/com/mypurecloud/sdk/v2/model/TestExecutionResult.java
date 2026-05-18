@@ -37,6 +37,12 @@ public class TestExecutionResult  implements Serializable {
     }
   }
 
+  public TestExecutionResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      operations = new ArrayList<TestExecutionOperationResult>();
+    }
+  }
+
   
   /**
    * Execution operations performed as part of the test

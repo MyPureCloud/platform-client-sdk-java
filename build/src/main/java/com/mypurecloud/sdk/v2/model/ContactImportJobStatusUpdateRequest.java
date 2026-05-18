@@ -79,6 +79,11 @@ public class ContactImportJobStatusUpdateRequest  implements Serializable {
     }
   }
 
+  public ContactImportJobStatusUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Job Id

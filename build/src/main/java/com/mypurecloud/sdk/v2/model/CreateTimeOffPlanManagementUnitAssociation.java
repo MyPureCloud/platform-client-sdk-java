@@ -32,6 +32,12 @@ public class CreateTimeOffPlanManagementUnitAssociation  implements Serializable
     }
   }
 
+  public CreateTimeOffPlanManagementUnitAssociation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staffingGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of the management unit to which this time-off plan belongs

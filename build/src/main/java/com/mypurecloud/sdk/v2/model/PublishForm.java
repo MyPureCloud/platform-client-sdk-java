@@ -30,6 +30,11 @@ public class PublishForm  implements Serializable {
     }
   }
 
+  public PublishForm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Is this form published

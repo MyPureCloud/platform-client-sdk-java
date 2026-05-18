@@ -36,6 +36,11 @@ public class PatchShiftTradeRequest  implements Serializable {
     }
   }
 
+  public PatchShiftTradeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Update the ID of the receiving user to direct the request at a specific user, or set the wrapped id to null to open up a trade to be matched by any user.

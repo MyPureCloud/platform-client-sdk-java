@@ -35,6 +35,12 @@ public class DocumentBodyParagraphWithHighlight  implements Serializable {
     }
   }
 
+  public DocumentBodyParagraphWithHighlight(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentContentBlockWithHighlight>();
+    }
+  }
+
   
   /**
    * The list of blocks for the paragraph.

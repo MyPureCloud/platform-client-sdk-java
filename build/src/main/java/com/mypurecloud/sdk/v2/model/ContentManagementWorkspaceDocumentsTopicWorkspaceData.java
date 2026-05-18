@@ -29,6 +29,11 @@ public class ContentManagementWorkspaceDocumentsTopicWorkspaceData  implements S
     }
   }
 
+  public ContentManagementWorkspaceDocumentsTopicWorkspaceData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

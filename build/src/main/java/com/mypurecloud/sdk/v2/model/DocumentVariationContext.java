@@ -35,6 +35,12 @@ public class DocumentVariationContext  implements Serializable {
     }
   }
 
+  public DocumentVariationContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<KnowledgeContextValueReference>();
+    }
+  }
+
   
   /**
    * The knowledge context associated with the variation.

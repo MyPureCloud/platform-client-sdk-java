@@ -200,6 +200,14 @@ public class Topic  implements Serializable {
     }
   }
 
+  public Topic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      programs = new ArrayList<BaseProgramEntity>();
+      tags = new ArrayList<String>();
+      phrases = new ArrayList<Phrase>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

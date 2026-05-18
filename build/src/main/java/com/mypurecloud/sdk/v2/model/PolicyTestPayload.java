@@ -33,6 +33,11 @@ public class PolicyTestPayload  implements Serializable {
     }
   }
 
+  public PolicyTestPayload(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A map of attribute names to attribute type and string representation of value. All attributes returned by api/v2/authorization/policies/{policyId}/attributes are required

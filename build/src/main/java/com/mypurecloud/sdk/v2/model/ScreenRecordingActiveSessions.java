@@ -29,6 +29,11 @@ public class ScreenRecordingActiveSessions  implements Serializable {
     }
   }
 
+  public ScreenRecordingActiveSessions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Current concurrent active screen recordings count for organization

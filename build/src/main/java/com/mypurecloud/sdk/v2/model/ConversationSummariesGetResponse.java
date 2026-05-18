@@ -38,6 +38,12 @@ public class ConversationSummariesGetResponse  implements Serializable {
     }
   }
 
+  public ConversationSummariesGetResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sessionSummaries = new ArrayList<ConversationSessionSummary>();
+    }
+  }
+
   
   /**
    * The conversation object.

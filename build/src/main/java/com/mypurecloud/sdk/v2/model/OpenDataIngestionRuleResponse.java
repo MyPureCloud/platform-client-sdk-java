@@ -96,6 +96,12 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
     }
   }
 
+  public OpenDataIngestionRuleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      countries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * ID of the open data ingestion rule.

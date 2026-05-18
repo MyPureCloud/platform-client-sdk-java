@@ -29,6 +29,11 @@ public class AiScoringSetting  implements Serializable {
     }
   }
 
+  public AiScoringSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * True if AI Scoring feature is configured.

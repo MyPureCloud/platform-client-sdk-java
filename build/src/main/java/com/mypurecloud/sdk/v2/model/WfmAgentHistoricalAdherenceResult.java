@@ -105,6 +105,16 @@ public class WfmAgentHistoricalAdherenceResult  implements Serializable {
     }
   }
 
+  public WfmAgentHistoricalAdherenceResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      exceptionInfo = new ArrayList<HistoricalAdherenceExceptionInfo>();
+      dayMetrics = new ArrayList<AgentAdherenceDayMetrics>();
+      actuals = new ArrayList<HistoricalAdherenceActuals>();
+      scheduledActivities = new ArrayList<AgentAdherenceScheduledActivity>();
+      secondaryPresenceLookupItems = new ArrayList<SecondaryPresenceLookupItem>();
+    }
+  }
+
   
   /**
    * The user who submitted the agent historical adherence query

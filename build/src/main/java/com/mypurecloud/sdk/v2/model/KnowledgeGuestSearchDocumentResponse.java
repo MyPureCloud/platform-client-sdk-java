@@ -105,6 +105,13 @@ public class KnowledgeGuestSearchDocumentResponse  implements Serializable {
     }
   }
 
+  public KnowledgeGuestSearchDocumentResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alternatives = new ArrayList<KnowledgeDocumentAlternative>();
+      variations = new ArrayList<KnowledgeGuestDocumentVariationAnswer>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

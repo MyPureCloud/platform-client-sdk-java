@@ -33,6 +33,12 @@ public class AvailableTopicEntityListing  implements Serializable {
     }
   }
 
+  public AvailableTopicEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AvailableTopic>();
+    }
+  }
+
   
   /**
    **/

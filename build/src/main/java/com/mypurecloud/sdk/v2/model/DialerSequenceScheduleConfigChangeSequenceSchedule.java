@@ -48,6 +48,13 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     }
   }
 
+  public DialerSequenceScheduleConfigChangeSequenceSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intervals = new ArrayList<DialerSequenceScheduleConfigChangeScheduleInterval>();
+      recurrences = new ArrayList<DialerSequenceScheduleConfigChangeScheduleRecurrence>();
+    }
+  }
+
   
   /**
    * a list of start and end times

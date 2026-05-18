@@ -37,6 +37,11 @@ public class QueueConversationSocialExpressionEventTopicFaxStatus  implements Se
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicFaxStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The fax direction, either \"send\" or \"receive\".

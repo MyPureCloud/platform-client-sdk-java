@@ -34,6 +34,12 @@ public class AgentIntegrationsRequest  implements Serializable {
     }
   }
 
+  public AgentIntegrationsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      associatedIntegrations = new ArrayList<AgentIntegrationAssociationRequest>();
+    }
+  }
+
   
   /**
    * The ID of the integration selected for the agent. If not set, no integration will be used for the agent

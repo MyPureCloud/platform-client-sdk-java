@@ -87,6 +87,12 @@ public class InputMessage  implements Serializable {
     }
   }
 
+  public InputMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      content = new ArrayList<ConversationMessageContent>();
+    }
+  }
+
   
   /**
    * Message type.

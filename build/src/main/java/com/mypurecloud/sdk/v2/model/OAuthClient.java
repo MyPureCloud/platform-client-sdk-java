@@ -153,6 +153,15 @@ public class OAuthClient  implements Serializable {
     }
   }
 
+  public OAuthClient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      registeredRedirectUri = new ArrayList<String>();
+      roleIds = new ArrayList<String>();
+      scope = new ArrayList<String>();
+      roleDivisions = new ArrayList<RoleDivision>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

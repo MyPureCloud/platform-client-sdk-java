@@ -34,6 +34,11 @@ public class UpdateStaffingGroupRequest  implements Serializable {
     }
   }
 
+  public UpdateStaffingGroupRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the staffing group

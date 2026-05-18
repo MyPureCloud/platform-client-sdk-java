@@ -38,6 +38,14 @@ public class Assignment  implements Serializable {
     }
   }
 
+  public Assignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      assignedMembers = new ArrayList<UserReference>();
+      removedMembers = new ArrayList<UserReference>();
+      assignmentErrors = new ArrayList<AssignmentError>();
+    }
+  }
+
   
   /**
    * The list of users successfully assigned to the custom performance profile

@@ -80,6 +80,11 @@ public class Feedback  implements Serializable {
     }
   }
 
+  public Feedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Feedback suggestion id.

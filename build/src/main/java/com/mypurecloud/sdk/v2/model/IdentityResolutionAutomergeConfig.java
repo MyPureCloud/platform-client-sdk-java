@@ -30,6 +30,11 @@ public class IdentityResolutionAutomergeConfig  implements Serializable {
     }
   }
 
+  public IdentityResolutionAutomergeConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether automerging is enabled for Authenticated Webmessaging conversations in this channel.

@@ -102,6 +102,12 @@ public class ConversationActivityResponse  implements Serializable {
     }
   }
 
+  public ConversationActivityResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<ConversationActivityData>();
+    }
+  }
+
   
   /**
    * Query results

@@ -35,6 +35,12 @@ public class OAuthScopeListing  implements Serializable {
     }
   }
 
+  public OAuthScopeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OAuthScope>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,11 @@ public class ValidationErrorResponse  implements Serializable {
     }
   }
 
+  public ValidationErrorResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Message string of the validation error.

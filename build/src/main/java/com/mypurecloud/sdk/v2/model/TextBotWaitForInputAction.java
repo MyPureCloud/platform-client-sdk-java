@@ -31,6 +31,11 @@ public class TextBotWaitForInputAction  implements Serializable {
     }
   }
 
+  public TextBotWaitForInputAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The mode constraints for the user input.

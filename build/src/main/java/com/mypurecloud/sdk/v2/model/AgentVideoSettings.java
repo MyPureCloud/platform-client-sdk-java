@@ -84,6 +84,11 @@ public class AgentVideoSettings  implements Serializable {
     }
   }
 
+  public AgentVideoSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not agent camera is allowed

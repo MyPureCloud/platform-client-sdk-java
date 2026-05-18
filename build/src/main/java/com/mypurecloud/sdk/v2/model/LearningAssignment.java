@@ -115,6 +115,12 @@ public class LearningAssignment  implements Serializable {
     }
   }
 
+  public LearningAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      steps = new ArrayList<LearningAssignmentStep>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

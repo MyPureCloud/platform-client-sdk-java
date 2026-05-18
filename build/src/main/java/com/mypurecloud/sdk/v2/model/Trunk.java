@@ -262,6 +262,14 @@ public class Trunk  implements Serializable {
     }
   }
 
+  public Trunk(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      optionsStatus = new ArrayList<TrunkMetricsOptions>();
+      registersStatus = new ArrayList<TrunkMetricsRegisters>();
+      proxyAddressList = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

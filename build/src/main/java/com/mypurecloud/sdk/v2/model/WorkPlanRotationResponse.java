@@ -44,6 +44,12 @@ public class WorkPlanRotationResponse  implements Serializable {
     }
   }
 
+  public WorkPlanRotationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agents = new ArrayList<WorkPlanRotationAgentResponse>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

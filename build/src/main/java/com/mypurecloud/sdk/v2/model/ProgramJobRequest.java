@@ -32,6 +32,12 @@ public class ProgramJobRequest  implements Serializable {
     }
   }
 
+  public ProgramJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      programIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ids of the programs used for this job

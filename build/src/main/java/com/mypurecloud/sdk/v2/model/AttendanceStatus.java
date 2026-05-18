@@ -130,6 +130,11 @@ public class AttendanceStatus  implements Serializable {
     }
   }
 
+  public AttendanceStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "the workday date of this attendance status. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateWorkday")

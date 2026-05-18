@@ -29,6 +29,11 @@ public class SupportCenterFeedbackSettings  implements Serializable {
     }
   }
 
+  public SupportCenterFeedbackSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether or not requesting customer feedback on article content and article search results is enabled

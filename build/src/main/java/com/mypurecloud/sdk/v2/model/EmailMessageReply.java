@@ -50,6 +50,15 @@ public class EmailMessageReply  implements Serializable {
     }
   }
 
+  public EmailMessageReply(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      to = new ArrayList<EmailAddress>();
+      cc = new ArrayList<EmailAddress>();
+      bcc = new ArrayList<EmailAddress>();
+      attachments = new ArrayList<Attachment>();
+    }
+  }
+
   
   /**
    * The recipients of the email message.

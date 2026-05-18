@@ -44,6 +44,12 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     }
   }
 
+  public ScriptEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Script>();
+    }
+  }
+
   
   /**
    **/

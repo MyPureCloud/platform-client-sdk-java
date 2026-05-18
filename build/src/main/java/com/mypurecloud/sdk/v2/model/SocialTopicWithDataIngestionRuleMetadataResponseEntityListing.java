@@ -43,6 +43,12 @@ public class SocialTopicWithDataIngestionRuleMetadataResponseEntityListing  impl
     }
   }
 
+  public SocialTopicWithDataIngestionRuleMetadataResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SocialTopicWithDataIngestionRuleMetadataResponse>();
+    }
+  }
+
   
   /**
    **/

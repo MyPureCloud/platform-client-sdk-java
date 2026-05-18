@@ -29,6 +29,11 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicUserReference  impleme
     }
   }
 
+  public WfmBulkShiftTradeStateUpdateNotificationTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

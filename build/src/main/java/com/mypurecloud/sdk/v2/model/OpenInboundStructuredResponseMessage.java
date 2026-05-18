@@ -33,6 +33,11 @@ public class OpenInboundStructuredResponseMessage  implements Serializable {
     }
   }
 
+  public OpenInboundStructuredResponseMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Channel-specific information that describes the message and the message channel/provider.

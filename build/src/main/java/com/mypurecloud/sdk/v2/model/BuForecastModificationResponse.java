@@ -198,6 +198,14 @@ public class BuForecastModificationResponse  implements Serializable {
     }
   }
 
+  public BuForecastModificationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<WfmForecastModificationIntervalOffsetValue>();
+      secondaryValues = new ArrayList<WfmForecastModificationIntervalOffsetValue>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The type of the modification

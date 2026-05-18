@@ -87,6 +87,11 @@ public class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration  implem
     }
   }
 
+  public V2WemEngagementCelebrationUpdatesTopicEngagementCelebration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

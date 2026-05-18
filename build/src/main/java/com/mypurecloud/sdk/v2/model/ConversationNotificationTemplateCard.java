@@ -38,6 +38,12 @@ public class ConversationNotificationTemplateCard  implements Serializable {
     }
   }
 
+  public ConversationNotificationTemplateCard(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      buttons = new ArrayList<ConversationNotificationTemplateButton>();
+    }
+  }
+
   
   /**
    * The template header.

@@ -30,6 +30,11 @@ public class WorkitemsAttributeChangeString  implements Serializable {
     }
   }
 
+  public WorkitemsAttributeChangeString(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * New property value

@@ -134,6 +134,11 @@ public class RowSearchPredicate  implements Serializable {
     }
   }
 
+  public RowSearchPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The decision table column identifier this predicate applies to

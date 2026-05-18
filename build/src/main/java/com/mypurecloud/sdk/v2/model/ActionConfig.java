@@ -34,6 +34,11 @@ public class ActionConfig  implements Serializable {
     }
   }
 
+  public ActionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional 1-60 second timeout enforced on the execution or test of this action. This setting is invalid for Custom Authentication Actions.

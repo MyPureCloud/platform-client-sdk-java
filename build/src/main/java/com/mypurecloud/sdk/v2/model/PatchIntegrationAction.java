@@ -29,6 +29,11 @@ public class PatchIntegrationAction  implements Serializable {
     }
   }
 
+  public PatchIntegrationAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the integration action to be invoked.

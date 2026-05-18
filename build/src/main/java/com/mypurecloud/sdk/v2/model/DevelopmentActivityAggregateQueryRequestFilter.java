@@ -82,6 +82,12 @@ public class DevelopmentActivityAggregateQueryRequestFilter  implements Serializ
     }
   }
 
+  public DevelopmentActivityAggregateQueryRequestFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<DevelopmentActivityAggregateQueryRequestClause>();
+    }
+  }
+
   
   /**
    * The logic used to combine the clauses

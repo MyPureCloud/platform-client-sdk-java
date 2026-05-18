@@ -31,6 +31,11 @@ public class ExternalContactsUnresolvedContactChangedTopicMergeOperation  implem
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicMergeOperation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

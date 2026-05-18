@@ -171,6 +171,13 @@ public class EvaluationSearchAggregationDTO  implements Serializable {
     }
   }
 
+  public EvaluationSearchAggregationDTO(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ranges = new ArrayList<QueryApiSearchAggregationRange>();
+      subAggregations = new ArrayList<EvaluationSearchSubAggregationDTO>();
+    }
+  }
+
   
   /**
    * The name of the aggregation

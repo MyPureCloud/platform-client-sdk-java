@@ -35,6 +35,12 @@ public class ConversationEventTopicConversationDivisionMembership  implements Se
     }
   }
 
+  public ConversationEventTopicConversationDivisionMembership(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ConversationEventTopicDivisionEntityRef>();
+    }
+  }
+
   
   /**
    * A reference to another domain entity.

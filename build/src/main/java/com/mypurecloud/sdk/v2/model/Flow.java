@@ -194,6 +194,13 @@ public class Flow  implements Serializable {
     }
   }
 
+  public Flow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      supportedLanguages = new ArrayList<SupportedLanguage>();
+      compatibleFlowTypes = new ArrayList<CompatibleFlowTypesEnum>();
+    }
+  }
+
   
   /**
    * The flow identifier

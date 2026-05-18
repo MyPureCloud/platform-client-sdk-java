@@ -33,6 +33,12 @@ public class ShiftTradeMatchesSummaryResponse  implements Serializable {
     }
   }
 
+  public ShiftTradeMatchesSummaryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WeekShiftTradeMatchesSummaryResponse>();
+    }
+  }
+
   
   /**
    **/

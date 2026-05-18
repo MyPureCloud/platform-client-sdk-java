@@ -31,6 +31,11 @@ public class GreetingAudioFile  implements Serializable {
     }
   }
 
+  public GreetingAudioFile(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

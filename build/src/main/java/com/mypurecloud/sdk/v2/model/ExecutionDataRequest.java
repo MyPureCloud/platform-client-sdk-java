@@ -33,6 +33,12 @@ public class ExecutionDataRequest  implements Serializable {
     }
   }
 
+  public ExecutionDataRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A list of ids to retrieve

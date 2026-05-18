@@ -31,6 +31,11 @@ public class EventSession  implements Serializable {
     }
   }
 
+  public EventSession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the session.

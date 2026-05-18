@@ -32,6 +32,11 @@ public class QueueConversationSocialExpressionEventTopicDivisionEntityRef  imple
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

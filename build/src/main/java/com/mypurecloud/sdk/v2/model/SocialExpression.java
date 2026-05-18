@@ -170,6 +170,12 @@ public class SocialExpression  implements Serializable {
     }
   }
 
+  public SocialExpression(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<Segment>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

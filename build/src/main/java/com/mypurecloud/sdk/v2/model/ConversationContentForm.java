@@ -45,6 +45,13 @@ public class ConversationContentForm  implements Serializable {
     }
   }
 
+  public ConversationContentForm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      formPages = new ArrayList<ConversationFormPage>();
+      response = new ArrayList<ConversationFormResponseComponent>();
+    }
+  }
+
   
   /**
    * The intro component, used to give an intro into what the form entails

@@ -309,6 +309,12 @@ public class WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAd
     }
   }
 
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      scheduledSecondaryPresenceLookupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

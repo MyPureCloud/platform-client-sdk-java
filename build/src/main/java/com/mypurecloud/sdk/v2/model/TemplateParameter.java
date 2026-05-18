@@ -30,6 +30,11 @@ public class TemplateParameter  implements Serializable {
     }
   }
 
+  public TemplateParameter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Response substitution identifier

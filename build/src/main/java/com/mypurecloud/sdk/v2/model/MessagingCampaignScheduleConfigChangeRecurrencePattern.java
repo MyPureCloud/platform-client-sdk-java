@@ -86,6 +86,12 @@ public class MessagingCampaignScheduleConfigChangeRecurrencePattern  implements 
     }
   }
 
+  public MessagingCampaignScheduleConfigChangeRecurrencePattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      daysOfWeek = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -82,6 +82,11 @@ public class TimeOffSettingsResponse  implements Serializable {
     }
   }
 
+  public TimeOffSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to enforce a submission range for agent time off requests

@@ -31,6 +31,11 @@ public class MessagingTemplate  implements Serializable {
     }
   }
 
+  public MessagingTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Defines a messaging template for a WhatsApp messaging channel

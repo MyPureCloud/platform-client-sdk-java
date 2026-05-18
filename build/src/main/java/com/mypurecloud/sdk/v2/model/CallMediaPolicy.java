@@ -32,6 +32,11 @@ public class CallMediaPolicy  implements Serializable {
     }
   }
 
+  public CallMediaPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Actions applied when specified conditions are met

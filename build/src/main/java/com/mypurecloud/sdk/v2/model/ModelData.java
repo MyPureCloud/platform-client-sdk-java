@@ -35,6 +35,13 @@ public class ModelData  implements Serializable {
     }
   }
 
+  public ModelData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadUrls = new ArrayList<String>();
+      downloadResult = new ArrayList<PlanningGroupModel>();
+    }
+  }
+
   
   /**
    * List of URLs to fetch the results of the forecast model. This field is populated only if session state is Complete

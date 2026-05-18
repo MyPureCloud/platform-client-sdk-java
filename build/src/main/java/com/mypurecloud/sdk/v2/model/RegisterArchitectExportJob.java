@@ -33,6 +33,12 @@ public class RegisterArchitectExportJob  implements Serializable {
     }
   }
 
+  public RegisterArchitectExportJob(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      flows = new ArrayList<ExportDetails>();
+    }
+  }
+
   
   /**
    * A list of the flows to be exported.

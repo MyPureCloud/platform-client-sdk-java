@@ -31,6 +31,11 @@ public class ExternalContactsContactChangedTopicWhatsAppId  implements Serializa
     }
   }
 
+  public ExternalContactsContactChangedTopicWhatsAppId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

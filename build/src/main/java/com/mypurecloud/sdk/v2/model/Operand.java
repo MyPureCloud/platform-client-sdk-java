@@ -92,6 +92,12 @@ public class Operand  implements Serializable {
     }
   }
 
+  public Operand(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      operands = new ArrayList<Operand>();
+    }
+  }
+
   
   /**
    * The Operand type of the category

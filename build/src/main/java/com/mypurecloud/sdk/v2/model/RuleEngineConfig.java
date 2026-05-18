@@ -35,6 +35,12 @@ public class RuleEngineConfig  implements Serializable {
     }
   }
 
+  public RuleEngineConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      rules = new ArrayList<RuleConfig>();
+    }
+  }
+
   
   /**
    * List of rules to evaluate by the engine.

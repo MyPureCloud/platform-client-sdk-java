@@ -76,6 +76,11 @@ public class ExecuteRecordingJobsQuery  implements Serializable {
     }
   }
 
+  public ExecuteRecordingJobsQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The desired state for the job to be set to.

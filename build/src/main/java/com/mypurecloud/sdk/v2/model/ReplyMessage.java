@@ -87,6 +87,12 @@ public class ReplyMessage  implements Serializable {
     }
   }
 
+  public ReplyMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      content = new ArrayList<ConversationMessageContent>();
+    }
+  }
+
   
   /**
    * Message type.

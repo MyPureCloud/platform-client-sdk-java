@@ -43,6 +43,12 @@ public class DashboardConfigurationListing  implements Serializable, PagedResour
     }
   }
 
+  public DashboardConfigurationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DashboardConfiguration>();
+    }
+  }
+
   
   /**
    **/

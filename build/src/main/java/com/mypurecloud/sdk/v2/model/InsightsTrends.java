@@ -35,6 +35,13 @@ public class InsightsTrends  implements Serializable {
     }
   }
 
+  public InsightsTrends(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      comparativePeriod = new ArrayList<TrendData>();
+      primaryPeriod = new ArrayList<TrendData>();
+    }
+  }
+
   
   /**
    * List of trend data in the comparative period

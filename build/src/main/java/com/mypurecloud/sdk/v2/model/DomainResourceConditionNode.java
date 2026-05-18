@@ -137,6 +137,13 @@ public class DomainResourceConditionNode  implements Serializable {
     }
   }
 
+  public DomainResourceConditionNode(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      operands = new ArrayList<DomainResourceConditionValue>();
+      terms = new ArrayList<DomainResourceConditionNode>();
+    }
+  }
+
   
   /**
    **/

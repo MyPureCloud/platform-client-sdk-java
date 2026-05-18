@@ -86,6 +86,12 @@ public class SocialMediaAsyncDetailQuery  implements Serializable {
     }
   }
 
+  public SocialMediaAsyncDetailQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topicIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

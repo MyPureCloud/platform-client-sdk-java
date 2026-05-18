@@ -44,6 +44,11 @@ public class UserEstablishedEvent  implements Serializable {
     }
   }
 
+  public UserEstablishedEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

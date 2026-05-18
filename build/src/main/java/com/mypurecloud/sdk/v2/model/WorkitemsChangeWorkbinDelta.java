@@ -33,6 +33,11 @@ public class WorkitemsChangeWorkbinDelta  implements Serializable {
     }
   }
 
+  public WorkitemsChangeWorkbinDelta(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Version

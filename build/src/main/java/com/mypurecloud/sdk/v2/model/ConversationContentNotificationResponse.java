@@ -81,6 +81,11 @@ public class ConversationContentNotificationResponse  implements Serializable {
     }
   }
 
+  public ConversationContentNotificationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Reference to the ID of the original outbound notification message this response is for (e.g. the Apple requestIdentifier).

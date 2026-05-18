@@ -362,6 +362,13 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     }
   }
 
+  public ConversationCobrowseEventTopicCobrowseMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      controlling = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

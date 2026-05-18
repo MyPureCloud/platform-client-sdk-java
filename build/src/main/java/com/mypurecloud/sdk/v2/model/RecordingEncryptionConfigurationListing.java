@@ -35,6 +35,12 @@ public class RecordingEncryptionConfigurationListing  implements Serializable {
     }
   }
 
+  public RecordingEncryptionConfigurationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<RecordingEncryptionConfiguration>();
+    }
+  }
+
   
   /**
    **/

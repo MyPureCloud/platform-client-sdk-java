@@ -30,6 +30,11 @@ public class DigitLength  implements Serializable {
     }
   }
 
+  public DigitLength(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

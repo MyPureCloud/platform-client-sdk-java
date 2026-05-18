@@ -95,6 +95,12 @@ public class AssessmentFormQuestion  implements Serializable {
     }
   }
 
+  public AssessmentFormQuestion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      answerOptions = new ArrayList<AnswerOption>();
+    }
+  }
+
   
   /**
    **/

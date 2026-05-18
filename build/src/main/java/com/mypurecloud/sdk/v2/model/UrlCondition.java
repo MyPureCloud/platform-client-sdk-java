@@ -91,6 +91,12 @@ public class UrlCondition  implements Serializable {
     }
   }
 
+  public UrlCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The URL condition value.

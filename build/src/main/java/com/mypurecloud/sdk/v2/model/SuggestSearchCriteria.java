@@ -90,6 +90,14 @@ public class SuggestSearchCriteria  implements Serializable {
     }
   }
 
+  public SuggestSearchCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+      group = new ArrayList<SuggestSearchCriteria>();
+      fields = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The end value of the range. This field is used for range search types.

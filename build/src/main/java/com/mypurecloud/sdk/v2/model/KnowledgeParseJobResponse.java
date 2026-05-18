@@ -100,6 +100,13 @@ public class KnowledgeParseJobResponse  implements Serializable {
     }
   }
 
+  public KnowledgeParseJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      hints = new ArrayList<String>();
+      parseResults = new ArrayList<KnowledgeParseRecord>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Id of the parse job")
   @JsonProperty("id")

@@ -95,6 +95,16 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     }
   }
 
+  public CreateAdminTimeOffRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<UserReference>();
+      fullDayManagementUnitDates = new ArrayList<String>();
+      partialDayStartDateTimes = new ArrayList<Date>();
+      durationMinutes = new ArrayList<Integer>();
+      payableMinutes = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The status of this time off request

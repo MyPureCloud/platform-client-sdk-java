@@ -39,6 +39,12 @@ public class OutboundMessagingEmailCampaignConfigChangeEmailConfig  implements S
     }
   }
 
+  public OutboundMessagingEmailCampaignConfigChangeEmailConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      emailColumns = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The Contact List column specifying the email to send to the contact.

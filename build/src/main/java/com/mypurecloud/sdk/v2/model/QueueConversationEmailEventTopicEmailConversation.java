@@ -46,6 +46,15 @@ public class QueueConversationEmailEventTopicEmailConversation  implements Seria
     }
   }
 
+  public QueueConversationEmailEventTopicEmailConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<QueueConversationEmailEventTopicEmailMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationEmailEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

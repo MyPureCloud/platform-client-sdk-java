@@ -29,6 +29,11 @@ public class UCI10n  implements Serializable {
     }
   }
 
+  public UCI10n(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

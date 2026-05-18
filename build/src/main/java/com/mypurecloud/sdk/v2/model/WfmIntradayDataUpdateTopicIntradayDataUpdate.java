@@ -43,6 +43,14 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
     }
   }
 
+  public WfmIntradayDataUpdateTopicIntradayDataUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<WfmIntradayDataUpdateTopicIntradayMetric>();
+      queueIds = new ArrayList<String>();
+      intradayDataGroupings = new ArrayList<WfmIntradayDataUpdateTopicIntradayDataGroup>();
+    }
+  }
+
   
   /**
    **/

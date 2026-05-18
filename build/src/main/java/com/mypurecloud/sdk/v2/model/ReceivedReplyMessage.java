@@ -30,6 +30,11 @@ public class ReceivedReplyMessage  implements Serializable {
     }
   }
 
+  public ReceivedReplyMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text to show in the title.

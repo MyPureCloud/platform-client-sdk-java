@@ -34,6 +34,12 @@ public class KnowledgeGuestSessionContext  implements Serializable {
     }
   }
 
+  public KnowledgeGuestSessionContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<Entity>();
+    }
+  }
+
   
   /**
    * The context id associated with the session.

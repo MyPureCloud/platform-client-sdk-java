@@ -82,6 +82,12 @@ public class WorkPlanConstraintConflictMessage  implements Serializable {
     }
   }
 
+  public WorkPlanConstraintConflictMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      arguments = new ArrayList<WorkPlanValidationMessageArgument>();
+    }
+  }
+
   
   /**
    * Type of constraint conflict that can be resolved by clients in order to generate agent schedules

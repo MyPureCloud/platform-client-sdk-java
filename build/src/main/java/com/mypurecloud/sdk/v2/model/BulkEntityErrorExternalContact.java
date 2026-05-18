@@ -39,6 +39,12 @@ public class BulkEntityErrorExternalContact  implements Serializable {
     }
   }
 
+  public BulkEntityErrorExternalContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<BulkErrorDetail>();
+    }
+  }
+
   
   /**
    * An error code for the specific error condition.

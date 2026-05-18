@@ -32,6 +32,11 @@ public class PreprocessingRule  implements Serializable {
     }
   }
 
+  public PreprocessingRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The regular expression to which file lines are to be matched.

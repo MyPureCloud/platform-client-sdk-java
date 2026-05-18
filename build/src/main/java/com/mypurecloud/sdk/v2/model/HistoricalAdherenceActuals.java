@@ -87,6 +87,11 @@ public class HistoricalAdherenceActuals  implements Serializable {
     }
   }
 
+  public HistoricalAdherenceActuals(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Activity in which the user is actually engaged

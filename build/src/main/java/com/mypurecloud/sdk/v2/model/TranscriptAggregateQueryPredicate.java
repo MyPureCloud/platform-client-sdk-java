@@ -197,6 +197,11 @@ public class TranscriptAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public TranscriptAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

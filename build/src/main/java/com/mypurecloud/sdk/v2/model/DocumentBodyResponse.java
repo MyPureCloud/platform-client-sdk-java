@@ -33,6 +33,12 @@ public class DocumentBodyResponse  implements Serializable {
     }
   }
 
+  public DocumentBodyResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentBodyBlock>();
+    }
+  }
+
   
   /**
    * The list of building blocks for the document body.

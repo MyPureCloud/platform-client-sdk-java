@@ -34,6 +34,13 @@ public class TrustRequestCreate  implements Serializable {
     }
   }
 
+  public TrustRequestCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+      groupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of trustee users that are requesting access. If no users are specified, at least one group is required.

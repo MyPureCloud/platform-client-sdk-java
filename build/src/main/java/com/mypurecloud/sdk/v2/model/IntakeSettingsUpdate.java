@@ -33,6 +33,12 @@ public class IntakeSettingsUpdate  implements Serializable {
     }
   }
 
+  public IntakeSettingsUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intakeSettings = new ArrayList<IntakeSetting>();
+    }
+  }
+
   
   /**
    * The intake settings for the Caseplan.

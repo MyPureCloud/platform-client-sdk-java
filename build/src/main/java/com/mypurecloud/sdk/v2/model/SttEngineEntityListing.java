@@ -43,6 +43,12 @@ public class SttEngineEntityListing  implements Serializable, PagedResource<SttE
     }
   }
 
+  public SttEngineEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SttEngineEntity>();
+    }
+  }
+
   
   /**
    **/

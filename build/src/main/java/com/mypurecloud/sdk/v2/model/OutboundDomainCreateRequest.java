@@ -83,6 +83,11 @@ public class OutboundDomainCreateRequest  implements Serializable {
     }
   }
 
+  public OutboundDomainCreateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique Id of the domain such as: example.com

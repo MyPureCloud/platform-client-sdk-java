@@ -31,6 +31,11 @@ public class WorktypeReference  implements Serializable {
     }
   }
 
+  public WorktypeReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

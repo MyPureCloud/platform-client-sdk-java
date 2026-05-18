@@ -78,6 +78,11 @@ public class ConversationResponseSuggestionsTopicSuggestionFeedback  implements 
     }
   }
 
+  public ConversationResponseSuggestionsTopicSuggestionFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

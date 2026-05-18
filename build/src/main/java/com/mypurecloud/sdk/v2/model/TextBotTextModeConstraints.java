@@ -34,6 +34,12 @@ public class TextBotTextModeConstraints  implements Serializable {
     }
   }
 
+  public TextBotTextModeConstraints(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      languagePreferences = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of language preferences by their ISO language code.

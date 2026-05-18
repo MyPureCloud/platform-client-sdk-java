@@ -30,6 +30,11 @@ public class CreateUploadSourceUrlJobResponse  implements Serializable {
     }
   }
 
+  public CreateUploadSourceUrlJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the upload from URL job.

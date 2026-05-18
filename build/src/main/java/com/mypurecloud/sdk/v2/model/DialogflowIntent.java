@@ -34,6 +34,11 @@ public class DialogflowIntent  implements Serializable {
     }
   }
 
+  public DialogflowIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The intent name

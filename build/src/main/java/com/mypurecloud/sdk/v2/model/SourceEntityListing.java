@@ -35,6 +35,12 @@ public class SourceEntityListing  implements Serializable {
     }
   }
 
+  public SourceEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Source>();
+    }
+  }
+
   
   /**
    **/

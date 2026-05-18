@@ -29,6 +29,11 @@ public class OverrideEscalationTarget  implements Serializable {
     }
   }
 
+  public OverrideEscalationTarget(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the integration.

@@ -33,6 +33,11 @@ public class BotExecutionConfiguration  implements Serializable {
     }
   }
 
+  public BotExecutionConfiguration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Nuance bot ID

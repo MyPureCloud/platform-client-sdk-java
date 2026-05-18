@@ -63,6 +63,17 @@ public class ContactList  implements Serializable {
     }
   }
 
+  public ContactList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      columnNames = new ArrayList<String>();
+      phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
+      emailColumns = new ArrayList<EmailColumn>();
+      whatsAppColumns = new ArrayList<WhatsAppColumn>();
+      previewModeAcceptedValues = new ArrayList<String>();
+      columnDataTypeSpecifications = new ArrayList<ColumnDataTypeSpecification>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

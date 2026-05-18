@@ -80,6 +80,11 @@ public class HistoricalDataJobEntityStatus  implements Serializable {
     }
   }
 
+  public HistoricalDataJobEntityStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The Job Id Request")
   @JsonProperty("id")

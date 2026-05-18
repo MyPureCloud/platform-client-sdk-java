@@ -47,6 +47,13 @@ public class ConversationCallbackEventTopicErrorBody  implements Serializable {
     }
   }
 
+  public ConversationCallbackEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<ConversationCallbackEventTopicDetail>();
+      errors = new ArrayList<ConversationCallbackEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

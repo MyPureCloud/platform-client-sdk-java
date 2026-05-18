@@ -38,6 +38,12 @@ public class UserScheduleContainer  implements Serializable {
     }
   }
 
+  public UserScheduleContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      publishedSchedules = new ArrayList<WeekScheduleReference>();
+    }
+  }
+
   
   /**
    * The reference time zone used for the management unit

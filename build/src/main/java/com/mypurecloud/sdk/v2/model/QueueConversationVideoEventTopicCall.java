@@ -345,6 +345,12 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     }
   }
 
+  public QueueConversationVideoEventTopicCall(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      disconnectReasons = new ArrayList<QueueConversationVideoEventTopicDisconnectReason>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

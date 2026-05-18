@@ -36,6 +36,12 @@ public class UserObservationDataContainer  implements Serializable {
     }
   }
 
+  public UserObservationDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<ObservationMetricData>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

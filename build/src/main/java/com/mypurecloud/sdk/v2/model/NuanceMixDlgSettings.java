@@ -33,6 +33,11 @@ public class NuanceMixDlgSettings  implements Serializable {
     }
   }
 
+  public NuanceMixDlgSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Nuance channel ID to use when launching the Nuance bot, which must one of the code names of the bot's registered input channels.

@@ -97,6 +97,11 @@ public class Schedule  implements Serializable {
     }
   }
 
+  public Schedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

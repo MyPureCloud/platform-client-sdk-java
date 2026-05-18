@@ -30,6 +30,11 @@ public class CoverSheet  implements Serializable {
     }
   }
 
+  public CoverSheet(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Text to be added to the coversheet

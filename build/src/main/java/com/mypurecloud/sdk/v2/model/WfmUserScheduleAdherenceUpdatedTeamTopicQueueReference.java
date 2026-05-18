@@ -29,6 +29,11 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference  implements 
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

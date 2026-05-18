@@ -87,6 +87,12 @@ public class V2MobiusAlertsTopicAlertSummary  implements Serializable {
     }
   }
 
+  public V2MobiusAlertsTopicAlertSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<V2MobiusAlertsTopicAlertSummaryEntity>();
+    }
+  }
+
   
   /**
    **/

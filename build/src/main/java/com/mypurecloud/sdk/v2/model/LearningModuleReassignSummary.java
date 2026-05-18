@@ -34,6 +34,11 @@ public class LearningModuleReassignSummary  implements Serializable {
     }
   }
 
+  public LearningModuleReassignSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The total number of users for whom assignment is reassigned

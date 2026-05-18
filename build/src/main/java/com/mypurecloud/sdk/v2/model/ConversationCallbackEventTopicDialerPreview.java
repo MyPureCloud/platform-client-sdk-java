@@ -37,6 +37,12 @@ public class ConversationCallbackEventTopicDialerPreview  implements Serializabl
     }
   }
 
+  public ConversationCallbackEventTopicDialerPreview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneNumberColumns = new ArrayList<ConversationCallbackEventTopicPhoneNumberColumn>();
+    }
+  }
+
   
   /**
    **/

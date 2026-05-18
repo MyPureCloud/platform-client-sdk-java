@@ -38,6 +38,13 @@ public class LearningSlotWfmScheduleActivity  implements Serializable {
     }
   }
 
+  public LearningSlotWfmScheduleActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activities = new ArrayList<LearningSlotScheduleActivity>();
+      fullDayTimeOffMarkers = new ArrayList<LearningSlotFullDayTimeOffMarker>();
+    }
+  }
+
   
   /**
    * User that the schedule is for

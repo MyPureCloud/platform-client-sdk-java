@@ -31,6 +31,11 @@ public class WorkitemCaseReference  implements Serializable {
     }
   }
 
+  public WorkitemCaseReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

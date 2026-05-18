@@ -35,6 +35,12 @@ public class CaseplanQueryRequest  implements Serializable {
     }
   }
 
+  public CaseplanQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      divisionIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Filter by caseplan name (case-insensitive, partial match). Omitting name returns all caseplans (subject to pagination).

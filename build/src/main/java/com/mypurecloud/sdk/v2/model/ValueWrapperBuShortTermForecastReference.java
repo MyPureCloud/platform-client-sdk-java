@@ -30,6 +30,11 @@ public class ValueWrapperBuShortTermForecastReference  implements Serializable {
     }
   }
 
+  public ValueWrapperBuShortTermForecastReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field

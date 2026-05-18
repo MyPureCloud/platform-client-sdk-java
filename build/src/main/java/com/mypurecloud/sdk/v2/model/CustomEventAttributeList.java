@@ -33,6 +33,12 @@ public class CustomEventAttributeList  implements Serializable {
     }
   }
 
+  public CustomEventAttributeList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The data type of the custom attributes.

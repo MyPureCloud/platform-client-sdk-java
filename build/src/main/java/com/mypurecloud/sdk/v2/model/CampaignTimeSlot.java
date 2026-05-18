@@ -31,6 +31,11 @@ public class CampaignTimeSlot  implements Serializable {
     }
   }
 
+  public CampaignTimeSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start time of the interval as an ISO-8601 string, i.e. HH:mm:ss

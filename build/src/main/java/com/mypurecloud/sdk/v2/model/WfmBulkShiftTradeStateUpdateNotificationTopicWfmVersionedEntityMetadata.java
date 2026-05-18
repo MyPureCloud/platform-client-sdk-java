@@ -33,6 +33,11 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMeta
     }
   }
 
+  public WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -40,6 +40,14 @@ public class DomainOrgRoleDifference  implements Serializable {
     }
   }
 
+  public DomainOrgRoleDifference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      removedPermissionPolicies = new ArrayList<DomainPermissionPolicy>();
+      addedPermissionPolicies = new ArrayList<DomainPermissionPolicy>();
+      samePermissionPolicies = new ArrayList<DomainPermissionPolicy>();
+    }
+  }
+
   
   /**
    **/

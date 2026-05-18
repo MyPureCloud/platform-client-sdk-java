@@ -356,6 +356,11 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     }
   }
 
+  public SegmentDetailQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

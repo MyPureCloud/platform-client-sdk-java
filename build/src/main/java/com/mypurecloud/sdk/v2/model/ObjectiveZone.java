@@ -133,6 +133,11 @@ public class ObjectiveZone  implements Serializable {
     }
   }
 
+  public ObjectiveZone(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * label

@@ -43,6 +43,12 @@ public class FlowOutcomeDivisionViewEntityListing  implements Serializable, Page
     }
   }
 
+  public FlowOutcomeDivisionViewEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FlowOutcomeDivisionView>();
+    }
+  }
+
   
   /**
    **/

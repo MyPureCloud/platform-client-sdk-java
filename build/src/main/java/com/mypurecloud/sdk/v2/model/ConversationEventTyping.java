@@ -78,6 +78,11 @@ public class ConversationEventTyping  implements Serializable {
     }
   }
 
+  public ConversationEventTyping(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of Typing event.

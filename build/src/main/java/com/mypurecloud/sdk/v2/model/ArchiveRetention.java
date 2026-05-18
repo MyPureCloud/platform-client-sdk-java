@@ -77,6 +77,11 @@ public class ArchiveRetention  implements Serializable {
     }
   }
 
+  public ArchiveRetention(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

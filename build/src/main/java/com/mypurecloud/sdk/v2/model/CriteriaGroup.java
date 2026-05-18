@@ -39,6 +39,14 @@ public class CriteriaGroup  implements Serializable {
     }
   }
 
+  public CriteriaGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      and = new ArrayList<CriteriaItem>();
+      or = new ArrayList<CriteriaItem>();
+      not = new ArrayList<CriteriaItem>();
+    }
+  }
+
   
   /**
    * These criteriaItems will be AND'd together to find a match.

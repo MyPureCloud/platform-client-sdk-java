@@ -83,6 +83,11 @@ public class TaskManagementObservationGroupResult  implements Serializable {
     }
   }
 
+  public TaskManagementObservationGroupResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The queueId for this group.

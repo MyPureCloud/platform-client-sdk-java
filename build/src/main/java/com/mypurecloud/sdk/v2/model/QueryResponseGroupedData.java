@@ -36,6 +36,12 @@ public class QueryResponseGroupedData  implements Serializable {
     }
   }
 
+  public QueryResponseGroupedData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<QueryResponseData>();
+    }
+  }
+
   
   /**
    * The group values for this data

@@ -88,6 +88,13 @@ public class LearningScheduleSlotsJobResponse  implements Serializable {
     }
   }
 
+  public LearningScheduleSlotsJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userIds = new ArrayList<String>();
+      results = new ArrayList<LearningScheduleSlotsJobResult>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

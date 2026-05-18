@@ -32,6 +32,11 @@ public class ConversationVideoEventTopicDivisionEntityRef  implements Serializab
     }
   }
 
+  public ConversationVideoEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

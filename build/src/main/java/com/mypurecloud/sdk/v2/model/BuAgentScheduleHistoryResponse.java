@@ -40,6 +40,14 @@ public class BuAgentScheduleHistoryResponse  implements Serializable {
     }
   }
 
+  public BuAgentScheduleHistoryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      priorPublishedSchedules = new ArrayList<BuScheduleReference>();
+      droppedChanges = new ArrayList<BuAgentScheduleHistoryDroppedChange>();
+      changes = new ArrayList<BuAgentScheduleHistoryChange>();
+    }
+  }
+
   
   /**
    * The list of previously published schedules

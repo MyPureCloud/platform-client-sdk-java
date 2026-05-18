@@ -37,6 +37,12 @@ public class BulkJobsListing  implements Serializable {
     }
   }
 
+  public BulkJobsListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BulkJob>();
+    }
+  }
+
   
   /**
    **/

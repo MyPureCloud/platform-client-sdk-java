@@ -43,6 +43,12 @@ public class GDPRRequestEntityListing  implements Serializable, PagedResource<GD
     }
   }
 
+  public GDPRRequestEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<GDPRRequest>();
+    }
+  }
+
   
   /**
    **/

@@ -86,6 +86,12 @@ public class WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAd
     }
   }
 
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceAgentCalculationsCompleteNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadUrls = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -94,6 +94,12 @@ public class SurveyQuestion  implements Serializable {
     }
   }
 
+  public SurveyQuestion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      answerOptions = new ArrayList<AnswerOption>();
+    }
+  }
+
   
   /**
    **/

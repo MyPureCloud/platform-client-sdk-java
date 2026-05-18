@@ -33,6 +33,12 @@ public class BuShortTermForecastListing  implements Serializable {
     }
   }
 
+  public BuShortTermForecastListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BuShortTermForecastListItem>();
+    }
+  }
+
   
   /**
    **/

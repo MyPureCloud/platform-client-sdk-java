@@ -33,6 +33,12 @@ public class FacebookPermissionEntityListing  implements Serializable {
     }
   }
 
+  public FacebookPermissionEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FacebookPermission>();
+    }
+  }
+
   
   /**
    **/

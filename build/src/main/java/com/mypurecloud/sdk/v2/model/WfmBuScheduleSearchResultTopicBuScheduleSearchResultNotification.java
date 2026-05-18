@@ -31,6 +31,11 @@ public class WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification  i
     }
   }
 
+  public WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

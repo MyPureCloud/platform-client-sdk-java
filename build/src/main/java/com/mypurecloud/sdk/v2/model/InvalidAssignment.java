@@ -31,6 +31,11 @@ public class InvalidAssignment  implements Serializable {
     }
   }
 
+  public InvalidAssignment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Invalid user for validation

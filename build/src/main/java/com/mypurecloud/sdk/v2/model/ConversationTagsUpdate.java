@@ -29,6 +29,11 @@ public class ConversationTagsUpdate  implements Serializable {
     }
   }
 
+  public ConversationTagsUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The external tag associated with the conversation.

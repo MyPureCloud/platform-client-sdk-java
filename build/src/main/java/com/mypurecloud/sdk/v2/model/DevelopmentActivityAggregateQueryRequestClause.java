@@ -82,6 +82,12 @@ public class DevelopmentActivityAggregateQueryRequestClause  implements Serializ
     }
   }
 
+  public DevelopmentActivityAggregateQueryRequestClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<DevelopmentActivityAggregateQueryRequestPredicate>();
+    }
+  }
+
   
   /**
    * The logic used to combine the predicates

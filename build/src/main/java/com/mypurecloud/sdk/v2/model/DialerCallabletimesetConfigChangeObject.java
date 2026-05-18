@@ -25,6 +25,11 @@ public class DialerCallabletimesetConfigChangeObject  implements Serializable {
     }
   }
 
+  public DialerCallabletimesetConfigChangeObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

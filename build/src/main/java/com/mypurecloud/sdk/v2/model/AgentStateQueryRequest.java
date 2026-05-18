@@ -232,6 +232,11 @@ public class AgentStateQueryRequest  implements Serializable {
     }
   }
 
+  public AgentStateQueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Filters that target user-level data

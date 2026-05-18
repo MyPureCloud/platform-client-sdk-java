@@ -34,6 +34,13 @@ public class TranscriptTopics  implements Serializable {
     }
   }
 
+  public TranscriptTopics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      includes = new ArrayList<String>();
+      excludes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of topics which need to be included in exact match criteria. This field is not mutually exclusive with excludes topic list.

@@ -29,6 +29,11 @@ public class WfmAdherenceExplanationJobCompleteTopicManagementUnit  implements S
     }
   }
 
+  public WfmAdherenceExplanationJobCompleteTopicManagementUnit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

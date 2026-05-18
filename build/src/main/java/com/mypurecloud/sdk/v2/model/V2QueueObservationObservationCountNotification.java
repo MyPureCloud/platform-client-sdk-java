@@ -33,6 +33,12 @@ public class V2QueueObservationObservationCountNotification  implements Serializ
     }
   }
 
+  public V2QueueObservationObservationCountNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<V2QueueObservationMetricCountGroup>();
+    }
+  }
+
   
   /**
    * List of observations by grouping.

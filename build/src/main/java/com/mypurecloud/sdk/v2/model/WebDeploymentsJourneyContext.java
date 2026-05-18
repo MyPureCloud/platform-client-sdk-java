@@ -34,6 +34,11 @@ public class WebDeploymentsJourneyContext  implements Serializable {
     }
   }
 
+  public WebDeploymentsJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A subset of the Journey System's action data relevant to a part of a conversation (for external linkage and internal usage/context)

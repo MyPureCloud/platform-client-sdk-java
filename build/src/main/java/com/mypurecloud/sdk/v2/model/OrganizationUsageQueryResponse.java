@@ -32,6 +32,11 @@ public class OrganizationUsageQueryResponse  implements Serializable {
     }
   }
 
+  public OrganizationUsageQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The jobId of the query.

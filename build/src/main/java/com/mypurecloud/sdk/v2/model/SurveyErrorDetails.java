@@ -31,6 +31,11 @@ public class SurveyErrorDetails  implements Serializable {
     }
   }
 
+  public SurveyErrorDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Additional information about any errors that occurred in the survey invite flow.

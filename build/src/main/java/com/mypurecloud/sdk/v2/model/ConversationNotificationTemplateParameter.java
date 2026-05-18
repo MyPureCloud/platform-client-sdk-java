@@ -31,6 +31,11 @@ public class ConversationNotificationTemplateParameter  implements Serializable 
     }
   }
 
+  public ConversationNotificationTemplateParameter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Parameter name.

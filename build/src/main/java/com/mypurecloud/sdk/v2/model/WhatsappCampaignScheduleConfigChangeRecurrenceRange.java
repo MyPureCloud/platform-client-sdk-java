@@ -85,6 +85,11 @@ public class WhatsappCampaignScheduleConfigChangeRecurrenceRange  implements Ser
     }
   }
 
+  public WhatsappCampaignScheduleConfigChangeRecurrenceRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

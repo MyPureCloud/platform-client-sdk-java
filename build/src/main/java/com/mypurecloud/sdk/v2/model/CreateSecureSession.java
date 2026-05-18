@@ -32,6 +32,11 @@ public class CreateSecureSession  implements Serializable {
     }
   }
 
+  public CreateSecureSession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * requesting participant

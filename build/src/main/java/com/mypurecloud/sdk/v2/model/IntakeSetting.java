@@ -31,6 +31,11 @@ public class IntakeSetting  implements Serializable {
     }
   }
 
+  public IntakeSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The property name for this intake setting.

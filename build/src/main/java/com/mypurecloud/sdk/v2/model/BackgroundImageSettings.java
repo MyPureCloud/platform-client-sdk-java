@@ -30,6 +30,11 @@ public class BackgroundImageSettings  implements Serializable {
     }
   }
 
+  public BackgroundImageSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * BackgroundImage URL for agent video settings

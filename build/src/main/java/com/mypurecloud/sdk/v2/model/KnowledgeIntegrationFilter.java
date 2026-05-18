@@ -179,6 +179,12 @@ public class KnowledgeIntegrationFilter  implements Serializable {
     }
   }
 
+  public KnowledgeIntegrationFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<KnowledgeIntegrationFilterValue>();
+    }
+  }
+
   
   /**
    * Filter name, which is the name of a setting in a knowledge source.

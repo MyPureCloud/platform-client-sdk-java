@@ -34,6 +34,12 @@ public class LineId  implements Serializable {
     }
   }
 
+  public LineId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ids = new ArrayList<LineUserId>();
+    }
+  }
+
   
   /**
    * The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with. Max 1 Id.

@@ -31,6 +31,11 @@ public class UserAgentInfo  implements Serializable {
     }
   }
 
+  public UserAgentInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The firmware version of the phone.

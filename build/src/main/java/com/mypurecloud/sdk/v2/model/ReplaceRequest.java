@@ -31,6 +31,11 @@ public class ReplaceRequest  implements Serializable {
     }
   }
 
+  public ReplaceRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

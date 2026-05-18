@@ -32,6 +32,11 @@ public class CampaignRuleSpecificDateParameters  implements Serializable {
     }
   }
 
+  public CampaignRuleSpecificDateParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * If true, includes year in date comparison for specificDate type. When false, only month and day are compared. Default is true. 

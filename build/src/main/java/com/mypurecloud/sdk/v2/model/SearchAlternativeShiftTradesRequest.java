@@ -34,6 +34,13 @@ public class SearchAlternativeShiftTradesRequest  implements Serializable {
     }
   }
 
+  public SearchAlternativeShiftTradesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnitIds = new ArrayList<String>();
+      agentIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The list of management unit IDs for this alternative shift trade search. Either managementUnitIds or agentIds is required

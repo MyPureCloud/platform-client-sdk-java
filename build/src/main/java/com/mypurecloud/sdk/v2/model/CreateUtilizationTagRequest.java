@@ -29,6 +29,11 @@ public class CreateUtilizationTagRequest  implements Serializable {
     }
   }
 
+  public CreateUtilizationTagRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The utilization tag name.

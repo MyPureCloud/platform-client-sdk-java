@@ -99,6 +99,14 @@ public class BillingContract  implements Serializable {
     }
   }
 
+  public BillingContract(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      purchaseOrderNumbers = new ArrayList<String>();
+      billingPeriods = new ArrayList<BillingContractPeriod>();
+      plans = new ArrayList<BillingPlan>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

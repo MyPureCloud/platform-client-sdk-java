@@ -36,6 +36,11 @@ public class OutcomeScore  implements Serializable {
     }
   }
 
+  public OutcomeScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The outcome that the score was calculated for.

@@ -32,6 +32,11 @@ public class OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes  imp
     }
   }
 
+  public OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

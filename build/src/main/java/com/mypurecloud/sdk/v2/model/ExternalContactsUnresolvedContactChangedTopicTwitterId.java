@@ -33,6 +33,11 @@ public class ExternalContactsUnresolvedContactChangedTopicTwitterId  implements 
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicTwitterId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

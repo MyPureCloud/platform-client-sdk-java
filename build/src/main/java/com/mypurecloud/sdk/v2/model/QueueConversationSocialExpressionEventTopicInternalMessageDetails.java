@@ -31,6 +31,11 @@ public class QueueConversationSocialExpressionEventTopicInternalMessageDetails  
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicInternalMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * UUID identifying the internal message media.

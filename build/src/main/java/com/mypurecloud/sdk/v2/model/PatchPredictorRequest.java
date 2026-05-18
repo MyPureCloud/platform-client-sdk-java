@@ -33,6 +33,11 @@ public class PatchPredictorRequest  implements Serializable {
     }
   }
 
+  public PatchPredictorRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Number of seconds allocated to predictive routing before attempting a different routing method. This is a value between 12 and 900 seconds.

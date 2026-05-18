@@ -34,6 +34,13 @@ public class SubjectDivisions  implements Serializable {
     }
   }
 
+  public SubjectDivisions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      subjectIds = new ArrayList<String>();
+      divisionIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A collection of subject IDs to associate with the given divisions

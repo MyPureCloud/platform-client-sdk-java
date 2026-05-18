@@ -107,6 +107,12 @@ public class BuScheduleRun  implements Serializable {
     }
   }
 
+  public BuScheduleRun(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messageSeverityCounts = new ArrayList<SchedulerMessageSeverityCount>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

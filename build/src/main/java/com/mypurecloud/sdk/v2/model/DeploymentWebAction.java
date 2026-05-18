@@ -93,6 +93,11 @@ public class DeploymentWebAction  implements Serializable {
     }
   }
 
+  public DeploymentWebAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * System-generated UUID for the action.

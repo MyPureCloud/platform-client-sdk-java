@@ -82,6 +82,12 @@ public class ContactListFilterClause  implements Serializable {
     }
   }
 
+  public ContactListFilterClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<ContactListFilterPredicate>();
+    }
+  }
+
   
   /**
    * How to join predicates together.

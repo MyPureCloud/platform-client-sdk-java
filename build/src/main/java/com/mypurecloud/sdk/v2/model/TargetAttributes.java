@@ -36,6 +36,12 @@ public class TargetAttributes  implements Serializable {
     }
   }
 
+  public TargetAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      baseAttributes = new ArrayList<PolicyAttribute>();
+    }
+  }
+
   
   /**
    * A set of base attributes which may be used in policies for any target.

@@ -39,6 +39,13 @@ public class ScimConfigResourceTypesListResponse  implements Serializable {
     }
   }
 
+  public ScimConfigResourceTypesListResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+      resources = new ArrayList<ScimConfigResourceType>();
+    }
+  }
+
   
   /**
    * The list of supported schemas.

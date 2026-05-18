@@ -30,6 +30,11 @@ public class BuTimeOffLimitReference  implements Serializable {
     }
   }
 
+  public BuTimeOffLimitReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

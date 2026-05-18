@@ -33,6 +33,11 @@ public class WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetada
     }
   }
 
+  public WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

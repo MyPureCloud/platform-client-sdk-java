@@ -33,6 +33,11 @@ public class WfmBuScheduleTopicWfmVersionedEntityMetadata  implements Serializab
     }
   }
 
+  public WfmBuScheduleTopicWfmVersionedEntityMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

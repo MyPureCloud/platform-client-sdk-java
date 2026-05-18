@@ -30,6 +30,11 @@ public class ConversationReference  implements Serializable {
     }
   }
 
+  public ConversationReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

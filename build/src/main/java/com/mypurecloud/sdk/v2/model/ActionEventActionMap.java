@@ -32,6 +32,11 @@ public class ActionEventActionMap  implements Serializable {
     }
   }
 
+  public ActionEventActionMap(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the action map.

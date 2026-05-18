@@ -43,6 +43,12 @@ public class CommandStatusEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public CommandStatusEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CommandStatus>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,12 @@ public class TimeOffRequestListing  implements Serializable {
     }
   }
 
+  public TimeOffRequestListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TimeOffRequest>();
+    }
+  }
+
   
   /**
    * List of time off requests

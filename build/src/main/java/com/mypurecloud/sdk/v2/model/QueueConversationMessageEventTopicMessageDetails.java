@@ -149,6 +149,13 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     }
   }
 
+  public QueueConversationMessageEventTopicMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      media = new ArrayList<QueueConversationMessageEventTopicMessageMedia>();
+      stickers = new ArrayList<QueueConversationMessageEventTopicMessageSticker>();
+    }
+  }
+
   
   /**
    **/

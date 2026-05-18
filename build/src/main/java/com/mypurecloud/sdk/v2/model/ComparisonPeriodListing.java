@@ -35,6 +35,12 @@ public class ComparisonPeriodListing  implements Serializable {
     }
   }
 
+  public ComparisonPeriodListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ComparisonPeriod>();
+    }
+  }
+
   
   /**
    **/

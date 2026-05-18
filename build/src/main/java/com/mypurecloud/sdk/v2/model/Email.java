@@ -277,6 +277,13 @@ public class Email  implements Serializable {
     }
   }
 
+  public Email(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      segments = new ArrayList<Segment>();
+      draftAttachments = new ArrayList<Attachment>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

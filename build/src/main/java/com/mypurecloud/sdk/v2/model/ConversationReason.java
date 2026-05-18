@@ -90,6 +90,11 @@ public class ConversationReason  implements Serializable {
     }
   }
 
+  public ConversationReason(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The reason code for the failed message receipt.

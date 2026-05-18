@@ -93,6 +93,12 @@ public class Criteria  implements Serializable {
     }
   }
 
+  public Criteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The criteria key.

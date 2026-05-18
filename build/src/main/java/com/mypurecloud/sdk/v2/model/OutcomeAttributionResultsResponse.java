@@ -92,6 +92,12 @@ public class OutcomeAttributionResultsResponse  implements Serializable {
     }
   }
 
+  public OutcomeAttributionResultsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      touchpoints = new ArrayList<TouchpointResponse>();
+    }
+  }
+
   
   /**
    * ID of Outcome.

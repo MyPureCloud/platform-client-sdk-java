@@ -33,6 +33,12 @@ public class ActionSurvey  implements Serializable {
     }
   }
 
+  public ActionSurvey(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questions = new ArrayList<JourneySurveyQuestion>();
+    }
+  }
+
   
   /**
    * Questions shown to the user.

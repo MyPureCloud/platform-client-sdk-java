@@ -118,6 +118,13 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     }
   }
 
+  public WebDeploymentConfigurationVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      languages = new ArrayList<String>();
+      customI18nLabels = new ArrayList<CustomI18nLabels>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The configuration version ID")
   @JsonProperty("id")

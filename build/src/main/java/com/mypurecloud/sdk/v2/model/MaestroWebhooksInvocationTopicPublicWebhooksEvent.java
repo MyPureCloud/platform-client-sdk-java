@@ -32,6 +32,11 @@ public class MaestroWebhooksInvocationTopicPublicWebhooksEvent  implements Seria
     }
   }
 
+  public MaestroWebhooksInvocationTopicPublicWebhooksEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class BulkCallbackDisconnectRequest  implements Serializable {
     }
   }
 
+  public BulkCallbackDisconnectRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackDisconnectIdentifiers = new ArrayList<CallbackDisconnectIdentifier>();
+    }
+  }
+
   
   /**
    * The list of requests to disconnect callbacks in bulk

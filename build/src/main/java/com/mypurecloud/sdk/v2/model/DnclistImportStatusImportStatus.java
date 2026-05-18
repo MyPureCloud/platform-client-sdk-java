@@ -89,6 +89,12 @@ public class DnclistImportStatusImportStatus  implements Serializable {
     }
   }
 
+  public DnclistImportStatusImportStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      targetContactListIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * current status of the import

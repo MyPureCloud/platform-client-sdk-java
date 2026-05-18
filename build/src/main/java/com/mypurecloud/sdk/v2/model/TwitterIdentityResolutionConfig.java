@@ -32,6 +32,11 @@ public class TwitterIdentityResolutionConfig  implements Serializable {
     }
   }
 
+  public TwitterIdentityResolutionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to use when performing identity resolution.

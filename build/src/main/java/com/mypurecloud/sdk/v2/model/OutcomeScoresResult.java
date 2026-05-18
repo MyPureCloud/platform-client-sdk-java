@@ -35,6 +35,12 @@ public class OutcomeScoresResult  implements Serializable {
     }
   }
 
+  public OutcomeScoresResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      outcomeScores = new ArrayList<OutcomeScore>();
+    }
+  }
+
   
   /**
    * List of scored outcomes in the session.

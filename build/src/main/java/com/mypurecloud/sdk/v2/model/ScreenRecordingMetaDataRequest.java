@@ -35,6 +35,12 @@ public class ScreenRecordingMetaDataRequest  implements Serializable {
     }
   }
 
+  public ScreenRecordingMetaDataRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metaData = new ArrayList<ScreenRecordingMetaData>();
+    }
+  }
+
   
   /**
    **/

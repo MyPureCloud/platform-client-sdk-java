@@ -83,6 +83,11 @@ public class UserTimeOffIntegrationStatusResponse  implements Serializable {
     }
   }
 
+  public UserTimeOffIntegrationStatusResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The time off request associated with this integration status

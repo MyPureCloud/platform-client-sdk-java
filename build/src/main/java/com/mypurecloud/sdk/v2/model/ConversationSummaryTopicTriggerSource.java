@@ -130,6 +130,11 @@ public class ConversationSummaryTopicTriggerSource  implements Serializable {
     }
   }
 
+  public ConversationSummaryTopicTriggerSource(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

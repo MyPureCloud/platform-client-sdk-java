@@ -79,6 +79,11 @@ public class OpenMessageContent  implements Serializable {
     }
   }
 
+  public OpenMessageContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element. If contentType = \"Attachment\" only one item is allowed.

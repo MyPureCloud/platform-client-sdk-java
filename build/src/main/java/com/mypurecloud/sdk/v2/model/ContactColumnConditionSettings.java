@@ -137,6 +137,11 @@ public class ContactColumnConditionSettings  implements Serializable {
     }
   }
 
+  public ContactColumnConditionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the contact list column to evaluate.

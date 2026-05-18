@@ -34,6 +34,12 @@ public class SendMessageBody  implements Serializable {
     }
   }
 
+  public SendMessageBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mentions = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The body of the message

@@ -88,6 +88,12 @@ public class DynamicGroupLanguageSkillCondition  implements Serializable {
     }
   }
 
+  public DynamicGroupLanguageSkillCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      childConditions = new ArrayList<DynamicGroupSkillCondition>();
+    }
+  }
+
   
   /**
    * The language skill to be used in the skill condition query

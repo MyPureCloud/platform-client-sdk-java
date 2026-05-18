@@ -35,6 +35,12 @@ public class TrustedCertificates  implements Serializable {
     }
   }
 
+  public TrustedCertificates(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TrustedCertificateInfo>();
+    }
+  }
+
   
   /**
    * The list of trusted certificates

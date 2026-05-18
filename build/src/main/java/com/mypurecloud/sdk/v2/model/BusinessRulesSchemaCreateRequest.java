@@ -31,6 +31,11 @@ public class BusinessRulesSchemaCreateRequest  implements Serializable {
     }
   }
 
+  public BusinessRulesSchemaCreateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A JSON schema defining the extension to the built-in entity type.

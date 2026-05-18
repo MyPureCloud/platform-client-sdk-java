@@ -82,6 +82,11 @@ public class AgentStateRoutingStatusCount  implements Serializable {
     }
   }
 
+  public AgentStateRoutingStatusCount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Routing status

@@ -89,6 +89,13 @@ public class GroupSearchRequest  implements Serializable {
     }
   }
 
+  public GroupSearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      query = new ArrayList<GroupSearchCriteria>();
+    }
+  }
+
   
   /**
    * The sort order for results

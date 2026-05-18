@@ -94,6 +94,15 @@ public class DocumentationV2SearchRequest  implements Serializable {
     }
   }
 
+  public DocumentationV2SearchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sort = new ArrayList<SearchSort>();
+      types = new ArrayList<String>();
+      query = new ArrayList<DocumentationV2SearchCriteria>();
+      aggregations = new ArrayList<DocumentationV2SearchAggregation>();
+    }
+  }
+
   
   /**
    * The sort order for results

@@ -60,6 +60,14 @@ public class WorkitemCreate  implements Serializable {
     }
   }
 
+  public WorkitemCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+      scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
+      preferredAgentIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the Workitem. Valid length between 3 and 256 characters.

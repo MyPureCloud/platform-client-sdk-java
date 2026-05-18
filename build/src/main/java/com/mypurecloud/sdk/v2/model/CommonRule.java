@@ -100,6 +100,12 @@ public class CommonRule  implements Serializable {
     }
   }
 
+  public CommonRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      notifications = new ArrayList<AlertNotification>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -32,6 +32,11 @@ public class ConversationScreenShareEventTopicDetail  implements Serializable {
     }
   }
 
+  public ConversationScreenShareEventTopicDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

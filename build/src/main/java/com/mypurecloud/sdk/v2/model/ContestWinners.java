@@ -35,6 +35,12 @@ public class ContestWinners  implements Serializable {
     }
   }
 
+  public ContestWinners(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<ContestUserRank>();
+    }
+  }
+
   
   /**
    * The Contest Winner tier

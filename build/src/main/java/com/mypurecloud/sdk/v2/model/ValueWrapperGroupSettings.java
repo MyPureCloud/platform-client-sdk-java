@@ -30,6 +30,11 @@ public class ValueWrapperGroupSettings  implements Serializable {
     }
   }
 
+  public ValueWrapperGroupSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The value for the associated field

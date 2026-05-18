@@ -50,6 +50,16 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     }
   }
 
+  public EdgeMetricsTopicEdgeMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      processors = new ArrayList<EdgeMetricsTopicEdgeMetricProcessor>();
+      memory = new ArrayList<EdgeMetricsTopicEdgeMetricMemory>();
+      disks = new ArrayList<EdgeMetricsTopicEdgeMetricDisk>();
+      subsystems = new ArrayList<EdgeMetricsTopicEdgeMetricSubsystem>();
+      networks = new ArrayList<EdgeMetricsTopicEdgeMetricNetworks>();
+    }
+  }
+
   
   /**
    **/

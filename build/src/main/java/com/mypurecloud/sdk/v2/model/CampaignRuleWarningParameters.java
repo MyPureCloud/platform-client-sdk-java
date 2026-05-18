@@ -153,6 +153,11 @@ public class CampaignRuleWarningParameters  implements Serializable {
     }
   }
 
+  public CampaignRuleWarningParameters(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of action

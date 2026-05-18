@@ -30,6 +30,11 @@ public class RequestScoredAgent  implements Serializable {
     }
   }
 
+  public RequestScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Agent's user ID

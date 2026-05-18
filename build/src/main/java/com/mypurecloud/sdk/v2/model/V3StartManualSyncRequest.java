@@ -77,6 +77,11 @@ public class V3StartManualSyncRequest  implements Serializable {
     }
   }
 
+  public V3StartManualSyncRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    *  Optional field that specifies the synchronization type. For SharePoint only Full synchronization is supported, therefore that is the default. For FileUpload both Full and Incremental is supported, default is Incremental.

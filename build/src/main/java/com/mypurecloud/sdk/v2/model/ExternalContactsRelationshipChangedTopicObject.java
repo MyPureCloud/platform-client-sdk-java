@@ -25,6 +25,11 @@ public class ExternalContactsRelationshipChangedTopicObject  implements Serializ
     }
   }
 
+  public ExternalContactsRelationshipChangedTopicObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

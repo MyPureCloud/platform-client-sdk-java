@@ -32,6 +32,11 @@ public class QueueConversationEventTopicDivisionEntityRef  implements Serializab
     }
   }
 
+  public QueueConversationEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

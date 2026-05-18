@@ -35,6 +35,13 @@ public class MediaRegions  implements Serializable {
     }
   }
 
+  public MediaRegions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      awsCoreRegions = new ArrayList<String>();
+      awsSatelliteRegions = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The AWS region your organization is in.")
   @JsonProperty("awsHomeRegion")

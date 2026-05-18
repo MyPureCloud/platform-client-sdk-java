@@ -151,6 +151,14 @@ public class ReprocessJobResponse  implements Serializable {
     }
   }
 
+  public ReprocessJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      programs = new ArrayList<String>();
+      dialects = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

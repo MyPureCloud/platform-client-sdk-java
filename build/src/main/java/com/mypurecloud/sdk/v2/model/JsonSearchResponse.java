@@ -39,6 +39,12 @@ public class JsonSearchResponse  implements Serializable {
     }
   }
 
+  public JsonSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The total number of results found

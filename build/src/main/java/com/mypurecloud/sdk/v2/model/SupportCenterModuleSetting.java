@@ -87,6 +87,11 @@ public class SupportCenterModuleSetting  implements Serializable {
     }
   }
 
+  public SupportCenterModuleSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Screen module type

@@ -33,6 +33,12 @@ public class UpdateNotificationsResponse  implements Serializable {
     }
   }
 
+  public UpdateNotificationsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UpdateNotificationResponse>();
+    }
+  }
+
   
   /**
    **/

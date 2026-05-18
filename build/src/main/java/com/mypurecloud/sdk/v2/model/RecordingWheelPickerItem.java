@@ -32,6 +32,11 @@ public class RecordingWheelPickerItem  implements Serializable {
     }
   }
 
+  public RecordingWheelPickerItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the wheel picker item.

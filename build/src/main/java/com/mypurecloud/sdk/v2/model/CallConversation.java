@@ -99,6 +99,15 @@ public class CallConversation  implements Serializable {
     }
   }
 
+  public CallConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<CallMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      recentTransfers = new ArrayList<TransferResponse>();
+      divisions = new ArrayList<ConversationDivisionMembership>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

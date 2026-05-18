@@ -31,6 +31,11 @@ public class ReplyToEmailAddress  implements Serializable {
     }
   }
 
+  public ReplyToEmailAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The InboundDomain used for the email address.

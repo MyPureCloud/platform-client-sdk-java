@@ -178,6 +178,11 @@ public class AgentUtilizationAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public AgentUtilizationAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

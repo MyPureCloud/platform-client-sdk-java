@@ -32,6 +32,11 @@ public class TestTopicPhraseJobRequest  implements Serializable {
     }
   }
 
+  public TestTopicPhraseJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The topic to test

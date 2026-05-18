@@ -37,6 +37,12 @@ public class UserReferenceEntityListing  implements Serializable {
     }
   }
 
+  public UserReferenceEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserReference>();
+    }
+  }
+
   
   /**
    **/

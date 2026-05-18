@@ -258,6 +258,24 @@ public class ParticipantBasic  implements Serializable {
     }
   }
 
+  public ParticipantBasic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      calls = new ArrayList<CallBasic>();
+      callbacks = new ArrayList<CallbackBasic>();
+      chats = new ArrayList<ConversationChat>();
+      cobrowsesessions = new ArrayList<Cobrowsesession>();
+      emails = new ArrayList<Email>();
+      messages = new ArrayList<Message>();
+      internalMessages = new ArrayList<InternalMessage>();
+      screenMonitorings = new ArrayList<ScreenMonitoring>();
+      screenshares = new ArrayList<Screenshare>();
+      socialExpressions = new ArrayList<SocialExpression>();
+      videos = new ArrayList<Video>();
+      evaluations = new ArrayList<Evaluation>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this conversation.

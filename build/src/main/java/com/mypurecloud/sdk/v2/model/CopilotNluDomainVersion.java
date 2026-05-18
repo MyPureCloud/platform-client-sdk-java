@@ -30,6 +30,11 @@ public class CopilotNluDomainVersion  implements Serializable {
     }
   }
 
+  public CopilotNluDomainVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the NLU v3 domain version.

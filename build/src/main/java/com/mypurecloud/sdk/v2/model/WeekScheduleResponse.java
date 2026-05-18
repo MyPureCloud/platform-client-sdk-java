@@ -31,6 +31,11 @@ public class WeekScheduleResponse  implements Serializable {
     }
   }
 
+  public WeekScheduleResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The result of the request. The value will be null if response is large

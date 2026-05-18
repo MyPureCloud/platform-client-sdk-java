@@ -33,6 +33,11 @@ public class OpenInboundMessagingReceiptChannel  implements Serializable {
     }
   }
 
+  public OpenInboundMessagingReceiptChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Information about the recipient the message is intended for.

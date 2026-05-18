@@ -131,6 +131,11 @@ public class WorkitemsAttributeChangeWorkitemStatusCategory  implements Serializ
     }
   }
 
+  public WorkitemsAttributeChangeWorkitemStatusCategory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * New property value

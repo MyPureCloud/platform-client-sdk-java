@@ -43,6 +43,12 @@ public class TrustEntityListing  implements Serializable, PagedResource<Trustee>
     }
   }
 
+  public TrustEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Trustee>();
+    }
+  }
+
   
   /**
    **/

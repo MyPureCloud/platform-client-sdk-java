@@ -231,6 +231,11 @@ public class QueueConversationVideoEventTopicScreenMonitoring  implements Serial
     }
   }
 
+  public QueueConversationVideoEventTopicScreenMonitoring(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

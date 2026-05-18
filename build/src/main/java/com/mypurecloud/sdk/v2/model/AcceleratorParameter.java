@@ -31,6 +31,11 @@ public class AcceleratorParameter  implements Serializable {
     }
   }
 
+  public AcceleratorParameter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Parameter Name

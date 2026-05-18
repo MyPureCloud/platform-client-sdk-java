@@ -46,6 +46,15 @@ public class QueueConversationMessageEventTopicMessageConversation  implements S
     }
   }
 
+  public QueueConversationMessageEventTopicMessageConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<QueueConversationMessageEventTopicMessageMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationMessageEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

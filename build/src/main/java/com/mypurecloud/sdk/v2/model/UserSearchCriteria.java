@@ -145,6 +145,14 @@ public class UserSearchCriteria  implements Serializable {
     }
   }
 
+  public UserSearchCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+      group = new ArrayList<UserSearchCriteria>();
+      fields = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The end value of the range. This field is used for range search types.

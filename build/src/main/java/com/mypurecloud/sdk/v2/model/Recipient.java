@@ -94,6 +94,11 @@ public class Recipient  implements Serializable {
     }
   }
 
+  public Recipient(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

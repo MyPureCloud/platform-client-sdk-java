@@ -31,6 +31,11 @@ public class TrunkInstanceTopicTrunkMetricsNetworkTypeIp  implements Serializabl
     }
   }
 
+  public TrunkInstanceTopicTrunkMetricsNetworkTypeIp(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

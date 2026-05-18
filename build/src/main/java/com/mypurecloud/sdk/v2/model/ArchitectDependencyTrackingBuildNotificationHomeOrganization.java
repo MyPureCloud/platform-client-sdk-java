@@ -31,6 +31,11 @@ public class ArchitectDependencyTrackingBuildNotificationHomeOrganization  imple
     }
   }
 
+  public ArchitectDependencyTrackingBuildNotificationHomeOrganization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

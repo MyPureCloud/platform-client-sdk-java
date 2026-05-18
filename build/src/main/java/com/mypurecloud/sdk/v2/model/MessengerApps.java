@@ -33,6 +33,11 @@ public class MessengerApps  implements Serializable {
     }
   }
 
+  public MessengerApps(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The conversation settings that handles chats within the messenger

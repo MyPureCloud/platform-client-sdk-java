@@ -98,6 +98,12 @@ public class WfmShiftTradingJobCompleteEventTradeEntity  implements Serializable
     }
   }
 
+  public WfmShiftTradingJobCompleteEventTradeEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      acceptableIntervals = new ArrayList<WfmShiftTradingJobCompleteEventWfmDateTimeInterval>();
+    }
+  }
+
   
   /**
    **/

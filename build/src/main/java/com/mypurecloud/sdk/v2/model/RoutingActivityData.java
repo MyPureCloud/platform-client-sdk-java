@@ -40,6 +40,13 @@ public class RoutingActivityData  implements Serializable {
     }
   }
 
+  public RoutingActivityData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<RoutingActivityMetricValue>();
+      entities = new ArrayList<RoutingActivityEntityData>();
+    }
+  }
+
   
   /**
    * A mapping from grouping dimension to value

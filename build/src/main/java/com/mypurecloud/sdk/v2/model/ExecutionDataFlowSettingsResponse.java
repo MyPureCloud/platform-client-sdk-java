@@ -38,6 +38,11 @@ public class ExecutionDataFlowSettingsResponse  implements Serializable {
     }
   }
 
+  public ExecutionDataFlowSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

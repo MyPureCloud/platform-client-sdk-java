@@ -103,6 +103,13 @@ public class BuTimeOffPlanResponse  implements Serializable {
     }
   }
 
+  public BuTimeOffPlanResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activityCodeIds = new ArrayList<String>();
+      timeOffLimits = new ArrayList<BuTimeOffLimitReference>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

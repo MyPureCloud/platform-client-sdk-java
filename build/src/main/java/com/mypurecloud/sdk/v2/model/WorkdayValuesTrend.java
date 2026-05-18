@@ -45,6 +45,12 @@ public class WorkdayValuesTrend  implements Serializable {
     }
   }
 
+  public WorkdayValuesTrend(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<WorkdayValuesMetricItem>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The start workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateStartWorkday")

@@ -37,6 +37,11 @@ public class HistoryHeadersTranslation  implements Serializable {
     }
   }
 
+  public HistoryHeadersTranslation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A translation for the word \"from\", for the expected language

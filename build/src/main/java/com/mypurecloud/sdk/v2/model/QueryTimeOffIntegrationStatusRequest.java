@@ -33,6 +33,12 @@ public class QueryTimeOffIntegrationStatusRequest  implements Serializable {
     }
   }
 
+  public QueryTimeOffIntegrationStatusRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      timeOffRequestLookups = new ArrayList<TimeOffRequestLookup>();
+    }
+  }
+
   
   /**
    * A list of time off request lookups

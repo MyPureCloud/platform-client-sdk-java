@@ -36,6 +36,12 @@ public class CopilotAggregateDataContainer  implements Serializable {
     }
   }
 
+  public CopilotAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

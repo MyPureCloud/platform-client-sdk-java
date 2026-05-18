@@ -31,6 +31,11 @@ public class NextOccurrenceDetails  implements Serializable {
     }
   }
 
+  public NextOccurrenceDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The details for the next start occurrence for the recurrence.

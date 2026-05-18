@@ -87,6 +87,11 @@ public class LearningSlotScheduleActivity  implements Serializable {
     }
   }
 
+  public LearningSlotScheduleActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start date/time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

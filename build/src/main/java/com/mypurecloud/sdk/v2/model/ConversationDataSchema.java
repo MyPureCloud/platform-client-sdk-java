@@ -38,6 +38,11 @@ public class ConversationDataSchema  implements Serializable {
     }
   }
 
+  public ConversationDataSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the schema.

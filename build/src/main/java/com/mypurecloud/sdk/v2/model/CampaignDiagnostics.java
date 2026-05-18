@@ -52,6 +52,13 @@ public class CampaignDiagnostics  implements Serializable {
     }
   }
 
+  public CampaignDiagnostics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      ruleSetDiagnostics = new ArrayList<RuleSetDiagnostic>();
+      campaignErrors = new ArrayList<RestErrorDetail>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Campaign properties that can impact which contacts are callable")
   @JsonProperty("callableContacts")

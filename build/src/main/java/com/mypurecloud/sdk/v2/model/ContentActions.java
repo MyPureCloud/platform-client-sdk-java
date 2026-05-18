@@ -32,6 +32,11 @@ public class ContentActions  implements Serializable {
     }
   }
 
+  public ContentActions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A URL of a web page to direct the user to.

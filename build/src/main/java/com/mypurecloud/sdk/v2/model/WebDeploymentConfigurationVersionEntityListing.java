@@ -37,6 +37,12 @@ public class WebDeploymentConfigurationVersionEntityListing  implements Serializ
     }
   }
 
+  public WebDeploymentConfigurationVersionEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WebDeploymentConfigurationVersion>();
+    }
+  }
+
   
   /**
    **/

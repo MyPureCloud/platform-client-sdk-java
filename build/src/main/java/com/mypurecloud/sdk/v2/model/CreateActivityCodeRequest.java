@@ -98,6 +98,13 @@ public class CreateActivityCodeRequest  implements Serializable {
     }
   }
 
+  public CreateActivityCodeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      secondaryPresences = new ArrayList<SecondaryPresence>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the activity code

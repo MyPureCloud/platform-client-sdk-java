@@ -129,6 +129,11 @@ public class SchedulingNoForecastOptionsRequest  implements Serializable {
     }
   }
 
+  public SchedulingNoForecastOptionsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The shift length option to apply if no forecast is supplied

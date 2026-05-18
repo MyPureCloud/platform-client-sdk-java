@@ -33,6 +33,12 @@ public class UserTimeOffIntegrationStatusResponseListing  implements Serializabl
     }
   }
 
+  public UserTimeOffIntegrationStatusResponseListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserTimeOffIntegrationStatusResponse>();
+    }
+  }
+
   
   /**
    **/

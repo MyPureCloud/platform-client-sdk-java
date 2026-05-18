@@ -146,6 +146,12 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     }
   }
 
+  public DialerDnclistConfigChangeDncList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dncCodes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

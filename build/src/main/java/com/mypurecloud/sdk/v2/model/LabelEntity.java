@@ -30,6 +30,11 @@ public class LabelEntity  implements Serializable {
     }
   }
 
+  public LabelEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Id of the label.

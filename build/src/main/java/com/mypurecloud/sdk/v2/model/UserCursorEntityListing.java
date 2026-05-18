@@ -37,6 +37,12 @@ public class UserCursorEntityListing  implements Serializable {
     }
   }
 
+  public UserCursorEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<User>();
+    }
+  }
+
   
   /**
    **/

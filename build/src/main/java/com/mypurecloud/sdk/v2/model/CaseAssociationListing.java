@@ -36,6 +36,12 @@ public class CaseAssociationListing  implements Serializable {
     }
   }
 
+  public CaseAssociationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CaseAssociation>();
+    }
+  }
+
   
   /**
    **/

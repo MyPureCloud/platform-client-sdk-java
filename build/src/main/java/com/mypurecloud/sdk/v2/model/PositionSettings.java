@@ -81,6 +81,11 @@ public class PositionSettings  implements Serializable {
     }
   }
 
+  public PositionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The alignment for position

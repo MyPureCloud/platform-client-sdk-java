@@ -218,6 +218,15 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     }
   }
 
+  public AcdStartDetailEventTopicAcdStartEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callbackNumbers = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+      requestedRoutingSkillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

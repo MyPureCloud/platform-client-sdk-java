@@ -99,6 +99,13 @@ public class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast  impleme
     }
   }
 
+  public WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sourceDays = new ArrayList<WfmBuShortTermForecastCopyCompleteTopicForecastSourceDayPointer>();
+      modifications = new ArrayList<WfmBuShortTermForecastCopyCompleteTopicBuForecastModification>();
+    }
+  }
+
   
   /**
    **/

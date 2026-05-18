@@ -43,6 +43,12 @@ public class EmailCampaignScheduleEntityListing  implements Serializable, PagedR
     }
   }
 
+  public EmailCampaignScheduleEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EmailCampaignSchedule>();
+    }
+  }
+
   
   /**
    **/

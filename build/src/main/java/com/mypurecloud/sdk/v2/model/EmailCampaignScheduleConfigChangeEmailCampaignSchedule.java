@@ -48,6 +48,13 @@ public class EmailCampaignScheduleConfigChangeEmailCampaignSchedule  implements 
     }
   }
 
+  public EmailCampaignScheduleConfigChangeEmailCampaignSchedule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intervals = new ArrayList<EmailCampaignScheduleConfigChangeScheduleInterval>();
+      recurrences = new ArrayList<EmailCampaignScheduleConfigChangeScheduleRecurrence>();
+    }
+  }
+
   
   /**
    * a list of start and end times

@@ -142,6 +142,11 @@ public class JourneySessionEventsNotificationConversationChannel  implements Ser
     }
   }
 
+  public JourneySessionEventsNotificationConversationChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

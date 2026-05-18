@@ -56,6 +56,23 @@ public class StaffingGroupAllocation  implements Serializable {
     }
   }
 
+  public StaffingGroupAllocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      shrinkagePercentages = new ArrayList<Double>();
+      attritionPercentages = new ArrayList<Double>();
+      newHiresFullTimeEquivalentCount = new ArrayList<Double>();
+      planningGroupIds = new ArrayList<String>();
+      baseStartingFullTimeEquivalentCount = new ArrayList<Double>();
+      attritionFullTimeEquivalentCount = new ArrayList<Double>();
+      staffingGroupPlannedFullTimeEquivalentCount = new ArrayList<Double>();
+      endOfMonthPlannedFullTimeEquivalentCount = new ArrayList<Double>();
+      shrinkageFullTimeEquivalentCount = new ArrayList<Double>();
+      netFullTimeEquivalentCount = new ArrayList<Double>();
+      extraTimeUnderTimeFullTimeEquivalentCount = new ArrayList<Double>();
+      transfersFullTimeEquivalentCount = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * The staffing group to which the result allocation belongs

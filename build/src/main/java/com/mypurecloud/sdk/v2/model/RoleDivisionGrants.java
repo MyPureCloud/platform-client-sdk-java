@@ -33,6 +33,12 @@ public class RoleDivisionGrants  implements Serializable {
     }
   }
 
+  public RoleDivisionGrants(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      grants = new ArrayList<RoleDivisionPair>();
+    }
+  }
+
   
   /**
    * A list containing pairs of role and division IDs

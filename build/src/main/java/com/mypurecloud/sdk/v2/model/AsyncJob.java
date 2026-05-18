@@ -81,6 +81,11 @@ public class AsyncJob  implements Serializable {
     }
   }
 
+  public AsyncJob(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

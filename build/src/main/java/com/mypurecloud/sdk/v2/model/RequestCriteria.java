@@ -93,6 +93,12 @@ public class RequestCriteria  implements Serializable {
     }
   }
 
+  public RequestCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The criteria key.

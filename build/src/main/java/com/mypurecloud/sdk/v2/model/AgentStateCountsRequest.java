@@ -32,6 +32,11 @@ public class AgentStateCountsRequest  implements Serializable {
     }
   }
 
+  public AgentStateCountsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Filters that target user-level data

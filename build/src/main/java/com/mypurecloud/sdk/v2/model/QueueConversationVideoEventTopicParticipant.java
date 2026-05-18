@@ -154,6 +154,23 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     }
   }
 
+  public QueueConversationVideoEventTopicParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      calls = new ArrayList<QueueConversationVideoEventTopicCall>();
+      callbacks = new ArrayList<QueueConversationVideoEventTopicCallback>();
+      chats = new ArrayList<QueueConversationVideoEventTopicChat>();
+      cobrowsesessions = new ArrayList<QueueConversationVideoEventTopicCobrowse>();
+      emails = new ArrayList<QueueConversationVideoEventTopicEmail>();
+      messages = new ArrayList<QueueConversationVideoEventTopicMessage>();
+      internalMessages = new ArrayList<QueueConversationVideoEventTopicInternalMessage>();
+      screenMonitorings = new ArrayList<QueueConversationVideoEventTopicScreenMonitoring>();
+      screenshares = new ArrayList<QueueConversationVideoEventTopicScreenShare>();
+      socialExpressions = new ArrayList<QueueConversationVideoEventTopicSocialExpression>();
+      videos = new ArrayList<QueueConversationVideoEventTopicVideo>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this conversation.

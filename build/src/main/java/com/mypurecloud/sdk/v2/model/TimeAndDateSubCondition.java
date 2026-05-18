@@ -142,6 +142,11 @@ public class TimeAndDateSubCondition  implements Serializable {
     }
   }
 
+  public TimeAndDateSubCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of time/date sub-condition.

@@ -155,6 +155,13 @@ public class ConversationSummary  implements Serializable {
     }
   }
 
+  public ConversationSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predictedWrapupCodes = new ArrayList<ConversationSummaryWrapupCode>();
+      participants = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   /**
    * The id of the summary.

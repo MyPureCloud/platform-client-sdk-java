@@ -33,6 +33,12 @@ public class ContextPattern  implements Serializable {
     }
   }
 
+  public ContextPattern(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<EntityTypeCriteria>();
+    }
+  }
+
   
   /**
    * A list of one or more criteria to satisfy.

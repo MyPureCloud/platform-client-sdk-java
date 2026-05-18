@@ -231,6 +231,11 @@ public class ConversationEventTopicScreenMonitoring  implements Serializable {
     }
   }
 
+  public ConversationEventTopicScreenMonitoring(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

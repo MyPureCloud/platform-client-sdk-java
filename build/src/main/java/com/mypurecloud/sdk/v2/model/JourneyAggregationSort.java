@@ -147,6 +147,11 @@ public class JourneyAggregationSort  implements Serializable {
     }
   }
 
+  public JourneyAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

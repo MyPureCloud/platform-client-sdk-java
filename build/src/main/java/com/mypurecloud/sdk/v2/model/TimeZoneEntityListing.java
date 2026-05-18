@@ -43,6 +43,12 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     }
   }
 
+  public TimeZoneEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<RegionTimeZone>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class QueueConversationVideoEventTopicUriReference  implements Serializab
     }
   }
 
+  public QueueConversationVideoEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

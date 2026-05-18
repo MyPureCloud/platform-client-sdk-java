@@ -83,6 +83,11 @@ public class RoutingStatus  implements Serializable {
     }
   }
 
+  public RoutingStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The userId of the agent

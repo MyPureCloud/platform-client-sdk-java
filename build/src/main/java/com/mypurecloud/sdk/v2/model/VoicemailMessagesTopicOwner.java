@@ -29,6 +29,11 @@ public class VoicemailMessagesTopicOwner  implements Serializable {
     }
   }
 
+  public VoicemailMessagesTopicOwner(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

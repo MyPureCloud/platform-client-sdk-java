@@ -43,6 +43,12 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     }
   }
 
+  public CoachingNotificationList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CoachingNotification>();
+    }
+  }
+
   
   /**
    **/

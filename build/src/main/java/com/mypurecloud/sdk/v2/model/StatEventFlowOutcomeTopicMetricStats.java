@@ -35,6 +35,11 @@ public class StatEventFlowOutcomeTopicMetricStats  implements Serializable {
     }
   }
 
+  public StatEventFlowOutcomeTopicMetricStats(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

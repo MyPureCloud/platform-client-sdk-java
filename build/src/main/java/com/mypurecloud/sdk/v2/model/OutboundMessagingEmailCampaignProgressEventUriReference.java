@@ -31,6 +31,11 @@ public class OutboundMessagingEmailCampaignProgressEventUriReference  implements
     }
   }
 
+  public OutboundMessagingEmailCampaignProgressEventUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

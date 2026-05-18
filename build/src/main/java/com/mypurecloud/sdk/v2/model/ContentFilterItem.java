@@ -140,6 +140,12 @@ public class ContentFilterItem  implements Serializable {
     }
   }
 
+  public ContentFilterItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

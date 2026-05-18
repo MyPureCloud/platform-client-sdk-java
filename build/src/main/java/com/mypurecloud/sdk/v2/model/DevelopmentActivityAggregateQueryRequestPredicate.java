@@ -80,6 +80,11 @@ public class DevelopmentActivityAggregateQueryRequestPredicate  implements Seria
     }
   }
 
+  public DevelopmentActivityAggregateQueryRequestPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Each predicates specifies a dimension.

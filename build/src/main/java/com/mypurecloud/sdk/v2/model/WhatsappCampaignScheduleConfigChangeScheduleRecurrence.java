@@ -44,6 +44,12 @@ public class WhatsappCampaignScheduleConfigChangeScheduleRecurrence  implements 
     }
   }
 
+  public WhatsappCampaignScheduleConfigChangeScheduleRecurrence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alterations = new ArrayList<WhatsappCampaignScheduleConfigChangeAlteration>();
+    }
+  }
+
   
   /**
    * the recurrence id

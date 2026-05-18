@@ -40,6 +40,13 @@ public class QueueConversationEventTopicConversationRoutingData  implements Seri
     }
   }
 
+  public QueueConversationEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<QueueConversationEventTopicUriReference>();
+      scoredAgents = new ArrayList<QueueConversationEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    **/

@@ -42,6 +42,12 @@ public class JsonSchemaDocument  implements Serializable {
     }
   }
 
+  public JsonSchemaDocument(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      required = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

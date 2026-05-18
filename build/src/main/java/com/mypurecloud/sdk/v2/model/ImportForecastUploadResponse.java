@@ -36,6 +36,11 @@ public class ImportForecastUploadResponse  implements Serializable {
     }
   }
 
+  public ImportForecastUploadResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The key to pass to the secondary request to start processing of the upload

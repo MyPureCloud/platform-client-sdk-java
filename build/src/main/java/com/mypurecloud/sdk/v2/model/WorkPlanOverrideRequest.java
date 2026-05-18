@@ -82,6 +82,11 @@ public class WorkPlanOverrideRequest  implements Serializable {
     }
   }
 
+  public WorkPlanOverrideRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The action to perform on work plan override, defaults to add

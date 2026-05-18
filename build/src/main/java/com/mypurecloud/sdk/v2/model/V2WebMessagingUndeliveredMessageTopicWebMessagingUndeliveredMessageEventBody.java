@@ -40,6 +40,12 @@ public class V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessage
     }
   }
 
+  public V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messages = new ArrayList<V2WebMessagingUndeliveredMessageTopicMessage>();
+    }
+  }
+
   
   /**
    **/

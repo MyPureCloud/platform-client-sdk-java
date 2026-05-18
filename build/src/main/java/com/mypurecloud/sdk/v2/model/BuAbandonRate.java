@@ -30,6 +30,11 @@ public class BuAbandonRate  implements Serializable {
     }
   }
 
+  public BuAbandonRate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to include abandon rate in the associated configuration

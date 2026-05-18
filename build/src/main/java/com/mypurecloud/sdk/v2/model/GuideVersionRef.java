@@ -30,6 +30,11 @@ public class GuideVersionRef  implements Serializable {
     }
   }
 
+  public GuideVersionRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The version number.")
   @JsonProperty("version")

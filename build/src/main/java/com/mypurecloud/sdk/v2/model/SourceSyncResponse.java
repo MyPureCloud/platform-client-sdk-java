@@ -87,6 +87,11 @@ public class SourceSyncResponse  implements Serializable {
     }
   }
 
+  public SourceSyncResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Sync state.

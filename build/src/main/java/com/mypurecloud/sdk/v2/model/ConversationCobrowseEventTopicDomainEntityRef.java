@@ -31,6 +31,11 @@ public class ConversationCobrowseEventTopicDomainEntityRef  implements Serializa
     }
   }
 
+  public ConversationCobrowseEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

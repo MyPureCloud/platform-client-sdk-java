@@ -198,6 +198,11 @@ public class ConversationAggregationView  implements Serializable {
     }
   }
 
+  public ConversationAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

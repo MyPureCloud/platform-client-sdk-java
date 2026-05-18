@@ -33,6 +33,12 @@ public class BuScheduleListing  implements Serializable {
     }
   }
 
+  public BuScheduleListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BuScheduleListItem>();
+    }
+  }
+
   
   /**
    **/

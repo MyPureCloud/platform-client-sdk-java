@@ -33,6 +33,12 @@ public class DocumentBodyWithHighlight  implements Serializable {
     }
   }
 
+  public DocumentBodyWithHighlight(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      blocks = new ArrayList<DocumentBodyBlockWithHighlight>();
+    }
+  }
+
   
   /**
    * The list of building blocks for the document body.

@@ -195,6 +195,18 @@ public class PolicyConditions  implements Serializable {
     }
   }
 
+  public PolicyConditions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      forUsers = new ArrayList<PolicyUser>();
+      directions = new ArrayList<DirectionsEnum>();
+      dateRanges = new ArrayList<String>();
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      forQueues = new ArrayList<Queue>();
+      wrapupCodes = new ArrayList<WrapupCode>();
+      teams = new ArrayList<Team>();
+    }
+  }
+
   
   /**
    * List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].

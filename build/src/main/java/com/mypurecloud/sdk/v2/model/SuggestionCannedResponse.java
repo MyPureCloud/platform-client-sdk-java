@@ -31,6 +31,11 @@ public class SuggestionCannedResponse  implements Serializable {
     }
   }
 
+  public SuggestionCannedResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The suggested response.")
   @JsonProperty("response")

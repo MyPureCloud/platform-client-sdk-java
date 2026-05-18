@@ -42,6 +42,14 @@ public class TtsEngineEntity  implements Serializable {
     }
   }
 
+  public TtsEngineEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      languages = new ArrayList<String>();
+      outputFormats = new ArrayList<String>();
+      voices = new ArrayList<TtsVoiceEntity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

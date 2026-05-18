@@ -42,6 +42,13 @@ public class VoicemailsSearchResponse  implements Serializable {
     }
   }
 
+  public VoicemailsSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+      results = new ArrayList<VoicemailMessage>();
+    }
+  }
+
   
   /**
    * The total number of results found

@@ -33,6 +33,12 @@ public class Bullseye  implements Serializable {
     }
   }
 
+  public Bullseye(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      rings = new ArrayList<Ring>();
+    }
+  }
+
   
   /**
    * The bullseye rings configured for this queue.

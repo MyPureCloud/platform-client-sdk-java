@@ -30,6 +30,11 @@ public class MessageSticker  implements Serializable {
     }
   }
 
+  public MessageSticker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the sticker, useful for retrieving it

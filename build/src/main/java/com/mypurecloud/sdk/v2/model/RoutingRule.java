@@ -79,6 +79,11 @@ public class RoutingRule  implements Serializable {
     }
   }
 
+  public RoutingRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * matching operator.  MEETS_THRESHOLD matches any agent with a score at or above the rule's threshold.  ANY matches all specified agents, regardless of score.

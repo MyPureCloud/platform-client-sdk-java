@@ -31,6 +31,11 @@ public class AlternativeShiftScheduleLookup  implements Serializable {
     }
   }
 
+  public AlternativeShiftScheduleLookup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unique identifier of the schedule

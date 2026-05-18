@@ -216,6 +216,16 @@ public class Document  implements Serializable {
     }
   }
 
+  public Document(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      tags = new ArrayList<String>();
+      tagValues = new ArrayList<TagValue>();
+      attributes = new ArrayList<DocumentAttribute>();
+      thumbnails = new ArrayList<DocumentThumbnail>();
+      acl = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

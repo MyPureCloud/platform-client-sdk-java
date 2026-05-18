@@ -29,6 +29,11 @@ public class CallForwardingEventUser  implements Serializable {
     }
   }
 
+  public CallForwardingEventUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

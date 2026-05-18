@@ -33,6 +33,11 @@ public class SnapshotFiles  implements Serializable {
     }
   }
 
+  public SnapshotFiles(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Metadata for requested snapshot

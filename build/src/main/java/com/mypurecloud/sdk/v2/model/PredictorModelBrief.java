@@ -135,6 +135,12 @@ public class PredictorModelBrief  implements Serializable {
     }
   }
 
+  public PredictorModelBrief(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      retrainingErrors = new ArrayList<PredictorModelRetrainingError>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The media type of the model.")
   @JsonProperty("mediaType")

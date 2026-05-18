@@ -37,6 +37,12 @@ public class NamedEntityTypeItem  implements Serializable {
     }
   }
 
+  public NamedEntityTypeItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      synonyms = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A value for an named entity type definition.

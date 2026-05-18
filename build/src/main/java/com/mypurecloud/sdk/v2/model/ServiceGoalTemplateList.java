@@ -35,6 +35,12 @@ public class ServiceGoalTemplateList  implements Serializable {
     }
   }
 
+  public ServiceGoalTemplateList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ServiceGoalTemplate>();
+    }
+  }
+
   
   /**
    **/

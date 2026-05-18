@@ -31,6 +31,11 @@ public class InternalMessageDetails  implements Serializable {
     }
   }
 
+  public InternalMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * UUID identifying the internal message media.

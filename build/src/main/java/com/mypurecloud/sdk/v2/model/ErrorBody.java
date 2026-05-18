@@ -47,6 +47,13 @@ public class ErrorBody  implements Serializable {
     }
   }
 
+  public ErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<Detail>();
+      errors = new ArrayList<ErrorBody>();
+    }
+  }
+
   
   /**
    **/

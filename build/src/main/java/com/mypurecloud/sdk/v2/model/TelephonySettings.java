@@ -30,6 +30,11 @@ public class TelephonySettings  implements Serializable {
     }
   }
 
+  public TelephonySettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Determines if a persistent connection will be established before routing calls to agents

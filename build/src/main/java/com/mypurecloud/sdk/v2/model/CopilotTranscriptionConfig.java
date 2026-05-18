@@ -77,6 +77,11 @@ public class CopilotTranscriptionConfig  implements Serializable {
     }
   }
 
+  public CopilotTranscriptionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Transcription engine for Agent Copilot.

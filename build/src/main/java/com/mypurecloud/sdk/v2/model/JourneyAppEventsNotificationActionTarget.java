@@ -30,6 +30,11 @@ public class JourneyAppEventsNotificationActionTarget  implements Serializable {
     }
   }
 
+  public JourneyAppEventsNotificationActionTarget(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

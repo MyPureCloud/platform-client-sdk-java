@@ -37,6 +37,13 @@ public class BuAgentSchedulesSearchResponse  implements Serializable {
     }
   }
 
+  public BuAgentSchedulesSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentSchedules = new ArrayList<BuAgentScheduleSearchResponse>();
+      publishedSchedules = new ArrayList<BuAgentSchedulePublishedScheduleReference>();
+    }
+  }
+
   
   /**
    * The requested agent schedules

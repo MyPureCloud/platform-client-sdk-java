@@ -35,6 +35,12 @@ public class SetTimeOffLimitValuesRequest  implements Serializable {
     }
   }
 
+  public SetTimeOffLimitValuesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<TimeOffLimitRange>();
+    }
+  }
+
   
   /**
    **/

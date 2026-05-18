@@ -83,6 +83,11 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
     }
   }
 
+  public DialerCampaignRuleConfigChangeCampaignRuleCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the condition

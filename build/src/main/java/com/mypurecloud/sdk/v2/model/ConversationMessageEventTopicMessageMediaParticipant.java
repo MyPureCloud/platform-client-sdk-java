@@ -424,6 +424,13 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     }
   }
 
+  public ConversationMessageEventTopicMessageMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+      messages = new ArrayList<ConversationMessageEventTopicMessageDetails>();
+    }
+  }
+
   
   /**
    **/

@@ -82,6 +82,12 @@ public class SegmentDetailQueryClause  implements Serializable {
     }
   }
 
+  public SegmentDetailQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<SegmentDetailQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

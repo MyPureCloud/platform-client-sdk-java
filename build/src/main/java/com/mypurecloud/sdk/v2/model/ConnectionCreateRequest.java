@@ -31,6 +31,11 @@ public class ConnectionCreateRequest  implements Serializable {
     }
   }
 
+  public ConnectionCreateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the Connection

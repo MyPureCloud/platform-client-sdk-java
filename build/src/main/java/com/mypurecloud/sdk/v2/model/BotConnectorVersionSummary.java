@@ -30,6 +30,11 @@ public class BotConnectorVersionSummary  implements Serializable {
     }
   }
 
+  public BotConnectorVersionSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the version.

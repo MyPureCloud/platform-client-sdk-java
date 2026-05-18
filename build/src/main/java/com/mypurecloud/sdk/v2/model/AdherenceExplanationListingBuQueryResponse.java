@@ -33,6 +33,12 @@ public class AdherenceExplanationListingBuQueryResponse  implements Serializable
     }
   }
 
+  public AdherenceExplanationListingBuQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AdherenceExplanationResponse>();
+    }
+  }
+
   
   /**
    **/

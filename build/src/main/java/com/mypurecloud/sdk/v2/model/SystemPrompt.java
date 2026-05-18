@@ -37,6 +37,12 @@ public class SystemPrompt  implements Serializable {
     }
   }
 
+  public SystemPrompt(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      resources = new ArrayList<SystemPromptAsset>();
+    }
+  }
+
   
   /**
    * The system prompt identifier

@@ -30,6 +30,11 @@ public class AdherenceExplanationAsyncResponse  implements Serializable {
     }
   }
 
+  public AdherenceExplanationAsyncResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A reference to the job that was started by the request

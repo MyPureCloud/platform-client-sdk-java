@@ -29,6 +29,11 @@ public class PhoneNumberStatus  implements Serializable {
     }
   }
 
+  public PhoneNumberStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates whether or not a phone number is callable.

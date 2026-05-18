@@ -32,6 +32,12 @@ public class ConversationDeletionProtectionQuery  implements Serializable {
     }
   }
 
+  public ConversationDeletionProtectionQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conversationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * This is a list of ConversationIds. The list cannot exceed 100 conversationids.

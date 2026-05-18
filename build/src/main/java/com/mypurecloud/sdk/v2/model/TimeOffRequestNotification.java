@@ -90,6 +90,13 @@ public class TimeOffRequestNotification  implements Serializable {
     }
   }
 
+  public TimeOffRequestNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      partialDayStartDateTimes = new ArrayList<Date>();
+      fullDayManagementUnitDates = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of this time off request

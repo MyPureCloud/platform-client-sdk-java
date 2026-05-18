@@ -37,6 +37,12 @@ public class WorkbinChangeListing  implements Serializable {
     }
   }
 
+  public WorkbinChangeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkitemsChangeWorkbinDelta>();
+    }
+  }
+
   
   /**
    **/

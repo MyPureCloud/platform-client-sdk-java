@@ -33,6 +33,12 @@ public class EmbeddedIntegration  implements Serializable {
     }
   }
 
+  public EmbeddedIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      domainWhitelist = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

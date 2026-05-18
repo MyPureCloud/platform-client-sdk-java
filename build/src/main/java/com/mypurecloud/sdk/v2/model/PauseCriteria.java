@@ -81,6 +81,11 @@ public class PauseCriteria  implements Serializable {
     }
   }
 
+  public PauseCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

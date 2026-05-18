@@ -33,6 +33,12 @@ public class OpenSocialMediaReactionsRequest  implements Serializable {
     }
   }
 
+  public OpenSocialMediaReactionsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<OpenSocialMediaReactionsNormalizedEvent>();
+    }
+  }
+
   
   /**
    * List of open social media reaction events

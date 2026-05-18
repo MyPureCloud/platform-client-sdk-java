@@ -35,6 +35,11 @@ public class V2WfmMainForecastExportSnapshotEventMainForecastErrorBody  implemen
     }
   }
 
+  public V2WfmMainForecastExportSnapshotEventMainForecastErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -37,6 +37,14 @@ public class AgentQueueTimeRequest  implements Serializable {
     }
   }
 
+  public AgentQueueTimeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      startOffsetMinutes = new ArrayList<Integer>();
+      onQueueLengthMinutesPerInterval = new ArrayList<Integer>();
+      onQueueActivityCodeIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * ID of the agent

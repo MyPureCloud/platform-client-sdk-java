@@ -33,6 +33,12 @@ public class OutputValue  implements Serializable {
     }
   }
 
+  public OutputValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      properties = new ArrayList<OutputValue>();
+    }
+  }
+
   
   /**
    * The contract schema property key that describes the output value of this column.

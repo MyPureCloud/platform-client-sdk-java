@@ -44,6 +44,12 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public ExtensionPoolEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExtensionPool>();
+    }
+  }
+
   
   /**
    **/

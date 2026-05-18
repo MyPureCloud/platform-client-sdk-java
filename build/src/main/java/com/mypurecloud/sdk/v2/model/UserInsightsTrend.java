@@ -94,6 +94,12 @@ public class UserInsightsTrend  implements Serializable {
     }
   }
 
+  public UserInsightsTrend(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserInsightsTrendMetricItem>();
+    }
+  }
+
   
   /**
    * The performance profile

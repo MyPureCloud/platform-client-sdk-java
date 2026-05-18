@@ -35,6 +35,11 @@ public class ExternalContactsContactChangedTopicPhoneNumber  implements Serializ
     }
   }
 
+  public ExternalContactsContactChangedTopicPhoneNumber(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

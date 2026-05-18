@@ -33,6 +33,11 @@ public class DocumentChunkBlock  implements Serializable {
     }
   }
 
+  public DocumentChunkBlock(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the chunk.

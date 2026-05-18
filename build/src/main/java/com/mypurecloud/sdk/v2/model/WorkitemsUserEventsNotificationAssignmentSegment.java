@@ -148,6 +148,11 @@ public class WorkitemsUserEventsNotificationAssignmentSegment  implements Serial
     }
   }
 
+  public WorkitemsUserEventsNotificationAssignmentSegment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

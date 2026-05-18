@@ -81,6 +81,11 @@ public class WebMessagingEventPresence  implements Serializable {
     }
   }
 
+  public WebMessagingEventPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of Presence event.

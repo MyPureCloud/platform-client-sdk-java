@@ -30,6 +30,11 @@ public class AnalyticsProposedAgent  implements Serializable {
     }
   }
 
+  public AnalyticsProposedAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Proposed agent rank for this conversation from predictive routing (lower is better)

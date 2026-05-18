@@ -31,6 +31,11 @@ public class AcknowledgeScreenRecordingRequest  implements Serializable {
     }
   }
 
+  public AcknowledgeScreenRecordingRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

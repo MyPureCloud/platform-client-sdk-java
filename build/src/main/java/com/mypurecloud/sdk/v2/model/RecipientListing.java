@@ -43,6 +43,12 @@ public class RecipientListing  implements Serializable, PagedResource<Recipient>
     }
   }
 
+  public RecipientListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Recipient>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class PatchActionMapScheduleGroups  implements Serializable {
     }
   }
 
+  public PatchActionMapScheduleGroups(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The actions map's associated schedule group.

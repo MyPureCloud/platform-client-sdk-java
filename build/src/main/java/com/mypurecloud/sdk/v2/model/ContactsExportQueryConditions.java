@@ -31,6 +31,11 @@ public class ContactsExportQueryConditions  implements Serializable {
     }
   }
 
+  public ContactsExportQueryConditions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Filters to apply on export

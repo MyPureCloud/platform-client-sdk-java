@@ -140,6 +140,11 @@ public class ContactImportJobResponse  implements Serializable {
     }
   }
 
+  public ContactImportJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

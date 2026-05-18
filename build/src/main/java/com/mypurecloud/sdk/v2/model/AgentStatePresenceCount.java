@@ -88,6 +88,11 @@ public class AgentStatePresenceCount  implements Serializable {
     }
   }
 
+  public AgentStatePresenceCount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * System presence

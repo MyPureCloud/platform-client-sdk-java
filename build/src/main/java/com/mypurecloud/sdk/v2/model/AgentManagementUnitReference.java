@@ -34,6 +34,11 @@ public class AgentManagementUnitReference  implements Serializable {
     }
   }
 
+  public AgentManagementUnitReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user (agent) for whom the management unit was requested

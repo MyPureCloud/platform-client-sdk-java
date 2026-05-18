@@ -82,6 +82,12 @@ public class ContentModeration  implements Serializable {
     }
   }
 
+  public ContentModeration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      categories = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The Content Moderation Flag of the message.

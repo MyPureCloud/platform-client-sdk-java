@@ -36,6 +36,12 @@ public class LongTermForecastResult  implements Serializable {
     }
   }
 
+  public LongTermForecastResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      planningGroups = new ArrayList<LongTermForecastPlanningGroupData>();
+    }
+  }
+
   
   /**
    * The forecast data broken up by planning group

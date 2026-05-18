@@ -33,6 +33,12 @@ public class AuditQueryServiceMapping  implements Serializable {
     }
   }
 
+  public AuditQueryServiceMapping(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      services = new ArrayList<AuditQueryService>();
+    }
+  }
+
   
   /**
    * List of Services

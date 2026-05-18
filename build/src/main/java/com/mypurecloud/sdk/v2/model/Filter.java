@@ -35,6 +35,12 @@ public class Filter  implements Serializable {
     }
   }
 
+  public Filter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the field by which to filter.

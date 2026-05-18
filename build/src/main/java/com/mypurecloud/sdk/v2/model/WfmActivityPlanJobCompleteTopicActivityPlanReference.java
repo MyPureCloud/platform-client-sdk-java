@@ -34,6 +34,12 @@ public class WfmActivityPlanJobCompleteTopicActivityPlanReference  implements Se
     }
   }
 
+  public WfmActivityPlanJobCompleteTopicActivityPlanReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      occurrences = new ArrayList<WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference>();
+    }
+  }
+
   
   /**
    **/

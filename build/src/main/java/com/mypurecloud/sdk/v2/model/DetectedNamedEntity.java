@@ -33,6 +33,11 @@ public class DetectedNamedEntity  implements Serializable {
     }
   }
 
+  public DetectedNamedEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The name of the detected named entity.")
   @JsonProperty("name")

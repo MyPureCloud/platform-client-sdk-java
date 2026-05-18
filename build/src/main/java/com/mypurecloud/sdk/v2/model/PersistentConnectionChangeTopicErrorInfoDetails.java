@@ -37,6 +37,11 @@ public class PersistentConnectionChangeTopicErrorInfoDetails  implements Seriali
     }
   }
 
+  public PersistentConnectionChangeTopicErrorInfoDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class HeaderEntry  implements Serializable {
     }
   }
 
+  public HeaderEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The key of the header (e.g., 'Subject', 'From', 'X-Custom-Header').

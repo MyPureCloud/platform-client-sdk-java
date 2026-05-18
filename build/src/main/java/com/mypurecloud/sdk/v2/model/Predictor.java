@@ -98,6 +98,13 @@ public class Predictor  implements Serializable {
     }
   }
 
+  public Predictor(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queues = new ArrayList<AddressableEntityRef>();
+      models = new ArrayList<PredictorModelBrief>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

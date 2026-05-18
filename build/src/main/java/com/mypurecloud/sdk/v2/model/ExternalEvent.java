@@ -37,6 +37,11 @@ public class ExternalEvent  implements Serializable {
     }
   }
 
+  public ExternalEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the event.

@@ -425,6 +425,12 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     }
   }
 
+  public QueueConversationCallEventTopicCallMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

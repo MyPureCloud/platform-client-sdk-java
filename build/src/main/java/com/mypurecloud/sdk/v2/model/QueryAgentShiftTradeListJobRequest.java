@@ -32,6 +32,12 @@ public class QueryAgentShiftTradeListJobRequest  implements Serializable {
     }
   }
 
+  public QueryAgentShiftTradeListJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      weekDates = new ArrayList<LocalDate>();
+    }
+  }
+
   
   /**
    * The start week dates in which to query shift trades in the business unit time zone (yyyy-MM-dd format)

@@ -78,6 +78,11 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpointChannel  implement
     }
   }
 
+  public JourneyOutcomeEventsNotificationOutcomeTouchpointChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

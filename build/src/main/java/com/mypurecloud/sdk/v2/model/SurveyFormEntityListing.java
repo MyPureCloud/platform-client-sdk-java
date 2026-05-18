@@ -43,6 +43,12 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     }
   }
 
+  public SurveyFormEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SurveyForm>();
+    }
+  }
+
   
   /**
    **/

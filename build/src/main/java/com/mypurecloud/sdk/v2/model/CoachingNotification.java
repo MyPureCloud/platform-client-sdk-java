@@ -189,6 +189,11 @@ public class CoachingNotification  implements Serializable {
     }
   }
 
+  public CoachingNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

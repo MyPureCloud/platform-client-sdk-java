@@ -30,6 +30,11 @@ public class WorkitemsUserEventsNotificationScoredAgent  implements Serializable
     }
   }
 
+  public WorkitemsUserEventsNotificationScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

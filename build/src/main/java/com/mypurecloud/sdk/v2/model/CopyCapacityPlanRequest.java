@@ -35,6 +35,11 @@ public class CopyCapacityPlanRequest  implements Serializable {
     }
   }
 
+  public CopyCapacityPlanRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the new capacity plan

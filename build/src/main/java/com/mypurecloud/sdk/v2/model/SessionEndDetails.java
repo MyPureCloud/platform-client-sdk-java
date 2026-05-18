@@ -78,6 +78,11 @@ public class SessionEndDetails  implements Serializable {
     }
   }
 
+  public SessionEndDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of termination handling that resulted in the session end. It can be either Exit or Disconnect

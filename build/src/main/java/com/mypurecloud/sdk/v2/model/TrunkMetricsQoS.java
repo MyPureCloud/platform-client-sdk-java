@@ -29,6 +29,11 @@ public class TrunkMetricsQoS  implements Serializable {
     }
   }
 
+  public TrunkMetricsQoS(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Total number of QoS mismatches over the course of the last 24-hour period (sliding window).

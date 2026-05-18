@@ -43,6 +43,12 @@ public class ReportingExportMetadataJobListing  implements Serializable, PagedRe
     }
   }
 
+  public ReportingExportMetadataJobListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ReportingExportMetadataJobResponse>();
+    }
+  }
+
   
   /**
    **/

@@ -38,6 +38,11 @@ public class JourneyGeolocation  implements Serializable {
     }
   }
 
+  public JourneyGeolocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Geolocation's ISO 3166-1 alpha-2 country code.

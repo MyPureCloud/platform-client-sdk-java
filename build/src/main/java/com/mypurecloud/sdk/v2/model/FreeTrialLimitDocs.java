@@ -33,6 +33,12 @@ public class FreeTrialLimitDocs  implements Serializable {
     }
   }
 
+  public FreeTrialLimitDocs(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      namespaces = new ArrayList<FreeTrialNamespace>();
+    }
+  }
+
   
   /**
    **/

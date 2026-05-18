@@ -30,6 +30,11 @@ public class PresenceEventOrganizationPresence  implements Serializable {
     }
   }
 
+  public PresenceEventOrganizationPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

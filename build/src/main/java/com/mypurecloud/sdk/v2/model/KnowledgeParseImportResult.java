@@ -35,6 +35,12 @@ public class KnowledgeParseImportResult  implements Serializable {
     }
   }
 
+  public KnowledgeParseImportResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errors = new ArrayList<ErrorBody>();
+    }
+  }
+
   
   /**
    * Number of imported articles.

@@ -43,6 +43,12 @@ public class AssignedLearningModuleDomainEntityListing  implements Serializable,
     }
   }
 
+  public AssignedLearningModuleDomainEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AssignedLearningModule>();
+    }
+  }
+
   
   /**
    **/

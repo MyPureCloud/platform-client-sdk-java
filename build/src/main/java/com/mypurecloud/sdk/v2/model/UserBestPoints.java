@@ -35,6 +35,12 @@ public class UserBestPoints  implements Serializable {
     }
   }
 
+  public UserBestPoints(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      bestPoints = new ArrayList<UserBestPointsItem>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The requested user for the best points")
   @JsonProperty("user")

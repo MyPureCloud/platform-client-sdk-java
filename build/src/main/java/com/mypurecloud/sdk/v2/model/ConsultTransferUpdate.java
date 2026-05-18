@@ -80,6 +80,11 @@ public class ConsultTransferUpdate  implements Serializable {
     }
   }
 
+  public ConsultTransferUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Determines to whom the initiating participant is speaking.

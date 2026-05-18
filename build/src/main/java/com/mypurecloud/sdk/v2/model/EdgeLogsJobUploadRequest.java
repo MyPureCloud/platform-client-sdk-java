@@ -32,6 +32,12 @@ public class EdgeLogsJobUploadRequest  implements Serializable {
     }
   }
 
+  public EdgeLogsJobUploadRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      fileIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A list of file ids to upload.

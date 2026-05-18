@@ -93,6 +93,12 @@ public class ContactEnrichRequest  implements Serializable {
     }
   }
 
+  public ContactEnrichRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchingIdentifiers = new ArrayList<ContactIdentifier>();
+    }
+  }
+
   
   /**
    * A user-specified tracker string, only useful in the Bulk-Enrich API. If one Bulk-Enrich operation in a request fails, the requested operation will be repeated in the Bulk API response, including this id field, allowing associating of request and response operations.

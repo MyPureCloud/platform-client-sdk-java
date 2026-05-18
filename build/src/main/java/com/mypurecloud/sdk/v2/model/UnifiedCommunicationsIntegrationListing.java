@@ -43,6 +43,12 @@ public class UnifiedCommunicationsIntegrationListing  implements Serializable, P
     }
   }
 
+  public UnifiedCommunicationsIntegrationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UnifiedCommunicationsIntegration>();
+    }
+  }
+
   
   /**
    **/

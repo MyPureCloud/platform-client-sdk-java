@@ -84,6 +84,11 @@ public class CampaignDiagnosticCampaignHealthState  implements Serializable {
     }
   }
 
+  public CampaignDiagnosticCampaignHealthState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Campaign health state name

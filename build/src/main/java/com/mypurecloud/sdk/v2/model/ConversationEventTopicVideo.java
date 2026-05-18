@@ -226,6 +226,12 @@ public class ConversationEventTopicVideo  implements Serializable {
     }
   }
 
+  public ConversationEventTopicVideo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      msids = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

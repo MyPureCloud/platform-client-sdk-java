@@ -43,6 +43,12 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     }
   }
 
+  public LanguageEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Language>();
+    }
+  }
+
   
   /**
    **/

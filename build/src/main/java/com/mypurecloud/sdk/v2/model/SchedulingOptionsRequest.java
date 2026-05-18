@@ -81,6 +81,11 @@ public class SchedulingOptionsRequest  implements Serializable {
     }
   }
 
+  public SchedulingOptionsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Schedule generation options to apply if no forecast is supplied

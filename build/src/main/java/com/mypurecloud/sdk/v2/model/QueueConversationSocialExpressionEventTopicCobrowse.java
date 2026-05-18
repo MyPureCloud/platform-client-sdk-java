@@ -226,6 +226,12 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicCobrowse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      controlling = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

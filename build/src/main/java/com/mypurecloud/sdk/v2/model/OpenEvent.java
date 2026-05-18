@@ -77,6 +77,11 @@ public class OpenEvent  implements Serializable {
     }
   }
 
+  public OpenEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element

@@ -86,6 +86,11 @@ public class FlowPathsFlowDetails  implements Serializable {
     }
   }
 
+  public FlowPathsFlowDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The identifier of the flow.

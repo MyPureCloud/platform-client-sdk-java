@@ -32,6 +32,11 @@ public class ConversationSummaryTopicVirtualAgentsConversationFollowupAction  im
     }
   }
 
+  public ConversationSummaryTopicVirtualAgentsConversationFollowupAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

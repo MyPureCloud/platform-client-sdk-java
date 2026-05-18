@@ -29,6 +29,11 @@ public class WfmUserNotificationTopicUserReference  implements Serializable {
     }
   }
 
+  public WfmUserNotificationTopicUserReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

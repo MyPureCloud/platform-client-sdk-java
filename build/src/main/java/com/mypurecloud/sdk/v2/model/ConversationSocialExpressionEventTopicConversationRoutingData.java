@@ -39,6 +39,13 @@ public class ConversationSocialExpressionEventTopicConversationRoutingData  impl
     }
   }
 
+  public ConversationSocialExpressionEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<ConversationSocialExpressionEventTopicUriReference>();
+      scoredAgents = new ArrayList<ConversationSocialExpressionEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

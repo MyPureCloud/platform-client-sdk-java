@@ -30,6 +30,11 @@ public class ContactImportField  implements Serializable {
     }
   }
 
+  public ContactImportField(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Field name

@@ -34,6 +34,12 @@ public class JourneyViewChartMetricResultValue  implements Serializable {
     }
   }
 
+  public JourneyViewChartMetricResultValue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      groupByAttributes = new ArrayList<GroupByAttribute>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Value for this metric")
   @JsonProperty("value")

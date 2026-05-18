@@ -31,6 +31,11 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayForecastData  implements Seri
     }
   }
 
+  public WfmBuIntradayDataUpdateTopicBuIntradayForecastData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

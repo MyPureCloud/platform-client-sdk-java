@@ -32,6 +32,11 @@ public class DispositionSilentCallTimeout  implements Serializable {
     }
   }
 
+  public DispositionSilentCallTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured silent call timeout value.

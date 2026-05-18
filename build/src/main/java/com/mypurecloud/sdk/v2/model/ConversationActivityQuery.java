@@ -154,6 +154,13 @@ public class ConversationActivityQuery  implements Serializable {
     }
   }
 
+  public ConversationActivityQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<ConversationActivityQueryMetric>();
+      groupBy = new ArrayList<GroupByEnum>();
+    }
+  }
+
   
   /**
    * List of requested metrics

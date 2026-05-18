@@ -34,6 +34,11 @@ public class QueueConversationChatEventTopicJourneyContext  implements Serializa
     }
   }
 
+  public QueueConversationChatEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

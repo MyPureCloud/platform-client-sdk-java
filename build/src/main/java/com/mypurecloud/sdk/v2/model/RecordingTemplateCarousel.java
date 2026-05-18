@@ -33,6 +33,12 @@ public class RecordingTemplateCarousel  implements Serializable {
     }
   }
 
+  public RecordingTemplateCarousel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      cards = new ArrayList<RecordingTemplateCard>();
+    }
+  }
+
   
   /**
    * An array of template card objects.

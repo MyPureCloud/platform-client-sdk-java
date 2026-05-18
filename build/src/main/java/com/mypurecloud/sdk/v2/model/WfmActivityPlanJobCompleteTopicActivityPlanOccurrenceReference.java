@@ -34,6 +34,12 @@ public class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference  imp
     }
   }
 
+  public WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sessions = new ArrayList<WfmActivityPlanJobCompleteTopicActivityPlanSessionReference>();
+    }
+  }
+
   
   /**
    **/

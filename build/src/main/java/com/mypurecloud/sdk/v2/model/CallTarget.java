@@ -78,6 +78,11 @@ public class CallTarget  implements Serializable {
     }
   }
 
+  public CallTarget(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of call

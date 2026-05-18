@@ -309,6 +309,12 @@ public class SmsPhoneNumber  implements Serializable {
     }
   }
 
+  public SmsPhoneNumber(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      capabilities = new ArrayList<CapabilitiesEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

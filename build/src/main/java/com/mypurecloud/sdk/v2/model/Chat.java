@@ -29,6 +29,11 @@ public class Chat  implements Serializable {
     }
   }
 
+  public Chat(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

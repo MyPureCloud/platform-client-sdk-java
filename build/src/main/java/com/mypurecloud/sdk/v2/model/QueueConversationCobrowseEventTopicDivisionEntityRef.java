@@ -32,6 +32,11 @@ public class QueueConversationCobrowseEventTopicDivisionEntityRef  implements Se
     }
   }
 
+  public QueueConversationCobrowseEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

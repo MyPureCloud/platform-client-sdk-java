@@ -29,6 +29,11 @@ public class ChecklistFinalizePayload  implements Serializable {
     }
   }
 
+  public ChecklistFinalizePayload(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Exit reason provided at the time of finalizing the checklist.

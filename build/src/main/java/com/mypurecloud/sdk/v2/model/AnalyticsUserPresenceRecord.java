@@ -89,6 +89,11 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     }
   }
 
+  public AnalyticsUserPresenceRecord(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

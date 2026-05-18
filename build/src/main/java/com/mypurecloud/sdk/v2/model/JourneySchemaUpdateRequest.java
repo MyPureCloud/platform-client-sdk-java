@@ -33,6 +33,11 @@ public class JourneySchemaUpdateRequest  implements Serializable {
     }
   }
 
+  public JourneySchemaUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The schema's version, a positive integer.

@@ -78,6 +78,11 @@ public class ConversationKnowledgeSearchSuggestionsTopicSuggestionFeedback  impl
     }
   }
 
+  public ConversationKnowledgeSearchSuggestionsTopicSuggestionFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

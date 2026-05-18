@@ -32,6 +32,11 @@ public class RecordingInput  implements Serializable {
     }
   }
 
+  public RecordingInput(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier for the input.

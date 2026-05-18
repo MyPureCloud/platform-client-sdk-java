@@ -80,6 +80,11 @@ public class CasePriorityUpdate  implements Serializable {
     }
   }
 
+  public CasePriorityUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The priority of the Case.

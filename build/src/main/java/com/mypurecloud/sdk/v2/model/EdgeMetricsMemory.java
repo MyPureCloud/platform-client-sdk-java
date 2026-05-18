@@ -31,6 +31,11 @@ public class EdgeMetricsMemory  implements Serializable {
     }
   }
 
+  public EdgeMetricsMemory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Available memory in bytes.

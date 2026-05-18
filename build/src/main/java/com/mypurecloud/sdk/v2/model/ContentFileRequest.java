@@ -30,6 +30,11 @@ public class ContentFileRequest  implements Serializable {
     }
   }
 
+  public ContentFileRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Key that identifies the file in the storage including the file name

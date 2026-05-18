@@ -163,6 +163,12 @@ public class PostTextRequest  implements Serializable {
     }
   }
 
+  public PostTextRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      botChannels = new ArrayList<BotChannelsEnum>();
+    }
+  }
+
   
   /**
    * ID of the bot to send the text to.

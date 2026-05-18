@@ -34,6 +34,11 @@ public class WorkPlanBidGroupResponse  implements Serializable {
     }
   }
 
+  public WorkPlanBidGroupResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

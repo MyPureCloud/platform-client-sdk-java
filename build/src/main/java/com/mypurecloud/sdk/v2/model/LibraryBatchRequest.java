@@ -32,6 +32,12 @@ public class LibraryBatchRequest  implements Serializable {
     }
   }
 
+  public LibraryBatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      libraryIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of Library IDs

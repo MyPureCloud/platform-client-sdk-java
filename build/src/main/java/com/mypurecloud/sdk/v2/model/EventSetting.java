@@ -30,6 +30,11 @@ public class EventSetting  implements Serializable {
     }
   }
 
+  public EventSetting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Settings regarding typing events

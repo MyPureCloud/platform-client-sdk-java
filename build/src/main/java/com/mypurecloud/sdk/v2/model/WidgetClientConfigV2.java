@@ -25,6 +25,11 @@ public class WidgetClientConfigV2  implements Serializable {
     }
   }
 
+  public WidgetClientConfigV2(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

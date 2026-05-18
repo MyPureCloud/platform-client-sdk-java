@@ -29,6 +29,11 @@ public class GoogleBusinessProfileAccountReference  implements Serializable {
     }
   }
 
+  public GoogleBusinessProfileAccountReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the Google Business Profile account

@@ -83,6 +83,11 @@ public class ForecastMetadata  implements Serializable {
     }
   }
 
+  public ForecastMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Forecast creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

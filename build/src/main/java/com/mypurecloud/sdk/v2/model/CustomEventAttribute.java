@@ -30,6 +30,11 @@ public class CustomEventAttribute  implements Serializable {
     }
   }
 
+  public CustomEventAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The data type of the custom attribute.

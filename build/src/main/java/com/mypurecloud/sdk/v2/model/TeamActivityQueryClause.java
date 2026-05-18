@@ -82,6 +82,12 @@ public class TeamActivityQueryClause  implements Serializable {
     }
   }
 
+  public TeamActivityQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<TeamActivityQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

@@ -85,6 +85,11 @@ public class V2ReprocessJobStateChangedTopicJobStateChanged  implements Serializ
     }
   }
 
+  public V2ReprocessJobStateChangedTopicJobStateChanged(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

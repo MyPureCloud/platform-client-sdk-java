@@ -94,6 +94,13 @@ public class SkillGroupWithMemberDivisions  implements Serializable {
     }
   }
 
+  public SkillGroupWithMemberDivisions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillConditions = new ArrayList<SkillGroupCondition>();
+      memberDivisions = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

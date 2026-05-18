@@ -95,6 +95,13 @@ public class TimeOffPlan  implements Serializable {
     }
   }
 
+  public TimeOffPlan(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activityCodeIds = new ArrayList<String>();
+      timeOffLimits = new ArrayList<TimeOffLimitReference>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

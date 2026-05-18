@@ -322,6 +322,11 @@ public class GetAlertQuery  implements Serializable {
     }
   }
 
+  public GetAlertQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The rule type of the alerts the query will return

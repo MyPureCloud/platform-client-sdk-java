@@ -37,6 +37,12 @@ public class ListPicker  implements Serializable {
     }
   }
 
+  public ListPicker(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sections = new ArrayList<ListPickerSection>();
+    }
+  }
+
   
   /**
    * Optional unique identifier to help map component replies to form messages where multiple List Pickers can be present.

@@ -32,6 +32,11 @@ public class ClientUsageQueryResponse  implements Serializable {
     }
   }
 
+  public ClientUsageQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The jobId of the query.

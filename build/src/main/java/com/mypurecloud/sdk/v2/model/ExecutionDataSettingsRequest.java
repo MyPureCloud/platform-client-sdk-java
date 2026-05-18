@@ -29,6 +29,11 @@ public class ExecutionDataSettingsRequest  implements Serializable {
     }
   }
 
+  public ExecutionDataSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not the setting is enabled.

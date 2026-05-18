@@ -33,6 +33,12 @@ public class ActionAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public ActionAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<ActionAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

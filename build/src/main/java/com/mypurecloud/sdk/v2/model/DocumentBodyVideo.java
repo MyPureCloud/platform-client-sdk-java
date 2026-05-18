@@ -31,6 +31,11 @@ public class DocumentBodyVideo  implements Serializable {
     }
   }
 
+  public DocumentBodyVideo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The URL for the video.

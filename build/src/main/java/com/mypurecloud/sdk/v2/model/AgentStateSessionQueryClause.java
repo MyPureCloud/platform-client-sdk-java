@@ -82,6 +82,12 @@ public class AgentStateSessionQueryClause  implements Serializable {
     }
   }
 
+  public AgentStateSessionQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<AgentStateSessionQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

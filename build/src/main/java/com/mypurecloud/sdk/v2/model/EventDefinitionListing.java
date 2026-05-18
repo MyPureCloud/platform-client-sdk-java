@@ -33,6 +33,12 @@ public class EventDefinitionListing  implements Serializable {
     }
   }
 
+  public EventDefinitionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EventDefinition>();
+    }
+  }
+
   
   /**
    **/

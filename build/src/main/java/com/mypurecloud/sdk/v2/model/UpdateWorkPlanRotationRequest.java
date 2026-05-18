@@ -41,6 +41,12 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
     }
   }
 
+  public UpdateWorkPlanRotationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agents = new ArrayList<UpdateWorkPlanRotationAgentRequest>();
+    }
+  }
+
   
   /**
    * Name of this work plan rotation

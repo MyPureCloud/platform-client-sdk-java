@@ -31,6 +31,11 @@ public class V3SourceScheduleSettings  implements Serializable {
     }
   }
 
+  public V3SourceScheduleSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The date-time value of the first sync run. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

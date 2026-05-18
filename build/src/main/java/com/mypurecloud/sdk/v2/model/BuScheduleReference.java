@@ -32,6 +32,11 @@ public class BuScheduleReference  implements Serializable {
     }
   }
 
+  public BuScheduleReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the schedule

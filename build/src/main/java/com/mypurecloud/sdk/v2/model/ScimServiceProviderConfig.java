@@ -48,6 +48,13 @@ public class ScimServiceProviderConfig  implements Serializable {
     }
   }
 
+  public ScimServiceProviderConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      schemas = new ArrayList<String>();
+      authenticationSchemes = new ArrayList<ScimServiceProviderConfigAuthenticationScheme>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")

@@ -41,6 +41,13 @@ public class UnansweredGroup  implements Serializable {
     }
   }
 
+  public UnansweredGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phraseGroups = new ArrayList<UnansweredPhraseGroup>();
+      suggestedDocuments = new ArrayList<UnansweredGroupSuggestedDocument>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

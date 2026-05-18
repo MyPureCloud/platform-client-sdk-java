@@ -80,6 +80,11 @@ public class RecordingContentStory  implements Serializable {
     }
   }
 
+  public RecordingContentStory(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of ephemeral story attachment.

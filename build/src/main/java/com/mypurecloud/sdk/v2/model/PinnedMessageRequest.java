@@ -32,6 +32,12 @@ public class PinnedMessageRequest  implements Serializable {
     }
   }
 
+  public PinnedMessageRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pinnedMessageIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Ids of the messages to pin

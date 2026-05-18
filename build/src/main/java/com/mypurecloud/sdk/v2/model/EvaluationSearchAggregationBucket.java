@@ -45,6 +45,11 @@ public class EvaluationSearchAggregationBucket  implements Serializable {
     }
   }
 
+  public EvaluationSearchAggregationBucket(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The key for this bucket

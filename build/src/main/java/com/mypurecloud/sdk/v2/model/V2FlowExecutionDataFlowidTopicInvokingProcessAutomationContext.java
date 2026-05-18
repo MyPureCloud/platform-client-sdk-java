@@ -31,6 +31,11 @@ public class V2FlowExecutionDataFlowidTopicInvokingProcessAutomationContext  imp
     }
   }
 
+  public V2FlowExecutionDataFlowidTopicInvokingProcessAutomationContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The identifier of the process automation trigger that invoked this flow.

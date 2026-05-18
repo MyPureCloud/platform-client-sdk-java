@@ -86,6 +86,11 @@ public class DocumentContentBlockWithHighlight  implements Serializable {
     }
   }
 
+  public DocumentContentBlockWithHighlight(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type of the paragraph block.

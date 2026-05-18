@@ -31,6 +31,11 @@ public class ScoredAgent  implements Serializable {
     }
   }
 
+  public ScoredAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The agent

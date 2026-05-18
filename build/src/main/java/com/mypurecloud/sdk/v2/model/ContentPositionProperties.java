@@ -32,6 +32,11 @@ public class ContentPositionProperties  implements Serializable {
     }
   }
 
+  public ContentPositionProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Top positioning offset.

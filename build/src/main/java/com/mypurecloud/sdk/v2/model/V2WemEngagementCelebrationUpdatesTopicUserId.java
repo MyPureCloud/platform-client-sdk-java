@@ -29,6 +29,11 @@ public class V2WemEngagementCelebrationUpdatesTopicUserId  implements Serializab
     }
   }
 
+  public V2WemEngagementCelebrationUpdatesTopicUserId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class WhatsAppAvailablePhoneNumberDetailsListing  implements Serializable
     }
   }
 
+  public WhatsAppAvailablePhoneNumberDetailsListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WhatsAppAvailablePhoneNumberDetails>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,11 @@ public class BuGenerateScheduleRequest  implements Serializable {
     }
   }
 
+  public BuGenerateScheduleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The description for the schedule

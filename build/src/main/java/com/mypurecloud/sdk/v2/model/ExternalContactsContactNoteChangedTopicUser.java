@@ -29,6 +29,11 @@ public class ExternalContactsContactNoteChangedTopicUser  implements Serializabl
     }
   }
 
+  public ExternalContactsContactNoteChangedTopicUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

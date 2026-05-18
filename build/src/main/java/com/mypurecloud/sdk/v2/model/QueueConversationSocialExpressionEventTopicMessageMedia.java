@@ -33,6 +33,11 @@ public class QueueConversationSocialExpressionEventTopicMessageMedia  implements
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicMessageMedia(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The location of the media, useful for retrieving it

@@ -36,6 +36,12 @@ public class SessionsResponse  implements Serializable {
     }
   }
 
+  public SessionsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BotFlowSession>();
+    }
+  }
+
   
   /**
    **/

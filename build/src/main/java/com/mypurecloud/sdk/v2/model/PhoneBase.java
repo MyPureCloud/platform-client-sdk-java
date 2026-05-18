@@ -104,6 +104,12 @@ public class PhoneBase  implements Serializable {
     }
   }
 
+  public PhoneBase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      lines = new ArrayList<LineBase>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

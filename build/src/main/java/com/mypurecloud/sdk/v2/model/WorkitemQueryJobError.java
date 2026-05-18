@@ -30,6 +30,11 @@ public class WorkitemQueryJobError  implements Serializable {
     }
   }
 
+  public WorkitemQueryJobError(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * System defined error code for the error.

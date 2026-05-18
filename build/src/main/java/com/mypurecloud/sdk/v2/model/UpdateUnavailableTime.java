@@ -33,6 +33,11 @@ public class UpdateUnavailableTime  implements Serializable {
     }
   }
 
+  public UpdateUnavailableTime(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the unavailable time span. Should be specified to update or delete an existing unavailable time span or set to null when creating a new one

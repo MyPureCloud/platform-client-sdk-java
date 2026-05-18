@@ -39,6 +39,13 @@ public class ContactsExportFilter  implements Serializable {
     }
   }
 
+  public ContactsExportFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      and = new ArrayList<ContactsExportFilter>();
+      or = new ArrayList<ContactsExportFilter>();
+    }
+  }
+
   
   /**
    * Filtered field should have the same value

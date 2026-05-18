@@ -43,6 +43,13 @@ public class Article  implements Serializable {
     }
   }
 
+  public Article(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      snippets = new ArrayList<String>();
+      variations = new ArrayList<AddressableEntityRef>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The article title.")
   @JsonProperty("title")

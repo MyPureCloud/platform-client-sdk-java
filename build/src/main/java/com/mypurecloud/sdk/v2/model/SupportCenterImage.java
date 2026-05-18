@@ -30,6 +30,11 @@ public class SupportCenterImage  implements Serializable {
     }
   }
 
+  public SupportCenterImage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Source URLs for image

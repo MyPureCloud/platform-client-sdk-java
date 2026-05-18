@@ -34,6 +34,11 @@ public class QueueConversationScreenShareEventTopicJourneyContext  implements Se
     }
   }
 
+  public QueueConversationScreenShareEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

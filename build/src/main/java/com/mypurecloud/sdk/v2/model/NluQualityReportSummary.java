@@ -33,6 +33,12 @@ public class NluQualityReportSummary  implements Serializable {
     }
   }
 
+  public NluQualityReportSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<NluQualityReportSummaryMetric>();
+    }
+  }
+
   
   /**
    * The list of metrics in the summary

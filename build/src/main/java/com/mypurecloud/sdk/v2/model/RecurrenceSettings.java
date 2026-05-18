@@ -33,6 +33,11 @@ public class RecurrenceSettings  implements Serializable {
     }
   }
 
+  public RecurrenceSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Settings controlling when to end the recurrence for the activity plan

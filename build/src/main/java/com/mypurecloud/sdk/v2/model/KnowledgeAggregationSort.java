@@ -141,6 +141,11 @@ public class KnowledgeAggregationSort  implements Serializable {
     }
   }
 
+  public KnowledgeAggregationSort(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the metric used for sorting values.

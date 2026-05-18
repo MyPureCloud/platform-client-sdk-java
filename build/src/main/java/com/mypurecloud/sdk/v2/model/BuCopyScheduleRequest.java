@@ -32,6 +32,11 @@ public class BuCopyScheduleRequest  implements Serializable {
     }
   }
 
+  public BuCopyScheduleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The description for the new schedule

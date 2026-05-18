@@ -31,6 +31,11 @@ public class QueueConversationCallEventTopicDomainEntityRef  implements Serializ
     }
   }
 
+  public QueueConversationCallEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -80,6 +80,11 @@ public class AdminBulkUpdateAlternativeShiftTradeState  implements Serializable 
     }
   }
 
+  public AdminBulkUpdateAlternativeShiftTradeState(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the trade for this alternative shift trade

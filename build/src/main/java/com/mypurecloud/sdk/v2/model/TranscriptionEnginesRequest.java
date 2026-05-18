@@ -33,6 +33,12 @@ public class TranscriptionEnginesRequest  implements Serializable {
     }
   }
 
+  public TranscriptionEnginesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      transcriptionEngines = new ArrayList<ProgramTranscriptionEngine>();
+    }
+  }
+
   
   /**
    * The transcription engine setting

@@ -33,6 +33,12 @@ public class BulkCallbackPatchRequest  implements Serializable {
     }
   }
 
+  public BulkCallbackPatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      patchCallbackRequests = new ArrayList<PatchCallbackRequest>();
+    }
+  }
+
   
   /**
    * The list of requests to update callbacks in bulk

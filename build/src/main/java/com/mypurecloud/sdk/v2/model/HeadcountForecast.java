@@ -35,6 +35,13 @@ public class HeadcountForecast  implements Serializable {
     }
   }
 
+  public HeadcountForecast(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      required = new ArrayList<HeadcountInterval>();
+      requiredWithoutShrinkage = new ArrayList<HeadcountInterval>();
+    }
+  }
+
   
   /**
    * Headcount information with shrinkage

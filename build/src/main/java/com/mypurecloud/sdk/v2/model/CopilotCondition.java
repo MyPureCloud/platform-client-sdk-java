@@ -83,6 +83,12 @@ public class CopilotCondition  implements Serializable {
     }
   }
 
+  public CopilotCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      conditionValues = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Type of condition.

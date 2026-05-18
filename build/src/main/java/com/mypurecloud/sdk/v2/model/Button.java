@@ -80,6 +80,11 @@ public class Button  implements Serializable {
     }
   }
 
+  public Button(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of button to include in whatsApp template

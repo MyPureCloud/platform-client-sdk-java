@@ -35,6 +35,12 @@ public class CreateGeneralProgramTestTopicPhraseResults  implements Serializable
     }
   }
 
+  public CreateGeneralProgramTestTopicPhraseResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      matchedTranscripts = new ArrayList<CreateGeneralProgramTestPhraseMatchedTranscript>();
+    }
+  }
+
   
   /**
    **/

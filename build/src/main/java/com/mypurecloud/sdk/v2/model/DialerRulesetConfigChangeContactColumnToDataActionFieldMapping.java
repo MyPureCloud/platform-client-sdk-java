@@ -34,6 +34,11 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
     }
   }
 
+  public DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of a contact column whose data will be passed to the data action

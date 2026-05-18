@@ -33,6 +33,11 @@ public class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress  imp
     }
   }
 
+  public OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The friendly name of the email address.

@@ -29,6 +29,11 @@ public class SummarySettingPII  implements Serializable {
     }
   }
 
+  public SummarySettingPII(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Toggle PII visibility in summary.

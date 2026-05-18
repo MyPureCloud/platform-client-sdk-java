@@ -31,6 +31,11 @@ public class EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange  imple
     }
   }
 
+  public EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

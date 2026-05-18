@@ -135,6 +135,11 @@ public class PatchActionTemplate  implements Serializable {
     }
   }
 
+  public PatchActionTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of the action template.

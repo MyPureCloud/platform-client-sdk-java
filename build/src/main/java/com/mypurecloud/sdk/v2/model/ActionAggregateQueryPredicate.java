@@ -184,6 +184,11 @@ public class ActionAggregateQueryPredicate  implements Serializable {
     }
   }
 
+  public ActionAggregateQueryPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Optional type, can usually be inferred

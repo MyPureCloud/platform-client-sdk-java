@@ -101,6 +101,11 @@ public class DecisionTableInputColumnExpression  implements Serializable {
     }
   }
 
+  public DecisionTableInputColumnExpression(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A value that is defined by a contract schema and used to form the left side of a logical condition.

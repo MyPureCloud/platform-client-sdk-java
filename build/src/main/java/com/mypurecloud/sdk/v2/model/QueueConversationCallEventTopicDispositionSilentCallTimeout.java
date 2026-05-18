@@ -33,6 +33,11 @@ public class QueueConversationCallEventTopicDispositionSilentCallTimeout  implem
     }
   }
 
+  public QueueConversationCallEventTopicDispositionSilentCallTimeout(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Configured Silent Call timeout value.

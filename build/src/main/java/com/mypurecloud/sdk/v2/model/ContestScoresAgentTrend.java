@@ -38,6 +38,12 @@ public class ContestScoresAgentTrend  implements Serializable {
     }
   }
 
+  public ContestScoresAgentTrend(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metricScores = new ArrayList<ContestMetricScoreRanked>();
+    }
+  }
+
   
   /**
    * The Contest score

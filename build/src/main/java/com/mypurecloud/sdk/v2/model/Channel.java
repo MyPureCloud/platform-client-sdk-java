@@ -32,6 +32,11 @@ public class Channel  implements Serializable {
     }
   }
 
+  public Channel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

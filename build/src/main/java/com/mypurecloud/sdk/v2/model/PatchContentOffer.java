@@ -139,6 +139,11 @@ public class PatchContentOffer  implements Serializable {
     }
   }
 
+  public PatchContentOffer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * URL for image displayed to the customer when displaying content offer.

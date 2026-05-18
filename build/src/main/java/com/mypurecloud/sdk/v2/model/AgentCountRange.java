@@ -30,6 +30,11 @@ public class AgentCountRange  implements Serializable {
     }
   }
 
+  public AgentCountRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The minimum value of agent count per work plan

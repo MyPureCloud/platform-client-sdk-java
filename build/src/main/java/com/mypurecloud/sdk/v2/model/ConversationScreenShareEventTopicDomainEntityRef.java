@@ -31,6 +31,11 @@ public class ConversationScreenShareEventTopicDomainEntityRef  implements Serial
     }
   }
 
+  public ConversationScreenShareEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

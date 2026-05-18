@@ -82,6 +82,11 @@ public class CampaignDiagnosticConfigChange  implements Serializable {
     }
   }
 
+  public CampaignDiagnosticConfigChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Timestamp when the configuration change occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

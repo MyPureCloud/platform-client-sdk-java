@@ -31,6 +31,11 @@ public class AgentMuScheduleQuery  implements Serializable {
     }
   }
 
+  public AgentMuScheduleQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start date for the range to query the schedule's for the agent's management unit. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

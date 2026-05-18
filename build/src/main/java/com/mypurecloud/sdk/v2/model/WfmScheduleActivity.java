@@ -38,6 +38,13 @@ public class WfmScheduleActivity  implements Serializable {
     }
   }
 
+  public WfmScheduleActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activities = new ArrayList<ScheduleActivity>();
+      fullDayTimeOffMarkers = new ArrayList<FullDayTimeOffMarker>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "ID of user that the schedule is for")
   @JsonProperty("userReference")

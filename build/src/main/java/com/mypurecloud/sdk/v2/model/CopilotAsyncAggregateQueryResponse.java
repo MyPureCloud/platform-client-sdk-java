@@ -34,6 +34,12 @@ public class CopilotAsyncAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public CopilotAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<CopilotAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

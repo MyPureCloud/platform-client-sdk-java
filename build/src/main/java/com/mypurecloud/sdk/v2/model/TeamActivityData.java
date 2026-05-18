@@ -40,6 +40,13 @@ public class TeamActivityData  implements Serializable {
     }
   }
 
+  public TeamActivityData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<TeamActivityMetricValue>();
+      entities = new ArrayList<TeamActivityEntityData>();
+    }
+  }
+
   
   /**
    * A mapping from grouping dimension to value

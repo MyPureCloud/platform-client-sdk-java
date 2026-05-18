@@ -82,6 +82,11 @@ public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implement
     }
   }
 
+  public WfmBuScheduleRunTopicBuSchedulingRunProgressNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

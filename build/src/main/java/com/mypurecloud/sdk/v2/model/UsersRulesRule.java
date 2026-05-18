@@ -97,6 +97,12 @@ public class UsersRulesRule  implements Serializable {
     }
   }
 
+  public UsersRulesRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      criteria = new ArrayList<UsersRulesCriteria>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

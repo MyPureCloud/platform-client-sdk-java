@@ -98,6 +98,14 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     }
   }
 
+  public HistoricalAdherenceQueryResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      exceptionInfo = new ArrayList<HistoricalAdherenceExceptionInfo>();
+      dayMetrics = new ArrayList<HistoricalAdherenceDayMetrics>();
+      actuals = new ArrayList<HistoricalAdherenceActuals>();
+    }
+  }
+
   
   /**
    * The ID of the user for whom the adherence is queried

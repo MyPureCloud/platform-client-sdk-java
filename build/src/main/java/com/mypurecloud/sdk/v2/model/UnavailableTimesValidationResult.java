@@ -36,6 +36,12 @@ public class UnavailableTimesValidationResult  implements Serializable {
     }
   }
 
+  public UnavailableTimesValidationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      invalidWorkPlans = new ArrayList<WorkPlanReference>();
+    }
+  }
+
   
   /**
    * Indicates whether there are no violations in the given unavailable times

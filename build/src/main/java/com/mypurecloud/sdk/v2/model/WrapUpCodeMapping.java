@@ -92,6 +92,12 @@ public class WrapUpCodeMapping  implements Serializable {
     }
   }
 
+  public WrapUpCodeMapping(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      defaultSet = new ArrayList<DefaultSetEnum>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

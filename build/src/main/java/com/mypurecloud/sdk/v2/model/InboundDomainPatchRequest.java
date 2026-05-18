@@ -38,6 +38,11 @@ public class InboundDomainPatchRequest  implements Serializable {
     }
   }
 
+  public InboundDomainPatchRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.

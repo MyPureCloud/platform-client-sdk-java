@@ -80,6 +80,11 @@ public class InactivityTimeoutSettings  implements Serializable {
     }
   }
 
+  public InactivityTimeoutSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Timeout in seconds for inactivity on the interaction

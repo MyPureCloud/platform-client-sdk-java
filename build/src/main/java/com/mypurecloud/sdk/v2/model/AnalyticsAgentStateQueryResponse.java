@@ -33,6 +33,12 @@ public class AnalyticsAgentStateQueryResponse  implements Serializable {
     }
   }
 
+  public AnalyticsAgentStateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AnalyticsAgentStateAgentResponse>();
+    }
+  }
+
   
   /**
    * List of agents

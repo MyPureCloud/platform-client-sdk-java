@@ -148,6 +148,13 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicMessageDetails(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      media = new ArrayList<QueueConversationSocialExpressionEventTopicMessageMedia>();
+      stickers = new ArrayList<QueueConversationSocialExpressionEventTopicMessageSticker>();
+    }
+  }
+
   
   /**
    * UUID identifying the message media.

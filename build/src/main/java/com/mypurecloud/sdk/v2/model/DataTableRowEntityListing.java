@@ -43,6 +43,12 @@ public class DataTableRowEntityListing  implements Serializable, PagedResource<M
     }
   }
 
+  public DataTableRowEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Map<String, Object>>();
+    }
+  }
+
   
   /**
    **/

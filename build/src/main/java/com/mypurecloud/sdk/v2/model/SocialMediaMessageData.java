@@ -203,6 +203,12 @@ public class SocialMediaMessageData  implements Serializable {
     }
   }
 
+  public SocialMediaMessageData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      normalizedReceipts = new ArrayList<ConversationNormalizedMessage>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

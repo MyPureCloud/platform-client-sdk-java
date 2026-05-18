@@ -43,6 +43,12 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     }
   }
 
+  public IntegrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Integration>();
+    }
+  }
+
   
   /**
    **/

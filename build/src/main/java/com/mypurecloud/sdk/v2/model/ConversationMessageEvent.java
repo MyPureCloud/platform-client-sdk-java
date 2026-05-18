@@ -89,6 +89,11 @@ public class ConversationMessageEvent  implements Serializable {
     }
   }
 
+  public ConversationMessageEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this event element

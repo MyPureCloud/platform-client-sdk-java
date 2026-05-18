@@ -34,6 +34,11 @@ public class BuScheduleReferenceForMuRoute  implements Serializable {
     }
   }
 
+  public BuScheduleReferenceForMuRoute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the schedule

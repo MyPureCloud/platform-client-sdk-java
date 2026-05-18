@@ -40,6 +40,14 @@ public class ScimUserExtensions  implements Serializable {
     }
   }
 
+  public ScimUserExtensions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routingSkills = new ArrayList<ScimUserRoutingSkill>();
+      routingLanguages = new ArrayList<ScimUserRoutingLanguage>();
+      externalIds = new ArrayList<ScimGenesysUserExternalId>();
+    }
+  }
+
   
   /**
    * The list of routing skills assigned to a user. Maximum 50 skills.

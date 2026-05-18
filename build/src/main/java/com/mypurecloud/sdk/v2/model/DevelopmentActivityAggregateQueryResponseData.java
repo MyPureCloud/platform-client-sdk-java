@@ -34,6 +34,12 @@ public class DevelopmentActivityAggregateQueryResponseData  implements Serializa
     }
   }
 
+  public DevelopmentActivityAggregateQueryResponseData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<DevelopmentActivityAggregateQueryResponseMetric>();
+    }
+  }
+
   
   /**
    * Specifies the range of due dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss

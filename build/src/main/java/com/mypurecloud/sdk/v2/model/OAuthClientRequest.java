@@ -145,6 +145,15 @@ public class OAuthClientRequest  implements Serializable {
     }
   }
 
+  public OAuthClientRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      registeredRedirectUri = new ArrayList<String>();
+      roleIds = new ArrayList<String>();
+      scope = new ArrayList<String>();
+      roleDivisions = new ArrayList<RoleDivision>();
+    }
+  }
+
   
   /**
    * The name of the OAuth client.

@@ -33,6 +33,11 @@ public class MessagingCommunicationAnsweredEvent  implements Serializable {
     }
   }
 
+  public MessagingCommunicationAnsweredEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

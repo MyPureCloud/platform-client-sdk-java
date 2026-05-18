@@ -30,6 +30,11 @@ public class ConversationEventTopicWorkflow  implements Serializable {
     }
   }
 
+  public ConversationEventTopicWorkflow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the workflow

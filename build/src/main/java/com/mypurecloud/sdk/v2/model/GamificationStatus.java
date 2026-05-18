@@ -33,6 +33,11 @@ public class GamificationStatus  implements Serializable {
     }
   }
 
+  public GamificationStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Gamification status of the organization.

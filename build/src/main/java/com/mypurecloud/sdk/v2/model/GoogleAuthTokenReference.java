@@ -29,6 +29,11 @@ public class GoogleAuthTokenReference  implements Serializable {
     }
   }
 
+  public GoogleAuthTokenReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the Google OAuth 2 access token. The token cannot be accessed via Genesys API, only referenced by this property. When the token is not referenced by any integration, it is deleted after 24 hours.

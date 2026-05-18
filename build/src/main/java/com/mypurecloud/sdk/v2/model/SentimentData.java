@@ -30,6 +30,11 @@ public class SentimentData  implements Serializable {
     }
   }
 
+  public SentimentData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The sentiment insights extracted from the conversation

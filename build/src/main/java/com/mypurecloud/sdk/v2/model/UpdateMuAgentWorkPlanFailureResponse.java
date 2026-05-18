@@ -83,6 +83,11 @@ public class UpdateMuAgentWorkPlanFailureResponse  implements Serializable {
     }
   }
 
+  public UpdateMuAgentWorkPlanFailureResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user for whom the work plan update has failed

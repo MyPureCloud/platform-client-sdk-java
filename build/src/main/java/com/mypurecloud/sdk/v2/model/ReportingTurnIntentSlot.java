@@ -32,6 +32,11 @@ public class ReportingTurnIntentSlot  implements Serializable {
     }
   }
 
+  public ReportingTurnIntentSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the slot.

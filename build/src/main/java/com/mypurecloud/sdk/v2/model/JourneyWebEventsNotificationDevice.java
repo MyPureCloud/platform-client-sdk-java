@@ -88,6 +88,11 @@ public class JourneyWebEventsNotificationDevice  implements Serializable {
     }
   }
 
+  public JourneyWebEventsNotificationDevice(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

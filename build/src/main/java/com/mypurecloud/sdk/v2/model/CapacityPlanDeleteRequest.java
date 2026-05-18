@@ -32,6 +32,12 @@ public class CapacityPlanDeleteRequest  implements Serializable {
     }
   }
 
+  public CapacityPlanDeleteRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      capacityPlanIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of the capacity plans to be deleted

@@ -31,6 +31,11 @@ public class WorkdayPeriod  implements Serializable {
     }
   }
 
+  public WorkdayPeriod(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

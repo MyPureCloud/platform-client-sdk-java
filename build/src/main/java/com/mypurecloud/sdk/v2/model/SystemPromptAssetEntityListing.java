@@ -43,6 +43,12 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     }
   }
 
+  public SystemPromptAssetEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SystemPromptAsset>();
+    }
+  }
+
   
   /**
    **/

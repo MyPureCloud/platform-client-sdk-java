@@ -87,6 +87,13 @@ public class V2MobiusAlertsTopicCondition  implements Serializable {
     }
   }
 
+  public V2MobiusAlertsTopicCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<V2MobiusAlertsTopicCondition>();
+      predicates = new ArrayList<V2MobiusAlertsTopicConditionRulePredicate>();
+    }
+  }
+
   
   /**
    **/

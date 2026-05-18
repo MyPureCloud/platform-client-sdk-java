@@ -88,6 +88,12 @@ public class GetFlowExecutionDataJobResult  implements Serializable {
     }
   }
 
+  public GetFlowExecutionDataJobResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ExecutionDataEntity>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

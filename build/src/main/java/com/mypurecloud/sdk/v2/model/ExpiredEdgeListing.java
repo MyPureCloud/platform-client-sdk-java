@@ -33,6 +33,12 @@ public class ExpiredEdgeListing  implements Serializable {
     }
   }
 
+  public ExpiredEdgeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   /**
    **/

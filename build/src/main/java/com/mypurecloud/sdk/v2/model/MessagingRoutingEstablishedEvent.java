@@ -44,6 +44,12 @@ public class MessagingRoutingEstablishedEvent  implements Serializable {
     }
   }
 
+  public MessagingRoutingEstablishedEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * A unique (V4 UUID) eventId for this event

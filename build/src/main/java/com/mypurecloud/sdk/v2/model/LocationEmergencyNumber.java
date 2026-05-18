@@ -79,6 +79,11 @@ public class LocationEmergencyNumber  implements Serializable {
     }
   }
 
+  public LocationEmergencyNumber(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

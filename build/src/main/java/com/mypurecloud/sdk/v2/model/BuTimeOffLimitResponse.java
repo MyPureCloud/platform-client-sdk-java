@@ -36,6 +36,11 @@ public class BuTimeOffLimitResponse  implements Serializable {
     }
   }
 
+  public BuTimeOffLimitResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

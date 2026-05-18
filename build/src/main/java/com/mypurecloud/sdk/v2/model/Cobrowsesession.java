@@ -224,6 +224,13 @@ public class Cobrowsesession  implements Serializable {
     }
   }
 
+  public Cobrowsesession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      controlling = new ArrayList<String>();
+      segments = new ArrayList<Segment>();
+    }
+  }
+
   
   /**
    * The connection state of this communication.

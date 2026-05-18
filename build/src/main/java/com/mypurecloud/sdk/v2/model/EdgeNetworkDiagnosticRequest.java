@@ -29,6 +29,11 @@ public class EdgeNetworkDiagnosticRequest  implements Serializable {
     }
   }
 
+  public EdgeNetworkDiagnosticRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * IPv4/6 address or host to be probed for connectivity. No port allowed.

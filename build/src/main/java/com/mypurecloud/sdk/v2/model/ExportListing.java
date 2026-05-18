@@ -36,6 +36,12 @@ public class ExportListing  implements Serializable {
     }
   }
 
+  public ExportListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContactsExport>();
+    }
+  }
+
   
   /**
    **/

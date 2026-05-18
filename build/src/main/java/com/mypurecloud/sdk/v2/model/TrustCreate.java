@@ -39,6 +39,13 @@ public class TrustCreate  implements Serializable {
     }
   }
 
+  public TrustCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<TrustMemberCreate>();
+      groups = new ArrayList<TrustMemberCreate>();
+    }
+  }
+
   
   /**
    * The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.  Not required when creating a default pairing with Customer Care.

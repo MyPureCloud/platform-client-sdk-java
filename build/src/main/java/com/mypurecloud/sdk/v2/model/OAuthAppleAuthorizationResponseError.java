@@ -31,6 +31,11 @@ public class OAuthAppleAuthorizationResponseError  implements Serializable {
     }
   }
 
+  public OAuthAppleAuthorizationResponseError(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The error code

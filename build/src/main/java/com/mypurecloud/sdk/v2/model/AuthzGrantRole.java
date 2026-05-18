@@ -38,6 +38,12 @@ public class AuthzGrantRole  implements Serializable {
     }
   }
 
+  public AuthzGrantRole(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      policies = new ArrayList<AuthzGrantPolicy>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

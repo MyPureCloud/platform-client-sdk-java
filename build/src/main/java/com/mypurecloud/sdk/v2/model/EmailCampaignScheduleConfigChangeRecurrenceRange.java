@@ -85,6 +85,11 @@ public class EmailCampaignScheduleConfigChangeRecurrenceRange  implements Serial
     }
   }
 
+  public EmailCampaignScheduleConfigChangeRecurrenceRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

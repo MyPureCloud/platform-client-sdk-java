@@ -35,6 +35,11 @@ public class JourneySessionEventsNotificationMktCampaign  implements Serializabl
     }
   }
 
+  public JourneySessionEventsNotificationMktCampaign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

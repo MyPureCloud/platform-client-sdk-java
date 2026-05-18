@@ -89,6 +89,11 @@ public class JourneyWebActionEventsNotificationReferrer  implements Serializable
     }
   }
 
+  public JourneyWebActionEventsNotificationReferrer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

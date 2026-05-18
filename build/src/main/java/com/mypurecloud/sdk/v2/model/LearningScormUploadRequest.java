@@ -30,6 +30,11 @@ public class LearningScormUploadRequest  implements Serializable {
     }
   }
 
+  public LearningScormUploadRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The MD5 content of the SCORM package

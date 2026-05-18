@@ -46,6 +46,15 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
     }
   }
 
+  public QueueConversationCobrowseEventTopicCobrowseConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<QueueConversationCobrowseEventTopicCobrowseMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      accessAttributes = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationCobrowseEventTopicConversationDivisionMembership>();
+    }
+  }
+
   
   /**
    **/

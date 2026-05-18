@@ -33,6 +33,11 @@ public class ConversationSummaryTopicConversationResolution  implements Serializ
     }
   }
 
+  public ConversationSummaryTopicConversationResolution(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

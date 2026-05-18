@@ -156,6 +156,12 @@ public class Operation  implements Serializable {
     }
   }
 
+  public Operation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      errorDetails = new ArrayList<Detail>();
+    }
+  }
+
   
   /**
    **/

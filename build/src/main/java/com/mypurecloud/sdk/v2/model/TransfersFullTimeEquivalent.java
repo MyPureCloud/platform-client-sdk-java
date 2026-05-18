@@ -78,6 +78,11 @@ public class TransfersFullTimeEquivalent  implements Serializable {
     }
   }
 
+  public TransfersFullTimeEquivalent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The target staffing group that will receive the full time equivalent when agents are transferred from one staffing group to another

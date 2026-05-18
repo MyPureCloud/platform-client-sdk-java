@@ -142,6 +142,11 @@ public class QueueConversationEmailEventTopicLimit  implements Serializable {
     }
   }
 
+  public QueueConversationEmailEventTopicLimit(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

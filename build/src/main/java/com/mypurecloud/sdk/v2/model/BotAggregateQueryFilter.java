@@ -85,6 +85,13 @@ public class BotAggregateQueryFilter  implements Serializable {
     }
   }
 
+  public BotAggregateQueryFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      clauses = new ArrayList<BotAggregateQueryClause>();
+      predicates = new ArrayList<BotAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses

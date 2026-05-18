@@ -33,6 +33,11 @@ public class ConversationVideoEventTopicQueueMediaSettings  implements Serializa
     }
   }
 
+  public ConversationVideoEventTopicQueueMediaSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.

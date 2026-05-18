@@ -30,6 +30,11 @@ public class AddressableEntityRef  implements Serializable {
     }
   }
 
+  public AddressableEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

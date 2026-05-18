@@ -79,6 +79,11 @@ public class ContactImportJobStatusUpdateResponse  implements Serializable {
     }
   }
 
+  public ContactImportJobStatusUpdateResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

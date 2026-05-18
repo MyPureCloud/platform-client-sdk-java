@@ -43,6 +43,12 @@ public class FieldList  implements Serializable {
     }
   }
 
+  public FieldList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      labelKeys = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

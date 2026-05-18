@@ -36,6 +36,13 @@ public class DecisionTableColumns  implements Serializable {
     }
   }
 
+  public DecisionTableColumns(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inputs = new ArrayList<DecisionTableInputColumn>();
+      outputs = new ArrayList<DecisionTableOutputColumn>();
+    }
+  }
+
   
   /**
    * The input columns of the decision table.

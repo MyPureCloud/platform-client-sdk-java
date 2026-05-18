@@ -30,6 +30,11 @@ public class WebDeploymentsAuthorizationResponse  implements Serializable {
     }
   }
 
+  public WebDeploymentsAuthorizationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Refresh token used to issue a new JWT.

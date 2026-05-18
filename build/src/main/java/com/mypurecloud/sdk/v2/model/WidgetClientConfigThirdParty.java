@@ -25,6 +25,11 @@ public class WidgetClientConfigThirdParty  implements Serializable {
     }
   }
 
+  public WidgetClientConfigThirdParty(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

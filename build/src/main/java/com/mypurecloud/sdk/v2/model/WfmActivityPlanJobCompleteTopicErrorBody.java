@@ -35,6 +35,11 @@ public class WfmActivityPlanJobCompleteTopicErrorBody  implements Serializable {
     }
   }
 
+  public WfmActivityPlanJobCompleteTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

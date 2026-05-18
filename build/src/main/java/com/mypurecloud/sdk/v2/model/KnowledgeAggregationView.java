@@ -140,6 +140,11 @@ public class KnowledgeAggregationView  implements Serializable {
     }
   }
 
+  public KnowledgeAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

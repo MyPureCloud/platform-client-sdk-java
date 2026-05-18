@@ -95,6 +95,12 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     }
   }
 
+  public DialerSequenceConfigChangeCampaignSequence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      campaigns = new ArrayList<DialerSequenceConfigChangeUriReference>();
+    }
+  }
+
   
   /**
    * the ordered list of campaign identifiers

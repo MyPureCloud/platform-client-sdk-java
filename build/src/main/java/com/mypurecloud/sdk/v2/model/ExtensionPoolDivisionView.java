@@ -33,6 +33,11 @@ public class ExtensionPoolDivisionView  implements Serializable {
     }
   }
 
+  public ExtensionPoolDivisionView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The extension pool identifier

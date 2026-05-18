@@ -37,6 +37,12 @@ public class ResponseAssetSearchResults  implements Serializable {
     }
   }
 
+  public ResponseAssetSearchResults(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<ResponseAsset>();
+    }
+  }
+
   
   /**
    * The total number of results found

@@ -80,6 +80,11 @@ public class ArchitectJobMessage  implements Serializable {
     }
   }
 
+  public ArchitectJobMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The DateTime when the message was generated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

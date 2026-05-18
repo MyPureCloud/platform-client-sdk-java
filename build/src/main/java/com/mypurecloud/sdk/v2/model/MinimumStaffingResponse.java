@@ -86,6 +86,12 @@ public class MinimumStaffingResponse  implements Serializable {
     }
   }
 
+  public MinimumStaffingResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      planningGroupOverrides = new ArrayList<PlanningGroupMinimumsResponse>();
+    }
+  }
+
   
   /**
    * Whether the setting is turned on or off

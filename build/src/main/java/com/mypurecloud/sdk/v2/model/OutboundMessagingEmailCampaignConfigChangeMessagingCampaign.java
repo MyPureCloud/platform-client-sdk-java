@@ -114,6 +114,16 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
     }
   }
 
+  public OutboundMessagingEmailCampaignConfigChangeMessagingCampaign(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dncLists = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
+      contactListFilters = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
+      contactSorts = new ArrayList<OutboundMessagingEmailCampaignConfigChangeContactSort>();
+      ruleSets = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
+      errors = new ArrayList<OutboundMessagingEmailCampaignConfigChangeErrorDetail>();
+    }
+  }
+
   
   /**
    **/

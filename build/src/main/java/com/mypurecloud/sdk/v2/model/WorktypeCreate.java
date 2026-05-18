@@ -52,6 +52,12 @@ public class WorktypeCreate  implements Serializable {
     }
   }
 
+  public WorktypeCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      defaultSkillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The name of the Worktype. Valid length between 3 and 256 characters.

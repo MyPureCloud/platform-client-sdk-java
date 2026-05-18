@@ -31,6 +31,11 @@ public class AggregationRange  implements Serializable {
     }
   }
 
+  public AggregationRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Greater than or equal to

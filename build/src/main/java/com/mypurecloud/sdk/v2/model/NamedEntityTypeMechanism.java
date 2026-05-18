@@ -142,6 +142,13 @@ public class NamedEntityTypeMechanism  implements Serializable {
     }
   }
 
+  public NamedEntityTypeMechanism(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      items = new ArrayList<NamedEntityTypeItem>();
+      examples = new ArrayList<NamedEntityTypeMechanismExample>();
+    }
+  }
+
   
   /**
    * The items that define the named entity type.

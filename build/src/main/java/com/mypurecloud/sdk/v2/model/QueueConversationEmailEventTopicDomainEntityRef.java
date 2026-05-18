@@ -31,6 +31,11 @@ public class QueueConversationEmailEventTopicDomainEntityRef  implements Seriali
     }
   }
 
+  public QueueConversationEmailEventTopicDomainEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

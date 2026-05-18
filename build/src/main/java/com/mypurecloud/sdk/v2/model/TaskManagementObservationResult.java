@@ -35,6 +35,12 @@ public class TaskManagementObservationResult  implements Serializable {
     }
   }
 
+  public TaskManagementObservationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<TaskManagementObservationDataContainer>();
+    }
+  }
+
   
   /**
    * The group dimensions and their values for this result. Represents the combination of groupBy dimensions that define this result set.

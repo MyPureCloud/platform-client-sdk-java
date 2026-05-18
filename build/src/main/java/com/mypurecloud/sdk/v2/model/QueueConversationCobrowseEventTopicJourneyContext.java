@@ -34,6 +34,11 @@ public class QueueConversationCobrowseEventTopicJourneyContext  implements Seria
     }
   }
 
+  public QueueConversationCobrowseEventTopicJourneyContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

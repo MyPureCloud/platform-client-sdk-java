@@ -81,6 +81,12 @@ public class UsersRulesLockedCriteriaSettingsCriteria  implements Serializable {
     }
   }
 
+  public UsersRulesLockedCriteriaSettingsCriteria(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      group = new ArrayList<UsersRulesLockedCriteriaSettingsGroup>();
+    }
+  }
+
   
   /**
    * The operator for this criteria

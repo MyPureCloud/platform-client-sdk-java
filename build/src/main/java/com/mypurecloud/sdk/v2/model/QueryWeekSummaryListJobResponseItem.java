@@ -33,6 +33,12 @@ public class QueryWeekSummaryListJobResponseItem  implements Serializable {
     }
   }
 
+  public QueryWeekSummaryListJobResponseItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      weeks = new ArrayList<ShiftTradeWeekSummaryResponseItem>();
+    }
+  }
+
   
   /**
    * Weekly summary counts of the trades for the requested weeks

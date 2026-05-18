@@ -135,6 +135,13 @@ public class AlternativeShiftBuSettingsResponse  implements Serializable {
     }
   }
 
+  public AlternativeShiftBuSettingsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      enabledGranularities = new ArrayList<EnabledGranularitiesEnum>();
+      retainedActivityCategories = new ArrayList<RetainedActivityCategoriesEnum>();
+    }
+  }
+
   
   /**
    * The granularity at which alternative shifts is allowed. An empty list means Alternative Shifts is disabled

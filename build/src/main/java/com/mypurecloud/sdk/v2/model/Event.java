@@ -47,6 +47,11 @@ public class Event  implements Serializable {
     }
   }
 
+  public Event(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * System-generated UUID for the event.

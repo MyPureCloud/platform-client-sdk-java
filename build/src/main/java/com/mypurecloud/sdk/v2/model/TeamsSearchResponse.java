@@ -42,6 +42,13 @@ public class TeamsSearchResponse  implements Serializable {
     }
   }
 
+  public TeamsSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      types = new ArrayList<String>();
+      results = new ArrayList<Team>();
+    }
+  }
+
   
   /**
    * The total number of results found

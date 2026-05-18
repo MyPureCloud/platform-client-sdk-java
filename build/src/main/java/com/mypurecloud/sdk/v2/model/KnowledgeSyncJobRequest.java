@@ -30,6 +30,11 @@ public class KnowledgeSyncJobRequest  implements Serializable {
     }
   }
 
+  public KnowledgeSyncJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Upload key

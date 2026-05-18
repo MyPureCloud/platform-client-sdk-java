@@ -43,6 +43,12 @@ public class TrustGroupEntityListing  implements Serializable, PagedResource<Tru
     }
   }
 
+  public TrustGroupEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TrustGroup>();
+    }
+  }
+
   
   /**
    **/

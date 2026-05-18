@@ -30,6 +30,11 @@ public class QueueConversationEventTopicMessageMetadataContent  implements Seria
     }
   }
 
+  public QueueConversationEventTopicMessageMetadataContent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of this content element.

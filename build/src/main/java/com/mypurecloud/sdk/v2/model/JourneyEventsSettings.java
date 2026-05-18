@@ -103,6 +103,18 @@ public class JourneyEventsSettings  implements Serializable {
     }
   }
 
+  public JourneyEventsSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      excludedQueryParameters = new ArrayList<String>();
+      searchQueryParameters = new ArrayList<String>();
+      clickEvents = new ArrayList<SelectorEventTrigger>();
+      formsTrackEvents = new ArrayList<FormsTrackTrigger>();
+      idleEvents = new ArrayList<IdleEventTrigger>();
+      inViewportEvents = new ArrayList<SelectorEventTrigger>();
+      scrollDepthEvents = new ArrayList<ScrollPercentageEventTrigger>();
+    }
+  }
+
   
   /**
    * Whether or not journey event collection is enabled.

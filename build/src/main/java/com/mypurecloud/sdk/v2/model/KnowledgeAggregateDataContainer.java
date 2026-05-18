@@ -36,6 +36,12 @@ public class KnowledgeAggregateDataContainer  implements Serializable {
     }
   }
 
+  public KnowledgeAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

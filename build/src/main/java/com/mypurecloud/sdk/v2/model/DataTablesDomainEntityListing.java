@@ -43,6 +43,12 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public DataTablesDomainEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DataTable>();
+    }
+  }
+
   
   /**
    **/

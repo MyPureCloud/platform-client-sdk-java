@@ -32,6 +32,11 @@ public class LexSlot  implements Serializable {
     }
   }
 
+  public LexSlot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The slot name

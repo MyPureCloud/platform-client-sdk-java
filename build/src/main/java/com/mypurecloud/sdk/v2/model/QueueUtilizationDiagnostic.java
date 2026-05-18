@@ -38,6 +38,11 @@ public class QueueUtilizationDiagnostic  implements Serializable {
     }
   }
 
+  public QueueUtilizationDiagnostic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Identifier of the queue")
   @JsonProperty("queue")

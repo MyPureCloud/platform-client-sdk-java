@@ -145,6 +145,11 @@ public class DocumentBodyTableProperties  implements Serializable {
     }
   }
 
+  public DocumentBodyTableProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The width of the table converted to em unit.

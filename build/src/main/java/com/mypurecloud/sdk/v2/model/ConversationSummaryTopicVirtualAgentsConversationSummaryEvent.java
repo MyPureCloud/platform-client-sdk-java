@@ -219,6 +219,16 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     }
   }
 
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      participants = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant>();
+      communicationIds = new ArrayList<String>();
+      followupActions = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationFollowupAction>();
+      extractedEntities = new ArrayList<ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity>();
+      wrapUpCodes = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class GenerateBuForecastRequest  implements Serializable {
     }
   }
 
+  public GenerateBuForecastRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The description for the forecast

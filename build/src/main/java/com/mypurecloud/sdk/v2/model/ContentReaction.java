@@ -90,6 +90,11 @@ public class ContentReaction  implements Serializable {
     }
   }
 
+  public ContentReaction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of reaction.

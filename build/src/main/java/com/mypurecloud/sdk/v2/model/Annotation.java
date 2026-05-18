@@ -97,6 +97,12 @@ public class Annotation  implements Serializable {
     }
   }
 
+  public Annotation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      annotations = new ArrayList<Annotation>();
+    }
+  }
+
   
   /**
    * Annotation id. All pause annotations on a recording will share an ID value, bookmark annotations will have unique IDs, and hold annotations will have randomly generated UUIDs (i.e. the ID will change at each request).

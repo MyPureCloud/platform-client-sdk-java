@@ -140,6 +140,12 @@ public class WfmActivityPlanRunJobCompleteTopicActivityPlanJobCompleteNotificati
     }
   }
 
+  public WfmActivityPlanRunJobCompleteTopicActivityPlanJobCompleteNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      exceptions = new ArrayList<WfmActivityPlanRunJobCompleteTopicActivityPlanJobException>();
+    }
+  }
+
   
   /**
    **/

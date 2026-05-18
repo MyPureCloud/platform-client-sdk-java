@@ -131,6 +131,11 @@ public class AgentCopilotAggregationView  implements Serializable {
     }
   }
 
+  public AgentCopilotAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

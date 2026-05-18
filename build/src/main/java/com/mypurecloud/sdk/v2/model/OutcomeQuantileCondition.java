@@ -31,6 +31,11 @@ public class OutcomeQuantileCondition  implements Serializable {
     }
   }
 
+  public OutcomeQuantileCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The outcome ID.

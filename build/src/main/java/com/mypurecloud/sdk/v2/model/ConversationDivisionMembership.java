@@ -35,6 +35,12 @@ public class ConversationDivisionMembership  implements Serializable {
     }
   }
 
+  public ConversationDivisionMembership(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DivisionEntityRef>();
+    }
+  }
+
   
   /**
    * A division the conversation belongs to.

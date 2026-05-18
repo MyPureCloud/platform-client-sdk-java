@@ -35,6 +35,12 @@ public class TrustMemberCreate  implements Serializable {
     }
   }
 
+  public TrustMemberCreate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      roleIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Trustee User or Group Id

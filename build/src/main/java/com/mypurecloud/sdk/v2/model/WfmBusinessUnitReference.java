@@ -30,6 +30,11 @@ public class WfmBusinessUnitReference  implements Serializable {
     }
   }
 
+  public WfmBusinessUnitReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the business unit

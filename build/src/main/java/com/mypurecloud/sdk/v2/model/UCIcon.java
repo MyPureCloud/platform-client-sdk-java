@@ -29,6 +29,11 @@ public class UCIcon  implements Serializable {
     }
   }
 
+  public UCIcon(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "vector")
   @JsonProperty("vector")

@@ -30,6 +30,11 @@ public class ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeN
     }
   }
 
+  public ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Date and time before which data is guaranteed to be available in the datalake

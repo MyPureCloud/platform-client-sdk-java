@@ -32,6 +32,11 @@ public class ShortTermForecastReference  implements Serializable {
     }
   }
 
+  public ShortTermForecastReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

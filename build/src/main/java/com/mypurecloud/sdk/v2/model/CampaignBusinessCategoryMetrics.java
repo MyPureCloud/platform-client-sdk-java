@@ -31,6 +31,11 @@ public class CampaignBusinessCategoryMetrics  implements Serializable {
     }
   }
 
+  public CampaignBusinessCategoryMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Number of calls categorized as business success

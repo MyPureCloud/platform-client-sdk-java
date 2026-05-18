@@ -30,6 +30,11 @@ public class ConversationSocialExpressionEventTopicUriReference  implements Seri
     }
   }
 
+  public ConversationSocialExpressionEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

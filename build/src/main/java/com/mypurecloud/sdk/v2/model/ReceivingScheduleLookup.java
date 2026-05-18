@@ -29,6 +29,11 @@ public class ReceivingScheduleLookup  implements Serializable {
     }
   }
 
+  public ReceivingScheduleLookup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the schedule

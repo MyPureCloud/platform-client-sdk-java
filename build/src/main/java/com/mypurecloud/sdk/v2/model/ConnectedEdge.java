@@ -38,6 +38,12 @@ public class ConnectedEdge  implements Serializable {
     }
   }
 
+  public ConnectedEdge(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      edgeConnectionList = new ArrayList<EdgeConnectionInfo>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

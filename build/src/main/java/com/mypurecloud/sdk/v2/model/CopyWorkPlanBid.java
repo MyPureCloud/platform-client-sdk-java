@@ -29,6 +29,11 @@ public class CopyWorkPlanBid  implements Serializable {
     }
   }
 
+  public CopyWorkPlanBid(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the new work plan bid

@@ -29,6 +29,11 @@ public class UnreadFields  implements Serializable {
     }
   }
 
+  public UnreadFields(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The new unread state of the alert

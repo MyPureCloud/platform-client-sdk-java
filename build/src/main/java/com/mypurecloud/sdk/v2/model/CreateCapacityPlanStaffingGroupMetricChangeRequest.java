@@ -92,6 +92,12 @@ public class CreateCapacityPlanStaffingGroupMetricChangeRequest  implements Seri
     }
   }
 
+  public CreateCapacityPlanStaffingGroupMetricChangeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      staffingGroupIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The number of weeks to which the metric change applies

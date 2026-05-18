@@ -30,6 +30,11 @@ public class SortItem  implements Serializable {
     }
   }
 
+  public SortItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

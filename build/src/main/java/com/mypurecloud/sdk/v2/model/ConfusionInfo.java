@@ -33,6 +33,12 @@ public class ConfusionInfo  implements Serializable {
     }
   }
 
+  public ConfusionInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<ConfusionIntentInfo>();
+    }
+  }
+
   
   /**
    * Confusion details between this utterance and other intents.

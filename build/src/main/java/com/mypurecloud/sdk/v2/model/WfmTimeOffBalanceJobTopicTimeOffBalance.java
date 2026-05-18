@@ -37,6 +37,12 @@ public class WfmTimeOffBalanceJobTopicTimeOffBalance  implements Serializable {
     }
   }
 
+  public WfmTimeOffBalanceJobTopicTimeOffBalance(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      balanceMinutesPerDay = new ArrayList<Long>();
+    }
+  }
+
   
   /**
    **/

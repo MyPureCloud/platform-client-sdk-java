@@ -287,6 +287,13 @@ public class KnowledgeDocumentsAnswerFilter  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentsAnswerFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      answerMode = new ArrayList<AnswerModeEnum>();
+      variationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The search query.

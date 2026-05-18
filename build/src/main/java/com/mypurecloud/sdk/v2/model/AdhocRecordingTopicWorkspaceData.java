@@ -29,6 +29,11 @@ public class AdhocRecordingTopicWorkspaceData  implements Serializable {
     }
   }
 
+  public AdhocRecordingTopicWorkspaceData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

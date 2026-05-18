@@ -30,6 +30,11 @@ public class QueueConversationVideoEventTopicPhoneNumberColumn  implements Seria
     }
   }
 
+  public QueueConversationVideoEventTopicPhoneNumberColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

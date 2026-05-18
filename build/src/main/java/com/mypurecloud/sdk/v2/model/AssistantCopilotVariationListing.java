@@ -36,6 +36,12 @@ public class AssistantCopilotVariationListing  implements Serializable {
     }
   }
 
+  public AssistantCopilotVariationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AssistantCopilotVariation>();
+    }
+  }
+
   
   /**
    **/

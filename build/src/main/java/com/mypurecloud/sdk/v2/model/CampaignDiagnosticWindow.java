@@ -79,6 +79,11 @@ public class CampaignDiagnosticWindow  implements Serializable {
     }
   }
 
+  public CampaignDiagnosticWindow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Name of informational attribute

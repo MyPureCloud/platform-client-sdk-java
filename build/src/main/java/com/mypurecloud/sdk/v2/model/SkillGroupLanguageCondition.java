@@ -88,6 +88,12 @@ public class SkillGroupLanguageCondition  implements Serializable {
     }
   }
 
+  public SkillGroupLanguageCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      childConditions = new ArrayList<SkillGroupCondition>();
+    }
+  }
+
   
   /**
    * The language skill to be used in the skill condition query

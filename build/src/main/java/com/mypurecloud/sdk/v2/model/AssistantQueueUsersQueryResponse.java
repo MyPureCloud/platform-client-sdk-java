@@ -35,6 +35,12 @@ public class AssistantQueueUsersQueryResponse  implements Serializable {
     }
   }
 
+  public AssistantQueueUsersQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      users = new ArrayList<UserReference>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The queue information.")
   @JsonProperty("queue")

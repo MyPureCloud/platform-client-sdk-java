@@ -46,6 +46,13 @@ public class ConversationBasic  implements Serializable {
     }
   }
 
+  public ConversationBasic(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      divisions = new ArrayList<ConversationDivisionMembership>();
+      participants = new ArrayList<ParticipantBasic>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

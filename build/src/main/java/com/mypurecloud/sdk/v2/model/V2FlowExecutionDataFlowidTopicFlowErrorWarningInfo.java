@@ -31,6 +31,11 @@ public class V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo  implements Seri
     }
   }
 
+  public V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The reason a executionItem encountered an error or warning.

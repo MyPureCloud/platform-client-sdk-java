@@ -33,6 +33,11 @@ public class UserRoutingSkillPost  implements Serializable {
     }
   }
 
+  public UserRoutingSkillPost(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the existing routing skill to add to the user

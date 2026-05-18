@@ -358,6 +358,12 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
     }
   }
 
+  public ConversationChatEventTopicChatMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

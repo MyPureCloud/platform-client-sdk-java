@@ -34,6 +34,12 @@ public class AgentUtilizationAsyncAggregateQueryResponse  implements Serializabl
     }
   }
 
+  public AgentUtilizationAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<AgentUtilizationAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

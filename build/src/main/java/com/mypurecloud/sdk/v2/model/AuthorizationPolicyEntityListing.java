@@ -36,6 +36,12 @@ public class AuthorizationPolicyEntityListing  implements Serializable {
     }
   }
 
+  public AuthorizationPolicyEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AuthorizationPolicy>();
+    }
+  }
+
   
   /**
    **/

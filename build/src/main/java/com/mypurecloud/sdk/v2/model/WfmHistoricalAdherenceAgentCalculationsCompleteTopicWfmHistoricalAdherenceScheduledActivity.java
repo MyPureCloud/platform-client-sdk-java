@@ -31,6 +31,11 @@ public class WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAd
     }
   }
 
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceScheduledActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

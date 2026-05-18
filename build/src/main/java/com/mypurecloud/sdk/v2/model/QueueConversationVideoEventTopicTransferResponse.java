@@ -139,6 +139,11 @@ public class QueueConversationVideoEventTopicTransferResponse  implements Serial
     }
   }
 
+  public QueueConversationVideoEventTopicTransferResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the command.

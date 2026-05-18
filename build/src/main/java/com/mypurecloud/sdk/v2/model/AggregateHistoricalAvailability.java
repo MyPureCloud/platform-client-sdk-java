@@ -34,6 +34,13 @@ public class AggregateHistoricalAvailability  implements Serializable {
     }
   }
 
+  public AggregateHistoricalAvailability(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      weekly = new ArrayList<Integer>();
+      yearly = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * All available week offsets from the historical start date.

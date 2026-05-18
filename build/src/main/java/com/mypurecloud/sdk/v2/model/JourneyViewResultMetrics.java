@@ -34,6 +34,11 @@ public class JourneyViewResultMetrics  implements Serializable {
     }
   }
 
+  public JourneyViewResultMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "number of external contacts who participated at the element")
   @JsonProperty("participantCount")

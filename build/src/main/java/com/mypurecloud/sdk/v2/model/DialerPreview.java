@@ -38,6 +38,12 @@ public class DialerPreview  implements Serializable {
     }
   }
 
+  public DialerPreview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneNumberColumns = new ArrayList<PhoneNumberColumn>();
+    }
+  }
+
   
   /**
    **/

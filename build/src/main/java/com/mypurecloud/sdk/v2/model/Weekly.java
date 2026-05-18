@@ -34,6 +34,12 @@ public class Weekly  implements Serializable {
     }
   }
 
+  public Weekly(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      downloadResult = new ArrayList<Timeseries>();
+    }
+  }
+
   
   /**
    * Download URL to fetch the result of weekly time series. This field is populated only if session state is Complete

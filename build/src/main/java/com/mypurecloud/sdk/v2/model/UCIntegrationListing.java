@@ -43,6 +43,12 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     }
   }
 
+  public UCIntegrationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UCIntegration>();
+    }
+  }
+
   
   /**
    **/

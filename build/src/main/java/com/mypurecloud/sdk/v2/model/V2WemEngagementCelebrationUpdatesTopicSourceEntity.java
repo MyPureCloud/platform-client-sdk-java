@@ -87,6 +87,11 @@ public class V2WemEngagementCelebrationUpdatesTopicSourceEntity  implements Seri
     }
   }
 
+  public V2WemEngagementCelebrationUpdatesTopicSourceEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

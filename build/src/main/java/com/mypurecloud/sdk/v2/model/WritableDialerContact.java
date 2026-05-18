@@ -45,6 +45,11 @@ public class WritableDialerContact  implements Serializable {
     }
   }
 
+  public WritableDialerContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

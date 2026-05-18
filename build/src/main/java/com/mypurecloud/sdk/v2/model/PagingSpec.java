@@ -30,6 +30,11 @@ public class PagingSpec  implements Serializable {
     }
   }
 
+  public PagingSpec(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * How many results per page

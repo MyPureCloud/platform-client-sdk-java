@@ -82,6 +82,12 @@ public class DncPatchWhatsAppNumbersRequest  implements Serializable {
     }
   }
 
+  public DncPatchWhatsAppNumbersRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      whatsAppNumbers = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The action to perform

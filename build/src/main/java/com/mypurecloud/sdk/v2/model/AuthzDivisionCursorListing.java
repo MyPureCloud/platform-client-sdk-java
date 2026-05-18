@@ -36,6 +36,12 @@ public class AuthzDivisionCursorListing  implements Serializable {
     }
   }
 
+  public AuthzDivisionCursorListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AuthzDivision>();
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,11 @@ public class QueueConversationCobrowseEventTopicDetail  implements Serializable 
     }
   }
 
+  public QueueConversationCobrowseEventTopicDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

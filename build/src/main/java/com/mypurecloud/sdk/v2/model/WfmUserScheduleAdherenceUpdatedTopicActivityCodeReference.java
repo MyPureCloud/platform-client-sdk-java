@@ -34,6 +34,12 @@ public class WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference  implemen
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      secondaryPresences = new ArrayList<WfmUserScheduleAdherenceUpdatedTopicSecondaryPresenceReference>();
+    }
+  }
+
   
   /**
    **/

@@ -34,6 +34,13 @@ public class AssignUsers  implements Serializable {
     }
   }
 
+  public AssignUsers(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      membersToAssign = new ArrayList<String>();
+      membersToRemove = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * List of user ids to assign to a performance profile

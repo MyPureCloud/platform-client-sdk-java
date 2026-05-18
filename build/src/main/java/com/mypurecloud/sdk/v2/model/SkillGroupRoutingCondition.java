@@ -88,6 +88,12 @@ public class SkillGroupRoutingCondition  implements Serializable {
     }
   }
 
+  public SkillGroupRoutingCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      childConditions = new ArrayList<SkillGroupCondition>();
+    }
+  }
+
   
   /**
    * The routing skill to be used in the skill condition query

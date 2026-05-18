@@ -82,6 +82,12 @@ public class HistoricalImportOverallDeleteStatusResponse  implements Serializabl
     }
   }
 
+  public HistoricalImportOverallDeleteStatusResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<HistoricalDataJobEntityStatus>();
+    }
+  }
+
   
   /**
    * List of all the delete jobs

@@ -35,6 +35,12 @@ public class ValidateAgentUnavailableTimesRequest  implements Serializable {
     }
   }
 
+  public ValidateAgentUnavailableTimesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      unavailableTimes = new ArrayList<UpdateUnavailableTime>();
+    }
+  }
+
   
   /**
    * The ID of the week to validate. Must correspond to the start day of week of the business unit to which the agent belongs in the format YYYY-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

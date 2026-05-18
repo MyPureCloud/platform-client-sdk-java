@@ -34,6 +34,12 @@ public class StatEventUserTopicIntervalMetrics  implements Serializable {
     }
   }
 
+  public StatEventUserTopicIntervalMetrics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<StatEventUserTopicMetricStats>();
+    }
+  }
+
   
   /**
    **/

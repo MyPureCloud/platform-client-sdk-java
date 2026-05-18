@@ -40,6 +40,15 @@ public class CampaignRuleActionEntities  implements Serializable {
     }
   }
 
+  public CampaignRuleActionEntities(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      campaigns = new ArrayList<DomainEntityRef>();
+      sequences = new ArrayList<DomainEntityRef>();
+      emailCampaigns = new ArrayList<DomainEntityRef>();
+      smsCampaigns = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   /**
    * The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.

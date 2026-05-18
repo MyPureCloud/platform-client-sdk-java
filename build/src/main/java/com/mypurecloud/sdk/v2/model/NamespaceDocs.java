@@ -35,6 +35,12 @@ public class NamespaceDocs  implements Serializable {
     }
   }
 
+  public NamespaceDocs(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      limits = new ArrayList<LimitDocs>();
+    }
+  }
+
   
   /**
    **/

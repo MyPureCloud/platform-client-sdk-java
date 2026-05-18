@@ -34,6 +34,12 @@ public class CreatePlanningGroupRequest  implements Serializable {
     }
   }
 
+  public CreatePlanningGroupRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      routePaths = new ArrayList<RoutePathRequest>();
+    }
+  }
+
   
   /**
    * The name of the planning group

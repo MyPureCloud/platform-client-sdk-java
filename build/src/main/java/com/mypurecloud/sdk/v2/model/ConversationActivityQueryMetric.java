@@ -81,6 +81,11 @@ public class ConversationActivityQueryMetric  implements Serializable {
     }
   }
 
+  public ConversationActivityQueryMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The requested metric

@@ -43,6 +43,12 @@ public class InboundDomainEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public InboundDomainEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<InboundDomain>();
+    }
+  }
+
   
   /**
    **/

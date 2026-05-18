@@ -31,6 +31,11 @@ public class V2StaEmpathyOverallTopicAgentEmpathyScore  implements Serializable 
     }
   }
 
+  public V2StaEmpathyOverallTopicAgentEmpathyScore(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

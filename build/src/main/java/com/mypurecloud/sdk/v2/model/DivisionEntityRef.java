@@ -33,6 +33,11 @@ public class DivisionEntityRef  implements Serializable {
     }
   }
 
+  public DivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

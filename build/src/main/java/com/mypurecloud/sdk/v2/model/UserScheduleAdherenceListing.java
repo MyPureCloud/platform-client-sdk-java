@@ -34,6 +34,12 @@ public class UserScheduleAdherenceListing  implements Serializable {
     }
   }
 
+  public UserScheduleAdherenceListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserScheduleAdherence>();
+    }
+  }
+
   
   /**
    **/

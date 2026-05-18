@@ -39,6 +39,11 @@ public class WeekScheduleListItemResponse  implements Serializable {
     }
   }
 
+  public WeekScheduleListItemResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

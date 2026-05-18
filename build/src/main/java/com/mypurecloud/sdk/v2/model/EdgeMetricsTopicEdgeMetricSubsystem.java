@@ -32,6 +32,11 @@ public class EdgeMetricsTopicEdgeMetricSubsystem  implements Serializable {
     }
   }
 
+  public EdgeMetricsTopicEdgeMetricSubsystem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -85,6 +85,11 @@ public class AgentMuQueryResponse  implements Serializable {
     }
   }
 
+  public AgentMuQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the operation

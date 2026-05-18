@@ -30,6 +30,11 @@ public class RecordingAnnotationQueue  implements Serializable {
     }
   }
 
+  public RecordingAnnotationQueue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The queue name

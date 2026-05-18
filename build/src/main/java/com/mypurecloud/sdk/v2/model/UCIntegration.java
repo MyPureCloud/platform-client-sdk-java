@@ -96,6 +96,12 @@ public class UCIntegration  implements Serializable {
     }
   }
 
+  public UCIntegration(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      userPermissions = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

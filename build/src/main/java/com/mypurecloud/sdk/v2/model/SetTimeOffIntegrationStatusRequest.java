@@ -79,6 +79,11 @@ public class SetTimeOffIntegrationStatusRequest  implements Serializable {
     }
   }
 
+  public SetTimeOffIntegrationStatusRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The integration status value for the time off request

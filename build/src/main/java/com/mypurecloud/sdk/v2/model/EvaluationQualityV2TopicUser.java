@@ -30,6 +30,11 @@ public class EvaluationQualityV2TopicUser  implements Serializable {
     }
   }
 
+  public EvaluationQualityV2TopicUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

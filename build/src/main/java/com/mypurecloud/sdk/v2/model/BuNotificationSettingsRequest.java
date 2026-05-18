@@ -30,6 +30,11 @@ public class BuNotificationSettingsRequest  implements Serializable {
     }
   }
 
+  public BuNotificationSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Schedule notification settings

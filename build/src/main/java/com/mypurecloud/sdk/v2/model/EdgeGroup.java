@@ -101,6 +101,12 @@ public class EdgeGroup  implements Serializable {
     }
   }
 
+  public EdgeGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      phoneTrunkBases = new ArrayList<TrunkBase>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

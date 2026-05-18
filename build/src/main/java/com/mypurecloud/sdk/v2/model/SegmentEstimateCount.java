@@ -30,6 +30,11 @@ public class SegmentEstimateCount  implements Serializable {
     }
   }
 
+  public SegmentEstimateCount(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of Segment.

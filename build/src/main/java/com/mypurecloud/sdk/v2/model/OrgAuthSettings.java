@@ -40,6 +40,14 @@ public class OrgAuthSettings  implements Serializable {
     }
   }
 
+  public OrgAuthSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      domainAllowlist = new ArrayList<String>();
+      ipAddressAllowlist = new ArrayList<String>();
+      inactivityTimeoutExclusions = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Indicates whether multi-factor authentication is required.

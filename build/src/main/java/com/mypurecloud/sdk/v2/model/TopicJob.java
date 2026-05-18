@@ -90,6 +90,12 @@ public class TopicJob  implements Serializable {
     }
   }
 
+  public TopicJob(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      topics = new ArrayList<BaseTopicEntitiy>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -30,6 +30,11 @@ public class LearningCoverArtThumbnail  implements Serializable {
     }
   }
 
+  public LearningCoverArtThumbnail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Resolution of thumbnail

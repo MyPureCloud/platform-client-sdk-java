@@ -29,6 +29,11 @@ public class ShiftTradeTargetRequestItem  implements Serializable {
     }
   }
 
+  public ShiftTradeTargetRequestItem(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user to whom the shift trade request was sent in a direct trade

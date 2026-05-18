@@ -56,6 +56,24 @@ public class CapacityPlanMetricsSummary  implements Serializable {
     }
   }
 
+  public CapacityPlanMetricsSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      requiredStaffFullTimeEquivalentCount = new ArrayList<Double>();
+      plannedFullTimeEquivalentCount = new ArrayList<Double>();
+      staffingOverUnderFullTimeEquivalentCount = new ArrayList<Double>();
+      startingFullTimeEquivalentCount = new ArrayList<Double>();
+      attritionFullTimeEquivalentCount = new ArrayList<Double>();
+      attritionPercentage = new ArrayList<Double>();
+      newHireFullTimeEquivalentCount = new ArrayList<Double>();
+      transfersFullTimeEquivalentCount = new ArrayList<Double>();
+      extraTimeUnderTimeFullTimeEquivalentCount = new ArrayList<Double>();
+      shrinkageFullTimeEquivalentCount = new ArrayList<Double>();
+      shrinkagePercentage = new ArrayList<Double>();
+      endOfMonthPlannedFullTimeEquivalentCount = new ArrayList<Double>();
+      netFullTimeEquivalentCount = new ArrayList<Double>();
+    }
+  }
+
   
   /**
    * The total staff requirements for all planning groups in the capacity plan, aggregated by the selected time granularity

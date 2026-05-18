@@ -32,6 +32,11 @@ public class WebDeploymentConfigurationVersionEntityRef  implements Serializable
     }
   }
 
+  public WebDeploymentConfigurationVersionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The configuration version ID

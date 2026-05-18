@@ -106,6 +106,13 @@ public class TrusteeBillingOverview  implements Serializable {
     }
   }
 
+  public TrusteeBillingOverview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      enabledProducts = new ArrayList<String>();
+      usages = new ArrayList<SubscriptionOverviewUsage>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

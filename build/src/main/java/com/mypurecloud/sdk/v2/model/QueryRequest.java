@@ -45,6 +45,15 @@ public class QueryRequest  implements Serializable {
     }
   }
 
+  public QueryRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      facetNameRequests = new ArrayList<String>();
+      sort = new ArrayList<SortItem>();
+      filters = new ArrayList<ContentFilterItem>();
+      attributeFilters = new ArrayList<AttributeFilterItem>();
+    }
+  }
+
   
   /**
    **/

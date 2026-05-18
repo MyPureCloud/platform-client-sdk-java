@@ -78,6 +78,11 @@ public class UpdateAdherenceExplanationStatusRequest  implements Serializable {
     }
   }
 
+  public UpdateAdherenceExplanationStatusRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The status of the adherence explanation

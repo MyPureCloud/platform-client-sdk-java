@@ -79,6 +79,11 @@ public class AppendToDncActionSettings  implements Serializable {
     }
   }
 
+  public AppendToDncActionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether to expire the record appended to the DNC list.

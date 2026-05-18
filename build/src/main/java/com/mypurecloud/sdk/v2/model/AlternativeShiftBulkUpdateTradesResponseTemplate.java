@@ -33,6 +33,12 @@ public class AlternativeShiftBulkUpdateTradesResponseTemplate  implements Serial
     }
   }
 
+  public AlternativeShiftBulkUpdateTradesResponseTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AlternativeShiftTradeBulkUpdateTemplateItem>();
+    }
+  }
+
   
   /**
    **/

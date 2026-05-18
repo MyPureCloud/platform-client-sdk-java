@@ -36,6 +36,12 @@ public class StatEventUserTopicStatsNotification  implements Serializable {
     }
   }
 
+  public StatEventUserTopicStatsNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatEventUserTopicIntervalMetrics>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class DialerDnclistConfigChangeUriReference  implements Serializable {
     }
   }
 
+  public DialerDnclistConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

@@ -85,6 +85,13 @@ public class JourneyViewElementFilter  implements Serializable {
     }
   }
 
+  public JourneyViewElementFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<JourneyViewElementFilterPredicate>();
+      numberPredicates = new ArrayList<JourneyViewElementFilterNumberPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates and clauses. Valid values: And

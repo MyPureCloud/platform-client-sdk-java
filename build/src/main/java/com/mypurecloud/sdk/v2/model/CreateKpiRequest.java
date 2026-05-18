@@ -132,6 +132,11 @@ public class CreateKpiRequest  implements Serializable {
     }
   }
 
+  public CreateKpiRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the Key Performance Indicator.

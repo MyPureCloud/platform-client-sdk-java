@@ -80,6 +80,11 @@ public class AgentAction  implements Serializable {
     }
   }
 
+  public AgentAction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of the checklist item.

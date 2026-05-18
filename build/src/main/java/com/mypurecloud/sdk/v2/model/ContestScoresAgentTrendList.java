@@ -35,6 +35,12 @@ public class ContestScoresAgentTrendList  implements Serializable {
     }
   }
 
+  public ContestScoresAgentTrendList(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ContestScoresAgentTrend>();
+    }
+  }
+
   
   /**
    **/

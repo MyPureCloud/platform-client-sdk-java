@@ -35,6 +35,12 @@ public class VoicemailMediaInfo  implements Serializable {
     }
   }
 
+  public VoicemailMediaInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      waveformData = new ArrayList<Float>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -34,6 +34,11 @@ public class LexV2Bot  implements Serializable {
     }
   }
 
+  public LexV2Bot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

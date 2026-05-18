@@ -30,6 +30,11 @@ public class CaseplanDataSchema  implements Serializable {
     }
   }
 
+  public CaseplanDataSchema(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the schema.

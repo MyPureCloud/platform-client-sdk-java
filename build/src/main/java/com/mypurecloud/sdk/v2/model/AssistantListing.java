@@ -36,6 +36,12 @@ public class AssistantListing  implements Serializable {
     }
   }
 
+  public AssistantListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Assistant>();
+    }
+  }
+
   
   /**
    **/

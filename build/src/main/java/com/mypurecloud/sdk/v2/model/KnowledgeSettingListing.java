@@ -36,6 +36,12 @@ public class KnowledgeSettingListing  implements Serializable {
     }
   }
 
+  public KnowledgeSettingListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<KnowledgeSettingsResponse>();
+    }
+  }
+
   
   /**
    **/

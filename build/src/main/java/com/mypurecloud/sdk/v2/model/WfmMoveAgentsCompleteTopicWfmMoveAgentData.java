@@ -85,6 +85,11 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentData  implements Serializable
     }
   }
 
+  public WfmMoveAgentsCompleteTopicWfmMoveAgentData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

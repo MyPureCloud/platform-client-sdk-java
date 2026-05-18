@@ -33,6 +33,12 @@ public class GeneralTopicsEntityListing  implements Serializable {
     }
   }
 
+  public GeneralTopicsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<GeneralTopic>();
+    }
+  }
+
   
   /**
    **/

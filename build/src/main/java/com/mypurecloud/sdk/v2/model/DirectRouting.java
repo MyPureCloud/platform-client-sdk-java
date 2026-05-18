@@ -35,6 +35,11 @@ public class DirectRouting  implements Serializable {
     }
   }
 
+  public DirectRouting(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Direct Routing Settings specific to Call media.

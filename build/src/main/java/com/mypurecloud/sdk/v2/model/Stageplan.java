@@ -39,6 +39,11 @@ public class Stageplan  implements Serializable {
     }
   }
 
+  public Stageplan(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

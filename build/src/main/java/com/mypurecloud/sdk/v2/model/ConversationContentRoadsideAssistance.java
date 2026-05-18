@@ -35,6 +35,11 @@ public class ConversationContentRoadsideAssistance  implements Serializable {
     }
   }
 
+  public ConversationContentRoadsideAssistance(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Roadside Assistance message text

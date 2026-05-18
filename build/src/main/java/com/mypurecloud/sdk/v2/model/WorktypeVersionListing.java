@@ -37,6 +37,12 @@ public class WorktypeVersionListing  implements Serializable {
     }
   }
 
+  public WorktypeVersionListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorktypeVersion>();
+    }
+  }
+
   
   /**
    **/

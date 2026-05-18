@@ -33,6 +33,12 @@ public class ExternalMetricDataWriteRequest  implements Serializable {
     }
   }
 
+  public ExternalMetricDataWriteRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      items = new ArrayList<ExternalMetricDataItem>();
+    }
+  }
+
   
   /**
    * A list of external metric data items. A maximum of 100 items are allowed.

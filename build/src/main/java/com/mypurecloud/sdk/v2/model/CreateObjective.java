@@ -199,6 +199,16 @@ public class CreateObjective  implements Serializable {
     }
   }
 
+  public CreateObjective(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      zones = new ArrayList<ObjectiveZone>();
+      topicIds = new ArrayList<String>();
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      queueIds = new ArrayList<String>();
+      evaluationFormContextIds = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

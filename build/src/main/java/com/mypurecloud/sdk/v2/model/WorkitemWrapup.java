@@ -37,6 +37,11 @@ public class WorkitemWrapup  implements Serializable {
     }
   }
 
+  public WorkitemWrapup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Workitem that the wrapup code has been added to.

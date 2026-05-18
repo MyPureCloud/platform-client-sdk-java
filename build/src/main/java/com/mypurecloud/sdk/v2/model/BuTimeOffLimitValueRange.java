@@ -95,6 +95,15 @@ public class BuTimeOffLimitValueRange  implements Serializable {
     }
   }
 
+  public BuTimeOffLimitValueRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      limitMinutesPerInterval = new ArrayList<Integer>();
+      allocatedMinutesPerInterval = new ArrayList<Integer>();
+      waitlistedMinutesPerInterval = new ArrayList<Integer>();
+      waitlistedRequestsPerInterval = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

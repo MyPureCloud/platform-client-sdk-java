@@ -43,6 +43,12 @@ public class OrganizationRoleEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public OrganizationRoleEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DomainOrganizationRole>();
+    }
+  }
+
   
   /**
    **/

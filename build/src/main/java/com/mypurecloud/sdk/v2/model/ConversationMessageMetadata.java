@@ -90,6 +90,13 @@ public class ConversationMessageMetadata  implements Serializable {
     }
   }
 
+  public ConversationMessageMetadata(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      events = new ArrayList<ConversationMessageMetadataEvent>();
+      content = new ArrayList<ConversationMessageMetadataContent>();
+    }
+  }
+
   
   /**
    * Message type.

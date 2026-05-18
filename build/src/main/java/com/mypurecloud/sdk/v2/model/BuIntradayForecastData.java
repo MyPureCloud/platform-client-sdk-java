@@ -30,6 +30,11 @@ public class BuIntradayForecastData  implements Serializable {
     }
   }
 
+  public BuIntradayForecastData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The number of interactions routed into the queues in the selected planning groups for the given media type for an agent to answer

@@ -30,6 +30,11 @@ public class CampaignRuleSpecificDateInterval  implements Serializable {
     }
   }
 
+  public CampaignRuleSpecificDateInterval(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The minimum value of the interval in yyyy-MM-dd format (if includeYear=true) or in MM-dd format (if includeYear=false). Required for the \"between\" operator

@@ -324,6 +324,17 @@ public class Session  implements Serializable {
     }
   }
 
+  public Session(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      outcomeAchievements = new ArrayList<OutcomeAchievement>();
+      segmentAssignments = new ArrayList<SessionSegmentAssignment>();
+      searchTerms = new ArrayList<String>();
+      conversationChannels = new ArrayList<ConversationChannel>();
+      divisionIds = new ArrayList<String>();
+      caseAssociations = new ArrayList<JourneyCaseAssociation>();
+    }
+  }
+
   
   /**
    * The ID of the session.

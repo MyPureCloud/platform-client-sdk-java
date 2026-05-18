@@ -36,6 +36,12 @@ public class V3SynchronizationListing  implements Serializable {
     }
   }
 
+  public V3SynchronizationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<V3Synchronization>();
+    }
+  }
+
   
   /**
    **/

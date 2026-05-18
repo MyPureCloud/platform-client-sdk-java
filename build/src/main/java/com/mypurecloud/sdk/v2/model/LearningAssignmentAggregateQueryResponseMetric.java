@@ -87,6 +87,11 @@ public class LearningAssignmentAggregateQueryResponseMetric  implements Serializ
     }
   }
 
+  public LearningAssignmentAggregateQueryResponseMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The metric this applies to

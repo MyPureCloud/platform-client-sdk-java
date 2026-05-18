@@ -30,6 +30,11 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUriReference  implements Se
     }
   }
 
+  public WfmUserScheduleAdherenceUpdatedTeamTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

@@ -147,6 +147,11 @@ public class ConversationChannel  implements Serializable {
     }
   }
 
+  public ConversationChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The type or category of this channel.

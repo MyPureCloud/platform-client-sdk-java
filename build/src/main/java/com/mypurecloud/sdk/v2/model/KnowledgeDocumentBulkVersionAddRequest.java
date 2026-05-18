@@ -33,6 +33,12 @@ public class KnowledgeDocumentBulkVersionAddRequest  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentBulkVersionAddRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<KnowledgeDocumentBulkVersionAddEntity>();
+    }
+  }
+
   
   /**
    * List of unique identifiers referencing documents that are to be versioned

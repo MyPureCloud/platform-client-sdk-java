@@ -425,6 +425,12 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     }
   }
 
+  public ConversationCallEventTopicCallMediaParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

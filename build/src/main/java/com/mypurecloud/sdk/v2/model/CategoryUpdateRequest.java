@@ -34,6 +34,11 @@ public class CategoryUpdateRequest  implements Serializable {
     }
   }
 
+  public CategoryUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

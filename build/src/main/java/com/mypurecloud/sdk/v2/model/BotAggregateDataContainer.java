@@ -36,6 +36,12 @@ public class BotAggregateDataContainer  implements Serializable {
     }
   }
 
+  public BotAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

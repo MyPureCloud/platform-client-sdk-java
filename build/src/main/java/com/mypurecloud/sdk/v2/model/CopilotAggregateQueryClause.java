@@ -82,6 +82,12 @@ public class CopilotAggregateQueryClause  implements Serializable {
     }
   }
 
+  public CopilotAggregateQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<CopilotAggregateQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

@@ -93,6 +93,12 @@ public class LearningModulePreviewUpdateRequest  implements Serializable {
     }
   }
 
+  public LearningModulePreviewUpdateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      steps = new ArrayList<LearningModulePreviewUpdateStep>();
+    }
+  }
+
   
   /**
    * The assignment State

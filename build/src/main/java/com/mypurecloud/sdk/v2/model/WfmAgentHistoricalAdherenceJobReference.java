@@ -80,6 +80,11 @@ public class WfmAgentHistoricalAdherenceJobReference  implements Serializable {
     }
   }
 
+  public WfmAgentHistoricalAdherenceJobReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the historical adherence job to listen for via notification or query using the jobs route

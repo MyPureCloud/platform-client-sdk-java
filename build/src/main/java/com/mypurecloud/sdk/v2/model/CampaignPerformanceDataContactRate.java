@@ -30,6 +30,11 @@ public class CampaignPerformanceDataContactRate  implements Serializable {
     }
   }
 
+  public CampaignPerformanceDataContactRate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Ratio of connects to attempts

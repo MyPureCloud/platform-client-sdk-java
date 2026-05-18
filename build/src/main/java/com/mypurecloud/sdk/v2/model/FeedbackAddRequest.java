@@ -79,6 +79,11 @@ public class FeedbackAddRequest  implements Serializable {
     }
   }
 
+  public FeedbackAddRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Agent’s rating for the system-generated summary.

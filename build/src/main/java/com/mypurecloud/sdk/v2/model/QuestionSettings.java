@@ -31,6 +31,11 @@ public class QuestionSettings  implements Serializable {
     }
   }
 
+  public QuestionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The context id of the question in the group

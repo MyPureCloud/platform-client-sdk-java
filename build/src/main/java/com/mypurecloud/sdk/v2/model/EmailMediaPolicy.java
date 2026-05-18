@@ -32,6 +32,11 @@ public class EmailMediaPolicy  implements Serializable {
     }
   }
 
+  public EmailMediaPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Actions applied when specified conditions are met

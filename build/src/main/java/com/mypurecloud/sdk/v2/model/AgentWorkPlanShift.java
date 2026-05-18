@@ -46,6 +46,12 @@ public class AgentWorkPlanShift  implements Serializable {
     }
   }
 
+  public AgentWorkPlanShift(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activities = new ArrayList<AgentWorkPlanActivity>();
+    }
+  }
+
   
   /**
    * Days of the week applicable for this shift

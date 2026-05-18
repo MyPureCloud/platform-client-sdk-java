@@ -34,6 +34,11 @@ public class MaestroWebhooksInvocationTopicWebhooksInvocation  implements Serial
     }
   }
 
+  public MaestroWebhooksInvocationTopicWebhooksInvocation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

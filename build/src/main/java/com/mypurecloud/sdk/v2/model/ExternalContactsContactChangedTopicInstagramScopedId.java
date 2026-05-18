@@ -29,6 +29,11 @@ public class ExternalContactsContactChangedTopicInstagramScopedId  implements Se
     }
   }
 
+  public ExternalContactsContactChangedTopicInstagramScopedId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -80,6 +80,11 @@ public class InfixOperator  implements Serializable {
     }
   }
 
+  public InfixOperator(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The logical operation that is applied on the operand against the following operand

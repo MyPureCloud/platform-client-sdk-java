@@ -31,6 +31,11 @@ public class FlowHealthVersionInfo  implements Serializable {
     }
   }
 
+  public FlowHealthVersionInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Given flow's Version Info.")
   @JsonProperty("flowVersion")

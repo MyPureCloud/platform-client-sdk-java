@@ -41,6 +41,12 @@ public class GamificationScorecardChangeTopicEvaluationDetail  implements Serial
     }
   }
 
+  public GamificationScorecardChangeTopicEvaluationDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      mediaTypes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

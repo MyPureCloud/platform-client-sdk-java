@@ -43,6 +43,12 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     }
   }
 
+  public RuleSetEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<RuleSet>();
+    }
+  }
+
   
   /**
    **/

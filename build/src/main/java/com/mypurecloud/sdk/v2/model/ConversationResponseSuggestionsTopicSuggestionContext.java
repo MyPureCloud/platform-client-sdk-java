@@ -87,6 +87,11 @@ public class ConversationResponseSuggestionsTopicSuggestionContext  implements S
     }
   }
 
+  public ConversationResponseSuggestionsTopicSuggestionContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

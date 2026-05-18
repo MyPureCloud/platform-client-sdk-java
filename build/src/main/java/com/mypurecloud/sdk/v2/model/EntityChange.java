@@ -37,6 +37,13 @@ public class EntityChange  implements Serializable {
     }
   }
 
+  public EntityChange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      oldValues = new ArrayList<String>();
+      newValues = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * Id of the entity that was changed

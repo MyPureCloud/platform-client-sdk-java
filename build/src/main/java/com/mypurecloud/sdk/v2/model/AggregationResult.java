@@ -85,6 +85,12 @@ public class AggregationResult  implements Serializable {
     }
   }
 
+  public AggregationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<AggregationResultEntry>();
+    }
+  }
+
   
   /**
    **/

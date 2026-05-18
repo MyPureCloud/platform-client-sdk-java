@@ -43,6 +43,12 @@ public class JourneyViewListing  implements Serializable, PagedResource<JourneyV
     }
   }
 
+  public JourneyViewListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<JourneyView>();
+    }
+  }
+
   
   /**
    **/

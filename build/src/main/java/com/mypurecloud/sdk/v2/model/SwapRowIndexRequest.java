@@ -32,6 +32,11 @@ public class SwapRowIndexRequest  implements Serializable {
     }
   }
 
+  public SwapRowIndexRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Unique identifier of the source row to swap

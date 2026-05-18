@@ -88,6 +88,11 @@ public class FormPageComponent  implements Serializable {
     }
   }
 
+  public FormPageComponent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of the component

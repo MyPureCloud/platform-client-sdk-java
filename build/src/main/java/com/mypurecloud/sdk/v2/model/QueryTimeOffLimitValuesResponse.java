@@ -33,6 +33,12 @@ public class QueryTimeOffLimitValuesResponse  implements Serializable {
     }
   }
 
+  public QueryTimeOffLimitValuesResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      values = new ArrayList<TimeOffLimitValueRange>();
+    }
+  }
+
   
   /**
    **/

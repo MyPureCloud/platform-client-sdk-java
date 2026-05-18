@@ -35,6 +35,12 @@ public class WorkitemStatusListing  implements Serializable {
     }
   }
 
+  public WorkitemStatusListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WorkitemStatus>();
+    }
+  }
+
   
   /**
    **/

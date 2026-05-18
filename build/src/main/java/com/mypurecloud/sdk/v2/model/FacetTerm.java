@@ -35,6 +35,11 @@ public class FacetTerm  implements Serializable {
     }
   }
 
+  public FacetTerm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

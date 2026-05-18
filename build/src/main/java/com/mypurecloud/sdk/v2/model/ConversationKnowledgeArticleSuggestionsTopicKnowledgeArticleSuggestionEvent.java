@@ -197,6 +197,11 @@ public class ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggest
     }
   }
 
+  public ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

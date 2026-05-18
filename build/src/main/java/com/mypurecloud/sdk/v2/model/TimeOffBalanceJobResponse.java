@@ -83,6 +83,12 @@ public class TimeOffBalanceJobResponse  implements Serializable {
     }
   }
 
+  public TimeOffBalanceJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<TimeOffBalanceResponse>();
+    }
+  }
+
   
   /**
    **/

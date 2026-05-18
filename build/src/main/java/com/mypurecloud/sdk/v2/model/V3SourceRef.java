@@ -30,6 +30,11 @@ public class V3SourceRef  implements Serializable {
     }
   }
 
+  public V3SourceRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Source Id.

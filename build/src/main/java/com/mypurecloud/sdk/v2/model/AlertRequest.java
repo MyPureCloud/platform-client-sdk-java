@@ -85,6 +85,11 @@ public class AlertRequest  implements Serializable {
     }
   }
 
+  public AlertRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The action being taken on the alert.

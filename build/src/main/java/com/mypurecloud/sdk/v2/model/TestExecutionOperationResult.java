@@ -34,6 +34,11 @@ public class TestExecutionOperationResult  implements Serializable {
     }
   }
 
+  public TestExecutionOperationResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The step number to indicate the order in which the operation was performed

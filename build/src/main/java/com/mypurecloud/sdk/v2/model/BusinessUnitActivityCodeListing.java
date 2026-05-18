@@ -34,6 +34,12 @@ public class BusinessUnitActivityCodeListing  implements Serializable {
     }
   }
 
+  public BusinessUnitActivityCodeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BusinessUnitActivityCode>();
+    }
+  }
+
   
   /**
    **/

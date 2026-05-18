@@ -31,6 +31,11 @@ public class ExportScriptRequest  implements Serializable {
     }
   }
 
+  public ExportScriptRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The final file name (no extension) of the script download: <fileName>.script

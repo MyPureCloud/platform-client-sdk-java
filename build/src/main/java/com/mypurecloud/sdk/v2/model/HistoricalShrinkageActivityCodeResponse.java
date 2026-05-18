@@ -31,6 +31,11 @@ public class HistoricalShrinkageActivityCodeResponse  implements Serializable {
     }
   }
 
+  public HistoricalShrinkageActivityCodeResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the activity code for which shrinkage data is provided

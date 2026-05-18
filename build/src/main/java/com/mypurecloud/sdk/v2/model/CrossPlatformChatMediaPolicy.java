@@ -32,6 +32,11 @@ public class CrossPlatformChatMediaPolicy  implements Serializable {
     }
   }
 
+  public CrossPlatformChatMediaPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Actions applied when specified conditions are met

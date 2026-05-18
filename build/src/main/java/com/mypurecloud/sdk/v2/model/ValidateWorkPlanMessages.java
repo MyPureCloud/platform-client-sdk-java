@@ -35,6 +35,12 @@ public class ValidateWorkPlanMessages  implements Serializable {
     }
   }
 
+  public ValidateWorkPlanMessages(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      violationMessages = new ArrayList<WorkPlanConfigurationViolationMessage>();
+    }
+  }
+
   
   /**
    * Messages for work plan violating some rules such as no shifts in a work plan

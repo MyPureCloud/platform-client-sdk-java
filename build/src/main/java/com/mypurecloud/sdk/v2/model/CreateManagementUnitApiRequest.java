@@ -88,6 +88,11 @@ public class CreateManagementUnitApiRequest  implements Serializable {
     }
   }
 
+  public CreateManagementUnitApiRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the management unit

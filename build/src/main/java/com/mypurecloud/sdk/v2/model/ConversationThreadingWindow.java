@@ -35,6 +35,12 @@ public class ConversationThreadingWindow  implements Serializable {
     }
   }
 
+  public ConversationThreadingWindow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      settings = new ArrayList<ConversationThreadingWindowSetting>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

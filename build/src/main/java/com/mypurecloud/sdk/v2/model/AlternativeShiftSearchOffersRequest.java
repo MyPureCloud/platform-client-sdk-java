@@ -38,6 +38,12 @@ public class AlternativeShiftSearchOffersRequest  implements Serializable {
     }
   }
 
+  public AlternativeShiftSearchOffersRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      acceptableIntervals = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The existing schedule being used to find alternative shift offers

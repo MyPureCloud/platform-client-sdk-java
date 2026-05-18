@@ -31,6 +31,11 @@ public class ManualEscalationRequest  implements Serializable {
     }
   }
 
+  public ManualEscalationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The social media normalized message ID to be escalated.

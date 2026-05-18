@@ -82,6 +82,11 @@ public class KnowledgeExportJobRequest  implements Serializable {
     }
   }
 
+  public KnowledgeExportJobRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * What to export.

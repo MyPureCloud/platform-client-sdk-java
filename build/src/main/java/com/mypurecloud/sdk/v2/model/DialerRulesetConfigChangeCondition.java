@@ -209,6 +209,14 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     }
   }
 
+  public DialerRulesetConfigChangeCondition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      codes = new ArrayList<String>();
+      contactColumnToDataActionFieldMappings = new ArrayList<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping>();
+      predicates = new ArrayList<DialerRulesetConfigChangeDataActionConditionPredicate>();
+    }
+  }
+
   
   /**
    * A UriReference for a resource

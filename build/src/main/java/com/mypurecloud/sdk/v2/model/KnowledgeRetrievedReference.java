@@ -33,6 +33,11 @@ public class KnowledgeRetrievedReference  implements Serializable {
     }
   }
 
+  public KnowledgeRetrievedReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The confidence associated with retrieved reference respect to a search query.

@@ -31,6 +31,11 @@ public class IpFilter  implements Serializable {
     }
   }
 
+  public IpFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * IP address or CIDR range to filter (e.g. '192.168.1.0/24').

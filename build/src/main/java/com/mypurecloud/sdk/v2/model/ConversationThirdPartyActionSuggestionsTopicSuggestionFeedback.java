@@ -78,6 +78,11 @@ public class ConversationThirdPartyActionSuggestionsTopicSuggestionFeedback  imp
     }
   }
 
+  public ConversationThirdPartyActionSuggestionsTopicSuggestionFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

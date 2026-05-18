@@ -84,6 +84,11 @@ public class Touchpoint  implements Serializable {
     }
   }
 
+  public Touchpoint(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * ID of conversation.

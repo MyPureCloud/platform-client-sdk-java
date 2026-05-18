@@ -30,6 +30,11 @@ public class KnowledgeDocumentAlternative  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentAlternative(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Alternate phrasing to the document title, having a limit of 500 words.

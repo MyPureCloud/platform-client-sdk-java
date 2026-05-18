@@ -43,6 +43,12 @@ public class AudioConnectorIntegrationEntityListing  implements Serializable, Pa
     }
   }
 
+  public AudioConnectorIntegrationEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AudioConnectorIntegration>();
+    }
+  }
+
   
   /**
    **/

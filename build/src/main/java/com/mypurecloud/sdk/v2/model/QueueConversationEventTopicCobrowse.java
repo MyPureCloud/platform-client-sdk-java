@@ -226,6 +226,12 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
     }
   }
 
+  public QueueConversationEventTopicCobrowse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      controlling = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

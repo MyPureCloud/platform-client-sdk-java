@@ -30,6 +30,11 @@ public class EmailThreadingSettings  implements Serializable {
     }
   }
 
+  public EmailThreadingSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * This setting controls whether a new conversation is started if the subject of an inbound email is different from the subject of the current conversation. RE: and FWD: prefixes in any language are ignored.

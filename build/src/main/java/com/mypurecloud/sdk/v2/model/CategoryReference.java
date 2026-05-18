@@ -32,6 +32,11 @@ public class CategoryReference  implements Serializable {
     }
   }
 
+  public CategoryReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the category.

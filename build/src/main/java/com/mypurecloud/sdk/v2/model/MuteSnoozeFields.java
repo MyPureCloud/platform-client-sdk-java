@@ -31,6 +31,11 @@ public class MuteSnoozeFields  implements Serializable {
     }
   }
 
+  public MuteSnoozeFields(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The start date of the mute/snooze period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

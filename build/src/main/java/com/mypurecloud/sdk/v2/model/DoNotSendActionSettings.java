@@ -25,6 +25,11 @@ public class DoNotSendActionSettings  implements Serializable {
     }
   }
 
+  public DoNotSendActionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

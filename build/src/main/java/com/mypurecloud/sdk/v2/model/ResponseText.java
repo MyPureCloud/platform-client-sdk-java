@@ -127,6 +127,11 @@ public class ResponseText  implements Serializable {
     }
   }
 
+  public ResponseText(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Response text content.

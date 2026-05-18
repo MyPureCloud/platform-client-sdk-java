@@ -85,6 +85,12 @@ public class AlertSummary  implements Serializable {
     }
   }
 
+  public AlertSummary(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AlertSummaryEntity>();
+    }
+  }
+
   
   /**
    * The entities who violated the rule condition over the duration of the alert.

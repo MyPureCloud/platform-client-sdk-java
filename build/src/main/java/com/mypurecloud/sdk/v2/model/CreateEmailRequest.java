@@ -98,6 +98,12 @@ public class CreateEmailRequest  implements Serializable {
     }
   }
 
+  public CreateEmailRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skillIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId

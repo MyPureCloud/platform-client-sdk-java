@@ -43,6 +43,12 @@ public class AgentActivityEntityListing  implements Serializable, PagedResource<
     }
   }
 
+  public AgentActivityEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AgentActivity>();
+    }
+  }
+
   
   /**
    **/

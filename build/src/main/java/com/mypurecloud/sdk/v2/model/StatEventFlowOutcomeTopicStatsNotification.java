@@ -36,6 +36,12 @@ public class StatEventFlowOutcomeTopicStatsNotification  implements Serializable
     }
   }
 
+  public StatEventFlowOutcomeTopicStatsNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatEventFlowOutcomeTopicIntervalMetrics>();
+    }
+  }
+
   
   /**
    **/

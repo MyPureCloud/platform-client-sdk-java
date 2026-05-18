@@ -35,6 +35,12 @@ public class ForecastPlanningGroupsResponse  implements Serializable {
     }
   }
 
+  public ForecastPlanningGroupsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ForecastPlanningGroupResponse>();
+    }
+  }
+
   
   /**
    **/

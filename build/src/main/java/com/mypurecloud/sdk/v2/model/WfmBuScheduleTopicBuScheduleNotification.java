@@ -132,6 +132,11 @@ public class WfmBuScheduleTopicBuScheduleNotification  implements Serializable {
     }
   }
 
+  public WfmBuScheduleTopicBuScheduleNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

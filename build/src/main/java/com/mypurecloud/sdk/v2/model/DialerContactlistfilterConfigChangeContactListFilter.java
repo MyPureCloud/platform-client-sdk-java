@@ -95,6 +95,13 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     }
   }
 
+  public DialerContactlistfilterConfigChangeContactListFilter(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contactListColumns = new ArrayList<String>();
+      clauses = new ArrayList<DialerContactlistfilterConfigChangeFilterClause>();
+    }
+  }
+
   
   /**
    **/

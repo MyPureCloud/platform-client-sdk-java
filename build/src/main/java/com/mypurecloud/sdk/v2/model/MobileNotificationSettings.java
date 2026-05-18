@@ -78,6 +78,11 @@ public class MobileNotificationSettings  implements Serializable {
     }
   }
 
+  public MobileNotificationSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * When the user should receive notifications

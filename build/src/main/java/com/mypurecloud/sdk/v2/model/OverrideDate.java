@@ -79,6 +79,11 @@ public class OverrideDate  implements Serializable {
     }
   }
 
+  public OverrideDate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The date in yyyy-MM-dd format, interpreted in the business unit’s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

@@ -39,6 +39,14 @@ public class QueryCriteriaGroup  implements Serializable {
     }
   }
 
+  public QueryCriteriaGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      and = new ArrayList<QueryCriteriaItem>();
+      or = new ArrayList<QueryCriteriaItem>();
+      not = new ArrayList<QueryCriteriaItem>();
+    }
+  }
+
   
   /**
    * Items that will be AND'd together

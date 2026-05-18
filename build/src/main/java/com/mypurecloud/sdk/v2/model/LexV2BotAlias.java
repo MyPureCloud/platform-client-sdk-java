@@ -93,6 +93,12 @@ public class LexV2BotAlias  implements Serializable {
     }
   }
 
+  public LexV2BotAlias(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<LexV2Intent>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

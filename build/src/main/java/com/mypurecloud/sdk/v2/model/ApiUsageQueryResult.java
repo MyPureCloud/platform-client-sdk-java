@@ -85,6 +85,12 @@ public class ApiUsageQueryResult  implements Serializable {
     }
   }
 
+  public ApiUsageQueryResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<ApiUsageRow>();
+    }
+  }
+
   
   /**
    * Query results

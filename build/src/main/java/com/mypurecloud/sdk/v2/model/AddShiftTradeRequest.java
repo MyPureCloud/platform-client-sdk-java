@@ -37,6 +37,12 @@ public class AddShiftTradeRequest  implements Serializable {
     }
   }
 
+  public AddShiftTradeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      acceptableIntervals = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The ID of the schedule to which the initiating and receiving shifts belong

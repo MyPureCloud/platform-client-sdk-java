@@ -47,6 +47,13 @@ public class QueueConversationScreenShareEventTopicErrorBody  implements Seriali
     }
   }
 
+  public QueueConversationScreenShareEventTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      details = new ArrayList<QueueConversationScreenShareEventTopicDetail>();
+      errors = new ArrayList<QueueConversationScreenShareEventTopicErrorBody>();
+    }
+  }
+
   
   /**
    **/

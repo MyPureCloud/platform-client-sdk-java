@@ -35,6 +35,11 @@ public class WaitlistPosition  implements Serializable {
     }
   }
 
+  public WaitlistPosition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The time off request for this wait list position

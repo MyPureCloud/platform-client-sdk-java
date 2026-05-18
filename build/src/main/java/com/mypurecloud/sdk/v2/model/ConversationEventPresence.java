@@ -87,6 +87,11 @@ public class ConversationEventPresence  implements Serializable {
     }
   }
 
+  public ConversationEventPresence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Describes the type of Presence event.

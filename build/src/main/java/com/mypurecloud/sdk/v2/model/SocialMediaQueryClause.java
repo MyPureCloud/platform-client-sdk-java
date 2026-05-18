@@ -82,6 +82,12 @@ public class SocialMediaQueryClause  implements Serializable {
     }
   }
 
+  public SocialMediaQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<SocialMediaQueryPredicate>();
+    }
+  }
+
   
   /**
    * Boolean operation to apply to the provided predicates

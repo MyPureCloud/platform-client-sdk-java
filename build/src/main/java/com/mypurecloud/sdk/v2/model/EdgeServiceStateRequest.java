@@ -30,6 +30,11 @@ public class EdgeServiceStateRequest  implements Serializable {
     }
   }
 
+  public EdgeServiceStateRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A boolean that sets the Edge in-service or out-of-service.

@@ -205,6 +205,14 @@ public class ConversationChecklistTopicAgentChecklistRuntimeEventBody  implement
     }
   }
 
+  public ConversationChecklistTopicAgentChecklistRuntimeEventBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      activationTriggers = new ArrayList<ConversationChecklistTopicAgentChecklistActivationTrigger>();
+      conversationContext = new ArrayList<ConversationChecklistTopicConversationContextTurnInfo>();
+      agentChecklistItems = new ArrayList<ConversationChecklistTopicAgentChecklistItemState>();
+    }
+  }
+
   
   /**
    **/

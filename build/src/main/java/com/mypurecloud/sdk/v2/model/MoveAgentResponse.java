@@ -85,6 +85,11 @@ public class MoveAgentResponse  implements Serializable {
     }
   }
 
+  public MoveAgentResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The user associated with the move

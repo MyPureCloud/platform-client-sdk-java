@@ -80,6 +80,11 @@ public class VoicemailRetentionPolicy  implements Serializable {
     }
   }
 
+  public VoicemailRetentionPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The retention policy type

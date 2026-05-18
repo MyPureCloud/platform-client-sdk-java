@@ -34,6 +34,12 @@ public class NuanceBotLaunchSettings  implements Serializable {
     }
   }
 
+  public NuanceBotLaunchSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      botExecutionConfigurations = new ArrayList<BotExecutionConfiguration>();
+    }
+  }
+
   
   /**
    * The list of Nuance bots that are configured as available to the Genesys Cloud system

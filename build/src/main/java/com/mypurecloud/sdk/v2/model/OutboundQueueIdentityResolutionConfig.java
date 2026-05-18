@@ -32,6 +32,11 @@ public class OutboundQueueIdentityResolutionConfig  implements Serializable {
     }
   }
 
+  public OutboundQueueIdentityResolutionConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division to use when performing identity resolution.

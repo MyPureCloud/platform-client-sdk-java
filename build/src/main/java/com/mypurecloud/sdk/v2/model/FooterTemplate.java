@@ -127,6 +127,12 @@ public class FooterTemplate  implements Serializable {
     }
   }
 
+  public FooterTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      applicableResources = new ArrayList<ApplicableResourcesEnum>();
+    }
+  }
+
   
   /**
    * Specifies the type represented by Footer.

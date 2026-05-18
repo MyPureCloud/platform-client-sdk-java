@@ -33,6 +33,12 @@ public class SupportedDialectsEntityListing  implements Serializable {
     }
   }
 
+  public SupportedDialectsEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<SupportedDialectsTranscriptionEngine>();
+    }
+  }
+
   
   /**
    **/

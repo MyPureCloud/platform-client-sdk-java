@@ -82,6 +82,12 @@ public class DocumentQueryClause  implements Serializable {
     }
   }
 
+  public DocumentQueryClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<DocumentQueryPredicate>();
+    }
+  }
+
   
   /**
    * Specifies how the predicates will be applied together.

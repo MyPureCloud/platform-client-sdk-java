@@ -35,6 +35,11 @@ public class WfmAdherenceExplanationJobCompleteTopicErrorBody  implements Serial
     }
   }
 
+  public WfmAdherenceExplanationJobCompleteTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

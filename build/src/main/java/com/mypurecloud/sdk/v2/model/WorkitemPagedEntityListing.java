@@ -37,6 +37,12 @@ public class WorkitemPagedEntityListing  implements Serializable {
     }
   }
 
+  public WorkitemPagedEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Workitem>();
+    }
+  }
+
   
   /**
    **/

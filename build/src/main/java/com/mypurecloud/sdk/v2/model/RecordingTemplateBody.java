@@ -29,6 +29,11 @@ public class RecordingTemplateBody  implements Serializable {
     }
   }
 
+  public RecordingTemplateBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Template parameters for placeholders in template.

@@ -35,6 +35,11 @@ public class ScimV2EnterpriseUser  implements Serializable {
     }
   }
 
+  public ScimV2EnterpriseUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The division that the user belongs to.

@@ -40,6 +40,13 @@ public class FlowActivityData  implements Serializable {
     }
   }
 
+  public FlowActivityData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<FlowActivityMetricValue>();
+      entities = new ArrayList<FlowActivityEntityData>();
+    }
+  }
+
   
   /**
    * A mapping from grouping dimension to value

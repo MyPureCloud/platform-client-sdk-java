@@ -85,6 +85,11 @@ public class AgentScheduleShiftActivity  implements Serializable {
     }
   }
 
+  public AgentScheduleShiftActivity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The activity category for which the agent is scheduled

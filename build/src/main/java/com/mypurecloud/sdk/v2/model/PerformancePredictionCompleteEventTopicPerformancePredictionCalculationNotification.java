@@ -84,6 +84,11 @@ public class PerformancePredictionCompleteEventTopicPerformancePredictionCalcula
     }
   }
 
+  public PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

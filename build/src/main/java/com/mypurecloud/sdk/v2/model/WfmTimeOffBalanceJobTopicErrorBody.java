@@ -35,6 +35,11 @@ public class WfmTimeOffBalanceJobTopicErrorBody  implements Serializable {
     }
   }
 
+  public WfmTimeOffBalanceJobTopicErrorBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

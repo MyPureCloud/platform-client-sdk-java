@@ -83,6 +83,11 @@ public class WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody 
     }
   }
 
+  public WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

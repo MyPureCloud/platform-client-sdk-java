@@ -43,6 +43,12 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     }
   }
 
+  public VoicemailMessageEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<VoicemailMessage>();
+    }
+  }
+
   
   /**
    **/

@@ -33,6 +33,12 @@ public class V3SourceExpandableListing  implements Serializable {
     }
   }
 
+  public V3SourceExpandableListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<V3SourceExpandableListResponse>();
+    }
+  }
+
   
   /**
    **/

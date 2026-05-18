@@ -43,6 +43,12 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     }
   }
 
+  public FlowVersionEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FlowVersion>();
+    }
+  }
+
   
   /**
    **/

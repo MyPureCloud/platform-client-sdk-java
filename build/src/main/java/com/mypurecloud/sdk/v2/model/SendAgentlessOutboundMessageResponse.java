@@ -93,6 +93,11 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     }
   }
 
+  public SendAgentlessOutboundMessageResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

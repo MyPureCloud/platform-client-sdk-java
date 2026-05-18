@@ -102,6 +102,11 @@ public class OutboundVoiceCampaignPreContactOutboundVoiceCampaignPreContactEvent
     }
   }
 
+  public OutboundVoiceCampaignPreContactOutboundVoiceCampaignPreContactEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

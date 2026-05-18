@@ -30,6 +30,11 @@ public class SelectedColumns  implements Serializable {
     }
   }
 
+  public SelectedColumns(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Indicates the order/position of the selected column

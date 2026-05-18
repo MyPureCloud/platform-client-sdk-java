@@ -34,6 +34,12 @@ public class SummaryAsyncAggregateQueryResponse  implements Serializable {
     }
   }
 
+  public SummaryAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<SummaryAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

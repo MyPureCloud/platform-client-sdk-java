@@ -101,6 +101,12 @@ public class LearningModuleRequest  implements Serializable {
     }
   }
 
+  public LearningModuleRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      informSteps = new ArrayList<LearningModuleInformStepRequest>();
+    }
+  }
+
   
   /**
    * The name of learning module

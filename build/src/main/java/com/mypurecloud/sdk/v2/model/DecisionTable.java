@@ -45,6 +45,11 @@ public class DecisionTable  implements Serializable {
     }
   }
 
+  public DecisionTable(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

@@ -31,6 +31,11 @@ public class DialerCampaignScheduleConfigChangeUriReference  implements Serializ
     }
   }
 
+  public DialerCampaignScheduleConfigChangeUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

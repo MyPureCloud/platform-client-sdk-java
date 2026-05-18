@@ -33,6 +33,12 @@ public class AssistantQueueUsersBulkAddRequest  implements Serializable {
     }
   }
 
+  public AssistantQueueUsersBulkAddRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AssistantQueueUser>();
+    }
+  }
+
   
   /**
    * List of users to assign assistant for. Maximum users to add is 100 per request.

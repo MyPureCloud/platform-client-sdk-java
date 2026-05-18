@@ -30,6 +30,11 @@ public class QueueConversationSocialExpressionEventTopicPhoneNumberColumn  imple
     }
   }
 
+  public QueueConversationSocialExpressionEventTopicPhoneNumberColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

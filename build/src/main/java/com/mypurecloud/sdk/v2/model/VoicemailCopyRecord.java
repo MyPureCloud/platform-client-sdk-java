@@ -34,6 +34,11 @@ public class VoicemailCopyRecord  implements Serializable {
     }
   }
 
+  public VoicemailCopyRecord(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The user that the voicemail message was copied to/from")
   @JsonProperty("user")

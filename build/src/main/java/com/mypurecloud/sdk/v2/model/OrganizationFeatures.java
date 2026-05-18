@@ -41,6 +41,11 @@ public class OrganizationFeatures  implements Serializable {
     }
   }
 
+  public OrganizationFeatures(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

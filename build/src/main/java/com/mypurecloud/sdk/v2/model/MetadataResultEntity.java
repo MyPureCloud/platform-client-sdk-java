@@ -80,6 +80,11 @@ public class MetadataResultEntity  implements Serializable {
     }
   }
 
+  public MetadataResultEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "object type of the modified resource")
   @JsonProperty("type")

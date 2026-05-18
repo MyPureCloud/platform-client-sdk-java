@@ -137,6 +137,11 @@ public class SystemMessageSystemMessage  implements Serializable {
     }
   }
 
+  public SystemMessageSystemMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

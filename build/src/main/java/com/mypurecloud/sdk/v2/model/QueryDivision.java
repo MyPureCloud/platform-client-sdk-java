@@ -25,6 +25,11 @@ public class QueryDivision  implements Serializable {
     }
   }
 
+  public QueryDivision(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @Override
   public boolean equals(java.lang.Object o) {

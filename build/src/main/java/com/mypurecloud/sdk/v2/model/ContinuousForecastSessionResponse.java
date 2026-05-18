@@ -81,6 +81,11 @@ public class ContinuousForecastSessionResponse  implements Serializable {
     }
   }
 
+  public ContinuousForecastSessionResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Session ID of the continuous forecast data

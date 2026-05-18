@@ -32,6 +32,11 @@ public class MergeOperation  implements Serializable {
     }
   }
 
+  public MergeOperation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The source contact for the merge operation")
   @JsonProperty("sourceContact")

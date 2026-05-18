@@ -95,6 +95,12 @@ public class KnowledgeDocumentChunkResponse  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentChunkResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<DocumentChunkBlock>();
+    }
+  }
+
   
   /**
    * Query to search chunks in the knowledge base.

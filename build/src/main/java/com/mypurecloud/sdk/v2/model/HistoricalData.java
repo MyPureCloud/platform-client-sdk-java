@@ -32,6 +32,11 @@ public class HistoricalData  implements Serializable {
     }
   }
 
+  public HistoricalData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Daily time series for historical data

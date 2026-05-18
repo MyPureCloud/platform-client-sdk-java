@@ -33,6 +33,11 @@ public class ExternalContactsContactChangedTopicTwitterId  implements Serializab
     }
   }
 
+  public ExternalContactsContactChangedTopicTwitterId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

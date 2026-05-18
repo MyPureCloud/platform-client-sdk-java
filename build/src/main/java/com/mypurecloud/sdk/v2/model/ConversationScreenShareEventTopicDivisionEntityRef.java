@@ -32,6 +32,11 @@ public class ConversationScreenShareEventTopicDivisionEntityRef  implements Seri
     }
   }
 
+  public ConversationScreenShareEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

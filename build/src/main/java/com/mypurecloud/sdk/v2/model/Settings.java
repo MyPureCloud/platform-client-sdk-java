@@ -34,6 +34,11 @@ public class Settings  implements Serializable {
     }
   }
 
+  public Settings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Communication Based ACW

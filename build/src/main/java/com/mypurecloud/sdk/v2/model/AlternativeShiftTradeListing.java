@@ -33,6 +33,12 @@ public class AlternativeShiftTradeListing  implements Serializable {
     }
   }
 
+  public AlternativeShiftTradeListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AlternativeShiftTradeResponse>();
+    }
+  }
+
   
   /**
    **/

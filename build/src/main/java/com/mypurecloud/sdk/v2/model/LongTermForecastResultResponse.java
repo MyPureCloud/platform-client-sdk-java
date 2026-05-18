@@ -31,6 +31,11 @@ public class LongTermForecastResultResponse  implements Serializable {
     }
   }
 
+  public LongTermForecastResultResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The result of the operation.  Populated whenever the result is small enough to pass through the api directly

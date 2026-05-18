@@ -177,6 +177,19 @@ public class AnalyticsConversation  implements Serializable {
     }
   }
 
+  public AnalyticsConversation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      accessAttributes = new ArrayList<String>();
+      consultationConversationIds = new ArrayList<String>();
+      divisionIds = new ArrayList<String>();
+      knowledgeBaseIds = new ArrayList<String>();
+      evaluations = new ArrayList<AnalyticsEvaluation>();
+      surveys = new ArrayList<AnalyticsSurvey>();
+      resolutions = new ArrayList<AnalyticsResolution>();
+      participants = new ArrayList<AnalyticsParticipant>();
+    }
+  }
+
   
   /**
    * Set of attributes that limit which users can access the conversation

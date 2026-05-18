@@ -82,6 +82,12 @@ public class AlertNotification  implements Serializable {
     }
   }
 
+  public AlertNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      notificationTypes = new ArrayList<NotificationTypesEnum>();
+    }
+  }
+
   
   /**
    * The entity to receive the notification.

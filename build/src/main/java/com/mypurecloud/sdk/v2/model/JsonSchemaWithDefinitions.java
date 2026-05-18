@@ -44,6 +44,12 @@ public class JsonSchemaWithDefinitions  implements Serializable {
     }
   }
 
+  public JsonSchemaWithDefinitions(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      required = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

@@ -178,6 +178,13 @@ public class TextBotChannel  implements Serializable {
     }
   }
 
+  public TextBotChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      inputModes = new ArrayList<InputModesEnum>();
+      outputModes = new ArrayList<OutputModesEnum>();
+    }
+  }
+
   
   /**
    * The name of the channel.

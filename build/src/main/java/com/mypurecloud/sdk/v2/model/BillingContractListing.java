@@ -36,6 +36,12 @@ public class BillingContractListing  implements Serializable {
     }
   }
 
+  public BillingContractListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BillingContract>();
+    }
+  }
+
   
   /**
    **/

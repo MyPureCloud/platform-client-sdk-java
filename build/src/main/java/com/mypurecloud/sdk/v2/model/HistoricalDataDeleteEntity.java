@@ -78,6 +78,11 @@ public class HistoricalDataDeleteEntity  implements Serializable {
     }
   }
 
+  public HistoricalDataDeleteEntity(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

@@ -30,6 +30,11 @@ public class Items  implements Serializable {
     }
   }
 
+  public Items(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

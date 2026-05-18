@@ -153,6 +153,12 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     }
   }
 
+  public AnalyticsParticipantWithoutAttributes(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sessions = new ArrayList<AnalyticsSession>();
+    }
+  }
+
   
   /**
    * External contact identifier

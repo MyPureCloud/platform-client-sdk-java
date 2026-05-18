@@ -30,6 +30,11 @@ public class NamedEntityTypeMechanismExample  implements Serializable {
     }
   }
 
+  public NamedEntityTypeMechanismExample(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Example input text

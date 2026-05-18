@@ -38,6 +38,12 @@ public class WorkitemPostQueryEntityListing  implements Serializable {
     }
   }
 
+  public WorkitemPostQueryEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Workitem>();
+    }
+  }
+
   
   /**
    **/

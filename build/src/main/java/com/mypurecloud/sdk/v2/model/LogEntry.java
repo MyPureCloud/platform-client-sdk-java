@@ -31,6 +31,11 @@ public class LogEntry  implements Serializable {
     }
   }
 
+  public LogEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Level of log entry

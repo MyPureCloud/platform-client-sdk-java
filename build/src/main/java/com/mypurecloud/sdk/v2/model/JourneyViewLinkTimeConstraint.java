@@ -82,6 +82,11 @@ public class JourneyViewLinkTimeConstraint  implements Serializable {
     }
   }
 
+  public JourneyViewLinkTimeConstraint(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The unit for the link's time constraint

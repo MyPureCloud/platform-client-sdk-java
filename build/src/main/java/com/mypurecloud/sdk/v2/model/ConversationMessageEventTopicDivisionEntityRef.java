@@ -32,6 +32,11 @@ public class ConversationMessageEventTopicDivisionEntityRef  implements Serializ
     }
   }
 
+  public ConversationMessageEventTopicDivisionEntityRef(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

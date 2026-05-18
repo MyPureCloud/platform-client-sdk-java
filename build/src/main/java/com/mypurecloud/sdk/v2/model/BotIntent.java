@@ -35,6 +35,11 @@ public class BotIntent  implements Serializable {
     }
   }
 
+  public BotIntent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of this intent.  This can be up to 100 characters long and must be comprised of displayable characters without leading or trailing whitespace

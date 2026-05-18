@@ -29,6 +29,11 @@ public class SetSmsPhoneNumberActionSettings  implements Serializable {
     }
   }
 
+  public SetSmsPhoneNumberActionSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The string address for the sms phone number.

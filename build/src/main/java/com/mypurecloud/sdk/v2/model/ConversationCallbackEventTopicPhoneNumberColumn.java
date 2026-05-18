@@ -30,6 +30,11 @@ public class ConversationCallbackEventTopicPhoneNumberColumn  implements Seriali
     }
   }
 
+  public ConversationCallbackEventTopicPhoneNumberColumn(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

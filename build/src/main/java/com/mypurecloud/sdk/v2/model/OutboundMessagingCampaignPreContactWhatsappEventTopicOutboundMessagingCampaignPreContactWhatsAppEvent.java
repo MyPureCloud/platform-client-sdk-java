@@ -151,6 +151,11 @@ public class OutboundMessagingCampaignPreContactWhatsappEventTopicOutboundMessag
     }
   }
 
+  public OutboundMessagingCampaignPreContactWhatsappEventTopicOutboundMessagingCampaignPreContactWhatsAppEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

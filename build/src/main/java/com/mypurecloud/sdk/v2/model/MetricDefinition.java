@@ -98,6 +98,13 @@ public class MetricDefinition  implements Serializable {
     }
   }
 
+  public MetricDefinition(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      dividendMetrics = new ArrayList<String>();
+      divisorMetrics = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

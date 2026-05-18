@@ -30,6 +30,11 @@ public class AddConversationRequest  implements Serializable {
     }
   }
 
+  public AddConversationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The id of the conversation to add

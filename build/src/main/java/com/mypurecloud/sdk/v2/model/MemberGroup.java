@@ -84,6 +84,11 @@ public class MemberGroup  implements Serializable {
     }
   }
 
+  public MemberGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

@@ -32,6 +32,11 @@ public class FailedObject  implements Serializable {
     }
   }
 
+  public FailedObject(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

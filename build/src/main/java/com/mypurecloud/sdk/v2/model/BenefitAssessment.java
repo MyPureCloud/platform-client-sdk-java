@@ -92,6 +92,13 @@ public class BenefitAssessment  implements Serializable {
     }
   }
 
+  public BenefitAssessment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queues = new ArrayList<AddressableEntityRef>();
+      kpiAssessments = new ArrayList<KeyPerformanceIndicatorAssessment>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

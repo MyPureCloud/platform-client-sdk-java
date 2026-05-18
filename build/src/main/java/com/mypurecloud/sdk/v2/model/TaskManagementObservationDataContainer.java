@@ -139,6 +139,11 @@ public class TaskManagementObservationDataContainer  implements Serializable {
     }
   }
 
+  public TaskManagementObservationDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The metric for this data point

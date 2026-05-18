@@ -88,6 +88,11 @@ public class RequestDevice  implements Serializable {
     }
   }
 
+  public RequestDevice(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Device category.

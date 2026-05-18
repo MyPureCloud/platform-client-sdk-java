@@ -29,6 +29,11 @@ public class CaseSummaryUpdate  implements Serializable {
     }
   }
 
+  public CaseSummaryUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Overview information for the Case. Valid length between 3 and 512 characters.

@@ -31,6 +31,11 @@ public class CreateGeneralProgramTestPhraseDetectedPhrase  implements Serializab
     }
   }
 
+  public CreateGeneralProgramTestPhraseDetectedPhrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

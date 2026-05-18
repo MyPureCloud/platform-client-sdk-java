@@ -30,6 +30,11 @@ public class AchievedOutcome  implements Serializable {
     }
   }
 
+  public AchievedOutcome(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the outcome achieved.

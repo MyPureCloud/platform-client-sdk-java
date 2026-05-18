@@ -43,6 +43,12 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     }
   }
 
+  public OrganizationPresenceEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<OrganizationPresence>();
+    }
+  }
+
   
   /**
    **/

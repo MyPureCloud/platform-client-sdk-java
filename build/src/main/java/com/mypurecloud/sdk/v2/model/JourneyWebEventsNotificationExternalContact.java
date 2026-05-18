@@ -30,6 +30,11 @@ public class JourneyWebEventsNotificationExternalContact  implements Serializabl
     }
   }
 
+  public JourneyWebEventsNotificationExternalContact(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

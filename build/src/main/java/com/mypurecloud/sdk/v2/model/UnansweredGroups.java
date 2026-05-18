@@ -33,6 +33,12 @@ public class UnansweredGroups  implements Serializable {
     }
   }
 
+  public UnansweredGroups(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UnansweredGroup>();
+    }
+  }
+
   
   /**
    **/

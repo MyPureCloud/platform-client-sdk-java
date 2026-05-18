@@ -29,6 +29,11 @@ public class BackgroundAssistantUserAuthenticatedInfo  implements Serializable {
     }
   }
 
+  public BackgroundAssistantUserAuthenticatedInfo(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of Genesys Cloud Background Assistant

@@ -33,6 +33,12 @@ public class KnowledgeDocumentBulkRemoveRequest  implements Serializable {
     }
   }
 
+  public KnowledgeDocumentBulkRemoveRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<WritableEntity>();
+    }
+  }
+
   
   /**
    * List of unique identifiers referencing documents that are to be deleted

@@ -36,6 +36,12 @@ public class FormPage  implements Serializable {
     }
   }
 
+  public FormPage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pageComponents = new ArrayList<FormPageComponent>();
+    }
+  }
+
   
   /**
    * Title of the page

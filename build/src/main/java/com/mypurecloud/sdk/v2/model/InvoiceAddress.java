@@ -93,6 +93,11 @@ public class InvoiceAddress  implements Serializable {
     }
   }
 
+  public InvoiceAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The date when the Address became effective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

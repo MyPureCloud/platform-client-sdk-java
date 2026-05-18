@@ -103,6 +103,14 @@ public class ScheduleGroup  implements Serializable {
     }
   }
 
+  public ScheduleGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      openSchedules = new ArrayList<DomainEntityRef>();
+      closedSchedules = new ArrayList<DomainEntityRef>();
+      holidaySchedules = new ArrayList<DomainEntityRef>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

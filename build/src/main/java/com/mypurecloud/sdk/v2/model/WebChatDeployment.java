@@ -43,6 +43,12 @@ public class WebChatDeployment  implements Serializable {
     }
   }
 
+  public WebChatDeployment(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      allowedDomains = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

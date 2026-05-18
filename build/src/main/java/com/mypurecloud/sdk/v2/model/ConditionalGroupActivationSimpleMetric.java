@@ -80,6 +80,11 @@ public class ConditionalGroupActivationSimpleMetric  implements Serializable {
     }
   }
 
+  public ConditionalGroupActivationSimpleMetric(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The queue metric being evaluated

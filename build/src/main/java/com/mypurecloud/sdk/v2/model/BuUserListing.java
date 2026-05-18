@@ -33,6 +33,12 @@ public class BuUserListing  implements Serializable {
     }
   }
 
+  public BuUserListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      managementUnits = new ArrayList<ManagementUnitUserListing>();
+    }
+  }
+
   
   /**
    * Management units and their associated users

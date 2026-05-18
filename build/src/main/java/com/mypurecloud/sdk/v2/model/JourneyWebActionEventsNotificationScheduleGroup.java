@@ -30,6 +30,11 @@ public class JourneyWebActionEventsNotificationScheduleGroup  implements Seriali
     }
   }
 
+  public JourneyWebActionEventsNotificationScheduleGroup(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

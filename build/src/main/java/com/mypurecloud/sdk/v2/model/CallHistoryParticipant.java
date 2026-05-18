@@ -215,6 +215,12 @@ public class CallHistoryParticipant  implements Serializable {
     }
   }
 
+  public CallHistoryParticipant(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sipResponseCodes = new ArrayList<Long>();
+    }
+  }
+
   
   /**
    * The unique participant ID.

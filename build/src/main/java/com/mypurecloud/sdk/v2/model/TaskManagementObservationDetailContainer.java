@@ -36,6 +36,13 @@ public class TaskManagementObservationDetailContainer  implements Serializable {
     }
   }
 
+  public TaskManagementObservationDetailContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      typeDetails = new ArrayList<WorktypeReference>();
+      assigneeDetails = new ArrayList<UserReferenceWithName>();
+    }
+  }
+
   
   /**
    * Information about worktypes referenced in the results. Present when 'type' is included in the expands parameter.

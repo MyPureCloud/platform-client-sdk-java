@@ -35,6 +35,13 @@ public class AutomaticTimeZoneMappingSettings  implements Serializable {
     }
   }
 
+  public AutomaticTimeZoneMappingSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callableWindows = new ArrayList<CallableWindow>();
+      supportedCountries = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The time intervals to use for automatic time zone mapping.

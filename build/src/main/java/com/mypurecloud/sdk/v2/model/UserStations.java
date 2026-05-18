@@ -33,6 +33,11 @@ public class UserStations  implements Serializable {
     }
   }
 
+  public UserStations(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Current associated station for this user.")
   @JsonProperty("associatedStation")

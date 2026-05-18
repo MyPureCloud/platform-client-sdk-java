@@ -88,6 +88,13 @@ public class AvailableTimeOffRange  implements Serializable {
     }
   }
 
+  public AvailableTimeOffRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      availableMinutesPerInterval = new ArrayList<Integer>();
+      waitlistedRequestsPerInterval = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * The time off limit

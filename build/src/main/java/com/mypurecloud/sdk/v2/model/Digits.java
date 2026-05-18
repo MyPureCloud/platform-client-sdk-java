@@ -29,6 +29,11 @@ public class Digits  implements Serializable {
     }
   }
 
+  public Digits(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A string representing the digits pressed on phone.

@@ -32,6 +32,11 @@ public class LearningModuleAutoAssignResponse  implements Serializable {
     }
   }
 
+  public LearningModuleAutoAssignResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The rule reference

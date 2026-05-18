@@ -207,6 +207,13 @@ public class MessageData  implements Serializable {
     }
   }
 
+  public MessageData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      media = new ArrayList<MessageMedia>();
+      normalizedReceipts = new ArrayList<ConversationNormalizedMessage>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

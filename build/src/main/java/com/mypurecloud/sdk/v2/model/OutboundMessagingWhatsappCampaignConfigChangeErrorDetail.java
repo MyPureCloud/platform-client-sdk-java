@@ -30,6 +30,11 @@ public class OutboundMessagingWhatsappCampaignConfigChangeErrorDetail  implement
     }
   }
 
+  public OutboundMessagingWhatsappCampaignConfigChangeErrorDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The name of the error code.

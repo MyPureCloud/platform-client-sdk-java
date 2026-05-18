@@ -81,6 +81,11 @@ public class DnsRecordEntry  implements Serializable {
     }
   }
 
+  public DnsRecordEntry(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * the hostname of the DNS entry

@@ -92,6 +92,11 @@ public class ClientPublicApiUsage  implements Serializable {
     }
   }
 
+  public ClientPublicApiUsage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The date of the usage. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

@@ -32,6 +32,11 @@ public class AuditQueryExecutionLargeResultsResponse  implements Serializable {
     }
   }
 
+  public AuditQueryExecutionLargeResultsResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Id of the audit query execution request.

@@ -40,6 +40,13 @@ public class ConversationRoutingData  implements Serializable {
     }
   }
 
+  public ConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<AddressableEntityRef>();
+      scoredAgents = new ArrayList<ScoredAgent>();
+    }
+  }
+
   
   /**
    * The queue to use for routing decisions

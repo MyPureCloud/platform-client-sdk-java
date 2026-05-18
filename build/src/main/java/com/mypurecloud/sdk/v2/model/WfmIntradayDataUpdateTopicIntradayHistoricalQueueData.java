@@ -37,6 +37,11 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
     }
   }
 
+  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

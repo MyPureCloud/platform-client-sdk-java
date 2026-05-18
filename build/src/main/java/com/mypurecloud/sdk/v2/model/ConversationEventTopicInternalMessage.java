@@ -193,6 +193,12 @@ public class ConversationEventTopicInternalMessage  implements Serializable {
     }
   }
 
+  public ConversationEventTopicInternalMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      messages = new ArrayList<ConversationEventTopicInternalMessageDetails>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

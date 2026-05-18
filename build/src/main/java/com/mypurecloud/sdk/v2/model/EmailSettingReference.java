@@ -32,6 +32,11 @@ public class EmailSettingReference  implements Serializable {
     }
   }
 
+  public EmailSettingReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The email setting unique identifier

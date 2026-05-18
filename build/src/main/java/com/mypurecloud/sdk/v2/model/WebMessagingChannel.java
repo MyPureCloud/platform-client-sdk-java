@@ -35,6 +35,11 @@ public class WebMessagingChannel  implements Serializable {
     }
   }
 
+  public WebMessagingChannel(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Information about the recipient the message is received from.")
   @JsonProperty("from")

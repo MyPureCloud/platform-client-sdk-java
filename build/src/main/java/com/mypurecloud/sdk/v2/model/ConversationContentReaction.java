@@ -91,6 +91,11 @@ public class ConversationContentReaction  implements Serializable {
     }
   }
 
+  public ConversationContentReaction(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Type of reaction.

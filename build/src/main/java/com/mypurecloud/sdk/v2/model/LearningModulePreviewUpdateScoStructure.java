@@ -136,6 +136,12 @@ public class LearningModulePreviewUpdateScoStructure  implements Serializable {
     }
   }
 
+  public LearningModulePreviewUpdateScoStructure(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      children = new ArrayList<LearningModulePreviewUpdateScoStructure>();
+    }
+  }
+
   
   /**
    * The id of this SCO in the course manifest

@@ -36,6 +36,13 @@ public class DraftRequest  implements Serializable {
     }
   }
 
+  public DraftRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      intents = new ArrayList<DraftIntents>();
+      topics = new ArrayList<DraftTopicRequest>();
+    }
+  }
+
   
   /**
    * Draft intent object.

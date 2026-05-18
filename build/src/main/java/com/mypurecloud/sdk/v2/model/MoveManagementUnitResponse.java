@@ -81,6 +81,11 @@ public class MoveManagementUnitResponse  implements Serializable {
     }
   }
 
+  public MoveManagementUnitResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The new business unit

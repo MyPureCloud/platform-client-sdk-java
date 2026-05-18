@@ -39,6 +39,11 @@ public class PatchOutcome  implements Serializable {
     }
   }
 
+  public PatchOutcome(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether or not the outcome is active.

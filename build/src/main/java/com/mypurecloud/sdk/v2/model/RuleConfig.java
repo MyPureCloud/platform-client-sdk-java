@@ -32,6 +32,11 @@ public class RuleConfig  implements Serializable {
     }
   }
 
+  public RuleConfig(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Rule ID.

@@ -34,6 +34,12 @@ public class MergeContactsRequest  implements Serializable {
     }
   }
 
+  public MergeContactsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      contactIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The IDs of all contacts involved in the merge operation (must be between 2 and 25).

@@ -44,6 +44,14 @@ public class DialogflowAgent  implements Serializable {
     }
   }
 
+  public DialogflowAgent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      languages = new ArrayList<String>();
+      intents = new ArrayList<DialogflowIntent>();
+      environments = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

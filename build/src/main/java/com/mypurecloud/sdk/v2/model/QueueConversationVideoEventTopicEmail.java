@@ -273,6 +273,12 @@ public class QueueConversationVideoEventTopicEmail  implements Serializable {
     }
   }
 
+  public QueueConversationVideoEventTopicEmail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      draftAttachments = new ArrayList<QueueConversationVideoEventTopicAttachment>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

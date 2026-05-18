@@ -141,6 +141,11 @@ public class OutboundMessagingCampaignPostContactWhatsappEventTopicOutboundMessa
     }
   }
 
+  public OutboundMessagingCampaignPostContactWhatsappEventTopicOutboundMessagingCampaignPostContactWhatsAppEvent(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

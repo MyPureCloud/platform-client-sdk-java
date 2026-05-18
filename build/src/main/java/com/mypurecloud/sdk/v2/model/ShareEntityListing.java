@@ -43,6 +43,12 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     }
   }
 
+  public ShareEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<Share>();
+    }
+  }
+
   
   /**
    **/

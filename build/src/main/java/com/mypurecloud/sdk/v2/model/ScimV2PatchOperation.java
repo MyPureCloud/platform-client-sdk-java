@@ -82,6 +82,11 @@ public class ScimV2PatchOperation  implements Serializable {
     }
   }
 
+  public ScimV2PatchOperation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The PATCH operation to perform.

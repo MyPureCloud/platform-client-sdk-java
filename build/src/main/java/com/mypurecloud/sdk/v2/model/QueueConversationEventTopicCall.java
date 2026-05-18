@@ -345,6 +345,12 @@ public class QueueConversationEventTopicCall  implements Serializable {
     }
   }
 
+  public QueueConversationEventTopicCall(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      disconnectReasons = new ArrayList<QueueConversationEventTopicDisconnectReason>();
+    }
+  }
+
   
   /**
    * A globally unique identifier for this communication.

@@ -163,6 +163,12 @@ public class AnalyticsFlow  implements Serializable {
     }
   }
 
+  public AnalyticsFlow(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      outcomes = new ArrayList<AnalyticsFlowOutcome>();
+    }
+  }
+
   
   /**
    * Flow ending language, e.g. en-us

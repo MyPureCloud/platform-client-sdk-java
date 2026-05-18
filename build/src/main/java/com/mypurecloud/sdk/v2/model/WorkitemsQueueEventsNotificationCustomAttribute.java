@@ -81,6 +81,11 @@ public class WorkitemsQueueEventsNotificationCustomAttribute  implements Seriali
     }
   }
 
+  public WorkitemsQueueEventsNotificationCustomAttribute(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

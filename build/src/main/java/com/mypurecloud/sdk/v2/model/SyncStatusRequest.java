@@ -86,6 +86,11 @@ public class SyncStatusRequest  implements Serializable {
     }
   }
 
+  public SyncStatusRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * New status for an existing sync operation

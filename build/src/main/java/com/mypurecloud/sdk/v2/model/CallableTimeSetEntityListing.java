@@ -43,6 +43,12 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     }
   }
 
+  public CallableTimeSetEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<CallableTimeSet>();
+    }
+  }
+
   
   /**
    **/

@@ -32,6 +32,11 @@ public class Detail  implements Serializable {
     }
   }
 
+  public Detail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

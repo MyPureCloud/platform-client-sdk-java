@@ -43,6 +43,12 @@ public class InternalMessageDataEntityListing  implements Serializable, PagedRes
     }
   }
 
+  public InternalMessageDataEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<InternalMessageData>();
+    }
+  }
+
   
   /**
    **/

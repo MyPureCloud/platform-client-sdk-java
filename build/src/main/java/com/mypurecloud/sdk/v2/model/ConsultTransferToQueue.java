@@ -82,6 +82,11 @@ public class ConsultTransferToQueue  implements Serializable {
     }
   }
 
+  public ConsultTransferToQueue(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION

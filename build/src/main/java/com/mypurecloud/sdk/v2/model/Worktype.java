@@ -71,6 +71,13 @@ public class Worktype  implements Serializable {
     }
   }
 
+  public Worktype(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      statuses = new ArrayList<WorkitemStatus>();
+      defaultSkills = new ArrayList<RoutingSkillReference>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

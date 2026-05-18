@@ -30,6 +30,11 @@ public class UpdateMuAgentRequest  implements Serializable {
     }
   }
 
+  public UpdateMuAgentRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether the agent can be included in schedule generation

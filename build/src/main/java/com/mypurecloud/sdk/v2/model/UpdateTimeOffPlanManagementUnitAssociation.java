@@ -30,6 +30,11 @@ public class UpdateTimeOffPlanManagementUnitAssociation  implements Serializable
     }
   }
 
+  public UpdateTimeOffPlanManagementUnitAssociation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The IDs of staffing groups to which this time-off plan applies. If not defined, the plan is applied to the management unit

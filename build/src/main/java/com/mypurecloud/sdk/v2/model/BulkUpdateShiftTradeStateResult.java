@@ -33,6 +33,12 @@ public class BulkUpdateShiftTradeStateResult  implements Serializable {
     }
   }
 
+  public BulkUpdateShiftTradeStateResult(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<BulkUpdateShiftTradeStateResultItem>();
+    }
+  }
+
   
   /**
    **/

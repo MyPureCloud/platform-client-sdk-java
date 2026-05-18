@@ -34,6 +34,11 @@ public class VideoSettings  implements Serializable {
     }
   }
 
+  public VideoSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * whether or not video is enabled

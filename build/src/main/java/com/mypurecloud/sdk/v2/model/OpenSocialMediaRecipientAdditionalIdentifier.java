@@ -80,6 +80,11 @@ public class OpenSocialMediaRecipientAdditionalIdentifier  implements Serializab
     }
   }
 
+  public OpenSocialMediaRecipientAdditionalIdentifier(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "Type of the Identifier")
   @JsonProperty("type")

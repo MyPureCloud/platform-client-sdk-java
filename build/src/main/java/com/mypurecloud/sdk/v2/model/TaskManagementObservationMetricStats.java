@@ -30,6 +30,11 @@ public class TaskManagementObservationMetricStats  implements Serializable {
     }
   }
 
+  public TaskManagementObservationMetricStats(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The observed value for this metric

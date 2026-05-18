@@ -152,6 +152,11 @@ public class KnowledgeImportJobResponse  implements Serializable {
     }
   }
 
+  public KnowledgeImportJobResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Id of the import job")
   @JsonProperty("id")

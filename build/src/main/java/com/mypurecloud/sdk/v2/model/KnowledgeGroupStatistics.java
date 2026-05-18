@@ -31,6 +31,11 @@ public class KnowledgeGroupStatistics  implements Serializable {
     }
   }
 
+  public KnowledgeGroupStatistics(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Knowledge Group unique phrase count

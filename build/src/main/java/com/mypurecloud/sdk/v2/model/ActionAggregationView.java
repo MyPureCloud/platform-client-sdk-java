@@ -126,6 +126,11 @@ public class ActionAggregationView  implements Serializable {
     }
   }
 
+  public ActionAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

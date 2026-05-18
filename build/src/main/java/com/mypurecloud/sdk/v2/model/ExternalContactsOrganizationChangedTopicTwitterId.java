@@ -33,6 +33,11 @@ public class ExternalContactsOrganizationChangedTopicTwitterId  implements Seria
     }
   }
 
+  public ExternalContactsOrganizationChangedTopicTwitterId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

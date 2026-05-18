@@ -78,6 +78,11 @@ public class WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadP
     }
   }
 
+  public WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRequestUpdate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

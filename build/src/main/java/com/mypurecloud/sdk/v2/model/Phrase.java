@@ -133,6 +133,11 @@ public class Phrase  implements Serializable {
     }
   }
 
+  public Phrase(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The phrase text

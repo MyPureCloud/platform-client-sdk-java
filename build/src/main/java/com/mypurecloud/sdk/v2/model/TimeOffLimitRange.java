@@ -83,6 +83,12 @@ public class TimeOffLimitRange  implements Serializable {
     }
   }
 
+  public TimeOffLimitRange(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      limitMinutesPerInterval = new ArrayList<Integer>();
+    }
+  }
+
   
   /**
    * Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

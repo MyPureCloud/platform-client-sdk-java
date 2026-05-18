@@ -31,6 +31,11 @@ public class AgentScheduleUnavailableTime  implements Serializable {
     }
   }
 
+  public AgentScheduleUnavailableTime(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Exact date, time and length of the unavailability time span

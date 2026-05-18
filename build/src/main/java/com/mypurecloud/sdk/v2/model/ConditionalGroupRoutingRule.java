@@ -135,6 +135,12 @@ public class ConditionalGroupRoutingRule  implements Serializable {
     }
   }
 
+  public ConditionalGroupRoutingRule(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      groups = new ArrayList<MemberGroup>();
+    }
+  }
+
   
   /**
    * The queue being evaluated for this rule.  If null, the current queue will be used.

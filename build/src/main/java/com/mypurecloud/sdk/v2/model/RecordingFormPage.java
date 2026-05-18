@@ -35,6 +35,12 @@ public class RecordingFormPage  implements Serializable {
     }
   }
 
+  public RecordingFormPage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      pageComponents = new ArrayList<RecordingFormPageComponent>();
+    }
+  }
+
   
   /**
    * Text to show in the title.

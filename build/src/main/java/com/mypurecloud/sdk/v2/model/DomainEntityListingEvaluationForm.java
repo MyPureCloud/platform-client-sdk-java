@@ -43,6 +43,12 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     }
   }
 
+  public DomainEntityListingEvaluationForm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<EvaluationForm>();
+    }
+  }
+
   
   /**
    **/

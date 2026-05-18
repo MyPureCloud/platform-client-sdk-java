@@ -35,6 +35,12 @@ public class DataSchemaListing  implements Serializable {
     }
   }
 
+  public DataSchemaListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<DataSchema>();
+    }
+  }
+
   
   /**
    **/

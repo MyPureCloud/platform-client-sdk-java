@@ -43,6 +43,12 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     }
   }
 
+  public ManagementUnitListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<ManagementUnit>();
+    }
+  }
+
   
   /**
    **/

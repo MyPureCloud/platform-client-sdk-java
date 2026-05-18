@@ -36,6 +36,12 @@ public class ConversationAggregateDataContainer  implements Serializable {
     }
   }
 
+  public ConversationAggregateDataContainer(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      data = new ArrayList<StatisticalResponse>();
+    }
+  }
+
   
   /**
    * A mapping from dimension to value

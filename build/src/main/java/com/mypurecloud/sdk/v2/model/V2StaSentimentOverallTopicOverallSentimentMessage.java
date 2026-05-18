@@ -40,6 +40,14 @@ public class V2StaSentimentOverallTopicOverallSentimentMessage  implements Seria
     }
   }
 
+  public V2StaSentimentOverallTopicOverallSentimentMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queueIds = new ArrayList<String>();
+      divisionIds = new ArrayList<String>();
+      flowIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

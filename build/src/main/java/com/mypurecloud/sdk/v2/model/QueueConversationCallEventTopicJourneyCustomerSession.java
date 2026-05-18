@@ -31,6 +31,11 @@ public class QueueConversationCallEventTopicJourneyCustomerSession  implements S
     }
   }
 
+  public QueueConversationCallEventTopicJourneyCustomerSession(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * An ID of a Customer/User's session within the Journey System at a point-in-time

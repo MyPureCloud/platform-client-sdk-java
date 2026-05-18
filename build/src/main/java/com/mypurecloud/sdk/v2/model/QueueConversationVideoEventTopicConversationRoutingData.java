@@ -40,6 +40,13 @@ public class QueueConversationVideoEventTopicConversationRoutingData  implements
     }
   }
 
+  public QueueConversationVideoEventTopicConversationRoutingData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      skills = new ArrayList<QueueConversationVideoEventTopicUriReference>();
+      scoredAgents = new ArrayList<QueueConversationVideoEventTopicScoredAgent>();
+    }
+  }
+
   
   /**
    **/

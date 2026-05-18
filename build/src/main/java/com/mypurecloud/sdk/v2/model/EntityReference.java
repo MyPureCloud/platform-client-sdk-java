@@ -29,6 +29,11 @@ public class EntityReference  implements Serializable {
     }
   }
 
+  public EntityReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The globally unique identifier for the object.

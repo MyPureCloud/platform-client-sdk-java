@@ -91,6 +91,14 @@ public class V2WemEngagementCelebrationUpdatesTopicContestCompleteData  implemen
     }
   }
 
+  public V2WemEngagementCelebrationUpdatesTopicContestCompleteData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestMetrics>();
+      prizes = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestPrizes>();
+      winners = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestWinners>();
+    }
+  }
+
   
   /**
    **/

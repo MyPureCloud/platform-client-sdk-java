@@ -33,6 +33,12 @@ public class UpdateUnavailableTimesRequest  implements Serializable {
     }
   }
 
+  public UpdateUnavailableTimesRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UpdateUnavailableTime>();
+    }
+  }
+
   
   /**
    * A list of unavailable time spans to update

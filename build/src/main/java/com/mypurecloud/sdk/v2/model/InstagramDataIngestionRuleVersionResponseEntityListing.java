@@ -43,6 +43,12 @@ public class InstagramDataIngestionRuleVersionResponseEntityListing  implements 
     }
   }
 
+  public InstagramDataIngestionRuleVersionResponseEntityListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<InstagramDataIngestionRuleVersionResponse>();
+    }
+  }
+
   
   /**
    **/

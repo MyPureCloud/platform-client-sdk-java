@@ -33,6 +33,12 @@ public class AdherenceExplanationListing  implements Serializable {
     }
   }
 
+  public AdherenceExplanationListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<AdherenceExplanationResponse>();
+    }
+  }
+
   
   /**
    **/

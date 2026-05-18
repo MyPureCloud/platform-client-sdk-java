@@ -39,6 +39,12 @@ public class BotConnectorBot  implements Serializable {
     }
   }
 
+  public BotConnectorBot(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      versions = new ArrayList<BotConnectorBotVersion>();
+    }
+  }
+
   
   /**
    * The Botconnector Bot Id - this is configurable by the user when put

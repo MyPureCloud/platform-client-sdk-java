@@ -95,6 +95,11 @@ public class OrganizationPublicApiUsage  implements Serializable {
     }
   }
 
+  public OrganizationPublicApiUsage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The date of the usage. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

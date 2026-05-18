@@ -39,6 +39,11 @@ public class Trustor  implements Serializable {
     }
   }
 
+  public Trustor(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "Organization Id for this trust.")
   @JsonProperty("id")

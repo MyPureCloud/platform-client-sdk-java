@@ -30,6 +30,11 @@ public class CallbackDisconnectIdentifier  implements Serializable {
     }
   }
 
+  public CallbackDisconnectIdentifier(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The Conversation Id.

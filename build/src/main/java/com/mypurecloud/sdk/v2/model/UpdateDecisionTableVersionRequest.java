@@ -30,6 +30,11 @@ public class UpdateDecisionTableVersionRequest  implements Serializable {
     }
   }
 
+  public UpdateDecisionTableVersionRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * An update to a decision table version row index, which moves the row to a new position in the table.

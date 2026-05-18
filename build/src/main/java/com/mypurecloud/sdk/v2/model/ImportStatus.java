@@ -86,6 +86,12 @@ public class ImportStatus  implements Serializable {
     }
   }
 
+  public ImportStatus(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      targetContactListIds = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", required = true, value = "current status of the import")
   @JsonProperty("state")

@@ -30,6 +30,11 @@ public class QueueConversationEmailEventTopicUriReference  implements Serializab
     }
   }
 
+  public QueueConversationEmailEventTopicUriReference(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the resource

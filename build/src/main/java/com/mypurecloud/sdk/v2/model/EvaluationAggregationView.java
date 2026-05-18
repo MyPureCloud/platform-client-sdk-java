@@ -130,6 +130,11 @@ public class EvaluationAggregationView  implements Serializable {
     }
   }
 
+  public EvaluationAggregationView(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Target metric name

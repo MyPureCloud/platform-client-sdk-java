@@ -31,6 +31,11 @@ public class RestorePresenceSettings  implements Serializable {
     }
   }
 
+  public RestorePresenceSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Whether the restore presence feature is enabled

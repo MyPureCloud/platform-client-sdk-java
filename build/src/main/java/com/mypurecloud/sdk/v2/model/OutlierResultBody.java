@@ -34,6 +34,12 @@ public class OutlierResultBody  implements Serializable {
     }
   }
 
+  public OutlierResultBody(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      outliers = new ArrayList<Outlier>();
+    }
+  }
+
   
   /**
    * The ID of the planning group for which outliers are present

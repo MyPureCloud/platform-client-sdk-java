@@ -29,6 +29,11 @@ public class ExternalContactsUnresolvedContactChangedTopicFacebookScopedId  impl
     }
   }
 
+  public ExternalContactsUnresolvedContactChangedTopicFacebookScopedId(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

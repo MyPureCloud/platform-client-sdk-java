@@ -29,6 +29,11 @@ public class ParticipantDataProperties  implements Serializable {
     }
   }
 
+  public ParticipantDataProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Participant data name.

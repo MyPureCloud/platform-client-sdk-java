@@ -184,6 +184,11 @@ public class CapacityPlanningRequirementsResultTopicStaffingRequirementsNotifica
     }
   }
 
+  public CapacityPlanningRequirementsResultTopicStaffingRequirementsNotification(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

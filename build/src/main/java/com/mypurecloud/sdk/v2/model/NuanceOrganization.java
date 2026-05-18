@@ -31,6 +31,11 @@ public class NuanceOrganization  implements Serializable {
     }
   }
 
+  public NuanceOrganization(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The organization ID

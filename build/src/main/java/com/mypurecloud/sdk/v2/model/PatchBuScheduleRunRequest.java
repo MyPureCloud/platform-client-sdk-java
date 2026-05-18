@@ -30,6 +30,11 @@ public class PatchBuScheduleRunRequest  implements Serializable {
     }
   }
 
+  public PatchBuScheduleRunRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The rescheduling options to update

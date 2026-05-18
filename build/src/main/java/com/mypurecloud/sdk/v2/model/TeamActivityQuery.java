@@ -133,6 +133,13 @@ public class TeamActivityQuery  implements Serializable {
     }
   }
 
+  public TeamActivityQuery(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      metrics = new ArrayList<TeamActivityQueryMetric>();
+      groupBy = new ArrayList<GroupByEnum>();
+    }
+  }
+
   
   /**
    * List of requested metrics

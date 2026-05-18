@@ -38,6 +38,12 @@ public class KnowledgeSettingsRequest  implements Serializable {
     }
   }
 
+  public KnowledgeSettingsRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      sources = new ArrayList<V3SourceRef>();
+    }
+  }
+
   
   /**
    * Knowledge setting name.

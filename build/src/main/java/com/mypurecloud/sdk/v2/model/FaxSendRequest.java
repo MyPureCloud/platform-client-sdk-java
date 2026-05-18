@@ -93,6 +93,12 @@ public class FaxSendRequest  implements Serializable {
     }
   }
 
+  public FaxSendRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      addresses = new ArrayList<String>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

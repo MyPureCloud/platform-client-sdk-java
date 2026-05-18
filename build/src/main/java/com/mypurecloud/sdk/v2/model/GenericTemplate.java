@@ -38,6 +38,12 @@ public class GenericTemplate  implements Serializable {
     }
   }
 
+  public GenericTemplate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      components = new ArrayList<RecordingButtonComponent>();
+    }
+  }
+
   
   /**
    * Text to show in the title.

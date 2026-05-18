@@ -34,6 +34,12 @@ public class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings 
     }
   }
 
+  public DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      callableWindows = new ArrayList<DialerOutboundSettingsConfigChangeCallableWindow>();
+    }
+  }
+
   
   /**
    * The time intervals to use for automatic time zone mapping

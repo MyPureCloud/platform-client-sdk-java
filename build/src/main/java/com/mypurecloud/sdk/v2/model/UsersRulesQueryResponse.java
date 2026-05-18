@@ -38,6 +38,12 @@ public class UsersRulesQueryResponse  implements Serializable {
     }
   }
 
+  public UsersRulesQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<UserReference>();
+    }
+  }
+
   
   /**
    **/

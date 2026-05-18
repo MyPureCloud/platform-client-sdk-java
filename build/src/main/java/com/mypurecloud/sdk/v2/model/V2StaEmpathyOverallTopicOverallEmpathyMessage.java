@@ -40,6 +40,15 @@ public class V2StaEmpathyOverallTopicOverallEmpathyMessage  implements Serializa
     }
   }
 
+  public V2StaEmpathyOverallTopicOverallEmpathyMessage(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      queueIds = new ArrayList<String>();
+      divisionIds = new ArrayList<String>();
+      flowIds = new ArrayList<String>();
+      agents = new ArrayList<V2StaEmpathyOverallTopicAgentEmpathyScore>();
+    }
+  }
+
   
   /**
    **/

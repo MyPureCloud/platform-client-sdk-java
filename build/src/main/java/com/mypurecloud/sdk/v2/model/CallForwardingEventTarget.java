@@ -30,6 +30,11 @@ public class CallForwardingEventTarget  implements Serializable {
     }
   }
 
+  public CallForwardingEventTarget(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

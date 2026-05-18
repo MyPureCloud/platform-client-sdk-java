@@ -33,6 +33,12 @@ public class RequestContext  implements Serializable {
     }
   }
 
+  public RequestContext(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      patterns = new ArrayList<RequestContextPattern>();
+    }
+  }
+
   
   /**
    * A list of one or more patterns to match. Defaults to an empty list if not provided.

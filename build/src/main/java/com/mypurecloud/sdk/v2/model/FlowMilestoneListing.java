@@ -43,6 +43,12 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     }
   }
 
+  public FlowMilestoneListing(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      entities = new ArrayList<FlowMilestone>();
+    }
+  }
+
   
   /**
    **/

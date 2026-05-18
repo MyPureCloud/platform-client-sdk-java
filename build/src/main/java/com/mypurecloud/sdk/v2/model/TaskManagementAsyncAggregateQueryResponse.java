@@ -34,6 +34,12 @@ public class TaskManagementAsyncAggregateQueryResponse  implements Serializable 
     }
   }
 
+  public TaskManagementAsyncAggregateQueryResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      results = new ArrayList<TaskManagementAggregateDataContainer>();
+    }
+  }
+
   
   /**
    **/

@@ -31,6 +31,11 @@ public class SessionMetaData  implements Serializable {
     }
   }
 
+  public SessionMetaData(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * URL to fetch the meta data information. This field is populated only if session state is Complete

@@ -46,6 +46,12 @@ public class SurveyForm  implements Serializable {
     }
   }
 
+  public SurveyForm(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      questionGroups = new ArrayList<SurveyQuestionGroup>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

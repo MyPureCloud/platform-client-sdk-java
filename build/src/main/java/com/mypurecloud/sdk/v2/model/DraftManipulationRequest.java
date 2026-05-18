@@ -80,6 +80,11 @@ public class DraftManipulationRequest  implements Serializable {
     }
   }
 
+  public DraftManipulationRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * A set of definitions to translate email attributes and correctly display date and time, for a given language

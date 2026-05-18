@@ -35,6 +35,11 @@ public class LocationAddress  implements Serializable {
     }
   }
 
+  public LocationAddress(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

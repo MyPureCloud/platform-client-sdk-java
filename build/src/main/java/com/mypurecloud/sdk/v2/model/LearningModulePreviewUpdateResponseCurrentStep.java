@@ -31,6 +31,11 @@ public class LearningModulePreviewUpdateResponseCurrentStep  implements Serializ
     }
   }
 
+  public LearningModulePreviewUpdateResponseCurrentStep(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The SCO (Shareable Content Object) data

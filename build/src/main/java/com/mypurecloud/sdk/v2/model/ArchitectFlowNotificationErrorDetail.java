@@ -32,6 +32,11 @@ public class ArchitectFlowNotificationErrorDetail  implements Serializable {
     }
   }
 
+  public ArchitectFlowNotificationErrorDetail(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    **/

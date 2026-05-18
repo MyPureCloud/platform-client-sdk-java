@@ -87,6 +87,12 @@ public class JourneyViewLink  implements Serializable {
     }
   }
 
+  public JourneyViewLink(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      joinAttributes = new ArrayList<String>();
+    }
+  }
+
   
   /**
    * The identifier of the element downstream

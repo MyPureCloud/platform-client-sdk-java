@@ -88,6 +88,12 @@ public class BillingUsageReport  implements Serializable {
     }
   }
 
+  public BillingUsageReport(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      usages = new ArrayList<BillingUsage>();
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")

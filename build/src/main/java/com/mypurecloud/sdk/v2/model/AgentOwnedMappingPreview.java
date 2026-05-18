@@ -34,6 +34,11 @@ public class AgentOwnedMappingPreview  implements Serializable {
     }
   }
 
+  public AgentOwnedMappingPreview(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   @ApiModelProperty(example = "null", value = "The raw value of the agent-owned column")
   @JsonProperty("agentOwnedColumn")

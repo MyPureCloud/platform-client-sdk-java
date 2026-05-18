@@ -30,6 +30,11 @@ public class PatchCloseButtonStyleProperties  implements Serializable {
     }
   }
 
+  public PatchCloseButtonStyleProperties(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Color of button. (eg. #FF0000)

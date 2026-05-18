@@ -40,6 +40,13 @@ public class DomainPermissionPolicy  implements Serializable {
     }
   }
 
+  public DomainPermissionPolicy(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      actionSet = new ArrayList<String>();
+      namedResources = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/

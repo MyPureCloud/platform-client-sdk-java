@@ -35,6 +35,12 @@ public class ReportingTurnKnowledgeFeedback  implements Serializable {
     }
   }
 
+  public ReportingTurnKnowledgeFeedback(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      documents = new ArrayList<ReportingTurnKnowledgeDocument>();
+    }
+  }
+
   
   /**
    * The ID of the original knowledge search that this feedback relates to.

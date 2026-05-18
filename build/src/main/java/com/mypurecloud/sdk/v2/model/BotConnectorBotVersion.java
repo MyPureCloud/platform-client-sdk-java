@@ -37,6 +37,13 @@ public class BotConnectorBotVersion  implements Serializable {
     }
   }
 
+  public BotConnectorBotVersion(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      supportedLanguages = new ArrayList<String>();
+      intents = new ArrayList<BotIntent>();
+    }
+  }
+
   
   /**
    * The name of the version. This can be up to 100 characters long and must be comprised of displayable characters without leading or trailing whitespace

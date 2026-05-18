@@ -37,6 +37,12 @@ public class ChatMessageUser  implements Serializable {
     }
   }
 
+  public ChatMessageUser(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      images = new ArrayList<Image>();
+    }
+  }
+
   
   /**
    **/

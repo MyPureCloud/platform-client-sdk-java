@@ -85,6 +85,12 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
     }
   }
 
+  public DialerContactlistfilterConfigChangeFilterClause(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      predicates = new ArrayList<DialerContactlistfilterConfigChangeFilterPredicate>();
+    }
+  }
+
   
   /**
    * Contact list filter type

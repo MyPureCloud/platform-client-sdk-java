@@ -44,6 +44,12 @@ public class EmailCampaignScheduleConfigChangeScheduleRecurrence  implements Ser
     }
   }
 
+  public EmailCampaignScheduleConfigChangeScheduleRecurrence(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      alterations = new ArrayList<EmailCampaignScheduleConfigChangeAlteration>();
+    }
+  }
+
   
   /**
    * the recurrence id

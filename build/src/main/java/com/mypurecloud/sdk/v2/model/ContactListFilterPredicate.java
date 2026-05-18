@@ -140,6 +140,11 @@ public class ContactListFilterPredicate  implements Serializable {
     }
   }
 
+  public ContactListFilterPredicate(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Contact list column from the ContactListFilter's contactList.

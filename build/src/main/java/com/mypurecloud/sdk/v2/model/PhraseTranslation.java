@@ -31,6 +31,11 @@ public class PhraseTranslation  implements Serializable {
     }
   }
 
+  public PhraseTranslation(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * Epoch start time of the phrase

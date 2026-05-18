@@ -30,6 +30,11 @@ public class MergeRequest  implements Serializable {
     }
   }
 
+  public MergeRequest(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
   
   /**
    * The ID of the source contact for the merge operation

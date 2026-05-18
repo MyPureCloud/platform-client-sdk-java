@@ -139,6 +139,12 @@ public class Variable  implements Serializable {
     }
   }
 
+  public Variable(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      listVariables = new ArrayList<Variable>();
+    }
+  }
+
   
   /**
    * The name of the variable.
