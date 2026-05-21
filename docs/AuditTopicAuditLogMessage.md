@@ -304,6 +304,8 @@
 | KNOWLEDGELABEL | &quot;KnowledgeLabel&quot; | 
 | KNOWLEDGETRAINING | &quot;KnowledgeTraining&quot; | 
 | KNOWLEDGESEARCHFEEDBACK | &quot;KnowledgeSearchFeedback&quot; | 
+| KNOWLEDGEBASESOURCE | &quot;KnowledgeBaseSource&quot; | 
+| KNOWLEDGEFABRICSOURCE | &quot;KnowledgeFabricSource&quot; | 
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; | 
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; | 
 | APPOINTMENT | &quot;Appointment&quot; | 

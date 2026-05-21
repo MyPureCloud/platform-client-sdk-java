@@ -8,6 +8,7 @@
 | **dateStart** | **String** |  |  [optional] |
 | **dateScheduleStart** | **String** |  |  [optional] |
 | **activityCode** | **String** |  |  [optional] |
+| **activityCodeId** | **String** |  |  [optional] |
 | **activityColor** | **String** |  |  [optional] |
 | **activityName** | **String** |  |  [optional] |
 | **points** | **Long** |  |  [optional] |

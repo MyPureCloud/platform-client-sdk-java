@@ -22,6 +22,8 @@
 | **extractedEntities** | [**List&lt;ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity&gt;**](ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity) |  |  [optional] |
 | **wrapUpCodes** | [**List&lt;ConversationSummaryTopicVirtualAgentsConversationWrapUpCode&gt;**](ConversationSummaryTopicVirtualAgentsConversationWrapUpCode) |  |  [optional] |
 | **triggerSource** | [**ConversationSummaryTopicVirtualAgentsTriggerSource**](ConversationSummaryTopicVirtualAgentsTriggerSource) |  |  [optional] |
+| **summarySourceType** | [**SummarySourceTypeEnum**](#Enum--SummarySourceTypeEnum) |  |  [optional] |
+| **triggerType** | [**TriggerTypeEnum**](#Enum--TriggerTypeEnum) |  |  [optional] |
 | **lastEditedBy** | [**ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant**](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  |  [optional] |
 | **errorType** | [**ErrorTypeEnum**](#Enum--ErrorTypeEnum) |  |  [optional] |
 | **durationMs** | **Long** |  |  [optional] |
@@ -53,6 +55,26 @@
 | MESSAGE | &quot;MESSAGE&quot; | 
 | CALL | &quot;CALL&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
+
+
+## Enum: SummarySourceTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| GENESYS_NATIVE_SERVICE | &quot;GENESYS_NATIVE_SERVICE&quot; | 
+| EXTERNAL_SERVICE | &quot;EXTERNAL_SERVICE&quot; | 
+
+
+## Enum: TriggerTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| ON_DEMAND | &quot;ON_DEMAND&quot; | 
+| AFTER_DISCONNECT | &quot;AFTER_DISCONNECT&quot; | 
 
 
 ## Enum: ErrorTypeEnum
