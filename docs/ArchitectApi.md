@@ -8479,7 +8479,7 @@ try {
 # **postFlowsJobs**
 
 
-> [RegisterArchitectJobResponse](RegisterArchitectJobResponse) postFlowsJobs()
+> [RegisterArchitectJobResponse](RegisterArchitectJobResponse) postFlowsJobs(body)
 
 Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 
@@ -8511,8 +8511,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
+Object body = null; // Object | 
 try {
-    RegisterArchitectJobResponse result = apiInstance.postFlowsJobs();
+    RegisterArchitectJobResponse result = apiInstance.postFlowsJobs(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#postFlowsJobs");
@@ -8522,8 +8523,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **Object**|  | [optional] 
+{: class="table-striped"}
 
 
 ### Return type
@@ -9588,4 +9592,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

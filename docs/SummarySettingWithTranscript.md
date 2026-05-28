@@ -6,10 +6,10 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **transcript** | **String** | Example transcript to preview with the setting. |  |
-| **summarySetting** | [**SummarySetting**](SummarySetting) | Summary setting to preview on the transcript. |  |
 | **summaryPreviewSessionId** | **String** | Session identifier of the summary preview. |  |
+| **summarySetting** | [**SummarySetting**](SummarySetting) | Summary setting to preview on the transcript. |  |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

@@ -106,7 +106,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTelephonyProvidersEdgesDidpools**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesDidpools) | Create a new DID pool |
 | [**postTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesEdgegroups) | Create an edge group. |
 | [**postTelephonyProvidersEdgesExtensionpools**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesExtensionpools) | Create a new extension pool |
-| [**postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource) | Post media endpoint statistics event. |
 | [**postTelephonyProvidersEdgesPhoneReboot**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesPhoneReboot) | Reboot a Phone |
 | [**postTelephonyProvidersEdgesPhonebasesettings**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesPhonebasesettings) | Create a new Phone Base Settings object |
 | [**postTelephonyProvidersEdgesPhones**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesPhones) | Create a new Phone |
@@ -6422,73 +6421,6 @@ try {
 [**ExtensionPool**](ExtensionPool)
 
 
-# **postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource**
-
-
-> [MediaStatistics](MediaStatistics) postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(conversationId, communicationId, mediaResourceId, body)
-
-Post media endpoint statistics event.
-
-postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps POST /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId}  
-
-Requires ANY permissions: 
-
-* telephony:mediaStatistics:add
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String conversationId = "conversationId_example"; // String | Identifier of the conversation
-String communicationId = "communicationId_example"; // String | Identifier of the media session
-String mediaResourceId = "mediaResourceId_example"; // String | Identifier of the media resource of the endpoint
-MediaStatisticsPostRequest body = new MediaStatisticsPostRequest(); // MediaStatisticsPostRequest | MediaStatisticsPostRequest
-try {
-    MediaStatistics result = apiInstance.postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(conversationId, communicationId, mediaResourceId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Identifier of the conversation | 
-| **communicationId** | **String**| Identifier of the media session | 
-| **mediaResourceId** | **String**| Identifier of the media resource of the endpoint | 
-| **body** | [**MediaStatisticsPostRequest**](MediaStatisticsPostRequest)| MediaStatisticsPostRequest | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**MediaStatistics**](MediaStatistics)
-
-
 # **postTelephonyProvidersEdgesPhoneReboot**
 
 
@@ -7880,4 +7812,4 @@ try {
 [**TrunkBase**](TrunkBase)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

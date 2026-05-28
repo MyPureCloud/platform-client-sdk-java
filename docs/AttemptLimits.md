@@ -12,7 +12,7 @@
 | **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
 | **maxAttemptsPerContact** | **Integer** | The maximum number of times a contact can be called within the resetPeriod. Required if maxAttemptsPerNumber is not defined. |  [optional] |
 | **maxAttemptsPerNumber** | **Integer** | The maximum number of times a phone number can be called within the resetPeriod. Required if maxAttemptsPerContact is not defined. |  [optional] |
-| **timeZoneId** | **String** | If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY. |  [optional] |
+| **timeZoneId** | **String** | If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London |  [optional] |
 | **resetPeriod** | [**ResetPeriodEnum**](#Enum--ResetPeriodEnum) | After how long the number of attempts will be set back to 0. Defaults to NEVER. |  [optional] |
 | **recallEntries** | [**Map&lt;String, RecallEntry&gt;**](RecallEntry) | Configuration for recall attempts. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -58,4 +58,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

@@ -38,6 +38,7 @@
 | **recordingErrorStatus** | [**RecordingErrorStatusEnum**](#Enum--RecordingErrorStatusEnum) | Status of a recording that cannot be returned because of an error |  [optional] |
 | **originalRecordingStartTime** | [**Date**](Date) | The start time of the full recording, before any segment access restrictions are applied. Null when there is no playable media. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **creationTime** | [**Date**](Date) | The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **associatedConversationIds** | **List&lt;String&gt;** | List of associated conversation IDs |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -94,4 +95,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

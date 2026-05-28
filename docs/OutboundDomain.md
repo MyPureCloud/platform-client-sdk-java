@@ -11,6 +11,7 @@
 | **dkimVerificationResult** | [**VerificationResult**](VerificationResult) | DKIM registration Status |  [optional] |
 | **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) | Sender Type |  [optional] |
 | **emailSetting** | [**EmailSetting**](EmailSetting) | The email settings associated with this domain. |  [optional] |
+| **dmarcVerificationResult** | [**DmarcResult**](DmarcResult) | The DMARC verification status for this domain. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -27,4 +28,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

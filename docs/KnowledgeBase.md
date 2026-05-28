@@ -15,6 +15,7 @@
 | **dateDocumentLastModified** | [**Date**](Date) | The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **articleCount** | **Integer** | The count representing the number of documents of type Article in the KnowledgeBase |  [optional] |
 | **published** | **Boolean** | Flag that indicates the knowledge base is published |  [optional] |
+| **contentSearchEnabled** | **Boolean** | Flag that indicates the search on content is enabled for the knowledge base. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -78,4 +79,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

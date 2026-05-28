@@ -8,6 +8,7 @@
 | **name** | **String** | Knowledge base name |  |
 | **description** | **String** | Knowledge base description |  [optional] |
 | **coreLanguage** | [**CoreLanguageEnum**](#Enum--CoreLanguageEnum) | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy. |  |
+| **contentSearchEnabled** | **Boolean** | Flag that indicates the search on content is enabled for the knowledge base. |  [optional] |
 
 
 ## Enum: CoreLanguageEnum
@@ -70,4 +71,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

@@ -9,6 +9,7 @@
 | **lastSuccessfulSessionId** | **String** | Last successful session ID of the business unit |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | State of the latest session |  [optional] |
 | **errorCode** | **String** | Failed session error code |  [optional] |
+| **retrainInProgress** | **Boolean** | True if a model retrain is currently running for the organization, false if not |  [optional] |
 
 
 ## Enum: StateEnum
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

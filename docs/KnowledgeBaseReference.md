@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the knowledge base. |  |
 | **languageCode** | [**LanguageCodeEnum**](#Enum--LanguageCodeEnum) | Language of the knowledge base |  [optional] |
+| **contentSearchEnabled** | **Boolean** | Flag that indicates the search on content is enabled for the knowledge base. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -70,4 +71,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

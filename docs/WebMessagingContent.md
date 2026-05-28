@@ -14,6 +14,7 @@
 | **carousel** | [**ContentCarousel**](ContentCarousel) | Carousel content |  [optional] |
 | **datePicker** | [**ContentDatePicker**](ContentDatePicker) | DatePicker content |  [optional] |
 | **listPicker** | [**ConversationContentListPicker**](ConversationContentListPicker) | ListPicker content |  [optional] |
+| **form** | [**ConversationContentForm**](ConversationContentForm) | Form content |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -29,8 +30,9 @@
 | CAROUSEL | &quot;Carousel&quot; | 
 | DATEPICKER | &quot;DatePicker&quot; | 
 | LISTPICKER | &quot;ListPicker&quot; | 
+| FORM | &quot;Form&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

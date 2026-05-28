@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | **Integer** | Value for this metric |  [optional] |
+| **value** | [**Number**](Number) | Value for this metric |  [optional] |
 | **groupByAttributes** | [**List&lt;GroupByAttribute&gt;**](GroupByAttribute) | Group by attributes for this metric |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
