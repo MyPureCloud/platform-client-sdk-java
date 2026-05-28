@@ -40,8 +40,13 @@
 | REQUIRED_FIELDS | &quot;REQUIRED_FIELDS&quot; | 
 | MATCH_ALL | &quot;MATCH_ALL&quot; | 
 | QUERY_STRING | &quot;QUERY_STRING&quot; | 
+| RANGE | &quot;RANGE&quot; | 
+| LESS_THAN | &quot;LESS_THAN&quot; | 
+| LESS_THAN_EQUAL_TO | &quot;LESS_THAN_EQUAL_TO&quot; | 
+| GREATER_THAN | &quot;GREATER_THAN&quot; | 
+| GREATER_THAN_EQUAL_TO | &quot;GREATER_THAN_EQUAL_TO&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

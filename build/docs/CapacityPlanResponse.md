@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **name** | **String** |  |  [optional] |
 | **description** | **String** | Description of the capacity plan |  [optional] |
 | **forecast** | [**BuShortTermForecastReference**](BuShortTermForecastReference) | The selected forecast for this capacity plan. Null when main forecast is used in the future |  [optional] |
@@ -18,4 +18,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

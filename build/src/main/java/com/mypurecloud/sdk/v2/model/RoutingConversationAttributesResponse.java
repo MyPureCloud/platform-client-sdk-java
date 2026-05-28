@@ -33,6 +33,8 @@ public class RoutingConversationAttributesResponse  implements Serializable {
   private Language language = null;
   private UtilizationLabel label = null;
   private List<ScoredAgent> scoredAgents = null;
+  private String skillExpression = null;
+  private String skillExpressionId = null;
 
   public RoutingConversationAttributesResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -139,6 +141,42 @@ public class RoutingConversationAttributesResponse  implements Serializable {
   }
 
 
+  /**
+   * Current skill expression on in-queue conversation
+   **/
+  public RoutingConversationAttributesResponse skillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Current skill expression on in-queue conversation")
+  @JsonProperty("skillExpression")
+  public String getSkillExpression() {
+    return skillExpression;
+  }
+  public void setSkillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
+  }
+
+
+  /**
+   * Current skill expression ID on in-queue conversation
+   **/
+  public RoutingConversationAttributesResponse skillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Current skill expression ID on in-queue conversation")
+  @JsonProperty("skillExpressionId")
+  public String getSkillExpressionId() {
+    return skillExpressionId;
+  }
+  public void setSkillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -153,12 +191,14 @@ public class RoutingConversationAttributesResponse  implements Serializable {
             Objects.equals(this.skills, routingConversationAttributesResponse.skills) &&
             Objects.equals(this.language, routingConversationAttributesResponse.language) &&
             Objects.equals(this.label, routingConversationAttributesResponse.label) &&
-            Objects.equals(this.scoredAgents, routingConversationAttributesResponse.scoredAgents);
+            Objects.equals(this.scoredAgents, routingConversationAttributesResponse.scoredAgents) &&
+            Objects.equals(this.skillExpression, routingConversationAttributesResponse.skillExpression) &&
+            Objects.equals(this.skillExpressionId, routingConversationAttributesResponse.skillExpressionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(priority, skills, language, label, scoredAgents);
+    return Objects.hash(priority, skills, language, label, scoredAgents, skillExpression, skillExpressionId);
   }
 
   @Override
@@ -171,6 +211,8 @@ public class RoutingConversationAttributesResponse  implements Serializable {
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    skillExpression: ").append(toIndentedString(skillExpression)).append("\n");
+    sb.append("    skillExpressionId: ").append(toIndentedString(skillExpressionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

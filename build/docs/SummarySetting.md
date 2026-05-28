@@ -7,10 +7,13 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** | Name of the summary setting. |  |
+| **dateModified** | [**Date**](Date) | The date and time the setting was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **interactionType** | [**InteractionTypeEnum**](#Enum--InteractionTypeEnum) | The interaction type the setting can be used for |  [optional] |
 | **language** | **String** | Language of the generated summary, e.g. en-US, it-IT. |  |
 | **summaryType** | [**SummaryTypeEnum**](#Enum--SummaryTypeEnum) | Level of detail of the generated summary. |  [optional] |
 | **format** | [**FormatEnum**](#Enum--FormatEnum) | Format of the generated summary. |  [optional] |
 | **maskPII** | [**SummarySettingPII**](SummarySettingPII) | Displaying PII in the generated summary. |  [optional] |
+| **dateCreated** | [**Date**](Date) | The date and time the setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **participantLabels** | [**SummarySettingParticipantLabels**](SummarySettingParticipantLabels) | How to refer to interaction participants in the generated summary. |  [optional] |
 | **predefinedInsights** | [**List<PredefinedInsightsEnum>**](#Enum--PredefinedInsightsEnum) | Set which insights to include in the generated summary by default. |  [optional] |
 | **customEntities** | [**List&lt;SummarySettingCustomEntity&gt;**](SummarySettingCustomEntity) | Custom entity definition. |  [optional] |
@@ -19,9 +22,16 @@
 | **serviceType** | [**ServiceTypeEnum**](#Enum--ServiceTypeEnum) | Service type for summarization. Can be 'Native' for Genesys native summarization engine or 'External' for external service. If specified as 'External', integrationId must be provided. |  [optional] |
 | **integrationId** | **String** | Integration ID for the external summarization service. Required when serviceType is External. |  [optional] |
 | **timeoutDuration** | **Integer** | Timeout duration in seconds for the external summarization service request. |  [optional] |
-| **dateCreated** | [**Date**](Date) | The date and time the setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateModified** | [**Date**](Date) | The date and time the setting was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
+
+
+## Enum: InteractionTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LIVE | &quot;Live&quot; | 
+| EMAIL | &quot;Email&quot; | 
 
 
 ## Enum: SummaryTypeEnum
@@ -74,4 +84,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

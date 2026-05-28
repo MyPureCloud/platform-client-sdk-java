@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UnavailableTimesTimeSpan;
+import com.mypurecloud.sdk.v2.model.WfmTimeSpan;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class UnavailableTime  implements Serializable {
   
   private String id = null;
-  private UnavailableTimesTimeSpan timeSpan = null;
+  private WfmTimeSpan timeSpan = null;
   private String notes = null;
 
   public UnavailableTime() {
@@ -48,17 +48,17 @@ public class UnavailableTime  implements Serializable {
   /**
    * Exact date, time and length of the unavailability time span
    **/
-  public UnavailableTime timeSpan(UnavailableTimesTimeSpan timeSpan) {
+  public UnavailableTime timeSpan(WfmTimeSpan timeSpan) {
     this.timeSpan = timeSpan;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Exact date, time and length of the unavailability time span")
   @JsonProperty("timeSpan")
-  public UnavailableTimesTimeSpan getTimeSpan() {
+  public WfmTimeSpan getTimeSpan() {
     return timeSpan;
   }
-  public void setTimeSpan(UnavailableTimesTimeSpan timeSpan) {
+  public void setTimeSpan(WfmTimeSpan timeSpan) {
     this.timeSpan = timeSpan;
   }
 

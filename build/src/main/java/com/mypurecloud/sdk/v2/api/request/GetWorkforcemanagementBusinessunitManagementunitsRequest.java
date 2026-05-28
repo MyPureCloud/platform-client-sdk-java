@@ -37,6 +37,10 @@ import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
 import com.mypurecloud.sdk.v2.model.AdminAgentWorkPlanPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AdminBulkUpdateAlternativeShiftTradeStateRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AgentBulkAddOpportunityEnrollmentsRequest;
+import com.mypurecloud.sdk.v2.model.AgentBulkAddOpportunityEnrollmentsResponse;
+import com.mypurecloud.sdk.v2.model.AgentBulkStatusUpdateOpportunityEnrollmentsRequest;
+import com.mypurecloud.sdk.v2.model.AgentBulkStatusUpdateOpportunityEnrollmentsResponse;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
@@ -46,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsRequest;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
+import com.mypurecloud.sdk.v2.model.AgentQueryOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentUpdateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBiddingPreferenceResponse;
@@ -104,7 +109,17 @@ import com.mypurecloud.sdk.v2.model.BuTimeOffPlanListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
 import com.mypurecloud.sdk.v2.model.BuUpdateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.BuUserListing;
+import com.mypurecloud.sdk.v2.model.BulkAddOpportunitiesRequest;
+import com.mypurecloud.sdk.v2.model.BulkAddOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesExternalActivitiesRequest;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesRequest;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesStatusUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesStatusUpdateResponse;
+import com.mypurecloud.sdk.v2.model.BulkOpportunityEnrollmentsStatusUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkPublishOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.BulkRemoveOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateOpportunityEnrollmentsStatusResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
@@ -181,7 +196,10 @@ import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
+import com.mypurecloud.sdk.v2.model.OpportunityResult;
+import com.mypurecloud.sdk.v2.model.OpportunityResultWithAgentIds;
 import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
+import com.mypurecloud.sdk.v2.model.PatchOpportunityRequest;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationResponse;
 import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationUploadResponse;
@@ -200,6 +218,11 @@ import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
+import com.mypurecloud.sdk.v2.model.QueryExternalActivityOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.QueryOpportunitiesRequest;
+import com.mypurecloud.sdk.v2.model.QueryOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.QueryOpportunityEnrollmentsRequest;
+import com.mypurecloud.sdk.v2.model.QueryOpportunityEnrollmentsResponse;
 import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
 import com.mypurecloud.sdk.v2.model.QueryShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
@@ -296,7 +319,6 @@ import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForAgent;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForTeams;
-import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageResponse;
@@ -353,10 +375,10 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		AGENTHISTORICALADHERENCECONFORMANCE("AgentHistoricalAdherenceConformance"),
 		AGENTSCHEDULE("AgentSchedule"),
 		AGENTADHERENCEADJUSTMENTS("AgentAdherenceAdjustments"),
-		AGENTADHERENCEADJUSTMENTSQUERY("AgentAdherenceAdjustmentsQuery"),
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"),
 		AGENTWORKPLANBID("AgentWorkPlanBid"),
 		AGENTSCHEDULEBID("AgentScheduleBid"),
+		AGENTSHIFTTRADE("AgentShiftTrade"),
 		ALTERNATIVESHIFT("AlternativeShift"),
 		COACHING("Coaching"),
 		LEARNING("Learning"),
@@ -364,6 +386,9 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		AGENTOPPORTUNITIESQUERY("AgentOpportunitiesQuery"),
 		AGENTOPPORTUNITIESENROLLMENTS("AgentOpportunitiesEnrollments"),
 		AGENTOPPORTUNITIESENROLLMENTSSTATUSES("AgentOpportunitiesEnrollmentsStatuses"),
+		AGENTSCHEDULINGPREFERENCESQUERY("AgentSchedulingPreferencesQuery"),
+		AGENTSCHEDULINGPREFERENCES("AgentSchedulingPreferences"),
+		AGENTSCHEDULINGPREFERENCESSETTINGS("AgentSchedulingPreferencesSettings"),
 		ACTIVITYCODES("ActivityCodes"),
 		ACTIVITYPLANS("ActivityPlans"),
 		ADHERENCEADJUSTMENTSSETTINGS("AdherenceAdjustmentsSettings"),
@@ -375,6 +400,7 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		BUSINESSUNITS("BusinessUnits"),
 		CAPACITYPLAN("CapacityPlan"),
 		CAPACITYPLANFORECASTINPUTS("CapacityPlanForecastInputs"),
+		CAPACITYPLANPERFORMANCEPREDICTION("CapacityPlanPerformancePrediction"),
 		CONTINUOUSFORECAST("ContinuousForecast"),
 		HISTORICALADHERENCE("HistoricalAdherence"),
 		HISTORICALSHRINKAGE("HistoricalShrinkage"),
@@ -405,7 +431,10 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		OPPORTUNITIESENROLLMENTSQUERY("OpportunitiesEnrollmentsQuery"),
 		OPPORTUNITIESEXTERNALACTIVITIESQUERY("OpportunitiesExternalActivitiesQuery"),
 		OPPORTUNITIESSTATUSES("OpportunitiesStatuses"),
-		OPPORTUNITIESENROLLMENTSSTATUSES("OpportunitiesEnrollmentsStatuses");
+		OPPORTUNITIESENROLLMENTSSTATUSES("OpportunitiesEnrollmentsStatuses"),
+		SCHEDULINGPREFERENCESQUERY("SchedulingPreferencesQuery"),
+		SCHEDULINGPREFERENCESSETTINGS("SchedulingPreferencesSettings"),
+		DECISIONMETRICS("DecisionMetrics");
 
 		private String value;
 

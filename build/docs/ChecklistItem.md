@@ -9,6 +9,7 @@
 | **name** | **String** | Name of the checklist item. |  |
 | **description** | **String** | Description of the checklist item. |  [optional] |
 | **automatedCheckEnabled** | **Boolean** | Flag to indicate whether automated check is enabled for this checklist item. |  [optional] |
+| **exactPhraseMatch** | **Boolean** | Flag to indicate whether exact phrase matching is applicable for this checklist item. |  [optional] |
 | **important** | **Boolean** | Flag to indicate whether this checklist item is marked as important. |  [optional] |
 | **stateFromModel** | [**StateFromModelEnum**](#Enum--StateFromModelEnum) | Checklist state as evaluated by the model. |  [optional] |
 | **stateFromAgent** | [**StateFromAgentEnum**](#Enum--StateFromAgentEnum) | Checklist state as evaluated by the agent. |  [optional] |
@@ -38,4 +39,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

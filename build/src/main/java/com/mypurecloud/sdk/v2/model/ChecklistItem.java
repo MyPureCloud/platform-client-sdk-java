@@ -28,6 +28,7 @@ public class ChecklistItem  implements Serializable {
   private String name = null;
   private String description = null;
   private Boolean automatedCheckEnabled = null;
+  private Boolean exactPhraseMatch = null;
   private Boolean important = null;
 
   private static class StateFromModelEnumDeserializer extends StdDeserializer<StateFromModelEnum> {
@@ -214,6 +215,24 @@ public class ChecklistItem  implements Serializable {
 
 
   /**
+   * Flag to indicate whether exact phrase matching is applicable for this checklist item.
+   **/
+  public ChecklistItem exactPhraseMatch(Boolean exactPhraseMatch) {
+    this.exactPhraseMatch = exactPhraseMatch;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag to indicate whether exact phrase matching is applicable for this checklist item.")
+  @JsonProperty("exactPhraseMatch")
+  public Boolean getExactPhraseMatch() {
+    return exactPhraseMatch;
+  }
+  public void setExactPhraseMatch(Boolean exactPhraseMatch) {
+    this.exactPhraseMatch = exactPhraseMatch;
+  }
+
+
+  /**
    * Flag to indicate whether this checklist item is marked as important.
    **/
   public ChecklistItem important(Boolean important) {
@@ -342,6 +361,7 @@ public class ChecklistItem  implements Serializable {
             Objects.equals(this.name, checklistItem.name) &&
             Objects.equals(this.description, checklistItem.description) &&
             Objects.equals(this.automatedCheckEnabled, checklistItem.automatedCheckEnabled) &&
+            Objects.equals(this.exactPhraseMatch, checklistItem.exactPhraseMatch) &&
             Objects.equals(this.important, checklistItem.important) &&
             Objects.equals(this.stateFromModel, checklistItem.stateFromModel) &&
             Objects.equals(this.stateFromAgent, checklistItem.stateFromAgent) &&
@@ -353,7 +373,7 @@ public class ChecklistItem  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, automatedCheckEnabled, important, stateFromModel, stateFromAgent, dateLastModifiedByModel, dateLastModifiedByAgent, lastModifiedInAcw, selfUri);
+    return Objects.hash(id, name, description, automatedCheckEnabled, exactPhraseMatch, important, stateFromModel, stateFromAgent, dateLastModifiedByModel, dateLastModifiedByAgent, lastModifiedInAcw, selfUri);
   }
 
   @Override
@@ -365,6 +385,7 @@ public class ChecklistItem  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    automatedCheckEnabled: ").append(toIndentedString(automatedCheckEnabled)).append("\n");
+    sb.append("    exactPhraseMatch: ").append(toIndentedString(exactPhraseMatch)).append("\n");
     sb.append("    important: ").append(toIndentedString(important)).append("\n");
     sb.append("    stateFromModel: ").append(toIndentedString(stateFromModel)).append("\n");
     sb.append("    stateFromAgent: ").append(toIndentedString(stateFromAgent)).append("\n");

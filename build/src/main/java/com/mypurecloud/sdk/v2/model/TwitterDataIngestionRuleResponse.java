@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.MessageInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -85,6 +86,7 @@ public class TwitterDataIngestionRuleResponse  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private String platform = null;
+  private MessageInfo ingestionRuleInfo = null;
   private List<String> countries = null;
   private String searchTerms = null;
   private String selfUri = null;
@@ -214,6 +216,24 @@ public class TwitterDataIngestionRuleResponse  implements Serializable {
 
 
   /**
+   * The Info about ingestion rule.
+   **/
+  public TwitterDataIngestionRuleResponse ingestionRuleInfo(MessageInfo ingestionRuleInfo) {
+    this.ingestionRuleInfo = ingestionRuleInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Info about ingestion rule.")
+  @JsonProperty("ingestionRuleInfo")
+  public MessageInfo getIngestionRuleInfo() {
+    return ingestionRuleInfo;
+  }
+  public void setIngestionRuleInfo(MessageInfo ingestionRuleInfo) {
+    this.ingestionRuleInfo = ingestionRuleInfo;
+  }
+
+
+  /**
    * ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
    **/
   public TwitterDataIngestionRuleResponse countries(List<String> countries) {
@@ -274,6 +294,7 @@ public class TwitterDataIngestionRuleResponse  implements Serializable {
             Objects.equals(this.dateCreated, twitterDataIngestionRuleResponse.dateCreated) &&
             Objects.equals(this.dateModified, twitterDataIngestionRuleResponse.dateModified) &&
             Objects.equals(this.platform, twitterDataIngestionRuleResponse.platform) &&
+            Objects.equals(this.ingestionRuleInfo, twitterDataIngestionRuleResponse.ingestionRuleInfo) &&
             Objects.equals(this.countries, twitterDataIngestionRuleResponse.countries) &&
             Objects.equals(this.searchTerms, twitterDataIngestionRuleResponse.searchTerms) &&
             Objects.equals(this.selfUri, twitterDataIngestionRuleResponse.selfUri);
@@ -281,7 +302,7 @@ public class TwitterDataIngestionRuleResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, countries, searchTerms, selfUri);
+    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, ingestionRuleInfo, countries, searchTerms, selfUri);
   }
 
   @Override
@@ -297,6 +318,7 @@ public class TwitterDataIngestionRuleResponse  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    ingestionRuleInfo: ").append(toIndentedString(ingestionRuleInfo)).append("\n");
     sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    searchTerms: ").append(toIndentedString(searchTerms)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DmarcResult;
 import com.mypurecloud.sdk.v2.model.DnsRecordEntry;
 import com.mypurecloud.sdk.v2.model.EmailSetting;
 import io.swagger.annotations.ApiModel;
@@ -130,6 +131,7 @@ public class EmailOutboundDomainResult  implements Serializable {
   }
   private SenderTypeEnum senderType = null;
   private EmailSetting emailSetting = null;
+  private DmarcResult dmarcVerificationResult = null;
 
   public EmailOutboundDomainResult() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -245,6 +247,13 @@ public class EmailOutboundDomainResult  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The DMARC verification status for this domain.")
+  @JsonProperty("dmarcVerificationResult")
+  public DmarcResult getDmarcVerificationResult() {
+    return dmarcVerificationResult;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -260,12 +269,13 @@ public class EmailOutboundDomainResult  implements Serializable {
             Objects.equals(this.domainName, emailOutboundDomainResult.domainName) &&
             Objects.equals(this.senderStatus, emailOutboundDomainResult.senderStatus) &&
             Objects.equals(this.senderType, emailOutboundDomainResult.senderType) &&
-            Objects.equals(this.emailSetting, emailOutboundDomainResult.emailSetting);
+            Objects.equals(this.emailSetting, emailOutboundDomainResult.emailSetting) &&
+            Objects.equals(this.dmarcVerificationResult, emailOutboundDomainResult.dmarcVerificationResult);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dnsCnameBounceRecord, dnsTxtSendingRecord, domainName, senderStatus, senderType, emailSetting);
+    return Objects.hash(dnsCnameBounceRecord, dnsTxtSendingRecord, domainName, senderStatus, senderType, emailSetting, dmarcVerificationResult);
   }
 
   @Override
@@ -279,6 +289,7 @@ public class EmailOutboundDomainResult  implements Serializable {
     sb.append("    senderStatus: ").append(toIndentedString(senderStatus)).append("\n");
     sb.append("    senderType: ").append(toIndentedString(senderType)).append("\n");
     sb.append("    emailSetting: ").append(toIndentedString(emailSetting)).append("\n");
+    sb.append("    dmarcVerificationResult: ").append(toIndentedString(dmarcVerificationResult)).append("\n");
     sb.append("}");
     return sb.toString();
   }

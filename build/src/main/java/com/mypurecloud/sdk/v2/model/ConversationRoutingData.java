@@ -30,6 +30,8 @@ public class ConversationRoutingData  implements Serializable {
   private AddressableEntityRef language = null;
   private Integer priority = null;
   private List<AddressableEntityRef> skills = null;
+  private String skillExpression = null;
+  private String skillExpressionId = null;
   private List<ScoredAgent> scoredAgents = null;
   private String label = null;
 
@@ -121,6 +123,42 @@ public class ConversationRoutingData  implements Serializable {
 
 
   /**
+   * The string with skill expression requested by the caller for routing decisions
+   **/
+  public ConversationRoutingData skillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The string with skill expression requested by the caller for routing decisions")
+  @JsonProperty("skillExpression")
+  public String getSkillExpression() {
+    return skillExpression;
+  }
+  public void setSkillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
+  }
+
+
+  /**
+   * The internal id of the skill expression, if any, that is currently in use for routing decisions
+   **/
+  public ConversationRoutingData skillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The internal id of the skill expression, if any, that is currently in use for routing decisions")
+  @JsonProperty("skillExpressionId")
+  public String getSkillExpressionId() {
+    return skillExpressionId;
+  }
+  public void setSkillExpressionId(String skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+  }
+
+
+  /**
    * A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
    **/
   public ConversationRoutingData scoredAgents(List<ScoredAgent> scoredAgents) {
@@ -170,13 +208,15 @@ public class ConversationRoutingData  implements Serializable {
             Objects.equals(this.language, conversationRoutingData.language) &&
             Objects.equals(this.priority, conversationRoutingData.priority) &&
             Objects.equals(this.skills, conversationRoutingData.skills) &&
+            Objects.equals(this.skillExpression, conversationRoutingData.skillExpression) &&
+            Objects.equals(this.skillExpressionId, conversationRoutingData.skillExpressionId) &&
             Objects.equals(this.scoredAgents, conversationRoutingData.scoredAgents) &&
             Objects.equals(this.label, conversationRoutingData.label);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, language, priority, skills, scoredAgents, label);
+    return Objects.hash(queue, language, priority, skills, skillExpression, skillExpressionId, scoredAgents, label);
   }
 
   @Override
@@ -188,6 +228,8 @@ public class ConversationRoutingData  implements Serializable {
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
+    sb.append("    skillExpression: ").append(toIndentedString(skillExpression)).append("\n");
+    sb.append("    skillExpressionId: ").append(toIndentedString(skillExpressionId)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("}");

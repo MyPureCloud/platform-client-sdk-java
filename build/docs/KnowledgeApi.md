@@ -37,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getKnowledgeKnowledgebaseDocumentVersionVariations**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVersionVariations) | Get variations for the given document version. |
 | [**getKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVersions) | Get document versions. |
 | [**getKnowledgeKnowledgebaseDocuments**](KnowledgeApi#getKnowledgeKnowledgebaseDocuments) | Get documents. |
+| [**getKnowledgeKnowledgebaseDocumentsFeedback**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentsFeedback) | Get a list of feedback records given on documents in a knowledge base |
 | [**getKnowledgeKnowledgebaseExportJob**](KnowledgeApi#getKnowledgeKnowledgebaseExportJob) | Get export job report |
 | [**getKnowledgeKnowledgebaseImportJob**](KnowledgeApi#getKnowledgeKnowledgebaseImportJob) | Get import job report |
 | [**getKnowledgeKnowledgebaseLabel**](KnowledgeApi#getKnowledgeKnowledgebaseLabel) | Get label |
@@ -2199,6 +2200,87 @@ try {
 ### Return type
 
 [**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing)
+
+
+# **getKnowledgeKnowledgebaseDocumentsFeedback**
+
+
+> [KnowledgeDocumentFeedbackResponseListing](KnowledgeDocumentFeedbackResponseListing) getKnowledgeKnowledgebaseDocumentsFeedback(knowledgeBaseId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state)
+
+Get a list of feedback records given on documents in a knowledge base
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback  
+
+Requires ANY permissions: 
+
+* knowledge:feedback:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+Boolean onlyCommented = true; // Boolean | If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false.
+String documentVersionId = "documentVersionId_example"; // String | Document version ID to filter by. Supported only if onlyCommented=true is set.
+String documentVariationId = "documentVariationId_example"; // String | Document variation ID to filter by. Supported only if onlyCommented=true is set.
+String appType = "appType_example"; // String | Application type to filter by. Supported only if onlyCommented=true is set.
+String queryType = "queryType_example"; // String | Query type to filter by. Supported only if onlyCommented=true is set.
+String userId = "userId_example"; // String | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.
+String queueId = "queueId_example"; // String | Queue ID to filter by. Supported only if onlyCommented=true is set.
+String state = "state_example"; // String | State to filter by. Supported only if onlyCommented=true is set. Default: Final
+try {
+    KnowledgeDocumentFeedbackResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocumentsFeedback(knowledgeBaseId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseDocumentsFeedback");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID. | 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **onlyCommented** | **Boolean**| If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. | [optional] 
+| **documentVersionId** | **String**| Document version ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] 
+| **documentVariationId** | **String**| Document variation ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] 
+| **appType** | **String**| Application type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]<br />**Values**: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter 
+| **queryType** | **String**| Query type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]<br />**Values**: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle 
+| **userId** | **String**| The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] 
+| **queueId** | **String**| Queue ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] 
+| **state** | **String**| State to filter by. Supported only if onlyCommented&#x3D;true is set. Default: Final | [optional]<br />**Values**: All, Draft, Final 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing)
 
 
 # **getKnowledgeKnowledgebaseExportJob**
@@ -7439,4 +7521,4 @@ try {
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

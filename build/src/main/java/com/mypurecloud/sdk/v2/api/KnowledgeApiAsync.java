@@ -164,6 +164,7 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentVersi
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentVersionVariationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentsFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseExportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseImportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLabelRequest;
@@ -2733,6 +2734,81 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KnowledgeDocumentResponseListing> response = (ApiResponse<KnowledgeDocumentResponseListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of feedback records given on documents in a knowledge base
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeDocumentFeedbackResponseListing> getKnowledgeKnowledgebaseDocumentsFeedbackAsync(GetKnowledgeKnowledgebaseDocumentsFeedbackRequest request, final AsyncApiCallback<KnowledgeDocumentFeedbackResponseListing> callback) {
+    try {
+      final SettableFuture<KnowledgeDocumentFeedbackResponseListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeDocumentFeedbackResponseListing>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentFeedbackResponseListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentFeedbackResponseListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of feedback records given on documents in a knowledge base
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeDocumentFeedbackResponseListing>> getKnowledgeKnowledgebaseDocumentsFeedbackAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentFeedbackResponseListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeDocumentFeedbackResponseListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeDocumentFeedbackResponseListing>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentFeedbackResponseListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentFeedbackResponseListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentFeedbackResponseListing> response = (ApiResponse<KnowledgeDocumentFeedbackResponseListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentFeedbackResponseListing> response = (ApiResponse<KnowledgeDocumentFeedbackResponseListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

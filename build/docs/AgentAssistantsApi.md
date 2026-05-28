@@ -655,7 +655,7 @@ try {
 # **getAssistantsAgentchecklists**
 
 
-> [AgentChecklistListing](AgentChecklistListing) getAssistantsAgentchecklists(before, after, pageSize, namePrefix, language, sortOrder, sortBy)
+> [AgentChecklistListing](AgentChecklistListing) getAssistantsAgentchecklists(before, after, pageSize, namePrefix, language, sortOrder, sortBy, agentChecklistIds)
 
 Get the list of agent checklists
 
@@ -694,8 +694,9 @@ String namePrefix = "namePrefix_example"; // String | The agent checklist name p
 String language = "language_example"; // String | The agent checklist language filter applied to the listing.
 String sortOrder = "sortOrder_example"; // String | The sort order for the listing
 String sortBy = "sortBy_example"; // String | The field to sort by for the listing.
+List<String> agentChecklistIds = Arrays.asList(null); // List<String> | Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters.
 try {
-    AgentChecklistListing result = apiInstance.getAssistantsAgentchecklists(before, after, pageSize, namePrefix, language, sortOrder, sortBy);
+    AgentChecklistListing result = apiInstance.getAssistantsAgentchecklists(before, after, pageSize, namePrefix, language, sortOrder, sortBy, agentChecklistIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentAssistantsApi#getAssistantsAgentchecklists");
@@ -715,6 +716,7 @@ try {
 | **language** | **String**| The agent checklist language filter applied to the listing. | [optional] 
 | **sortOrder** | **String**| The sort order for the listing | [optional]<br />**Values**: asc, desc 
 | **sortBy** | **String**| The field to sort by for the listing. | [optional]<br />**Values**: dateModified, language, name 
+| **agentChecklistIds** | [**List&lt;String&gt;**](String)| Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters. | [optional] 
 {: class="table-striped"}
 
 
@@ -1463,4 +1465,4 @@ try {
 [**AgentChecklist**](AgentChecklist)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

@@ -10057,7 +10057,7 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RegisterArchitectJobResponse>> postFlowsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RegisterArchitectJobResponse>> callback) {
+  public Future<ApiResponse<RegisterArchitectJobResponse>> postFlowsJobsAsync(ApiRequest<Object> request, final AsyncApiCallback<ApiResponse<RegisterArchitectJobResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<RegisterArchitectJobResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

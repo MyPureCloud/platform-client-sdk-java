@@ -24,11 +24,11 @@ import java.io.Serializable;
 
 public class WfmVersionedEntityMetadata  implements Serializable {
   
-  private Integer version = null;
   private UserReference modifiedBy = null;
   private Date dateModified = null;
   private UserReference createdBy = null;
   private Date dateCreated = null;
+  private Integer version = null;
 
   public WfmVersionedEntityMetadata() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -41,24 +41,6 @@ public class WfmVersionedEntityMetadata  implements Serializable {
   }
 
   
-  /**
-   * The version of the associated entity.  Used to prevent conflicts on concurrent edits
-   **/
-  public WfmVersionedEntityMetadata version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The version of the associated entity.  Used to prevent conflicts on concurrent edits")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
   @ApiModelProperty(example = "null", value = "The user who last modified the associated entity. The id may be 'System' if it was an automated process")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
@@ -87,6 +69,24 @@ public class WfmVersionedEntityMetadata  implements Serializable {
   }
 
 
+  /**
+   * The version of the associated entity.  Used to prevent conflicts on concurrent edits
+   **/
+  public WfmVersionedEntityMetadata version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The version of the associated entity.  Used to prevent conflicts on concurrent edits")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -97,16 +97,16 @@ public class WfmVersionedEntityMetadata  implements Serializable {
     }
     WfmVersionedEntityMetadata wfmVersionedEntityMetadata = (WfmVersionedEntityMetadata) o;
 
-    return Objects.equals(this.version, wfmVersionedEntityMetadata.version) &&
-            Objects.equals(this.modifiedBy, wfmVersionedEntityMetadata.modifiedBy) &&
+    return Objects.equals(this.modifiedBy, wfmVersionedEntityMetadata.modifiedBy) &&
             Objects.equals(this.dateModified, wfmVersionedEntityMetadata.dateModified) &&
             Objects.equals(this.createdBy, wfmVersionedEntityMetadata.createdBy) &&
-            Objects.equals(this.dateCreated, wfmVersionedEntityMetadata.dateCreated);
+            Objects.equals(this.dateCreated, wfmVersionedEntityMetadata.dateCreated) &&
+            Objects.equals(this.version, wfmVersionedEntityMetadata.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, modifiedBy, dateModified, createdBy, dateCreated);
+    return Objects.hash(modifiedBy, dateModified, createdBy, dateCreated, version);
   }
 
   @Override
@@ -114,11 +114,11 @@ public class WfmVersionedEntityMetadata  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class WfmVersionedEntityMetadata {\n");
     
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

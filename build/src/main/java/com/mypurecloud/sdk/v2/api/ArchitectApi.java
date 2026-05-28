@@ -11464,26 +11464,30 @@ public class ArchitectApi {
   /**
    * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
    * 
+   * @param body  (optional)
    * @return RegisterArchitectJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RegisterArchitectJobResponse postFlowsJobs() throws IOException, ApiException {
-    return  postFlowsJobs(createPostFlowsJobsRequest());
+  public RegisterArchitectJobResponse postFlowsJobs(Object body) throws IOException, ApiException {
+    return  postFlowsJobs(createPostFlowsJobsRequest(body));
   }
 
   /**
    * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
    * 
+   * @param body  (optional)
    * @return RegisterArchitectJobResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobsWithHttpInfo() throws IOException {
-    return postFlowsJobs(createPostFlowsJobsRequest().withHttpInfo());
+  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobsWithHttpInfo(Object body) throws IOException {
+    return postFlowsJobs(createPostFlowsJobsRequest(body).withHttpInfo());
   }
 
-  private PostFlowsJobsRequest createPostFlowsJobsRequest() {
+  private PostFlowsJobsRequest createPostFlowsJobsRequest(Object body) {
     return PostFlowsJobsRequest.builder()
+            .withBody(body)
+
             .build();
   }
 
@@ -11513,7 +11517,7 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobs(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobs(ApiRequest<Object> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<RegisterArchitectJobResponse>() {});
     }

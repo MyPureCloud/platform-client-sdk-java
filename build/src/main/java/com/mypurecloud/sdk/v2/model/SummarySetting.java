@@ -31,6 +31,55 @@ public class SummarySetting  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Date dateModified = null;
+
+  private static class InteractionTypeEnumDeserializer extends StdDeserializer<InteractionTypeEnum> {
+    public InteractionTypeEnumDeserializer() {
+      super(InteractionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public InteractionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InteractionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The interaction type the setting can be used for
+   */
+ @JsonDeserialize(using = InteractionTypeEnumDeserializer.class)
+  public enum InteractionTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    LIVE("Live"),
+    EMAIL("Email");
+
+    private String value;
+
+    InteractionTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InteractionTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InteractionTypeEnum value : InteractionTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InteractionTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InteractionTypeEnum interactionType = null;
   private String language = null;
 
   private static class SummaryTypeEnumDeserializer extends StdDeserializer<SummaryTypeEnum> {
@@ -131,6 +180,7 @@ public class SummarySetting  implements Serializable {
   }
   private FormatEnum format = null;
   private SummarySettingPII maskPII = null;
+  private Date dateCreated = null;
   private SummarySettingParticipantLabels participantLabels = null;
 
   private static class PredefinedInsightsEnumDeserializer extends StdDeserializer<PredefinedInsightsEnum> {
@@ -281,8 +331,6 @@ public class SummarySetting  implements Serializable {
   private ServiceTypeEnum serviceType = null;
   private String integrationId = null;
   private Integer timeoutDuration = null;
-  private Date dateCreated = null;
-  private Date dateModified = null;
   private String selfUri = null;
 
   public SummarySetting() {
@@ -322,6 +370,20 @@ public class SummarySetting  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The date and time the setting was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The interaction type the setting can be used for")
+  @JsonProperty("interactionType")
+  public InteractionTypeEnum getInteractionType() {
+    return interactionType;
   }
 
 
@@ -394,6 +456,13 @@ public class SummarySetting  implements Serializable {
   }
   public void setMaskPII(SummarySettingPII maskPII) {
     this.maskPII = maskPII;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The date and time the setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
   }
 
 
@@ -541,20 +610,6 @@ public class SummarySetting  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The date and time the setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "The date and time the setting was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-
-
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -574,10 +629,13 @@ public class SummarySetting  implements Serializable {
 
     return Objects.equals(this.id, summarySetting.id) &&
             Objects.equals(this.name, summarySetting.name) &&
+            Objects.equals(this.dateModified, summarySetting.dateModified) &&
+            Objects.equals(this.interactionType, summarySetting.interactionType) &&
             Objects.equals(this.language, summarySetting.language) &&
             Objects.equals(this.summaryType, summarySetting.summaryType) &&
             Objects.equals(this.format, summarySetting.format) &&
             Objects.equals(this.maskPII, summarySetting.maskPII) &&
+            Objects.equals(this.dateCreated, summarySetting.dateCreated) &&
             Objects.equals(this.participantLabels, summarySetting.participantLabels) &&
             Objects.equals(this.predefinedInsights, summarySetting.predefinedInsights) &&
             Objects.equals(this.customEntities, summarySetting.customEntities) &&
@@ -586,14 +644,12 @@ public class SummarySetting  implements Serializable {
             Objects.equals(this.serviceType, summarySetting.serviceType) &&
             Objects.equals(this.integrationId, summarySetting.integrationId) &&
             Objects.equals(this.timeoutDuration, summarySetting.timeoutDuration) &&
-            Objects.equals(this.dateCreated, summarySetting.dateCreated) &&
-            Objects.equals(this.dateModified, summarySetting.dateModified) &&
             Objects.equals(this.selfUri, summarySetting.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, language, summaryType, format, maskPII, participantLabels, predefinedInsights, customEntities, settingType, prompt, serviceType, integrationId, timeoutDuration, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, name, dateModified, interactionType, language, summaryType, format, maskPII, dateCreated, participantLabels, predefinedInsights, customEntities, settingType, prompt, serviceType, integrationId, timeoutDuration, selfUri);
   }
 
   @Override
@@ -603,10 +659,13 @@ public class SummarySetting  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    interactionType: ").append(toIndentedString(interactionType)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    summaryType: ").append(toIndentedString(summaryType)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    maskPII: ").append(toIndentedString(maskPII)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    participantLabels: ").append(toIndentedString(participantLabels)).append("\n");
     sb.append("    predefinedInsights: ").append(toIndentedString(predefinedInsights)).append("\n");
     sb.append("    customEntities: ").append(toIndentedString(customEntities)).append("\n");
@@ -615,8 +674,6 @@ public class SummarySetting  implements Serializable {
     sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
     sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    timeoutDuration: ").append(toIndentedString(timeoutDuration)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

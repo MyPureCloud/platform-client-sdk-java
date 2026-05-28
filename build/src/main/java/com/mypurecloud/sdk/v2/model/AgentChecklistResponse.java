@@ -189,6 +189,9 @@ public class AgentChecklistResponse  implements Serializable {
   private Date evaluationLastModifiedDate = null;
   private Date evaluationFinalizedDate = null;
   private Date evaluationFinalizedWithAcwDate = null;
+  private Boolean success = null;
+  private String errorCode = null;
+  private String errorMessage = null;
   private String selfUri = null;
 
   public AgentChecklistResponse() {
@@ -512,6 +515,60 @@ public class AgentChecklistResponse  implements Serializable {
   }
 
 
+  /**
+   * Whether activation succeeded for this checklist (bulk activation). Omitted for non-bulk responses.
+   **/
+  public AgentChecklistResponse success(Boolean success) {
+    this.success = success;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether activation succeeded for this checklist (bulk activation). Omitted for non-bulk responses.")
+  @JsonProperty("success")
+  public Boolean getSuccess() {
+    return success;
+  }
+  public void setSuccess(Boolean success) {
+    this.success = success;
+  }
+
+
+  /**
+   * Error code when success is false.
+   **/
+  public AgentChecklistResponse errorCode(String errorCode) {
+    this.errorCode = errorCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Error code when success is false.")
+  @JsonProperty("errorCode")
+  public String getErrorCode() {
+    return errorCode;
+  }
+  public void setErrorCode(String errorCode) {
+    this.errorCode = errorCode;
+  }
+
+
+  /**
+   * Error message when success is false.
+   **/
+  public AgentChecklistResponse errorMessage(String errorMessage) {
+    this.errorMessage = errorMessage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Error message when success is false.")
+  @JsonProperty("errorMessage")
+  public String getErrorMessage() {
+    return errorMessage;
+  }
+  public void setErrorMessage(String errorMessage) {
+    this.errorMessage = errorMessage;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -546,12 +603,15 @@ public class AgentChecklistResponse  implements Serializable {
             Objects.equals(this.evaluationLastModifiedDate, agentChecklistResponse.evaluationLastModifiedDate) &&
             Objects.equals(this.evaluationFinalizedDate, agentChecklistResponse.evaluationFinalizedDate) &&
             Objects.equals(this.evaluationFinalizedWithAcwDate, agentChecklistResponse.evaluationFinalizedWithAcwDate) &&
+            Objects.equals(this.success, agentChecklistResponse.success) &&
+            Objects.equals(this.errorCode, agentChecklistResponse.errorCode) &&
+            Objects.equals(this.errorMessage, agentChecklistResponse.errorMessage) &&
             Objects.equals(this.selfUri, agentChecklistResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, checklistItems, activationTriggers, status, exitReason, language, agentId, participantId, queueId, assistantId, mediaType, direction, evaluationStartDate, evaluationLastModifiedDate, evaluationFinalizedDate, evaluationFinalizedWithAcwDate, selfUri);
+    return Objects.hash(id, name, checklistItems, activationTriggers, status, exitReason, language, agentId, participantId, queueId, assistantId, mediaType, direction, evaluationStartDate, evaluationLastModifiedDate, evaluationFinalizedDate, evaluationFinalizedWithAcwDate, success, errorCode, errorMessage, selfUri);
   }
 
   @Override
@@ -576,6 +636,9 @@ public class AgentChecklistResponse  implements Serializable {
     sb.append("    evaluationLastModifiedDate: ").append(toIndentedString(evaluationLastModifiedDate)).append("\n");
     sb.append("    evaluationFinalizedDate: ").append(toIndentedString(evaluationFinalizedDate)).append("\n");
     sb.append("    evaluationFinalizedWithAcwDate: ").append(toIndentedString(evaluationFinalizedWithAcwDate)).append("\n");
+    sb.append("    success: ").append(toIndentedString(success)).append("\n");
+    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

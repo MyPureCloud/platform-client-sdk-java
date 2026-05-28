@@ -22,6 +22,8 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.ActivateExternalEventRequest;
+import com.mypurecloud.sdk.v2.model.ActivateExternalEventResponse;
 import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
@@ -35,12 +37,14 @@ import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateJobAsyncResponse;
 import com.mypurecloud.sdk.v2.model.EventListing;
+import com.mypurecloud.sdk.v2.model.ExternalEventChangesResponse;
 import com.mypurecloud.sdk.v2.model.ExternalEventsConfiguration;
 import com.mypurecloud.sdk.v2.model.ExternalEventsConfigurationListing;
 import com.mypurecloud.sdk.v2.model.ExternalEventsRequest;
 import com.mypurecloud.sdk.v2.model.ExternalEventsResponse;
 import com.mypurecloud.sdk.v2.model.FlowPaths;
 import com.mypurecloud.sdk.v2.model.FlowPathsQuery;
+import com.mypurecloud.sdk.v2.model.GetExternalEventsResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
@@ -84,6 +88,8 @@ import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.UpdateExternalEventRequest;
+import com.mypurecloud.sdk.v2.model.UpdateExternalEventResponse;
 import com.mypurecloud.sdk.v2.model.UpdateExternalEventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentResponse;
@@ -147,6 +153,8 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsDataDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsExternalRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsExternalChangesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsSchedulesRequest;
@@ -182,6 +190,8 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsEncodingsValidateReque
 import com.mypurecloud.sdk.v2.api.request.PutJourneyExternaleventsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutJourneyViewSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutJourneyViewVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutJourneyViewsEventdefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutJourneyViewsEventdefinitionActivateRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1566,11 +1576,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve a single action target.
-   * 
+   * Deprecated. Retrieve a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ActionTarget> getJourneyActiontargetAsync(GetJourneyActiontargetRequest request, final AsyncApiCallback<ActionTarget> callback) {
     try {
@@ -1600,11 +1611,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve a single action target.
-   * 
+   * Deprecated. Retrieve a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ActionTarget>> getJourneyActiontargetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActionTarget>> callback) {
     try {
@@ -1641,11 +1653,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve all action targets.
-   * 
+   * Deprecated. Retrieve all action targets.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ActionTargetListing> getJourneyActiontargetsAsync(GetJourneyActiontargetsRequest request, final AsyncApiCallback<ActionTargetListing> callback) {
     try {
@@ -1675,11 +1688,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve all action targets.
-   * 
+   * Deprecated. Retrieve all action targets.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ActionTargetListing>> getJourneyActiontargetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActionTargetListing>> callback) {
     try {
@@ -4434,6 +4448,156 @@ public class JourneyApiAsync {
   }
 
   /**
+   * Get external events for journey views
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GetExternalEventsResponse> getJourneyViewsEventdefinitionsExternalAsync(GetJourneyViewsEventdefinitionsExternalRequest request, final AsyncApiCallback<GetExternalEventsResponse> callback) {
+    try {
+      final SettableFuture<GetExternalEventsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetExternalEventsResponse>() {}, new AsyncApiCallback<ApiResponse<GetExternalEventsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetExternalEventsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get external events for journey views
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GetExternalEventsResponse>> getJourneyViewsEventdefinitionsExternalAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GetExternalEventsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GetExternalEventsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GetExternalEventsResponse>() {}, new AsyncApiCallback<ApiResponse<GetExternalEventsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetExternalEventsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetExternalEventsResponse> response = (ApiResponse<GetExternalEventsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetExternalEventsResponse> response = (ApiResponse<GetExternalEventsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get changes in external event definitions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalEventChangesResponse> getJourneyViewsEventdefinitionsExternalChangesAsync(GetJourneyViewsEventdefinitionsExternalChangesRequest request, final AsyncApiCallback<ExternalEventChangesResponse> callback) {
+    try {
+      final SettableFuture<ExternalEventChangesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalEventChangesResponse>() {}, new AsyncApiCallback<ApiResponse<ExternalEventChangesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventChangesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get changes in external event definitions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalEventChangesResponse>> getJourneyViewsEventdefinitionsExternalChangesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalEventChangesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalEventChangesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalEventChangesResponse>() {}, new AsyncApiCallback<ApiResponse<ExternalEventChangesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalEventChangesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventChangesResponse> response = (ApiResponse<ExternalEventChangesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalEventChangesResponse> response = (ApiResponse<ExternalEventChangesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the jobs for an organization.
    * 
    * @param request the request object
@@ -4734,11 +4898,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Update a single action target.
-   * 
+   * Deprecated. Update a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ActionTarget> patchJourneyActiontargetAsync(PatchJourneyActiontargetRequest request, final AsyncApiCallback<ActionTarget> callback) {
     try {
@@ -4768,11 +4933,12 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Update a single action target.
-   * 
+   * Deprecated. Update a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ActionTarget>> patchJourneyActiontargetAsync(ApiRequest<PatchActionTarget> request, final AsyncApiCallback<ApiResponse<ActionTarget>> callback) {
     try {
@@ -7061,6 +7227,156 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update external event for journey views
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UpdateExternalEventResponse> putJourneyViewsEventdefinitionAsync(PutJourneyViewsEventdefinitionRequest request, final AsyncApiCallback<UpdateExternalEventResponse> callback) {
+    try {
+      final SettableFuture<UpdateExternalEventResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UpdateExternalEventResponse>() {}, new AsyncApiCallback<ApiResponse<UpdateExternalEventResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdateExternalEventResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update external event for journey views
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UpdateExternalEventResponse>> putJourneyViewsEventdefinitionAsync(ApiRequest<UpdateExternalEventRequest> request, final AsyncApiCallback<ApiResponse<UpdateExternalEventResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UpdateExternalEventResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UpdateExternalEventResponse>() {}, new AsyncApiCallback<ApiResponse<UpdateExternalEventResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdateExternalEventResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdateExternalEventResponse> response = (ApiResponse<UpdateExternalEventResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdateExternalEventResponse> response = (ApiResponse<UpdateExternalEventResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Activate external event for journey views
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivateExternalEventResponse> putJourneyViewsEventdefinitionActivateAsync(PutJourneyViewsEventdefinitionActivateRequest request, final AsyncApiCallback<ActivateExternalEventResponse> callback) {
+    try {
+      final SettableFuture<ActivateExternalEventResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivateExternalEventResponse>() {}, new AsyncApiCallback<ApiResponse<ActivateExternalEventResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivateExternalEventResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Activate external event for journey views
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivateExternalEventResponse>> putJourneyViewsEventdefinitionActivateAsync(ApiRequest<ActivateExternalEventRequest> request, final AsyncApiCallback<ApiResponse<ActivateExternalEventResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivateExternalEventResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivateExternalEventResponse>() {}, new AsyncApiCallback<ApiResponse<ActivateExternalEventResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivateExternalEventResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivateExternalEventResponse> response = (ApiResponse<ActivateExternalEventResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivateExternalEventResponse> response = (ApiResponse<ActivateExternalEventResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -918,12 +918,13 @@ public class AgentAssistantsApi {
    * @param language The agent checklist language filter applied to the listing. (optional)
    * @param sortOrder The sort order for the listing (optional)
    * @param sortBy The field to sort by for the listing. (optional)
+   * @param agentChecklistIds Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters. (optional)
    * @return AgentChecklistListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AgentChecklistListing getAssistantsAgentchecklists(String before, String after, String pageSize, String namePrefix, String language, String sortOrder, String sortBy) throws IOException, ApiException {
-    return  getAssistantsAgentchecklists(createGetAssistantsAgentchecklistsRequest(before, after, pageSize, namePrefix, language, sortOrder, sortBy));
+  public AgentChecklistListing getAssistantsAgentchecklists(String before, String after, String pageSize, String namePrefix, String language, String sortOrder, String sortBy, List<String> agentChecklistIds) throws IOException, ApiException {
+    return  getAssistantsAgentchecklists(createGetAssistantsAgentchecklistsRequest(before, after, pageSize, namePrefix, language, sortOrder, sortBy, agentChecklistIds));
   }
 
   /**
@@ -936,14 +937,15 @@ public class AgentAssistantsApi {
    * @param language The agent checklist language filter applied to the listing. (optional)
    * @param sortOrder The sort order for the listing (optional)
    * @param sortBy The field to sort by for the listing. (optional)
+   * @param agentChecklistIds Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters. (optional)
    * @return AgentChecklistListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AgentChecklistListing> getAssistantsAgentchecklistsWithHttpInfo(String before, String after, String pageSize, String namePrefix, String language, String sortOrder, String sortBy) throws IOException {
-    return getAssistantsAgentchecklists(createGetAssistantsAgentchecklistsRequest(before, after, pageSize, namePrefix, language, sortOrder, sortBy).withHttpInfo());
+  public ApiResponse<AgentChecklistListing> getAssistantsAgentchecklistsWithHttpInfo(String before, String after, String pageSize, String namePrefix, String language, String sortOrder, String sortBy, List<String> agentChecklistIds) throws IOException {
+    return getAssistantsAgentchecklists(createGetAssistantsAgentchecklistsRequest(before, after, pageSize, namePrefix, language, sortOrder, sortBy, agentChecklistIds).withHttpInfo());
   }
 
-  private GetAssistantsAgentchecklistsRequest createGetAssistantsAgentchecklistsRequest(String before, String after, String pageSize, String namePrefix, String language, String sortOrder, String sortBy) {
+  private GetAssistantsAgentchecklistsRequest createGetAssistantsAgentchecklistsRequest(String before, String after, String pageSize, String namePrefix, String language, String sortOrder, String sortBy, List<String> agentChecklistIds) {
     return GetAssistantsAgentchecklistsRequest.builder()
             .withBefore(before)
 
@@ -958,6 +960,8 @@ public class AgentAssistantsApi {
             .withSortOrder(sortOrder)
 
             .withSortBy(sortBy)
+
+            .withAgentChecklistIds(agentChecklistIds)
 
             .build();
   }

@@ -31,7 +31,6 @@ import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
-import com.mypurecloud.sdk.v2.model.CreateUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -77,6 +76,10 @@ import com.mypurecloud.sdk.v2.model.RoutingSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillExpression;
+import com.mypurecloud.sdk.v2.model.SkillExpressionData;
+import com.mypurecloud.sdk.v2.model.SkillExpressionEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillExpressionValidationResult;
 import com.mypurecloud.sdk.v2.model.SkillGroup;
 import com.mypurecloud.sdk.v2.model.SkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisionList;
@@ -111,8 +114,6 @@ import com.mypurecloud.sdk.v2.model.UtilizationLabel;
 import com.mypurecloud.sdk.v2.model.UtilizationLabelEntityListing;
 import com.mypurecloud.sdk.v2.model.UtilizationRequest;
 import com.mypurecloud.sdk.v2.model.UtilizationResponse;
-import com.mypurecloud.sdk.v2.model.UtilizationTag;
-import com.mypurecloud.sdk.v2.model.UtilizationTagEntityListing;
 import com.mypurecloud.sdk.v2.model.VerificationResult;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
@@ -135,6 +136,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillexpressionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillexpressionsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
@@ -142,7 +145,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserDirectroutingbackupSe
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationLabelRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
@@ -193,6 +195,9 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsContactcenterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillexpressionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillexpressionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillexpressionsQueueQueueIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupMembersDivisionsRequest;
@@ -210,9 +215,6 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagAgentsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesDivisionviewRequest;
@@ -261,6 +263,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillexpressionsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupMembersDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
@@ -269,7 +272,6 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersAlphanumericRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationLabelsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
@@ -1364,6 +1366,156 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Archive a skill expression to remove it from the set of active expressions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingSkillexpressionAsync(DeleteRoutingSkillexpressionRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Archive a skill expression to remove it from the set of active expressions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingSkillexpressionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Archive a set of skill expressions to remove them from the set of active expressions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingSkillexpressionsAsync(DeleteRoutingSkillexpressionsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Archive a set of skill expressions to remove them from the set of active expressions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingSkillexpressionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Remove skill group definition
    * 
    * @param request the request object
@@ -1855,83 +2007,6 @@ public class RoutingApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteRoutingUtilizationLabelAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete an utilization tag
-   * 
-   * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Void> deleteRoutingUtilizationTagAsync(DeleteRoutingUtilizationTagRequest request, final AsyncApiCallback<Void> callback) {
-    try {
-      final SettableFuture<Void> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete an utilization tag
-   * 
-   * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Void>> deleteRoutingUtilizationTagAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -5722,6 +5797,231 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Get a skill expression by ID
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillExpression> getRoutingSkillexpressionAsync(GetRoutingSkillexpressionRequest request, final AsyncApiCallback<SkillExpression> callback) {
+    try {
+      final SettableFuture<SkillExpression> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillExpression>() {}, new AsyncApiCallback<ApiResponse<SkillExpression>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillExpression> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a skill expression by ID
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillExpression>> getRoutingSkillexpressionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SkillExpression>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillExpression>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillExpression>() {}, new AsyncApiCallback<ApiResponse<SkillExpression>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillExpression> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillExpression> response = (ApiResponse<SkillExpression>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillExpression> response = (ApiResponse<SkillExpression>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill expressions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillExpressionEntityListing> getRoutingSkillexpressionsAsync(GetRoutingSkillexpressionsRequest request, final AsyncApiCallback<SkillExpressionEntityListing> callback) {
+    try {
+      final SettableFuture<SkillExpressionEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillExpressionEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillExpressionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillExpressionEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill expressions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillExpressionEntityListing>> getRoutingSkillexpressionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SkillExpressionEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillExpressionEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillExpressionEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillExpressionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillExpressionEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillExpressionEntityListing> response = (ApiResponse<SkillExpressionEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillExpressionEntityListing> response = (ApiResponse<SkillExpressionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill expressions associated with a queue
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillExpressionEntityListing> getRoutingSkillexpressionsQueueQueueIdAsync(GetRoutingSkillexpressionsQueueQueueIdRequest request, final AsyncApiCallback<SkillExpressionEntityListing> callback) {
+    try {
+      final SettableFuture<SkillExpressionEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillExpressionEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillExpressionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillExpressionEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill expressions associated with a queue
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillExpressionEntityListing>> getRoutingSkillexpressionsQueueQueueIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SkillExpressionEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillExpressionEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillExpressionEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillExpressionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillExpressionEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillExpressionEntityListing> response = (ApiResponse<SkillExpressionEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillExpressionEntityListing> response = (ApiResponse<SkillExpressionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get skill group
    * 
    * @param request the request object
@@ -6985,237 +7285,6 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UtilizationLabelEntityListing> response = (ApiResponse<UtilizationLabelEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get details about this utilization tag
-   * 
-   * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<UtilizationTag> getRoutingUtilizationTagAsync(GetRoutingUtilizationTagRequest request, final AsyncApiCallback<UtilizationTag> callback) {
-    try {
-      final SettableFuture<UtilizationTag> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UtilizationTag>() {}, new AsyncApiCallback<ApiResponse<UtilizationTag>>() {
-        @Override
-        public void onCompleted(ApiResponse<UtilizationTag> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get details about this utilization tag
-   * 
-   * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<UtilizationTag>> getRoutingUtilizationTagAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UtilizationTag>> callback) {
-    try {
-      final SettableFuture<ApiResponse<UtilizationTag>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UtilizationTag>() {}, new AsyncApiCallback<ApiResponse<UtilizationTag>>() {
-        @Override
-        public void onCompleted(ApiResponse<UtilizationTag> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get list of agent ids associated with a utilization tag
-   * 
-   * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<List<Object>> getRoutingUtilizationTagAgentsAsync(GetRoutingUtilizationTagAgentsRequest request, final AsyncApiCallback<List<Object>> callback) {
-    try {
-      final SettableFuture<List<Object>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Object>>() {}, new AsyncApiCallback<ApiResponse<List<Object>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<Object>> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get list of agent ids associated with a utilization tag
-   * 
-   * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<List<Object>>> getRoutingUtilizationTagAgentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Object>>> callback) {
-    try {
-      final SettableFuture<ApiResponse<List<Object>>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<Object>>() {}, new AsyncApiCallback<ApiResponse<List<Object>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<Object>> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get list of utilization tags
-   * 
-   * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<UtilizationTagEntityListing> getRoutingUtilizationTagsAsync(GetRoutingUtilizationTagsRequest request, final AsyncApiCallback<UtilizationTagEntityListing> callback) {
-    try {
-      final SettableFuture<UtilizationTagEntityListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UtilizationTagEntityListing>() {}, new AsyncApiCallback<ApiResponse<UtilizationTagEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<UtilizationTagEntityListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get list of utilization tags
-   * 
-   * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<UtilizationTagEntityListing>> getRoutingUtilizationTagsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UtilizationTagEntityListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<UtilizationTagEntityListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UtilizationTagEntityListing>() {}, new AsyncApiCallback<ApiResponse<UtilizationTagEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<UtilizationTagEntityListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UtilizationTagEntityListing> response = (ApiResponse<UtilizationTagEntityListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UtilizationTagEntityListing> response = (ApiResponse<UtilizationTagEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10838,6 +10907,81 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Validate and normalize a skill expression
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillExpressionValidationResult> postRoutingSkillexpressionsValidateAsync(PostRoutingSkillexpressionsValidateRequest request, final AsyncApiCallback<SkillExpressionValidationResult> callback) {
+    try {
+      final SettableFuture<SkillExpressionValidationResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillExpressionValidationResult>() {}, new AsyncApiCallback<ApiResponse<SkillExpressionValidationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillExpressionValidationResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate and normalize a skill expression
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillExpressionValidationResult>> postRoutingSkillexpressionsValidateAsync(ApiRequest<SkillExpressionData> request, final AsyncApiCallback<ApiResponse<SkillExpressionValidationResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillExpressionValidationResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillExpressionValidationResult>() {}, new AsyncApiCallback<ApiResponse<SkillExpressionValidationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillExpressionValidationResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillExpressionValidationResult> response = (ApiResponse<SkillExpressionValidationResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillExpressionValidationResult> response = (ApiResponse<SkillExpressionValidationResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Add or remove member divisions for this skill group.
    * 
    * @param request the request object
@@ -11428,83 +11572,6 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Create an utilization tag
-   * 
-   * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<UtilizationTag> postRoutingUtilizationTagsAsync(PostRoutingUtilizationTagsRequest request, final AsyncApiCallback<UtilizationTag> callback) {
-    try {
-      final SettableFuture<UtilizationTag> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UtilizationTag>() {}, new AsyncApiCallback<ApiResponse<UtilizationTag>>() {
-        @Override
-        public void onCompleted(ApiResponse<UtilizationTag> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Create an utilization tag
-   * 
-   * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<UtilizationTag>> postRoutingUtilizationTagsAsync(ApiRequest<CreateUtilizationTagRequest> request, final AsyncApiCallback<ApiResponse<UtilizationTag>> callback) {
-    try {
-      final SettableFuture<ApiResponse<UtilizationTag>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UtilizationTag>() {}, new AsyncApiCallback<ApiResponse<UtilizationTag>>() {
-        @Override
-        public void onCompleted(ApiResponse<UtilizationTag> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

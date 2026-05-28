@@ -19,6 +19,7 @@
 | NCALLBACKATTEMPTS | &quot;nCallbackAttempts&quot; | 
 | NCALLBACKOVERSLA | &quot;nCallbackOverSla&quot; | 
 | NCALLBACKSCHEDULED | &quot;nCallbackScheduled&quot; | 
+| NCFCOFFERED | &quot;nCfcOffered&quot; | 
 | NCOBROWSESESSIONS | &quot;nCobrowseSessions&quot; | 
 | NCONNECTED | &quot;nConnected&quot; | 
 | NCONSULT | &quot;nConsult&quot; | 
@@ -58,6 +59,10 @@
 | TCALLBACKABANDON | &quot;tCallbackAbandon&quot; | 
 | TCALLBACKCONNECT | &quot;tCallbackConnect&quot; | 
 | TCALLBACKNOTREACHED | &quot;tCallbackNotReached&quot; | 
+| TCFCABANDON | &quot;tCfcAbandon&quot; | 
+| TCFCACD | &quot;tCfcAcd&quot; | 
+| TCFCANSWERED | &quot;tCfcAnswered&quot; | 
+| TCFCFLOWOUT | &quot;tCfcFlowOut&quot; | 
 | TCOACHING | &quot;tCoaching&quot; | 
 | TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; | 
 | TCONNECTED | &quot;tConnected&quot; | 
@@ -100,4 +105,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **name** | **String** |  |  [optional] |
 | **constrainWeeklyPaidTime** | **Boolean** | Whether the weekly paid time constraint is enabled for this work plan |  |
 | **flexibleWeeklyPaidTime** | **Boolean** | Whether the weekly paid time constraint is flexible for this work plan |  |
@@ -19,4 +19,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

@@ -161,6 +161,7 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentVersi
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentVersionVariationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentsFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseExportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseImportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLabelRequest;
@@ -3168,6 +3169,128 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeDocumentResponseListing> response = (ApiResponse<KnowledgeDocumentResponseListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of feedback records given on documents in a knowledge base
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param onlyCommented If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. (optional)
+   * @param documentVersionId Document version ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param documentVariationId Document variation ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param appType Application type to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param queryType Query type to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param userId The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param queueId Queue ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param state State to filter by. Supported only if onlyCommented=true is set. Default: Final (optional)
+   * @return KnowledgeDocumentFeedbackResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponseListing getKnowledgeKnowledgebaseDocumentsFeedback(String knowledgeBaseId, String before, String after, String pageSize, Boolean onlyCommented, String documentVersionId, String documentVariationId, String appType, String queryType, String userId, String queueId, String state) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseDocumentsFeedback(createGetKnowledgeKnowledgebaseDocumentsFeedbackRequest(knowledgeBaseId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state));
+  }
+
+  /**
+   * Get a list of feedback records given on documents in a knowledge base
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param onlyCommented If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. (optional)
+   * @param documentVersionId Document version ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param documentVariationId Document variation ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param appType Application type to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param queryType Query type to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param userId The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param queueId Queue ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param state State to filter by. Supported only if onlyCommented=true is set. Default: Final (optional)
+   * @return KnowledgeDocumentFeedbackResponseListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponseListing> getKnowledgeKnowledgebaseDocumentsFeedbackWithHttpInfo(String knowledgeBaseId, String before, String after, String pageSize, Boolean onlyCommented, String documentVersionId, String documentVariationId, String appType, String queryType, String userId, String queueId, String state) throws IOException {
+    return getKnowledgeKnowledgebaseDocumentsFeedback(createGetKnowledgeKnowledgebaseDocumentsFeedbackRequest(knowledgeBaseId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseDocumentsFeedbackRequest createGetKnowledgeKnowledgebaseDocumentsFeedbackRequest(String knowledgeBaseId, String before, String after, String pageSize, Boolean onlyCommented, String documentVersionId, String documentVariationId, String appType, String queryType, String userId, String queueId, String state) {
+    return GetKnowledgeKnowledgebaseDocumentsFeedbackRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withOnlyCommented(onlyCommented)
+
+            .withDocumentVersionId(documentVersionId)
+
+            .withDocumentVariationId(documentVariationId)
+
+            .withAppType(appType)
+
+            .withQueryType(queryType)
+
+            .withUserId(userId)
+
+            .withQueueId(queueId)
+
+            .withState(state)
+
+            .build();
+  }
+
+  /**
+   * Get a list of feedback records given on documents in a knowledge base
+   * 
+   * @param request The request object
+   * @return KnowledgeDocumentFeedbackResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponseListing getKnowledgeKnowledgebaseDocumentsFeedback(GetKnowledgeKnowledgebaseDocumentsFeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeDocumentFeedbackResponseListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeDocumentFeedbackResponseListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of feedback records given on documents in a knowledge base
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponseListing> getKnowledgeKnowledgebaseDocumentsFeedback(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentFeedbackResponseListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponseListing> response = (ApiResponse<KnowledgeDocumentFeedbackResponseListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponseListing> response = (ApiResponse<KnowledgeDocumentFeedbackResponseListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

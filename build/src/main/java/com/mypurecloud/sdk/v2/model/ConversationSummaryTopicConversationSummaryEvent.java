@@ -156,6 +156,104 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
   private List<ConversationSummaryTopicSummaryExtractedCustomEntity> extractedEntities = null;
   private List<ConversationSummaryTopicConversationWrapUpCode> wrapUpCodes = null;
   private ConversationSummaryTopicTriggerSource triggerSource = null;
+
+  private static class SummarySourceTypeEnumDeserializer extends StdDeserializer<SummarySourceTypeEnum> {
+    public SummarySourceTypeEnumDeserializer() {
+      super(SummarySourceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SummarySourceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SummarySourceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets summarySourceType
+   */
+ @JsonDeserialize(using = SummarySourceTypeEnumDeserializer.class)
+  public enum SummarySourceTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
+    GENESYS_NATIVE_SERVICE("GENESYS_NATIVE_SERVICE"),
+    EXTERNAL_SERVICE("EXTERNAL_SERVICE");
+
+    private String value;
+
+    SummarySourceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SummarySourceTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SummarySourceTypeEnum value : SummarySourceTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SummarySourceTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SummarySourceTypeEnum summarySourceType = null;
+
+  private static class TriggerTypeEnumDeserializer extends StdDeserializer<TriggerTypeEnum> {
+    public TriggerTypeEnumDeserializer() {
+      super(TriggerTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TriggerTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TriggerTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets triggerType
+   */
+ @JsonDeserialize(using = TriggerTypeEnumDeserializer.class)
+  public enum TriggerTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
+    ON_DEMAND("ON_DEMAND"),
+    AFTER_DISCONNECT("AFTER_DISCONNECT");
+
+    private String value;
+
+    TriggerTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TriggerTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TriggerTypeEnum value : TriggerTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TriggerTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TriggerTypeEnum triggerType = null;
   private ConversationSummaryTopicConversationSummaryParticipant lastEditedBy = null;
 
   private static class ErrorTypeEnumDeserializer extends StdDeserializer<ErrorTypeEnum> {
@@ -521,6 +619,40 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
 
   /**
    **/
+  public ConversationSummaryTopicConversationSummaryEvent summarySourceType(SummarySourceTypeEnum summarySourceType) {
+    this.summarySourceType = summarySourceType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("summarySourceType")
+  public SummarySourceTypeEnum getSummarySourceType() {
+    return summarySourceType;
+  }
+  public void setSummarySourceType(SummarySourceTypeEnum summarySourceType) {
+    this.summarySourceType = summarySourceType;
+  }
+
+
+  /**
+   **/
+  public ConversationSummaryTopicConversationSummaryEvent triggerType(TriggerTypeEnum triggerType) {
+    this.triggerType = triggerType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("triggerType")
+  public TriggerTypeEnum getTriggerType() {
+    return triggerType;
+  }
+  public void setTriggerType(TriggerTypeEnum triggerType) {
+    this.triggerType = triggerType;
+  }
+
+
+  /**
+   **/
   public ConversationSummaryTopicConversationSummaryEvent lastEditedBy(ConversationSummaryTopicConversationSummaryParticipant lastEditedBy) {
     this.lastEditedBy = lastEditedBy;
     return this;
@@ -597,6 +729,8 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
             Objects.equals(this.extractedEntities, conversationSummaryTopicConversationSummaryEvent.extractedEntities) &&
             Objects.equals(this.wrapUpCodes, conversationSummaryTopicConversationSummaryEvent.wrapUpCodes) &&
             Objects.equals(this.triggerSource, conversationSummaryTopicConversationSummaryEvent.triggerSource) &&
+            Objects.equals(this.summarySourceType, conversationSummaryTopicConversationSummaryEvent.summarySourceType) &&
+            Objects.equals(this.triggerType, conversationSummaryTopicConversationSummaryEvent.triggerType) &&
             Objects.equals(this.lastEditedBy, conversationSummaryTopicConversationSummaryEvent.lastEditedBy) &&
             Objects.equals(this.errorType, conversationSummaryTopicConversationSummaryEvent.errorType) &&
             Objects.equals(this.durationMs, conversationSummaryTopicConversationSummaryEvent.durationMs);
@@ -604,7 +738,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
+    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, summarySourceType, triggerType, lastEditedBy, errorType, durationMs);
   }
 
   @Override
@@ -629,6 +763,8 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
     sb.append("    extractedEntities: ").append(toIndentedString(extractedEntities)).append("\n");
     sb.append("    wrapUpCodes: ").append(toIndentedString(wrapUpCodes)).append("\n");
     sb.append("    triggerSource: ").append(toIndentedString(triggerSource)).append("\n");
+    sb.append("    summarySourceType: ").append(toIndentedString(summarySourceType)).append("\n");
+    sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");
     sb.append("    lastEditedBy: ").append(toIndentedString(lastEditedBy)).append("\n");
     sb.append("    errorType: ").append(toIndentedString(errorType)).append("\n");
     sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");

@@ -22,6 +22,9 @@
 | **evaluationLastModifiedDate** | [**Date**](Date) | Date when the checklist was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **evaluationFinalizedDate** | [**Date**](Date) | Date when the checklist was finalized. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **evaluationFinalizedWithAcwDate** | [**Date**](Date) | Date when the checklist was finalized with ACW. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **success** | **Boolean** | Whether activation succeeded for this checklist (bulk activation). Omitted for non-bulk responses. |  [optional] |
+| **errorCode** | **String** | Error code when success is false. |  [optional] |
+| **errorMessage** | **String** | Error message when success is false. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -57,4 +60,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

@@ -43,17 +43,31 @@ import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 public class GetConversationsSummariesSettingsRequest {
 
-	private String language;
-	public String getLanguage() {
-		return this.language;
+	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
-	public GetConversationsSummariesSettingsRequest withLanguage(String language) {
-	    this.setLanguage(language);
+	public GetConversationsSummariesSettingsRequest withPageNumber(Integer pageNumber) {
+	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetConversationsSummariesSettingsRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
 	    return this;
 	} 
 
@@ -68,6 +82,64 @@ public class GetConversationsSummariesSettingsRequest {
 
 	public GetConversationsSummariesSettingsRequest withName(String name) {
 	    this.setName(name);
+	    return this;
+	} 
+
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetConversationsSummariesSettingsRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
+	public enum sortOrderValues { 
+		ASC("asc"),
+		DESC("desc");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
+	private String language;
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public GetConversationsSummariesSettingsRequest withLanguage(String language) {
+	    this.setLanguage(language);
 	    return this;
 	} 
 
@@ -115,78 +187,6 @@ public class GetConversationsSummariesSettingsRequest {
 		}
 	}
 
-	private String sortOrder;
-	public String getSortOrder() {
-		return this.sortOrder;
-	}
-
-	public void setSortOrder(String sortOrder) {
-		this.sortOrder = sortOrder;
-	}
-
-	public GetConversationsSummariesSettingsRequest withSortOrder(String sortOrder) {
-	    this.setSortOrder(sortOrder);
-	    return this;
-	} 
-
-	public enum sortOrderValues { 
-		ASC("asc"),
-		DESC("desc");
-
-		private String value;
-
-		sortOrderValues(String value) {
-		  this.value = value;
-		}
-
-		@JsonCreator
-		public static sortOrderValues fromString(String key) {
-			if (key == null) return null;
-
-			for (sortOrderValues value : sortOrderValues.values()) {
-				if (key.equalsIgnoreCase(value.toString())) {
-					return value;
-				}
-			}
-
-			return sortOrderValues.values()[0];
-		}
-
-		@Override
-		@JsonValue
-		public String toString() {
-			return String.valueOf(value);
-		}
-	}
-
-	private Integer pageNumber;
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public GetConversationsSummariesSettingsRequest withPageNumber(Integer pageNumber) {
-	    this.setPageNumber(pageNumber);
-	    return this;
-	} 
-
-	private Integer pageSize;
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public GetConversationsSummariesSettingsRequest withPageSize(Integer pageSize) {
-	    this.setPageSize(pageSize);
-	    return this;
-	} 
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -211,22 +211,22 @@ public class GetConversationsSummariesSettingsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/conversations/summaries/settings")
 
-                .withQueryParameters("language", "", language)
+                .withQueryParameters("pageNumber", "", pageNumber)
+        
+
+                .withQueryParameters("pageSize", "", pageSize)
         
 
                 .withQueryParameters("name", "", name)
         
 
-                .withQueryParameters("sortBy", "", sortBy)
-        
-
                 .withQueryParameters("sortOrder", "", sortOrder)
         
 
-                .withQueryParameters("pageNumber", "", pageNumber)
+                .withQueryParameters("language", "", language)
         
 
-                .withQueryParameters("pageSize", "", pageSize)
+                .withQueryParameters("sortBy", "", sortBy)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -249,28 +249,19 @@ public class GetConversationsSummariesSettingsRequest {
 		}
 
 
-		public Builder withLanguage(String language) {
-			request.setLanguage(language);
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
+			return this;
+		}
+
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
 			return this;
 		}
 
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
-		}
-
-		public Builder withSortBy(String sortBy) {
-			request.setSortBy(sortBy);
-			return this;
-		}
-
-
-
-		
-		public Builder withSortBy(sortByValues sortBy) {
-		    request.setSortBy(sortBy.toString());
-
-		    return this;
 		}
 
 		public Builder withSortOrder(String sortOrder) {
@@ -287,14 +278,23 @@ public class GetConversationsSummariesSettingsRequest {
 		    return this;
 		}
 
-		public Builder withPageNumber(Integer pageNumber) {
-			request.setPageNumber(pageNumber);
+		public Builder withLanguage(String language) {
+			request.setLanguage(language);
 			return this;
 		}
 
-		public Builder withPageSize(Integer pageSize) {
-			request.setPageSize(pageSize);
+		public Builder withSortBy(String sortBy) {
+			request.setSortBy(sortBy);
 			return this;
+		}
+
+
+
+		
+		public Builder withSortBy(sortByValues sortBy) {
+		    request.setSortBy(sortBy.toString());
+
+		    return this;
 		}
 
 

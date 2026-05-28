@@ -75,6 +75,7 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
   }
   private StateEnum state = null;
   private String errorCode = null;
+  private Boolean retrainInProgress = null;
 
   public ContinuousForecastGetSessionResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -159,6 +160,24 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
   }
 
 
+  /**
+   * True if a model retrain is currently running for the organization, false if not
+   **/
+  public ContinuousForecastGetSessionResponse retrainInProgress(Boolean retrainInProgress) {
+    this.retrainInProgress = retrainInProgress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if a model retrain is currently running for the organization, false if not")
+  @JsonProperty("retrainInProgress")
+  public Boolean getRetrainInProgress() {
+    return retrainInProgress;
+  }
+  public void setRetrainInProgress(Boolean retrainInProgress) {
+    this.retrainInProgress = retrainInProgress;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -172,12 +191,13 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
     return Objects.equals(this.sessionId, continuousForecastGetSessionResponse.sessionId) &&
             Objects.equals(this.lastSuccessfulSessionId, continuousForecastGetSessionResponse.lastSuccessfulSessionId) &&
             Objects.equals(this.state, continuousForecastGetSessionResponse.state) &&
-            Objects.equals(this.errorCode, continuousForecastGetSessionResponse.errorCode);
+            Objects.equals(this.errorCode, continuousForecastGetSessionResponse.errorCode) &&
+            Objects.equals(this.retrainInProgress, continuousForecastGetSessionResponse.retrainInProgress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sessionId, lastSuccessfulSessionId, state, errorCode);
+    return Objects.hash(sessionId, lastSuccessfulSessionId, state, errorCode, retrainInProgress);
   }
 
   @Override
@@ -189,6 +209,7 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
     sb.append("    lastSuccessfulSessionId: ").append(toIndentedString(lastSuccessfulSessionId)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    sb.append("    retrainInProgress: ").append(toIndentedString(retrainInProgress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

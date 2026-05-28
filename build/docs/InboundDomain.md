@@ -14,6 +14,7 @@
 | **imapSettings** | [**ImapSettings**](ImapSettings) | The IMAP server integration and settings to use for processing inbound emails. |  [optional] |
 | **graphApiSettings** | [**GraphApiSettings**](GraphApiSettings) | The GraphAPI server integration and settings to use for processing inbound and outbound emails. |  [optional] |
 | **emailSetting** | [**EmailSetting**](EmailSetting) | The email settings associated with this domain. |  [optional] |
+| **dmarcVerificationResult** | [**DmarcResult**](DmarcResult) | The DMARC verification status for this domain. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -29,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

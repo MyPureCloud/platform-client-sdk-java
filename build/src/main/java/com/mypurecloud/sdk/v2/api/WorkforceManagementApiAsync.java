@@ -30,6 +30,10 @@ import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
 import com.mypurecloud.sdk.v2.model.AdminAgentWorkPlanPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AdminBulkUpdateAlternativeShiftTradeStateRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AgentBulkAddOpportunityEnrollmentsRequest;
+import com.mypurecloud.sdk.v2.model.AgentBulkAddOpportunityEnrollmentsResponse;
+import com.mypurecloud.sdk.v2.model.AgentBulkStatusUpdateOpportunityEnrollmentsRequest;
+import com.mypurecloud.sdk.v2.model.AgentBulkStatusUpdateOpportunityEnrollmentsResponse;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
@@ -39,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsRequest;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
+import com.mypurecloud.sdk.v2.model.AgentQueryOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentUpdateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBiddingPreferenceResponse;
@@ -97,7 +102,17 @@ import com.mypurecloud.sdk.v2.model.BuTimeOffPlanListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
 import com.mypurecloud.sdk.v2.model.BuUpdateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.BuUserListing;
+import com.mypurecloud.sdk.v2.model.BulkAddOpportunitiesRequest;
+import com.mypurecloud.sdk.v2.model.BulkAddOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesExternalActivitiesRequest;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesRequest;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesStatusUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesStatusUpdateResponse;
+import com.mypurecloud.sdk.v2.model.BulkOpportunityEnrollmentsStatusUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkPublishOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.BulkRemoveOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateOpportunityEnrollmentsStatusResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
@@ -174,7 +189,10 @@ import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
+import com.mypurecloud.sdk.v2.model.OpportunityResult;
+import com.mypurecloud.sdk.v2.model.OpportunityResultWithAgentIds;
 import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
+import com.mypurecloud.sdk.v2.model.PatchOpportunityRequest;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationResponse;
 import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationUploadResponse;
@@ -193,6 +211,11 @@ import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
+import com.mypurecloud.sdk.v2.model.QueryExternalActivityOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.QueryOpportunitiesRequest;
+import com.mypurecloud.sdk.v2.model.QueryOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.QueryOpportunityEnrollmentsRequest;
+import com.mypurecloud.sdk.v2.model.QueryOpportunityEnrollmentsResponse;
 import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
 import com.mypurecloud.sdk.v2.model.QueryShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
@@ -289,7 +312,6 @@ import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForAgent;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForTeams;
-import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageResponse;
@@ -368,6 +390,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMain
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitOpportunityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulerSettingsRequest;
@@ -470,6 +493,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAc
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCapacityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitOpportunityRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
@@ -497,7 +521,6 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUsersWorkplanb
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementWorkplanbidPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsQueryRequest;
-import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
@@ -506,6 +529,9 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsOpportunitiesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesManagementunitsMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersJobsRequest;
@@ -525,6 +551,14 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest;
@@ -4834,6 +4868,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get opportunity details
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpportunityResultWithAgentIds> getWorkforcemanagementBusinessunitOpportunityAsync(GetWorkforcemanagementBusinessunitOpportunityRequest request, final AsyncApiCallback<OpportunityResultWithAgentIds> callback) {
+    try {
+      final SettableFuture<OpportunityResultWithAgentIds> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpportunityResultWithAgentIds>() {}, new AsyncApiCallback<ApiResponse<OpportunityResultWithAgentIds>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpportunityResultWithAgentIds> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get opportunity details
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpportunityResultWithAgentIds>> getWorkforcemanagementBusinessunitOpportunityAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OpportunityResultWithAgentIds>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpportunityResultWithAgentIds>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpportunityResultWithAgentIds>() {}, new AsyncApiCallback<ApiResponse<OpportunityResultWithAgentIds>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpportunityResultWithAgentIds> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpportunityResultWithAgentIds> response = (ApiResponse<OpportunityResultWithAgentIds>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpportunityResultWithAgentIds> response = (ApiResponse<OpportunityResultWithAgentIds>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a planning group
    * 
    * @param request the request object
@@ -8812,10 +8921,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets all the shift trades for a given agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ShiftTradeListResponse> getWorkforcemanagementManagementunitAgentShifttradesAsync(GetWorkforcemanagementManagementunitAgentShifttradesRequest request, final AsyncApiCallback<ShiftTradeListResponse> callback) {
     try {
@@ -8846,10 +8956,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets all the shift trades for a given agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ShiftTradeListResponse>> getWorkforcemanagementManagementunitAgentShifttradesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeListResponse>> callback) {
     try {
@@ -8887,10 +8998,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets a summary of all shift trades in the matched state
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ShiftTradeMatchesSummaryResponse> getWorkforcemanagementManagementunitShifttradesMatchedAsync(GetWorkforcemanagementManagementunitShifttradesMatchedRequest request, final AsyncApiCallback<ShiftTradeMatchesSummaryResponse> callback) {
     try {
@@ -8921,10 +9033,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets a summary of all shift trades in the matched state
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ShiftTradeMatchesSummaryResponse>> getWorkforcemanagementManagementunitShifttradesMatchedAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeMatchesSummaryResponse>> callback) {
     try {
@@ -9791,10 +9904,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets all the shift trades for a given week
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttradesAsync(GetWorkforcemanagementManagementunitWeekShifttradesRequest request, final AsyncApiCallback<WeekShiftTradeListResponse> callback) {
     try {
@@ -9825,10 +9939,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets all the shift trades for a given week
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WeekShiftTradeListResponse>> getWorkforcemanagementManagementunitWeekShifttradesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WeekShiftTradeListResponse>> callback) {
     try {
@@ -10466,10 +10581,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets all of my shift trades
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ShiftTradeListResponse> getWorkforcemanagementShifttradesAsync(GetWorkforcemanagementShifttradesRequest request, final AsyncApiCallback<ShiftTradeListResponse> callback) {
     try {
@@ -10500,10 +10616,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets all of my shift trades
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ShiftTradeListResponse>> getWorkforcemanagementShifttradesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShiftTradeListResponse>> callback) {
     try {
@@ -12490,8 +12607,83 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Update the opportunity
+   * Only opportunities with Draft status can be updated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpportunityResult> patchWorkforcemanagementBusinessunitOpportunityAsync(PatchWorkforcemanagementBusinessunitOpportunityRequest request, final AsyncApiCallback<OpportunityResult> callback) {
+    try {
+      final SettableFuture<OpportunityResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpportunityResult>() {}, new AsyncApiCallback<ApiResponse<OpportunityResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpportunityResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the opportunity
+   * Only opportunities with Draft status can be updated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpportunityResult>> patchWorkforcemanagementBusinessunitOpportunityAsync(ApiRequest<PatchOpportunityRequest> request, final AsyncApiCallback<ApiResponse<OpportunityResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpportunityResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpportunityResult>() {}, new AsyncApiCallback<ApiResponse<OpportunityResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpportunityResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpportunityResult> response = (ApiResponse<OpportunityResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpportunityResult> response = (ApiResponse<OpportunityResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Updates the planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12525,7 +12717,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Updates the planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -13766,10 +13958,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Updates a shift trade. This route can only be called by the initiating agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ShiftTradeResponse> patchWorkforcemanagementManagementunitWeekShifttradeAsync(PatchWorkforcemanagementManagementunitWeekShifttradeRequest request, final AsyncApiCallback<ShiftTradeResponse> callback) {
     try {
@@ -13800,10 +13993,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Updates a shift trade. This route can only be called by the initiating agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ShiftTradeResponse>> patchWorkforcemanagementManagementunitWeekShifttradeAsync(ApiRequest<PatchShiftTradeRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeResponse>> callback) {
     try {
@@ -14515,83 +14709,6 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<WfmHistoricalAdherenceResponse> postWorkforcemanagementAdherenceHistoricalAsync(PostWorkforcemanagementAdherenceHistoricalRequest request, final AsyncApiCallback<WfmHistoricalAdherenceResponse> callback) {
-    try {
-      final SettableFuture<WfmHistoricalAdherenceResponse> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WfmHistoricalAdherenceResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalAdherenceResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<WfmHistoricalAdherenceResponse> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<WfmHistoricalAdherenceResponse>> postWorkforcemanagementAdherenceHistoricalAsync(ApiRequest<WfmHistoricalAdherenceQueryForUsers> request, final AsyncApiCallback<ApiResponse<WfmHistoricalAdherenceResponse>> callback) {
-    try {
-      final SettableFuture<ApiResponse<WfmHistoricalAdherenceResponse>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<WfmHistoricalAdherenceResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalAdherenceResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<WfmHistoricalAdherenceResponse> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Request a historical adherence report in bulk
    * 
    * @param request the request object
@@ -15180,6 +15297,231 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AgentPossibleWorkShiftsResponse> response = (ApiResponse<AgentPossibleWorkShiftsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add enrollments to opportunities for the authenticated agent
+   * Allows an agent to enroll in opportunities. This endpoint can return partial success.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentBulkAddOpportunityEnrollmentsResponse> postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddAsync(PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddRequest request, final AsyncApiCallback<AgentBulkAddOpportunityEnrollmentsResponse> callback) {
+    try {
+      final SettableFuture<AgentBulkAddOpportunityEnrollmentsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentBulkAddOpportunityEnrollmentsResponse>() {}, new AsyncApiCallback<ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add enrollments to opportunities for the authenticated agent
+   * Allows an agent to enroll in opportunities. This endpoint can return partial success.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse>> postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddAsync(ApiRequest<AgentBulkAddOpportunityEnrollmentsRequest> request, final AsyncApiCallback<ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentBulkAddOpportunityEnrollmentsResponse>() {}, new AsyncApiCallback<ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse> response = (ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse> response = (ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update enrollment status for the authenticated agent
+   * Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateAsync(PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest request, final AsyncApiCallback<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> callback) {
+    try {
+      final SettableFuture<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>() {}, new AsyncApiCallback<ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update enrollment status for the authenticated agent
+   * Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>> postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateAsync(ApiRequest<AgentBulkStatusUpdateOpportunityEnrollmentsRequest> request, final AsyncApiCallback<ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>() {}, new AsyncApiCallback<ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> response = (ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> response = (ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query opportunities for the authenticated agent
+   * Queries within the specified date range. Each opportunity includes the agent's enrollment details if they have enrolled.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentQueryOpportunitiesResponse> postWorkforcemanagementAgentsOpportunitiesQueryAsync(PostWorkforcemanagementAgentsOpportunitiesQueryRequest request, final AsyncApiCallback<AgentQueryOpportunitiesResponse> callback) {
+    try {
+      final SettableFuture<AgentQueryOpportunitiesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentQueryOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<AgentQueryOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentQueryOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query opportunities for the authenticated agent
+   * Queries within the specified date range. Each opportunity includes the agent's enrollment details if they have enrolled.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentQueryOpportunitiesResponse>> postWorkforcemanagementAgentsOpportunitiesQueryAsync(ApiRequest<QueryOpportunitiesRequest> request, final AsyncApiCallback<ApiResponse<AgentQueryOpportunitiesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentQueryOpportunitiesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentQueryOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<AgentQueryOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentQueryOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentQueryOpportunitiesResponse> response = (ApiResponse<AgentQueryOpportunitiesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentQueryOpportunitiesResponse> response = (ApiResponse<AgentQueryOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -16617,8 +16959,608 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Adds a new planning group
+   * Bulk add opportunities
    * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkAddOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkAddAsync(PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest request, final AsyncApiCallback<BulkAddOpportunitiesResponse> callback) {
+    try {
+      final SettableFuture<BulkAddOpportunitiesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkAddOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkAddOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkAddOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add opportunities
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkAddOpportunitiesResponse>> postWorkforcemanagementBusinessunitOpportunitiesBulkAddAsync(ApiRequest<BulkAddOpportunitiesRequest> request, final AsyncApiCallback<ApiResponse<BulkAddOpportunitiesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkAddOpportunitiesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkAddOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkAddOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkAddOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkAddOpportunitiesResponse> response = (ApiResponse<BulkAddOpportunitiesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkAddOpportunitiesResponse> response = (ApiResponse<BulkAddOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk publish opportunities
+   * Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkPublishOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkPublishAsync(PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest request, final AsyncApiCallback<BulkPublishOpportunitiesResponse> callback) {
+    try {
+      final SettableFuture<BulkPublishOpportunitiesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkPublishOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkPublishOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkPublishOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk publish opportunities
+   * Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkPublishOpportunitiesResponse>> postWorkforcemanagementBusinessunitOpportunitiesBulkPublishAsync(ApiRequest<BulkOpportunitiesRequest> request, final AsyncApiCallback<ApiResponse<BulkPublishOpportunitiesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkPublishOpportunitiesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkPublishOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkPublishOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkPublishOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkPublishOpportunitiesResponse> response = (ApiResponse<BulkPublishOpportunitiesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkPublishOpportunitiesResponse> response = (ApiResponse<BulkPublishOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk remove opportunities
+   * This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkRemoveOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkRemoveAsync(PostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest request, final AsyncApiCallback<BulkRemoveOpportunitiesResponse> callback) {
+    try {
+      final SettableFuture<BulkRemoveOpportunitiesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkRemoveOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkRemoveOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkRemoveOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk remove opportunities
+   * This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkRemoveOpportunitiesResponse>> postWorkforcemanagementBusinessunitOpportunitiesBulkRemoveAsync(ApiRequest<BulkOpportunitiesRequest> request, final AsyncApiCallback<ApiResponse<BulkRemoveOpportunitiesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkRemoveOpportunitiesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkRemoveOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkRemoveOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkRemoveOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkRemoveOpportunitiesResponse> response = (ApiResponse<BulkRemoveOpportunitiesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkRemoveOpportunitiesResponse> response = (ApiResponse<BulkRemoveOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update opportunities status
+   * If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkOpportunitiesStatusUpdateResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateAsync(PostWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateRequest request, final AsyncApiCallback<BulkOpportunitiesStatusUpdateResponse> callback) {
+    try {
+      final SettableFuture<BulkOpportunitiesStatusUpdateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkOpportunitiesStatusUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<BulkOpportunitiesStatusUpdateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkOpportunitiesStatusUpdateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update opportunities status
+   * If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkOpportunitiesStatusUpdateResponse>> postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateAsync(ApiRequest<BulkOpportunitiesStatusUpdateRequest> request, final AsyncApiCallback<ApiResponse<BulkOpportunitiesStatusUpdateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkOpportunitiesStatusUpdateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkOpportunitiesStatusUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<BulkOpportunitiesStatusUpdateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkOpportunitiesStatusUpdateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkOpportunitiesStatusUpdateResponse> response = (ApiResponse<BulkOpportunitiesStatusUpdateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkOpportunitiesStatusUpdateResponse> response = (ApiResponse<BulkOpportunitiesStatusUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update enrollment status
+   * Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkUpdateOpportunityEnrollmentsStatusResponse> postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateAsync(PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateRequest request, final AsyncApiCallback<BulkUpdateOpportunityEnrollmentsStatusResponse> callback) {
+    try {
+      final SettableFuture<BulkUpdateOpportunityEnrollmentsStatusResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkUpdateOpportunityEnrollmentsStatusResponse>() {}, new AsyncApiCallback<ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update enrollment status
+   * Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse>> postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateAsync(ApiRequest<BulkOpportunityEnrollmentsStatusUpdateRequest> request, final AsyncApiCallback<ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkUpdateOpportunityEnrollmentsStatusResponse>() {}, new AsyncApiCallback<ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse> response = (ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse> response = (ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query enrollments
+   * For more information about opportunities, use the expand parameter.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QueryOpportunityEnrollmentsResponse> postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryAsync(PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest request, final AsyncApiCallback<QueryOpportunityEnrollmentsResponse> callback) {
+    try {
+      final SettableFuture<QueryOpportunityEnrollmentsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryOpportunityEnrollmentsResponse>() {}, new AsyncApiCallback<ApiResponse<QueryOpportunityEnrollmentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryOpportunityEnrollmentsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query enrollments
+   * For more information about opportunities, use the expand parameter.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QueryOpportunityEnrollmentsResponse>> postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryAsync(ApiRequest<QueryOpportunityEnrollmentsRequest> request, final AsyncApiCallback<ApiResponse<QueryOpportunityEnrollmentsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QueryOpportunityEnrollmentsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QueryOpportunityEnrollmentsResponse>() {}, new AsyncApiCallback<ApiResponse<QueryOpportunityEnrollmentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryOpportunityEnrollmentsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryOpportunityEnrollmentsResponse> response = (ApiResponse<QueryOpportunityEnrollmentsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryOpportunityEnrollmentsResponse> response = (ApiResponse<QueryOpportunityEnrollmentsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query opportunities by external activity IDs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QueryExternalActivityOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryAsync(PostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest request, final AsyncApiCallback<QueryExternalActivityOpportunitiesResponse> callback) {
+    try {
+      final SettableFuture<QueryExternalActivityOpportunitiesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryExternalActivityOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<QueryExternalActivityOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryExternalActivityOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query opportunities by external activity IDs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QueryExternalActivityOpportunitiesResponse>> postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryAsync(ApiRequest<BulkOpportunitiesExternalActivitiesRequest> request, final AsyncApiCallback<ApiResponse<QueryExternalActivityOpportunitiesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QueryExternalActivityOpportunitiesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QueryExternalActivityOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<QueryExternalActivityOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryExternalActivityOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryExternalActivityOpportunitiesResponse> response = (ApiResponse<QueryExternalActivityOpportunitiesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryExternalActivityOpportunitiesResponse> response = (ApiResponse<QueryExternalActivityOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query opportunities within the specified date range
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QueryOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesQueryAsync(PostWorkforcemanagementBusinessunitOpportunitiesQueryRequest request, final AsyncApiCallback<QueryOpportunitiesResponse> callback) {
+    try {
+      final SettableFuture<QueryOpportunitiesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<QueryOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query opportunities within the specified date range
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QueryOpportunitiesResponse>> postWorkforcemanagementBusinessunitOpportunitiesQueryAsync(ApiRequest<QueryOpportunitiesRequest> request, final AsyncApiCallback<ApiResponse<QueryOpportunitiesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QueryOpportunitiesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QueryOpportunitiesResponse>() {}, new AsyncApiCallback<ApiResponse<QueryOpportunitiesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryOpportunitiesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryOpportunitiesResponse> response = (ApiResponse<QueryOpportunitiesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryOpportunitiesResponse> response = (ApiResponse<QueryOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Adds a new planning group
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -16652,7 +17594,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Adds a new planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -20670,10 +21612,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Matches a shift trade. This route can only be called by the receiving agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<MatchShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeMatchAsync(PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest request, final AsyncApiCallback<MatchShiftTradeResponse> callback) {
     try {
@@ -20704,10 +21647,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Matches a shift trade. This route can only be called by the receiving agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<MatchShiftTradeResponse>> postWorkforcemanagementManagementunitWeekShifttradeMatchAsync(ApiRequest<MatchShiftTradeRequest> request, final AsyncApiCallback<ApiResponse<MatchShiftTradeResponse>> callback) {
     try {
@@ -20745,10 +21689,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Adds a shift trade
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradesAsync(PostWorkforcemanagementManagementunitWeekShifttradesRequest request, final AsyncApiCallback<ShiftTradeResponse> callback) {
     try {
@@ -20779,10 +21724,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Adds a shift trade
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ShiftTradeResponse>> postWorkforcemanagementManagementunitWeekShifttradesAsync(ApiRequest<AddShiftTradeRequest> request, final AsyncApiCallback<ApiResponse<ShiftTradeResponse>> callback) {
     try {
@@ -20820,10 +21766,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Searches for potential shift trade matches for the current agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<SearchShiftTradesResponse> postWorkforcemanagementManagementunitWeekShifttradesSearchAsync(PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest request, final AsyncApiCallback<SearchShiftTradesResponse> callback) {
     try {
@@ -20854,10 +21801,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Searches for potential shift trade matches for the current agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<SearchShiftTradesResponse>> postWorkforcemanagementManagementunitWeekShifttradesSearchAsync(ApiRequest<SearchShiftTradesRequest> request, final AsyncApiCallback<ApiResponse<SearchShiftTradesResponse>> callback) {
     try {
@@ -20895,10 +21843,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \"mine\".
+   * Admin functionality is not supported with \"mine\". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<BulkUpdateShiftTradeStateResponse> postWorkforcemanagementManagementunitWeekShifttradesStateBulkAsync(PostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest request, final AsyncApiCallback<BulkUpdateShiftTradeStateResponse> callback) {
     try {
@@ -20929,10 +21878,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \"mine\".
+   * Admin functionality is not supported with \"mine\". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<BulkUpdateShiftTradeStateResponse>> postWorkforcemanagementManagementunitWeekShifttradesStateBulkAsync(ApiRequest<BulkShiftTradeStateUpdateRequest> request, final AsyncApiCallback<ApiResponse<BulkUpdateShiftTradeStateResponse>> callback) {
     try {

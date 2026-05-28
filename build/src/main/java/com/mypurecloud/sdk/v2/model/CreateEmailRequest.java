@@ -31,6 +31,7 @@ public class CreateEmailRequest  implements Serializable {
   private String flowId = null;
   private String provider = null;
   private List<String> skillIds = null;
+  private String skillExpression = null;
   private String languageId = null;
   private Long priority = null;
   private Map<String, String> attributes = null;
@@ -174,6 +175,24 @@ public class CreateEmailRequest  implements Serializable {
   }
   public void setSkillIds(List<String> skillIds) {
     this.skillIds = skillIds;
+  }
+
+
+  /**
+   * The skill expression to use for routing the email conversation (when using queueId).
+   **/
+  public CreateEmailRequest skillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The skill expression to use for routing the email conversation (when using queueId).")
+  @JsonProperty("skillExpression")
+  public String getSkillExpression() {
+    return skillExpression;
+  }
+  public void setSkillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
   }
 
 
@@ -425,6 +444,7 @@ public class CreateEmailRequest  implements Serializable {
             Objects.equals(this.flowId, createEmailRequest.flowId) &&
             Objects.equals(this.provider, createEmailRequest.provider) &&
             Objects.equals(this.skillIds, createEmailRequest.skillIds) &&
+            Objects.equals(this.skillExpression, createEmailRequest.skillExpression) &&
             Objects.equals(this.languageId, createEmailRequest.languageId) &&
             Objects.equals(this.priority, createEmailRequest.priority) &&
             Objects.equals(this.attributes, createEmailRequest.attributes) &&
@@ -442,7 +462,7 @@ public class CreateEmailRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, flowId, provider, skillIds, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction, htmlBody, textBody, externalContactId, utilizationLabel);
+    return Objects.hash(queueId, flowId, provider, skillIds, skillExpression, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction, htmlBody, textBody, externalContactId, utilizationLabel);
   }
 
   @Override
@@ -454,6 +474,7 @@ public class CreateEmailRequest  implements Serializable {
     sb.append("    flowId: ").append(toIndentedString(flowId)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
+    sb.append("    skillExpression: ").append(toIndentedString(skillExpression)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");

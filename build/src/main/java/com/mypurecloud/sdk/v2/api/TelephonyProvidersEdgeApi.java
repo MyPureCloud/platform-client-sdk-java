@@ -53,7 +53,6 @@ import com.mypurecloud.sdk.v2.model.LineEntityListing;
 import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaStatistics;
 import com.mypurecloud.sdk.v2.model.MediaStatisticsListing;
-import com.mypurecloud.sdk.v2.model.MediaStatisticsPostRequest;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBaseEntityListing;
@@ -185,7 +184,6 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesCertificate
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesDidpoolsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesEdgegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesExtensionpoolsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhoneRebootRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonebasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRequest;
@@ -8685,100 +8683,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Post media endpoint statistics event.
-   * 
-   * postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param conversationId Identifier of the conversation (required)
-   * @param communicationId Identifier of the media session (required)
-   * @param mediaResourceId Identifier of the media resource of the endpoint (required)
-   * @param body MediaStatisticsPostRequest (required)
-   * @return MediaStatistics
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public MediaStatistics postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(String conversationId, String communicationId, String mediaResourceId, MediaStatisticsPostRequest body) throws IOException, ApiException {
-    return  postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(createPostTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceRequest(conversationId, communicationId, mediaResourceId, body));
-  }
-
-  /**
-   * Post media endpoint statistics event.
-   * 
-   * postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param conversationId Identifier of the conversation (required)
-   * @param communicationId Identifier of the media session (required)
-   * @param mediaResourceId Identifier of the media resource of the endpoint (required)
-   * @param body MediaStatisticsPostRequest (required)
-   * @return MediaStatistics
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<MediaStatistics> postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceWithHttpInfo(String conversationId, String communicationId, String mediaResourceId, MediaStatisticsPostRequest body) throws IOException {
-    return postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(createPostTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceRequest(conversationId, communicationId, mediaResourceId, body).withHttpInfo());
-  }
-
-  private PostTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceRequest createPostTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceRequest(String conversationId, String communicationId, String mediaResourceId, MediaStatisticsPostRequest body) {
-    return PostTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceRequest.builder()
-            .withConversationId(conversationId)
-
-            .withCommunicationId(communicationId)
-
-            .withMediaResourceId(mediaResourceId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Post media endpoint statistics event.
-   * 
-   * postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return MediaStatistics
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public MediaStatistics postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(PostTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<MediaStatistics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MediaStatistics>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Post media endpoint statistics event.
-   * 
-   * postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<MediaStatistics> postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(ApiRequest<MediaStatisticsPostRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<MediaStatistics>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<MediaStatistics> response = (ApiResponse<MediaStatistics>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<MediaStatistics> response = (ApiResponse<MediaStatistics>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

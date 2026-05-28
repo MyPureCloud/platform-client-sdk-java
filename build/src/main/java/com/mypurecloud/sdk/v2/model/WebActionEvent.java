@@ -93,14 +93,14 @@ public class WebActionEvent  implements Serializable {
 
 
   /**
-   * The target for engagement actions.
+   * Deprecated. The target for engagement actions.
    **/
   public WebActionEvent actionTarget(AddressableEntityRef actionTarget) {
     this.actionTarget = actionTarget;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The target for engagement actions.")
+  @ApiModelProperty(example = "null", required = true, value = "Deprecated. The target for engagement actions.")
   @JsonProperty("actionTarget")
   public AddressableEntityRef getActionTarget() {
     return actionTarget;

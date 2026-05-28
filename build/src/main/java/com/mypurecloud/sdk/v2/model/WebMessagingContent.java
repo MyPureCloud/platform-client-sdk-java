@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContentCard;
 import com.mypurecloud.sdk.v2.model.ContentCarousel;
 import com.mypurecloud.sdk.v2.model.ContentDatePicker;
+import com.mypurecloud.sdk.v2.model.ConversationContentForm;
 import com.mypurecloud.sdk.v2.model.ConversationContentListPicker;
 import com.mypurecloud.sdk.v2.model.WebMessagingAttachment;
 import com.mypurecloud.sdk.v2.model.WebMessagingButtonResponse;
@@ -58,7 +59,8 @@ public class WebMessagingContent  implements Serializable {
     CARD("Card"),
     CAROUSEL("Carousel"),
     DATEPICKER("DatePicker"),
-    LISTPICKER("ListPicker");
+    LISTPICKER("ListPicker"),
+    FORM("Form");
 
     private String value;
 
@@ -94,6 +96,7 @@ public class WebMessagingContent  implements Serializable {
   private ContentCarousel carousel = null;
   private ContentDatePicker datePicker = null;
   private ConversationContentListPicker listPicker = null;
+  private ConversationContentForm form = null;
 
   public WebMessagingContent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -246,6 +249,24 @@ public class WebMessagingContent  implements Serializable {
   }
 
 
+  /**
+   * Form content
+   **/
+  public WebMessagingContent form(ConversationContentForm form) {
+    this.form = form;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Form content")
+  @JsonProperty("form")
+  public ConversationContentForm getForm() {
+    return form;
+  }
+  public void setForm(ConversationContentForm form) {
+    this.form = form;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -264,12 +285,13 @@ public class WebMessagingContent  implements Serializable {
             Objects.equals(this.card, webMessagingContent.card) &&
             Objects.equals(this.carousel, webMessagingContent.carousel) &&
             Objects.equals(this.datePicker, webMessagingContent.datePicker) &&
-            Objects.equals(this.listPicker, webMessagingContent.listPicker);
+            Objects.equals(this.listPicker, webMessagingContent.listPicker) &&
+            Objects.equals(this.form, webMessagingContent.form);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, attachment, quickReply, buttonResponse, generic, card, carousel, datePicker, listPicker);
+    return Objects.hash(contentType, attachment, quickReply, buttonResponse, generic, card, carousel, datePicker, listPicker, form);
   }
 
   @Override
@@ -286,6 +308,7 @@ public class WebMessagingContent  implements Serializable {
     sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
     sb.append("    datePicker: ").append(toIndentedString(datePicker)).append("\n");
     sb.append("    listPicker: ").append(toIndentedString(listPicker)).append("\n");
+    sb.append("    form: ").append(toIndentedString(form)).append("\n");
     sb.append("}");
     return sb.toString();
   }

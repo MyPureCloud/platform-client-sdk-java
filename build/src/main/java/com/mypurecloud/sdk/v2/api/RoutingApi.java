@@ -28,7 +28,6 @@ import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
-import com.mypurecloud.sdk.v2.model.CreateUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -74,6 +73,10 @@ import com.mypurecloud.sdk.v2.model.RoutingSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillExpression;
+import com.mypurecloud.sdk.v2.model.SkillExpressionData;
+import com.mypurecloud.sdk.v2.model.SkillExpressionEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillExpressionValidationResult;
 import com.mypurecloud.sdk.v2.model.SkillGroup;
 import com.mypurecloud.sdk.v2.model.SkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisionList;
@@ -108,8 +111,6 @@ import com.mypurecloud.sdk.v2.model.UtilizationLabel;
 import com.mypurecloud.sdk.v2.model.UtilizationLabelEntityListing;
 import com.mypurecloud.sdk.v2.model.UtilizationRequest;
 import com.mypurecloud.sdk.v2.model.UtilizationResponse;
-import com.mypurecloud.sdk.v2.model.UtilizationTag;
-import com.mypurecloud.sdk.v2.model.UtilizationTagEntityListing;
 import com.mypurecloud.sdk.v2.model.VerificationResult;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
@@ -132,6 +133,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillexpressionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillexpressionsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
@@ -139,7 +142,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserDirectroutingbackupSe
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationLabelRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
@@ -190,6 +192,9 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsContactcenterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillexpressionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillexpressionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillexpressionsQueueQueueIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupMembersDivisionsRequest;
@@ -207,9 +212,6 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagAgentsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesDivisionviewRequest;
@@ -258,6 +260,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillexpressionsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupMembersDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
@@ -266,7 +269,6 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersAlphanumericRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationLabelsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
@@ -1376,6 +1378,156 @@ public class RoutingApi {
   }
 
   /**
+   * Archive a skill expression to remove it from the set of active expressions
+   * 
+   * @param expressionId Expression ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSkillexpression(String expressionId) throws IOException, ApiException {
+     deleteRoutingSkillexpression(createDeleteRoutingSkillexpressionRequest(expressionId));
+  }
+
+  /**
+   * Archive a skill expression to remove it from the set of active expressions
+   * 
+   * @param expressionId Expression ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSkillexpressionWithHttpInfo(String expressionId) throws IOException {
+    return deleteRoutingSkillexpression(createDeleteRoutingSkillexpressionRequest(expressionId).withHttpInfo());
+  }
+
+  private DeleteRoutingSkillexpressionRequest createDeleteRoutingSkillexpressionRequest(String expressionId) {
+    return DeleteRoutingSkillexpressionRequest.builder()
+            .withExpressionId(expressionId)
+
+            .build();
+  }
+
+  /**
+   * Archive a skill expression to remove it from the set of active expressions
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSkillexpression(DeleteRoutingSkillexpressionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Archive a skill expression to remove it from the set of active expressions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSkillexpression(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Archive a set of skill expressions to remove them from the set of active expressions
+   * 
+   * @param id Expression ID(s) to filter. Repeat for multiple or use comma-separated list. (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSkillexpressions(List<String> id) throws IOException, ApiException {
+     deleteRoutingSkillexpressions(createDeleteRoutingSkillexpressionsRequest(id));
+  }
+
+  /**
+   * Archive a set of skill expressions to remove them from the set of active expressions
+   * 
+   * @param id Expression ID(s) to filter. Repeat for multiple or use comma-separated list. (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSkillexpressionsWithHttpInfo(List<String> id) throws IOException {
+    return deleteRoutingSkillexpressions(createDeleteRoutingSkillexpressionsRequest(id).withHttpInfo());
+  }
+
+  private DeleteRoutingSkillexpressionsRequest createDeleteRoutingSkillexpressionsRequest(List<String> id) {
+    return DeleteRoutingSkillexpressionsRequest.builder()
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Archive a set of skill expressions to remove them from the set of active expressions
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSkillexpressions(DeleteRoutingSkillexpressionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Archive a set of skill expressions to remove them from the set of active expressions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSkillexpressions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Remove skill group definition
    * 
    * @param skillGroupId Skill Group ID (required)
@@ -1879,89 +2031,6 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingUtilizationLabel(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Delete an utilization tag
-   * 
-   * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param tagId Utilization Tag ID (required)
-   * @param forceDelete Remove all tag usages (if found) without warning (optional, default to false)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteRoutingUtilizationTag(String tagId, Boolean forceDelete) throws IOException, ApiException {
-     deleteRoutingUtilizationTag(createDeleteRoutingUtilizationTagRequest(tagId, forceDelete));
-  }
-
-  /**
-   * Delete an utilization tag
-   * 
-   * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param tagId Utilization Tag ID (required)
-   * @param forceDelete Remove all tag usages (if found) without warning (optional, default to false)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteRoutingUtilizationTagWithHttpInfo(String tagId, Boolean forceDelete) throws IOException {
-    return deleteRoutingUtilizationTag(createDeleteRoutingUtilizationTagRequest(tagId, forceDelete).withHttpInfo());
-  }
-
-  private DeleteRoutingUtilizationTagRequest createDeleteRoutingUtilizationTagRequest(String tagId, Boolean forceDelete) {
-    return DeleteRoutingUtilizationTagRequest.builder()
-            .withTagId(tagId)
-
-            .withForceDelete(forceDelete)
-
-            .build();
-  }
-
-  /**
-   * Delete an utilization tag
-   * 
-   * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteRoutingUtilizationTag(DeleteRoutingUtilizationTagRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Delete an utilization tag
-   * 
-   * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteRoutingUtilizationTag(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -6227,6 +6296,264 @@ public class RoutingApi {
   }
 
   /**
+   * Get a skill expression by ID
+   * 
+   * @param expressionId Expression ID (required)
+   * @param includeArchived Include archived (optional, default to false)
+   * @param format Response format: raw expression or normalized (optional, default to Raw)
+   * @return SkillExpression
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillExpression getRoutingSkillexpression(String expressionId, Boolean includeArchived, String format) throws IOException, ApiException {
+    return  getRoutingSkillexpression(createGetRoutingSkillexpressionRequest(expressionId, includeArchived, format));
+  }
+
+  /**
+   * Get a skill expression by ID
+   * 
+   * @param expressionId Expression ID (required)
+   * @param includeArchived Include archived (optional, default to false)
+   * @param format Response format: raw expression or normalized (optional, default to Raw)
+   * @return SkillExpression
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillExpression> getRoutingSkillexpressionWithHttpInfo(String expressionId, Boolean includeArchived, String format) throws IOException {
+    return getRoutingSkillexpression(createGetRoutingSkillexpressionRequest(expressionId, includeArchived, format).withHttpInfo());
+  }
+
+  private GetRoutingSkillexpressionRequest createGetRoutingSkillexpressionRequest(String expressionId, Boolean includeArchived, String format) {
+    return GetRoutingSkillexpressionRequest.builder()
+            .withExpressionId(expressionId)
+
+            .withIncludeArchived(includeArchived)
+
+            .withFormat(format)
+
+            .build();
+  }
+
+  /**
+   * Get a skill expression by ID
+   * 
+   * @param request The request object
+   * @return SkillExpression
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillExpression getRoutingSkillexpression(GetRoutingSkillexpressionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillExpression> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillExpression>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a skill expression by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillExpression> getRoutingSkillexpression(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillExpression>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillExpression> response = (ApiResponse<SkillExpression>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillExpression> response = (ApiResponse<SkillExpression>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get skill expressions
+   * 
+   * @param format Response format: raw expression or normalized (optional, default to Raw)
+   * @param includeArchived Include archived (optional, default to false)
+   * @param id Expression ID(s) to filter. Repeat for multiple or use comma-separated list. (optional)
+   * @return SkillExpressionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillExpressionEntityListing getRoutingSkillexpressions(String format, Boolean includeArchived, List<String> id) throws IOException, ApiException {
+    return  getRoutingSkillexpressions(createGetRoutingSkillexpressionsRequest(format, includeArchived, id));
+  }
+
+  /**
+   * Get skill expressions
+   * 
+   * @param format Response format: raw expression or normalized (optional, default to Raw)
+   * @param includeArchived Include archived (optional, default to false)
+   * @param id Expression ID(s) to filter. Repeat for multiple or use comma-separated list. (optional)
+   * @return SkillExpressionEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillExpressionEntityListing> getRoutingSkillexpressionsWithHttpInfo(String format, Boolean includeArchived, List<String> id) throws IOException {
+    return getRoutingSkillexpressions(createGetRoutingSkillexpressionsRequest(format, includeArchived, id).withHttpInfo());
+  }
+
+  private GetRoutingSkillexpressionsRequest createGetRoutingSkillexpressionsRequest(String format, Boolean includeArchived, List<String> id) {
+    return GetRoutingSkillexpressionsRequest.builder()
+            .withFormat(format)
+
+            .withIncludeArchived(includeArchived)
+
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Get skill expressions
+   * 
+   * @param request The request object
+   * @return SkillExpressionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillExpressionEntityListing getRoutingSkillexpressions(GetRoutingSkillexpressionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillExpressionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillExpressionEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get skill expressions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillExpressionEntityListing> getRoutingSkillexpressions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillExpressionEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillExpressionEntityListing> response = (ApiResponse<SkillExpressionEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillExpressionEntityListing> response = (ApiResponse<SkillExpressionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get skill expressions associated with a queue
+   * 
+   * @param queueId Queue ID (required)
+   * @param format Response format: raw expression or normalized (optional, default to Raw)
+   * @param includeArchived Include archived (optional, default to false)
+   * @return SkillExpressionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillExpressionEntityListing getRoutingSkillexpressionsQueueQueueId(String queueId, String format, Boolean includeArchived) throws IOException, ApiException {
+    return  getRoutingSkillexpressionsQueueQueueId(createGetRoutingSkillexpressionsQueueQueueIdRequest(queueId, format, includeArchived));
+  }
+
+  /**
+   * Get skill expressions associated with a queue
+   * 
+   * @param queueId Queue ID (required)
+   * @param format Response format: raw expression or normalized (optional, default to Raw)
+   * @param includeArchived Include archived (optional, default to false)
+   * @return SkillExpressionEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillExpressionEntityListing> getRoutingSkillexpressionsQueueQueueIdWithHttpInfo(String queueId, String format, Boolean includeArchived) throws IOException {
+    return getRoutingSkillexpressionsQueueQueueId(createGetRoutingSkillexpressionsQueueQueueIdRequest(queueId, format, includeArchived).withHttpInfo());
+  }
+
+  private GetRoutingSkillexpressionsQueueQueueIdRequest createGetRoutingSkillexpressionsQueueQueueIdRequest(String queueId, String format, Boolean includeArchived) {
+    return GetRoutingSkillexpressionsQueueQueueIdRequest.builder()
+            .withQueueId(queueId)
+
+            .withFormat(format)
+
+            .withIncludeArchived(includeArchived)
+
+            .build();
+  }
+
+  /**
+   * Get skill expressions associated with a queue
+   * 
+   * @param request The request object
+   * @return SkillExpressionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillExpressionEntityListing getRoutingSkillexpressionsQueueQueueId(GetRoutingSkillexpressionsQueueQueueIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillExpressionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillExpressionEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get skill expressions associated with a queue
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillExpressionEntityListing> getRoutingSkillexpressionsQueueQueueId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillExpressionEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillExpressionEntityListing> response = (ApiResponse<SkillExpressionEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillExpressionEntityListing> response = (ApiResponse<SkillExpressionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get skill group
    * 
    * @param skillGroupId Skill Group ID (required)
@@ -7676,264 +8003,6 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UtilizationLabelEntityListing> response = (ApiResponse<UtilizationLabelEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get details about this utilization tag
-   * 
-   * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param tagId Utilization Tag ID (required)
-   * @return UtilizationTag
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UtilizationTag getRoutingUtilizationTag(String tagId) throws IOException, ApiException {
-    return  getRoutingUtilizationTag(createGetRoutingUtilizationTagRequest(tagId));
-  }
-
-  /**
-   * Get details about this utilization tag
-   * 
-   * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param tagId Utilization Tag ID (required)
-   * @return UtilizationTag
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UtilizationTag> getRoutingUtilizationTagWithHttpInfo(String tagId) throws IOException {
-    return getRoutingUtilizationTag(createGetRoutingUtilizationTagRequest(tagId).withHttpInfo());
-  }
-
-  private GetRoutingUtilizationTagRequest createGetRoutingUtilizationTagRequest(String tagId) {
-    return GetRoutingUtilizationTagRequest.builder()
-            .withTagId(tagId)
-
-            .build();
-  }
-
-  /**
-   * Get details about this utilization tag
-   * 
-   * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return UtilizationTag
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UtilizationTag getRoutingUtilizationTag(GetRoutingUtilizationTagRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<UtilizationTag> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationTag>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get details about this utilization tag
-   * 
-   * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UtilizationTag> getRoutingUtilizationTag(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<UtilizationTag>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get list of agent ids associated with a utilization tag
-   * 
-   * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param tagId Utilization Tag ID (required)
-   * @return List<Object>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<Object> getRoutingUtilizationTagAgents(String tagId) throws IOException, ApiException {
-    return  getRoutingUtilizationTagAgents(createGetRoutingUtilizationTagAgentsRequest(tagId));
-  }
-
-  /**
-   * Get list of agent ids associated with a utilization tag
-   * 
-   * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param tagId Utilization Tag ID (required)
-   * @return List<Object>
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<Object>> getRoutingUtilizationTagAgentsWithHttpInfo(String tagId) throws IOException {
-    return getRoutingUtilizationTagAgents(createGetRoutingUtilizationTagAgentsRequest(tagId).withHttpInfo());
-  }
-
-  private GetRoutingUtilizationTagAgentsRequest createGetRoutingUtilizationTagAgentsRequest(String tagId) {
-    return GetRoutingUtilizationTagAgentsRequest.builder()
-            .withTagId(tagId)
-
-            .build();
-  }
-
-  /**
-   * Get list of agent ids associated with a utilization tag
-   * 
-   * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return List<Object>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<Object> getRoutingUtilizationTagAgents(GetRoutingUtilizationTagAgentsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<List<Object>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Object>>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get list of agent ids associated with a utilization tag
-   * 
-   * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<Object>> getRoutingUtilizationTagAgents(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<List<Object>>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get list of utilization tags
-   * 
-   * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortOrder Sort order by name (optional, default to ascending)
-   * @param name Utilization tag's name (Wildcard is supported, e.g., 'tag1*') (optional)
-   * @return UtilizationTagEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UtilizationTagEntityListing getRoutingUtilizationTags(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
-    return  getRoutingUtilizationTags(createGetRoutingUtilizationTagsRequest(pageSize, pageNumber, sortOrder, name));
-  }
-
-  /**
-   * Get list of utilization tags
-   * 
-   * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortOrder Sort order by name (optional, default to ascending)
-   * @param name Utilization tag's name (Wildcard is supported, e.g., 'tag1*') (optional)
-   * @return UtilizationTagEntityListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UtilizationTagEntityListing> getRoutingUtilizationTagsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException {
-    return getRoutingUtilizationTags(createGetRoutingUtilizationTagsRequest(pageSize, pageNumber, sortOrder, name).withHttpInfo());
-  }
-
-  private GetRoutingUtilizationTagsRequest createGetRoutingUtilizationTagsRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name) {
-    return GetRoutingUtilizationTagsRequest.builder()
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withSortOrder(sortOrder)
-
-            .withName(name)
-
-            .build();
-  }
-
-  /**
-   * Get list of utilization tags
-   * 
-   * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return UtilizationTagEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UtilizationTagEntityListing getRoutingUtilizationTags(GetRoutingUtilizationTagsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<UtilizationTagEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationTagEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get list of utilization tags
-   * 
-   * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UtilizationTagEntityListing> getRoutingUtilizationTags(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<UtilizationTagEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<UtilizationTagEntityListing> response = (ApiResponse<UtilizationTagEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<UtilizationTagEntityListing> response = (ApiResponse<UtilizationTagEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11920,6 +11989,84 @@ public class RoutingApi {
   }
 
   /**
+   * Validate and normalize a skill expression
+   * 
+   * @param body Skill expression data to validate (required)
+   * @return SkillExpressionValidationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillExpressionValidationResult postRoutingSkillexpressionsValidate(SkillExpressionData body) throws IOException, ApiException {
+    return  postRoutingSkillexpressionsValidate(createPostRoutingSkillexpressionsValidateRequest(body));
+  }
+
+  /**
+   * Validate and normalize a skill expression
+   * 
+   * @param body Skill expression data to validate (required)
+   * @return SkillExpressionValidationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillExpressionValidationResult> postRoutingSkillexpressionsValidateWithHttpInfo(SkillExpressionData body) throws IOException {
+    return postRoutingSkillexpressionsValidate(createPostRoutingSkillexpressionsValidateRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingSkillexpressionsValidateRequest createPostRoutingSkillexpressionsValidateRequest(SkillExpressionData body) {
+    return PostRoutingSkillexpressionsValidateRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Validate and normalize a skill expression
+   * 
+   * @param request The request object
+   * @return SkillExpressionValidationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillExpressionValidationResult postRoutingSkillexpressionsValidate(PostRoutingSkillexpressionsValidateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillExpressionValidationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillExpressionValidationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Validate and normalize a skill expression
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillExpressionValidationResult> postRoutingSkillexpressionsValidate(ApiRequest<SkillExpressionData> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillExpressionValidationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillExpressionValidationResult> response = (ApiResponse<SkillExpressionValidationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillExpressionValidationResult> response = (ApiResponse<SkillExpressionValidationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Add or remove member divisions for this skill group.
    * 
    * @param skillGroupId Skill Group ID (required)
@@ -12544,88 +12691,6 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Create an utilization tag
-   * 
-   * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body UtilizationTag (required)
-   * @return UtilizationTag
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UtilizationTag postRoutingUtilizationTags(CreateUtilizationTagRequest body) throws IOException, ApiException {
-    return  postRoutingUtilizationTags(createPostRoutingUtilizationTagsRequest(body));
-  }
-
-  /**
-   * Create an utilization tag
-   * 
-   * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body UtilizationTag (required)
-   * @return UtilizationTag
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UtilizationTag> postRoutingUtilizationTagsWithHttpInfo(CreateUtilizationTagRequest body) throws IOException {
-    return postRoutingUtilizationTags(createPostRoutingUtilizationTagsRequest(body).withHttpInfo());
-  }
-
-  private PostRoutingUtilizationTagsRequest createPostRoutingUtilizationTagsRequest(CreateUtilizationTagRequest body) {
-    return PostRoutingUtilizationTagsRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Create an utilization tag
-   * 
-   * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return UtilizationTag
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UtilizationTag postRoutingUtilizationTags(PostRoutingUtilizationTagsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<UtilizationTag> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationTag>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Create an utilization tag
-   * 
-   * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UtilizationTag> postRoutingUtilizationTags(ApiRequest<CreateUtilizationTagRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<UtilizationTag>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

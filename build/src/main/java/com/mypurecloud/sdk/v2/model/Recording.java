@@ -308,6 +308,7 @@ public class Recording  implements Serializable {
   private RecordingErrorStatusEnum recordingErrorStatus = null;
   private Date originalRecordingStartTime = null;
   private Date creationTime = null;
+  private List<String> associatedConversationIds = null;
   private String selfUri = null;
 
   public Recording() {
@@ -317,6 +318,7 @@ public class Recording  implements Serializable {
       emailTranscript = new ArrayList<RecordingEmailMessage>();
       messagingTranscript = new ArrayList<RecordingMessagingMessage>();
       users = new ArrayList<User>();
+      associatedConversationIds = new ArrayList<String>();
     }
   }
 
@@ -327,6 +329,7 @@ public class Recording  implements Serializable {
       emailTranscript = new ArrayList<RecordingEmailMessage>();
       messagingTranscript = new ArrayList<RecordingMessagingMessage>();
       users = new ArrayList<User>();
+      associatedConversationIds = new ArrayList<String>();
     }
   }
 
@@ -909,6 +912,24 @@ public class Recording  implements Serializable {
   }
 
 
+  /**
+   * List of associated conversation IDs
+   **/
+  public Recording associatedConversationIds(List<String> associatedConversationIds) {
+    this.associatedConversationIds = associatedConversationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of associated conversation IDs")
+  @JsonProperty("associatedConversationIds")
+  public List<String> getAssociatedConversationIds() {
+    return associatedConversationIds;
+  }
+  public void setAssociatedConversationIds(List<String> associatedConversationIds) {
+    this.associatedConversationIds = associatedConversationIds;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -959,12 +980,13 @@ public class Recording  implements Serializable {
             Objects.equals(this.recordingErrorStatus, recording.recordingErrorStatus) &&
             Objects.equals(this.originalRecordingStartTime, recording.originalRecordingStartTime) &&
             Objects.equals(this.creationTime, recording.creationTime) &&
+            Objects.equals(this.associatedConversationIds, recording.associatedConversationIds) &&
             Objects.equals(this.selfUri, recording.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, mediaSubtype, mediaSubject, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, recordingFileRole, recordingErrorStatus, originalRecordingStartTime, creationTime, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, mediaSubtype, mediaSubject, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, recordingFileRole, recordingErrorStatus, originalRecordingStartTime, creationTime, associatedConversationIds, selfUri);
   }
 
   @Override
@@ -1005,6 +1027,7 @@ public class Recording  implements Serializable {
     sb.append("    recordingErrorStatus: ").append(toIndentedString(recordingErrorStatus)).append("\n");
     sb.append("    originalRecordingStartTime: ").append(toIndentedString(originalRecordingStartTime)).append("\n");
     sb.append("    creationTime: ").append(toIndentedString(creationTime)).append("\n");
+    sb.append("    associatedConversationIds: ").append(toIndentedString(associatedConversationIds)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

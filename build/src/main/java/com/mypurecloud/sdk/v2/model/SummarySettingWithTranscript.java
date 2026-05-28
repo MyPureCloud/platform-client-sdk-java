@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class SummarySettingWithTranscript  implements Serializable {
   
   private String transcript = null;
-  private SummarySetting summarySetting = null;
   private String summaryPreviewSessionId = null;
+  private SummarySetting summarySetting = null;
 
   public SummarySettingWithTranscript() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -57,24 +57,6 @@ public class SummarySettingWithTranscript  implements Serializable {
 
 
   /**
-   * Summary setting to preview on the transcript.
-   **/
-  public SummarySettingWithTranscript summarySetting(SummarySetting summarySetting) {
-    this.summarySetting = summarySetting;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Summary setting to preview on the transcript.")
-  @JsonProperty("summarySetting")
-  public SummarySetting getSummarySetting() {
-    return summarySetting;
-  }
-  public void setSummarySetting(SummarySetting summarySetting) {
-    this.summarySetting = summarySetting;
-  }
-
-
-  /**
    * Session identifier of the summary preview.
    **/
   public SummarySettingWithTranscript summaryPreviewSessionId(String summaryPreviewSessionId) {
@@ -92,6 +74,24 @@ public class SummarySettingWithTranscript  implements Serializable {
   }
 
 
+  /**
+   * Summary setting to preview on the transcript.
+   **/
+  public SummarySettingWithTranscript summarySetting(SummarySetting summarySetting) {
+    this.summarySetting = summarySetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Summary setting to preview on the transcript.")
+  @JsonProperty("summarySetting")
+  public SummarySetting getSummarySetting() {
+    return summarySetting;
+  }
+  public void setSummarySetting(SummarySetting summarySetting) {
+    this.summarySetting = summarySetting;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -103,13 +103,13 @@ public class SummarySettingWithTranscript  implements Serializable {
     SummarySettingWithTranscript summarySettingWithTranscript = (SummarySettingWithTranscript) o;
 
     return Objects.equals(this.transcript, summarySettingWithTranscript.transcript) &&
-            Objects.equals(this.summarySetting, summarySettingWithTranscript.summarySetting) &&
-            Objects.equals(this.summaryPreviewSessionId, summarySettingWithTranscript.summaryPreviewSessionId);
+            Objects.equals(this.summaryPreviewSessionId, summarySettingWithTranscript.summaryPreviewSessionId) &&
+            Objects.equals(this.summarySetting, summarySettingWithTranscript.summarySetting);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transcript, summarySetting, summaryPreviewSessionId);
+    return Objects.hash(transcript, summaryPreviewSessionId, summarySetting);
   }
 
   @Override
@@ -118,8 +118,8 @@ public class SummarySettingWithTranscript  implements Serializable {
     sb.append("class SummarySettingWithTranscript {\n");
     
     sb.append("    transcript: ").append(toIndentedString(transcript)).append("\n");
-    sb.append("    summarySetting: ").append(toIndentedString(summarySetting)).append("\n");
     sb.append("    summaryPreviewSessionId: ").append(toIndentedString(summaryPreviewSessionId)).append("\n");
+    sb.append("    summarySetting: ").append(toIndentedString(summarySetting)).append("\n");
     sb.append("}");
     return sb.toString();
   }

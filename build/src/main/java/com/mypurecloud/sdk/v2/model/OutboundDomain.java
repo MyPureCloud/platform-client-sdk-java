@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DmarcResult;
 import com.mypurecloud.sdk.v2.model.EmailSetting;
 import com.mypurecloud.sdk.v2.model.VerificationResult;
 import io.swagger.annotations.ApiModel;
@@ -80,6 +81,7 @@ public class OutboundDomain  implements Serializable {
   }
   private SenderTypeEnum senderType = null;
   private EmailSetting emailSetting = null;
+  private DmarcResult dmarcVerificationResult = null;
   private String selfUri = null;
 
   public OutboundDomain() {
@@ -200,6 +202,13 @@ public class OutboundDomain  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The DMARC verification status for this domain.")
+  @JsonProperty("dmarcVerificationResult")
+  public DmarcResult getDmarcVerificationResult() {
+    return dmarcVerificationResult;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -223,12 +232,13 @@ public class OutboundDomain  implements Serializable {
             Objects.equals(this.dkimVerificationResult, outboundDomain.dkimVerificationResult) &&
             Objects.equals(this.senderType, outboundDomain.senderType) &&
             Objects.equals(this.emailSetting, outboundDomain.emailSetting) &&
+            Objects.equals(this.dmarcVerificationResult, outboundDomain.dmarcVerificationResult) &&
             Objects.equals(this.selfUri, outboundDomain.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, cnameVerificationResult, dkimVerificationResult, senderType, emailSetting, selfUri);
+    return Objects.hash(id, name, cnameVerificationResult, dkimVerificationResult, senderType, emailSetting, dmarcVerificationResult, selfUri);
   }
 
   @Override
@@ -242,6 +252,7 @@ public class OutboundDomain  implements Serializable {
     sb.append("    dkimVerificationResult: ").append(toIndentedString(dkimVerificationResult)).append("\n");
     sb.append("    senderType: ").append(toIndentedString(senderType)).append("\n");
     sb.append("    emailSetting: ").append(toIndentedString(emailSetting)).append("\n");
+    sb.append("    dmarcVerificationResult: ").append(toIndentedString(dmarcVerificationResult)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -130,6 +130,7 @@ public class KnowledgeBase  implements Serializable {
   private Date dateDocumentLastModified = null;
   private Integer articleCount = null;
   private Boolean published = null;
+  private Boolean contentSearchEnabled = null;
   private String selfUri = null;
 
   public KnowledgeBase() {
@@ -245,6 +246,24 @@ public class KnowledgeBase  implements Serializable {
   }
 
 
+  /**
+   * Flag that indicates the search on content is enabled for the knowledge base.
+   **/
+  public KnowledgeBase contentSearchEnabled(Boolean contentSearchEnabled) {
+    this.contentSearchEnabled = contentSearchEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag that indicates the search on content is enabled for the knowledge base.")
+  @JsonProperty("contentSearchEnabled")
+  public Boolean getContentSearchEnabled() {
+    return contentSearchEnabled;
+  }
+  public void setContentSearchEnabled(Boolean contentSearchEnabled) {
+    this.contentSearchEnabled = contentSearchEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -272,12 +291,13 @@ public class KnowledgeBase  implements Serializable {
             Objects.equals(this.dateDocumentLastModified, knowledgeBase.dateDocumentLastModified) &&
             Objects.equals(this.articleCount, knowledgeBase.articleCount) &&
             Objects.equals(this.published, knowledgeBase.published) &&
+            Objects.equals(this.contentSearchEnabled, knowledgeBase.contentSearchEnabled) &&
             Objects.equals(this.selfUri, knowledgeBase.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, coreLanguage, dateCreated, dateModified, faqCount, dateDocumentLastModified, articleCount, published, selfUri);
+    return Objects.hash(id, name, description, coreLanguage, dateCreated, dateModified, faqCount, dateDocumentLastModified, articleCount, published, contentSearchEnabled, selfUri);
   }
 
   @Override
@@ -295,6 +315,7 @@ public class KnowledgeBase  implements Serializable {
     sb.append("    dateDocumentLastModified: ").append(toIndentedString(dateDocumentLastModified)).append("\n");
     sb.append("    articleCount: ").append(toIndentedString(articleCount)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
+    sb.append("    contentSearchEnabled: ").append(toIndentedString(contentSearchEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

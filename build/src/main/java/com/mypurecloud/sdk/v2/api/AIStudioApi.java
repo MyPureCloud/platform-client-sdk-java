@@ -305,49 +305,49 @@ public class AIStudioApi {
   /**
    * Get all summary settings.
    * 
-   * @param language Filter by matching language - case insensitive. (optional)
-   * @param name Filter by partially matching name - case insensitive. (optional)
-   * @param sortBy Sort by. Default value dateModified. (optional, default to dateModified)
-   * @param sortOrder Sort Order. Default value desc. (optional, default to desc)
    * @param pageNumber Page number. (optional, default to 1)
    * @param pageSize Page size. The maximum page size is 100. (optional, default to 25)
+   * @param name Filter by partially matching name - case insensitive. (optional)
+   * @param sortOrder Sort Order. Default value desc. (optional, default to desc)
+   * @param language Filter by matching language - case insensitive. (optional)
+   * @param sortBy Sort by. Default value dateModified. (optional, default to dateModified)
    * @return SummarySettingEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SummarySettingEntityListing getConversationsSummariesSettings(String language, String name, String sortBy, String sortOrder, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return  getConversationsSummariesSettings(createGetConversationsSummariesSettingsRequest(language, name, sortBy, sortOrder, pageNumber, pageSize));
+  public SummarySettingEntityListing getConversationsSummariesSettings(Integer pageNumber, Integer pageSize, String name, String sortOrder, String language, String sortBy) throws IOException, ApiException {
+    return  getConversationsSummariesSettings(createGetConversationsSummariesSettingsRequest(pageNumber, pageSize, name, sortOrder, language, sortBy));
   }
 
   /**
    * Get all summary settings.
    * 
-   * @param language Filter by matching language - case insensitive. (optional)
-   * @param name Filter by partially matching name - case insensitive. (optional)
-   * @param sortBy Sort by. Default value dateModified. (optional, default to dateModified)
-   * @param sortOrder Sort Order. Default value desc. (optional, default to desc)
    * @param pageNumber Page number. (optional, default to 1)
    * @param pageSize Page size. The maximum page size is 100. (optional, default to 25)
+   * @param name Filter by partially matching name - case insensitive. (optional)
+   * @param sortOrder Sort Order. Default value desc. (optional, default to desc)
+   * @param language Filter by matching language - case insensitive. (optional)
+   * @param sortBy Sort by. Default value dateModified. (optional, default to dateModified)
    * @return SummarySettingEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SummarySettingEntityListing> getConversationsSummariesSettingsWithHttpInfo(String language, String name, String sortBy, String sortOrder, Integer pageNumber, Integer pageSize) throws IOException {
-    return getConversationsSummariesSettings(createGetConversationsSummariesSettingsRequest(language, name, sortBy, sortOrder, pageNumber, pageSize).withHttpInfo());
+  public ApiResponse<SummarySettingEntityListing> getConversationsSummariesSettingsWithHttpInfo(Integer pageNumber, Integer pageSize, String name, String sortOrder, String language, String sortBy) throws IOException {
+    return getConversationsSummariesSettings(createGetConversationsSummariesSettingsRequest(pageNumber, pageSize, name, sortOrder, language, sortBy).withHttpInfo());
   }
 
-  private GetConversationsSummariesSettingsRequest createGetConversationsSummariesSettingsRequest(String language, String name, String sortBy, String sortOrder, Integer pageNumber, Integer pageSize) {
+  private GetConversationsSummariesSettingsRequest createGetConversationsSummariesSettingsRequest(Integer pageNumber, Integer pageSize, String name, String sortOrder, String language, String sortBy) {
     return GetConversationsSummariesSettingsRequest.builder()
-            .withLanguage(language)
-
-            .withName(name)
-
-            .withSortBy(sortBy)
-
-            .withSortOrder(sortOrder)
-
             .withPageNumber(pageNumber)
 
             .withPageSize(pageSize)
+
+            .withName(name)
+
+            .withSortOrder(sortOrder)
+
+            .withLanguage(language)
+
+            .withSortBy(sortBy)
 
             .build();
   }

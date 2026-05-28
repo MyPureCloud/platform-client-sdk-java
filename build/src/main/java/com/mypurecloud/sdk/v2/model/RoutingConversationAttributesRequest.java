@@ -27,6 +27,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
   
   private Integer priority = null;
   private List<String> skillIds = null;
+  private String skillExpression = null;
   private String languageId = null;
   private String labelId = null;
   private List<RequestScoredAgent> requestScoredAgents = null;
@@ -81,6 +82,24 @@ public class RoutingConversationAttributesRequest  implements Serializable {
   }
   public void setSkillIds(List<String> skillIds) {
     this.skillIds = skillIds;
+  }
+
+
+  /**
+   * Skill requirements in form of expression for the conversation.  To remove the skill expression, specify an empty string, i.e., \"\".
+   **/
+  public RoutingConversationAttributesRequest skillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Skill requirements in form of expression for the conversation.  To remove the skill expression, specify an empty string, i.e., \"\".")
+  @JsonProperty("skillExpression")
+  public String getSkillExpression() {
+    return skillExpression;
+  }
+  public void setSkillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
   }
 
 
@@ -149,6 +168,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
 
     return Objects.equals(this.priority, routingConversationAttributesRequest.priority) &&
             Objects.equals(this.skillIds, routingConversationAttributesRequest.skillIds) &&
+            Objects.equals(this.skillExpression, routingConversationAttributesRequest.skillExpression) &&
             Objects.equals(this.languageId, routingConversationAttributesRequest.languageId) &&
             Objects.equals(this.labelId, routingConversationAttributesRequest.labelId) &&
             Objects.equals(this.requestScoredAgents, routingConversationAttributesRequest.requestScoredAgents);
@@ -156,7 +176,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(priority, skillIds, languageId, labelId, requestScoredAgents);
+    return Objects.hash(priority, skillIds, skillExpression, languageId, labelId, requestScoredAgents);
   }
 
   @Override
@@ -166,6 +186,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
+    sb.append("    skillExpression: ").append(toIndentedString(skillExpression)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
     sb.append("    labelId: ").append(toIndentedString(labelId)).append("\n");
     sb.append("    requestScoredAgents: ").append(toIndentedString(requestScoredAgents)).append("\n");

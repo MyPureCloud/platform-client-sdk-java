@@ -56,7 +56,6 @@ import com.mypurecloud.sdk.v2.model.LineEntityListing;
 import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaStatistics;
 import com.mypurecloud.sdk.v2.model.MediaStatisticsListing;
-import com.mypurecloud.sdk.v2.model.MediaStatisticsPostRequest;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBaseEntityListing;
@@ -188,7 +187,6 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesCertificate
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesDidpoolsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesEdgegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesExtensionpoolsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhoneRebootRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonebasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRequest;
@@ -7874,83 +7872,6 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Post media endpoint statistics event.
-   * 
-   * postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<MediaStatistics> postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceAsync(PostTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceRequest request, final AsyncApiCallback<MediaStatistics> callback) {
-    try {
-      final SettableFuture<MediaStatistics> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MediaStatistics>() {}, new AsyncApiCallback<ApiResponse<MediaStatistics>>() {
-        @Override
-        public void onCompleted(ApiResponse<MediaStatistics> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Post media endpoint statistics event.
-   * 
-   * postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<MediaStatistics>> postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresourceAsync(ApiRequest<MediaStatisticsPostRequest> request, final AsyncApiCallback<ApiResponse<MediaStatistics>> callback) {
-    try {
-      final SettableFuture<ApiResponse<MediaStatistics>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<MediaStatistics>() {}, new AsyncApiCallback<ApiResponse<MediaStatistics>>() {
-        @Override
-        public void onCompleted(ApiResponse<MediaStatistics> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<MediaStatistics> response = (ApiResponse<MediaStatistics>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<MediaStatistics> response = (ApiResponse<MediaStatistics>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -37,6 +37,7 @@ public class CreateCallRequest  implements Serializable {
   private Map<String, String> attributes = null;
   private String languageId = null;
   private List<String> routingSkillsIds = null;
+  private String routingSkillExpression = null;
   private List<String> conversationIds = null;
   private List<Destination> participants = null;
   private String uuiData = null;
@@ -241,6 +242,24 @@ public class CreateCallRequest  implements Serializable {
 
 
   /**
+   * The skill expression to use for routing this call (if calling a queue).
+   **/
+  public CreateCallRequest routingSkillExpression(String routingSkillExpression) {
+    this.routingSkillExpression = routingSkillExpression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The skill expression to use for routing this call (if calling a queue).")
+  @JsonProperty("routingSkillExpression")
+  public String getRoutingSkillExpression() {
+    return routingSkillExpression;
+  }
+  public void setRoutingSkillExpression(String routingSkillExpression) {
+    this.routingSkillExpression = routingSkillExpression;
+  }
+
+
+  /**
    * The list of existing call conversations to merge into a new ad-hoc conference.
    **/
   public CreateCallRequest conversationIds(List<String> conversationIds) {
@@ -350,6 +369,7 @@ public class CreateCallRequest  implements Serializable {
             Objects.equals(this.attributes, createCallRequest.attributes) &&
             Objects.equals(this.languageId, createCallRequest.languageId) &&
             Objects.equals(this.routingSkillsIds, createCallRequest.routingSkillsIds) &&
+            Objects.equals(this.routingSkillExpression, createCallRequest.routingSkillExpression) &&
             Objects.equals(this.conversationIds, createCallRequest.conversationIds) &&
             Objects.equals(this.participants, createCallRequest.participants) &&
             Objects.equals(this.uuiData, createCallRequest.uuiData) &&
@@ -359,7 +379,7 @@ public class CreateCallRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, callerId, callerIdName, callFromQueueId, callQueueId, callUserId, priority, attributes, languageId, routingSkillsIds, conversationIds, participants, uuiData, externalContactId, label);
+    return Objects.hash(phoneNumber, callerId, callerIdName, callFromQueueId, callQueueId, callUserId, priority, attributes, languageId, routingSkillsIds, routingSkillExpression, conversationIds, participants, uuiData, externalContactId, label);
   }
 
   @Override
@@ -377,6 +397,7 @@ public class CreateCallRequest  implements Serializable {
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
     sb.append("    routingSkillsIds: ").append(toIndentedString(routingSkillsIds)).append("\n");
+    sb.append("    routingSkillExpression: ").append(toIndentedString(routingSkillExpression)).append("\n");
     sb.append("    conversationIds: ").append(toIndentedString(conversationIds)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");

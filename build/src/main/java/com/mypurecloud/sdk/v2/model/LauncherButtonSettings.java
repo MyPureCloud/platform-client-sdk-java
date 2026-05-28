@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Icon;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -74,6 +75,56 @@ public class LauncherButtonSettings  implements Serializable {
   }
   private VisibilityEnum visibility = null;
 
+  private static class DisplayTypeEnumDeserializer extends StdDeserializer<DisplayTypeEnum> {
+    public DisplayTypeEnumDeserializer() {
+      super(DisplayTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DisplayTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DisplayTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The display type of the launcher button
+   */
+ @JsonDeserialize(using = DisplayTypeEnumDeserializer.class)
+  public enum DisplayTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ICONANDTEXT("IconAndText"),
+    ICON("Icon"),
+    TEXT("Text");
+
+    private String value;
+
+    DisplayTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DisplayTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DisplayTypeEnum value : DisplayTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DisplayTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DisplayTypeEnum displayType = null;
+  private Icon icon = null;
+
   public LauncherButtonSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
     }
@@ -103,6 +154,42 @@ public class LauncherButtonSettings  implements Serializable {
   }
 
 
+  /**
+   * The display type of the launcher button
+   **/
+  public LauncherButtonSettings displayType(DisplayTypeEnum displayType) {
+    this.displayType = displayType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The display type of the launcher button")
+  @JsonProperty("displayType")
+  public DisplayTypeEnum getDisplayType() {
+    return displayType;
+  }
+  public void setDisplayType(DisplayTypeEnum displayType) {
+    this.displayType = displayType;
+  }
+
+
+  /**
+   * The icon for the launcher button
+   **/
+  public LauncherButtonSettings icon(Icon icon) {
+    this.icon = icon;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The icon for the launcher button")
+  @JsonProperty("icon")
+  public Icon getIcon() {
+    return icon;
+  }
+  public void setIcon(Icon icon) {
+    this.icon = icon;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -113,12 +200,14 @@ public class LauncherButtonSettings  implements Serializable {
     }
     LauncherButtonSettings launcherButtonSettings = (LauncherButtonSettings) o;
 
-    return Objects.equals(this.visibility, launcherButtonSettings.visibility);
+    return Objects.equals(this.visibility, launcherButtonSettings.visibility) &&
+            Objects.equals(this.displayType, launcherButtonSettings.displayType) &&
+            Objects.equals(this.icon, launcherButtonSettings.icon);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(visibility);
+    return Objects.hash(visibility, displayType, icon);
   }
 
   @Override
@@ -127,6 +216,8 @@ public class LauncherButtonSettings  implements Serializable {
     sb.append("class LauncherButtonSettings {\n");
     
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+    sb.append("    displayType: ").append(toIndentedString(displayType)).append("\n");
+    sb.append("    icon: ").append(toIndentedString(icon)).append("\n");
     sb.append("}");
     return sb.toString();
   }

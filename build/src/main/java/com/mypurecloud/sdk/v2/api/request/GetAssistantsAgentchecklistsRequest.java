@@ -197,6 +197,20 @@ public class GetAssistantsAgentchecklistsRequest {
 		}
 	}
 
+	private List<String> agentChecklistIds;
+	public List<String> getAgentChecklistIds() {
+		return this.agentChecklistIds;
+	}
+
+	public void setAgentChecklistIds(List<String> agentChecklistIds) {
+		this.agentChecklistIds = agentChecklistIds;
+	}
+
+	public GetAssistantsAgentchecklistsRequest withAgentChecklistIds(List<String> agentChecklistIds) {
+	    this.setAgentChecklistIds(agentChecklistIds);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -240,6 +254,9 @@ public class GetAssistantsAgentchecklistsRequest {
         
 
                 .withQueryParameters("sortBy", "", sortBy)
+        
+
+                .withQueryParameters("agentChecklistIds", "multi", agentChecklistIds)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -313,6 +330,11 @@ public class GetAssistantsAgentchecklistsRequest {
 		    request.setSortBy(sortBy.toString());
 
 		    return this;
+		}
+
+		public Builder withAgentChecklistIds(List<String> agentChecklistIds) {
+			request.setAgentChecklistIds(agentChecklistIds);
+			return this;
 		}
 
 

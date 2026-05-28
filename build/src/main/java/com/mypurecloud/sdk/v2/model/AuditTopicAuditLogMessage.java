@@ -415,6 +415,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     KNOWLEDGELABEL("KnowledgeLabel"),
     KNOWLEDGETRAINING("KnowledgeTraining"),
     KNOWLEDGESEARCHFEEDBACK("KnowledgeSearchFeedback"),
+    KNOWLEDGEBASESOURCE("KnowledgeBaseSource"),
+    KNOWLEDGEFABRICSOURCE("KnowledgeFabricSource"),
     TRANSCRIPTIONSETTINGS("TranscriptionSettings"),
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
     APPOINTMENT("Appointment"),

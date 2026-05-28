@@ -188,14 +188,14 @@ public class WorkitemQueryPostRequest  implements Serializable {
 
 
   /**
-   * List of filter objects to be used in the search. Valid filter names are: 'workbinId', 'typeId, 'assigneeId', 'id', 'name', 'description', 'languageId', 'priority', 'dateCreated', 'dateModified', 'dateDue', 'dateExpires', 'durationInSeconds', 'ttl', 'statusId', 'statusCategory', 'dateClosed', 'externalContactId', 'reporterId', 'queueId', 'externalTag', 'modifiedBy', 'assignmentState', 'divisionId', 'customFields.<custom field name>'
+   * List of filter objects to be used in the search. Valid filter names are: 'workbinId', 'typeId, 'assigneeId', 'id', 'name', 'description', 'languageId', 'priority', 'dateCreated', 'dateModified', 'dateDue', 'dateExpires', 'durationInSeconds', 'ttl', 'statusId', 'statusCategory', 'dateClosed', 'externalContactId', 'reporterId', 'queueId', 'externalTag', 'modifiedBy', 'assignmentState', 'divisionId', 'caseId', 'externalContactId', 'customFields.<custom field name>'
    **/
   public WorkitemQueryPostRequest filters(List<WorkitemFilter> filters) {
     this.filters = filters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List of filter objects to be used in the search. Valid filter names are: 'workbinId', 'typeId, 'assigneeId', 'id', 'name', 'description', 'languageId', 'priority', 'dateCreated', 'dateModified', 'dateDue', 'dateExpires', 'durationInSeconds', 'ttl', 'statusId', 'statusCategory', 'dateClosed', 'externalContactId', 'reporterId', 'queueId', 'externalTag', 'modifiedBy', 'assignmentState', 'divisionId', 'customFields.<custom field name>'")
+  @ApiModelProperty(example = "null", required = true, value = "List of filter objects to be used in the search. Valid filter names are: 'workbinId', 'typeId, 'assigneeId', 'id', 'name', 'description', 'languageId', 'priority', 'dateCreated', 'dateModified', 'dateDue', 'dateExpires', 'durationInSeconds', 'ttl', 'statusId', 'statusCategory', 'dateClosed', 'externalContactId', 'reporterId', 'queueId', 'externalTag', 'modifiedBy', 'assignmentState', 'divisionId', 'caseId', 'externalContactId', 'customFields.<custom field name>'")
   @JsonProperty("filters")
   public List<WorkitemFilter> getFilters() {
     return filters;

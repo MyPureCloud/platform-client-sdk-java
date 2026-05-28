@@ -22,8 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyActionmaps**](JourneyApi#getJourneyActionmaps) | Retrieve all action maps. |
 | [**getJourneyActionmapsEstimatesJob**](JourneyApi#getJourneyActionmapsEstimatesJob) | Deprecated. Get status of job. |
 | [**getJourneyActionmapsEstimatesJobResults**](JourneyApi#getJourneyActionmapsEstimatesJobResults) | Deprecated. Get estimates from completed job. |
-| [**getJourneyActiontarget**](JourneyApi#getJourneyActiontarget) | Retrieve a single action target. |
-| [**getJourneyActiontargets**](JourneyApi#getJourneyActiontargets) | Retrieve all action targets. |
+| [**getJourneyActiontarget**](JourneyApi#getJourneyActiontarget) | Deprecated. Retrieve a single action target. |
+| [**getJourneyActiontargets**](JourneyApi#getJourneyActiontargets) | Deprecated. Retrieve all action targets. |
 | [**getJourneyActiontemplate**](JourneyApi#getJourneyActiontemplate) | Retrieve a single action template. |
 | [**getJourneyActiontemplates**](JourneyApi#getJourneyActiontemplates) | Retrieve all action templates. |
 | [**getJourneyDeploymentCustomerPing**](JourneyApi#getJourneyDeploymentCustomerPing) | Send a ping. |
@@ -60,11 +60,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyViewsDataDetails**](JourneyApi#getJourneyViewsDataDetails) | Get details about the data available for journey queries including oldest and newest event dates |
 | [**getJourneyViewsEventdefinition**](JourneyApi#getJourneyViewsEventdefinition) | Get an Event Definition |
 | [**getJourneyViewsEventdefinitions**](JourneyApi#getJourneyViewsEventdefinitions) | Get a list of Event Definitions |
+| [**getJourneyViewsEventdefinitionsExternal**](JourneyApi#getJourneyViewsEventdefinitionsExternal) | Get external events for journey views |
+| [**getJourneyViewsEventdefinitionsExternalChanges**](JourneyApi#getJourneyViewsEventdefinitionsExternalChanges) | Get changes in external event definitions |
 | [**getJourneyViewsJobs**](JourneyApi#getJourneyViewsJobs) | Get the jobs for an organization. |
 | [**getJourneyViewsJobsMe**](JourneyApi#getJourneyViewsJobsMe) | Get my jobs |
 | [**getJourneyViewsSchedules**](JourneyApi#getJourneyViewsSchedules) | Get the journey schedules for an organization. |
 | [**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | Update single action map. |
-| [**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | Update a single action target. |
+| [**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | Deprecated. Update a single action target. |
 | [**patchJourneyActiontemplate**](JourneyApi#patchJourneyActiontemplate) | Update a single action template. |
 | [**patchJourneyExternaleventsConfiguration**](JourneyApi#patchJourneyExternaleventsConfiguration) | Update an external events configuration. |
 | [**patchJourneyOutcome**](JourneyApi#patchJourneyOutcome) | Deprecated. Update an outcome. |
@@ -95,6 +97,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putJourneyExternaleventsSchema**](JourneyApi#putJourneyExternaleventsSchema) | Update a schema |
 | [**putJourneyViewSchedules**](JourneyApi#putJourneyViewSchedules) | Update the Schedule for a JourneyView |
 | [**putJourneyViewVersion**](JourneyApi#putJourneyViewVersion) | Update a Journey View by ID and version |
+| [**putJourneyViewsEventdefinition**](JourneyApi#putJourneyViewsEventdefinition) | Update external event for journey views |
+| [**putJourneyViewsEventdefinitionActivate**](JourneyApi#putJourneyViewsEventdefinitionActivate) | Activate external event for journey views |
 {: class="table-striped"}
 
 
@@ -1209,10 +1213,15 @@ try {
 
 # **getJourneyActiontarget**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ActionTarget](ActionTarget) getJourneyActiontarget(actionTargetId)
 
-Retrieve a single action target.
+Deprecated. Retrieve a single action target.
+
+ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
 Wraps GET /api/v2/journey/actiontargets/{actionTargetId}  
 
@@ -1268,10 +1277,15 @@ try {
 
 # **getJourneyActiontargets**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ActionTargetListing](ActionTargetListing) getJourneyActiontargets(pageNumber, pageSize)
 
-Retrieve all action targets.
+Deprecated. Retrieve all action targets.
+
+ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
 Wraps GET /api/v2/journey/actiontargets  
 
@@ -3549,6 +3563,116 @@ This endpoint does not require any parameters.
 [**JourneyEventDefinitionListing**](JourneyEventDefinitionListing)
 
 
+# **getJourneyViewsEventdefinitionsExternal**
+
+
+> [GetExternalEventsResponse](GetExternalEventsResponse) getJourneyViewsEventdefinitionsExternal()
+
+Get external events for journey views
+
+Wraps GET /api/v2/journey/views/eventdefinitions/external  
+
+Requires ALL permissions: 
+
+* journey:externalEvents:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+try {
+    GetExternalEventsResponse result = apiInstance.getJourneyViewsEventdefinitionsExternal();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewsEventdefinitionsExternal");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**GetExternalEventsResponse**](GetExternalEventsResponse)
+
+
+# **getJourneyViewsEventdefinitionsExternalChanges**
+
+
+> [ExternalEventChangesResponse](ExternalEventChangesResponse) getJourneyViewsEventdefinitionsExternalChanges()
+
+Get changes in external event definitions
+
+Wraps GET /api/v2/journey/views/eventdefinitions/external/changes  
+
+Requires ALL permissions: 
+
+* journey:externalEvents:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+try {
+    ExternalEventChangesResponse result = apiInstance.getJourneyViewsEventdefinitionsExternalChanges();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewsEventdefinitionsExternalChanges");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ExternalEventChangesResponse**](ExternalEventChangesResponse)
+
+
 # **getJourneyViewsJobs**
 
 
@@ -3803,10 +3927,15 @@ try {
 
 # **patchJourneyActiontarget**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ActionTarget](ActionTarget) patchJourneyActiontarget(actionTargetId, body)
 
-Update a single action target.
+Deprecated. Update a single action target.
+
+ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
 Wraps PATCH /api/v2/journey/actiontargets/{actionTargetId}  
 
@@ -5663,4 +5792,126 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+# **putJourneyViewsEventdefinition**
+
+
+> [UpdateExternalEventResponse](UpdateExternalEventResponse) putJourneyViewsEventdefinition(eventDefinitionId, body)
+
+Update external event for journey views
+
+Wraps PUT /api/v2/journey/views/eventdefinitions/{eventDefinitionId}  
+
+Requires ALL permissions: 
+
+* journey:externalEvents:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String eventDefinitionId = "eventDefinitionId_example"; // String | Event Definition ID
+UpdateExternalEventRequest body = new UpdateExternalEventRequest(); // UpdateExternalEventRequest | 
+try {
+    UpdateExternalEventResponse result = apiInstance.putJourneyViewsEventdefinition(eventDefinitionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#putJourneyViewsEventdefinition");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eventDefinitionId** | **String**| Event Definition ID | 
+| **body** | [**UpdateExternalEventRequest**](UpdateExternalEventRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UpdateExternalEventResponse**](UpdateExternalEventResponse)
+
+
+# **putJourneyViewsEventdefinitionActivate**
+
+
+> [ActivateExternalEventResponse](ActivateExternalEventResponse) putJourneyViewsEventdefinitionActivate(eventDefinitionId, body)
+
+Activate external event for journey views
+
+Wraps PUT /api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate  
+
+Requires ALL permissions: 
+
+* journey:externalEvents:activate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String eventDefinitionId = "eventDefinitionId_example"; // String | Event Definition ID
+ActivateExternalEventRequest body = new ActivateExternalEventRequest(); // ActivateExternalEventRequest | 
+try {
+    ActivateExternalEventResponse result = apiInstance.putJourneyViewsEventdefinitionActivate(eventDefinitionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#putJourneyViewsEventdefinitionActivate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eventDefinitionId** | **String**| Event Definition ID | 
+| **body** | [**ActivateExternalEventRequest**](ActivateExternalEventRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivateExternalEventResponse**](ActivateExternalEventResponse)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

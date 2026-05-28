@@ -26,6 +26,7 @@ public class AgentChecklistItem  implements Serializable {
   private String name = null;
   private String description = null;
   private Boolean automatedCheckEnabled = null;
+  private Boolean exactPhraseMatch = null;
   private Boolean important = null;
   private String selfUri = null;
 
@@ -102,6 +103,24 @@ public class AgentChecklistItem  implements Serializable {
 
 
   /**
+   * Flag to indicate whether exact phrase matching is applicable for this checklist item.
+   **/
+  public AgentChecklistItem exactPhraseMatch(Boolean exactPhraseMatch) {
+    this.exactPhraseMatch = exactPhraseMatch;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag to indicate whether exact phrase matching is applicable for this checklist item.")
+  @JsonProperty("exactPhraseMatch")
+  public Boolean getExactPhraseMatch() {
+    return exactPhraseMatch;
+  }
+  public void setExactPhraseMatch(Boolean exactPhraseMatch) {
+    this.exactPhraseMatch = exactPhraseMatch;
+  }
+
+
+  /**
    * Flag to indicate whether this checklist item is marked as important.
    **/
   public AgentChecklistItem important(Boolean important) {
@@ -140,13 +159,14 @@ public class AgentChecklistItem  implements Serializable {
             Objects.equals(this.name, agentChecklistItem.name) &&
             Objects.equals(this.description, agentChecklistItem.description) &&
             Objects.equals(this.automatedCheckEnabled, agentChecklistItem.automatedCheckEnabled) &&
+            Objects.equals(this.exactPhraseMatch, agentChecklistItem.exactPhraseMatch) &&
             Objects.equals(this.important, agentChecklistItem.important) &&
             Objects.equals(this.selfUri, agentChecklistItem.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, automatedCheckEnabled, important, selfUri);
+    return Objects.hash(id, name, description, automatedCheckEnabled, exactPhraseMatch, important, selfUri);
   }
 
   @Override
@@ -158,6 +178,7 @@ public class AgentChecklistItem  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    automatedCheckEnabled: ").append(toIndentedString(automatedCheckEnabled)).append("\n");
+    sb.append("    exactPhraseMatch: ").append(toIndentedString(exactPhraseMatch)).append("\n");
     sb.append("    important: ").append(toIndentedString(important)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

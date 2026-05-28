@@ -220,14 +220,14 @@ public class AttemptLimits  implements Serializable {
 
 
   /**
-   * If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.
+   * If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
    **/
   public AttemptLimits timeZoneId(String timeZoneId) {
     this.timeZoneId = timeZoneId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.")
+  @ApiModelProperty(example = "null", value = "If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London")
   @JsonProperty("timeZoneId")
   public String getTimeZoneId() {
     return timeZoneId;

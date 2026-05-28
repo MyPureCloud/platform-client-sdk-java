@@ -6,6 +6,8 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **visibility** | [**VisibilityEnum**](#Enum--VisibilityEnum) | The visibility settings for the button |  [optional] |
+| **displayType** | [**DisplayTypeEnum**](#Enum--DisplayTypeEnum) | The display type of the launcher button |  [optional] |
+| **icon** | [**Icon**](Icon) | The icon for the launcher button |  [optional] |
 
 
 ## Enum: VisibilityEnum
@@ -18,6 +20,16 @@
 | ONDEMAND | &quot;OnDemand&quot; | 
 
 
+## Enum: DisplayTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ICONANDTEXT | &quot;IconAndText&quot; | 
+| ICON | &quot;Icon&quot; | 
+| TEXT | &quot;Text&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

@@ -122,6 +122,7 @@ public class KnowledgeBaseCreateRequest  implements Serializable {
     }
   }
   private CoreLanguageEnum coreLanguage = null;
+  private Boolean contentSearchEnabled = null;
 
   public KnowledgeBaseCreateRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -188,6 +189,24 @@ public class KnowledgeBaseCreateRequest  implements Serializable {
   }
 
 
+  /**
+   * Flag that indicates the search on content is enabled for the knowledge base.
+   **/
+  public KnowledgeBaseCreateRequest contentSearchEnabled(Boolean contentSearchEnabled) {
+    this.contentSearchEnabled = contentSearchEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag that indicates the search on content is enabled for the knowledge base.")
+  @JsonProperty("contentSearchEnabled")
+  public Boolean getContentSearchEnabled() {
+    return contentSearchEnabled;
+  }
+  public void setContentSearchEnabled(Boolean contentSearchEnabled) {
+    this.contentSearchEnabled = contentSearchEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -200,12 +219,13 @@ public class KnowledgeBaseCreateRequest  implements Serializable {
 
     return Objects.equals(this.name, knowledgeBaseCreateRequest.name) &&
             Objects.equals(this.description, knowledgeBaseCreateRequest.description) &&
-            Objects.equals(this.coreLanguage, knowledgeBaseCreateRequest.coreLanguage);
+            Objects.equals(this.coreLanguage, knowledgeBaseCreateRequest.coreLanguage) &&
+            Objects.equals(this.contentSearchEnabled, knowledgeBaseCreateRequest.contentSearchEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, coreLanguage);
+    return Objects.hash(name, description, coreLanguage, contentSearchEnabled);
   }
 
   @Override
@@ -216,6 +236,7 @@ public class KnowledgeBaseCreateRequest  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    coreLanguage: ").append(toIndentedString(coreLanguage)).append("\n");
+    sb.append("    contentSearchEnabled: ").append(toIndentedString(contentSearchEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

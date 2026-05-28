@@ -101,6 +101,20 @@ import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 public class PostFlowsJobsRequest {
 
+	private Object body;
+	public Object getBody() {
+		return this.body;
+	}
+
+	public void setBody(Object body) {
+		this.body = body;
+	}
+
+	public PostFlowsJobsRequest withBody(Object body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -120,10 +134,12 @@ public class PostFlowsJobsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() {
+    public ApiRequest<Object> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/flows/jobs")
+                .withBody(body)
+
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -144,6 +160,11 @@ public class PostFlowsJobsRequest {
 			request = new PostFlowsJobsRequest();
 		}
 
+
+		public Builder withBody(Object body) {
+			request.setBody(body);
+			return this;
+		}
 
 
 

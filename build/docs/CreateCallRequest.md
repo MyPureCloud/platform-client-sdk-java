@@ -15,6 +15,7 @@
 | **attributes** | **Map&lt;String, String&gt;** | The list of attributes to associate with the customer participant. |  [optional] |
 | **languageId** | **String** | The language skill ID to use for routing this call (if calling a queue). |  [optional] |
 | **routingSkillsIds** | **List&lt;String&gt;** | The skill ID's to use for routing this call (if calling a queue). |  [optional] |
+| **routingSkillExpression** | **String** | The skill expression to use for routing this call (if calling a queue). |  [optional] |
 | **conversationIds** | **List&lt;String&gt;** | The list of existing call conversations to merge into a new ad-hoc conference. |  [optional] |
 | **participants** | [**List&lt;Destination&gt;**](Destination) | The list of participants to call to create a new ad-hoc conference. |  [optional] |
 | **uuiData** | **String** | User to User Information (UUI) data managed by SIP session application. |  [optional] |
@@ -24,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

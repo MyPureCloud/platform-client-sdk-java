@@ -60,14 +60,14 @@ public class CallableTime  implements Serializable {
 
 
   /**
-   * The time zone for the time slots; for example, Africa/Abidjan
+   * The time zone for the time slots; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
    **/
   public CallableTime timeZoneId(String timeZoneId) {
     this.timeZoneId = timeZoneId;
     return this;
   }
   
-  @ApiModelProperty(example = "Africa/Abidjan", required = true, value = "The time zone for the time slots; for example, Africa/Abidjan")
+  @ApiModelProperty(example = "null", required = true, value = "The time zone for the time slots; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London")
   @JsonProperty("timeZoneId")
   public String getTimeZoneId() {
     return timeZoneId;

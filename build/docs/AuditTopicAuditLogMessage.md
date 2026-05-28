@@ -304,6 +304,8 @@
 | KNOWLEDGELABEL | &quot;KnowledgeLabel&quot; | 
 | KNOWLEDGETRAINING | &quot;KnowledgeTraining&quot; | 
 | KNOWLEDGESEARCHFEEDBACK | &quot;KnowledgeSearchFeedback&quot; | 
+| KNOWLEDGEBASESOURCE | &quot;KnowledgeBaseSource&quot; | 
+| KNOWLEDGEFABRICSOURCE | &quot;KnowledgeFabricSource&quot; | 
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; | 
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; | 
 | APPOINTMENT | &quot;Appointment&quot; | 
@@ -500,4 +502,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

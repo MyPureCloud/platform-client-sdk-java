@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The globally unique identifier for the object. |  |
 | **name** | **String** |  |  [optional] |
 | **serviceGoalTemplate** | [**ServiceGoalTemplateReference**](ServiceGoalTemplateReference) | The ID of the service goal template associated with this planning group |  [optional] |
 | **routePaths** | [**List&lt;RoutePathResponse&gt;**](RoutePathResponse) | Set of route paths associated with the planning group |  [optional] |
@@ -15,4 +15,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

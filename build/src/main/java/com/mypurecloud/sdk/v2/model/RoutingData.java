@@ -30,6 +30,7 @@ public class RoutingData  implements Serializable {
   private String label = null;
   private Integer priority = null;
   private List<String> skillIds = null;
+  private String skillExpression = null;
   private List<String> preferredAgentIds = null;
   private List<ScoredAgent> scoredAgents = null;
   private List<String> routingFlags = null;
@@ -144,6 +145,24 @@ public class RoutingData  implements Serializable {
 
 
   /**
+   * Optional skill expression for routing when skillIds are present. Used to match agents by a logical expression over skills.
+   **/
+  public RoutingData skillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional skill expression for routing when skillIds are present. Used to match agents by a logical expression over skills.")
+  @JsonProperty("skillExpression")
+  public String getSkillExpression() {
+    return skillExpression;
+  }
+  public void setSkillExpression(String skillExpression) {
+    this.skillExpression = skillExpression;
+  }
+
+
+  /**
    * A list of agents to be preferred in routing
    **/
   public RoutingData preferredAgentIds(List<String> preferredAgentIds) {
@@ -212,6 +231,7 @@ public class RoutingData  implements Serializable {
             Objects.equals(this.label, routingData.label) &&
             Objects.equals(this.priority, routingData.priority) &&
             Objects.equals(this.skillIds, routingData.skillIds) &&
+            Objects.equals(this.skillExpression, routingData.skillExpression) &&
             Objects.equals(this.preferredAgentIds, routingData.preferredAgentIds) &&
             Objects.equals(this.scoredAgents, routingData.scoredAgents) &&
             Objects.equals(this.routingFlags, routingData.routingFlags);
@@ -219,7 +239,7 @@ public class RoutingData  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, languageId, label, priority, skillIds, preferredAgentIds, scoredAgents, routingFlags);
+    return Objects.hash(queueId, languageId, label, priority, skillIds, skillExpression, preferredAgentIds, scoredAgents, routingFlags);
   }
 
   @Override
@@ -232,6 +252,7 @@ public class RoutingData  implements Serializable {
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
+    sb.append("    skillExpression: ").append(toIndentedString(skillExpression)).append("\n");
     sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("    routingFlags: ").append(toIndentedString(routingFlags)).append("\n");

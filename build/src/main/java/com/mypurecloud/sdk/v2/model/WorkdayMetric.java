@@ -34,6 +34,7 @@ public class WorkdayMetric  implements Serializable {
   private Integer maxPoints = null;
   private Double value = null;
   private List<PunctualityEvent> punctualityEvents = null;
+  private String businessUnitId = null;
   private List<QualityEvaluationScoreItem> evaluationDetails = null;
 
   public WorkdayMetric() {
@@ -93,6 +94,13 @@ public class WorkdayMetric  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The id of the business unit associated with this metric, only returned for metrics with punctuality events")
+  @JsonProperty("businessUnitId")
+  public String getBusinessUnitId() {
+    return businessUnitId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "List of evaluations for quality evaluation score metrics")
   @JsonProperty("evaluationDetails")
   public List<QualityEvaluationScoreItem> getEvaluationDetails() {
@@ -116,12 +124,13 @@ public class WorkdayMetric  implements Serializable {
             Objects.equals(this.maxPoints, workdayMetric.maxPoints) &&
             Objects.equals(this.value, workdayMetric.value) &&
             Objects.equals(this.punctualityEvents, workdayMetric.punctualityEvents) &&
+            Objects.equals(this.businessUnitId, workdayMetric.businessUnitId) &&
             Objects.equals(this.evaluationDetails, workdayMetric.evaluationDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, objective, points, maxPoints, value, punctualityEvents, evaluationDetails);
+    return Objects.hash(metric, objective, points, maxPoints, value, punctualityEvents, businessUnitId, evaluationDetails);
   }
 
   @Override
@@ -135,6 +144,7 @@ public class WorkdayMetric  implements Serializable {
     sb.append("    maxPoints: ").append(toIndentedString(maxPoints)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    punctualityEvents: ").append(toIndentedString(punctualityEvents)).append("\n");
+    sb.append("    businessUnitId: ").append(toIndentedString(businessUnitId)).append("\n");
     sb.append("    evaluationDetails: ").append(toIndentedString(evaluationDetails)).append("\n");
     sb.append("}");
     return sb.toString();

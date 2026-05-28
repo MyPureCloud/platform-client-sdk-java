@@ -10,8 +10,10 @@
 | **language** | [**Language**](Language) | Current language on in-queue conversation |  [optional] |
 | **label** | [**UtilizationLabel**](UtilizationLabel) | Current label on in-queue conversation |  [optional] |
 | **scoredAgents** | [**List&lt;ScoredAgent&gt;**](ScoredAgent) | Current scored agents on in-queue conversation |  [optional] |
+| **skillExpression** | **String** | Current skill expression on in-queue conversation |  [optional] |
+| **skillExpressionId** | **String** | Current skill expression ID on in-queue conversation |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

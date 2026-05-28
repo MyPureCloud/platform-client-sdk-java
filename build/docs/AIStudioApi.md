@@ -207,7 +207,7 @@ try {
 # **getConversationsSummariesSettings**
 
 
-> [SummarySettingEntityListing](SummarySettingEntityListing) getConversationsSummariesSettings(language, name, sortBy, sortOrder, pageNumber, pageSize)
+> [SummarySettingEntityListing](SummarySettingEntityListing) getConversationsSummariesSettings(pageNumber, pageSize, name, sortOrder, language, sortBy)
 
 Get all summary settings.
 
@@ -239,14 +239,14 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AIStudioApi apiInstance = new AIStudioApi();
-String language = "language_example"; // String | Filter by matching language - case insensitive.
-String name = "name_example"; // String | Filter by partially matching name - case insensitive.
-String sortBy = "dateModified"; // String | Sort by. Default value dateModified.
-String sortOrder = "desc"; // String | Sort Order. Default value desc.
 Integer pageNumber = 1; // Integer | Page number.
 Integer pageSize = 25; // Integer | Page size. The maximum page size is 100.
+String name = "name_example"; // String | Filter by partially matching name - case insensitive.
+String sortOrder = "desc"; // String | Sort Order. Default value desc.
+String language = "language_example"; // String | Filter by matching language - case insensitive.
+String sortBy = "dateModified"; // String | Sort by. Default value dateModified.
 try {
-    SummarySettingEntityListing result = apiInstance.getConversationsSummariesSettings(language, name, sortBy, sortOrder, pageNumber, pageSize);
+    SummarySettingEntityListing result = apiInstance.getConversationsSummariesSettings(pageNumber, pageSize, name, sortOrder, language, sortBy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AIStudioApi#getConversationsSummariesSettings");
@@ -259,12 +259,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **language** | **String**| Filter by matching language - case insensitive. | [optional] 
-| **name** | **String**| Filter by partially matching name - case insensitive. | [optional] 
-| **sortBy** | **String**| Sort by. Default value dateModified. | [optional] [default to dateModified]<br />**Values**: dateModified, name 
-| **sortOrder** | **String**| Sort Order. Default value desc. | [optional] [default to desc]<br />**Values**: asc, desc 
 | **pageNumber** | **Integer**| Page number. | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size. The maximum page size is 100. | [optional] [default to 25] 
+| **name** | **String**| Filter by partially matching name - case insensitive. | [optional] 
+| **sortOrder** | **String**| Sort Order. Default value desc. | [optional] [default to desc]<br />**Values**: asc, desc 
+| **language** | **String**| Filter by matching language - case insensitive. | [optional] 
+| **sortBy** | **String**| Sort by. Default value dateModified. | [optional] [default to dateModified]<br />**Values**: dateModified, name 
 {: class="table-striped"}
 
 
@@ -1315,4 +1315,4 @@ try {
 [**SummarySetting**](SummarySetting)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

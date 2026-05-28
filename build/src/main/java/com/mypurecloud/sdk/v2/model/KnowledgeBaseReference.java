@@ -121,6 +121,7 @@ public class KnowledgeBaseReference  implements Serializable {
     }
   }
   private LanguageCodeEnum languageCode = null;
+  private Boolean contentSearchEnabled = null;
   private String selfUri = null;
 
   public KnowledgeBaseReference() {
@@ -170,6 +171,24 @@ public class KnowledgeBaseReference  implements Serializable {
   }
 
 
+  /**
+   * Flag that indicates the search on content is enabled for the knowledge base.
+   **/
+  public KnowledgeBaseReference contentSearchEnabled(Boolean contentSearchEnabled) {
+    this.contentSearchEnabled = contentSearchEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag that indicates the search on content is enabled for the knowledge base.")
+  @JsonProperty("contentSearchEnabled")
+  public Boolean getContentSearchEnabled() {
+    return contentSearchEnabled;
+  }
+  public void setContentSearchEnabled(Boolean contentSearchEnabled) {
+    this.contentSearchEnabled = contentSearchEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -189,12 +208,13 @@ public class KnowledgeBaseReference  implements Serializable {
 
     return Objects.equals(this.id, knowledgeBaseReference.id) &&
             Objects.equals(this.languageCode, knowledgeBaseReference.languageCode) &&
+            Objects.equals(this.contentSearchEnabled, knowledgeBaseReference.contentSearchEnabled) &&
             Objects.equals(this.selfUri, knowledgeBaseReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, languageCode, selfUri);
+    return Objects.hash(id, languageCode, contentSearchEnabled, selfUri);
   }
 
   @Override
@@ -204,6 +224,7 @@ public class KnowledgeBaseReference  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    languageCode: ").append(toIndentedString(languageCode)).append("\n");
+    sb.append("    contentSearchEnabled: ").append(toIndentedString(contentSearchEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

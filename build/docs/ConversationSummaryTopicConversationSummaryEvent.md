@@ -22,6 +22,8 @@
 | **extractedEntities** | [**List&lt;ConversationSummaryTopicSummaryExtractedCustomEntity&gt;**](ConversationSummaryTopicSummaryExtractedCustomEntity) |  |  [optional] |
 | **wrapUpCodes** | [**List&lt;ConversationSummaryTopicConversationWrapUpCode&gt;**](ConversationSummaryTopicConversationWrapUpCode) |  |  [optional] |
 | **triggerSource** | [**ConversationSummaryTopicTriggerSource**](ConversationSummaryTopicTriggerSource) |  |  [optional] |
+| **summarySourceType** | [**SummarySourceTypeEnum**](#Enum--SummarySourceTypeEnum) |  |  [optional] |
+| **triggerType** | [**TriggerTypeEnum**](#Enum--TriggerTypeEnum) |  |  [optional] |
 | **lastEditedBy** | [**ConversationSummaryTopicConversationSummaryParticipant**](ConversationSummaryTopicConversationSummaryParticipant) |  |  [optional] |
 | **errorType** | [**ErrorTypeEnum**](#Enum--ErrorTypeEnum) |  |  [optional] |
 | **durationMs** | **Long** |  |  [optional] |
@@ -55,6 +57,26 @@
 | EMAIL | &quot;EMAIL&quot; | 
 
 
+## Enum: SummarySourceTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| GENESYS_NATIVE_SERVICE | &quot;GENESYS_NATIVE_SERVICE&quot; | 
+| EXTERNAL_SERVICE | &quot;EXTERNAL_SERVICE&quot; | 
+
+
+## Enum: TriggerTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| ON_DEMAND | &quot;ON_DEMAND&quot; | 
+| AFTER_DISCONNECT | &quot;AFTER_DISCONNECT&quot; | 
+
+
 ## Enum: ErrorTypeEnum
 
 | Name | Value |
@@ -68,4 +90,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

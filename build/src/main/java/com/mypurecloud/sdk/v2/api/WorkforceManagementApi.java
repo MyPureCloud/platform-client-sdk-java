@@ -27,6 +27,10 @@ import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
 import com.mypurecloud.sdk.v2.model.AdminAgentWorkPlanPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AdminBulkUpdateAlternativeShiftTradeStateRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AgentBulkAddOpportunityEnrollmentsRequest;
+import com.mypurecloud.sdk.v2.model.AgentBulkAddOpportunityEnrollmentsResponse;
+import com.mypurecloud.sdk.v2.model.AgentBulkStatusUpdateOpportunityEnrollmentsRequest;
+import com.mypurecloud.sdk.v2.model.AgentBulkStatusUpdateOpportunityEnrollmentsResponse;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
@@ -36,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsRequest;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
+import com.mypurecloud.sdk.v2.model.AgentQueryOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentUpdateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBiddingPreferenceResponse;
@@ -94,7 +99,17 @@ import com.mypurecloud.sdk.v2.model.BuTimeOffPlanListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
 import com.mypurecloud.sdk.v2.model.BuUpdateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.BuUserListing;
+import com.mypurecloud.sdk.v2.model.BulkAddOpportunitiesRequest;
+import com.mypurecloud.sdk.v2.model.BulkAddOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesExternalActivitiesRequest;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesRequest;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesStatusUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkOpportunitiesStatusUpdateResponse;
+import com.mypurecloud.sdk.v2.model.BulkOpportunityEnrollmentsStatusUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkPublishOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.BulkRemoveOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateOpportunityEnrollmentsStatusResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
@@ -171,7 +186,10 @@ import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
+import com.mypurecloud.sdk.v2.model.OpportunityResult;
+import com.mypurecloud.sdk.v2.model.OpportunityResultWithAgentIds;
 import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
+import com.mypurecloud.sdk.v2.model.PatchOpportunityRequest;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationResponse;
 import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationUploadResponse;
@@ -190,6 +208,11 @@ import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
+import com.mypurecloud.sdk.v2.model.QueryExternalActivityOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.QueryOpportunitiesRequest;
+import com.mypurecloud.sdk.v2.model.QueryOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.QueryOpportunityEnrollmentsRequest;
+import com.mypurecloud.sdk.v2.model.QueryOpportunityEnrollmentsResponse;
 import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
 import com.mypurecloud.sdk.v2.model.QueryShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
@@ -286,7 +309,6 @@ import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForAgent;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForTeams;
-import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageResponse;
@@ -365,6 +387,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMain
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitOpportunityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulerSettingsRequest;
@@ -467,6 +490,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAc
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCapacityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitOpportunityRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
@@ -494,7 +518,6 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUsersWorkplanb
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementWorkplanbidPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsQueryRequest;
-import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
@@ -503,6 +526,9 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsOpportunitiesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesManagementunitsMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersJobsRequest;
@@ -522,6 +548,14 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest;
@@ -5114,6 +5148,92 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get opportunity details
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param opportunityId The ID of the opportunity (required)
+   * @param expand List of resources to expand (optional)
+   * @return OpportunityResultWithAgentIds
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpportunityResultWithAgentIds getWorkforcemanagementBusinessunitOpportunity(String businessUnitId, String opportunityId, String expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitOpportunity(createGetWorkforcemanagementBusinessunitOpportunityRequest(businessUnitId, opportunityId, expand));
+  }
+
+  /**
+   * Get opportunity details
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param opportunityId The ID of the opportunity (required)
+   * @param expand List of resources to expand (optional)
+   * @return OpportunityResultWithAgentIds
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpportunityResultWithAgentIds> getWorkforcemanagementBusinessunitOpportunityWithHttpInfo(String businessUnitId, String opportunityId, String expand) throws IOException {
+    return getWorkforcemanagementBusinessunitOpportunity(createGetWorkforcemanagementBusinessunitOpportunityRequest(businessUnitId, opportunityId, expand).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitOpportunityRequest createGetWorkforcemanagementBusinessunitOpportunityRequest(String businessUnitId, String opportunityId, String expand) {
+    return GetWorkforcemanagementBusinessunitOpportunityRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withOpportunityId(opportunityId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get opportunity details
+   * 
+   * @param request The request object
+   * @return OpportunityResultWithAgentIds
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpportunityResultWithAgentIds getWorkforcemanagementBusinessunitOpportunity(GetWorkforcemanagementBusinessunitOpportunityRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpportunityResultWithAgentIds> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpportunityResultWithAgentIds>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get opportunity details
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpportunityResultWithAgentIds> getWorkforcemanagementBusinessunitOpportunity(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpportunityResultWithAgentIds>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpportunityResultWithAgentIds> response = (ApiResponse<OpportunityResultWithAgentIds>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpportunityResultWithAgentIds> response = (ApiResponse<OpportunityResultWithAgentIds>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a planning group
    * 
    * @param businessUnitId The ID of the business unit. (required)
@@ -9525,12 +9645,13 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all the shift trades for a given agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
    * @return ShiftTradeListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(String managementUnitId, String agentId) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitAgentShifttrades(createGetWorkforcemanagementManagementunitAgentShifttradesRequest(managementUnitId, agentId));
@@ -9538,11 +9659,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all the shift trades for a given agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
    * @return ShiftTradeListResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementManagementunitAgentShifttradesWithHttpInfo(String managementUnitId, String agentId) throws IOException {
     return getWorkforcemanagementManagementunitAgentShifttrades(createGetWorkforcemanagementManagementunitAgentShifttradesRequest(managementUnitId, agentId).withHttpInfo());
@@ -9559,11 +9681,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all the shift trades for a given agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
    * @param request The request object
    * @return ShiftTradeListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(GetWorkforcemanagementManagementunitAgentShifttradesRequest request) throws IOException, ApiException {
     try {
@@ -9578,10 +9701,11 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all the shift trades for a given agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementManagementunitAgentShifttrades(ApiRequest<Void> request) throws IOException {
     try {
@@ -9607,11 +9731,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a summary of all shift trades in the matched state
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return ShiftTradeMatchesSummaryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(String managementUnitId) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitShifttradesMatched(createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(managementUnitId));
@@ -9619,10 +9744,11 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a summary of all shift trades in the matched state
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return ShiftTradeMatchesSummaryResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeMatchesSummaryResponse> getWorkforcemanagementManagementunitShifttradesMatchedWithHttpInfo(String managementUnitId) throws IOException {
     return getWorkforcemanagementManagementunitShifttradesMatched(createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(managementUnitId).withHttpInfo());
@@ -9637,11 +9763,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a summary of all shift trades in the matched state
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
    * @param request The request object
    * @return ShiftTradeMatchesSummaryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(GetWorkforcemanagementManagementunitShifttradesMatchedRequest request) throws IOException, ApiException {
     try {
@@ -9656,10 +9783,11 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a summary of all shift trades in the matched state
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeMatchesSummaryResponse> getWorkforcemanagementManagementunitShifttradesMatched(ApiRequest<Void> request) throws IOException {
     try {
@@ -10611,7 +10739,7 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all the shift trades for a given week
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
@@ -10620,6 +10748,7 @@ public class WorkforceManagementApi {
    * @return WeekShiftTradeListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean includeCrossWeekShifts, Boolean forceDownloadService) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches, includeCrossWeekShifts, forceDownloadService));
@@ -10627,7 +10756,7 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all the shift trades for a given week
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
@@ -10635,6 +10764,7 @@ public class WorkforceManagementApi {
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return WeekShiftTradeListResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean includeCrossWeekShifts, Boolean forceDownloadService) throws IOException {
     return getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches, includeCrossWeekShifts, forceDownloadService).withHttpInfo());
@@ -10657,11 +10787,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all the shift trades for a given week
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
    * @param request The request object
    * @return WeekShiftTradeListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(GetWorkforcemanagementManagementunitWeekShifttradesRequest request) throws IOException, ApiException {
     try {
@@ -10676,10 +10807,11 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all the shift trades for a given week
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttrades(ApiRequest<Void> request) throws IOException {
     try {
@@ -11365,10 +11497,11 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all of my shift trades
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
    * @return ShiftTradeListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeListResponse getWorkforcemanagementShifttrades() throws IOException, ApiException {
     return  getWorkforcemanagementShifttrades(createGetWorkforcemanagementShifttradesRequest());
@@ -11376,9 +11509,10 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all of my shift trades
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
    * @return ShiftTradeListResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementShifttradesWithHttpInfo() throws IOException {
     return getWorkforcemanagementShifttrades(createGetWorkforcemanagementShifttradesRequest().withHttpInfo());
@@ -11391,11 +11525,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all of my shift trades
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
    * @param request The request object
    * @return ShiftTradeListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeListResponse getWorkforcemanagementShifttrades(GetWorkforcemanagementShifttradesRequest request) throws IOException, ApiException {
     try {
@@ -11410,10 +11545,11 @@ public class WorkforceManagementApi {
 
   /**
    * Gets all of my shift trades
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementShifttrades(ApiRequest<Void> request) throws IOException {
     try {
@@ -13518,8 +13654,94 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Update the opportunity
+   * Only opportunities with Draft status can be updated.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param opportunityId The ID of the opportunity (required)
+   * @param body body (required)
+   * @return OpportunityResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpportunityResult patchWorkforcemanagementBusinessunitOpportunity(String businessUnitId, String opportunityId, PatchOpportunityRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitOpportunity(createPatchWorkforcemanagementBusinessunitOpportunityRequest(businessUnitId, opportunityId, body));
+  }
+
+  /**
+   * Update the opportunity
+   * Only opportunities with Draft status can be updated.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param opportunityId The ID of the opportunity (required)
+   * @param body body (required)
+   * @return OpportunityResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpportunityResult> patchWorkforcemanagementBusinessunitOpportunityWithHttpInfo(String businessUnitId, String opportunityId, PatchOpportunityRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitOpportunity(createPatchWorkforcemanagementBusinessunitOpportunityRequest(businessUnitId, opportunityId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitOpportunityRequest createPatchWorkforcemanagementBusinessunitOpportunityRequest(String businessUnitId, String opportunityId, PatchOpportunityRequest body) {
+    return PatchWorkforcemanagementBusinessunitOpportunityRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withOpportunityId(opportunityId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the opportunity
+   * Only opportunities with Draft status can be updated.
+   * @param request The request object
+   * @return OpportunityResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpportunityResult patchWorkforcemanagementBusinessunitOpportunity(PatchWorkforcemanagementBusinessunitOpportunityRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpportunityResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpportunityResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the opportunity
+   * Only opportunities with Draft status can be updated.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpportunityResult> patchWorkforcemanagementBusinessunitOpportunity(ApiRequest<PatchOpportunityRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpportunityResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpportunityResult> response = (ApiResponse<OpportunityResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpportunityResult> response = (ApiResponse<OpportunityResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Updates the planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param businessUnitId The ID of the business unit. (required)
    * @param planningGroupId The ID of a planning group to update (required)
    * @param body body (required)
@@ -13533,7 +13755,7 @@ public class WorkforceManagementApi {
 
   /**
    * Updates the planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param businessUnitId The ID of the business unit. (required)
    * @param planningGroupId The ID of a planning group to update (required)
    * @param body body (required)
@@ -13557,7 +13779,7 @@ public class WorkforceManagementApi {
 
   /**
    * Updates the planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param request The request object
    * @return PlanningGroup
    * @throws ApiException if the request fails on the server
@@ -13576,7 +13798,7 @@ public class WorkforceManagementApi {
 
   /**
    * Updates the planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -14971,7 +15193,7 @@ public class WorkforceManagementApi {
 
   /**
    * Updates a shift trade. This route can only be called by the initiating agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param tradeId The ID of the shift trade to update (required)
@@ -14979,6 +15201,7 @@ public class WorkforceManagementApi {
    * @return ShiftTradeResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(String managementUnitId, LocalDate weekDateId, String tradeId, PatchShiftTradeRequest body) throws IOException, ApiException {
     return  patchWorkforcemanagementManagementunitWeekShifttrade(createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(managementUnitId, weekDateId, tradeId, body));
@@ -14986,13 +15209,14 @@ public class WorkforceManagementApi {
 
   /**
    * Updates a shift trade. This route can only be called by the initiating agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param tradeId The ID of the shift trade to update (required)
    * @param body body (required)
    * @return ShiftTradeResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeResponse> patchWorkforcemanagementManagementunitWeekShifttradeWithHttpInfo(String managementUnitId, LocalDate weekDateId, String tradeId, PatchShiftTradeRequest body) throws IOException {
     return patchWorkforcemanagementManagementunitWeekShifttrade(createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(managementUnitId, weekDateId, tradeId, body).withHttpInfo());
@@ -15013,11 +15237,12 @@ public class WorkforceManagementApi {
 
   /**
    * Updates a shift trade. This route can only be called by the initiating agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
    * @param request The request object
    * @return ShiftTradeResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(PatchWorkforcemanagementManagementunitWeekShifttradeRequest request) throws IOException, ApiException {
     try {
@@ -15032,10 +15257,11 @@ public class WorkforceManagementApi {
 
   /**
    * Updates a shift trade. This route can only be called by the initiating agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeResponse> patchWorkforcemanagementManagementunitWeekShifttrade(ApiRequest<PatchShiftTradeRequest> request) throws IOException {
     try {
@@ -15802,88 +16028,6 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-   * 
-   * @param body body (optional)
-   * @return WfmHistoricalAdherenceResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public WfmHistoricalAdherenceResponse postWorkforcemanagementAdherenceHistorical(WfmHistoricalAdherenceQueryForUsers body) throws IOException, ApiException {
-    return  postWorkforcemanagementAdherenceHistorical(createPostWorkforcemanagementAdherenceHistoricalRequest(body));
-  }
-
-  /**
-   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-   * 
-   * @param body body (optional)
-   * @return WfmHistoricalAdherenceResponse
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementAdherenceHistoricalWithHttpInfo(WfmHistoricalAdherenceQueryForUsers body) throws IOException {
-    return postWorkforcemanagementAdherenceHistorical(createPostWorkforcemanagementAdherenceHistoricalRequest(body).withHttpInfo());
-  }
-
-  private PostWorkforcemanagementAdherenceHistoricalRequest createPostWorkforcemanagementAdherenceHistoricalRequest(WfmHistoricalAdherenceQueryForUsers body) {
-    return PostWorkforcemanagementAdherenceHistoricalRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-   * 
-   * @param request The request object
-   * @return WfmHistoricalAdherenceResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public WfmHistoricalAdherenceResponse postWorkforcemanagementAdherenceHistorical(PostWorkforcemanagementAdherenceHistoricalRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<WfmHistoricalAdherenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmHistoricalAdherenceResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementAdherenceHistorical(ApiRequest<WfmHistoricalAdherenceQueryForUsers> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<WfmHistoricalAdherenceResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Request a historical adherence report in bulk
    * 
    * @param body body (required)
@@ -16527,6 +16671,248 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentPossibleWorkShiftsResponse> response = (ApiResponse<AgentPossibleWorkShiftsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk add enrollments to opportunities for the authenticated agent
+   * Allows an agent to enroll in opportunities. This endpoint can return partial success.
+   * @param body body (required)
+   * @return AgentBulkAddOpportunityEnrollmentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentBulkAddOpportunityEnrollmentsResponse postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd(AgentBulkAddOpportunityEnrollmentsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd(createPostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddRequest(body));
+  }
+
+  /**
+   * Bulk add enrollments to opportunities for the authenticated agent
+   * Allows an agent to enroll in opportunities. This endpoint can return partial success.
+   * @param body body (required)
+   * @return AgentBulkAddOpportunityEnrollmentsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse> postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddWithHttpInfo(AgentBulkAddOpportunityEnrollmentsRequest body) throws IOException {
+    return postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd(createPostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddRequest createPostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddRequest(AgentBulkAddOpportunityEnrollmentsRequest body) {
+    return PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk add enrollments to opportunities for the authenticated agent
+   * Allows an agent to enroll in opportunities. This endpoint can return partial success.
+   * @param request The request object
+   * @return AgentBulkAddOpportunityEnrollmentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentBulkAddOpportunityEnrollmentsResponse postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd(PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentBulkAddOpportunityEnrollmentsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk add enrollments to opportunities for the authenticated agent
+   * Allows an agent to enroll in opportunities. This endpoint can return partial success.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse> postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd(ApiRequest<AgentBulkAddOpportunityEnrollmentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentBulkAddOpportunityEnrollmentsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse> response = (ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse> response = (ApiResponse<AgentBulkAddOpportunityEnrollmentsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk update enrollment status for the authenticated agent
+   * Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
+   * @param body body (required)
+   * @return AgentBulkStatusUpdateOpportunityEnrollmentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentBulkStatusUpdateOpportunityEnrollmentsResponse postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate(AgentBulkStatusUpdateOpportunityEnrollmentsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate(createPostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest(body));
+  }
+
+  /**
+   * Bulk update enrollment status for the authenticated agent
+   * Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
+   * @param body body (required)
+   * @return AgentBulkStatusUpdateOpportunityEnrollmentsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateWithHttpInfo(AgentBulkStatusUpdateOpportunityEnrollmentsRequest body) throws IOException {
+    return postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate(createPostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest createPostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest(AgentBulkStatusUpdateOpportunityEnrollmentsRequest body) {
+    return PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk update enrollment status for the authenticated agent
+   * Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
+   * @param request The request object
+   * @return AgentBulkStatusUpdateOpportunityEnrollmentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentBulkStatusUpdateOpportunityEnrollmentsResponse postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate(PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update enrollment status for the authenticated agent
+   * Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate(ApiRequest<AgentBulkStatusUpdateOpportunityEnrollmentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> response = (ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse> response = (ApiResponse<AgentBulkStatusUpdateOpportunityEnrollmentsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query opportunities for the authenticated agent
+   * Queries within the specified date range. Each opportunity includes the agent's enrollment details if they have enrolled.
+   * @param body body (required)
+   * @param expand List of resources to expand (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return AgentQueryOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentQueryOpportunitiesResponse postWorkforcemanagementAgentsOpportunitiesQuery(QueryOpportunitiesRequest body, String expand, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentsOpportunitiesQuery(createPostWorkforcemanagementAgentsOpportunitiesQueryRequest(body, expand, forceDownloadService));
+  }
+
+  /**
+   * Query opportunities for the authenticated agent
+   * Queries within the specified date range. Each opportunity includes the agent's enrollment details if they have enrolled.
+   * @param body body (required)
+   * @param expand List of resources to expand (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return AgentQueryOpportunitiesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentQueryOpportunitiesResponse> postWorkforcemanagementAgentsOpportunitiesQueryWithHttpInfo(QueryOpportunitiesRequest body, String expand, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementAgentsOpportunitiesQuery(createPostWorkforcemanagementAgentsOpportunitiesQueryRequest(body, expand, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentsOpportunitiesQueryRequest createPostWorkforcemanagementAgentsOpportunitiesQueryRequest(QueryOpportunitiesRequest body, String expand, Boolean forceDownloadService) {
+    return PostWorkforcemanagementAgentsOpportunitiesQueryRequest.builder()
+            .withBody(body)
+
+            .withExpand(expand)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Query opportunities for the authenticated agent
+   * Queries within the specified date range. Each opportunity includes the agent's enrollment details if they have enrolled.
+   * @param request The request object
+   * @return AgentQueryOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentQueryOpportunitiesResponse postWorkforcemanagementAgentsOpportunitiesQuery(PostWorkforcemanagementAgentsOpportunitiesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentQueryOpportunitiesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentQueryOpportunitiesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query opportunities for the authenticated agent
+   * Queries within the specified date range. Each opportunity includes the agent's enrollment details if they have enrolled.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentQueryOpportunitiesResponse> postWorkforcemanagementAgentsOpportunitiesQuery(ApiRequest<QueryOpportunitiesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentQueryOpportunitiesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentQueryOpportunitiesResponse> response = (ApiResponse<AgentQueryOpportunitiesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentQueryOpportunitiesResponse> response = (ApiResponse<AgentQueryOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -18115,8 +18501,676 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Adds a new planning group
+   * Bulk add opportunities
    * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkAddOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkAddOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesBulkAdd(String businessUnitId, BulkAddOpportunitiesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitOpportunitiesBulkAdd(createPostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest(businessUnitId, body));
+  }
+
+  /**
+   * Bulk add opportunities
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkAddOpportunitiesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkAddOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkAddWithHttpInfo(String businessUnitId, BulkAddOpportunitiesRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitOpportunitiesBulkAdd(createPostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest createPostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest(String businessUnitId, BulkAddOpportunitiesRequest body) {
+    return PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk add opportunities
+   * 
+   * @param request The request object
+   * @return BulkAddOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkAddOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesBulkAdd(PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkAddOpportunitiesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkAddOpportunitiesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk add opportunities
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkAddOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkAdd(ApiRequest<BulkAddOpportunitiesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkAddOpportunitiesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkAddOpportunitiesResponse> response = (ApiResponse<BulkAddOpportunitiesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkAddOpportunitiesResponse> response = (ApiResponse<BulkAddOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk publish opportunities
+   * Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkPublishOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkPublishOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesBulkPublish(String businessUnitId, BulkOpportunitiesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitOpportunitiesBulkPublish(createPostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest(businessUnitId, body));
+  }
+
+  /**
+   * Bulk publish opportunities
+   * Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkPublishOpportunitiesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkPublishOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkPublishWithHttpInfo(String businessUnitId, BulkOpportunitiesRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitOpportunitiesBulkPublish(createPostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest createPostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest(String businessUnitId, BulkOpportunitiesRequest body) {
+    return PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk publish opportunities
+   * Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
+   * @param request The request object
+   * @return BulkPublishOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkPublishOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesBulkPublish(PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkPublishOpportunitiesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkPublishOpportunitiesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk publish opportunities
+   * Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkPublishOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkPublish(ApiRequest<BulkOpportunitiesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkPublishOpportunitiesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkPublishOpportunitiesResponse> response = (ApiResponse<BulkPublishOpportunitiesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkPublishOpportunitiesResponse> response = (ApiResponse<BulkPublishOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk remove opportunities
+   * This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkRemoveOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkRemoveOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesBulkRemove(String businessUnitId, BulkOpportunitiesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitOpportunitiesBulkRemove(createPostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest(businessUnitId, body));
+  }
+
+  /**
+   * Bulk remove opportunities
+   * This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkRemoveOpportunitiesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkRemoveOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkRemoveWithHttpInfo(String businessUnitId, BulkOpportunitiesRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitOpportunitiesBulkRemove(createPostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest createPostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest(String businessUnitId, BulkOpportunitiesRequest body) {
+    return PostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk remove opportunities
+   * This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
+   * @param request The request object
+   * @return BulkRemoveOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkRemoveOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesBulkRemove(PostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkRemoveOpportunitiesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkRemoveOpportunitiesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk remove opportunities
+   * This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkRemoveOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkRemove(ApiRequest<BulkOpportunitiesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkRemoveOpportunitiesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkRemoveOpportunitiesResponse> response = (ApiResponse<BulkRemoveOpportunitiesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkRemoveOpportunitiesResponse> response = (ApiResponse<BulkRemoveOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk update opportunities status
+   * If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkOpportunitiesStatusUpdateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkOpportunitiesStatusUpdateResponse postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate(String businessUnitId, BulkOpportunitiesStatusUpdateRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate(createPostWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateRequest(businessUnitId, body));
+  }
+
+  /**
+   * Bulk update opportunities status
+   * If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkOpportunitiesStatusUpdateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkOpportunitiesStatusUpdateResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateWithHttpInfo(String businessUnitId, BulkOpportunitiesStatusUpdateRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate(createPostWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateRequest createPostWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateRequest(String businessUnitId, BulkOpportunitiesStatusUpdateRequest body) {
+    return PostWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk update opportunities status
+   * If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
+   * @param request The request object
+   * @return BulkOpportunitiesStatusUpdateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkOpportunitiesStatusUpdateResponse postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate(PostWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkOpportunitiesStatusUpdateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkOpportunitiesStatusUpdateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update opportunities status
+   * If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkOpportunitiesStatusUpdateResponse> postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate(ApiRequest<BulkOpportunitiesStatusUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkOpportunitiesStatusUpdateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkOpportunitiesStatusUpdateResponse> response = (ApiResponse<BulkOpportunitiesStatusUpdateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkOpportunitiesStatusUpdateResponse> response = (ApiResponse<BulkOpportunitiesStatusUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk update enrollment status
+   * Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkUpdateOpportunityEnrollmentsStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateOpportunityEnrollmentsStatusResponse postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate(String businessUnitId, BulkOpportunityEnrollmentsStatusUpdateRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate(createPostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateRequest(businessUnitId, body));
+  }
+
+  /**
+   * Bulk update enrollment status
+   * Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BulkUpdateOpportunityEnrollmentsStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse> postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateWithHttpInfo(String businessUnitId, BulkOpportunityEnrollmentsStatusUpdateRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate(createPostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateRequest createPostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateRequest(String businessUnitId, BulkOpportunityEnrollmentsStatusUpdateRequest body) {
+    return PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk update enrollment status
+   * Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
+   * @param request The request object
+   * @return BulkUpdateOpportunityEnrollmentsStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateOpportunityEnrollmentsStatusResponse postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate(PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkUpdateOpportunityEnrollmentsStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update enrollment status
+   * Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse> postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate(ApiRequest<BulkOpportunityEnrollmentsStatusUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkUpdateOpportunityEnrollmentsStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse> response = (ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse> response = (ApiResponse<BulkUpdateOpportunityEnrollmentsStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query enrollments
+   * For more information about opportunities, use the expand parameter.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @param expand List of resources to expand (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return QueryOpportunityEnrollmentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryOpportunityEnrollmentsResponse postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery(String businessUnitId, QueryOpportunityEnrollmentsRequest body, String expand, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery(createPostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest(businessUnitId, body, expand, forceDownloadService));
+  }
+
+  /**
+   * Query enrollments
+   * For more information about opportunities, use the expand parameter.
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @param expand List of resources to expand (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return QueryOpportunityEnrollmentsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryOpportunityEnrollmentsResponse> postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryWithHttpInfo(String businessUnitId, QueryOpportunityEnrollmentsRequest body, String expand, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery(createPostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest(businessUnitId, body, expand, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest createPostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest(String businessUnitId, QueryOpportunityEnrollmentsRequest body, String expand, Boolean forceDownloadService) {
+    return PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withExpand(expand)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Query enrollments
+   * For more information about opportunities, use the expand parameter.
+   * @param request The request object
+   * @return QueryOpportunityEnrollmentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryOpportunityEnrollmentsResponse postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery(PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueryOpportunityEnrollmentsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryOpportunityEnrollmentsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query enrollments
+   * For more information about opportunities, use the expand parameter.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryOpportunityEnrollmentsResponse> postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery(ApiRequest<QueryOpportunityEnrollmentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryOpportunityEnrollmentsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryOpportunityEnrollmentsResponse> response = (ApiResponse<QueryOpportunityEnrollmentsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryOpportunityEnrollmentsResponse> response = (ApiResponse<QueryOpportunityEnrollmentsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query opportunities by external activity IDs
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return QueryExternalActivityOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryExternalActivityOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery(String businessUnitId, BulkOpportunitiesExternalActivitiesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery(createPostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest(businessUnitId, body));
+  }
+
+  /**
+   * Query opportunities by external activity IDs
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return QueryExternalActivityOpportunitiesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryExternalActivityOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryWithHttpInfo(String businessUnitId, BulkOpportunitiesExternalActivitiesRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery(createPostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest createPostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest(String businessUnitId, BulkOpportunitiesExternalActivitiesRequest body) {
+    return PostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query opportunities by external activity IDs
+   * 
+   * @param request The request object
+   * @return QueryExternalActivityOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryExternalActivityOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery(PostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueryExternalActivityOpportunitiesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryExternalActivityOpportunitiesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query opportunities by external activity IDs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryExternalActivityOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery(ApiRequest<BulkOpportunitiesExternalActivitiesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryExternalActivityOpportunitiesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryExternalActivityOpportunitiesResponse> response = (ApiResponse<QueryExternalActivityOpportunitiesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryExternalActivityOpportunitiesResponse> response = (ApiResponse<QueryExternalActivityOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query opportunities within the specified date range
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return QueryOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesQuery(String businessUnitId, QueryOpportunitiesRequest body, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitOpportunitiesQuery(createPostWorkforcemanagementBusinessunitOpportunitiesQueryRequest(businessUnitId, body, forceDownloadService));
+  }
+
+  /**
+   * Query opportunities within the specified date range
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return QueryOpportunitiesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesQueryWithHttpInfo(String businessUnitId, QueryOpportunitiesRequest body, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitOpportunitiesQuery(createPostWorkforcemanagementBusinessunitOpportunitiesQueryRequest(businessUnitId, body, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitOpportunitiesQueryRequest createPostWorkforcemanagementBusinessunitOpportunitiesQueryRequest(String businessUnitId, QueryOpportunitiesRequest body, Boolean forceDownloadService) {
+    return PostWorkforcemanagementBusinessunitOpportunitiesQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Query opportunities within the specified date range
+   * 
+   * @param request The request object
+   * @return QueryOpportunitiesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesQuery(PostWorkforcemanagementBusinessunitOpportunitiesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueryOpportunitiesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryOpportunitiesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query opportunities within the specified date range
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryOpportunitiesResponse> postWorkforcemanagementBusinessunitOpportunitiesQuery(ApiRequest<QueryOpportunitiesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryOpportunitiesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryOpportunitiesResponse> response = (ApiResponse<QueryOpportunitiesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryOpportunitiesResponse> response = (ApiResponse<QueryOpportunitiesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Adds a new planning group
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param businessUnitId The ID of the business unit. (required)
    * @param body body (required)
    * @return PlanningGroup
@@ -18129,7 +19183,7 @@ public class WorkforceManagementApi {
 
   /**
    * Adds a new planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param businessUnitId The ID of the business unit. (required)
    * @param body body (required)
    * @return PlanningGroup
@@ -18150,7 +19204,7 @@ public class WorkforceManagementApi {
 
   /**
    * Adds a new planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param request The request object
    * @return PlanningGroup
    * @throws ApiException if the request fails on the server
@@ -18169,7 +19223,7 @@ public class WorkforceManagementApi {
 
   /**
    * Adds a new planning group
-   * 
+   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -22716,7 +23770,7 @@ public class WorkforceManagementApi {
 
   /**
    * Matches a shift trade. This route can only be called by the receiving agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param tradeId The ID of the shift trade to update (required)
@@ -22724,6 +23778,7 @@ public class WorkforceManagementApi {
    * @return MatchShiftTradeResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(String managementUnitId, LocalDate weekDateId, String tradeId, MatchShiftTradeRequest body) throws IOException, ApiException {
     return  postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, tradeId, body));
@@ -22731,13 +23786,14 @@ public class WorkforceManagementApi {
 
   /**
    * Matches a shift trade. This route can only be called by the receiving agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param tradeId The ID of the shift trade to update (required)
    * @param body body (required)
    * @return MatchShiftTradeResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<MatchShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeMatchWithHttpInfo(String managementUnitId, LocalDate weekDateId, String tradeId, MatchShiftTradeRequest body) throws IOException {
     return postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, tradeId, body).withHttpInfo());
@@ -22758,11 +23814,12 @@ public class WorkforceManagementApi {
 
   /**
    * Matches a shift trade. This route can only be called by the receiving agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
    * @param request The request object
    * @return MatchShiftTradeResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest request) throws IOException, ApiException {
     try {
@@ -22777,10 +23834,11 @@ public class WorkforceManagementApi {
 
   /**
    * Matches a shift trade. This route can only be called by the receiving agent
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<MatchShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeMatch(ApiRequest<MatchShiftTradeRequest> request) throws IOException {
     try {
@@ -22806,13 +23864,14 @@ public class WorkforceManagementApi {
 
   /**
    * Adds a shift trade
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @return ShiftTradeResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, AddShiftTradeRequest body) throws IOException, ApiException {
     return  postWorkforcemanagementManagementunitWeekShifttrades(createPostWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, body));
@@ -22820,12 +23879,13 @@ public class WorkforceManagementApi {
 
   /**
    * Adds a shift trade
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @return ShiftTradeResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, AddShiftTradeRequest body) throws IOException {
     return postWorkforcemanagementManagementunitWeekShifttrades(createPostWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, body).withHttpInfo());
@@ -22844,11 +23904,12 @@ public class WorkforceManagementApi {
 
   /**
    * Adds a shift trade
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/jobs)
    * @param request The request object
    * @return ShiftTradeResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(PostWorkforcemanagementManagementunitWeekShifttradesRequest request) throws IOException, ApiException {
     try {
@@ -22863,10 +23924,11 @@ public class WorkforceManagementApi {
 
   /**
    * Adds a shift trade
-   * 
+   * Deprecated. Use new route instead (/shifttrading/trades/jobs)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttrades(ApiRequest<AddShiftTradeRequest> request) throws IOException {
     try {
@@ -22892,7 +23954,7 @@ public class WorkforceManagementApi {
 
   /**
    * Searches for potential shift trade matches for the current agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
@@ -22900,6 +23962,7 @@ public class WorkforceManagementApi {
    * @return SearchShiftTradesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body, Boolean forceDownloadService) throws IOException, ApiException {
     return  postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body, forceDownloadService));
@@ -22907,13 +23970,14 @@ public class WorkforceManagementApi {
 
   /**
    * Searches for potential shift trade matches for the current agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return SearchShiftTradesResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SearchShiftTradesResponse> postWorkforcemanagementManagementunitWeekShifttradesSearchWithHttpInfo(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body, Boolean forceDownloadService) throws IOException {
     return postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body, forceDownloadService).withHttpInfo());
@@ -22934,11 +23998,12 @@ public class WorkforceManagementApi {
 
   /**
    * Searches for potential shift trade matches for the current agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
    * @param request The request object
    * @return SearchShiftTradesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest request) throws IOException, ApiException {
     try {
@@ -22953,10 +24018,11 @@ public class WorkforceManagementApi {
 
   /**
    * Searches for potential shift trade matches for the current agent
-   * 
+   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SearchShiftTradesResponse> postWorkforcemanagementManagementunitWeekShifttradesSearch(ApiRequest<SearchShiftTradesRequest> request) throws IOException {
     try {
@@ -22982,7 +24048,7 @@ public class WorkforceManagementApi {
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \"mine\".
+   * Admin functionality is not supported with \"mine\". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
@@ -22990,6 +24056,7 @@ public class WorkforceManagementApi {
    * @return BulkUpdateShiftTradeStateResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public BulkUpdateShiftTradeStateResponse postWorkforcemanagementManagementunitWeekShifttradesStateBulk(String managementUnitId, LocalDate weekDateId, BulkShiftTradeStateUpdateRequest body, Boolean forceAsync) throws IOException, ApiException {
     return  postWorkforcemanagementManagementunitWeekShifttradesStateBulk(createPostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest(managementUnitId, weekDateId, body, forceAsync));
@@ -22997,13 +24064,14 @@ public class WorkforceManagementApi {
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \"mine\".
+   * Admin functionality is not supported with \"mine\". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @return BulkUpdateShiftTradeStateResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<BulkUpdateShiftTradeStateResponse> postWorkforcemanagementManagementunitWeekShifttradesStateBulkWithHttpInfo(String managementUnitId, LocalDate weekDateId, BulkShiftTradeStateUpdateRequest body, Boolean forceAsync) throws IOException {
     return postWorkforcemanagementManagementunitWeekShifttradesStateBulk(createPostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest(managementUnitId, weekDateId, body, forceAsync).withHttpInfo());
@@ -23024,11 +24092,12 @@ public class WorkforceManagementApi {
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \"mine\".
+   * Admin functionality is not supported with \"mine\". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
    * @param request The request object
    * @return BulkUpdateShiftTradeStateResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public BulkUpdateShiftTradeStateResponse postWorkforcemanagementManagementunitWeekShifttradesStateBulk(PostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest request) throws IOException, ApiException {
     try {
@@ -23043,10 +24112,11 @@ public class WorkforceManagementApi {
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \"mine\".
+   * Admin functionality is not supported with \"mine\". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<BulkUpdateShiftTradeStateResponse> postWorkforcemanagementManagementunitWeekShifttradesStateBulk(ApiRequest<BulkShiftTradeStateUpdateRequest> request) throws IOException {
     try {

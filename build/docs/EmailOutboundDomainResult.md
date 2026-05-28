@@ -11,6 +11,7 @@
 | **senderStatus** | [**SenderStatusEnum**](#Enum--SenderStatusEnum) |  |  [optional] |
 | **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) |  |  [optional] |
 | **emailSetting** | [**EmailSetting**](EmailSetting) | The email settings associated with this domain. |  [optional] |
+| **dmarcVerificationResult** | [**DmarcResult**](DmarcResult) | The DMARC verification status for this domain. |  [optional] |
 
 
 ## Enum: SenderStatusEnum
@@ -38,4 +39,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

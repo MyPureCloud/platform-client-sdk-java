@@ -9,6 +9,7 @@
 | **flowId** | **String** | The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId |  [optional] |
 | **provider** | **String** | The name of the provider that is sourcing the emails. The Provider \"PureCloud Email\" is reserved for native emails. |  |
 | **skillIds** | **List&lt;String&gt;** | The list of skill ID's to use for routing. |  [optional] |
+| **skillExpression** | **String** | The skill expression to use for routing the email conversation (when using queueId). |  [optional] |
 | **languageId** | **String** | The ID of the language to use for routing. |  [optional] |
 | **priority** | **Long** | The priority to assign to the conversation for routing. |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** | The list of attributes to associate with the customer participant. |  [optional] |
@@ -35,4 +36,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:253.2.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_

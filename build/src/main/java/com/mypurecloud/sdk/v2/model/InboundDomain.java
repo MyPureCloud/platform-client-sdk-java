@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DmarcResult;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailSetting;
 import com.mypurecloud.sdk.v2.model.GraphApiSettings;
@@ -85,6 +86,7 @@ public class InboundDomain  implements Serializable {
   private ImapSettings imapSettings = null;
   private GraphApiSettings graphApiSettings = null;
   private EmailSetting emailSetting = null;
+  private DmarcResult dmarcVerificationResult = null;
   private String selfUri = null;
 
   public InboundDomain() {
@@ -259,6 +261,13 @@ public class InboundDomain  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The DMARC verification status for this domain.")
+  @JsonProperty("dmarcVerificationResult")
+  public DmarcResult getDmarcVerificationResult() {
+    return dmarcVerificationResult;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -285,12 +294,13 @@ public class InboundDomain  implements Serializable {
             Objects.equals(this.imapSettings, inboundDomain.imapSettings) &&
             Objects.equals(this.graphApiSettings, inboundDomain.graphApiSettings) &&
             Objects.equals(this.emailSetting, inboundDomain.emailSetting) &&
+            Objects.equals(this.dmarcVerificationResult, inboundDomain.dmarcVerificationResult) &&
             Objects.equals(this.selfUri, inboundDomain.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, mxRecordStatus, subDomain, mailFromSettings, customSMTPServer, imapSettings, graphApiSettings, emailSetting, selfUri);
+    return Objects.hash(id, name, mxRecordStatus, subDomain, mailFromSettings, customSMTPServer, imapSettings, graphApiSettings, emailSetting, dmarcVerificationResult, selfUri);
   }
 
   @Override
@@ -307,6 +317,7 @@ public class InboundDomain  implements Serializable {
     sb.append("    imapSettings: ").append(toIndentedString(imapSettings)).append("\n");
     sb.append("    graphApiSettings: ").append(toIndentedString(graphApiSettings)).append("\n");
     sb.append("    emailSetting: ").append(toIndentedString(emailSetting)).append("\n");
+    sb.append("    dmarcVerificationResult: ").append(toIndentedString(dmarcVerificationResult)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -136,14 +136,14 @@ public class ActionMapAction  implements Serializable {
 
 
   /**
-   * Action target ID.
+   * Deprecated. Action target ID.
    **/
   public ActionMapAction actionTargetId(String actionTargetId) {
     this.actionTargetId = actionTargetId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Action target ID.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Action target ID.")
   @JsonProperty("actionTargetId")
   public String getActionTargetId() {
     return actionTargetId;
@@ -154,14 +154,14 @@ public class ActionMapAction  implements Serializable {
 
 
   /**
-   * Whether this action should be throttled.
+   * Deprecated. Whether this action should be throttled.
    **/
   public ActionMapAction isPacingEnabled(Boolean isPacingEnabled) {
     this.isPacingEnabled = isPacingEnabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether this action should be throttled.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Whether this action should be throttled.")
   @JsonProperty("isPacingEnabled")
   public Boolean getIsPacingEnabled() {
     return isPacingEnabled;
@@ -172,14 +172,14 @@ public class ActionMapAction  implements Serializable {
 
 
   /**
-   * Additional properties.
+   * Deprecated. Additional properties.
    **/
   public ActionMapAction props(ActionProperties props) {
     this.props = props;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Additional properties.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Additional properties.")
   @JsonProperty("props")
   public ActionProperties getProps() {
     return props;

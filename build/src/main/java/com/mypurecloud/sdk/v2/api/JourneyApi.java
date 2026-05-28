@@ -19,6 +19,8 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.ActivateExternalEventRequest;
+import com.mypurecloud.sdk.v2.model.ActivateExternalEventResponse;
 import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
@@ -32,12 +34,14 @@ import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateJobAsyncResponse;
 import com.mypurecloud.sdk.v2.model.EventListing;
+import com.mypurecloud.sdk.v2.model.ExternalEventChangesResponse;
 import com.mypurecloud.sdk.v2.model.ExternalEventsConfiguration;
 import com.mypurecloud.sdk.v2.model.ExternalEventsConfigurationListing;
 import com.mypurecloud.sdk.v2.model.ExternalEventsRequest;
 import com.mypurecloud.sdk.v2.model.ExternalEventsResponse;
 import com.mypurecloud.sdk.v2.model.FlowPaths;
 import com.mypurecloud.sdk.v2.model.FlowPathsQuery;
+import com.mypurecloud.sdk.v2.model.GetExternalEventsResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
@@ -81,6 +85,8 @@ import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.UpdateExternalEventRequest;
+import com.mypurecloud.sdk.v2.model.UpdateExternalEventResponse;
 import com.mypurecloud.sdk.v2.model.UpdateExternalEventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentResponse;
@@ -144,6 +150,8 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsDataDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsExternalRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsExternalChangesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsSchedulesRequest;
@@ -179,6 +187,8 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsEncodingsValidateReque
 import com.mypurecloud.sdk.v2.api.request.PutJourneyExternaleventsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutJourneyViewSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutJourneyViewVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutJourneyViewsEventdefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutJourneyViewsEventdefinitionActivateRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1659,23 +1669,25 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve a single action target.
-   * 
+   * Deprecated. Retrieve a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param actionTargetId ID of the action target. (required)
    * @return ActionTarget
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActionTarget getJourneyActiontarget(String actionTargetId) throws IOException, ApiException {
     return  getJourneyActiontarget(createGetJourneyActiontargetRequest(actionTargetId));
   }
 
   /**
-   * Retrieve a single action target.
-   * 
+   * Deprecated. Retrieve a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param actionTargetId ID of the action target. (required)
    * @return ActionTarget
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActionTarget> getJourneyActiontargetWithHttpInfo(String actionTargetId) throws IOException {
     return getJourneyActiontarget(createGetJourneyActiontargetRequest(actionTargetId).withHttpInfo());
@@ -1689,12 +1701,13 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve a single action target.
-   * 
+   * Deprecated. Retrieve a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request The request object
    * @return ActionTarget
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActionTarget getJourneyActiontarget(GetJourneyActiontargetRequest request) throws IOException, ApiException {
     try {
@@ -1708,11 +1721,12 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve a single action target.
-   * 
+   * Deprecated. Retrieve a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActionTarget> getJourneyActiontarget(ApiRequest<Void> request) throws IOException {
     try {
@@ -1737,25 +1751,27 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all action targets.
-   * 
+   * Deprecated. Retrieve all action targets.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return ActionTargetListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActionTargetListing getJourneyActiontargets(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return  getJourneyActiontargets(createGetJourneyActiontargetsRequest(pageNumber, pageSize));
   }
 
   /**
-   * Retrieve all action targets.
-   * 
+   * Deprecated. Retrieve all action targets.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return ActionTargetListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActionTargetListing> getJourneyActiontargetsWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
     return getJourneyActiontargets(createGetJourneyActiontargetsRequest(pageNumber, pageSize).withHttpInfo());
@@ -1771,12 +1787,13 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all action targets.
-   * 
+   * Deprecated. Retrieve all action targets.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request The request object
    * @return ActionTargetListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActionTargetListing getJourneyActiontargets(GetJourneyActiontargetsRequest request) throws IOException, ApiException {
     try {
@@ -1790,11 +1807,12 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all action targets.
-   * 
+   * Deprecated. Retrieve all action targets.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActionTargetListing> getJourneyActiontargets(ApiRequest<Void> request) throws IOException {
     try {
@@ -4823,6 +4841,154 @@ public class JourneyApi {
   }
 
   /**
+   * Get external events for journey views
+   * 
+   * @return GetExternalEventsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetExternalEventsResponse getJourneyViewsEventdefinitionsExternal() throws IOException, ApiException {
+    return  getJourneyViewsEventdefinitionsExternal(createGetJourneyViewsEventdefinitionsExternalRequest());
+  }
+
+  /**
+   * Get external events for journey views
+   * 
+   * @return GetExternalEventsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetExternalEventsResponse> getJourneyViewsEventdefinitionsExternalWithHttpInfo() throws IOException {
+    return getJourneyViewsEventdefinitionsExternal(createGetJourneyViewsEventdefinitionsExternalRequest().withHttpInfo());
+  }
+
+  private GetJourneyViewsEventdefinitionsExternalRequest createGetJourneyViewsEventdefinitionsExternalRequest() {
+    return GetJourneyViewsEventdefinitionsExternalRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get external events for journey views
+   * 
+   * @param request The request object
+   * @return GetExternalEventsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetExternalEventsResponse getJourneyViewsEventdefinitionsExternal(GetJourneyViewsEventdefinitionsExternalRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetExternalEventsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetExternalEventsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get external events for journey views
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetExternalEventsResponse> getJourneyViewsEventdefinitionsExternal(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetExternalEventsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetExternalEventsResponse> response = (ApiResponse<GetExternalEventsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetExternalEventsResponse> response = (ApiResponse<GetExternalEventsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get changes in external event definitions
+   * 
+   * @return ExternalEventChangesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventChangesResponse getJourneyViewsEventdefinitionsExternalChanges() throws IOException, ApiException {
+    return  getJourneyViewsEventdefinitionsExternalChanges(createGetJourneyViewsEventdefinitionsExternalChangesRequest());
+  }
+
+  /**
+   * Get changes in external event definitions
+   * 
+   * @return ExternalEventChangesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventChangesResponse> getJourneyViewsEventdefinitionsExternalChangesWithHttpInfo() throws IOException {
+    return getJourneyViewsEventdefinitionsExternalChanges(createGetJourneyViewsEventdefinitionsExternalChangesRequest().withHttpInfo());
+  }
+
+  private GetJourneyViewsEventdefinitionsExternalChangesRequest createGetJourneyViewsEventdefinitionsExternalChangesRequest() {
+    return GetJourneyViewsEventdefinitionsExternalChangesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get changes in external event definitions
+   * 
+   * @param request The request object
+   * @return ExternalEventChangesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalEventChangesResponse getJourneyViewsEventdefinitionsExternalChanges(GetJourneyViewsEventdefinitionsExternalChangesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalEventChangesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalEventChangesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get changes in external event definitions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalEventChangesResponse> getJourneyViewsEventdefinitionsExternalChanges(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalEventChangesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventChangesResponse> response = (ApiResponse<ExternalEventChangesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalEventChangesResponse> response = (ApiResponse<ExternalEventChangesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the jobs for an organization.
    * 
    * @param pageNumber The number of the page to return (optional, default to 1)
@@ -5167,25 +5333,27 @@ public class JourneyApi {
   }
 
   /**
-   * Update a single action target.
-   * 
+   * Deprecated. Update a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param actionTargetId ID of the action target. (required)
    * @param body  (optional)
    * @return ActionTarget
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActionTarget patchJourneyActiontarget(String actionTargetId, PatchActionTarget body) throws IOException, ApiException {
     return  patchJourneyActiontarget(createPatchJourneyActiontargetRequest(actionTargetId, body));
   }
 
   /**
-   * Update a single action target.
-   * 
+   * Deprecated. Update a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param actionTargetId ID of the action target. (required)
    * @param body  (optional)
    * @return ActionTarget
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActionTarget> patchJourneyActiontargetWithHttpInfo(String actionTargetId, PatchActionTarget body) throws IOException {
     return patchJourneyActiontarget(createPatchJourneyActiontargetRequest(actionTargetId, body).withHttpInfo());
@@ -5201,12 +5369,13 @@ public class JourneyApi {
   }
 
   /**
-   * Update a single action target.
-   * 
+   * Deprecated. Update a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request The request object
    * @return ActionTarget
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActionTarget patchJourneyActiontarget(PatchJourneyActiontargetRequest request) throws IOException, ApiException {
     try {
@@ -5220,11 +5389,12 @@ public class JourneyApi {
   }
 
   /**
-   * Update a single action target.
-   * 
+   * Deprecated. Update a single action target.
+   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActionTarget> patchJourneyActiontarget(ApiRequest<PatchActionTarget> request) throws IOException {
     try {
@@ -7685,6 +7855,170 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update external event for journey views
+   * 
+   * @param eventDefinitionId Event Definition ID (required)
+   * @param body  (optional)
+   * @return UpdateExternalEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateExternalEventResponse putJourneyViewsEventdefinition(String eventDefinitionId, UpdateExternalEventRequest body) throws IOException, ApiException {
+    return  putJourneyViewsEventdefinition(createPutJourneyViewsEventdefinitionRequest(eventDefinitionId, body));
+  }
+
+  /**
+   * Update external event for journey views
+   * 
+   * @param eventDefinitionId Event Definition ID (required)
+   * @param body  (optional)
+   * @return UpdateExternalEventResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateExternalEventResponse> putJourneyViewsEventdefinitionWithHttpInfo(String eventDefinitionId, UpdateExternalEventRequest body) throws IOException {
+    return putJourneyViewsEventdefinition(createPutJourneyViewsEventdefinitionRequest(eventDefinitionId, body).withHttpInfo());
+  }
+
+  private PutJourneyViewsEventdefinitionRequest createPutJourneyViewsEventdefinitionRequest(String eventDefinitionId, UpdateExternalEventRequest body) {
+    return PutJourneyViewsEventdefinitionRequest.builder()
+            .withEventDefinitionId(eventDefinitionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update external event for journey views
+   * 
+   * @param request The request object
+   * @return UpdateExternalEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateExternalEventResponse putJourneyViewsEventdefinition(PutJourneyViewsEventdefinitionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UpdateExternalEventResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UpdateExternalEventResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update external event for journey views
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateExternalEventResponse> putJourneyViewsEventdefinition(ApiRequest<UpdateExternalEventRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UpdateExternalEventResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateExternalEventResponse> response = (ApiResponse<UpdateExternalEventResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateExternalEventResponse> response = (ApiResponse<UpdateExternalEventResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Activate external event for journey views
+   * 
+   * @param eventDefinitionId Event Definition ID (required)
+   * @param body  (optional)
+   * @return ActivateExternalEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivateExternalEventResponse putJourneyViewsEventdefinitionActivate(String eventDefinitionId, ActivateExternalEventRequest body) throws IOException, ApiException {
+    return  putJourneyViewsEventdefinitionActivate(createPutJourneyViewsEventdefinitionActivateRequest(eventDefinitionId, body));
+  }
+
+  /**
+   * Activate external event for journey views
+   * 
+   * @param eventDefinitionId Event Definition ID (required)
+   * @param body  (optional)
+   * @return ActivateExternalEventResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivateExternalEventResponse> putJourneyViewsEventdefinitionActivateWithHttpInfo(String eventDefinitionId, ActivateExternalEventRequest body) throws IOException {
+    return putJourneyViewsEventdefinitionActivate(createPutJourneyViewsEventdefinitionActivateRequest(eventDefinitionId, body).withHttpInfo());
+  }
+
+  private PutJourneyViewsEventdefinitionActivateRequest createPutJourneyViewsEventdefinitionActivateRequest(String eventDefinitionId, ActivateExternalEventRequest body) {
+    return PutJourneyViewsEventdefinitionActivateRequest.builder()
+            .withEventDefinitionId(eventDefinitionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Activate external event for journey views
+   * 
+   * @param request The request object
+   * @return ActivateExternalEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivateExternalEventResponse putJourneyViewsEventdefinitionActivate(PutJourneyViewsEventdefinitionActivateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivateExternalEventResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivateExternalEventResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Activate external event for journey views
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivateExternalEventResponse> putJourneyViewsEventdefinitionActivate(ApiRequest<ActivateExternalEventRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivateExternalEventResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivateExternalEventResponse> response = (ApiResponse<ActivateExternalEventResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivateExternalEventResponse> response = (ApiResponse<ActivateExternalEventResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
