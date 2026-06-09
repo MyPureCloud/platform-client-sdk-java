@@ -7,14 +7,14 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The ID of the association. |  [optional] |
 | **name** | **String** |  |  [optional] |
-| **associationType** | [**AssociationTypeEnum**](#Enum--AssociationTypeEnum) | Association type. |  [optional] |
-| **dateAssociated** | [**Date**](Date) | Interaction association date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **workitem** | [**WorkitemReference**](WorkitemReference) | Associated workitem ID. |  [optional] |
-| **conversation** | [**ConversationReference**](ConversationReference) | Associated conversation ID. |  [optional] |
-| **stage** | [**StageReference**](StageReference) | The stage related to this association. |  [optional] |
-| **step** | [**StepReference**](StepReference) | The step related to this association. |  [optional] |
+| **associationType** | [**AssociationTypeEnum**](#Enum--AssociationTypeEnum) | The association type. |  [optional] |
+| **dateAssociated** | [**Date**](Date) | The date of the interaction association. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **workitem** | [**WorkitemReference**](WorkitemReference) | The associated Workitem. |  [optional] |
+| **conversation** | [**ConversationReference**](ConversationReference) | The associated Conversation. |  [optional] |
+| **stage** | [**StageReference**](StageReference) | The Stage related to this association. |  [optional] |
+| **step** | [**StepReference**](StepReference) | The Step related to this association. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-| **_case** | [**CaseReference**](CaseReference) | Case ID |  [optional] |
+| **_case** | [**CaseReference**](CaseReference) | The Case for this association. |  [optional] |
 
 
 ## Enum: AssociationTypeEnum
@@ -29,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

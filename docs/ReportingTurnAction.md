@@ -24,6 +24,7 @@
 | ASKFORSLOTACTION | &quot;AskForSlotAction&quot; | 
 | ASKSURVEYQUESTIONACTION | &quot;AskSurveyQuestionAction&quot; | 
 | ASKFORNLUNEXTINTENTACTION | &quot;AskForNLUNextIntentAction&quot; | 
+| ASSIGNCUSTOMERSEGMENTACTION | &quot;AssignCustomerSegmentAction&quot; | 
 | BOTSTATE | &quot;BotState&quot; | 
 | CALLAGENTICVIRTUALAGENTACTION | &quot;CallAgenticVirtualAgentAction&quot; | 
 | CALLBOTFLOWACTION | &quot;CallBotFlowAction&quot; | 
@@ -60,6 +61,7 @@
 | DATATABLELOOKUPACTION | &quot;DataTableLookupAction&quot; | 
 | GETEXTERNALCONTACTACTION | &quot;GetExternalContactAction&quot; | 
 | GETEXTERNALORGANIZATIONACTION | &quot;GetExternalOrganizationAction&quot; | 
+| GETASSIGNEDCUSTOMERSEGMENTSACTION | &quot;GetAssignedCustomerSegmentsAction&quot; | 
 | LOOPACTION | &quot;LoopAction&quot; | 
 | EXITLOOPACTION | &quot;ExitLoopAction&quot; | 
 | NEXTLOOPACTION | &quot;NextLoopAction&quot; | 
@@ -98,4 +100,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

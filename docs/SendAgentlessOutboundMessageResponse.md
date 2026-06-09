@@ -27,8 +27,9 @@
 | SMS | &quot;sms&quot; | 
 | WHATSAPP | &quot;whatsapp&quot; | 
 | OPEN | &quot;open&quot; | 
+| WEBMESSAGING | &quot;webmessaging&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

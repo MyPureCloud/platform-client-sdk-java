@@ -21,8 +21,11 @@
 | INGESTIONRULE | &quot;IngestionRule&quot; | 
 | INGESTIONRULEVERSION | &quot;IngestionRuleVersion&quot; | 
 | PHONENUMBER | &quot;PhoneNumber&quot; | 
+| BSUID | &quot;Bsuid&quot; | 
+| PARENTBSUID | &quot;ParentBsuid&quot; | 
+| USERNAME | &quot;Username&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

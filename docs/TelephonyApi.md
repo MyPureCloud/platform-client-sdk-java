@@ -4,20 +4,87 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteTelephonyOrganizationLinkTargetOrganizationId**](TelephonyApi#deleteTelephonyOrganizationLinkTargetOrganizationId) | Delete a link |
 | [**getTelephonyAgentGreetings**](TelephonyApi#getTelephonyAgentGreetings) | Get an agent's greetings. |
 | [**getTelephonyAgentsGreetingsMe**](TelephonyApi#getTelephonyAgentsGreetingsMe) | Get the agent's own greetings. |
 | [**getTelephonyCallsMetrics**](TelephonyApi#getTelephonyCallsMetrics) | Get the concurrent call metrics for a given organization. |
 | [**getTelephonyMediaregions**](TelephonyApi#getTelephonyMediaregions) | Retrieve the list of AWS regions media can stream through. |
+| [**getTelephonyNumbersRouting**](TelephonyApi#getTelephonyNumbersRouting) | Get Number Routings by organizationId |
+| [**getTelephonyOrganizationLink**](TelephonyApi#getTelephonyOrganizationLink) | Get organization links |
+| [**getTelephonyOrganizationLinkRegions**](TelephonyApi#getTelephonyOrganizationLinkRegions) | Get all the replica regions by primary region |
 | [**getTelephonySettings**](TelephonyApi#getTelephonySettings) | Get the global telephony configuration. |
 | [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | Get a SIP message. |
 | [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | Get SIP headers. |
 | [**getTelephonySiptraces**](TelephonyApi#getTelephonySiptraces) | Fetch SIP metadata |
 | [**getTelephonySiptracesDownloadDownloadId**](TelephonyApi#getTelephonySiptracesDownloadDownloadId) | Get signed S3 URL for a pcap download |
+| [**patchTelephonyOrganizationLinkApproveRequestingOrganizationId**](TelephonyApi#patchTelephonyOrganizationLinkApproveRequestingOrganizationId) | Approving a requested link |
+| [**postTelephonyNumbersRouting**](TelephonyApi#postTelephonyNumbersRouting) | Update the routing of numbers for one or multiple organizations |
+| [**postTelephonyNumbersRoutingAll**](TelephonyApi#postTelephonyNumbersRoutingAll) | Re-route all numbers on an organization |
+| [**postTelephonyNumbersRoutingReset**](TelephonyApi#postTelephonyNumbersRoutingReset) | Reset routing for organization |
+| [**postTelephonyOrganizationLink**](TelephonyApi#postTelephonyOrganizationLink) | Create a link with an organization |
 | [**postTelephonySiptracesDownload**](TelephonyApi#postTelephonySiptracesDownload) | Request a download of a pcap file to S3 |
 | [**putTelephonyAgentGreetings**](TelephonyApi#putTelephonyAgentGreetings) | Updates an agent's greetings. |
 | [**putTelephonyAgentsGreetingsMe**](TelephonyApi#putTelephonyAgentsGreetingsMe) | Updates the agent's own greetings. |
 | [**putTelephonySettings**](TelephonyApi#putTelephonySettings) | Update the global telephony configuration. |
 {: class="table-striped"}
+
+
+# **deleteTelephonyOrganizationLinkTargetOrganizationId**
+
+
+> Void deleteTelephonyOrganizationLinkTargetOrganizationId(targetOrganizationId)
+
+Delete a link
+
+Wraps DELETE /api/v2/telephony/organization/link/{targetOrganizationId}  
+
+Requires ALL permissions: 
+
+* telephony:organizationLink:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String targetOrganizationId = "targetOrganizationId_example"; // String | targetOrganizationId
+try {
+    apiInstance.deleteTelephonyOrganizationLinkTargetOrganizationId(targetOrganizationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#deleteTelephonyOrganizationLinkTargetOrganizationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **targetOrganizationId** | **String**| targetOrganizationId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **getTelephonyAgentGreetings**
@@ -246,6 +313,187 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**MediaRegions**](MediaRegions)
+
+
+# **getTelephonyNumbersRouting**
+
+
+> [NumberRoutingListing](NumberRoutingListing) getTelephonyNumbersRouting(before, after, pageSize, numberId, activeRoutingOrganizationId, ownerOrganizationId, status)
+
+Get Number Routings by organizationId
+
+Wraps GET /api/v2/telephony/numbers/routing  
+
+Requires ALL permissions: 
+
+* telephony:numberRouting:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String numberId = "numberId_example"; // String | numberId
+String activeRoutingOrganizationId = "activeRoutingOrganizationId_example"; // String | activeRoutingOrganizationId
+String ownerOrganizationId = "ownerOrganizationId_example"; // String | ownerOrganizationId
+String status = "status_example"; // String | status
+try {
+    NumberRoutingListing result = apiInstance.getTelephonyNumbersRouting(before, after, pageSize, numberId, activeRoutingOrganizationId, ownerOrganizationId, status);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonyNumbersRouting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **numberId** | **String**| numberId | [optional] 
+| **activeRoutingOrganizationId** | **String**| activeRoutingOrganizationId | [optional] 
+| **ownerOrganizationId** | **String**| ownerOrganizationId | [optional] 
+| **status** | **String**| status | [optional]<br />**Values**: Normal, Redirected, Pending 
+{: class="table-striped"}
+
+
+### Return type
+
+[**NumberRoutingListing**](NumberRoutingListing)
+
+
+# **getTelephonyOrganizationLink**
+
+
+> [List&lt;OrganizationLinkResponse&gt;](OrganizationLinkResponse) getTelephonyOrganizationLink()
+
+Get organization links
+
+Wraps GET /api/v2/telephony/organization/link  
+
+Requires ALL permissions: 
+
+* telephony:organizationLink:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+try {
+    List<OrganizationLinkResponse> result = apiInstance.getTelephonyOrganizationLink();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonyOrganizationLink");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**List&lt;OrganizationLinkResponse&gt;**](OrganizationLinkResponse)
+
+
+# **getTelephonyOrganizationLinkRegions**
+
+
+> [List&lt;RegionResponse&gt;](RegionResponse) getTelephonyOrganizationLinkRegions()
+
+Get all the replica regions by primary region
+
+Wraps GET /api/v2/telephony/organization/link/regions  
+
+Requires ALL permissions: 
+
+* telephony:organizationLink:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+try {
+    List<RegionResponse> result = apiInstance.getTelephonyOrganizationLinkRegions();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonyOrganizationLinkRegions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**List&lt;RegionResponse&gt;**](RegionResponse)
 
 
 # **getTelephonySettings**
@@ -557,6 +805,299 @@ try {
 [**SignedUrlResponse**](SignedUrlResponse)
 
 
+# **patchTelephonyOrganizationLinkApproveRequestingOrganizationId**
+
+
+> Void patchTelephonyOrganizationLinkApproveRequestingOrganizationId(requestingOrganizationId, body)
+
+Approving a requested link
+
+Wraps PATCH /api/v2/telephony/organization/link/approve/{requestingOrganizationId}  
+
+Requires ALL permissions: 
+
+* telephony:organizationLink:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String requestingOrganizationId = "requestingOrganizationId_example"; // String | requestingOrganizationId
+OrganizationLinkApprovalRequest body = new OrganizationLinkApprovalRequest(); // OrganizationLinkApprovalRequest | Approval request body
+try {
+    apiInstance.patchTelephonyOrganizationLinkApproveRequestingOrganizationId(requestingOrganizationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#patchTelephonyOrganizationLinkApproveRequestingOrganizationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **requestingOrganizationId** | **String**| requestingOrganizationId | 
+| **body** | [**OrganizationLinkApprovalRequest**](OrganizationLinkApprovalRequest)| Approval request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postTelephonyNumbersRouting**
+
+
+> Void postTelephonyNumbersRouting(body)
+
+Update the routing of numbers for one or multiple organizations
+
+Wraps POST /api/v2/telephony/numbers/routing  
+
+Requires ALL permissions: 
+
+* telephony:numberRouting:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+List<NumberRoutingRequest> body = Arrays.asList(new NumberRoutingRequest()); // List<NumberRoutingRequest> | drRoutingList
+try {
+    apiInstance.postTelephonyNumbersRouting(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#postTelephonyNumbersRouting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;NumberRoutingRequest&gt;**](NumberRoutingRequest)| drRoutingList | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postTelephonyNumbersRoutingAll**
+
+
+> Void postTelephonyNumbersRoutingAll(body)
+
+Re-route all numbers on an organization
+
+Wraps POST /api/v2/telephony/numbers/routing/all  
+
+Requires ALL permissions: 
+
+* telephony:numberRouting:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+DisasterRecoveryAllRoutingRequest body = new DisasterRecoveryAllRoutingRequest(); // DisasterRecoveryAllRoutingRequest | Value for all routing request body
+try {
+    apiInstance.postTelephonyNumbersRoutingAll(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#postTelephonyNumbersRoutingAll");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DisasterRecoveryAllRoutingRequest**](DisasterRecoveryAllRoutingRequest)| Value for all routing request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postTelephonyNumbersRoutingReset**
+
+
+> Void postTelephonyNumbersRoutingReset(body)
+
+Reset routing for organization
+
+Wraps POST /api/v2/telephony/numbers/routing/reset  
+
+Requires ALL permissions: 
+
+* telephony:numberRouting:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+NumberRoutingResetOrganizationRequest body = new NumberRoutingResetOrganizationRequest(); // NumberRoutingResetOrganizationRequest | Value for bulk routing request body
+try {
+    apiInstance.postTelephonyNumbersRoutingReset(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#postTelephonyNumbersRoutingReset");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**NumberRoutingResetOrganizationRequest**](NumberRoutingResetOrganizationRequest)| Value for bulk routing request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postTelephonyOrganizationLink**
+
+
+> [OrganizationLink](OrganizationLink) postTelephonyOrganizationLink(body)
+
+Create a link with an organization
+
+Wraps POST /api/v2/telephony/organization/link  
+
+Requires ALL permissions: 
+
+* telephony:organizationLink:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+CreateOrganizationLink body = new CreateOrganizationLink(); // CreateOrganizationLink | CreateLinkOrg body
+try {
+    OrganizationLink result = apiInstance.postTelephonyOrganizationLink(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#postTelephonyOrganizationLink");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateOrganizationLink**](CreateOrganizationLink)| CreateLinkOrg body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationLink**](OrganizationLink)
+
+
 # **postTelephonySiptracesDownload**
 
 
@@ -795,4 +1336,4 @@ try {
 [**TelephonySettings**](TelephonySettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

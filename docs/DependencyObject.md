@@ -37,6 +37,7 @@
 | CONTACTLIST | &quot;CONTACTLIST&quot; | 
 | CONVERSATIONCUSTOMATTRIBUTESCHEMA | &quot;CONVERSATIONCUSTOMATTRIBUTESCHEMA&quot; | 
 | CONVERSATIONSUMMARYSETTING | &quot;CONVERSATIONSUMMARYSETTING&quot; | 
+| CUSTOMERSEGMENT | &quot;CUSTOMERSEGMENT&quot; | 
 | DATAACTION | &quot;DATAACTION&quot; | 
 | DATATABLE | &quot;DATATABLE&quot; | 
 | DECISIONTABLE | &quot;DECISIONTABLE&quot; | 
@@ -113,4 +114,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

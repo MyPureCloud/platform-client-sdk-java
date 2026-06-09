@@ -42,8 +42,9 @@
 | CAMPAIGNEMAILTEMPLATE | &quot;CampaignEmailTemplate&quot; | 
 | FOOTER | &quot;Footer&quot; | 
 | FORM | &quot;Form&quot; | 
+| APPLEINVITATION | &quot;AppleInvitation&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

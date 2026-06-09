@@ -1298,7 +1298,7 @@ try {
 # **getExternalcontactsContactsExports**
 
 
-> [ExportListing](ExportListing) getExternalcontactsContactsExports(divisionIds, after, pageSize)
+> [ContactsExportListing](ContactsExportListing) getExternalcontactsContactsExports(divisionIds, after, pageSize)
 
 List exports for organization
 
@@ -1335,7 +1335,7 @@ List<String> divisionIds = Arrays.asList(null); // List<String> | Division IDs o
 String after = "after_example"; // String | The cursor that points to the end of the set of entities
 Integer pageSize = 56; // Integer | Number of entities to return
 try {
-    ExportListing result = apiInstance.getExternalcontactsContactsExports(divisionIds, after, pageSize);
+    ContactsExportListing result = apiInstance.getExternalcontactsContactsExports(divisionIds, after, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsExports");
@@ -1356,7 +1356,7 @@ try {
 
 ### Return type
 
-[**ExportListing**](ExportListing)
+[**ContactsExportListing**](ContactsExportListing)
 
 
 # **getExternalcontactsContactsSchema**
@@ -7520,4 +7520,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

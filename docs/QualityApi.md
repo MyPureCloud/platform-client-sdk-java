@@ -86,8 +86,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete/cancel an async request for evaluation aggregates
 
-deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -145,8 +143,6 @@ null (empty response body)
 > Void deleteAnalyticsSurveysAggregatesJob(jobId)
 
 Delete/cancel an async request for survey aggregates
-
-deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}  
 
@@ -567,8 +563,6 @@ null (empty response body)
 
 Get status for async query for evaluation aggregates
 
-getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -627,8 +621,6 @@ try {
 > [EvaluationAsyncAggregateQueryResponse](EvaluationAsyncAggregateQueryResponse) getAnalyticsEvaluationsAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results  
 
@@ -691,8 +683,6 @@ try {
 
 Get status for async query for survey aggregates
 
-getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -751,8 +741,6 @@ try {
 > [SurveyAsyncAggregateQueryResponse](SurveyAsyncAggregateQueryResponse) getAnalyticsSurveysAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results  
 
@@ -2977,8 +2965,6 @@ try {
 
 Query for evaluation aggregates asynchronously
 
-postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/evaluations/aggregates/jobs  
 
 Requires ANY permissions: 
@@ -3096,8 +3082,6 @@ try {
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsSurveysAggregatesJobs(body)
 
 Query for survey aggregates asynchronously
-
-postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/surveys/aggregates/jobs  
 
@@ -4599,4 +4583,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

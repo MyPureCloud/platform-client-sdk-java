@@ -30,6 +30,7 @@
 | CANNEDRESPONSELIBRARYID | &quot;cannedResponseLibraryId&quot; |
 | CHUNKCOUNT | &quot;chunkCount&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
+| KNOWLEDGESETTINGID | &quot;knowledgeSettingId&quot; |
 | ENGAGEMENTTYPE | &quot;engagementType&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | FEEDBACKRATING | &quot;feedbackRating&quot; |
@@ -84,4 +85,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

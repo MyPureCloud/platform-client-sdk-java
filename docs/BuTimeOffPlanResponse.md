@@ -13,6 +13,7 @@
 | **daysBeforeStartToExpireFromWaitlist** | **Integer** | The number of days before the time-off request start date for when the request will be expired from the waitlist |  |
 | **autoPublishApprovedTimeOffRequests** | **Boolean** | Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule |  [optional] |
 | **restrictedActivityCodes** | [**ActivityCodesReference**](ActivityCodesReference) | The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved |  [optional] |
+| **overrideDates** | [**List&lt;OverrideDate&gt;**](OverrideDate) | A list of override dates to check for conflicts with time-off request dates. If a conflict is found, the request will not be auto-approved |  [optional] |
 | **hrisTimeOffType** | [**HrisTimeOffType**](HrisTimeOffType) | Time-off type, if this time-off plan is associated with the integration |  [optional] |
 | **enabled** | **Boolean** | Whether this time-off plan is currently being used by agents |  |
 | **countAgainstTimeOffLimits** | **Boolean** | Whether this time-off plan counts against time-off limits |  |
@@ -36,4 +37,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

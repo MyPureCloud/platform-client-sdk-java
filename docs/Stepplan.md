@@ -13,8 +13,8 @@
 | **dateCreated** | [**Date**](Date) | The Stepplan creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | [**Date**](Date) | The Stepplan modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedBy** | [**UserReference**](UserReference) | The ID of the User who modified the Stepplan. |  [optional] |
-| **activityType** | [**ActivityTypeEnum**](#Enum--ActivityTypeEnum) | The activityType of the Stepplan. |  [optional] |
-| **workitemSettings** | [**WorkitemSettingsResponse**](WorkitemSettingsResponse) | The workitemSettings of the Stepplan. |  [optional] |
+| **activityType** | [**ActivityTypeEnum**](#Enum--ActivityTypeEnum) | The activity type of the Stepplan. |  [optional] |
+| **workitemSettings** | [**WorkitemSettingsResponse**](WorkitemSettingsResponse) | The Workitem settings of the Stepplan. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -30,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

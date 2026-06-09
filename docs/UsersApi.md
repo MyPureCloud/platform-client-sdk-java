@@ -137,8 +137,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete/cancel an async request for user aggregates
 
-deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -1080,8 +1078,6 @@ null (empty response body)
 
 Get status for async query for user aggregates
 
-getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -1140,8 +1136,6 @@ try {
 > [UserAsyncAggregateQueryResponse](UserAsyncAggregateQueryResponse) getAnalyticsUsersAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results  
 
@@ -5321,8 +5315,6 @@ try {
 
 Query for user aggregates asynchronously
 
-postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/users/aggregates/jobs  
 
 Requires ANY permissions: 
@@ -7683,4 +7675,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_
