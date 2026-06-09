@@ -15,9 +15,9 @@
 | **modifiedBy** | [**UserReference**](UserReference) | The ID of the User who modified the Step. |  [optional] |
 | **version** | **Integer** | The version of the Step. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The Status of the Step. |  [optional] |
-| **stage** | [**StageReference**](StageReference) | The parent stage of the step. |  [optional] |
+| **stage** | [**StageReference**](StageReference) | The parent Stage of the Step. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-| **_case** | [**CaseReference**](CaseReference) | The parent case of the step. |  [optional] |
+| **_case** | [**CaseReference**](CaseReference) | The parent Case of the Step. |  [optional] |
 
 
 ## Enum: StatusEnum
@@ -34,4 +34,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

@@ -32,6 +32,8 @@ import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
+import com.mypurecloud.sdk.v2.model.EmailSetting;
+import com.mypurecloud.sdk.v2.model.EmailSettingEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
@@ -127,6 +129,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingDirectroutingbackupSettin
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailOutboundDomainRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailSettingEmailSettingIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorsKeyperformanceindicatorRequest;
@@ -165,6 +168,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainActivationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSettingEmailSettingIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSetupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguagesRequest;
@@ -227,6 +232,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailOutboundDomainRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailSettingEmailSettingIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
@@ -256,6 +262,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsSimulatedRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsKeyperformanceindicatorsRequest;
@@ -653,6 +660,81 @@ public class RoutingApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteRoutingEmailOutboundDomainAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an email setting. Removes the email setting and its associated settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingEmailSettingEmailSettingIdAsync(DeleteRoutingEmailSettingEmailSettingIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an email setting. Removes the email setting and its associated settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingEmailSettingEmailSettingIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3541,6 +3623,156 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Get a paged list of email routing settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EmailSettingEntityListing> getRoutingEmailSettingAsync(GetRoutingEmailSettingRequest request, final AsyncApiCallback<EmailSettingEntityListing> callback) {
+    try {
+      final SettableFuture<EmailSettingEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailSettingEntityListing>() {}, new AsyncApiCallback<ApiResponse<EmailSettingEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailSettingEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a paged list of email routing settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EmailSettingEntityListing>> getRoutingEmailSettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailSettingEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EmailSettingEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EmailSettingEntityListing>() {}, new AsyncApiCallback<ApiResponse<EmailSettingEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailSettingEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailSettingEntityListing> response = (ApiResponse<EmailSettingEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailSettingEntityListing> response = (ApiResponse<EmailSettingEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get email setting. Returns the specified email setting that defines settings for email
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EmailSetting> getRoutingEmailSettingEmailSettingIdAsync(GetRoutingEmailSettingEmailSettingIdRequest request, final AsyncApiCallback<EmailSetting> callback) {
+    try {
+      final SettableFuture<EmailSetting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailSetting>() {}, new AsyncApiCallback<ApiResponse<EmailSetting>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailSetting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get email setting. Returns the specified email setting that defines settings for email
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EmailSetting>> getRoutingEmailSettingEmailSettingIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailSetting>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EmailSetting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EmailSetting>() {}, new AsyncApiCallback<ApiResponse<EmailSetting>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailSetting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get email setup
    * 
    * @param request the request object
@@ -6322,7 +6554,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Get the list of routing skills.
+   * Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6356,7 +6588,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Get the list of routing skills.
+   * Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8185,6 +8417,81 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an email setting. Modifies the settings for email setting
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EmailSetting> patchRoutingEmailSettingEmailSettingIdAsync(PatchRoutingEmailSettingEmailSettingIdRequest request, final AsyncApiCallback<EmailSetting> callback) {
+    try {
+      final SettableFuture<EmailSetting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailSetting>() {}, new AsyncApiCallback<ApiResponse<EmailSetting>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailSetting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an email setting. Modifies the settings for email setting
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EmailSetting>> patchRoutingEmailSettingEmailSettingIdAsync(ApiRequest<EmailSetting> request, final AsyncApiCallback<ApiResponse<EmailSetting>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EmailSetting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EmailSetting>() {}, new AsyncApiCallback<ApiResponse<EmailSetting>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailSetting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10366,6 +10673,81 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EmailOutboundDomainResult> response = (ApiResponse<EmailOutboundDomainResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new email setting. Used to define various settings, that can then be associated with email domains
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EmailSetting> postRoutingEmailSettingAsync(PostRoutingEmailSettingRequest request, final AsyncApiCallback<EmailSetting> callback) {
+    try {
+      final SettableFuture<EmailSetting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailSetting>() {}, new AsyncApiCallback<ApiResponse<EmailSetting>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailSetting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new email setting. Used to define various settings, that can then be associated with email domains
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EmailSetting>> postRoutingEmailSettingAsync(ApiRequest<EmailSetting> request, final AsyncApiCallback<ApiResponse<EmailSetting>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EmailSetting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EmailSetting>() {}, new AsyncApiCallback<ApiResponse<EmailSetting>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailSetting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

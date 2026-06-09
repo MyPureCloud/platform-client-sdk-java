@@ -182,14 +182,14 @@ public class CaseplanCreate  implements Serializable {
 
 
   /**
-   * The ID of the division the Caseplan belongs to. Use '*' for divisionless caseplans.
+   * The ID of the division the Caseplan belongs to. Use '*' for divisionless Caseplans.
    **/
   public CaseplanCreate divisionId(String divisionId) {
     this.divisionId = divisionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The ID of the division the Caseplan belongs to. Use '*' for divisionless caseplans.")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the division the Caseplan belongs to. Use '*' for divisionless Caseplans.")
   @JsonProperty("divisionId")
   public String getDivisionId() {
     return divisionId;
@@ -200,14 +200,14 @@ public class CaseplanCreate  implements Serializable {
 
 
   /**
-   * The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
+   * The schemas that define all data for Cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
    **/
   public CaseplanCreate dataSchemas(List<CaseplanDataSchema> dataSchemas) {
     this.dataSchemas = dataSchemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.")
+  @ApiModelProperty(example = "null", value = "The schemas that define all data for Cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.")
   @JsonProperty("dataSchemas")
   public List<CaseplanDataSchema> getDataSchemas() {
     return dataSchemas;
@@ -218,14 +218,14 @@ public class CaseplanCreate  implements Serializable {
 
 
   /**
-   * The intake format when collecting data for a case from this caseplan. There can be a maximum of 10 IntakeSettings defined for a Caseplan.
+   * The intake format when collecting data for a Case from this Caseplan. There can be a maximum of 10 IntakeSettings defined for a Caseplan.
    **/
   public CaseplanCreate intakeSettings(List<IntakeSetting> intakeSettings) {
     this.intakeSettings = intakeSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The intake format when collecting data for a case from this caseplan. There can be a maximum of 10 IntakeSettings defined for a Caseplan.")
+  @ApiModelProperty(example = "null", value = "The intake format when collecting data for a Case from this Caseplan. There can be a maximum of 10 IntakeSettings defined for a Caseplan.")
   @JsonProperty("intakeSettings")
   public List<IntakeSetting> getIntakeSettings() {
     return intakeSettings;

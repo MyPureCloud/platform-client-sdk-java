@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **workitemId** | **String** | The ID of the workitem to associate with the case. |  [optional] |
-| **conversationId** | **String** | The ID of the conversation to associate with the case. |  [optional] |
+| **workitemId** | **String** | The ID of the Workitem to associate with the Case. |  [optional] |
+| **conversationId** | **String** | The ID of the Conversation to associate with the Case. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

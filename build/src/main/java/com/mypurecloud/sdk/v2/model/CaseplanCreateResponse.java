@@ -230,14 +230,14 @@ public class CaseplanCreateResponse  implements Serializable {
 
 
   /**
-   * The default case owner for Cases created from the Caseplan.
+   * The default Case owner for Cases created from the Caseplan.
    **/
   public CaseplanCreateResponse defaultCaseOwner(UserReference defaultCaseOwner) {
     this.defaultCaseOwner = defaultCaseOwner;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The default case owner for Cases created from the Caseplan.")
+  @ApiModelProperty(example = "null", value = "The default Case owner for Cases created from the Caseplan.")
   @JsonProperty("defaultCaseOwner")
   public UserReference getDefaultCaseOwner() {
     return defaultCaseOwner;
@@ -338,14 +338,14 @@ public class CaseplanCreateResponse  implements Serializable {
 
 
   /**
-   * The id of the User who modified the Caseplan.
+   * The ID of the User who modified the Caseplan.
    **/
   public CaseplanCreateResponse modifiedBy(UserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The id of the User who modified the Caseplan.")
+  @ApiModelProperty(example = "null", value = "The ID of the User who modified the Caseplan.")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
@@ -356,14 +356,14 @@ public class CaseplanCreateResponse  implements Serializable {
 
 
   /**
-   * The customer intent for the Cases created from the caseplan.
+   * The customer intent for Cases created from this Caseplan.
    **/
   public CaseplanCreateResponse customerIntent(CustomerIntentReference customerIntent) {
     this.customerIntent = customerIntent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The customer intent for the Cases created from the caseplan.")
+  @ApiModelProperty(example = "null", value = "The customer intent for Cases created from this Caseplan.")
   @JsonProperty("customerIntent")
   public CustomerIntentReference getCustomerIntent() {
     return customerIntent;
@@ -392,14 +392,14 @@ public class CaseplanCreateResponse  implements Serializable {
 
 
   /**
-   * The schemas that define all data for cases from this Caseplan.
+   * The schemas that define all data for Cases from this Caseplan.
    **/
   public CaseplanCreateResponse dataSchemas(List<CaseplanDataSchema> dataSchemas) {
     this.dataSchemas = dataSchemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The schemas that define all data for cases from this Caseplan.")
+  @ApiModelProperty(example = "null", value = "The schemas that define all data for Cases from this Caseplan.")
   @JsonProperty("dataSchemas")
   public List<CaseplanDataSchema> getDataSchemas() {
     return dataSchemas;
@@ -410,14 +410,14 @@ public class CaseplanCreateResponse  implements Serializable {
 
 
   /**
-   * The intake format when collecting data for a case from this caseplan.
+   * The intake format when collecting data for a Case from this Caseplan.
    **/
   public CaseplanCreateResponse intakeSettings(List<IntakeSetting> intakeSettings) {
     this.intakeSettings = intakeSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The intake format when collecting data for a case from this caseplan.")
+  @ApiModelProperty(example = "null", value = "The intake format when collecting data for a Case from this Caseplan.")
   @JsonProperty("intakeSettings")
   public List<IntakeSetting> getIntakeSettings() {
     return intakeSettings;

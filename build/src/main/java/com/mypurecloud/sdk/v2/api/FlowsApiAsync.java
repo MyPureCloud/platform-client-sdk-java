@@ -55,7 +55,6 @@ public class FlowsApiAsync {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -90,7 +89,6 @@ public class FlowsApiAsync {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -132,7 +130,6 @@ public class FlowsApiAsync {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -167,7 +164,6 @@ public class FlowsApiAsync {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -209,7 +205,6 @@ public class FlowsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -244,7 +239,6 @@ public class FlowsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -361,7 +355,6 @@ public class FlowsApiAsync {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -396,7 +389,6 @@ public class FlowsApiAsync {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

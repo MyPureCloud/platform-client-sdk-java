@@ -203,14 +203,14 @@ public class TerminateJob  implements Serializable {
 
 
   /**
-   * The job creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The Job creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TerminateJob dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The job creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The Job creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -221,14 +221,14 @@ public class TerminateJob  implements Serializable {
 
 
   /**
-   * The job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The Job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TerminateJob dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The Job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;

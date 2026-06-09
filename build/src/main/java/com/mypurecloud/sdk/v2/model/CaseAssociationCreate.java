@@ -37,14 +37,14 @@ public class CaseAssociationCreate  implements Serializable {
 
   
   /**
-   * The ID of the workitem to associate with the case.
+   * The ID of the Workitem to associate with the Case.
    **/
   public CaseAssociationCreate workitemId(String workitemId) {
     this.workitemId = workitemId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the workitem to associate with the case.")
+  @ApiModelProperty(example = "null", value = "The ID of the Workitem to associate with the Case.")
   @JsonProperty("workitemId")
   public String getWorkitemId() {
     return workitemId;
@@ -55,14 +55,14 @@ public class CaseAssociationCreate  implements Serializable {
 
 
   /**
-   * The ID of the conversation to associate with the case.
+   * The ID of the Conversation to associate with the Case.
    **/
   public CaseAssociationCreate conversationId(String conversationId) {
     this.conversationId = conversationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the conversation to associate with the case.")
+  @ApiModelProperty(example = "null", value = "The ID of the Conversation to associate with the Case.")
   @JsonProperty("conversationId")
   public String getConversationId() {
     return conversationId;

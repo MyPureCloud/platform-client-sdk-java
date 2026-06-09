@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.ContactImportSettings;
 import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
+import com.mypurecloud.sdk.v2.model.ContactsExportListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
@@ -59,7 +60,6 @@ import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
-import com.mypurecloud.sdk.v2.model.ExportListing;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalContactsPatchRequest;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
@@ -1781,11 +1781,11 @@ public class ExternalContactsApi {
    * @param divisionIds Division IDs of entities (optional)
    * @param after The cursor that points to the end of the set of entities (optional)
    * @param pageSize Number of entities to return (optional)
-   * @return ExportListing
+   * @return ContactsExportListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExportListing getExternalcontactsContactsExports(List<String> divisionIds, String after, Integer pageSize) throws IOException, ApiException {
+  public ContactsExportListing getExternalcontactsContactsExports(List<String> divisionIds, String after, Integer pageSize) throws IOException, ApiException {
     return  getExternalcontactsContactsExports(createGetExternalcontactsContactsExportsRequest(divisionIds, after, pageSize));
   }
 
@@ -1795,10 +1795,10 @@ public class ExternalContactsApi {
    * @param divisionIds Division IDs of entities (optional)
    * @param after The cursor that points to the end of the set of entities (optional)
    * @param pageSize Number of entities to return (optional)
-   * @return ExportListing
+   * @return ContactsExportListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExportListing> getExternalcontactsContactsExportsWithHttpInfo(List<String> divisionIds, String after, Integer pageSize) throws IOException {
+  public ApiResponse<ContactsExportListing> getExternalcontactsContactsExportsWithHttpInfo(List<String> divisionIds, String after, Integer pageSize) throws IOException {
     return getExternalcontactsContactsExports(createGetExternalcontactsContactsExportsRequest(divisionIds, after, pageSize).withHttpInfo());
   }
 
@@ -1817,13 +1817,13 @@ public class ExternalContactsApi {
    * List exports for organization
    * 
    * @param request The request object
-   * @return ExportListing
+   * @return ContactsExportListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExportListing getExternalcontactsContactsExports(GetExternalcontactsContactsExportsRequest request) throws IOException, ApiException {
+  public ContactsExportListing getExternalcontactsContactsExports(GetExternalcontactsContactsExportsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ExportListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExportListing>() {});
+      ApiResponse<ContactsExportListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactsExportListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1839,13 +1839,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExportListing> getExternalcontactsContactsExports(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<ContactsExportListing> getExternalcontactsContactsExports(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ExportListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<ContactsExportListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ExportListing> response = (ApiResponse<ExportListing>)(ApiResponse<?>)exception;
+      ApiResponse<ContactsExportListing> response = (ApiResponse<ContactsExportListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1856,7 +1856,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ExportListing> response = (ApiResponse<ExportListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ContactsExportListing> response = (ApiResponse<ContactsExportListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

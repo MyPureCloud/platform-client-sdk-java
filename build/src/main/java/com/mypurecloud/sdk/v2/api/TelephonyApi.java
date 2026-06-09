@@ -13,10 +13,19 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.AgentGreeting;
 import com.mypurecloud.sdk.v2.model.Callheader;
 import com.mypurecloud.sdk.v2.model.Callmessage;
+import com.mypurecloud.sdk.v2.model.CreateOrganizationLink;
 import java.util.Date;
+import com.mypurecloud.sdk.v2.model.DisasterRecoveryAllRoutingRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MediaRegions;
+import com.mypurecloud.sdk.v2.model.NumberRoutingListing;
+import com.mypurecloud.sdk.v2.model.NumberRoutingRequest;
+import com.mypurecloud.sdk.v2.model.NumberRoutingResetOrganizationRequest;
 import com.mypurecloud.sdk.v2.model.OrganizationCallMetrics;
+import com.mypurecloud.sdk.v2.model.OrganizationLink;
+import com.mypurecloud.sdk.v2.model.OrganizationLinkApprovalRequest;
+import com.mypurecloud.sdk.v2.model.OrganizationLinkResponse;
+import com.mypurecloud.sdk.v2.model.RegionResponse;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
 import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
@@ -25,15 +34,24 @@ import com.mypurecloud.sdk.v2.model.SipSearchResult;
 import com.mypurecloud.sdk.v2.model.TelephonySettings;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyOrganizationLinkTargetOrganizationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentsGreetingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyCallsMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyNumbersRoutingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyOrganizationLinkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyOrganizationLinkRegionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesDownloadDownloadIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyNumbersRoutingRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyNumbersRoutingAllRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyNumbersRoutingResetRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyOrganizationLinkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentsGreetingsMeRequest;
@@ -54,6 +72,81 @@ public class TelephonyApi {
 
   public TelephonyApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete a link
+   * 
+   * @param targetOrganizationId targetOrganizationId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTelephonyOrganizationLinkTargetOrganizationId(String targetOrganizationId) throws IOException, ApiException {
+     deleteTelephonyOrganizationLinkTargetOrganizationId(createDeleteTelephonyOrganizationLinkTargetOrganizationIdRequest(targetOrganizationId));
+  }
+
+  /**
+   * Delete a link
+   * 
+   * @param targetOrganizationId targetOrganizationId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTelephonyOrganizationLinkTargetOrganizationIdWithHttpInfo(String targetOrganizationId) throws IOException {
+    return deleteTelephonyOrganizationLinkTargetOrganizationId(createDeleteTelephonyOrganizationLinkTargetOrganizationIdRequest(targetOrganizationId).withHttpInfo());
+  }
+
+  private DeleteTelephonyOrganizationLinkTargetOrganizationIdRequest createDeleteTelephonyOrganizationLinkTargetOrganizationIdRequest(String targetOrganizationId) {
+    return DeleteTelephonyOrganizationLinkTargetOrganizationIdRequest.builder()
+            .withTargetOrganizationId(targetOrganizationId)
+
+            .build();
+  }
+
+  /**
+   * Delete a link
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTelephonyOrganizationLinkTargetOrganizationId(DeleteTelephonyOrganizationLinkTargetOrganizationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a link
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTelephonyOrganizationLinkTargetOrganizationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -356,6 +449,256 @@ public class TelephonyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MediaRegions> response = (ApiResponse<MediaRegions>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Number Routings by organizationId
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param numberId numberId (optional)
+   * @param activeRoutingOrganizationId activeRoutingOrganizationId (optional)
+   * @param ownerOrganizationId ownerOrganizationId (optional)
+   * @param status status (optional)
+   * @return NumberRoutingListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NumberRoutingListing getTelephonyNumbersRouting(String before, String after, String pageSize, String numberId, String activeRoutingOrganizationId, String ownerOrganizationId, String status) throws IOException, ApiException {
+    return  getTelephonyNumbersRouting(createGetTelephonyNumbersRoutingRequest(before, after, pageSize, numberId, activeRoutingOrganizationId, ownerOrganizationId, status));
+  }
+
+  /**
+   * Get Number Routings by organizationId
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param numberId numberId (optional)
+   * @param activeRoutingOrganizationId activeRoutingOrganizationId (optional)
+   * @param ownerOrganizationId ownerOrganizationId (optional)
+   * @param status status (optional)
+   * @return NumberRoutingListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NumberRoutingListing> getTelephonyNumbersRoutingWithHttpInfo(String before, String after, String pageSize, String numberId, String activeRoutingOrganizationId, String ownerOrganizationId, String status) throws IOException {
+    return getTelephonyNumbersRouting(createGetTelephonyNumbersRoutingRequest(before, after, pageSize, numberId, activeRoutingOrganizationId, ownerOrganizationId, status).withHttpInfo());
+  }
+
+  private GetTelephonyNumbersRoutingRequest createGetTelephonyNumbersRoutingRequest(String before, String after, String pageSize, String numberId, String activeRoutingOrganizationId, String ownerOrganizationId, String status) {
+    return GetTelephonyNumbersRoutingRequest.builder()
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withNumberId(numberId)
+
+            .withActiveRoutingOrganizationId(activeRoutingOrganizationId)
+
+            .withOwnerOrganizationId(ownerOrganizationId)
+
+            .withStatus(status)
+
+            .build();
+  }
+
+  /**
+   * Get Number Routings by organizationId
+   * 
+   * @param request The request object
+   * @return NumberRoutingListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NumberRoutingListing getTelephonyNumbersRouting(GetTelephonyNumbersRoutingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NumberRoutingListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NumberRoutingListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Number Routings by organizationId
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NumberRoutingListing> getTelephonyNumbersRouting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NumberRoutingListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NumberRoutingListing> response = (ApiResponse<NumberRoutingListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NumberRoutingListing> response = (ApiResponse<NumberRoutingListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get organization links
+   * 
+   * @return List<OrganizationLinkResponse>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<OrganizationLinkResponse> getTelephonyOrganizationLink() throws IOException, ApiException {
+    return  getTelephonyOrganizationLink(createGetTelephonyOrganizationLinkRequest());
+  }
+
+  /**
+   * Get organization links
+   * 
+   * @return List<OrganizationLinkResponse>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<OrganizationLinkResponse>> getTelephonyOrganizationLinkWithHttpInfo() throws IOException {
+    return getTelephonyOrganizationLink(createGetTelephonyOrganizationLinkRequest().withHttpInfo());
+  }
+
+  private GetTelephonyOrganizationLinkRequest createGetTelephonyOrganizationLinkRequest() {
+    return GetTelephonyOrganizationLinkRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get organization links
+   * 
+   * @param request The request object
+   * @return List<OrganizationLinkResponse>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<OrganizationLinkResponse> getTelephonyOrganizationLink(GetTelephonyOrganizationLinkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<OrganizationLinkResponse>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<OrganizationLinkResponse>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get organization links
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<OrganizationLinkResponse>> getTelephonyOrganizationLink(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<OrganizationLinkResponse>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<OrganizationLinkResponse>> response = (ApiResponse<List<OrganizationLinkResponse>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<OrganizationLinkResponse>> response = (ApiResponse<List<OrganizationLinkResponse>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all the replica regions by primary region
+   * 
+   * @return List<RegionResponse>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<RegionResponse> getTelephonyOrganizationLinkRegions() throws IOException, ApiException {
+    return  getTelephonyOrganizationLinkRegions(createGetTelephonyOrganizationLinkRegionsRequest());
+  }
+
+  /**
+   * Get all the replica regions by primary region
+   * 
+   * @return List<RegionResponse>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<RegionResponse>> getTelephonyOrganizationLinkRegionsWithHttpInfo() throws IOException {
+    return getTelephonyOrganizationLinkRegions(createGetTelephonyOrganizationLinkRegionsRequest().withHttpInfo());
+  }
+
+  private GetTelephonyOrganizationLinkRegionsRequest createGetTelephonyOrganizationLinkRegionsRequest() {
+    return GetTelephonyOrganizationLinkRegionsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get all the replica regions by primary region
+   * 
+   * @param request The request object
+   * @return List<RegionResponse>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<RegionResponse> getTelephonyOrganizationLinkRegions(GetTelephonyOrganizationLinkRegionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<RegionResponse>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<RegionResponse>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all the replica regions by primary region
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<RegionResponse>> getTelephonyOrganizationLinkRegions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<RegionResponse>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<RegionResponse>> response = (ApiResponse<List<RegionResponse>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<RegionResponse>> response = (ApiResponse<List<RegionResponse>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -766,6 +1109,388 @@ public class TelephonyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SignedUrlResponse> response = (ApiResponse<SignedUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Approving a requested link
+   * 
+   * @param requestingOrganizationId requestingOrganizationId (required)
+   * @param body Approval request body (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchTelephonyOrganizationLinkApproveRequestingOrganizationId(String requestingOrganizationId, OrganizationLinkApprovalRequest body) throws IOException, ApiException {
+     patchTelephonyOrganizationLinkApproveRequestingOrganizationId(createPatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest(requestingOrganizationId, body));
+  }
+
+  /**
+   * Approving a requested link
+   * 
+   * @param requestingOrganizationId requestingOrganizationId (required)
+   * @param body Approval request body (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchTelephonyOrganizationLinkApproveRequestingOrganizationIdWithHttpInfo(String requestingOrganizationId, OrganizationLinkApprovalRequest body) throws IOException {
+    return patchTelephonyOrganizationLinkApproveRequestingOrganizationId(createPatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest(requestingOrganizationId, body).withHttpInfo());
+  }
+
+  private PatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest createPatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest(String requestingOrganizationId, OrganizationLinkApprovalRequest body) {
+    return PatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest.builder()
+            .withRequestingOrganizationId(requestingOrganizationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Approving a requested link
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchTelephonyOrganizationLinkApproveRequestingOrganizationId(PatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Approving a requested link
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchTelephonyOrganizationLinkApproveRequestingOrganizationId(ApiRequest<OrganizationLinkApprovalRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the routing of numbers for one or multiple organizations
+   * 
+   * @param body drRoutingList (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postTelephonyNumbersRouting(List<NumberRoutingRequest> body) throws IOException, ApiException {
+     postTelephonyNumbersRouting(createPostTelephonyNumbersRoutingRequest(body));
+  }
+
+  /**
+   * Update the routing of numbers for one or multiple organizations
+   * 
+   * @param body drRoutingList (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postTelephonyNumbersRoutingWithHttpInfo(List<NumberRoutingRequest> body) throws IOException {
+    return postTelephonyNumbersRouting(createPostTelephonyNumbersRoutingRequest(body).withHttpInfo());
+  }
+
+  private PostTelephonyNumbersRoutingRequest createPostTelephonyNumbersRoutingRequest(List<NumberRoutingRequest> body) {
+    return PostTelephonyNumbersRoutingRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the routing of numbers for one or multiple organizations
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postTelephonyNumbersRouting(PostTelephonyNumbersRoutingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update the routing of numbers for one or multiple organizations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postTelephonyNumbersRouting(ApiRequest<List<NumberRoutingRequest>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Re-route all numbers on an organization
+   * 
+   * @param body Value for all routing request body (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postTelephonyNumbersRoutingAll(DisasterRecoveryAllRoutingRequest body) throws IOException, ApiException {
+     postTelephonyNumbersRoutingAll(createPostTelephonyNumbersRoutingAllRequest(body));
+  }
+
+  /**
+   * Re-route all numbers on an organization
+   * 
+   * @param body Value for all routing request body (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postTelephonyNumbersRoutingAllWithHttpInfo(DisasterRecoveryAllRoutingRequest body) throws IOException {
+    return postTelephonyNumbersRoutingAll(createPostTelephonyNumbersRoutingAllRequest(body).withHttpInfo());
+  }
+
+  private PostTelephonyNumbersRoutingAllRequest createPostTelephonyNumbersRoutingAllRequest(DisasterRecoveryAllRoutingRequest body) {
+    return PostTelephonyNumbersRoutingAllRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Re-route all numbers on an organization
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postTelephonyNumbersRoutingAll(PostTelephonyNumbersRoutingAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Re-route all numbers on an organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postTelephonyNumbersRoutingAll(ApiRequest<DisasterRecoveryAllRoutingRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Reset routing for organization
+   * 
+   * @param body Value for bulk routing request body (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postTelephonyNumbersRoutingReset(NumberRoutingResetOrganizationRequest body) throws IOException, ApiException {
+     postTelephonyNumbersRoutingReset(createPostTelephonyNumbersRoutingResetRequest(body));
+  }
+
+  /**
+   * Reset routing for organization
+   * 
+   * @param body Value for bulk routing request body (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postTelephonyNumbersRoutingResetWithHttpInfo(NumberRoutingResetOrganizationRequest body) throws IOException {
+    return postTelephonyNumbersRoutingReset(createPostTelephonyNumbersRoutingResetRequest(body).withHttpInfo());
+  }
+
+  private PostTelephonyNumbersRoutingResetRequest createPostTelephonyNumbersRoutingResetRequest(NumberRoutingResetOrganizationRequest body) {
+    return PostTelephonyNumbersRoutingResetRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Reset routing for organization
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postTelephonyNumbersRoutingReset(PostTelephonyNumbersRoutingResetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Reset routing for organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postTelephonyNumbersRoutingReset(ApiRequest<NumberRoutingResetOrganizationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a link with an organization
+   * 
+   * @param body CreateLinkOrg body (required)
+   * @return OrganizationLink
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationLink postTelephonyOrganizationLink(CreateOrganizationLink body) throws IOException, ApiException {
+    return  postTelephonyOrganizationLink(createPostTelephonyOrganizationLinkRequest(body));
+  }
+
+  /**
+   * Create a link with an organization
+   * 
+   * @param body CreateLinkOrg body (required)
+   * @return OrganizationLink
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationLink> postTelephonyOrganizationLinkWithHttpInfo(CreateOrganizationLink body) throws IOException {
+    return postTelephonyOrganizationLink(createPostTelephonyOrganizationLinkRequest(body).withHttpInfo());
+  }
+
+  private PostTelephonyOrganizationLinkRequest createPostTelephonyOrganizationLinkRequest(CreateOrganizationLink body) {
+    return PostTelephonyOrganizationLinkRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a link with an organization
+   * 
+   * @param request The request object
+   * @return OrganizationLink
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationLink postTelephonyOrganizationLink(PostTelephonyOrganizationLinkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationLink> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationLink>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a link with an organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationLink> postTelephonyOrganizationLink(ApiRequest<CreateOrganizationLink> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationLink>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationLink> response = (ApiResponse<OrganizationLink>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationLink> response = (ApiResponse<OrganizationLink>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

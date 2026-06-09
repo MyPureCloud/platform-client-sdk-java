@@ -301,7 +301,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for action aggregates
    * 
-   * deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -313,7 +312,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for action aggregates
    * 
-   * deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -331,7 +329,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for action aggregates
    * 
-   * deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -350,7 +347,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for action aggregates
    * 
-   * deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -538,7 +534,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for bot aggregates
    * 
-   * deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -550,7 +545,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for bot aggregates
    * 
-   * deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -568,7 +562,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for bot aggregates
    * 
-   * deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -587,7 +580,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for bot aggregates
    * 
-   * deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -617,7 +609,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for case management aggregates
    * 
-   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -629,7 +620,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for case management aggregates
    * 
-   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -647,7 +637,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for case management aggregates
    * 
-   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -666,7 +655,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for case management aggregates
    * 
-   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -696,7 +684,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for conversation aggregates
    * 
-   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -708,7 +695,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for conversation aggregates
    * 
-   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -726,7 +712,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for conversation aggregates
    * 
-   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -745,7 +730,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for conversation aggregates
    * 
-   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -929,7 +913,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for evaluation aggregates
    * 
-   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -941,7 +924,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for evaluation aggregates
    * 
-   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -959,7 +941,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for evaluation aggregates
    * 
-   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -978,7 +959,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for evaluation aggregates
    * 
-   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1008,7 +988,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for flow execution aggregates
    * 
-   * deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1020,7 +999,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for flow execution aggregates
    * 
-   * deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1038,7 +1016,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for flow execution aggregates
    * 
-   * deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1057,7 +1034,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for flow execution aggregates
    * 
-   * deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1087,7 +1063,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1099,7 +1074,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1117,7 +1091,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1136,7 +1109,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1166,7 +1138,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1178,7 +1149,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1196,7 +1166,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1215,7 +1184,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1245,7 +1213,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for knowledge aggregates
    * 
-   * deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1257,7 +1224,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for knowledge aggregates
    * 
-   * deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1275,7 +1241,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for knowledge aggregates
    * 
-   * deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1294,7 +1259,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for knowledge aggregates
    * 
-   * deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1324,7 +1288,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for resolution aggregates
    * 
-   * deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1336,7 +1299,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for resolution aggregates
    * 
-   * deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1354,7 +1316,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for resolution aggregates
    * 
-   * deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1373,7 +1334,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for resolution aggregates
    * 
-   * deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1403,7 +1363,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for summary aggregates
    * 
-   * deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1415,7 +1374,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for summary aggregates
    * 
-   * deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1433,7 +1391,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for summary aggregates
    * 
-   * deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1452,7 +1409,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for summary aggregates
    * 
-   * deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1482,7 +1438,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for survey aggregates
    * 
-   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1494,7 +1449,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for survey aggregates
    * 
-   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1512,7 +1466,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for survey aggregates
    * 
-   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1531,7 +1484,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for survey aggregates
    * 
-   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1561,7 +1513,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for task management aggregates
    * 
-   * deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1573,7 +1524,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for task management aggregates
    * 
-   * deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1591,7 +1541,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for task management aggregates
    * 
-   * deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1610,7 +1559,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for task management aggregates
    * 
-   * deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1640,7 +1588,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for transcript aggregates
    * 
-   * deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1652,7 +1599,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for transcript aggregates
    * 
-   * deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1670,7 +1616,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for transcript aggregates
    * 
-   * deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1689,7 +1634,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for transcript aggregates
    * 
-   * deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1719,7 +1663,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1731,7 +1674,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1749,7 +1691,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1768,7 +1709,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1873,7 +1813,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for action aggregates
    * 
-   * getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -1886,7 +1825,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for action aggregates
    * 
-   * getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -1905,7 +1843,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for action aggregates
    * 
-   * getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -1925,7 +1862,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for action aggregates
    * 
-   * getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1955,7 +1891,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ActionAsyncAggregateQueryResponse
@@ -1969,7 +1904,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ActionAsyncAggregateQueryResponse
@@ -1991,7 +1925,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ActionAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -2011,7 +1944,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2769,7 +2701,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for bot aggregates
    * 
-   * getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -2782,7 +2713,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for bot aggregates
    * 
-   * getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -2801,7 +2731,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for bot aggregates
    * 
-   * getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -2821,7 +2750,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for bot aggregates
    * 
-   * getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2851,7 +2779,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return BotAsyncAggregateQueryResponse
@@ -2865,7 +2792,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return BotAsyncAggregateQueryResponse
@@ -2887,7 +2813,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BotAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -2907,7 +2832,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2937,7 +2861,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for case management aggregates
    * 
-   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -2950,7 +2873,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for case management aggregates
    * 
-   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -2969,7 +2891,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for case management aggregates
    * 
-   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -2989,7 +2910,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for case management aggregates
    * 
-   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3019,7 +2939,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async case management query
    * 
-   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return CaseManagementAsyncAggregateQueryResponse
@@ -3033,7 +2952,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async case management query
    * 
-   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return CaseManagementAsyncAggregateQueryResponse
@@ -3055,7 +2973,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async case management query
    * 
-   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseManagementAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -3075,7 +2992,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async case management query
    * 
-   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3183,7 +3099,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
-   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -3196,7 +3111,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
-   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -3215,7 +3129,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
-   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -3235,7 +3148,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
-   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3265,7 +3177,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ConversationAsyncAggregateQueryResponse
@@ -3279,7 +3190,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ConversationAsyncAggregateQueryResponse
@@ -3301,7 +3211,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConversationAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -3321,7 +3230,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4090,7 +3998,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for evaluation aggregates
    * 
-   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4103,7 +4010,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for evaluation aggregates
    * 
-   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -4122,7 +4028,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for evaluation aggregates
    * 
-   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4142,7 +4047,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for evaluation aggregates
    * 
-   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4172,7 +4076,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return EvaluationAsyncAggregateQueryResponse
@@ -4186,7 +4089,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return EvaluationAsyncAggregateQueryResponse
@@ -4208,7 +4110,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return EvaluationAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -4228,7 +4129,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4258,7 +4158,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for flow execution aggregates
    * 
-   * getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4271,7 +4170,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for flow execution aggregates
    * 
-   * getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -4290,7 +4188,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for flow execution aggregates
    * 
-   * getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4310,7 +4207,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for flow execution aggregates
    * 
-   * getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4340,7 +4236,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return FlowExecutionAsyncAggregateQueryResponse
@@ -4354,7 +4249,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return FlowExecutionAsyncAggregateQueryResponse
@@ -4376,7 +4270,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowExecutionAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -4396,7 +4289,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4426,7 +4318,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4439,7 +4330,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -4458,7 +4348,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4478,7 +4367,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4508,7 +4396,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return FlowAsyncAggregateQueryResponse
@@ -4522,7 +4409,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return FlowAsyncAggregateQueryResponse
@@ -4544,7 +4430,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -4564,7 +4449,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4594,7 +4478,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4607,7 +4490,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -4626,7 +4508,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4646,7 +4527,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4676,7 +4556,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return JourneyAsyncAggregateQueryResponse
@@ -4690,7 +4569,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return JourneyAsyncAggregateQueryResponse
@@ -4712,7 +4590,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -4732,7 +4609,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4762,7 +4638,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for knowledge aggregates
    * 
-   * getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4775,7 +4650,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for knowledge aggregates
    * 
-   * getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -4794,7 +4668,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for knowledge aggregates
    * 
-   * getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -4814,7 +4687,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for knowledge aggregates
    * 
-   * getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4844,7 +4716,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return KnowledgeAsyncAggregateQueryResponse
@@ -4858,7 +4729,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return KnowledgeAsyncAggregateQueryResponse
@@ -4880,7 +4750,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -4900,7 +4769,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5544,7 +5412,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for resolution aggregates
    * 
-   * getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -5557,7 +5424,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for resolution aggregates
    * 
-   * getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -5576,7 +5442,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for resolution aggregates
    * 
-   * getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -5596,7 +5461,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for resolution aggregates
    * 
-   * getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5626,7 +5490,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ResolutionAsyncAggregateQueryResponse
@@ -5640,7 +5503,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ResolutionAsyncAggregateQueryResponse
@@ -5662,7 +5524,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ResolutionAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -5682,7 +5543,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5712,7 +5572,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for summary aggregates
    * 
-   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -5725,7 +5584,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for summary aggregates
    * 
-   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -5744,7 +5602,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for summary aggregates
    * 
-   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -5764,7 +5621,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for summary aggregates
    * 
-   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5794,7 +5650,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return SummaryAsyncAggregateQueryResponse
@@ -5808,7 +5663,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return SummaryAsyncAggregateQueryResponse
@@ -5830,7 +5684,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SummaryAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -5850,7 +5703,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5880,7 +5732,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for survey aggregates
    * 
-   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -5893,7 +5744,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for survey aggregates
    * 
-   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -5912,7 +5762,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for survey aggregates
    * 
-   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -5932,7 +5781,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for survey aggregates
    * 
-   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5962,7 +5810,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return SurveyAsyncAggregateQueryResponse
@@ -5976,7 +5823,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return SurveyAsyncAggregateQueryResponse
@@ -5998,7 +5844,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SurveyAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6018,7 +5863,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6048,7 +5892,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for task management aggregates
    * 
-   * getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -6061,7 +5904,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for task management aggregates
    * 
-   * getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -6080,7 +5922,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for task management aggregates
    * 
-   * getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -6100,7 +5941,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for task management aggregates
    * 
-   * getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6130,7 +5970,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async task management query
    * 
-   * getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return TaskManagementAsyncAggregateQueryResponse
@@ -6144,7 +5983,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async task management query
    * 
-   * getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return TaskManagementAsyncAggregateQueryResponse
@@ -6166,7 +6004,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async task management query
    * 
-   * getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TaskManagementAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6186,7 +6023,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async task management query
    * 
-   * getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6216,7 +6052,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for transcript aggregates
    * 
-   * getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -6229,7 +6064,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for transcript aggregates
    * 
-   * getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -6248,7 +6082,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for transcript aggregates
    * 
-   * getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -6268,7 +6101,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for transcript aggregates
    * 
-   * getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6298,7 +6130,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return TranscriptAsyncAggregateQueryResponse
@@ -6312,7 +6143,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return TranscriptAsyncAggregateQueryResponse
@@ -6334,7 +6164,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TranscriptAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6354,7 +6183,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6384,7 +6212,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -6397,7 +6224,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -6416,7 +6242,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -6436,7 +6261,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6466,7 +6290,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return UserAsyncAggregateQueryResponse
@@ -6480,7 +6303,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return UserAsyncAggregateQueryResponse
@@ -6502,7 +6324,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6522,7 +6343,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6868,7 +6688,6 @@ public class AnalyticsApi {
   /**
    * Query for action aggregates asynchronously
    * 
-   * postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6881,7 +6700,6 @@ public class AnalyticsApi {
   /**
    * Query for action aggregates asynchronously
    * 
-   * postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -6900,7 +6718,6 @@ public class AnalyticsApi {
   /**
    * Query for action aggregates asynchronously
    * 
-   * postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6920,7 +6737,6 @@ public class AnalyticsApi {
   /**
    * Query for action aggregates asynchronously
    * 
-   * postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7512,7 +7328,6 @@ public class AnalyticsApi {
   /**
    * Query for bot aggregates asynchronously
    * 
-   * postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7525,7 +7340,6 @@ public class AnalyticsApi {
   /**
    * Query for bot aggregates asynchronously
    * 
-   * postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -7544,7 +7358,6 @@ public class AnalyticsApi {
   /**
    * Query for bot aggregates asynchronously
    * 
-   * postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7564,7 +7377,6 @@ public class AnalyticsApi {
   /**
    * Query for bot aggregates asynchronously
    * 
-   * postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7672,7 +7484,6 @@ public class AnalyticsApi {
   /**
    * Query for case management aggregates asynchronously
    * 
-   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7685,7 +7496,6 @@ public class AnalyticsApi {
   /**
    * Query for case management aggregates asynchronously
    * 
-   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -7704,7 +7514,6 @@ public class AnalyticsApi {
   /**
    * Query for case management aggregates asynchronously
    * 
-   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7724,7 +7533,6 @@ public class AnalyticsApi {
   /**
    * Query for case management aggregates asynchronously
    * 
-   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7754,7 +7562,6 @@ public class AnalyticsApi {
   /**
    * Query for case management aggregates
    * 
-   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return CaseManagementAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7767,7 +7574,6 @@ public class AnalyticsApi {
   /**
    * Query for case management aggregates
    * 
-   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return CaseManagementAggregateQueryResponse
    * @throws IOException if the request fails to be processed
@@ -7786,7 +7592,6 @@ public class AnalyticsApi {
   /**
    * Query for case management aggregates
    * 
-   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseManagementAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7806,7 +7611,6 @@ public class AnalyticsApi {
   /**
    * Query for case management aggregates
    * 
-   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8004,7 +7808,6 @@ public class AnalyticsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
-   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -8017,7 +7820,6 @@ public class AnalyticsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
-   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -8036,7 +7838,6 @@ public class AnalyticsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
-   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -8056,7 +7857,6 @@ public class AnalyticsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
-   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8566,7 +8366,6 @@ public class AnalyticsApi {
   /**
    * Query for evaluation aggregates asynchronously
    * 
-   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -8579,7 +8378,6 @@ public class AnalyticsApi {
   /**
    * Query for evaluation aggregates asynchronously
    * 
-   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -8598,7 +8396,6 @@ public class AnalyticsApi {
   /**
    * Query for evaluation aggregates asynchronously
    * 
-   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -8618,7 +8415,6 @@ public class AnalyticsApi {
   /**
    * Query for evaluation aggregates asynchronously
    * 
-   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8726,7 +8522,6 @@ public class AnalyticsApi {
   /**
    * Query for flow execution aggregates asynchronously
    * 
-   * postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -8739,7 +8534,6 @@ public class AnalyticsApi {
   /**
    * Query for flow execution aggregates asynchronously
    * 
-   * postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -8758,7 +8552,6 @@ public class AnalyticsApi {
   /**
    * Query for flow execution aggregates asynchronously
    * 
-   * postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -8778,7 +8571,6 @@ public class AnalyticsApi {
   /**
    * Query for flow execution aggregates asynchronously
    * 
-   * postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8972,7 +8764,6 @@ public class AnalyticsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -8985,7 +8776,6 @@ public class AnalyticsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -9004,7 +8794,6 @@ public class AnalyticsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -9024,7 +8813,6 @@ public class AnalyticsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9210,7 +8998,6 @@ public class AnalyticsApi {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -9223,7 +9010,6 @@ public class AnalyticsApi {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -9242,7 +9028,6 @@ public class AnalyticsApi {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -9262,7 +9047,6 @@ public class AnalyticsApi {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9370,7 +9154,6 @@ public class AnalyticsApi {
   /**
    * Query for knowledge aggregates asynchronously
    * 
-   * postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -9383,7 +9166,6 @@ public class AnalyticsApi {
   /**
    * Query for knowledge aggregates asynchronously
    * 
-   * postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -9402,7 +9184,6 @@ public class AnalyticsApi {
   /**
    * Query for knowledge aggregates asynchronously
    * 
-   * postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -9422,7 +9203,6 @@ public class AnalyticsApi {
   /**
    * Query for knowledge aggregates asynchronously
    * 
-   * postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9992,7 +9772,6 @@ public class AnalyticsApi {
   /**
    * Query for resolution aggregates asynchronously
    * 
-   * postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10005,7 +9784,6 @@ public class AnalyticsApi {
   /**
    * Query for resolution aggregates asynchronously
    * 
-   * postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -10024,7 +9802,6 @@ public class AnalyticsApi {
   /**
    * Query for resolution aggregates asynchronously
    * 
-   * postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10044,7 +9821,6 @@ public class AnalyticsApi {
   /**
    * Query for resolution aggregates asynchronously
    * 
-   * postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10238,7 +10014,6 @@ public class AnalyticsApi {
   /**
    * Query for summary aggregates asynchronously
    * 
-   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10251,7 +10026,6 @@ public class AnalyticsApi {
   /**
    * Query for summary aggregates asynchronously
    * 
-   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -10270,7 +10044,6 @@ public class AnalyticsApi {
   /**
    * Query for summary aggregates asynchronously
    * 
-   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10290,7 +10063,6 @@ public class AnalyticsApi {
   /**
    * Query for summary aggregates asynchronously
    * 
-   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10398,7 +10170,6 @@ public class AnalyticsApi {
   /**
    * Query for survey aggregates asynchronously
    * 
-   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10411,7 +10182,6 @@ public class AnalyticsApi {
   /**
    * Query for survey aggregates asynchronously
    * 
-   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -10430,7 +10200,6 @@ public class AnalyticsApi {
   /**
    * Query for survey aggregates asynchronously
    * 
-   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10450,7 +10219,6 @@ public class AnalyticsApi {
   /**
    * Query for survey aggregates asynchronously
    * 
-   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10558,7 +10326,6 @@ public class AnalyticsApi {
   /**
    * Query for task management aggregates asynchronously
    * 
-   * postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10571,7 +10338,6 @@ public class AnalyticsApi {
   /**
    * Query for task management aggregates asynchronously
    * 
-   * postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -10590,7 +10356,6 @@ public class AnalyticsApi {
   /**
    * Query for task management aggregates asynchronously
    * 
-   * postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10610,7 +10375,6 @@ public class AnalyticsApi {
   /**
    * Query for task management aggregates asynchronously
    * 
-   * postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10890,7 +10654,6 @@ public class AnalyticsApi {
   /**
    * Query for transcript aggregates asynchronously
    * 
-   * postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10903,7 +10666,6 @@ public class AnalyticsApi {
   /**
    * Query for transcript aggregates asynchronously
    * 
-   * postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -10922,7 +10684,6 @@ public class AnalyticsApi {
   /**
    * Query for transcript aggregates asynchronously
    * 
-   * postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -10942,7 +10703,6 @@ public class AnalyticsApi {
   /**
    * Query for transcript aggregates asynchronously
    * 
-   * postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11136,7 +10896,6 @@ public class AnalyticsApi {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -11149,7 +10908,6 @@ public class AnalyticsApi {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -11168,7 +10926,6 @@ public class AnalyticsApi {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -11188,7 +10945,6 @@ public class AnalyticsApi {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

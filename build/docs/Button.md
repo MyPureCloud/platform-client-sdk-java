@@ -8,6 +8,7 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of button to include in whatsApp template |  [optional] |
 | **content** | **String** | Content of the button. Use for 'Url' or 'PhoneNumber' button type |  [optional] |
 | **contentText** | **String** | The text label that will be displayed on the button |  [optional] |
+| **payload** | **String** | A payload to uniquely identify a quickReply button in carousel |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -22,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

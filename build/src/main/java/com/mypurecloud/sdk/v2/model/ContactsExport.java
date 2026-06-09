@@ -30,7 +30,6 @@ public class ContactsExport  implements Serializable {
   
   private String id = null;
   private List<String> divisionIds = null;
-  private ContactsExportQueryConditions queryConditions = null;
   private DomainEntityRef createdBy = null;
   private Date dateCreated = null;
 
@@ -83,6 +82,7 @@ public class ContactsExport  implements Serializable {
   }
   private StatusEnum status = null;
   private String downloadUrl = null;
+  private ContactsExportQueryConditions queryConditions = null;
   private String selfUri = null;
 
   public ContactsExport() {
@@ -123,24 +123,6 @@ public class ContactsExport  implements Serializable {
   }
 
 
-  /**
-   * Query conditions to apply on export
-   **/
-  public ContactsExport queryConditions(ContactsExportQueryConditions queryConditions) {
-    this.queryConditions = queryConditions;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Query conditions to apply on export")
-  @JsonProperty("queryConditions")
-  public ContactsExportQueryConditions getQueryConditions() {
-    return queryConditions;
-  }
-  public void setQueryConditions(ContactsExportQueryConditions queryConditions) {
-    this.queryConditions = queryConditions;
-  }
-
-
   @ApiModelProperty(example = "null", value = "The user that created this request")
   @JsonProperty("createdBy")
   public DomainEntityRef getCreatedBy() {
@@ -169,6 +151,24 @@ public class ContactsExport  implements Serializable {
   }
 
 
+  /**
+   * Query conditions to apply on export
+   **/
+  public ContactsExport queryConditions(ContactsExportQueryConditions queryConditions) {
+    this.queryConditions = queryConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Query conditions to apply on export")
+  @JsonProperty("queryConditions")
+  public ContactsExportQueryConditions getQueryConditions() {
+    return queryConditions;
+  }
+  public void setQueryConditions(ContactsExportQueryConditions queryConditions) {
+    this.queryConditions = queryConditions;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -188,17 +188,17 @@ public class ContactsExport  implements Serializable {
 
     return Objects.equals(this.id, contactsExport.id) &&
             Objects.equals(this.divisionIds, contactsExport.divisionIds) &&
-            Objects.equals(this.queryConditions, contactsExport.queryConditions) &&
             Objects.equals(this.createdBy, contactsExport.createdBy) &&
             Objects.equals(this.dateCreated, contactsExport.dateCreated) &&
             Objects.equals(this.status, contactsExport.status) &&
             Objects.equals(this.downloadUrl, contactsExport.downloadUrl) &&
+            Objects.equals(this.queryConditions, contactsExport.queryConditions) &&
             Objects.equals(this.selfUri, contactsExport.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, divisionIds, queryConditions, createdBy, dateCreated, status, downloadUrl, selfUri);
+    return Objects.hash(id, divisionIds, createdBy, dateCreated, status, downloadUrl, queryConditions, selfUri);
   }
 
   @Override
@@ -208,11 +208,11 @@ public class ContactsExport  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
-    sb.append("    queryConditions: ").append(toIndentedString(queryConditions)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("    queryConditions: ").append(toIndentedString(queryConditions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

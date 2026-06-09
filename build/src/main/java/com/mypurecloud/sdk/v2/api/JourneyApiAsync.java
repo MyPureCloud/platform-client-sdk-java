@@ -214,7 +214,6 @@ public class JourneyApiAsync {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -249,7 +248,6 @@ public class JourneyApiAsync {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -970,7 +968,6 @@ public class JourneyApiAsync {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1005,7 +1002,6 @@ public class JourneyApiAsync {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1047,7 +1043,6 @@ public class JourneyApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1082,7 +1077,6 @@ public class JourneyApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5354,7 +5348,6 @@ public class JourneyApiAsync {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5389,7 +5382,6 @@ public class JourneyApiAsync {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

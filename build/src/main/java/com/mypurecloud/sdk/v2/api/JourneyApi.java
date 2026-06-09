@@ -210,7 +210,6 @@ public class JourneyApi {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -222,7 +221,6 @@ public class JourneyApi {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -240,7 +238,6 @@ public class JourneyApi {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -259,7 +256,6 @@ public class JourneyApi {
   /**
    * Delete/cancel an async request for journey aggregates
    * 
-   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -979,7 +975,6 @@ public class JourneyApi {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -992,7 +987,6 @@ public class JourneyApi {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -1011,7 +1005,6 @@ public class JourneyApi {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -1031,7 +1024,6 @@ public class JourneyApi {
   /**
    * Get status for async query for journey aggregates
    * 
-   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1061,7 +1053,6 @@ public class JourneyApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return JourneyAsyncAggregateQueryResponse
@@ -1075,7 +1066,6 @@ public class JourneyApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return JourneyAsyncAggregateQueryResponse
@@ -1097,7 +1087,6 @@ public class JourneyApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -1117,7 +1106,6 @@ public class JourneyApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5843,7 +5831,6 @@ public class JourneyApi {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -5856,7 +5843,6 @@ public class JourneyApi {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -5875,7 +5861,6 @@ public class JourneyApi {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -5895,7 +5880,6 @@ public class JourneyApi {
   /**
    * Query for journey aggregates asynchronously
    * 
-   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

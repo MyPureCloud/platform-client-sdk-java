@@ -57,14 +57,14 @@ public class CaseAssociationQuery  implements Serializable {
 
 
   /**
-   * The cursor that points to the end of the set of entities that has been returned.
+   * Cursor pointing to the end of the previously returned page of associations.
    **/
   public CaseAssociationQuery after(String after) {
     this.after = after;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The cursor that points to the end of the set of entities that has been returned.")
+  @ApiModelProperty(example = "null", value = "Cursor pointing to the end of the previously returned page of associations.")
   @JsonProperty("after")
   public String getAfter() {
     return after;
@@ -93,14 +93,14 @@ public class CaseAssociationQuery  implements Serializable {
 
 
   /**
-   * The conversation ID to query by.
+   * The Conversation ID to query by.
    **/
   public CaseAssociationQuery conversationId(String conversationId) {
     this.conversationId = conversationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The conversation ID to query by.")
+  @ApiModelProperty(example = "null", value = "The Conversation ID to query by.")
   @JsonProperty("conversationId")
   public String getConversationId() {
     return conversationId;

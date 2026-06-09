@@ -37,14 +37,14 @@ public class CaseplanDataSchema  implements Serializable {
 
   
   /**
-   * The id of the schema.
+   * The schema ID.
    **/
   public CaseplanDataSchema id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The id of the schema.")
+  @ApiModelProperty(example = "null", required = true, value = "The schema ID.")
   @JsonProperty("id")
   public String getId() {
     return id;

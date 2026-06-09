@@ -10,6 +10,11 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BulkAddDecisionTableRowsRequest;
+import com.mypurecloud.sdk.v2.model.BulkAddDecisionTableRowsResponse;
+import com.mypurecloud.sdk.v2.model.BulkDeleteDecisionTableRowsRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateDecisionTableRowsRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateDecisionTableRowsResponse;
 import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchema;
 import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchemaListing;
 import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaCreateRequest;
@@ -17,11 +22,17 @@ import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
+import com.mypurecloud.sdk.v2.model.CreateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;
+import com.mypurecloud.sdk.v2.model.DecisionTableExportJob;
+import com.mypurecloud.sdk.v2.model.DecisionTableExportJobListing;
+import com.mypurecloud.sdk.v2.model.DecisionTableExportJobRequest;
+import com.mypurecloud.sdk.v2.model.DecisionTableImportJob;
+import com.mypurecloud.sdk.v2.model.DecisionTableImportJobListing;
 import com.mypurecloud.sdk.v2.model.DecisionTableListing;
 import com.mypurecloud.sdk.v2.model.DecisionTableRow;
 import com.mypurecloud.sdk.v2.model.DecisionTableRowListing;
@@ -30,15 +41,22 @@ import com.mypurecloud.sdk.v2.model.DecisionTableVersionListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
+import com.mypurecloud.sdk.v2.model.UpdateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableVersionRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableExportRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableImportRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionRowRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableExportRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableExportsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableImportRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableVersionRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableVersionRowsRequest;
@@ -50,11 +68,17 @@ import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchBusinessrulesDecisiontableRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchBusinessrulesDecisiontableImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchBusinessrulesDecisiontableVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableExecuteRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableExportsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionExecuteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionSyncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionsRequest;
@@ -139,6 +163,164 @@ public class BusinessRulesApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteBusinessrulesDecisiontable(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an export job for a decision table
+   * 
+   * @param tableId Table ID (required)
+   * @param exportJobId Export Job ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteBusinessrulesDecisiontableExport(String tableId, String exportJobId) throws IOException, ApiException {
+     deleteBusinessrulesDecisiontableExport(createDeleteBusinessrulesDecisiontableExportRequest(tableId, exportJobId));
+  }
+
+  /**
+   * Delete an export job for a decision table
+   * 
+   * @param tableId Table ID (required)
+   * @param exportJobId Export Job ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteBusinessrulesDecisiontableExportWithHttpInfo(String tableId, String exportJobId) throws IOException {
+    return deleteBusinessrulesDecisiontableExport(createDeleteBusinessrulesDecisiontableExportRequest(tableId, exportJobId).withHttpInfo());
+  }
+
+  private DeleteBusinessrulesDecisiontableExportRequest createDeleteBusinessrulesDecisiontableExportRequest(String tableId, String exportJobId) {
+    return DeleteBusinessrulesDecisiontableExportRequest.builder()
+            .withTableId(tableId)
+
+            .withExportJobId(exportJobId)
+
+            .build();
+  }
+
+  /**
+   * Delete an export job for a decision table
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteBusinessrulesDecisiontableExport(DeleteBusinessrulesDecisiontableExportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an export job for a decision table
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteBusinessrulesDecisiontableExport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete decision table row import job
+   * 
+   * @param tableId Table ID (required)
+   * @param importJobId Import job ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteBusinessrulesDecisiontableImport(String tableId, String importJobId) throws IOException, ApiException {
+     deleteBusinessrulesDecisiontableImport(createDeleteBusinessrulesDecisiontableImportRequest(tableId, importJobId));
+  }
+
+  /**
+   * Delete decision table row import job
+   * 
+   * @param tableId Table ID (required)
+   * @param importJobId Import job ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteBusinessrulesDecisiontableImportWithHttpInfo(String tableId, String importJobId) throws IOException {
+    return deleteBusinessrulesDecisiontableImport(createDeleteBusinessrulesDecisiontableImportRequest(tableId, importJobId).withHttpInfo());
+  }
+
+  private DeleteBusinessrulesDecisiontableImportRequest createDeleteBusinessrulesDecisiontableImportRequest(String tableId, String importJobId) {
+    return DeleteBusinessrulesDecisiontableImportRequest.builder()
+            .withTableId(tableId)
+
+            .withImportJobId(importJobId)
+
+            .build();
+  }
+
+  /**
+   * Delete decision table row import job
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteBusinessrulesDecisiontableImport(DeleteBusinessrulesDecisiontableImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete decision table row import job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteBusinessrulesDecisiontableImport(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -471,6 +653,342 @@ public class BusinessRulesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DecisionTable> response = (ApiResponse<DecisionTable>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an export job for a decision table
+   * 
+   * @param tableId Table ID (required)
+   * @param exportJobId Export Job ID (required)
+   * @return DecisionTableExportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableExportJob getBusinessrulesDecisiontableExport(String tableId, String exportJobId) throws IOException, ApiException {
+    return  getBusinessrulesDecisiontableExport(createGetBusinessrulesDecisiontableExportRequest(tableId, exportJobId));
+  }
+
+  /**
+   * Get an export job for a decision table
+   * 
+   * @param tableId Table ID (required)
+   * @param exportJobId Export Job ID (required)
+   * @return DecisionTableExportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableExportJob> getBusinessrulesDecisiontableExportWithHttpInfo(String tableId, String exportJobId) throws IOException {
+    return getBusinessrulesDecisiontableExport(createGetBusinessrulesDecisiontableExportRequest(tableId, exportJobId).withHttpInfo());
+  }
+
+  private GetBusinessrulesDecisiontableExportRequest createGetBusinessrulesDecisiontableExportRequest(String tableId, String exportJobId) {
+    return GetBusinessrulesDecisiontableExportRequest.builder()
+            .withTableId(tableId)
+
+            .withExportJobId(exportJobId)
+
+            .build();
+  }
+
+  /**
+   * Get an export job for a decision table
+   * 
+   * @param request The request object
+   * @return DecisionTableExportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableExportJob getBusinessrulesDecisiontableExport(GetBusinessrulesDecisiontableExportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableExportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableExportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an export job for a decision table
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableExportJob> getBusinessrulesDecisiontableExport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableExportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableExportJob> response = (ApiResponse<DecisionTableExportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableExportJob> response = (ApiResponse<DecisionTableExportJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List export jobs for a decision table
+   * 
+   * @param tableId Table ID (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
+   * @return DecisionTableExportJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableExportJobListing getBusinessrulesDecisiontableExports(String tableId, String after, String pageSize) throws IOException, ApiException {
+    return  getBusinessrulesDecisiontableExports(createGetBusinessrulesDecisiontableExportsRequest(tableId, after, pageSize));
+  }
+
+  /**
+   * List export jobs for a decision table
+   * 
+   * @param tableId Table ID (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
+   * @return DecisionTableExportJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableExportJobListing> getBusinessrulesDecisiontableExportsWithHttpInfo(String tableId, String after, String pageSize) throws IOException {
+    return getBusinessrulesDecisiontableExports(createGetBusinessrulesDecisiontableExportsRequest(tableId, after, pageSize).withHttpInfo());
+  }
+
+  private GetBusinessrulesDecisiontableExportsRequest createGetBusinessrulesDecisiontableExportsRequest(String tableId, String after, String pageSize) {
+    return GetBusinessrulesDecisiontableExportsRequest.builder()
+            .withTableId(tableId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * List export jobs for a decision table
+   * 
+   * @param request The request object
+   * @return DecisionTableExportJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableExportJobListing getBusinessrulesDecisiontableExports(GetBusinessrulesDecisiontableExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableExportJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableExportJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List export jobs for a decision table
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableExportJobListing> getBusinessrulesDecisiontableExports(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableExportJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableExportJobListing> response = (ApiResponse<DecisionTableExportJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableExportJobListing> response = (ApiResponse<DecisionTableExportJobListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get decision table row import job
+   * 
+   * @param tableId Table ID (required)
+   * @param importJobId Import job ID (required)
+   * @return DecisionTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableImportJob getBusinessrulesDecisiontableImport(String tableId, String importJobId) throws IOException, ApiException {
+    return  getBusinessrulesDecisiontableImport(createGetBusinessrulesDecisiontableImportRequest(tableId, importJobId));
+  }
+
+  /**
+   * Get decision table row import job
+   * 
+   * @param tableId Table ID (required)
+   * @param importJobId Import job ID (required)
+   * @return DecisionTableImportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableImportJob> getBusinessrulesDecisiontableImportWithHttpInfo(String tableId, String importJobId) throws IOException {
+    return getBusinessrulesDecisiontableImport(createGetBusinessrulesDecisiontableImportRequest(tableId, importJobId).withHttpInfo());
+  }
+
+  private GetBusinessrulesDecisiontableImportRequest createGetBusinessrulesDecisiontableImportRequest(String tableId, String importJobId) {
+    return GetBusinessrulesDecisiontableImportRequest.builder()
+            .withTableId(tableId)
+
+            .withImportJobId(importJobId)
+
+            .build();
+  }
+
+  /**
+   * Get decision table row import job
+   * 
+   * @param request The request object
+   * @return DecisionTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableImportJob getBusinessrulesDecisiontableImport(GetBusinessrulesDecisiontableImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableImportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableImportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get decision table row import job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableImportJob> getBusinessrulesDecisiontableImport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableImportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List decision table row import jobs
+   * 
+   * @param tableId Table ID (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
+   * @return DecisionTableImportJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableImportJobListing getBusinessrulesDecisiontableImports(String tableId, String after, String pageSize) throws IOException, ApiException {
+    return  getBusinessrulesDecisiontableImports(createGetBusinessrulesDecisiontableImportsRequest(tableId, after, pageSize));
+  }
+
+  /**
+   * List decision table row import jobs
+   * 
+   * @param tableId Table ID (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
+   * @return DecisionTableImportJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableImportJobListing> getBusinessrulesDecisiontableImportsWithHttpInfo(String tableId, String after, String pageSize) throws IOException {
+    return getBusinessrulesDecisiontableImports(createGetBusinessrulesDecisiontableImportsRequest(tableId, after, pageSize).withHttpInfo());
+  }
+
+  private GetBusinessrulesDecisiontableImportsRequest createGetBusinessrulesDecisiontableImportsRequest(String tableId, String after, String pageSize) {
+    return GetBusinessrulesDecisiontableImportsRequest.builder()
+            .withTableId(tableId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * List decision table row import jobs
+   * 
+   * @param request The request object
+   * @return DecisionTableImportJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableImportJobListing getBusinessrulesDecisiontableImports(GetBusinessrulesDecisiontableImportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableImportJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableImportJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List decision table row import jobs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableImportJobListing> getBusinessrulesDecisiontableImports(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableImportJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableImportJobListing> response = (ApiResponse<DecisionTableImportJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableImportJobListing> response = (ApiResponse<DecisionTableImportJobListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1398,6 +1916,92 @@ public class BusinessRulesApi {
   }
 
   /**
+   * Update decision table row import job
+   * 
+   * @param tableId Table ID (required)
+   * @param importJobId Import job ID (required)
+   * @param body Import job update request (required)
+   * @return DecisionTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableImportJob patchBusinessrulesDecisiontableImport(String tableId, String importJobId, UpdateDecisionTableImportJobRequest body) throws IOException, ApiException {
+    return  patchBusinessrulesDecisiontableImport(createPatchBusinessrulesDecisiontableImportRequest(tableId, importJobId, body));
+  }
+
+  /**
+   * Update decision table row import job
+   * 
+   * @param tableId Table ID (required)
+   * @param importJobId Import job ID (required)
+   * @param body Import job update request (required)
+   * @return DecisionTableImportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableImportJob> patchBusinessrulesDecisiontableImportWithHttpInfo(String tableId, String importJobId, UpdateDecisionTableImportJobRequest body) throws IOException {
+    return patchBusinessrulesDecisiontableImport(createPatchBusinessrulesDecisiontableImportRequest(tableId, importJobId, body).withHttpInfo());
+  }
+
+  private PatchBusinessrulesDecisiontableImportRequest createPatchBusinessrulesDecisiontableImportRequest(String tableId, String importJobId, UpdateDecisionTableImportJobRequest body) {
+    return PatchBusinessrulesDecisiontableImportRequest.builder()
+            .withTableId(tableId)
+
+            .withImportJobId(importJobId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update decision table row import job
+   * 
+   * @param request The request object
+   * @return DecisionTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableImportJob patchBusinessrulesDecisiontableImport(PatchBusinessrulesDecisiontableImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableImportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableImportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update decision table row import job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableImportJob> patchBusinessrulesDecisiontableImport(ApiRequest<UpdateDecisionTableImportJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableImportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update a decision table version
    * 
    * @param tableId Table ID (required)
@@ -1561,6 +2165,170 @@ public class BusinessRulesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DecisionTableExecutionResponse> response = (ApiResponse<DecisionTableExecutionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an export job for a decision table version
+   * 
+   * @param tableId Table ID (required)
+   * @param body Export job request (required)
+   * @return DecisionTableExportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableExportJob postBusinessrulesDecisiontableExports(String tableId, DecisionTableExportJobRequest body) throws IOException, ApiException {
+    return  postBusinessrulesDecisiontableExports(createPostBusinessrulesDecisiontableExportsRequest(tableId, body));
+  }
+
+  /**
+   * Create an export job for a decision table version
+   * 
+   * @param tableId Table ID (required)
+   * @param body Export job request (required)
+   * @return DecisionTableExportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableExportJob> postBusinessrulesDecisiontableExportsWithHttpInfo(String tableId, DecisionTableExportJobRequest body) throws IOException {
+    return postBusinessrulesDecisiontableExports(createPostBusinessrulesDecisiontableExportsRequest(tableId, body).withHttpInfo());
+  }
+
+  private PostBusinessrulesDecisiontableExportsRequest createPostBusinessrulesDecisiontableExportsRequest(String tableId, DecisionTableExportJobRequest body) {
+    return PostBusinessrulesDecisiontableExportsRequest.builder()
+            .withTableId(tableId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an export job for a decision table version
+   * 
+   * @param request The request object
+   * @return DecisionTableExportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableExportJob postBusinessrulesDecisiontableExports(PostBusinessrulesDecisiontableExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableExportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableExportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an export job for a decision table version
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableExportJob> postBusinessrulesDecisiontableExports(ApiRequest<DecisionTableExportJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableExportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableExportJob> response = (ApiResponse<DecisionTableExportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableExportJob> response = (ApiResponse<DecisionTableExportJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a decision table row import job
+   * 
+   * @param tableId Table ID (required)
+   * @param body Import job create request (required)
+   * @return DecisionTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableImportJob postBusinessrulesDecisiontableImports(String tableId, CreateDecisionTableImportJobRequest body) throws IOException, ApiException {
+    return  postBusinessrulesDecisiontableImports(createPostBusinessrulesDecisiontableImportsRequest(tableId, body));
+  }
+
+  /**
+   * Create a decision table row import job
+   * 
+   * @param tableId Table ID (required)
+   * @param body Import job create request (required)
+   * @return DecisionTableImportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableImportJob> postBusinessrulesDecisiontableImportsWithHttpInfo(String tableId, CreateDecisionTableImportJobRequest body) throws IOException {
+    return postBusinessrulesDecisiontableImports(createPostBusinessrulesDecisiontableImportsRequest(tableId, body).withHttpInfo());
+  }
+
+  private PostBusinessrulesDecisiontableImportsRequest createPostBusinessrulesDecisiontableImportsRequest(String tableId, CreateDecisionTableImportJobRequest body) {
+    return PostBusinessrulesDecisiontableImportsRequest.builder()
+            .withTableId(tableId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a decision table row import job
+   * 
+   * @param request The request object
+   * @return DecisionTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableImportJob postBusinessrulesDecisiontableImports(PostBusinessrulesDecisiontableImportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableImportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableImportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a decision table row import job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableImportJob> postBusinessrulesDecisiontableImports(ApiRequest<CreateDecisionTableImportJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableImportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1819,6 +2587,261 @@ public class BusinessRulesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DecisionTableRow> response = (ApiResponse<DecisionTableRow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk add decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body Bulk add decision table rows request (required)
+   * @return BulkAddDecisionTableRowsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkAddDecisionTableRowsResponse postBusinessrulesDecisiontableVersionRowsBulkAdd(String tableId, Integer tableVersion, BulkAddDecisionTableRowsRequest body) throws IOException, ApiException {
+    return  postBusinessrulesDecisiontableVersionRowsBulkAdd(createPostBusinessrulesDecisiontableVersionRowsBulkAddRequest(tableId, tableVersion, body));
+  }
+
+  /**
+   * Bulk add decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body Bulk add decision table rows request (required)
+   * @return BulkAddDecisionTableRowsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkAddDecisionTableRowsResponse> postBusinessrulesDecisiontableVersionRowsBulkAddWithHttpInfo(String tableId, Integer tableVersion, BulkAddDecisionTableRowsRequest body) throws IOException {
+    return postBusinessrulesDecisiontableVersionRowsBulkAdd(createPostBusinessrulesDecisiontableVersionRowsBulkAddRequest(tableId, tableVersion, body).withHttpInfo());
+  }
+
+  private PostBusinessrulesDecisiontableVersionRowsBulkAddRequest createPostBusinessrulesDecisiontableVersionRowsBulkAddRequest(String tableId, Integer tableVersion, BulkAddDecisionTableRowsRequest body) {
+    return PostBusinessrulesDecisiontableVersionRowsBulkAddRequest.builder()
+            .withTableId(tableId)
+
+            .withTableVersion(tableVersion)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk add decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request The request object
+   * @return BulkAddDecisionTableRowsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkAddDecisionTableRowsResponse postBusinessrulesDecisiontableVersionRowsBulkAdd(PostBusinessrulesDecisiontableVersionRowsBulkAddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkAddDecisionTableRowsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkAddDecisionTableRowsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk add decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkAddDecisionTableRowsResponse> postBusinessrulesDecisiontableVersionRowsBulkAdd(ApiRequest<BulkAddDecisionTableRowsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkAddDecisionTableRowsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkAddDecisionTableRowsResponse> response = (ApiResponse<BulkAddDecisionTableRowsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkAddDecisionTableRowsResponse> response = (ApiResponse<BulkAddDecisionTableRowsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk delete decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postBusinessrulesDecisiontableVersionRowsBulkRemove(String tableId, Integer tableVersion, BulkDeleteDecisionTableRowsRequest body) throws IOException, ApiException {
+     postBusinessrulesDecisiontableVersionRowsBulkRemove(createPostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest(tableId, tableVersion, body));
+  }
+
+  /**
+   * Bulk delete decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body  (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postBusinessrulesDecisiontableVersionRowsBulkRemoveWithHttpInfo(String tableId, Integer tableVersion, BulkDeleteDecisionTableRowsRequest body) throws IOException {
+    return postBusinessrulesDecisiontableVersionRowsBulkRemove(createPostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest(tableId, tableVersion, body).withHttpInfo());
+  }
+
+  private PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest createPostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest(String tableId, Integer tableVersion, BulkDeleteDecisionTableRowsRequest body) {
+    return PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest.builder()
+            .withTableId(tableId)
+
+            .withTableVersion(tableVersion)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk delete decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postBusinessrulesDecisiontableVersionRowsBulkRemove(PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Bulk delete decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postBusinessrulesDecisiontableVersionRowsBulkRemove(ApiRequest<BulkDeleteDecisionTableRowsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk update decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body Bulk update decision table rows request (required)
+   * @return BulkUpdateDecisionTableRowsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateDecisionTableRowsResponse postBusinessrulesDecisiontableVersionRowsBulkUpdate(String tableId, Integer tableVersion, BulkUpdateDecisionTableRowsRequest body) throws IOException, ApiException {
+    return  postBusinessrulesDecisiontableVersionRowsBulkUpdate(createPostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest(tableId, tableVersion, body));
+  }
+
+  /**
+   * Bulk update decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body Bulk update decision table rows request (required)
+   * @return BulkUpdateDecisionTableRowsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateDecisionTableRowsResponse> postBusinessrulesDecisiontableVersionRowsBulkUpdateWithHttpInfo(String tableId, Integer tableVersion, BulkUpdateDecisionTableRowsRequest body) throws IOException {
+    return postBusinessrulesDecisiontableVersionRowsBulkUpdate(createPostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest(tableId, tableVersion, body).withHttpInfo());
+  }
+
+  private PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest createPostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest(String tableId, Integer tableVersion, BulkUpdateDecisionTableRowsRequest body) {
+    return PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest.builder()
+            .withTableId(tableId)
+
+            .withTableVersion(tableVersion)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk update decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request The request object
+   * @return BulkUpdateDecisionTableRowsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateDecisionTableRowsResponse postBusinessrulesDecisiontableVersionRowsBulkUpdate(PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkUpdateDecisionTableRowsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkUpdateDecisionTableRowsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateDecisionTableRowsResponse> postBusinessrulesDecisiontableVersionRowsBulkUpdate(ApiRequest<BulkUpdateDecisionTableRowsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkUpdateDecisionTableRowsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateDecisionTableRowsResponse> response = (ApiResponse<BulkUpdateDecisionTableRowsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateDecisionTableRowsResponse> response = (ApiResponse<BulkUpdateDecisionTableRowsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

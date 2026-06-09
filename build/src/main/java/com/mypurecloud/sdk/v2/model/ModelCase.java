@@ -163,7 +163,7 @@ public class ModelCase  implements Serializable {
     }
   }
   /**
-   * The creation status of the Case
+   * The creation status of the Case.
    */
  @JsonDeserialize(using = CreationStatusEnumDeserializer.class)
   public enum CreationStatusEnum {
@@ -293,14 +293,14 @@ public class ModelCase  implements Serializable {
 
 
   /**
-   * The Caseplan the case was created from.
+   * The Caseplan the Case was created from.
    **/
   public ModelCase caseplan(CaseplanReference caseplan) {
     this.caseplan = caseplan;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The Caseplan the case was created from.")
+  @ApiModelProperty(example = "null", value = "The Caseplan the Case was created from.")
   @JsonProperty("caseplan")
   public CaseplanReference getCaseplan() {
     return caseplan;
@@ -473,14 +473,14 @@ public class ModelCase  implements Serializable {
 
 
   /**
-   * The id of the User who modified the Case.
+   * The ID of the User who modified the Case.
    **/
   public ModelCase modifiedBy(UserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The id of the User who modified the Case.")
+  @ApiModelProperty(example = "null", value = "The ID of the User who modified the Case.")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
@@ -527,14 +527,14 @@ public class ModelCase  implements Serializable {
 
 
   /**
-   * The creation status of the Case
+   * The creation status of the Case.
    **/
   public ModelCase creationStatus(CreationStatusEnum creationStatus) {
     this.creationStatus = creationStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The creation status of the Case")
+  @ApiModelProperty(example = "null", value = "The creation status of the Case.")
   @JsonProperty("creationStatus")
   public CreationStatusEnum getCreationStatus() {
     return creationStatus;

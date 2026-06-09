@@ -56,14 +56,14 @@ public class IntakeSetting  implements Serializable {
 
 
   /**
-   * Defines if this property is required for intake
+   * Whether this property is required for intake.
    **/
   public IntakeSetting required(Boolean required) {
     this.required = required;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Defines if this property is required for intake")
+  @ApiModelProperty(example = "null", required = true, value = "Whether this property is required for intake.")
   @JsonProperty("required")
   public Boolean getRequired() {
     return required;
@@ -74,14 +74,14 @@ public class IntakeSetting  implements Serializable {
 
 
   /**
-   * The order where this property should be displayed
+   * The display order for this property.
    **/
   public IntakeSetting displayOrder(Integer displayOrder) {
     this.displayOrder = displayOrder;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The order where this property should be displayed")
+  @ApiModelProperty(example = "null", required = true, value = "The display order for this property.")
   @JsonProperty("displayOrder")
   public Integer getDisplayOrder() {
     return displayOrder;

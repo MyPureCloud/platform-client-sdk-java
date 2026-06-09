@@ -239,6 +239,8 @@
 | **sentimentTrendCategories** | [**List<SentimentTrendCategoriesEnum>**](#Enum--SentimentTrendCategoriesEnum) | A set of Sentiment Trend Categories for filtering |  [optional] |
 | **contentModerationFlags** | [**List<ContentModerationFlagsEnum>**](#Enum--ContentModerationFlagsEnum) | A set of Content Moderation Flags for filtering |  [optional] |
 | **socialSourceTypes** | [**List<SocialSourceTypesEnum>**](#Enum--SocialSourceTypesEnum) | A set of Source Types for social filtering |  [optional] |
+| **socialFollowerRange** | [**SocialNumericRange**](SocialNumericRange) | The follower range used to filter the view |  [optional] |
+| **socialVerificationStatus** | **Boolean** | Filter to indicate if the posts from verified user |  [optional] |
 | **sessionExpired** | **Boolean** | Filter to indicate for if session is expired |  [optional] |
 | **screenMonitored** | **Boolean** | Filter to indicate if the interaction was screen monitored |  [optional] |
 | **engagementSources** | [**List<EngagementSourcesEnum>**](#Enum--EngagementSourcesEnum) | The engagement sources used to filter the view |  [optional] |
@@ -1101,4 +1103,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

@@ -38,14 +38,14 @@ public class StepplansWorktypeReference  implements Serializable {
 
   
   /**
-   * The id of the worktype.
+   * The Worktype ID.
    **/
   public StepplansWorktypeReference id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The id of the worktype.")
+  @ApiModelProperty(example = "null", value = "The Worktype ID.")
   @JsonProperty("id")
   public String getId() {
     return id;

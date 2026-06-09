@@ -26,7 +26,9 @@ import com.mypurecloud.sdk.v2.model.CaseSummaryUpdate;
 import com.mypurecloud.sdk.v2.model.Caseplan;
 import com.mypurecloud.sdk.v2.model.CaseplanCreate;
 import com.mypurecloud.sdk.v2.model.CaseplanCreateResponse;
+import com.mypurecloud.sdk.v2.model.CaseplanDataSchema;
 import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaListing;
+import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
@@ -50,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.TerminateJob;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanDataschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationsRequest;
@@ -77,12 +80,14 @@ import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanStageplanRe
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanStageplanStepplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseAssociationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseTerminateJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanDataschemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesAssociationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanDataschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanIntakesettingsRequest;
 
 import java.io.IOException;
@@ -106,7 +111,6 @@ public class CaseManagementApiAsync {
   /**
    * Delete a Case.
    * 
-   * deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -141,7 +145,6 @@ public class CaseManagementApiAsync {
   /**
    * Delete a Case.
    * 
-   * deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -183,7 +186,6 @@ public class CaseManagementApiAsync {
   /**
    * Delete a Caseplan.
    * 
-   * deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -218,7 +220,6 @@ public class CaseManagementApiAsync {
   /**
    * Delete a Caseplan.
    * 
-   * deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -258,9 +259,83 @@ public class CaseManagementApiAsync {
   }
 
   /**
+   * Remove a data schema from a draft Caseplan.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> deleteCasemanagementCaseplanDataschemaAsync(DeleteCasemanagementCaseplanDataschemaRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a data schema from a draft Caseplan.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> deleteCasemanagementCaseplanDataschemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a Case.
    * 
-   * getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -295,7 +370,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Case.
    * 
-   * getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -337,7 +411,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Case Association.
    * 
-   * getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -372,7 +445,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Case Association.
    * 
-   * getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -412,9 +484,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Get a list of case associations for a provided case.
+   * Get a list of Case associations for the Case.
    * 
-   * getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -447,9 +518,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Get a list of case associations for a provided case.
+   * Get a list of Case associations for the Case.
    * 
-   * getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -491,7 +561,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Stage.
    * 
-   * getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -526,7 +595,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Stage.
    * 
-   * getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -568,7 +636,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Step.
    * 
-   * getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -603,7 +670,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Step.
    * 
-   * getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -645,7 +711,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Steps.
    * 
-   * getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -680,7 +745,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Steps.
    * 
-   * getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -722,7 +786,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Stages.
    * 
-   * getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -757,7 +820,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Stages.
    * 
-   * getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -799,7 +861,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Terminate Job for a Case.
    * 
-   * getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -834,7 +895,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Terminate Job for a Case.
    * 
-   * getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -876,7 +936,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Caseplan.
    * 
-   * getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -911,7 +970,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Caseplan.
    * 
-   * getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -953,7 +1011,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -988,7 +1045,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1028,9 +1084,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Get the dataSchemas for a caseplan version.
+   * Get the data schemas for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1063,9 +1118,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Get the dataSchemas for a caseplan version.
+   * Get the data schemas for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1107,7 +1161,6 @@ public class CaseManagementApiAsync {
   /**
    * Get the intake settings for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1142,7 +1195,6 @@ public class CaseManagementApiAsync {
   /**
    * Get the intake settings for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1184,7 +1236,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Stageplan.
    * 
-   * getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1219,7 +1270,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Stageplan.
    * 
-   * getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1261,7 +1311,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Stepplan.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1296,7 +1345,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Stepplan.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1338,7 +1386,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Stepplans.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1373,7 +1420,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Stepplans.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1415,7 +1461,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Stageplans.
    * 
-   * getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1450,7 +1495,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Stageplans.
    * 
-   * getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1492,7 +1536,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Caseplans.
    * 
-   * getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1527,7 +1570,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a list of Caseplans.
    * 
-   * getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1567,9 +1609,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Get a list of cases for provided external contact id.
+   * Get a list of Cases for an External Contact.
    * 
-   * getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1602,9 +1643,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Get a list of cases for provided external contact id.
+   * Get a list of Cases for an External Contact.
    * 
-   * getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1646,7 +1686,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Case by reference.
    * 
-   * getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1681,7 +1720,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a Case by reference.
    * 
-   * getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1721,9 +1759,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Update date due of a Case.
+   * Update the due date of a Case.
    * 
-   * patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1756,9 +1793,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Update date due of a Case.
+   * Update the due date of a Case.
    * 
-   * patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1800,7 +1836,6 @@ public class CaseManagementApiAsync {
   /**
    * Update priority of a Case.
    * 
-   * patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1835,7 +1870,6 @@ public class CaseManagementApiAsync {
   /**
    * Update priority of a Case.
    * 
-   * patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1877,7 +1911,6 @@ public class CaseManagementApiAsync {
   /**
    * Update summary of a Case.
    * 
-   * patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1912,7 +1945,6 @@ public class CaseManagementApiAsync {
   /**
    * Update summary of a Case.
    * 
-   * patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1954,7 +1986,6 @@ public class CaseManagementApiAsync {
   /**
    * Update the attributes of a Caseplan.
    * 
-   * patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1989,7 +2020,6 @@ public class CaseManagementApiAsync {
   /**
    * Update the attributes of a Caseplan.
    * 
-   * patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2031,7 +2061,6 @@ public class CaseManagementApiAsync {
   /**
    * Update the attributes of a Stageplan.
    * 
-   * patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2066,7 +2095,6 @@ public class CaseManagementApiAsync {
   /**
    * Update the attributes of a Stageplan.
    * 
-   * patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2108,7 +2136,6 @@ public class CaseManagementApiAsync {
   /**
    * Update the attributes of a Stepplan.
    * 
-   * patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2143,7 +2170,6 @@ public class CaseManagementApiAsync {
   /**
    * Update the attributes of a Stepplan.
    * 
-   * patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2183,9 +2209,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Create a case association.
+   * Create a Case association.
    * 
-   * postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2218,9 +2243,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Create a case association.
+   * Create a Case association.
    * 
-   * postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2262,7 +2286,6 @@ public class CaseManagementApiAsync {
   /**
    * Create a Terminate Job for a Case.
    * 
-   * postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2297,7 +2320,6 @@ public class CaseManagementApiAsync {
   /**
    * Create a Terminate Job for a Case.
    * 
-   * postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2337,9 +2359,83 @@ public class CaseManagementApiAsync {
   }
 
   /**
+   * Add a data schema to a draft Caseplan.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CaseplanDataSchema> postCasemanagementCaseplanDataschemasAsync(PostCasemanagementCaseplanDataschemasRequest request, final AsyncApiCallback<CaseplanDataSchema> callback) {
+    try {
+      final SettableFuture<CaseplanDataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CaseplanDataSchema>() {}, new AsyncApiCallback<ApiResponse<CaseplanDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseplanDataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a data schema to a draft Caseplan.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CaseplanDataSchema>> postCasemanagementCaseplanDataschemasAsync(ApiRequest<CaseplanDataSchemaRequest> request, final AsyncApiCallback<ApiResponse<CaseplanDataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CaseplanDataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CaseplanDataSchema>() {}, new AsyncApiCallback<ApiResponse<CaseplanDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseplanDataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseplanDataSchema> response = (ApiResponse<CaseplanDataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseplanDataSchema> response = (ApiResponse<CaseplanDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Publish Caseplan.
    * 
-   * postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2374,7 +2470,6 @@ public class CaseManagementApiAsync {
   /**
    * Publish Caseplan.
    * 
-   * postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2416,7 +2511,6 @@ public class CaseManagementApiAsync {
   /**
    * Create Caseplan version.
    * 
-   * postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2451,7 +2545,6 @@ public class CaseManagementApiAsync {
   /**
    * Create Caseplan version.
    * 
-   * postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2493,7 +2586,6 @@ public class CaseManagementApiAsync {
   /**
    * Create a Caseplan.
    * 
-   * postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2528,7 +2620,6 @@ public class CaseManagementApiAsync {
   /**
    * Create a Caseplan.
    * 
-   * postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2568,9 +2659,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Query for caseplans
+   * Query for Caseplans.
    * 
-   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2603,9 +2693,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Query for caseplans
+   * Query for Caseplans.
    * 
-   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2647,7 +2736,6 @@ public class CaseManagementApiAsync {
   /**
    * Create a Case.
    * 
-   * postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2682,7 +2770,6 @@ public class CaseManagementApiAsync {
   /**
    * Create a Case.
    * 
-   * postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2722,9 +2809,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Query for case associations
+   * Query for Case associations by interaction.
    * 
-   * postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2757,9 +2843,8 @@ public class CaseManagementApiAsync {
   }
 
   /**
-   * Query for case associations
+   * Query for Case associations by interaction.
    * 
-   * postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2799,9 +2884,83 @@ public class CaseManagementApiAsync {
   }
 
   /**
+   * Update a data schema on a draft Caseplan.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CaseplanDataSchema> putCasemanagementCaseplanDataschemaAsync(PutCasemanagementCaseplanDataschemaRequest request, final AsyncApiCallback<CaseplanDataSchema> callback) {
+    try {
+      final SettableFuture<CaseplanDataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CaseplanDataSchema>() {}, new AsyncApiCallback<ApiResponse<CaseplanDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseplanDataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a data schema on a draft Caseplan.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CaseplanDataSchema>> putCasemanagementCaseplanDataschemaAsync(ApiRequest<CaseplanDataSchemaRequest> request, final AsyncApiCallback<ApiResponse<CaseplanDataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CaseplanDataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CaseplanDataSchema>() {}, new AsyncApiCallback<ApiResponse<CaseplanDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseplanDataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseplanDataSchema> response = (ApiResponse<CaseplanDataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseplanDataSchema> response = (ApiResponse<CaseplanDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update the intake settings for a Caseplan.
    * 
-   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2836,7 +2995,6 @@ public class CaseManagementApiAsync {
   /**
    * Update the intake settings for a Caseplan.
    * 
-   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

@@ -50,7 +50,7 @@ public class Stepplan  implements Serializable {
     }
   }
   /**
-   * The activityType of the Stepplan.
+   * The activity type of the Stepplan.
    */
  @JsonDeserialize(using = ActivityTypeEnumDeserializer.class)
   public enum ActivityTypeEnum {
@@ -233,14 +233,14 @@ public class Stepplan  implements Serializable {
 
 
   /**
-   * The activityType of the Stepplan.
+   * The activity type of the Stepplan.
    **/
   public Stepplan activityType(ActivityTypeEnum activityType) {
     this.activityType = activityType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The activityType of the Stepplan.")
+  @ApiModelProperty(example = "null", value = "The activity type of the Stepplan.")
   @JsonProperty("activityType")
   public ActivityTypeEnum getActivityType() {
     return activityType;
@@ -251,14 +251,14 @@ public class Stepplan  implements Serializable {
 
 
   /**
-   * The workitemSettings of the Stepplan.
+   * The Workitem settings of the Stepplan.
    **/
   public Stepplan workitemSettings(WorkitemSettingsResponse workitemSettings) {
     this.workitemSettings = workitemSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The workitemSettings of the Stepplan.")
+  @ApiModelProperty(example = "null", value = "The Workitem settings of the Stepplan.")
   @JsonProperty("workitemSettings")
   public WorkitemSettingsResponse getWorkitemSettings() {
     return workitemSettings;

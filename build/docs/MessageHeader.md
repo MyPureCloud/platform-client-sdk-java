@@ -16,8 +16,9 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TEXT | &quot;Text&quot; | 
 | IMAGE | &quot;Image&quot; | 
+| VIDEO | &quot;Video&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

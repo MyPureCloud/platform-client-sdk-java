@@ -33,7 +33,9 @@ import com.mypurecloud.sdk.v2.model.CaseSummaryUpdate;
 import com.mypurecloud.sdk.v2.model.Caseplan;
 import com.mypurecloud.sdk.v2.model.CaseplanCreate;
 import com.mypurecloud.sdk.v2.model.CaseplanCreateResponse;
+import com.mypurecloud.sdk.v2.model.CaseplanDataSchema;
 import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaListing;
+import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
@@ -91,6 +93,11 @@ public class PostCasemanagementCasesAssociationsQueryRequest {
 
     public ApiRequest<CaseAssociationQuery> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostCasemanagementCasesAssociationsQueryRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/casemanagement/cases/associations/query")
                 .withBody(body)
@@ -106,6 +113,11 @@ public class PostCasemanagementCasesAssociationsQueryRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(CaseAssociationQuery body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -123,8 +135,19 @@ public class PostCasemanagementCasesAssociationsQueryRequest {
 
 
 
+		public Builder withRequiredParams(CaseAssociationQuery body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostCasemanagementCasesAssociationsQueryRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostCasemanagementCasesAssociationsQueryRequest.");
+            }
             
 			return request;
 		}

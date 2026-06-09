@@ -579,7 +579,6 @@ public class ConversationsApi {
   /**
    * Delete/cancel an async request for conversation aggregates
    * 
-   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -591,7 +590,6 @@ public class ConversationsApi {
   /**
    * Delete/cancel an async request for conversation aggregates
    * 
-   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -609,7 +607,6 @@ public class ConversationsApi {
   /**
    * Delete/cancel an async request for conversation aggregates
    * 
-   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -628,7 +625,6 @@ public class ConversationsApi {
   /**
    * Delete/cancel an async request for conversation aggregates
    * 
-   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2196,7 +2192,6 @@ public class ConversationsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
-   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -2209,7 +2204,6 @@ public class ConversationsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
-   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -2228,7 +2222,6 @@ public class ConversationsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
-   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -2248,7 +2241,6 @@ public class ConversationsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
-   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2278,7 +2270,6 @@ public class ConversationsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ConversationAsyncAggregateQueryResponse
@@ -2292,7 +2283,6 @@ public class ConversationsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ConversationAsyncAggregateQueryResponse
@@ -2314,7 +2304,6 @@ public class ConversationsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConversationAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -2334,7 +2323,6 @@ public class ConversationsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -16724,7 +16712,6 @@ public class ConversationsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
-   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -16737,7 +16724,6 @@ public class ConversationsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
-   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -16756,7 +16742,6 @@ public class ConversationsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
-   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -16776,7 +16761,6 @@ public class ConversationsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
-   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -23545,7 +23529,7 @@ public class ConversationsApi {
 
   /**
    * Send an agentless outbound message
-   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and 'toAddress' specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
+   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and recipient specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
    * @param body Create agentless outbound messaging request (required)
    * @param useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (optional, default to false)
    * @return SendAgentlessOutboundMessageResponse
@@ -23558,7 +23542,7 @@ public class ConversationsApi {
 
   /**
    * Send an agentless outbound message
-   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and 'toAddress' specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
+   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and recipient specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
    * @param body Create agentless outbound messaging request (required)
    * @param useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (optional, default to false)
    * @return SendAgentlessOutboundMessageResponse
@@ -23579,7 +23563,7 @@ public class ConversationsApi {
 
   /**
    * Send an agentless outbound message
-   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and 'toAddress' specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
+   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and recipient specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
    * @param request The request object
    * @return SendAgentlessOutboundMessageResponse
    * @throws ApiException if the request fails on the server
@@ -23598,7 +23582,7 @@ public class ConversationsApi {
 
   /**
    * Send an agentless outbound message
-   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and 'toAddress' specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
+   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and recipient specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

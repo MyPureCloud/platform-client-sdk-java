@@ -16,8 +16,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanBusinessUnitAssociation;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanManagementUnitAssociation;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffType;
+import com.mypurecloud.sdk.v2.model.OverrideDate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -83,6 +85,7 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
   private Integer daysBeforeStartToExpireFromWaitlist = null;
   private Boolean autoPublishApprovedTimeOffRequests = null;
   private List<String> restrictedActivityCodeIds = null;
+  private List<OverrideDate> overrideDates = null;
   private HrisTimeOffType hrisTimeOffType = null;
   private Boolean enabled = null;
   private Boolean countAgainstTimeOffLimits = null;
@@ -93,6 +96,7 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       activityCodeIds = new ArrayList<String>();
       restrictedActivityCodeIds = new ArrayList<String>();
+      overrideDates = new ArrayList<OverrideDate>();
     }
   }
 
@@ -100,6 +104,7 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
     if (initWithEmptyList == true) { 
       activityCodeIds = new ArrayList<String>();
       restrictedActivityCodeIds = new ArrayList<String>();
+      overrideDates = new ArrayList<OverrideDate>();
     }
   }
 
@@ -213,6 +218,24 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
 
 
   /**
+   * A list of override dates to check for conflicts with time-off request dates. If a conflict is found, the request will not be auto-approved
+   **/
+  public BuCreateTimeOffPlanRequest overrideDates(List<OverrideDate> overrideDates) {
+    this.overrideDates = overrideDates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of override dates to check for conflicts with time-off request dates. If a conflict is found, the request will not be auto-approved")
+  @JsonProperty("overrideDates")
+  public List<OverrideDate> getOverrideDates() {
+    return overrideDates;
+  }
+  public void setOverrideDates(List<OverrideDate> overrideDates) {
+    this.overrideDates = overrideDates;
+  }
+
+
+  /**
    * Time-off type, if this time-off plan is associated with the integration
    **/
   public BuCreateTimeOffPlanRequest hrisTimeOffType(HrisTimeOffType hrisTimeOffType) {
@@ -318,6 +341,7 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
             Objects.equals(this.daysBeforeStartToExpireFromWaitlist, buCreateTimeOffPlanRequest.daysBeforeStartToExpireFromWaitlist) &&
             Objects.equals(this.autoPublishApprovedTimeOffRequests, buCreateTimeOffPlanRequest.autoPublishApprovedTimeOffRequests) &&
             Objects.equals(this.restrictedActivityCodeIds, buCreateTimeOffPlanRequest.restrictedActivityCodeIds) &&
+            Objects.equals(this.overrideDates, buCreateTimeOffPlanRequest.overrideDates) &&
             Objects.equals(this.hrisTimeOffType, buCreateTimeOffPlanRequest.hrisTimeOffType) &&
             Objects.equals(this.enabled, buCreateTimeOffPlanRequest.enabled) &&
             Objects.equals(this.countAgainstTimeOffLimits, buCreateTimeOffPlanRequest.countAgainstTimeOffLimits) &&
@@ -327,7 +351,7 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, activityCodeIds, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, autoPublishApprovedTimeOffRequests, restrictedActivityCodeIds, hrisTimeOffType, enabled, countAgainstTimeOffLimits, businessUnitAssociation, managementUnitAssociation);
+    return Objects.hash(name, activityCodeIds, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, autoPublishApprovedTimeOffRequests, restrictedActivityCodeIds, overrideDates, hrisTimeOffType, enabled, countAgainstTimeOffLimits, businessUnitAssociation, managementUnitAssociation);
   }
 
   @Override
@@ -341,6 +365,7 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
     sb.append("    daysBeforeStartToExpireFromWaitlist: ").append(toIndentedString(daysBeforeStartToExpireFromWaitlist)).append("\n");
     sb.append("    autoPublishApprovedTimeOffRequests: ").append(toIndentedString(autoPublishApprovedTimeOffRequests)).append("\n");
     sb.append("    restrictedActivityCodeIds: ").append(toIndentedString(restrictedActivityCodeIds)).append("\n");
+    sb.append("    overrideDates: ").append(toIndentedString(overrideDates)).append("\n");
     sb.append("    hrisTimeOffType: ").append(toIndentedString(hrisTimeOffType)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    countAgainstTimeOffLimits: ").append(toIndentedString(countAgainstTimeOffLimits)).append("\n");

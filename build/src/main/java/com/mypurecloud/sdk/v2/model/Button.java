@@ -74,6 +74,7 @@ public class Button  implements Serializable {
   private TypeEnum type = null;
   private String content = null;
   private String contentText = null;
+  private String payload = null;
 
   public Button() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -140,6 +141,24 @@ public class Button  implements Serializable {
   }
 
 
+  /**
+   * A payload to uniquely identify a quickReply button in carousel
+   **/
+  public Button payload(String payload) {
+    this.payload = payload;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A payload to uniquely identify a quickReply button in carousel")
+  @JsonProperty("payload")
+  public String getPayload() {
+    return payload;
+  }
+  public void setPayload(String payload) {
+    this.payload = payload;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -152,12 +171,13 @@ public class Button  implements Serializable {
 
     return Objects.equals(this.type, button.type) &&
             Objects.equals(this.content, button.content) &&
-            Objects.equals(this.contentText, button.contentText);
+            Objects.equals(this.contentText, button.contentText) &&
+            Objects.equals(this.payload, button.payload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, content, contentText);
+    return Objects.hash(type, content, contentText, payload);
   }
 
   @Override
@@ -168,6 +188,7 @@ public class Button  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    contentText: ").append(toIndentedString(contentText)).append("\n");
+    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("}");
     return sb.toString();
   }

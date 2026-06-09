@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ListWrapperOverrideDate;
 import com.mypurecloud.sdk.v2.model.SetWrapperString;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanBusinessUnitAssociation;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanManagementUnitAssociation;
@@ -84,6 +85,7 @@ public class BuUpdateTimeOffPlanRequest  implements Serializable {
   private Integer daysBeforeStartToExpireFromWaitlist = null;
   private Boolean autoPublishApprovedTimeOffRequests = null;
   private SetWrapperString restrictedActivityCodeIds = null;
+  private ListWrapperOverrideDate overrideDates = null;
   private ValueWrapperHrisTimeOffType hrisTimeOffType = null;
   private Boolean enabled = null;
   private Boolean countAgainstTimeOffLimits = null;
@@ -211,6 +213,24 @@ public class BuUpdateTimeOffPlanRequest  implements Serializable {
 
 
   /**
+   * A list of override dates to check for conflicts with time-off request dates. If a conflict is found, the request will not be auto-approved
+   **/
+  public BuUpdateTimeOffPlanRequest overrideDates(ListWrapperOverrideDate overrideDates) {
+    this.overrideDates = overrideDates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of override dates to check for conflicts with time-off request dates. If a conflict is found, the request will not be auto-approved")
+  @JsonProperty("overrideDates")
+  public ListWrapperOverrideDate getOverrideDates() {
+    return overrideDates;
+  }
+  public void setOverrideDates(ListWrapperOverrideDate overrideDates) {
+    this.overrideDates = overrideDates;
+  }
+
+
+  /**
    * Time-off type, if this time-off plan is associated with the integration
    **/
   public BuUpdateTimeOffPlanRequest hrisTimeOffType(ValueWrapperHrisTimeOffType hrisTimeOffType) {
@@ -334,6 +354,7 @@ public class BuUpdateTimeOffPlanRequest  implements Serializable {
             Objects.equals(this.daysBeforeStartToExpireFromWaitlist, buUpdateTimeOffPlanRequest.daysBeforeStartToExpireFromWaitlist) &&
             Objects.equals(this.autoPublishApprovedTimeOffRequests, buUpdateTimeOffPlanRequest.autoPublishApprovedTimeOffRequests) &&
             Objects.equals(this.restrictedActivityCodeIds, buUpdateTimeOffPlanRequest.restrictedActivityCodeIds) &&
+            Objects.equals(this.overrideDates, buUpdateTimeOffPlanRequest.overrideDates) &&
             Objects.equals(this.hrisTimeOffType, buUpdateTimeOffPlanRequest.hrisTimeOffType) &&
             Objects.equals(this.enabled, buUpdateTimeOffPlanRequest.enabled) &&
             Objects.equals(this.countAgainstTimeOffLimits, buUpdateTimeOffPlanRequest.countAgainstTimeOffLimits) &&
@@ -344,7 +365,7 @@ public class BuUpdateTimeOffPlanRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, activityCodeIds, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, autoPublishApprovedTimeOffRequests, restrictedActivityCodeIds, hrisTimeOffType, enabled, countAgainstTimeOffLimits, businessUnitAssociation, managementUnitAssociation, metadata);
+    return Objects.hash(name, activityCodeIds, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, autoPublishApprovedTimeOffRequests, restrictedActivityCodeIds, overrideDates, hrisTimeOffType, enabled, countAgainstTimeOffLimits, businessUnitAssociation, managementUnitAssociation, metadata);
   }
 
   @Override
@@ -358,6 +379,7 @@ public class BuUpdateTimeOffPlanRequest  implements Serializable {
     sb.append("    daysBeforeStartToExpireFromWaitlist: ").append(toIndentedString(daysBeforeStartToExpireFromWaitlist)).append("\n");
     sb.append("    autoPublishApprovedTimeOffRequests: ").append(toIndentedString(autoPublishApprovedTimeOffRequests)).append("\n");
     sb.append("    restrictedActivityCodeIds: ").append(toIndentedString(restrictedActivityCodeIds)).append("\n");
+    sb.append("    overrideDates: ").append(toIndentedString(overrideDates)).append("\n");
     sb.append("    hrisTimeOffType: ").append(toIndentedString(hrisTimeOffType)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    countAgainstTimeOffLimits: ").append(toIndentedString(countAgainstTimeOffLimits)).append("\n");

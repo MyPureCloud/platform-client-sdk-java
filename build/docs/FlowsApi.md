@@ -21,8 +21,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete/cancel an async request for flow aggregates
 
-deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -80,8 +78,6 @@ null (empty response body)
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsFlowsAggregatesJob(jobId)
 
 Get status for async query for Flow aggregates
-
-getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/flows/aggregates/jobs/{jobId}  
 
@@ -141,8 +137,6 @@ try {
 > [FlowAsyncAggregateQueryResponse](FlowAsyncAggregateQueryResponse) getAnalyticsFlowsAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results  
 
@@ -267,8 +261,6 @@ try {
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsFlowsAggregatesJobs(body)
 
 Query for flow aggregates asynchronously
-
-postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/flows/aggregates/jobs  
 
@@ -440,4 +432,4 @@ try {
 [**FlowObservationQueryResponse**](FlowObservationQueryResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

@@ -6719,12 +6719,13 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param managementUnitId The ID of the management unit to get management unit specific staffing groups (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @param expand Include to access additional data for the time-off plans (optional)
    * @return BuTimeOffPlanListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuTimeOffPlanListing getWorkforcemanagementBusinessunitTimeoffplans(String businessUnitId, String managementUnitId, Boolean forceDownloadService) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitTimeoffplans(createGetWorkforcemanagementBusinessunitTimeoffplansRequest(businessUnitId, managementUnitId, forceDownloadService));
+  public BuTimeOffPlanListing getWorkforcemanagementBusinessunitTimeoffplans(String businessUnitId, String managementUnitId, Boolean forceDownloadService, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitTimeoffplans(createGetWorkforcemanagementBusinessunitTimeoffplansRequest(businessUnitId, managementUnitId, forceDownloadService, expand));
   }
 
   /**
@@ -6733,20 +6734,23 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param managementUnitId The ID of the management unit to get management unit specific staffing groups (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @param expand Include to access additional data for the time-off plans (optional)
    * @return BuTimeOffPlanListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuTimeOffPlanListing> getWorkforcemanagementBusinessunitTimeoffplansWithHttpInfo(String businessUnitId, String managementUnitId, Boolean forceDownloadService) throws IOException {
-    return getWorkforcemanagementBusinessunitTimeoffplans(createGetWorkforcemanagementBusinessunitTimeoffplansRequest(businessUnitId, managementUnitId, forceDownloadService).withHttpInfo());
+  public ApiResponse<BuTimeOffPlanListing> getWorkforcemanagementBusinessunitTimeoffplansWithHttpInfo(String businessUnitId, String managementUnitId, Boolean forceDownloadService, List<String> expand) throws IOException {
+    return getWorkforcemanagementBusinessunitTimeoffplans(createGetWorkforcemanagementBusinessunitTimeoffplansRequest(businessUnitId, managementUnitId, forceDownloadService, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitTimeoffplansRequest createGetWorkforcemanagementBusinessunitTimeoffplansRequest(String businessUnitId, String managementUnitId, Boolean forceDownloadService) {
+  private GetWorkforcemanagementBusinessunitTimeoffplansRequest createGetWorkforcemanagementBusinessunitTimeoffplansRequest(String businessUnitId, String managementUnitId, Boolean forceDownloadService, List<String> expand) {
     return GetWorkforcemanagementBusinessunitTimeoffplansRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
             .withManagementUnitId(managementUnitId)
 
             .withForceDownloadService(forceDownloadService)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -7418,14 +7422,16 @@ public class WorkforceManagementApi {
    * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param businessUnitId The ID of the business unit (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules (required)
+   * @param earliestWeekDate If weekId == 'recent', specify the earliest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param latestWeekDate If weekId == 'recent', specify the latest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param includeOnlyPublished includeOnlyPublished (optional)
    * @param expand expand (optional)
    * @return BuScheduleListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuScheduleListing getWorkforcemanagementBusinessunitWeekSchedules(String businessUnitId, String weekId, Boolean includeOnlyPublished, String expand) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitWeekSchedules(createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(businessUnitId, weekId, includeOnlyPublished, expand));
+  public BuScheduleListing getWorkforcemanagementBusinessunitWeekSchedules(String businessUnitId, String weekId, LocalDate earliestWeekDate, LocalDate latestWeekDate, Boolean includeOnlyPublished, String expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekSchedules(createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(businessUnitId, weekId, earliestWeekDate, latestWeekDate, includeOnlyPublished, expand));
   }
 
   /**
@@ -7433,20 +7439,26 @@ public class WorkforceManagementApi {
    * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param businessUnitId The ID of the business unit (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules (required)
+   * @param earliestWeekDate If weekId == 'recent', specify the earliest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param latestWeekDate If weekId == 'recent', specify the latest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param includeOnlyPublished includeOnlyPublished (optional)
    * @param expand expand (optional)
    * @return BuScheduleListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuScheduleListing> getWorkforcemanagementBusinessunitWeekSchedulesWithHttpInfo(String businessUnitId, String weekId, Boolean includeOnlyPublished, String expand) throws IOException {
-    return getWorkforcemanagementBusinessunitWeekSchedules(createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(businessUnitId, weekId, includeOnlyPublished, expand).withHttpInfo());
+  public ApiResponse<BuScheduleListing> getWorkforcemanagementBusinessunitWeekSchedulesWithHttpInfo(String businessUnitId, String weekId, LocalDate earliestWeekDate, LocalDate latestWeekDate, Boolean includeOnlyPublished, String expand) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekSchedules(createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(businessUnitId, weekId, earliestWeekDate, latestWeekDate, includeOnlyPublished, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitWeekSchedulesRequest createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(String businessUnitId, String weekId, Boolean includeOnlyPublished, String expand) {
+  private GetWorkforcemanagementBusinessunitWeekSchedulesRequest createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(String businessUnitId, String weekId, LocalDate earliestWeekDate, LocalDate latestWeekDate, Boolean includeOnlyPublished, String expand) {
     return GetWorkforcemanagementBusinessunitWeekSchedulesRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
             .withWeekId(weekId)
+
+            .withEarliestWeekDate(earliestWeekDate)
+
+            .withLatestWeekDate(latestWeekDate)
 
             .withIncludeOnlyPublished(includeOnlyPublished)
 
@@ -23688,12 +23700,13 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit (required)
    * @param userId The id of the user for whom the time off request estimate is requested (required)
    * @param body body (required)
+   * @param includeOnly Limit response to the specified field (optional)
    * @return EstimateAvailableTimeOffResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(createPostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest(managementUnitId, userId, body));
+  public EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body, String includeOnly) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(createPostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest(managementUnitId, userId, body, includeOnly));
   }
 
   /**
@@ -23702,20 +23715,23 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit (required)
    * @param userId The id of the user for whom the time off request estimate is requested (required)
    * @param body body (required)
+   * @param includeOnly Limit response to the specified field (optional)
    * @return EstimateAvailableTimeOffResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EstimateAvailableTimeOffResponse> postWorkforcemanagementManagementunitUserTimeoffrequestsEstimateWithHttpInfo(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body) throws IOException {
-    return postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(createPostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest(managementUnitId, userId, body).withHttpInfo());
+  public ApiResponse<EstimateAvailableTimeOffResponse> postWorkforcemanagementManagementunitUserTimeoffrequestsEstimateWithHttpInfo(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body, String includeOnly) throws IOException {
+    return postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(createPostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest(managementUnitId, userId, body, includeOnly).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest createPostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body) {
+  private PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest createPostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body, String includeOnly) {
     return PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withUserId(userId)
 
             .withBody(body)
+
+            .withIncludeOnly(includeOnly)
 
             .build();
   }
@@ -25636,28 +25652,32 @@ public class WorkforceManagementApi {
    * Estimates available time off for current user
    * 
    * @param body body (required)
+   * @param includeOnly Limit response to the specified field (optional)
    * @return EstimateAvailableTimeOffResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(EstimateAvailableTimeOffRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementTimeoffrequestsEstimate(createPostWorkforcemanagementTimeoffrequestsEstimateRequest(body));
+  public EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(EstimateAvailableTimeOffRequest body, String includeOnly) throws IOException, ApiException {
+    return  postWorkforcemanagementTimeoffrequestsEstimate(createPostWorkforcemanagementTimeoffrequestsEstimateRequest(body, includeOnly));
   }
 
   /**
    * Estimates available time off for current user
    * 
    * @param body body (required)
+   * @param includeOnly Limit response to the specified field (optional)
    * @return EstimateAvailableTimeOffResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EstimateAvailableTimeOffResponse> postWorkforcemanagementTimeoffrequestsEstimateWithHttpInfo(EstimateAvailableTimeOffRequest body) throws IOException {
-    return postWorkforcemanagementTimeoffrequestsEstimate(createPostWorkforcemanagementTimeoffrequestsEstimateRequest(body).withHttpInfo());
+  public ApiResponse<EstimateAvailableTimeOffResponse> postWorkforcemanagementTimeoffrequestsEstimateWithHttpInfo(EstimateAvailableTimeOffRequest body, String includeOnly) throws IOException {
+    return postWorkforcemanagementTimeoffrequestsEstimate(createPostWorkforcemanagementTimeoffrequestsEstimateRequest(body, includeOnly).withHttpInfo());
   }
 
-  private PostWorkforcemanagementTimeoffrequestsEstimateRequest createPostWorkforcemanagementTimeoffrequestsEstimateRequest(EstimateAvailableTimeOffRequest body) {
+  private PostWorkforcemanagementTimeoffrequestsEstimateRequest createPostWorkforcemanagementTimeoffrequestsEstimateRequest(EstimateAvailableTimeOffRequest body, String includeOnly) {
     return PostWorkforcemanagementTimeoffrequestsEstimateRequest.builder()
             .withBody(body)
+
+            .withIncludeOnly(includeOnly)
 
             .build();
   }

@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingEmailDomain**](RoutingApi#deleteRoutingEmailDomain) | Delete a domain |
 | [**deleteRoutingEmailDomainRoute**](RoutingApi#deleteRoutingEmailDomainRoute) | Delete a route |
 | [**deleteRoutingEmailOutboundDomain**](RoutingApi#deleteRoutingEmailOutboundDomain) | Delete an outbound domain |
+| [**deleteRoutingEmailSettingEmailSettingId**](RoutingApi#deleteRoutingEmailSettingEmailSettingId) | Delete an email setting. Removes the email setting and its associated settings |
 | [**deleteRoutingLanguage**](RoutingApi#deleteRoutingLanguage) | Delete a routing language |
 | [**deleteRoutingPredictor**](RoutingApi#deleteRoutingPredictor) | Delete single predictor. |
 | [**deleteRoutingPredictorsKeyperformanceindicator**](RoutingApi#deleteRoutingPredictorsKeyperformanceindicator) | Delete a custom Key Performance Indicator. |
@@ -47,6 +48,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingEmailOutboundDomain**](RoutingApi#getRoutingEmailOutboundDomain) | Get domain |
 | [**getRoutingEmailOutboundDomainActivation**](RoutingApi#getRoutingEmailOutboundDomainActivation) | Get activation status (cname + dkim) of an outbound domain |
 | [**getRoutingEmailOutboundDomains**](RoutingApi#getRoutingEmailOutboundDomains) | Get outbound domains |
+| [**getRoutingEmailSetting**](RoutingApi#getRoutingEmailSetting) | Get a paged list of email routing settings. |
+| [**getRoutingEmailSettingEmailSettingId**](RoutingApi#getRoutingEmailSettingEmailSettingId) | Get email setting. Returns the specified email setting that defines settings for email |
 | [**getRoutingEmailSetup**](RoutingApi#getRoutingEmailSetup) | Get email setup |
 | [**getRoutingLanguage**](RoutingApi#getRoutingLanguage) | Get a routing language |
 | [**getRoutingLanguages**](RoutingApi#getRoutingLanguages) | Get the list of supported languages. |
@@ -84,7 +87,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingSkillgroupMembers**](RoutingApi#getRoutingSkillgroupMembers) | Get skill group members |
 | [**getRoutingSkillgroupMembersDivisions**](RoutingApi#getRoutingSkillgroupMembersDivisions) | Get list of member divisions for this skill group. |
 | [**getRoutingSkillgroups**](RoutingApi#getRoutingSkillgroups) | Get skill group listing |
-| [**getRoutingSkills**](RoutingApi#getRoutingSkills) | Get the list of routing skills. |
+| [**getRoutingSkills**](RoutingApi#getRoutingSkills) | Get the list of routing skills. View permission enforcement only applies to skills assigned to a division. |
 | [**getRoutingSmsAddress**](RoutingApi#getRoutingSmsAddress) | Get an Address by Id for SMS |
 | [**getRoutingSmsAddresses**](RoutingApi#getRoutingSmsAddresses) | Get a list of Addresses for SMS |
 | [**getRoutingSmsAvailablephonenumbers**](RoutingApi#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
@@ -109,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingEmailDomain**](RoutingApi#patchRoutingEmailDomain) | Update domain settings |
 | [**patchRoutingEmailDomainValidate**](RoutingApi#patchRoutingEmailDomainValidate) | Validate domain settings |
 | [**patchRoutingEmailOutboundDomain**](RoutingApi#patchRoutingEmailOutboundDomain) | Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP). |
+| [**patchRoutingEmailSettingEmailSettingId**](RoutingApi#patchRoutingEmailSettingEmailSettingId) | Update an email setting. Modifies the settings for email setting |
 | [**patchRoutingPredictor**](RoutingApi#patchRoutingPredictor) | Update single predictor. |
 | [**patchRoutingPredictorsKeyperformanceindicator**](RoutingApi#patchRoutingPredictorsKeyperformanceindicator) | Update a custom Key Performance Indicator. |
 | [**patchRoutingQueueMember**](RoutingApi#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
@@ -138,6 +142,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingEmailOutboundDomainTestconnection**](RoutingApi#postRoutingEmailOutboundDomainTestconnection) | Tests the custom SMTP server integration connection set on this outbound domain |
 | [**postRoutingEmailOutboundDomains**](RoutingApi#postRoutingEmailOutboundDomains) | Create a domain |
 | [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | Create a simulated domain |
+| [**postRoutingEmailSetting**](RoutingApi#postRoutingEmailSetting) | Create a new email setting. Used to define various settings, that can then be associated with email domains |
 | [**postRoutingLanguages**](RoutingApi#postRoutingLanguages) | Create Language |
 | [**postRoutingPredictors**](RoutingApi#postRoutingPredictors) | Create a predictor. |
 | [**postRoutingPredictorsKeyperformanceindicators**](RoutingApi#postRoutingPredictorsKeyperformanceindicators) | Create a custom Key Performance Indicator. |
@@ -457,6 +462,64 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteRoutingEmailSettingEmailSettingId**
+
+
+> Void deleteRoutingEmailSettingEmailSettingId(emailSettingId)
+
+Delete an email setting. Removes the email setting and its associated settings
+
+Wraps DELETE /api/v2/routing/email/setting/{emailSettingId}  
+
+Requires ALL permissions: 
+
+* email:settings:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String emailSettingId = "emailSettingId_example"; // String | Email Setting ID
+try {
+    apiInstance.deleteRoutingEmailSettingEmailSettingId(emailSettingId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingEmailSettingEmailSettingId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **emailSettingId** | **String**| Email Setting ID | 
 {: class="table-striped"}
 
 
@@ -2739,6 +2802,126 @@ try {
 [**OutboundDomainEntityListing**](OutboundDomainEntityListing)
 
 
+# **getRoutingEmailSetting**
+
+
+> [EmailSettingEntityListing](EmailSettingEntityListing) getRoutingEmailSetting(pageSize, pageNumber)
+
+Get a paged list of email routing settings.
+
+Wraps GET /api/v2/routing/email/setting  
+
+Requires ALL permissions: 
+
+* email:settings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    EmailSettingEntityListing result = apiInstance.getRoutingEmailSetting(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailSettingEntityListing**](EmailSettingEntityListing)
+
+
+# **getRoutingEmailSettingEmailSettingId**
+
+
+> [EmailSetting](EmailSetting) getRoutingEmailSettingEmailSettingId(emailSettingId)
+
+Get email setting. Returns the specified email setting that defines settings for email
+
+Wraps GET /api/v2/routing/email/setting/{emailSettingId}  
+
+Requires ALL permissions: 
+
+* email:settings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String emailSettingId = "emailSettingId_example"; // String | Email Setting ID
+try {
+    EmailSetting result = apiInstance.getRoutingEmailSettingEmailSettingId(emailSettingId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailSettingEmailSettingId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **emailSettingId** | **String**| Email Setting ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailSetting**](EmailSetting)
+
+
 # **getRoutingEmailSetup**
 
 
@@ -4260,7 +4443,7 @@ String sortBy = "name"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
 String name = "name_example"; // String | Name
 List<String> id = Arrays.asList(null); // List<String> | Queue ID(s)
-List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s). Including '*' will query for all divisions
 try {
     QueueEntityListing result = apiInstance.getRoutingQueuesDivisionviews(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId);
     System.out.println(result);
@@ -4281,7 +4464,7 @@ try {
 | **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc 
 | **name** | **String**| Name | [optional] 
 | **id** | [**List&lt;String&gt;**](String)| Queue ID(s) | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s). Including &#39;*&#39; will query for all divisions | [optional] 
 {: class="table-striped"}
 
 
@@ -5085,7 +5268,7 @@ try {
 
 > [SkillEntityListing](SkillEntityListing) getRoutingSkills(pageSize, pageNumber, name, id)
 
-Get the list of routing skills.
+Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 
 Wraps GET /api/v2/routing/skills  
 
@@ -6666,6 +6849,67 @@ try {
 ### Return type
 
 [**OutboundDomain**](OutboundDomain)
+
+
+# **patchRoutingEmailSettingEmailSettingId**
+
+
+> [EmailSetting](EmailSetting) patchRoutingEmailSettingEmailSettingId(emailSettingId, body)
+
+Update an email setting. Modifies the settings for email setting
+
+Wraps PATCH /api/v2/routing/email/setting/{emailSettingId}  
+
+Requires ALL permissions: 
+
+* email:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String emailSettingId = "emailSettingId_example"; // String | Email Setting ID
+EmailSetting body = new EmailSetting(); // EmailSetting | EmailSetting
+try {
+    EmailSetting result = apiInstance.patchRoutingEmailSettingEmailSettingId(emailSettingId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingEmailSettingEmailSettingId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **emailSettingId** | **String**| Email Setting ID | 
+| **body** | [**EmailSetting**](EmailSetting)| EmailSetting | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailSetting**](EmailSetting)
 
 
 # **patchRoutingPredictor**
@@ -8452,6 +8696,65 @@ try {
 ### Return type
 
 [**EmailOutboundDomainResult**](EmailOutboundDomainResult)
+
+
+# **postRoutingEmailSetting**
+
+
+> [EmailSetting](EmailSetting) postRoutingEmailSetting(body)
+
+Create a new email setting. Used to define various settings, that can then be associated with email domains
+
+Wraps POST /api/v2/routing/email/setting  
+
+Requires ANY permissions: 
+
+* email:settings:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+EmailSetting body = new EmailSetting(); // EmailSetting | EmailSetting
+try {
+    EmailSetting result = apiInstance.postRoutingEmailSetting(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingEmailSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EmailSetting**](EmailSetting)| EmailSetting | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailSetting**](EmailSetting)
 
 
 # **postRoutingLanguages**
@@ -10638,4 +10941,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

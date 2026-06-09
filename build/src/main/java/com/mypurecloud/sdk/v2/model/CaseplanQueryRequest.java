@@ -43,14 +43,14 @@ public class CaseplanQueryRequest  implements Serializable {
 
   
   /**
-   * Filter by caseplan name (case-insensitive, partial match). Omitting name returns all caseplans (subject to pagination).
+   * Filter by Caseplan name (case-insensitive, partial match). Omitting name returns all Caseplans (subject to pagination).
    **/
   public CaseplanQueryRequest name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Filter by caseplan name (case-insensitive, partial match). Omitting name returns all caseplans (subject to pagination).")
+  @ApiModelProperty(example = "null", value = "Filter by Caseplan name (case-insensitive, partial match). Omitting name returns all Caseplans (subject to pagination).")
   @JsonProperty("name")
   public String getName() {
     return name;

@@ -7,8 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | The name of the Stepplan. Valid length between 3 and 256 characters. |  [optional] |
 | **description** | **String** | The description of the Stepplan. Maximum length of 512 characters. |  [optional] |
-| **workitemSettings** | [**WorkitemSettings**](WorkitemSettings) | The workitemSettings of the Stepplan. |  [optional] |
-| **activityType** | [**ActivityTypeEnum**](#Enum--ActivityTypeEnum) | The activityType of the Stepplan. |  [optional] |
+| **workitemSettings** | [**WorkitemSettings**](WorkitemSettings) | The Workitem settings of the Stepplan. |  [optional] |
+| **activityType** | [**ActivityTypeEnum**](#Enum--ActivityTypeEnum) | The activity type of the Stepplan. |  [optional] |
 
 
 ## Enum: ActivityTypeEnum
@@ -23,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

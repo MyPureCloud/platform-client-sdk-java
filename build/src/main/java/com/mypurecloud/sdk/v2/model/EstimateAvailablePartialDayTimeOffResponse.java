@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -27,6 +28,54 @@ public class EstimateAvailablePartialDayTimeOffResponse  implements Serializable
   private Integer durationMinutes = null;
   private Integer payableMinutes = null;
   private Boolean flexible = null;
+
+  private static class OverrideDateTypeEnumDeserializer extends StdDeserializer<OverrideDateTypeEnum> {
+    public OverrideDateTypeEnumDeserializer() {
+      super(OverrideDateTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public OverrideDateTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OverrideDateTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The override date type, if the partial day request overlaps with an override date
+   */
+ @JsonDeserialize(using = OverrideDateTypeEnumDeserializer.class)
+  public enum OverrideDateTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BLOCKED("Blocked"),
+    MANUALREVIEW("ManualReview");
+
+    private String value;
+
+    OverrideDateTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static OverrideDateTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (OverrideDateTypeEnum value : OverrideDateTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return OverrideDateTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private OverrideDateTypeEnum overrideDateType = null;
 
   public EstimateAvailablePartialDayTimeOffResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -111,6 +160,24 @@ public class EstimateAvailablePartialDayTimeOffResponse  implements Serializable
   }
 
 
+  /**
+   * The override date type, if the partial day request overlaps with an override date
+   **/
+  public EstimateAvailablePartialDayTimeOffResponse overrideDateType(OverrideDateTypeEnum overrideDateType) {
+    this.overrideDateType = overrideDateType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The override date type, if the partial day request overlaps with an override date")
+  @JsonProperty("overrideDateType")
+  public OverrideDateTypeEnum getOverrideDateType() {
+    return overrideDateType;
+  }
+  public void setOverrideDateType(OverrideDateTypeEnum overrideDateType) {
+    this.overrideDateType = overrideDateType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -124,12 +191,13 @@ public class EstimateAvailablePartialDayTimeOffResponse  implements Serializable
     return Objects.equals(this.date, estimateAvailablePartialDayTimeOffResponse.date) &&
             Objects.equals(this.durationMinutes, estimateAvailablePartialDayTimeOffResponse.durationMinutes) &&
             Objects.equals(this.payableMinutes, estimateAvailablePartialDayTimeOffResponse.payableMinutes) &&
-            Objects.equals(this.flexible, estimateAvailablePartialDayTimeOffResponse.flexible);
+            Objects.equals(this.flexible, estimateAvailablePartialDayTimeOffResponse.flexible) &&
+            Objects.equals(this.overrideDateType, estimateAvailablePartialDayTimeOffResponse.overrideDateType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, durationMinutes, payableMinutes, flexible);
+    return Objects.hash(date, durationMinutes, payableMinutes, flexible, overrideDateType);
   }
 
   @Override
@@ -141,6 +209,7 @@ public class EstimateAvailablePartialDayTimeOffResponse  implements Serializable
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
     sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("    flexible: ").append(toIndentedString(flexible)).append("\n");
+    sb.append("    overrideDateType: ").append(toIndentedString(overrideDateType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

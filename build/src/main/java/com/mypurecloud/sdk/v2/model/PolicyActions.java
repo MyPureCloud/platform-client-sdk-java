@@ -243,13 +243,14 @@ public class PolicyActions  implements Serializable {
 
 
   /**
+   * Deprecated. The Voci and Call Journey transcription integrations are no longer supported.
    **/
   public PolicyActions mediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
     this.mediaTranscriptions = mediaTranscriptions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated. The Voci and Call Journey transcription integrations are no longer supported.")
   @JsonProperty("mediaTranscriptions")
   public List<MediaTranscription> getMediaTranscriptions() {
     return mediaTranscriptions;

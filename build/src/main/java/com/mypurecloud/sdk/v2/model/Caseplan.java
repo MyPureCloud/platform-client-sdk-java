@@ -220,14 +220,14 @@ public class Caseplan  implements Serializable {
 
 
   /**
-   * The default case owner for Cases created from the Caseplan.
+   * The default Case owner for Cases created from the Caseplan.
    **/
   public Caseplan defaultCaseOwner(UserReference defaultCaseOwner) {
     this.defaultCaseOwner = defaultCaseOwner;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The default case owner for Cases created from the Caseplan.")
+  @ApiModelProperty(example = "null", value = "The default Case owner for Cases created from the Caseplan.")
   @JsonProperty("defaultCaseOwner")
   public UserReference getDefaultCaseOwner() {
     return defaultCaseOwner;
@@ -328,14 +328,14 @@ public class Caseplan  implements Serializable {
 
 
   /**
-   * The id of the User who modified the Caseplan.
+   * The ID of the User who modified the Caseplan.
    **/
   public Caseplan modifiedBy(UserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The id of the User who modified the Caseplan.")
+  @ApiModelProperty(example = "null", value = "The ID of the User who modified the Caseplan.")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
@@ -346,14 +346,14 @@ public class Caseplan  implements Serializable {
 
 
   /**
-   * The customer intent for the Cases created from the caseplan.
+   * The customer intent for Cases created from this Caseplan.
    **/
   public Caseplan customerIntent(CustomerIntentReference customerIntent) {
     this.customerIntent = customerIntent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The customer intent for the Cases created from the caseplan.")
+  @ApiModelProperty(example = "null", value = "The customer intent for Cases created from this Caseplan.")
   @JsonProperty("customerIntent")
   public CustomerIntentReference getCustomerIntent() {
     return customerIntent;

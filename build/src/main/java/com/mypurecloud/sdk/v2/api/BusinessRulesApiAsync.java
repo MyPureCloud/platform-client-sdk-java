@@ -13,6 +13,11 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BulkAddDecisionTableRowsRequest;
+import com.mypurecloud.sdk.v2.model.BulkAddDecisionTableRowsResponse;
+import com.mypurecloud.sdk.v2.model.BulkDeleteDecisionTableRowsRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateDecisionTableRowsRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateDecisionTableRowsResponse;
 import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchema;
 import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchemaListing;
 import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaCreateRequest;
@@ -20,11 +25,17 @@ import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
+import com.mypurecloud.sdk.v2.model.CreateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;
+import com.mypurecloud.sdk.v2.model.DecisionTableExportJob;
+import com.mypurecloud.sdk.v2.model.DecisionTableExportJobListing;
+import com.mypurecloud.sdk.v2.model.DecisionTableExportJobRequest;
+import com.mypurecloud.sdk.v2.model.DecisionTableImportJob;
+import com.mypurecloud.sdk.v2.model.DecisionTableImportJobListing;
 import com.mypurecloud.sdk.v2.model.DecisionTableListing;
 import com.mypurecloud.sdk.v2.model.DecisionTableRow;
 import com.mypurecloud.sdk.v2.model.DecisionTableRowListing;
@@ -33,15 +44,22 @@ import com.mypurecloud.sdk.v2.model.DecisionTableVersionListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
+import com.mypurecloud.sdk.v2.model.UpdateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableVersionRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableExportRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableImportRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionRowRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableExportRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableExportsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableImportRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableVersionRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableVersionRowsRequest;
@@ -53,11 +71,17 @@ import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchBusinessrulesDecisiontableRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchBusinessrulesDecisiontableImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchBusinessrulesDecisiontableVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableExecuteRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableExportsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionExecuteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionSyncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionsRequest;
@@ -127,6 +151,156 @@ public class BusinessRulesApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteBusinessrulesDecisiontableAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an export job for a decision table
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteBusinessrulesDecisiontableExportAsync(DeleteBusinessrulesDecisiontableExportRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an export job for a decision table
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteBusinessrulesDecisiontableExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete decision table row import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteBusinessrulesDecisiontableImportAsync(DeleteBusinessrulesDecisiontableImportRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete decision table row import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteBusinessrulesDecisiontableImportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -449,6 +623,306 @@ public class BusinessRulesApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DecisionTable> response = (ApiResponse<DecisionTable>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an export job for a decision table
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableExportJob> getBusinessrulesDecisiontableExportAsync(GetBusinessrulesDecisiontableExportRequest request, final AsyncApiCallback<DecisionTableExportJob> callback) {
+    try {
+      final SettableFuture<DecisionTableExportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableExportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableExportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableExportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an export job for a decision table
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableExportJob>> getBusinessrulesDecisiontableExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DecisionTableExportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableExportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableExportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableExportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableExportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableExportJob> response = (ApiResponse<DecisionTableExportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableExportJob> response = (ApiResponse<DecisionTableExportJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List export jobs for a decision table
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableExportJobListing> getBusinessrulesDecisiontableExportsAsync(GetBusinessrulesDecisiontableExportsRequest request, final AsyncApiCallback<DecisionTableExportJobListing> callback) {
+    try {
+      final SettableFuture<DecisionTableExportJobListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableExportJobListing>() {}, new AsyncApiCallback<ApiResponse<DecisionTableExportJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableExportJobListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List export jobs for a decision table
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableExportJobListing>> getBusinessrulesDecisiontableExportsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DecisionTableExportJobListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableExportJobListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableExportJobListing>() {}, new AsyncApiCallback<ApiResponse<DecisionTableExportJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableExportJobListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableExportJobListing> response = (ApiResponse<DecisionTableExportJobListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableExportJobListing> response = (ApiResponse<DecisionTableExportJobListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get decision table row import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableImportJob> getBusinessrulesDecisiontableImportAsync(GetBusinessrulesDecisiontableImportRequest request, final AsyncApiCallback<DecisionTableImportJob> callback) {
+    try {
+      final SettableFuture<DecisionTableImportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableImportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get decision table row import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableImportJob>> getBusinessrulesDecisiontableImportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DecisionTableImportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableImportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableImportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List decision table row import jobs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableImportJobListing> getBusinessrulesDecisiontableImportsAsync(GetBusinessrulesDecisiontableImportsRequest request, final AsyncApiCallback<DecisionTableImportJobListing> callback) {
+    try {
+      final SettableFuture<DecisionTableImportJobListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableImportJobListing>() {}, new AsyncApiCallback<ApiResponse<DecisionTableImportJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableImportJobListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List decision table row import jobs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableImportJobListing>> getBusinessrulesDecisiontableImportsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DecisionTableImportJobListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableImportJobListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableImportJobListing>() {}, new AsyncApiCallback<ApiResponse<DecisionTableImportJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableImportJobListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableImportJobListing> response = (ApiResponse<DecisionTableImportJobListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableImportJobListing> response = (ApiResponse<DecisionTableImportJobListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1286,6 +1760,81 @@ public class BusinessRulesApiAsync {
   }
 
   /**
+   * Update decision table row import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableImportJob> patchBusinessrulesDecisiontableImportAsync(PatchBusinessrulesDecisiontableImportRequest request, final AsyncApiCallback<DecisionTableImportJob> callback) {
+    try {
+      final SettableFuture<DecisionTableImportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableImportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update decision table row import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableImportJob>> patchBusinessrulesDecisiontableImportAsync(ApiRequest<UpdateDecisionTableImportJobRequest> request, final AsyncApiCallback<ApiResponse<DecisionTableImportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableImportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableImportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update a decision table version
    * 
    * @param request the request object
@@ -1424,6 +1973,156 @@ public class BusinessRulesApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DecisionTableExecutionResponse> response = (ApiResponse<DecisionTableExecutionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an export job for a decision table version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableExportJob> postBusinessrulesDecisiontableExportsAsync(PostBusinessrulesDecisiontableExportsRequest request, final AsyncApiCallback<DecisionTableExportJob> callback) {
+    try {
+      final SettableFuture<DecisionTableExportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableExportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableExportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableExportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an export job for a decision table version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableExportJob>> postBusinessrulesDecisiontableExportsAsync(ApiRequest<DecisionTableExportJobRequest> request, final AsyncApiCallback<ApiResponse<DecisionTableExportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableExportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableExportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableExportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableExportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableExportJob> response = (ApiResponse<DecisionTableExportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableExportJob> response = (ApiResponse<DecisionTableExportJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a decision table row import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableImportJob> postBusinessrulesDecisiontableImportsAsync(PostBusinessrulesDecisiontableImportsRequest request, final AsyncApiCallback<DecisionTableImportJob> callback) {
+    try {
+      final SettableFuture<DecisionTableImportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableImportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a decision table row import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableImportJob>> postBusinessrulesDecisiontableImportsAsync(ApiRequest<CreateDecisionTableImportJobRequest> request, final AsyncApiCallback<ApiResponse<DecisionTableImportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableImportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DecisionTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableImportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableImportJob> response = (ApiResponse<DecisionTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1649,6 +2348,231 @@ public class BusinessRulesApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DecisionTableRow> response = (ApiResponse<DecisionTableRow>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkAddDecisionTableRowsResponse> postBusinessrulesDecisiontableVersionRowsBulkAddAsync(PostBusinessrulesDecisiontableVersionRowsBulkAddRequest request, final AsyncApiCallback<BulkAddDecisionTableRowsResponse> callback) {
+    try {
+      final SettableFuture<BulkAddDecisionTableRowsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkAddDecisionTableRowsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkAddDecisionTableRowsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkAddDecisionTableRowsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkAddDecisionTableRowsResponse>> postBusinessrulesDecisiontableVersionRowsBulkAddAsync(ApiRequest<BulkAddDecisionTableRowsRequest> request, final AsyncApiCallback<ApiResponse<BulkAddDecisionTableRowsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkAddDecisionTableRowsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkAddDecisionTableRowsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkAddDecisionTableRowsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkAddDecisionTableRowsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkAddDecisionTableRowsResponse> response = (ApiResponse<BulkAddDecisionTableRowsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkAddDecisionTableRowsResponse> response = (ApiResponse<BulkAddDecisionTableRowsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk delete decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postBusinessrulesDecisiontableVersionRowsBulkRemoveAsync(PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk delete decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postBusinessrulesDecisiontableVersionRowsBulkRemoveAsync(ApiRequest<BulkDeleteDecisionTableRowsRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkUpdateDecisionTableRowsResponse> postBusinessrulesDecisiontableVersionRowsBulkUpdateAsync(PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest request, final AsyncApiCallback<BulkUpdateDecisionTableRowsResponse> callback) {
+    try {
+      final SettableFuture<BulkUpdateDecisionTableRowsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkUpdateDecisionTableRowsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkUpdateDecisionTableRowsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkUpdateDecisionTableRowsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update decision table rows
+   * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkUpdateDecisionTableRowsResponse>> postBusinessrulesDecisiontableVersionRowsBulkUpdateAsync(ApiRequest<BulkUpdateDecisionTableRowsRequest> request, final AsyncApiCallback<ApiResponse<BulkUpdateDecisionTableRowsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkUpdateDecisionTableRowsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkUpdateDecisionTableRowsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkUpdateDecisionTableRowsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkUpdateDecisionTableRowsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkUpdateDecisionTableRowsResponse> response = (ApiResponse<BulkUpdateDecisionTableRowsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkUpdateDecisionTableRowsResponse> response = (ApiResponse<BulkUpdateDecisionTableRowsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

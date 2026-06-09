@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.ContactImportSettings;
 import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
+import com.mypurecloud.sdk.v2.model.ContactsExportListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
@@ -62,7 +63,6 @@ import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
-import com.mypurecloud.sdk.v2.model.ExportListing;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalContactsPatchRequest;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
@@ -1661,13 +1661,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExportListing> getExternalcontactsContactsExportsAsync(GetExternalcontactsContactsExportsRequest request, final AsyncApiCallback<ExportListing> callback) {
+  public Future<ContactsExportListing> getExternalcontactsContactsExportsAsync(GetExternalcontactsContactsExportsRequest request, final AsyncApiCallback<ContactsExportListing> callback) {
     try {
-      final SettableFuture<ExportListing> future = SettableFuture.create();
+      final SettableFuture<ContactsExportListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExportListing>() {}, new AsyncApiCallback<ApiResponse<ExportListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactsExportListing>() {}, new AsyncApiCallback<ApiResponse<ContactsExportListing>>() {
         @Override
-        public void onCompleted(ApiResponse<ExportListing> response) {
+        public void onCompleted(ApiResponse<ContactsExportListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1695,13 +1695,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExportListing>> getExternalcontactsContactsExportsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExportListing>> callback) {
+  public Future<ApiResponse<ContactsExportListing>> getExternalcontactsContactsExportsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactsExportListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<ExportListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ContactsExportListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ExportListing>() {}, new AsyncApiCallback<ApiResponse<ExportListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ContactsExportListing>() {}, new AsyncApiCallback<ApiResponse<ContactsExportListing>>() {
         @Override
-        public void onCompleted(ApiResponse<ExportListing> response) {
+        public void onCompleted(ApiResponse<ContactsExportListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1709,7 +1709,7 @@ public class ExternalContactsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ExportListing> response = (ApiResponse<ExportListing>)(ApiResponse<?>)exception;
+            ApiResponse<ContactsExportListing> response = (ApiResponse<ContactsExportListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1717,7 +1717,7 @@ public class ExternalContactsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ExportListing> response = (ApiResponse<ExportListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ContactsExportListing> response = (ApiResponse<ContactsExportListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

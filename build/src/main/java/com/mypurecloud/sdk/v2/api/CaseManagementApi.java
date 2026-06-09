@@ -23,7 +23,9 @@ import com.mypurecloud.sdk.v2.model.CaseSummaryUpdate;
 import com.mypurecloud.sdk.v2.model.Caseplan;
 import com.mypurecloud.sdk.v2.model.CaseplanCreate;
 import com.mypurecloud.sdk.v2.model.CaseplanCreateResponse;
+import com.mypurecloud.sdk.v2.model.CaseplanDataSchema;
 import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaListing;
+import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
@@ -47,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.TerminateJob;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanDataschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationsRequest;
@@ -74,12 +77,14 @@ import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanStageplanRe
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanStageplanStepplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseAssociationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseTerminateJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanDataschemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesAssociationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanDataschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanIntakesettingsRequest;
 
 import java.io.IOException;
@@ -102,8 +107,7 @@ public class CaseManagementApi {
   /**
    * Delete a Case.
    * 
-   * deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
+   * @param caseId Case identifier. (required)
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -115,8 +119,7 @@ public class CaseManagementApi {
   /**
    * Delete a Case.
    * 
-   * deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
+   * @param caseId Case identifier. (required)
    * @return Empty
    * @throws IOException if the request fails to be processed
    */
@@ -134,7 +137,6 @@ public class CaseManagementApi {
   /**
    * Delete a Case.
    * 
-   * deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -154,7 +156,6 @@ public class CaseManagementApi {
   /**
    * Delete a Case.
    * 
-   * deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -184,8 +185,7 @@ public class CaseManagementApi {
   /**
    * Delete a Caseplan.
    * 
-   * deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -197,8 +197,7 @@ public class CaseManagementApi {
   /**
    * Delete a Caseplan.
    * 
-   * deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
    * @return Empty
    * @throws IOException if the request fails to be processed
    */
@@ -216,7 +215,6 @@ public class CaseManagementApi {
   /**
    * Delete a Caseplan.
    * 
-   * deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -236,7 +234,6 @@ public class CaseManagementApi {
   /**
    * Delete a Caseplan.
    * 
-   * deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -264,11 +261,92 @@ public class CaseManagementApi {
   }
 
   /**
+   * Remove a data schema from a draft Caseplan.
+   * 
+   * @param caseplanId Caseplan identifier. (required)
+   * @param schemaKeyName Schema key (for example \"default\"). (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteCasemanagementCaseplanDataschema(String caseplanId, String schemaKeyName) throws IOException, ApiException {
+    return  deleteCasemanagementCaseplanDataschema(createDeleteCasemanagementCaseplanDataschemaRequest(caseplanId, schemaKeyName));
+  }
+
+  /**
+   * Remove a data schema from a draft Caseplan.
+   * 
+   * @param caseplanId Caseplan identifier. (required)
+   * @param schemaKeyName Schema key (for example \"default\"). (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteCasemanagementCaseplanDataschemaWithHttpInfo(String caseplanId, String schemaKeyName) throws IOException {
+    return deleteCasemanagementCaseplanDataschema(createDeleteCasemanagementCaseplanDataschemaRequest(caseplanId, schemaKeyName).withHttpInfo());
+  }
+
+  private DeleteCasemanagementCaseplanDataschemaRequest createDeleteCasemanagementCaseplanDataschemaRequest(String caseplanId, String schemaKeyName) {
+    return DeleteCasemanagementCaseplanDataschemaRequest.builder()
+            .withCaseplanId(caseplanId)
+
+            .withSchemaKeyName(schemaKeyName)
+
+            .build();
+  }
+
+  /**
+   * Remove a data schema from a draft Caseplan.
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteCasemanagementCaseplanDataschema(DeleteCasemanagementCaseplanDataschemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Remove a data schema from a draft Caseplan.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteCasemanagementCaseplanDataschema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a Case.
    * 
-   * getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param expands Which fields to expand. (optional)
+   * @param caseId Case identifier. (required)
+   * @param expands Fields to expand. (optional)
    * @return ModelCase
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -280,9 +358,8 @@ public class CaseManagementApi {
   /**
    * Get a Case.
    * 
-   * getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param expands Which fields to expand. (optional)
+   * @param caseId Case identifier. (required)
+   * @param expands Fields to expand. (optional)
    * @return ModelCase
    * @throws IOException if the request fails to be processed
    */
@@ -302,7 +379,6 @@ public class CaseManagementApi {
   /**
    * Get a Case.
    * 
-   * getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ModelCase
    * @throws ApiException if the request fails on the server
@@ -322,7 +398,6 @@ public class CaseManagementApi {
   /**
    * Get a Case.
    * 
-   * getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -352,9 +427,8 @@ public class CaseManagementApi {
   /**
    * Get a Case Association.
    * 
-   * getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param associationId Case Association ID (required)
+   * @param caseId Case identifier. (required)
+   * @param associationId Case association identifier. (required)
    * @return CaseAssociation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -366,9 +440,8 @@ public class CaseManagementApi {
   /**
    * Get a Case Association.
    * 
-   * getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param associationId Case Association ID (required)
+   * @param caseId Case identifier. (required)
+   * @param associationId Case association identifier. (required)
    * @return CaseAssociation
    * @throws IOException if the request fails to be processed
    */
@@ -388,7 +461,6 @@ public class CaseManagementApi {
   /**
    * Get a Case Association.
    * 
-   * getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseAssociation
    * @throws ApiException if the request fails on the server
@@ -408,7 +480,6 @@ public class CaseManagementApi {
   /**
    * Get a Case Association.
    * 
-   * getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -436,10 +507,9 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get a list of case associations for a provided case.
+   * Get a list of Case associations for the Case.
    * 
-   * getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID. (required)
+   * @param caseId Case identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
@@ -452,10 +522,9 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get a list of case associations for a provided case.
+   * Get a list of Case associations for the Case.
    * 
-   * getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID. (required)
+   * @param caseId Case identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
@@ -480,9 +549,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get a list of case associations for a provided case.
+   * Get a list of Case associations for the Case.
    * 
-   * getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseAssociationListing
    * @throws ApiException if the request fails on the server
@@ -500,9 +568,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get a list of case associations for a provided case.
+   * Get a list of Case associations for the Case.
    * 
-   * getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -532,9 +599,8 @@ public class CaseManagementApi {
   /**
    * Get a Stage.
    * 
-   * getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param stageId Stage ID (required)
+   * @param caseId Case identifier. (required)
+   * @param stageId Stage identifier. (required)
    * @return Stage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -546,9 +612,8 @@ public class CaseManagementApi {
   /**
    * Get a Stage.
    * 
-   * getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param stageId Stage ID (required)
+   * @param caseId Case identifier. (required)
+   * @param stageId Stage identifier. (required)
    * @return Stage
    * @throws IOException if the request fails to be processed
    */
@@ -568,7 +633,6 @@ public class CaseManagementApi {
   /**
    * Get a Stage.
    * 
-   * getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Stage
    * @throws ApiException if the request fails on the server
@@ -588,7 +652,6 @@ public class CaseManagementApi {
   /**
    * Get a Stage.
    * 
-   * getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -618,10 +681,9 @@ public class CaseManagementApi {
   /**
    * Get a Step.
    * 
-   * getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param stageId Stage ID (required)
-   * @param stepId Step ID (required)
+   * @param caseId Case identifier. (required)
+   * @param stageId Stage identifier. (required)
+   * @param stepId Step identifier. (required)
    * @return Step
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -633,10 +695,9 @@ public class CaseManagementApi {
   /**
    * Get a Step.
    * 
-   * getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param stageId Stage ID (required)
-   * @param stepId Step ID (required)
+   * @param caseId Case identifier. (required)
+   * @param stageId Stage identifier. (required)
+   * @param stepId Step identifier. (required)
    * @return Step
    * @throws IOException if the request fails to be processed
    */
@@ -658,7 +719,6 @@ public class CaseManagementApi {
   /**
    * Get a Step.
    * 
-   * getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Step
    * @throws ApiException if the request fails on the server
@@ -678,7 +738,6 @@ public class CaseManagementApi {
   /**
    * Get a Step.
    * 
-   * getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -708,9 +767,8 @@ public class CaseManagementApi {
   /**
    * Get a list of Steps.
    * 
-   * getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param stageId Stage ID (required)
+   * @param caseId Case identifier. (required)
+   * @param stageId Stage identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
@@ -725,9 +783,8 @@ public class CaseManagementApi {
   /**
    * Get a list of Steps.
    * 
-   * getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param stageId Stage ID (required)
+   * @param caseId Case identifier. (required)
+   * @param stageId Stage identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
@@ -756,7 +813,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Steps.
    * 
-   * getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return StepListing
    * @throws ApiException if the request fails on the server
@@ -776,7 +832,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Steps.
    * 
-   * getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -806,8 +861,7 @@ public class CaseManagementApi {
   /**
    * Get a list of Stages.
    * 
-   * getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
+   * @param caseId Case identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
@@ -822,8 +876,7 @@ public class CaseManagementApi {
   /**
    * Get a list of Stages.
    * 
-   * getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
+   * @param caseId Case identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
@@ -850,7 +903,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Stages.
    * 
-   * getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return StageListing
    * @throws ApiException if the request fails on the server
@@ -870,7 +922,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Stages.
    * 
-   * getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -900,9 +951,8 @@ public class CaseManagementApi {
   /**
    * Get a Terminate Job for a Case.
    * 
-   * getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param jobId Job ID (required)
+   * @param caseId Case identifier. (required)
+   * @param jobId Terminate Job identifier. (required)
    * @return TerminateJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -914,9 +964,8 @@ public class CaseManagementApi {
   /**
    * Get a Terminate Job for a Case.
    * 
-   * getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param jobId Job ID (required)
+   * @param caseId Case identifier. (required)
+   * @param jobId Terminate Job identifier. (required)
    * @return TerminateJob
    * @throws IOException if the request fails to be processed
    */
@@ -936,7 +985,6 @@ public class CaseManagementApi {
   /**
    * Get a Terminate Job for a Case.
    * 
-   * getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TerminateJob
    * @throws ApiException if the request fails on the server
@@ -956,7 +1004,6 @@ public class CaseManagementApi {
   /**
    * Get a Terminate Job for a Case.
    * 
-   * getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -986,8 +1033,7 @@ public class CaseManagementApi {
   /**
    * Get a Caseplan.
    * 
-   * getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
    * @return Caseplan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -999,8 +1045,7 @@ public class CaseManagementApi {
   /**
    * Get a Caseplan.
    * 
-   * getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
    * @return Caseplan
    * @throws IOException if the request fails to be processed
    */
@@ -1018,7 +1063,6 @@ public class CaseManagementApi {
   /**
    * Get a Caseplan.
    * 
-   * getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Caseplan
    * @throws ApiException if the request fails on the server
@@ -1038,7 +1082,6 @@ public class CaseManagementApi {
   /**
    * Get a Caseplan.
    * 
-   * getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1068,9 +1111,8 @@ public class CaseManagementApi {
   /**
    * Get a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version of the caseplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
    * @return Caseplan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1082,9 +1124,8 @@ public class CaseManagementApi {
   /**
    * Get a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version of the caseplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
    * @return Caseplan
    * @throws IOException if the request fails to be processed
    */
@@ -1104,7 +1145,6 @@ public class CaseManagementApi {
   /**
    * Get a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Caseplan
    * @throws ApiException if the request fails on the server
@@ -1124,7 +1164,6 @@ public class CaseManagementApi {
   /**
    * Get a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1152,11 +1191,10 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get the dataSchemas for a caseplan version.
+   * Get the data schemas for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version of the caseplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
    * @return CaseplanDataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1166,11 +1204,10 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get the dataSchemas for a caseplan version.
+   * Get the data schemas for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version of the caseplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
    * @return CaseplanDataSchemaListing
    * @throws IOException if the request fails to be processed
    */
@@ -1188,9 +1225,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get the dataSchemas for a caseplan version.
+   * Get the data schemas for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseplanDataSchemaListing
    * @throws ApiException if the request fails on the server
@@ -1208,9 +1244,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get the dataSchemas for a caseplan version.
+   * Get the data schemas for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1240,9 +1275,8 @@ public class CaseManagementApi {
   /**
    * Get the intake settings for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version of the caseplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
    * @return IntakeSettingsListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1254,9 +1288,8 @@ public class CaseManagementApi {
   /**
    * Get the intake settings for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version of the caseplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
    * @return IntakeSettingsListing
    * @throws IOException if the request fails to be processed
    */
@@ -1276,7 +1309,6 @@ public class CaseManagementApi {
   /**
    * Get the intake settings for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IntakeSettingsListing
    * @throws ApiException if the request fails on the server
@@ -1296,7 +1328,6 @@ public class CaseManagementApi {
   /**
    * Get the intake settings for a Caseplan version.
    * 
-   * getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1326,11 +1357,10 @@ public class CaseManagementApi {
   /**
    * Get a Stageplan.
    * 
-   * getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version ID (required)
-   * @param stageplanId Stageplan ID (required)
-   * @param expands Which fields to expand. (optional)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param expands Fields to expand. (optional)
    * @return Stageplan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1342,11 +1372,10 @@ public class CaseManagementApi {
   /**
    * Get a Stageplan.
    * 
-   * getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version ID (required)
-   * @param stageplanId Stageplan ID (required)
-   * @param expands Which fields to expand. (optional)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param expands Fields to expand. (optional)
    * @return Stageplan
    * @throws IOException if the request fails to be processed
    */
@@ -1370,7 +1399,6 @@ public class CaseManagementApi {
   /**
    * Get a Stageplan.
    * 
-   * getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Stageplan
    * @throws ApiException if the request fails on the server
@@ -1390,7 +1418,6 @@ public class CaseManagementApi {
   /**
    * Get a Stageplan.
    * 
-   * getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1420,12 +1447,11 @@ public class CaseManagementApi {
   /**
    * Get a Stepplan.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version ID (required)
-   * @param stageplanId Stageplan ID (required)
-   * @param stepplanId Stepplan ID (required)
-   * @param expands Which fields to expand. (optional)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param stepplanId Stepplan identifier. (required)
+   * @param expands Fields to expand. (optional)
    * @return Stepplan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1437,12 +1463,11 @@ public class CaseManagementApi {
   /**
    * Get a Stepplan.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version ID (required)
-   * @param stageplanId Stageplan ID (required)
-   * @param stepplanId Stepplan ID (required)
-   * @param expands Which fields to expand. (optional)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param stepplanId Stepplan identifier. (required)
+   * @param expands Fields to expand. (optional)
    * @return Stepplan
    * @throws IOException if the request fails to be processed
    */
@@ -1468,7 +1493,6 @@ public class CaseManagementApi {
   /**
    * Get a Stepplan.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Stepplan
    * @throws ApiException if the request fails on the server
@@ -1488,7 +1512,6 @@ public class CaseManagementApi {
   /**
    * Get a Stepplan.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1518,14 +1541,13 @@ public class CaseManagementApi {
   /**
    * Get a list of Stepplans.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version ID (required)
-   * @param stageplanId Stageplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param expands Which fields to expand. (optional)
+   * @param expands Fields to expand. (optional)
    * @return StepplanListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1537,14 +1559,13 @@ public class CaseManagementApi {
   /**
    * Get a list of Stepplans.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version ID (required)
-   * @param stageplanId Stageplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param expands Which fields to expand. (optional)
+   * @param expands Fields to expand. (optional)
    * @return StepplanListing
    * @throws IOException if the request fails to be processed
    */
@@ -1574,7 +1595,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Stepplans.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return StepplanListing
    * @throws ApiException if the request fails on the server
@@ -1594,7 +1614,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Stepplans.
    * 
-   * getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1624,13 +1643,12 @@ public class CaseManagementApi {
   /**
    * Get a list of Stageplans.
    * 
-   * getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version ID (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param expands Which fields to expand. (optional)
+   * @param expands Fields to expand. (optional)
    * @return StageplanListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1642,13 +1660,12 @@ public class CaseManagementApi {
   /**
    * Get a list of Stageplans.
    * 
-   * getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param versionId Version ID (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param versionId Caseplan version identifier. (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param expands Which fields to expand. (optional)
+   * @param expands Fields to expand. (optional)
    * @return StageplanListing
    * @throws IOException if the request fails to be processed
    */
@@ -1676,7 +1693,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Stageplans.
    * 
-   * getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return StageplanListing
    * @throws ApiException if the request fails on the server
@@ -1696,7 +1712,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Stageplans.
    * 
-   * getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1726,11 +1741,10 @@ public class CaseManagementApi {
   /**
    * Get a list of Caseplans.
    * 
-   * getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param after The cursor that points to the end of the set of caseplans that has been returned. (optional)
-   * @param pageSize Number of caseplans to return. Maximum of 200. (optional)
-   * @param customerIntentId Filter by Customer Intent. (optional)
-   * @param divisionIds Filter by Divisions. (optional)
+   * @param after Cursor that points to the end of the previously returned set of Caseplans. (optional)
+   * @param pageSize Number of Caseplans to return. Maximum is 200. (optional)
+   * @param customerIntentId Filter by customer intent. (optional)
+   * @param divisionIds Filter by divisions. (optional)
    * @return CaseplanListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1742,11 +1756,10 @@ public class CaseManagementApi {
   /**
    * Get a list of Caseplans.
    * 
-   * getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param after The cursor that points to the end of the set of caseplans that has been returned. (optional)
-   * @param pageSize Number of caseplans to return. Maximum of 200. (optional)
-   * @param customerIntentId Filter by Customer Intent. (optional)
-   * @param divisionIds Filter by Divisions. (optional)
+   * @param after Cursor that points to the end of the previously returned set of Caseplans. (optional)
+   * @param pageSize Number of Caseplans to return. Maximum is 200. (optional)
+   * @param customerIntentId Filter by customer intent. (optional)
+   * @param divisionIds Filter by divisions. (optional)
    * @return CaseplanListing
    * @throws IOException if the request fails to be processed
    */
@@ -1770,7 +1783,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Caseplans.
    * 
-   * getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseplanListing
    * @throws ApiException if the request fails on the server
@@ -1790,7 +1802,6 @@ public class CaseManagementApi {
   /**
    * Get a list of Caseplans.
    * 
-   * getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1818,14 +1829,13 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get a list of cases for provided external contact id.
+   * Get a list of Cases for an External Contact.
    * 
-   * getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param externalContactId External Contact ID (required)
-   * @param after The cursor that points to the end of the set of cases that has been returned. (optional)
-   * @param pageSize Number of cases to return. Maximum of 200. (optional)
-   * @param divisionIds Filter by Divisions (optional)
-   * @param expands Which fields to expand. (optional)
+   * @param externalContactId External contact identifier. (required)
+   * @param after Cursor pointing to the end of the previously returned page of Cases. (optional)
+   * @param pageSize Number of Cases to return (maximum 200). (optional)
+   * @param divisionIds Filter by divisions. (optional)
+   * @param expands Fields to expand. (optional)
    * @return CaseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1835,14 +1845,13 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get a list of cases for provided external contact id.
+   * Get a list of Cases for an External Contact.
    * 
-   * getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param externalContactId External Contact ID (required)
-   * @param after The cursor that points to the end of the set of cases that has been returned. (optional)
-   * @param pageSize Number of cases to return. Maximum of 200. (optional)
-   * @param divisionIds Filter by Divisions (optional)
-   * @param expands Which fields to expand. (optional)
+   * @param externalContactId External contact identifier. (required)
+   * @param after Cursor pointing to the end of the previously returned page of Cases. (optional)
+   * @param pageSize Number of Cases to return (maximum 200). (optional)
+   * @param divisionIds Filter by divisions. (optional)
+   * @param expands Fields to expand. (optional)
    * @return CaseListing
    * @throws IOException if the request fails to be processed
    */
@@ -1866,9 +1875,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get a list of cases for provided external contact id.
+   * Get a list of Cases for an External Contact.
    * 
-   * getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseListing
    * @throws ApiException if the request fails on the server
@@ -1886,9 +1894,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Get a list of cases for provided external contact id.
+   * Get a list of Cases for an External Contact.
    * 
-   * getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1918,9 +1925,8 @@ public class CaseManagementApi {
   /**
    * Get a Case by reference.
    * 
-   * getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param referenceId Reference (required)
-   * @param expands Which fields to expand. (optional)
+   * @param referenceId Case reference. (required)
+   * @param expands Fields to expand. (optional)
    * @return ModelCase
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1932,9 +1938,8 @@ public class CaseManagementApi {
   /**
    * Get a Case by reference.
    * 
-   * getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param referenceId Reference (required)
-   * @param expands Which fields to expand. (optional)
+   * @param referenceId Case reference. (required)
+   * @param expands Fields to expand. (optional)
    * @return ModelCase
    * @throws IOException if the request fails to be processed
    */
@@ -1954,7 +1959,6 @@ public class CaseManagementApi {
   /**
    * Get a Case by reference.
    * 
-   * getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ModelCase
    * @throws ApiException if the request fails on the server
@@ -1974,7 +1978,6 @@ public class CaseManagementApi {
   /**
    * Get a Case by reference.
    * 
-   * getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2002,11 +2005,10 @@ public class CaseManagementApi {
   }
 
   /**
-   * Update date due of a Case.
+   * Update the due date of a Case.
    * 
-   * patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param body Date due (required)
+   * @param caseId Case identifier. (required)
+   * @param body Due date update. (required)
    * @return ModelCase
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2016,11 +2018,10 @@ public class CaseManagementApi {
   }
 
   /**
-   * Update date due of a Case.
+   * Update the due date of a Case.
    * 
-   * patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param body Date due (required)
+   * @param caseId Case identifier. (required)
+   * @param body Due date update. (required)
    * @return ModelCase
    * @throws IOException if the request fails to be processed
    */
@@ -2038,9 +2039,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Update date due of a Case.
+   * Update the due date of a Case.
    * 
-   * patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ModelCase
    * @throws ApiException if the request fails on the server
@@ -2058,9 +2058,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Update date due of a Case.
+   * Update the due date of a Case.
    * 
-   * patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2090,9 +2089,8 @@ public class CaseManagementApi {
   /**
    * Update priority of a Case.
    * 
-   * patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param body Priority (required)
+   * @param caseId Case identifier. (required)
+   * @param body Priority update. (required)
    * @return ModelCase
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2104,9 +2102,8 @@ public class CaseManagementApi {
   /**
    * Update priority of a Case.
    * 
-   * patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param body Priority (required)
+   * @param caseId Case identifier. (required)
+   * @param body Priority update. (required)
    * @return ModelCase
    * @throws IOException if the request fails to be processed
    */
@@ -2126,7 +2123,6 @@ public class CaseManagementApi {
   /**
    * Update priority of a Case.
    * 
-   * patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ModelCase
    * @throws ApiException if the request fails on the server
@@ -2146,7 +2142,6 @@ public class CaseManagementApi {
   /**
    * Update priority of a Case.
    * 
-   * patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2176,9 +2171,8 @@ public class CaseManagementApi {
   /**
    * Update summary of a Case.
    * 
-   * patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param body Summary (required)
+   * @param caseId Case identifier. (required)
+   * @param body Summary update. (required)
    * @return ModelCase
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2190,9 +2184,8 @@ public class CaseManagementApi {
   /**
    * Update summary of a Case.
    * 
-   * patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
-   * @param body Summary (required)
+   * @param caseId Case identifier. (required)
+   * @param body Summary update. (required)
    * @return ModelCase
    * @throws IOException if the request fails to be processed
    */
@@ -2212,7 +2205,6 @@ public class CaseManagementApi {
   /**
    * Update summary of a Case.
    * 
-   * patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ModelCase
    * @throws ApiException if the request fails on the server
@@ -2232,7 +2224,6 @@ public class CaseManagementApi {
   /**
    * Update summary of a Case.
    * 
-   * patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2262,9 +2253,8 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Caseplan.
    * 
-   * patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param body Caseplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param body Caseplan update. (required)
    * @return Caseplan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2276,9 +2266,8 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Caseplan.
    * 
-   * patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param body Caseplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param body Caseplan update. (required)
    * @return Caseplan
    * @throws IOException if the request fails to be processed
    */
@@ -2298,7 +2287,6 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Caseplan.
    * 
-   * patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Caseplan
    * @throws ApiException if the request fails on the server
@@ -2318,7 +2306,6 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Caseplan.
    * 
-   * patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2348,10 +2335,9 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Stageplan.
    * 
-   * patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param stageplanId Stageplan ID (required)
-   * @param body Stageplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param body Stageplan update. (required)
    * @return Stageplan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2363,10 +2349,9 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Stageplan.
    * 
-   * patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param stageplanId Stageplan ID (required)
-   * @param body Stageplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param body Stageplan update. (required)
    * @return Stageplan
    * @throws IOException if the request fails to be processed
    */
@@ -2388,7 +2373,6 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Stageplan.
    * 
-   * patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Stageplan
    * @throws ApiException if the request fails on the server
@@ -2408,7 +2392,6 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Stageplan.
    * 
-   * patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2438,11 +2421,10 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Stepplan.
    * 
-   * patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param stageplanId Stageplan ID (required)
-   * @param stepplanId Stepplan ID (required)
-   * @param body Stepplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param stepplanId Stepplan identifier. (required)
+   * @param body Stepplan update. (required)
    * @return Stepplan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2454,11 +2436,10 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Stepplan.
    * 
-   * patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param stageplanId Stageplan ID (required)
-   * @param stepplanId Stepplan ID (required)
-   * @param body Stepplan (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param stepplanId Stepplan identifier. (required)
+   * @param body Stepplan update. (required)
    * @return Stepplan
    * @throws IOException if the request fails to be processed
    */
@@ -2482,7 +2463,6 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Stepplan.
    * 
-   * patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Stepplan
    * @throws ApiException if the request fails on the server
@@ -2502,7 +2482,6 @@ public class CaseManagementApi {
   /**
    * Update the attributes of a Stepplan.
    * 
-   * patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2530,11 +2509,10 @@ public class CaseManagementApi {
   }
 
   /**
-   * Create a case association.
+   * Create a Case association.
    * 
-   * postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID. (required)
-   * @param body Case Association (optional)
+   * @param caseId Case identifier. (required)
+   * @param body Case association create request. (required)
    * @return CaseAssociation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2544,11 +2522,10 @@ public class CaseManagementApi {
   }
 
   /**
-   * Create a case association.
+   * Create a Case association.
    * 
-   * postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID. (required)
-   * @param body Case Association (optional)
+   * @param caseId Case identifier. (required)
+   * @param body Case association create request. (required)
    * @return CaseAssociation
    * @throws IOException if the request fails to be processed
    */
@@ -2566,9 +2543,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Create a case association.
+   * Create a Case association.
    * 
-   * postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseAssociation
    * @throws ApiException if the request fails on the server
@@ -2586,9 +2562,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Create a case association.
+   * Create a Case association.
    * 
-   * postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2618,8 +2593,7 @@ public class CaseManagementApi {
   /**
    * Create a Terminate Job for a Case.
    * 
-   * postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
+   * @param caseId Case identifier. (required)
    * @return TerminateJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2631,8 +2605,7 @@ public class CaseManagementApi {
   /**
    * Create a Terminate Job for a Case.
    * 
-   * postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseId Case ID (required)
+   * @param caseId Case identifier. (required)
    * @return TerminateJob
    * @throws IOException if the request fails to be processed
    */
@@ -2650,7 +2623,6 @@ public class CaseManagementApi {
   /**
    * Create a Terminate Job for a Case.
    * 
-   * postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TerminateJob
    * @throws ApiException if the request fails on the server
@@ -2670,7 +2642,6 @@ public class CaseManagementApi {
   /**
    * Create a Terminate Job for a Case.
    * 
-   * postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2698,10 +2669,91 @@ public class CaseManagementApi {
   }
 
   /**
+   * Add a data schema to a draft Caseplan.
+   * 
+   * @param caseplanId Caseplan identifier. (required)
+   * @param body Data schema reference. (required)
+   * @return CaseplanDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseplanDataSchema postCasemanagementCaseplanDataschemas(String caseplanId, CaseplanDataSchemaRequest body) throws IOException, ApiException {
+    return  postCasemanagementCaseplanDataschemas(createPostCasemanagementCaseplanDataschemasRequest(caseplanId, body));
+  }
+
+  /**
+   * Add a data schema to a draft Caseplan.
+   * 
+   * @param caseplanId Caseplan identifier. (required)
+   * @param body Data schema reference. (required)
+   * @return CaseplanDataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseplanDataSchema> postCasemanagementCaseplanDataschemasWithHttpInfo(String caseplanId, CaseplanDataSchemaRequest body) throws IOException {
+    return postCasemanagementCaseplanDataschemas(createPostCasemanagementCaseplanDataschemasRequest(caseplanId, body).withHttpInfo());
+  }
+
+  private PostCasemanagementCaseplanDataschemasRequest createPostCasemanagementCaseplanDataschemasRequest(String caseplanId, CaseplanDataSchemaRequest body) {
+    return PostCasemanagementCaseplanDataschemasRequest.builder()
+            .withCaseplanId(caseplanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add a data schema to a draft Caseplan.
+   * 
+   * @param request The request object
+   * @return CaseplanDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseplanDataSchema postCasemanagementCaseplanDataschemas(PostCasemanagementCaseplanDataschemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CaseplanDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CaseplanDataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a data schema to a draft Caseplan.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseplanDataSchema> postCasemanagementCaseplanDataschemas(ApiRequest<CaseplanDataSchemaRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CaseplanDataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseplanDataSchema> response = (ApiResponse<CaseplanDataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseplanDataSchema> response = (ApiResponse<CaseplanDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Publish Caseplan.
    * 
-   * postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
    * @return Caseplan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2713,8 +2765,7 @@ public class CaseManagementApi {
   /**
    * Publish Caseplan.
    * 
-   * postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
    * @return Caseplan
    * @throws IOException if the request fails to be processed
    */
@@ -2732,7 +2783,6 @@ public class CaseManagementApi {
   /**
    * Publish Caseplan.
    * 
-   * postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Caseplan
    * @throws ApiException if the request fails on the server
@@ -2752,7 +2802,6 @@ public class CaseManagementApi {
   /**
    * Publish Caseplan.
    * 
-   * postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2782,8 +2831,7 @@ public class CaseManagementApi {
   /**
    * Create Caseplan version.
    * 
-   * postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
    * @return Caseplan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2795,8 +2843,7 @@ public class CaseManagementApi {
   /**
    * Create Caseplan version.
    * 
-   * postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
+   * @param caseplanId Caseplan identifier. (required)
    * @return Caseplan
    * @throws IOException if the request fails to be processed
    */
@@ -2814,7 +2861,6 @@ public class CaseManagementApi {
   /**
    * Create Caseplan version.
    * 
-   * postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Caseplan
    * @throws ApiException if the request fails on the server
@@ -2834,7 +2880,6 @@ public class CaseManagementApi {
   /**
    * Create Caseplan version.
    * 
-   * postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2864,8 +2909,7 @@ public class CaseManagementApi {
   /**
    * Create a Caseplan.
    * 
-   * postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Caseplan (required)
+   * @param body Caseplan create request. (required)
    * @return CaseplanCreateResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2877,8 +2921,7 @@ public class CaseManagementApi {
   /**
    * Create a Caseplan.
    * 
-   * postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Caseplan (required)
+   * @param body Caseplan create request. (required)
    * @return CaseplanCreateResponse
    * @throws IOException if the request fails to be processed
    */
@@ -2896,7 +2939,6 @@ public class CaseManagementApi {
   /**
    * Create a Caseplan.
    * 
-   * postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseplanCreateResponse
    * @throws ApiException if the request fails on the server
@@ -2916,7 +2958,6 @@ public class CaseManagementApi {
   /**
    * Create a Caseplan.
    * 
-   * postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2944,10 +2985,9 @@ public class CaseManagementApi {
   }
 
   /**
-   * Query for caseplans
+   * Query for Caseplans.
    * 
-   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body CaseplanQueryRequest (required)
+   * @param body Caseplan query request. (required)
    * @return CaseplanQueryEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2957,10 +2997,9 @@ public class CaseManagementApi {
   }
 
   /**
-   * Query for caseplans
+   * Query for Caseplans.
    * 
-   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body CaseplanQueryRequest (required)
+   * @param body Caseplan query request. (required)
    * @return CaseplanQueryEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -2976,9 +3015,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Query for caseplans
+   * Query for Caseplans.
    * 
-   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseplanQueryEntityListing
    * @throws ApiException if the request fails on the server
@@ -2996,9 +3034,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Query for caseplans
+   * Query for Caseplans.
    * 
-   * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3028,8 +3065,7 @@ public class CaseManagementApi {
   /**
    * Create a Case.
    * 
-   * postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Case (required)
+   * @param body Case create request. (required)
    * @return ModelCase
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3041,8 +3077,7 @@ public class CaseManagementApi {
   /**
    * Create a Case.
    * 
-   * postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Case (required)
+   * @param body Case create request. (required)
    * @return ModelCase
    * @throws IOException if the request fails to be processed
    */
@@ -3060,7 +3095,6 @@ public class CaseManagementApi {
   /**
    * Create a Case.
    * 
-   * postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ModelCase
    * @throws ApiException if the request fails on the server
@@ -3080,7 +3114,6 @@ public class CaseManagementApi {
   /**
    * Create a Case.
    * 
-   * postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3108,10 +3141,9 @@ public class CaseManagementApi {
   }
 
   /**
-   * Query for case associations
+   * Query for Case associations by interaction.
    * 
-   * postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Case Association (optional)
+   * @param body Case association query request. (required)
    * @return CaseAssociationQueryEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3121,10 +3153,9 @@ public class CaseManagementApi {
   }
 
   /**
-   * Query for case associations
+   * Query for Case associations by interaction.
    * 
-   * postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Case Association (optional)
+   * @param body Case association query request. (required)
    * @return CaseAssociationQueryEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -3140,9 +3171,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Query for case associations
+   * Query for Case associations by interaction.
    * 
-   * postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseAssociationQueryEntityListing
    * @throws ApiException if the request fails on the server
@@ -3160,9 +3190,8 @@ public class CaseManagementApi {
   }
 
   /**
-   * Query for case associations
+   * Query for Case associations by interaction.
    * 
-   * postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3190,11 +3219,96 @@ public class CaseManagementApi {
   }
 
   /**
+   * Update a data schema on a draft Caseplan.
+   * 
+   * @param caseplanId Caseplan identifier. (required)
+   * @param schemaKeyName Schema key (for example \"default\"). (required)
+   * @param body Data schema reference. (required)
+   * @return CaseplanDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseplanDataSchema putCasemanagementCaseplanDataschema(String caseplanId, String schemaKeyName, CaseplanDataSchemaRequest body) throws IOException, ApiException {
+    return  putCasemanagementCaseplanDataschema(createPutCasemanagementCaseplanDataschemaRequest(caseplanId, schemaKeyName, body));
+  }
+
+  /**
+   * Update a data schema on a draft Caseplan.
+   * 
+   * @param caseplanId Caseplan identifier. (required)
+   * @param schemaKeyName Schema key (for example \"default\"). (required)
+   * @param body Data schema reference. (required)
+   * @return CaseplanDataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseplanDataSchema> putCasemanagementCaseplanDataschemaWithHttpInfo(String caseplanId, String schemaKeyName, CaseplanDataSchemaRequest body) throws IOException {
+    return putCasemanagementCaseplanDataschema(createPutCasemanagementCaseplanDataschemaRequest(caseplanId, schemaKeyName, body).withHttpInfo());
+  }
+
+  private PutCasemanagementCaseplanDataschemaRequest createPutCasemanagementCaseplanDataschemaRequest(String caseplanId, String schemaKeyName, CaseplanDataSchemaRequest body) {
+    return PutCasemanagementCaseplanDataschemaRequest.builder()
+            .withCaseplanId(caseplanId)
+
+            .withSchemaKeyName(schemaKeyName)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a data schema on a draft Caseplan.
+   * 
+   * @param request The request object
+   * @return CaseplanDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseplanDataSchema putCasemanagementCaseplanDataschema(PutCasemanagementCaseplanDataschemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CaseplanDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CaseplanDataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a data schema on a draft Caseplan.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseplanDataSchema> putCasemanagementCaseplanDataschema(ApiRequest<CaseplanDataSchemaRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CaseplanDataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseplanDataSchema> response = (ApiResponse<CaseplanDataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseplanDataSchema> response = (ApiResponse<CaseplanDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the intake settings for a Caseplan.
    * 
-   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param body Intake Settings (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param body Intake settings update. (required)
    * @return IntakeSettingsListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3206,9 +3320,8 @@ public class CaseManagementApi {
   /**
    * Update the intake settings for a Caseplan.
    * 
-   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param caseplanId Caseplan ID (required)
-   * @param body Intake Settings (required)
+   * @param caseplanId Caseplan identifier. (required)
+   * @param body Intake settings update. (required)
    * @return IntakeSettingsListing
    * @throws IOException if the request fails to be processed
    */
@@ -3228,7 +3341,6 @@ public class CaseManagementApi {
   /**
    * Update the intake settings for a Caseplan.
    * 
-   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IntakeSettingsListing
    * @throws ApiException if the request fails on the server
@@ -3248,7 +3360,6 @@ public class CaseManagementApi {
   /**
    * Update the intake settings for a Caseplan.
    * 
-   * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

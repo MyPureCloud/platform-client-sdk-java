@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeConversationTurn;
 import com.mypurecloud.sdk.v2.model.KnowledgeGenerationSetting;
 import com.mypurecloud.sdk.v2.model.V3SourceRef;
+import com.mypurecloud.sdk.v2.model.V3SourceTagFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class KnowledgeSearchPreviewRequest  implements Serializable {
   private KnowledgeGenerationSetting generationSetting = null;
   private Boolean stateful = null;
   private List<KnowledgeConversationTurn> conversationTurns = null;
+  private V3SourceTagFilter filter = null;
 
   public KnowledgeSearchPreviewRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -138,6 +140,24 @@ public class KnowledgeSearchPreviewRequest  implements Serializable {
   }
 
 
+  /**
+   * Composite tag filter applied to the search preview.
+   **/
+  public KnowledgeSearchPreviewRequest filter(V3SourceTagFilter filter) {
+    this.filter = filter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Composite tag filter applied to the search preview.")
+  @JsonProperty("filter")
+  public V3SourceTagFilter getFilter() {
+    return filter;
+  }
+  public void setFilter(V3SourceTagFilter filter) {
+    this.filter = filter;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -152,12 +172,13 @@ public class KnowledgeSearchPreviewRequest  implements Serializable {
             Objects.equals(this.sources, knowledgeSearchPreviewRequest.sources) &&
             Objects.equals(this.generationSetting, knowledgeSearchPreviewRequest.generationSetting) &&
             Objects.equals(this.stateful, knowledgeSearchPreviewRequest.stateful) &&
-            Objects.equals(this.conversationTurns, knowledgeSearchPreviewRequest.conversationTurns);
+            Objects.equals(this.conversationTurns, knowledgeSearchPreviewRequest.conversationTurns) &&
+            Objects.equals(this.filter, knowledgeSearchPreviewRequest.filter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, sources, generationSetting, stateful, conversationTurns);
+    return Objects.hash(query, sources, generationSetting, stateful, conversationTurns, filter);
   }
 
   @Override
@@ -170,6 +191,7 @@ public class KnowledgeSearchPreviewRequest  implements Serializable {
     sb.append("    generationSetting: ").append(toIndentedString(generationSetting)).append("\n");
     sb.append("    stateful: ").append(toIndentedString(stateful)).append("\n");
     sb.append("    conversationTurns: ").append(toIndentedString(conversationTurns)).append("\n");
+    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("}");
     return sb.toString();
   }

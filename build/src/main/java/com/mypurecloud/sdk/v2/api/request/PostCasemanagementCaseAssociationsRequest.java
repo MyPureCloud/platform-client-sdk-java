@@ -33,7 +33,9 @@ import com.mypurecloud.sdk.v2.model.CaseSummaryUpdate;
 import com.mypurecloud.sdk.v2.model.Caseplan;
 import com.mypurecloud.sdk.v2.model.CaseplanCreate;
 import com.mypurecloud.sdk.v2.model.CaseplanCreateResponse;
+import com.mypurecloud.sdk.v2.model.CaseplanDataSchema;
 import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaListing;
+import com.mypurecloud.sdk.v2.model.CaseplanDataSchemaRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
@@ -110,6 +112,11 @@ public class PostCasemanagementCaseAssociationsRequest {
             throw new IllegalStateException("Missing the required parameter 'caseId' when building request for PostCasemanagementCaseAssociationsRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostCasemanagementCaseAssociationsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/casemanagement/cases/{caseId}/associations")
                 .withPathParameter("caseId", caseId)
@@ -128,9 +135,9 @@ public class PostCasemanagementCaseAssociationsRequest {
 	}
 
 
-	public static Builder builder(String caseId) {
+	public static Builder builder(String caseId, CaseAssociationCreate body) {
 	    return new Builder()
-	            .withRequiredParams(caseId);
+	            .withRequiredParams(caseId, body);
 	}
 
 
@@ -154,8 +161,9 @@ public class PostCasemanagementCaseAssociationsRequest {
 
 
 
-		public Builder withRequiredParams(String caseId) {
+		public Builder withRequiredParams(String caseId, CaseAssociationCreate body) {
 			request.setCaseId(caseId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -166,6 +174,11 @@ public class PostCasemanagementCaseAssociationsRequest {
             // verify the required parameter 'caseId' is set
             if (request.caseId == null) {
                 throw new IllegalStateException("Missing the required parameter 'caseId' when building request for PostCasemanagementCaseAssociationsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostCasemanagementCaseAssociationsRequest.");
             }
             
 			return request;

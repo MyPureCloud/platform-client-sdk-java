@@ -16,7 +16,7 @@
 | **version** | **Integer** | The version of the Stage. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The Status of the Stage. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-| **_case** | [**CaseReference**](CaseReference) | The parent case of the Stage. |  [optional] |
+| **_case** | [**CaseReference**](CaseReference) | The parent Case of the Stage. |  [optional] |
 
 
 ## Enum: StatusEnum
@@ -33,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

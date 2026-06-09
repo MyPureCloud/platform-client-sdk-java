@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeGenerationSetting;
 import com.mypurecloud.sdk.v2.model.V3SourceRef;
+import com.mypurecloud.sdk.v2.model.V3SourceTagFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class KnowledgeSettingsRequest  implements Serializable {
   private List<V3SourceRef> sources = null;
   private KnowledgeGenerationSetting generationSetting = null;
   private Boolean stateful = null;
+  private V3SourceTagFilter filter = null;
 
   public KnowledgeSettingsRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -135,6 +137,24 @@ public class KnowledgeSettingsRequest  implements Serializable {
   }
 
 
+  /**
+   * Composite tag filter of search results.
+   **/
+  public KnowledgeSettingsRequest filter(V3SourceTagFilter filter) {
+    this.filter = filter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Composite tag filter of search results.")
+  @JsonProperty("filter")
+  public V3SourceTagFilter getFilter() {
+    return filter;
+  }
+  public void setFilter(V3SourceTagFilter filter) {
+    this.filter = filter;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -149,12 +169,13 @@ public class KnowledgeSettingsRequest  implements Serializable {
             Objects.equals(this.description, knowledgeSettingsRequest.description) &&
             Objects.equals(this.sources, knowledgeSettingsRequest.sources) &&
             Objects.equals(this.generationSetting, knowledgeSettingsRequest.generationSetting) &&
-            Objects.equals(this.stateful, knowledgeSettingsRequest.stateful);
+            Objects.equals(this.stateful, knowledgeSettingsRequest.stateful) &&
+            Objects.equals(this.filter, knowledgeSettingsRequest.filter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, sources, generationSetting, stateful);
+    return Objects.hash(name, description, sources, generationSetting, stateful, filter);
   }
 
   @Override
@@ -167,6 +188,7 @@ public class KnowledgeSettingsRequest  implements Serializable {
     sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
     sb.append("    generationSetting: ").append(toIndentedString(generationSetting)).append("\n");
     sb.append("    stateful: ").append(toIndentedString(stateful)).append("\n");
+    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("}");
     return sb.toString();
   }

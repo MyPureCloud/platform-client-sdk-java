@@ -16,6 +16,7 @@ com/mypurecloud/sdk/v2/model/FlowAggregationQuery$MetricsEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/WfmHistoricalAdherenceBulkUserDayMetrics.class
 com/mypurecloud/sdk/v2/api/ContentManagementApiAsync$8.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$153.class
+com/mypurecloud/sdk/v2/model/OrganizationLinkResponse$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationsRequest.class
 com/mypurecloud/sdk/v2/api/MessagingApiAsync$27.class
 com/mypurecloud/sdk/v2/model/CallbackMediaParticipant$FlaggedReasonEnumDeserializer.class
@@ -97,6 +98,7 @@ com/mypurecloud/sdk/v2/model/OperationResponse$TypeEnum.class
 com/mypurecloud/sdk/v2/model/EmailThreadingSettings.class
 com/mypurecloud/sdk/v2/api/AlertingApiAsync$27.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$205.class
+com/mypurecloud/sdk/v2/model/DecisionTableImportJob$ImportModeEnum.class
 com/mypurecloud/sdk/v2/model/ConversationActivityQueryPredicate$TypeEnum.class
 com/mypurecloud/sdk/v2/api/request/GetLearningScheduleslotsJobRequest$Builder.class
 com/mypurecloud/sdk/v2/model/DID$OwnerTypeEnumDeserializer.class
@@ -172,6 +174,7 @@ com/mypurecloud/sdk/v2/api/JourneyApiAsync$350.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitTimeoffplansRequest$Builder.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$174.class
 com/mypurecloud/sdk/v2/model/AutoSearchConfig$TypeEnum.class
+com/mypurecloud/sdk/v2/model/DecisionTableJobValidationError.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundContactlistTimezonemappingpreviewRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AIStudioApiAsync$25.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$594.class
@@ -197,6 +200,7 @@ com/mypurecloud/sdk/v2/model/DialerCampaignScheduleConfigChangeRecurrenceRange$T
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsFlowsAggregatesQueryRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportJobsRequest$expandValues.class
 com/mypurecloud/sdk/v2/api/request/DeleteOutboundDnclistPhonenumbersRequest$Builder.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$147.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$365.class
 com/mypurecloud/sdk/v2/model/IVRDivisionViewEntityListing.class
 com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest$Builder.class
@@ -368,6 +372,7 @@ com/mypurecloud/sdk/v2/api/request/PostScimV2UsersRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$157.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$138.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$33.class
+com/mypurecloud/sdk/v2/model/DecisionTableImportJobListing.class
 com/mypurecloud/sdk/v2/api/OrganizationApiAsync$5.class
 com/mypurecloud/sdk/v2/model/ChatMessageResponse.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$352.class
@@ -473,6 +478,7 @@ com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$16.class
 com/mypurecloud/sdk/v2/api/request/PutFlowsInstancesSettingsLoglevelsDefaultRequest.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$190.class
 com/mypurecloud/sdk/v2/model/OutboundRouteBase$StateEnum.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PostOutboundCampaignStartRequest$1.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$141.class
 com/mypurecloud/sdk/v2/model/WfmBuShortTermForecastGenerateProgressTopicBuForecastModification$MetricEnumDeserializer.class
@@ -596,6 +602,7 @@ com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$63.class
 com/mypurecloud/sdk/v2/api/AgentAssistantsApiAsync$25.class
 com/mypurecloud/sdk/v2/model/ReportingExportJobRequest$CsvDelimiterEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/PostFlowsDatatablesRequest$Builder.class
+com/mypurecloud/sdk/v2/model/BulkDeleteDecisionTableRowsRequest.class
 com/mypurecloud/sdk/v2/api/request/GetMobiledeviceRequest$Builder.class
 com/mypurecloud/sdk/v2/model/ConversationChecklistTopicAgentChecklistRuntimeEventBody$DirectionEnum.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$393.class
@@ -811,6 +818,7 @@ com/mypurecloud/sdk/v2/model/ViewFilter$BlockedReasonsEnum.class
 com/mypurecloud/sdk/v2/api/ResponseManagementApiAsync$62.class
 com/mypurecloud/sdk/v2/model/KnowledgeDocumentView$QueryTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$39.class
+com/mypurecloud/sdk/v2/api/CaseManagementApi$78.class
 com/mypurecloud/sdk/v2/api/request/PutAuthorizationRoleUsersAddRequest.class
 com/mypurecloud/sdk/v2/api/request/GetLearningModulePreviewRequest$1.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$520.class
@@ -819,6 +827,7 @@ com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesAlertablepresencesR
 com/mypurecloud/sdk/v2/model/ContentFileResponse.class
 com/mypurecloud/sdk/v2/model/CapacityPlanStaffingRequirementResult.class
 com/mypurecloud/sdk/v2/api/VoicemailApiAsync$81.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableImportRequest.class
 com/mypurecloud/sdk/v2/api/request/DeleteRoutingUtilizationLabelRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$48.class
 com/mypurecloud/sdk/v2/model/AgentUtilizationAggregateQueryPredicate$OperatorEnumDeserializer.class
@@ -914,6 +923,7 @@ com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$306.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$94.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$179.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$503.class
+com/mypurecloud/sdk/v2/api/CaseManagementApi$77.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$226.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$497.class
 com/mypurecloud/sdk/v2/api/EventsApiAsync.class
@@ -1281,6 +1291,7 @@ com/mypurecloud/sdk/v2/model/BenefitAssessment$StateEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetScimV2ResourcetypeRequest.class
 com/mypurecloud/sdk/v2/model/FreeTrialLimit.class
 com/mypurecloud/sdk/v2/api/WebDeploymentsApi$10.class
+com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplanDataschemasRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementManagementunitWorkplanrotationsRequest$expandValues.class
 com/mypurecloud/sdk/v2/api/TaskManagementApi$87.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementNotificationsUpdateRequest$Builder.class
@@ -1389,6 +1400,7 @@ com/mypurecloud/sdk/v2/api/EmployeeEngagementApiAsync$20.class
 com/mypurecloud/sdk/v2/model/UsersRulesRule$TypeEnum.class
 com/mypurecloud/sdk/v2/model/CustomerIntentAssignmentRequest$SourceTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$98.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$148.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$258.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$28.class
 com/mypurecloud/sdk/v2/model/ConversationSummaryReason.class
@@ -1513,6 +1525,7 @@ com/mypurecloud/sdk/v2/api/request/DeleteBusinessrulesDecisiontableRequest.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$98.class
 com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetUsageQueryExecutionIdResultsRequest.class
+com/mypurecloud/sdk/v2/api/request/GetRoutingEmailSettingRequest.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$122.class
 com/mypurecloud/sdk/v2/model/RecordingMetadata$ArchiveMediumEnum.class
 com/mypurecloud/sdk/v2/api/ProcessAutomationApiAsync$28.class
@@ -1617,6 +1630,7 @@ com/mypurecloud/sdk/v2/api/request/GetCoachingScheduleslotsJobRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAdherenceHistoricalBulkRequest$Builder.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$328.class
 com/mypurecloud/sdk/v2/api/request/GetOrganizationsLimitsChangerequestsRequest$Builder.class
+com/mypurecloud/sdk/v2/api/CaseManagementApi$76.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$777.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$950.class
 com/mypurecloud/sdk/v2/model/TrunkMetricsRegisters.class
@@ -1658,6 +1672,7 @@ com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsInstagra
 com/mypurecloud/sdk/v2/api/request/PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundContactlistsDivisionviewsRequest.class
 com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicDivisionEntityRef.class
+com/mypurecloud/sdk/v2/model/NumberRouting$StatusEnum.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$138.class
 com/mypurecloud/sdk/v2/model/WfmAgentAdherenceExplanationChangedAgentTopicUserReference.class
 com/mypurecloud/sdk/v2/api/request/DeleteConversationParticipantCodeRequest$Builder.class
@@ -1667,6 +1682,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$1115.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$347.class
 com/mypurecloud/sdk/v2/api/AuthorizationApi$89.class
 com/mypurecloud/sdk/v2/api/RecordingApi$17.class
+com/mypurecloud/sdk/v2/model/ScheduleVisibilitySettingsRequest.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$417.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$95.class
 com/mypurecloud/sdk/v2/model/CustomerInteractionCenter$SsoBindingEnumDeserializer.class
@@ -1697,6 +1713,7 @@ com/mypurecloud/sdk/v2/api/request/PostConversationsMessageParticipantReplaceReq
 com/mypurecloud/sdk/v2/api/UsersApi$58.class
 com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionTemplateRequest$Builder.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$154.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableExportRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$496.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsSummariesSettingRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetAuthorizationPoliciesTargetRequest$Builder.class
@@ -1858,7 +1875,6 @@ com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$32.class
 com/mypurecloud/sdk/v2/model/EvaluationSearchAggregationDTO.class
 com/mypurecloud/sdk/v2/api/request/DeleteQualityFormsSurveyRequest$1.class
 com/mypurecloud/sdk/v2/api/AuditApiAsync$27.class
-com/mypurecloud/sdk/v2/model/ExportListing.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$868.class
 com/mypurecloud/sdk/v2/model/ActivityPlanAbandonRateImpactOverride.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$136.class
@@ -1874,6 +1890,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApi$157.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingAvailablemediatypesRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$64.class
 com/mypurecloud/sdk/v2/model/PlanningGroupRequirementOutput.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableImportsRequest.class
 com/mypurecloud/sdk/v2/api/GroupsApiAsync$42.class
 com/mypurecloud/sdk/v2/model/AnalyticsConversationSegment$SegmentTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$210.class
@@ -2071,6 +2088,7 @@ com/mypurecloud/sdk/v2/api/SearchApiAsync$34.class
 com/mypurecloud/sdk/v2/model/PlanningGroupToStaffingGroupsResponse.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$162.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsCallbackParticipantCommunicationWrapupRequest$1.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$146.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$26.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$211.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$261.class
@@ -2081,6 +2099,7 @@ com/mypurecloud/sdk/v2/model/ArchitectFlowNotificationArchitectOperation$ActionS
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$140.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesessionsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$329.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyNumbersRoutingResetRequest$Builder.class
 com/mypurecloud/sdk/v2/api/RoutingApi$156.class
 com/mypurecloud/sdk/v2/api/request/PostContentmanagementWorkspacesRequest.class
 com/mypurecloud/sdk/v2/model/Customer.class
@@ -2115,6 +2134,7 @@ com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApiAsync$84.class
 com/mypurecloud/sdk/v2/api/ScriptsApi$14.class
 com/mypurecloud/sdk/v2/connector/apache/ApacheHttpClientConnectorProvider.class
 com/mypurecloud/sdk/v2/model/LearningAssignmentAggregateQueryResponseStats.class
+com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseplanDataschemaRequest$1.class
 com/mypurecloud/sdk/v2/api/UsersApi$167.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$355.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$260.class
@@ -2184,6 +2204,7 @@ com/mypurecloud/sdk/v2/api/ArchitectApi$137.class
 com/mypurecloud/sdk/v2/api/request/PatchConversationsCobrowsesessionRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetAuthorizationPoliciesTargetsRequest$1.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$571.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$109.class
 com/mypurecloud/sdk/v2/model/TtsVoiceEntity.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$171.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApiAsync$47.class
@@ -2264,6 +2285,7 @@ com/mypurecloud/sdk/v2/model/SocialMediaMessageData$MessengerTypeEnumDeserialize
 com/mypurecloud/sdk/v2/api/request/GetWebchatGuestConversationMediarequestRequest.class
 com/mypurecloud/sdk/v2/api/request/PostGamificationContestsRequest$1.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$5.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$145.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$673.class
 com/mypurecloud/sdk/v2/api/IntentsApiAsync$35.class
 com/mypurecloud/sdk/v2/api/CaseManagementApi$23.class
@@ -2371,6 +2393,7 @@ com/mypurecloud/sdk/v2/model/JourneySessionEventsNotificationConversationChannel
 com/mypurecloud/sdk/v2/model/CreateCallResponse.class
 com/mypurecloud/sdk/v2/model/FlowHealthIntentInfo.class
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsAgentsStatusQueryRequest.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$149.class
 com/mypurecloud/sdk/v2/api/JourneyApi$2.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignsAllRequest$1.class
 com/mypurecloud/sdk/v2/api/AgentAssistantsApiAsync$3.class
@@ -2867,6 +2890,7 @@ com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeVersionsRequest$1.cl
 com/mypurecloud/sdk/v2/api/request/PostWebchatDeploymentsRequest$1.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$15.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$265.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$149.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$828.class
 com/mypurecloud/sdk/v2/api/request/DeleteSpeechandtextanalyticsTopicRequest$1.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$259.class
@@ -3227,6 +3251,7 @@ com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsReprocessingJobInter
 com/mypurecloud/sdk/v2/model/RecordingEncryptionConfiguration.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$255.class
 com/mypurecloud/sdk/v2/api/AgentAssistantsApiAsync$78.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$130.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$49.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$10.class
 com/mypurecloud/sdk/v2/model/WorkitemOnAttributeChangeCondition$AttributeEnumDeserializer.class
@@ -3487,6 +3512,7 @@ com/mypurecloud/sdk/v2/model/AnalyticsProperty$PropertyTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/GetGroupIndividualsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AlertingApiAsync$25.class
 com/mypurecloud/sdk/v2/api/request/PutQualityFormsSurveyRequest$1.class
+com/mypurecloud/sdk/v2/api/request/DeleteBusinessrulesDecisiontableExportRequest$Builder.class
 com/mypurecloud/sdk/v2/model/PredictorModelBrief$MediaTypeEnum.class
 com/mypurecloud/sdk/v2/api/OrganizationApiAsync$7.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundImporttemplateRequest$Builder.class
@@ -3613,8 +3639,8 @@ com/mypurecloud/sdk/v2/model/PersistentConnectionChangeTopicPersistentConnection
 com/mypurecloud/sdk/v2/api/ConversationsApi$355.class
 com/mypurecloud/sdk/v2/api/MessagingApiAsync$11.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$430.class
-com/mypurecloud/sdk/v2/model/V2FlowExecutionDataFlowidTopicInvokingContextInfo.class
 com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopicConversationDivisionMembership.class
+com/mypurecloud/sdk/v2/model/V2FlowExecutionDataFlowidTopicInvokingContextInfo.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$211.class
 com/mypurecloud/sdk/v2/api/request/PostExternalcontactsImportCsvJobsRequest$Builder.class
 com/mypurecloud/sdk/v2/model/BulkContactsEnrichResponse.class
@@ -3730,6 +3756,7 @@ com/mypurecloud/sdk/v2/api/RoutingApiAsync$367.class
 com/mypurecloud/sdk/v2/api/request/PatchUsersBulkRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$310.class
 com/mypurecloud/sdk/v2/model/ApiUsageQueryResult$QueryStatusEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableExportRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PatchLearningModuleUserAssignmentsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/VoicemailApi$12.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$860.class
@@ -3913,6 +3940,7 @@ com/mypurecloud/sdk/v2/api/request/DeleteRoutingSkillexpressionsRequest$1.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApi$1.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsCustomattributesSchemaVersionRequest.class
 com/mypurecloud/sdk/v2/model/BuAgentScheduleActivity.class
+com/mypurecloud/sdk/v2/api/request/DeleteBusinessrulesDecisiontableImportRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$120.class
 com/mypurecloud/sdk/v2/model/ConversationMessagingFromRecipient$IdTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/BulkJobAddResponse.class
@@ -4162,6 +4190,7 @@ com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitWeekShi
 com/mypurecloud/sdk/v2/api/LearningApi$53.class
 com/mypurecloud/sdk/v2/api/request/GetWebchatDeploymentsRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactIdentifiersRequest.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$148.class
 com/mypurecloud/sdk/v2/model/LogCaptureUserConfiguration.class
 com/mypurecloud/sdk/v2/api/request/PutOutboundAttemptlimitRequest.class
 com/mypurecloud/sdk/v2/api/AnalyticsApi$8.class
@@ -4352,6 +4381,7 @@ com/mypurecloud/sdk/v2/api/UsersApiAsync$194.class
 com/mypurecloud/sdk/v2/model/CaseCreate.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApi$12.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApi$36.class
+com/mypurecloud/sdk/v2/api/RoutingApi$281.class
 com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueUserRequest$1.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$157.class
 com/mypurecloud/sdk/v2/model/ConversationChannel.class
@@ -4579,12 +4609,14 @@ com/mypurecloud/sdk/v2/api/ConversationsApi$440.class
 com/mypurecloud/sdk/v2/api/RecordingApi$14.class
 com/mypurecloud/sdk/v2/api/AgentAssistantsApiAsync$26.class
 com/mypurecloud/sdk/v2/api/SettingsApi$9.class
+com/mypurecloud/sdk/v2/model/DecisionTableImportJob$StatusEnum.class
 com/mypurecloud/sdk/v2/api/request/GetJourneyExternaleventsSchemasCoretypesRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/DeleteArchitectGrammarLanguageFilesDtmfRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$916.class
 com/mypurecloud/sdk/v2/api/request/GetProcessautomationScheduledtriggersRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$48.class
 com/mypurecloud/sdk/v2/model/ConversationChatEventTopicChatMediaParticipant$DisconnectTypeEnum.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyOrganizationLinkRegionsRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetWebchatGuestConversationMembersRequest.class
 com/mypurecloud/sdk/v2/api/AgentAssistantsApiAsync$79.class
 com/mypurecloud/sdk/v2/api/PresenceApiAsync$52.class
@@ -5049,6 +5081,7 @@ com/mypurecloud/sdk/v2/api/request/GetUsageAggregatesQueryJobRequest$1.class
 com/mypurecloud/sdk/v2/api/MessagingApiAsync$23.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$2.class
 com/mypurecloud/sdk/v2/api/request/GetScriptsPublishedScriptIdPageRequest$Builder.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyOrganizationLinkRegionsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$48.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$298.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$44.class
@@ -5084,6 +5117,7 @@ com/mypurecloud/sdk/v2/model/ConversationSummary$StatusEnum.class
 com/mypurecloud/sdk/v2/api/request/PostAssistantVariationsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$548.class
 com/mypurecloud/sdk/v2/model/CoachingNotification$ActionTypeEnum.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$145.class
 com/mypurecloud/sdk/v2/api/request/PostQualityEvaluationsSearchRequest$Builder.class
 com/mypurecloud/sdk/v2/api/PresenceApiAsync$6.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$25.class
@@ -5122,6 +5156,7 @@ com/mypurecloud/sdk/v2/api/JourneyApi$5.class
 com/mypurecloud/sdk/v2/model/WebChatConfig$WebChatSkinEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementCalendarDataIcsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetScimV2SchemaRequest$Builder.class
+com/mypurecloud/sdk/v2/model/AgentStateActivityCategoryCount$ActivityCategoryEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/PutFlowsOutcomeRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetScriptsRequest.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$183.class
@@ -5158,6 +5193,7 @@ com/mypurecloud/sdk/v2/api/ChatApiAsync$67.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$315.class
 com/mypurecloud/sdk/v2/api/OAuthApi$17.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$138.class
+com/mypurecloud/sdk/v2/model/OrganizationLinkResponse.class
 com/mypurecloud/sdk/v2/model/UserTransferEvent$TransferTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/PatchUserPresencesPurecloudRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetRecordingJobFailedrecordingsRequest$Builder.class
@@ -5341,6 +5377,7 @@ com/mypurecloud/sdk/v2/api/SCIMApiAsync$49.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$420.class
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$101.class
 com/mypurecloud/sdk/v2/api/OutboundApi$12.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$59.class
 com/mypurecloud/sdk/v2/model/EmergencyGroup$StateEnum.class
 com/mypurecloud/sdk/v2/model/AgentQueryOpportunityResult$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$57.class
@@ -5516,6 +5553,7 @@ com/mypurecloud/sdk/v2/api/CoachingApi$38.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$8.class
 com/mypurecloud/sdk/v2/api/WebChatApiAsync$42.class
 com/mypurecloud/sdk/v2/api/TaskManagementApi$112.class
+com/mypurecloud/sdk/v2/api/request/DeleteBusinessrulesDecisiontableImportRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetIdentityprovidersRequest$1.class
 com/mypurecloud/sdk/v2/api/CoachingApiAsync$38.class
 com/mypurecloud/sdk/v2/model/ConnectedQueue.class
@@ -5729,6 +5767,7 @@ com/mypurecloud/sdk/v2/model/AdjustableLiveSpeakerDetection$ModeEnumDeserializer
 com/mypurecloud/sdk/v2/model/ConversationSummaryTopicConversationSummaryEvent$MediaTypeEnum.class
 com/mypurecloud/sdk/v2/model/CaseManagementAsyncAggregationQuery$AlternateTimeDimensionEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingQueueMediatypeEstimatedwaittimeRequest$mediaTypeValues.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJobError.class
 com/mypurecloud/sdk/v2/model/DomainEdgeSoftwareUpdateDto$StatusEnum.class
 com/mypurecloud/sdk/v2/api/QualityApi$41.class
 com/mypurecloud/sdk/v2/model/DraftManipulationRequest.class
@@ -5822,6 +5861,7 @@ com/mypurecloud/sdk/v2/api/SettingsApi$3.class
 com/mypurecloud/sdk/v2/model/TranscriptAggregationSort$FunctionEnum.class
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$157.class
 com/mypurecloud/sdk/v2/api/RecordingApi$10.class
+com/mypurecloud/sdk/v2/model/RecordingNotificationResponse$NotificationStatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/AgentAssistantsApiAsync$76.class
 com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgeRequest$1.class
 com/mypurecloud/sdk/v2/model/ApiUsageOrganizationQuery$MetricsEnumDeserializer.class
@@ -5915,6 +5955,7 @@ com/mypurecloud/sdk/v2/model/FacebookScopedId.class
 com/mypurecloud/sdk/v2/model/WorkbinQueryEntityListing.class
 com/mypurecloud/sdk/v2/api/GeneralDataProtectionRegulationApi$3.class
 com/mypurecloud/sdk/v2/model/UpdateVerifierRequest.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$132.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$418.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$98.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApi$205.class
@@ -5941,6 +5982,7 @@ com/mypurecloud/sdk/v2/model/Literal$SpecialEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$115.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApi$2.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1029.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$133.class
 com/mypurecloud/sdk/v2/api/request/PostContentmanagementQueryRequest.class
 com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$11.class
 com/mypurecloud/sdk/v2/api/request/PostArchitectSchedulesRequest.class
@@ -6162,9 +6204,11 @@ com/mypurecloud/sdk/v2/model/Widget$TypeEnum.class
 com/mypurecloud/sdk/v2/model/TransferToAddressRequest$TransferTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsChatParticipantCommunicationWrapupRequest$Builder.class
 com/mypurecloud/sdk/v2/model/SendAgentlessOutboundMessageResponse$MessengerTypeEnum.class
+com/mypurecloud/sdk/v2/api/CaseManagementApi$73.class
 com/mypurecloud/sdk/v2/model/SessionSegmentAssignment.class
 com/mypurecloud/sdk/v2/model/CaseManagementAggregateDataContainer.class
 com/mypurecloud/sdk/v2/model/ResponseAsset.class
+com/mypurecloud/sdk/v2/model/WhatsAppDefinition$CategoryEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetAnalyticsFlowsAggregatesJobRequest$1.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$79.class
 com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsConfigurationsRequest$Builder.class
@@ -6338,6 +6382,7 @@ com/mypurecloud/sdk/v2/api/TokensApi$4.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$455.class
 com/mypurecloud/sdk/v2/api/request/DeleteRoutingEmailDomainRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$190.class
+com/mypurecloud/sdk/v2/model/EstimateAvailableFullDayTimeOffResponse$OverrideDateTypeEnum.class
 com/mypurecloud/sdk/v2/model/V3SourceExpandableListResponse$TypeEnum.class
 com/mypurecloud/sdk/v2/api/request/PostCertificateDetailsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemsBulkTerminateJobRequest.class
@@ -6829,6 +6874,7 @@ com/mypurecloud/sdk/v2/api/request/PostFlowHistoryRequest$1.class
 com/mypurecloud/sdk/v2/api/ContentManagementApi$48.class
 com/mypurecloud/sdk/v2/model/ConversationCallEventTopicCallMediaParticipant$DisconnectTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$196.class
+com/mypurecloud/sdk/v2/model/NumberRoutingListing.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$777.class
 com/mypurecloud/sdk/v2/model/AuthorizationPolicyEntityListing.class
 com/mypurecloud/sdk/v2/api/request/DeleteScimV2UserRequest.class
@@ -6900,6 +6946,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$570.class
 com/mypurecloud/sdk/v2/model/SchedulerMessageArgument.class
 com/mypurecloud/sdk/v2/api/ObjectsApiAsync$7.class
 com/mypurecloud/sdk/v2/model/UserAggregationView$FunctionEnum.class
+com/mypurecloud/sdk/v2/api/CaseManagementApi$74.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$1091.class
 com/mypurecloud/sdk/v2/api/LocationsApiAsync$4.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$134.class
@@ -7153,6 +7200,7 @@ com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementAlternativeshiftsOffers
 com/mypurecloud/sdk/v2/model/JourneyAggregateQueryFilter$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/SummarySetting$FormatEnum.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApi$206.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$131.class
 com/mypurecloud/sdk/v2/model/CursorOrganizationListing.class
 com/mypurecloud/sdk/v2/api/AIStudioApi$13.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundFilespecificationtemplatesRequest$sortOrderValues.class
@@ -7247,6 +7295,7 @@ com/mypurecloud/sdk/v2/api/JourneyApi$80.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$122.class
 com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicInternalMessage$DisconnectTypeEnum.class
 com/mypurecloud/sdk/v2/api/GroupsApi$23.class
+com/mypurecloud/sdk/v2/api/request/PutCasemanagementCaseplanDataschemaRequest.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$395.class
 com/mypurecloud/sdk/v2/model/ConversationEventPresence.class
 com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicLimit$NamespaceEnum.class
@@ -7695,6 +7744,7 @@ com/mypurecloud/sdk/v2/model/SurveyDetailQueryFilter$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest$1.class
 com/mypurecloud/sdk/v2/api/JourneyApi$128.class
 com/mypurecloud/sdk/v2/model/PushDeviceInsertRequest$DeviceTypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$142.class
 com/mypurecloud/sdk/v2/api/request/DeleteAnalyticsFlowsAggregatesJobRequest.class
 com/mypurecloud/sdk/v2/model/SupportCenterCustomMessage$TypeEnum.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$294.class
@@ -7830,6 +7880,7 @@ com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$101.class
 com/mypurecloud/sdk/v2/model/Schedule$StateEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/ConversationSessionSummary$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/KnowledgeDocumentFeedback$RatingEnum.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$144.class
 com/mypurecloud/sdk/v2/model/AgentCopilotAggregationView.class
 com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$80.class
 com/mypurecloud/sdk/v2/api/OutboundApi$69.class
@@ -7989,6 +8040,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$443.class
 com/mypurecloud/sdk/v2/api/UsersApi$164.class
 com/mypurecloud/sdk/v2/api/TaskManagementApi$75.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApi$230.class
+com/mypurecloud/sdk/v2/api/CaseManagementApi$75.class
 com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsManagersRequest$granularityValues.class
 com/mypurecloud/sdk/v2/api/request/PatchIntegrationRequest$Builder.class
 com/mypurecloud/sdk/v2/model/NluDomainVersionQualityReport.class
@@ -8072,6 +8124,7 @@ com/mypurecloud/sdk/v2/api/request/GetConversationsVideosMeetingRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetLocationsSearchRequest$expandValues.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementSchedulingjobRequest$1.class
 com/mypurecloud/sdk/v2/api/request/DeleteRoutingSkillRequest$Builder.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableImportsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/RecordingApi$69.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$126.class
 com/mypurecloud/sdk/v2/model/QueryOpportunityEnrollmentResult$SystemMessageCodeEnumDeserializer.class
@@ -8198,6 +8251,7 @@ com/mypurecloud/sdk/v2/api/request/GetPresenceSettingsRequest.class
 com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsSchemasRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AnalyticsApi$51.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsEmailsAgentlessRequest$Builder.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableImportsRequest.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$505.class
 com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicSocialMediaParticipant$FlaggedReasonEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$139.class
@@ -8433,11 +8487,13 @@ com/mypurecloud/sdk/v2/model/JourneyViewChartMetric$AggregateEnumDeserializer.cl
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$13.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$505.class
 com/mypurecloud/sdk/v2/model/EvaluationSearchCriteriaDTO$OperatorEnumDeserializer.class
+com/mypurecloud/sdk/v2/model/EstimateAvailablePartialDayTimeOffResponse$OverrideDateTypeEnum.class
 com/mypurecloud/sdk/v2/model/SegmentAssignments.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$405.class
 com/mypurecloud/sdk/v2/model/ManagementUnitSettingsRequest.class
 com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicVoicemail.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest$1.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$60.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$290.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$382.class
 com/mypurecloud/sdk/v2/api/request/GetAnalyticsCopilotsAggregatesJobResultsRequest.class
@@ -8521,6 +8577,7 @@ com/mypurecloud/sdk/v2/api/request/PostKnowledgeSourceSynchronizationsRequest.cl
 com/mypurecloud/sdk/v2/model/GuideSessionTurnInvocationParameters.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$513.class
 com/mypurecloud/sdk/v2/api/request/GetGamificationScorecardsRequest.class
+com/mypurecloud/sdk/v2/api/RoutingApi$280.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationContactsRequest$expandValues.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1077.class
 com/mypurecloud/sdk/v2/model/AggregateMetricData.class
@@ -8720,6 +8777,7 @@ com/mypurecloud/sdk/v2/model/LimitChangeRequestDetails$NamespaceEnum.class
 com/mypurecloud/sdk/v2/api/request/PatchConversationsSettingsRequest$1.class
 com/mypurecloud/sdk/v2/model/AgentlessEmailSendResponseDto$SenderTypeEnum.class
 com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicCallbackMediaParticipant$DisconnectTypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/request/DeleteTelephonyOrganizationLinkTargetOrganizationIdRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ResponseManagementApiAsync$66.class
 com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseDocumentVariationsRequest$expandValues.class
 com/mypurecloud/sdk/v2/api/request/DeleteOutboundDnclistCustomexclusioncolumnsRequest.class
@@ -8816,6 +8874,7 @@ com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$352.class
 com/mypurecloud/sdk/v2/model/Suggestion$TypeEnum.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$335.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$999.class
+com/mypurecloud/sdk/v2/model/ScheduleVisibilityRange.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$469.class
 com/mypurecloud/sdk/v2/model/ApiUsageOrganizationQuery$GroupByEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$272.class
@@ -8978,10 +9037,12 @@ com/mypurecloud/sdk/v2/model/CriteriaQuery.class
 com/mypurecloud/sdk/v2/model/DialerSequenceConfigChangeCampaignSequence$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/CoachingApi$21.class
 com/mypurecloud/sdk/v2/api/request/PostJourneyExternaleventsConfigurationEventsRequest.class
+com/mypurecloud/sdk/v2/model/UpdateDecisionTableImportJobRequest.class
 com/mypurecloud/sdk/v2/api/request/PutSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementShifttradingTradeJobRequest$1.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$483.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$262.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableExportsRequest$1.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$99.class
 com/mypurecloud/sdk/v2/api/OutboundApi$203.class
 com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTopicsRequest$sortOrderValues.class
@@ -9047,6 +9108,7 @@ com/mypurecloud/sdk/v2/api/GamificationApiAsync$25.class
 com/mypurecloud/sdk/v2/api/request/GetAssistantRequest$1.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$114.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationNoteRequest.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJob.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$6.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$251.class
 com/mypurecloud/sdk/v2/api/request/GetAnalyticsUsersAggregatesJobResultsRequest.class
@@ -9113,6 +9175,7 @@ com/mypurecloud/sdk/v2/api/UsersRulesApi$11.class
 com/mypurecloud/sdk/v2/model/SchedulingStatusResponse.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$956.class
 com/mypurecloud/sdk/v2/model/OutboundSettings$ComplianceAbandonRateDenominatorEnum.class
+com/mypurecloud/sdk/v2/model/OrganizationLink.class
 com/mypurecloud/sdk/v2/api/AgentUIApi$1.class
 com/mypurecloud/sdk/v2/model/DocumentBodyListItemProperties$UnorderedTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/GetBillingContractsRequest$statusValues.class
@@ -9398,6 +9461,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApi$527.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$1127.class
 com/mypurecloud/sdk/v2/api/ProcessAutomationApiAsync$23.class
 com/mypurecloud/sdk/v2/model/ConversationIntentSuggestionsTopicIntentSuggestionEvent$TriggerTypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJob$ExportTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetScimV2ResourcetypeRequest$1.class
 com/mypurecloud/sdk/v2/model/NumberPlan$StateEnum.class
 com/mypurecloud/sdk/v2/api/request/GetGamificationContestsRequest$sortByValues.class
@@ -9421,6 +9485,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$955.class
 com/mypurecloud/sdk/v2/api/OutboundApi$196.class
 com/mypurecloud/sdk/v2/model/CategoriesFilter.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$346.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$143.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$102.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$183.class
 com/mypurecloud/sdk/v2/api/ChatApi$20.class
@@ -9816,6 +9881,7 @@ com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantConsultExtern
 com/mypurecloud/sdk/v2/api/request/DeleteOutboundSequenceRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportCsvSettingRequest.class
 com/mypurecloud/sdk/v2/model/IgnoredActivityCategories$ValuesEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyOrganizationLinkRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingSkillgroupMembersDivisionsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$144.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$154.class
@@ -10109,6 +10175,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$910.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$124.class
 com/mypurecloud/sdk/v2/model/ScimUserRole.class
 com/mypurecloud/sdk/v2/api/AgentAssistantsApiAsync$20.class
+com/mypurecloud/sdk/v2/model/DecisionTableImportJob$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/OutboundApi$4.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$720.class
@@ -10201,6 +10268,7 @@ com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorktypeFlowsOnattributec
 com/mypurecloud/sdk/v2/model/JourneySessionEventsNotificationNetworkConnectivity.class
 com/mypurecloud/sdk/v2/model/WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationJobNotification$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$553.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$146.class
 com/mypurecloud/sdk/v2/api/QualityApi$120.class
 com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicEmail$DirectionEnum.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$283.class
@@ -10281,6 +10349,7 @@ com/mypurecloud/sdk/v2/api/request/PostArchitectGrammarLanguageFilesDtmfRequest$
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$254.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$54.class
 com/mypurecloud/sdk/v2/model/WebChatTyping.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyOrganizationLinkRequest$1.class
 com/mypurecloud/sdk/v2/api/SearchApiAsync$35.class
 com/mypurecloud/sdk/v2/api/AnalyticsApi$163.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApi$19.class
@@ -10646,6 +10715,7 @@ com/mypurecloud/sdk/v2/api/SocialMediaApi$47.class
 com/mypurecloud/sdk/v2/model/WorkitemsChangeWorkbinDelta.class
 com/mypurecloud/sdk/v2/api/request/PostFlowsExportJobsRequest.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$479.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$119.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$448.class
 com/mypurecloud/sdk/v2/api/request/PostArchitectGrammarLanguagesRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$274.class
@@ -10669,6 +10739,7 @@ com/mypurecloud/sdk/v2/model/WfmAgent.class
 com/mypurecloud/sdk/v2/model/ConversationEventTopicScreenMonitoring.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$527.class
 com/mypurecloud/sdk/v2/api/UsersApi$12.class
+com/mypurecloud/sdk/v2/model/BulkUpdateDecisionTableRowsResponse.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$237.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$312.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$301.class
@@ -10687,6 +10758,7 @@ com/mypurecloud/sdk/v2/api/WebDeploymentsApi$19.class
 com/mypurecloud/sdk/v2/model/FlowDivisionView.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$289.class
 com/mypurecloud/sdk/v2/api/SearchApiAsync$104.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$156.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$191.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$462.class
 com/mypurecloud/sdk/v2/api/request/GetOauthAuthorizationsRequest.class
@@ -10698,6 +10770,7 @@ com/mypurecloud/sdk/v2/model/OpenSocialMediaNormalizedMessage$TypeEnumDeserializ
 com/mypurecloud/sdk/v2/model/ContestsFinalizeRequest.class
 com/mypurecloud/sdk/v2/api/DataPrivacyApiAsync$15.class
 com/mypurecloud/sdk/v2/model/ImportForecastResponse$StatusEnum.class
+com/mypurecloud/sdk/v2/api/request/DeleteBusinessrulesDecisiontableExportRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationPairingRequest$1.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$184.class
 com/mypurecloud/sdk/v2/model/DevelopmentActivityAggregateQueryRequestPredicate.class
@@ -10935,6 +11008,7 @@ com/mypurecloud/sdk/v2/model/IntradayPlanningGroupRequest$CategoriesEnumDeserial
 com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseCategoriesRequest$Builder.class
 com/mypurecloud/sdk/v2/api/IdentityProviderApi$10.class
 com/mypurecloud/sdk/v2/model/AnalyticsFlowOutcome.class
+com/mypurecloud/sdk/v2/api/request/PatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest$1.class
 com/mypurecloud/sdk/v2/model/EvaluationDetailQueryFilter.class
 com/mypurecloud/sdk/v2/model/KnowledgeIntegrationDefaultSettings.class
 com/mypurecloud/sdk/v2/api/LogCaptureApiAsync$16.class
@@ -11020,6 +11094,7 @@ com/mypurecloud/sdk/v2/api/WebDeploymentsApi$8.class
 com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemUserWrapupsRequest$sortOrderValues.class
 com/mypurecloud/sdk/v2/model/CustomI18nLabels.class
 com/mypurecloud/sdk/v2/api/request/GetScimV2UserRequest$1.class
+com/mypurecloud/sdk/v2/model/NumberRoutingResetOrganizationRequest.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApi$61.class
 com/mypurecloud/sdk/v2/model/TextBotExitAction$ReasonEnum.class
 com/mypurecloud/sdk/v2/api/WebDeploymentsApiAsync$33.class
@@ -11048,6 +11123,7 @@ com/mypurecloud/sdk/v2/api/request/PostAssistantQueueUsersBulkAddRequest$Builder
 com/mypurecloud/sdk/v2/model/OrganizationPublicApiUsageQueryRequest$GranularityEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/IntentsApiAsync$45.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$163.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$72.class
 com/mypurecloud/sdk/v2/model/TrustGroup$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/SmsPhoneNumberEntityListing.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$18.class
@@ -11078,6 +11154,7 @@ com/mypurecloud/sdk/v2/model/MinimumStaffingResponse$ApplicableIntervalsEnumDese
 com/mypurecloud/sdk/v2/api/request/GetFlowsInstancesQuerycapabilitiesRequest.class
 com/mypurecloud/sdk/v2/api/WebChatApi$17.class
 com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobResult.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyNumbersRoutingResetRequest$1.class
 com/mypurecloud/sdk/v2/api/AIStudioApiAsync$34.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApiAsync$56.class
 com/mypurecloud/sdk/v2/model/ConversationChecklistTopicAgentChecklistItemState$StateFromModelEnum.class
@@ -11250,6 +11327,7 @@ com/mypurecloud/sdk/v2/api/request/GetContentmanagementWorkspacesRequest$expandV
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$25.class
 com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentAnnotationsRequest$1.class
 com/mypurecloud/sdk/v2/model/AgentCopilotAggregationSort$FunctionEnum.class
+com/mypurecloud/sdk/v2/api/TelephonyApi$32.class
 com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$116.class
 com/mypurecloud/sdk/v2/model/SurveyDetailQueryPredicate$OperatorEnum.class
@@ -11522,6 +11600,7 @@ com/mypurecloud/sdk/v2/api/OutboundApiAsync$443.class
 com/mypurecloud/sdk/v2/api/request/DeleteContentmanagementWorkspaceRequest$Builder.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$165.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApi$28.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJob$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$229.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsTwitterOauthSettingsRequest.class
 com/mypurecloud/sdk/v2/api/request/GetUserCallforwardingRequest.class
@@ -11732,6 +11811,7 @@ com/mypurecloud/sdk/v2/model/Edge$EdgeDeploymentTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/TextBotErrorInputEvent.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$642.class
 com/mypurecloud/sdk/v2/api/UsersRulesApi$15.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyNumbersRoutingRequest$1.class
 com/mypurecloud/sdk/v2/model/ConversationSummaryTopicConversationSummaryEvent$ErrorTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/SiteConnection$TypeEnum.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$67.class
@@ -11801,6 +11881,7 @@ com/mypurecloud/sdk/v2/api/request/PostExternalcontactsOrganizationsRequest$1.cl
 com/mypurecloud/sdk/v2/api/ContentManagementApi$36.class
 com/mypurecloud/sdk/v2/api/request/PutOutboundDnclistRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$485.class
+com/mypurecloud/sdk/v2/api/request/PatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$117.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$250.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$336.class
@@ -12250,13 +12331,16 @@ com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationNotesRequest.c
 com/mypurecloud/sdk/v2/api/request/GetRoutingAssessmentRequest$Builder.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$28.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$256.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJob$FormatEnum.class
 com/mypurecloud/sdk/v2/model/ExternalMetricDataUnprocessedItem$TypeEnum.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$189.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$53.class
 com/mypurecloud/sdk/v2/api/request/GetContentmanagementQueryRequest$1.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$107.class
 com/mypurecloud/sdk/v2/model/PolicyEntityListing.class
 com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeLogicalinterfacesRequest$expandValues.class
 com/mypurecloud/sdk/v2/model/UserObservationQuery$MetricsEnum.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$74.class
 com/mypurecloud/sdk/v2/api/VoicemailApiAsync$18.class
 com/mypurecloud/sdk/v2/api/request/DeleteRecordingCrossplatformMediaretentionpoliciesRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitMoveRequest$Builder.class
@@ -12363,6 +12447,7 @@ com/mypurecloud/sdk/v2/api/request/DeleteConversationRecordingAnnotationRequest.
 com/mypurecloud/sdk/v2/model/UserConversationsEventMediaSummary.class
 com/mypurecloud/sdk/v2/api/request/GetScriptsPublishedRequest.class
 com/mypurecloud/sdk/v2/api/TelephonyApi$15.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$55.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$78.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$392.class
 com/mypurecloud/sdk/v2/api/request/PutConversationsCallParticipantCommunicationUuidataRequest$1.class
@@ -12411,6 +12496,7 @@ com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$323.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitPlanninggroupsRequest.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$19.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$753.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJobRequest$FormatEnum.class
 com/mypurecloud/sdk/v2/api/request/GetUsersRuleDependentsRequest$sortOrderValues.class
 com/mypurecloud/sdk/v2/api/WebChatApiAsync$20.class
 com/mypurecloud/sdk/v2/api/WebDeploymentsApiAsync$16.class
@@ -12661,6 +12747,7 @@ com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$14.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$200.class
 com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkbinsRequest$1.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$284.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJobRequest.class
 com/mypurecloud/sdk/v2/model/FooterTemplate$ApplicableResourcesEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$86.class
 com/mypurecloud/sdk/v2/extensions/notifications/Metadata.class
@@ -12690,6 +12777,7 @@ com/mypurecloud/sdk/v2/model/ConversationDetailQueryPredicate$OperatorEnumDeseri
 com/mypurecloud/sdk/v2/model/PredictorSchedule.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$165.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingSmsAvailablephonenumbersRequest$Builder.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$154.class
 com/mypurecloud/sdk/v2/model/PresentedKnowledgeDocument$SurfacingMethodEnum.class
 com/mypurecloud/sdk/v2/api/request/GetJourneyExternaleventsConfigurationsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$15.class
@@ -12970,6 +13058,7 @@ com/mypurecloud/sdk/v2/api/request/GetUserAdjacentsRequest$expandValues.class
 com/mypurecloud/sdk/v2/model/EvaluationFormResponse.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$223.class
 com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactJourneySegmentsRequest.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetGamificationLeaderboardAllRequest.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$72.class
 com/mypurecloud/sdk/v2/model/UsersRulesDependent$TypeEnumDeserializer.class
@@ -13041,6 +13130,7 @@ com/mypurecloud/sdk/v2/model/SocialMediaQueryPredicate.class
 com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopicDetail.class
 com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$119.class
 com/mypurecloud/sdk/v2/api/CaseManagementApi$51.class
+com/mypurecloud/sdk/v2/model/UpdateDecisionTableImportJobRequest$StatusEnum.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationTwitterOauthSettingsRequest$1.class
 com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicLimit$NamespaceEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetJourneyDeploymentCustomerPingRequest.class
@@ -13310,6 +13400,7 @@ com/mypurecloud/sdk/v2/api/request/GetAnalyticsBotsAggregatesJobResultsRequest.c
 com/mypurecloud/sdk/v2/model/ConversationCallEventTopicWrapup.class
 com/mypurecloud/sdk/v2/api/PresenceApiAsync$21.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$347.class
+com/mypurecloud/sdk/v2/model/AgentStateActivityCategoryCount$ActivityCategoryEnum.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$942.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$396.class
 com/mypurecloud/sdk/v2/api/RecordingApiAsync$19.class
@@ -13495,6 +13586,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$91.class
 com/mypurecloud/sdk/v2/model/DocumentBodyVideoProperties$AlignEnum.class
 com/mypurecloud/sdk/v2/model/FacetTerm.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$434.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsEmailMessagesRequest$Builder.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$104.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$148.class
@@ -13595,6 +13687,7 @@ com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$2.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$745.class
 com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsTopicRequest$Builder.class
 com/mypurecloud/sdk/v2/model/FlowMetricsTopicFlowMetricRecord$DeliveryStatusEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/TelephonyApi$30.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$467.class
 com/mypurecloud/sdk/v2/api/LearningApi$24.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$259.class
@@ -13637,6 +13730,7 @@ com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemHistoryRequest$sortO
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$314.class
 com/mypurecloud/sdk/v2/model/CaseManagementAggregationSort$NameEnum.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsCobrowsesessionParticipantReplaceRequest$1.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$65.class
 com/mypurecloud/sdk/v2/model/DncListCreate$DncSourceTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/JourneySessionEventsNotificationCase.class
 com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationActionMap.class
@@ -13792,6 +13886,7 @@ com/mypurecloud/sdk/v2/api/OutboundApi$231.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitShrinkageJobsRequest$Builder.class
 com/mypurecloud/sdk/v2/model/QueueConversationEventTopicScreenMonitoring.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$86.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$618.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$191.class
 com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrustorGroupsRequest.class
 com/mypurecloud/sdk/v2/api/OutboundApi$249.class
@@ -14028,6 +14123,7 @@ com/mypurecloud/sdk/v2/api/ContentManagementApiAsync$74.class
 com/mypurecloud/sdk/v2/model/FlowMetricsTopicFlowMetricRecord$FlowSubTypeEnum.class
 com/mypurecloud/sdk/v2/api/TokensApiAsync$11.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$103.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest$Builder.class
 com/mypurecloud/sdk/v2/model/ConversationNotificationTemplateParameter.class
 com/mypurecloud/sdk/v2/model/Operation$ActionNameEnum.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsScanContactsDivisionviewsAllRequest$Builder.class
@@ -14291,6 +14387,7 @@ com/mypurecloud/sdk/v2/api/request/GetUserRoutingskillsRequest.class
 com/mypurecloud/sdk/v2/api/request/PatchSpeechandtextanalyticsSettingsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundSettingsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/SCIMApiAsync$75.class
+com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitTimeoffplansRequest$expandValues.class
 com/mypurecloud/sdk/v2/model/CopilotCondition$ConditionTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest$expandValues.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$92.class
@@ -14340,6 +14437,7 @@ com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$74.class
 com/mypurecloud/sdk/v2/model/EventError.class
 com/mypurecloud/sdk/v2/api/request/PutLearningModuleRequest$1.class
 com/mypurecloud/sdk/v2/api/request/DeleteRoutingSkillexpressionsRequest.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJob$FormatEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/VoicemailMailboxInfo.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationIdentifiersRequest$Builder.class
 com/mypurecloud/sdk/v2/model/BatchPredictiveRoutingCustomKpiAttributionEventRequest.class
@@ -14388,6 +14486,7 @@ com/mypurecloud/sdk/v2/api/request/PostRecordingsScreensessionsAcknowledgeReques
 com/mypurecloud/sdk/v2/api/ResponseManagementApiAsync$39.class
 com/mypurecloud/sdk/v2/model/GuideVersionResources.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$307.class
+com/mypurecloud/sdk/v2/api/TelephonyApi$34.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$36.class
 com/mypurecloud/sdk/v2/model/ServiceNowSettings.class
 com/mypurecloud/sdk/v2/model/DayOfWeekMinimums$DaysOfWeekEnumDeserializer.class
@@ -14466,6 +14565,7 @@ com/mypurecloud/sdk/v2/api/KnowledgeApi$18.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$414.class
 com/mypurecloud/sdk/v2/model/CaseAssociationQuery.class
 com/mypurecloud/sdk/v2/api/request/GetUserrecordingTranscodingRequest.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$61.class
 com/mypurecloud/sdk/v2/model/V3SynchronizationUploadUrlRequest.class
 com/mypurecloud/sdk/v2/api/request/GetUsersRequest$expandValues.class
 com/mypurecloud/sdk/v2/model/ConversationJsonSchemaDocument.class
@@ -14659,6 +14759,7 @@ com/mypurecloud/sdk/v2/model/QualityAuditLogMessage$LevelEnum.class
 com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicDetail.class
 com/mypurecloud/sdk/v2/model/TransferResponse$TransferTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/PutIdentityprovidersIdentitynowRequest$Builder.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$134.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$219.class
 com/mypurecloud/sdk/v2/api/request/GetArchitectSystempromptHistoryHistoryIdRequest$Builder.class
 com/mypurecloud/sdk/v2/api/CaseManagementApi$28.class
@@ -15094,6 +15195,7 @@ com/mypurecloud/sdk/v2/api/request/GetVoicemailUserMailboxRequest$1.class
 com/mypurecloud/sdk/v2/model/DialerRulesetConfigChangeRule.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$18.class
 com/mypurecloud/sdk/v2/model/ActivityPlanResponse$OptimizationObjectiveEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$138.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$570.class
 com/mypurecloud/sdk/v2/api/request/GetMessagingSettingsDefaultRequest$1.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$276.class
@@ -15117,6 +15219,7 @@ com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicCallback$StateEnumD
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest$Builder.class
 com/mypurecloud/sdk/v2/model/FlowExecutionDataQueryResult.class
 com/mypurecloud/sdk/v2/api/QualityApi$95.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableImportRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$6.class
 com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentsMeRequest$relationshipsValues.class
 com/mypurecloud/sdk/v2/api/OrganizationApiAsync$72.class
@@ -15144,6 +15247,7 @@ com/mypurecloud/sdk/v2/api/TeamsApiAsync$12.class
 com/mypurecloud/sdk/v2/model/AgentStateSessionQueryClause.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$108.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$64.class
+com/mypurecloud/sdk/v2/api/request/GetRoutingEmailSettingEmailSettingIdRequest.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementTeamShrinkageJobsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$318.class
 com/mypurecloud/sdk/v2/model/GoogleBusinessProfileDataIngestionRuleVersionResponse$StatusEnum.class
@@ -15253,10 +15357,12 @@ com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsUserDetailsRequest$fil
 com/mypurecloud/sdk/v2/api/QualityApi$91.class
 com/mypurecloud/sdk/v2/api/request/GetAssistantsCopilotFeaturesupportRequest.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$148.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$633.class
 com/mypurecloud/sdk/v2/model/TransferRequest.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$419.class
 com/mypurecloud/sdk/v2/api/RecordingApi$29.class
 com/mypurecloud/sdk/v2/model/NamedEntityTypeMechanism.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$77.class
 com/mypurecloud/sdk/v2/api/IntentsApiAsync$7.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$623.class
 com/mypurecloud/sdk/v2/api/GreetingsApi$16.class
@@ -15300,6 +15406,7 @@ com/mypurecloud/sdk/v2/model/EvaluationAggregationQuery$GroupByEnum.class
 com/mypurecloud/sdk/v2/api/request/GetAnalyticsUsersAggregatesJobResultsRequest$Builder.class
 com/mypurecloud/sdk/v2/connector/apache/ApacheHttpCredentialsProvider.class
 com/mypurecloud/sdk/v2/api/request/GetPresencedefinitionRequest$Builder.class
+com/mypurecloud/sdk/v2/model/BulkAddDecisionTableRowsRequest.class
 com/mypurecloud/sdk/v2/api/VoicemailApi$39.class
 com/mypurecloud/sdk/v2/api/request/GetUserRoutinglanguagesRequest$sortOrderValues.class
 com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementCalendarUrlIcsRequest$1.class
@@ -15332,6 +15439,7 @@ com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$410.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApiAsync$117.class
 com/mypurecloud/sdk/v2/model/V2IntegrationPresenceEventOrganizationPresence.class
 com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkContactsAddRequest$1.class
+com/mypurecloud/sdk/v2/model/NumberRoutingRequest.class
 com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicCobrowse$DisconnectTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitTimeoffplansRequest.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$339.class
@@ -15461,6 +15569,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$905.class
 com/mypurecloud/sdk/v2/model/InsightsDetailsOverallPeriodPoints.class
 com/mypurecloud/sdk/v2/api/request/PostEmployeeengagementRecognitionsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/UsersApi$27.class
+com/mypurecloud/sdk/v2/model/AgentStateAdherenceStateCount.class
 com/mypurecloud/sdk/v2/api/SCIMApi$51.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$489.class
 com/mypurecloud/sdk/v2/model/AgentMuScheduleItem.class
@@ -15626,6 +15735,7 @@ com/mypurecloud/sdk/v2/model/AgentsWorkPlansResponse.class
 com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$57.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$14.class
 com/mypurecloud/sdk/v2/api/TelephonyApiAsync$6.class
+com/mypurecloud/sdk/v2/model/ConversationSummaryLabel$TypeEnum.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1033.class
 com/mypurecloud/sdk/v2/api/request/GetKnowledgeConnectionOptionsRequest.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$59.class
@@ -15657,6 +15767,7 @@ com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicJourneyAction.class
 com/mypurecloud/sdk/v2/model/ActionMapScheduleGroup.class
 com/mypurecloud/sdk/v2/model/JourneySegmentAssignmentEventsNotificationSegmentAssignmentEventsNotification$EventTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/DisallowedEntityLearningAssignmentItem.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$114.class
 com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicEmail$DirectionEnum.class
 com/mypurecloud/sdk/v2/model/BuForecastTimeSeriesResult$ForecastTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/DeleteIdentityprovidersGenericRequest$1.class
@@ -15877,8 +15988,8 @@ com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantConsultQueueR
 com/mypurecloud/sdk/v2/model/ContactlistImportStatusImportStatus$ImportStateEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingPredictorRequest$Builder.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$495.class
-com/mypurecloud/sdk/v2/model/CustomAttributesUpdateRequest.class
 com/mypurecloud/sdk/v2/model/Call$InitialStateEnum.class
+com/mypurecloud/sdk/v2/model/CustomAttributesUpdateRequest.class
 com/mypurecloud/sdk/v2/model/ConversationEventTopicTransferResponse$TransferTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetAuthorizationRolesRequest$1.class
 com/mypurecloud/sdk/v2/api/OutboundApi$179.class
@@ -16018,6 +16129,7 @@ com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesTrunkbasesettingReq
 com/mypurecloud/sdk/v2/api/GroupsApi$24.class
 com/mypurecloud/sdk/v2/model/ResponseFilter$OperatorEnum.class
 com/mypurecloud/sdk/v2/model/UsersRulesLockedCriteriaSettingsCriteria.class
+com/mypurecloud/sdk/v2/model/RegionResponse.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$140.class
 com/mypurecloud/sdk/v2/model/CustomEventAttributeList.class
 com/mypurecloud/sdk/v2/model/V3SourceDetailedResponse$TypeEnum.class
@@ -16128,6 +16240,7 @@ com/mypurecloud/sdk/v2/model/InitiateScreenRecording.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$111.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$446.class
 com/mypurecloud/sdk/v2/api/RecordingApiAsync$116.class
+com/mypurecloud/sdk/v2/model/CreateDecisionTableImportJobRequest$ImportModeEnum.class
 com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentRequest.class
 com/mypurecloud/sdk/v2/api/ObjectsApi$9.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$478.class
@@ -16230,6 +16343,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$13.class
 com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicDivisionEntityRef.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$258.class
 com/mypurecloud/sdk/v2/model/PaymentRequest$PaymentPlatformEnum.class
+com/mypurecloud/sdk/v2/api/request/GetRoutingEmailSettingEmailSettingIdRequest$Builder.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$121.class
 com/mypurecloud/sdk/v2/model/KnowledgeAggregateQueryClause$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/RecordingApi$9.class
@@ -16246,6 +16360,7 @@ com/mypurecloud/sdk/v2/model/KnowledgeDocumentsAnswerFilter.class
 com/mypurecloud/sdk/v2/model/ActionTarget$StateEnum.class
 com/mypurecloud/sdk/v2/api/TelephonyApi$19.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$282.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$620.class
 com/mypurecloud/sdk/v2/model/AuthzSubject.class
 com/mypurecloud/sdk/v2/api/request/PutUserRoutingskillRequest$1.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$62.class
@@ -16494,6 +16609,7 @@ com/mypurecloud/sdk/v2/model/ConversationEventTopicJourneyContext.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$395.class
 com/mypurecloud/sdk/v2/model/CampaignRuleTimeOfDayInterval.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApi$63.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyOrganizationLinkRegionsRequest.class
 com/mypurecloud/sdk/v2/api/request/GetContentmanagementWorkspaceMembersRequest$Builder.class
 com/mypurecloud/sdk/v2/model/V2MobiusAlertsTopicConditionRulePredicate$MetricTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/TrustRequest.class
@@ -16782,6 +16898,7 @@ com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$187.class
 com/mypurecloud/sdk/v2/api/request/GetEmployeeperformanceExternalmetricsDefinitionRequest.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$123.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$217.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$123.class
 com/mypurecloud/sdk/v2/api/VoicemailApiAsync$22.class
 com/mypurecloud/sdk/v2/api/WebChatApiAsync$61.class
 com/mypurecloud/sdk/v2/model/PolicyTestPayload.class
@@ -16808,6 +16925,7 @@ com/mypurecloud/sdk/v2/model/WorkitemsQueueEventsNotificationSession$TypeEnumDes
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdateRequest$Builder.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$301.class
 com/mypurecloud/sdk/v2/api/BackgroundAssistantApi$2.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$68.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$313.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$261.class
 com/mypurecloud/sdk/v2/api/UtilitiesApiAsync$12.class
@@ -16925,6 +17043,7 @@ com/mypurecloud/sdk/v2/model/TranscriptSearchRequest.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$494.class
 com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$62.class
 com/mypurecloud/sdk/v2/model/Subscription.class
+com/mypurecloud/sdk/v2/api/request/PatchBusinessrulesDecisiontableImportRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantCoachRequest.class
 com/mypurecloud/sdk/v2/api/request/PatchLearningAssignmentRescheduleRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetJourneyActiontemplatesRequest.class
@@ -16971,9 +17090,11 @@ com/mypurecloud/sdk/v2/api/request/PostAnalyticsBotsAggregatesQueryRequest$1.cla
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$47.class
 com/mypurecloud/sdk/v2/model/LastAttemptByColumnConditionSettings$OperatorEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/DeleteMessagingSettingsDefaultRequest$1.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableExportsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest$Builder.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$671.class
 com/mypurecloud/sdk/v2/api/WebChatApi$3.class
+com/mypurecloud/sdk/v2/model/EmailSettingEntityListing.class
 com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseSynchronizeJobsRequest.class
 com/mypurecloud/sdk/v2/api/request/GetSocialmediaEscalationruleRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTopicsDialectsRequest.class
@@ -17146,6 +17267,7 @@ com/mypurecloud/sdk/v2/api/UsageApiAsync$38.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$259.class
 com/mypurecloud/sdk/v2/model/DialerDnclistConfigChangeDncList$DncSourceTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/UpdateTimeOffPlanRequest$AutoApprovalRuleEnum.class
+com/mypurecloud/sdk/v2/api/request/PatchBusinessrulesDecisiontableImportRequest.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$256.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$115.class
 com/mypurecloud/sdk/v2/model/AgentAdherenceDayMetrics.class
@@ -17234,6 +17356,7 @@ com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$73.class
 com/mypurecloud/sdk/v2/api/ResponseManagementApiAsync$13.class
 com/mypurecloud/sdk/v2/api/request/PatchConversationsCallParticipantAttributesRequest.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$455.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$629.class
 com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemVersionsRequest$Builder.class
 com/mypurecloud/sdk/v2/model/LauncherButtonSettings$DisplayTypeEnum.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$337.class
@@ -17330,6 +17453,7 @@ com/mypurecloud/sdk/v2/api/request/GetLearningModuleVersionRequest$1.class
 com/mypurecloud/sdk/v2/model/WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer$DayOfWeekEnum.class
 com/mypurecloud/sdk/v2/api/request/GetAuthorizationPermissionsRequest$Builder.class
 com/mypurecloud/sdk/v2/model/Workbin.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$152.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundContactlistsRequest.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$176.class
 com/mypurecloud/sdk/v2/model/JourneyViewResultLink.class
@@ -17466,6 +17590,7 @@ com/mypurecloud/sdk/v2/api/LanguagesApiAsync$1.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitTimeoffplanRequest$Builder.class
 com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$73.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApi$104.class
+com/mypurecloud/sdk/v2/api/request/DeleteRoutingEmailSettingEmailSettingIdRequest$1.class
 com/mypurecloud/sdk/v2/model/SkillGroupWithMemberDivisions$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantConsultExternalRequest$1.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$97.class
@@ -17606,6 +17731,7 @@ com/mypurecloud/sdk/v2/model/UserDetailQueryClause.class
 com/mypurecloud/sdk/v2/api/request/PostOauthClientSecretRequest.class
 com/mypurecloud/sdk/v2/model/Condition$OperatorEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetAuthorizationDivisionspermittedMeRequest$1.class
+com/mypurecloud/sdk/v2/api/RoutingApi$284.class
 com/mypurecloud/sdk/v2/model/OutcomeAchievedEventOutcome.class
 com/mypurecloud/sdk/v2/model/SocialMediaQueryPredicate$DimensionEnum.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$923.class
@@ -17626,6 +17752,7 @@ com/mypurecloud/sdk/v2/model/EmailCampaignScheduleConfigChangeUriReference.class
 com/mypurecloud/sdk/v2/model/MessageMediaParticipant$DisconnectTypeEnum.class
 com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicDisposition.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$73.class
+com/mypurecloud/sdk/v2/api/RoutingApi$282.class
 com/mypurecloud/sdk/v2/model/Metrics$TimeDisplayUnitEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/AIStudioApi$2.class
 com/mypurecloud/sdk/v2/api/AgentCopilotApi.class
@@ -17816,6 +17943,7 @@ com/mypurecloud/sdk/v2/api/request/GetConversationsChatsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PostConversationCommunicationAgentchecklistsFinalizeRequest$1.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$178.class
 com/mypurecloud/sdk/v2/model/DialerCampaignProgressEventCampaignProgress.class
+com/mypurecloud/sdk/v2/model/ScheduleVisibilitySettingsResponse.class
 com/mypurecloud/sdk/v2/api/request/DeleteRecordingCrossplatformMediaretentionpoliciesRequest.class
 com/mypurecloud/sdk/v2/api/TeamsApi.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$408.class
@@ -17831,6 +17959,7 @@ com/mypurecloud/sdk/v2/model/GuideSessionTurnResponse$StatusEnumDeserializer.cla
 com/mypurecloud/sdk/v2/api/SearchApiAsync$38.class
 com/mypurecloud/sdk/v2/api/request/GetLocationsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsConversationsDetailsJobsRequest$Builder.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$112.class
 com/mypurecloud/sdk/v2/model/BuAgentScheduleActivity$ExternalActivityTypeEnum.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$884.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingAssessmentsJobsRequest$Builder.class
@@ -17870,6 +17999,7 @@ com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$454.class
 com/mypurecloud/sdk/v2/api/request/PutVoicemailPolicyRequest$1.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$27.class
 com/mypurecloud/sdk/v2/api/request/DeleteWebdeploymentsDeploymentRequest$Builder.class
+com/mypurecloud/sdk/v2/model/SocialNumericRange.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundFilespecificationtemplateRequest$1.class
 com/mypurecloud/sdk/v2/model/RoutingActivityResponse$EntityIdDimensionEnum.class
 com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTopicsGeneralStatusRequest.class
@@ -17955,6 +18085,7 @@ com/mypurecloud/sdk/v2/model/ExportScriptResponse.class
 com/mypurecloud/sdk/v2/api/ContentManagementApi$12.class
 com/mypurecloud/sdk/v2/model/AgentUtilizationAggregateQueryPredicate.class
 com/mypurecloud/sdk/v2/model/WorkPlanBidGroupResponse.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$59.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$388.class
 com/mypurecloud/sdk/v2/model/ConversationEditedInput.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$117.class
@@ -18128,6 +18259,7 @@ com/mypurecloud/sdk/v2/api/request/DeleteWebmessagingDeploymentPushdeviceRequest
 com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesPhoneRequest$Builder.class
 com/mypurecloud/sdk/v2/model/TranscriptAsyncAggregationQuery$QueryTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/V2StaEmpathyOverallTopicAgentEmpathyScore.class
+com/mypurecloud/sdk/v2/api/TelephonyApi$28.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$24.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$122.class
 com/mypurecloud/sdk/v2/model/ContactImportSettings.class
@@ -18195,6 +18327,7 @@ com/mypurecloud/sdk/v2/model/UserStaffingGroupResponse.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$141.class
 com/mypurecloud/sdk/v2/api/SocialMediaApi$25.class
 com/mypurecloud/sdk/v2/model/SharedResponse.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$140.class
 com/mypurecloud/sdk/v2/model/SearchShiftTradesResponse.class
 com/mypurecloud/sdk/v2/api/request/PatchConversationsChatParticipantRequest.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$107.class
@@ -18539,6 +18672,7 @@ com/mypurecloud/sdk/v2/model/SecureSession$StateEnum.class
 com/mypurecloud/sdk/v2/model/CapacityPlanStaffingGroupMetricChangeResponse.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApi$171.class
 com/mypurecloud/sdk/v2/model/WrapupCodeEntityListing.class
+com/mypurecloud/sdk/v2/model/V3SourceTagFilter.class
 com/mypurecloud/sdk/v2/api/request/GetTeamRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetUserStationRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ContentManagementApi$56.class
@@ -18854,6 +18988,7 @@ com/mypurecloud/sdk/v2/api/SCIMApi$42.class
 com/mypurecloud/sdk/v2/model/PropertyIndexRequest.class
 com/mypurecloud/sdk/v2/api/request/GetGamificationScorecardsValuesAverageRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest$Builder.class
+com/mypurecloud/sdk/v2/api/request/PatchTelephonyOrganizationLinkApproveRequestingOrganizationIdRequest$Builder.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$605.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationsSchemasCoretypeRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetGamificationProfileMembersRequest.class
@@ -18882,6 +19017,7 @@ com/mypurecloud/sdk/v2/model/MessagingCampaignDiagnostics.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$308.class
 com/mypurecloud/sdk/v2/model/V2WemEngagementCelebrationUpdatesTopicSourceEntity.class
 com/mypurecloud/sdk/v2/api/request/GetOrganizationsLimitsChangerequestsRequest.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$70.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$118.class
 com/mypurecloud/sdk/v2/api/RecordingApiAsync$47.class
 com/mypurecloud/sdk/v2/model/AgentStateSessionQueryClause$TypeEnumDeserializer.class
@@ -18913,6 +19049,7 @@ com/mypurecloud/sdk/v2/model/GenesysBotConnector.class
 com/mypurecloud/sdk/v2/model/ChannelTopic$StateEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/WfmBuScheduleRunTopicBuSchedulingRunProgressNotification$StatusEnum.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$343.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$57.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$268.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$534.class
 com/mypurecloud/sdk/v2/model/JourneySessionEventsNotificationDevice$CategoryEnumDeserializer.class
@@ -18961,6 +19098,7 @@ com/mypurecloud/sdk/v2/model/WfmBuScheduleRunTopicUserReference.class
 com/mypurecloud/sdk/v2/model/WhatsAppIdentityResolutionConfig.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$111.class
 com/mypurecloud/sdk/v2/api/request/PostJourneyDeploymentAppeventsRequest$1.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableExportsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitMoveRequest$1.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$35.class
 com/mypurecloud/sdk/v2/model/QueryResponseGroupedData.class
@@ -19015,6 +19153,7 @@ com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicDialerPreview.cl
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$188.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$367.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$229.class
+com/mypurecloud/sdk/v2/model/OrganizationLink$StatusEnum.class
 com/mypurecloud/sdk/v2/model/PatchEntityTypeCriteria$OperatorEnum.class
 com/mypurecloud/sdk/v2/model/EmailInitialConfiguration.class
 com/mypurecloud/sdk/v2/api/RoutingApi$59.class
@@ -19359,6 +19498,7 @@ com/mypurecloud/sdk/v2/model/WorkPlanBidRanks.class
 com/mypurecloud/sdk/v2/api/AnalyticsApi$110.class
 com/mypurecloud/sdk/v2/api/BusinessRulesApi$41.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$172.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyOrganizationLinkRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PatchIntentsCustomerintentRequest$1.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$495.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$434.class
@@ -19519,6 +19659,7 @@ com/mypurecloud/sdk/v2/model/WorkitemsQueueEventsNotificationSession$StatusEnumD
 com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemasCoretypeRequest$Builder.class
 com/mypurecloud/sdk/v2/model/MetadataResultEntity.class
 com/mypurecloud/sdk/v2/api/request/PostResponsemanagementResponseassetsUploadsRequest$Builder.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$125.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$13.class
 com/mypurecloud/sdk/v2/model/ResourceConditionValue.class
 com/mypurecloud/sdk/v2/model/Activation.class
@@ -19744,6 +19885,7 @@ com/mypurecloud/sdk/v2/api/IdentityProviderApi$19.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$234.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignSkillcombinationsRequest$1.class
 com/mypurecloud/sdk/v2/api/OAuthApiAsync$24.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$631.class
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$21.class
 com/mypurecloud/sdk/v2/api/NotificationsApi$10.class
 com/mypurecloud/sdk/v2/model/TeamAddMemberFailure$ReasonEnum.class
@@ -19764,6 +19906,7 @@ com/mypurecloud/sdk/v2/api/ArchitectApiAsync$3.class
 com/mypurecloud/sdk/v2/api/UsersApi$1.class
 com/mypurecloud/sdk/v2/api/AuditApiAsync$24.class
 com/mypurecloud/sdk/v2/model/ConversationCobrowseEventTopicCobrowseMediaParticipant$DisconnectTypeEnum.class
+com/mypurecloud/sdk/v2/model/ContactsExportListing.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$714.class
 com/mypurecloud/sdk/v2/model/OutgoingMessageRequest.class
 com/mypurecloud/sdk/v2/model/CreateQueueRequest$LastAgentRoutingModeEnumDeserializer.class
@@ -19836,6 +19979,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApi$311.class
 com/mypurecloud/sdk/v2/api/request/PostChatsRoomsRequest.class
 com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsCategoriesRequest.class
 com/mypurecloud/sdk/v2/model/WorkitemsQueueEventsNotificationCustomAttribute.class
+com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest$includeOnlyValues.class
 com/mypurecloud/sdk/v2/api/LocationsApiAsync$9.class
 com/mypurecloud/sdk/v2/model/ConversationCallEventTopicCallMediaParticipant$RecordingStateEnum.class
 com/mypurecloud/sdk/v2/model/SetTimeOffIntegrationStatusRequest.class
@@ -19856,6 +20000,7 @@ com/mypurecloud/sdk/v2/model/ConversationChatEventTopicLimit$NamespaceEnumDeseri
 com/mypurecloud/sdk/v2/api/request/DeleteResponsemanagementResponseassetRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$1134.class
 com/mypurecloud/sdk/v2/api/request/PostRoutingAssessmentsJobsRequest$1.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableExportsRequest.class
 com/mypurecloud/sdk/v2/model/WorkitemQueryJobQueryFiltersCriteria.class
 com/mypurecloud/sdk/v2/api/request/PatchScimV2UserRequest.class
 com/mypurecloud/sdk/v2/api/request/GetAuthorizationPoliciesSubjectSubjectIdRequest.class
@@ -20134,6 +20279,7 @@ com/mypurecloud/sdk/v2/api/request/PostLearningAssignmentsBulkremoveRequest$1.cl
 com/mypurecloud/sdk/v2/model/TimeZoneEntityListing.class
 com/mypurecloud/sdk/v2/api/request/GetFlowsInstancesSettingsLoglevelsDefaultRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetIntegrationsCredentialsRequest$Builder.class
+com/mypurecloud/sdk/v2/model/EstimateAvailableFullDayTimeOffResponse$OverrideDateTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/DeleteJourneyActionmapRequest$1.class
 com/mypurecloud/sdk/v2/model/SummaryAggregationQuery$GroupByEnum.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundFilespecificationtemplatesRequest$filterTypeValues.class
@@ -20162,6 +20308,9 @@ com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$132.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$869.class
 com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableVersionRequest.class
 com/mypurecloud/sdk/v2/model/ConversationScriptSuggestionsTopicScriptSuggestionEvent.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$63.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyOrganizationLinkRequest.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$136.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$108.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitsRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PatchBusinessrulesDecisiontableRequest$Builder.class
@@ -20386,6 +20535,7 @@ com/mypurecloud/sdk/v2/api/RecordingApi$53.class
 com/mypurecloud/sdk/v2/model/TaskManagementObservationDataContainer.class
 com/mypurecloud/sdk/v2/api/IdentityProviderApi$45.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$106.class
+com/mypurecloud/sdk/v2/model/RecordingNotificationResponse$NotificationStatusEnum.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$851.class
 com/mypurecloud/sdk/v2/model/RecordingMetadata$RegionEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetInfrastructureascodeAcceleratorsRequest$originValues.class
@@ -20420,6 +20570,7 @@ com/mypurecloud/sdk/v2/model/MediaSummary.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$499.class
 com/mypurecloud/sdk/v2/model/LocalDateRange.class
 com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicErrorBody.class
+com/mypurecloud/sdk/v2/api/request/DeleteBusinessrulesDecisiontableImportRequest.class
 com/mypurecloud/sdk/v2/api/AIStudioApiAsync$78.class
 com/mypurecloud/sdk/v2/model/WritableDialerContact.class
 com/mypurecloud/sdk/v2/api/ContentManagementApiAsync$17.class
@@ -20572,6 +20723,7 @@ com/mypurecloud/sdk/v2/api/request/GetCasemanagementCaseplanVersionStageplanStep
 com/mypurecloud/sdk/v2/model/EmailMediaSettings.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$145.class
 com/mypurecloud/sdk/v2/api/PresenceApiAsync$91.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$147.class
 com/mypurecloud/sdk/v2/api/QualityApi$124.class
 com/mypurecloud/sdk/v2/model/FileUploadMode$FileTypesEnum.class
 com/mypurecloud/sdk/v2/api/request/PatchVoicemailMessageRequest.class
@@ -20654,6 +20806,8 @@ com/mypurecloud/sdk/v2/api/request/DeleteOauthClientRequest$1.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$361.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$223.class
 com/mypurecloud/sdk/v2/api/request/PostLearningModulesRequest$Builder.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$52.class
+com/mypurecloud/sdk/v2/model/EstimateAvailablePartialDayTimeOffResponse$OverrideDateTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsSocialParticipantCommunicationWrapupRequest$1.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$346.class
 com/mypurecloud/sdk/v2/api/request/PostAlertingRulesQueryRequest$Builder.class
@@ -20932,9 +21086,9 @@ com/mypurecloud/sdk/v2/api/request/PutAuthorizationRoleUsersRemoveRequest$1.clas
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$230.class
 com/mypurecloud/sdk/v2/api/request/DeleteKnowledgeKnowledgebaseDocumentVariationRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$197.class
+com/mypurecloud/sdk/v2/model/OverrideDate$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/ConversationSummaryTopicVirtualAgentsConversationSummaryEvent$MessageTypeEnum.class
 com/mypurecloud/sdk/v2/model/QueueConversationEventTopicCobrowse$InitialStateEnum.class
-com/mypurecloud/sdk/v2/model/OverrideDate$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/RoutingApi$94.class
 com/mypurecloud/sdk/v2/model/TimeOffIntegrationStatusResponse.class
 com/mypurecloud/sdk/v2/model/LocationCreateDefinition$StateEnum.class
@@ -20946,6 +21100,7 @@ com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesLinesTemplateReques
 com/mypurecloud/sdk/v2/model/GreetingOwner.class
 com/mypurecloud/sdk/v2/model/AnalyticsParticipant.class
 com/mypurecloud/sdk/v2/api/SettingsApiAsync$2.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$53.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$154.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$282.class
 com/mypurecloud/sdk/v2/model/LicenseOrgToggle.class
@@ -21189,6 +21344,7 @@ com/mypurecloud/sdk/v2/api/request/PostBusinessrulesSchemasRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetCoachingScheduleslotsJobRequest.class
 com/mypurecloud/sdk/v2/api/SettingsApiAsync$40.class
 com/mypurecloud/sdk/v2/model/WorkitemQueryJobResponse$StateEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementTimeoffrequestsEstimateRequest$includeOnlyValues.class
 com/mypurecloud/sdk/v2/api/VoicemailApi$46.class
 com/mypurecloud/sdk/v2/model/EvaluationSearchSubAggregationDTO.class
 com/mypurecloud/sdk/v2/model/DocumentBodyTableCaptionItem$TypeEnum.class
@@ -21311,6 +21467,7 @@ com/mypurecloud/sdk/v2/model/DialerRulesetConfigChangeCondition$ValueTypeEnum.cl
 com/mypurecloud/sdk/v2/api/ContentManagementApiAsync$130.class
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$134.class
 com/mypurecloud/sdk/v2/api/AuditApiAsync$9.class
+com/mypurecloud/sdk/v2/model/DecisionTableImportRowMetrics.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$555.class
 com/mypurecloud/sdk/v2/api/request/PostLanguageunderstandingMinerUploadsRequest.class
 com/mypurecloud/sdk/v2/model/BillingContractPeriodDetail.class
@@ -21380,6 +21537,7 @@ com/mypurecloud/sdk/v2/api/OutboundApiAsync$119.class
 com/mypurecloud/sdk/v2/model/ScorableSurvey$StatusEnum.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$45.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1185.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$625.class
 com/mypurecloud/sdk/v2/model/WfmBuIntradayDataUpdateTopicBuIntradayNotification.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$346.class
 com/mypurecloud/sdk/v2/api/request/GetIprangesRequest$Builder.class
@@ -21484,6 +21642,7 @@ com/mypurecloud/sdk/v2/model/GuestCategoryReference.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$693.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$62.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$231.class
+com/mypurecloud/sdk/v2/model/DecisionTableImportJobError.class
 com/mypurecloud/sdk/v2/model/DevelopmentActivity$ArchivalModeEnum.class
 com/mypurecloud/sdk/v2/model/CampaignPerformanceData$DialingModeEnum.class
 com/mypurecloud/sdk/v2/api/request/DeleteOutboundContactlistsRequest.class
@@ -21854,6 +22013,7 @@ com/mypurecloud/sdk/v2/model/StatEventFlowTopicStatsNotification.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$188.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$434.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$29.class
+com/mypurecloud/sdk/v2/api/request/PostRoutingEmailSettingRequest$Builder.class
 com/mypurecloud/sdk/v2/api/VoicemailApi$47.class
 com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsSurveyRequest.class
 com/mypurecloud/sdk/v2/api/TextbotsApiAsync$4.class
@@ -21941,6 +22101,7 @@ com/mypurecloud/sdk/v2/api/RecordingApiAsync$148.class
 com/mypurecloud/sdk/v2/api/RoutingApi$222.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$367.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$14.class
+com/mypurecloud/sdk/v2/model/DecisionTableImportJob.class
 com/mypurecloud/sdk/v2/model/JourneyActionMap.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$899.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$192.class
@@ -21988,6 +22149,7 @@ com/mypurecloud/sdk/v2/model/ScimPhoneNumber$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$48.class
 com/mypurecloud/sdk/v2/api/request/DeleteAnalyticsSurveysAggregatesJobRequest.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$411.class
+com/mypurecloud/sdk/v2/model/ConversationSummaryLabel$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/LearningApi$30.class
 com/mypurecloud/sdk/v2/api/request/GetLanguagesTranslationsOrganizationRequest$1.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$182.class
@@ -22056,6 +22218,7 @@ com/mypurecloud/sdk/v2/model/UpdateMuAgentWorkPlansBatchRequest.class
 com/mypurecloud/sdk/v2/model/ContentModeration$FlagEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/PatchSpeechandtextanalyticsSettingsRequest.class
 com/mypurecloud/sdk/v2/model/RichLinkHeader$TypeEnum.class
+com/mypurecloud/sdk/v2/api/request/PatchRoutingEmailSettingEmailSettingIdRequest.class
 com/mypurecloud/sdk/v2/model/GrammarLanguageFileMetadata$FileTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/ConsultTransferEvent.class
 com/mypurecloud/sdk/v2/api/request/PostConversationParticipantReplaceQueueRequest$1.class
@@ -22124,6 +22287,7 @@ com/mypurecloud/sdk/v2/api/UsersRulesApiAsync$33.class
 com/mypurecloud/sdk/v2/model/CopilotContextFilter$OperatorEnum.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$700.class
 com/mypurecloud/sdk/v2/api/OAuthApiAsync$10.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$63.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitSchedulesSearchRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PostUserPasswordRequest$1.class
 com/mypurecloud/sdk/v2/model/WorkitemsUserEventsNotificationSession.class
@@ -22189,6 +22353,7 @@ com/mypurecloud/sdk/v2/api/GroupsApi$19.class
 com/mypurecloud/sdk/v2/model/RecallEntry.class
 com/mypurecloud/sdk/v2/api/request/PutConversationsSummariesSettingRequest$Builder.class
 com/mypurecloud/sdk/v2/api/WebChatApiAsync$66.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$64.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$1049.class
 com/mypurecloud/sdk/v2/api/RecordingApi$71.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$181.class
@@ -22222,10 +22387,12 @@ com/mypurecloud/sdk/v2/model/OrphanRecording$MediaSubtypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/OAuthApiAsync$11.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$192.class
 com/mypurecloud/sdk/v2/model/DigitalDataActionConditionPredicate.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$129.class
 com/mypurecloud/sdk/v2/model/WebChatGuestMediaRequest$StateEnum.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$191.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$105.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsEmailReconnectRequest$Builder.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$62.class
 com/mypurecloud/sdk/v2/api/SocialMediaApi$74.class
 com/mypurecloud/sdk/v2/model/Session$LastUserDisconnectTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$116.class
@@ -22240,10 +22407,12 @@ com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$190.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$471.class
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsDataextractionDownloadsBulkRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$702.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$128.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$338.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$193.class
 com/mypurecloud/sdk/v2/model/Feedback$RelevanceEnum.class
 com/mypurecloud/sdk/v2/api/AgentAssistantsApiAsync$81.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$127.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$86.class
 com/mypurecloud/sdk/v2/api/PresenceApiAsync$71.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$171.class
@@ -22484,6 +22653,8 @@ com/mypurecloud/sdk/v2/model/BotAggregateQueryPredicate$TypeEnumDeserializer.cla
 com/mypurecloud/sdk/v2/model/CreateWorkPlanShift$DayOffRuleEnum.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$137.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$95.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$110.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableImportsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesCertificateauthorityRequest$Builder.class
 com/mypurecloud/sdk/v2/model/DocumentBodyParagraphProperties$FontSizeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/GenAiPhrasesTopicsDefinitionsJob$StateEnumDeserializer.class
@@ -22517,6 +22688,7 @@ com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$363.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$365.class
 com/mypurecloud/sdk/v2/api/request/PutIntegrationsSpeechTtsSettingsRequest.class
 com/mypurecloud/sdk/v2/model/CampaignRuleCondition$ConditionTypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/request/DeleteBusinessrulesDecisiontableExportRequest.class
 com/mypurecloud/sdk/v2/api/request/DeleteIdentityprovidersPingRequest$1.class
 com/mypurecloud/sdk/v2/api/VoicemailApi$45.class
 com/mypurecloud/sdk/v2/model/AgentStateAgentQueryClause$TypeEnumDeserializer.class
@@ -22567,6 +22739,7 @@ com/mypurecloud/sdk/v2/api/request/GetAnalyticsCopilotsAggregatesJobRequest.clas
 com/mypurecloud/sdk/v2/api/ObjectsApi$6.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$428.class
 com/mypurecloud/sdk/v2/model/Workitem$AssignmentStateEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$627.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantConsultContactExternalRequest$1.class
 com/mypurecloud/sdk/v2/api/OperationalEventsApi$7.class
 com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicCall$StateEnum.class
@@ -22721,6 +22894,7 @@ com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicMessageD
 com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicJourneyActionMap.class
 com/mypurecloud/sdk/v2/api/request/GetScimV2UserRequest$excludedAttributesValues.class
 com/mypurecloud/sdk/v2/model/WorkPlanValidationRequest$ShiftStartVarianceTypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyNumbersRoutingResetRequest.class
 com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicChat$StateEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/LauncherButtonSettings.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$48.class
@@ -22907,6 +23081,7 @@ com/mypurecloud/sdk/v2/model/BotAsyncAggregationQuery$GroupByEnum.class
 com/mypurecloud/sdk/v2/model/UpdateSegmentAssignmentResponse.class
 com/mypurecloud/sdk/v2/model/Evaluation$MediaTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/DialerSequenceScheduleConfigChangeAlteration$TypeEnum.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyNumbersRoutingRequest$Builder.class
 com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactWhatsappEventTopicOutboundMessagingCampaignPreContactWhatsAppEvent$WrapupCodeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/PostGamificationProfileMembersValidateRequest$1.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$156.class
@@ -22996,6 +23171,7 @@ com/mypurecloud/sdk/v2/api/QualityApiAsync$104.class
 com/mypurecloud/sdk/v2/model/AgentStateSessionQueryPredicate$DimensionEnum.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$334.class
 com/mypurecloud/sdk/v2/api/CoachingApiAsync$44.class
+com/mypurecloud/sdk/v2/api/request/PostRoutingEmailSettingRequest$1.class
 com/mypurecloud/sdk/v2/model/CoachingAppointmentReference.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$263.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$652.class
@@ -23072,6 +23248,7 @@ com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$118.class
 com/mypurecloud/sdk/v2/api/ObjectsApiAsync$37.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$133.class
 com/mypurecloud/sdk/v2/model/ViewFilter$SocialSourceTypesEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$55.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$71.class
 com/mypurecloud/sdk/v2/api/ResponseManagementApiAsync$45.class
 com/mypurecloud/sdk/v2/model/TrunkErrorInfo.class
@@ -23128,6 +23305,7 @@ com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$21.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$195.class
 com/mypurecloud/sdk/v2/api/GroupsApiAsync$61.class
 com/mypurecloud/sdk/v2/api/UsersApi$22.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$51.class
 com/mypurecloud/sdk/v2/api/request/PutRecordingsDeletionprotectionRequest.class
 com/mypurecloud/sdk/v2/model/BotAggregationView$FunctionEnum.class
 com/mypurecloud/sdk/v2/model/FlowObservationQueryPredicate.class
@@ -23307,6 +23485,7 @@ com/mypurecloud/sdk/v2/api/UtilitiesApi$7.class
 com/mypurecloud/sdk/v2/api/request/GetConversationSuggestionRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsWhatsappRequest$expandValues.class
 com/mypurecloud/sdk/v2/api/UsageApi$3.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableImportsRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetArchitectSystempromptRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$249.class
 com/mypurecloud/sdk/v2/model/AlternativeShiftTradeBulkUpdateTemplateItem$FailureReasonEnumDeserializer.class
@@ -23414,6 +23593,7 @@ com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApi$70.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$419.class
 com/mypurecloud/sdk/v2/model/WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationChangedNotification$TypeEnum.class
 com/mypurecloud/sdk/v2/model/SetContentTemplateActionSettings.class
+com/mypurecloud/sdk/v2/api/RoutingApi$277.class
 com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsConfigurationVersionsRequest.class
 com/mypurecloud/sdk/v2/model/AcceleratorMetadata$TypeEnum.class
 com/mypurecloud/sdk/v2/model/IdentityResolutionQueueConfig.class
@@ -23442,6 +23622,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$67.class
 com/mypurecloud/sdk/v2/model/ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant$PurposeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$798.class
 com/mypurecloud/sdk/v2/api/SCIMApiAsync$26.class
+com/mypurecloud/sdk/v2/api/request/PatchBusinessrulesDecisiontableImportRequest$Builder.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$602.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$206.class
 com/mypurecloud/sdk/v2/model/ConversationKnowledgeArticleSuggestionsTopicSuggestionFeedback.class
@@ -23473,6 +23654,7 @@ com/mypurecloud/sdk/v2/api/WebDeploymentsApiAsync$59.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$26.class
 com/mypurecloud/sdk/v2/model/Range$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetAssistantVariationsRequest$1.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsBulkAddRequest$1.class
 com/mypurecloud/sdk/v2/api/AnalyticsApi$81.class
 com/mypurecloud/sdk/v2/api/OutboundApi$222.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$600.class
@@ -23510,6 +23692,7 @@ com/mypurecloud/sdk/v2/api/TelephonyApi$22.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$158.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$247.class
+com/mypurecloud/sdk/v2/api/RoutingApi$279.class
 com/mypurecloud/sdk/v2/api/request/PatchOutboundDnclistWhatsappnumbersRequest.class
 com/mypurecloud/sdk/v2/model/EvaluationAggregationView$FunctionEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$338.class
@@ -23777,6 +23960,7 @@ com/mypurecloud/sdk/v2/api/request/GetRoutingWrapupcodeRequest.class
 com/mypurecloud/sdk/v2/api/request/GetUsersQueryRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetCasemanagementCaseRequest.class
 com/mypurecloud/sdk/v2/model/RuleSetDiagnostic$WarningsEnumDeserializer.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJobRequest$FormatEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/FlowLogLevelCharacteristicsDefinition.class
 com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicCallbackMediaParticipant.class
 com/mypurecloud/sdk/v2/model/ContactImportJobResponse$ExecutionStepEnum.class
@@ -24061,6 +24245,7 @@ com/mypurecloud/sdk/v2/api/OutboundApi$75.class
 com/mypurecloud/sdk/v2/model/WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete.class
 com/mypurecloud/sdk/v2/api/JourneyApi$68.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$479.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$344.class
 com/mypurecloud/sdk/v2/api/QualityApi$62.class
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsReportingExportsRequest$1.class
@@ -24233,6 +24418,7 @@ com/mypurecloud/sdk/v2/api/request/GetRoutingSmsPhonenumberRequest$1.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$124.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$429.class
 com/mypurecloud/sdk/v2/api/request/PostChatsUsersMeSettingsRequest$Builder.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$65.class
 com/mypurecloud/sdk/v2/model/NamedEntityTypeDefinition.class
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsTaskmanagementAggregatesJobsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$410.class
@@ -24548,6 +24734,7 @@ com/mypurecloud/sdk/v2/api/JourneyApiAsync$104.class
 com/mypurecloud/sdk/v2/model/ConfusionIntentInfo.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$97.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$555.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$66.class
 com/mypurecloud/sdk/v2/api/ChatApiAsync$2.class
 com/mypurecloud/sdk/v2/model/EvaluationCreateBody$ResourceTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/PostSpeechandtextanalyticsTopicsTestphraseJobsRequest.class
@@ -24628,6 +24815,7 @@ com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$273.class
 com/mypurecloud/sdk/v2/model/ConversationMetricsTopicConversationMetricRecord$ConversationInitiatorEnum.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PostOutboundImporttemplatesBulkAddRequest$1.class
+com/mypurecloud/sdk/v2/api/request/DeleteTelephonyOrganizationLinkTargetOrganizationIdRequest$1.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$194.class
 com/mypurecloud/sdk/v2/model/PhoneChangeTopicPhone.class
 com/mypurecloud/sdk/v2/model/V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage$TypeEnum.class
@@ -24776,6 +24964,7 @@ com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesEdgeversionreportRe
 com/mypurecloud/sdk/v2/api/BillingApi$16.class
 com/mypurecloud/sdk/v2/model/OutcomeAttributionResultsResponse$StateEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$7.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$61.class
 com/mypurecloud/sdk/v2/model/ViewFilter$FlowDestinationTypesEnum.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$349.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$145.class
@@ -24790,6 +24979,7 @@ com/mypurecloud/sdk/v2/model/ConversationSummaryTopicVirtualAgentsConversationWr
 com/mypurecloud/sdk/v2/model/WfmAgentHistoricalAdherenceJobReference$StatusEnum.class
 com/mypurecloud/sdk/v2/model/CaseManagementAsyncAggregationQuery$GroupByEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseDocumentRequest$1.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$126.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsEmailParticipantWrapupRequest.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$210.class
 com/mypurecloud/sdk/v2/model/AgentUtilizationAggregationSort$NameEnumDeserializer.class
@@ -24923,6 +25113,7 @@ com/mypurecloud/sdk/v2/model/DialerCampaignScheduleConfigChangeAlteration$TypeEn
 com/mypurecloud/sdk/v2/api/request/PatchConversationsCallParticipantCommunicationPostflowactionRequest$1.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$610.class
 com/mypurecloud/sdk/v2/model/MessagingIntegration$MessengerTypeEnum.class
+com/mypurecloud/sdk/v2/model/DisasterRecoveryAllRoutingRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$248.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundCallabletimesetsRequest$sortOrderValues.class
 com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingIgnorephraseRequest$sortOrderValues.class
@@ -25018,6 +25209,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApi$285.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$510.class
 com/mypurecloud/sdk/v2/api/request/GetLearningModulesCoverartCoverArtIdRequest$Builder.class
 com/mypurecloud/sdk/v2/model/AlertSummary$MetricTypeEnum.class
+com/mypurecloud/sdk/v2/model/CreateDecisionTableImportJobRequest.class
 com/mypurecloud/sdk/v2/model/DomainEdgeSoftwareUpdateDto.class
 com/mypurecloud/sdk/v2/model/ContinuousForecastSessionResponse$StateEnum.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$154.class
@@ -25056,6 +25248,7 @@ com/mypurecloud/sdk/v2/api/OrganizationApi$3.class
 com/mypurecloud/sdk/v2/model/ConversationMessagingChannel$TypeEnum.class
 com/mypurecloud/sdk/v2/model/PostTextRequest$BotChannelsEnum.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$322.class
+com/mypurecloud/sdk/v2/model/OrganizationLink$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/ContactlistImportStatusObject.class
 com/mypurecloud/sdk/v2/model/ContentOfferStyleProperties.class
 com/mypurecloud/sdk/v2/model/ConversationSummaryTopicConversationSummaryEvent.class
@@ -25229,6 +25422,7 @@ com/mypurecloud/sdk/v2/api/OutboundApiAsync$243.class
 com/mypurecloud/sdk/v2/model/OpenMessagingFromRecipient$IdTypeEnum.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$61.class
 com/mypurecloud/sdk/v2/api/request/DeleteEmployeeengagementCelebrationRequest$1.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$622.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$79.class
 com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocumentCopiesRequest$Builder.class
 com/mypurecloud/sdk/v2/api/JourneyApi$134.class
@@ -25516,6 +25710,7 @@ com/mypurecloud/sdk/v2/api/JourneyApiAsync$242.class
 com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicConversationRoutingData.class
 com/mypurecloud/sdk/v2/model/VoicemailEndDetailEventTopicVoicemailEndEvent$MediaTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest$Builder.class
+com/mypurecloud/sdk/v2/api/request/DeleteRoutingEmailSettingEmailSettingIdRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingSupportedcontentSupportedContentIdRequest$Builder.class
 com/mypurecloud/sdk/v2/model/AcdEndDetailEventTopicAcdEndEvent$UsedRoutingEnum.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$716.class
@@ -25539,6 +25734,7 @@ com/mypurecloud/sdk/v2/api/RecordingApiAsync$187.class
 com/mypurecloud/sdk/v2/model/DialerSequenceConfigChangeCampaignSequence.class
 com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesTimezonesRequest$1.class
 com/mypurecloud/sdk/v2/api/UsersApi$23.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableExportRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetLocationsRequest.class
 com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactsMergeRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/DeleteProcessautomationScheduledtriggerRequest.class
@@ -25580,11 +25776,13 @@ com/mypurecloud/sdk/v2/api/GamificationApi$105.class
 com/mypurecloud/sdk/v2/api/DataExtensionsApiAsync$3.class
 com/mypurecloud/sdk/v2/model/CaseplanQueryRequest.class
 com/mypurecloud/sdk/v2/api/CoachingApiAsync$82.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$626.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingFacebookAppRequest$1.class
 com/mypurecloud/sdk/v2/api/RoutingApi$274.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$12.class
 com/mypurecloud/sdk/v2/model/ReportingDataExportTopicDataExportNotification$ExportErrorMessagesTypeEnum.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$209.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsBulkAddRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AssistantCopilotVariationsApi$3.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$118.class
 com/mypurecloud/sdk/v2/api/AIStudioApi$7.class
@@ -25653,6 +25851,7 @@ com/mypurecloud/sdk/v2/model/ReportingTurnIntentSlot.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$474.class
 com/mypurecloud/sdk/v2/model/DocumentBodyTableProperties$AlignmentEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/UpdateSkillDivisionRequest.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$111.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$181.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$10.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$142.class
@@ -25907,6 +26106,7 @@ com/mypurecloud/sdk/v2/model/KnowledgeDocumentSuggestionResultDocument.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$467.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$70.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitActivitycodesRequest.class
+com/mypurecloud/sdk/v2/api/TelephonyApi$27.class
 com/mypurecloud/sdk/v2/model/ConversationActivityQueryMetric$MetricEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$351.class
 com/mypurecloud/sdk/v2/model/UploadUrlRequest$ServerSideEncryptionEnum.class
@@ -25916,6 +26116,7 @@ com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicCobrowseMediaPar
 com/mypurecloud/sdk/v2/model/WorkdayPointsTrendItem.class
 com/mypurecloud/sdk/v2/model/ConditionalGroupActivationSimpleMetric.class
 com/mypurecloud/sdk/v2/model/ActivityPlanResponse$TypeEnum.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$54.class
 com/mypurecloud/sdk/v2/model/ContestsResponse$AnonymizationEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/ConversationSummaryTopicVirtualAgentsConversationReason.class
 com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsProgramMappingsRequest$1.class
@@ -25970,6 +26171,7 @@ com/mypurecloud/sdk/v2/model/UserAgentInfo.class
 com/mypurecloud/sdk/v2/api/request/GetIntegrationsTypeConfigschemaRequest.class
 com/mypurecloud/sdk/v2/api/request/PostLanguagesRequest.class
 com/mypurecloud/sdk/v2/api/request/GetCasemanagementCaseplanVersionRequest.class
+com/mypurecloud/sdk/v2/api/RoutingApi$278.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$797.class
 com/mypurecloud/sdk/v2/model/ConsultTransferToExternal.class
 com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkOrganizationsUpdateRequest.class
@@ -26370,6 +26572,7 @@ com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWeekSchedul
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$255.class
 com/mypurecloud/sdk/v2/model/DIDPool$StateEnum.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$331.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$151.class
 com/mypurecloud/sdk/v2/api/ContentManagementApiAsync$107.class
 com/mypurecloud/sdk/v2/api/request/PostExternalcontactsIdentifierlookupOrganizationsRequest$expandValues.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsKeyconfigurationsValidateRequest$Builder.class
@@ -26564,6 +26767,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApi$205.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$236.class
 com/mypurecloud/sdk/v2/model/HistoricalImportStatusListing.class
 com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobRequest$SlotsTypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/model/RecordingNotificationResponse.class
 com/mypurecloud/sdk/v2/api/request/GetQualityFormsSurveyRequest.class
 com/mypurecloud/sdk/v2/model/RateLimitAggregationQuery$AlternateTimeDimensionEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetTeamsRequest.class
@@ -26702,6 +26906,7 @@ com/mypurecloud/sdk/v2/model/BotAggregationSort$NameEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseplanRequest$Builder.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$211.class
 com/mypurecloud/sdk/v2/model/Format.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$67.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$24.class
 com/mypurecloud/sdk/v2/model/PhoneEstablishedEvent.class
 com/mypurecloud/sdk/v2/api/RoutingApi$43.class
@@ -26720,6 +26925,7 @@ com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingDomainVersionReportRe
 com/mypurecloud/sdk/v2/api/request/DeleteArchitectPromptResourceAudioRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingUserDirectroutingbackupSettingsRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWorkplanbidRequest$Builder.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJob$StatusEnum.class
 com/mypurecloud/sdk/v2/api/request/PutIdentityprovidersOneloginRequest.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApi$165.class
 com/mypurecloud/sdk/v2/api/OrganizationApi$1.class
@@ -26774,6 +26980,7 @@ com/mypurecloud/sdk/v2/api/OrganizationApi$29.class
 com/mypurecloud/sdk/v2/model/IpAddressRange$DirectionEnum.class
 com/mypurecloud/sdk/v2/api/AIStudioApiAsync$30.class
 com/mypurecloud/sdk/v2/api/TaskManagementApi$27.class
+com/mypurecloud/sdk/v2/model/CreateDecisionTableImportJobRequest$ImportModeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$20.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$236.class
 com/mypurecloud/sdk/v2/model/AnalyticsParticipant$FlaggedReasonEnum.class
@@ -27000,6 +27207,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$615.class
 com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$34.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$296.class
 com/mypurecloud/sdk/v2/api/JourneyApi$60.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableImportsRequest$1.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$101.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$43.class
 com/mypurecloud/sdk/v2/api/request/PutArchitectIvrRequest$1.class
@@ -27392,6 +27600,7 @@ com/mypurecloud/sdk/v2/api/ArchitectApiAsync$514.class
 com/mypurecloud/sdk/v2/model/RoomParticipantResponse.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$976.class
 com/mypurecloud/sdk/v2/api/request/GetAssistantVariationRequest.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$66.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$295.class
 com/mypurecloud/sdk/v2/model/DocumentBodyListItemProperties$FontSizeEnum.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$566.class
@@ -27482,6 +27691,7 @@ com/mypurecloud/sdk/v2/api/request/PatchOutboundCampaignRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$206.class
 com/mypurecloud/sdk/v2/api/RoutingApi$188.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$66.class
+com/mypurecloud/sdk/v2/model/OrganizationLinkResponse$StatusEnum.class
 com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$37.class
 com/mypurecloud/sdk/v2/model/DocumentBodyTableRowBlockProperties$RowTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/UserLanguageEntityListing.class
@@ -27549,6 +27759,7 @@ com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApiAsync$61.class
 com/mypurecloud/sdk/v2/api/TelephonyApi$3.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$64.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$934.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyNumbersRoutingRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ProcessAutomationApi$21.class
 com/mypurecloud/sdk/v2/model/ApprovalNamespace$NamespaceEnum.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesRequest$1.class
@@ -27598,6 +27809,7 @@ com/mypurecloud/sdk/v2/model/CreateStaffingGroupRequest.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsEmailsAgentlessRequest.class
 com/mypurecloud/sdk/v2/api/ContentManagementApiAsync$85.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$1139.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$76.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$62.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$103.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$415.class
@@ -27685,6 +27897,7 @@ com/mypurecloud/sdk/v2/model/WfmMoveManagementUnitTopicMoveManagementUnitNotific
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$159.class
 com/mypurecloud/sdk/v2/api/WidgetsApi.class
 com/mypurecloud/sdk/v2/api/request/PostRoutingEmailDomainVerificationRequest$1.class
+com/mypurecloud/sdk/v2/model/WhatsAppDefinition$CategoryEnum.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$150.class
 com/mypurecloud/sdk/v2/model/WfmBuScheduleTopicBuScheduleGenerationResultSummary.class
 com/mypurecloud/sdk/v2/model/TranscriptionEnginesRequest.class
@@ -27719,6 +27932,7 @@ com/mypurecloud/sdk/v2/model/Warning$RangeTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$236.class
 com/mypurecloud/sdk/v2/api/ArchitectApi.class
 com/mypurecloud/sdk/v2/model/V2MobiusAlertsTopicConditionRulePredicate$MediaTypeEnum.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$150.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$330.class
 com/mypurecloud/sdk/v2/api/request/GetGamificationContestAgentsScoresTrendsRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$191.class
@@ -28002,6 +28216,7 @@ com/mypurecloud/sdk/v2/model/EvaluationResponse$MediaTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/GetFlowsInstancesSettingsLoglevelsCharacteristicsRequest.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$29.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$117.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$68.class
 com/mypurecloud/sdk/v2/model/CommonRule.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1189.class
 com/mypurecloud/sdk/v2/api/request/GetUsersStationsMeRequest$1.class
@@ -28051,6 +28266,7 @@ com/mypurecloud/sdk/v2/api/RoutingApi$177.class
 com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationWebEventsNotification.class
 com/mypurecloud/sdk/v2/api/GreetingsApiAsync$29.class
 com/mypurecloud/sdk/v2/model/Miner$MinerTypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJob$ExportTypeEnum.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$378.class
 com/mypurecloud/sdk/v2/api/IntentsApiAsync$10.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$288.class
@@ -28138,6 +28354,7 @@ com/mypurecloud/sdk/v2/model/QueueConversationEventTopicConversationRoutingData.
 com/mypurecloud/sdk/v2/api/request/GetUsageEventsDefinitionRequest$1.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApi$76.class
 com/mypurecloud/sdk/v2/model/EdgeChangeTopicEdge$OnlineStatusEnum.class
+com/mypurecloud/sdk/v2/model/BulkAddDecisionTableRowsResponse.class
 com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseplanRequest$1.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$143.class
 com/mypurecloud/sdk/v2/model/Widget$SortKeyEnum.class
@@ -28185,6 +28402,7 @@ com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgeUnpairRequest.class
 com/mypurecloud/sdk/v2/model/SurveyQuestionGroupScore.class
 com/mypurecloud/sdk/v2/api/request/GetOauthScopesRequest.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest$Builder.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$116.class
 com/mypurecloud/sdk/v2/model/LogCaptureUserConfigurationListing.class
 com/mypurecloud/sdk/v2/model/KnowledgeSourcesSearchResponse$QueryTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/GetAuthorizationRoleRequest$expandValues.class
@@ -28344,6 +28562,7 @@ com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$104.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$115.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$579.class
 com/mypurecloud/sdk/v2/model/ConversationMessageMetadataEvent$EventTypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/model/ConversationSummaryLabel.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$889.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$445.class
 com/mypurecloud/sdk/v2/model/CallbackMediaSettings$LiveVoiceReactionTypeEnumDeserializer.class
@@ -28482,6 +28701,7 @@ com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemsBulkAddJobRequest
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$573.class
 com/mypurecloud/sdk/v2/model/ActionMap.class
 com/mypurecloud/sdk/v2/model/FlowPathsElement$TypeEnum.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$57.class
 com/mypurecloud/sdk/v2/model/FacebookDataIngestionRuleRequest.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$29.class
 com/mypurecloud/sdk/v2/model/TeamActivityQuery$GroupByEnumDeserializer.class
@@ -28493,6 +28713,7 @@ com/mypurecloud/sdk/v2/api/request/DeleteConversationCustomattributeRequest$Buil
 com/mypurecloud/sdk/v2/model/PingIdentity$NameIdentifierFormatEnum.class
 com/mypurecloud/sdk/v2/model/AgentStateCountsRequest.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$75.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyNumbersRoutingAllRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobRequest$Builder.class
 com/mypurecloud/sdk/v2/model/ReportingTurnKnowledgeDocument.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$192.class
@@ -28800,6 +29021,7 @@ com/mypurecloud/sdk/v2/api/request/DeleteRoutingUtilizationRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/DeleteIdentityprovidersPingRequest$Builder.class
 com/mypurecloud/sdk/v2/api/CoachingApiAsync$17.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$8.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$623.class
 com/mypurecloud/sdk/v2/model/AgentMaxUtilizationResponse.class
 com/mypurecloud/sdk/v2/api/request/PutExternalcontactsImportCsvSettingRequest.class
 com/mypurecloud/sdk/v2/api/request/PostLanguageunderstandingDomainFeedbackRequest.class
@@ -28858,6 +29080,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$718.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$149.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$516.class
 com/mypurecloud/sdk/v2/model/RowSearchFilter.class
+com/mypurecloud/sdk/v2/api/request/GetRoutingEmailSettingRequest$1.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApi$23.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$54.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$22.class
@@ -28868,6 +29091,7 @@ com/mypurecloud/sdk/v2/api/LanguageUnderstandingApi$2.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$428.class
 com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsRequest.class
 com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$159.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$75.class
 com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitActivitycodeRequest.class
 com/mypurecloud/sdk/v2/api/request/GetQualityFormsSurveyVersionsRequest.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$557.class
@@ -29164,6 +29388,7 @@ com/mypurecloud/sdk/v2/model/BuForecastGenerationPlanningGroupResult.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$436.class
 com/mypurecloud/sdk/v2/api/request/DeleteAnalyticsSummariesAggregatesJobRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$466.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$117.class
 com/mypurecloud/sdk/v2/model/WorkPlan.class
 com/mypurecloud/sdk/v2/api/CoachingApi$17.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$147.class
@@ -29203,6 +29428,7 @@ com/mypurecloud/sdk/v2/api/UsersApiAsync$402.class
 com/mypurecloud/sdk/v2/model/RegisterArchitectExportJobResponse.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$157.class
 com/mypurecloud/sdk/v2/api/request/GetAlertingAlertRequest.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableExportsRequest.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsVideosMeetingsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PutRoutingMessageRecipientRequest.class
 com/mypurecloud/sdk/v2/api/RoutingApi$92.class
@@ -29300,6 +29526,7 @@ com/mypurecloud/sdk/v2/api/GreetingsApiAsync$20.class
 com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicFacebookId.class
 com/mypurecloud/sdk/v2/model/ContextEntity.class
 com/mypurecloud/sdk/v2/api/IntentsApi$7.class
+com/mypurecloud/sdk/v2/model/V3SynchronizationRef.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$312.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$231.class
 com/mypurecloud/sdk/v2/api/request/GetArchitectEmergencygroupsRequest$Builder.class
@@ -29408,6 +29635,7 @@ com/mypurecloud/sdk/v2/api/RecordingApiAsync$136.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingQueueEstimatedwaittimeRequest$Builder.class
 com/mypurecloud/sdk/v2/model/ProgramJob$StateEnum.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest$1.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$120.class
 com/mypurecloud/sdk/v2/api/DataPrivacyApiAsync$5.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$188.class
 com/mypurecloud/sdk/v2/api/TaskManagementApi$51.class
@@ -29622,6 +29850,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApi$185.class
 com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTranslationsLanguageConversationRequest$1.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$42.class
 com/mypurecloud/sdk/v2/api/GroupsApiAsync$14.class
+com/mypurecloud/sdk/v2/api/request/GetBusinessrulesDecisiontableImportRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseCategoryRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$117.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$44.class
@@ -29792,6 +30021,7 @@ com/mypurecloud/sdk/v2/api/ChatApi$2.class
 com/mypurecloud/sdk/v2/model/CallbackBasic$DisconnectTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicCallback$DisconnectTypeEnum.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$197.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$121.class
 com/mypurecloud/sdk/v2/model/TaskManagementAggregateQueryClause$TypeEnum.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$286.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$517.class
@@ -29924,6 +30154,7 @@ com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$90.class
 com/mypurecloud/sdk/v2/api/LicenseApiAsync$22.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$85.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$18.class
+com/mypurecloud/sdk/v2/model/CaseplanDataSchemaRequest.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest$1.class
 com/mypurecloud/sdk/v2/api/LearningApiAsync$73.class
 com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsSentimentfeedbackRequest$1.class
@@ -30452,6 +30683,8 @@ com/mypurecloud/sdk/v2/api/LearningApiAsync$116.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1105.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignRequest.class
 com/mypurecloud/sdk/v2/api/UsersApi$32.class
+com/mypurecloud/sdk/v2/api/request/DeleteTelephonyOrganizationLinkTargetOrganizationIdRequest.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$624.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$899.class
 com/mypurecloud/sdk/v2/model/TimeOffRequest$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/TwitterIntegration$CreateStatusEnum.class
@@ -30829,6 +31062,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$792.class
 com/mypurecloud/sdk/v2/api/GamificationApi$94.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$18.class
 com/mypurecloud/sdk/v2/api/WebChatApi$25.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyNumbersRoutingRequest.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$16.class
 com/mypurecloud/sdk/v2/api/request/PostOutboundMessagingcampaignStopRequest.class
 com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseUploadsUrlsJobRequest$Builder.class
@@ -30967,6 +31201,7 @@ com/mypurecloud/sdk/v2/model/DnclistImportStatusImportStatus$ImportStateEnumDese
 com/mypurecloud/sdk/v2/api/GamificationApi$57.class
 com/mypurecloud/sdk/v2/model/AgentStateAgentQueryPredicate.class
 com/mypurecloud/sdk/v2/model/KnowledgeConversationContextResponse$MediaTypeEnum.class
+com/mypurecloud/sdk/v2/api/request/PutCasemanagementCaseplanDataschemaRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PostOutboundCampaignAgentownedmappingpreviewRequest.class
 com/mypurecloud/sdk/v2/api/request/GetResponsemanagementResponseassetsStatusStatusIdRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsReprocessingJobsRequest$sortOrderValues.class
@@ -31114,6 +31349,8 @@ com/mypurecloud/sdk/v2/api/OutboundApi$162.class
 com/mypurecloud/sdk/v2/model/EventCondition$StreamTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/PatchRoutingSkillRequest$Builder.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$226.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$56.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJobRequest$ExportTypeEnum.class
 com/mypurecloud/sdk/v2/api/request/PostFlowsMilestonesRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$134.class
 com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPostContactWhatsappEventTopicWhatsAppAttributes.class
@@ -31149,6 +31386,7 @@ com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$9.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$230.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$376.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$204.class
+com/mypurecloud/sdk/v2/model/AgentStateAdherenceStateCount$AdherenceStateEnum.class
 com/mypurecloud/sdk/v2/api/request/DeleteGroupRequest$Builder.class
 com/mypurecloud/sdk/v2/model/BuSchedulingSettingsResponse.class
 com/mypurecloud/sdk/v2/model/CoachingSlot$DifferenceRatingEnum.class
@@ -31250,6 +31488,7 @@ com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueMemberRequest.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$441.class
 com/mypurecloud/sdk/v2/api/request/PatchCasemanagementCaseplanStageplanRequest$Builder.class
 com/mypurecloud/sdk/v2/model/BotSlot.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$163.class
 com/mypurecloud/sdk/v2/api/ChatApiAsync$31.class
 com/mypurecloud/sdk/v2/api/CaseManagementApi$52.class
@@ -31512,6 +31751,7 @@ com/mypurecloud/sdk/v2/model/ConnectionCreateResponse.class
 com/mypurecloud/sdk/v2/api/LearningApi$40.class
 com/mypurecloud/sdk/v2/model/DocumentUpload.class
 com/mypurecloud/sdk/v2/api/AssistantCopilotVariationsApiAsync$2.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyNumbersRoutingAllRequest.class
 com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$166.class
 com/mypurecloud/sdk/v2/model/V2FlowExecutionDataFlowidTopicInvokingFlowContext.class
 com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest$Builder.class
@@ -31570,6 +31810,7 @@ com/mypurecloud/sdk/v2/model/SmsPhoneNumber$PhoneNumberStatusEnum.class
 com/mypurecloud/sdk/v2/model/OpenSocialMediaChannel$PlatformEnum.class
 com/mypurecloud/sdk/v2/api/request/PostUploadsWorkforcemanagementHistoricaldataCsvRequest$Builder.class
 com/mypurecloud/sdk/v2/api/BusinessRulesApi$44.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableExportsRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocumentFeedbackRequest.class
 com/mypurecloud/sdk/v2/model/AgentUtilizationAggregateQueryPredicate$OperatorEnum.class
 com/mypurecloud/sdk/v2/api/RecordingApi$43.class
@@ -31708,6 +31949,7 @@ com/mypurecloud/sdk/v2/api/WebChatApiAsync$56.class
 com/mypurecloud/sdk/v2/model/KnowledgeParseJobResponse$StatusEnum.class
 com/mypurecloud/sdk/v2/model/GuideContentGenerationJob.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$66.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$62.class
 com/mypurecloud/sdk/v2/api/request/GetOutboundDnclistsRequest.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$178.class
 com/mypurecloud/sdk/v2/model/WebChatMemberInfo$StateEnum.class
@@ -31724,6 +31966,7 @@ com/mypurecloud/sdk/v2/model/LearningModulePreviewGetScoStructure$CompletionStat
 com/mypurecloud/sdk/v2/api/request/PatchLocationRequest.class
 com/mypurecloud/sdk/v2/api/AuthorizationApi$60.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenRequest$1.class
+com/mypurecloud/sdk/v2/api/TelephonyApi$33.class
 com/mypurecloud/sdk/v2/api/OutboundApi$45.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$629.class
 com/mypurecloud/sdk/v2/api/request/GetUserGreetingsRequest.class
@@ -31755,6 +31998,7 @@ com/mypurecloud/sdk/v2/model/QueueConversationEventTopicEmail$StateEnum.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$88.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$17.class
 com/mypurecloud/sdk/v2/model/EmailExternalEstablishedEvent.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$137.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$161.class
 com/mypurecloud/sdk/v2/model/Survey.class
 com/mypurecloud/sdk/v2/api/request/PostContentmanagementDocumentRequest.class
@@ -31857,6 +32101,7 @@ com/mypurecloud/sdk/v2/api/GamificationApiAsync$106.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$51.class
 com/mypurecloud/sdk/v2/model/OrganizationRoleEntityListing.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$198.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$54.class
 com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$62.class
 com/mypurecloud/sdk/v2/api/request/GetUsersCustomattributesSchemasCoretypeRequest$1.class
 com/mypurecloud/sdk/v2/api/MessagingApiAsync$36.class
@@ -32425,6 +32670,7 @@ com/mypurecloud/sdk/v2/api/OutboundApiAsync$127.class
 com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicMessageDetails$MessageStatusEnum.class
 com/mypurecloud/sdk/v2/api/request/GetVoicemailPolicyRequest$1.class
 com/mypurecloud/sdk/v2/api/RoutingApi$84.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$617.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$219.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$921.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$531.class
@@ -32581,6 +32827,7 @@ com/mypurecloud/sdk/v2/api/RoutingApiAsync$146.class
 com/mypurecloud/sdk/v2/api/LocationsApiAsync$20.class
 com/mypurecloud/sdk/v2/model/UpdateMuAgentsRequest.class
 com/mypurecloud/sdk/v2/api/request/GetGamificationProfilesUsersMeRequest$Builder.class
+com/mypurecloud/sdk/v2/model/Row.class
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsReportingDashboardsUsersBulkRemoveRequest.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$128.class
 com/mypurecloud/sdk/v2/model/TextBotChannel$InputModesEnum.class
@@ -32779,6 +33026,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$388.class
 com/mypurecloud/sdk/v2/api/StationsApiAsync$7.class
 com/mypurecloud/sdk/v2/model/PresenceEventUserPresence.class
 com/mypurecloud/sdk/v2/model/Term.class
+com/mypurecloud/sdk/v2/model/NumberRouting$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/KnowledgeApi$71.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$154.class
 com/mypurecloud/sdk/v2/model/AgentUtilizationAsyncAggregationQuery$AlternateTimeDimensionEnumDeserializer.class
@@ -32969,6 +33217,7 @@ com/mypurecloud/sdk/v2/model/WfmBuShortTermForecastImportCompleteTopicBuForecast
 com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitActivitycodeRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTopicsGeneralRequest.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$337.class
+com/mypurecloud/sdk/v2/api/TelephonyApi$31.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$127.class
 com/mypurecloud/sdk/v2/api/request/PostFlowsRequest.class
 com/mypurecloud/sdk/v2/api/request/GetScriptsPublishedScriptIdRequest.class
@@ -32985,6 +33234,7 @@ com/mypurecloud/sdk/v2/api/request/PostRoutingSmsPhonenumbersImportRequest.class
 com/mypurecloud/sdk/v2/api/request/DeleteVoicemailMessagesRequest$Builder.class
 com/mypurecloud/sdk/v2/model/PhoneEntityListing.class
 com/mypurecloud/sdk/v2/api/request/PutExternalcontactsOrganizationsSchemaRequest$1.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$118.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$6.class
 com/mypurecloud/sdk/v2/model/Prompt.class
 com/mypurecloud/sdk/v2/api/EmployeeEngagementApiAsync$9.class
@@ -33025,6 +33275,7 @@ com/mypurecloud/sdk/v2/api/RecordingApi$3.class
 com/mypurecloud/sdk/v2/model/TaskManagementAsyncAggregateQueryResponse.class
 com/mypurecloud/sdk/v2/api/request/DeleteRoutingUserUtilizationRequest$1.class
 com/mypurecloud/sdk/v2/api/CoachingApiAsync$53.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$139.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$19.class
 com/mypurecloud/sdk/v2/api/request/GetFaxSettingsRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetPresenceUserPrimarysourceRequest$Builder.class
@@ -33100,6 +33351,7 @@ com/mypurecloud/sdk/v2/api/OutboundApiAsync$461.class
 com/mypurecloud/sdk/v2/model/WorkitemQueueReference.class
 com/mypurecloud/sdk/v2/model/ObservationMetricData.class
 com/mypurecloud/sdk/v2/api/GamificationApi$130.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$64.class
 com/mypurecloud/sdk/v2/api/RecordingApi$63.class
 com/mypurecloud/sdk/v2/api/request/PutUserRolesRequest.class
 com/mypurecloud/sdk/v2/api/GamificationApi$15.class
@@ -33156,6 +33408,7 @@ com/mypurecloud/sdk/v2/api/request/GetScimV2ServiceproviderconfigRequest$1.class
 com/mypurecloud/sdk/v2/model/PauseCriteria.class
 com/mypurecloud/sdk/v2/api/SCIMApiAsync$17.class
 com/mypurecloud/sdk/v2/api/request/PutOrgauthorizationTrustorUserRequest$Builder.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyOrganizationLinkRequest.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$317.class
 com/mypurecloud/sdk/v2/model/ActionEntityListing.class
 com/mypurecloud/sdk/v2/api/TaskManagementApi$79.class
@@ -33267,6 +33520,7 @@ com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$183.class
 com/mypurecloud/sdk/v2/api/request/DeleteAnalyticsUsersAggregatesJobRequest$1.class
 com/mypurecloud/sdk/v2/api/UsageApiAsync$30.class
 com/mypurecloud/sdk/v2/model/WidgetClientConfigV1$WebChatSkinEnum.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$634.class
 com/mypurecloud/sdk/v2/api/request/DeleteUsersRuleRequest.class
 com/mypurecloud/sdk/v2/model/UserRoutingStatusUserParam.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$944.class
@@ -33508,6 +33762,7 @@ com/mypurecloud/sdk/v2/model/RoutingActivityMetricValue$MetricEnumDeserializer.c
 com/mypurecloud/sdk/v2/model/ManualEscalationResponse$EscalationStatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$186.class
 com/mypurecloud/sdk/v2/api/IntentsApiAsync$8.class
+com/mypurecloud/sdk/v2/model/CardBodyText$ContentTypeEnum.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1121.class
 com/mypurecloud/sdk/v2/api/request/PatchUsersRuleRequest$1.class
 com/mypurecloud/sdk/v2/model/AttributeFilterItem.class
@@ -34000,6 +34255,7 @@ com/mypurecloud/sdk/v2/api/ArchitectApiAsync$46.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitIntradayRequest.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1178.class
 com/mypurecloud/sdk/v2/model/QueryWeekSummaryListJobRequest.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJobListing.class
 com/mypurecloud/sdk/v2/api/UploadsApi$3.class
 com/mypurecloud/sdk/v2/model/ActionAggregateQueryFilter$TypeEnum.class
 com/mypurecloud/sdk/v2/api/request/DeleteIdentityprovidersPureengageRequest.class
@@ -34692,6 +34948,7 @@ com/mypurecloud/sdk/v2/model/DomainEntityListingSurveyForm.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$957.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$159.class
 com/mypurecloud/sdk/v2/model/WorkitemOnCreateRule$TypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/model/AgentStateAdherenceStateCount$AdherenceStateEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApiAsync$166.class
 com/mypurecloud/sdk/v2/api/SocialMediaApi$1.class
 com/mypurecloud/sdk/v2/api/PresenceApiAsync$81.class
@@ -35015,6 +35272,7 @@ com/mypurecloud/sdk/v2/api/OrganizationApiAsync$65.class
 com/mypurecloud/sdk/v2/model/WhatsAppIntegrationRequest.class
 com/mypurecloud/sdk/v2/api/request/GetIdentityprovidersOktaRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PostChatsRoomMessagesPinsRequest$1.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$619.class
 com/mypurecloud/sdk/v2/model/EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition$UnitEnum.class
 com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicCallbackMediaParticipant$InitialStateEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/LanguagesApi$9.class
@@ -35343,6 +35601,7 @@ com/mypurecloud/sdk/v2/model/QueueConversationEventTopicCobrowse$StateEnumDeseri
 com/mypurecloud/sdk/v2/api/request/DeleteGroupRequest.class
 com/mypurecloud/sdk/v2/model/QueueConversationEmailEventTopicConversationRoutingData.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$92.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$122.class
 com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseParseJobRequest.class
 com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseImportJobsRequest.class
 com/mypurecloud/sdk/v2/api/WebDeploymentsApiAsync$8.class
@@ -35417,6 +35676,7 @@ com/mypurecloud/sdk/v2/model/WfmMoveManagementUnitTopicBusinessUnit.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$53.class
 com/mypurecloud/sdk/v2/api/TaskManagementApi$20.class
 com/mypurecloud/sdk/v2/api/InfrastructureAsCodeApiAsync$12.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$155.class
 com/mypurecloud/sdk/v2/api/request/DeleteContentmanagementStatusStatusIdRequest$Builder.class
 com/mypurecloud/sdk/v2/model/Contractual.class
 com/mypurecloud/sdk/v2/api/request/PostArchitectGrammarLanguageFilesDtmfRequest$Builder.class
@@ -35593,6 +35853,7 @@ com/mypurecloud/sdk/v2/api/request/GetKnowledgeGuestSessionDocumentsRequest$1.cl
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$259.class
 com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicCallback$DisconnectTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$71.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$58.class
 com/mypurecloud/sdk/v2/model/V2MobiusRulesTopicRule$ActionEnum.class
 com/mypurecloud/sdk/v2/api/request/DeleteLanguageunderstandingMinerRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$21.class
@@ -35623,6 +35884,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$474.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$563.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWorkplanbidsRequest$1.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$149.class
+com/mypurecloud/sdk/v2/model/AgentStateActivityCategoryCount.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$594.class
 com/mypurecloud/sdk/v2/api/request/GetConversationRecordingmetadataRequest.class
 com/mypurecloud/sdk/v2/model/ConversationSummaryTopicVirtualAgentsConversationFollowupAction.class
@@ -35651,6 +35913,7 @@ com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$407.class
 com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicJourneyActionMap.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$273.class
 com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$179.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$115.class
 com/mypurecloud/sdk/v2/api/UserRecordingsApiAsync$1.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$379.class
 com/mypurecloud/sdk/v2/api/request/PatchConversationsEmailParticipantParkingstateRequest$1.class
@@ -35766,6 +36029,7 @@ com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$147.class
 com/mypurecloud/sdk/v2/model/GenAiPhrasesTestPhraseMatchedTranscript.class
 com/mypurecloud/sdk/v2/api/LanguagesApiAsync$2.class
 com/mypurecloud/sdk/v2/model/ConversationFormResponseContent$ContentTypeEnumDeserializer.class
+com/mypurecloud/sdk/v2/model/ThirdPartySuggestionSource.class
 com/mypurecloud/sdk/v2/api/request/PutArchitectPromptRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$322.class
 com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitCapacityplanRequest$Builder.class
@@ -35854,6 +36118,7 @@ com/mypurecloud/sdk/v2/api/request/PostJourneyOutcomesPredictorsRequest$Builder.
 com/mypurecloud/sdk/v2/api/UsersApiAsync$76.class
 com/mypurecloud/sdk/v2/api/OutboundApi$60.class
 com/mypurecloud/sdk/v2/api/request/PostGamificationProfileMembersValidateRequest$Builder.class
+com/mypurecloud/sdk/v2/api/request/PatchRoutingEmailSettingEmailSettingIdRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetMobiledevicesRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PostConversationParticipantReplaceRequest$1.class
 com/mypurecloud/sdk/v2/model/ApiUsageOrganizationQuery$GroupByEnum.class
@@ -35920,6 +36185,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$73.class
 com/mypurecloud/sdk/v2/api/request/GetContentmanagementStatusRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PatchSocialmediaTopicDataingestionrulesOpenOpenIdRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsVideoDetailsRequest.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$141.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$21.class
 com/mypurecloud/sdk/v2/api/TelephonyApiAsync$2.class
 com/mypurecloud/sdk/v2/model/TrunkInstanceTopicTrunkMetricsNetworkTypeIp.class
@@ -36021,6 +36287,7 @@ com/mypurecloud/sdk/v2/model/HistoricalImportDeleteFilesJobResponse$StateEnum.cl
 com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicScreenMonitoring$StateEnum.class
 com/mypurecloud/sdk/v2/model/ViewFilter$DevelopmentRoleListEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/PutJourneyViewsEventdefinitionRequest.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$73.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$381.class
 com/mypurecloud/sdk/v2/model/ActionAggregateQueryPredicate$DimensionEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$1.class
@@ -36211,6 +36478,7 @@ com/mypurecloud/sdk/v2/model/MinerIntent.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$108.class
 com/mypurecloud/sdk/v2/api/request/GetBusinessrulesSchemasCoretypesRequest$Builder.class
 com/mypurecloud/sdk/v2/model/ChecklistInferenceJobResponse$StatusEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyNumbersRoutingAllRequest$Builder.class
 com/mypurecloud/sdk/v2/model/EngagementRequest.class
 com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$23.class
 com/mypurecloud/sdk/v2/model/TaskManagementAggregateDataContainer.class
@@ -36283,6 +36551,7 @@ com/mypurecloud/sdk/v2/model/HistoricalImportDeleteFilesJobResponse.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi$78.class
 com/mypurecloud/sdk/v2/api/LearningApiAsync$23.class
 com/mypurecloud/sdk/v2/api/WidgetsApi$1.class
+com/mypurecloud/sdk/v2/api/request/DeleteRoutingEmailSettingEmailSettingIdRequest.class
 com/mypurecloud/sdk/v2/api/MessagingApi$8.class
 com/mypurecloud/sdk/v2/model/AlternativeShiftJobResponse.class
 com/mypurecloud/sdk/v2/api/SearchApiAsync$67.class
@@ -36310,6 +36579,7 @@ com/mypurecloud/sdk/v2/model/MaskingRule$TypeEnum.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$297.class
 com/mypurecloud/sdk/v2/api/DataPrivacyApiAsync$14.class
 com/mypurecloud/sdk/v2/model/OpportunityResultWithAgentIds$ApprovalTypeEnum.class
+com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableVersionRowsBulkAddRequest.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsTwitterOauthSettingsRequest$1.class
 com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicVoicemail$UploadStatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/MessagingCommunicationEndedEvent$DisconnectTypeEnumDeserializer.class
@@ -36482,6 +36752,7 @@ com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesOpenOpen
 com/mypurecloud/sdk/v2/model/AnalyticsConversation$ConversationInitiatorEnum.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsCallbacksBulkDisconnectRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetGroupGreetingsRequest.class
+com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplanDataschemasRequest$Builder.class
 com/mypurecloud/sdk/v2/model/ConsultTransfer$SpeakToEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/QueueObservationQueryPredicate$DimensionEnum.class
 com/mypurecloud/sdk/v2/model/WorkPlanBidGroupSummaryList.class
@@ -36544,6 +36815,7 @@ com/mypurecloud/sdk/v2/api/UsersApiAsync$10.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$417.class
 com/mypurecloud/sdk/v2/model/ReportingDataExportTopicDataExportNotification$ExportFormatEnum.class
 com/mypurecloud/sdk/v2/api/ScriptsApiAsync$42.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApi$58.class
 com/mypurecloud/sdk/v2/model/ShiftTradeUpdateTradeStateJobResponse.class
 com/mypurecloud/sdk/v2/model/TranscriptAggregationView$TargetEnum.class
 com/mypurecloud/sdk/v2/api/EmployeeEngagementApi$3.class
@@ -36774,6 +37046,7 @@ com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$329.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$142.class
 com/mypurecloud/sdk/v2/api/JourneyApiAsync$231.class
 com/mypurecloud/sdk/v2/api/request/DeleteRoutingUserUtilizationRequest.class
+com/mypurecloud/sdk/v2/model/AppleInvitation.class
 com/mypurecloud/sdk/v2/api/UsageApiAsync$37.class
 com/mypurecloud/sdk/v2/model/UpdateWorkPlanBid.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$251.class
@@ -36816,6 +37089,7 @@ com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApiAsync$155.class
 com/mypurecloud/sdk/v2/api/request/DeleteRecordingMediaretentionpolicyRequest.class
 com/mypurecloud/sdk/v2/api/AnalyticsApi$49.class
 com/mypurecloud/sdk/v2/model/RecordingTemplateCard.class
+com/mypurecloud/sdk/v2/api/request/GetRoutingEmailSettingEmailSettingIdRequest$1.class
 com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicScreenShareMediaParticipant$InitialStateEnum.class
 com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent$OutboundCampaignTypeEnum.class
 com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$86.class
@@ -37127,6 +37401,7 @@ com/mypurecloud/sdk/v2/api/request/PutFlowRequest$1.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$245.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$177.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$223.class
+com/mypurecloud/sdk/v2/api/RoutingApi$283.class
 com/mypurecloud/sdk/v2/model/CollaborateChatAdhocMessageEventTopicCollaborateChatMessage$ActionTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetAuthorizationRoleRequest.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$303.class
@@ -37248,6 +37523,7 @@ com/mypurecloud/sdk/v2/api/request/GetRoutingSmsPhonenumbersRequest$sortOrderVal
 com/mypurecloud/sdk/v2/api/request/PutPresenceSettingsRequest.class
 com/mypurecloud/sdk/v2/api/request/PostUsageEventsQueryRequest.class
 com/mypurecloud/sdk/v2/api/WebDeploymentsApiAsync$74.class
+com/mypurecloud/sdk/v2/model/UpdateDecisionTableImportJobRequest$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$465.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApi$334.class
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsAgentutilizationsAggregatesQueryRequest$1.class
@@ -37395,11 +37671,13 @@ com/mypurecloud/sdk/v2/api/LearningApiAsync$34.class
 com/mypurecloud/sdk/v2/api/VoicemailApiAsync$87.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$344.class
+com/mypurecloud/sdk/v2/model/DecisionTableExportJobRequest$ExportTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/ExternalOrganization.class
 com/mypurecloud/sdk/v2/api/request/PutConversationsSocialRecordingstateRequest$1.class
 com/mypurecloud/sdk/v2/model/QueueConversationEventTopicSocialExpression$DisconnectTypeEnum.class
 com/mypurecloud/sdk/v2/model/AgentCopilotAggregateQueryPredicate$DimensionEnum.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$207.class
+com/mypurecloud/sdk/v2/model/BulkUpdateDecisionTableRowsRequest.class
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsFlowsAggregatesQueryRequest$Builder.class
 com/mypurecloud/sdk/v2/api/OutboundApi$189.class
 com/mypurecloud/sdk/v2/model/ScimV2SchemaAttribute$UniquenessEnum.class
@@ -37600,6 +37878,7 @@ com/mypurecloud/sdk/v2/model/FlowAggregateQueryPredicate$TypeEnum.class
 com/mypurecloud/sdk/v2/model/GKNDocumentationSearchCriteria$OperatorEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingAssessmentsJobRequest$1.class
 com/mypurecloud/sdk/v2/api/BillingApi$8.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$69.class
 com/mypurecloud/sdk/v2/api/request/PostPresencedefinitionsRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesSitesSearchRequest$1.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$589.class
@@ -37650,6 +37929,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$368.class
 com/mypurecloud/sdk/v2/api/request/GetAuthorizationDivisionsRequest.class
 com/mypurecloud/sdk/v2/api/request/PostLanguageunderstandingIgnorephraseRemoveRequest.class
 com/mypurecloud/sdk/v2/model/UpdateTimeOffPlanRequest$AutoApprovalRuleEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$124.class
 com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenRequest.class
 com/mypurecloud/sdk/v2/model/Phone$StateEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/Flow$TypeEnumDeserializer.class
@@ -37891,6 +38171,7 @@ com/mypurecloud/sdk/v2/api/request/GetUsersRulesRequest$sortOrderValues.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$58.class
 com/mypurecloud/sdk/v2/model/CrossPlatformMediaPolicies.class
 com/mypurecloud/sdk/v2/api/AuthorizationApiAsync$135.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$67.class
 com/mypurecloud/sdk/v2/model/ViewFilter$EmpathyScoreCategoriesEnum.class
 com/mypurecloud/sdk/v2/api/QualityApi$123.class
 com/mypurecloud/sdk/v2/api/SearchApiAsync$87.class
@@ -37924,6 +38205,7 @@ com/mypurecloud/sdk/v2/api/SpeechTextAnalyticsApiAsync$61.class
 com/mypurecloud/sdk/v2/model/KnowledgeAggregateQueryPredicate$DimensionEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/KnowledgeIntegrationFilter.class
 com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$52.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyNumbersRoutingRequest$1.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$314.class
 com/mypurecloud/sdk/v2/api/GreetingsApi$28.class
 com/mypurecloud/sdk/v2/api/request/GetContentmanagementQueryRequest$Builder.class
@@ -38206,6 +38488,7 @@ com/mypurecloud/sdk/v2/api/OutboundApi$178.class
 com/mypurecloud/sdk/v2/api/GroupsApiAsync.class
 com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseLabelRequest.class
 com/mypurecloud/sdk/v2/model/OutboundRoute$StateEnum.class
+com/mypurecloud/sdk/v2/api/request/PatchRoutingEmailSettingEmailSettingIdRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/PostSocialmediaEscalationrulesRequest$Builder.class
 com/mypurecloud/sdk/v2/model/ActionAggregationSort$NameEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/SingleWorkdayAveragePoints.class
@@ -38498,9 +38781,11 @@ com/mypurecloud/sdk/v2/model/UserObservationQuery.class
 com/mypurecloud/sdk/v2/model/HealthInfo$StatusEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$85.class
 com/mypurecloud/sdk/v2/api/RecordingApiAsync$37.class
+com/mypurecloud/sdk/v2/model/OrganizationLinkApprovalRequest.class
 com/mypurecloud/sdk/v2/model/Campaign$DialingModeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/AiAnswer$FailureTypeEnum.class
 com/mypurecloud/sdk/v2/model/VoicemailEndDetailEventTopicVoicemailEndEvent$DirectionEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$78.class
 com/mypurecloud/sdk/v2/api/request/GetSocialmediaTopicDataingestionrulesRequest$1.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest$1.class
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$298.class
@@ -38512,6 +38797,7 @@ com/mypurecloud/sdk/v2/model/UserScheduleAdherence$ImpactEnum.class
 com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$236.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$196.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$107.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$621.class
 com/mypurecloud/sdk/v2/api/SocialMediaApi$87.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1125.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$241.class
@@ -38940,6 +39226,8 @@ com/mypurecloud/sdk/v2/api/request/PostConversationsSummariesPreviewRequest.clas
 com/mypurecloud/sdk/v2/api/GamificationApi$104.class
 com/mypurecloud/sdk/v2/api/request/GetFlowsDivisionviewsRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementCalendarUrlIcsRequest$1.class
+com/mypurecloud/sdk/v2/model/DecisionTableImportJob$ImportModeEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseplanDataschemaRequest$Builder.class
 com/mypurecloud/sdk/v2/api/VoicemailApiAsync$39.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsMessageInboundOpenReceiptRequest$Builder.class
 com/mypurecloud/sdk/v2/model/WorkPlanConstraintConflictMessage.class
@@ -38956,6 +39244,7 @@ com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$277.class
 com/mypurecloud/sdk/v2/model/UpdateCoachingAppointmentRequest.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$9.class
 com/mypurecloud/sdk/v2/api/OutboundApi$256.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$630.class
 com/mypurecloud/sdk/v2/api/request/DeleteAnalyticsUsersDetailsJobRequest$1.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$304.class
 com/mypurecloud/sdk/v2/model/AgentBulkStatusUpdateOpportunityEnrollmentsRequest$StatusEnumDeserializer.class
@@ -39004,6 +39293,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1036.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$752.class
 com/mypurecloud/sdk/v2/api/request/GetPresenceDefinitions0Request$localeCodeValues.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$172.class
+com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseplanDataschemaRequest.class
 com/mypurecloud/sdk/v2/api/QualityApiAsync$85.class
 com/mypurecloud/sdk/v2/model/ConversationContentQuickReply.class
 com/mypurecloud/sdk/v2/model/DocumentBodyBlock$TypeEnumDeserializer.class
@@ -39042,6 +39332,7 @@ com/mypurecloud/sdk/v2/model/V2WfmMainForecastExportSnapshotEventMainForecastExp
 com/mypurecloud/sdk/v2/api/request/PostConversationsCallbackParticipantReplaceRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest$Builder.class
 com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicCobrowseMediaParticipant$InitialStateEnumDeserializer.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyNumbersRoutingRequest$statusValues.class
 com/mypurecloud/sdk/v2/api/CaseManagementApi$3.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest.class
 com/mypurecloud/sdk/v2/model/MatchCriteria$OperatorEnumDeserializer.class
@@ -39170,7 +39461,9 @@ com/mypurecloud/sdk/v2/api/GamificationApiAsync$232.class
 com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest$1.class
 com/mypurecloud/sdk/v2/api/IntegrationsApiAsync$118.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$350.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$628.class
 com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseCategoryRequest.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$135.class
 com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$14.class
 com/mypurecloud/sdk/v2/model/FacebookPermission.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingQueuesMeRequest$1.class
@@ -39307,6 +39600,7 @@ com/mypurecloud/sdk/v2/api/OutboundApiAsync$272.class
 com/mypurecloud/sdk/v2/model/ConversationEventTopicScreenShare$InitialStateEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/BulkOpportunitiesReferenceResult$StatusEnum.class
 com/mypurecloud/sdk/v2/api/request/GetScriptsDivisionviewsRequest$1.class
+com/mypurecloud/sdk/v2/api/RoutingApiAsync$632.class
 com/mypurecloud/sdk/v2/api/RoutingApi$161.class
 com/mypurecloud/sdk/v2/model/WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate$RoutingStatusEnum.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentsOpportunitiesQueryRequest$1.class
@@ -39407,6 +39701,7 @@ com/mypurecloud/sdk/v2/api/EmailsApiAsync$13.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1169.class
 com/mypurecloud/sdk/v2/api/ArchitectApi$4.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsMessageCommunicationMessagesRequest$1.class
+com/mypurecloud/sdk/v2/api/request/PutCasemanagementCaseplanDataschemaRequest$Builder.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$672.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$37.class
 com/mypurecloud/sdk/v2/api/RoutingApi$73.class
@@ -39451,6 +39746,7 @@ com/mypurecloud/sdk/v2/model/ConversationEventTopicCobrowse.class
 com/mypurecloud/sdk/v2/model/HrisTimeOffTypesJobResponse.class
 com/mypurecloud/sdk/v2/model/WorkitemWrapupUpdate.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$295.class
+com/mypurecloud/sdk/v2/model/NumberRouting.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$400.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApiAsync$157.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$377.class
@@ -39713,6 +40009,7 @@ com/mypurecloud/sdk/v2/api/AnalyticsApiAsync$301.class
 com/mypurecloud/sdk/v2/api/BusinessRulesApi$14.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$73.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$813.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$56.class
 com/mypurecloud/sdk/v2/api/request/PutOutboundRulesetRequest$Builder.class
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$265.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$535.class
@@ -39766,6 +40063,7 @@ com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWeekSchedul
 com/mypurecloud/sdk/v2/api/GamificationApi$126.class
 com/mypurecloud/sdk/v2/api/UsersApiAsync$118.class
 com/mypurecloud/sdk/v2/api/request/GetChatsUserSettingsRequest$Builder.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$60.class
 com/mypurecloud/sdk/v2/model/AnalyticsConversationWithoutAttributes$OriginatingDirectionEnum.class
 com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$43.class
 com/mypurecloud/sdk/v2/model/SupportCenterModuleSetting$TypeEnumDeserializer.class
@@ -39839,6 +40137,7 @@ com/mypurecloud/sdk/v2/api/request/GetAnalyticsReportingSettingsUserDashboardsRe
 com/mypurecloud/sdk/v2/api/IdentityProviderApiAsync$121.class
 com/mypurecloud/sdk/v2/api/request/GetArchitectSystempromptResourceRequest.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$349.class
+com/mypurecloud/sdk/v2/api/request/PostTelephonyNumbersRoutingRequest.class
 com/mypurecloud/sdk/v2/api/EmailsApi$4.class
 com/mypurecloud/sdk/v2/api/request/PostConversationDisconnectRequest.class
 com/mypurecloud/sdk/v2/model/AlternativeShiftNotification$NewStateEnum.class
@@ -40193,6 +40492,7 @@ com/mypurecloud/sdk/v2/ApiClient.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingQueueMediatypeEstimatedwaittimeRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$361.class
 com/mypurecloud/sdk/v2/api/request/PostOutboundCallanalysisresponsesetsRequest$Builder.class
+com/mypurecloud/sdk/v2/api/request/PostRoutingEmailSettingRequest.class
 com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApiAsync$209.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$186.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$491.class
@@ -40413,8 +40713,8 @@ com/mypurecloud/sdk/v2/model/AuthorizedDomains.class
 com/mypurecloud/sdk/v2/api/SCIMApiAsync$10.class
 com/mypurecloud/sdk/v2/api/OutboundApiAsync$65.class
 com/mypurecloud/sdk/v2/api/SocialMediaApiAsync$73.class
-com/mypurecloud/sdk/v2/model/V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent$OutboundCampaignTypeEnum.class
+com/mypurecloud/sdk/v2/model/V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier$TypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/GetArchitectGrammarRequest.class
 com/mypurecloud/sdk/v2/model/SmsPhoneNumber$ShortCodeBillingTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$501.class
@@ -40467,6 +40767,7 @@ com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$861.class
 com/mypurecloud/sdk/v2/api/request/GetGuideJobRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$135.class
+com/mypurecloud/sdk/v2/api/TelephonyApiAsync$71.class
 com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitCapacityplanRequest.class
 com/mypurecloud/sdk/v2/model/TestTopicPhraseJobs$StateEnum.class
 com/mypurecloud/sdk/v2/api/request/PostAnalyticsJourneysAggregatesJobsRequest.class
@@ -40605,6 +40906,7 @@ com/mypurecloud/sdk/v2/model/EdgeMetricsNetwork.class
 com/mypurecloud/sdk/v2/api/request/PatchAssistantQueuesRequest$1.class
 com/mypurecloud/sdk/v2/model/AuditTopicPropertyChange.class
 com/mypurecloud/sdk/v2/model/V2WfmMainForecastExportSnapshotEventMainForecastExportNotification$StatusEnum.class
+com/mypurecloud/sdk/v2/api/request/GetRoutingEmailSettingRequest$Builder.class
 com/mypurecloud/sdk/v2/model/QuestionGroupSettings.class
 com/mypurecloud/sdk/v2/api/request/PostSocialmediaTwitterHistoricalTweetsRequest$Builder.class
 com/mypurecloud/sdk/v2/model/GuideVersion$StateEnum.class
@@ -40780,6 +41082,7 @@ com/mypurecloud/sdk/v2/api/BusinessRulesApi$4.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsChatsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$937.class
 com/mypurecloud/sdk/v2/api/request/GetRoutingLanguageRequest$Builder.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$113.class
 com/mypurecloud/sdk/v2/model/WfmMoveAgentsCompleteTopicWfmMoveAgentData$ResultEnum.class
 com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest$1.class
 com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentAnnotationRequest$1.class
@@ -40787,6 +41090,7 @@ com/mypurecloud/sdk/v2/api/request/PostIntegrationsSpeechNuanceNuanceIntegration
 com/mypurecloud/sdk/v2/api/request/GetIntegrationConfigCurrentRequest$Builder.class
 com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest$Builder.class
 com/mypurecloud/sdk/v2/api/InfrastructureAsCodeApiAsync$10.class
+com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$150.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$25.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$383.class
 com/mypurecloud/sdk/v2/api/request/PostBusinessrulesDecisiontableExecuteRequest$1.class
@@ -41062,6 +41366,7 @@ com/mypurecloud/sdk/v2/api/TextbotsApiAsync.class
 com/mypurecloud/sdk/v2/api/RoutingApi$62.class
 com/mypurecloud/sdk/v2/model/SAMLProvider.class
 com/mypurecloud/sdk/v2/model/FacebookDataIngestionRuleVersionResponse.class
+com/mypurecloud/sdk/v2/model/CreateOrganizationLink.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$428.class
 com/mypurecloud/sdk/v2/api/KnowledgeApiAsync$70.class
 com/mypurecloud/sdk/v2/api/request/GetArchitectPromptsRequest$1.class
@@ -41157,6 +41462,7 @@ com/mypurecloud/sdk/v2/api/ConversationsApiAsync$250.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApi$157.class
 com/mypurecloud/sdk/v2/model/BotAggregationView$TargetEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQueryRequest.class
+com/mypurecloud/sdk/v2/api/TelephonyApi$29.class
 com/mypurecloud/sdk/v2/api/request/PostEventsConversationsRequest.class
 com/mypurecloud/sdk/v2/api/RecordingApiAsync$1.class
 com/mypurecloud/sdk/v2/model/ViewFilter$DashboardStateEnum.class
@@ -41233,6 +41539,7 @@ com/mypurecloud/sdk/v2/api/GamificationApiAsync$70.class
 com/mypurecloud/sdk/v2/model/VoicemailSearchRequest$SortOrderEnum.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$850.class
 com/mypurecloud/sdk/v2/api/LanguageUnderstandingApiAsync$26.class
+com/mypurecloud/sdk/v2/api/CaseManagementApiAsync$153.class
 com/mypurecloud/sdk/v2/model/DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.class
 com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationsSchemasLimitsRequest$Builder.class
 com/mypurecloud/sdk/v2/api/RoutingApiAsync$198.class
@@ -41344,8 +41651,10 @@ com/mypurecloud/sdk/v2/model/WorkitemUpdate$AssignmentOperationEnumDeserializer.
 com/mypurecloud/sdk/v2/api/JourneyApi$7.class
 com/mypurecloud/sdk/v2/model/ColumnDataTypeSpecification.class
 com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicAttachment.class
+com/mypurecloud/sdk/v2/model/CardBodyText$ContentTypeEnumDeserializer.class
 com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsOrganizationNoteRequest$Builder.class
 com/mypurecloud/sdk/v2/model/Share.class
+com/mypurecloud/sdk/v2/api/request/GetTelephonyOrganizationLinkRequest$Builder.class
 com/mypurecloud/sdk/v2/api/GamificationApiAsync$128.class
 com/mypurecloud/sdk/v2/model/ConversationActivityResponse.class
 com/mypurecloud/sdk/v2/api/request/GetOauthClientUsageSummaryRequest$1.class
@@ -41420,8 +41729,8 @@ com/mypurecloud/sdk/v2/model/ContestsEssentials$StatusEnum.class
 com/mypurecloud/sdk/v2/api/request/PostExternalcontactsIdentifierlookupOrganizationsRequest.class
 com/mypurecloud/sdk/v2/api/ArchitectApiAsync$74.class
 com/mypurecloud/sdk/v2/api/request/PutGamificationProfileRequest.class
-com/mypurecloud/sdk/v2/api/request/PostUsageClientClientIdAggregatesQueryJobsRequest.class
 com/mypurecloud/sdk/v2/api/request/DeleteUserrecordingRequest$Builder.class
+com/mypurecloud/sdk/v2/api/request/PostUsageClientClientIdAggregatesQueryJobsRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$848.class
 com/mypurecloud/sdk/v2/api/IntegrationsApi$131.class
 com/mypurecloud/sdk/v2/api/request/GetIntegrationsTypesRequest$1.class
@@ -41460,6 +41769,7 @@ com/mypurecloud/sdk/v2/api/OutboundApiAsync$368.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$1069.class
 com/mypurecloud/sdk/v2/api/BusinessRulesApiAsync$21.class
 com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync$353.class
+com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplanDataschemasRequest.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$401.class
 com/mypurecloud/sdk/v2/model/PolicyUpdate.class
 com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantsRequest.class

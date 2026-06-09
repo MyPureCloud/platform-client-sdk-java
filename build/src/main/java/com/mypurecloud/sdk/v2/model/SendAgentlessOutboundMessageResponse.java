@@ -52,7 +52,8 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("sms"),
     WHATSAPP("whatsapp"),
-    OPEN("open");
+    OPEN("open"),
+    WEBMESSAGING("webmessaging");
 
     private String value;
 

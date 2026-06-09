@@ -248,6 +248,7 @@ public class StatusChange  implements Serializable {
     WORKFORCE_MANAGEMENT_AGENT_AVAILABILITY("workforce.management.agent.availability"),
     WORKFORCE_MANAGEMENT_FORECAST("workforce.management.forecast"),
     WORKFORCE_MANAGEMENT("workforce.management"),
+    WORKFORCE_MANAGEMENT_SCHEDULING_PREFERENCES("workforce.management.scheduling.preferences"),
     WORKFORCE_MANAGEMENT_SELF_SCHEDULE("workforce.management.self.schedule"),
     WORKFORCE_MANAGEMENT_SHIFT_TRADING("workforce.management.shift.trading"),
     SYSTEM("system");

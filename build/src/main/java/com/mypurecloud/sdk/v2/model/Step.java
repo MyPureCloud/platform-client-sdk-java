@@ -272,14 +272,14 @@ public class Step  implements Serializable {
 
 
   /**
-   * The parent stage of the step.
+   * The parent Stage of the Step.
    **/
   public Step stage(StageReference stage) {
     this.stage = stage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The parent stage of the step.")
+  @ApiModelProperty(example = "null", value = "The parent Stage of the Step.")
   @JsonProperty("stage")
   public StageReference getStage() {
     return stage;
@@ -297,14 +297,14 @@ public class Step  implements Serializable {
 
 
   /**
-   * The parent case of the step.
+   * The parent Case of the Step.
    **/
   public Step _case(CaseReference _case) {
     this._case = _case;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The parent case of the step.")
+  @ApiModelProperty(example = "null", value = "The parent Case of the Step.")
   @JsonProperty("case")
   public CaseReference getCase() {
     return _case;

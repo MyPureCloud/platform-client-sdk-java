@@ -370,6 +370,34 @@ public class GetWorkforcemanagementBusinessunitWeekSchedulesRequest {
 	    return this;
 	} 
 
+	private LocalDate earliestWeekDate;
+	public LocalDate getEarliestWeekDate() {
+		return this.earliestWeekDate;
+	}
+
+	public void setEarliestWeekDate(LocalDate earliestWeekDate) {
+		this.earliestWeekDate = earliestWeekDate;
+	}
+
+	public GetWorkforcemanagementBusinessunitWeekSchedulesRequest withEarliestWeekDate(LocalDate earliestWeekDate) {
+	    this.setEarliestWeekDate(earliestWeekDate);
+	    return this;
+	} 
+
+	private LocalDate latestWeekDate;
+	public LocalDate getLatestWeekDate() {
+		return this.latestWeekDate;
+	}
+
+	public void setLatestWeekDate(LocalDate latestWeekDate) {
+		this.latestWeekDate = latestWeekDate;
+	}
+
+	public GetWorkforcemanagementBusinessunitWeekSchedulesRequest withLatestWeekDate(LocalDate latestWeekDate) {
+	    this.setLatestWeekDate(latestWeekDate);
+	    return this;
+	} 
+
 	private Boolean includeOnlyPublished;
 	public Boolean getIncludeOnlyPublished() {
 		return this.includeOnlyPublished;
@@ -399,7 +427,7 @@ public class GetWorkforcemanagementBusinessunitWeekSchedulesRequest {
 	} 
 
 	public enum expandValues { 
-		FORECAST_DESCRIPTION("forecast.description");
+		SHORTTERMFORECAST_DESCRIPTION("shortTermForecast.description");
 
 		private String value;
 
@@ -465,6 +493,12 @@ public class GetWorkforcemanagementBusinessunitWeekSchedulesRequest {
                 .withPathParameter("weekId", weekId)
         
 
+                .withQueryParameters("earliestWeekDate", "", earliestWeekDate)
+        
+
+                .withQueryParameters("latestWeekDate", "", latestWeekDate)
+        
+
                 .withQueryParameters("includeOnlyPublished", "", includeOnlyPublished)
         
 
@@ -503,6 +537,16 @@ public class GetWorkforcemanagementBusinessunitWeekSchedulesRequest {
 
 		public Builder withWeekId(String weekId) {
 			request.setWeekId(weekId);
+			return this;
+		}
+
+		public Builder withEarliestWeekDate(LocalDate earliestWeekDate) {
+			request.setEarliestWeekDate(earliestWeekDate);
+			return this;
+		}
+
+		public Builder withLatestWeekDate(LocalDate latestWeekDate) {
+			request.setLatestWeekDate(latestWeekDate);
 			return this;
 		}
 

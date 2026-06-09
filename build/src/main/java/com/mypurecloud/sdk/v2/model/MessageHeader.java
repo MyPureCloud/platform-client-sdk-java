@@ -43,7 +43,8 @@ public class MessageHeader  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
-    IMAGE("Image");
+    IMAGE("Image"),
+    VIDEO("Video");
 
     private String value;
 

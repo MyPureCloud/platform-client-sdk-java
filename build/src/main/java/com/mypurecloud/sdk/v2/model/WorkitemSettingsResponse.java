@@ -37,14 +37,14 @@ public class WorkitemSettingsResponse  implements Serializable {
 
   
   /**
-   * The worktype information for the workitem settings.
+   * The Worktype information for the Workitem settings.
    **/
   public WorkitemSettingsResponse worktype(StepplansWorktypeReference worktype) {
     this.worktype = worktype;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The worktype information for the workitem settings.")
+  @ApiModelProperty(example = "null", value = "The Worktype information for the Workitem settings.")
   @JsonProperty("worktype")
   public StepplansWorktypeReference getWorktype() {
     return worktype;

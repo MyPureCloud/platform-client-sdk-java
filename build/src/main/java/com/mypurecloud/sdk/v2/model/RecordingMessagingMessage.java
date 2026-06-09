@@ -107,7 +107,8 @@ public class RecordingMessagingMessage  implements Serializable {
     PAYMENTRESPONSE("PaymentResponse"),
     FORM("Form"),
     RICHLINK("RichLink"),
-    ROADSIDEASSISTANCE("RoadsideAssistance");
+    ROADSIDEASSISTANCE("RoadsideAssistance"),
+    NOTIFICATIONRESPONSE("NotificationResponse");
 
     private String value;
 

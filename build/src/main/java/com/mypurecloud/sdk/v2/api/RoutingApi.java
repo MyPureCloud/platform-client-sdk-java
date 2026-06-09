@@ -29,6 +29,8 @@ import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
+import com.mypurecloud.sdk.v2.model.EmailSetting;
+import com.mypurecloud.sdk.v2.model.EmailSettingEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
@@ -124,6 +126,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingDirectroutingbackupSettin
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailOutboundDomainRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailSettingEmailSettingIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorsKeyperformanceindicatorRequest;
@@ -162,6 +165,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainActivationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSettingEmailSettingIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSetupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguagesRequest;
@@ -224,6 +229,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailOutboundDomainRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailSettingEmailSettingIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
@@ -253,6 +259,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsSimulatedRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsKeyperformanceindicatorsRequest;
@@ -661,6 +668,81 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingEmailOutboundDomain(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an email setting. Removes the email setting and its associated settings
+   * 
+   * @param emailSettingId Email Setting ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingEmailSettingEmailSettingId(String emailSettingId) throws IOException, ApiException {
+     deleteRoutingEmailSettingEmailSettingId(createDeleteRoutingEmailSettingEmailSettingIdRequest(emailSettingId));
+  }
+
+  /**
+   * Delete an email setting. Removes the email setting and its associated settings
+   * 
+   * @param emailSettingId Email Setting ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingEmailSettingEmailSettingIdWithHttpInfo(String emailSettingId) throws IOException {
+    return deleteRoutingEmailSettingEmailSettingId(createDeleteRoutingEmailSettingEmailSettingIdRequest(emailSettingId).withHttpInfo());
+  }
+
+  private DeleteRoutingEmailSettingEmailSettingIdRequest createDeleteRoutingEmailSettingEmailSettingIdRequest(String emailSettingId) {
+    return DeleteRoutingEmailSettingEmailSettingIdRequest.builder()
+            .withEmailSettingId(emailSettingId)
+
+            .build();
+  }
+
+  /**
+   * Delete an email setting. Removes the email setting and its associated settings
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingEmailSettingEmailSettingId(DeleteRoutingEmailSettingEmailSettingIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an email setting. Removes the email setting and its associated settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingEmailSettingEmailSettingId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3684,6 +3766,166 @@ public class RoutingApi {
   }
 
   /**
+   * Get a paged list of email routing settings.
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return EmailSettingEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailSettingEntityListing getRoutingEmailSetting(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getRoutingEmailSetting(createGetRoutingEmailSettingRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a paged list of email routing settings.
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return EmailSettingEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailSettingEntityListing> getRoutingEmailSettingWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getRoutingEmailSetting(createGetRoutingEmailSettingRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetRoutingEmailSettingRequest createGetRoutingEmailSettingRequest(Integer pageSize, Integer pageNumber) {
+    return GetRoutingEmailSettingRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Get a paged list of email routing settings.
+   * 
+   * @param request The request object
+   * @return EmailSettingEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailSettingEntityListing getRoutingEmailSetting(GetRoutingEmailSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailSettingEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailSettingEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a paged list of email routing settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailSettingEntityListing> getRoutingEmailSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailSettingEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailSettingEntityListing> response = (ApiResponse<EmailSettingEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailSettingEntityListing> response = (ApiResponse<EmailSettingEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get email setting. Returns the specified email setting that defines settings for email
+   * 
+   * @param emailSettingId Email Setting ID (required)
+   * @return EmailSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailSetting getRoutingEmailSettingEmailSettingId(String emailSettingId) throws IOException, ApiException {
+    return  getRoutingEmailSettingEmailSettingId(createGetRoutingEmailSettingEmailSettingIdRequest(emailSettingId));
+  }
+
+  /**
+   * Get email setting. Returns the specified email setting that defines settings for email
+   * 
+   * @param emailSettingId Email Setting ID (required)
+   * @return EmailSetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailSetting> getRoutingEmailSettingEmailSettingIdWithHttpInfo(String emailSettingId) throws IOException {
+    return getRoutingEmailSettingEmailSettingId(createGetRoutingEmailSettingEmailSettingIdRequest(emailSettingId).withHttpInfo());
+  }
+
+  private GetRoutingEmailSettingEmailSettingIdRequest createGetRoutingEmailSettingEmailSettingIdRequest(String emailSettingId) {
+    return GetRoutingEmailSettingEmailSettingIdRequest.builder()
+            .withEmailSettingId(emailSettingId)
+
+            .build();
+  }
+
+  /**
+   * Get email setting. Returns the specified email setting that defines settings for email
+   * 
+   * @param request The request object
+   * @return EmailSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailSetting getRoutingEmailSettingEmailSettingId(GetRoutingEmailSettingEmailSettingIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailSetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailSetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get email setting. Returns the specified email setting that defines settings for email
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailSetting> getRoutingEmailSettingEmailSettingId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailSetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get email setup
    * 
    * @return EmailSetup
@@ -5726,7 +5968,7 @@ public class RoutingApi {
    * @param sortOrder Sort order (optional, default to asc)
    * @param name Name (optional)
    * @param id Queue ID(s) (optional)
-   * @param divisionId Division ID(s) (optional)
+   * @param divisionId Division ID(s). Including '*' will query for all divisions (optional)
    * @return QueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5744,7 +5986,7 @@ public class RoutingApi {
    * @param sortOrder Sort order (optional, default to asc)
    * @param name Name (optional)
    * @param id Queue ID(s) (optional)
-   * @param divisionId Division ID(s) (optional)
+   * @param divisionId Division ID(s). Including '*' will query for all divisions (optional)
    * @return QueueEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -6898,7 +7140,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the list of routing skills.
+   * Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -6913,7 +7155,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the list of routing skills.
+   * Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -6940,7 +7182,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the list of routing skills.
+   * Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
    * 
    * @param request The request object
    * @return SkillEntityListing
@@ -6959,7 +7201,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the list of routing skills.
+   * Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
    * 
    * @param request The request object
    * @return the response
@@ -9051,6 +9293,88 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an email setting. Modifies the settings for email setting
+   * 
+   * @param emailSettingId Email Setting ID (required)
+   * @param body EmailSetting (required)
+   * @return EmailSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailSetting patchRoutingEmailSettingEmailSettingId(String emailSettingId, EmailSetting body) throws IOException, ApiException {
+    return  patchRoutingEmailSettingEmailSettingId(createPatchRoutingEmailSettingEmailSettingIdRequest(emailSettingId, body));
+  }
+
+  /**
+   * Update an email setting. Modifies the settings for email setting
+   * 
+   * @param emailSettingId Email Setting ID (required)
+   * @param body EmailSetting (required)
+   * @return EmailSetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailSetting> patchRoutingEmailSettingEmailSettingIdWithHttpInfo(String emailSettingId, EmailSetting body) throws IOException {
+    return patchRoutingEmailSettingEmailSettingId(createPatchRoutingEmailSettingEmailSettingIdRequest(emailSettingId, body).withHttpInfo());
+  }
+
+  private PatchRoutingEmailSettingEmailSettingIdRequest createPatchRoutingEmailSettingEmailSettingIdRequest(String emailSettingId, EmailSetting body) {
+    return PatchRoutingEmailSettingEmailSettingIdRequest.builder()
+            .withEmailSettingId(emailSettingId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an email setting. Modifies the settings for email setting
+   * 
+   * @param request The request object
+   * @return EmailSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailSetting patchRoutingEmailSettingEmailSettingId(PatchRoutingEmailSettingEmailSettingIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailSetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailSetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an email setting. Modifies the settings for email setting
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailSetting> patchRoutingEmailSettingEmailSettingId(ApiRequest<EmailSetting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailSetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11416,6 +11740,84 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmailOutboundDomainResult> response = (ApiResponse<EmailOutboundDomainResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new email setting. Used to define various settings, that can then be associated with email domains
+   * 
+   * @param body EmailSetting (required)
+   * @return EmailSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailSetting postRoutingEmailSetting(EmailSetting body) throws IOException, ApiException {
+    return  postRoutingEmailSetting(createPostRoutingEmailSettingRequest(body));
+  }
+
+  /**
+   * Create a new email setting. Used to define various settings, that can then be associated with email domains
+   * 
+   * @param body EmailSetting (required)
+   * @return EmailSetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailSetting> postRoutingEmailSettingWithHttpInfo(EmailSetting body) throws IOException {
+    return postRoutingEmailSetting(createPostRoutingEmailSettingRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingEmailSettingRequest createPostRoutingEmailSettingRequest(EmailSetting body) {
+    return PostRoutingEmailSettingRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new email setting. Used to define various settings, that can then be associated with email domains
+   * 
+   * @param request The request object
+   * @return EmailSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailSetting postRoutingEmailSetting(PostRoutingEmailSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailSetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailSetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new email setting. Used to define various settings, that can then be associated with email domains
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailSetting> postRoutingEmailSetting(ApiRequest<EmailSetting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailSetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailSetting> response = (ApiResponse<EmailSetting>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

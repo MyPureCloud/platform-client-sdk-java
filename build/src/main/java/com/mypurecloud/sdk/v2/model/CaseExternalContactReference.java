@@ -37,14 +37,14 @@ public class CaseExternalContactReference  implements Serializable {
 
   
   /**
-   * The globally unique identifier for the object.
+   * The globally unique identifier for the External Contact.
    **/
   public CaseExternalContactReference id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the External Contact.")
   @JsonProperty("id")
   public String getId() {
     return id;

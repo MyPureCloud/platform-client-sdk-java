@@ -97,6 +97,7 @@ public class AgentCopilotAggregateQueryPredicate  implements Serializable {
     CANNEDRESPONSELIBRARYID("cannedResponseLibraryId"),
     CHUNKCOUNT("chunkCount"),
     CONVERSATIONID("conversationId"),
+    KNOWLEDGESETTINGID("knowledgeSettingId"),
     ENGAGEMENTTYPE("engagementType"),
     EXTERNALCONTACTID("externalContactId"),
     FEEDBACKRATING("feedbackRating"),

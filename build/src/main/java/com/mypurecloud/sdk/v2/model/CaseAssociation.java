@@ -24,9 +24,9 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * Represents an association between a case and an interaction
+ * Represents an association between a Case and an interaction.
  */
-@ApiModel(description = "Represents an association between a case and an interaction")
+@ApiModel(description = "Represents an association between a Case and an interaction.")
 
 public class CaseAssociation  implements Serializable {
   
@@ -46,7 +46,7 @@ public class CaseAssociation  implements Serializable {
     }
   }
   /**
-   * Association type.
+   * The association type.
    */
  @JsonDeserialize(using = AssociationTypeEnumDeserializer.class)
   public enum AssociationTypeEnum {
@@ -136,14 +136,14 @@ public class CaseAssociation  implements Serializable {
 
 
   /**
-   * Association type.
+   * The association type.
    **/
   public CaseAssociation associationType(AssociationTypeEnum associationType) {
     this.associationType = associationType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Association type.")
+  @ApiModelProperty(example = "null", value = "The association type.")
   @JsonProperty("associationType")
   public AssociationTypeEnum getAssociationType() {
     return associationType;
@@ -154,14 +154,14 @@ public class CaseAssociation  implements Serializable {
 
 
   /**
-   * Interaction association date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The date of the interaction association. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CaseAssociation dateAssociated(Date dateAssociated) {
     this.dateAssociated = dateAssociated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Interaction association date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The date of the interaction association. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateAssociated")
   public Date getDateAssociated() {
     return dateAssociated;
@@ -172,14 +172,14 @@ public class CaseAssociation  implements Serializable {
 
 
   /**
-   * Associated workitem ID.
+   * The associated Workitem.
    **/
   public CaseAssociation workitem(WorkitemReference workitem) {
     this.workitem = workitem;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Associated workitem ID.")
+  @ApiModelProperty(example = "null", value = "The associated Workitem.")
   @JsonProperty("workitem")
   public WorkitemReference getWorkitem() {
     return workitem;
@@ -190,14 +190,14 @@ public class CaseAssociation  implements Serializable {
 
 
   /**
-   * Associated conversation ID.
+   * The associated Conversation.
    **/
   public CaseAssociation conversation(ConversationReference conversation) {
     this.conversation = conversation;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Associated conversation ID.")
+  @ApiModelProperty(example = "null", value = "The associated Conversation.")
   @JsonProperty("conversation")
   public ConversationReference getConversation() {
     return conversation;
@@ -208,14 +208,14 @@ public class CaseAssociation  implements Serializable {
 
 
   /**
-   * The stage related to this association.
+   * The Stage related to this association.
    **/
   public CaseAssociation stage(StageReference stage) {
     this.stage = stage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The stage related to this association.")
+  @ApiModelProperty(example = "null", value = "The Stage related to this association.")
   @JsonProperty("stage")
   public StageReference getStage() {
     return stage;
@@ -226,14 +226,14 @@ public class CaseAssociation  implements Serializable {
 
 
   /**
-   * The step related to this association.
+   * The Step related to this association.
    **/
   public CaseAssociation step(StepReference step) {
     this.step = step;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The step related to this association.")
+  @ApiModelProperty(example = "null", value = "The Step related to this association.")
   @JsonProperty("step")
   public StepReference getStep() {
     return step;
@@ -251,14 +251,14 @@ public class CaseAssociation  implements Serializable {
 
 
   /**
-   * Case ID
+   * The Case for this association.
    **/
   public CaseAssociation _case(CaseReference _case) {
     this._case = _case;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Case ID")
+  @ApiModelProperty(example = "null", value = "The Case for this association.")
   @JsonProperty("case")
   public CaseReference getCase() {
     return _case;

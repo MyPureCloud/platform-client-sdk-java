@@ -231,7 +231,6 @@ public class UsersApiAsync {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -266,7 +265,6 @@ public class UsersApiAsync {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1433,7 +1431,6 @@ public class UsersApiAsync {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1468,7 +1465,6 @@ public class UsersApiAsync {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1510,7 +1506,6 @@ public class UsersApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1545,7 +1540,6 @@ public class UsersApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6549,7 +6543,6 @@ public class UsersApiAsync {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6584,7 +6577,6 @@ public class UsersApiAsync {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

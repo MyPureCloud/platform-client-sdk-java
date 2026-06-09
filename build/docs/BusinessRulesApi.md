@@ -5,10 +5,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteBusinessrulesDecisiontable**](BusinessRulesApi#deleteBusinessrulesDecisiontable) | Delete a decision table |
+| [**deleteBusinessrulesDecisiontableExport**](BusinessRulesApi#deleteBusinessrulesDecisiontableExport) | Delete an export job for a decision table |
+| [**deleteBusinessrulesDecisiontableImport**](BusinessRulesApi#deleteBusinessrulesDecisiontableImport) | Delete decision table row import job |
 | [**deleteBusinessrulesDecisiontableVersion**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersion) | Delete a decision table version |
 | [**deleteBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersionRow) | Delete a decision table row |
 | [**deleteBusinessrulesSchema**](BusinessRulesApi#deleteBusinessrulesSchema) | Delete a schema |
 | [**getBusinessrulesDecisiontable**](BusinessRulesApi#getBusinessrulesDecisiontable) | Get a decision table |
+| [**getBusinessrulesDecisiontableExport**](BusinessRulesApi#getBusinessrulesDecisiontableExport) | Get an export job for a decision table |
+| [**getBusinessrulesDecisiontableExports**](BusinessRulesApi#getBusinessrulesDecisiontableExports) | List export jobs for a decision table |
+| [**getBusinessrulesDecisiontableImport**](BusinessRulesApi#getBusinessrulesDecisiontableImport) | Get decision table row import job |
+| [**getBusinessrulesDecisiontableImports**](BusinessRulesApi#getBusinessrulesDecisiontableImports) | List decision table row import jobs |
 | [**getBusinessrulesDecisiontableVersion**](BusinessRulesApi#getBusinessrulesDecisiontableVersion) | Get a decision table version |
 | [**getBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#getBusinessrulesDecisiontableVersionRow) | Get a decision table row |
 | [**getBusinessrulesDecisiontableVersionRows**](BusinessRulesApi#getBusinessrulesDecisiontableVersionRows) | Get a list of decision table rows. |
@@ -20,11 +26,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getBusinessrulesSchemasCoretype**](BusinessRulesApi#getBusinessrulesSchemasCoretype) | Get a specific named core type. |
 | [**getBusinessrulesSchemasCoretypes**](BusinessRulesApi#getBusinessrulesSchemasCoretypes) | Get the core types from which all schemas are built. |
 | [**patchBusinessrulesDecisiontable**](BusinessRulesApi#patchBusinessrulesDecisiontable) | Update a decision table |
+| [**patchBusinessrulesDecisiontableImport**](BusinessRulesApi#patchBusinessrulesDecisiontableImport) | Update decision table row import job |
 | [**patchBusinessrulesDecisiontableVersion**](BusinessRulesApi#patchBusinessrulesDecisiontableVersion) | Update a decision table version |
 | [**postBusinessrulesDecisiontableExecute**](BusinessRulesApi#postBusinessrulesDecisiontableExecute) | Execute a published decision table |
+| [**postBusinessrulesDecisiontableExports**](BusinessRulesApi#postBusinessrulesDecisiontableExports) | Create an export job for a decision table version |
+| [**postBusinessrulesDecisiontableImports**](BusinessRulesApi#postBusinessrulesDecisiontableImports) | Create a decision table row import job |
 | [**postBusinessrulesDecisiontableVersionCopy**](BusinessRulesApi#postBusinessrulesDecisiontableVersionCopy) | Copy a decision table version |
 | [**postBusinessrulesDecisiontableVersionExecute**](BusinessRulesApi#postBusinessrulesDecisiontableVersionExecute) | Execute a decision table version |
 | [**postBusinessrulesDecisiontableVersionRows**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRows) | Create a decision table row |
+| [**postBusinessrulesDecisiontableVersionRowsBulkAdd**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkAdd) | Bulk add decision table rows |
+| [**postBusinessrulesDecisiontableVersionRowsBulkRemove**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkRemove) | Bulk delete decision table rows |
+| [**postBusinessrulesDecisiontableVersionRowsBulkUpdate**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkUpdate) | Bulk update decision table rows |
 | [**postBusinessrulesDecisiontableVersionRowsSearch**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsSearch) | Search for decision table rows |
 | [**postBusinessrulesDecisiontableVersionSync**](BusinessRulesApi#postBusinessrulesDecisiontableVersionSync) | Update the Business Rules Schema to the latest version for a given decision table version |
 | [**postBusinessrulesDecisiontableVersions**](BusinessRulesApi#postBusinessrulesDecisiontableVersions) | Create a new decision table version |
@@ -88,6 +100,126 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **tableId** | **String**| Table ID | 
 | **forceDelete** | **Boolean**| Force delete decision table (under certain conditions) | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteBusinessrulesDecisiontableExport**
+
+
+> Void deleteBusinessrulesDecisiontableExport(tableId, exportJobId)
+
+Delete an export job for a decision table
+
+Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableExportJob:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+String exportJobId = "exportJobId_example"; // String | Export Job ID
+try {
+    apiInstance.deleteBusinessrulesDecisiontableExport(tableId, exportJobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#deleteBusinessrulesDecisiontableExport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **exportJobId** | **String**| Export Job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteBusinessrulesDecisiontableImport**
+
+
+> Void deleteBusinessrulesDecisiontableImport(tableId, importJobId)
+
+Delete decision table row import job
+
+Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+String importJobId = "importJobId_example"; // String | Import job ID
+try {
+    apiInstance.deleteBusinessrulesDecisiontableImport(tableId, importJobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#deleteBusinessrulesDecisiontableImport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **importJobId** | **String**| Import job ID | 
 {: class="table-striped"}
 
 
@@ -336,6 +468,254 @@ try {
 ### Return type
 
 [**DecisionTable**](DecisionTable)
+
+
+# **getBusinessrulesDecisiontableExport**
+
+
+> [DecisionTableExportJob](DecisionTableExportJob) getBusinessrulesDecisiontableExport(tableId, exportJobId)
+
+Get an export job for a decision table
+
+Wraps GET /api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableExportJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+String exportJobId = "exportJobId_example"; // String | Export Job ID
+try {
+    DecisionTableExportJob result = apiInstance.getBusinessrulesDecisiontableExport(tableId, exportJobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesDecisiontableExport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **exportJobId** | **String**| Export Job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableExportJob**](DecisionTableExportJob)
+
+
+# **getBusinessrulesDecisiontableExports**
+
+
+> [DecisionTableExportJobListing](DecisionTableExportJobListing) getBusinessrulesDecisiontableExports(tableId, after, pageSize)
+
+List export jobs for a decision table
+
+Wraps GET /api/v2/businessrules/decisiontables/{tableId}/exports  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableExportJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 100.
+try {
+    DecisionTableExportJobListing result = apiInstance.getBusinessrulesDecisiontableExports(tableId, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesDecisiontableExports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableExportJobListing**](DecisionTableExportJobListing)
+
+
+# **getBusinessrulesDecisiontableImport**
+
+
+> [DecisionTableImportJob](DecisionTableImportJob) getBusinessrulesDecisiontableImport(tableId, importJobId)
+
+Get decision table row import job
+
+Wraps GET /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+String importJobId = "importJobId_example"; // String | Import job ID
+try {
+    DecisionTableImportJob result = apiInstance.getBusinessrulesDecisiontableImport(tableId, importJobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesDecisiontableImport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **importJobId** | **String**| Import job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableImportJob**](DecisionTableImportJob)
+
+
+# **getBusinessrulesDecisiontableImports**
+
+
+> [DecisionTableImportJobListing](DecisionTableImportJobListing) getBusinessrulesDecisiontableImports(tableId, after, pageSize)
+
+List decision table row import jobs
+
+Wraps GET /api/v2/businessrules/decisiontables/{tableId}/imports  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 100.
+try {
+    DecisionTableImportJobListing result = apiInstance.getBusinessrulesDecisiontableImports(tableId, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesDecisiontableImports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableImportJobListing**](DecisionTableImportJobListing)
 
 
 # **getBusinessrulesDecisiontableVersion**
@@ -1019,6 +1399,69 @@ try {
 [**DecisionTable**](DecisionTable)
 
 
+# **patchBusinessrulesDecisiontableImport**
+
+
+> [DecisionTableImportJob](DecisionTableImportJob) patchBusinessrulesDecisiontableImport(tableId, importJobId, body)
+
+Update decision table row import job
+
+Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+String importJobId = "importJobId_example"; // String | Import job ID
+UpdateDecisionTableImportJobRequest body = new UpdateDecisionTableImportJobRequest(); // UpdateDecisionTableImportJobRequest | Import job update request
+try {
+    DecisionTableImportJob result = apiInstance.patchBusinessrulesDecisiontableImport(tableId, importJobId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#patchBusinessrulesDecisiontableImport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **importJobId** | **String**| Import job ID | 
+| **body** | [**UpdateDecisionTableImportJobRequest**](UpdateDecisionTableImportJobRequest)| Import job update request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableImportJob**](DecisionTableImportJob)
+
+
 # **patchBusinessrulesDecisiontableVersion**
 
 
@@ -1141,6 +1584,128 @@ try {
 ### Return type
 
 [**DecisionTableExecutionResponse**](DecisionTableExecutionResponse)
+
+
+# **postBusinessrulesDecisiontableExports**
+
+
+> [DecisionTableExportJob](DecisionTableExportJob) postBusinessrulesDecisiontableExports(tableId, body)
+
+Create an export job for a decision table version
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/exports  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableExportJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+DecisionTableExportJobRequest body = new DecisionTableExportJobRequest(); // DecisionTableExportJobRequest | Export job request
+try {
+    DecisionTableExportJob result = apiInstance.postBusinessrulesDecisiontableExports(tableId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#postBusinessrulesDecisiontableExports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **body** | [**DecisionTableExportJobRequest**](DecisionTableExportJobRequest)| Export job request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableExportJob**](DecisionTableExportJob)
+
+
+# **postBusinessrulesDecisiontableImports**
+
+
+> [DecisionTableImportJob](DecisionTableImportJob) postBusinessrulesDecisiontableImports(tableId, body)
+
+Create a decision table row import job
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/imports  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+CreateDecisionTableImportJobRequest body = new CreateDecisionTableImportJobRequest(); // CreateDecisionTableImportJobRequest | Import job create request
+try {
+    DecisionTableImportJob result = apiInstance.postBusinessrulesDecisiontableImports(tableId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#postBusinessrulesDecisiontableImports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **body** | [**CreateDecisionTableImportJobRequest**](CreateDecisionTableImportJobRequest)| Import job create request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableImportJob**](DecisionTableImportJob)
 
 
 # **postBusinessrulesDecisiontableVersionCopy**
@@ -1333,6 +1898,203 @@ try {
 ### Return type
 
 [**DecisionTableRow**](DecisionTableRow)
+
+
+# **postBusinessrulesDecisiontableVersionRowsBulkAdd**
+
+
+> [BulkAddDecisionTableRowsResponse](BulkAddDecisionTableRowsResponse) postBusinessrulesDecisiontableVersionRowsBulkAdd(tableId, tableVersion, body)
+
+Bulk add decision table rows
+
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add  
+
+Requires ALL permissions: 
+
+* businessrules:decisionTableRow:add
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+Integer tableVersion = 56; // Integer | Table Version
+BulkAddDecisionTableRowsRequest body = new BulkAddDecisionTableRowsRequest(); // BulkAddDecisionTableRowsRequest | Bulk add decision table rows request
+try {
+    BulkAddDecisionTableRowsResponse result = apiInstance.postBusinessrulesDecisiontableVersionRowsBulkAdd(tableId, tableVersion, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkAdd");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **tableVersion** | **Integer**| Table Version | 
+| **body** | [**BulkAddDecisionTableRowsRequest**](BulkAddDecisionTableRowsRequest)| Bulk add decision table rows request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkAddDecisionTableRowsResponse**](BulkAddDecisionTableRowsResponse)
+
+
+# **postBusinessrulesDecisiontableVersionRowsBulkRemove**
+
+
+> Void postBusinessrulesDecisiontableVersionRowsBulkRemove(tableId, tableVersion, body)
+
+Bulk delete decision table rows
+
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/remove  
+
+Requires ALL permissions: 
+
+* businessrules:decisionTableRow:delete
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+Integer tableVersion = 56; // Integer | Table Version
+BulkDeleteDecisionTableRowsRequest body = new BulkDeleteDecisionTableRowsRequest(); // BulkDeleteDecisionTableRowsRequest | 
+try {
+    apiInstance.postBusinessrulesDecisiontableVersionRowsBulkRemove(tableId, tableVersion, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **tableVersion** | **Integer**| Table Version | 
+| **body** | [**BulkDeleteDecisionTableRowsRequest**](BulkDeleteDecisionTableRowsRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postBusinessrulesDecisiontableVersionRowsBulkUpdate**
+
+
+> [BulkUpdateDecisionTableRowsResponse](BulkUpdateDecisionTableRowsResponse) postBusinessrulesDecisiontableVersionRowsBulkUpdate(tableId, tableVersion, body)
+
+Bulk update decision table rows
+
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update  
+
+Requires ALL permissions: 
+
+* businessrules:decisionTableRow:edit
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+Integer tableVersion = 56; // Integer | Table Version
+BulkUpdateDecisionTableRowsRequest body = new BulkUpdateDecisionTableRowsRequest(); // BulkUpdateDecisionTableRowsRequest | Bulk update decision table rows request
+try {
+    BulkUpdateDecisionTableRowsResponse result = apiInstance.postBusinessrulesDecisiontableVersionRowsBulkUpdate(tableId, tableVersion, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **tableVersion** | **Integer**| Table Version | 
+| **body** | [**BulkUpdateDecisionTableRowsRequest**](BulkUpdateDecisionTableRowsRequest)| Bulk update decision table rows request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkUpdateDecisionTableRowsResponse**](BulkUpdateDecisionTableRowsResponse)
 
 
 # **postBusinessrulesDecisiontableVersionRowsSearch**
@@ -1834,4 +2596,4 @@ try {
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:254.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_

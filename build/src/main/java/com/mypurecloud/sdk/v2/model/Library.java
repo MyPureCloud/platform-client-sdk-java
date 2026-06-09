@@ -54,7 +54,8 @@ public class Library  implements Serializable {
     CAMPAIGNSMSTEMPLATE("CampaignSmsTemplate"),
     CAMPAIGNEMAILTEMPLATE("CampaignEmailTemplate"),
     FOOTER("Footer"),
-    FORM("Form");
+    FORM("Form"),
+    APPLEINVITATION("AppleInvitation");
 
     private String value;
 

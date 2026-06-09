@@ -153,7 +153,6 @@ public class QualityApiAsync {
   /**
    * Delete/cancel an async request for evaluation aggregates
    * 
-   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -188,7 +187,6 @@ public class QualityApiAsync {
   /**
    * Delete/cancel an async request for evaluation aggregates
    * 
-   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -230,7 +228,6 @@ public class QualityApiAsync {
   /**
    * Delete/cancel an async request for survey aggregates
    * 
-   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -265,7 +262,6 @@ public class QualityApiAsync {
   /**
    * Delete/cancel an async request for survey aggregates
    * 
-   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -759,7 +755,6 @@ public class QualityApiAsync {
   /**
    * Get status for async query for evaluation aggregates
    * 
-   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -794,7 +789,6 @@ public class QualityApiAsync {
   /**
    * Get status for async query for evaluation aggregates
    * 
-   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -836,7 +830,6 @@ public class QualityApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -871,7 +864,6 @@ public class QualityApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -913,7 +905,6 @@ public class QualityApiAsync {
   /**
    * Get status for async query for survey aggregates
    * 
-   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -948,7 +939,6 @@ public class QualityApiAsync {
   /**
    * Get status for async query for survey aggregates
    * 
-   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -990,7 +980,6 @@ public class QualityApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1025,7 +1014,6 @@ public class QualityApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3552,7 +3540,6 @@ public class QualityApiAsync {
   /**
    * Query for evaluation aggregates asynchronously
    * 
-   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3587,7 +3574,6 @@ public class QualityApiAsync {
   /**
    * Query for evaluation aggregates asynchronously
    * 
-   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3704,7 +3690,6 @@ public class QualityApiAsync {
   /**
    * Query for survey aggregates asynchronously
    * 
-   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3739,7 +3724,6 @@ public class QualityApiAsync {
   /**
    * Query for survey aggregates asynchronously
    * 
-   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

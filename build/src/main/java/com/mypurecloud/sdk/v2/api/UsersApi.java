@@ -227,7 +227,6 @@ public class UsersApi {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -239,7 +238,6 @@ public class UsersApi {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -257,7 +255,6 @@ public class UsersApi {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -276,7 +273,6 @@ public class UsersApi {
   /**
    * Delete/cancel an async request for user aggregates
    * 
-   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1458,7 +1454,6 @@ public class UsersApi {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -1471,7 +1466,6 @@ public class UsersApi {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -1490,7 +1484,6 @@ public class UsersApi {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -1510,7 +1503,6 @@ public class UsersApi {
   /**
    * Get status for async query for user aggregates
    * 
-   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1540,7 +1532,6 @@ public class UsersApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return UserAsyncAggregateQueryResponse
@@ -1554,7 +1545,6 @@ public class UsersApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return UserAsyncAggregateQueryResponse
@@ -1576,7 +1566,6 @@ public class UsersApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -1596,7 +1585,6 @@ public class UsersApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7210,7 +7198,6 @@ public class UsersApi {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7223,7 +7210,6 @@ public class UsersApi {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -7242,7 +7228,6 @@ public class UsersApi {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7262,7 +7247,6 @@ public class UsersApi {
   /**
    * Query for user aggregates asynchronously
    * 
-   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

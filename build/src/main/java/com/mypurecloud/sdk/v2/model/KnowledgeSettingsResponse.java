@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeGenerationSetting;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.V3SourceRef;
+import com.mypurecloud.sdk.v2.model.V3SourceTagFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class KnowledgeSettingsResponse  implements Serializable {
   private List<V3SourceRef> sources = null;
   private KnowledgeGenerationSetting generationSetting = null;
   private Boolean stateful = null;
+  private V3SourceTagFilter filter = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private UserReference modifiedBy = null;
@@ -161,6 +163,24 @@ public class KnowledgeSettingsResponse  implements Serializable {
 
 
   /**
+   * Composite tag filter of search results.
+   **/
+  public KnowledgeSettingsResponse filter(V3SourceTagFilter filter) {
+    this.filter = filter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Composite tag filter of search results.")
+  @JsonProperty("filter")
+  public V3SourceTagFilter getFilter() {
+    return filter;
+  }
+  public void setFilter(V3SourceTagFilter filter) {
+    this.filter = filter;
+  }
+
+
+  /**
    * Knowledge setting created date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public KnowledgeSettingsResponse dateCreated(Date dateCreated) {
@@ -237,6 +257,7 @@ public class KnowledgeSettingsResponse  implements Serializable {
             Objects.equals(this.sources, knowledgeSettingsResponse.sources) &&
             Objects.equals(this.generationSetting, knowledgeSettingsResponse.generationSetting) &&
             Objects.equals(this.stateful, knowledgeSettingsResponse.stateful) &&
+            Objects.equals(this.filter, knowledgeSettingsResponse.filter) &&
             Objects.equals(this.dateCreated, knowledgeSettingsResponse.dateCreated) &&
             Objects.equals(this.dateModified, knowledgeSettingsResponse.dateModified) &&
             Objects.equals(this.modifiedBy, knowledgeSettingsResponse.modifiedBy) &&
@@ -245,7 +266,7 @@ public class KnowledgeSettingsResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, sources, generationSetting, stateful, dateCreated, dateModified, modifiedBy, selfUri);
+    return Objects.hash(id, name, description, sources, generationSetting, stateful, filter, dateCreated, dateModified, modifiedBy, selfUri);
   }
 
   @Override
@@ -259,6 +280,7 @@ public class KnowledgeSettingsResponse  implements Serializable {
     sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
     sb.append("    generationSetting: ").append(toIndentedString(generationSetting)).append("\n");
     sb.append("    stateful: ").append(toIndentedString(stateful)).append("\n");
+    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");

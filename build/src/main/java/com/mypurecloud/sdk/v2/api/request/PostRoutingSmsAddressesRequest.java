@@ -39,6 +39,8 @@ import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
+import com.mypurecloud.sdk.v2.model.EmailSetting;
+import com.mypurecloud.sdk.v2.model.EmailSettingEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;

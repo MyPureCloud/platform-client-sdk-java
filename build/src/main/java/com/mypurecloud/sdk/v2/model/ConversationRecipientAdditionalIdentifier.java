@@ -49,7 +49,10 @@ public class ConversationRecipientAdditionalIdentifier  implements Serializable 
     TOPIC("Topic"),
     INGESTIONRULE("IngestionRule"),
     INGESTIONRULEVERSION("IngestionRuleVersion"),
-    PHONENUMBER("PhoneNumber");
+    PHONENUMBER("PhoneNumber"),
+    BSUID("Bsuid"),
+    PARENTBSUID("ParentBsuid"),
+    USERNAME("Username");
 
     private String value;
 

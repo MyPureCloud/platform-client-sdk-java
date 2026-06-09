@@ -51,7 +51,6 @@ public class FlowsApi {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -63,7 +62,6 @@ public class FlowsApi {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -81,7 +79,6 @@ public class FlowsApi {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -100,7 +97,6 @@ public class FlowsApi {
   /**
    * Delete/cancel an async request for flow aggregates
    * 
-   * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -130,7 +126,6 @@ public class FlowsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -143,7 +138,6 @@ public class FlowsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -162,7 +156,6 @@ public class FlowsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -182,7 +175,6 @@ public class FlowsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
-   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -212,7 +204,6 @@ public class FlowsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return FlowAsyncAggregateQueryResponse
@@ -226,7 +217,6 @@ public class FlowsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return FlowAsyncAggregateQueryResponse
@@ -248,7 +238,6 @@ public class FlowsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -268,7 +257,6 @@ public class FlowsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -384,7 +372,6 @@ public class FlowsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -397,7 +384,6 @@ public class FlowsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -416,7 +402,6 @@ public class FlowsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -436,7 +421,6 @@ public class FlowsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
-   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

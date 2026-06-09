@@ -356,6 +356,49 @@ public class PostWorkforcemanagementTimeoffrequestsEstimateRequest {
 	    return this;
 	} 
 
+	private String includeOnly;
+	public String getIncludeOnly() {
+		return this.includeOnly;
+	}
+
+	public void setIncludeOnly(String includeOnly) {
+		this.includeOnly = includeOnly;
+	}
+
+	public PostWorkforcemanagementTimeoffrequestsEstimateRequest withIncludeOnly(String includeOnly) {
+	    this.setIncludeOnly(includeOnly);
+	    return this;
+	} 
+
+	public enum includeOnlyValues { 
+		OVERRIDEDATETYPE("overrideDateType");
+
+		private String value;
+
+		includeOnlyValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static includeOnlyValues fromString(String key) {
+			if (key == null) return null;
+
+			for (includeOnlyValues value : includeOnlyValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return includeOnlyValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -384,6 +427,9 @@ public class PostWorkforcemanagementTimeoffrequestsEstimateRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/timeoffrequests/estimate")
+
+                .withQueryParameters("includeOnly", "", includeOnly)
+        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -415,6 +461,20 @@ public class PostWorkforcemanagementTimeoffrequestsEstimateRequest {
 		public Builder withBody(EstimateAvailableTimeOffRequest body) {
 			request.setBody(body);
 			return this;
+		}
+
+		public Builder withIncludeOnly(String includeOnly) {
+			request.setIncludeOnly(includeOnly);
+			return this;
+		}
+
+
+
+		
+		public Builder withIncludeOnly(includeOnlyValues includeOnly) {
+		    request.setIncludeOnly(includeOnly.toString());
+
+		    return this;
 		}
 
 

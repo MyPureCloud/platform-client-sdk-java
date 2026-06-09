@@ -12,9 +12,12 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Button;
+import com.mypurecloud.sdk.v2.model.Carousel;
 import com.mypurecloud.sdk.v2.model.MessageFooter;
 import com.mypurecloud.sdk.v2.model.MessageHeader;
+import com.mypurecloud.sdk.v2.model.StatusInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -34,6 +37,57 @@ public class WhatsAppDefinition  implements Serializable {
   private List<Button> buttons = null;
   private MessageFooter messageFooter = null;
   private MessageHeader header = null;
+  private String integrationId = null;
+
+  private static class CategoryEnumDeserializer extends StdDeserializer<CategoryEnum> {
+    public CategoryEnumDeserializer() {
+      super(CategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public CategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Category of whatsApp carousels template.
+   */
+ @JsonDeserialize(using = CategoryEnumDeserializer.class)
+  public enum CategoryEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    MARKETING("marketing");
+
+    private String value;
+
+    CategoryEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CategoryEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CategoryEnum value : CategoryEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CategoryEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CategoryEnum category = null;
+  private String templateStatus = null;
+  private StatusInfo statusInfo = null;
+  private Carousel carousel = null;
 
   public WhatsAppDefinition() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -156,6 +210,74 @@ public class WhatsAppDefinition  implements Serializable {
   }
 
 
+  /**
+   * WhatsApp integration ID for whatsApp carousels
+   **/
+  public WhatsAppDefinition integrationId(String integrationId) {
+    this.integrationId = integrationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "WhatsApp integration ID for whatsApp carousels")
+  @JsonProperty("integrationId")
+  public String getIntegrationId() {
+    return integrationId;
+  }
+  public void setIntegrationId(String integrationId) {
+    this.integrationId = integrationId;
+  }
+
+
+  /**
+   * Category of whatsApp carousels template.
+   **/
+  public WhatsAppDefinition category(CategoryEnum category) {
+    this.category = category;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Category of whatsApp carousels template.")
+  @JsonProperty("category")
+  public CategoryEnum getCategory() {
+    return category;
+  }
+  public void setCategory(CategoryEnum category) {
+    this.category = category;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Template status of whatsApp carousels template.")
+  @JsonProperty("templateStatus")
+  public String getTemplateStatus() {
+    return templateStatus;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Status information about the template")
+  @JsonProperty("statusInfo")
+  public StatusInfo getStatusInfo() {
+    return statusInfo;
+  }
+
+
+  /**
+   * Definition for whatsApp carousels template.
+   **/
+  public WhatsAppDefinition carousel(Carousel carousel) {
+    this.carousel = carousel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Definition for whatsApp carousels template.")
+  @JsonProperty("carousel")
+  public Carousel getCarousel() {
+    return carousel;
+  }
+  public void setCarousel(Carousel carousel) {
+    this.carousel = carousel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -171,12 +293,17 @@ public class WhatsAppDefinition  implements Serializable {
             Objects.equals(this.language, whatsAppDefinition.language) &&
             Objects.equals(this.buttons, whatsAppDefinition.buttons) &&
             Objects.equals(this.messageFooter, whatsAppDefinition.messageFooter) &&
-            Objects.equals(this.header, whatsAppDefinition.header);
+            Objects.equals(this.header, whatsAppDefinition.header) &&
+            Objects.equals(this.integrationId, whatsAppDefinition.integrationId) &&
+            Objects.equals(this.category, whatsAppDefinition.category) &&
+            Objects.equals(this.templateStatus, whatsAppDefinition.templateStatus) &&
+            Objects.equals(this.statusInfo, whatsAppDefinition.statusInfo) &&
+            Objects.equals(this.carousel, whatsAppDefinition.carousel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, namespace, language, buttons, messageFooter, header);
+    return Objects.hash(name, namespace, language, buttons, messageFooter, header, integrationId, category, templateStatus, statusInfo, carousel);
   }
 
   @Override
@@ -190,6 +317,11 @@ public class WhatsAppDefinition  implements Serializable {
     sb.append("    buttons: ").append(toIndentedString(buttons)).append("\n");
     sb.append("    messageFooter: ").append(toIndentedString(messageFooter)).append("\n");
     sb.append("    header: ").append(toIndentedString(header)).append("\n");
+    sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    templateStatus: ").append(toIndentedString(templateStatus)).append("\n");
+    sb.append("    statusInfo: ").append(toIndentedString(statusInfo)).append("\n");
+    sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

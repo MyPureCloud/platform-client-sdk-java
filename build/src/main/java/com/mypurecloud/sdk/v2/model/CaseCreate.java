@@ -48,14 +48,14 @@ public class CaseCreate  implements Serializable {
 
   
   /**
-   * The ID of the caseplan to create the case from.
+   * The ID of the Caseplan used to create the Case.
    **/
   public CaseCreate caseplanId(String caseplanId) {
     this.caseplanId = caseplanId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The ID of the caseplan to create the case from.")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the Caseplan used to create the Case.")
   @JsonProperty("caseplanId")
   public String getCaseplanId() {
     return caseplanId;
@@ -66,14 +66,14 @@ public class CaseCreate  implements Serializable {
 
 
   /**
-   * The ID of the owner of the case.
+   * The ID of the owner of the Case.
    **/
   public CaseCreate ownerId(String ownerId) {
     this.ownerId = ownerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the owner of the case.")
+  @ApiModelProperty(example = "null", value = "The ID of the owner of the Case.")
   @JsonProperty("ownerId")
   public String getOwnerId() {
     return ownerId;
@@ -120,14 +120,14 @@ public class CaseCreate  implements Serializable {
 
 
   /**
-   * The ID of conversation associated with the Case.
+   * The ID of the Conversation associated with the Case.
    **/
   public CaseCreate conversationId(String conversationId) {
     this.conversationId = conversationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of conversation associated with the Case.")
+  @ApiModelProperty(example = "null", value = "The ID of the Conversation associated with the Case.")
   @JsonProperty("conversationId")
   public String getConversationId() {
     return conversationId;
@@ -138,14 +138,14 @@ public class CaseCreate  implements Serializable {
 
 
   /**
-   * The ID of the workitem associated with the Case.
+   * The ID of the Workitem associated with the Case.
    **/
   public CaseCreate workitemId(String workitemId) {
     this.workitemId = workitemId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the workitem associated with the Case.")
+  @ApiModelProperty(example = "null", value = "The ID of the Workitem associated with the Case.")
   @JsonProperty("workitemId")
   public String getWorkitemId() {
     return workitemId;
@@ -156,14 +156,14 @@ public class CaseCreate  implements Serializable {
 
 
   /**
-   * The epoch timestamp in seconds specifying the time-to-live for the lifetime of the Case. Can not be greater than 365 days from the current time.
+   * Epoch timestamp in seconds for the Case time-to-live. Cannot be more than 365 days after the current time.
    **/
   public CaseCreate ttlSeconds(Integer ttlSeconds) {
     this.ttlSeconds = ttlSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The epoch timestamp in seconds specifying the time-to-live for the lifetime of the Case. Can not be greater than 365 days from the current time.")
+  @ApiModelProperty(example = "null", value = "Epoch timestamp in seconds for the Case time-to-live. Cannot be more than 365 days after the current time.")
   @JsonProperty("ttlSeconds")
   public Integer getTtlSeconds() {
     return ttlSeconds;

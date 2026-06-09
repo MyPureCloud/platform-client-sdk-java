@@ -277,14 +277,14 @@ public class Stage  implements Serializable {
 
 
   /**
-   * The parent case of the Stage.
+   * The parent Case of the Stage.
    **/
   public Stage _case(CaseReference _case) {
     this._case = _case;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The parent case of the Stage.")
+  @ApiModelProperty(example = "null", value = "The parent Case of the Stage.")
   @JsonProperty("case")
   public CaseReference getCase() {
     return _case;
