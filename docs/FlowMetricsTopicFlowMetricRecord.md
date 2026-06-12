@@ -254,6 +254,7 @@
 | BOT | &quot;bot&quot; | 
 | COMMONMODULE | &quot;commonmodule&quot; | 
 | DIGITALBOT | &quot;digitalbot&quot; | 
+| EMAILSEND | &quot;emailsend&quot; | 
 | INBOUNDCALL | &quot;inboundcall&quot; | 
 | INBOUNDCHAT | &quot;inboundchat&quot; | 
 | INBOUNDEMAIL | &quot;inboundemail&quot; | 
@@ -370,4 +371,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_

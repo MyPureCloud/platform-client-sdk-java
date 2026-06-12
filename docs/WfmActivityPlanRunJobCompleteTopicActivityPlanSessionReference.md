@@ -6,9 +6,9 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** |  |  [optional] |
-| **users** | **List&lt;String&gt;** |  |  [optional] |
+| **users** | [**List&lt;WfmActivityPlanRunJobCompleteTopicUserReference&gt;**](WfmActivityPlanRunJobCompleteTopicUserReference) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_

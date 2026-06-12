@@ -16,9 +16,11 @@
 | **entityType** | **String** |  |  [optional] |
 | **conversationId** | **String** |  |  [optional] |
 | **entityToken** | **String** |  |  [optional] |
+| **phoneNumber** | **String** |  |  [optional] |
+| **externalContactId** | **String** |  |  [optional] |
 | **timestamp** | **Long** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_

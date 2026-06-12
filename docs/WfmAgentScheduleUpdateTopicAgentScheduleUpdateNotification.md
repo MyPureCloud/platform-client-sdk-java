@@ -9,8 +9,9 @@
 | **startDate** | [**Date**](Date) |  |  [optional] |
 | **endDate** | [**Date**](Date) |  |  [optional] |
 | **updates** | [**List&lt;WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate&gt;**](WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate) |  |  [optional] |
+| **visibilityRange** | [**WfmAgentScheduleUpdateTopicAgentScheduleVisibilityRange**](WfmAgentScheduleUpdateTopicAgentScheduleVisibilityRange) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_

@@ -84,6 +84,9 @@
 | SOCIALESCALATIONRULES | &quot;SocialEscalationRules&quot; | 
 | ALERTING | &quot;Alerting&quot; | 
 | ASSISTANTS | &quot;Assistants&quot; | 
+| ANOMALYDETECTION | &quot;AnomalyDetection&quot; | 
+| CONVERSATIONS | &quot;Conversations&quot; | 
+| COPILOT | &quot;Copilot&quot; | 
 
 
 ## Enum: ActionEnum
@@ -222,6 +225,10 @@
 | INITIATE | &quot;Initiate&quot; | 
 | REVERSEMANUALLY | &quot;ReverseManually&quot; | 
 | CALCULATE | &quot;Calculate&quot; | 
+| GETALLRESULTS | &quot;GetAllResults&quot; | 
+| GETALLRESULTSDOWNLOAD | &quot;GetAllResultsDownload&quot; | 
+| GETCHARTRESULTS | &quot;GetChartResults&quot; | 
+| GETCHARTRESULTSDOWNLOAD | &quot;GetChartResultsDownload&quot; | 
 | PROVISIONED | &quot;Provisioned&quot; | 
 | UPDATEABORTED | &quot;UpdateAborted&quot; | 
 | EDIT | &quot;Edit&quot; | 
@@ -344,6 +351,7 @@
 | SCHEDULESETBID | &quot;ScheduleSetBid&quot; | 
 | SCHEDULESETBIDGROUP | &quot;ScheduleSetBidGroup&quot; | 
 | OPPORTUNITY | &quot;Opportunity&quot; | 
+| DECISIONMETRICS | &quot;DecisionMetrics&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSELIBRARY | &quot;ResponseLibrary&quot; | 
@@ -411,6 +419,7 @@
 | ANALYTICSREPORTINGSETTINGS | &quot;AnalyticsReportingSettings&quot; | 
 | CUSTOMCALCULATIONS | &quot;CustomCalculations&quot; | 
 | SAVEDVIEWS | &quot;SavedViews&quot; | 
+| ANALYTICSLAKEHOUSESETTINGS | &quot;AnalyticsLakehouseSettings&quot; | 
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; | 
 | EXPORTS | &quot;Exports&quot; | 
 | EXPORTPDFTEMPLATES | &quot;ExportPdfTemplates&quot; | 
@@ -498,8 +507,14 @@
 | SOCIALMEDIAMESSAGE | &quot;SocialMediaMessage&quot; | 
 | ASSISTANT | &quot;Assistant&quot; | 
 | ASSISTANTQUEUE | &quot;AssistantQueue&quot; | 
+| QUEUEANOMALY | &quot;QueueAnomaly&quot; | 
+| MONITOREDQUEUE | &quot;MonitoredQueue&quot; | 
+| ANOMALYDETECTIONSETTINGS | &quot;AnomalyDetectionSettings&quot; | 
+| CONVERSATIONACCESSATTRIBUTES | &quot;ConversationAccessAttributes&quot; | 
+| SETTINGS | &quot;Settings&quot; | 
+| AGENT | &quot;Agent&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_

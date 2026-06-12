@@ -17,6 +17,7 @@
 | **resolution** | [**V2SessionConversationsSummarySettingsPreviewEventConversationResolutionMessage**](V2SessionConversationsSummarySettingsPreviewEventConversationResolutionMessage) |  |  [optional] |
 | **followupActions** | [**List&lt;V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction&gt;**](V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction) |  |  [optional] |
 | **extractedEntities** | [**List&lt;V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity&gt;**](V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity) |  |  [optional] |
+| **labels** | [**List&lt;V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel&gt;**](V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel) |  |  [optional] |
 | **errorType** | [**ErrorTypeEnum**](#Enum--ErrorTypeEnum) |  |  [optional] |
 | **durationMs** | **Long** |  |  [optional] |
 
@@ -45,4 +46,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
