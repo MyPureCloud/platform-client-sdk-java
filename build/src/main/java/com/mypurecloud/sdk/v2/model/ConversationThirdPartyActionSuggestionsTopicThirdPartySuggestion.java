@@ -12,8 +12,11 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -23,14 +26,18 @@ import java.io.Serializable;
 public class ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion  implements Serializable {
   
   private String text = null;
+  private String title = null;
+  private List<ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource> sources = null;
 
   public ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sources = new ArrayList<ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource>();
     }
   }
 
   public ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      sources = new ArrayList<ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource>();
     }
   }
 
@@ -52,6 +59,40 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion  i
   }
 
 
+  /**
+   **/
+  public ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion title(String title) {
+    this.title = title;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("title")
+  public String getTitle() {
+    return title;
+  }
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+
+  /**
+   **/
+  public ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion sources(List<ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource> sources) {
+    this.sources = sources;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sources")
+  public List<ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource> getSources() {
+    return sources;
+  }
+  public void setSources(List<ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource> sources) {
+    this.sources = sources;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -62,12 +103,14 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion  i
     }
     ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion conversationThirdPartyActionSuggestionsTopicThirdPartySuggestion = (ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion) o;
 
-    return Objects.equals(this.text, conversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.text);
+    return Objects.equals(this.text, conversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.text) &&
+            Objects.equals(this.title, conversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.title) &&
+            Objects.equals(this.sources, conversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.sources);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text);
+    return Objects.hash(text, title, sources);
   }
 
   @Override
@@ -76,6 +119,8 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion  i
     sb.append("class ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion {\n");
     
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
     sb.append("}");
     return sb.toString();
   }

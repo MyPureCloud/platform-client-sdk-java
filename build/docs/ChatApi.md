@@ -2112,4 +2112,4 @@ try {
 [**ChatSettings**](ChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_

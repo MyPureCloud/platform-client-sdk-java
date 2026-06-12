@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationScriptSuggestionsTopicQueryReformulationContext;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -81,6 +82,7 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
   private String messageId = null;
   private String queryStatement = null;
   private String language = null;
+  private ConversationScriptSuggestionsTopicQueryReformulationContext queryReformulationContext = null;
 
   public ConversationScriptSuggestionsTopicSuggestionContext() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -246,6 +248,23 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
   }
 
 
+  /**
+   **/
+  public ConversationScriptSuggestionsTopicSuggestionContext queryReformulationContext(ConversationScriptSuggestionsTopicQueryReformulationContext queryReformulationContext) {
+    this.queryReformulationContext = queryReformulationContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queryReformulationContext")
+  public ConversationScriptSuggestionsTopicQueryReformulationContext getQueryReformulationContext() {
+    return queryReformulationContext;
+  }
+  public void setQueryReformulationContext(ConversationScriptSuggestionsTopicQueryReformulationContext queryReformulationContext) {
+    this.queryReformulationContext = queryReformulationContext;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -264,12 +283,13 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
             Objects.equals(this.utteranceId, conversationScriptSuggestionsTopicSuggestionContext.utteranceId) &&
             Objects.equals(this.messageId, conversationScriptSuggestionsTopicSuggestionContext.messageId) &&
             Objects.equals(this.queryStatement, conversationScriptSuggestionsTopicSuggestionContext.queryStatement) &&
-            Objects.equals(this.language, conversationScriptSuggestionsTopicSuggestionContext.language);
+            Objects.equals(this.language, conversationScriptSuggestionsTopicSuggestionContext.language) &&
+            Objects.equals(this.queryReformulationContext, conversationScriptSuggestionsTopicSuggestionContext.queryReformulationContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, utteranceId, messageId, queryStatement, language);
+    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, utteranceId, messageId, queryStatement, language, queryReformulationContext);
   }
 
   @Override
@@ -286,6 +306,7 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    queryStatement: ").append(toIndentedString(queryStatement)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    queryReformulationContext: ").append(toIndentedString(queryReformulationContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }

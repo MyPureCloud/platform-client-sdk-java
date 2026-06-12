@@ -27,6 +27,7 @@
 | **lastEditedBy** | [**ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant**](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  |  [optional] |
 | **errorType** | [**ErrorTypeEnum**](#Enum--ErrorTypeEnum) |  |  [optional] |
 | **durationMs** | **Long** |  |  [optional] |
+| **labels** | [**List&lt;ConversationSummaryTopicVirtualAgentsConversationSummaryLabel&gt;**](ConversationSummaryTopicVirtualAgentsConversationSummaryLabel) |  |  [optional] |
 
 
 ## Enum: MessageTypeEnum
@@ -90,4 +91,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_

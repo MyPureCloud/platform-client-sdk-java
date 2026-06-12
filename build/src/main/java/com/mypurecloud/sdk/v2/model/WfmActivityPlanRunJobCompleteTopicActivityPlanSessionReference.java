@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WfmActivityPlanRunJobCompleteTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,17 +26,17 @@ import java.io.Serializable;
 public class WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference  implements Serializable {
   
   private String id = null;
-  private List<String> users = null;
+  private List<WfmActivityPlanRunJobCompleteTopicUserReference> users = null;
 
   public WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      users = new ArrayList<String>();
+      users = new ArrayList<WfmActivityPlanRunJobCompleteTopicUserReference>();
     }
   }
 
   public WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
-      users = new ArrayList<String>();
+      users = new ArrayList<WfmActivityPlanRunJobCompleteTopicUserReference>();
     }
   }
 
@@ -59,17 +60,17 @@ public class WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference  imp
 
   /**
    **/
-  public WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference users(List<String> users) {
+  public WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference users(List<WfmActivityPlanRunJobCompleteTopicUserReference> users) {
     this.users = users;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("users")
-  public List<String> getUsers() {
+  public List<WfmActivityPlanRunJobCompleteTopicUserReference> getUsers() {
     return users;
   }
-  public void setUsers(List<String> users) {
+  public void setUsers(List<WfmActivityPlanRunJobCompleteTopicUserReference> users) {
     this.users = users;
   }
 

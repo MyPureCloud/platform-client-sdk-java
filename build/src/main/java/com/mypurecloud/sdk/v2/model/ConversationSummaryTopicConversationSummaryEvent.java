@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationHeadline
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationReason;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationResolution;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationSummary;
+import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationSummaryLabel;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationSummaryParticipant;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationWrapUpCode;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicSummaryExtractedCustomEntity;
@@ -306,6 +307,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
   }
   private ErrorTypeEnum errorType = null;
   private Long durationMs = null;
+  private List<ConversationSummaryTopicConversationSummaryLabel> labels = null;
 
   public ConversationSummaryTopicConversationSummaryEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -314,6 +316,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
       followupActions = new ArrayList<ConversationSummaryTopicConversationFollowupAction>();
       extractedEntities = new ArrayList<ConversationSummaryTopicSummaryExtractedCustomEntity>();
       wrapUpCodes = new ArrayList<ConversationSummaryTopicConversationWrapUpCode>();
+      labels = new ArrayList<ConversationSummaryTopicConversationSummaryLabel>();
     }
   }
 
@@ -324,6 +327,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
       followupActions = new ArrayList<ConversationSummaryTopicConversationFollowupAction>();
       extractedEntities = new ArrayList<ConversationSummaryTopicSummaryExtractedCustomEntity>();
       wrapUpCodes = new ArrayList<ConversationSummaryTopicConversationWrapUpCode>();
+      labels = new ArrayList<ConversationSummaryTopicConversationSummaryLabel>();
     }
   }
 
@@ -702,6 +706,23 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
   }
 
 
+  /**
+   **/
+  public ConversationSummaryTopicConversationSummaryEvent labels(List<ConversationSummaryTopicConversationSummaryLabel> labels) {
+    this.labels = labels;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("labels")
+  public List<ConversationSummaryTopicConversationSummaryLabel> getLabels() {
+    return labels;
+  }
+  public void setLabels(List<ConversationSummaryTopicConversationSummaryLabel> labels) {
+    this.labels = labels;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -733,12 +754,13 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
             Objects.equals(this.triggerType, conversationSummaryTopicConversationSummaryEvent.triggerType) &&
             Objects.equals(this.lastEditedBy, conversationSummaryTopicConversationSummaryEvent.lastEditedBy) &&
             Objects.equals(this.errorType, conversationSummaryTopicConversationSummaryEvent.errorType) &&
-            Objects.equals(this.durationMs, conversationSummaryTopicConversationSummaryEvent.durationMs);
+            Objects.equals(this.durationMs, conversationSummaryTopicConversationSummaryEvent.durationMs) &&
+            Objects.equals(this.labels, conversationSummaryTopicConversationSummaryEvent.labels);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, summarySourceType, triggerType, lastEditedBy, errorType, durationMs);
+    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, summarySourceType, triggerType, lastEditedBy, errorType, durationMs, labels);
   }
 
   @Override
@@ -768,6 +790,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
     sb.append("    lastEditedBy: ").append(toIndentedString(lastEditedBy)).append("\n");
     sb.append("    errorType: ").append(toIndentedString(errorType)).append("\n");
     sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
+    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -577,6 +577,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     BOT("bot"),
     COMMONMODULE("commonmodule"),
     DIGITALBOT("digitalbot"),
+    EMAILSEND("emailsend"),
     INBOUNDCALL("inboundcall"),
     INBOUNDCHAT("inboundchat"),
     INBOUNDEMAIL("inboundemail"),

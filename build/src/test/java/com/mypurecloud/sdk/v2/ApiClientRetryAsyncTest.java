@@ -350,10 +350,32 @@ public class ApiClientRetryAsyncTest {
                 return PureCloudRegionHosts.ap_northeast_1;
             case "mypurecloud.de":
                 return PureCloudRegionHosts.eu_central_1;
+            case "usw2.pure.cloud":
+                return PureCloudRegionHosts.us_west_2;
+            case "cac1.pure.cloud":
+                return PureCloudRegionHosts.ca_central_1;
+            case "apne2.pure.cloud":
+                return PureCloudRegionHosts.ap_northeast_2;
+            case "euw2.pure.cloud":
+                return PureCloudRegionHosts.eu_west_2;
+            case "aps1.pure.cloud":
+                return PureCloudRegionHosts.ap_south_1;
+            case "use2.us-gov-pure.cloud":
+                return PureCloudRegionHosts.us_east_2;
+            case "sae1.pure.cloud":
+                return PureCloudRegionHosts.sa_east_1;
+            case "mec1.pure.cloud":
+                return PureCloudRegionHosts.me_central_1;
+            case "apne3.pure.cloud":
+                return PureCloudRegionHosts.ap_northeast_3;
+            case "euc2.pure.cloud":
+                return PureCloudRegionHosts.eu_central_2;
             case "mxc1.pure.cloud":
                 return PureCloudRegionHosts.mx_central_1;
             case "apse1.pure.cloud":
                 return PureCloudRegionHosts.ap_southeast_1;
+            case "edee1.eusc-pure.cloud":
+                return PureCloudRegionHosts.eusc_de_east_1;
             default:
                 System.out.println("Not in PureCloudRegionHosts using string value");
                 return null;

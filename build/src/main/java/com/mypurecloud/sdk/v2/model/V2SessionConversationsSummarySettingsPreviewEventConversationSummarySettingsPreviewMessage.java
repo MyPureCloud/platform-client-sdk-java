@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.V2SessionConversationsSummarySettingsPreview
 import com.mypurecloud.sdk.v2.model.V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage;
 import com.mypurecloud.sdk.v2.model.V2SessionConversationsSummarySettingsPreviewEventConversationResolutionMessage;
 import com.mypurecloud.sdk.v2.model.V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity;
+import com.mypurecloud.sdk.v2.model.V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel;
 import com.mypurecloud.sdk.v2.model.V2SessionConversationsSummarySettingsPreviewEventConversationSummaryMessage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -92,6 +93,7 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationSummar
   private V2SessionConversationsSummarySettingsPreviewEventConversationResolutionMessage resolution = null;
   private List<V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction> followupActions = null;
   private List<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity> extractedEntities = null;
+  private List<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel> labels = null;
 
   private static class ErrorTypeEnumDeserializer extends StdDeserializer<ErrorTypeEnum> {
     public ErrorTypeEnumDeserializer() {
@@ -148,6 +150,7 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationSummar
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       followupActions = new ArrayList<V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction>();
       extractedEntities = new ArrayList<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity>();
+      labels = new ArrayList<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel>();
     }
   }
 
@@ -155,6 +158,7 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationSummar
     if (initWithEmptyList == true) { 
       followupActions = new ArrayList<V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction>();
       extractedEntities = new ArrayList<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity>();
+      labels = new ArrayList<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel>();
     }
   }
 
@@ -365,6 +369,23 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationSummar
 
   /**
    **/
+  public V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage labels(List<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel> labels) {
+    this.labels = labels;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("labels")
+  public List<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel> getLabels() {
+    return labels;
+  }
+  public void setLabels(List<V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel> labels) {
+    this.labels = labels;
+  }
+
+
+  /**
+   **/
   public V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage errorType(ErrorTypeEnum errorType) {
     this.errorType = errorType;
     return this;
@@ -419,13 +440,14 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationSummar
             Objects.equals(this.resolution, v2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.resolution) &&
             Objects.equals(this.followupActions, v2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.followupActions) &&
             Objects.equals(this.extractedEntities, v2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.extractedEntities) &&
+            Objects.equals(this.labels, v2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.labels) &&
             Objects.equals(this.errorType, v2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.errorType) &&
             Objects.equals(this.durationMs, v2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.durationMs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdDate, summaryId, sessionId, userId, summarySettingsId, language, mediaType, summary, reason, resolution, followupActions, extractedEntities, errorType, durationMs);
+    return Objects.hash(createdDate, summaryId, sessionId, userId, summarySettingsId, language, mediaType, summary, reason, resolution, followupActions, extractedEntities, labels, errorType, durationMs);
   }
 
   @Override
@@ -445,6 +467,7 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationSummar
     sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
     sb.append("    followupActions: ").append(toIndentedString(followupActions)).append("\n");
     sb.append("    extractedEntities: ").append(toIndentedString(extractedEntities)).append("\n");
+    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    errorType: ").append(toIndentedString(errorType)).append("\n");
     sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
     sb.append("}");

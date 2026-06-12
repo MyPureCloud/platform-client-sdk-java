@@ -34,6 +34,8 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
   private String entityType = null;
   private String conversationId = null;
   private String entityToken = null;
+  private String phoneNumber = null;
+  private String externalContactId = null;
   private Long timestamp = null;
 
   public OperationalEventNotificationTopicOperationalEventNotification() {
@@ -236,6 +238,40 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
 
   /**
    **/
+  public OperationalEventNotificationTopicOperationalEventNotification phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("phoneNumber")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification externalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalContactId")
+  public String getExternalContactId() {
+    return externalContactId;
+  }
+  public void setExternalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+  }
+
+
+  /**
+   **/
   public OperationalEventNotificationTopicOperationalEventNotification timestamp(Long timestamp) {
     this.timestamp = timestamp;
     return this;
@@ -272,12 +308,14 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
             Objects.equals(this.entityType, operationalEventNotificationTopicOperationalEventNotification.entityType) &&
             Objects.equals(this.conversationId, operationalEventNotificationTopicOperationalEventNotification.conversationId) &&
             Objects.equals(this.entityToken, operationalEventNotificationTopicOperationalEventNotification.entityToken) &&
+            Objects.equals(this.phoneNumber, operationalEventNotificationTopicOperationalEventNotification.phoneNumber) &&
+            Objects.equals(this.externalContactId, operationalEventNotificationTopicOperationalEventNotification.externalContactId) &&
             Objects.equals(this.timestamp, operationalEventNotificationTopicOperationalEventNotification.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventEntity, entityId, entityName, previousValue, currentValue, errorCode, version, parentEntity, entityType, conversationId, entityToken, timestamp);
+    return Objects.hash(eventEntity, entityId, entityName, previousValue, currentValue, errorCode, version, parentEntity, entityType, conversationId, entityToken, phoneNumber, externalContactId, timestamp);
   }
 
   @Override
@@ -296,6 +334,8 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    entityToken: ").append(toIndentedString(entityToken)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");
     return sb.toString();

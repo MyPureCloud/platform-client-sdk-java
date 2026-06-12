@@ -113,7 +113,10 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     BUSINESSRULES("BusinessRules"),
     SOCIALESCALATIONRULES("SocialEscalationRules"),
     ALERTING("Alerting"),
-    ASSISTANTS("Assistants");
+    ASSISTANTS("Assistants"),
+    ANOMALYDETECTION("AnomalyDetection"),
+    CONVERSATIONS("Conversations"),
+    COPILOT("Copilot");
 
     private String value;
 
@@ -294,6 +297,10 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     INITIATE("Initiate"),
     REVERSEMANUALLY("ReverseManually"),
     CALCULATE("Calculate"),
+    GETALLRESULTS("GetAllResults"),
+    GETALLRESULTSDOWNLOAD("GetAllResultsDownload"),
+    GETCHARTRESULTS("GetChartResults"),
+    GETCHARTRESULTSDOWNLOAD("GetChartResultsDownload"),
     PROVISIONED("Provisioned"),
     UPDATEABORTED("UpdateAborted"),
     EDIT("Edit");
@@ -455,6 +462,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     SCHEDULESETBID("ScheduleSetBid"),
     SCHEDULESETBIDGROUP("ScheduleSetBidGroup"),
     OPPORTUNITY("Opportunity"),
+    DECISIONMETRICS("DecisionMetrics"),
     TRIGGER("Trigger"),
     RESPONSE("Response"),
     RESPONSELIBRARY("ResponseLibrary"),
@@ -522,6 +530,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ANALYTICSREPORTINGSETTINGS("AnalyticsReportingSettings"),
     CUSTOMCALCULATIONS("CustomCalculations"),
     SAVEDVIEWS("SavedViews"),
+    ANALYTICSLAKEHOUSESETTINGS("AnalyticsLakehouseSettings"),
     SCHEDULEDEXPORTS("ScheduledExports"),
     EXPORTS("Exports"),
     EXPORTPDFTEMPLATES("ExportPdfTemplates"),
@@ -608,7 +617,13 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     EXTERNALORG("ExternalOrg"),
     SOCIALMEDIAMESSAGE("SocialMediaMessage"),
     ASSISTANT("Assistant"),
-    ASSISTANTQUEUE("AssistantQueue");
+    ASSISTANTQUEUE("AssistantQueue"),
+    QUEUEANOMALY("QueueAnomaly"),
+    MONITOREDQUEUE("MonitoredQueue"),
+    ANOMALYDETECTIONSETTINGS("AnomalyDetectionSettings"),
+    CONVERSATIONACCESSATTRIBUTES("ConversationAccessAttributes"),
+    SETTINGS("Settings"),
+    AGENT("Agent");
 
     private String value;
 
