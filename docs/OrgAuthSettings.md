@@ -11,8 +11,9 @@
 | **ipAddressAllowlist** | **List&lt;String&gt;** | The list of IP addresses that will be allowed to authenticate with Genesys Cloud. |  [optional] |
 | **passwordRequirements** | [**PasswordRequirements**](PasswordRequirements) | The password requirements for the organization. |  [optional] |
 | **inactivityTimeoutExclusions** | **List&lt;String&gt;** | The list of exempt apis from inactivity timeout. |  [optional] |
+| **universalLogout** | **Boolean** | Indicates whether universal logout is enabled for the organization. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

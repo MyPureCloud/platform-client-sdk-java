@@ -15,6 +15,8 @@
 | **agentRankingType** | [**AgentRankingTypeEnum**](#Enum--AgentRankingTypeEnum) | The type of agent ranking selected for this bid |  |
 | **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#Enum--RankingTiebreakerTypeEnum) | Ranking tiebreaker |  |
 | **publishedDate** | [**Date**](Date) | The date the work plan bid published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **bidType** | [**BidTypeEnum**](#Enum--BidTypeEnum) | The type of bid created |  |
+| **endOverridesAndRotations** | **Boolean** | If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid |  |
 | **workPlanFieldsVisibleToAgents** | [**List<WorkPlanFieldsVisibleToAgentsEnum>**](#Enum--WorkPlanFieldsVisibleToAgentsEnum) | The work plan fields visible to agents whenever work plan preferences are made |  |
 | **metadata** | [**WorkPlanBidMetadata**](WorkPlanBidMetadata) | The meta data of this bid |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -55,6 +57,15 @@
 | RANDOMLYASSIGN | &quot;RandomlyAssign&quot; | 
 
 
+## Enum: BidTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WORKPLANBID | &quot;WorkPlanBid&quot; | 
+| SCHEDULEBID | &quot;ScheduleBid&quot; | 
+
+
 ## Enum: WorkPlanFieldsVisibleToAgentsEnum
 
 | Name | Value |
@@ -66,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

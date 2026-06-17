@@ -12,6 +12,7 @@
 | **effectiveDate** | [**LocalDate**](LocalDate) | The date when agents will be assigned to the new work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The state of the bid |  |
 | **workPlanFieldsVisibleToAgents** | [**List<WorkPlanFieldsVisibleToAgentsEnum>**](#Enum--WorkPlanFieldsVisibleToAgentsEnum) | The work plan fields visible to agents whenever work plan preferences are made |  |
+| **bidType** | [**BidTypeEnum**](#Enum--BidTypeEnum) | The type of the bid |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -39,6 +40,15 @@
 | PAIDHOURS | &quot;PaidHours&quot; |
 
 
+## Enum: BidTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WORKPLANBID | &quot;WorkPlanBid&quot; | 
+| SCHEDULEBID | &quot;ScheduleBid&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

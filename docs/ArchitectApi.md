@@ -96,6 +96,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsOutcome**](ArchitectApi#getFlowsOutcome) | Get a flow outcome |
 | [**getFlowsOutcomes**](ArchitectApi#getFlowsOutcomes) | Get a pageable list of flow outcomes, filtered by query parameters |
 | [**getFlowsOutcomesDivisionviews**](ArchitectApi#getFlowsOutcomesDivisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters. |
+| [**getFlowsValidateJob**](ArchitectApi#getFlowsValidateJob) | Fetch Architect Validate Job Status |
 | [**patchArchitectGrammar**](ArchitectApi#patchArchitectGrammar) | Updates a grammar |
 | [**patchArchitectGrammarLanguage**](ArchitectApi#patchArchitectGrammarLanguage) | Updates a grammar language |
 | [**patchFlowsInstancesSettingsExecutiondata**](ArchitectApi#patchFlowsInstancesSettingsExecutiondata) | Edit the execution history enabled setting. |
@@ -137,6 +138,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsJobs**](ArchitectApi#postFlowsJobs) | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job. |
 | [**postFlowsMilestones**](ArchitectApi#postFlowsMilestones) | Create a flow milestone |
 | [**postFlowsOutcomes**](ArchitectApi#postFlowsOutcomes) | Create a flow outcome |
+| [**postFlowsValidateJobs**](ArchitectApi#postFlowsValidateJobs) | Register Architect Validate Job |
 | [**putArchitectEmergencygroup**](ArchitectApi#putArchitectEmergencygroup) | Updates a emergency group by ID |
 | [**putArchitectIvr**](ArchitectApi#putArchitectIvr) | Update an IVR Config. |
 | [**putArchitectIvrIdentityresolution**](ArchitectApi#putArchitectIvrIdentityresolution) | Update an IVR IdentityResolutionConfig. |
@@ -6146,6 +6148,69 @@ try {
 [**FlowOutcomeDivisionViewEntityListing**](FlowOutcomeDivisionViewEntityListing)
 
 
+# **getFlowsValidateJob**
+
+
+> [ArchitectValidateJobStateResponse](ArchitectValidateJobStateResponse) getFlowsValidateJob(jobId, expand)
+
+Fetch Architect Validate Job Status
+
+getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/flows/validate/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* architect:jobValidate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String jobId = "jobId_example"; // String | Job ID
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
+try {
+    ArchitectValidateJobStateResponse result = apiInstance.getFlowsValidateJob(jobId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsValidateJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| Job ID | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: messages 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ArchitectValidateJobStateResponse**](ArchitectValidateJobStateResponse)
+
+
 # **patchArchitectGrammar**
 
 
@@ -8655,6 +8720,67 @@ try {
 [**FlowOutcome**](FlowOutcome)
 
 
+# **postFlowsValidateJobs**
+
+
+> [RegisterArchitectValidateJobResponse](RegisterArchitectValidateJobResponse) postFlowsValidateJobs(body)
+
+Register Architect Validate Job
+
+postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/flows/validate/jobs  
+
+Requires ALL permissions: 
+
+* architect:jobValidate:create
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+RegisterArchitectValidateJob body = new RegisterArchitectValidateJob(); // RegisterArchitectValidateJob | 
+try {
+    RegisterArchitectValidateJobResponse result = apiInstance.postFlowsValidateJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsValidateJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RegisterArchitectValidateJob**](RegisterArchitectValidateJob)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RegisterArchitectValidateJobResponse**](RegisterArchitectValidateJobResponse)
+
+
 # **putArchitectEmergencygroup**
 
 
@@ -9592,4 +9718,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

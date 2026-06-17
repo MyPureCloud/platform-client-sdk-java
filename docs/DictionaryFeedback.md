@@ -15,9 +15,10 @@
 | **dateModified** | [**Date**](Date) | The Timestamp when dictionary feedback modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedBy** | [**UserReference**](UserReference) | The Id of the user who modified the dictionary feedback |  [optional] |
 | **transcriptionEngine** | [**TranscriptionEngineEnum**](#Enum--TranscriptionEngineEnum) | The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled. |  [optional] |
-| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled. |  [optional] |
-| **displayAs** | **String** | The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine. |  [optional] |
-| **examplePhrases** | [**List&lt;DictionaryFeedbackExamplePhrase&gt;**](DictionaryFeedbackExamplePhrase) | A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine. |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the dictionary feedback |  [optional] |
+| **invalidReason** | **String** | The reason the dictionary feedback is invalid |  [optional] |
+| **displayAs** | **String** | The display name for the dictionary feedback. |  [optional] |
+| **examplePhrases** | [**List&lt;DictionaryFeedbackExamplePhrase&gt;**](DictionaryFeedbackExamplePhrase) | A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid for Genesys transcription engine. Not applicable for English and Spanish dialects |  [optional] |
 | **soundsLike** | **List&lt;String&gt;** | A list of up to 10 terms that give examples of how the term sounds. This field is only valid for Genesys transcription engine. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -48,8 +49,9 @@
 | PENDING | &quot;Pending&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | SAVED | &quot;Saved&quot; | 
+| INVALID | &quot;Invalid&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

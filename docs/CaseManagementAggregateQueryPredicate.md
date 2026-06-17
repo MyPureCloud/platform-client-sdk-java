@@ -27,13 +27,18 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASSOCIATIONTYPE | &quot;associationType&quot; | 
 | CASEID | &quot;caseId&quot; | 
 | CASEPLANID | &quot;caseplanId&quot; | 
+| CONVERSATIONID | &quot;conversationId&quot; | 
 | CUSTOMERINTENTID | &quot;customerIntentId&quot; | 
 | DIVISIONID | &quot;divisionId&quot; | 
 | OWNERID | &quot;ownerId&quot; | 
 | PRIORITY | &quot;priority&quot; | 
+| STAGEID | &quot;stageId&quot; | 
 | STATUS | &quot;status&quot; | 
+| STEPID | &quot;stepId&quot; | 
+| WORKITEMID | &quot;workitemId&quot; | 
 
 
 ## Enum: OperatorEnum
@@ -48,4 +53,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

@@ -23,7 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsContactUnresolved**](ExternalContactsApi#getExternalcontactsContactUnresolved) | Fetch an unresolved external contact |
 | [**getExternalcontactsContacts**](ExternalContactsApi#getExternalcontactsContacts) | Search for external contacts |
 | [**getExternalcontactsContactsExport**](ExternalContactsApi#getExternalcontactsContactsExport) | Get export for exportId |
-| [**getExternalcontactsContactsExports**](ExternalContactsApi#getExternalcontactsContactsExports) | List exports for organization |
+| [**getExternalcontactsContactsExports**](ExternalContactsApi#getExternalcontactsContactsExports) | List contact exports for organization |
 | [**getExternalcontactsContactsSchema**](ExternalContactsApi#getExternalcontactsContactsSchema) | Get a schema |
 | [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi#getExternalcontactsContactsSchemaVersion) | Get a specific version of a schema |
 | [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi#getExternalcontactsContactsSchemaVersions) | Get all versions of an external contact's schema |
@@ -1300,7 +1300,7 @@ try {
 
 > [ContactsExportListing](ContactsExportListing) getExternalcontactsContactsExports(divisionIds, after, pageSize)
 
-List exports for organization
+List contact exports for organization
 
 Wraps GET /api/v2/externalcontacts/contacts/exports  
 
@@ -7520,4 +7520,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

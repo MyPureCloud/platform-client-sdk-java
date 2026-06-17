@@ -33,8 +33,9 @@
 | CREATE | &quot;Create&quot; | 
 | UPDATE | &quot;Update&quot; | 
 | EXPORT | &quot;Export&quot; | 
+| VALIDATE | &quot;Validate&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

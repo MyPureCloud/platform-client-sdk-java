@@ -1,0 +1,13 @@
+# ValidateDetails
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **flow** | [**ArchitectFlowReference**](ArchitectFlowReference) | The flow to validate. If you do not provide the flow ID, you must provide both the name and type. |  |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

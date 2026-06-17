@@ -23,8 +23,9 @@
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

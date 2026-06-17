@@ -8,6 +8,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitActivitycode) | Deletes an activity code |
 | [**deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory) | Delete staffing group allocations history created for a capacity plan before the given date |
 | [**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitPlanninggroup) | Deletes the planning group |
+| [**deleteWorkforcemanagementBusinessunitSchedulebid**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebid) | Delete a schedule bid |
+| [**deleteWorkforcemanagementBusinessunitSchedulebidGroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebidGroup) | Delete a schedule bid group by bid group Id |
 | [**deleteWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulingRun) | Cancel a scheduling run |
 | [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | Delete a service goal template |
 | [**deleteWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitStaffinggroup) | Deletes a staffing group |
@@ -63,6 +65,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitOpportunity**](WorkforceManagementApi#getWorkforcemanagementBusinessunitOpportunity) | Get opportunity details |
 | [**getWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroup) | Get a planning group |
 | [**getWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroups) | Gets list of planning groups |
+| [**getWorkforcemanagementBusinessunitSchedulebid**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebid) | Get a schedule bid |
+| [**getWorkforcemanagementBusinessunitSchedulebidGroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroup) | Get a schedule bid group |
+| [**getWorkforcemanagementBusinessunitSchedulebidGroupPreferences**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroupPreferences) | Get agents schedule bid preferences for a bid group |
+| [**getWorkforcemanagementBusinessunitSchedulebidGroupsSummary**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroupsSummary) | Get summary of bid groups that belong to a schedule bid |
+| [**getWorkforcemanagementBusinessunitSchedulebids**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebids) | Get list of schedule bids |
 | [**getWorkforcemanagementBusinessunitSchedulerSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulerSettings) | Get scheduler settings for a business unit |
 | [**getWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRun) | Get a scheduling run |
 | [**getWorkforcemanagementBusinessunitSchedulingRunResult**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRunResult) | Get the result of a rescheduling operation |
@@ -135,6 +142,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementManagementunits**](WorkforceManagementApi#getWorkforcemanagementManagementunits) | Get management units |
 | [**getWorkforcemanagementManagementunitsDivisionviews**](WorkforceManagementApi#getWorkforcemanagementManagementunitsDivisionviews) | Get management units across divisions |
 | [**getWorkforcemanagementNotifications**](WorkforceManagementApi#getWorkforcemanagementNotifications) | Get a list of notifications for the current user |
+| [**getWorkforcemanagementSchedulebidPreference**](WorkforceManagementApi#getWorkforcemanagementSchedulebidPreference) | Gets an agent's schedule bidding preference |
+| [**getWorkforcemanagementSchedulebidSchedulesets**](WorkforceManagementApi#getWorkforcemanagementSchedulebidSchedulesets) | Gets an agent's schedule sets for a bid |
+| [**getWorkforcemanagementSchedulebids**](WorkforceManagementApi#getWorkforcemanagementSchedulebids) | Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently |
 | [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi#getWorkforcemanagementSchedulingjob) | Get status of the scheduling job |
 | [**getWorkforcemanagementShifttrades**](WorkforceManagementApi#getWorkforcemanagementShifttrades) | Gets all of my shift trades |
 | [**getWorkforcemanagementShifttradingTradeJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradeJob) | View result of update trade operation. Only the user who started the operation can query the status |
@@ -165,6 +175,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementBusinessunitMinimumstaffingSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitMinimumstaffingSettings) | Update minimum staffing settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitOpportunity**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitOpportunity) | Update the opportunity |
 | [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitPlanninggroup) | Updates the planning group |
+| [**patchWorkforcemanagementBusinessunitSchedulebid**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebid) | Update a schedule bid |
+| [**patchWorkforcemanagementBusinessunitSchedulebidGroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebidGroup) | Update a schedule bid group by bid group Id |
+| [**patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences) | Overrides the assigned schedule bid for the specified agents |
 | [**patchWorkforcemanagementBusinessunitSchedulerSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulerSettings) | Update scheduler settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulingRun) | Mark a schedule run as applied |
 | [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitServicegoaltemplate) | Updates a service goal template |
@@ -230,6 +243,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery) | Query opportunities by external activity IDs |
 | [**postWorkforcemanagementBusinessunitOpportunitiesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitOpportunitiesQuery) | Query opportunities within the specified date range |
 | [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitPlanninggroups) | Adds a new planning group |
+| [**postWorkforcemanagementBusinessunitSchedulebidCopy**](WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidCopy) | Copy a schedule bid |
+| [**postWorkforcemanagementBusinessunitSchedulebidGroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidGroups) | Add a bid group in a given schedule bid |
+| [**postWorkforcemanagementBusinessunitSchedulebids**](WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebids) | Create a new schedule bid |
+| [**postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets**](WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets) | Fetch all the agents with effective schedule set for the given BU |
 | [**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi#postWorkforcemanagementBusinessunitServicegoaltemplates) | Adds a new service goal template |
 | [**postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs) | Queries and evaluates against shift trade configuration shift trades in a management unit per week |
 | [**postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs) | Queries shift trades in a management unit per user |
@@ -312,6 +329,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putWorkforcemanagementAgentIntegrationsHris**](WorkforceManagementApi#putWorkforcemanagementAgentIntegrationsHris) | Update integrations for agent |
 | [**putWorkforcemanagementBusinessunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementBusinessunitTimeofflimitValues) | Sets daily values for a date range of time-off limit object |
 | [**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementManagementunitTimeofflimitValues) | Sets daily values for a date range of time off limit object |
+| [**putWorkforcemanagementSchedulebidPreference**](WorkforceManagementApi#putWorkforcemanagementSchedulebidPreference) | Update an agent's schedule set preference |
 {: class="table-striped"}
 
 
@@ -549,6 +567,128 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit. | 
 | **planningGroupId** | **String**| The ID of a planning group to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteWorkforcemanagementBusinessunitSchedulebid**
+
+
+> Void deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId)
+
+Delete a schedule bid
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteWorkforcemanagementBusinessunitSchedulebidGroup**
+
+
+> Void deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId)
+
+Delete a schedule bid group by bid group Id
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+String bidGroupId = "bidGroupId_example"; // String | Schedule Bid Group id
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebidGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid associated with the bid groups | 
+| **bidGroupId** | **String**| Schedule Bid Group id | 
 {: class="table-striped"}
 
 
@@ -4098,6 +4238,317 @@ try {
 ### Return type
 
 [**PlanningGroupList**](PlanningGroupList)
+
+
+# **getWorkforcemanagementBusinessunitSchedulebid**
+
+
+> [ScheduleBid](ScheduleBid) getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId)
+
+Get a schedule bid
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid
+try {
+    ScheduleBid result = apiInstance.getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleBid**](ScheduleBid)
+
+
+# **getWorkforcemanagementBusinessunitSchedulebidGroup**
+
+
+> [ScheduleBidGroupResponse](ScheduleBidGroupResponse) getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId)
+
+Get a schedule bid group
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+String bidGroupId = "bidGroupId_example"; // String | Schedule Bid Group id
+try {
+    ScheduleBidGroupResponse result = apiInstance.getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid associated with the bid groups | 
+| **bidGroupId** | **String**| Schedule Bid Group id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleBidGroupResponse**](ScheduleBidGroupResponse)
+
+
+# **getWorkforcemanagementBusinessunitSchedulebidGroupPreferences**
+
+
+> [AdminAgentScheduleBidPreferenceResponse](AdminAgentScheduleBidPreferenceResponse) getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, forceDownloadService, expand)
+
+Get agents schedule bid preferences for a bid group
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+String bidGroupId = "bidGroupId_example"; // String | The ID of the schedule bid group
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+List<String> expand = Arrays.asList(null); // List<String> | Include to fetch agents' preferences with priorities
+try {
+    AdminAgentScheduleBidPreferenceResponse result = apiInstance.getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, forceDownloadService, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroupPreferences");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid associated with the bid groups | 
+| **bidGroupId** | **String**| The ID of the schedule bid group | 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| Include to fetch agents&#39; preferences with priorities | [optional]<br />**Values**: agentsScheduleBidPreferences.agentScheduleBidPreferencePriorities 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdminAgentScheduleBidPreferenceResponse**](AdminAgentScheduleBidPreferenceResponse)
+
+
+# **getWorkforcemanagementBusinessunitSchedulebidGroupsSummary**
+
+
+> [ScheduleBidGroupSummaryList](ScheduleBidGroupSummaryList) getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId)
+
+Get summary of bid groups that belong to a schedule bid
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+try {
+    ScheduleBidGroupSummaryList result = apiInstance.getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroupsSummary");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid associated with the bid groups | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleBidGroupSummaryList**](ScheduleBidGroupSummaryList)
+
+
+# **getWorkforcemanagementBusinessunitSchedulebids**
+
+
+> [ScheduleBidListResponse](ScheduleBidListResponse) getWorkforcemanagementBusinessunitSchedulebids(businessUnitId)
+
+Get list of schedule bids
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    ScheduleBidListResponse result = apiInstance.getWorkforcemanagementBusinessunitSchedulebids(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebids");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleBidListResponse**](ScheduleBidListResponse)
 
 
 # **getWorkforcemanagementBusinessunitSchedulerSettings**
@@ -8729,6 +9180,179 @@ This endpoint does not require any parameters.
 [**NotificationsResponse**](NotificationsResponse)
 
 
+# **getWorkforcemanagementSchedulebidPreference**
+
+
+> [AgentScheduleBiddingPreferenceResponse](AgentScheduleBiddingPreferenceResponse) getWorkforcemanagementSchedulebidPreference(bidId)
+
+Gets an agent's schedule bidding preference
+
+Wraps GET /api/v2/workforcemanagement/schedulebids/{bidId}/preference  
+
+Requires ANY permissions: 
+
+* wfm:agentScheduleBid:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String bidId = "bidId_example"; // String | The ID of the schedule bid
+try {
+    AgentScheduleBiddingPreferenceResponse result = apiInstance.getWorkforcemanagementSchedulebidPreference(bidId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementSchedulebidPreference");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bidId** | **String**| The ID of the schedule bid | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
+
+
+# **getWorkforcemanagementSchedulebidSchedulesets**
+
+
+> [AgentScheduleBidScheduleSetResponse](AgentScheduleBidScheduleSetResponse) getWorkforcemanagementSchedulebidSchedulesets(bidId)
+
+Gets an agent's schedule sets for a bid
+
+Wraps GET /api/v2/workforcemanagement/schedulebids/{bidId}/schedulesets  
+
+Requires ANY permissions: 
+
+* wfm:agentScheduleBid:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String bidId = "bidId_example"; // String | The ID of the schedule bid
+try {
+    AgentScheduleBidScheduleSetResponse result = apiInstance.getWorkforcemanagementSchedulebidSchedulesets(bidId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementSchedulebidSchedulesets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bidId** | **String**| The ID of the schedule bid | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentScheduleBidScheduleSetResponse**](AgentScheduleBidScheduleSetResponse)
+
+
+# **getWorkforcemanagementSchedulebids**
+
+
+> [AgentScheduleBids](AgentScheduleBids) getWorkforcemanagementSchedulebids()
+
+Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+
+Wraps GET /api/v2/workforcemanagement/schedulebids  
+
+Requires ANY permissions: 
+
+* wfm:agentScheduleBid:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    AgentScheduleBids result = apiInstance.getWorkforcemanagementSchedulebids();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementSchedulebids");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AgentScheduleBids**](AgentScheduleBids)
+
+
 # **getWorkforcemanagementSchedulingjob**
 
 
@@ -10545,6 +11169,199 @@ try {
 ### Return type
 
 [**PlanningGroup**](PlanningGroup)
+
+
+# **patchWorkforcemanagementBusinessunitSchedulebid**
+
+
+> [ScheduleBid](ScheduleBid) patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body)
+
+Update a schedule bid
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid
+UpdateScheduleBid body = new UpdateScheduleBid(); // UpdateScheduleBid | The schedule bid to be updated
+try {
+    ScheduleBid result = apiInstance.patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid | 
+| **body** | [**UpdateScheduleBid**](UpdateScheduleBid)| The schedule bid to be updated | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleBid**](ScheduleBid)
+
+
+# **patchWorkforcemanagementBusinessunitSchedulebidGroup**
+
+
+> [ScheduleBidGroupResponse](ScheduleBidGroupResponse) patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body)
+
+Update a schedule bid group by bid group Id
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+String bidGroupId = "bidGroupId_example"; // String | Schedule Bid Group id
+ScheduleBidGroupUpdate body = new ScheduleBidGroupUpdate(); // ScheduleBidGroupUpdate | body
+try {
+    ScheduleBidGroupResponse result = apiInstance.patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebidGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid associated with the bid groups | 
+| **bidGroupId** | **String**| Schedule Bid Group id | 
+| **body** | [**ScheduleBidGroupUpdate**](ScheduleBidGroupUpdate)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleBidGroupResponse**](ScheduleBidGroupResponse)
+
+
+# **patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences**
+
+
+> [AdminAgentScheduleBidPreferenceResponse](AdminAgentScheduleBidPreferenceResponse) patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body)
+
+Overrides the assigned schedule bid for the specified agents
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+String bidGroupId = "bidGroupId_example"; // String | The ID of the schedule bid group
+AgentsBidAssignedScheduleSetOverrideRequest body = new AgentsBidAssignedScheduleSetOverrideRequest(); // AgentsBidAssignedScheduleSetOverrideRequest | body
+try {
+    AdminAgentScheduleBidPreferenceResponse result = apiInstance.patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid associated with the bid groups | 
+| **bidGroupId** | **String**| The ID of the schedule bid group | 
+| **body** | [**AgentsBidAssignedScheduleSetOverrideRequest**](AgentsBidAssignedScheduleSetOverrideRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdminAgentScheduleBidPreferenceResponse**](AdminAgentScheduleBidPreferenceResponse)
 
 
 # **patchWorkforcemanagementBusinessunitSchedulerSettings**
@@ -14589,6 +15406,254 @@ try {
 ### Return type
 
 [**PlanningGroup**](PlanningGroup)
+
+
+# **postWorkforcemanagementBusinessunitSchedulebidCopy**
+
+
+> [ScheduleBid](ScheduleBid) postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body)
+
+Copy a schedule bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/copy  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid to copy
+CopyScheduleBid body = new CopyScheduleBid(); // CopyScheduleBid | body
+try {
+    ScheduleBid result = apiInstance.postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidCopy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid to copy | 
+| **body** | [**CopyScheduleBid**](CopyScheduleBid)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleBid**](ScheduleBid)
+
+
+# **postWorkforcemanagementBusinessunitSchedulebidGroups**
+
+
+> [ScheduleBidGroupResponse](ScheduleBidGroupResponse) postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body)
+
+Add a bid group in a given schedule bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+ScheduleBidGroupCreate body = new ScheduleBidGroupCreate(); // ScheduleBidGroupCreate | body
+try {
+    ScheduleBidGroupResponse result = apiInstance.postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidGroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the schedule bid associated with the bid groups | 
+| **body** | [**ScheduleBidGroupCreate**](ScheduleBidGroupCreate)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleBidGroupResponse**](ScheduleBidGroupResponse)
+
+
+# **postWorkforcemanagementBusinessunitSchedulebids**
+
+
+> [ScheduleBid](ScheduleBid) postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body)
+
+Create a new schedule bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+CreateScheduleBid body = new CreateScheduleBid(); // CreateScheduleBid | The schedule bid to be created
+try {
+    ScheduleBid result = apiInstance.postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebids");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**CreateScheduleBid**](CreateScheduleBid)| The schedule bid to be created | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleBid**](ScheduleBid)
+
+
+# **postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets**
+
+
+> [AgentsEffectiveScheduleSetResponse](AgentsEffectiveScheduleSetResponse) postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body)
+
+Fetch all the agents with effective schedule set for the given BU
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets  
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+QueryEffectiveScheduleSetsRequest body = new QueryEffectiveScheduleSetsRequest(); // QueryEffectiveScheduleSetsRequest | body
+try {
+    AgentsEffectiveScheduleSetResponse result = apiInstance.postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**QueryEffectiveScheduleSetsRequest**](QueryEffectiveScheduleSetsRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentsEffectiveScheduleSetResponse**](AgentsEffectiveScheduleSetResponse)
 
 
 # **postWorkforcemanagementBusinessunitServicegoaltemplates**
@@ -19765,4 +20830,65 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+# **putWorkforcemanagementSchedulebidPreference**
+
+
+> [AgentScheduleBiddingPreferenceResponse](AgentScheduleBiddingPreferenceResponse) putWorkforcemanagementSchedulebidPreference(bidId, body)
+
+Update an agent's schedule set preference
+
+Wraps PUT /api/v2/workforcemanagement/schedulebids/{bidId}/preference  
+
+Requires ANY permissions: 
+
+* wfm:agentScheduleBid:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String bidId = "bidId_example"; // String | The ID of the schedule bid
+UpdateAgentScheduleBiddingPreference body = new UpdateAgentScheduleBiddingPreference(); // UpdateAgentScheduleBiddingPreference | body
+try {
+    AgentScheduleBiddingPreferenceResponse result = apiInstance.putWorkforcemanagementSchedulebidPreference(bidId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#putWorkforcemanagementSchedulebidPreference");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bidId** | **String**| The ID of the schedule bid | 
+| **body** | [**UpdateAgentScheduleBiddingPreference**](UpdateAgentScheduleBiddingPreference)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

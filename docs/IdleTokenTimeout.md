@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **idleTokenTimeoutSeconds** | **Integer** | Token timeout length in seconds. Must be at least 5 minutes and 8 hours or less (if HIPAA is disabled) or 15 minutes or less (if HIPAA is enabled). |  [optional] |
+| **idleTokenTimeoutSeconds** | **Integer** | Token timeout length in seconds. Must be at least 5 minutes and at most 8 hours. HIPAA-enabled organizations may be subject to a stricter 15-minute maximum during rollout. |  [optional] |
 | **enableIdleTokenTimeout** | **Boolean** | Indicates whether the Token Timeout should be enabled or disabled. |  [optional] |
 | **inactivityTimeoutUnit** | [**InactivityTimeoutUnitEnum**](#Enum--InactivityTimeoutUnitEnum) | The unit for the inactivity timeout (MINUTES or HOURS). |  [optional] |
 | **inactivityTimeoutGroupsEnabled** | **Boolean** | Indicates whether inactivity timeout groups are enabled. |  [optional] |
@@ -23,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_
