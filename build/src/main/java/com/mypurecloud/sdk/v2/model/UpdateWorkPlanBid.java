@@ -130,6 +130,7 @@ public class UpdateWorkPlanBid  implements Serializable {
     }
   }
   private RankingTiebreakerTypeEnum rankingTiebreakerType = null;
+  private Boolean endOverridesAndRotations = null;
   private ListWrapperAgentWorkPlanField workPlanFieldsVisibleToAgents = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
@@ -324,6 +325,24 @@ public class UpdateWorkPlanBid  implements Serializable {
 
 
   /**
+   * If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid
+   **/
+  public UpdateWorkPlanBid endOverridesAndRotations(Boolean endOverridesAndRotations) {
+    this.endOverridesAndRotations = endOverridesAndRotations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid")
+  @JsonProperty("endOverridesAndRotations")
+  public Boolean getEndOverridesAndRotations() {
+    return endOverridesAndRotations;
+  }
+  public void setEndOverridesAndRotations(Boolean endOverridesAndRotations) {
+    this.endOverridesAndRotations = endOverridesAndRotations;
+  }
+
+
+  /**
    * The work plan fields visible to agents whenever work plan preferences are made
    **/
   public UpdateWorkPlanBid workPlanFieldsVisibleToAgents(ListWrapperAgentWorkPlanField workPlanFieldsVisibleToAgents) {
@@ -376,13 +395,14 @@ public class UpdateWorkPlanBid  implements Serializable {
             Objects.equals(this.effectiveDate, updateWorkPlanBid.effectiveDate) &&
             Objects.equals(this.agentRankingType, updateWorkPlanBid.agentRankingType) &&
             Objects.equals(this.rankingTiebreakerType, updateWorkPlanBid.rankingTiebreakerType) &&
+            Objects.equals(this.endOverridesAndRotations, updateWorkPlanBid.endOverridesAndRotations) &&
             Objects.equals(this.workPlanFieldsVisibleToAgents, updateWorkPlanBid.workPlanFieldsVisibleToAgents) &&
             Objects.equals(this.status, updateWorkPlanBid.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, forecast, bidWindowStartDate, bidWindowEndDate, effectiveDate, agentRankingType, rankingTiebreakerType, workPlanFieldsVisibleToAgents, status);
+    return Objects.hash(name, forecast, bidWindowStartDate, bidWindowEndDate, effectiveDate, agentRankingType, rankingTiebreakerType, endOverridesAndRotations, workPlanFieldsVisibleToAgents, status);
   }
 
   @Override
@@ -397,6 +417,7 @@ public class UpdateWorkPlanBid  implements Serializable {
     sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
     sb.append("    agentRankingType: ").append(toIndentedString(agentRankingType)).append("\n");
     sb.append("    rankingTiebreakerType: ").append(toIndentedString(rankingTiebreakerType)).append("\n");
+    sb.append("    endOverridesAndRotations: ").append(toIndentedString(endOverridesAndRotations)).append("\n");
     sb.append("    workPlanFieldsVisibleToAgents: ").append(toIndentedString(workPlanFieldsVisibleToAgents)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");

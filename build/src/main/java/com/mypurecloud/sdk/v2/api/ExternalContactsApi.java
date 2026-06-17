@@ -1776,7 +1776,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * List exports for organization
+   * List contact exports for organization
    * 
    * @param divisionIds Division IDs of entities (optional)
    * @param after The cursor that points to the end of the set of entities (optional)
@@ -1790,7 +1790,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * List exports for organization
+   * List contact exports for organization
    * 
    * @param divisionIds Division IDs of entities (optional)
    * @param after The cursor that points to the end of the set of entities (optional)
@@ -1814,7 +1814,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * List exports for organization
+   * List contact exports for organization
    * 
    * @param request The request object
    * @return ContactsExportListing
@@ -1833,7 +1833,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * List exports for organization
+   * List contact exports for organization
    * 
    * @param request The request object
    * @return the response

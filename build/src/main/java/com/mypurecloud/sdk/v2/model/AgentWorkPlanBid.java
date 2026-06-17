@@ -134,6 +134,54 @@ public class AgentWorkPlanBid  implements Serializable {
     }
   }
   private List<WorkPlanFieldsVisibleToAgentsEnum> workPlanFieldsVisibleToAgents = null;
+
+  private static class BidTypeEnumDeserializer extends StdDeserializer<BidTypeEnum> {
+    public BidTypeEnumDeserializer() {
+      super(BidTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public BidTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BidTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the bid
+   */
+ @JsonDeserialize(using = BidTypeEnumDeserializer.class)
+  public enum BidTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    WORKPLANBID("WorkPlanBid"),
+    SCHEDULEBID("ScheduleBid");
+
+    private String value;
+
+    BidTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BidTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BidTypeEnum value : BidTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BidTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private BidTypeEnum bidType = null;
   private String selfUri = null;
 
   public AgentWorkPlanBid() {
@@ -274,6 +322,24 @@ public class AgentWorkPlanBid  implements Serializable {
   }
 
 
+  /**
+   * The type of the bid
+   **/
+  public AgentWorkPlanBid bidType(BidTypeEnum bidType) {
+    this.bidType = bidType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the bid")
+  @JsonProperty("bidType")
+  public BidTypeEnum getBidType() {
+    return bidType;
+  }
+  public void setBidType(BidTypeEnum bidType) {
+    this.bidType = bidType;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -298,12 +364,13 @@ public class AgentWorkPlanBid  implements Serializable {
             Objects.equals(this.effectiveDate, agentWorkPlanBid.effectiveDate) &&
             Objects.equals(this.status, agentWorkPlanBid.status) &&
             Objects.equals(this.workPlanFieldsVisibleToAgents, agentWorkPlanBid.workPlanFieldsVisibleToAgents) &&
+            Objects.equals(this.bidType, agentWorkPlanBid.bidType) &&
             Objects.equals(this.selfUri, agentWorkPlanBid.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, bidWindowStartDate, bidWindowEndDate, effectiveDate, status, workPlanFieldsVisibleToAgents, selfUri);
+    return Objects.hash(id, name, bidWindowStartDate, bidWindowEndDate, effectiveDate, status, workPlanFieldsVisibleToAgents, bidType, selfUri);
   }
 
   @Override
@@ -318,6 +385,7 @@ public class AgentWorkPlanBid  implements Serializable {
     sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    workPlanFieldsVisibleToAgents: ").append(toIndentedString(workPlanFieldsVisibleToAgents)).append("\n");
+    sb.append("    bidType: ").append(toIndentedString(bidType)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

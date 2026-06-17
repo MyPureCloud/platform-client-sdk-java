@@ -7,9 +7,10 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **columnName** | **String** | The name of the email column. |  |
 | **type** | **String** | Indicates the type of the email column. For example, 'work' or 'personal'. |  |
+| **contactableTimeColumnName** | **String** | A name of the contactableTimeColumn |  [optional] |
 | **contactableTimeColumn** | **String** | A column that indicates the timezone to use for a given contact when checking contactable times. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

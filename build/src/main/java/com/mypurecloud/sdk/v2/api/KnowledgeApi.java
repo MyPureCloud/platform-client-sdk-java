@@ -42,7 +42,6 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
@@ -8109,7 +8108,7 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeDocumentResponse postKnowledgeKnowledgebaseDocuments(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) throws IOException, ApiException {
+  public KnowledgeDocumentResponse postKnowledgeKnowledgebaseDocuments(String knowledgeBaseId, KnowledgeDocumentReq body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseDocuments(createPostKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, body));
   }
 
@@ -8121,11 +8120,11 @@ public class KnowledgeApi {
    * @return KnowledgeDocumentResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeDocumentResponse> postKnowledgeKnowledgebaseDocumentsWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) throws IOException {
+  public ApiResponse<KnowledgeDocumentResponse> postKnowledgeKnowledgebaseDocumentsWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentReq body) throws IOException {
     return postKnowledgeKnowledgebaseDocuments(createPostKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, body).withHttpInfo());
   }
 
-  private PostKnowledgeKnowledgebaseDocumentsRequest createPostKnowledgeKnowledgebaseDocumentsRequest(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) {
+  private PostKnowledgeKnowledgebaseDocumentsRequest createPostKnowledgeKnowledgebaseDocumentsRequest(String knowledgeBaseId, KnowledgeDocumentReq body) {
     return PostKnowledgeKnowledgebaseDocumentsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -8160,7 +8159,7 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeDocumentResponse> postKnowledgeKnowledgebaseDocuments(ApiRequest<KnowledgeDocumentCreateRequest> request) throws IOException {
+  public ApiResponse<KnowledgeDocumentResponse> postKnowledgeKnowledgebaseDocuments(ApiRequest<KnowledgeDocumentReq> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentResponse>() {});
     }

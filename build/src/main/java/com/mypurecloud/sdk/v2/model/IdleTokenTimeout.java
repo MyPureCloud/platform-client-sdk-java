@@ -93,7 +93,7 @@ public class IdleTokenTimeout  implements Serializable {
 
   
   /**
-   * Token timeout length in seconds. Must be at least 5 minutes and 8 hours or less (if HIPAA is disabled) or 15 minutes or less (if HIPAA is enabled).
+   * Token timeout length in seconds. Must be at least 5 minutes and at most 8 hours. HIPAA-enabled organizations may be subject to a stricter 15-minute maximum during rollout.
    * minimum: 300
    **/
   public IdleTokenTimeout idleTokenTimeoutSeconds(Integer idleTokenTimeoutSeconds) {
@@ -101,7 +101,7 @@ public class IdleTokenTimeout  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Token timeout length in seconds. Must be at least 5 minutes and 8 hours or less (if HIPAA is disabled) or 15 minutes or less (if HIPAA is enabled).")
+  @ApiModelProperty(example = "null", value = "Token timeout length in seconds. Must be at least 5 minutes and at most 8 hours. HIPAA-enabled organizations may be subject to a stricter 15-minute maximum during rollout.")
   @JsonProperty("idleTokenTimeoutSeconds")
   public Integer getIdleTokenTimeoutSeconds() {
     return idleTokenTimeoutSeconds;

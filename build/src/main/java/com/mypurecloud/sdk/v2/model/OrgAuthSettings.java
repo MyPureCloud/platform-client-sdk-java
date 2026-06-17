@@ -31,6 +31,7 @@ public class OrgAuthSettings  implements Serializable {
   private List<String> ipAddressAllowlist = null;
   private PasswordRequirements passwordRequirements = null;
   private List<String> inactivityTimeoutExclusions = null;
+  private Boolean universalLogout = null;
 
   public OrgAuthSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -157,6 +158,24 @@ public class OrgAuthSettings  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether universal logout is enabled for the organization.
+   **/
+  public OrgAuthSettings universalLogout(Boolean universalLogout) {
+    this.universalLogout = universalLogout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether universal logout is enabled for the organization.")
+  @JsonProperty("universalLogout")
+  public Boolean getUniversalLogout() {
+    return universalLogout;
+  }
+  public void setUniversalLogout(Boolean universalLogout) {
+    this.universalLogout = universalLogout;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -172,12 +191,13 @@ public class OrgAuthSettings  implements Serializable {
             Objects.equals(this.domainAllowlist, orgAuthSettings.domainAllowlist) &&
             Objects.equals(this.ipAddressAllowlist, orgAuthSettings.ipAddressAllowlist) &&
             Objects.equals(this.passwordRequirements, orgAuthSettings.passwordRequirements) &&
-            Objects.equals(this.inactivityTimeoutExclusions, orgAuthSettings.inactivityTimeoutExclusions);
+            Objects.equals(this.inactivityTimeoutExclusions, orgAuthSettings.inactivityTimeoutExclusions) &&
+            Objects.equals(this.universalLogout, orgAuthSettings.universalLogout);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(multifactorAuthenticationRequired, domainAllowlistEnabled, domainAllowlist, ipAddressAllowlist, passwordRequirements, inactivityTimeoutExclusions);
+    return Objects.hash(multifactorAuthenticationRequired, domainAllowlistEnabled, domainAllowlist, ipAddressAllowlist, passwordRequirements, inactivityTimeoutExclusions, universalLogout);
   }
 
   @Override
@@ -191,6 +211,7 @@ public class OrgAuthSettings  implements Serializable {
     sb.append("    ipAddressAllowlist: ").append(toIndentedString(ipAddressAllowlist)).append("\n");
     sb.append("    passwordRequirements: ").append(toIndentedString(passwordRequirements)).append("\n");
     sb.append("    inactivityTimeoutExclusions: ").append(toIndentedString(inactivityTimeoutExclusions)).append("\n");
+    sb.append("    universalLogout: ").append(toIndentedString(universalLogout)).append("\n");
     sb.append("}");
     return sb.toString();
   }

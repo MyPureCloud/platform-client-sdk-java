@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ArchitectExportJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
+import com.mypurecloud.sdk.v2.model.ArchitectValidateJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.CriteriaQuery;
@@ -80,6 +81,8 @@ import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJob;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
 import com.mypurecloud.sdk.v2.model.ScheduleDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
@@ -185,6 +188,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesDivisionviewsRequest
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsValidateJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchFlowsInstancesSettingsExecutiondataRequest;
@@ -226,6 +230,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsValidateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrIdentityresolutionRequest;
@@ -7161,6 +7166,83 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Fetch Architect Validate Job Status
+   * 
+   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ArchitectValidateJobStateResponse> getFlowsValidateJobAsync(GetFlowsValidateJobRequest request, final AsyncApiCallback<ArchitectValidateJobStateResponse> callback) {
+    try {
+      final SettableFuture<ArchitectValidateJobStateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ArchitectValidateJobStateResponse>() {}, new AsyncApiCallback<ApiResponse<ArchitectValidateJobStateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ArchitectValidateJobStateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch Architect Validate Job Status
+   * 
+   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ArchitectValidateJobStateResponse>> getFlowsValidateJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ArchitectValidateJobStateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ArchitectValidateJobStateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ArchitectValidateJobStateResponse>() {}, new AsyncApiCallback<ApiResponse<ArchitectValidateJobStateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ArchitectValidateJobStateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ArchitectValidateJobStateResponse> response = (ApiResponse<ArchitectValidateJobStateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ArchitectValidateJobStateResponse> response = (ApiResponse<ArchitectValidateJobStateResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Updates a grammar
    * 
    * @param request the request object
@@ -10230,6 +10312,83 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Register Architect Validate Job
+   * 
+   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RegisterArchitectValidateJobResponse> postFlowsValidateJobsAsync(PostFlowsValidateJobsRequest request, final AsyncApiCallback<RegisterArchitectValidateJobResponse> callback) {
+    try {
+      final SettableFuture<RegisterArchitectValidateJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RegisterArchitectValidateJobResponse>() {}, new AsyncApiCallback<ApiResponse<RegisterArchitectValidateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RegisterArchitectValidateJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Register Architect Validate Job
+   * 
+   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RegisterArchitectValidateJobResponse>> postFlowsValidateJobsAsync(ApiRequest<RegisterArchitectValidateJob> request, final AsyncApiCallback<ApiResponse<RegisterArchitectValidateJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RegisterArchitectValidateJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RegisterArchitectValidateJobResponse>() {}, new AsyncApiCallback<ApiResponse<RegisterArchitectValidateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RegisterArchitectValidateJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RegisterArchitectValidateJobResponse> response = (ApiResponse<RegisterArchitectValidateJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RegisterArchitectValidateJobResponse> response = (ApiResponse<RegisterArchitectValidateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

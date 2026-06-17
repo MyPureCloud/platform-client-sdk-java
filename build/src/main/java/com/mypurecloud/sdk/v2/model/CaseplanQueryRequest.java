@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,6 +26,54 @@ import java.io.Serializable;
 public class CaseplanQueryRequest  implements Serializable {
   
   private String name = null;
+
+  private static class NameSearchTypeEnumDeserializer extends StdDeserializer<NameSearchTypeEnum> {
+    public NameSearchTypeEnumDeserializer() {
+      super(NameSearchTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public NameSearchTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return NameSearchTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Type of name search to perform. Default is BEGINS_WITH.
+   */
+ @JsonDeserialize(using = NameSearchTypeEnumDeserializer.class)
+  public enum NameSearchTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BEGINS_WITH("BEGINS_WITH"),
+    CONTAINS("CONTAINS");
+
+    private String value;
+
+    NameSearchTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static NameSearchTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (NameSearchTypeEnum value : NameSearchTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return NameSearchTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private NameSearchTypeEnum nameSearchType = null;
   private Integer pageSize = null;
   private String after = null;
   private List<String> divisionIds = null;
@@ -57,6 +106,24 @@ public class CaseplanQueryRequest  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  /**
+   * Type of name search to perform. Default is BEGINS_WITH.
+   **/
+  public CaseplanQueryRequest nameSearchType(NameSearchTypeEnum nameSearchType) {
+    this.nameSearchType = nameSearchType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of name search to perform. Default is BEGINS_WITH.")
+  @JsonProperty("nameSearchType")
+  public NameSearchTypeEnum getNameSearchType() {
+    return nameSearchType;
+  }
+  public void setNameSearchType(NameSearchTypeEnum nameSearchType) {
+    this.nameSearchType = nameSearchType;
   }
 
 
@@ -127,6 +194,7 @@ public class CaseplanQueryRequest  implements Serializable {
     CaseplanQueryRequest caseplanQueryRequest = (CaseplanQueryRequest) o;
 
     return Objects.equals(this.name, caseplanQueryRequest.name) &&
+            Objects.equals(this.nameSearchType, caseplanQueryRequest.nameSearchType) &&
             Objects.equals(this.pageSize, caseplanQueryRequest.pageSize) &&
             Objects.equals(this.after, caseplanQueryRequest.after) &&
             Objects.equals(this.divisionIds, caseplanQueryRequest.divisionIds);
@@ -134,7 +202,7 @@ public class CaseplanQueryRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, pageSize, after, divisionIds);
+    return Objects.hash(name, nameSearchType, pageSize, after, divisionIds);
   }
 
   @Override
@@ -143,6 +211,7 @@ public class CaseplanQueryRequest  implements Serializable {
     sb.append("class CaseplanQueryRequest {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    nameSearchType: ").append(toIndentedString(nameSearchType)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    after: ").append(toIndentedString(after)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");

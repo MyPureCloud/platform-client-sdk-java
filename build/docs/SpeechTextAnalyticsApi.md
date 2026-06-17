@@ -1009,7 +1009,7 @@ SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String dialect = en-US; // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
 String transcriptionEngine = "transcriptionEngine_example"; // String | Filter by transcription engine, If not provided, all transcription engines will be considered
 String nextPage = "nextPage_example"; // String | The key for listing the next page
-Integer pageSize = 500; // Integer | The page size for the listing
+Integer pageSize = 500; // Integer | The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary.
 try {
     DictionaryFeedbackEntityListing result = apiInstance.getSpeechandtextanalyticsDictionaryfeedback(dialect, transcriptionEngine, nextPage, pageSize);
     System.out.println(result);
@@ -1027,7 +1027,7 @@ try {
 | **dialect** | **String**| The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] [default to null] 
 | **transcriptionEngine** | **String**| Filter by transcription engine, If not provided, all transcription engines will be considered | [optional]<br />**Values**: Genesys, GenesysExtended 
 | **nextPage** | **String**| The key for listing the next page | [optional] 
-| **pageSize** | **Integer**| The page size for the listing | [optional] [default to 500] 
+| **pageSize** | **Integer**| The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. | [optional] [default to 500] 
 {: class="table-striped"}
 
 
@@ -3926,4 +3926,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

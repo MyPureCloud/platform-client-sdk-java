@@ -45,7 +45,6 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
@@ -7061,7 +7060,7 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KnowledgeDocumentResponse>> postKnowledgeKnowledgebaseDocumentsAsync(ApiRequest<KnowledgeDocumentCreateRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentResponse>> callback) {
+  public Future<ApiResponse<KnowledgeDocumentResponse>> postKnowledgeKnowledgebaseDocumentsAsync(ApiRequest<KnowledgeDocumentReq> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<KnowledgeDocumentResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

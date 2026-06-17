@@ -6068,6 +6068,25 @@
     "return": "FlowOutcomeDivisionViewEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ArchitectApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;\n\npublic class ExamplegetFlowsOutcomesDivisionviews {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ArchitectApi apiInstance = new ArchitectApi();\n        Integer pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\nString sortBy = \"id\"; // String | Sort by\nString sortOrder = \"asc\"; // String | Sort order\nList<String> id = Arrays.asList(null); // List<String> | ID\nString name = \"name_example\"; // String | Name\nList<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)\n        try { \n            // Get a pageable list of basic flow outcome information objects filterable by query parameters.\n            FlowOutcomeDivisionViewEntityListing result = apiInstance.getFlowsOutcomesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ArchitectApi#getFlowsOutcomesDivisionviews\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getflowsvalidatejob": {
+    "operationId": "getflowsvalidatejob",
+    "functionName": "getFlowsValidateJob",
+    "signature": "getFlowsValidateJob(jobId, expand)",
+    "parameters": [
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "ArchitectValidateJobStateResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ArchitectApi;\nimport com.mypurecloud.sdk.v2.model.ArchitectValidateJobStateResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetFlowsValidateJob {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ArchitectApi apiInstance = new ArchitectApi();\n        String jobId = \"jobId_example\"; // String | Job ID\nList<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.\n        try { \n            // Fetch Architect Validate Job Status\n            ArchitectValidateJobStateResponse result = apiInstance.getFlowsValidateJob(jobId, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ArchitectApi#getFlowsValidateJob\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "patcharchitectgrammar": {
     "operationId": "patcharchitectgrammar",
     "functionName": "patchArchitectGrammar",
@@ -6748,6 +6767,20 @@
     ],
     "return": "FlowOutcome",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ArchitectApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.FlowOutcome;\n\npublic class ExamplepostFlowsOutcomes {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ArchitectApi apiInstance = new ArchitectApi();\n        FlowOutcome body = new FlowOutcome(); // FlowOutcome | \n        try { \n            // Create a flow outcome\n            FlowOutcome result = apiInstance.postFlowsOutcomes(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ArchitectApi#postFlowsOutcomes\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postflowsvalidatejobs": {
+    "operationId": "postflowsvalidatejobs",
+    "functionName": "postFlowsValidateJobs",
+    "signature": "postFlowsValidateJobs(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "RegisterArchitectValidateJob",
+        "required": "true"
+      }
+    ],
+    "return": "RegisterArchitectValidateJobResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ArchitectApi;\nimport com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJob;import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJobResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostFlowsValidateJobs {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ArchitectApi apiInstance = new ArchitectApi();\n        RegisterArchitectValidateJob body = new RegisterArchitectValidateJob(); // RegisterArchitectValidateJob | \n        try { \n            // Register Architect Validate Job\n            RegisterArchitectValidateJobResponse result = apiInstance.postFlowsValidateJobs(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ArchitectApi#postFlowsValidateJobs\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putarchitectemergencygroup": {
     "operationId": "putarchitectemergencygroup",
@@ -19046,7 +19079,7 @@
       }
     ],
     "return": "ContactsExportListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ExternalContactsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ContactsExportListing;\n\npublic class ExamplegetExternalcontactsContactsExports {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ExternalContactsApi apiInstance = new ExternalContactsApi();\n        List<String> divisionIds = Arrays.asList(null); // List<String> | Division IDs of entities\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities\nInteger pageSize = 56; // Integer | Number of entities to return\n        try { \n            // List exports for organization\n            ContactsExportListing result = apiInstance.getExternalcontactsContactsExports(divisionIds, after, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ExternalContactsApi#getExternalcontactsContactsExports\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ExternalContactsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ContactsExportListing;\n\npublic class ExamplegetExternalcontactsContactsExports {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ExternalContactsApi apiInstance = new ExternalContactsApi();\n        List<String> divisionIds = Arrays.asList(null); // List<String> | Division IDs of entities\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities\nInteger pageSize = 56; // Integer | Number of entities to return\n        try { \n            // List contact exports for organization\n            ContactsExportListing result = apiInstance.getExternalcontactsContactsExports(divisionIds, after, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ExternalContactsApi#getExternalcontactsContactsExports\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getexternalcontactscontactsschema": {
     "operationId": "getexternalcontactscontactsschema",
@@ -30442,12 +30475,12 @@
       },
       {
         "name": "body",
-        "type": "KnowledgeDocumentCreateRequest",
+        "type": "KnowledgeDocumentReq",
         "required": "true"
       }
     ],
     "return": "KnowledgeDocumentResponse",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;\n\npublic class ExamplepostKnowledgeKnowledgebaseDocuments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nKnowledgeDocumentCreateRequest body = new KnowledgeDocumentCreateRequest(); // KnowledgeDocumentCreateRequest | \n        try { \n            // Create document.\n            KnowledgeDocumentResponse result = apiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocuments\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;\n\npublic class ExamplepostKnowledgeKnowledgebaseDocuments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nKnowledgeDocumentReq body = new KnowledgeDocumentReq(); // KnowledgeDocumentReq | \n        try { \n            // Create document.\n            KnowledgeDocumentResponse result = apiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocuments\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postknowledgeknowledgebasedocumentsanswers": {
     "operationId": "postknowledgeknowledgebasedocumentsanswers",
@@ -48718,7 +48751,7 @@
       }
     ],
     "return": "DictionaryFeedbackEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;\nimport com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetSpeechandtextanalyticsDictionaryfeedback {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();\n        String dialect = en-US; // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard\nString transcriptionEngine = \"transcriptionEngine_example\"; // String | Filter by transcription engine, If not provided, all transcription engines will be considered\nString nextPage = \"nextPage_example\"; // String | The key for listing the next page\nInteger pageSize = 500; // Integer | The page size for the listing\n        try { \n            // Get the list of Speech & Text Analytics dictionary feedbacks\n            DictionaryFeedbackEntityListing result = apiInstance.getSpeechandtextanalyticsDictionaryfeedback(dialect, transcriptionEngine, nextPage, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsDictionaryfeedback\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;\nimport com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetSpeechandtextanalyticsDictionaryfeedback {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();\n        String dialect = en-US; // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard\nString transcriptionEngine = \"transcriptionEngine_example\"; // String | Filter by transcription engine, If not provided, all transcription engines will be considered\nString nextPage = \"nextPage_example\"; // String | The key for listing the next page\nInteger pageSize = 500; // Integer | The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary.\n        try { \n            // Get the list of Speech & Text Analytics dictionary feedbacks\n            DictionaryFeedbackEntityListing result = apiInstance.getSpeechandtextanalyticsDictionaryfeedback(dialect, transcriptionEngine, nextPage, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsDictionaryfeedback\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getspeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid": {
     "operationId": "getspeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid",
@@ -57304,6 +57337,47 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteWorkforcemanagementBusinessunitPlanninggroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\nString planningGroupId = \"planningGroupId_example\"; // String | The ID of a planning group to delete\n        try { \n            // Deletes the planning group\n            apiInstance.deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitPlanninggroup\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deleteworkforcemanagementbusinessunitschedulebid": {
+    "operationId": "deleteworkforcemanagementbusinessunitschedulebid",
+    "functionName": "deleteWorkforcemanagementBusinessunitSchedulebid",
+    "signature": "deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteWorkforcemanagementBusinessunitSchedulebid {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid\n        try { \n            // Delete a schedule bid\n            apiInstance.deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebid\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "deleteworkforcemanagementbusinessunitschedulebidgroup": {
+    "operationId": "deleteworkforcemanagementbusinessunitschedulebidgroup",
+    "functionName": "deleteWorkforcemanagementBusinessunitSchedulebidGroup",
+    "signature": "deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteWorkforcemanagementBusinessunitSchedulebidGroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nString bidGroupId = \"bidGroupId_example\"; // String | Schedule Bid Group id\n        try { \n            // Delete a schedule bid group by bid group Id\n            apiInstance.deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebidGroup\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deleteworkforcemanagementbusinessunitschedulingrun": {
     "operationId": "deleteworkforcemanagementbusinessunitschedulingrun",
     "functionName": "deleteWorkforcemanagementBusinessunitSchedulingRun",
@@ -58253,6 +58327,116 @@
     ],
     "return": "PlanningGroupList",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.PlanningGroupList;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWorkforcemanagementBusinessunitPlanninggroups {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\n        try { \n            // Gets list of planning groups\n            PlanningGroupList result = apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroups\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementbusinessunitschedulebid": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebid",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebid",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ScheduleBid;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWorkforcemanagementBusinessunitSchedulebid {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid\n        try { \n            // Get a schedule bid\n            ScheduleBid result = apiInstance.getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebid\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementbusinessunitschedulebidgroup": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebidgroup",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebidGroup",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ScheduleBidGroupResponse;\n\npublic class ExamplegetWorkforcemanagementBusinessunitSchedulebidGroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nString bidGroupId = \"bidGroupId_example\"; // String | Schedule Bid Group id\n        try { \n            // Get a schedule bid group\n            ScheduleBidGroupResponse result = apiInstance.getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroup\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementbusinessunitschedulebidgrouppreferences": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebidgrouppreferences",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebidGroupPreferences",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, forceDownloadService, expand)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "forceDownloadService",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "AdminAgentScheduleBidPreferenceResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AdminAgentScheduleBidPreferenceResponse;\n\npublic class ExamplegetWorkforcemanagementBusinessunitSchedulebidGroupPreferences {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nString bidGroupId = \"bidGroupId_example\"; // String | The ID of the schedule bid group\nBoolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes\nList<String> expand = Arrays.asList(null); // List<String> | Include to fetch agents' preferences with priorities\n        try { \n            // Get agents schedule bid preferences for a bid group\n            AdminAgentScheduleBidPreferenceResponse result = apiInstance.getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, forceDownloadService, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroupPreferences\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementbusinessunitschedulebidgroupssummary": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebidgroupssummary",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebidGroupsSummary",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupSummaryList",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ScheduleBidGroupSummaryList;\n\npublic class ExamplegetWorkforcemanagementBusinessunitSchedulebidGroupsSummary {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\n        try { \n            // Get summary of bid groups that belong to a schedule bid\n            ScheduleBidGroupSummaryList result = apiInstance.getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroupsSummary\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementbusinessunitschedulebids": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebids",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebids",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebids(businessUnitId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidListResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ScheduleBidListResponse;\n\npublic class ExamplegetWorkforcemanagementBusinessunitSchedulebids {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\n        try { \n            // Get list of schedule bids\n            ScheduleBidListResponse result = apiInstance.getWorkforcemanagementBusinessunitSchedulebids(businessUnitId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebids\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getworkforcemanagementbusinessunitschedulersettings": {
     "operationId": "getworkforcemanagementbusinessunitschedulersettings",
@@ -59747,6 +59931,41 @@
     "return": "NotificationsResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.NotificationsResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWorkforcemanagementNotifications {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n                try { \n            // Get a list of notifications for the current user\n            NotificationsResponse result = apiInstance.getWorkforcemanagementNotifications();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementNotifications\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getworkforcemanagementschedulebidpreference": {
+    "operationId": "getworkforcemanagementschedulebidpreference",
+    "functionName": "getWorkforcemanagementSchedulebidPreference",
+    "signature": "getWorkforcemanagementSchedulebidPreference(bidId)",
+    "parameters": [
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "AgentScheduleBiddingPreferenceResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.AgentScheduleBiddingPreferenceResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWorkforcemanagementSchedulebidPreference {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String bidId = \"bidId_example\"; // String | The ID of the schedule bid\n        try { \n            // Gets an agent's schedule bidding preference\n            AgentScheduleBiddingPreferenceResponse result = apiInstance.getWorkforcemanagementSchedulebidPreference(bidId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementSchedulebidPreference\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementschedulebidschedulesets": {
+    "operationId": "getworkforcemanagementschedulebidschedulesets",
+    "functionName": "getWorkforcemanagementSchedulebidSchedulesets",
+    "signature": "getWorkforcemanagementSchedulebidSchedulesets(bidId)",
+    "parameters": [
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "AgentScheduleBidScheduleSetResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AgentScheduleBidScheduleSetResponse;\n\npublic class ExamplegetWorkforcemanagementSchedulebidSchedulesets {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String bidId = \"bidId_example\"; // String | The ID of the schedule bid\n        try { \n            // Gets an agent's schedule sets for a bid\n            AgentScheduleBidScheduleSetResponse result = apiInstance.getWorkforcemanagementSchedulebidSchedulesets(bidId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementSchedulebidSchedulesets\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementschedulebids": {
+    "operationId": "getworkforcemanagementschedulebids",
+    "functionName": "getWorkforcemanagementSchedulebids",
+    "signature": "getWorkforcemanagementSchedulebids()",
+    "return": "AgentScheduleBids",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.AgentScheduleBids;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWorkforcemanagementSchedulebids {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n                try { \n            // Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently\n            AgentScheduleBids result = apiInstance.getWorkforcemanagementSchedulebids();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementSchedulebids\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getworkforcemanagementschedulingjob": {
     "operationId": "getworkforcemanagementschedulingjob",
     "functionName": "getWorkforcemanagementSchedulingjob",
@@ -60238,6 +60457,88 @@
     ],
     "return": "PlanningGroup",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;import com.mypurecloud.sdk.v2.model.PlanningGroup;\n\npublic class ExamplepatchWorkforcemanagementBusinessunitPlanninggroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\nString planningGroupId = \"planningGroupId_example\"; // String | The ID of a planning group to update\nUpdatePlanningGroupRequest body = new UpdatePlanningGroupRequest(); // UpdatePlanningGroupRequest | body\n        try { \n            // Updates the planning group\n            PlanningGroup result = apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitPlanninggroup\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchworkforcemanagementbusinessunitschedulebid": {
+    "operationId": "patchworkforcemanagementbusinessunitschedulebid",
+    "functionName": "patchWorkforcemanagementBusinessunitSchedulebid",
+    "signature": "patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UpdateScheduleBid",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ScheduleBid;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UpdateScheduleBid;\n\npublic class ExamplepatchWorkforcemanagementBusinessunitSchedulebid {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid\nUpdateScheduleBid body = new UpdateScheduleBid(); // UpdateScheduleBid | The schedule bid to be updated\n        try { \n            // Update a schedule bid\n            ScheduleBid result = apiInstance.patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebid\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchworkforcemanagementbusinessunitschedulebidgroup": {
+    "operationId": "patchworkforcemanagementbusinessunitschedulebidgroup",
+    "functionName": "patchWorkforcemanagementBusinessunitSchedulebidGroup",
+    "signature": "patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScheduleBidGroupUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ScheduleBidGroupResponse;import com.mypurecloud.sdk.v2.model.ScheduleBidGroupUpdate;\n\npublic class ExamplepatchWorkforcemanagementBusinessunitSchedulebidGroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nString bidGroupId = \"bidGroupId_example\"; // String | Schedule Bid Group id\nScheduleBidGroupUpdate body = new ScheduleBidGroupUpdate(); // ScheduleBidGroupUpdate | body\n        try { \n            // Update a schedule bid group by bid group Id\n            ScheduleBidGroupResponse result = apiInstance.patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebidGroup\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchworkforcemanagementbusinessunitschedulebidgrouppreferences": {
+    "operationId": "patchworkforcemanagementbusinessunitschedulebidgrouppreferences",
+    "functionName": "patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences",
+    "signature": "patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "AgentsBidAssignedScheduleSetOverrideRequest",
+        "required": "true"
+      }
+    ],
+    "return": "AdminAgentScheduleBidPreferenceResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AgentsBidAssignedScheduleSetOverrideRequest;import com.mypurecloud.sdk.v2.model.AdminAgentScheduleBidPreferenceResponse;\n\npublic class ExamplepatchWorkforcemanagementBusinessunitSchedulebidGroupPreferences {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nString bidGroupId = \"bidGroupId_example\"; // String | The ID of the schedule bid group\nAgentsBidAssignedScheduleSetOverrideRequest body = new AgentsBidAssignedScheduleSetOverrideRequest(); // AgentsBidAssignedScheduleSetOverrideRequest | body\n        try { \n            // Overrides the assigned schedule bid for the specified agents\n            AdminAgentScheduleBidPreferenceResponse result = apiInstance.patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "patchworkforcemanagementbusinessunitschedulersettings": {
     "operationId": "patchworkforcemanagementbusinessunitschedulersettings",
@@ -61595,6 +61896,92 @@
     ],
     "return": "PlanningGroup",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.PlanningGroup;import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;\n\npublic class ExamplepostWorkforcemanagementBusinessunitPlanninggroups {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\nCreatePlanningGroupRequest body = new CreatePlanningGroupRequest(); // CreatePlanningGroupRequest | body\n        try { \n            // Adds a new planning group\n            PlanningGroup result = apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitPlanninggroups\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postworkforcemanagementbusinessunitschedulebidcopy": {
+    "operationId": "postworkforcemanagementbusinessunitschedulebidcopy",
+    "functionName": "postWorkforcemanagementBusinessunitSchedulebidCopy",
+    "signature": "postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CopyScheduleBid",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ScheduleBid;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CopyScheduleBid;\n\npublic class ExamplepostWorkforcemanagementBusinessunitSchedulebidCopy {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid to copy\nCopyScheduleBid body = new CopyScheduleBid(); // CopyScheduleBid | body\n        try { \n            // Copy a schedule bid\n            ScheduleBid result = apiInstance.postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidCopy\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postworkforcemanagementbusinessunitschedulebidgroups": {
+    "operationId": "postworkforcemanagementbusinessunitschedulebidgroups",
+    "functionName": "postWorkforcemanagementBusinessunitSchedulebidGroups",
+    "signature": "postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScheduleBidGroupCreate",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ScheduleBidGroupResponse;import com.mypurecloud.sdk.v2.model.ScheduleBidGroupCreate;\n\npublic class ExamplepostWorkforcemanagementBusinessunitSchedulebidGroups {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nString bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nScheduleBidGroupCreate body = new ScheduleBidGroupCreate(); // ScheduleBidGroupCreate | body\n        try { \n            // Add a bid group in a given schedule bid\n            ScheduleBidGroupResponse result = apiInstance.postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidGroups\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postworkforcemanagementbusinessunitschedulebids": {
+    "operationId": "postworkforcemanagementbusinessunitschedulebids",
+    "functionName": "postWorkforcemanagementBusinessunitSchedulebids",
+    "signature": "postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CreateScheduleBid",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ScheduleBid;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CreateScheduleBid;\n\npublic class ExamplepostWorkforcemanagementBusinessunitSchedulebids {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nCreateScheduleBid body = new CreateScheduleBid(); // CreateScheduleBid | The schedule bid to be created\n        try { \n            // Create a new schedule bid\n            ScheduleBid result = apiInstance.postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebids\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postworkforcemanagementbusinessunitschedulebidseffectiveschedulesets": {
+    "operationId": "postworkforcemanagementbusinessunitschedulebidseffectiveschedulesets",
+    "functionName": "postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets",
+    "signature": "postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "QueryEffectiveScheduleSetsRequest",
+        "required": "true"
+      }
+    ],
+    "return": "AgentsEffectiveScheduleSetResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AgentsEffectiveScheduleSetResponse;import com.mypurecloud.sdk.v2.model.QueryEffectiveScheduleSetsRequest;\n\npublic class ExamplepostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nQueryEffectiveScheduleSetsRequest body = new QueryEffectiveScheduleSetsRequest(); // QueryEffectiveScheduleSetsRequest | body\n        try { \n            // Fetch all the agents with effective schedule set for the given BU\n            AgentsEffectiveScheduleSetResponse result = apiInstance.postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postworkforcemanagementbusinessunitservicegoaltemplates": {
     "operationId": "postworkforcemanagementbusinessunitservicegoaltemplates",
@@ -63413,5 +63800,24 @@
     ],
     "return": "TimeOffLimit",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TimeOffLimit;import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;\n\npublic class ExampleputWorkforcemanagementManagementunitTimeofflimitValues {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String managementUnitId = \"managementUnitId_example\"; // String | The ID of the management unit.\nString timeOffLimitId = \"timeOffLimitId_example\"; // String | The ID of the time off limit object to set values for\nSetTimeOffLimitValuesRequest body = new SetTimeOffLimitValuesRequest(); // SetTimeOffLimitValuesRequest | body\n        try { \n            // Sets daily values for a date range of time off limit object\n            TimeOffLimit result = apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#putWorkforcemanagementManagementunitTimeofflimitValues\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putworkforcemanagementschedulebidpreference": {
+    "operationId": "putworkforcemanagementschedulebidpreference",
+    "functionName": "putWorkforcemanagementSchedulebidPreference",
+    "signature": "putWorkforcemanagementSchedulebidPreference(bidId, body)",
+    "parameters": [
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UpdateAgentScheduleBiddingPreference",
+        "required": "true"
+      }
+    ],
+    "return": "AgentScheduleBiddingPreferenceResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.AgentScheduleBiddingPreferenceResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UpdateAgentScheduleBiddingPreference;\n\npublic class ExampleputWorkforcemanagementSchedulebidPreference {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String bidId = \"bidId_example\"; // String | The ID of the schedule bid\nUpdateAgentScheduleBiddingPreference body = new UpdateAgentScheduleBiddingPreference(); // UpdateAgentScheduleBiddingPreference | body\n        try { \n            // Update an agent's schedule set preference\n            AgentScheduleBiddingPreferenceResponse result = apiInstance.putWorkforcemanagementSchedulebidPreference(bidId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#putWorkforcemanagementSchedulebidPreference\");\n            e.printStackTrace();\n        }\n    }\n}"
   }
 }

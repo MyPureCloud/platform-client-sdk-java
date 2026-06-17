@@ -12,6 +12,7 @@
 | **effectiveDate** | [**LocalDate**](LocalDate) | The date when agents will be assigned to the new work plan in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **agentRankingType** | [**AgentRankingTypeEnum**](#Enum--AgentRankingTypeEnum) | The type of agent ranking selected for this bid |  [optional] |
 | **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#Enum--RankingTiebreakerTypeEnum) | Ranking tiebreaker |  [optional] |
+| **endOverridesAndRotations** | **Boolean** | If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid |  [optional] |
 | **workPlanFieldsVisibleToAgents** | [**ListWrapperAgentWorkPlanField**](ListWrapperAgentWorkPlanField) | The work plan fields visible to agents whenever work plan preferences are made |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The state of the bid |  [optional] |
 
@@ -53,4 +54,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

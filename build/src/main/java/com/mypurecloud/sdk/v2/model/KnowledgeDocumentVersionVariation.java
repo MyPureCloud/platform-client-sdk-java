@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
-import com.mypurecloud.sdk.v2.model.DocumentBodyResponse;
+import com.mypurecloud.sdk.v2.model.DocumentBody;
 import com.mypurecloud.sdk.v2.model.DocumentVariationContext;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,7 +34,7 @@ public class KnowledgeDocumentVersionVariation  implements Serializable {
   private List<DocumentVariationContext> contexts = null;
   private Integer priority = null;
   private String name = null;
-  private DocumentBodyResponse body = null;
+  private DocumentBody body = null;
   private String selfUri = null;
   private AddressableEntityRef documentVersion = null;
 
@@ -129,17 +129,17 @@ public class KnowledgeDocumentVersionVariation  implements Serializable {
   /**
    * The content for the variation.
    **/
-  public KnowledgeDocumentVersionVariation body(DocumentBodyResponse body) {
+  public KnowledgeDocumentVersionVariation body(DocumentBody body) {
     this.body = body;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The content for the variation.")
   @JsonProperty("body")
-  public DocumentBodyResponse getBody() {
+  public DocumentBody getBody() {
     return body;
   }
-  public void setBody(DocumentBodyResponse body) {
+  public void setBody(DocumentBody body) {
     this.body = body;
   }
 

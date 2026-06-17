@@ -24,6 +24,7 @@ public class ContactPhoneNumberColumn  implements Serializable {
   
   private String columnName = null;
   private String type = null;
+  private String callableTimeColumnName = null;
   private String callableTimeColumn = null;
 
   public ContactPhoneNumberColumn() {
@@ -74,6 +75,24 @@ public class ContactPhoneNumberColumn  implements Serializable {
 
 
   /**
+   * A name of the callableTimeColumn
+   **/
+  public ContactPhoneNumberColumn callableTimeColumnName(String callableTimeColumnName) {
+    this.callableTimeColumnName = callableTimeColumnName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A name of the callableTimeColumn")
+  @JsonProperty("callableTimeColumnName")
+  public String getCallableTimeColumnName() {
+    return callableTimeColumnName;
+  }
+  public void setCallableTimeColumnName(String callableTimeColumnName) {
+    this.callableTimeColumnName = callableTimeColumnName;
+  }
+
+
+  /**
    * A column that indicates the timezone to use for a given contact when checking callable times. Not allowed if 'automaticTimeZoneMapping' is set to true.
    **/
   public ContactPhoneNumberColumn callableTimeColumn(String callableTimeColumn) {
@@ -103,12 +122,13 @@ public class ContactPhoneNumberColumn  implements Serializable {
 
     return Objects.equals(this.columnName, contactPhoneNumberColumn.columnName) &&
             Objects.equals(this.type, contactPhoneNumberColumn.type) &&
+            Objects.equals(this.callableTimeColumnName, contactPhoneNumberColumn.callableTimeColumnName) &&
             Objects.equals(this.callableTimeColumn, contactPhoneNumberColumn.callableTimeColumn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type, callableTimeColumn);
+    return Objects.hash(columnName, type, callableTimeColumnName, callableTimeColumn);
   }
 
   @Override
@@ -118,6 +138,7 @@ public class ContactPhoneNumberColumn  implements Serializable {
     
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    callableTimeColumnName: ").append(toIndentedString(callableTimeColumnName)).append("\n");
     sb.append("    callableTimeColumn: ").append(toIndentedString(callableTimeColumn)).append("\n");
     sb.append("}");
     return sb.toString();

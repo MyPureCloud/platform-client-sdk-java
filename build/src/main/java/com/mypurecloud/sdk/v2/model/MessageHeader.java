@@ -44,7 +44,8 @@ public class MessageHeader  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
     IMAGE("Image"),
-    VIDEO("Video");
+    VIDEO("Video"),
+    DOCUMENT("Document");
 
     private String value;
 

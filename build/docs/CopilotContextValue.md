@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | Name of the context. |  |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the context. |  |
-| **participantDataProperties** | [**ParticipantDataProperties**](ParticipantDataProperties) | Participant data properties. |  [optional] |
 | **conversationAttributeProperties** | [**ConversationAttributeProperties**](ConversationAttributeProperties) | Conversation attribute properties. |  [optional] |
 
 
@@ -18,9 +17,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ACTIVEINTENT | &quot;ActiveIntent&quot; | 
 | CONVERSATIONATTRIBUTE | &quot;ConversationAttribute&quot; | 
-| PARTICIPANTDATA | &quot;ParticipantData&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
+import com.mypurecloud.sdk.v2.model.AdminAgentScheduleBidPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AdminAgentWorkPlanPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AdminBulkUpdateAlternativeShiftTradeStateRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
@@ -41,12 +42,17 @@ import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.AgentScheduleBidScheduleSetResponse;
+import com.mypurecloud.sdk.v2.model.AgentScheduleBiddingPreferenceResponse;
+import com.mypurecloud.sdk.v2.model.AgentScheduleBids;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentUpdateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBiddingPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBids;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanListResponse;
+import com.mypurecloud.sdk.v2.model.AgentsBidAssignedScheduleSetOverrideRequest;
 import com.mypurecloud.sdk.v2.model.AgentsBidAssignedWorkPlanOverrideRequest;
+import com.mypurecloud.sdk.v2.model.AgentsEffectiveScheduleSetResponse;
 import com.mypurecloud.sdk.v2.model.AgentsIntegrationsListing;
 import com.mypurecloud.sdk.v2.model.AgentsWorkPlansResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftAsyncResponse;
@@ -130,6 +136,7 @@ import com.mypurecloud.sdk.v2.model.ContinuousForecastSessionResponse;
 import com.mypurecloud.sdk.v2.model.ContinuousForecastSnapshotResponse;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.CopyCapacityPlanRequest;
+import com.mypurecloud.sdk.v2.model.CopyScheduleBid;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
@@ -142,6 +149,7 @@ import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.CreateCapacityPlanStaffingGroupMetricChangeRequest;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.CreateScheduleBid;
 import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.CreateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
@@ -208,6 +216,7 @@ import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
+import com.mypurecloud.sdk.v2.model.QueryEffectiveScheduleSetsRequest;
 import com.mypurecloud.sdk.v2.model.QueryExternalActivityOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.QueryOpportunitiesRequest;
 import com.mypurecloud.sdk.v2.model.QueryOpportunitiesResponse;
@@ -221,6 +230,12 @@ import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.QueryUserStaffingGroupListRequest;
 import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
 import com.mypurecloud.sdk.v2.model.QueryWeekSummaryListJobRequest;
+import com.mypurecloud.sdk.v2.model.ScheduleBid;
+import com.mypurecloud.sdk.v2.model.ScheduleBidGroupCreate;
+import com.mypurecloud.sdk.v2.model.ScheduleBidGroupResponse;
+import com.mypurecloud.sdk.v2.model.ScheduleBidGroupSummaryList;
+import com.mypurecloud.sdk.v2.model.ScheduleBidGroupUpdate;
+import com.mypurecloud.sdk.v2.model.ScheduleBidListResponse;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
 import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
@@ -263,6 +278,7 @@ import com.mypurecloud.sdk.v2.model.UnavailableTimeListing;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAgentScheduleBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
@@ -275,6 +291,7 @@ import com.mypurecloud.sdk.v2.model.UpdateMuAgentsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
 import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.UpdateScheduleBid;
 import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateShiftTradeJobRequest;
@@ -335,6 +352,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitR
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitPlanninggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulebidRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitStaffinggroupRequest;
@@ -390,6 +409,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMini
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitOpportunityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunResultRequest;
@@ -462,6 +486,9 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWo
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidPreferenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidSchedulesetsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeJobRequest;
@@ -492,6 +519,9 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCa
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitOpportunityRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulebidRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulebidGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
@@ -557,6 +587,10 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpp
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSchedulebidCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSchedulebidGroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSchedulebidsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest;
@@ -639,6 +673,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletime
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementAgentIntegrationsHrisRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementSchedulebidPreferenceRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -952,6 +987,168 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementBusinessunitPlanninggroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitSchedulebid(String businessUnitId, String bidId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitSchedulebid(createDeleteWorkforcemanagementBusinessunitSchedulebidRequest(businessUnitId, bidId));
+  }
+
+  /**
+   * Delete a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitSchedulebidWithHttpInfo(String businessUnitId, String bidId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitSchedulebid(createDeleteWorkforcemanagementBusinessunitSchedulebidRequest(businessUnitId, bidId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitSchedulebidRequest createDeleteWorkforcemanagementBusinessunitSchedulebidRequest(String businessUnitId, String bidId) {
+    return DeleteWorkforcemanagementBusinessunitSchedulebidRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Delete a schedule bid
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitSchedulebid(DeleteWorkforcemanagementBusinessunitSchedulebidRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a schedule bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitSchedulebid(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a schedule bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId Schedule Bid Group id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitSchedulebidGroup(String businessUnitId, String bidId, String bidGroupId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitSchedulebidGroup(createDeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest(businessUnitId, bidId, bidGroupId));
+  }
+
+  /**
+   * Delete a schedule bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId Schedule Bid Group id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitSchedulebidGroupWithHttpInfo(String businessUnitId, String bidId, String bidGroupId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitSchedulebidGroup(createDeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest(businessUnitId, bidId, bidGroupId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest createDeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest(String businessUnitId, String bidId, String bidGroupId) {
+    return DeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .build();
+  }
+
+  /**
+   * Delete a schedule bid group by bid group Id
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitSchedulebidGroup(DeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a schedule bid group by bid group Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitSchedulebidGroup(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -5389,6 +5586,428 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PlanningGroupList> response = (ApiResponse<PlanningGroupList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid (required)
+   * @return ScheduleBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBid getWorkforcemanagementBusinessunitSchedulebid(String businessUnitId, String bidId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulebid(createGetWorkforcemanagementBusinessunitSchedulebidRequest(businessUnitId, bidId));
+  }
+
+  /**
+   * Get a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid (required)
+   * @return ScheduleBid
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBid> getWorkforcemanagementBusinessunitSchedulebidWithHttpInfo(String businessUnitId, String bidId) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulebid(createGetWorkforcemanagementBusinessunitSchedulebidRequest(businessUnitId, bidId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulebidRequest createGetWorkforcemanagementBusinessunitSchedulebidRequest(String businessUnitId, String bidId) {
+    return GetWorkforcemanagementBusinessunitSchedulebidRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Get a schedule bid
+   * 
+   * @param request The request object
+   * @return ScheduleBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBid getWorkforcemanagementBusinessunitSchedulebid(GetWorkforcemanagementBusinessunitSchedulebidRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleBid> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleBid>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a schedule bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBid> getWorkforcemanagementBusinessunitSchedulebid(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleBid>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a schedule bid group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId Schedule Bid Group id (required)
+   * @return ScheduleBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidGroupResponse getWorkforcemanagementBusinessunitSchedulebidGroup(String businessUnitId, String bidId, String bidGroupId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulebidGroup(createGetWorkforcemanagementBusinessunitSchedulebidGroupRequest(businessUnitId, bidId, bidGroupId));
+  }
+
+  /**
+   * Get a schedule bid group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId Schedule Bid Group id (required)
+   * @return ScheduleBidGroupResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidGroupResponse> getWorkforcemanagementBusinessunitSchedulebidGroupWithHttpInfo(String businessUnitId, String bidId, String bidGroupId) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulebidGroup(createGetWorkforcemanagementBusinessunitSchedulebidGroupRequest(businessUnitId, bidId, bidGroupId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulebidGroupRequest createGetWorkforcemanagementBusinessunitSchedulebidGroupRequest(String businessUnitId, String bidId, String bidGroupId) {
+    return GetWorkforcemanagementBusinessunitSchedulebidGroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .build();
+  }
+
+  /**
+   * Get a schedule bid group
+   * 
+   * @param request The request object
+   * @return ScheduleBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidGroupResponse getWorkforcemanagementBusinessunitSchedulebidGroup(GetWorkforcemanagementBusinessunitSchedulebidGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleBidGroupResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleBidGroupResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a schedule bid group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidGroupResponse> getWorkforcemanagementBusinessunitSchedulebidGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleBidGroupResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get agents schedule bid preferences for a bid group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId The ID of the schedule bid group (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @param expand Include to fetch agents' preferences with priorities (optional)
+   * @return AdminAgentScheduleBidPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdminAgentScheduleBidPreferenceResponse getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(String businessUnitId, String bidId, String bidGroupId, Boolean forceDownloadService, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(createGetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest(businessUnitId, bidId, bidGroupId, forceDownloadService, expand));
+  }
+
+  /**
+   * Get agents schedule bid preferences for a bid group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId The ID of the schedule bid group (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @param expand Include to fetch agents' preferences with priorities (optional)
+   * @return AdminAgentScheduleBidPreferenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdminAgentScheduleBidPreferenceResponse> getWorkforcemanagementBusinessunitSchedulebidGroupPreferencesWithHttpInfo(String businessUnitId, String bidId, String bidGroupId, Boolean forceDownloadService, List<String> expand) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(createGetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest(businessUnitId, bidId, bidGroupId, forceDownloadService, expand).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest createGetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest(String businessUnitId, String bidId, String bidGroupId, Boolean forceDownloadService, List<String> expand) {
+    return GetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get agents schedule bid preferences for a bid group
+   * 
+   * @param request The request object
+   * @return AdminAgentScheduleBidPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdminAgentScheduleBidPreferenceResponse getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(GetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdminAgentScheduleBidPreferenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get agents schedule bid preferences for a bid group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdminAgentScheduleBidPreferenceResponse> getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdminAgentScheduleBidPreferenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = (ApiResponse<AdminAgentScheduleBidPreferenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = (ApiResponse<AdminAgentScheduleBidPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get summary of bid groups that belong to a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @return ScheduleBidGroupSummaryList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidGroupSummaryList getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(String businessUnitId, String bidId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(createGetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest(businessUnitId, bidId));
+  }
+
+  /**
+   * Get summary of bid groups that belong to a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @return ScheduleBidGroupSummaryList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidGroupSummaryList> getWorkforcemanagementBusinessunitSchedulebidGroupsSummaryWithHttpInfo(String businessUnitId, String bidId) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(createGetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest(businessUnitId, bidId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest createGetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest(String businessUnitId, String bidId) {
+    return GetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Get summary of bid groups that belong to a schedule bid
+   * 
+   * @param request The request object
+   * @return ScheduleBidGroupSummaryList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidGroupSummaryList getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(GetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleBidGroupSummaryList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleBidGroupSummaryList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get summary of bid groups that belong to a schedule bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidGroupSummaryList> getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleBidGroupSummaryList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidGroupSummaryList> response = (ApiResponse<ScheduleBidGroupSummaryList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidGroupSummaryList> response = (ApiResponse<ScheduleBidGroupSummaryList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of schedule bids
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return ScheduleBidListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidListResponse getWorkforcemanagementBusinessunitSchedulebids(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulebids(createGetWorkforcemanagementBusinessunitSchedulebidsRequest(businessUnitId));
+  }
+
+  /**
+   * Get list of schedule bids
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return ScheduleBidListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidListResponse> getWorkforcemanagementBusinessunitSchedulebidsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulebids(createGetWorkforcemanagementBusinessunitSchedulebidsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulebidsRequest createGetWorkforcemanagementBusinessunitSchedulebidsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitSchedulebidsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get list of schedule bids
+   * 
+   * @param request The request object
+   * @return ScheduleBidListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidListResponse getWorkforcemanagementBusinessunitSchedulebids(GetWorkforcemanagementBusinessunitSchedulebidsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleBidListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleBidListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of schedule bids
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidListResponse> getWorkforcemanagementBusinessunitSchedulebids(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleBidListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidListResponse> response = (ApiResponse<ScheduleBidListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidListResponse> response = (ApiResponse<ScheduleBidListResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11430,6 +12049,236 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Gets an agent's schedule bidding preference
+   * 
+   * @param bidId The ID of the schedule bid (required)
+   * @return AgentScheduleBiddingPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScheduleBiddingPreferenceResponse getWorkforcemanagementSchedulebidPreference(String bidId) throws IOException, ApiException {
+    return  getWorkforcemanagementSchedulebidPreference(createGetWorkforcemanagementSchedulebidPreferenceRequest(bidId));
+  }
+
+  /**
+   * Gets an agent's schedule bidding preference
+   * 
+   * @param bidId The ID of the schedule bid (required)
+   * @return AgentScheduleBiddingPreferenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScheduleBiddingPreferenceResponse> getWorkforcemanagementSchedulebidPreferenceWithHttpInfo(String bidId) throws IOException {
+    return getWorkforcemanagementSchedulebidPreference(createGetWorkforcemanagementSchedulebidPreferenceRequest(bidId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSchedulebidPreferenceRequest createGetWorkforcemanagementSchedulebidPreferenceRequest(String bidId) {
+    return GetWorkforcemanagementSchedulebidPreferenceRequest.builder()
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Gets an agent's schedule bidding preference
+   * 
+   * @param request The request object
+   * @return AgentScheduleBiddingPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScheduleBiddingPreferenceResponse getWorkforcemanagementSchedulebidPreference(GetWorkforcemanagementSchedulebidPreferenceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentScheduleBiddingPreferenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentScheduleBiddingPreferenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets an agent's schedule bidding preference
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScheduleBiddingPreferenceResponse> getWorkforcemanagementSchedulebidPreference(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentScheduleBiddingPreferenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScheduleBiddingPreferenceResponse> response = (ApiResponse<AgentScheduleBiddingPreferenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScheduleBiddingPreferenceResponse> response = (ApiResponse<AgentScheduleBiddingPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets an agent's schedule sets for a bid
+   * 
+   * @param bidId The ID of the schedule bid (required)
+   * @return AgentScheduleBidScheduleSetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScheduleBidScheduleSetResponse getWorkforcemanagementSchedulebidSchedulesets(String bidId) throws IOException, ApiException {
+    return  getWorkforcemanagementSchedulebidSchedulesets(createGetWorkforcemanagementSchedulebidSchedulesetsRequest(bidId));
+  }
+
+  /**
+   * Gets an agent's schedule sets for a bid
+   * 
+   * @param bidId The ID of the schedule bid (required)
+   * @return AgentScheduleBidScheduleSetResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScheduleBidScheduleSetResponse> getWorkforcemanagementSchedulebidSchedulesetsWithHttpInfo(String bidId) throws IOException {
+    return getWorkforcemanagementSchedulebidSchedulesets(createGetWorkforcemanagementSchedulebidSchedulesetsRequest(bidId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSchedulebidSchedulesetsRequest createGetWorkforcemanagementSchedulebidSchedulesetsRequest(String bidId) {
+    return GetWorkforcemanagementSchedulebidSchedulesetsRequest.builder()
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Gets an agent's schedule sets for a bid
+   * 
+   * @param request The request object
+   * @return AgentScheduleBidScheduleSetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScheduleBidScheduleSetResponse getWorkforcemanagementSchedulebidSchedulesets(GetWorkforcemanagementSchedulebidSchedulesetsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentScheduleBidScheduleSetResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentScheduleBidScheduleSetResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets an agent's schedule sets for a bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScheduleBidScheduleSetResponse> getWorkforcemanagementSchedulebidSchedulesets(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentScheduleBidScheduleSetResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScheduleBidScheduleSetResponse> response = (ApiResponse<AgentScheduleBidScheduleSetResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScheduleBidScheduleSetResponse> response = (ApiResponse<AgentScheduleBidScheduleSetResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+   * 
+   * @return AgentScheduleBids
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScheduleBids getWorkforcemanagementSchedulebids() throws IOException, ApiException {
+    return  getWorkforcemanagementSchedulebids(createGetWorkforcemanagementSchedulebidsRequest());
+  }
+
+  /**
+   * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+   * 
+   * @return AgentScheduleBids
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScheduleBids> getWorkforcemanagementSchedulebidsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementSchedulebids(createGetWorkforcemanagementSchedulebidsRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSchedulebidsRequest createGetWorkforcemanagementSchedulebidsRequest() {
+    return GetWorkforcemanagementSchedulebidsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+   * 
+   * @param request The request object
+   * @return AgentScheduleBids
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScheduleBids getWorkforcemanagementSchedulebids(GetWorkforcemanagementSchedulebidsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentScheduleBids> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentScheduleBids>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScheduleBids> getWorkforcemanagementSchedulebids(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentScheduleBids>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScheduleBids> response = (ApiResponse<AgentScheduleBids>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScheduleBids> response = (ApiResponse<AgentScheduleBids>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get status of the scheduling job
    * 
    * @param jobId The id of the scheduling job (required)
@@ -13833,6 +14682,272 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid (required)
+   * @param body The schedule bid to be updated (required)
+   * @return ScheduleBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBid patchWorkforcemanagementBusinessunitSchedulebid(String businessUnitId, String bidId, UpdateScheduleBid body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitSchedulebid(createPatchWorkforcemanagementBusinessunitSchedulebidRequest(businessUnitId, bidId, body));
+  }
+
+  /**
+   * Update a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid (required)
+   * @param body The schedule bid to be updated (required)
+   * @return ScheduleBid
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBid> patchWorkforcemanagementBusinessunitSchedulebidWithHttpInfo(String businessUnitId, String bidId, UpdateScheduleBid body) throws IOException {
+    return patchWorkforcemanagementBusinessunitSchedulebid(createPatchWorkforcemanagementBusinessunitSchedulebidRequest(businessUnitId, bidId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitSchedulebidRequest createPatchWorkforcemanagementBusinessunitSchedulebidRequest(String businessUnitId, String bidId, UpdateScheduleBid body) {
+    return PatchWorkforcemanagementBusinessunitSchedulebidRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a schedule bid
+   * 
+   * @param request The request object
+   * @return ScheduleBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBid patchWorkforcemanagementBusinessunitSchedulebid(PatchWorkforcemanagementBusinessunitSchedulebidRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleBid> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleBid>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a schedule bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBid> patchWorkforcemanagementBusinessunitSchedulebid(ApiRequest<UpdateScheduleBid> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleBid>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a schedule bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId Schedule Bid Group id (required)
+   * @param body body (required)
+   * @return ScheduleBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidGroupResponse patchWorkforcemanagementBusinessunitSchedulebidGroup(String businessUnitId, String bidId, String bidGroupId, ScheduleBidGroupUpdate body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitSchedulebidGroup(createPatchWorkforcemanagementBusinessunitSchedulebidGroupRequest(businessUnitId, bidId, bidGroupId, body));
+  }
+
+  /**
+   * Update a schedule bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId Schedule Bid Group id (required)
+   * @param body body (required)
+   * @return ScheduleBidGroupResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidGroupResponse> patchWorkforcemanagementBusinessunitSchedulebidGroupWithHttpInfo(String businessUnitId, String bidId, String bidGroupId, ScheduleBidGroupUpdate body) throws IOException {
+    return patchWorkforcemanagementBusinessunitSchedulebidGroup(createPatchWorkforcemanagementBusinessunitSchedulebidGroupRequest(businessUnitId, bidId, bidGroupId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitSchedulebidGroupRequest createPatchWorkforcemanagementBusinessunitSchedulebidGroupRequest(String businessUnitId, String bidId, String bidGroupId, ScheduleBidGroupUpdate body) {
+    return PatchWorkforcemanagementBusinessunitSchedulebidGroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a schedule bid group by bid group Id
+   * 
+   * @param request The request object
+   * @return ScheduleBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidGroupResponse patchWorkforcemanagementBusinessunitSchedulebidGroup(PatchWorkforcemanagementBusinessunitSchedulebidGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleBidGroupResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleBidGroupResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a schedule bid group by bid group Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidGroupResponse> patchWorkforcemanagementBusinessunitSchedulebidGroup(ApiRequest<ScheduleBidGroupUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleBidGroupResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Overrides the assigned schedule bid for the specified agents
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId The ID of the schedule bid group (required)
+   * @param body body (required)
+   * @return AdminAgentScheduleBidPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdminAgentScheduleBidPreferenceResponse patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(String businessUnitId, String bidId, String bidGroupId, AgentsBidAssignedScheduleSetOverrideRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(createPatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest(businessUnitId, bidId, bidGroupId, body));
+  }
+
+  /**
+   * Overrides the assigned schedule bid for the specified agents
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param bidGroupId The ID of the schedule bid group (required)
+   * @param body body (required)
+   * @return AdminAgentScheduleBidPreferenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdminAgentScheduleBidPreferenceResponse> patchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesWithHttpInfo(String businessUnitId, String bidId, String bidGroupId, AgentsBidAssignedScheduleSetOverrideRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(createPatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest(businessUnitId, bidId, bidGroupId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest createPatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest(String businessUnitId, String bidId, String bidGroupId, AgentsBidAssignedScheduleSetOverrideRequest body) {
+    return PatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Overrides the assigned schedule bid for the specified agents
+   * 
+   * @param request The request object
+   * @return AdminAgentScheduleBidPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdminAgentScheduleBidPreferenceResponse patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(PatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdminAgentScheduleBidPreferenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Overrides the assigned schedule bid for the specified agents
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdminAgentScheduleBidPreferenceResponse> patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(ApiRequest<AgentsBidAssignedScheduleSetOverrideRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdminAgentScheduleBidPreferenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = (ApiResponse<AdminAgentScheduleBidPreferenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = (ApiResponse<AdminAgentScheduleBidPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -19258,6 +20373,342 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Copy a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid to copy (required)
+   * @param body body (required)
+   * @return ScheduleBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBid postWorkforcemanagementBusinessunitSchedulebidCopy(String businessUnitId, String bidId, CopyScheduleBid body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitSchedulebidCopy(createPostWorkforcemanagementBusinessunitSchedulebidCopyRequest(businessUnitId, bidId, body));
+  }
+
+  /**
+   * Copy a schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid to copy (required)
+   * @param body body (required)
+   * @return ScheduleBid
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBid> postWorkforcemanagementBusinessunitSchedulebidCopyWithHttpInfo(String businessUnitId, String bidId, CopyScheduleBid body) throws IOException {
+    return postWorkforcemanagementBusinessunitSchedulebidCopy(createPostWorkforcemanagementBusinessunitSchedulebidCopyRequest(businessUnitId, bidId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitSchedulebidCopyRequest createPostWorkforcemanagementBusinessunitSchedulebidCopyRequest(String businessUnitId, String bidId, CopyScheduleBid body) {
+    return PostWorkforcemanagementBusinessunitSchedulebidCopyRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Copy a schedule bid
+   * 
+   * @param request The request object
+   * @return ScheduleBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBid postWorkforcemanagementBusinessunitSchedulebidCopy(PostWorkforcemanagementBusinessunitSchedulebidCopyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleBid> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleBid>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Copy a schedule bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBid> postWorkforcemanagementBusinessunitSchedulebidCopy(ApiRequest<CopyScheduleBid> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleBid>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add a bid group in a given schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param body body (required)
+   * @return ScheduleBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidGroupResponse postWorkforcemanagementBusinessunitSchedulebidGroups(String businessUnitId, String bidId, ScheduleBidGroupCreate body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitSchedulebidGroups(createPostWorkforcemanagementBusinessunitSchedulebidGroupsRequest(businessUnitId, bidId, body));
+  }
+
+  /**
+   * Add a bid group in a given schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the schedule bid associated with the bid groups (required)
+   * @param body body (required)
+   * @return ScheduleBidGroupResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidGroupResponse> postWorkforcemanagementBusinessunitSchedulebidGroupsWithHttpInfo(String businessUnitId, String bidId, ScheduleBidGroupCreate body) throws IOException {
+    return postWorkforcemanagementBusinessunitSchedulebidGroups(createPostWorkforcemanagementBusinessunitSchedulebidGroupsRequest(businessUnitId, bidId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitSchedulebidGroupsRequest createPostWorkforcemanagementBusinessunitSchedulebidGroupsRequest(String businessUnitId, String bidId, ScheduleBidGroupCreate body) {
+    return PostWorkforcemanagementBusinessunitSchedulebidGroupsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add a bid group in a given schedule bid
+   * 
+   * @param request The request object
+   * @return ScheduleBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBidGroupResponse postWorkforcemanagementBusinessunitSchedulebidGroups(PostWorkforcemanagementBusinessunitSchedulebidGroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleBidGroupResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleBidGroupResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a bid group in a given schedule bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBidGroupResponse> postWorkforcemanagementBusinessunitSchedulebidGroups(ApiRequest<ScheduleBidGroupCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleBidGroupResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The schedule bid to be created (required)
+   * @return ScheduleBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBid postWorkforcemanagementBusinessunitSchedulebids(String businessUnitId, CreateScheduleBid body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitSchedulebids(createPostWorkforcemanagementBusinessunitSchedulebidsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Create a new schedule bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The schedule bid to be created (required)
+   * @return ScheduleBid
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBid> postWorkforcemanagementBusinessunitSchedulebidsWithHttpInfo(String businessUnitId, CreateScheduleBid body) throws IOException {
+    return postWorkforcemanagementBusinessunitSchedulebids(createPostWorkforcemanagementBusinessunitSchedulebidsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitSchedulebidsRequest createPostWorkforcemanagementBusinessunitSchedulebidsRequest(String businessUnitId, CreateScheduleBid body) {
+    return PostWorkforcemanagementBusinessunitSchedulebidsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new schedule bid
+   * 
+   * @param request The request object
+   * @return ScheduleBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleBid postWorkforcemanagementBusinessunitSchedulebids(PostWorkforcemanagementBusinessunitSchedulebidsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleBid> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleBid>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new schedule bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleBid> postWorkforcemanagementBusinessunitSchedulebids(ApiRequest<CreateScheduleBid> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleBid>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch all the agents with effective schedule set for the given BU
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AgentsEffectiveScheduleSetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentsEffectiveScheduleSetResponse postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(String businessUnitId, QueryEffectiveScheduleSetsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(createPostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Fetch all the agents with effective schedule set for the given BU
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AgentsEffectiveScheduleSetResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentsEffectiveScheduleSetResponse> postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsWithHttpInfo(String businessUnitId, QueryEffectiveScheduleSetsRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(createPostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest createPostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest(String businessUnitId, QueryEffectiveScheduleSetsRequest body) {
+    return PostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Fetch all the agents with effective schedule set for the given BU
+   * 
+   * @param request The request object
+   * @return AgentsEffectiveScheduleSetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentsEffectiveScheduleSetResponse postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(PostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentsEffectiveScheduleSetResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentsEffectiveScheduleSetResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch all the agents with effective schedule set for the given BU
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentsEffectiveScheduleSetResponse> postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(ApiRequest<QueryEffectiveScheduleSetsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentsEffectiveScheduleSetResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentsEffectiveScheduleSetResponse> response = (ApiResponse<AgentsEffectiveScheduleSetResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentsEffectiveScheduleSetResponse> response = (ApiResponse<AgentsEffectiveScheduleSetResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -26214,6 +27665,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an agent's schedule set preference
+   * 
+   * @param bidId The ID of the schedule bid (required)
+   * @param body body (required)
+   * @return AgentScheduleBiddingPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScheduleBiddingPreferenceResponse putWorkforcemanagementSchedulebidPreference(String bidId, UpdateAgentScheduleBiddingPreference body) throws IOException, ApiException {
+    return  putWorkforcemanagementSchedulebidPreference(createPutWorkforcemanagementSchedulebidPreferenceRequest(bidId, body));
+  }
+
+  /**
+   * Update an agent's schedule set preference
+   * 
+   * @param bidId The ID of the schedule bid (required)
+   * @param body body (required)
+   * @return AgentScheduleBiddingPreferenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScheduleBiddingPreferenceResponse> putWorkforcemanagementSchedulebidPreferenceWithHttpInfo(String bidId, UpdateAgentScheduleBiddingPreference body) throws IOException {
+    return putWorkforcemanagementSchedulebidPreference(createPutWorkforcemanagementSchedulebidPreferenceRequest(bidId, body).withHttpInfo());
+  }
+
+  private PutWorkforcemanagementSchedulebidPreferenceRequest createPutWorkforcemanagementSchedulebidPreferenceRequest(String bidId, UpdateAgentScheduleBiddingPreference body) {
+    return PutWorkforcemanagementSchedulebidPreferenceRequest.builder()
+            .withBidId(bidId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an agent's schedule set preference
+   * 
+   * @param request The request object
+   * @return AgentScheduleBiddingPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentScheduleBiddingPreferenceResponse putWorkforcemanagementSchedulebidPreference(PutWorkforcemanagementSchedulebidPreferenceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentScheduleBiddingPreferenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentScheduleBiddingPreferenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an agent's schedule set preference
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentScheduleBiddingPreferenceResponse> putWorkforcemanagementSchedulebidPreference(ApiRequest<UpdateAgentScheduleBiddingPreference> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentScheduleBiddingPreferenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScheduleBiddingPreferenceResponse> response = (ApiResponse<AgentScheduleBiddingPreferenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentScheduleBiddingPreferenceResponse> response = (ApiResponse<AgentScheduleBiddingPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

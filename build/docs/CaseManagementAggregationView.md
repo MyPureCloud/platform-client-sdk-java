@@ -16,6 +16,8 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NCASEASSOCIATIONSCREATED | &quot;nCaseAssociationsCreated&quot; | 
+| NCASESDELETED | &quot;nCasesDeleted&quot; | 
 | NCASESOPENED | &quot;nCasesOpened&quot; | 
 | NCASESOVERSLA | &quot;nCasesOverSla&quot; | 
 | NCASESPURGED | &quot;nCasesPurged&quot; | 
@@ -36,4 +38,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

@@ -24,6 +24,7 @@ public class EmailColumn  implements Serializable {
   
   private String columnName = null;
   private String type = null;
+  private String contactableTimeColumnName = null;
   private String contactableTimeColumn = null;
 
   public EmailColumn() {
@@ -74,6 +75,24 @@ public class EmailColumn  implements Serializable {
 
 
   /**
+   * A name of the contactableTimeColumn
+   **/
+  public EmailColumn contactableTimeColumnName(String contactableTimeColumnName) {
+    this.contactableTimeColumnName = contactableTimeColumnName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A name of the contactableTimeColumn")
+  @JsonProperty("contactableTimeColumnName")
+  public String getContactableTimeColumnName() {
+    return contactableTimeColumnName;
+  }
+  public void setContactableTimeColumnName(String contactableTimeColumnName) {
+    this.contactableTimeColumnName = contactableTimeColumnName;
+  }
+
+
+  /**
    * A column that indicates the timezone to use for a given contact when checking contactable times.
    **/
   public EmailColumn contactableTimeColumn(String contactableTimeColumn) {
@@ -103,12 +122,13 @@ public class EmailColumn  implements Serializable {
 
     return Objects.equals(this.columnName, emailColumn.columnName) &&
             Objects.equals(this.type, emailColumn.type) &&
+            Objects.equals(this.contactableTimeColumnName, emailColumn.contactableTimeColumnName) &&
             Objects.equals(this.contactableTimeColumn, emailColumn.contactableTimeColumn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type, contactableTimeColumn);
+    return Objects.hash(columnName, type, contactableTimeColumnName, contactableTimeColumn);
   }
 
   @Override
@@ -118,6 +138,7 @@ public class EmailColumn  implements Serializable {
     
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    contactableTimeColumnName: ").append(toIndentedString(contactableTimeColumnName)).append("\n");
     sb.append("    contactableTimeColumn: ").append(toIndentedString(contactableTimeColumn)).append("\n");
     sb.append("}");
     return sb.toString();

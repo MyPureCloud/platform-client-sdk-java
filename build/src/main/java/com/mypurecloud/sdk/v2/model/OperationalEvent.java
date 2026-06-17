@@ -35,6 +35,8 @@ public class OperationalEvent  implements Serializable {
   private AddressableEntityRef conversation = null;
   private Date dateCreated = null;
   private String entityVersion = null;
+  private String phoneNumber = null;
+  private String externalContactId = null;
 
   public OperationalEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -245,6 +247,42 @@ public class OperationalEvent  implements Serializable {
   }
 
 
+  /**
+   * The phone number associated with the event
+   **/
+  public OperationalEvent phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The phone number associated with the event")
+  @JsonProperty("phoneNumber")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
+
+  /**
+   * The external contact ID associated with the event
+   **/
+  public OperationalEvent externalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external contact ID associated with the event")
+  @JsonProperty("externalContactId")
+  public String getExternalContactId() {
+    return externalContactId;
+  }
+  public void setExternalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -265,12 +303,14 @@ public class OperationalEvent  implements Serializable {
             Objects.equals(this.parentEntityId, operationalEvent.parentEntityId) &&
             Objects.equals(this.conversation, operationalEvent.conversation) &&
             Objects.equals(this.dateCreated, operationalEvent.dateCreated) &&
-            Objects.equals(this.entityVersion, operationalEvent.entityVersion);
+            Objects.equals(this.entityVersion, operationalEvent.entityVersion) &&
+            Objects.equals(this.phoneNumber, operationalEvent.phoneNumber) &&
+            Objects.equals(this.externalContactId, operationalEvent.externalContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventDefinition, entityId, entityToken, entityName, previousValue, currentValue, errorCode, parentEntityId, conversation, dateCreated, entityVersion);
+    return Objects.hash(eventDefinition, entityId, entityToken, entityName, previousValue, currentValue, errorCode, parentEntityId, conversation, dateCreated, entityVersion, phoneNumber, externalContactId);
   }
 
   @Override
@@ -289,6 +329,8 @@ public class OperationalEvent  implements Serializable {
     sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    entityVersion: ").append(toIndentedString(entityVersion)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

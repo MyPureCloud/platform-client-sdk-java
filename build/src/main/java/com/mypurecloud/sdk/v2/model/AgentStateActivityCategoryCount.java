@@ -50,7 +50,8 @@ public class AgentStateActivityCategoryCount  implements Serializable {
     TIMEOFF("TimeOff"),
     TRAINING("Training"),
     UNAVAILABLE("Unavailable"),
-    UNSCHEDULED("Unscheduled");
+    UNSCHEDULED("Unscheduled"),
+    UNKNOWN("Unknown");
 
     private String value;
 

@@ -145,7 +145,7 @@ public class DictionaryFeedback  implements Serializable {
     }
   }
   /**
-   * The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+   * The status of the dictionary feedback
    */
  @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
@@ -153,7 +153,8 @@ public class DictionaryFeedback  implements Serializable {
     ACTIVE("Active"),
     PENDING("Pending"),
     FAILED("Failed"),
-    SAVED("Saved");
+    SAVED("Saved"),
+    INVALID("Invalid");
 
     private String value;
 
@@ -181,6 +182,7 @@ public class DictionaryFeedback  implements Serializable {
     }
   }
   private StatusEnum status = null;
+  private String invalidReason = null;
   private String displayAs = null;
   private List<DictionaryFeedbackExamplePhrase> examplePhrases = null;
   private List<String> soundsLike = null;
@@ -315,22 +317,29 @@ public class DictionaryFeedback  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.")
+  @ApiModelProperty(example = "null", value = "The status of the dictionary feedback")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
 
+  @ApiModelProperty(example = "null", value = "The reason the dictionary feedback is invalid")
+  @JsonProperty("invalidReason")
+  public String getInvalidReason() {
+    return invalidReason;
+  }
+
+
   /**
-   * The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+   * The display name for the dictionary feedback.
    **/
   public DictionaryFeedback displayAs(String displayAs) {
     this.displayAs = displayAs;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.")
+  @ApiModelProperty(example = "null", value = "The display name for the dictionary feedback.")
   @JsonProperty("displayAs")
   public String getDisplayAs() {
     return displayAs;
@@ -341,14 +350,14 @@ public class DictionaryFeedback  implements Serializable {
 
 
   /**
-   * A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.
+   * A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid for Genesys transcription engine. Not applicable for English and Spanish dialects
    **/
   public DictionaryFeedback examplePhrases(List<DictionaryFeedbackExamplePhrase> examplePhrases) {
     this.examplePhrases = examplePhrases;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.")
+  @ApiModelProperty(example = "null", value = "A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid for Genesys transcription engine. Not applicable for English and Spanish dialects")
   @JsonProperty("examplePhrases")
   public List<DictionaryFeedbackExamplePhrase> getExamplePhrases() {
     return examplePhrases;
@@ -404,6 +413,7 @@ public class DictionaryFeedback  implements Serializable {
             Objects.equals(this.modifiedBy, dictionaryFeedback.modifiedBy) &&
             Objects.equals(this.transcriptionEngine, dictionaryFeedback.transcriptionEngine) &&
             Objects.equals(this.status, dictionaryFeedback.status) &&
+            Objects.equals(this.invalidReason, dictionaryFeedback.invalidReason) &&
             Objects.equals(this.displayAs, dictionaryFeedback.displayAs) &&
             Objects.equals(this.examplePhrases, dictionaryFeedback.examplePhrases) &&
             Objects.equals(this.soundsLike, dictionaryFeedback.soundsLike) &&
@@ -412,7 +422,7 @@ public class DictionaryFeedback  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, term, dialect, boostValue, source, dateCreated, createdBy, dateModified, modifiedBy, transcriptionEngine, status, displayAs, examplePhrases, soundsLike, selfUri);
+    return Objects.hash(id, term, dialect, boostValue, source, dateCreated, createdBy, dateModified, modifiedBy, transcriptionEngine, status, invalidReason, displayAs, examplePhrases, soundsLike, selfUri);
   }
 
   @Override
@@ -431,6 +441,7 @@ public class DictionaryFeedback  implements Serializable {
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    transcriptionEngine: ").append(toIndentedString(transcriptionEngine)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    invalidReason: ").append(toIndentedString(invalidReason)).append("\n");
     sb.append("    displayAs: ").append(toIndentedString(displayAs)).append("\n");
     sb.append("    examplePhrases: ").append(toIndentedString(examplePhrases)).append("\n");
     sb.append("    soundsLike: ").append(toIndentedString(soundsLike)).append("\n");

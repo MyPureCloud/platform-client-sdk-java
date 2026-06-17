@@ -49,13 +49,18 @@ public class CaseManagementAggregationQuery  implements Serializable {
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASSOCIATIONTYPE("associationType"),
     CASEID("caseId"),
     CASEPLANID("caseplanId"),
+    CONVERSATIONID("conversationId"),
     CUSTOMERINTENTID("customerIntentId"),
     DIVISIONID("divisionId"),
     OWNERID("ownerId"),
     PRIORITY("priority"),
-    STATUS("status");
+    STAGEID("stageId"),
+    STATUS("status"),
+    STEPID("stepId"),
+    WORKITEMID("workitemId");
 
     private String value;
 
@@ -103,6 +108,8 @@ public class CaseManagementAggregationQuery  implements Serializable {
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NCASEASSOCIATIONSCREATED("nCaseAssociationsCreated"),
+    NCASESDELETED("nCasesDeleted"),
     NCASESOPENED("nCasesOpened"),
     NCASESOVERSLA("nCasesOverSla"),
     NCASESPURGED("nCasesPurged"),

@@ -42,6 +42,8 @@ public class CaseManagementAggregationSort  implements Serializable {
  @JsonDeserialize(using = NameEnumDeserializer.class)
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NCASEASSOCIATIONSCREATED("nCaseAssociationsCreated"),
+    NCASESDELETED("nCasesDeleted"),
     NCASESOPENED("nCasesOpened"),
     NCASESOVERSLA("nCasesOverSla"),
     NCASESPURGED("nCasesPurged"),

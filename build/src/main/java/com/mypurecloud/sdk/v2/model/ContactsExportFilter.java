@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ContactsExportComparisonFieldFilter;
 import com.mypurecloud.sdk.v2.model.ContactsExportFieldFilter;
 import com.mypurecloud.sdk.v2.model.ContactsExportFieldListFilter;
 import io.swagger.annotations.ApiModel;
@@ -28,6 +29,8 @@ public class ContactsExportFilter  implements Serializable {
   
   private ContactsExportFieldFilter eq = null;
   private ContactsExportFieldListFilter in = null;
+  private ContactsExportComparisonFieldFilter lte = null;
+  private ContactsExportComparisonFieldFilter gte = null;
   private List<ContactsExportFilter> and = null;
   private List<ContactsExportFilter> or = null;
   private ContactsExportFilter not = null;
@@ -80,6 +83,42 @@ public class ContactsExportFilter  implements Serializable {
   }
   public void setIn(ContactsExportFieldListFilter in) {
     this.in = in;
+  }
+
+
+  /**
+   * Filtered field should be less than or equal to the value
+   **/
+  public ContactsExportFilter lte(ContactsExportComparisonFieldFilter lte) {
+    this.lte = lte;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filtered field should be less than or equal to the value")
+  @JsonProperty("lte")
+  public ContactsExportComparisonFieldFilter getLte() {
+    return lte;
+  }
+  public void setLte(ContactsExportComparisonFieldFilter lte) {
+    this.lte = lte;
+  }
+
+
+  /**
+   * Filtered field should be greater than or equal to the value
+   **/
+  public ContactsExportFilter gte(ContactsExportComparisonFieldFilter gte) {
+    this.gte = gte;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filtered field should be greater than or equal to the value")
+  @JsonProperty("gte")
+  public ContactsExportComparisonFieldFilter getGte() {
+    return gte;
+  }
+  public void setGte(ContactsExportComparisonFieldFilter gte) {
+    this.gte = gte;
   }
 
 
@@ -149,6 +188,8 @@ public class ContactsExportFilter  implements Serializable {
 
     return Objects.equals(this.eq, contactsExportFilter.eq) &&
             Objects.equals(this.in, contactsExportFilter.in) &&
+            Objects.equals(this.lte, contactsExportFilter.lte) &&
+            Objects.equals(this.gte, contactsExportFilter.gte) &&
             Objects.equals(this.and, contactsExportFilter.and) &&
             Objects.equals(this.or, contactsExportFilter.or) &&
             Objects.equals(this.not, contactsExportFilter.not);
@@ -156,7 +197,7 @@ public class ContactsExportFilter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(eq, in, and, or, not);
+    return Objects.hash(eq, in, lte, gte, and, or, not);
   }
 
   @Override
@@ -166,6 +207,8 @@ public class ContactsExportFilter  implements Serializable {
     
     sb.append("    eq: ").append(toIndentedString(eq)).append("\n");
     sb.append("    in: ").append(toIndentedString(in)).append("\n");
+    sb.append("    lte: ").append(toIndentedString(lte)).append("\n");
+    sb.append("    gte: ").append(toIndentedString(gte)).append("\n");
     sb.append("    and: ").append(toIndentedString(and)).append("\n");
     sb.append("    or: ").append(toIndentedString(or)).append("\n");
     sb.append("    not: ").append(toIndentedString(not)).append("\n");

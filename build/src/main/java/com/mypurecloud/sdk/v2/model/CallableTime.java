@@ -26,6 +26,7 @@ import java.io.Serializable;
 public class CallableTime  implements Serializable {
   
   private List<CampaignTimeSlot> timeSlots = null;
+  private String name = null;
   private String timeZoneId = null;
 
   public CallableTime() {
@@ -60,6 +61,24 @@ public class CallableTime  implements Serializable {
 
 
   /**
+   * The name for the callable time.
+   **/
+  public CallableTime name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name for the callable time.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  /**
    * The time zone for the time slots; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
    **/
   public CallableTime timeZoneId(String timeZoneId) {
@@ -88,12 +107,13 @@ public class CallableTime  implements Serializable {
     CallableTime callableTime = (CallableTime) o;
 
     return Objects.equals(this.timeSlots, callableTime.timeSlots) &&
+            Objects.equals(this.name, callableTime.name) &&
             Objects.equals(this.timeZoneId, callableTime.timeZoneId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(timeSlots, timeZoneId);
+    return Objects.hash(timeSlots, name, timeZoneId);
   }
 
   @Override
@@ -102,6 +122,7 @@ public class CallableTime  implements Serializable {
     sb.append("class CallableTime {\n");
     
     sb.append("    timeSlots: ").append(toIndentedString(timeSlots)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
     sb.append("}");
     return sb.toString();

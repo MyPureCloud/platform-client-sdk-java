@@ -24,6 +24,8 @@ public class WhatsAppColumn  implements Serializable {
   
   private String columnName = null;
   private String type = null;
+  private String contactableTimeColumnName = null;
+  private String contactableTimeColumn = null;
 
   public WhatsAppColumn() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -72,6 +74,42 @@ public class WhatsAppColumn  implements Serializable {
   }
 
 
+  /**
+   * A name of the contactableTimeColumn
+   **/
+  public WhatsAppColumn contactableTimeColumnName(String contactableTimeColumnName) {
+    this.contactableTimeColumnName = contactableTimeColumnName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A name of the contactableTimeColumn")
+  @JsonProperty("contactableTimeColumnName")
+  public String getContactableTimeColumnName() {
+    return contactableTimeColumnName;
+  }
+  public void setContactableTimeColumnName(String contactableTimeColumnName) {
+    this.contactableTimeColumnName = contactableTimeColumnName;
+  }
+
+
+  /**
+   * A column that indicates the timezone to use for a given contact when checking contactable times.
+   **/
+  public WhatsAppColumn contactableTimeColumn(String contactableTimeColumn) {
+    this.contactableTimeColumn = contactableTimeColumn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A column that indicates the timezone to use for a given contact when checking contactable times.")
+  @JsonProperty("contactableTimeColumn")
+  public String getContactableTimeColumn() {
+    return contactableTimeColumn;
+  }
+  public void setContactableTimeColumn(String contactableTimeColumn) {
+    this.contactableTimeColumn = contactableTimeColumn;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -83,12 +121,14 @@ public class WhatsAppColumn  implements Serializable {
     WhatsAppColumn whatsAppColumn = (WhatsAppColumn) o;
 
     return Objects.equals(this.columnName, whatsAppColumn.columnName) &&
-            Objects.equals(this.type, whatsAppColumn.type);
+            Objects.equals(this.type, whatsAppColumn.type) &&
+            Objects.equals(this.contactableTimeColumnName, whatsAppColumn.contactableTimeColumnName) &&
+            Objects.equals(this.contactableTimeColumn, whatsAppColumn.contactableTimeColumn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type);
+    return Objects.hash(columnName, type, contactableTimeColumnName, contactableTimeColumn);
   }
 
   @Override
@@ -98,6 +138,8 @@ public class WhatsAppColumn  implements Serializable {
     
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    contactableTimeColumnName: ").append(toIndentedString(contactableTimeColumnName)).append("\n");
+    sb.append("    contactableTimeColumn: ").append(toIndentedString(contactableTimeColumn)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -5722,7 +5722,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-KnowledgeDocumentCreateRequest body = new KnowledgeDocumentCreateRequest(); // KnowledgeDocumentCreateRequest | 
+KnowledgeDocumentReq body = new KnowledgeDocumentReq(); // KnowledgeDocumentReq | 
 try {
     KnowledgeDocumentResponse result = apiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body);
     System.out.println(result);
@@ -5738,7 +5738,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeDocumentCreateRequest**](KnowledgeDocumentCreateRequest)|  | 
+| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq)|  | 
 {: class="table-striped"}
 
 
@@ -7521,4 +7521,4 @@ try {
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

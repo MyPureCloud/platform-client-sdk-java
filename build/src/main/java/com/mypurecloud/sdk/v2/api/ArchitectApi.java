@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ArchitectExportJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
+import com.mypurecloud.sdk.v2.model.ArchitectValidateJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.CriteriaQuery;
@@ -77,6 +78,8 @@ import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJob;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
 import com.mypurecloud.sdk.v2.model.ScheduleDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
@@ -182,6 +185,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesDivisionviewsRequest
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsValidateJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchFlowsInstancesSettingsExecutiondataRequest;
@@ -223,6 +227,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsValidateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrIdentityresolutionRequest;
@@ -8401,6 +8406,92 @@ public class ArchitectApi {
   }
 
   /**
+   * Fetch Architect Validate Job Status
+   * 
+   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId Job ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @return ArchitectValidateJobStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ArchitectValidateJobStateResponse getFlowsValidateJob(String jobId, List<String> expand) throws IOException, ApiException {
+    return  getFlowsValidateJob(createGetFlowsValidateJobRequest(jobId, expand));
+  }
+
+  /**
+   * Fetch Architect Validate Job Status
+   * 
+   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId Job ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @return ArchitectValidateJobStateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ArchitectValidateJobStateResponse> getFlowsValidateJobWithHttpInfo(String jobId, List<String> expand) throws IOException {
+    return getFlowsValidateJob(createGetFlowsValidateJobRequest(jobId, expand).withHttpInfo());
+  }
+
+  private GetFlowsValidateJobRequest createGetFlowsValidateJobRequest(String jobId, List<String> expand) {
+    return GetFlowsValidateJobRequest.builder()
+            .withJobId(jobId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Fetch Architect Validate Job Status
+   * 
+   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ArchitectValidateJobStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ArchitectValidateJobStateResponse getFlowsValidateJob(GetFlowsValidateJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ArchitectValidateJobStateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ArchitectValidateJobStateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch Architect Validate Job Status
+   * 
+   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ArchitectValidateJobStateResponse> getFlowsValidateJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ArchitectValidateJobStateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ArchitectValidateJobStateResponse> response = (ApiResponse<ArchitectValidateJobStateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ArchitectValidateJobStateResponse> response = (ApiResponse<ArchitectValidateJobStateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Updates a grammar
    * 
    * @param grammarId grammar ID (required)
@@ -11691,6 +11782,88 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Register Architect Validate Job
+   * 
+   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body  (required)
+   * @return RegisterArchitectValidateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RegisterArchitectValidateJobResponse postFlowsValidateJobs(RegisterArchitectValidateJob body) throws IOException, ApiException {
+    return  postFlowsValidateJobs(createPostFlowsValidateJobsRequest(body));
+  }
+
+  /**
+   * Register Architect Validate Job
+   * 
+   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body  (required)
+   * @return RegisterArchitectValidateJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RegisterArchitectValidateJobResponse> postFlowsValidateJobsWithHttpInfo(RegisterArchitectValidateJob body) throws IOException {
+    return postFlowsValidateJobs(createPostFlowsValidateJobsRequest(body).withHttpInfo());
+  }
+
+  private PostFlowsValidateJobsRequest createPostFlowsValidateJobsRequest(RegisterArchitectValidateJob body) {
+    return PostFlowsValidateJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Register Architect Validate Job
+   * 
+   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return RegisterArchitectValidateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RegisterArchitectValidateJobResponse postFlowsValidateJobs(PostFlowsValidateJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RegisterArchitectValidateJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RegisterArchitectValidateJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Register Architect Validate Job
+   * 
+   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RegisterArchitectValidateJobResponse> postFlowsValidateJobs(ApiRequest<RegisterArchitectValidateJob> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RegisterArchitectValidateJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RegisterArchitectValidateJobResponse> response = (ApiResponse<RegisterArchitectValidateJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RegisterArchitectValidateJobResponse> response = (ApiResponse<RegisterArchitectValidateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

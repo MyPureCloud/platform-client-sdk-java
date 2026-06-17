@@ -247,6 +247,7 @@ public class AnalyticsSession  implements Serializable {
     }
   }
   private EngagementSourceEnum engagementSource = null;
+  private String errorCodeDescription = null;
   private String extendedDeliveryStatus = null;
   private String flowInType = null;
   private String flowOutType = null;
@@ -1180,6 +1181,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setEngagementSource(EngagementSourceEnum engagementSource) {
     this.engagementSource = engagementSource;
+  }
+
+
+  /**
+   * Error code description extracted from the first disconnectReason
+   **/
+  public AnalyticsSession errorCodeDescription(String errorCodeDescription) {
+    this.errorCodeDescription = errorCodeDescription;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Error code description extracted from the first disconnectReason")
+  @JsonProperty("errorCodeDescription")
+  public String getErrorCodeDescription() {
+    return errorCodeDescription;
+  }
+  public void setErrorCodeDescription(String errorCodeDescription) {
+    this.errorCodeDescription = errorCodeDescription;
   }
 
 
@@ -2182,6 +2201,7 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.edgeId, analyticsSession.edgeId) &&
             Objects.equals(this.eligibleAgentCounts, analyticsSession.eligibleAgentCounts) &&
             Objects.equals(this.engagementSource, analyticsSession.engagementSource) &&
+            Objects.equals(this.errorCodeDescription, analyticsSession.errorCodeDescription) &&
             Objects.equals(this.extendedDeliveryStatus, analyticsSession.extendedDeliveryStatus) &&
             Objects.equals(this.flowInType, analyticsSession.flowInType) &&
             Objects.equals(this.flowOutType, analyticsSession.flowOutType) &&
@@ -2239,7 +2259,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, engagementSource, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenMonitoredUserId, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skillExpressionId, skipEnabled, snippetRecording, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, engagementSource, errorCodeDescription, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenMonitoredUserId, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skillExpressionId, skipEnabled, snippetRecording, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -2282,6 +2302,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    edgeId: ").append(toIndentedString(edgeId)).append("\n");
     sb.append("    eligibleAgentCounts: ").append(toIndentedString(eligibleAgentCounts)).append("\n");
     sb.append("    engagementSource: ").append(toIndentedString(engagementSource)).append("\n");
+    sb.append("    errorCodeDescription: ").append(toIndentedString(errorCodeDescription)).append("\n");
     sb.append("    extendedDeliveryStatus: ").append(toIndentedString(extendedDeliveryStatus)).append("\n");
     sb.append("    flowInType: ").append(toIndentedString(flowInType)).append("\n");
     sb.append("    flowOutType: ").append(toIndentedString(flowOutType)).append("\n");

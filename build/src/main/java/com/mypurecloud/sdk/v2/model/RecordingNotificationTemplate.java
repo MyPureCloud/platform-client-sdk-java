@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingTemplateBody;
 import com.mypurecloud.sdk.v2.model.RecordingTemplateButton;
+import com.mypurecloud.sdk.v2.model.RecordingTemplateCarousel;
 import com.mypurecloud.sdk.v2.model.RecordingTemplateFooter;
 import com.mypurecloud.sdk.v2.model.RecordingTemplateHeader;
 import io.swagger.annotations.ApiModel;
@@ -33,6 +34,7 @@ public class RecordingNotificationTemplate  implements Serializable {
   private RecordingTemplateHeader header = null;
   private RecordingTemplateBody body = null;
   private List<RecordingTemplateButton> buttons = null;
+  private RecordingTemplateCarousel carousel = null;
   private RecordingTemplateFooter footer = null;
 
   public RecordingNotificationTemplate() {
@@ -128,6 +130,24 @@ public class RecordingNotificationTemplate  implements Serializable {
 
 
   /**
+   * The template carousel
+   **/
+  public RecordingNotificationTemplate carousel(RecordingTemplateCarousel carousel) {
+    this.carousel = carousel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The template carousel")
+  @JsonProperty("carousel")
+  public RecordingTemplateCarousel getCarousel() {
+    return carousel;
+  }
+  public void setCarousel(RecordingTemplateCarousel carousel) {
+    this.carousel = carousel;
+  }
+
+
+  /**
    * The template footer.
    **/
   public RecordingNotificationTemplate footer(RecordingTemplateFooter footer) {
@@ -160,12 +180,13 @@ public class RecordingNotificationTemplate  implements Serializable {
             Objects.equals(this.header, recordingNotificationTemplate.header) &&
             Objects.equals(this.body, recordingNotificationTemplate.body) &&
             Objects.equals(this.buttons, recordingNotificationTemplate.buttons) &&
+            Objects.equals(this.carousel, recordingNotificationTemplate.carousel) &&
             Objects.equals(this.footer, recordingNotificationTemplate.footer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, language, header, body, buttons, footer);
+    return Objects.hash(id, language, header, body, buttons, carousel, footer);
   }
 
   @Override
@@ -178,6 +199,7 @@ public class RecordingNotificationTemplate  implements Serializable {
     sb.append("    header: ").append(toIndentedString(header)).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    buttons: ").append(toIndentedString(buttons)).append("\n");
+    sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
     sb.append("    footer: ").append(toIndentedString(footer)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -37,6 +37,8 @@ public class BillingCharge  implements Serializable {
   private BigDecimal overageRate = null;
   private BigDecimal overageCharge = null;
   private String overageCurrency = null;
+  private BigDecimal convertedTokenCount = null;
+  private BigDecimal tokenConversionRate = null;
 
   public BillingCharge() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -220,6 +222,42 @@ public class BillingCharge  implements Serializable {
   }
 
 
+  /**
+   * AI Token Count after the conversion for AI Products.
+   **/
+  public BillingCharge convertedTokenCount(BigDecimal convertedTokenCount) {
+    this.convertedTokenCount = convertedTokenCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "AI Token Count after the conversion for AI Products.")
+  @JsonProperty("convertedTokenCount")
+  public BigDecimal getConvertedTokenCount() {
+    return convertedTokenCount;
+  }
+  public void setConvertedTokenCount(BigDecimal convertedTokenCount) {
+    this.convertedTokenCount = convertedTokenCount;
+  }
+
+
+  /**
+   * AI Token Conversion Rate — Units per token conversion ratio.
+   **/
+  public BillingCharge tokenConversionRate(BigDecimal tokenConversionRate) {
+    this.tokenConversionRate = tokenConversionRate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "AI Token Conversion Rate — Units per token conversion ratio.")
+  @JsonProperty("tokenConversionRate")
+  public BigDecimal getTokenConversionRate() {
+    return tokenConversionRate;
+  }
+  public void setTokenConversionRate(BigDecimal tokenConversionRate) {
+    this.tokenConversionRate = tokenConversionRate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -239,12 +277,14 @@ public class BillingCharge  implements Serializable {
             Objects.equals(this.overageQuantity, billingCharge.overageQuantity) &&
             Objects.equals(this.overageRate, billingCharge.overageRate) &&
             Objects.equals(this.overageCharge, billingCharge.overageCharge) &&
-            Objects.equals(this.overageCurrency, billingCharge.overageCurrency);
+            Objects.equals(this.overageCurrency, billingCharge.overageCurrency) &&
+            Objects.equals(this.convertedTokenCount, billingCharge.convertedTokenCount) &&
+            Objects.equals(this.tokenConversionRate, billingCharge.tokenConversionRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, product, organizations, prepaidQuantity, fairuseQuantity, actualQuantity, overageQuantity, overageRate, overageCharge, overageCurrency);
+    return Objects.hash(id, product, organizations, prepaidQuantity, fairuseQuantity, actualQuantity, overageQuantity, overageRate, overageCharge, overageCurrency, convertedTokenCount, tokenConversionRate);
   }
 
   @Override
@@ -262,6 +302,8 @@ public class BillingCharge  implements Serializable {
     sb.append("    overageRate: ").append(toIndentedString(overageRate)).append("\n");
     sb.append("    overageCharge: ").append(toIndentedString(overageCharge)).append("\n");
     sb.append("    overageCurrency: ").append(toIndentedString(overageCurrency)).append("\n");
+    sb.append("    convertedTokenCount: ").append(toIndentedString(convertedTokenCount)).append("\n");
+    sb.append("    tokenConversionRate: ").append(toIndentedString(tokenConversionRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -99,7 +99,8 @@ public class ArchitectExportJobStateResponse  implements Serializable {
     PUBLISH("Publish"),
     CREATE("Create"),
     UPDATE("Update"),
-    EXPORT("Export");
+    EXPORT("Export"),
+    VALIDATE("Validate");
 
     private String value;
 

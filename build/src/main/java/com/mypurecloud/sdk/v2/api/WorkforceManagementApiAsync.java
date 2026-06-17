@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
+import com.mypurecloud.sdk.v2.model.AdminAgentScheduleBidPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AdminAgentWorkPlanPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AdminBulkUpdateAlternativeShiftTradeStateRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
@@ -44,12 +45,17 @@ import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryOpportunitiesResponse;
+import com.mypurecloud.sdk.v2.model.AgentScheduleBidScheduleSetResponse;
+import com.mypurecloud.sdk.v2.model.AgentScheduleBiddingPreferenceResponse;
+import com.mypurecloud.sdk.v2.model.AgentScheduleBids;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentUpdateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBiddingPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBids;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanListResponse;
+import com.mypurecloud.sdk.v2.model.AgentsBidAssignedScheduleSetOverrideRequest;
 import com.mypurecloud.sdk.v2.model.AgentsBidAssignedWorkPlanOverrideRequest;
+import com.mypurecloud.sdk.v2.model.AgentsEffectiveScheduleSetResponse;
 import com.mypurecloud.sdk.v2.model.AgentsIntegrationsListing;
 import com.mypurecloud.sdk.v2.model.AgentsWorkPlansResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftAsyncResponse;
@@ -133,6 +139,7 @@ import com.mypurecloud.sdk.v2.model.ContinuousForecastSessionResponse;
 import com.mypurecloud.sdk.v2.model.ContinuousForecastSnapshotResponse;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.CopyCapacityPlanRequest;
+import com.mypurecloud.sdk.v2.model.CopyScheduleBid;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
@@ -145,6 +152,7 @@ import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.CreateCapacityPlanStaffingGroupMetricChangeRequest;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.CreateScheduleBid;
 import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.CreateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
@@ -211,6 +219,7 @@ import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.QueryAvailabilityManagementUnitsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
+import com.mypurecloud.sdk.v2.model.QueryEffectiveScheduleSetsRequest;
 import com.mypurecloud.sdk.v2.model.QueryExternalActivityOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.QueryOpportunitiesRequest;
 import com.mypurecloud.sdk.v2.model.QueryOpportunitiesResponse;
@@ -224,6 +233,12 @@ import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.QueryUserStaffingGroupListRequest;
 import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
 import com.mypurecloud.sdk.v2.model.QueryWeekSummaryListJobRequest;
+import com.mypurecloud.sdk.v2.model.ScheduleBid;
+import com.mypurecloud.sdk.v2.model.ScheduleBidGroupCreate;
+import com.mypurecloud.sdk.v2.model.ScheduleBidGroupResponse;
+import com.mypurecloud.sdk.v2.model.ScheduleBidGroupSummaryList;
+import com.mypurecloud.sdk.v2.model.ScheduleBidGroupUpdate;
+import com.mypurecloud.sdk.v2.model.ScheduleBidListResponse;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
 import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
@@ -266,6 +281,7 @@ import com.mypurecloud.sdk.v2.model.UnavailableTimeListing;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAgentScheduleBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
@@ -278,6 +294,7 @@ import com.mypurecloud.sdk.v2.model.UpdateMuAgentsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
 import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.UpdateScheduleBid;
 import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateShiftTradeJobRequest;
@@ -338,6 +355,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitR
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitPlanninggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulebidRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitStaffinggroupRequest;
@@ -393,6 +412,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMini
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitOpportunityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulebidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunResultRequest;
@@ -465,6 +489,9 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWo
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidPreferenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidSchedulesetsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeJobRequest;
@@ -495,6 +522,9 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCa
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitOpportunityRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulebidRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulebidGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
@@ -560,6 +590,10 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpp
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSchedulebidCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSchedulebidGroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSchedulebidsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest;
@@ -642,6 +676,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletime
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementAgentIntegrationsHrisRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementSchedulebidPreferenceRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -928,6 +963,156 @@ public class WorkforceManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteWorkforcemanagementBusinessunitPlanninggroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteWorkforcemanagementBusinessunitSchedulebidAsync(DeleteWorkforcemanagementBusinessunitSchedulebidRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteWorkforcemanagementBusinessunitSchedulebidAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a schedule bid group by bid group Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteWorkforcemanagementBusinessunitSchedulebidGroupAsync(DeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a schedule bid group by bid group Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteWorkforcemanagementBusinessunitSchedulebidGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -5081,6 +5266,381 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<PlanningGroupList> response = (ApiResponse<PlanningGroupList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleBid> getWorkforcemanagementBusinessunitSchedulebidAsync(GetWorkforcemanagementBusinessunitSchedulebidRequest request, final AsyncApiCallback<ScheduleBid> callback) {
+    try {
+      final SettableFuture<ScheduleBid> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleBid>() {}, new AsyncApiCallback<ApiResponse<ScheduleBid>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBid> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleBid>> getWorkforcemanagementBusinessunitSchedulebidAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScheduleBid>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleBid>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleBid>() {}, new AsyncApiCallback<ApiResponse<ScheduleBid>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBid> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a schedule bid group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleBidGroupResponse> getWorkforcemanagementBusinessunitSchedulebidGroupAsync(GetWorkforcemanagementBusinessunitSchedulebidGroupRequest request, final AsyncApiCallback<ScheduleBidGroupResponse> callback) {
+    try {
+      final SettableFuture<ScheduleBidGroupResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleBidGroupResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidGroupResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidGroupResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a schedule bid group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleBidGroupResponse>> getWorkforcemanagementBusinessunitSchedulebidGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScheduleBidGroupResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleBidGroupResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleBidGroupResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidGroupResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidGroupResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agents schedule bid preferences for a bid group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdminAgentScheduleBidPreferenceResponse> getWorkforcemanagementBusinessunitSchedulebidGroupPreferencesAsync(GetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest request, final AsyncApiCallback<AdminAgentScheduleBidPreferenceResponse> callback) {
+    try {
+      final SettableFuture<AdminAgentScheduleBidPreferenceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdminAgentScheduleBidPreferenceResponse>() {}, new AsyncApiCallback<ApiResponse<AdminAgentScheduleBidPreferenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdminAgentScheduleBidPreferenceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agents schedule bid preferences for a bid group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdminAgentScheduleBidPreferenceResponse>> getWorkforcemanagementBusinessunitSchedulebidGroupPreferencesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AdminAgentScheduleBidPreferenceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdminAgentScheduleBidPreferenceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdminAgentScheduleBidPreferenceResponse>() {}, new AsyncApiCallback<ApiResponse<AdminAgentScheduleBidPreferenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdminAgentScheduleBidPreferenceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = (ApiResponse<AdminAgentScheduleBidPreferenceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = (ApiResponse<AdminAgentScheduleBidPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get summary of bid groups that belong to a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleBidGroupSummaryList> getWorkforcemanagementBusinessunitSchedulebidGroupsSummaryAsync(GetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest request, final AsyncApiCallback<ScheduleBidGroupSummaryList> callback) {
+    try {
+      final SettableFuture<ScheduleBidGroupSummaryList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleBidGroupSummaryList>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidGroupSummaryList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidGroupSummaryList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get summary of bid groups that belong to a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleBidGroupSummaryList>> getWorkforcemanagementBusinessunitSchedulebidGroupsSummaryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScheduleBidGroupSummaryList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleBidGroupSummaryList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleBidGroupSummaryList>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidGroupSummaryList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidGroupSummaryList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidGroupSummaryList> response = (ApiResponse<ScheduleBidGroupSummaryList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidGroupSummaryList> response = (ApiResponse<ScheduleBidGroupSummaryList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of schedule bids
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleBidListResponse> getWorkforcemanagementBusinessunitSchedulebidsAsync(GetWorkforcemanagementBusinessunitSchedulebidsRequest request, final AsyncApiCallback<ScheduleBidListResponse> callback) {
+    try {
+      final SettableFuture<ScheduleBidListResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleBidListResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidListResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of schedule bids
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleBidListResponse>> getWorkforcemanagementBusinessunitSchedulebidsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScheduleBidListResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleBidListResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleBidListResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidListResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidListResponse> response = (ApiResponse<ScheduleBidListResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidListResponse> response = (ApiResponse<ScheduleBidListResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10505,6 +11065,231 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Gets an agent's schedule bidding preference
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentScheduleBiddingPreferenceResponse> getWorkforcemanagementSchedulebidPreferenceAsync(GetWorkforcemanagementSchedulebidPreferenceRequest request, final AsyncApiCallback<AgentScheduleBiddingPreferenceResponse> callback) {
+    try {
+      final SettableFuture<AgentScheduleBiddingPreferenceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentScheduleBiddingPreferenceResponse>() {}, new AsyncApiCallback<ApiResponse<AgentScheduleBiddingPreferenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScheduleBiddingPreferenceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an agent's schedule bidding preference
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentScheduleBiddingPreferenceResponse>> getWorkforcemanagementSchedulebidPreferenceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentScheduleBiddingPreferenceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentScheduleBiddingPreferenceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentScheduleBiddingPreferenceResponse>() {}, new AsyncApiCallback<ApiResponse<AgentScheduleBiddingPreferenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScheduleBiddingPreferenceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScheduleBiddingPreferenceResponse> response = (ApiResponse<AgentScheduleBiddingPreferenceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScheduleBiddingPreferenceResponse> response = (ApiResponse<AgentScheduleBiddingPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an agent's schedule sets for a bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentScheduleBidScheduleSetResponse> getWorkforcemanagementSchedulebidSchedulesetsAsync(GetWorkforcemanagementSchedulebidSchedulesetsRequest request, final AsyncApiCallback<AgentScheduleBidScheduleSetResponse> callback) {
+    try {
+      final SettableFuture<AgentScheduleBidScheduleSetResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentScheduleBidScheduleSetResponse>() {}, new AsyncApiCallback<ApiResponse<AgentScheduleBidScheduleSetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScheduleBidScheduleSetResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an agent's schedule sets for a bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentScheduleBidScheduleSetResponse>> getWorkforcemanagementSchedulebidSchedulesetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentScheduleBidScheduleSetResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentScheduleBidScheduleSetResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentScheduleBidScheduleSetResponse>() {}, new AsyncApiCallback<ApiResponse<AgentScheduleBidScheduleSetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScheduleBidScheduleSetResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScheduleBidScheduleSetResponse> response = (ApiResponse<AgentScheduleBidScheduleSetResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScheduleBidScheduleSetResponse> response = (ApiResponse<AgentScheduleBidScheduleSetResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentScheduleBids> getWorkforcemanagementSchedulebidsAsync(GetWorkforcemanagementSchedulebidsRequest request, final AsyncApiCallback<AgentScheduleBids> callback) {
+    try {
+      final SettableFuture<AgentScheduleBids> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentScheduleBids>() {}, new AsyncApiCallback<ApiResponse<AgentScheduleBids>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScheduleBids> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentScheduleBids>> getWorkforcemanagementSchedulebidsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentScheduleBids>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentScheduleBids>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentScheduleBids>() {}, new AsyncApiCallback<ApiResponse<AgentScheduleBids>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScheduleBids> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScheduleBids> response = (ApiResponse<AgentScheduleBids>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScheduleBids> response = (ApiResponse<AgentScheduleBids>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get status of the scheduling job
    * 
    * @param request the request object
@@ -12745,6 +13530,231 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleBid> patchWorkforcemanagementBusinessunitSchedulebidAsync(PatchWorkforcemanagementBusinessunitSchedulebidRequest request, final AsyncApiCallback<ScheduleBid> callback) {
+    try {
+      final SettableFuture<ScheduleBid> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleBid>() {}, new AsyncApiCallback<ApiResponse<ScheduleBid>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBid> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleBid>> patchWorkforcemanagementBusinessunitSchedulebidAsync(ApiRequest<UpdateScheduleBid> request, final AsyncApiCallback<ApiResponse<ScheduleBid>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleBid>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleBid>() {}, new AsyncApiCallback<ApiResponse<ScheduleBid>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBid> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schedule bid group by bid group Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleBidGroupResponse> patchWorkforcemanagementBusinessunitSchedulebidGroupAsync(PatchWorkforcemanagementBusinessunitSchedulebidGroupRequest request, final AsyncApiCallback<ScheduleBidGroupResponse> callback) {
+    try {
+      final SettableFuture<ScheduleBidGroupResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleBidGroupResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidGroupResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidGroupResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a schedule bid group by bid group Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleBidGroupResponse>> patchWorkforcemanagementBusinessunitSchedulebidGroupAsync(ApiRequest<ScheduleBidGroupUpdate> request, final AsyncApiCallback<ApiResponse<ScheduleBidGroupResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleBidGroupResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleBidGroupResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidGroupResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidGroupResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Overrides the assigned schedule bid for the specified agents
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdminAgentScheduleBidPreferenceResponse> patchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesAsync(PatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest request, final AsyncApiCallback<AdminAgentScheduleBidPreferenceResponse> callback) {
+    try {
+      final SettableFuture<AdminAgentScheduleBidPreferenceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdminAgentScheduleBidPreferenceResponse>() {}, new AsyncApiCallback<ApiResponse<AdminAgentScheduleBidPreferenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdminAgentScheduleBidPreferenceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Overrides the assigned schedule bid for the specified agents
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdminAgentScheduleBidPreferenceResponse>> patchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesAsync(ApiRequest<AgentsBidAssignedScheduleSetOverrideRequest> request, final AsyncApiCallback<ApiResponse<AdminAgentScheduleBidPreferenceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdminAgentScheduleBidPreferenceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdminAgentScheduleBidPreferenceResponse>() {}, new AsyncApiCallback<ApiResponse<AdminAgentScheduleBidPreferenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdminAgentScheduleBidPreferenceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = (ApiResponse<AdminAgentScheduleBidPreferenceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdminAgentScheduleBidPreferenceResponse> response = (ApiResponse<AdminAgentScheduleBidPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -17622,6 +18632,306 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Copy a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleBid> postWorkforcemanagementBusinessunitSchedulebidCopyAsync(PostWorkforcemanagementBusinessunitSchedulebidCopyRequest request, final AsyncApiCallback<ScheduleBid> callback) {
+    try {
+      final SettableFuture<ScheduleBid> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleBid>() {}, new AsyncApiCallback<ApiResponse<ScheduleBid>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBid> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Copy a schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleBid>> postWorkforcemanagementBusinessunitSchedulebidCopyAsync(ApiRequest<CopyScheduleBid> request, final AsyncApiCallback<ApiResponse<ScheduleBid>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleBid>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleBid>() {}, new AsyncApiCallback<ApiResponse<ScheduleBid>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBid> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a bid group in a given schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleBidGroupResponse> postWorkforcemanagementBusinessunitSchedulebidGroupsAsync(PostWorkforcemanagementBusinessunitSchedulebidGroupsRequest request, final AsyncApiCallback<ScheduleBidGroupResponse> callback) {
+    try {
+      final SettableFuture<ScheduleBidGroupResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleBidGroupResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidGroupResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidGroupResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a bid group in a given schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleBidGroupResponse>> postWorkforcemanagementBusinessunitSchedulebidGroupsAsync(ApiRequest<ScheduleBidGroupCreate> request, final AsyncApiCallback<ApiResponse<ScheduleBidGroupResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleBidGroupResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleBidGroupResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleBidGroupResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBidGroupResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBidGroupResponse> response = (ApiResponse<ScheduleBidGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleBid> postWorkforcemanagementBusinessunitSchedulebidsAsync(PostWorkforcemanagementBusinessunitSchedulebidsRequest request, final AsyncApiCallback<ScheduleBid> callback) {
+    try {
+      final SettableFuture<ScheduleBid> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleBid>() {}, new AsyncApiCallback<ApiResponse<ScheduleBid>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBid> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new schedule bid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleBid>> postWorkforcemanagementBusinessunitSchedulebidsAsync(ApiRequest<CreateScheduleBid> request, final AsyncApiCallback<ApiResponse<ScheduleBid>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleBid>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleBid>() {}, new AsyncApiCallback<ApiResponse<ScheduleBid>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleBid> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleBid> response = (ApiResponse<ScheduleBid>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch all the agents with effective schedule set for the given BU
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentsEffectiveScheduleSetResponse> postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsAsync(PostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest request, final AsyncApiCallback<AgentsEffectiveScheduleSetResponse> callback) {
+    try {
+      final SettableFuture<AgentsEffectiveScheduleSetResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentsEffectiveScheduleSetResponse>() {}, new AsyncApiCallback<ApiResponse<AgentsEffectiveScheduleSetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentsEffectiveScheduleSetResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch all the agents with effective schedule set for the given BU
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentsEffectiveScheduleSetResponse>> postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsAsync(ApiRequest<QueryEffectiveScheduleSetsRequest> request, final AsyncApiCallback<ApiResponse<AgentsEffectiveScheduleSetResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentsEffectiveScheduleSetResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentsEffectiveScheduleSetResponse>() {}, new AsyncApiCallback<ApiResponse<AgentsEffectiveScheduleSetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentsEffectiveScheduleSetResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentsEffectiveScheduleSetResponse> response = (ApiResponse<AgentsEffectiveScheduleSetResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentsEffectiveScheduleSetResponse> response = (ApiResponse<AgentsEffectiveScheduleSetResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -23784,6 +25094,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an agent's schedule set preference
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentScheduleBiddingPreferenceResponse> putWorkforcemanagementSchedulebidPreferenceAsync(PutWorkforcemanagementSchedulebidPreferenceRequest request, final AsyncApiCallback<AgentScheduleBiddingPreferenceResponse> callback) {
+    try {
+      final SettableFuture<AgentScheduleBiddingPreferenceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentScheduleBiddingPreferenceResponse>() {}, new AsyncApiCallback<ApiResponse<AgentScheduleBiddingPreferenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScheduleBiddingPreferenceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an agent's schedule set preference
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentScheduleBiddingPreferenceResponse>> putWorkforcemanagementSchedulebidPreferenceAsync(ApiRequest<UpdateAgentScheduleBiddingPreference> request, final AsyncApiCallback<ApiResponse<AgentScheduleBiddingPreferenceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentScheduleBiddingPreferenceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentScheduleBiddingPreferenceResponse>() {}, new AsyncApiCallback<ApiResponse<AgentScheduleBiddingPreferenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentScheduleBiddingPreferenceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScheduleBiddingPreferenceResponse> response = (ApiResponse<AgentScheduleBiddingPreferenceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentScheduleBiddingPreferenceResponse> response = (ApiResponse<AgentScheduleBiddingPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

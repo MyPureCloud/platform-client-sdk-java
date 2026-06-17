@@ -52,7 +52,6 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
@@ -153,16 +152,16 @@ public class PostKnowledgeKnowledgebaseDocumentsRequest {
 	    return this;
 	} 
 
-	private KnowledgeDocumentCreateRequest body;
-	public KnowledgeDocumentCreateRequest getBody() {
+	private KnowledgeDocumentReq body;
+	public KnowledgeDocumentReq getBody() {
 		return this.body;
 	}
 
-	public void setBody(KnowledgeDocumentCreateRequest body) {
+	public void setBody(KnowledgeDocumentReq body) {
 		this.body = body;
 	}
 
-	public PostKnowledgeKnowledgebaseDocumentsRequest withBody(KnowledgeDocumentCreateRequest body) {
+	public PostKnowledgeKnowledgebaseDocumentsRequest withBody(KnowledgeDocumentReq body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -186,7 +185,7 @@ public class PostKnowledgeKnowledgebaseDocumentsRequest {
         return this;
     }
 
-    public ApiRequest<KnowledgeDocumentCreateRequest> withHttpInfo() {
+    public ApiRequest<KnowledgeDocumentReq> withHttpInfo() {
         
         // verify the required parameter 'knowledgeBaseId' is set
         if (this.knowledgeBaseId == null) {
@@ -216,7 +215,7 @@ public class PostKnowledgeKnowledgebaseDocumentsRequest {
 	}
 
 
-	public static Builder builder(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) {
+	public static Builder builder(String knowledgeBaseId, KnowledgeDocumentReq body) {
 	    return new Builder()
 	            .withRequiredParams(knowledgeBaseId, body);
 	}
@@ -235,14 +234,14 @@ public class PostKnowledgeKnowledgebaseDocumentsRequest {
 			return this;
 		}
 
-		public Builder withBody(KnowledgeDocumentCreateRequest body) {
+		public Builder withBody(KnowledgeDocumentReq body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) {
+		public Builder withRequiredParams(String knowledgeBaseId, KnowledgeDocumentReq body) {
 			request.setKnowledgeBaseId(knowledgeBaseId);
 			request.setBody(body);
 

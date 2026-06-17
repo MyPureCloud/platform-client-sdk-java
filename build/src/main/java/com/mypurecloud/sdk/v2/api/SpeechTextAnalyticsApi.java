@@ -1346,7 +1346,7 @@ public class SpeechTextAnalyticsApi {
    * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
    * @param transcriptionEngine Filter by transcription engine, If not provided, all transcription engines will be considered (optional)
    * @param nextPage The key for listing the next page (optional)
-   * @param pageSize The page size for the listing (optional, default to 500)
+   * @param pageSize The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. (optional, default to 500)
    * @return DictionaryFeedbackEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1361,7 +1361,7 @@ public class SpeechTextAnalyticsApi {
    * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
    * @param transcriptionEngine Filter by transcription engine, If not provided, all transcription engines will be considered (optional)
    * @param nextPage The key for listing the next page (optional)
-   * @param pageSize The page size for the listing (optional, default to 500)
+   * @param pageSize The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. (optional, default to 500)
    * @return DictionaryFeedbackEntityListing
    * @throws IOException if the request fails to be processed
    */

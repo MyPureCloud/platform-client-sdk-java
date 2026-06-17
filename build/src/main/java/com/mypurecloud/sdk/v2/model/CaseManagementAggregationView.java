@@ -43,6 +43,8 @@ public class CaseManagementAggregationView  implements Serializable {
  @JsonDeserialize(using = TargetEnumDeserializer.class)
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NCASEASSOCIATIONSCREATED("nCaseAssociationsCreated"),
+    NCASESDELETED("nCasesDeleted"),
     NCASESOPENED("nCasesOpened"),
     NCASESOVERSLA("nCasesOverSla"),
     NCASESPURGED("nCasesPurged"),

@@ -32,6 +32,7 @@ public class ContactsExport  implements Serializable {
   private List<String> divisionIds = null;
   private DomainEntityRef createdBy = null;
   private Date dateCreated = null;
+  private Date dateCompletion = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -82,6 +83,7 @@ public class ContactsExport  implements Serializable {
   }
   private StatusEnum status = null;
   private String downloadUrl = null;
+  private Integer resultRowCount = null;
   private ContactsExportQueryConditions queryConditions = null;
   private String selfUri = null;
 
@@ -137,6 +139,13 @@ public class ContactsExport  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "When the request reached a terminal state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCompletion")
+  public Date getDateCompletion() {
+    return dateCompletion;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The status of the request")
   @JsonProperty("status")
   public StatusEnum getStatus() {
@@ -148,6 +157,13 @@ public class ContactsExport  implements Serializable {
   @JsonProperty("downloadUrl")
   public String getDownloadUrl() {
     return downloadUrl;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Number of rows returned by the export query")
+  @JsonProperty("resultRowCount")
+  public Integer getResultRowCount() {
+    return resultRowCount;
   }
 
 
@@ -190,15 +206,17 @@ public class ContactsExport  implements Serializable {
             Objects.equals(this.divisionIds, contactsExport.divisionIds) &&
             Objects.equals(this.createdBy, contactsExport.createdBy) &&
             Objects.equals(this.dateCreated, contactsExport.dateCreated) &&
+            Objects.equals(this.dateCompletion, contactsExport.dateCompletion) &&
             Objects.equals(this.status, contactsExport.status) &&
             Objects.equals(this.downloadUrl, contactsExport.downloadUrl) &&
+            Objects.equals(this.resultRowCount, contactsExport.resultRowCount) &&
             Objects.equals(this.queryConditions, contactsExport.queryConditions) &&
             Objects.equals(this.selfUri, contactsExport.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, divisionIds, createdBy, dateCreated, status, downloadUrl, queryConditions, selfUri);
+    return Objects.hash(id, divisionIds, createdBy, dateCreated, dateCompletion, status, downloadUrl, resultRowCount, queryConditions, selfUri);
   }
 
   @Override
@@ -210,8 +228,10 @@ public class ContactsExport  implements Serializable {
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateCompletion: ").append(toIndentedString(dateCompletion)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("    resultRowCount: ").append(toIndentedString(resultRowCount)).append("\n");
     sb.append("    queryConditions: ").append(toIndentedString(queryConditions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

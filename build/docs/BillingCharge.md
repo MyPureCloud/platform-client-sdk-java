@@ -15,8 +15,10 @@
 | **overageRate** | [**BigDecimal**](BigDecimal) | The rate charged per unit of overage. |  [optional] |
 | **overageCharge** | [**BigDecimal**](BigDecimal) | The total charge for overage usage. |  [optional] |
 | **overageCurrency** | **String** | The currency in which the overage charge is billed. |  [optional] |
+| **convertedTokenCount** | [**BigDecimal**](BigDecimal) | AI Token Count after the conversion for AI Products. |  [optional] |
+| **tokenConversionRate** | [**BigDecimal**](BigDecimal) | AI Token Conversion Rate — Units per token conversion ratio. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:255.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_

@@ -112,6 +112,9 @@ docs/AdhocRecordingTopicUserData.md
 docs/AdhocRecordingTopicWorkspaceData.md
 docs/Adjacents.md
 docs/AdjustableLiveSpeakerDetection.md
+docs/AdminAgentScheduleBidBiddingPreference.md
+docs/AdminAgentScheduleBidPreferenceResponse.md
+docs/AdminAgentScheduleSetPreferences.md
 docs/AdminAgentWorkPlanBiddingPreference.md
 docs/AdminAgentWorkPlanPreferenceResponse.md
 docs/AdminBulkUpdateAlternativeShiftTradeState.md
@@ -132,8 +135,11 @@ docs/AgentActivityEntityListing.md
 docs/AgentAddOpportunityEnrollment.md
 docs/AgentAdherenceDayMetrics.md
 docs/AgentAdherenceScheduledActivity.md
+docs/AgentAssignedScheduleSetList.md
+docs/AgentAssignedShiftSet.md
 docs/AgentAssistantsApi.json
 docs/AgentAssistantsApi.md
+docs/AgentBidScheduleSetOverrideRequest.md
 docs/AgentBidWorkPlanOverrideRequest.md
 docs/AgentBulkAddOpportunityEnrollment.md
 docs/AgentBulkAddOpportunityEnrollmentResult.md
@@ -162,6 +168,7 @@ docs/AgentCopilotAsyncAggregateQueryResponse.md
 docs/AgentCopilotAsyncAggregationQuery.md
 docs/AgentCountRange.md
 docs/AgentDirectRoutingBackupSettings.md
+docs/AgentEffectiveBid.md
 docs/AgentEvaluatorActivity.md
 docs/AgentGreeting.md
 docs/AgentIntegrationAssociationRequest.md
@@ -187,6 +194,11 @@ docs/AgentQueryOpportunities.md
 docs/AgentQueryOpportunitiesResponse.md
 docs/AgentQueryOpportunityResult.md
 docs/AgentQueueTimeRequest.md
+docs/AgentScheduleBid.md
+docs/AgentScheduleBidScheduleSetResponse.md
+docs/AgentScheduleBiddingPreferencePriority.md
+docs/AgentScheduleBiddingPreferenceResponse.md
+docs/AgentScheduleBids.md
 docs/AgentScheduleShiftActivity.md
 docs/AgentScheduleUnavailableTime.md
 docs/AgentScoringRule.md
@@ -233,7 +245,9 @@ docs/AgentWorkPlanShift.md
 docs/AgentWorkPlans.md
 docs/AgentlessEmailSendRequestDto.md
 docs/AgentlessEmailSendResponseDto.md
+docs/AgentsBidAssignedScheduleSetOverrideRequest.md
 docs/AgentsBidAssignedWorkPlanOverrideRequest.md
+docs/AgentsEffectiveScheduleSetResponse.md
 docs/AgentsIntegrationsListing.md
 docs/AgentsWorkPlansResponse.md
 docs/AggregateHistoricalAvailability.md
@@ -368,6 +382,7 @@ docs/ArchitectPromptNotificationPromptNotification.md
 docs/ArchitectPromptNotificationUser.md
 docs/ArchitectPromptResourceNotificationPromptResourceNotification.md
 docs/ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.md
+docs/ArchitectValidateJobStateResponse.md
 docs/ArchiveRetention.md
 docs/Article.md
 docs/ArticlesFilter.md
@@ -380,6 +395,7 @@ docs/AssessmentQuestionGroupScore.md
 docs/AssessmentQuestionScore.md
 docs/AssessmentScoringSet.md
 docs/AssignUsers.md
+docs/AssignedAgentDetails.md
 docs/AssignedLearningModule.md
 docs/AssignedLearningModuleDomainEntityListing.md
 docs/AssignedSegment.md
@@ -502,8 +518,11 @@ docs/BatchUserPresenceEventRequest.md
 docs/BatchUserRoutingStatusEventRequest.md
 docs/BenefitAssessment.md
 docs/BenefitAssessmentJob.md
+docs/BidGroupScheduleSet.md
 docs/BidGroupWorkPlanRequest.md
 docs/BidGroupWorkPlanResponse.md
+docs/BidGroupWorkPlanRotationRequest.md
+docs/BidGroupWorkPlanRotationResponse.md
 docs/BillingApi.json
 docs/BillingApi.md
 docs/BillingCharge.md
@@ -1133,6 +1152,7 @@ docs/ContactlistImportStatusObject.md
 docs/ContactsBulkOperationJob.md
 docs/ContactsBulkOperationJobListing.md
 docs/ContactsExport.md
+docs/ContactsExportComparisonFieldFilter.md
 docs/ContactsExportFieldFilter.md
 docs/ContactsExportFieldListFilter.md
 docs/ContactsExportFilter.md
@@ -1147,8 +1167,6 @@ docs/ContentCardAction.md
 docs/ContentCarousel.md
 docs/ContentDatePicker.md
 docs/ContentDatePickerAvailableTime.md
-docs/ContentFileRequest.md
-docs/ContentFileResponse.md
 docs/ContentFilterItem.md
 docs/ContentManagementApi.json
 docs/ContentManagementApi.md
@@ -1590,6 +1608,7 @@ docs/ConversationSocialExpressionEventTopicUriReference.md
 docs/ConversationSocialExpressionEventTopicWrapup.md
 docs/ConversationSummariesGetResponse.md
 docs/ConversationSummary.md
+docs/ConversationSummaryEditedBy.md
 docs/ConversationSummaryExtractedEntity.md
 docs/ConversationSummaryFollowup.md
 docs/ConversationSummaryLabel.md
@@ -1617,6 +1636,7 @@ docs/ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant.md
 docs/ConversationSummaryTopicVirtualAgentsConversationWrapUpCode.md
 docs/ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity.md
 docs/ConversationSummaryTopicVirtualAgentsTriggerSource.md
+docs/ConversationSummaryTriggerSource.md
 docs/ConversationSummaryWrapupCode.md
 docs/ConversationTagsUpdate.md
 docs/ConversationThirdPartyActionSuggestionsTopicQueryReformulationContext.md
@@ -1680,6 +1700,7 @@ docs/CopyAttachmentsRequest.md
 docs/CopyBuForecastRequest.md
 docs/CopyCapacityPlanRequest.md
 docs/CopyDecisionTableRequest.md
+docs/CopyScheduleBid.md
 docs/CopyVoicemailMessage.md
 docs/CopyWorkPlan.md
 docs/CopyWorkPlanBid.md
@@ -1735,6 +1756,7 @@ docs/CreateResponseAssetResponse.md
 docs/CreateRoomRequest.md
 docs/CreateRoomResponse.md
 docs/CreateRoutingSkill.md
+docs/CreateScheduleBid.md
 docs/CreateScheduledTriggerRequest.md
 docs/CreateSecureSession.md
 docs/CreateServiceGoalTemplate.md
@@ -2096,8 +2118,6 @@ docs/DocumentBodyListWithHighlight.md
 docs/DocumentBodyParagraph.md
 docs/DocumentBodyParagraphProperties.md
 docs/DocumentBodyParagraphWithHighlight.md
-docs/DocumentBodyRequest.md
-docs/DocumentBodyResponse.md
 docs/DocumentBodyTable.md
 docs/DocumentBodyTableCaptionBlock.md
 docs/DocumentBodyTableCaptionItem.md
@@ -3220,8 +3240,6 @@ docs/KnowledgeDocumentBulkVersionAddRequest.md
 docs/KnowledgeDocumentChunkRequest.md
 docs/KnowledgeDocumentChunkResponse.md
 docs/KnowledgeDocumentCopy.md
-docs/KnowledgeDocumentCreateRequest.md
-docs/KnowledgeDocumentDescriptor.md
 docs/KnowledgeDocumentFeedback.md
 docs/KnowledgeDocumentFeedbackResponse.md
 docs/KnowledgeDocumentFeedbackResponseListing.md
@@ -3474,12 +3492,14 @@ docs/ListWrapperAgentWorkPlanField.md
 docs/ListWrapperAlternativeShiftBuSettingsActivityCategory.md
 docs/ListWrapperAlternativeShiftBuSettingsGranularity.md
 docs/ListWrapperBidGroupWorkPlanRequest.md
+docs/ListWrapperBidGroupWorkPlanRotationRequest.md
 docs/ListWrapperFixedAvailability.md
 docs/ListWrapperInteger.md
 docs/ListWrapperInterval.md
 docs/ListWrapperOverrideDate.md
 docs/ListWrapperPlanningGroupMinimumsRequest.md
 docs/ListWrapperRequiredDateRange.md
+docs/ListWrapperScheduleSetRequest.md
 docs/ListWrapperSecondaryPresence.md
 docs/ListWrapperShiftStartVariance.md
 docs/ListWrapperString.md
@@ -4015,7 +4035,6 @@ docs/ParsedCertificate.md
 docs/Participant.md
 docs/ParticipantAttributes.md
 docs/ParticipantBasic.md
-docs/ParticipantDataProperties.md
 docs/ParticipantInfo.md
 docs/ParticipantMetrics.md
 docs/PasswordRequirements.md
@@ -4242,6 +4261,7 @@ docs/QueryCriteriaGroup.md
 docs/QueryCriteriaItem.md
 docs/QueryCriteriaQuery.md
 docs/QueryDivision.md
+docs/QueryEffectiveScheduleSetsRequest.md
 docs/QueryEnrollmentOpportunityResult.md
 docs/QueryExternalActivityOpportunitiesResponse.md
 docs/QueryExternalActivityOpportunityResult.md
@@ -4254,6 +4274,7 @@ docs/QueryOpportunityEnrollmentsRequest.md
 docs/QueryOpportunityEnrollmentsResponse.md
 docs/QueryOpportunityEnrollmentsResult.md
 docs/QueryPlanningGroupToStaffingGroupsRequest.md
+docs/QueryProcessingConfig.md
 docs/QueryRequest.md
 docs/QueryRequestClause.md
 docs/QueryRequestFilter.md
@@ -4599,6 +4620,7 @@ docs/RateLimitAggregateQueryResponse.md
 docs/RateLimitAggregationQuery.md
 docs/RateLimitAggregationSort.md
 docs/RateLimitAggregationView.md
+docs/RatingFilter.md
 docs/Reaction.md
 docs/RealTimeAdherenceExplanation.md
 docs/Reason.md
@@ -4676,6 +4698,8 @@ docs/RegisterArchitectExportJob.md
 docs/RegisterArchitectExportJobResponse.md
 docs/RegisterArchitectJobRequest.md
 docs/RegisterArchitectJobResponse.md
+docs/RegisterArchitectValidateJob.md
+docs/RegisterArchitectValidateJobResponse.md
 docs/Relationship.md
 docs/RelationshipListing.md
 docs/RemoveEntitiesRequest.md
@@ -4828,6 +4852,18 @@ docs/SalesforceSourceRequest.md
 docs/SalesforceSourceResponse.md
 docs/Schedule.md
 docs/ScheduleActivity.md
+docs/ScheduleBid.md
+docs/ScheduleBidGroup.md
+docs/ScheduleBidGroupCreate.md
+docs/ScheduleBidGroupReference.md
+docs/ScheduleBidGroupResponse.md
+docs/ScheduleBidGroupSummary.md
+docs/ScheduleBidGroupSummaryList.md
+docs/ScheduleBidGroupUpdate.md
+docs/ScheduleBidListResponse.md
+docs/ScheduleBidReference.md
+docs/ScheduleBidScheduledActivity.md
+docs/ScheduleBidScheduledShift.md
 docs/ScheduleBiddingAdminNotificationTopicScheduleBiddingNotification.md
 docs/ScheduleDivisionViewEntityListing.md
 docs/ScheduleEntityListing.md
@@ -4841,6 +4877,8 @@ docs/ScheduleGroupDivisionViewEntityListing.md
 docs/ScheduleGroupEntityListing.md
 docs/ScheduleInterval.md
 docs/ScheduleReferenceWithBusinessUnit.md
+docs/ScheduleSetError.md
+docs/ScheduleSetRequest.md
 docs/ScheduleUploadProcessingResponse.md
 docs/ScheduleVisibilityRange.md
 docs/ScheduleVisibilitySettingsRequest.md
@@ -4999,6 +5037,8 @@ docs/ShareEntityListing.md
 docs/SharedEntity.md
 docs/SharedResponse.md
 docs/SharepointAuthenticationProperties.md
+docs/ShiftSet.md
+docs/ShiftSetEffectiveWorkPlan.md
 docs/ShiftStartVariance.md
 docs/ShiftTradeActivityPreviewResponse.md
 docs/ShiftTradeActivityRule.md
@@ -5598,6 +5638,7 @@ docs/UpdateActionInput.md
 docs/UpdateActivityCodeRequest.md
 docs/UpdateActivityPlanRequest.md
 docs/UpdateAdherenceExplanationStatusRequest.md
+docs/UpdateAgentScheduleBiddingPreference.md
 docs/UpdateAgentWorkPlanBiddingPreference.md
 docs/UpdateAlternativeShiftBuSettingsRequest.md
 docs/UpdateAnalyticsDataRetentionRequest.md
@@ -5631,6 +5672,7 @@ docs/UpdateNotificationsRequest.md
 docs/UpdateNotificationsResponse.md
 docs/UpdatePlanningGroupRequest.md
 docs/UpdateRowIndexRequest.md
+docs/UpdateScheduleBid.md
 docs/UpdateScheduleUploadResponse.md
 docs/UpdateScheduleUploadSchema.md
 docs/UpdateScheduledTriggerRequest.md
@@ -5936,6 +5978,7 @@ docs/ValidateAddressResponse.md
 docs/ValidateAgentUnavailableTimesRequest.md
 docs/ValidateAgentUnavailableTimesResponse.md
 docs/ValidateAssignUsers.md
+docs/ValidateDetails.md
 docs/ValidateWorkPlanMessages.md
 docs/ValidateWorkPlanResponse.md
 docs/ValidationError.md
@@ -6287,6 +6330,7 @@ docs/WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.md
 docs/WfmVersionedEntityMetadata.md
 docs/WhatsAppAvailablePhoneNumberDetails.md
 docs/WhatsAppAvailablePhoneNumberDetailsListing.md
+docs/WhatsAppBusinessScopedId.md
 docs/WhatsAppCallingConfigurationRequest.md
 docs/WhatsAppCallingConfigurationResponse.md
 docs/WhatsAppCampaignSchedule.md
@@ -6862,6 +6906,8 @@ docs/deleteWorkforcemanagementBusinessunit-example.txt
 docs/deleteWorkforcemanagementBusinessunitActivitycode-example.txt
 docs/deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory-example.txt
 docs/deleteWorkforcemanagementBusinessunitPlanninggroup-example.txt
+docs/deleteWorkforcemanagementBusinessunitSchedulebid-example.txt
+docs/deleteWorkforcemanagementBusinessunitSchedulebidGroup-example.txt
 docs/deleteWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/deleteWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
 docs/deleteWorkforcemanagementBusinessunitStaffinggroup-example.txt
@@ -7375,6 +7421,7 @@ docs/getFlowsMilestonesDivisionviews-example.txt
 docs/getFlowsOutcome-example.txt
 docs/getFlowsOutcomes-example.txt
 docs/getFlowsOutcomesDivisionviews-example.txt
+docs/getFlowsValidateJob-example.txt
 docs/getGamificationContest-example.txt
 docs/getGamificationContestAgentsScores-example.txt
 docs/getGamificationContestAgentsScoresMe-example.txt
@@ -8334,6 +8381,11 @@ docs/getWorkforcemanagementBusinessunitMinimumstaffingSettings-example.txt
 docs/getWorkforcemanagementBusinessunitOpportunity-example.txt
 docs/getWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/getWorkforcemanagementBusinessunitPlanninggroups-example.txt
+docs/getWorkforcemanagementBusinessunitSchedulebid-example.txt
+docs/getWorkforcemanagementBusinessunitSchedulebidGroup-example.txt
+docs/getWorkforcemanagementBusinessunitSchedulebidGroupPreferences-example.txt
+docs/getWorkforcemanagementBusinessunitSchedulebidGroupsSummary-example.txt
+docs/getWorkforcemanagementBusinessunitSchedulebids-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulerSettings-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulingRunResult-example.txt
@@ -8406,6 +8458,9 @@ docs/getWorkforcemanagementManagementunitWorkplans-example.txt
 docs/getWorkforcemanagementManagementunits-example.txt
 docs/getWorkforcemanagementManagementunitsDivisionviews-example.txt
 docs/getWorkforcemanagementNotifications-example.txt
+docs/getWorkforcemanagementSchedulebidPreference-example.txt
+docs/getWorkforcemanagementSchedulebidSchedulesets-example.txt
+docs/getWorkforcemanagementSchedulebids-example.txt
 docs/getWorkforcemanagementSchedulingjob-example.txt
 docs/getWorkforcemanagementShifttrades-example.txt
 docs/getWorkforcemanagementShifttradingTradeJob-example.txt
@@ -8655,6 +8710,9 @@ docs/patchWorkforcemanagementBusinessunitCapacityplan-example.txt
 docs/patchWorkforcemanagementBusinessunitMinimumstaffingSettings-example.txt
 docs/patchWorkforcemanagementBusinessunitOpportunity-example.txt
 docs/patchWorkforcemanagementBusinessunitPlanninggroup-example.txt
+docs/patchWorkforcemanagementBusinessunitSchedulebid-example.txt
+docs/patchWorkforcemanagementBusinessunitSchedulebidGroup-example.txt
+docs/patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences-example.txt
 docs/patchWorkforcemanagementBusinessunitSchedulerSettings-example.txt
 docs/patchWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/patchWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
@@ -9044,6 +9102,7 @@ docs/postFlowsInstancesQuery-example.txt
 docs/postFlowsJobs-example.txt
 docs/postFlowsMilestones-example.txt
 docs/postFlowsOutcomes-example.txt
+docs/postFlowsValidateJobs-example.txt
 docs/postGamificationContests-example.txt
 docs/postGamificationContestsUploadsPrizeimages-example.txt
 docs/postGamificationContestsUploadsPrizeimages-example.txt
@@ -9504,6 +9563,10 @@ docs/postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery-example.tx
 docs/postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery-example.txt
 docs/postWorkforcemanagementBusinessunitOpportunitiesQuery-example.txt
 docs/postWorkforcemanagementBusinessunitPlanninggroups-example.txt
+docs/postWorkforcemanagementBusinessunitSchedulebidCopy-example.txt
+docs/postWorkforcemanagementBusinessunitSchedulebidGroups-example.txt
+docs/postWorkforcemanagementBusinessunitSchedulebids-example.txt
+docs/postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets-example.txt
 docs/postWorkforcemanagementBusinessunitServicegoaltemplates-example.txt
 docs/postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs-example.txt
 docs/postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs-example.txt
@@ -9865,6 +9928,7 @@ docs/putWidgetsDeployment-example.txt
 docs/putWorkforcemanagementAgentIntegrationsHris-example.txt
 docs/putWorkforcemanagementBusinessunitTimeofflimitValues-example.txt
 docs/putWorkforcemanagementManagementunitTimeofflimitValues-example.txt
+docs/putWorkforcemanagementSchedulebidPreference-example.txt
 git_push.sh
 gradle.properties
 pom.xml
@@ -10404,6 +10468,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusine
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitPlanninggroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitSchedulebidGroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitSchedulebidRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitSchedulingRunRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitStaffinggroupRequest.java
@@ -10917,6 +10983,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsOutcomeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsOutcomesDivisionviewsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsOutcomesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsValidateJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationContestAgentsScoresMeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationContestAgentsScoresRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationContestAgentsScoresTrendsMeRequest.java
@@ -11876,6 +11943,11 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessu
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitPlanninggroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitPlanninggroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitSchedulebidGroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitSchedulebidGroupsSummaryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitSchedulebidRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitSchedulebidsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitSchedulerSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitSchedulingRunRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitSchedulingRunResultRequest.java
@@ -11948,6 +12020,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementManagemen
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementManagementunitsDivisionviewsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementManagementunitsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementNotificationsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementSchedulebidPreferenceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementSchedulebidSchedulesetsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementSchedulebidsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementSchedulingjobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementShifttradesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementShifttradingTradeJobRequest.java
@@ -12197,6 +12272,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusines
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitOpportunityRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitPlanninggroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitSchedulebidGroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitSchedulebidRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitSchedulingRunRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest.java
@@ -12586,6 +12664,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostFlowsJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostFlowsMilestonesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostFlowsOutcomesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostFlowsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostFlowsValidateJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGamificationContestsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGamificationContestsUploadsPrizeimagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGamificationContestsUploadsPrizeimagesRequest.java
@@ -13046,6 +13125,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusiness
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitOpportunitiesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitPlanninggroupsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitSchedulebidCopyRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitSchedulebidGroupsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesetsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitSchedulebidsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsRequest.java
@@ -13407,6 +13490,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutWidgetsDeploymentRequest.jav
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutWorkforcemanagementAgentIntegrationsHrisRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutWorkforcemanagementManagementunitTimeofflimitValuesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutWorkforcemanagementSchedulebidPreferenceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/auth/ApiKeyAuth.java
 src/main/java/com/mypurecloud/sdk/v2/auth/Authentication.java
 src/main/java/com/mypurecloud/sdk/v2/auth/HttpBasicAuth.java
@@ -13520,6 +13604,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/AdhocRecordingTopicUserData.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdhocRecordingTopicWorkspaceData.java
 src/main/java/com/mypurecloud/sdk/v2/model/Adjacents.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdjustableLiveSpeakerDetection.java
+src/main/java/com/mypurecloud/sdk/v2/model/AdminAgentScheduleBidBiddingPreference.java
+src/main/java/com/mypurecloud/sdk/v2/model/AdminAgentScheduleBidPreferenceResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/AdminAgentScheduleSetPreferences.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdminAgentWorkPlanBiddingPreference.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdminAgentWorkPlanPreferenceResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdminBulkUpdateAlternativeShiftTradeState.java
@@ -13540,6 +13627,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentActivityEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentAddOpportunityEnrollment.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentAdherenceDayMetrics.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentAdherenceScheduledActivity.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentAssignedScheduleSetList.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentAssignedShiftSet.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentBidScheduleSetOverrideRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentBidWorkPlanOverrideRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentBulkAddOpportunityEnrollment.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentBulkAddOpportunityEnrollmentResult.java
@@ -13566,6 +13656,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentCopilotAsyncAggregateQueryRespon
 src/main/java/com/mypurecloud/sdk/v2/model/AgentCopilotAsyncAggregationQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentCountRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentDirectRoutingBackupSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentEffectiveBid.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentEvaluatorActivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentGreeting.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentIntegrationAssociationRequest.java
@@ -13591,6 +13682,11 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentQueryOpportunities.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentQueryOpportunitiesResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentQueryOpportunityResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentQueueTimeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentScheduleBid.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentScheduleBidScheduleSetResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentScheduleBiddingPreferencePriority.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentScheduleBiddingPreferenceResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentScheduleBids.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentScheduleShiftActivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentScheduleUnavailableTime.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentScoringRule.java
@@ -13635,7 +13731,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentWorkPlanShift.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentWorkPlans.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentlessEmailSendRequestDto.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentlessEmailSendResponseDto.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentsBidAssignedScheduleSetOverrideRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentsBidAssignedWorkPlanOverrideRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentsEffectiveScheduleSetResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentsIntegrationsListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentsWorkPlansResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AggregateHistoricalAvailability.java
@@ -13764,6 +13862,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ArchitectPromptNotificationPromptNoti
 src/main/java/com/mypurecloud/sdk/v2/model/ArchitectPromptNotificationUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/ArchitectPromptResourceNotificationPromptResourceNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.java
+src/main/java/com/mypurecloud/sdk/v2/model/ArchitectValidateJobStateResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ArchiveRetention.java
 src/main/java/com/mypurecloud/sdk/v2/model/Article.java
 src/main/java/com/mypurecloud/sdk/v2/model/ArticlesFilter.java
@@ -13776,6 +13875,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AssessmentQuestionGroupScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/AssessmentQuestionScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/AssessmentScoringSet.java
 src/main/java/com/mypurecloud/sdk/v2/model/AssignUsers.java
+src/main/java/com/mypurecloud/sdk/v2/model/AssignedAgentDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/AssignedLearningModule.java
 src/main/java/com/mypurecloud/sdk/v2/model/AssignedLearningModuleDomainEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/AssignedSegment.java
@@ -13890,8 +13990,11 @@ src/main/java/com/mypurecloud/sdk/v2/model/BatchUserPresenceEventRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BatchUserRoutingStatusEventRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BenefitAssessment.java
 src/main/java/com/mypurecloud/sdk/v2/model/BenefitAssessmentJob.java
+src/main/java/com/mypurecloud/sdk/v2/model/BidGroupScheduleSet.java
 src/main/java/com/mypurecloud/sdk/v2/model/BidGroupWorkPlanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BidGroupWorkPlanResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/BidGroupWorkPlanRotationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/BidGroupWorkPlanRotationResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BillingCharge.java
 src/main/java/com/mypurecloud/sdk/v2/model/BillingContract.java
 src/main/java/com/mypurecloud/sdk/v2/model/BillingContractListing.java
@@ -14509,6 +14612,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContactlistImportStatusObject.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactsBulkOperationJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactsBulkOperationJobListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactsExport.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactsExportComparisonFieldFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactsExportFieldFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactsExportFieldListFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactsExportFilter.java
@@ -14523,8 +14627,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContentCardAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentCarousel.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentDatePicker.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentDatePickerAvailableTime.java
-src/main/java/com/mypurecloud/sdk/v2/model/ContentFileRequest.java
-src/main/java/com/mypurecloud/sdk/v2/model/ContentFileResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentFilterItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentManagementSingleDocumentTopicDocumentDataV2.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentManagementSingleDocumentTopicLockData.java
@@ -14964,6 +15066,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopi
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicWrapup.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummariesGetResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummary.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryEditedBy.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryExtractedEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryFollowup.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryLabel.java
@@ -14991,6 +15094,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryTopicVirtualAgents
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryTopicVirtualAgentsConversationWrapUpCode.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryTopicVirtualAgentsTriggerSource.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryTriggerSource.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryWrapupCode.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationTagsUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationThirdPartyActionSuggestionsTopicQueryReformulationContext.java
@@ -15052,6 +15156,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CopyAttachmentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopyBuForecastRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopyCapacityPlanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopyDecisionTableRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/CopyScheduleBid.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopyVoicemailMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopyWorkPlan.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopyWorkPlanBid.java
@@ -15107,6 +15212,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CreateResponseAssetResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateRoomRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateRoomResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateRoutingSkill.java
+src/main/java/com/mypurecloud/sdk/v2/model/CreateScheduleBid.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateScheduledTriggerRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateSecureSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateServiceGoalTemplate.java
@@ -15464,8 +15570,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyListWithHighlight.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyParagraph.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyParagraphProperties.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyParagraphWithHighlight.java
-src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyRequest.java
-src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyTable.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyTableCaptionBlock.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyTableCaptionItem.java
@@ -16552,8 +16656,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentBulkVersionAddReques
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentChunkRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentChunkResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentCopy.java
-src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentCreateRequest.java
-src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentDescriptor.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentFeedback.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentFeedbackResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentFeedbackResponseListing.java
@@ -16798,12 +16900,14 @@ src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperAgentWorkPlanField.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperAlternativeShiftBuSettingsActivityCategory.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperAlternativeShiftBuSettingsGranularity.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperBidGroupWorkPlanRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperBidGroupWorkPlanRotationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperFixedAvailability.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperInteger.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperInterval.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperOverrideDate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperPlanningGroupMinimumsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperRequiredDateRange.java
+src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperScheduleSetRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperSecondaryPresence.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperShiftStartVariance.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperString.java
@@ -17317,7 +17421,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/ParsedCertificate.java
 src/main/java/com/mypurecloud/sdk/v2/model/Participant.java
 src/main/java/com/mypurecloud/sdk/v2/model/ParticipantAttributes.java
 src/main/java/com/mypurecloud/sdk/v2/model/ParticipantBasic.java
-src/main/java/com/mypurecloud/sdk/v2/model/ParticipantDataProperties.java
 src/main/java/com/mypurecloud/sdk/v2/model/ParticipantInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/ParticipantMetrics.java
 src/main/java/com/mypurecloud/sdk/v2/model/PasswordRequirements.java
@@ -17538,6 +17641,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueryCriteriaGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryCriteriaItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryCriteriaQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryDivision.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueryEffectiveScheduleSetsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryEnrollmentOpportunityResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryExternalActivityOpportunitiesResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryExternalActivityOpportunityResult.java
@@ -17550,6 +17654,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueryOpportunityEnrollmentsRequest.ja
 src/main/java/com/mypurecloud/sdk/v2/model/QueryOpportunityEnrollmentsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryOpportunityEnrollmentsResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryPlanningGroupToStaffingGroupsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueryProcessingConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryRequestClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryRequestFilter.java
@@ -17895,6 +18000,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/RateLimitAggregateQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/RateLimitAggregationQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/RateLimitAggregationSort.java
 src/main/java/com/mypurecloud/sdk/v2/model/RateLimitAggregationView.java
+src/main/java/com/mypurecloud/sdk/v2/model/RatingFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/Reaction.java
 src/main/java/com/mypurecloud/sdk/v2/model/RealTimeAdherenceExplanation.java
 src/main/java/com/mypurecloud/sdk/v2/model/Reason.java
@@ -17970,6 +18076,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/RegisterArchitectExportJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/RegisterArchitectExportJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/RegisterArchitectJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/RegisterArchitectJobResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/RegisterArchitectValidateJob.java
+src/main/java/com/mypurecloud/sdk/v2/model/RegisterArchitectValidateJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Relationship.java
 src/main/java/com/mypurecloud/sdk/v2/model/RelationshipListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/RemoveEntitiesRequest.java
@@ -18116,6 +18224,18 @@ src/main/java/com/mypurecloud/sdk/v2/model/SalesforceSourceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SalesforceSourceResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Schedule.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleActivity.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBid.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidGroup.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidGroupCreate.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidGroupReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidGroupResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidGroupSummary.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidGroupSummaryList.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidGroupUpdate.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidListResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidScheduledActivity.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBidScheduledShift.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleBiddingAdminNotificationTopicScheduleBiddingNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleDivisionViewEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleEntityListing.java
@@ -18129,6 +18249,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ScheduleGroupDivisionViewEntityListin
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleGroupEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleInterval.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleReferenceWithBusinessUnit.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleSetError.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScheduleSetRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleUploadProcessingResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleVisibilityRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleVisibilitySettingsRequest.java
@@ -18281,6 +18403,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ShareEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SharedEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/SharedResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/SharepointAuthenticationProperties.java
+src/main/java/com/mypurecloud/sdk/v2/model/ShiftSet.java
+src/main/java/com/mypurecloud/sdk/v2/model/ShiftSetEffectiveWorkPlan.java
 src/main/java/com/mypurecloud/sdk/v2/model/ShiftStartVariance.java
 src/main/java/com/mypurecloud/sdk/v2/model/ShiftTradeActivityPreviewResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ShiftTradeActivityRule.java
@@ -18860,6 +18984,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UpdateActionInput.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateActivityCodeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateActivityPlanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateAdherenceExplanationStatusRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateAgentScheduleBiddingPreference.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateAgentWorkPlanBiddingPreference.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateAlternativeShiftBuSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateAnalyticsDataRetentionRequest.java
@@ -18893,6 +19018,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UpdateNotificationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateNotificationsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdatePlanningGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateRowIndexRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateScheduleBid.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateScheduleUploadResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateScheduleUploadSchema.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateScheduledTriggerRequest.java
@@ -19186,6 +19312,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ValidateAddressResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidateAgentUnavailableTimesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidateAgentUnavailableTimesResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidateAssignUsers.java
+src/main/java/com/mypurecloud/sdk/v2/model/ValidateDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidateWorkPlanMessages.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidateWorkPlanResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidationError.java
@@ -19529,6 +19656,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WfmUserScheduleAdherenceUpdatedTopicU
 src/main/java/com/mypurecloud/sdk/v2/model/WfmVersionedEntityMetadata.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppAvailablePhoneNumberDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppAvailablePhoneNumberDetailsListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppBusinessScopedId.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppCallingConfigurationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppCallingConfigurationResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppCampaignSchedule.java

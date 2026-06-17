@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ArchitectExportJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
+import com.mypurecloud.sdk.v2.model.ArchitectValidateJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.CriteriaQuery;
@@ -87,6 +88,8 @@ import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJob;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
 import com.mypurecloud.sdk.v2.model.ScheduleDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;

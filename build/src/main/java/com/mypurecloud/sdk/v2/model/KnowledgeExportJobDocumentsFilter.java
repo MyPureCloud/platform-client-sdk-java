@@ -28,7 +28,6 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
   private String interval = null;
   private List<Entity> entities = null;
   private String sourceId = null;
-  private Boolean includeDocumentsWithFileBody = null;
 
   public KnowledgeExportJobDocumentsFilter() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -96,23 +95,6 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
   }
 
 
-  /**
-   **/
-  public KnowledgeExportJobDocumentsFilter includeDocumentsWithFileBody(Boolean includeDocumentsWithFileBody) {
-    this.includeDocumentsWithFileBody = includeDocumentsWithFileBody;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("includeDocumentsWithFileBody")
-  public Boolean getIncludeDocumentsWithFileBody() {
-    return includeDocumentsWithFileBody;
-  }
-  public void setIncludeDocumentsWithFileBody(Boolean includeDocumentsWithFileBody) {
-    this.includeDocumentsWithFileBody = includeDocumentsWithFileBody;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -125,13 +107,12 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
 
     return Objects.equals(this.interval, knowledgeExportJobDocumentsFilter.interval) &&
             Objects.equals(this.entities, knowledgeExportJobDocumentsFilter.entities) &&
-            Objects.equals(this.sourceId, knowledgeExportJobDocumentsFilter.sourceId) &&
-            Objects.equals(this.includeDocumentsWithFileBody, knowledgeExportJobDocumentsFilter.includeDocumentsWithFileBody);
+            Objects.equals(this.sourceId, knowledgeExportJobDocumentsFilter.sourceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, entities, sourceId, includeDocumentsWithFileBody);
+    return Objects.hash(interval, entities, sourceId);
   }
 
   @Override
@@ -142,7 +123,6 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
-    sb.append("    includeDocumentsWithFileBody: ").append(toIndentedString(includeDocumentsWithFileBody)).append("\n");
     sb.append("}");
     return sb.toString();
   }

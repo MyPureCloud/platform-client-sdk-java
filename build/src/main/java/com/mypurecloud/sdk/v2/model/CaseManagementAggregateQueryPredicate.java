@@ -92,13 +92,18 @@ public class CaseManagementAggregateQueryPredicate  implements Serializable {
  @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASSOCIATIONTYPE("associationType"),
     CASEID("caseId"),
     CASEPLANID("caseplanId"),
+    CONVERSATIONID("conversationId"),
     CUSTOMERINTENTID("customerIntentId"),
     DIVISIONID("divisionId"),
     OWNERID("ownerId"),
     PRIORITY("priority"),
-    STATUS("status");
+    STAGEID("stageId"),
+    STATUS("status"),
+    STEPID("stepId"),
+    WORKITEMID("workitemId");
 
     private String value;
 

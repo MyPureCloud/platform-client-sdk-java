@@ -142,7 +142,7 @@ public class ListedDictionaryFeedback  implements Serializable {
     }
   }
   /**
-   * The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+   * The status of the dictionary feedback
    */
  @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
@@ -150,7 +150,8 @@ public class ListedDictionaryFeedback  implements Serializable {
     ACTIVE("Active"),
     PENDING("Pending"),
     FAILED("Failed"),
-    SAVED("Saved");
+    SAVED("Saved"),
+    INVALID("Invalid");
 
     private String value;
 
@@ -178,6 +179,7 @@ public class ListedDictionaryFeedback  implements Serializable {
     }
   }
   private StatusEnum status = null;
+  private String invalidReason = null;
   private String displayAs = null;
   private String selfUri = null;
 
@@ -306,22 +308,29 @@ public class ListedDictionaryFeedback  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.")
+  @ApiModelProperty(example = "null", value = "The status of the dictionary feedback")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
 
+  @ApiModelProperty(example = "null", value = "The reason the dictionary feedback is invalid")
+  @JsonProperty("invalidReason")
+  public String getInvalidReason() {
+    return invalidReason;
+  }
+
+
   /**
-   * The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+   * The display name for the dictionary feedback.
    **/
   public ListedDictionaryFeedback displayAs(String displayAs) {
     this.displayAs = displayAs;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.")
+  @ApiModelProperty(example = "null", value = "The display name for the dictionary feedback.")
   @JsonProperty("displayAs")
   public String getDisplayAs() {
     return displayAs;
@@ -359,13 +368,14 @@ public class ListedDictionaryFeedback  implements Serializable {
             Objects.equals(this.modifiedBy, listedDictionaryFeedback.modifiedBy) &&
             Objects.equals(this.transcriptionEngine, listedDictionaryFeedback.transcriptionEngine) &&
             Objects.equals(this.status, listedDictionaryFeedback.status) &&
+            Objects.equals(this.invalidReason, listedDictionaryFeedback.invalidReason) &&
             Objects.equals(this.displayAs, listedDictionaryFeedback.displayAs) &&
             Objects.equals(this.selfUri, listedDictionaryFeedback.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, term, dialect, boostValue, source, dateCreated, createdBy, dateModified, modifiedBy, transcriptionEngine, status, displayAs, selfUri);
+    return Objects.hash(id, term, dialect, boostValue, source, dateCreated, createdBy, dateModified, modifiedBy, transcriptionEngine, status, invalidReason, displayAs, selfUri);
   }
 
   @Override
@@ -384,6 +394,7 @@ public class ListedDictionaryFeedback  implements Serializable {
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    transcriptionEngine: ").append(toIndentedString(transcriptionEngine)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    invalidReason: ").append(toIndentedString(invalidReason)).append("\n");
     sb.append("    displayAs: ").append(toIndentedString(displayAs)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
