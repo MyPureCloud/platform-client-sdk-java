@@ -249,4 +249,4 @@ try {
 [**BatchEventResponse**](BatchEventResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
