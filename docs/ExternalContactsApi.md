@@ -67,7 +67,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsScanRelationshipsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll) | Scan for relationships |
 | [**patchExternalcontactsContact**](ExternalContactsApi#patchExternalcontactsContact) | Update specific fields of an external contact |
 | [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | Claim or release identifiers for a contact |
+| [**patchExternalcontactsContactNote**](ExternalContactsApi#patchExternalcontactsContactNote) | Update a Contact Note |
+| [**patchExternalcontactsOrganization**](ExternalContactsApi#patchExternalcontactsOrganization) | Update specific fields of an external organization |
 | [**patchExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#patchExternalcontactsOrganizationIdentifiers) | Claim or release identifiers for an external organization |
+| [**patchExternalcontactsOrganizationNote**](ExternalContactsApi#patchExternalcontactsOrganizationNote) | Update an External Organization Note |
+| [**patchExternalcontactsRelationship**](ExternalContactsApi#patchExternalcontactsRelationship) | Update specific fields of a relationship |
 | [**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | Bulk fetch contacts |
 | [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi#postExternalcontactsBulkContactsAdd) | Bulk add contacts |
 | [**postExternalcontactsBulkContactsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkContactsDivisionviews) | Bulk fetch contacts across divisions |
@@ -3999,6 +4003,130 @@ try {
 [**ContactIdentifier**](ContactIdentifier)
 
 
+# **patchExternalcontactsContactNote**
+
+
+> [Note](Note) patchExternalcontactsContactNote(contactId, noteId, body)
+
+Update a Contact Note
+
+Wraps PATCH /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String contactId = "contactId_example"; // String | ExternalContact Id
+String noteId = "noteId_example"; // String | Note Id
+ExternalContactsPatchRequest body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | Note field to update
+try {
+    Note result = apiInstance.patchExternalcontactsContactNote(contactId, noteId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#patchExternalcontactsContactNote");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactId** | **String**| ExternalContact Id | 
+| **noteId** | **String**| Note Id | 
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Note field to update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Note**](Note)
+
+
+# **patchExternalcontactsOrganization**
+
+
+> [ExternalOrganization](ExternalOrganization) patchExternalcontactsOrganization(externalOrganizationId, body)
+
+Update specific fields of an external organization
+
+Wraps PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+ExternalContactsPatchRequest body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | External Organization fields to update
+try {
+    ExternalOrganization result = apiInstance.patchExternalcontactsOrganization(externalOrganizationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#patchExternalcontactsOrganization");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **externalOrganizationId** | **String**| External Organization ID | 
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| External Organization fields to update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalOrganization**](ExternalOrganization)
+
+
 # **patchExternalcontactsOrganizationIdentifiers**
 
 
@@ -4058,6 +4186,130 @@ try {
 ### Return type
 
 [**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier)
+
+
+# **patchExternalcontactsOrganizationNote**
+
+
+> [Note](Note) patchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
+
+Update an External Organization Note
+
+Wraps PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
+String noteId = "noteId_example"; // String | Note Id
+ExternalContactsPatchRequest body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | Note field to update
+try {
+    Note result = apiInstance.patchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#patchExternalcontactsOrganizationNote");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **externalOrganizationId** | **String**| External Organization Id | 
+| **noteId** | **String**| Note Id | 
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Note field to update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Note**](Note)
+
+
+# **patchExternalcontactsRelationship**
+
+
+> [Relationship](Relationship) patchExternalcontactsRelationship(relationshipId, body)
+
+Update specific fields of a relationship
+
+Wraps PATCH /api/v2/externalcontacts/relationships/{relationshipId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String relationshipId = "relationshipId_example"; // String | Relationship Id
+ExternalContactsPatchRequest body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | Relationship fields to update
+try {
+    Relationship result = apiInstance.patchExternalcontactsRelationship(relationshipId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#patchExternalcontactsRelationship");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **relationshipId** | **String**| Relationship Id | 
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Relationship fields to update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Relationship**](Relationship)
 
 
 # **postExternalcontactsBulkContacts**
@@ -7520,4 +7772,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | [**User**](User) |  |  [optional] |
-| **queue** | [**Queue**](Queue) |  |  [optional] |
-| **team** | [**Team**](Team) |  |  [optional] |
+| **user** | [**UserFullReference**](UserFullReference) |  |  [optional] |
+| **queue** | [**QueueFullReference**](QueueFullReference) |  |  [optional] |
+| **team** | [**TeamFullReference**](TeamFullReference) |  |  [optional] |
 | **value** | **String** |  |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
@@ -26,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

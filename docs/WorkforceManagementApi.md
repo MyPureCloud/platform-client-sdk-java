@@ -52,6 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitAlternativeshiftsTrade**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTrade) | Get an alternative shifts trade in a business unit for a given trade ID |
 | [**getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob) | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplan) | Get a capacity plan |
+| [**getWorkforcemanagementBusinessunitCapacityplanForecast**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanForecast) | Get a capacity plan's forecast inputs |
 | [**getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations) | Get a capacity plan's staffing group allocations |
 | [**getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements) | Get a capacity plan's staffing requirements |
 | [**getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast) | Get the latest long term staffing requirements for a business unit |
@@ -3431,6 +3432,69 @@ try {
 ### Return type
 
 [**CapacityPlanResponse**](CapacityPlanResponse)
+
+
+# **getWorkforcemanagementBusinessunitCapacityplanForecast**
+
+
+> [CapacityPlanForecastInputsResponse](CapacityPlanForecastInputsResponse) getWorkforcemanagementBusinessunitCapacityplanForecast(businessUnitId, capacityPlanId, granularity)
+
+Get a capacity plan's forecast inputs
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/forecast  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlanForecastInputs:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+String granularity = "granularity_example"; // String | Granularity to access capacity plan forecast data, defaults to weekly
+try {
+    CapacityPlanForecastInputsResponse result = apiInstance.getWorkforcemanagementBusinessunitCapacityplanForecast(businessUnitId, capacityPlanId, granularity);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanForecast");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+| **granularity** | **String**| Granularity to access capacity plan forecast data, defaults to weekly | [optional]<br />**Values**: weekly, monthly 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanForecastInputsResponse**](CapacityPlanForecastInputsResponse)
 
 
 # **getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**
@@ -20891,4 +20955,4 @@ try {
 [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

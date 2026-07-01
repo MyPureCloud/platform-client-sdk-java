@@ -8,6 +8,7 @@
 | **scriptId** | **String** | The identifier of the script to be used for the callback |  [optional] |
 | **queueId** | **String** | The identifier of the queue to be used for the callback. Either queueId or routingData is required. |  [optional] |
 | **routingData** | [**RoutingData**](RoutingData) | The routing data to be used for the callback. Either queueId or routingData is required. |  [optional] |
+| **customerFirstCallbackDeliveryMode** | [**CustomerFirstCallbackDeliveryModeEnum**](#Enum--CustomerFirstCallbackDeliveryModeEnum) | How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration. |  [optional] |
 | **callbackUserName** | **String** | The name of the party to be called back. |  [optional] |
 | **callbackNumbers** | **List&lt;String&gt;** | A list of phone numbers for the callback. |  |
 | **callbackScheduledTime** | [**Date**](Date) | The scheduled date-time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
@@ -18,6 +19,16 @@
 | **callerIdName** | **String** | The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \"callerIdName\" varies. |  [optional] |
 
 
+## Enum: CustomerFirstCallbackDeliveryModeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USEQUEUESETTING | &quot;UseQueueSetting&quot; | 
+| USEAGENTRESERVATION | &quot;UseAgentReservation&quot; | 
+| NOAGENTRESERVATION | &quot;NoAgentReservation&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

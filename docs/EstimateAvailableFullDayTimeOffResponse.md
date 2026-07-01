@@ -10,6 +10,8 @@
 | **payableMinutes** | **Integer** | An estimation of payable part of time off request in minutes |  |
 | **flexible** | **Boolean** | Whether there is flexibility for a user to choose different hours than the system estimated |  |
 | **overrideDateType** | [**OverrideDateTypeEnum**](#Enum--OverrideDateTypeEnum) | The override date type, if the requested day is an override date |  [optional] |
+| **earliestStartOffsetMinutes** | **Integer** | Earliest start time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled |  [optional] |
+| **latestEndOffsetMinutes** | **Integer** | Latest end time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled |  [optional] |
 
 
 ## Enum: OverrideDateTypeEnum
@@ -23,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

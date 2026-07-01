@@ -465,7 +465,7 @@ try {
 # **getIntegrations**
 
 
-> [IntegrationEntityListing](IntegrationEntityListing) getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState)
+> [IntegrationEntityListing](IntegrationEntityListing) getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState, credentialId)
 
 List integrations
 
@@ -506,8 +506,9 @@ String previousPage = "previousPage_example"; // String | Previous page token
 List<String> ids = 7c97172d-b029-490b-a975-ded1d17ce8e4,d21e2369-eb5a-4d5d-8798-61d21bc6a376; // List<String> | Comma-separated list of integration IDs to filter by (max 100)
 String integrationType = webhook; // String | Filter integrations by integration type ID
 String reportedState = ACTIVE; // String | Filter integrations by reported state (case-insensitive)
+String credentialId = a1b2c3d4-e5f6-7890-abcd-ef1234567890; // String | Filter integrations by credential ID
 try {
-    IntegrationEntityListing result = apiInstance.getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState);
+    IntegrationEntityListing result = apiInstance.getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState, credentialId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrations");
@@ -529,6 +530,7 @@ try {
 | **ids** | [**List&lt;String&gt;**](String)| Comma-separated list of integration IDs to filter by (max 100) | [optional] [default to new ArrayList&lt;String&gt;()] 
 | **integrationType** | **String**| Filter integrations by integration type ID | [optional] [default to null] 
 | **reportedState** | **String**| Filter integrations by reported state (case-insensitive) | [optional] [default to null]<br />**Values**: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR 
+| **credentialId** | **String**| Filter integrations by credential ID | [optional] [default to null] 
 {: class="table-striped"}
 
 
@@ -5864,4 +5866,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

@@ -13,7 +13,7 @@
 | **modifiedBy** | [**UserReference**](UserReference) | The user who last modified the assistant. |  [optional] |
 | **googleDialogflowConfig** | [**GoogleDialogflowConfig**](GoogleDialogflowConfig) | (Deprecated: use the 'knowledgeSuggestionConfig' for genesys knowledge suggestions) Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions. |  [optional] |
 | **transcriptionConfig** | [**TranscriptionConfig**](TranscriptionConfig) | Configuration for speech transcription used to assist the agent. |  |
-| **knowledgeSuggestionConfig** | [**KnowledgeSuggestionConfig**](KnowledgeSuggestionConfig) | Configuration that defines how to produce knowledge suggestions. |  |
+| **knowledgeSuggestionConfig** | [**KnowledgeSuggestionConfig**](KnowledgeSuggestionConfig) | Configuration that defines how to produce knowledge suggestions. |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | State of the assistant. |  [optional] |
 | **copilot** | [**Copilot**](Copilot) | Agent copilot configuration. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -31,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

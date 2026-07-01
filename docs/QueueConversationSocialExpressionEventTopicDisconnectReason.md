@@ -8,6 +8,7 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Disconnect reason protocol type. |  [optional] |
 | **code** | **Long** | Protocol specific reason code. See the Q.850 and SIP specs. |  [optional] |
 | **phrase** | **String** | Human readable English description of the disconnect reason. |  [optional] |
+| **reason** | **String** | Final disconnect reason code that triggered the disposition result. |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -21,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

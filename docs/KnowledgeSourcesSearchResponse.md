@@ -70,8 +70,14 @@
 | PT_PT | &quot;pt-PT&quot; | 
 | SV_SE | &quot;sv-SE&quot; | 
 | TR_TR | &quot;tr-TR&quot; | 
+| EL_GR | &quot;el-GR&quot; | 
+| FIL_PH | &quot;fil-PH&quot; | 
+| HE_IL | &quot;he-IL&quot; | 
+| MS_MY | &quot;ms-MY&quot; | 
+| PL_PL | &quot;pl-PL&quot; | 
+| TH_TH | &quot;th-TH&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

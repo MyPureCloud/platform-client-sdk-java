@@ -9,7 +9,7 @@
 | **name** | **String** |  |  [optional] |
 | **version** | **Integer** | Version number required for updates. |  [optional] |
 | **libraries** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) | One or more libraries response is associated with. |  |
-| **texts** | [**List&lt;ResponseText&gt;**](ResponseText) | One or more texts associated with the response. |  |
+| **texts** | [**List&lt;ResponseText&gt;**](ResponseText) | One or more texts associated with the response. Required for responseTypes: Standard, Footer, MessagingTemplate and CampaignEmailTemplate |  [optional] |
 | **createdBy** | [**User**](User) | User that created the response |  [optional] |
 | **dateCreated** | [**Date**](Date) | The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **interactionType** | [**InteractionTypeEnum**](#Enum--InteractionTypeEnum) | The interaction type for this response. |  [optional] |
@@ -19,6 +19,7 @@
 | **messagingTemplate** | [**MessagingTemplate**](MessagingTemplate) | An optional messaging template definition for responseType.MessagingTemplate. |  [optional] |
 | **assets** | [**List&lt;RmsAssetAddressableRef&gt;**](RmsAssetAddressableRef) | Assets used in the response |  [optional] |
 | **footer** | [**FooterTemplate**](FooterTemplate) | Footer template definition for responseType.Footer. |  [optional] |
+| **appleInvitation** | [**AppleInvitation**](AppleInvitation) | Apple Messages for Business invitation template definition for responseType.AppleInvitation. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -47,4 +48,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

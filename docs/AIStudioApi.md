@@ -1315,4 +1315,4 @@ try {
 [**SummarySetting**](SummarySetting)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

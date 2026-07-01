@@ -17,6 +17,7 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BOT | &quot;Bot&quot; | 
+| CASE | &quot;Case&quot; | 
 | COPILOT | &quot;Copilot&quot; | 
 | DIGITALBOT | &quot;Digitalbot&quot; | 
 | SEGMENT | &quot;Segment&quot; | 
@@ -26,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

@@ -90,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsInstancesSettingsLoglevelsCharacteristics**](ArchitectApi#getFlowsInstancesSettingsLoglevelsCharacteristics) | Gets the available flow log level characteristics for this organization. |
 | [**getFlowsInstancesSettingsLoglevelsDefault**](ArchitectApi#getFlowsInstancesSettingsLoglevelsDefault) | Returns the flow default log level. |
 | [**getFlowsJob**](ArchitectApi#getFlowsJob) | Fetch Architect Job Status |
+| [**getFlowsLookup**](ArchitectApi#getFlowsLookup) | Look up flows by ID |
 | [**getFlowsMilestone**](ArchitectApi#getFlowsMilestone) | Get a flow milestone |
 | [**getFlowsMilestones**](ArchitectApi#getFlowsMilestones) | Get a pageable list of flow milestones, filtered by query parameters |
 | [**getFlowsMilestonesDivisionviews**](ArchitectApi#getFlowsMilestonesDivisionviews) | Get a pageable list of basic flow milestone information objects filterable by query parameters. |
@@ -5726,6 +5727,75 @@ try {
 [**ArchitectJobStateResponse**](ArchitectJobStateResponse)
 
 
+# **getFlowsLookup**
+
+
+> [FlowEntityListing](FlowEntityListing) getFlowsLookup(id, pageNumber, pageSize, sortBy, sortOrder)
+
+Look up flows by ID
+
+Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+
+Wraps GET /api/v2/flows/lookup  
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+List<String> id = Arrays.asList(null); // List<String> | Flow ID(s)
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "id"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
+try {
+    FlowEntityListing result = apiInstance.getFlowsLookup(id, pageNumber, pageSize, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsLookup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String)| Flow ID(s) | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Sort by | [optional] [default to id] 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowEntityListing**](FlowEntityListing)
+
+
 # **getFlowsMilestone**
 
 
@@ -9718,4 +9788,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

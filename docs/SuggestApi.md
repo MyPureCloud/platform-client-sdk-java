@@ -149,6 +149,7 @@ Wraps POST /api/v2/search
 Requires ANY permissions: 
 
 * directory:user:view
+* routing:skill:view
 
 ### Example
 
@@ -259,4 +260,4 @@ try {
 [**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

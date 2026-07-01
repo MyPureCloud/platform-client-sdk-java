@@ -12,8 +12,19 @@
 | **countryCode** | **String** | The countryCode |  [optional] |
 | **callbackNumbers** | **List&lt;String&gt;** | The callbackNumbers |  [optional] |
 | **validateCallbackNumbers** | **Boolean** | validateCallbackNumbers |  [optional] |
+| **customerFirstCallbackDeliveryMode** | [**CustomerFirstCallbackDeliveryModeEnum**](#Enum--CustomerFirstCallbackDeliveryModeEnum) | How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration. |  [optional] |
+
+
+## Enum: CustomerFirstCallbackDeliveryModeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USEQUEUESETTING | &quot;UseQueueSetting&quot; | 
+| USEAGENTRESERVATION | &quot;UseAgentReservation&quot; | 
+| NOAGENTRESERVATION | &quot;NoAgentReservation&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_
