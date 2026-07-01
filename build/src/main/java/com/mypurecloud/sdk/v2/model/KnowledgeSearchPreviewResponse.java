@@ -13,6 +13,8 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResult;
+import com.mypurecloud.sdk.v2.model.KnowledgeV3PreviewConversationContext;
+import com.mypurecloud.sdk.v2.model.V3KnowledgeSearchPreviewClientApplication;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -27,6 +29,8 @@ public class KnowledgeSearchPreviewResponse  implements Serializable {
   private String searchId = null;
   private String sessionId = null;
   private KnowledgeSearchResult result = null;
+  private V3KnowledgeSearchPreviewClientApplication application = null;
+  private KnowledgeV3PreviewConversationContext conversationContext = null;
 
   public KnowledgeSearchPreviewResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -78,6 +82,42 @@ public class KnowledgeSearchPreviewResponse  implements Serializable {
   }
 
 
+  /**
+   * The touchpoint application used for the preview.
+   **/
+  public KnowledgeSearchPreviewResponse application(V3KnowledgeSearchPreviewClientApplication application) {
+    this.application = application;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The touchpoint application used for the preview.")
+  @JsonProperty("application")
+  public V3KnowledgeSearchPreviewClientApplication getApplication() {
+    return application;
+  }
+  public void setApplication(V3KnowledgeSearchPreviewClientApplication application) {
+    this.application = application;
+  }
+
+
+  /**
+   * The channel context used for the preview.
+   **/
+  public KnowledgeSearchPreviewResponse conversationContext(KnowledgeV3PreviewConversationContext conversationContext) {
+    this.conversationContext = conversationContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The channel context used for the preview.")
+  @JsonProperty("conversationContext")
+  public KnowledgeV3PreviewConversationContext getConversationContext() {
+    return conversationContext;
+  }
+  public void setConversationContext(KnowledgeV3PreviewConversationContext conversationContext) {
+    this.conversationContext = conversationContext;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -91,12 +131,14 @@ public class KnowledgeSearchPreviewResponse  implements Serializable {
     return Objects.equals(this.query, knowledgeSearchPreviewResponse.query) &&
             Objects.equals(this.searchId, knowledgeSearchPreviewResponse.searchId) &&
             Objects.equals(this.sessionId, knowledgeSearchPreviewResponse.sessionId) &&
-            Objects.equals(this.result, knowledgeSearchPreviewResponse.result);
+            Objects.equals(this.result, knowledgeSearchPreviewResponse.result) &&
+            Objects.equals(this.application, knowledgeSearchPreviewResponse.application) &&
+            Objects.equals(this.conversationContext, knowledgeSearchPreviewResponse.conversationContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, searchId, sessionId, result);
+    return Objects.hash(query, searchId, sessionId, result, application, conversationContext);
   }
 
   @Override
@@ -108,6 +150,8 @@ public class KnowledgeSearchPreviewResponse  implements Serializable {
     sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    application: ").append(toIndentedString(application)).append("\n");
+    sb.append("    conversationContext: ").append(toIndentedString(conversationContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }

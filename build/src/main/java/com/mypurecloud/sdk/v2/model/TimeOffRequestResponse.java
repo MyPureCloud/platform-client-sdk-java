@@ -146,6 +146,8 @@ public class TimeOffRequestResponse  implements Serializable {
   private Integer dailyDurationMinutes = null;
   private List<Integer> durationMinutes = null;
   private List<Integer> payableMinutes = null;
+  private List<Integer> fullDayEarliestStartOffsetMinutes = null;
+  private List<Integer> fullDayLatestEndOffsetMinutes = null;
   private String notes = null;
   private UserReference submittedBy = null;
   private Date submittedDate = null;
@@ -163,6 +165,8 @@ public class TimeOffRequestResponse  implements Serializable {
       fullDayManagementUnitDates = new ArrayList<String>();
       durationMinutes = new ArrayList<Integer>();
       payableMinutes = new ArrayList<Integer>();
+      fullDayEarliestStartOffsetMinutes = new ArrayList<Integer>();
+      fullDayLatestEndOffsetMinutes = new ArrayList<Integer>();
     }
   }
 
@@ -172,6 +176,8 @@ public class TimeOffRequestResponse  implements Serializable {
       fullDayManagementUnitDates = new ArrayList<String>();
       durationMinutes = new ArrayList<Integer>();
       payableMinutes = new ArrayList<Integer>();
+      fullDayEarliestStartOffsetMinutes = new ArrayList<Integer>();
+      fullDayLatestEndOffsetMinutes = new ArrayList<Integer>();
     }
   }
 
@@ -411,6 +417,42 @@ public class TimeOffRequestResponse  implements Serializable {
 
 
   /**
+   * Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+   **/
+  public TimeOffRequestResponse fullDayEarliestStartOffsetMinutes(List<Integer> fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @JsonProperty("fullDayEarliestStartOffsetMinutes")
+  public List<Integer> getFullDayEarliestStartOffsetMinutes() {
+    return fullDayEarliestStartOffsetMinutes;
+  }
+  public void setFullDayEarliestStartOffsetMinutes(List<Integer> fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+  }
+
+
+  /**
+   * Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+   **/
+  public TimeOffRequestResponse fullDayLatestEndOffsetMinutes(List<Integer> fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @JsonProperty("fullDayLatestEndOffsetMinutes")
+  public List<Integer> getFullDayLatestEndOffsetMinutes() {
+    return fullDayLatestEndOffsetMinutes;
+  }
+  public void setFullDayLatestEndOffsetMinutes(List<Integer> fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
+  }
+
+
+  /**
    * Notes about the time off request
    **/
   public TimeOffRequestResponse notes(String notes) {
@@ -602,6 +644,8 @@ public class TimeOffRequestResponse  implements Serializable {
             Objects.equals(this.dailyDurationMinutes, timeOffRequestResponse.dailyDurationMinutes) &&
             Objects.equals(this.durationMinutes, timeOffRequestResponse.durationMinutes) &&
             Objects.equals(this.payableMinutes, timeOffRequestResponse.payableMinutes) &&
+            Objects.equals(this.fullDayEarliestStartOffsetMinutes, timeOffRequestResponse.fullDayEarliestStartOffsetMinutes) &&
+            Objects.equals(this.fullDayLatestEndOffsetMinutes, timeOffRequestResponse.fullDayLatestEndOffsetMinutes) &&
             Objects.equals(this.notes, timeOffRequestResponse.notes) &&
             Objects.equals(this.submittedBy, timeOffRequestResponse.submittedBy) &&
             Objects.equals(this.submittedDate, timeOffRequestResponse.submittedDate) &&
@@ -616,7 +660,7 @@ public class TimeOffRequestResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, durationMinutes, payableMinutes, notes, submittedBy, submittedDate, reviewedBy, reviewedDate, modifiedBy, modifiedDate, syncVersion, metadata, selfUri);
+    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, durationMinutes, payableMinutes, fullDayEarliestStartOffsetMinutes, fullDayLatestEndOffsetMinutes, notes, submittedBy, submittedDate, reviewedBy, reviewedDate, modifiedBy, modifiedDate, syncVersion, metadata, selfUri);
   }
 
   @Override
@@ -637,6 +681,8 @@ public class TimeOffRequestResponse  implements Serializable {
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
     sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
+    sb.append("    fullDayEarliestStartOffsetMinutes: ").append(toIndentedString(fullDayEarliestStartOffsetMinutes)).append("\n");
+    sb.append("    fullDayLatestEndOffsetMinutes: ").append(toIndentedString(fullDayLatestEndOffsetMinutes)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("    submittedBy: ").append(toIndentedString(submittedBy)).append("\n");
     sb.append("    submittedDate: ").append(toIndentedString(submittedDate)).append("\n");

@@ -134,6 +134,7 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingGroupAllocationsResponse;

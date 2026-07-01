@@ -61,20 +61,6 @@ import com.mypurecloud.sdk.v2.model.LearningScormUploadResponse;
 
 public class GetLearningModulesRequest {
 
-	private Boolean isArchived;
-	public Boolean getIsArchived() {
-		return this.isArchived;
-	}
-
-	public void setIsArchived(Boolean isArchived) {
-		this.isArchived = isArchived;
-	}
-
-	public GetLearningModulesRequest withIsArchived(Boolean isArchived) {
-	    this.setIsArchived(isArchived);
-	    return this;
-	} 
-
 	private List<String> types;
 	public List<String> getTypes() {
 		return this.types;
@@ -298,51 +284,6 @@ public class GetLearningModulesRequest {
 		}
 	}
 
-	private String isPublished;
-	public String getIsPublished() {
-		return this.isPublished;
-	}
-
-	public void setIsPublished(String isPublished) {
-		this.isPublished = isPublished;
-	}
-
-	public GetLearningModulesRequest withIsPublished(String isPublished) {
-	    this.setIsPublished(isPublished);
-	    return this;
-	} 
-
-	public enum isPublishedValues { 
-		TRUE("True"),
-		FALSE("False"),
-		ANY("Any");
-
-		private String value;
-
-		isPublishedValues(String value) {
-		  this.value = value;
-		}
-
-		@JsonCreator
-		public static isPublishedValues fromString(String key) {
-			if (key == null) return null;
-
-			for (isPublishedValues value : isPublishedValues.values()) {
-				if (key.equalsIgnoreCase(value.toString())) {
-					return value;
-				}
-			}
-
-			return isPublishedValues.values()[0];
-		}
-
-		@Override
-		@JsonValue
-		public String toString() {
-			return String.valueOf(value);
-		}
-	}
-
 	private List<String> statuses;
 	public List<String> getStatuses() {
 		return this.statuses;
@@ -426,9 +367,6 @@ public class GetLearningModulesRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/learning/modules")
 
-                .withQueryParameters("isArchived", "", isArchived)
-        
-
                 .withQueryParameters("types", "multi", types)
         
 
@@ -448,9 +386,6 @@ public class GetLearningModulesRequest {
         
 
                 .withQueryParameters("expand", "multi", expand)
-        
-
-                .withQueryParameters("isPublished", "", isPublished)
         
 
                 .withQueryParameters("statuses", "multi", statuses)
@@ -478,11 +413,6 @@ public class GetLearningModulesRequest {
 			request = new GetLearningModulesRequest();
 		}
 
-
-		public Builder withIsArchived(Boolean isArchived) {
-			request.setIsArchived(isArchived);
-			return this;
-		}
 
 		public Builder withTypes(List<String> types) {
 			request.setTypes(types);
@@ -556,20 +486,6 @@ public class GetLearningModulesRequest {
 	        stringList.add(e.toString());
 	      }
 	      request.setExpand(stringList);
-		    return this;
-		}
-
-		public Builder withIsPublished(String isPublished) {
-			request.setIsPublished(isPublished);
-			return this;
-		}
-
-
-
-		
-		public Builder withIsPublished(isPublishedValues isPublished) {
-		    request.setIsPublished(isPublished.toString());
-
 		    return this;
 		}
 

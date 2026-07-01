@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DecisionTableColumns;
 import com.mypurecloud.sdk.v2.model.DecisionTableContract;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersionEntity;
@@ -36,6 +37,57 @@ public class DecisionTable  implements Serializable {
   private Date datePublished = null;
   private DecisionTableVersionEntity published = null;
   private DecisionTableVersionEntity latest = null;
+
+  private static class LatestVersionStatusEnumDeserializer extends StdDeserializer<LatestVersionStatusEnum> {
+    public LatestVersionStatusEnumDeserializer() {
+      super(LatestVersionStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public LatestVersionStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LatestVersionStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The status of the most recently created decision table version. Lets clients distinguish e.g. a Draft latest version from a Superseded one without an extra request.
+   */
+ @JsonDeserialize(using = LatestVersionStatusEnumDeserializer.class)
+  public enum LatestVersionStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DRAFT("Draft"),
+    PUBLISHED("Published"),
+    ERROR("Error"),
+    PREPARING("Preparing"),
+    SUPERSEDED("Superseded");
+
+    private String value;
+
+    LatestVersionStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static LatestVersionStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (LatestVersionStatusEnum value : LatestVersionStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return LatestVersionStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private LatestVersionStatusEnum latestVersionStatus = null;
   private DecisionTableColumns columns = null;
   private DecisionTableContract publishedContract = null;
   private String selfUri = null;
@@ -146,6 +198,13 @@ public class DecisionTable  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The status of the most recently created decision table version. Lets clients distinguish e.g. a Draft latest version from a Superseded one without an extra request.")
+  @JsonProperty("latestVersionStatus")
+  public LatestVersionStatusEnum getLatestVersionStatus() {
+    return latestVersionStatus;
+  }
+
+
   /**
    * The column definitions of this decision table.
    **/
@@ -208,6 +267,7 @@ public class DecisionTable  implements Serializable {
             Objects.equals(this.datePublished, decisionTable.datePublished) &&
             Objects.equals(this.published, decisionTable.published) &&
             Objects.equals(this.latest, decisionTable.latest) &&
+            Objects.equals(this.latestVersionStatus, decisionTable.latestVersionStatus) &&
             Objects.equals(this.columns, decisionTable.columns) &&
             Objects.equals(this.publishedContract, decisionTable.publishedContract) &&
             Objects.equals(this.selfUri, decisionTable.selfUri);
@@ -215,7 +275,7 @@ public class DecisionTable  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, datePublished, published, latest, columns, publishedContract, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, datePublished, published, latest, latestVersionStatus, columns, publishedContract, selfUri);
   }
 
   @Override
@@ -232,6 +292,7 @@ public class DecisionTable  implements Serializable {
     sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    latest: ").append(toIndentedString(latest)).append("\n");
+    sb.append("    latestVersionStatus: ").append(toIndentedString(latestVersionStatus)).append("\n");
     sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
     sb.append("    publishedContract: ").append(toIndentedString(publishedContract)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

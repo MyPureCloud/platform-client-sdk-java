@@ -77,6 +77,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     }
   }
   private List<SyncTimeOffPropertiesEnum> syncTimeOffProperties = null;
+  private Boolean enableTimeOffFullDayEstimation = null;
   private WfmServiceGoalImpactSettings serviceGoalImpact = null;
   private Boolean allowWorkPlanPerMinuteGranularity = null;
 
@@ -182,6 +183,24 @@ public class BuSchedulingSettingsResponse  implements Serializable {
 
 
   /**
+   * Enables start and end time estimation for full-day time-off requests
+   **/
+  public BuSchedulingSettingsResponse enableTimeOffFullDayEstimation(Boolean enableTimeOffFullDayEstimation) {
+    this.enableTimeOffFullDayEstimation = enableTimeOffFullDayEstimation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Enables start and end time estimation for full-day time-off requests")
+  @JsonProperty("enableTimeOffFullDayEstimation")
+  public Boolean getEnableTimeOffFullDayEstimation() {
+    return enableTimeOffFullDayEstimation;
+  }
+  public void setEnableTimeOffFullDayEstimation(Boolean enableTimeOffFullDayEstimation) {
+    this.enableTimeOffFullDayEstimation = enableTimeOffFullDayEstimation;
+  }
+
+
+  /**
    * Configures the max percent increase and decrease of service goals for this business unit
    **/
   public BuSchedulingSettingsResponse serviceGoalImpact(WfmServiceGoalImpactSettings serviceGoalImpact) {
@@ -265,6 +284,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
 
     return Objects.equals(this.messageSeverities, buSchedulingSettingsResponse.messageSeverities) &&
             Objects.equals(this.syncTimeOffProperties, buSchedulingSettingsResponse.syncTimeOffProperties) &&
+            Objects.equals(this.enableTimeOffFullDayEstimation, buSchedulingSettingsResponse.enableTimeOffFullDayEstimation) &&
             Objects.equals(this.serviceGoalImpact, buSchedulingSettingsResponse.serviceGoalImpact) &&
             Objects.equals(this.allowWorkPlanPerMinuteGranularity, buSchedulingSettingsResponse.allowWorkPlanPerMinuteGranularity) &&
             Objects.equals(this.activitySmoothingType, buSchedulingSettingsResponse.activitySmoothingType) &&
@@ -273,7 +293,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageSeverities, syncTimeOffProperties, serviceGoalImpact, allowWorkPlanPerMinuteGranularity, activitySmoothingType, induceScheduleVariability);
+    return Objects.hash(messageSeverities, syncTimeOffProperties, enableTimeOffFullDayEstimation, serviceGoalImpact, allowWorkPlanPerMinuteGranularity, activitySmoothingType, induceScheduleVariability);
   }
 
   @Override
@@ -283,6 +303,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     
     sb.append("    messageSeverities: ").append(toIndentedString(messageSeverities)).append("\n");
     sb.append("    syncTimeOffProperties: ").append(toIndentedString(syncTimeOffProperties)).append("\n");
+    sb.append("    enableTimeOffFullDayEstimation: ").append(toIndentedString(enableTimeOffFullDayEstimation)).append("\n");
     sb.append("    serviceGoalImpact: ").append(toIndentedString(serviceGoalImpact)).append("\n");
     sb.append("    allowWorkPlanPerMinuteGranularity: ").append(toIndentedString(allowWorkPlanPerMinuteGranularity)).append("\n");
     sb.append("    activitySmoothingType: ").append(toIndentedString(activitySmoothingType)).append("\n");

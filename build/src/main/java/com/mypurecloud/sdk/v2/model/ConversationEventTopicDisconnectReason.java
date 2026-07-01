@@ -73,6 +73,7 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
   private TypeEnum type = null;
   private Long code = null;
   private String phrase = null;
+  private String reason = null;
 
   public ConversationEventTopicDisconnectReason() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -139,6 +140,24 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
   }
 
 
+  /**
+   * Final disconnect reason code that triggered the disposition result.
+   **/
+  public ConversationEventTopicDisconnectReason reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Final disconnect reason code that triggered the disposition result.")
+  @JsonProperty("reason")
+  public String getReason() {
+    return reason;
+  }
+  public void setReason(String reason) {
+    this.reason = reason;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -151,12 +170,13 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
 
     return Objects.equals(this.type, conversationEventTopicDisconnectReason.type) &&
             Objects.equals(this.code, conversationEventTopicDisconnectReason.code) &&
-            Objects.equals(this.phrase, conversationEventTopicDisconnectReason.phrase);
+            Objects.equals(this.phrase, conversationEventTopicDisconnectReason.phrase) &&
+            Objects.equals(this.reason, conversationEventTopicDisconnectReason.reason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, code, phrase);
+    return Objects.hash(type, code, phrase, reason);
   }
 
   @Override
@@ -167,6 +187,7 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    phrase: ").append(toIndentedString(phrase)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -79,6 +79,8 @@ public class CreateAdminTimeOffRequest  implements Serializable {
   private String activityCodeId = null;
   private String notes = null;
   private List<String> fullDayManagementUnitDates = null;
+  private List<Integer> fullDayEarliestStartOffsetMinutes = null;
+  private List<Integer> fullDayLatestEndOffsetMinutes = null;
   private List<Date> partialDayStartDateTimes = null;
   private Integer dailyDurationMinutes = null;
   private List<Integer> durationMinutes = null;
@@ -89,6 +91,8 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       users = new ArrayList<UserReference>();
       fullDayManagementUnitDates = new ArrayList<String>();
+      fullDayEarliestStartOffsetMinutes = new ArrayList<Integer>();
+      fullDayLatestEndOffsetMinutes = new ArrayList<Integer>();
       partialDayStartDateTimes = new ArrayList<Date>();
       durationMinutes = new ArrayList<Integer>();
       payableMinutes = new ArrayList<Integer>();
@@ -99,6 +103,8 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     if (initWithEmptyList == true) { 
       users = new ArrayList<UserReference>();
       fullDayManagementUnitDates = new ArrayList<String>();
+      fullDayEarliestStartOffsetMinutes = new ArrayList<Integer>();
+      fullDayLatestEndOffsetMinutes = new ArrayList<Integer>();
       partialDayStartDateTimes = new ArrayList<Date>();
       durationMinutes = new ArrayList<Integer>();
       payableMinutes = new ArrayList<Integer>();
@@ -193,6 +199,42 @@ public class CreateAdminTimeOffRequest  implements Serializable {
   }
   public void setFullDayManagementUnitDates(List<String> fullDayManagementUnitDates) {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
+  }
+
+
+  /**
+   * Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+   **/
+  public CreateAdminTimeOffRequest fullDayEarliestStartOffsetMinutes(List<Integer> fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @JsonProperty("fullDayEarliestStartOffsetMinutes")
+  public List<Integer> getFullDayEarliestStartOffsetMinutes() {
+    return fullDayEarliestStartOffsetMinutes;
+  }
+  public void setFullDayEarliestStartOffsetMinutes(List<Integer> fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+  }
+
+
+  /**
+   * Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+   **/
+  public CreateAdminTimeOffRequest fullDayLatestEndOffsetMinutes(List<Integer> fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @JsonProperty("fullDayLatestEndOffsetMinutes")
+  public List<Integer> getFullDayLatestEndOffsetMinutes() {
+    return fullDayLatestEndOffsetMinutes;
+  }
+  public void setFullDayLatestEndOffsetMinutes(List<Integer> fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
   }
 
 
@@ -301,6 +343,8 @@ public class CreateAdminTimeOffRequest  implements Serializable {
             Objects.equals(this.activityCodeId, createAdminTimeOffRequest.activityCodeId) &&
             Objects.equals(this.notes, createAdminTimeOffRequest.notes) &&
             Objects.equals(this.fullDayManagementUnitDates, createAdminTimeOffRequest.fullDayManagementUnitDates) &&
+            Objects.equals(this.fullDayEarliestStartOffsetMinutes, createAdminTimeOffRequest.fullDayEarliestStartOffsetMinutes) &&
+            Objects.equals(this.fullDayLatestEndOffsetMinutes, createAdminTimeOffRequest.fullDayLatestEndOffsetMinutes) &&
             Objects.equals(this.partialDayStartDateTimes, createAdminTimeOffRequest.partialDayStartDateTimes) &&
             Objects.equals(this.dailyDurationMinutes, createAdminTimeOffRequest.dailyDurationMinutes) &&
             Objects.equals(this.durationMinutes, createAdminTimeOffRequest.durationMinutes) &&
@@ -310,7 +354,7 @@ public class CreateAdminTimeOffRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, users, activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes, paid);
+    return Objects.hash(status, users, activityCodeId, notes, fullDayManagementUnitDates, fullDayEarliestStartOffsetMinutes, fullDayLatestEndOffsetMinutes, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes, paid);
   }
 
   @Override
@@ -323,6 +367,8 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
+    sb.append("    fullDayEarliestStartOffsetMinutes: ").append(toIndentedString(fullDayEarliestStartOffsetMinutes)).append("\n");
+    sb.append("    fullDayLatestEndOffsetMinutes: ").append(toIndentedString(fullDayLatestEndOffsetMinutes)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");

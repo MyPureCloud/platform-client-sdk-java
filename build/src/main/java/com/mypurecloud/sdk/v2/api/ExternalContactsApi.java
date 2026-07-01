@@ -149,7 +149,11 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRe
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactIdentifiersRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactNoteRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsOrganizationIdentifiersRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsOrganizationNoteRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsDivisionviewsRequest;
@@ -5416,6 +5420,174 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Update a Contact Note
+   * 
+   * @param contactId ExternalContact Id (required)
+   * @param noteId Note Id (required)
+   * @param body Note field to update (required)
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Note patchExternalcontactsContactNote(String contactId, String noteId, ExternalContactsPatchRequest body) throws IOException, ApiException {
+    return  patchExternalcontactsContactNote(createPatchExternalcontactsContactNoteRequest(contactId, noteId, body));
+  }
+
+  /**
+   * Update a Contact Note
+   * 
+   * @param contactId ExternalContact Id (required)
+   * @param noteId Note Id (required)
+   * @param body Note field to update (required)
+   * @return Note
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Note> patchExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId, ExternalContactsPatchRequest body) throws IOException {
+    return patchExternalcontactsContactNote(createPatchExternalcontactsContactNoteRequest(contactId, noteId, body).withHttpInfo());
+  }
+
+  private PatchExternalcontactsContactNoteRequest createPatchExternalcontactsContactNoteRequest(String contactId, String noteId, ExternalContactsPatchRequest body) {
+    return PatchExternalcontactsContactNoteRequest.builder()
+            .withContactId(contactId)
+
+            .withNoteId(noteId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a Contact Note
+   * 
+   * @param request The request object
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Note patchExternalcontactsContactNote(PatchExternalcontactsContactNoteRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Note> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Note>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a Contact Note
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Note> patchExternalcontactsContactNote(ApiRequest<ExternalContactsPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Note>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update specific fields of an external organization
+   * 
+   * @param externalOrganizationId External Organization ID (required)
+   * @param body External Organization fields to update (required)
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganization patchExternalcontactsOrganization(String externalOrganizationId, ExternalContactsPatchRequest body) throws IOException, ApiException {
+    return  patchExternalcontactsOrganization(createPatchExternalcontactsOrganizationRequest(externalOrganizationId, body));
+  }
+
+  /**
+   * Update specific fields of an external organization
+   * 
+   * @param externalOrganizationId External Organization ID (required)
+   * @param body External Organization fields to update (required)
+   * @return ExternalOrganization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganization> patchExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, ExternalContactsPatchRequest body) throws IOException {
+    return patchExternalcontactsOrganization(createPatchExternalcontactsOrganizationRequest(externalOrganizationId, body).withHttpInfo());
+  }
+
+  private PatchExternalcontactsOrganizationRequest createPatchExternalcontactsOrganizationRequest(String externalOrganizationId, ExternalContactsPatchRequest body) {
+    return PatchExternalcontactsOrganizationRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update specific fields of an external organization
+   * 
+   * @param request The request object
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganization patchExternalcontactsOrganization(PatchExternalcontactsOrganizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update specific fields of an external organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganization> patchExternalcontactsOrganization(ApiRequest<ExternalContactsPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Claim or release identifiers for an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
@@ -5493,6 +5665,174 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalOrganizationIdentifier> response = (ApiResponse<ExternalOrganizationIdentifier>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an External Organization Note
+   * 
+   * @param externalOrganizationId External Organization Id (required)
+   * @param noteId Note Id (required)
+   * @param body Note field to update (required)
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Note patchExternalcontactsOrganizationNote(String externalOrganizationId, String noteId, ExternalContactsPatchRequest body) throws IOException, ApiException {
+    return  patchExternalcontactsOrganizationNote(createPatchExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId, body));
+  }
+
+  /**
+   * Update an External Organization Note
+   * 
+   * @param externalOrganizationId External Organization Id (required)
+   * @param noteId Note Id (required)
+   * @param body Note field to update (required)
+   * @return Note
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Note> patchExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId, ExternalContactsPatchRequest body) throws IOException {
+    return patchExternalcontactsOrganizationNote(createPatchExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId, body).withHttpInfo());
+  }
+
+  private PatchExternalcontactsOrganizationNoteRequest createPatchExternalcontactsOrganizationNoteRequest(String externalOrganizationId, String noteId, ExternalContactsPatchRequest body) {
+    return PatchExternalcontactsOrganizationNoteRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
+
+            .withNoteId(noteId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an External Organization Note
+   * 
+   * @param request The request object
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Note patchExternalcontactsOrganizationNote(PatchExternalcontactsOrganizationNoteRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Note> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Note>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an External Organization Note
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Note> patchExternalcontactsOrganizationNote(ApiRequest<ExternalContactsPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Note>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update specific fields of a relationship
+   * 
+   * @param relationshipId Relationship Id (required)
+   * @param body Relationship fields to update (required)
+   * @return Relationship
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Relationship patchExternalcontactsRelationship(String relationshipId, ExternalContactsPatchRequest body) throws IOException, ApiException {
+    return  patchExternalcontactsRelationship(createPatchExternalcontactsRelationshipRequest(relationshipId, body));
+  }
+
+  /**
+   * Update specific fields of a relationship
+   * 
+   * @param relationshipId Relationship Id (required)
+   * @param body Relationship fields to update (required)
+   * @return Relationship
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Relationship> patchExternalcontactsRelationshipWithHttpInfo(String relationshipId, ExternalContactsPatchRequest body) throws IOException {
+    return patchExternalcontactsRelationship(createPatchExternalcontactsRelationshipRequest(relationshipId, body).withHttpInfo());
+  }
+
+  private PatchExternalcontactsRelationshipRequest createPatchExternalcontactsRelationshipRequest(String relationshipId, ExternalContactsPatchRequest body) {
+    return PatchExternalcontactsRelationshipRequest.builder()
+            .withRelationshipId(relationshipId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update specific fields of a relationship
+   * 
+   * @param request The request object
+   * @return Relationship
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Relationship patchExternalcontactsRelationship(PatchExternalcontactsRelationshipRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Relationship> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Relationship>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update specific fields of a relationship
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Relationship> patchExternalcontactsRelationship(ApiRequest<ExternalContactsPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Relationship>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

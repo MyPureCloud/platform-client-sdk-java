@@ -16,6 +16,8 @@ import com.mypurecloud.sdk.v2.model.AgentVideoSettings;
 import com.mypurecloud.sdk.v2.model.UserVideoSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -26,16 +28,66 @@ import java.io.Serializable;
 public class VideoSettings  implements Serializable {
   
   private Boolean enabled = null;
+
+  private static class ChannelsEnumDeserializer extends StdDeserializer<ChannelsEnum> {
+    public ChannelsEnumDeserializer() {
+      super(ChannelsEnumDeserializer.class);
+    }
+
+    @Override
+    public ChannelsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ChannelsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets channels
+   */
+ @JsonDeserialize(using = ChannelsEnumDeserializer.class)
+  public enum ChannelsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    WEBMESSAGING("Webmessaging"),
+    VOICE("Voice");
+
+    private String value;
+
+    ChannelsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ChannelsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ChannelsEnum value : ChannelsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ChannelsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<ChannelsEnum> channels = null;
   private AgentVideoSettings agent = null;
   private UserVideoSettings user = null;
 
   public VideoSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      channels = new ArrayList<ChannelsEnum>();
     }
   }
 
   public VideoSettings(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      channels = new ArrayList<ChannelsEnum>();
     }
   }
 
@@ -55,6 +107,24 @@ public class VideoSettings  implements Serializable {
   }
   public void setEnabled(Boolean enabled) {
     this.enabled = enabled;
+  }
+
+
+  /**
+   * The channels on which video chat is available
+   **/
+  public VideoSettings channels(List<ChannelsEnum> channels) {
+    this.channels = channels;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The channels on which video chat is available")
+  @JsonProperty("channels")
+  public List<ChannelsEnum> getChannels() {
+    return channels;
+  }
+  public void setChannels(List<ChannelsEnum> channels) {
+    this.channels = channels;
   }
 
 
@@ -105,13 +175,14 @@ public class VideoSettings  implements Serializable {
     VideoSettings videoSettings = (VideoSettings) o;
 
     return Objects.equals(this.enabled, videoSettings.enabled) &&
+            Objects.equals(this.channels, videoSettings.channels) &&
             Objects.equals(this.agent, videoSettings.agent) &&
             Objects.equals(this.user, videoSettings.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, agent, user);
+    return Objects.hash(enabled, channels, agent, user);
   }
 
   @Override
@@ -120,6 +191,7 @@ public class VideoSettings  implements Serializable {
     sb.append("class VideoSettings {\n");
     
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
     sb.append("    agent: ").append(toIndentedString(agent)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");

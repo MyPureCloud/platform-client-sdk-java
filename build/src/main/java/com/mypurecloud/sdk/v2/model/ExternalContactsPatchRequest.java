@@ -41,14 +41,14 @@ public class ExternalContactsPatchRequest  implements Serializable {
 
   
   /**
-   * A list of changes to apply to the provided contact entity
+   * A list of changes to apply to the provided entity
    **/
   public ExternalContactsPatchRequest changes(List<ContactsPatchChange> changes) {
     this.changes = changes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of changes to apply to the provided contact entity")
+  @ApiModelProperty(example = "null", value = "A list of changes to apply to the provided entity")
   @JsonProperty("changes")
   public List<ContactsPatchChange> getChanges() {
     return changes;

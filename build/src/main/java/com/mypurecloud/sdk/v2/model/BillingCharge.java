@@ -30,10 +30,10 @@ public class BillingCharge  implements Serializable {
   private String id = null;
   private BillingProduct product = null;
   private List<NamedEntity> organizations = null;
-  private Integer prepaidQuantity = null;
-  private Integer fairuseQuantity = null;
-  private Integer actualQuantity = null;
-  private Integer overageQuantity = null;
+  private BigDecimal prepaidQuantity = null;
+  private BigDecimal fairuseQuantity = null;
+  private BigDecimal actualQuantity = null;
+  private BigDecimal overageQuantity = null;
   private BigDecimal overageRate = null;
   private BigDecimal overageCharge = null;
   private String overageCurrency = null;
@@ -99,17 +99,17 @@ public class BillingCharge  implements Serializable {
   /**
    * The quantity of usage that is prepaid.
    **/
-  public BillingCharge prepaidQuantity(Integer prepaidQuantity) {
+  public BillingCharge prepaidQuantity(BigDecimal prepaidQuantity) {
     this.prepaidQuantity = prepaidQuantity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The quantity of usage that is prepaid.")
   @JsonProperty("prepaidQuantity")
-  public Integer getPrepaidQuantity() {
+  public BigDecimal getPrepaidQuantity() {
     return prepaidQuantity;
   }
-  public void setPrepaidQuantity(Integer prepaidQuantity) {
+  public void setPrepaidQuantity(BigDecimal prepaidQuantity) {
     this.prepaidQuantity = prepaidQuantity;
   }
 
@@ -117,17 +117,17 @@ public class BillingCharge  implements Serializable {
   /**
    * The quantity of usage allowed under fair use policies.
    **/
-  public BillingCharge fairuseQuantity(Integer fairuseQuantity) {
+  public BillingCharge fairuseQuantity(BigDecimal fairuseQuantity) {
     this.fairuseQuantity = fairuseQuantity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The quantity of usage allowed under fair use policies.")
   @JsonProperty("fairuseQuantity")
-  public Integer getFairuseQuantity() {
+  public BigDecimal getFairuseQuantity() {
     return fairuseQuantity;
   }
-  public void setFairuseQuantity(Integer fairuseQuantity) {
+  public void setFairuseQuantity(BigDecimal fairuseQuantity) {
     this.fairuseQuantity = fairuseQuantity;
   }
 
@@ -135,17 +135,17 @@ public class BillingCharge  implements Serializable {
   /**
    * The actual quantity of usage.
    **/
-  public BillingCharge actualQuantity(Integer actualQuantity) {
+  public BillingCharge actualQuantity(BigDecimal actualQuantity) {
     this.actualQuantity = actualQuantity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The actual quantity of usage.")
   @JsonProperty("actualQuantity")
-  public Integer getActualQuantity() {
+  public BigDecimal getActualQuantity() {
     return actualQuantity;
   }
-  public void setActualQuantity(Integer actualQuantity) {
+  public void setActualQuantity(BigDecimal actualQuantity) {
     this.actualQuantity = actualQuantity;
   }
 
@@ -153,17 +153,17 @@ public class BillingCharge  implements Serializable {
   /**
    * The quantity of usage that exceeds prepaid or fair use limits.
    **/
-  public BillingCharge overageQuantity(Integer overageQuantity) {
+  public BillingCharge overageQuantity(BigDecimal overageQuantity) {
     this.overageQuantity = overageQuantity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The quantity of usage that exceeds prepaid or fair use limits.")
   @JsonProperty("overageQuantity")
-  public Integer getOverageQuantity() {
+  public BigDecimal getOverageQuantity() {
     return overageQuantity;
   }
-  public void setOverageQuantity(Integer overageQuantity) {
+  public void setOverageQuantity(BigDecimal overageQuantity) {
     this.overageQuantity = overageQuantity;
   }
 

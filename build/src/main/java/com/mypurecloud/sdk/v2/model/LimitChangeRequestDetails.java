@@ -49,7 +49,7 @@ public class LimitChangeRequestDetails  implements Serializable {
  @JsonDeserialize(using = NamespaceEnumDeserializer.class)
   public enum NamespaceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    WEBCHAT("webchat"),
+    WEB_MESSAGING("web.messaging"),
     WEBHOOKS("webhooks"),
     AGENT_ASSISTANT("agent.assistant"),
     AGENTIC_VIRTUAL_AGENTS("agentic.virtual.agents"),
@@ -105,6 +105,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     MEDIA_COMMUNICATIONS("media.communications"),
     MESSAGING("messaging"),
     MICRO_FRONTEND("micro.frontend"),
+    MULTI_ORG("multi.org"),
     NOTIFICATIONS("notifications"),
     ONBOARDING("onboarding"),
     OUTBOUND("outbound"),
@@ -131,7 +132,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     USERS_RULES("users.rules"),
     VOICE_TRANSCRIPTION("voice.transcription"),
     WEB_DEPLOYMENTS("web.deployments"),
-    WEB_MESSAGING("web.messaging"),
+    WEBCHAT("webchat"),
     WORKFORCE_MANAGEMENT_AGENT_AVAILABILITY("workforce.management.agent.availability"),
     WORKFORCE_MANAGEMENT_FORECAST("workforce.management.forecast"),
     WORKFORCE_MANAGEMENT("workforce.management"),

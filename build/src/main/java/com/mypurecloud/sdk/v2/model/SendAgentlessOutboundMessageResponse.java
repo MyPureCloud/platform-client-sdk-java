@@ -53,7 +53,8 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     SMS("sms"),
     WHATSAPP("whatsapp"),
     OPEN("open"),
-    WEBMESSAGING("webmessaging");
+    WEBMESSAGING("webmessaging"),
+    APPLE("apple");
 
     private String value;
 

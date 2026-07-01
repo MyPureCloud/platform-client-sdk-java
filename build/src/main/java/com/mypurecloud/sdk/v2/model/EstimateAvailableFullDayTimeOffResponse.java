@@ -76,6 +76,8 @@ public class EstimateAvailableFullDayTimeOffResponse  implements Serializable {
     }
   }
   private OverrideDateTypeEnum overrideDateType = null;
+  private Integer earliestStartOffsetMinutes = null;
+  private Integer latestEndOffsetMinutes = null;
 
   public EstimateAvailableFullDayTimeOffResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -178,6 +180,42 @@ public class EstimateAvailableFullDayTimeOffResponse  implements Serializable {
   }
 
 
+  /**
+   * Earliest start time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+   **/
+  public EstimateAvailableFullDayTimeOffResponse earliestStartOffsetMinutes(Integer earliestStartOffsetMinutes) {
+    this.earliestStartOffsetMinutes = earliestStartOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Earliest start time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled")
+  @JsonProperty("earliestStartOffsetMinutes")
+  public Integer getEarliestStartOffsetMinutes() {
+    return earliestStartOffsetMinutes;
+  }
+  public void setEarliestStartOffsetMinutes(Integer earliestStartOffsetMinutes) {
+    this.earliestStartOffsetMinutes = earliestStartOffsetMinutes;
+  }
+
+
+  /**
+   * Latest end time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+   **/
+  public EstimateAvailableFullDayTimeOffResponse latestEndOffsetMinutes(Integer latestEndOffsetMinutes) {
+    this.latestEndOffsetMinutes = latestEndOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Latest end time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled")
+  @JsonProperty("latestEndOffsetMinutes")
+  public Integer getLatestEndOffsetMinutes() {
+    return latestEndOffsetMinutes;
+  }
+  public void setLatestEndOffsetMinutes(Integer latestEndOffsetMinutes) {
+    this.latestEndOffsetMinutes = latestEndOffsetMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -192,12 +230,14 @@ public class EstimateAvailableFullDayTimeOffResponse  implements Serializable {
             Objects.equals(this.durationMinutes, estimateAvailableFullDayTimeOffResponse.durationMinutes) &&
             Objects.equals(this.payableMinutes, estimateAvailableFullDayTimeOffResponse.payableMinutes) &&
             Objects.equals(this.flexible, estimateAvailableFullDayTimeOffResponse.flexible) &&
-            Objects.equals(this.overrideDateType, estimateAvailableFullDayTimeOffResponse.overrideDateType);
+            Objects.equals(this.overrideDateType, estimateAvailableFullDayTimeOffResponse.overrideDateType) &&
+            Objects.equals(this.earliestStartOffsetMinutes, estimateAvailableFullDayTimeOffResponse.earliestStartOffsetMinutes) &&
+            Objects.equals(this.latestEndOffsetMinutes, estimateAvailableFullDayTimeOffResponse.latestEndOffsetMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, durationMinutes, payableMinutes, flexible, overrideDateType);
+    return Objects.hash(date, durationMinutes, payableMinutes, flexible, overrideDateType, earliestStartOffsetMinutes, latestEndOffsetMinutes);
   }
 
   @Override
@@ -210,6 +250,8 @@ public class EstimateAvailableFullDayTimeOffResponse  implements Serializable {
     sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("    flexible: ").append(toIndentedString(flexible)).append("\n");
     sb.append("    overrideDateType: ").append(toIndentedString(overrideDateType)).append("\n");
+    sb.append("    earliestStartOffsetMinutes: ").append(toIndentedString(earliestStartOffsetMinutes)).append("\n");
+    sb.append("    latestEndOffsetMinutes: ").append(toIndentedString(latestEndOffsetMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

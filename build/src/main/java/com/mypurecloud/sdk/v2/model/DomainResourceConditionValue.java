@@ -13,9 +13,9 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.Queue;
-import com.mypurecloud.sdk.v2.model.Team;
-import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.QueueFullReference;
+import com.mypurecloud.sdk.v2.model.TeamFullReference;
+import com.mypurecloud.sdk.v2.model.UserFullReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -26,9 +26,9 @@ import java.io.Serializable;
 
 public class DomainResourceConditionValue  implements Serializable {
   
-  private User user = null;
-  private Queue queue = null;
-  private Team team = null;
+  private UserFullReference user = null;
+  private QueueFullReference queue = null;
+  private TeamFullReference team = null;
   private String value = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -95,51 +95,51 @@ public class DomainResourceConditionValue  implements Serializable {
   
   /**
    **/
-  public DomainResourceConditionValue user(User user) {
+  public DomainResourceConditionValue user(UserFullReference user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public User getUser() {
+  public UserFullReference getUser() {
     return user;
   }
-  public void setUser(User user) {
+  public void setUser(UserFullReference user) {
     this.user = user;
   }
 
 
   /**
    **/
-  public DomainResourceConditionValue queue(Queue queue) {
+  public DomainResourceConditionValue queue(QueueFullReference queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("queue")
-  public Queue getQueue() {
+  public QueueFullReference getQueue() {
     return queue;
   }
-  public void setQueue(Queue queue) {
+  public void setQueue(QueueFullReference queue) {
     this.queue = queue;
   }
 
 
   /**
    **/
-  public DomainResourceConditionValue team(Team team) {
+  public DomainResourceConditionValue team(TeamFullReference team) {
     this.team = team;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("team")
-  public Team getTeam() {
+  public TeamFullReference getTeam() {
     return team;
   }
-  public void setTeam(Team team) {
+  public void setTeam(TeamFullReference team) {
     this.team = team;
   }
 

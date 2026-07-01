@@ -81,7 +81,13 @@ public class KnowledgeGenerationSetting  implements Serializable {
     PT_BR("pt-BR"),
     PT_PT("pt-PT"),
     SV_SE("sv-SE"),
-    TR_TR("tr-TR");
+    TR_TR("tr-TR"),
+    EL_GR("el-GR"),
+    FIL_PH("fil-PH"),
+    HE_IL("he-IL"),
+    MS_MY("ms-MY"),
+    PL_PL("pl-PL"),
+    TH_TH("th-TH");
 
     private String value;
 

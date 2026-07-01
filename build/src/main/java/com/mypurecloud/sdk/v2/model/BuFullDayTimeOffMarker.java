@@ -24,6 +24,8 @@ import java.io.Serializable;
 public class BuFullDayTimeOffMarker  implements Serializable {
   
   private LocalDate businessUnitDate = null;
+  private Integer startOffsetMinutes = null;
+  private Integer endOffsetMinutes = null;
   private Integer lengthMinutes = null;
   private String description = null;
   private String activityCodeId = null;
@@ -59,6 +61,42 @@ public class BuFullDayTimeOffMarker  implements Serializable {
   }
   public void setBusinessUnitDate(LocalDate businessUnitDate) {
     this.businessUnitDate = businessUnitDate;
+  }
+
+
+  /**
+   * The start offset in minutes for the time-off marker
+   **/
+  public BuFullDayTimeOffMarker startOffsetMinutes(Integer startOffsetMinutes) {
+    this.startOffsetMinutes = startOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The start offset in minutes for the time-off marker")
+  @JsonProperty("startOffsetMinutes")
+  public Integer getStartOffsetMinutes() {
+    return startOffsetMinutes;
+  }
+  public void setStartOffsetMinutes(Integer startOffsetMinutes) {
+    this.startOffsetMinutes = startOffsetMinutes;
+  }
+
+
+  /**
+   * The end offset in minutes for the time-off marker
+   **/
+  public BuFullDayTimeOffMarker endOffsetMinutes(Integer endOffsetMinutes) {
+    this.endOffsetMinutes = endOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The end offset in minutes for the time-off marker")
+  @JsonProperty("endOffsetMinutes")
+  public Integer getEndOffsetMinutes() {
+    return endOffsetMinutes;
+  }
+  public void setEndOffsetMinutes(Integer endOffsetMinutes) {
+    this.endOffsetMinutes = endOffsetMinutes;
   }
 
 
@@ -217,6 +255,8 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     BuFullDayTimeOffMarker buFullDayTimeOffMarker = (BuFullDayTimeOffMarker) o;
 
     return Objects.equals(this.businessUnitDate, buFullDayTimeOffMarker.businessUnitDate) &&
+            Objects.equals(this.startOffsetMinutes, buFullDayTimeOffMarker.startOffsetMinutes) &&
+            Objects.equals(this.endOffsetMinutes, buFullDayTimeOffMarker.endOffsetMinutes) &&
             Objects.equals(this.lengthMinutes, buFullDayTimeOffMarker.lengthMinutes) &&
             Objects.equals(this.description, buFullDayTimeOffMarker.description) &&
             Objects.equals(this.activityCodeId, buFullDayTimeOffMarker.activityCodeId) &&
@@ -229,7 +269,7 @@ public class BuFullDayTimeOffMarker  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessUnitDate, lengthMinutes, description, activityCodeId, paid, payableMinutes, timeOffRequestId, timeOffRequestSyncVersion, delete);
+    return Objects.hash(businessUnitDate, startOffsetMinutes, endOffsetMinutes, lengthMinutes, description, activityCodeId, paid, payableMinutes, timeOffRequestId, timeOffRequestSyncVersion, delete);
   }
 
   @Override
@@ -238,6 +278,8 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     sb.append("class BuFullDayTimeOffMarker {\n");
     
     sb.append("    businessUnitDate: ").append(toIndentedString(businessUnitDate)).append("\n");
+    sb.append("    startOffsetMinutes: ").append(toIndentedString(startOffsetMinutes)).append("\n");
+    sb.append("    endOffsetMinutes: ").append(toIndentedString(endOffsetMinutes)).append("\n");
     sb.append("    lengthMinutes: ").append(toIndentedString(lengthMinutes)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");

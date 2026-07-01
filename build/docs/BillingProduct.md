@@ -21,13 +21,17 @@
 | CONVERSATION | &quot;Conversation&quot; | 
 | COURSE | &quot;Course&quot; | 
 | DAY | &quot;Day&quot; | 
+| EA | &quot;EA&quot; | 
 | EACH | &quot;Each&quot; | 
 | EMPLOYEE | &quot;Employee&quot; | 
 | ENGAGEMENT | &quot;Engagement&quot; | 
+| EVALUATION | &quot;Evaluation&quot; | 
 | EVENT | &quot;Event&quot; | 
 | EXAM | &quot;Exam&quot; | 
 | GB | &quot;GB&quot; | 
+| GUIDE | &quot;Guide&quot; | 
 | HOUR | &quot;Hour&quot; | 
+| INGESTION | &quot;Ingestion&quot; | 
 | INSTANCE | &quot;Instance&quot; | 
 | INTERACTION | &quot;Interaction&quot; | 
 | INVOCATION | &quot;Invocation&quot; | 
@@ -37,11 +41,14 @@
 | PERSON | &quot;Person&quot; | 
 | PHONENUMBER | &quot;PhoneNumber&quot; | 
 | PORT | &quot;Port&quot; | 
+| RATETABLE | &quot;RateTable&quot; | 
 | SEGMENT | &quot;Segment&quot; | 
 | SESSION | &quot;Session&quot; | 
 | STREAM | &quot;Stream&quot; | 
+| SUMMARY | &quot;Summary&quot; | 
 | TOKEN | &quot;Token&quot; | 
 | TRANSACTION | &quot;Transaction&quot; | 
+| TRANSLATION | &quot;Translation&quot; | 
 | TURN | &quot;Turn&quot; | 
 | UNIT | &quot;Unit&quot; | 
 | USER | &quot;User&quot; | 
@@ -49,4 +56,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

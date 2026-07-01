@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.BuActivitySettingsRequest;
 import com.mypurecloud.sdk.v2.model.BuNotificationSettingsRequest;
 import com.mypurecloud.sdk.v2.model.BuSchedulingSettingsRequest;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastingSettings;
@@ -83,6 +84,8 @@ public class CreateBusinessUnitSettingsRequest  implements Serializable {
   private BuShortTermForecastingSettings shortTermForecasting = null;
   private BuSchedulingSettingsRequest scheduling = null;
   private BuNotificationSettingsRequest notifications = null;
+  private BuActivitySettingsRequest learning = null;
+  private BuActivitySettingsRequest coaching = null;
 
   public CreateBusinessUnitSettingsRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -185,6 +188,42 @@ public class CreateBusinessUnitSettingsRequest  implements Serializable {
   }
 
 
+  /**
+   * Learning settings
+   **/
+  public CreateBusinessUnitSettingsRequest learning(BuActivitySettingsRequest learning) {
+    this.learning = learning;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Learning settings")
+  @JsonProperty("learning")
+  public BuActivitySettingsRequest getLearning() {
+    return learning;
+  }
+  public void setLearning(BuActivitySettingsRequest learning) {
+    this.learning = learning;
+  }
+
+
+  /**
+   * Coaching settings
+   **/
+  public CreateBusinessUnitSettingsRequest coaching(BuActivitySettingsRequest coaching) {
+    this.coaching = coaching;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Coaching settings")
+  @JsonProperty("coaching")
+  public BuActivitySettingsRequest getCoaching() {
+    return coaching;
+  }
+  public void setCoaching(BuActivitySettingsRequest coaching) {
+    this.coaching = coaching;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -199,12 +238,14 @@ public class CreateBusinessUnitSettingsRequest  implements Serializable {
             Objects.equals(this.timeZone, createBusinessUnitSettingsRequest.timeZone) &&
             Objects.equals(this.shortTermForecasting, createBusinessUnitSettingsRequest.shortTermForecasting) &&
             Objects.equals(this.scheduling, createBusinessUnitSettingsRequest.scheduling) &&
-            Objects.equals(this.notifications, createBusinessUnitSettingsRequest.notifications);
+            Objects.equals(this.notifications, createBusinessUnitSettingsRequest.notifications) &&
+            Objects.equals(this.learning, createBusinessUnitSettingsRequest.learning) &&
+            Objects.equals(this.coaching, createBusinessUnitSettingsRequest.coaching);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDayOfWeek, timeZone, shortTermForecasting, scheduling, notifications);
+    return Objects.hash(startDayOfWeek, timeZone, shortTermForecasting, scheduling, notifications, learning, coaching);
   }
 
   @Override
@@ -217,6 +258,8 @@ public class CreateBusinessUnitSettingsRequest  implements Serializable {
     sb.append("    shortTermForecasting: ").append(toIndentedString(shortTermForecasting)).append("\n");
     sb.append("    scheduling: ").append(toIndentedString(scheduling)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+    sb.append("    learning: ").append(toIndentedString(learning)).append("\n");
+    sb.append("    coaching: ").append(toIndentedString(coaching)).append("\n");
     sb.append("}");
     return sb.toString();
   }

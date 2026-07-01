@@ -182,6 +182,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsRequ
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsCharacteristicsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsLookupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesDivisionviewsRequest;
@@ -6704,6 +6705,81 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ArchitectJobStateResponse> response = (ApiResponse<ArchitectJobStateResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Look up flows by ID
+   * Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowEntityListing> getFlowsLookupAsync(GetFlowsLookupRequest request, final AsyncApiCallback<FlowEntityListing> callback) {
+    try {
+      final SettableFuture<FlowEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Look up flows by ID
+   * Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowEntityListing>> getFlowsLookupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowEntityListing> response = (ApiResponse<FlowEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowEntityListing> response = (ApiResponse<FlowEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

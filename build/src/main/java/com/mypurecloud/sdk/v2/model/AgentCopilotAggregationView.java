@@ -48,7 +48,8 @@ public class AgentCopilotAggregationView  implements Serializable {
     NKNOWLEDGEANSWERSUGGESTIONS("nKnowledgeAnswerSuggestions"),
     NKNOWLEDGEARTICLESUGGESTIONS("nKnowledgeArticleSuggestions"),
     NKNOWLEDGESEARCHSUGGESTIONS("nKnowledgeSearchSuggestions"),
-    NSCRIPTSUGGESTIONS("nScriptSuggestions");
+    NSCRIPTSUGGESTIONS("nScriptSuggestions"),
+    NDISTINCTCONVERSATIONS("nDistinctConversations");
 
     private String value;
 

@@ -86,7 +86,7 @@
 | ASSISTANTS | &quot;Assistants&quot; | 
 | ANOMALYDETECTION | &quot;AnomalyDetection&quot; | 
 | CONVERSATIONS | &quot;Conversations&quot; | 
-| COPILOT | &quot;Copilot&quot; | 
+| GENESYSCLOUDCOPILOT | &quot;GenesysCloudCopilot&quot; | 
 
 
 ## Enum: ActionEnum
@@ -495,6 +495,7 @@
 | RULECATEGORY | &quot;RuleCategory&quot; | 
 | DECISIONTABLE | &quot;DecisionTable&quot; | 
 | DECISIONTABLEVERSION | &quot;DecisionTableVersion&quot; | 
+| DECISIONTABLESNAPSHOT | &quot;DecisionTableSnapshot&quot; | 
 | DECISIONTABLEROW | &quot;DecisionTableRow&quot; | 
 | DECISIONTABLEIMPORTJOB | &quot;DecisionTableImportJob&quot; | 
 | DECISIONTABLEEXPORTJOB | &quot;DecisionTableExportJob&quot; | 
@@ -517,4 +518,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

@@ -48,7 +48,8 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     SMS("sms"),
     WHATSAPP("whatsapp"),
     OPEN("open"),
-    WEBMESSAGING("webmessaging");
+    WEBMESSAGING("webmessaging"),
+    APPLE("apple");
 
     private String value;
 
@@ -92,14 +93,14 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
   
   /**
-   * The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID
+   * The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp, Open and Apple messenger types use the provisioned integration’s ID. For WebMessaging use the DeploymentId
    **/
   public SendAgentlessOutboundMessageRequest fromAddress(String fromAddress) {
     this.fromAddress = fromAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID")
+  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp, Open and Apple messenger types use the provisioned integration’s ID. For WebMessaging use the DeploymentId")
   @JsonProperty("fromAddress")
   public String getFromAddress() {
     return fromAddress;
@@ -110,14 +111,14 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
 
   /**
-   * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555.
+   * The messaging address of the recipient of the message. For an Apple Invitation and SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555. For WebMessaging this cannot be used, instead use externalContactId
    **/
   public SendAgentlessOutboundMessageRequest toAddress(String toAddress) {
     this.toAddress = toAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555.")
+  @ApiModelProperty(example = "null", value = "The messaging address of the recipient of the message. For an Apple Invitation and SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555. For WebMessaging this cannot be used, instead use externalContactId")
   @JsonProperty("toAddress")
   public String getToAddress() {
     return toAddress;

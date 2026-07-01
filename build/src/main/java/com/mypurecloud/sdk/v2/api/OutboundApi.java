@@ -5364,7 +5364,7 @@ public class OutboundApi {
 
   /**
    * Query a list of contact lists.
-   * 
+   * Any ContactList field can be used as a query parameter to filter results. Multiple values can be specified for a field, and filter type prefixes can be used inline. Example: dateCreated=greaterthan:2025-01-01T00:00:00.000Z&dateCreated=lessthan:2027-01-01T00:00:00.000Z. See https://developer.genesys.cloud/routing/outbound/filter-type for available filter types.
    * @param includeImportStatus Include import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
@@ -5386,7 +5386,7 @@ public class OutboundApi {
 
   /**
    * Query a list of contact lists.
-   * 
+   * Any ContactList field can be used as a query parameter to filter results. Multiple values can be specified for a field, and filter type prefixes can be used inline. Example: dateCreated=greaterthan:2025-01-01T00:00:00.000Z&dateCreated=lessthan:2027-01-01T00:00:00.000Z. See https://developer.genesys.cloud/routing/outbound/filter-type for available filter types.
    * @param includeImportStatus Include import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
@@ -5434,7 +5434,7 @@ public class OutboundApi {
 
   /**
    * Query a list of contact lists.
-   * 
+   * Any ContactList field can be used as a query parameter to filter results. Multiple values can be specified for a field, and filter type prefixes can be used inline. Example: dateCreated=greaterthan:2025-01-01T00:00:00.000Z&dateCreated=lessthan:2027-01-01T00:00:00.000Z. See https://developer.genesys.cloud/routing/outbound/filter-type for available filter types.
    * @param request The request object
    * @return ContactListEntityListing
    * @throws ApiException if the request fails on the server
@@ -5453,7 +5453,7 @@ public class OutboundApi {
 
   /**
    * Query a list of contact lists.
-   * 
+   * Any ContactList field can be used as a query parameter to filter results. Multiple values can be specified for a field, and filter type prefixes can be used inline. Example: dateCreated=greaterthan:2025-01-01T00:00:00.000Z&dateCreated=lessthan:2027-01-01T00:00:00.000Z. See https://developer.genesys.cloud/routing/outbound/filter-type for available filter types.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

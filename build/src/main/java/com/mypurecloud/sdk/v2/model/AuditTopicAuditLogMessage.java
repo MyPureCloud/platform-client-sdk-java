@@ -116,7 +116,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ASSISTANTS("Assistants"),
     ANOMALYDETECTION("AnomalyDetection"),
     CONVERSATIONS("Conversations"),
-    COPILOT("Copilot");
+    GENESYSCLOUDCOPILOT("GenesysCloudCopilot");
 
     private String value;
 
@@ -606,6 +606,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     RULECATEGORY("RuleCategory"),
     DECISIONTABLE("DecisionTable"),
     DECISIONTABLEVERSION("DecisionTableVersion"),
+    DECISIONTABLESNAPSHOT("DecisionTableSnapshot"),
     DECISIONTABLEROW("DecisionTableRow"),
     DECISIONTABLEIMPORTJOB("DecisionTableImportJob"),
     DECISIONTABLEEXPORTJOB("DecisionTableExportJob"),

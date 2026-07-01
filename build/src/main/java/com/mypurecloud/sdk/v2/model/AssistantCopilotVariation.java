@@ -199,7 +199,7 @@ public class AssistantCopilotVariation  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Configuration that defines how to produce knowledge suggestions.")
+  @ApiModelProperty(example = "null", value = "Configuration that defines how to produce knowledge suggestions.")
   @JsonProperty("knowledgeSuggestionConfig")
   public KnowledgeSuggestionConfig getKnowledgeSuggestionConfig() {
     return knowledgeSuggestionConfig;

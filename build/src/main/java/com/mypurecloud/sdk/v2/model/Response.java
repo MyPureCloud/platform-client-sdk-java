@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AppleInvitation;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FooterTemplate;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
@@ -148,6 +149,7 @@ public class Response  implements Serializable {
   private MessagingTemplate messagingTemplate = null;
   private List<RmsAssetAddressableRef> assets = null;
   private FooterTemplate footer = null;
+  private AppleInvitation appleInvitation = null;
   private String selfUri = null;
 
   public Response() {
@@ -230,14 +232,14 @@ public class Response  implements Serializable {
 
 
   /**
-   * One or more texts associated with the response.
+   * One or more texts associated with the response. Required for responseTypes: Standard, Footer, MessagingTemplate and CampaignEmailTemplate
    **/
   public Response texts(List<ResponseText> texts) {
     this.texts = texts;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "One or more texts associated with the response.")
+  @ApiModelProperty(example = "null", value = "One or more texts associated with the response. Required for responseTypes: Standard, Footer, MessagingTemplate and CampaignEmailTemplate")
   @JsonProperty("texts")
   public List<ResponseText> getTexts() {
     return texts;
@@ -387,6 +389,24 @@ public class Response  implements Serializable {
   }
 
 
+  /**
+   * Apple Messages for Business invitation template definition for responseType.AppleInvitation.
+   **/
+  public Response appleInvitation(AppleInvitation appleInvitation) {
+    this.appleInvitation = appleInvitation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Apple Messages for Business invitation template definition for responseType.AppleInvitation.")
+  @JsonProperty("appleInvitation")
+  public AppleInvitation getAppleInvitation() {
+    return appleInvitation;
+  }
+  public void setAppleInvitation(AppleInvitation appleInvitation) {
+    this.appleInvitation = appleInvitation;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -418,12 +438,13 @@ public class Response  implements Serializable {
             Objects.equals(this.messagingTemplate, response.messagingTemplate) &&
             Objects.equals(this.assets, response.assets) &&
             Objects.equals(this.footer, response.footer) &&
+            Objects.equals(this.appleInvitation, response.appleInvitation) &&
             Objects.equals(this.selfUri, response.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, responseType, messagingTemplate, assets, footer, selfUri);
+    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, responseType, messagingTemplate, assets, footer, appleInvitation, selfUri);
   }
 
   @Override
@@ -445,6 +466,7 @@ public class Response  implements Serializable {
     sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("    assets: ").append(toIndentedString(assets)).append("\n");
     sb.append("    footer: ").append(toIndentedString(footer)).append("\n");
+    sb.append("    appleInvitation: ").append(toIndentedString(appleInvitation)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

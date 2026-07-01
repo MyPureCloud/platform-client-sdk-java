@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ListWrapperInteger;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -80,6 +81,8 @@ public class AdminTimeOffRequestPatch  implements Serializable {
   private Boolean paid = null;
   private String notes = null;
   private List<String> fullDayManagementUnitDates = null;
+  private ListWrapperInteger fullDayEarliestStartOffsetMinutes = null;
+  private ListWrapperInteger fullDayLatestEndOffsetMinutes = null;
   private List<Date> partialDayStartDateTimes = null;
   private Integer dailyDurationMinutes = null;
   private List<Integer> durationMinutes = null;
@@ -196,6 +199,42 @@ public class AdminTimeOffRequestPatch  implements Serializable {
 
 
   /**
+   * Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+   **/
+  public AdminTimeOffRequestPatch fullDayEarliestStartOffsetMinutes(ListWrapperInteger fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @JsonProperty("fullDayEarliestStartOffsetMinutes")
+  public ListWrapperInteger getFullDayEarliestStartOffsetMinutes() {
+    return fullDayEarliestStartOffsetMinutes;
+  }
+  public void setFullDayEarliestStartOffsetMinutes(ListWrapperInteger fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+  }
+
+
+  /**
+   * Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+   **/
+  public AdminTimeOffRequestPatch fullDayLatestEndOffsetMinutes(ListWrapperInteger fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @JsonProperty("fullDayLatestEndOffsetMinutes")
+  public ListWrapperInteger getFullDayLatestEndOffsetMinutes() {
+    return fullDayLatestEndOffsetMinutes;
+  }
+  public void setFullDayLatestEndOffsetMinutes(ListWrapperInteger fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
+  }
+
+
+  /**
    * A set of start date-times in ISO-8601 format for partial day requests
    **/
   public AdminTimeOffRequestPatch partialDayStartDateTimes(List<Date> partialDayStartDateTimes) {
@@ -300,6 +339,8 @@ public class AdminTimeOffRequestPatch  implements Serializable {
             Objects.equals(this.paid, adminTimeOffRequestPatch.paid) &&
             Objects.equals(this.notes, adminTimeOffRequestPatch.notes) &&
             Objects.equals(this.fullDayManagementUnitDates, adminTimeOffRequestPatch.fullDayManagementUnitDates) &&
+            Objects.equals(this.fullDayEarliestStartOffsetMinutes, adminTimeOffRequestPatch.fullDayEarliestStartOffsetMinutes) &&
+            Objects.equals(this.fullDayLatestEndOffsetMinutes, adminTimeOffRequestPatch.fullDayLatestEndOffsetMinutes) &&
             Objects.equals(this.partialDayStartDateTimes, adminTimeOffRequestPatch.partialDayStartDateTimes) &&
             Objects.equals(this.dailyDurationMinutes, adminTimeOffRequestPatch.dailyDurationMinutes) &&
             Objects.equals(this.durationMinutes, adminTimeOffRequestPatch.durationMinutes) &&
@@ -309,7 +350,7 @@ public class AdminTimeOffRequestPatch  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, activityCodeId, paid, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes, metadata);
+    return Objects.hash(status, activityCodeId, paid, notes, fullDayManagementUnitDates, fullDayEarliestStartOffsetMinutes, fullDayLatestEndOffsetMinutes, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes, metadata);
   }
 
   @Override
@@ -322,6 +363,8 @@ public class AdminTimeOffRequestPatch  implements Serializable {
     sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
+    sb.append("    fullDayEarliestStartOffsetMinutes: ").append(toIndentedString(fullDayEarliestStartOffsetMinutes)).append("\n");
+    sb.append("    fullDayLatestEndOffsetMinutes: ").append(toIndentedString(fullDayLatestEndOffsetMinutes)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");

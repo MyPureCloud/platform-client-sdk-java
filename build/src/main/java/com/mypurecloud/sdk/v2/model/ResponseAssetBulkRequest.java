@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,6 +26,55 @@ import java.io.Serializable;
 public class ResponseAssetBulkRequest  implements Serializable {
   
   private List<String> assetIds = null;
+  private String sortBy = null;
+
+  private static class SortOrderEnumDeserializer extends StdDeserializer<SortOrderEnum> {
+    public SortOrderEnumDeserializer() {
+      super(SortOrderEnumDeserializer.class);
+    }
+
+    @Override
+    public SortOrderEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SortOrderEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The sort order for results
+   */
+ @JsonDeserialize(using = SortOrderEnumDeserializer.class)
+  public enum SortOrderEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASC("asc"),
+    DESC("desc");
+
+    private String value;
+
+    SortOrderEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SortOrderEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SortOrderEnum value : SortOrderEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SortOrderEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SortOrderEnum sortOrder = null;
 
   public ResponseAssetBulkRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -57,6 +107,42 @@ public class ResponseAssetBulkRequest  implements Serializable {
   }
 
 
+  /**
+   * The field in the resource that you want to sort the results by. Allowed values: name, dateCreated, dateModified, contentLength
+   **/
+  public ResponseAssetBulkRequest sortBy(String sortBy) {
+    this.sortBy = sortBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The field in the resource that you want to sort the results by. Allowed values: name, dateCreated, dateModified, contentLength")
+  @JsonProperty("sortBy")
+  public String getSortBy() {
+    return sortBy;
+  }
+  public void setSortBy(String sortBy) {
+    this.sortBy = sortBy;
+  }
+
+
+  /**
+   * The sort order for results
+   **/
+  public ResponseAssetBulkRequest sortOrder(SortOrderEnum sortOrder) {
+    this.sortOrder = sortOrder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The sort order for results")
+  @JsonProperty("sortOrder")
+  public SortOrderEnum getSortOrder() {
+    return sortOrder;
+  }
+  public void setSortOrder(SortOrderEnum sortOrder) {
+    this.sortOrder = sortOrder;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -67,12 +153,14 @@ public class ResponseAssetBulkRequest  implements Serializable {
     }
     ResponseAssetBulkRequest responseAssetBulkRequest = (ResponseAssetBulkRequest) o;
 
-    return Objects.equals(this.assetIds, responseAssetBulkRequest.assetIds);
+    return Objects.equals(this.assetIds, responseAssetBulkRequest.assetIds) &&
+            Objects.equals(this.sortBy, responseAssetBulkRequest.sortBy) &&
+            Objects.equals(this.sortOrder, responseAssetBulkRequest.sortOrder);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetIds);
+    return Objects.hash(assetIds, sortBy, sortOrder);
   }
 
   @Override
@@ -81,6 +169,8 @@ public class ResponseAssetBulkRequest  implements Serializable {
     sb.append("class ResponseAssetBulkRequest {\n");
     
     sb.append("    assetIds: ").append(toIndentedString(assetIds)).append("\n");
+    sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
+    sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
     sb.append("}");
     return sb.toString();
   }

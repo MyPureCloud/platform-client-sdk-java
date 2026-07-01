@@ -179,6 +179,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsRequ
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsCharacteristicsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsLookupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesDivisionviewsRequest;
@@ -7821,6 +7822,100 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ArchitectJobStateResponse> response = (ApiResponse<ArchitectJobStateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Look up flows by ID
+   * Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+   * @param id Flow ID(s) (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @return FlowEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowEntityListing getFlowsLookup(List<String> id, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getFlowsLookup(createGetFlowsLookupRequest(id, pageNumber, pageSize, sortBy, sortOrder));
+  }
+
+  /**
+   * Look up flows by ID
+   * Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+   * @param id Flow ID(s) (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @return FlowEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowEntityListing> getFlowsLookupWithHttpInfo(List<String> id, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
+    return getFlowsLookup(createGetFlowsLookupRequest(id, pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetFlowsLookupRequest createGetFlowsLookupRequest(List<String> id, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+    return GetFlowsLookupRequest.builder()
+            .withId(id)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .build();
+  }
+
+  /**
+   * Look up flows by ID
+   * Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+   * @param request The request object
+   * @return FlowEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowEntityListing getFlowsLookup(GetFlowsLookupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Look up flows by ID
+   * Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowEntityListing> getFlowsLookup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowEntityListing> response = (ApiResponse<FlowEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowEntityListing> response = (ApiResponse<FlowEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -774,7 +774,7 @@ try {
 # **getLearningModules**
 
 
-> [LearningModuleList](LearningModuleList) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds)
+> [LearningModuleList](LearningModuleList) getLearningModules(types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, statuses, externalIds)
 
 Get all learning modules of an organization
 
@@ -806,7 +806,6 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 LearningApi apiInstance = new LearningApi();
-Boolean isArchived = false; // Boolean | Archive status
 List<String> types = Arrays.asList(null); // List<String> | Specifies the module types. Informational, AssessedContent and Assessment are deprecated
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
@@ -814,11 +813,10 @@ String sortOrder = "ascending"; // String | Sort order
 String sortBy = "name"; // String | Sort by
 String searchTerm = "searchTerm_example"; // String | Search Term (searchable by name)
 List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)
-String isPublished = "Any"; // String | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
 List<String> statuses = Arrays.asList(null); // List<String> | Specifies the module statuses to filter by
 List<String> externalIds = Arrays.asList(null); // List<String> | Specifies the module external IDs to filter by. Only one ID is allowed
 try {
-    LearningModuleList result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds);
+    LearningModuleList result = apiInstance.getLearningModules(types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, statuses, externalIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#getLearningModules");
@@ -831,7 +829,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **isArchived** | **Boolean**| Archive status | [optional] [default to false] 
 | **types** | [**List&lt;String&gt;**](String)| Specifies the module types. Informational, AssessedContent and Assessment are deprecated | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External, Native 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
@@ -839,7 +836,6 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, createddate, percentpassed, averagescore 
 | **searchTerm** | **String**| Search Term (searchable by name) | [optional] 
 | **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: rule, summaryData 
-| **isPublished** | **String**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
 | **statuses** | [**List&lt;String&gt;**](String)| Specifies the module statuses to filter by | [optional]<br />**Values**: Unpublished, Published, Archived 
 | **externalIds** | [**List&lt;String&gt;**](String)| Specifies the module external IDs to filter by. Only one ID is allowed | [optional] 
 {: class="table-striped"}
@@ -2446,4 +2442,4 @@ try {
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

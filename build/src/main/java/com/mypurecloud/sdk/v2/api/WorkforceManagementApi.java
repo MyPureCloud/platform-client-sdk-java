@@ -124,6 +124,7 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingGroupAllocationsResponse;
@@ -396,6 +397,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlte
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanForecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest;
@@ -4500,6 +4502,92 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a capacity plan's forecast inputs
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param granularity Granularity to access capacity plan forecast data, defaults to weekly (optional)
+   * @return CapacityPlanForecastInputsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanForecastInputsResponse getWorkforcemanagementBusinessunitCapacityplanForecast(String businessUnitId, String capacityPlanId, String granularity) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitCapacityplanForecast(createGetWorkforcemanagementBusinessunitCapacityplanForecastRequest(businessUnitId, capacityPlanId, granularity));
+  }
+
+  /**
+   * Get a capacity plan's forecast inputs
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param granularity Granularity to access capacity plan forecast data, defaults to weekly (optional)
+   * @return CapacityPlanForecastInputsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanForecastInputsResponse> getWorkforcemanagementBusinessunitCapacityplanForecastWithHttpInfo(String businessUnitId, String capacityPlanId, String granularity) throws IOException {
+    return getWorkforcemanagementBusinessunitCapacityplanForecast(createGetWorkforcemanagementBusinessunitCapacityplanForecastRequest(businessUnitId, capacityPlanId, granularity).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitCapacityplanForecastRequest createGetWorkforcemanagementBusinessunitCapacityplanForecastRequest(String businessUnitId, String capacityPlanId, String granularity) {
+    return GetWorkforcemanagementBusinessunitCapacityplanForecastRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .withGranularity(granularity)
+
+            .build();
+  }
+
+  /**
+   * Get a capacity plan's forecast inputs
+   * 
+   * @param request The request object
+   * @return CapacityPlanForecastInputsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanForecastInputsResponse getWorkforcemanagementBusinessunitCapacityplanForecast(GetWorkforcemanagementBusinessunitCapacityplanForecastRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanForecastInputsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanForecastInputsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a capacity plan's forecast inputs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanForecastInputsResponse> getWorkforcemanagementBusinessunitCapacityplanForecast(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanForecastInputsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanForecastInputsResponse> response = (ApiResponse<CapacityPlanForecastInputsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanForecastInputsResponse> response = (ApiResponse<CapacityPlanForecastInputsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -28,8 +28,9 @@
 | WHATSAPP | &quot;whatsapp&quot; | 
 | OPEN | &quot;open&quot; | 
 | WEBMESSAGING | &quot;webmessaging&quot; | 
+| APPLE | &quot;apple&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

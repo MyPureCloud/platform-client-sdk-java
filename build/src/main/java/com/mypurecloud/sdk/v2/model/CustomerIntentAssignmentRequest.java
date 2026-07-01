@@ -46,6 +46,7 @@ public class CustomerIntentAssignmentRequest  implements Serializable {
   public enum SourceTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("Bot"),
+    CASE("Case"),
     COPILOT("Copilot"),
     DIGITALBOT("Digitalbot"),
     SEGMENT("Segment"),

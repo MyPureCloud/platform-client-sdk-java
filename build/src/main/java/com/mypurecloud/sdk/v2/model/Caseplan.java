@@ -119,7 +119,7 @@ public class Caseplan  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The name of the Caseplan.")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the Caseplan.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -130,14 +130,14 @@ public class Caseplan  implements Serializable {
 
 
   /**
-   * The division to which this entity belongs.
+   * The division to which this Caseplan belongs.
    **/
   public Caseplan division(StarrableDivision division) {
     this.division = division;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @ApiModelProperty(example = "null", required = true, value = "The division to which this Caseplan belongs.")
   @JsonProperty("division")
   public StarrableDivision getDivision() {
     return division;
@@ -173,7 +173,7 @@ public class Caseplan  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The prefix used when creating the reference for Cases from the Caseplan.")
+  @ApiModelProperty(example = "null", required = true, value = "The prefix used when creating the reference for Cases from the Caseplan.")
   @JsonProperty("referencePrefix")
   public String getReferencePrefix() {
     return referencePrefix;
@@ -191,7 +191,7 @@ public class Caseplan  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The default due duration in seconds for Cases created from the Caseplan.")
+  @ApiModelProperty(example = "null", required = true, value = "The default due duration in seconds for Cases created from the Caseplan.")
   @JsonProperty("defaultDueDurationInSeconds")
   public Integer getDefaultDueDurationInSeconds() {
     return defaultDueDurationInSeconds;
@@ -209,7 +209,7 @@ public class Caseplan  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The default TTL in seconds for Cases created from the Caseplan.")
+  @ApiModelProperty(example = "null", required = true, value = "The default TTL in seconds for Cases created from the Caseplan.")
   @JsonProperty("defaultTtlSeconds")
   public Integer getDefaultTtlSeconds() {
     return defaultTtlSeconds;
@@ -245,7 +245,7 @@ public class Caseplan  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The latest version of the Caseplan.")
+  @ApiModelProperty(example = "null", required = true, value = "The latest version of the Caseplan.")
   @JsonProperty("latest")
   public Integer getLatest() {
     return latest;
@@ -281,7 +281,7 @@ public class Caseplan  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The Caseplan creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "The Caseplan creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -299,7 +299,7 @@ public class Caseplan  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The Caseplan modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "The Caseplan modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -335,7 +335,7 @@ public class Caseplan  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the User who modified the Caseplan.")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the User who modified the Caseplan.")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
@@ -353,7 +353,7 @@ public class Caseplan  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The customer intent for Cases created from this Caseplan.")
+  @ApiModelProperty(example = "null", required = true, value = "The customer intent for Cases created from this Caseplan.")
   @JsonProperty("customerIntent")
   public CustomerIntentReference getCustomerIntent() {
     return customerIntent;

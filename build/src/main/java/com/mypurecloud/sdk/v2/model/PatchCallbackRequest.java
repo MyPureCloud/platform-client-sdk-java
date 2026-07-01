@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -32,6 +33,55 @@ public class PatchCallbackRequest  implements Serializable {
   private String countryCode = null;
   private List<String> callbackNumbers = null;
   private Boolean validateCallbackNumbers = null;
+
+  private static class CustomerFirstCallbackDeliveryModeEnumDeserializer extends StdDeserializer<CustomerFirstCallbackDeliveryModeEnum> {
+    public CustomerFirstCallbackDeliveryModeEnumDeserializer() {
+      super(CustomerFirstCallbackDeliveryModeEnumDeserializer.class);
+    }
+
+    @Override
+    public CustomerFirstCallbackDeliveryModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CustomerFirstCallbackDeliveryModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration.
+   */
+ @JsonDeserialize(using = CustomerFirstCallbackDeliveryModeEnumDeserializer.class)
+  public enum CustomerFirstCallbackDeliveryModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    USEQUEUESETTING("UseQueueSetting"),
+    USEAGENTRESERVATION("UseAgentReservation"),
+    NOAGENTRESERVATION("NoAgentReservation");
+
+    private String value;
+
+    CustomerFirstCallbackDeliveryModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CustomerFirstCallbackDeliveryModeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CustomerFirstCallbackDeliveryModeEnum value : CustomerFirstCallbackDeliveryModeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CustomerFirstCallbackDeliveryModeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CustomerFirstCallbackDeliveryModeEnum customerFirstCallbackDeliveryMode = null;
 
   public PatchCallbackRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -172,6 +222,24 @@ public class PatchCallbackRequest  implements Serializable {
   }
 
 
+  /**
+   * How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration.
+   **/
+  public PatchCallbackRequest customerFirstCallbackDeliveryMode(CustomerFirstCallbackDeliveryModeEnum customerFirstCallbackDeliveryMode) {
+    this.customerFirstCallbackDeliveryMode = customerFirstCallbackDeliveryMode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration.")
+  @JsonProperty("customerFirstCallbackDeliveryMode")
+  public CustomerFirstCallbackDeliveryModeEnum getCustomerFirstCallbackDeliveryMode() {
+    return customerFirstCallbackDeliveryMode;
+  }
+  public void setCustomerFirstCallbackDeliveryMode(CustomerFirstCallbackDeliveryModeEnum customerFirstCallbackDeliveryMode) {
+    this.customerFirstCallbackDeliveryMode = customerFirstCallbackDeliveryMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -188,12 +256,13 @@ public class PatchCallbackRequest  implements Serializable {
             Objects.equals(this.callbackScheduledTime, patchCallbackRequest.callbackScheduledTime) &&
             Objects.equals(this.countryCode, patchCallbackRequest.countryCode) &&
             Objects.equals(this.callbackNumbers, patchCallbackRequest.callbackNumbers) &&
-            Objects.equals(this.validateCallbackNumbers, patchCallbackRequest.validateCallbackNumbers);
+            Objects.equals(this.validateCallbackNumbers, patchCallbackRequest.validateCallbackNumbers) &&
+            Objects.equals(this.customerFirstCallbackDeliveryMode, patchCallbackRequest.customerFirstCallbackDeliveryMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, agentId, callbackScheduledTime, countryCode, callbackNumbers, validateCallbackNumbers);
+    return Objects.hash(conversationId, queueId, agentId, callbackScheduledTime, countryCode, callbackNumbers, validateCallbackNumbers, customerFirstCallbackDeliveryMode);
   }
 
   @Override
@@ -208,6 +277,7 @@ public class PatchCallbackRequest  implements Serializable {
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    validateCallbackNumbers: ").append(toIndentedString(validateCallbackNumbers)).append("\n");
+    sb.append("    customerFirstCallbackDeliveryMode: ").append(toIndentedString(customerFirstCallbackDeliveryMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

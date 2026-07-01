@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **changes** | [**List&lt;ContactsPatchChange&gt;**](ContactsPatchChange) | A list of changes to apply to the provided contact entity |  [optional] |
+| **changes** | [**List&lt;ContactsPatchChange&gt;**](ContactsPatchChange) | A list of changes to apply to the provided entity |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

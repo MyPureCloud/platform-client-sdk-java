@@ -4014,6 +4014,8 @@ try {
 
 Query a list of contact lists.
 
+Any ContactList field can be used as a query parameter to filter results. Multiple values can be specified for a field, and filter type prefixes can be used inline. Example: dateCreated=greaterthan:2025-01-01T00:00:00.000Z&dateCreated=lessthan:2027-01-01T00:00:00.000Z. See https://developer.genesys.cloud/routing/outbound/filter-type for available filter types.
+
 Wraps GET /api/v2/outbound/contactlists  
 
 Requires ANY permissions: 
@@ -11083,4 +11085,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:256.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:257.0.0_

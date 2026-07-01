@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.BuActivitySettingsRequest;
 import com.mypurecloud.sdk.v2.model.BuNotificationSettingsRequest;
 import com.mypurecloud.sdk.v2.model.BuSchedulingSettingsRequest;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastingSettings;
@@ -84,6 +85,8 @@ public class UpdateBusinessUnitSettingsRequest  implements Serializable {
   private BuShortTermForecastingSettings shortTermForecasting = null;
   private BuSchedulingSettingsRequest scheduling = null;
   private BuNotificationSettingsRequest notifications = null;
+  private BuActivitySettingsRequest learning = null;
+  private BuActivitySettingsRequest coaching = null;
   private WfmVersionedEntityMetadata metadata = null;
 
   public UpdateBusinessUnitSettingsRequest() {
@@ -166,6 +169,42 @@ public class UpdateBusinessUnitSettingsRequest  implements Serializable {
 
 
   /**
+   * Learning settings
+   **/
+  public UpdateBusinessUnitSettingsRequest learning(BuActivitySettingsRequest learning) {
+    this.learning = learning;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Learning settings")
+  @JsonProperty("learning")
+  public BuActivitySettingsRequest getLearning() {
+    return learning;
+  }
+  public void setLearning(BuActivitySettingsRequest learning) {
+    this.learning = learning;
+  }
+
+
+  /**
+   * Coaching settings
+   **/
+  public UpdateBusinessUnitSettingsRequest coaching(BuActivitySettingsRequest coaching) {
+    this.coaching = coaching;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Coaching settings")
+  @JsonProperty("coaching")
+  public BuActivitySettingsRequest getCoaching() {
+    return coaching;
+  }
+  public void setCoaching(BuActivitySettingsRequest coaching) {
+    this.coaching = coaching;
+  }
+
+
+  /**
    * Version metadata for this business unit
    **/
   public UpdateBusinessUnitSettingsRequest metadata(WfmVersionedEntityMetadata metadata) {
@@ -198,12 +237,14 @@ public class UpdateBusinessUnitSettingsRequest  implements Serializable {
             Objects.equals(this.shortTermForecasting, updateBusinessUnitSettingsRequest.shortTermForecasting) &&
             Objects.equals(this.scheduling, updateBusinessUnitSettingsRequest.scheduling) &&
             Objects.equals(this.notifications, updateBusinessUnitSettingsRequest.notifications) &&
+            Objects.equals(this.learning, updateBusinessUnitSettingsRequest.learning) &&
+            Objects.equals(this.coaching, updateBusinessUnitSettingsRequest.coaching) &&
             Objects.equals(this.metadata, updateBusinessUnitSettingsRequest.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDayOfWeek, timeZone, shortTermForecasting, scheduling, notifications, metadata);
+    return Objects.hash(startDayOfWeek, timeZone, shortTermForecasting, scheduling, notifications, learning, coaching, metadata);
   }
 
   @Override
@@ -216,6 +257,8 @@ public class UpdateBusinessUnitSettingsRequest  implements Serializable {
     sb.append("    shortTermForecasting: ").append(toIndentedString(shortTermForecasting)).append("\n");
     sb.append("    scheduling: ").append(toIndentedString(scheduling)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+    sb.append("    learning: ").append(toIndentedString(learning)).append("\n");
+    sb.append("    coaching: ").append(toIndentedString(coaching)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

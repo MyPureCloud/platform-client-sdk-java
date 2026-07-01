@@ -13,9 +13,12 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationInsight;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -124,18 +127,23 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
   private String language = null;
+  private String summaryId = null;
+  private String agentId = null;
   private String sourceId = null;
   private String summary = null;
   private Boolean generated = null;
   private Date dateCreated = null;
+  private List<ConversationInsight> insights = null;
 
   public SpeechTextAnalyticsConversationSummary() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      insights = new ArrayList<ConversationInsight>();
     }
   }
 
   public SpeechTextAnalyticsConversationSummary(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      insights = new ArrayList<ConversationInsight>();
     }
   }
 
@@ -191,6 +199,42 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
   }
   public void setLanguage(String language) {
     this.language = language;
+  }
+
+
+  /**
+   * The id of the summary
+   **/
+  public SpeechTextAnalyticsConversationSummary summaryId(String summaryId) {
+    this.summaryId = summaryId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the summary")
+  @JsonProperty("summaryId")
+  public String getSummaryId() {
+    return summaryId;
+  }
+  public void setSummaryId(String summaryId) {
+    this.summaryId = summaryId;
+  }
+
+
+  /**
+   * The id of the agent associated with the summary
+   **/
+  public SpeechTextAnalyticsConversationSummary agentId(String agentId) {
+    this.agentId = agentId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the agent associated with the summary")
+  @JsonProperty("agentId")
+  public String getAgentId() {
+    return agentId;
+  }
+  public void setAgentId(String agentId) {
+    this.agentId = agentId;
   }
 
 
@@ -266,6 +310,24 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
   }
 
 
+  /**
+   * Insights of the conversation
+   **/
+  public SpeechTextAnalyticsConversationSummary insights(List<ConversationInsight> insights) {
+    this.insights = insights;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Insights of the conversation")
+  @JsonProperty("insights")
+  public List<ConversationInsight> getInsights() {
+    return insights;
+  }
+  public void setInsights(List<ConversationInsight> insights) {
+    this.insights = insights;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -279,15 +341,18 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
     return Objects.equals(this.summaryType, speechTextAnalyticsConversationSummary.summaryType) &&
             Objects.equals(this.mediaType, speechTextAnalyticsConversationSummary.mediaType) &&
             Objects.equals(this.language, speechTextAnalyticsConversationSummary.language) &&
+            Objects.equals(this.summaryId, speechTextAnalyticsConversationSummary.summaryId) &&
+            Objects.equals(this.agentId, speechTextAnalyticsConversationSummary.agentId) &&
             Objects.equals(this.sourceId, speechTextAnalyticsConversationSummary.sourceId) &&
             Objects.equals(this.summary, speechTextAnalyticsConversationSummary.summary) &&
             Objects.equals(this.generated, speechTextAnalyticsConversationSummary.generated) &&
-            Objects.equals(this.dateCreated, speechTextAnalyticsConversationSummary.dateCreated);
+            Objects.equals(this.dateCreated, speechTextAnalyticsConversationSummary.dateCreated) &&
+            Objects.equals(this.insights, speechTextAnalyticsConversationSummary.insights);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(summaryType, mediaType, language, sourceId, summary, generated, dateCreated);
+    return Objects.hash(summaryType, mediaType, language, summaryId, agentId, sourceId, summary, generated, dateCreated, insights);
   }
 
   @Override
@@ -298,10 +363,13 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
     sb.append("    summaryType: ").append(toIndentedString(summaryType)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    summaryId: ").append(toIndentedString(summaryId)).append("\n");
+    sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
     sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    generated: ").append(toIndentedString(generated)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    insights: ").append(toIndentedString(insights)).append("\n");
     sb.append("}");
     return sb.toString();
   }

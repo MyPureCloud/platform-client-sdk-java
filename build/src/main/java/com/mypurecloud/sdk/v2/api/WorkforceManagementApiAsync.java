@@ -127,6 +127,7 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingGroupAllocationsResponse;
@@ -399,6 +400,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlte
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanForecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest;
@@ -4285,6 +4287,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a capacity plan's forecast inputs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CapacityPlanForecastInputsResponse> getWorkforcemanagementBusinessunitCapacityplanForecastAsync(GetWorkforcemanagementBusinessunitCapacityplanForecastRequest request, final AsyncApiCallback<CapacityPlanForecastInputsResponse> callback) {
+    try {
+      final SettableFuture<CapacityPlanForecastInputsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CapacityPlanForecastInputsResponse>() {}, new AsyncApiCallback<ApiResponse<CapacityPlanForecastInputsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CapacityPlanForecastInputsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a capacity plan's forecast inputs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CapacityPlanForecastInputsResponse>> getWorkforcemanagementBusinessunitCapacityplanForecastAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CapacityPlanForecastInputsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CapacityPlanForecastInputsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CapacityPlanForecastInputsResponse>() {}, new AsyncApiCallback<ApiResponse<CapacityPlanForecastInputsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CapacityPlanForecastInputsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CapacityPlanForecastInputsResponse> response = (ApiResponse<CapacityPlanForecastInputsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CapacityPlanForecastInputsResponse> response = (ApiResponse<CapacityPlanForecastInputsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

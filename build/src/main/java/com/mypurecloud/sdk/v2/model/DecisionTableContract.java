@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.BusinessRulesParentSchemaRef;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class DecisionTableContract  implements Serializable {
   
-  private DomainEntityRef parentSchema = null;
+  private BusinessRulesParentSchemaRef parentSchema = null;
   private JsonSchemaDocument rowAuthoringSchema = null;
   private JsonSchemaDocument executionInputSchema = null;
   private JsonSchemaDocument executionOutputSchema = null;
@@ -43,17 +43,17 @@ public class DecisionTableContract  implements Serializable {
   /**
    * DSS schema entity defining source properties for the decision table contract schemas
    **/
-  public DecisionTableContract parentSchema(DomainEntityRef parentSchema) {
+  public DecisionTableContract parentSchema(BusinessRulesParentSchemaRef parentSchema) {
     this.parentSchema = parentSchema;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "DSS schema entity defining source properties for the decision table contract schemas")
   @JsonProperty("parentSchema")
-  public DomainEntityRef getParentSchema() {
+  public BusinessRulesParentSchemaRef getParentSchema() {
     return parentSchema;
   }
-  public void setParentSchema(DomainEntityRef parentSchema) {
+  public void setParentSchema(BusinessRulesParentSchemaRef parentSchema) {
     this.parentSchema = parentSchema;
   }
 

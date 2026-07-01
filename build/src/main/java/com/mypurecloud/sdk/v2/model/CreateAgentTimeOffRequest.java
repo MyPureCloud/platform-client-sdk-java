@@ -28,6 +28,8 @@ public class CreateAgentTimeOffRequest  implements Serializable {
   private String activityCodeId = null;
   private String notes = null;
   private List<String> fullDayManagementUnitDates = null;
+  private List<Integer> fullDayEarliestStartOffsetMinutes = null;
+  private List<Integer> fullDayLatestEndOffsetMinutes = null;
   private List<Date> partialDayStartDateTimes = null;
   private Integer dailyDurationMinutes = null;
   private List<Integer> durationMinutes = null;
@@ -36,6 +38,8 @@ public class CreateAgentTimeOffRequest  implements Serializable {
   public CreateAgentTimeOffRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       fullDayManagementUnitDates = new ArrayList<String>();
+      fullDayEarliestStartOffsetMinutes = new ArrayList<Integer>();
+      fullDayLatestEndOffsetMinutes = new ArrayList<Integer>();
       partialDayStartDateTimes = new ArrayList<Date>();
       durationMinutes = new ArrayList<Integer>();
       payableMinutes = new ArrayList<Integer>();
@@ -45,6 +49,8 @@ public class CreateAgentTimeOffRequest  implements Serializable {
   public CreateAgentTimeOffRequest(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       fullDayManagementUnitDates = new ArrayList<String>();
+      fullDayEarliestStartOffsetMinutes = new ArrayList<Integer>();
+      fullDayLatestEndOffsetMinutes = new ArrayList<Integer>();
       partialDayStartDateTimes = new ArrayList<Date>();
       durationMinutes = new ArrayList<Integer>();
       payableMinutes = new ArrayList<Integer>();
@@ -103,6 +109,42 @@ public class CreateAgentTimeOffRequest  implements Serializable {
   }
   public void setFullDayManagementUnitDates(List<String> fullDayManagementUnitDates) {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
+  }
+
+
+  /**
+   * Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+   **/
+  public CreateAgentTimeOffRequest fullDayEarliestStartOffsetMinutes(List<Integer> fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @JsonProperty("fullDayEarliestStartOffsetMinutes")
+  public List<Integer> getFullDayEarliestStartOffsetMinutes() {
+    return fullDayEarliestStartOffsetMinutes;
+  }
+  public void setFullDayEarliestStartOffsetMinutes(List<Integer> fullDayEarliestStartOffsetMinutes) {
+    this.fullDayEarliestStartOffsetMinutes = fullDayEarliestStartOffsetMinutes;
+  }
+
+
+  /**
+   * Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+   **/
+  public CreateAgentTimeOffRequest fullDayLatestEndOffsetMinutes(List<Integer> fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @JsonProperty("fullDayLatestEndOffsetMinutes")
+  public List<Integer> getFullDayLatestEndOffsetMinutes() {
+    return fullDayLatestEndOffsetMinutes;
+  }
+  public void setFullDayLatestEndOffsetMinutes(List<Integer> fullDayLatestEndOffsetMinutes) {
+    this.fullDayLatestEndOffsetMinutes = fullDayLatestEndOffsetMinutes;
   }
 
 
@@ -191,6 +233,8 @@ public class CreateAgentTimeOffRequest  implements Serializable {
     return Objects.equals(this.activityCodeId, createAgentTimeOffRequest.activityCodeId) &&
             Objects.equals(this.notes, createAgentTimeOffRequest.notes) &&
             Objects.equals(this.fullDayManagementUnitDates, createAgentTimeOffRequest.fullDayManagementUnitDates) &&
+            Objects.equals(this.fullDayEarliestStartOffsetMinutes, createAgentTimeOffRequest.fullDayEarliestStartOffsetMinutes) &&
+            Objects.equals(this.fullDayLatestEndOffsetMinutes, createAgentTimeOffRequest.fullDayLatestEndOffsetMinutes) &&
             Objects.equals(this.partialDayStartDateTimes, createAgentTimeOffRequest.partialDayStartDateTimes) &&
             Objects.equals(this.dailyDurationMinutes, createAgentTimeOffRequest.dailyDurationMinutes) &&
             Objects.equals(this.durationMinutes, createAgentTimeOffRequest.durationMinutes) &&
@@ -199,7 +243,7 @@ public class CreateAgentTimeOffRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes);
+    return Objects.hash(activityCodeId, notes, fullDayManagementUnitDates, fullDayEarliestStartOffsetMinutes, fullDayLatestEndOffsetMinutes, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes);
   }
 
   @Override
@@ -210,6 +254,8 @@ public class CreateAgentTimeOffRequest  implements Serializable {
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
+    sb.append("    fullDayEarliestStartOffsetMinutes: ").append(toIndentedString(fullDayEarliestStartOffsetMinutes)).append("\n");
+    sb.append("    fullDayLatestEndOffsetMinutes: ").append(toIndentedString(fullDayLatestEndOffsetMinutes)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");

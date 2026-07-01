@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TextBotErrorInputEvent;
 import com.mypurecloud.sdk.v2.model.TextBotTurnReference;
 import com.mypurecloud.sdk.v2.model.TextBotUserInputEvent;
+import com.mypurecloud.sdk.v2.model.TextBotsRichMediaInputEvent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -83,6 +84,7 @@ public class TextBotFlowTurnRequest  implements Serializable {
   }
   private InputEventTypeEnum inputEventType = null;
   private TextBotUserInputEvent inputEventUserInput = null;
+  private TextBotsRichMediaInputEvent inputEventRichMedia = null;
   private TextBotErrorInputEvent inputEventError = null;
 
   public TextBotFlowTurnRequest() {
@@ -151,6 +153,24 @@ public class TextBotFlowTurnRequest  implements Serializable {
 
 
   /**
+   * The data for the Rich Media input event of this turn if it is a Rich Media input event. Only one inputEvent may be set. Only ButtonResponse, PaymentResponse, Form, Presence are supported.
+   **/
+  public TextBotFlowTurnRequest inputEventRichMedia(TextBotsRichMediaInputEvent inputEventRichMedia) {
+    this.inputEventRichMedia = inputEventRichMedia;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The data for the Rich Media input event of this turn if it is a Rich Media input event. Only one inputEvent may be set. Only ButtonResponse, PaymentResponse, Form, Presence are supported.")
+  @JsonProperty("inputEventRichMedia")
+  public TextBotsRichMediaInputEvent getInputEventRichMedia() {
+    return inputEventRichMedia;
+  }
+  public void setInputEventRichMedia(TextBotsRichMediaInputEvent inputEventRichMedia) {
+    this.inputEventRichMedia = inputEventRichMedia;
+  }
+
+
+  /**
    * The data for the input event of this turn if it is an error event. Only one inputEvent may be set.
    **/
   public TextBotFlowTurnRequest inputEventError(TextBotErrorInputEvent inputEventError) {
@@ -181,12 +201,13 @@ public class TextBotFlowTurnRequest  implements Serializable {
     return Objects.equals(this.previousTurn, textBotFlowTurnRequest.previousTurn) &&
             Objects.equals(this.inputEventType, textBotFlowTurnRequest.inputEventType) &&
             Objects.equals(this.inputEventUserInput, textBotFlowTurnRequest.inputEventUserInput) &&
+            Objects.equals(this.inputEventRichMedia, textBotFlowTurnRequest.inputEventRichMedia) &&
             Objects.equals(this.inputEventError, textBotFlowTurnRequest.inputEventError);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(previousTurn, inputEventType, inputEventUserInput, inputEventError);
+    return Objects.hash(previousTurn, inputEventType, inputEventUserInput, inputEventRichMedia, inputEventError);
   }
 
   @Override
@@ -197,6 +218,7 @@ public class TextBotFlowTurnRequest  implements Serializable {
     sb.append("    previousTurn: ").append(toIndentedString(previousTurn)).append("\n");
     sb.append("    inputEventType: ").append(toIndentedString(inputEventType)).append("\n");
     sb.append("    inputEventUserInput: ").append(toIndentedString(inputEventUserInput)).append("\n");
+    sb.append("    inputEventRichMedia: ").append(toIndentedString(inputEventRichMedia)).append("\n");
     sb.append("    inputEventError: ").append(toIndentedString(inputEventError)).append("\n");
     sb.append("}");
     return sb.toString();

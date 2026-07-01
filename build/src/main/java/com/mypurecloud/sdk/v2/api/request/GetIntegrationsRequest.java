@@ -253,6 +253,20 @@ public class GetIntegrationsRequest {
 		}
 	}
 
+	private String credentialId;
+	public String getCredentialId() {
+		return this.credentialId;
+	}
+
+	public void setCredentialId(String credentialId) {
+		this.credentialId = credentialId;
+	}
+
+	public GetIntegrationsRequest withCredentialId(String credentialId) {
+	    this.setCredentialId(credentialId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -302,6 +316,9 @@ public class GetIntegrationsRequest {
         
 
                 .withQueryParameters("reportedState", "", reportedState)
+        
+
+                .withQueryParameters("credentialId", "", credentialId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -376,6 +393,11 @@ public class GetIntegrationsRequest {
 		    request.setReportedState(reportedState.toString());
 
 		    return this;
+		}
+
+		public Builder withCredentialId(String credentialId) {
+			request.setCredentialId(credentialId);
+			return this;
 		}
 
 
