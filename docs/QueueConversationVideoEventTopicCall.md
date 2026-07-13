@@ -38,6 +38,7 @@
 | **queueMediaSettings** | [**QueueConversationVideoEventTopicQueueMediaSettings**](QueueConversationVideoEventTopicQueueMediaSettings) |  |  [optional] |
 | **disposition** | [**QueueConversationVideoEventTopicDisposition**](QueueConversationVideoEventTopicDisposition) |  |  [optional] |
 | **transferSource** | **String** | Indicates how call reaches the agent. |  [optional] |
+| **publicIpAddress** | **String** | The reported client IP of the phone for the call. |  [optional] |
 
 
 ## Enum: StateEnum
@@ -122,4 +123,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async details job |
 | [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**getConversation**](ConversationsApi#getConversation) | Get conversation |
+| [**getConversationAccessattributes**](ConversationsApi#getConversationAccessattributes) | Get the access attributes on a conversation. |
 | [**getConversationAssistantCopilotcontext**](ConversationsApi#getConversationAssistantCopilotcontext) | Get copilot context values for a conversation. |
 | [**getConversationCommunicationAgentchecklist**](ConversationsApi#getConversationCommunicationAgentchecklist) | Get checklist info for a single checklist. |
 | [**getConversationCommunicationAgentchecklistJob**](ConversationsApi#getConversationCommunicationAgentchecklistJob) | Get inference job status |
@@ -260,6 +261,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsEmailInboundmessages**](ConversationsApi#postConversationsEmailInboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it. |
 | [**postConversationsEmailMessages**](ConversationsApi#postConversationsEmailMessages) | Send an email reply |
 | [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsCopy) | Copy attachments from an email message to the current draft. |
+| [**postConversationsEmailMessagesDraftAttachmentsUploads**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsUploads) | Create a URL to upload a message attachment file |
 | [**postConversationsEmailParticipantCommunicationWrapup**](ConversationsApi#postConversationsEmailParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsEmailParticipantReplace**](ConversationsApi#postConversationsEmailParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsEmailReconnect**](ConversationsApi#postConversationsEmailReconnect) | Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation |
@@ -301,6 +303,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsVideoAgentconferenceCommunication**](ConversationsApi#postConversationsVideoAgentconferenceCommunication) | Create an Agent-Type video conference and assign an agent to it |
 | [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#postConversationsVideoParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsVideosMeetings**](ConversationsApi#postConversationsVideosMeetings) | Generate a meetingId for a given conferenceId |
+| [**putConversationAccessattributes**](ConversationsApi#putConversationAccessattributes) | Set the access attributes on a conversation. |
 | [**putConversationCustomattributes**](ConversationsApi#putConversationCustomattributes) | Create or update a single custom attributes record. Updating replaces all data with the provided fields. |
 | [**putConversationCustomattributesBulk**](ConversationsApi#putConversationCustomattributesBulk) | Create or update a list of custom attributes records. Updating replaces all data with the provided fields. |
 | [**putConversationParticipantFlaggedreason**](ConversationsApi#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
@@ -1985,6 +1988,67 @@ try {
 ### Return type
 
 [**Conversation**](Conversation)
+
+
+# **getConversationAccessattributes**
+
+
+> [ConversationAccessAttributesResponse](ConversationAccessAttributesResponse) getConversationAccessattributes(conversationId)
+
+Get the access attributes on a conversation.
+
+getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/accessattributes  
+
+Requires ANY permissions: 
+
+* conversation:accessAttributes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+try {
+    ConversationAccessAttributesResponse result = apiInstance.getConversationAccessattributes(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationAccessattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationAccessAttributesResponse**](ConversationAccessAttributesResponse)
 
 
 # **getConversationAssistantCopilotcontext**
@@ -16117,6 +16181,69 @@ try {
 [**EmailMessage**](EmailMessage)
 
 
+# **postConversationsEmailMessagesDraftAttachmentsUploads**
+
+
+> [UploadAttachmentResponse](UploadAttachmentResponse) postConversationsEmailMessagesDraftAttachmentsUploads(conversationId, body)
+
+Create a URL to upload a message attachment file
+
+See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+
+Wraps POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads  
+
+Requires ANY permissions: 
+
+* conversation:emailAttachment:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+UploadAttachmentRequest body = new UploadAttachmentRequest(); // UploadAttachmentRequest | Create attachment pre-signed URL request
+try {
+    UploadAttachmentResponse result = apiInstance.postConversationsEmailMessagesDraftAttachmentsUploads(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsEmailMessagesDraftAttachmentsUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**UploadAttachmentRequest**](UploadAttachmentRequest)| Create attachment pre-signed URL request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadAttachmentResponse**](UploadAttachmentResponse)
+
+
 # **postConversationsEmailParticipantCommunicationWrapup**
 
 
@@ -18671,6 +18798,69 @@ try {
 [**MeetingIdRecord**](MeetingIdRecord)
 
 
+# **putConversationAccessattributes**
+
+
+> String putConversationAccessattributes(conversationId, body)
+
+Set the access attributes on a conversation.
+
+putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/conversations/{conversationId}/accessattributes  
+
+Requires ANY permissions: 
+
+* conversation:accessAttributes:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+ConversationAccessAttributesUpdate body = new ConversationAccessAttributesUpdate(); // ConversationAccessAttributesUpdate | Conversation Access Attributes
+try {
+    String result = apiInstance.putConversationAccessattributes(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationAccessattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **body** | [**ConversationAccessAttributesUpdate**](ConversationAccessAttributesUpdate)| Conversation Access Attributes | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+
 # **putConversationCustomattributes**
 
 
@@ -20339,4 +20529,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

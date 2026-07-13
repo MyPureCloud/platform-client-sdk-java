@@ -95,9 +95,10 @@
 | SENDINTERACTIVEAPPLICATIONACTION | &quot;SendInteractiveApplicationAction&quot; | 
 | SENDRICHLINKACTION | &quot;SendRichLinkAction&quot; | 
 | SENDDIGITALCONTENTACTION | &quot;SendDigitalContentAction&quot; | 
+| AGENTICASKFORINTENTACTION | &quot;AgenticAskForIntentAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

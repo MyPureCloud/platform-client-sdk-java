@@ -17,8 +17,11 @@
 | DIVISIONID | &quot;DivisionId&quot; | 
 | CONTACTCLASSIFICATION | &quot;ContactClassification&quot; | 
 | EXTERNALORGANIZATIONID | &quot;ExternalOrganizationId&quot; | 
+| EXTERNALSOURCEID | &quot;ExternalSourceId&quot; | 
+| SCHEMAID | &quot;SchemaId&quot; | 
+| SCHEMAVERSION | &quot;SchemaVersion&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

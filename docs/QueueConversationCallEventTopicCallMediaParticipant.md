@@ -63,6 +63,7 @@
 | **bargedTime** | [**Date**](Date) |  |  [optional] |
 | **consultParticipantId** | **String** |  |  [optional] |
 | **faxStatus** | [**QueueConversationCallEventTopicFaxStatus**](QueueConversationCallEventTopicFaxStatus) |  |  [optional] |
+| **publicIpAddress** | **String** |  |  [optional] |
 
 
 ## Enum: StateEnum
@@ -162,4 +163,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

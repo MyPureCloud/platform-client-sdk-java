@@ -246,6 +246,7 @@
 | **engagementSources** | [**List<EngagementSourcesEnum>**](#Enum--EngagementSourcesEnum) | The engagement sources used to filter the view |  [optional] |
 | **isSnippetRecorded** | **Boolean** | Indicates filtering for snippet recorded |  [optional] |
 | **takeover** | **Boolean** | Indicates filtering for takeover |  [optional] |
+| **socialPostTypes** | [**List<SocialPostTypesEnum>**](#Enum--SocialPostTypesEnum) | The social post types used to filter the view |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -1101,6 +1102,22 @@
 | OPENMESSAGING | &quot;OpenMessaging&quot; |
 
 
+## Enum: SocialPostTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| POSTS | &quot;Posts&quot; |
+| COMMENTS | &quot;Comments&quot; |
+| POSTMENTION | &quot;PostMention&quot; |
+| REELSMENTION | &quot;ReelsMention&quot; |
+| COMMENTMENTION | &quot;CommentMention&quot; |
+| COLLABORATEPOSTS | &quot;CollaboratePosts&quot; |
+| LIVEVIDEO | &quot;LiveVideo&quot; |
+| LIVECOMMENT | &quot;LiveComment&quot; |
+| REVIEWS | &quot;Reviews&quot; |
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

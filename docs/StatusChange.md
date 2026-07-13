@@ -58,8 +58,8 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
 | WEB_MESSAGING | &quot;web.messaging&quot; | 
-| WEBHOOKS | &quot;webhooks&quot; | 
 | AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
 | AGENTIC_VIRTUAL_AGENTS | &quot;agentic.virtual.agents&quot; | 
 | ANALYTICS_AGENTS | &quot;analytics.agents&quot; | 
@@ -110,6 +110,7 @@
 | LEARNING | &quot;learning&quot; | 
 | LIMIT_REGISTRY | &quot;limit.registry&quot; | 
 | MARKETPLACE | &quot;marketplace&quot; | 
+| MCP_ANALYTICS_AGGREGATES | &quot;mcp.analytics.aggregates&quot; | 
 | MCP | &quot;mcp&quot; | 
 | MEDIA_COMMUNICATIONS | &quot;media.communications&quot; | 
 | MESSAGING | &quot;messaging&quot; | 
@@ -140,8 +141,9 @@
 | USERS | &quot;users&quot; | 
 | USERS_RULES | &quot;users.rules&quot; | 
 | VOICE_TRANSCRIPTION | &quot;voice.transcription&quot; | 
-| WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
 | WEBCHAT | &quot;webchat&quot; | 
+| WEBHOOKS | &quot;webhooks&quot; | 
+| WORKFORCE_MANAGEMENT_ADHERENCE | &quot;workforce.management.adherence&quot; | 
 | WORKFORCE_MANAGEMENT_AGENT_AVAILABILITY | &quot;workforce.management.agent.availability&quot; | 
 | WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
@@ -165,4 +167,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

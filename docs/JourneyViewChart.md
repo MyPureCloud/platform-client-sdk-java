@@ -8,6 +8,7 @@
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** |  |  [optional] |
 | **version** | **Integer** | The version of the journey view chart |  [optional] |
+| **rank** | **Integer** | The rank of the journey view chart for ordering display |  [optional] |
 | **groupByTime** | [**GroupByTimeEnum**](#Enum--GroupByTimeEnum) | A time unit to group the metrics by. There is a limit on the number of groupBy properties which can be specified. |  [optional] |
 | **groupByAttributes** | [**List&lt;JourneyViewChartGroupByAttribute&gt;**](JourneyViewChartGroupByAttribute) | A list of attributes to group the metrics by. There is a limit on the number of groupBy properties which can be specified. |  [optional] |
 | **metrics** | [**List&lt;JourneyViewChartMetric&gt;**](JourneyViewChartMetric) | A list of metrics to calculate within the chart by (aka the y axis) |  |
@@ -29,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

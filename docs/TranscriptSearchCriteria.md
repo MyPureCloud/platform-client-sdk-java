@@ -38,8 +38,9 @@
 | RANGE | &quot;RANGE&quot; | 
 | GREATER_THAN | &quot;GREATER_THAN&quot; | 
 | LESS_THAN | &quot;LESS_THAN&quot; | 
+| REQUIRED_FIELDS | &quot;REQUIRED_FIELDS&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

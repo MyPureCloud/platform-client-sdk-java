@@ -34,7 +34,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBots) | Get a list of botConnector bots for this integration |
 | [**getIntegrationsBotconnectorIntegrationIdBotsSummaries**](IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBotsSummaries) | Get a summary list of botConnector bots for this integration |
 | [**getIntegrationsClientapps**](IntegrationsApi#getIntegrationsClientapps) | List permitted client app integrations for the logged in user |
-| [**getIntegrationsClientappsUnifiedcommunications**](IntegrationsApi#getIntegrationsClientappsUnifiedcommunications) | UC integration client application configuration. |
 | [**getIntegrationsCredential**](IntegrationsApi#getIntegrationsCredential) | Get a single credential with sensitive fields redacted |
 | [**getIntegrationsCredentials**](IntegrationsApi#getIntegrationsCredentials) | List multiple sets of credentials |
 | [**getIntegrationsCredentialsListing**](IntegrationsApi#getIntegrationsCredentialsListing) | List multiple sets of credentials using cursor-based paging |
@@ -2018,80 +2017,6 @@ try {
 ### Return type
 
 [**ClientAppEntityListing**](ClientAppEntityListing)
-
-
-# **getIntegrationsClientappsUnifiedcommunications**
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-> [UCIntegrationListing](UCIntegrationListing) getIntegrationsClientappsUnifiedcommunications(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
-
-UC integration client application configuration.
-
-Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-
-Wraps GET /api/v2/integrations/clientapps/unifiedcommunications  
-
-Requires ANY permissions: 
-
-* integration:unifiedCommunications:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.IntegrationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-IntegrationsApi apiInstance = new IntegrationsApi();
-Integer pageSize = 25; // Integer | The total page size requested
-Integer pageNumber = 1; // Integer | The page number requested
-String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
-String nextPage = "nextPage_example"; // String | next page token
-String previousPage = "previousPage_example"; // String | Previous page token
-try {
-    UCIntegrationListing result = apiInstance.getIntegrationsClientappsUnifiedcommunications(pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IntegrationsApi#getIntegrationsClientappsUnifiedcommunications");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
-| **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| variable name requested by expand list | [optional] 
-| **nextPage** | **String**| next page token | [optional] 
-| **previousPage** | **String**| Previous page token | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**UCIntegrationListing**](UCIntegrationListing)
 
 
 # **getIntegrationsCredential**
@@ -5866,4 +5791,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

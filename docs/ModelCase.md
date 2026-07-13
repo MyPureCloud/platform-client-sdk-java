@@ -12,7 +12,7 @@
 | **reference** | **String** | The reference identifier of the Case. |  [optional] |
 | **caseplan** | [**CaseplanReference**](CaseplanReference) | The Caseplan the Case was created from. |  [optional] |
 | **summary** | **String** | Overview information for the Case. |  [optional] |
-| **owner** | [**UserReference**](UserReference) | The owner of the Case. |  [optional] |
+| **owner** | [**CaseUserReference**](CaseUserReference) | The owner of the Case. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the Case. |  [optional] |
 | **priority** | [**PriorityEnum**](#Enum--PriorityEnum) | The priority of the Case. |  [optional] |
 | **dateDue** | [**Date**](Date) | The due date of the Case. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -20,7 +20,7 @@
 | **dateClosed** | [**Date**](Date) | The completion time of the Case. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateCreated** | [**Date**](Date) | The date the Case was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | [**Date**](Date) | The date the Case was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **modifiedBy** | [**UserReference**](UserReference) | The ID of the User who modified the Case. |  [optional] |
+| **modifiedBy** | [**CaseUserReference**](CaseUserReference) | The ID of the User who modified the Case. |  [optional] |
 | **externalContact** | [**CaseExternalContactReference**](CaseExternalContactReference) | The External Contact associated with the Case. |  [optional] |
 | **customerIntent** | [**CustomerIntentReference**](CustomerIntentReference) | The customer intent for the Case. |  [optional] |
 | **creationStatus** | [**CreationStatusEnum**](#Enum--CreationStatusEnum) | The creation status of the Case. |  [optional] |
@@ -67,4 +67,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

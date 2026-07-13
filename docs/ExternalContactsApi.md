@@ -41,6 +41,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsImportJobs**](ExternalContactsApi#getExternalcontactsImportJobs) | List jobs for organization |
 | [**getExternalcontactsImportSetting**](ExternalContactsApi#getExternalcontactsImportSetting) | Get setting based on id |
 | [**getExternalcontactsImportSettings**](ExternalContactsApi#getExternalcontactsImportSettings) | List settings for organization |
+| [**getExternalcontactsNotesExport**](ExternalContactsApi#getExternalcontactsNotesExport) | Get notes export for exportId |
+| [**getExternalcontactsNotesExports**](ExternalContactsApi#getExternalcontactsNotesExports) | List note exports for organization |
 | [**getExternalcontactsOrganization**](ExternalContactsApi#getExternalcontactsOrganization) | Fetch an external organization |
 | [**getExternalcontactsOrganizationContacts**](ExternalContactsApi#getExternalcontactsOrganizationContacts) | Search for external contacts in an external organization |
 | [**getExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#getExternalcontactsOrganizationIdentifiers) | List the identifiers for an external organization |
@@ -48,6 +50,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsOrganizationNotes**](ExternalContactsApi#getExternalcontactsOrganizationNotes) | List notes for an external organization |
 | [**getExternalcontactsOrganizationRelationships**](ExternalContactsApi#getExternalcontactsOrganizationRelationships) | Fetch a relationship for an external organization |
 | [**getExternalcontactsOrganizations**](ExternalContactsApi#getExternalcontactsOrganizations) | Search for external organizations |
+| [**getExternalcontactsOrganizationsExport**](ExternalContactsApi#getExternalcontactsOrganizationsExport) | Get organizations export for exportId |
+| [**getExternalcontactsOrganizationsExports**](ExternalContactsApi#getExternalcontactsOrganizationsExports) | List organization exports for organization |
 | [**getExternalcontactsOrganizationsSchema**](ExternalContactsApi#getExternalcontactsOrganizationsSchema) | Get a schema |
 | [**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersion) | Get a specific version of a schema |
 | [**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersions) | Get all versions of an external organization's schema |
@@ -56,6 +60,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsOrganizationsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretypes) | Get the core types from which all schemas are built. |
 | [**getExternalcontactsOrganizationsSchemasLimits**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasLimits) | Get quantitative limits on schemas |
 | [**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | Fetch a relationship |
+| [**getExternalcontactsRelationshipsExport**](ExternalContactsApi#getExternalcontactsRelationshipsExport) | Get relationships export for exportId |
+| [**getExternalcontactsRelationshipsExports**](ExternalContactsApi#getExternalcontactsRelationshipsExports) | List relationship exports for organization |
 | [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | Look up contacts based on an attribute. Maximum of 25 values returned. |
 | [**getExternalcontactsScanContacts**](ExternalContactsApi#getExternalcontactsScanContacts) | Scan for external contacts using paging |
 | [**getExternalcontactsScanContactsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanContactsDivisionviewsAll) | Scan for external contacts using paging |
@@ -111,11 +117,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsImportJobs**](ExternalContactsApi#postExternalcontactsImportJobs) | Create a new job |
 | [**postExternalcontactsImportSettings**](ExternalContactsApi#postExternalcontactsImportSettings) | Create a new settings |
 | [**postExternalcontactsMergeContacts**](ExternalContactsApi#postExternalcontactsMergeContacts) | Merge two contacts into a new contact record |
+| [**postExternalcontactsNotesExports**](ExternalContactsApi#postExternalcontactsNotesExports) | Create notes export |
 | [**postExternalcontactsOrganizationNotes**](ExternalContactsApi#postExternalcontactsOrganizationNotes) | Create a note for an external organization |
 | [**postExternalcontactsOrganizations**](ExternalContactsApi#postExternalcontactsOrganizations) | Create an external organization |
 | [**postExternalcontactsOrganizationsEnrich**](ExternalContactsApi#postExternalcontactsOrganizationsEnrich) | Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs. |
+| [**postExternalcontactsOrganizationsExports**](ExternalContactsApi#postExternalcontactsOrganizationsExports) | Create organizations export |
 | [**postExternalcontactsOrganizationsSchemas**](ExternalContactsApi#postExternalcontactsOrganizationsSchemas) | Create a schema |
 | [**postExternalcontactsRelationships**](ExternalContactsApi#postExternalcontactsRelationships) | Create a relationship |
+| [**postExternalcontactsRelationshipsExports**](ExternalContactsApi#postExternalcontactsRelationshipsExports) | Create relationships export |
 | [**putExternalcontactsContact**](ExternalContactsApi#putExternalcontactsContact) | Update an external contact |
 | [**putExternalcontactsContactNote**](ExternalContactsApi#putExternalcontactsContactNote) | Update a note for an external contact |
 | [**putExternalcontactsContactsSchema**](ExternalContactsApi#putExternalcontactsContactsSchema) | Update a schema |
@@ -2386,6 +2395,132 @@ try {
 [**ContactImportSettingsEntityListing**](ContactImportSettingsEntityListing)
 
 
+# **getExternalcontactsNotesExport**
+
+
+> [NotesExport](NotesExport) getExternalcontactsNotesExport(exportId)
+
+Get notes export for exportId
+
+Wraps GET /api/v2/externalcontacts/notes/exports/{exportId}  
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String exportId = "exportId_example"; // String | Export id
+try {
+    NotesExport result = apiInstance.getExternalcontactsNotesExport(exportId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsNotesExport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **exportId** | **String**| Export id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**NotesExport**](NotesExport)
+
+
+# **getExternalcontactsNotesExports**
+
+
+> [NotesExportListing](NotesExportListing) getExternalcontactsNotesExports(divisionIds, after, pageSize)
+
+List note exports for organization
+
+Wraps GET /api/v2/externalcontacts/notes/exports  
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+List<String> divisionIds = Arrays.asList(null); // List<String> | Division IDs of entities
+String after = "after_example"; // String | The cursor that points to the end of the set of entities
+Integer pageSize = 56; // Integer | Number of entities to return
+try {
+    NotesExportListing result = apiInstance.getExternalcontactsNotesExports(divisionIds, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsNotesExports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **divisionIds** | [**List&lt;String&gt;**](String)| Division IDs of entities | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities | [optional] 
+| **pageSize** | **Integer**| Number of entities to return | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**NotesExportListing**](NotesExportListing)
+
+
 # **getExternalcontactsOrganization**
 
 
@@ -2853,6 +2988,130 @@ try {
 [**ExternalOrganizationListing**](ExternalOrganizationListing)
 
 
+# **getExternalcontactsOrganizationsExport**
+
+
+> [OrganizationsExport](OrganizationsExport) getExternalcontactsOrganizationsExport(exportId)
+
+Get organizations export for exportId
+
+Wraps GET /api/v2/externalcontacts/organizations/exports/{exportId}  
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String exportId = "exportId_example"; // String | Export id
+try {
+    OrganizationsExport result = apiInstance.getExternalcontactsOrganizationsExport(exportId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsExport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **exportId** | **String**| Export id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationsExport**](OrganizationsExport)
+
+
+# **getExternalcontactsOrganizationsExports**
+
+
+> [OrganizationsExportListing](OrganizationsExportListing) getExternalcontactsOrganizationsExports(divisionIds, after, pageSize)
+
+List organization exports for organization
+
+Wraps GET /api/v2/externalcontacts/organizations/exports  
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+List<String> divisionIds = Arrays.asList(null); // List<String> | Division IDs of entities
+String after = "after_example"; // String | The cursor that points to the end of the set of entities
+Integer pageSize = 56; // Integer | Number of entities to return
+try {
+    OrganizationsExportListing result = apiInstance.getExternalcontactsOrganizationsExports(divisionIds, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsExports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **divisionIds** | [**List&lt;String&gt;**](String)| Division IDs of entities | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities | [optional] 
+| **pageSize** | **Integer**| Number of entities to return | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationsExportListing**](OrganizationsExportListing)
+
+
 # **getExternalcontactsOrganizationsSchema**
 
 
@@ -3316,6 +3575,130 @@ try {
 ### Return type
 
 [**Relationship**](Relationship)
+
+
+# **getExternalcontactsRelationshipsExport**
+
+
+> [RelationshipsExport](RelationshipsExport) getExternalcontactsRelationshipsExport(exportId)
+
+Get relationships export for exportId
+
+Wraps GET /api/v2/externalcontacts/relationships/exports/{exportId}  
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String exportId = "exportId_example"; // String | Export id
+try {
+    RelationshipsExport result = apiInstance.getExternalcontactsRelationshipsExport(exportId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsRelationshipsExport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **exportId** | **String**| Export id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RelationshipsExport**](RelationshipsExport)
+
+
+# **getExternalcontactsRelationshipsExports**
+
+
+> [RelationshipsExportListing](RelationshipsExportListing) getExternalcontactsRelationshipsExports(divisionIds, after, pageSize)
+
+List relationship exports for organization
+
+Wraps GET /api/v2/externalcontacts/relationships/exports  
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+List<String> divisionIds = Arrays.asList(null); // List<String> | Division IDs of entities
+String after = "after_example"; // String | The cursor that points to the end of the set of entities
+Integer pageSize = 56; // Integer | Number of entities to return
+try {
+    RelationshipsExportListing result = apiInstance.getExternalcontactsRelationshipsExports(divisionIds, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsRelationshipsExports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **divisionIds** | [**List&lt;String&gt;**](String)| Division IDs of entities | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities | [optional] 
+| **pageSize** | **Integer**| Number of entities to return | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RelationshipsExportListing**](RelationshipsExportListing)
 
 
 # **getExternalcontactsReversewhitepageslookup**
@@ -6664,6 +7047,67 @@ try {
 [**ExternalContact**](ExternalContact)
 
 
+# **postExternalcontactsNotesExports**
+
+
+> [NotesExport](NotesExport) postExternalcontactsNotesExports(body)
+
+Create notes export
+
+Wraps POST /api/v2/externalcontacts/notes/exports  
+
+Requires ALL permissions: 
+
+* externalContacts:export:add
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+NotesExport body = new NotesExport(); // NotesExport | Export
+try {
+    NotesExport result = apiInstance.postExternalcontactsNotesExports(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsNotesExports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**NotesExport**](NotesExport)| Export | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**NotesExport**](NotesExport)
+
+
 # **postExternalcontactsOrganizationNotes**
 
 
@@ -6849,6 +7293,66 @@ try {
 [**ExternalOrganization**](ExternalOrganization)
 
 
+# **postExternalcontactsOrganizationsExports**
+
+
+> [OrganizationsExport](OrganizationsExport) postExternalcontactsOrganizationsExports(body)
+
+Create organizations export
+
+Wraps POST /api/v2/externalcontacts/organizations/exports  
+
+Requires ALL permissions: 
+
+* externalContacts:export:add
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+OrganizationsExport body = new OrganizationsExport(); // OrganizationsExport | Export
+try {
+    OrganizationsExport result = apiInstance.postExternalcontactsOrganizationsExports(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsOrganizationsExports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OrganizationsExport**](OrganizationsExport)| Export | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationsExport**](OrganizationsExport)
+
+
 # **postExternalcontactsOrganizationsSchemas**
 
 
@@ -6966,6 +7470,66 @@ try {
 ### Return type
 
 [**Relationship**](Relationship)
+
+
+# **postExternalcontactsRelationshipsExports**
+
+
+> [RelationshipsExport](RelationshipsExport) postExternalcontactsRelationshipsExports(body)
+
+Create relationships export
+
+Wraps POST /api/v2/externalcontacts/relationships/exports  
+
+Requires ALL permissions: 
+
+* externalContacts:export:add
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+RelationshipsExport body = new RelationshipsExport(); // RelationshipsExport | Export
+try {
+    RelationshipsExport result = apiInstance.postExternalcontactsRelationshipsExports(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsRelationshipsExports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RelationshipsExport**](RelationshipsExport)| Export | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RelationshipsExport**](RelationshipsExport)
 
 
 # **putExternalcontactsContact**
@@ -7772,4 +8336,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

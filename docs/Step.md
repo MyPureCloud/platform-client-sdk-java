@@ -16,6 +16,7 @@
 | **version** | **Integer** | The version of the Step. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The Status of the Step. |  [optional] |
 | **stage** | [**StageReference**](StageReference) | The parent Stage of the Step. |  [optional] |
+| **workitemActivity** | [**WorkitemActivityReference**](WorkitemActivityReference) | The workitem activity linked to this step. Present only for workitem-type steps that have been activated. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **_case** | [**CaseReference**](CaseReference) | The parent Case of the Step. |  [optional] |
 
@@ -34,4 +35,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

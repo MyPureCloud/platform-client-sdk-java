@@ -51,8 +51,9 @@
 | MESSAGING_CAMPAIGN_SCHEDULE | &quot;MESSAGING_CAMPAIGN_SCHEDULE&quot; | 
 | EMAIL_CAMPAIGN_SCHEDULE | &quot;EMAIL_CAMPAIGN_SCHEDULE&quot; | 
 | WHATSAPP_CAMPAIGN_SCHEDULE | &quot;WHATSAPP_CAMPAIGN_SCHEDULE&quot; | 
+| RETENTION_POLICY | &quot;RETENTION_POLICY&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

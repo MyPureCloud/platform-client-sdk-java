@@ -17,12 +17,12 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NCANNEDRESPONSESUGGESTIONS | &quot;nCannedResponseSuggestions&quot; | 
+| NDISTINCTCONVERSATIONS | &quot;nDistinctConversations&quot; | 
 | NDISTINCTSUGGESTIONS | &quot;nDistinctSuggestions&quot; | 
 | NKNOWLEDGEANSWERSUGGESTIONS | &quot;nKnowledgeAnswerSuggestions&quot; | 
 | NKNOWLEDGEARTICLESUGGESTIONS | &quot;nKnowledgeArticleSuggestions&quot; | 
 | NKNOWLEDGESEARCHSUGGESTIONS | &quot;nKnowledgeSearchSuggestions&quot; | 
 | NSCRIPTSUGGESTIONS | &quot;nScriptSuggestions&quot; | 
-| NDISTINCTCONVERSATIONS | &quot;nDistinctConversations&quot; | 
 
 
 ## Enum: FunctionEnum
@@ -35,4 +35,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

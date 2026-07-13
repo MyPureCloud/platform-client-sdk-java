@@ -2173,6 +2173,8 @@ try {
 
 Query for Caseplans.
 
+This endpoint supports two filtering modes. The recommended approach uses 'filters' (generic filter model) and 'attributes' (field projection). During the migration period, the legacy fields 'name', 'nameSearchType', and 'divisionIds' remain available as an alternative.
+
 Wraps POST /api/v2/casemanagement/caseplans/query  
 
 Requires ANY permissions: 
@@ -2467,4 +2469,4 @@ try {
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

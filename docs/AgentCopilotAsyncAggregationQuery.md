@@ -30,7 +30,6 @@
 | CANNEDRESPONSELIBRARYID | &quot;cannedResponseLibraryId&quot; |
 | CHUNKCOUNT | &quot;chunkCount&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
-| KNOWLEDGESETTINGID | &quot;knowledgeSettingId&quot; |
 | ENGAGEMENTTYPE | &quot;engagementType&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | FEEDBACKRATING | &quot;feedbackRating&quot; |
@@ -38,6 +37,7 @@
 | HASGENERATEDANSWER | &quot;hasGeneratedAnswer&quot; |
 | KNOWLEDGEBASEDOCUMENTID | &quot;knowledgeBaseDocumentId&quot; |
 | KNOWLEDGEBASEDOCUMENTVERSIONID | &quot;knowledgeBaseDocumentVersionId&quot; |
+| KNOWLEDGESETTINGID | &quot;knowledgeSettingId&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGEID | &quot;messageId&quot; |
 | QUEUEID | &quot;queueId&quot; |
@@ -58,12 +58,12 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NCANNEDRESPONSESUGGESTIONS | &quot;nCannedResponseSuggestions&quot; |
+| NDISTINCTCONVERSATIONS | &quot;nDistinctConversations&quot; |
 | NDISTINCTSUGGESTIONS | &quot;nDistinctSuggestions&quot; |
 | NKNOWLEDGEANSWERSUGGESTIONS | &quot;nKnowledgeAnswerSuggestions&quot; |
 | NKNOWLEDGEARTICLESUGGESTIONS | &quot;nKnowledgeArticleSuggestions&quot; |
 | NKNOWLEDGESEARCHSUGGESTIONS | &quot;nKnowledgeSearchSuggestions&quot; |
 | NSCRIPTSUGGESTIONS | &quot;nScriptSuggestions&quot; |
-| NDISTINCTCONVERSATIONS | &quot;nDistinctConversations&quot; |
 
 
 ## Enum: AlternateTimeDimensionEnum
@@ -86,4 +86,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
