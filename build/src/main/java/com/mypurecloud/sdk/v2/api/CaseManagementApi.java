@@ -2986,7 +2986,7 @@ public class CaseManagementApi {
 
   /**
    * Query for Caseplans.
-   * 
+   * This endpoint supports two filtering modes. The recommended approach uses 'filters' (generic filter model) and 'attributes' (field projection). During the migration period, the legacy fields 'name', 'nameSearchType', and 'divisionIds' remain available as an alternative.
    * @param body Caseplan query request. (required)
    * @return CaseplanQueryEntityListing
    * @throws ApiException if the request fails on the server
@@ -2998,7 +2998,7 @@ public class CaseManagementApi {
 
   /**
    * Query for Caseplans.
-   * 
+   * This endpoint supports two filtering modes. The recommended approach uses 'filters' (generic filter model) and 'attributes' (field projection). During the migration period, the legacy fields 'name', 'nameSearchType', and 'divisionIds' remain available as an alternative.
    * @param body Caseplan query request. (required)
    * @return CaseplanQueryEntityListing
    * @throws IOException if the request fails to be processed
@@ -3016,7 +3016,7 @@ public class CaseManagementApi {
 
   /**
    * Query for Caseplans.
-   * 
+   * This endpoint supports two filtering modes. The recommended approach uses 'filters' (generic filter model) and 'attributes' (field projection). During the migration period, the legacy fields 'name', 'nameSearchType', and 'divisionIds' remain available as an alternative.
    * @param request The request object
    * @return CaseplanQueryEntityListing
    * @throws ApiException if the request fails on the server
@@ -3035,7 +3035,7 @@ public class CaseManagementApi {
 
   /**
    * Query for Caseplans.
-   * 
+   * This endpoint supports two filtering modes. The recommended approach uses 'filters' (generic filter model) and 'attributes' (field projection). During the migration period, the legacy fields 'name', 'nameSearchType', and 'divisionIds' remain available as an alternative.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

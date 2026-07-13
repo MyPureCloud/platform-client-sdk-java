@@ -93,6 +93,7 @@ public class GetAssistantRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String languageVariation;

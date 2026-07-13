@@ -120,6 +120,7 @@ public class GetGamificationInsightsGroupsTrendsAllRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String filterId;
@@ -179,6 +180,7 @@ public class GetGamificationInsightsGroupsTrendsAllRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private LocalDate comparativePeriodStartWorkday;

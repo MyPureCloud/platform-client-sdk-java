@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AudioFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -32,6 +33,7 @@ public class SystemPromptAsset  implements Serializable {
   private String language = null;
   private Double durationSeconds = null;
   private String mediaUri = null;
+  private AudioFormat audioFormat = null;
   private String ttsString = null;
   private String text = null;
   private String uploadUri = null;
@@ -194,6 +196,13 @@ public class SystemPromptAsset  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Audio format info")
+  @JsonProperty("audioFormat")
+  public AudioFormat getAudioFormat() {
+    return audioFormat;
+  }
+
+
   /**
    **/
   public SystemPromptAsset ttsString(String ttsString) {
@@ -326,6 +335,7 @@ public class SystemPromptAsset  implements Serializable {
             Objects.equals(this.language, systemPromptAsset.language) &&
             Objects.equals(this.durationSeconds, systemPromptAsset.durationSeconds) &&
             Objects.equals(this.mediaUri, systemPromptAsset.mediaUri) &&
+            Objects.equals(this.audioFormat, systemPromptAsset.audioFormat) &&
             Objects.equals(this.ttsString, systemPromptAsset.ttsString) &&
             Objects.equals(this.text, systemPromptAsset.text) &&
             Objects.equals(this.uploadUri, systemPromptAsset.uploadUri) &&
@@ -338,7 +348,7 @@ public class SystemPromptAsset  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, promptId, language, durationSeconds, mediaUri, ttsString, text, uploadUri, uploadStatus, hasDefault, languageDefault, tags, selfUri);
+    return Objects.hash(id, name, promptId, language, durationSeconds, mediaUri, audioFormat, ttsString, text, uploadUri, uploadStatus, hasDefault, languageDefault, tags, selfUri);
   }
 
   @Override
@@ -352,6 +362,7 @@ public class SystemPromptAsset  implements Serializable {
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    durationSeconds: ").append(toIndentedString(durationSeconds)).append("\n");
     sb.append("    mediaUri: ").append(toIndentedString(mediaUri)).append("\n");
+    sb.append("    audioFormat: ").append(toIndentedString(audioFormat)).append("\n");
     sb.append("    ttsString: ").append(toIndentedString(ttsString)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    uploadUri: ").append(toIndentedString(uploadUri)).append("\n");

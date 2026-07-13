@@ -97,6 +97,7 @@ public class GetLanguagesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;

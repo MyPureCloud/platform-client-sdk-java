@@ -232,6 +232,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;

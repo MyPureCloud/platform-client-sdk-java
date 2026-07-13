@@ -101,6 +101,7 @@ public class GetInfrastructureascodeJobsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -145,6 +146,7 @@ public class GetInfrastructureascodeJobsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String acceleratorId;
@@ -221,6 +223,7 @@ public class GetInfrastructureascodeJobsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

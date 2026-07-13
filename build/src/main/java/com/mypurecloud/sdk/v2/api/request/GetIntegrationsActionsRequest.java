@@ -83,7 +83,6 @@ import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
-import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UCThirdPartyPresence;
 import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegration;
 import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegrationListing;
@@ -206,6 +205,7 @@ public class GetIntegrationsActionsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String category;
@@ -292,6 +292,7 @@ public class GetIntegrationsActionsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String includeAuthActions;
@@ -336,6 +337,7 @@ public class GetIntegrationsActionsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean includeConfig;

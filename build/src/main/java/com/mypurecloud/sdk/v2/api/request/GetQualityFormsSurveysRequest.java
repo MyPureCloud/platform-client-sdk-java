@@ -178,6 +178,7 @@ public class GetQualityFormsSurveysRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;

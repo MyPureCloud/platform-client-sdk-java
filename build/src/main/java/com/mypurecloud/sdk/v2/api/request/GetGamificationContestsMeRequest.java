@@ -180,6 +180,7 @@ public class GetGamificationContestsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortBy;
@@ -229,6 +230,7 @@ public class GetGamificationContestsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -273,6 +275,7 @@ public class GetGamificationContestsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String view;
@@ -317,6 +320,7 @@ public class GetGamificationContestsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

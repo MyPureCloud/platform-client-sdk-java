@@ -233,6 +233,7 @@ public class GetOutboundDnclistsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -293,6 +294,7 @@ public class GetOutboundDnclistsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> divisionId;
@@ -365,6 +367,7 @@ public class GetOutboundDnclistsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

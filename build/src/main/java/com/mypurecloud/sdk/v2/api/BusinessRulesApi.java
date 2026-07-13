@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
+import com.mypurecloud.sdk.v2.model.CreateDecisionTableVersionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;
@@ -3023,37 +3024,41 @@ public class BusinessRulesApi {
   }
 
   /**
-   * Create a new decision table version
+   * Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
    * 
    * @param tableId Table ID (required)
+   * @param body Decision Table Version (optional)
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DecisionTableVersion postBusinessrulesDecisiontableVersions(String tableId) throws IOException, ApiException {
-    return  postBusinessrulesDecisiontableVersions(createPostBusinessrulesDecisiontableVersionsRequest(tableId));
+  public DecisionTableVersion postBusinessrulesDecisiontableVersions(String tableId, CreateDecisionTableVersionRequest body) throws IOException, ApiException {
+    return  postBusinessrulesDecisiontableVersions(createPostBusinessrulesDecisiontableVersionsRequest(tableId, body));
   }
 
   /**
-   * Create a new decision table version
+   * Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
    * 
    * @param tableId Table ID (required)
+   * @param body Decision Table Version (optional)
    * @return DecisionTableVersion
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DecisionTableVersion> postBusinessrulesDecisiontableVersionsWithHttpInfo(String tableId) throws IOException {
-    return postBusinessrulesDecisiontableVersions(createPostBusinessrulesDecisiontableVersionsRequest(tableId).withHttpInfo());
+  public ApiResponse<DecisionTableVersion> postBusinessrulesDecisiontableVersionsWithHttpInfo(String tableId, CreateDecisionTableVersionRequest body) throws IOException {
+    return postBusinessrulesDecisiontableVersions(createPostBusinessrulesDecisiontableVersionsRequest(tableId, body).withHttpInfo());
   }
 
-  private PostBusinessrulesDecisiontableVersionsRequest createPostBusinessrulesDecisiontableVersionsRequest(String tableId) {
+  private PostBusinessrulesDecisiontableVersionsRequest createPostBusinessrulesDecisiontableVersionsRequest(String tableId, CreateDecisionTableVersionRequest body) {
     return PostBusinessrulesDecisiontableVersionsRequest.builder()
             .withTableId(tableId)
+
+            .withBody(body)
 
             .build();
   }
 
   /**
-   * Create a new decision table version
+   * Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
    * 
    * @param request The request object
    * @return DecisionTableVersion
@@ -3072,13 +3077,13 @@ public class BusinessRulesApi {
   }
 
   /**
-   * Create a new decision table version
+   * Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DecisionTableVersion> postBusinessrulesDecisiontableVersions(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DecisionTableVersion> postBusinessrulesDecisiontableVersions(ApiRequest<CreateDecisionTableVersionRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<DecisionTableVersion>() {});
     }

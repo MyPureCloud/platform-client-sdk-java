@@ -124,6 +124,7 @@ public class ReportingTurnAction  implements Serializable {
     SENDINTERACTIVEAPPLICATIONACTION("SendInteractiveApplicationAction"),
     SENDRICHLINKACTION("SendRichLinkAction"),
     SENDDIGITALCONTENTACTION("SendDigitalContentAction"),
+    AGENTICASKFORINTENTACTION("AgenticAskForIntentAction"),
     UNKNOWN("Unknown");
 
     private String value;

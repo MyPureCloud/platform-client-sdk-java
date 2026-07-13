@@ -217,6 +217,7 @@ public class GetArchitectPromptHistoryHistoryIdRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> action;
@@ -268,6 +269,7 @@ public class GetArchitectPromptHistoryHistoryIdRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

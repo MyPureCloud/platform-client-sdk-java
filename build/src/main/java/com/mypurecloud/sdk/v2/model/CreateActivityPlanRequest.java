@@ -190,6 +190,7 @@ public class CreateActivityPlanRequest  implements Serializable {
   private StateEnum state = null;
   private Boolean countsAsPaidTime = null;
   private List<FixedAvailability> fixedAvailability = null;
+  private Integer startTimeIncrementMinutes = null;
 
   public CreateActivityPlanRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -530,6 +531,24 @@ public class CreateActivityPlanRequest  implements Serializable {
   }
 
 
+  /**
+   * The valid start times available when scheduling sessions
+   **/
+  public CreateActivityPlanRequest startTimeIncrementMinutes(Integer startTimeIncrementMinutes) {
+    this.startTimeIncrementMinutes = startTimeIncrementMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The valid start times available when scheduling sessions")
+  @JsonProperty("startTimeIncrementMinutes")
+  public Integer getStartTimeIncrementMinutes() {
+    return startTimeIncrementMinutes;
+  }
+  public void setStartTimeIncrementMinutes(Integer startTimeIncrementMinutes) {
+    this.startTimeIncrementMinutes = startTimeIncrementMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -557,12 +576,13 @@ public class CreateActivityPlanRequest  implements Serializable {
             Objects.equals(this.optimizationObjective, createActivityPlanRequest.optimizationObjective) &&
             Objects.equals(this.state, createActivityPlanRequest.state) &&
             Objects.equals(this.countsAsPaidTime, createActivityPlanRequest.countsAsPaidTime) &&
-            Objects.equals(this.fixedAvailability, createActivityPlanRequest.fixedAvailability);
+            Objects.equals(this.fixedAvailability, createActivityPlanRequest.fixedAvailability) &&
+            Objects.equals(this.startTimeIncrementMinutes, createActivityPlanRequest.startTimeIncrementMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, managementUnitIds, description, activityCodeId, type, lengthMinutes, initialSchedulePeriod, groupSettings, recurrenceSettings, attendeesSearchRule, facilitated, facilitatorsSearchRule, transitionTimeMinutes, serviceGoalImpactOverrides, optimizationObjective, state, countsAsPaidTime, fixedAvailability);
+    return Objects.hash(name, managementUnitIds, description, activityCodeId, type, lengthMinutes, initialSchedulePeriod, groupSettings, recurrenceSettings, attendeesSearchRule, facilitated, facilitatorsSearchRule, transitionTimeMinutes, serviceGoalImpactOverrides, optimizationObjective, state, countsAsPaidTime, fixedAvailability, startTimeIncrementMinutes);
   }
 
   @Override
@@ -588,6 +608,7 @@ public class CreateActivityPlanRequest  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    countsAsPaidTime: ").append(toIndentedString(countsAsPaidTime)).append("\n");
     sb.append("    fixedAvailability: ").append(toIndentedString(fixedAvailability)).append("\n");
+    sb.append("    startTimeIncrementMinutes: ").append(toIndentedString(startTimeIncrementMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

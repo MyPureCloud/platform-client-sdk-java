@@ -147,6 +147,7 @@ public class GetFlowsInstancesSettingsLoglevelsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageNumber;

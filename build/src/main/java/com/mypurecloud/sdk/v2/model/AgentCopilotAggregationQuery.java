@@ -55,7 +55,6 @@ public class AgentCopilotAggregationQuery  implements Serializable {
     CANNEDRESPONSELIBRARYID("cannedResponseLibraryId"),
     CHUNKCOUNT("chunkCount"),
     CONVERSATIONID("conversationId"),
-    KNOWLEDGESETTINGID("knowledgeSettingId"),
     ENGAGEMENTTYPE("engagementType"),
     EXTERNALCONTACTID("externalContactId"),
     FEEDBACKRATING("feedbackRating"),
@@ -63,6 +62,7 @@ public class AgentCopilotAggregationQuery  implements Serializable {
     HASGENERATEDANSWER("hasGeneratedAnswer"),
     KNOWLEDGEBASEDOCUMENTID("knowledgeBaseDocumentId"),
     KNOWLEDGEBASEDOCUMENTVERSIONID("knowledgeBaseDocumentVersionId"),
+    KNOWLEDGESETTINGID("knowledgeSettingId"),
     MEDIATYPE("mediaType"),
     MESSAGEID("messageId"),
     QUEUEID("queueId"),
@@ -123,12 +123,12 @@ public class AgentCopilotAggregationQuery  implements Serializable {
   public enum MetricsEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCANNEDRESPONSESUGGESTIONS("nCannedResponseSuggestions"),
+    NDISTINCTCONVERSATIONS("nDistinctConversations"),
     NDISTINCTSUGGESTIONS("nDistinctSuggestions"),
     NKNOWLEDGEANSWERSUGGESTIONS("nKnowledgeAnswerSuggestions"),
     NKNOWLEDGEARTICLESUGGESTIONS("nKnowledgeArticleSuggestions"),
     NKNOWLEDGESEARCHSUGGESTIONS("nKnowledgeSearchSuggestions"),
-    NSCRIPTSUGGESTIONS("nScriptSuggestions"),
-    NDISTINCTCONVERSATIONS("nDistinctConversations");
+    NSCRIPTSUGGESTIONS("nScriptSuggestions");
 
     private String value;
 

@@ -260,6 +260,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean consumedResources;
@@ -418,6 +419,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> consumingResourceType;
@@ -548,6 +550,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean consumedResourceRequest;

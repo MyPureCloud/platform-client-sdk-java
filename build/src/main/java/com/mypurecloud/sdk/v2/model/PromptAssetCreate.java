@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AudioFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -31,6 +32,7 @@ public class PromptAssetCreate  implements Serializable {
   private String promptId = null;
   private String language = null;
   private String mediaUri = null;
+  private AudioFormat audioFormat = null;
   private String ttsString = null;
   private String text = null;
 
@@ -156,6 +158,13 @@ public class PromptAssetCreate  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Audio format info")
+  @JsonProperty("audioFormat")
+  public AudioFormat getAudioFormat() {
+    return audioFormat;
+  }
+
+
   /**
    * Text to speech of the resource
    **/
@@ -269,6 +278,7 @@ public class PromptAssetCreate  implements Serializable {
             Objects.equals(this.promptId, promptAssetCreate.promptId) &&
             Objects.equals(this.language, promptAssetCreate.language) &&
             Objects.equals(this.mediaUri, promptAssetCreate.mediaUri) &&
+            Objects.equals(this.audioFormat, promptAssetCreate.audioFormat) &&
             Objects.equals(this.ttsString, promptAssetCreate.ttsString) &&
             Objects.equals(this.text, promptAssetCreate.text) &&
             Objects.equals(this.uploadStatus, promptAssetCreate.uploadStatus) &&
@@ -281,7 +291,7 @@ public class PromptAssetCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, promptId, language, mediaUri, ttsString, text, uploadStatus, uploadUri, languageDefault, tags, durationSeconds, selfUri);
+    return Objects.hash(id, name, promptId, language, mediaUri, audioFormat, ttsString, text, uploadStatus, uploadUri, languageDefault, tags, durationSeconds, selfUri);
   }
 
   @Override
@@ -294,6 +304,7 @@ public class PromptAssetCreate  implements Serializable {
     sb.append("    promptId: ").append(toIndentedString(promptId)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    mediaUri: ").append(toIndentedString(mediaUri)).append("\n");
+    sb.append("    audioFormat: ").append(toIndentedString(audioFormat)).append("\n");
     sb.append("    ttsString: ").append(toIndentedString(ttsString)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    uploadStatus: ").append(toIndentedString(uploadStatus)).append("\n");

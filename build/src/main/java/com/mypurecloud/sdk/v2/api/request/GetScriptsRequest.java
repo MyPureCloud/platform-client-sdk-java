@@ -158,6 +158,7 @@ public class GetScriptsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -202,6 +203,7 @@ public class GetScriptsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String scriptDataVersion;

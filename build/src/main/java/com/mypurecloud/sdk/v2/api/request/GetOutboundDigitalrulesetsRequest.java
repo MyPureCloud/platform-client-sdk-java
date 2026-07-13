@@ -182,6 +182,7 @@ public class GetOutboundDigitalrulesetsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -226,6 +227,7 @@ public class GetOutboundDigitalrulesetsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;

@@ -484,6 +484,7 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String divisionId;

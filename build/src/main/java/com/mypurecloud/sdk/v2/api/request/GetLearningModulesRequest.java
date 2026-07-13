@@ -106,6 +106,7 @@ public class GetLearningModulesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageSize;
@@ -178,6 +179,7 @@ public class GetLearningModulesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortBy;
@@ -224,6 +226,7 @@ public class GetLearningModulesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String searchTerm;
@@ -282,6 +285,7 @@ public class GetLearningModulesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> statuses;
@@ -327,6 +331,7 @@ public class GetLearningModulesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> externalIds;

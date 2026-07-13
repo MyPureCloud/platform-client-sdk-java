@@ -192,6 +192,7 @@ public class GetUsersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> expand;
@@ -259,6 +260,7 @@ public class GetUsersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String integrationPresenceSource;
@@ -304,6 +306,7 @@ public class GetUsersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> userCustomAttributeSchemaIds;
@@ -364,6 +367,7 @@ public class GetUsersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

@@ -165,6 +165,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -382,6 +383,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> fields;
@@ -428,6 +430,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

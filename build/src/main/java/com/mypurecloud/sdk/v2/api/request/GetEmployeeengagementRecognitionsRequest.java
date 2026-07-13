@@ -73,6 +73,7 @@ public class GetEmployeeengagementRecognitionsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String recipient;

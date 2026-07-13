@@ -148,6 +148,7 @@ public class GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private LocalDate startWorkday;

@@ -219,6 +219,7 @@ public class GetOutboundImporttemplatesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -291,6 +292,7 @@ public class GetOutboundImporttemplatesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String contactListTemplateId;

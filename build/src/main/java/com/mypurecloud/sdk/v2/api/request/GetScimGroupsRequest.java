@@ -118,6 +118,7 @@ public class GetScimGroupsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> excludedAttributes;
@@ -174,6 +175,7 @@ public class GetScimGroupsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String filter;

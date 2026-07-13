@@ -22,6 +22,8 @@
 | **invokingContext** | [**V2FlowExecutionDataFlowidTopicInvokingContextInfo**](V2FlowExecutionDataFlowidTopicInvokingContextInfo) |  |  [optional] |
 | **startDateTime** | [**Date**](Date) | The start date time for this flow instance execution data. |  [optional] |
 | **warnings** | [**List&lt;V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo&gt;**](V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo) | If the flow encountered a warning during execution, this is an array of the warnings. |  [optional] |
+| **executionHistoryUri** | **String** | A signed URI to download the execution history data. |  [optional] |
+| **executionHistoryUriTtl** | **Long** | Time to live in seconds for the executionHistoryUri. |  [optional] |
 
 
 ## Enum: MessageTypeEnum
@@ -42,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

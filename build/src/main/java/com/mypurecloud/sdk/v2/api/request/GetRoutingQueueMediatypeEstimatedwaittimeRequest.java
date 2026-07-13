@@ -193,6 +193,7 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String labelId;

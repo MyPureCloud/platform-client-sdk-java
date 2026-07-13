@@ -1,0 +1,304 @@
+package com.mypurecloud.sdk.v2.api.request;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiRequest;
+import com.mypurecloud.sdk.v2.ApiRequestBuilder;
+import com.mypurecloud.sdk.v2.ApiResponse;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.model.*;
+import com.mypurecloud.sdk.v2.Pair;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
+
+import com.mypurecloud.sdk.v2.model.BulkResponse;
+import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
+import com.mypurecloud.sdk.v2.model.CategoryResponse;
+import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
+import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ChunkSearchRegisterRequest;
+import com.mypurecloud.sdk.v2.model.ConnectionCreateRequest;
+import com.mypurecloud.sdk.v2.model.ConnectionCreateResponse;
+import com.mypurecloud.sdk.v2.model.ConnectionListing;
+import com.mypurecloud.sdk.v2.model.ConnectionOptionListing;
+import com.mypurecloud.sdk.v2.model.ConnectionResponse;
+import com.mypurecloud.sdk.v2.model.ConnectionUpdateRequest;
+import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
+import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
+import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponse;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponseListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
+import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
+import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeAnswerDocumentsResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeBase;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseCreateRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseUpdateRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackUpdateRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentPresentation;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQuery;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQueryResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSearch;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSearchRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSuggestion;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSuggestionRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersion;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariation;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariationListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentView;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentsAnswerFilter;
+import com.mypurecloud.sdk.v2.model.KnowledgeExportJobRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeExportJobResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestAnswerDocumentsResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentCopy;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentFeedback;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentPresentation;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestion;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestionRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentView;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestSession;
+import com.mypurecloud.sdk.v2.model.KnowledgeImportJobRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeImportJobResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeIntegrationOptionsResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestImport;
+import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestPatch;
+import com.mypurecloud.sdk.v2.model.KnowledgeParseJobResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSearchPreviewRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSearchPreviewResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSettingListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeSettingsRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSettingsResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSourcesSearchRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSourcesSearchResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobResponse;
+import com.mypurecloud.sdk.v2.model.LabelCreateRequest;
+import com.mypurecloud.sdk.v2.model.LabelListing;
+import com.mypurecloud.sdk.v2.model.LabelResponse;
+import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.OperationCreatorUserResponse;
+import com.mypurecloud.sdk.v2.model.OperationListing;
+import com.mypurecloud.sdk.v2.model.SalesforceSourceRequest;
+import com.mypurecloud.sdk.v2.model.SalesforceSourceResponse;
+import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ServiceNowSourceRequest;
+import com.mypurecloud.sdk.v2.model.ServiceNowSourceResponse;
+import com.mypurecloud.sdk.v2.model.SourceBaseResponse;
+import com.mypurecloud.sdk.v2.model.SourceSyncResponse;
+import com.mypurecloud.sdk.v2.model.SyncStatusRequest;
+import com.mypurecloud.sdk.v2.model.UnansweredGroup;
+import com.mypurecloud.sdk.v2.model.UnansweredGroups;
+import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroup;
+import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupPatchRequestBody;
+import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupUpdateResponse;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
+import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableListing;
+import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
+import com.mypurecloud.sdk.v2.model.V3Synchronization;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationDeletion;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationDeletionListing;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationFileDeletionRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUpload;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadListing;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlResponse;
+
+public class DeleteKnowledgeSourceSynchronizationDeletionRequest {
+
+	private String sourceId;
+	public String getSourceId() {
+		return this.sourceId;
+	}
+
+	public void setSourceId(String sourceId) {
+		this.sourceId = sourceId;
+	}
+
+	public DeleteKnowledgeSourceSynchronizationDeletionRequest withSourceId(String sourceId) {
+	    this.setSourceId(sourceId);
+	    return this;
+	} 
+
+	private String synchronizationId;
+	public String getSynchronizationId() {
+		return this.synchronizationId;
+	}
+
+	public void setSynchronizationId(String synchronizationId) {
+		this.synchronizationId = synchronizationId;
+	}
+
+	public DeleteKnowledgeSourceSynchronizationDeletionRequest withSynchronizationId(String synchronizationId) {
+	    this.setSynchronizationId(synchronizationId);
+	    return this;
+	} 
+
+	private String fileId;
+	public String getFileId() {
+		return this.fileId;
+	}
+
+	public void setFileId(String fileId) {
+		this.fileId = fileId;
+	}
+
+	public DeleteKnowledgeSourceSynchronizationDeletionRequest withFileId(String fileId) {
+	    this.setFileId(fileId);
+	    return this;
+	} 
+
+	private final Map<String, String> customHeaders = new HashMap<>();
+    public Map<String, String> getCustomHeaders() {
+        return this.customHeaders;
+    }
+
+    public void setCustomHeaders(Map<String, String> customHeaders) {
+        this.customHeaders.clear();
+        this.customHeaders.putAll(customHeaders);
+    }
+
+    public void addCustomHeader(String name, String value) {
+        this.customHeaders.put(name, value);
+    }
+
+    public DeleteKnowledgeSourceSynchronizationDeletionRequest withCustomHeader(String name, String value) {
+        this.addCustomHeader(name, value);
+        return this;
+    }
+
+    public ApiRequest<Void> withHttpInfo() {
+        
+        // verify the required parameter 'sourceId' is set
+        if (this.sourceId == null) {
+            throw new IllegalStateException("Missing the required parameter 'sourceId' when building request for DeleteKnowledgeSourceSynchronizationDeletionRequest.");
+        }
+        
+        // verify the required parameter 'synchronizationId' is set
+        if (this.synchronizationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'synchronizationId' when building request for DeleteKnowledgeSourceSynchronizationDeletionRequest.");
+        }
+        
+        // verify the required parameter 'fileId' is set
+        if (this.fileId == null) {
+            throw new IllegalStateException("Missing the required parameter 'fileId' when building request for DeleteKnowledgeSourceSynchronizationDeletionRequest.");
+        }
+        
+
+        return ApiRequestBuilder.create("DELETE", "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}")
+                .withPathParameter("sourceId", sourceId)
+        
+                .withPathParameter("synchronizationId", synchronizationId)
+        
+                .withPathParameter("fileId", fileId)
+        
+		.withCustomHeaders(customHeaders)
+                .withContentTypes("application/json")
+                .withAccepts("application/json")
+                .withAuthNames("PureCloud OAuth")
+                .build();
+    }
+
+	public static Builder builder() {
+		return new Builder();
+	}
+
+
+	public static Builder builder(String sourceId, String synchronizationId, String fileId) {
+	    return new Builder()
+	            .withRequiredParams(sourceId, synchronizationId, fileId);
+	}
+
+
+	public static class Builder {
+		private final DeleteKnowledgeSourceSynchronizationDeletionRequest request;
+
+		private Builder() {
+			request = new DeleteKnowledgeSourceSynchronizationDeletionRequest();
+		}
+
+
+		public Builder withSourceId(String sourceId) {
+			request.setSourceId(sourceId);
+			return this;
+		}
+
+		public Builder withSynchronizationId(String synchronizationId) {
+			request.setSynchronizationId(synchronizationId);
+			return this;
+		}
+
+		public Builder withFileId(String fileId) {
+			request.setFileId(fileId);
+			return this;
+		}
+
+
+
+		public Builder withRequiredParams(String sourceId, String synchronizationId, String fileId) {
+			request.setSourceId(sourceId);
+			request.setSynchronizationId(synchronizationId);
+			request.setFileId(fileId);
+
+			return this;
+		}
+
+
+		public DeleteKnowledgeSourceSynchronizationDeletionRequest build() {
+            
+            // verify the required parameter 'sourceId' is set
+            if (request.sourceId == null) {
+                throw new IllegalStateException("Missing the required parameter 'sourceId' when building request for DeleteKnowledgeSourceSynchronizationDeletionRequest.");
+            }
+            
+            // verify the required parameter 'synchronizationId' is set
+            if (request.synchronizationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'synchronizationId' when building request for DeleteKnowledgeSourceSynchronizationDeletionRequest.");
+            }
+            
+            // verify the required parameter 'fileId' is set
+            if (request.fileId == null) {
+                throw new IllegalStateException("Missing the required parameter 'fileId' when building request for DeleteKnowledgeSourceSynchronizationDeletionRequest.");
+            }
+            
+			return request;
+		}
+	}
+}

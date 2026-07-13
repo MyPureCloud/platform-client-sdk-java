@@ -175,6 +175,7 @@ public class GetArchitectGrammarsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -219,6 +220,7 @@ public class GetArchitectGrammarsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> id;

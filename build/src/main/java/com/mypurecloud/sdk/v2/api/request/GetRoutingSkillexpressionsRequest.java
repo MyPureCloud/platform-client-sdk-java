@@ -174,6 +174,7 @@ public class GetRoutingSkillexpressionsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean includeArchived;

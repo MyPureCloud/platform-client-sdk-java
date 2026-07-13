@@ -122,6 +122,7 @@ public class GetGroupMembersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> expand;
@@ -189,6 +190,7 @@ public class GetGroupMembersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

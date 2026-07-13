@@ -100,6 +100,8 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
   private V2FlowExecutionDataFlowidTopicInvokingContextInfo invokingContext = null;
   private Date startDateTime = null;
   private List<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo> warnings = null;
+  private String executionHistoryUri = null;
+  private Long executionHistoryUriTtl = null;
 
   public V2FlowExecutionDataFlowidTopicFlowExecutionHistory() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -423,6 +425,42 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
   }
 
 
+  /**
+   * A signed URI to download the execution history data.
+   **/
+  public V2FlowExecutionDataFlowidTopicFlowExecutionHistory executionHistoryUri(String executionHistoryUri) {
+    this.executionHistoryUri = executionHistoryUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A signed URI to download the execution history data.")
+  @JsonProperty("executionHistoryUri")
+  public String getExecutionHistoryUri() {
+    return executionHistoryUri;
+  }
+  public void setExecutionHistoryUri(String executionHistoryUri) {
+    this.executionHistoryUri = executionHistoryUri;
+  }
+
+
+  /**
+   * Time to live in seconds for the executionHistoryUri.
+   **/
+  public V2FlowExecutionDataFlowidTopicFlowExecutionHistory executionHistoryUriTtl(Long executionHistoryUriTtl) {
+    this.executionHistoryUriTtl = executionHistoryUriTtl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Time to live in seconds for the executionHistoryUri.")
+  @JsonProperty("executionHistoryUriTtl")
+  public Long getExecutionHistoryUriTtl() {
+    return executionHistoryUriTtl;
+  }
+  public void setExecutionHistoryUriTtl(Long executionHistoryUriTtl) {
+    this.executionHistoryUriTtl = executionHistoryUriTtl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -449,12 +487,14 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
             Objects.equals(this.messageType, v2FlowExecutionDataFlowidTopicFlowExecutionHistory.messageType) &&
             Objects.equals(this.invokingContext, v2FlowExecutionDataFlowidTopicFlowExecutionHistory.invokingContext) &&
             Objects.equals(this.startDateTime, v2FlowExecutionDataFlowidTopicFlowExecutionHistory.startDateTime) &&
-            Objects.equals(this.warnings, v2FlowExecutionDataFlowidTopicFlowExecutionHistory.warnings);
+            Objects.equals(this.warnings, v2FlowExecutionDataFlowidTopicFlowExecutionHistory.warnings) &&
+            Objects.equals(this.executionHistoryUri, v2FlowExecutionDataFlowidTopicFlowExecutionHistory.executionHistoryUri) &&
+            Objects.equals(this.executionHistoryUriTtl, v2FlowExecutionDataFlowidTopicFlowExecutionHistory.executionHistoryUriTtl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(executionId, conversationId, divisionId, endDateTime, endpoint, errors, execution, flowExitReason, flowId, flowIsDebug, executionItemsTruncated, flowType, flowVersion, messageType, invokingContext, startDateTime, warnings);
+    return Objects.hash(executionId, conversationId, divisionId, endDateTime, endpoint, errors, execution, flowExitReason, flowId, flowIsDebug, executionItemsTruncated, flowType, flowVersion, messageType, invokingContext, startDateTime, warnings, executionHistoryUri, executionHistoryUriTtl);
   }
 
   @Override
@@ -479,6 +519,8 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
     sb.append("    invokingContext: ").append(toIndentedString(invokingContext)).append("\n");
     sb.append("    startDateTime: ").append(toIndentedString(startDateTime)).append("\n");
     sb.append("    warnings: ").append(toIndentedString(warnings)).append("\n");
+    sb.append("    executionHistoryUri: ").append(toIndentedString(executionHistoryUri)).append("\n");
+    sb.append("    executionHistoryUriTtl: ").append(toIndentedString(executionHistoryUriTtl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

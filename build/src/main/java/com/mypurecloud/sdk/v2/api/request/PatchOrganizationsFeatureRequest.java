@@ -90,6 +90,7 @@ public class PatchOrganizationsFeatureRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private FeatureState enabled;

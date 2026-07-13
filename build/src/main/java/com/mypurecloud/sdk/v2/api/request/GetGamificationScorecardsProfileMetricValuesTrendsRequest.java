@@ -176,6 +176,7 @@ public class GetGamificationScorecardsProfileMetricValuesTrendsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private LocalDate referenceWorkday;

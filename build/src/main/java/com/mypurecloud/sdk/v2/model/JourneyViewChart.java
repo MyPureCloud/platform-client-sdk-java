@@ -32,6 +32,7 @@ public class JourneyViewChart  implements Serializable {
   private String id = null;
   private String name = null;
   private Integer version = null;
+  private Integer rank = null;
 
   private static class GroupByTimeEnumDeserializer extends StdDeserializer<GroupByTimeEnum> {
     public GroupByTimeEnumDeserializer() {
@@ -131,6 +132,24 @@ public class JourneyViewChart  implements Serializable {
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
+  }
+
+
+  /**
+   * The rank of the journey view chart for ordering display
+   **/
+  public JourneyViewChart rank(Integer rank) {
+    this.rank = rank;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The rank of the journey view chart for ordering display")
+  @JsonProperty("rank")
+  public Integer getRank() {
+    return rank;
+  }
+  public void setRank(Integer rank) {
+    this.rank = rank;
   }
 
 
@@ -244,6 +263,7 @@ public class JourneyViewChart  implements Serializable {
     return Objects.equals(this.id, journeyViewChart.id) &&
             Objects.equals(this.name, journeyViewChart.name) &&
             Objects.equals(this.version, journeyViewChart.version) &&
+            Objects.equals(this.rank, journeyViewChart.rank) &&
             Objects.equals(this.groupByTime, journeyViewChart.groupByTime) &&
             Objects.equals(this.groupByAttributes, journeyViewChart.groupByAttributes) &&
             Objects.equals(this.metrics, journeyViewChart.metrics) &&
@@ -254,7 +274,7 @@ public class JourneyViewChart  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, groupByTime, groupByAttributes, metrics, displayAttributes, groupByMax, selfUri);
+    return Objects.hash(id, name, version, rank, groupByTime, groupByAttributes, metrics, displayAttributes, groupByMax, selfUri);
   }
 
   @Override
@@ -265,6 +285,7 @@ public class JourneyViewChart  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    rank: ").append(toIndentedString(rank)).append("\n");
     sb.append("    groupByTime: ").append(toIndentedString(groupByTime)).append("\n");
     sb.append("    groupByAttributes: ").append(toIndentedString(groupByAttributes)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");

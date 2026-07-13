@@ -418,6 +418,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   private Date bargedTime = null;
   private String consultParticipantId = null;
   private ConversationCallEventTopicFaxStatus faxStatus = null;
+  private String publicIpAddress = null;
 
   public ConversationCallEventTopicCallMediaParticipant() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -1418,6 +1419,23 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   }
 
 
+  /**
+   **/
+  public ConversationCallEventTopicCallMediaParticipant publicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("publicIpAddress")
+  public String getPublicIpAddress() {
+    return publicIpAddress;
+  }
+  public void setPublicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1485,12 +1503,13 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
             Objects.equals(this.bargedParticipantId, conversationCallEventTopicCallMediaParticipant.bargedParticipantId) &&
             Objects.equals(this.bargedTime, conversationCallEventTopicCallMediaParticipant.bargedTime) &&
             Objects.equals(this.consultParticipantId, conversationCallEventTopicCallMediaParticipant.consultParticipantId) &&
-            Objects.equals(this.faxStatus, conversationCallEventTopicCallMediaParticipant.faxStatus);
+            Objects.equals(this.faxStatus, conversationCallEventTopicCallMediaParticipant.faxStatus) &&
+            Objects.equals(this.publicIpAddress, conversationCallEventTopicCallMediaParticipant.publicIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, recordersState, disposition, transferSource, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, recordersState, disposition, transferSource, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus, publicIpAddress);
   }
 
   @Override
@@ -1556,6 +1575,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     sb.append("    bargedTime: ").append(toIndentedString(bargedTime)).append("\n");
     sb.append("    consultParticipantId: ").append(toIndentedString(consultParticipantId)).append("\n");
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
+    sb.append("    publicIpAddress: ").append(toIndentedString(publicIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

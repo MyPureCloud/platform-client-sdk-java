@@ -76,7 +76,6 @@ import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
-import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UCThirdPartyPresence;
 import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegration;
 import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegrationListing;
@@ -116,7 +115,6 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegration
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsUnifiedcommunicationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsListingRequest;
@@ -2442,83 +2440,6 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ClientAppEntityListing> response = (ApiResponse<ClientAppEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * UC integration client application configuration.
-   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<UCIntegrationListing> getIntegrationsClientappsUnifiedcommunicationsAsync(GetIntegrationsClientappsUnifiedcommunicationsRequest request, final AsyncApiCallback<UCIntegrationListing> callback) {
-    try {
-      final SettableFuture<UCIntegrationListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UCIntegrationListing>() {}, new AsyncApiCallback<ApiResponse<UCIntegrationListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<UCIntegrationListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * UC integration client application configuration.
-   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<UCIntegrationListing>> getIntegrationsClientappsUnifiedcommunicationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UCIntegrationListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<UCIntegrationListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UCIntegrationListing>() {}, new AsyncApiCallback<ApiResponse<UCIntegrationListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<UCIntegrationListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UCIntegrationListing> response = (ApiResponse<UCIntegrationListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UCIntegrationListing> response = (ApiResponse<UCIntegrationListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

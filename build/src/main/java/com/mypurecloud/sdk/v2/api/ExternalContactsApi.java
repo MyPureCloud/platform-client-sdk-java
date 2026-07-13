@@ -76,8 +76,14 @@ import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
 import com.mypurecloud.sdk.v2.model.Note;
 import com.mypurecloud.sdk.v2.model.NoteListing;
+import com.mypurecloud.sdk.v2.model.NotesExport;
+import com.mypurecloud.sdk.v2.model.NotesExportListing;
+import com.mypurecloud.sdk.v2.model.OrganizationsExport;
+import com.mypurecloud.sdk.v2.model.OrganizationsExportListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.RelationshipListing;
+import com.mypurecloud.sdk.v2.model.RelationshipsExport;
+import com.mypurecloud.sdk.v2.model.RelationshipsExportListing;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
@@ -123,6 +129,8 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsNotesExportRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsNotesExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationIdentifiersRequest;
@@ -130,6 +138,8 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNoteReq
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsExportRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaVersionsRequest;
@@ -138,6 +148,8 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchema
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasCoretypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsRelationshipRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsRelationshipsExportRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsRelationshipsExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsReversewhitepageslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsDivisionviewsAllRequest;
@@ -193,11 +205,14 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvUploadsRe
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsMergeContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsNotesExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsEnrichRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsRelationshipsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsRelationshipsExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactsSchemaRequest;
@@ -3236,6 +3251,170 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Get notes export for exportId
+   * 
+   * @param exportId Export id (required)
+   * @return NotesExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NotesExport getExternalcontactsNotesExport(String exportId) throws IOException, ApiException {
+    return  getExternalcontactsNotesExport(createGetExternalcontactsNotesExportRequest(exportId));
+  }
+
+  /**
+   * Get notes export for exportId
+   * 
+   * @param exportId Export id (required)
+   * @return NotesExport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NotesExport> getExternalcontactsNotesExportWithHttpInfo(String exportId) throws IOException {
+    return getExternalcontactsNotesExport(createGetExternalcontactsNotesExportRequest(exportId).withHttpInfo());
+  }
+
+  private GetExternalcontactsNotesExportRequest createGetExternalcontactsNotesExportRequest(String exportId) {
+    return GetExternalcontactsNotesExportRequest.builder()
+            .withExportId(exportId)
+
+            .build();
+  }
+
+  /**
+   * Get notes export for exportId
+   * 
+   * @param request The request object
+   * @return NotesExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NotesExport getExternalcontactsNotesExport(GetExternalcontactsNotesExportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NotesExport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NotesExport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get notes export for exportId
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NotesExport> getExternalcontactsNotesExport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NotesExport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NotesExport> response = (ApiResponse<NotesExport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NotesExport> response = (ApiResponse<NotesExport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List note exports for organization
+   * 
+   * @param divisionIds Division IDs of entities (optional)
+   * @param after The cursor that points to the end of the set of entities (optional)
+   * @param pageSize Number of entities to return (optional)
+   * @return NotesExportListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NotesExportListing getExternalcontactsNotesExports(List<String> divisionIds, String after, Integer pageSize) throws IOException, ApiException {
+    return  getExternalcontactsNotesExports(createGetExternalcontactsNotesExportsRequest(divisionIds, after, pageSize));
+  }
+
+  /**
+   * List note exports for organization
+   * 
+   * @param divisionIds Division IDs of entities (optional)
+   * @param after The cursor that points to the end of the set of entities (optional)
+   * @param pageSize Number of entities to return (optional)
+   * @return NotesExportListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NotesExportListing> getExternalcontactsNotesExportsWithHttpInfo(List<String> divisionIds, String after, Integer pageSize) throws IOException {
+    return getExternalcontactsNotesExports(createGetExternalcontactsNotesExportsRequest(divisionIds, after, pageSize).withHttpInfo());
+  }
+
+  private GetExternalcontactsNotesExportsRequest createGetExternalcontactsNotesExportsRequest(List<String> divisionIds, String after, Integer pageSize) {
+    return GetExternalcontactsNotesExportsRequest.builder()
+            .withDivisionIds(divisionIds)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * List note exports for organization
+   * 
+   * @param request The request object
+   * @return NotesExportListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NotesExportListing getExternalcontactsNotesExports(GetExternalcontactsNotesExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NotesExportListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NotesExportListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List note exports for organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NotesExportListing> getExternalcontactsNotesExports(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NotesExportListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NotesExportListing> response = (ApiResponse<NotesExportListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NotesExportListing> response = (ApiResponse<NotesExportListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Fetch an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
@@ -3878,6 +4057,170 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Get organizations export for exportId
+   * 
+   * @param exportId Export id (required)
+   * @return OrganizationsExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationsExport getExternalcontactsOrganizationsExport(String exportId) throws IOException, ApiException {
+    return  getExternalcontactsOrganizationsExport(createGetExternalcontactsOrganizationsExportRequest(exportId));
+  }
+
+  /**
+   * Get organizations export for exportId
+   * 
+   * @param exportId Export id (required)
+   * @return OrganizationsExport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationsExport> getExternalcontactsOrganizationsExportWithHttpInfo(String exportId) throws IOException {
+    return getExternalcontactsOrganizationsExport(createGetExternalcontactsOrganizationsExportRequest(exportId).withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationsExportRequest createGetExternalcontactsOrganizationsExportRequest(String exportId) {
+    return GetExternalcontactsOrganizationsExportRequest.builder()
+            .withExportId(exportId)
+
+            .build();
+  }
+
+  /**
+   * Get organizations export for exportId
+   * 
+   * @param request The request object
+   * @return OrganizationsExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationsExport getExternalcontactsOrganizationsExport(GetExternalcontactsOrganizationsExportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationsExport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationsExport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get organizations export for exportId
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationsExport> getExternalcontactsOrganizationsExport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationsExport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationsExport> response = (ApiResponse<OrganizationsExport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationsExport> response = (ApiResponse<OrganizationsExport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List organization exports for organization
+   * 
+   * @param divisionIds Division IDs of entities (optional)
+   * @param after The cursor that points to the end of the set of entities (optional)
+   * @param pageSize Number of entities to return (optional)
+   * @return OrganizationsExportListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationsExportListing getExternalcontactsOrganizationsExports(List<String> divisionIds, String after, Integer pageSize) throws IOException, ApiException {
+    return  getExternalcontactsOrganizationsExports(createGetExternalcontactsOrganizationsExportsRequest(divisionIds, after, pageSize));
+  }
+
+  /**
+   * List organization exports for organization
+   * 
+   * @param divisionIds Division IDs of entities (optional)
+   * @param after The cursor that points to the end of the set of entities (optional)
+   * @param pageSize Number of entities to return (optional)
+   * @return OrganizationsExportListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationsExportListing> getExternalcontactsOrganizationsExportsWithHttpInfo(List<String> divisionIds, String after, Integer pageSize) throws IOException {
+    return getExternalcontactsOrganizationsExports(createGetExternalcontactsOrganizationsExportsRequest(divisionIds, after, pageSize).withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationsExportsRequest createGetExternalcontactsOrganizationsExportsRequest(List<String> divisionIds, String after, Integer pageSize) {
+    return GetExternalcontactsOrganizationsExportsRequest.builder()
+            .withDivisionIds(divisionIds)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * List organization exports for organization
+   * 
+   * @param request The request object
+   * @return OrganizationsExportListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationsExportListing getExternalcontactsOrganizationsExports(GetExternalcontactsOrganizationsExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationsExportListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationsExportListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List organization exports for organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationsExportListing> getExternalcontactsOrganizationsExports(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationsExportListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationsExportListing> response = (ApiResponse<OrganizationsExportListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationsExportListing> response = (ApiResponse<OrganizationsExportListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a schema
    * 
    * @param schemaId Schema ID (required)
@@ -4493,6 +4836,170 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get relationships export for exportId
+   * 
+   * @param exportId Export id (required)
+   * @return RelationshipsExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RelationshipsExport getExternalcontactsRelationshipsExport(String exportId) throws IOException, ApiException {
+    return  getExternalcontactsRelationshipsExport(createGetExternalcontactsRelationshipsExportRequest(exportId));
+  }
+
+  /**
+   * Get relationships export for exportId
+   * 
+   * @param exportId Export id (required)
+   * @return RelationshipsExport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RelationshipsExport> getExternalcontactsRelationshipsExportWithHttpInfo(String exportId) throws IOException {
+    return getExternalcontactsRelationshipsExport(createGetExternalcontactsRelationshipsExportRequest(exportId).withHttpInfo());
+  }
+
+  private GetExternalcontactsRelationshipsExportRequest createGetExternalcontactsRelationshipsExportRequest(String exportId) {
+    return GetExternalcontactsRelationshipsExportRequest.builder()
+            .withExportId(exportId)
+
+            .build();
+  }
+
+  /**
+   * Get relationships export for exportId
+   * 
+   * @param request The request object
+   * @return RelationshipsExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RelationshipsExport getExternalcontactsRelationshipsExport(GetExternalcontactsRelationshipsExportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RelationshipsExport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RelationshipsExport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get relationships export for exportId
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RelationshipsExport> getExternalcontactsRelationshipsExport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RelationshipsExport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RelationshipsExport> response = (ApiResponse<RelationshipsExport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RelationshipsExport> response = (ApiResponse<RelationshipsExport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List relationship exports for organization
+   * 
+   * @param divisionIds Division IDs of entities (optional)
+   * @param after The cursor that points to the end of the set of entities (optional)
+   * @param pageSize Number of entities to return (optional)
+   * @return RelationshipsExportListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RelationshipsExportListing getExternalcontactsRelationshipsExports(List<String> divisionIds, String after, Integer pageSize) throws IOException, ApiException {
+    return  getExternalcontactsRelationshipsExports(createGetExternalcontactsRelationshipsExportsRequest(divisionIds, after, pageSize));
+  }
+
+  /**
+   * List relationship exports for organization
+   * 
+   * @param divisionIds Division IDs of entities (optional)
+   * @param after The cursor that points to the end of the set of entities (optional)
+   * @param pageSize Number of entities to return (optional)
+   * @return RelationshipsExportListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RelationshipsExportListing> getExternalcontactsRelationshipsExportsWithHttpInfo(List<String> divisionIds, String after, Integer pageSize) throws IOException {
+    return getExternalcontactsRelationshipsExports(createGetExternalcontactsRelationshipsExportsRequest(divisionIds, after, pageSize).withHttpInfo());
+  }
+
+  private GetExternalcontactsRelationshipsExportsRequest createGetExternalcontactsRelationshipsExportsRequest(List<String> divisionIds, String after, Integer pageSize) {
+    return GetExternalcontactsRelationshipsExportsRequest.builder()
+            .withDivisionIds(divisionIds)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * List relationship exports for organization
+   * 
+   * @param request The request object
+   * @return RelationshipsExportListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RelationshipsExportListing getExternalcontactsRelationshipsExports(GetExternalcontactsRelationshipsExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RelationshipsExportListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RelationshipsExportListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List relationship exports for organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RelationshipsExportListing> getExternalcontactsRelationshipsExports(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RelationshipsExportListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RelationshipsExportListing> response = (ApiResponse<RelationshipsExportListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RelationshipsExportListing> response = (ApiResponse<RelationshipsExportListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8920,6 +9427,84 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Create notes export
+   * 
+   * @param body Export (required)
+   * @return NotesExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NotesExport postExternalcontactsNotesExports(NotesExport body) throws IOException, ApiException {
+    return  postExternalcontactsNotesExports(createPostExternalcontactsNotesExportsRequest(body));
+  }
+
+  /**
+   * Create notes export
+   * 
+   * @param body Export (required)
+   * @return NotesExport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NotesExport> postExternalcontactsNotesExportsWithHttpInfo(NotesExport body) throws IOException {
+    return postExternalcontactsNotesExports(createPostExternalcontactsNotesExportsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsNotesExportsRequest createPostExternalcontactsNotesExportsRequest(NotesExport body) {
+    return PostExternalcontactsNotesExportsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create notes export
+   * 
+   * @param request The request object
+   * @return NotesExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NotesExport postExternalcontactsNotesExports(PostExternalcontactsNotesExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NotesExport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NotesExport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create notes export
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NotesExport> postExternalcontactsNotesExports(ApiRequest<NotesExport> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NotesExport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NotesExport> response = (ApiResponse<NotesExport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NotesExport> response = (ApiResponse<NotesExport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a note for an external organization
    * 
    * @param externalOrganizationId External Organization Id (required)
@@ -9162,6 +9747,84 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Create organizations export
+   * 
+   * @param body Export (required)
+   * @return OrganizationsExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationsExport postExternalcontactsOrganizationsExports(OrganizationsExport body) throws IOException, ApiException {
+    return  postExternalcontactsOrganizationsExports(createPostExternalcontactsOrganizationsExportsRequest(body));
+  }
+
+  /**
+   * Create organizations export
+   * 
+   * @param body Export (required)
+   * @return OrganizationsExport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationsExport> postExternalcontactsOrganizationsExportsWithHttpInfo(OrganizationsExport body) throws IOException {
+    return postExternalcontactsOrganizationsExports(createPostExternalcontactsOrganizationsExportsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsOrganizationsExportsRequest createPostExternalcontactsOrganizationsExportsRequest(OrganizationsExport body) {
+    return PostExternalcontactsOrganizationsExportsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create organizations export
+   * 
+   * @param request The request object
+   * @return OrganizationsExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationsExport postExternalcontactsOrganizationsExports(PostExternalcontactsOrganizationsExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationsExport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationsExport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create organizations export
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationsExport> postExternalcontactsOrganizationsExports(ApiRequest<OrganizationsExport> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationsExport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationsExport> response = (ApiResponse<OrganizationsExport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationsExport> response = (ApiResponse<OrganizationsExport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a schema
    * 
    * @param body Schema (required)
@@ -9313,6 +9976,84 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create relationships export
+   * 
+   * @param body Export (required)
+   * @return RelationshipsExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RelationshipsExport postExternalcontactsRelationshipsExports(RelationshipsExport body) throws IOException, ApiException {
+    return  postExternalcontactsRelationshipsExports(createPostExternalcontactsRelationshipsExportsRequest(body));
+  }
+
+  /**
+   * Create relationships export
+   * 
+   * @param body Export (required)
+   * @return RelationshipsExport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RelationshipsExport> postExternalcontactsRelationshipsExportsWithHttpInfo(RelationshipsExport body) throws IOException {
+    return postExternalcontactsRelationshipsExports(createPostExternalcontactsRelationshipsExportsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsRelationshipsExportsRequest createPostExternalcontactsRelationshipsExportsRequest(RelationshipsExport body) {
+    return PostExternalcontactsRelationshipsExportsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create relationships export
+   * 
+   * @param request The request object
+   * @return RelationshipsExport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RelationshipsExport postExternalcontactsRelationshipsExports(PostExternalcontactsRelationshipsExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RelationshipsExport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RelationshipsExport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create relationships export
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RelationshipsExport> postExternalcontactsRelationshipsExports(ApiRequest<RelationshipsExport> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RelationshipsExport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RelationshipsExport> response = (ApiResponse<RelationshipsExport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RelationshipsExport> response = (ApiResponse<RelationshipsExport>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

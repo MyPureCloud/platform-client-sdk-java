@@ -173,6 +173,7 @@ public class GetUserRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String integrationPresenceSource;
@@ -218,6 +219,7 @@ public class GetUserRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> userCustomAttributeSchemaIds;
@@ -276,6 +278,7 @@ public class GetUserRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

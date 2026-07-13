@@ -193,6 +193,7 @@ public class GetJourneyActiontemplatesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String state;
@@ -238,6 +239,7 @@ public class GetJourneyActiontemplatesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> queryFields;

@@ -338,6 +338,7 @@ public class ConversationEventTopicCall  implements Serializable {
   private ConversationEventTopicQueueMediaSettings queueMediaSettings = null;
   private ConversationEventTopicDisposition disposition = null;
   private String transferSource = null;
+  private String publicIpAddress = null;
 
   public ConversationEventTopicCall() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -937,6 +938,24 @@ public class ConversationEventTopicCall  implements Serializable {
   }
 
 
+  /**
+   * The reported client IP of the phone for the call.
+   **/
+  public ConversationEventTopicCall publicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reported client IP of the phone for the call.")
+  @JsonProperty("publicIpAddress")
+  public String getPublicIpAddress() {
+    return publicIpAddress;
+  }
+  public void setPublicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -979,12 +998,13 @@ public class ConversationEventTopicCall  implements Serializable {
             Objects.equals(this.agentAssistantId, conversationEventTopicCall.agentAssistantId) &&
             Objects.equals(this.queueMediaSettings, conversationEventTopicCall.queueMediaSettings) &&
             Objects.equals(this.disposition, conversationEventTopicCall.disposition) &&
-            Objects.equals(this.transferSource, conversationEventTopicCall.transferSource);
+            Objects.equals(this.transferSource, conversationEventTopicCall.transferSource) &&
+            Objects.equals(this.publicIpAddress, conversationEventTopicCall.publicIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition, transferSource);
+    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition, transferSource, publicIpAddress);
   }
 
   @Override
@@ -1025,6 +1045,7 @@ public class ConversationEventTopicCall  implements Serializable {
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
     sb.append("    transferSource: ").append(toIndentedString(transferSource)).append("\n");
+    sb.append("    publicIpAddress: ").append(toIndentedString(publicIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

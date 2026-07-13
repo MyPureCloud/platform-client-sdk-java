@@ -258,6 +258,7 @@ public class GetAnalyticsBotflowSessionsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String endLanguage;

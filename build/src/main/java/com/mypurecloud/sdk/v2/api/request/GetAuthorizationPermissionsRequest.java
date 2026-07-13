@@ -121,6 +121,7 @@ public class GetAuthorizationPermissionsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String query;

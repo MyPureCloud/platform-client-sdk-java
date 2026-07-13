@@ -2660,7 +2660,7 @@ public class CaseManagementApiAsync {
 
   /**
    * Query for Caseplans.
-   * 
+   * This endpoint supports two filtering modes. The recommended approach uses 'filters' (generic filter model) and 'attributes' (field projection). During the migration period, the legacy fields 'name', 'nameSearchType', and 'divisionIds' remain available as an alternative.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2694,7 +2694,7 @@ public class CaseManagementApiAsync {
 
   /**
    * Query for Caseplans.
-   * 
+   * This endpoint supports two filtering modes. The recommended approach uses 'filters' (generic filter model) and 'attributes' (field projection). During the migration period, the legacy fields 'name', 'nameSearchType', and 'divisionIds' remain available as an alternative.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

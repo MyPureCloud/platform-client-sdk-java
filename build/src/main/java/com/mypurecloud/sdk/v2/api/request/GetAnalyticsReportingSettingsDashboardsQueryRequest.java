@@ -198,6 +198,7 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String dashboardAccessFilter;
@@ -243,6 +244,7 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -301,6 +303,7 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortBy;

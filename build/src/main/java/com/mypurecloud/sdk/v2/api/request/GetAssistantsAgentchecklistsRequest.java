@@ -150,6 +150,7 @@ public class GetAssistantsAgentchecklistsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortBy;
@@ -195,6 +196,7 @@ public class GetAssistantsAgentchecklistsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> agentChecklistIds;

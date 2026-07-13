@@ -105,6 +105,7 @@ public class PostAuthorizationDivisionObjectRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> body;

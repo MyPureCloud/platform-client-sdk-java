@@ -133,6 +133,7 @@ public class GetGamificationProfileMetricsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private LocalDate workday;

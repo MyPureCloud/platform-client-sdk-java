@@ -115,6 +115,7 @@ public class GetSearchRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean profile;

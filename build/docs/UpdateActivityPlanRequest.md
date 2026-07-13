@@ -15,6 +15,11 @@
 | **optimizationObjective** | [**OptimizationObjectiveEnum**](#Enum--OptimizationObjectiveEnum) | The optimization objective of this activity plan |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of this activity plan |  [optional] |
 | **fixedAvailability** | [**ListWrapperFixedAvailability**](ListWrapperFixedAvailability) | Fixed availability configuration for the activity plan |  [optional] |
+| **activityCodeId** | **String** | The activity code associated with the activity plan |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the activity plan |  [optional] |
+| **lengthMinutes** | **Integer** | The length in minutes of the activity plan |  [optional] |
+| **countsAsPaidTime** | **Boolean** | Whether the activity should count as paid time |  [optional] |
+| **recurrenceSettings** | [**RecurrenceSettingsBase**](RecurrenceSettingsBase) | Settings controlling recurrence for the activity plan. If not set the activity plan will only occur once |  [optional] |
 
 
 ## Enum: OptimizationObjectiveEnum
@@ -35,6 +40,15 @@
 | INACTIVE | &quot;Inactive&quot; | 
 
 
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INDIVIDUAL | &quot;Individual&quot; | 
+| GROUP | &quot;Group&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

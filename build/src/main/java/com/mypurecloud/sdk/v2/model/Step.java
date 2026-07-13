@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CaseReference;
 import com.mypurecloud.sdk.v2.model.StageReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
+import com.mypurecloud.sdk.v2.model.WorkitemActivityReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -88,6 +89,7 @@ public class Step  implements Serializable {
   }
   private StatusEnum status = null;
   private StageReference stage = null;
+  private WorkitemActivityReference workitemActivity = null;
   private String selfUri = null;
   private CaseReference _case = null;
 
@@ -289,6 +291,13 @@ public class Step  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The workitem activity linked to this step. Present only for workitem-type steps that have been activated.")
+  @JsonProperty("workitemActivity")
+  public WorkitemActivityReference getWorkitemActivity() {
+    return workitemActivity;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -335,13 +344,14 @@ public class Step  implements Serializable {
             Objects.equals(this.version, step.version) &&
             Objects.equals(this.status, step.status) &&
             Objects.equals(this.stage, step.stage) &&
+            Objects.equals(this.workitemActivity, step.workitemActivity) &&
             Objects.equals(this.selfUri, step.selfUri) &&
             Objects.equals(this._case, step._case);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateCreated, dateModified, dateCompleted, dateStarted, modifiedBy, version, status, stage, selfUri, _case);
+    return Objects.hash(id, name, description, dateCreated, dateModified, dateCompleted, dateStarted, modifiedBy, version, status, stage, workitemActivity, selfUri, _case);
   }
 
   @Override
@@ -360,6 +370,7 @@ public class Step  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    stage: ").append(toIndentedString(stage)).append("\n");
+    sb.append("    workitemActivity: ").append(toIndentedString(workitemActivity)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    _case: ").append(toIndentedString(_case)).append("\n");
     sb.append("}");

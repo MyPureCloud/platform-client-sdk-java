@@ -107,6 +107,7 @@ public class GetContentmanagementWorkspaceDocumentsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageSize;

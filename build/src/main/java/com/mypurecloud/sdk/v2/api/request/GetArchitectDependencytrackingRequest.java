@@ -274,6 +274,7 @@ public class GetArchitectDependencytrackingRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean consumedResources;
@@ -432,6 +433,7 @@ public class GetArchitectDependencytrackingRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> consumingResourceType;
@@ -562,6 +564,7 @@ public class GetArchitectDependencytrackingRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

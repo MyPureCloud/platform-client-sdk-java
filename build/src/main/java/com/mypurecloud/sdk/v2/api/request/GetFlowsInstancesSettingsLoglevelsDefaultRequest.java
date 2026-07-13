@@ -145,6 +145,7 @@ public class GetFlowsInstancesSettingsLoglevelsDefaultRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

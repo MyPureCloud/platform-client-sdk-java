@@ -188,6 +188,7 @@ public class GetRoutingQueueAssistantRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String languageVariation;

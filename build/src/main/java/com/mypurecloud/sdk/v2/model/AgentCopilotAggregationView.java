@@ -44,12 +44,12 @@ public class AgentCopilotAggregationView  implements Serializable {
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCANNEDRESPONSESUGGESTIONS("nCannedResponseSuggestions"),
+    NDISTINCTCONVERSATIONS("nDistinctConversations"),
     NDISTINCTSUGGESTIONS("nDistinctSuggestions"),
     NKNOWLEDGEANSWERSUGGESTIONS("nKnowledgeAnswerSuggestions"),
     NKNOWLEDGEARTICLESUGGESTIONS("nKnowledgeArticleSuggestions"),
     NKNOWLEDGESEARCHSUGGESTIONS("nKnowledgeSearchSuggestions"),
-    NSCRIPTSUGGESTIONS("nScriptSuggestions"),
-    NDISTINCTCONVERSATIONS("nDistinctConversations");
+    NSCRIPTSUGGESTIONS("nScriptSuggestions");
 
     private String value;
 

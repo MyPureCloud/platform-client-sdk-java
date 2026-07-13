@@ -178,6 +178,7 @@ public class GetUsersMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String integrationPresenceSource;
@@ -223,6 +224,7 @@ public class GetUsersMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> userCustomAttributeSchemaIds;

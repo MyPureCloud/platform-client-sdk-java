@@ -84,6 +84,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     INTEGRATIONS("Integrations"),
     WEBHOOKS("Webhooks"),
     ANALYTICSREPORTING("AnalyticsReporting"),
+    EMBEDDEDANALYTICS("EmbeddedAnalytics"),
     LIMITS("Limits"),
     EMPLOYEEPERFORMANCE("EmployeePerformance"),
     DATATABLES("Datatables"),
@@ -439,7 +440,10 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ACTIVITYPLANOCCURRENCE("ActivityPlanOccurrence"),
     ACTIVITYPLANOCCURRENCESESSION("ActivityPlanOccurrenceSession"),
     ACTIVITYPLANOCCURRENCESESSIONUSER("ActivityPlanOccurrenceSessionUser"),
+    ADHERENCEADJUSTMENT("AdherenceAdjustment"),
+    ADHERENCEADJUSTMENTREASONCODE("AdherenceAdjustmentReasonCode"),
     ADHERENCEEXPLANATION("AdherenceExplanation"),
+    AGENTSCHEDULINGPREFERENCES("AgentSchedulingPreferences"),
     ALTERNATIVESHIFT("AlternativeShift"),
     BUSINESSUNIT("BusinessUnit"),
     FORECAST("Forecast"),
@@ -531,6 +535,9 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CUSTOMCALCULATIONS("CustomCalculations"),
     SAVEDVIEWS("SavedViews"),
     ANALYTICSLAKEHOUSESETTINGS("AnalyticsLakehouseSettings"),
+    USERS("Users"),
+    ANALYSES("Analyses"),
+    DASHBOARD("Dashboard"),
     SCHEDULEDEXPORTS("ScheduledExports"),
     EXPORTS("Exports"),
     EXPORTPDFTEMPLATES("ExportPdfTemplates"),
@@ -624,7 +631,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ANOMALYDETECTIONSETTINGS("AnomalyDetectionSettings"),
     CONVERSATIONACCESSATTRIBUTES("ConversationAccessAttributes"),
     SETTINGS("Settings"),
-    AGENT("Agent");
+    AGENT("Agent"),
+    GRAPHSETTINGS("GraphSettings");
 
     private String value;
 

@@ -146,6 +146,7 @@ public class GetLearningAssignmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageSize;
@@ -219,6 +220,7 @@ public class GetLearningAssignmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Float minPercentageScore;
@@ -291,6 +293,7 @@ public class GetLearningAssignmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortBy;
@@ -335,6 +338,7 @@ public class GetLearningAssignmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> types;
@@ -382,6 +386,7 @@ public class GetLearningAssignmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> states;
@@ -429,6 +434,7 @@ public class GetLearningAssignmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> expand;
@@ -472,6 +478,7 @@ public class GetLearningAssignmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

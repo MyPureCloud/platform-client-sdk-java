@@ -127,6 +127,7 @@ public class GetConversationsSummariesSettingsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String language;
@@ -185,6 +186,7 @@ public class GetConversationsSummariesSettingsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

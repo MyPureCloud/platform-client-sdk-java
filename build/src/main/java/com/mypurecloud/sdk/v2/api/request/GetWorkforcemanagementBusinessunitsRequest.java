@@ -470,6 +470,7 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String divisionId;

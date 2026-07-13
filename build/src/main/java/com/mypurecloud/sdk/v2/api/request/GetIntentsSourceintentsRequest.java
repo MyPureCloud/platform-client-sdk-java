@@ -112,6 +112,7 @@ public class GetIntentsSourceintentsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sourceId;

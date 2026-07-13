@@ -131,6 +131,7 @@ public class GetCoachingAppointmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> facilitatorIds;
@@ -189,6 +190,7 @@ public class GetCoachingAppointmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> relationships;
@@ -234,6 +236,7 @@ public class GetCoachingAppointmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String completionInterval;
@@ -293,6 +296,7 @@ public class GetCoachingAppointmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String intervalCondition;
@@ -337,6 +341,7 @@ public class GetCoachingAppointmentsMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

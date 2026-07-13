@@ -429,6 +429,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String feature;
@@ -541,6 +542,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String divisionId;

@@ -112,6 +112,7 @@ public class GetInfrastructureascodeAcceleratorsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -185,6 +186,7 @@ public class GetInfrastructureascodeAcceleratorsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String type;
@@ -230,6 +232,7 @@ public class GetInfrastructureascodeAcceleratorsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String classification;

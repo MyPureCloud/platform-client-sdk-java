@@ -2875,6 +2875,61 @@ public class ViewFilter  implements Serializable {
   private Boolean isSnippetRecorded = null;
   private Boolean takeover = null;
 
+  private static class SocialPostTypesEnumDeserializer extends StdDeserializer<SocialPostTypesEnum> {
+    public SocialPostTypesEnumDeserializer() {
+      super(SocialPostTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public SocialPostTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SocialPostTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets socialPostTypes
+   */
+ @JsonDeserialize(using = SocialPostTypesEnumDeserializer.class)
+  public enum SocialPostTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    POSTS("Posts"),
+    COMMENTS("Comments"),
+    POSTMENTION("PostMention"),
+    REELSMENTION("ReelsMention"),
+    COMMENTMENTION("CommentMention"),
+    COLLABORATEPOSTS("CollaboratePosts"),
+    LIVEVIDEO("LiveVideo"),
+    LIVECOMMENT("LiveComment"),
+    REVIEWS("Reviews");
+
+    private String value;
+
+    SocialPostTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SocialPostTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SocialPostTypesEnum value : SocialPostTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SocialPostTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SocialPostTypesEnum> socialPostTypes = null;
+
   public ViewFilter() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       mediaTypes = new ArrayList<MediaTypesEnum>();
@@ -3040,6 +3095,7 @@ public class ViewFilter  implements Serializable {
       contentModerationFlags = new ArrayList<ContentModerationFlagsEnum>();
       socialSourceTypes = new ArrayList<SocialSourceTypesEnum>();
       engagementSources = new ArrayList<EngagementSourcesEnum>();
+      socialPostTypes = new ArrayList<SocialPostTypesEnum>();
     }
   }
 
@@ -3208,6 +3264,7 @@ public class ViewFilter  implements Serializable {
       contentModerationFlags = new ArrayList<ContentModerationFlagsEnum>();
       socialSourceTypes = new ArrayList<SocialSourceTypesEnum>();
       engagementSources = new ArrayList<EngagementSourcesEnum>();
+      socialPostTypes = new ArrayList<SocialPostTypesEnum>();
     }
   }
 
@@ -7550,6 +7607,24 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * The social post types used to filter the view
+   **/
+  public ViewFilter socialPostTypes(List<SocialPostTypesEnum> socialPostTypes) {
+    this.socialPostTypes = socialPostTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The social post types used to filter the view")
+  @JsonProperty("socialPostTypes")
+  public List<SocialPostTypesEnum> getSocialPostTypes() {
+    return socialPostTypes;
+  }
+  public void setSocialPostTypes(List<SocialPostTypesEnum> socialPostTypes) {
+    this.socialPostTypes = socialPostTypes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -7800,12 +7875,13 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.screenMonitored, viewFilter.screenMonitored) &&
             Objects.equals(this.engagementSources, viewFilter.engagementSources) &&
             Objects.equals(this.isSnippetRecorded, viewFilter.isSnippetRecorded) &&
-            Objects.equals(this.takeover, viewFilter.takeover);
+            Objects.equals(this.takeover, viewFilter.takeover) &&
+            Objects.equals(this.socialPostTypes, viewFilter.socialPostTypes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, assignedSkillIds, skillGroups, languageIds, assignedLanguageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardState, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds, viewMetrics, timelineCategories, acw, segmentTypes, programIds, categoryIds, deliveryPushed, socialRatings, virtualAgentIds, empathyScoreCategories, sentimentScoreCategories, sentimentTrendCategories, contentModerationFlags, socialSourceTypes, socialFollowerRange, socialVerificationStatus, sessionExpired, screenMonitored, engagementSources, isSnippetRecorded, takeover);
+    return Objects.hash(mediaTypes, queueIds, skillIds, assignedSkillIds, skillGroups, languageIds, assignedLanguageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardState, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds, viewMetrics, timelineCategories, acw, segmentTypes, programIds, categoryIds, deliveryPushed, socialRatings, virtualAgentIds, empathyScoreCategories, sentimentScoreCategories, sentimentTrendCategories, contentModerationFlags, socialSourceTypes, socialFollowerRange, socialVerificationStatus, sessionExpired, screenMonitored, engagementSources, isSnippetRecorded, takeover, socialPostTypes);
   }
 
   @Override
@@ -8054,6 +8130,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    engagementSources: ").append(toIndentedString(engagementSources)).append("\n");
     sb.append("    isSnippetRecorded: ").append(toIndentedString(isSnippetRecorded)).append("\n");
     sb.append("    takeover: ").append(toIndentedString(takeover)).append("\n");
+    sb.append("    socialPostTypes: ").append(toIndentedString(socialPostTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

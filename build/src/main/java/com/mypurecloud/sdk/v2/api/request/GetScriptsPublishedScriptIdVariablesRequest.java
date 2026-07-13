@@ -87,6 +87,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String output;
@@ -131,6 +132,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String type;
@@ -176,6 +178,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String scriptDataVersion;

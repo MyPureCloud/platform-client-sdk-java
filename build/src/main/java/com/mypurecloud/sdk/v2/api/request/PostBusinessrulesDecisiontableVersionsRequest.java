@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
+import com.mypurecloud.sdk.v2.model.CreateDecisionTableVersionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;
@@ -71,6 +72,20 @@ public class PostBusinessrulesDecisiontableVersionsRequest {
 	    return this;
 	} 
 
+	private CreateDecisionTableVersionRequest body;
+	public CreateDecisionTableVersionRequest getBody() {
+		return this.body;
+	}
+
+	public void setBody(CreateDecisionTableVersionRequest body) {
+		this.body = body;
+	}
+
+	public PostBusinessrulesDecisiontableVersionsRequest withBody(CreateDecisionTableVersionRequest body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,7 +105,7 @@ public class PostBusinessrulesDecisiontableVersionsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() {
+    public ApiRequest<CreateDecisionTableVersionRequest> withHttpInfo() {
         
         // verify the required parameter 'tableId' is set
         if (this.tableId == null) {
@@ -101,6 +116,8 @@ public class PostBusinessrulesDecisiontableVersionsRequest {
         return ApiRequestBuilder.create("POST", "/api/v2/businessrules/decisiontables/{tableId}/versions")
                 .withPathParameter("tableId", tableId)
         
+                .withBody(body)
+
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -129,6 +146,11 @@ public class PostBusinessrulesDecisiontableVersionsRequest {
 
 		public Builder withTableId(String tableId) {
 			request.setTableId(tableId);
+			return this;
+		}
+
+		public Builder withBody(CreateDecisionTableVersionRequest body) {
+			request.setBody(body);
 			return this;
 		}
 

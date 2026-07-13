@@ -54,6 +54,7 @@
 | INTEGRATIONS | &quot;Integrations&quot; | 
 | WEBHOOKS | &quot;Webhooks&quot; | 
 | ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; | 
+| EMBEDDEDANALYTICS | &quot;EmbeddedAnalytics&quot; | 
 | LIMITS | &quot;Limits&quot; | 
 | EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; | 
 | DATATABLES | &quot;Datatables&quot; | 
@@ -328,7 +329,10 @@
 | ACTIVITYPLANOCCURRENCE | &quot;ActivityPlanOccurrence&quot; | 
 | ACTIVITYPLANOCCURRENCESESSION | &quot;ActivityPlanOccurrenceSession&quot; | 
 | ACTIVITYPLANOCCURRENCESESSIONUSER | &quot;ActivityPlanOccurrenceSessionUser&quot; | 
+| ADHERENCEADJUSTMENT | &quot;AdherenceAdjustment&quot; | 
+| ADHERENCEADJUSTMENTREASONCODE | &quot;AdherenceAdjustmentReasonCode&quot; | 
 | ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
+| AGENTSCHEDULINGPREFERENCES | &quot;AgentSchedulingPreferences&quot; | 
 | ALTERNATIVESHIFT | &quot;AlternativeShift&quot; | 
 | BUSINESSUNIT | &quot;BusinessUnit&quot; | 
 | FORECAST | &quot;Forecast&quot; | 
@@ -420,6 +424,9 @@
 | CUSTOMCALCULATIONS | &quot;CustomCalculations&quot; | 
 | SAVEDVIEWS | &quot;SavedViews&quot; | 
 | ANALYTICSLAKEHOUSESETTINGS | &quot;AnalyticsLakehouseSettings&quot; | 
+| USERS | &quot;Users&quot; | 
+| ANALYSES | &quot;Analyses&quot; | 
+| DASHBOARD | &quot;Dashboard&quot; | 
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; | 
 | EXPORTS | &quot;Exports&quot; | 
 | EXPORTPDFTEMPLATES | &quot;ExportPdfTemplates&quot; | 
@@ -514,8 +521,9 @@
 | CONVERSATIONACCESSATTRIBUTES | &quot;ConversationAccessAttributes&quot; | 
 | SETTINGS | &quot;Settings&quot; | 
 | AGENT | &quot;Agent&quot; | 
+| GRAPHSETTINGS | &quot;GraphSettings&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

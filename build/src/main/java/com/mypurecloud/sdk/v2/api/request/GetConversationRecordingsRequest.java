@@ -135,6 +135,7 @@ public class GetConversationRecordingsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> mediaFormats;

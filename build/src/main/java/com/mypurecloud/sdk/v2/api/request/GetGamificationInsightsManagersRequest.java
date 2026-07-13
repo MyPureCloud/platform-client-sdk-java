@@ -120,6 +120,7 @@ public class GetGamificationInsightsManagersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String filterId;
@@ -178,6 +179,7 @@ public class GetGamificationInsightsManagersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private LocalDate startWorkday;

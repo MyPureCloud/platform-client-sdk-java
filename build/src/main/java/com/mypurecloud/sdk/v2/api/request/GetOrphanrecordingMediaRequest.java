@@ -121,6 +121,7 @@ public class GetOrphanrecordingMediaRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String emailFormatId;
@@ -165,6 +166,7 @@ public class GetOrphanrecordingMediaRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String chatFormatId;
@@ -209,6 +211,7 @@ public class GetOrphanrecordingMediaRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String messageFormatId;
@@ -253,6 +256,7 @@ public class GetOrphanrecordingMediaRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean download;

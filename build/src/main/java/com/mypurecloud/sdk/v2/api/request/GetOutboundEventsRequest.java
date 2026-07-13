@@ -191,6 +191,7 @@ public class GetOutboundEventsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String category;
@@ -277,6 +278,7 @@ public class GetOutboundEventsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

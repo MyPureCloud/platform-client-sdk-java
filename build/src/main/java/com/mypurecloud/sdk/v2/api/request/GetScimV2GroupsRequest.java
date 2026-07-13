@@ -132,6 +132,7 @@ public class GetScimV2GroupsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> excludedAttributes;
@@ -188,6 +189,7 @@ public class GetScimV2GroupsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

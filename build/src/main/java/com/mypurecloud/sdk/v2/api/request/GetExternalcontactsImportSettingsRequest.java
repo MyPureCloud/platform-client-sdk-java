@@ -86,8 +86,14 @@ import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
 import com.mypurecloud.sdk.v2.model.Note;
 import com.mypurecloud.sdk.v2.model.NoteListing;
+import com.mypurecloud.sdk.v2.model.NotesExport;
+import com.mypurecloud.sdk.v2.model.NotesExportListing;
+import com.mypurecloud.sdk.v2.model.OrganizationsExport;
+import com.mypurecloud.sdk.v2.model.OrganizationsExportListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.RelationshipListing;
+import com.mypurecloud.sdk.v2.model.RelationshipsExport;
+import com.mypurecloud.sdk.v2.model.RelationshipsExportListing;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
@@ -167,6 +173,7 @@ public class GetExternalcontactsImportSettingsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;

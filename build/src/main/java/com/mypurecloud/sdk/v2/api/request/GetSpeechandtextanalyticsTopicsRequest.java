@@ -161,6 +161,7 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -247,6 +248,7 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortBy;
@@ -291,6 +293,7 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -335,6 +338,7 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

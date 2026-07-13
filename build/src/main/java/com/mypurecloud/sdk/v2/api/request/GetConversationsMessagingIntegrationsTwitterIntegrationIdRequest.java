@@ -71,6 +71,8 @@ import com.mypurecloud.sdk.v2.model.ConsultTransferToExternalContact;
 import com.mypurecloud.sdk.v2.model.ConsultTransferToQueue;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.Conversation;
+import com.mypurecloud.sdk.v2.model.ConversationAccessAttributesResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAccessAttributesUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationActivityQuery;
 import com.mypurecloud.sdk.v2.model.ConversationActivityResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
@@ -228,6 +230,8 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterOAuthSettings;
 import com.mypurecloud.sdk.v2.model.TwitterSignupOAuthSettings;
 import com.mypurecloud.sdk.v2.model.UpdateConferenceRequest;
+import com.mypurecloud.sdk.v2.model.UploadAttachmentRequest;
+import com.mypurecloud.sdk.v2.model.UploadAttachmentResponse;
 import com.mypurecloud.sdk.v2.model.UploadMediaRequest;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
@@ -302,6 +306,7 @@ public class GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

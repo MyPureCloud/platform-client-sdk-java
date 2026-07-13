@@ -164,6 +164,7 @@ public class GetFlowsDivisionviewsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageNumber;

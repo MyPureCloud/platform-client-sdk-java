@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
+import com.mypurecloud.sdk.v2.model.CreateDecisionTableVersionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;
@@ -2735,7 +2736,7 @@ public class BusinessRulesApiAsync {
   }
 
   /**
-   * Create a new decision table version
+   * Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2769,13 +2770,13 @@ public class BusinessRulesApiAsync {
   }
 
   /**
-   * Create a new decision table version
+   * Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DecisionTableVersion>> postBusinessrulesDecisiontableVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DecisionTableVersion>> callback) {
+  public Future<ApiResponse<DecisionTableVersion>> postBusinessrulesDecisiontableVersionsAsync(ApiRequest<CreateDecisionTableVersionRequest> request, final AsyncApiCallback<ApiResponse<DecisionTableVersion>> callback) {
     try {
       final SettableFuture<ApiResponse<DecisionTableVersion>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

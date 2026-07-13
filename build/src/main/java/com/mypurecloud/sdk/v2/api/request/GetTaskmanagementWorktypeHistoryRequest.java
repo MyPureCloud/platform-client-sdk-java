@@ -167,6 +167,7 @@ public class GetTaskmanagementWorktypeHistoryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> fields;
@@ -221,6 +222,7 @@ public class GetTaskmanagementWorktypeHistoryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

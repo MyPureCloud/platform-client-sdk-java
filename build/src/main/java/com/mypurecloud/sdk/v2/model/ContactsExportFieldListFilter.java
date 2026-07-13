@@ -46,7 +46,10 @@ public class ContactsExportFieldListFilter  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DIVISIONID("DivisionId"),
     CONTACTCLASSIFICATION("ContactClassification"),
-    EXTERNALORGANIZATIONID("ExternalOrganizationId");
+    EXTERNALORGANIZATIONID("ExternalOrganizationId"),
+    EXTERNALSOURCEID("ExternalSourceId"),
+    SCHEMAID("SchemaId"),
+    SCHEMAVERSION("SchemaVersion");
 
     private String value;
 

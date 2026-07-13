@@ -260,6 +260,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> resourceType;

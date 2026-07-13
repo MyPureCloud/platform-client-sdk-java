@@ -145,6 +145,7 @@ public class GetFlowsDatatablesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageNumber;
@@ -217,6 +218,7 @@ public class GetFlowsDatatablesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;

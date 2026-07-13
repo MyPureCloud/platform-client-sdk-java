@@ -43,6 +43,7 @@ public class AgentCopilotAggregationSort  implements Serializable {
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCANNEDRESPONSESUGGESTIONS("nCannedResponseSuggestions"),
+    NDISTINCTCONVERSATIONS("nDistinctConversations"),
     NDISTINCTSUGGESTIONS("nDistinctSuggestions"),
     NKNOWLEDGEANSWERSUGGESTIONS("nKnowledgeAnswerSuggestions"),
     NKNOWLEDGEARTICLESUGGESTIONS("nKnowledgeArticleSuggestions"),

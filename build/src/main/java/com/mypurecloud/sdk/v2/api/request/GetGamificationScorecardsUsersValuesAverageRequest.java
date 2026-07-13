@@ -120,6 +120,7 @@ public class GetGamificationScorecardsUsersValuesAverageRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String filterId;

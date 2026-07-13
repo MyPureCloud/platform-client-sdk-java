@@ -76,6 +76,7 @@ public class GetGdprSubjectsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String searchValue;

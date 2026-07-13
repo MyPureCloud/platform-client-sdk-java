@@ -113,6 +113,7 @@ public class GetGuidesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortBy;
@@ -158,6 +159,7 @@ public class GetGuidesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -202,6 +204,7 @@ public class GetGuidesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageNumber;

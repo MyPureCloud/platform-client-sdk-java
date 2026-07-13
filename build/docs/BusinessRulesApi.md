@@ -39,7 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postBusinessrulesDecisiontableVersionRowsBulkUpdate**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkUpdate) | Bulk update decision table rows |
 | [**postBusinessrulesDecisiontableVersionRowsSearch**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsSearch) | Search for decision table rows |
 | [**postBusinessrulesDecisiontableVersionSync**](BusinessRulesApi#postBusinessrulesDecisiontableVersionSync) | Update the Business Rules Schema to the latest version for a given decision table version |
-| [**postBusinessrulesDecisiontableVersions**](BusinessRulesApi#postBusinessrulesDecisiontableVersions) | Create a new decision table version |
+| [**postBusinessrulesDecisiontableVersions**](BusinessRulesApi#postBusinessrulesDecisiontableVersions) | Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version. |
 | [**postBusinessrulesDecisiontables**](BusinessRulesApi#postBusinessrulesDecisiontables) | Create a decision table |
 | [**postBusinessrulesSchemas**](BusinessRulesApi#postBusinessrulesSchemas) | Create a schema |
 | [**putBusinessrulesDecisiontableVersionPublish**](BusinessRulesApi#putBusinessrulesDecisiontableVersionPublish) | Publish a decision table version |
@@ -2228,9 +2228,9 @@ try {
 # **postBusinessrulesDecisiontableVersions**
 
 
-> [DecisionTableVersion](DecisionTableVersion) postBusinessrulesDecisiontableVersions(tableId)
+> [DecisionTableVersion](DecisionTableVersion) postBusinessrulesDecisiontableVersions(tableId, body)
 
-Create a new decision table version
+Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions  
 
@@ -2261,8 +2261,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 BusinessRulesApi apiInstance = new BusinessRulesApi();
 String tableId = "tableId_example"; // String | Table ID
+CreateDecisionTableVersionRequest body = new CreateDecisionTableVersionRequest(); // CreateDecisionTableVersionRequest | Decision Table Version
 try {
-    DecisionTableVersion result = apiInstance.postBusinessrulesDecisiontableVersions(tableId);
+    DecisionTableVersion result = apiInstance.postBusinessrulesDecisiontableVersions(tableId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#postBusinessrulesDecisiontableVersions");
@@ -2276,6 +2277,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tableId** | **String**| Table ID | 
+| **body** | [**CreateDecisionTableVersionRequest**](CreateDecisionTableVersionRequest)| Decision Table Version | [optional] 
 {: class="table-striped"}
 
 
@@ -2596,4 +2598,4 @@ try {
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

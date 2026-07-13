@@ -17,6 +17,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseSynchronizeJob) | Delete synchronization job |
 | [**deleteKnowledgeSetting**](KnowledgeApi#deleteKnowledgeSetting) | Delete Knowledge setting. |
 | [**deleteKnowledgeSource**](KnowledgeApi#deleteKnowledgeSource) | Delete source |
+| [**deleteKnowledgeSourceSynchronizationDeletion**](KnowledgeApi#deleteKnowledgeSourceSynchronizationDeletion) | Remove a deletion entry associated with the synchronization |
+| [**deleteKnowledgeSourceSynchronizationUpload**](KnowledgeApi#deleteKnowledgeSourceSynchronizationUpload) | Remove a file upload entry associated with the synchronization |
 | [**getKnowledgeConnection**](KnowledgeApi#getKnowledgeConnection) | Get connection |
 | [**getKnowledgeConnectionOptions**](KnowledgeApi#getKnowledgeConnectionOptions) | Get connection options |
 | [**getKnowledgeConnections**](KnowledgeApi#getKnowledgeConnections) | Get connections |
@@ -58,6 +60,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getKnowledgeSettings**](KnowledgeApi#getKnowledgeSettings) | Get Knowledge settings. |
 | [**getKnowledgeSource**](KnowledgeApi#getKnowledgeSource) | Get source |
 | [**getKnowledgeSourceSynchronization**](KnowledgeApi#getKnowledgeSourceSynchronization) | Get a specific synchronization of a source. |
+| [**getKnowledgeSourceSynchronizationDeletion**](KnowledgeApi#getKnowledgeSourceSynchronizationDeletion) | Get a deletion entry associated with the synchronization |
+| [**getKnowledgeSourceSynchronizationDeletions**](KnowledgeApi#getKnowledgeSourceSynchronizationDeletions) | Get deletion entries associated with the synchronization. |
+| [**getKnowledgeSourceSynchronizationUpload**](KnowledgeApi#getKnowledgeSourceSynchronizationUpload) | Get a file upload entry associated with the synchronization |
+| [**getKnowledgeSourceSynchronizationUploads**](KnowledgeApi#getKnowledgeSourceSynchronizationUploads) | Get file upload entries associated with the synchronization |
 | [**getKnowledgeSourceSynchronizations**](KnowledgeApi#getKnowledgeSourceSynchronizations) | Get synchronizations of a source. |
 | [**getKnowledgeSources**](KnowledgeApi#getKnowledgeSources) | List sources |
 | [**getKnowledgeSourcesSynchronizations**](KnowledgeApi#getKnowledgeSourcesSynchronizations) | Get synchronizations of all sources of the organization. |
@@ -118,6 +124,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeSearch**](KnowledgeApi#postKnowledgeSearch) | Get Knowledge Search |
 | [**postKnowledgeSearchPreview**](KnowledgeApi#postKnowledgeSearchPreview) | Get Knowledge Search Preview |
 | [**postKnowledgeSettings**](KnowledgeApi#postKnowledgeSettings) | Create Knowledge setting. |
+| [**postKnowledgeSourceSynchronizationDeletions**](KnowledgeApi#postKnowledgeSourceSynchronizationDeletions) | Mark a previously synced file for deletion in the synchronization. |
 | [**postKnowledgeSourceSynchronizationUploads**](KnowledgeApi#postKnowledgeSourceSynchronizationUploads) | Create presigned URL for uploading a file in the synchronization. |
 | [**postKnowledgeSourceSynchronizations**](KnowledgeApi#postKnowledgeSourceSynchronizations) | Start a manual synchronization from a source. |
 | [**postKnowledgeSources**](KnowledgeApi#postKnowledgeSources) | Create a new source |
@@ -898,6 +905,130 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sourceId** | **String**| Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteKnowledgeSourceSynchronizationDeletion**
+
+
+> Void deleteKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId)
+
+Remove a deletion entry associated with the synchronization
+
+Wraps DELETE /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}  
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileDeletion:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+String fileId = "fileId_example"; // String | File ID
+try {
+    apiInstance.deleteKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeSourceSynchronizationDeletion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+| **fileId** | **String**| File ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteKnowledgeSourceSynchronizationUpload**
+
+
+> Void deleteKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId)
+
+Remove a file upload entry associated with the synchronization
+
+Wraps DELETE /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}  
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileUpload:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+String fileId = "fileId_example"; // String | File ID
+try {
+    apiInstance.deleteKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeSourceSynchronizationUpload");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+| **fileId** | **String**| File ID | 
 {: class="table-striped"}
 
 
@@ -3573,6 +3704,266 @@ try {
 ### Return type
 
 [**V3Synchronization**](V3Synchronization)
+
+
+# **getKnowledgeSourceSynchronizationDeletion**
+
+
+> [V3SynchronizationDeletion](V3SynchronizationDeletion) getKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId)
+
+Get a deletion entry associated with the synchronization
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}  
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileDeletion:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+String fileId = "fileId_example"; // String | File ID
+try {
+    V3SynchronizationDeletion result = apiInstance.getKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSourceSynchronizationDeletion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+| **fileId** | **String**| File ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SynchronizationDeletion**](V3SynchronizationDeletion)
+
+
+# **getKnowledgeSourceSynchronizationDeletions**
+
+
+> [V3SynchronizationDeletionListing](V3SynchronizationDeletionListing) getKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, before, after, pageSize)
+
+Get deletion entries associated with the synchronization.
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions  
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileDeletion:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+try {
+    V3SynchronizationDeletionListing result = apiInstance.getKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, before, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSourceSynchronizationDeletions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SynchronizationDeletionListing**](V3SynchronizationDeletionListing)
+
+
+# **getKnowledgeSourceSynchronizationUpload**
+
+
+> [V3SynchronizationUpload](V3SynchronizationUpload) getKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId)
+
+Get a file upload entry associated with the synchronization
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}  
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileUpload:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+String fileId = "fileId_example"; // String | File ID
+try {
+    V3SynchronizationUpload result = apiInstance.getKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSourceSynchronizationUpload");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+| **fileId** | **String**| File ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SynchronizationUpload**](V3SynchronizationUpload)
+
+
+# **getKnowledgeSourceSynchronizationUploads**
+
+
+> [V3SynchronizationUploadListing](V3SynchronizationUploadListing) getKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, before, after, pageSize)
+
+Get file upload entries associated with the synchronization
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads  
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileUpload:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+try {
+    V3SynchronizationUploadListing result = apiInstance.getKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, before, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSourceSynchronizationUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SynchronizationUploadListing**](V3SynchronizationUploadListing)
 
 
 # **getKnowledgeSourceSynchronizations**
@@ -7151,6 +7542,69 @@ try {
 [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
 
 
+# **postKnowledgeSourceSynchronizationDeletions**
+
+
+> [V3SynchronizationDeletion](V3SynchronizationDeletion) postKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, body)
+
+Mark a previously synced file for deletion in the synchronization.
+
+Wraps POST /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions  
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:deleteFile
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sourceId = "sourceId_example"; // String | Source ID
+String synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+V3SynchronizationFileDeletionRequest body = new V3SynchronizationFileDeletionRequest(); // V3SynchronizationFileDeletionRequest | 
+try {
+    V3SynchronizationDeletion result = apiInstance.postKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeSourceSynchronizationDeletions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Source ID | 
+| **synchronizationId** | **String**| Synchronization ID | 
+| **body** | [**V3SynchronizationFileDeletionRequest**](V3SynchronizationFileDeletionRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SynchronizationDeletion**](V3SynchronizationDeletion)
+
+
 # **postKnowledgeSourceSynchronizationUploads**
 
 
@@ -7521,4 +7975,4 @@ try {
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

@@ -121,6 +121,7 @@ public class GetWebchatGuestConversationMessagesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer maxResults;

@@ -191,6 +191,7 @@ public class GetOutboundCampaignsDivisionviewsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -277,6 +278,7 @@ public class GetOutboundCampaignsDivisionviewsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

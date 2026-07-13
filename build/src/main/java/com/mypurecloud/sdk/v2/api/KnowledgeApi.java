@@ -121,8 +121,13 @@ import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
 import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
 import com.mypurecloud.sdk.v2.model.V3Synchronization;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationDeletion;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationDeletionListing;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationFileDeletionRequest;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUpload;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadListing;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlResponse;
 
@@ -140,6 +145,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesSer
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSourceSynchronizationDeletionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSourceSynchronizationUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionOptionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionsRequest;
@@ -181,6 +188,10 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationDeletionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationDeletionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationUploadRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesSynchronizationsRequest;
@@ -241,6 +252,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationDeletionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourcesRequest;
@@ -1271,6 +1283,172 @@ public class KnowledgeApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteKnowledgeSource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Remove a deletion entry associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param fileId File ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeSourceSynchronizationDeletion(String sourceId, String synchronizationId, String fileId) throws IOException, ApiException {
+     deleteKnowledgeSourceSynchronizationDeletion(createDeleteKnowledgeSourceSynchronizationDeletionRequest(sourceId, synchronizationId, fileId));
+  }
+
+  /**
+   * Remove a deletion entry associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param fileId File ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeSourceSynchronizationDeletionWithHttpInfo(String sourceId, String synchronizationId, String fileId) throws IOException {
+    return deleteKnowledgeSourceSynchronizationDeletion(createDeleteKnowledgeSourceSynchronizationDeletionRequest(sourceId, synchronizationId, fileId).withHttpInfo());
+  }
+
+  private DeleteKnowledgeSourceSynchronizationDeletionRequest createDeleteKnowledgeSourceSynchronizationDeletionRequest(String sourceId, String synchronizationId, String fileId) {
+    return DeleteKnowledgeSourceSynchronizationDeletionRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .withFileId(fileId)
+
+            .build();
+  }
+
+  /**
+   * Remove a deletion entry associated with the synchronization
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeSourceSynchronizationDeletion(DeleteKnowledgeSourceSynchronizationDeletionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove a deletion entry associated with the synchronization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeSourceSynchronizationDeletion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Remove a file upload entry associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param fileId File ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeSourceSynchronizationUpload(String sourceId, String synchronizationId, String fileId) throws IOException, ApiException {
+     deleteKnowledgeSourceSynchronizationUpload(createDeleteKnowledgeSourceSynchronizationUploadRequest(sourceId, synchronizationId, fileId));
+  }
+
+  /**
+   * Remove a file upload entry associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param fileId File ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeSourceSynchronizationUploadWithHttpInfo(String sourceId, String synchronizationId, String fileId) throws IOException {
+    return deleteKnowledgeSourceSynchronizationUpload(createDeleteKnowledgeSourceSynchronizationUploadRequest(sourceId, synchronizationId, fileId).withHttpInfo());
+  }
+
+  private DeleteKnowledgeSourceSynchronizationUploadRequest createDeleteKnowledgeSourceSynchronizationUploadRequest(String sourceId, String synchronizationId, String fileId) {
+    return DeleteKnowledgeSourceSynchronizationUploadRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .withFileId(fileId)
+
+            .build();
+  }
+
+  /**
+   * Remove a file upload entry associated with the synchronization
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeSourceSynchronizationUpload(DeleteKnowledgeSourceSynchronizationUploadRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove a file upload entry associated with the synchronization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeSourceSynchronizationUpload(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -5074,6 +5252,366 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a deletion entry associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param fileId File ID (required)
+   * @return V3SynchronizationDeletion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationDeletion getKnowledgeSourceSynchronizationDeletion(String sourceId, String synchronizationId, String fileId) throws IOException, ApiException {
+    return  getKnowledgeSourceSynchronizationDeletion(createGetKnowledgeSourceSynchronizationDeletionRequest(sourceId, synchronizationId, fileId));
+  }
+
+  /**
+   * Get a deletion entry associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param fileId File ID (required)
+   * @return V3SynchronizationDeletion
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationDeletion> getKnowledgeSourceSynchronizationDeletionWithHttpInfo(String sourceId, String synchronizationId, String fileId) throws IOException {
+    return getKnowledgeSourceSynchronizationDeletion(createGetKnowledgeSourceSynchronizationDeletionRequest(sourceId, synchronizationId, fileId).withHttpInfo());
+  }
+
+  private GetKnowledgeSourceSynchronizationDeletionRequest createGetKnowledgeSourceSynchronizationDeletionRequest(String sourceId, String synchronizationId, String fileId) {
+    return GetKnowledgeSourceSynchronizationDeletionRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .withFileId(fileId)
+
+            .build();
+  }
+
+  /**
+   * Get a deletion entry associated with the synchronization
+   * 
+   * @param request The request object
+   * @return V3SynchronizationDeletion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationDeletion getKnowledgeSourceSynchronizationDeletion(GetKnowledgeSourceSynchronizationDeletionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SynchronizationDeletion> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SynchronizationDeletion>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a deletion entry associated with the synchronization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationDeletion> getKnowledgeSourceSynchronizationDeletion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SynchronizationDeletion>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationDeletion> response = (ApiResponse<V3SynchronizationDeletion>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationDeletion> response = (ApiResponse<V3SynchronizationDeletion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get deletion entries associated with the synchronization.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return V3SynchronizationDeletionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationDeletionListing getKnowledgeSourceSynchronizationDeletions(String sourceId, String synchronizationId, String before, String after, String pageSize) throws IOException, ApiException {
+    return  getKnowledgeSourceSynchronizationDeletions(createGetKnowledgeSourceSynchronizationDeletionsRequest(sourceId, synchronizationId, before, after, pageSize));
+  }
+
+  /**
+   * Get deletion entries associated with the synchronization.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return V3SynchronizationDeletionListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationDeletionListing> getKnowledgeSourceSynchronizationDeletionsWithHttpInfo(String sourceId, String synchronizationId, String before, String after, String pageSize) throws IOException {
+    return getKnowledgeSourceSynchronizationDeletions(createGetKnowledgeSourceSynchronizationDeletionsRequest(sourceId, synchronizationId, before, after, pageSize).withHttpInfo());
+  }
+
+  private GetKnowledgeSourceSynchronizationDeletionsRequest createGetKnowledgeSourceSynchronizationDeletionsRequest(String sourceId, String synchronizationId, String before, String after, String pageSize) {
+    return GetKnowledgeSourceSynchronizationDeletionsRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get deletion entries associated with the synchronization.
+   * 
+   * @param request The request object
+   * @return V3SynchronizationDeletionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationDeletionListing getKnowledgeSourceSynchronizationDeletions(GetKnowledgeSourceSynchronizationDeletionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SynchronizationDeletionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SynchronizationDeletionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get deletion entries associated with the synchronization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationDeletionListing> getKnowledgeSourceSynchronizationDeletions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SynchronizationDeletionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationDeletionListing> response = (ApiResponse<V3SynchronizationDeletionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationDeletionListing> response = (ApiResponse<V3SynchronizationDeletionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a file upload entry associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param fileId File ID (required)
+   * @return V3SynchronizationUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationUpload getKnowledgeSourceSynchronizationUpload(String sourceId, String synchronizationId, String fileId) throws IOException, ApiException {
+    return  getKnowledgeSourceSynchronizationUpload(createGetKnowledgeSourceSynchronizationUploadRequest(sourceId, synchronizationId, fileId));
+  }
+
+  /**
+   * Get a file upload entry associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param fileId File ID (required)
+   * @return V3SynchronizationUpload
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationUpload> getKnowledgeSourceSynchronizationUploadWithHttpInfo(String sourceId, String synchronizationId, String fileId) throws IOException {
+    return getKnowledgeSourceSynchronizationUpload(createGetKnowledgeSourceSynchronizationUploadRequest(sourceId, synchronizationId, fileId).withHttpInfo());
+  }
+
+  private GetKnowledgeSourceSynchronizationUploadRequest createGetKnowledgeSourceSynchronizationUploadRequest(String sourceId, String synchronizationId, String fileId) {
+    return GetKnowledgeSourceSynchronizationUploadRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .withFileId(fileId)
+
+            .build();
+  }
+
+  /**
+   * Get a file upload entry associated with the synchronization
+   * 
+   * @param request The request object
+   * @return V3SynchronizationUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationUpload getKnowledgeSourceSynchronizationUpload(GetKnowledgeSourceSynchronizationUploadRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SynchronizationUpload> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SynchronizationUpload>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a file upload entry associated with the synchronization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationUpload> getKnowledgeSourceSynchronizationUpload(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SynchronizationUpload>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationUpload> response = (ApiResponse<V3SynchronizationUpload>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationUpload> response = (ApiResponse<V3SynchronizationUpload>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get file upload entries associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return V3SynchronizationUploadListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationUploadListing getKnowledgeSourceSynchronizationUploads(String sourceId, String synchronizationId, String before, String after, String pageSize) throws IOException, ApiException {
+    return  getKnowledgeSourceSynchronizationUploads(createGetKnowledgeSourceSynchronizationUploadsRequest(sourceId, synchronizationId, before, after, pageSize));
+  }
+
+  /**
+   * Get file upload entries associated with the synchronization
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return V3SynchronizationUploadListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationUploadListing> getKnowledgeSourceSynchronizationUploadsWithHttpInfo(String sourceId, String synchronizationId, String before, String after, String pageSize) throws IOException {
+    return getKnowledgeSourceSynchronizationUploads(createGetKnowledgeSourceSynchronizationUploadsRequest(sourceId, synchronizationId, before, after, pageSize).withHttpInfo());
+  }
+
+  private GetKnowledgeSourceSynchronizationUploadsRequest createGetKnowledgeSourceSynchronizationUploadsRequest(String sourceId, String synchronizationId, String before, String after, String pageSize) {
+    return GetKnowledgeSourceSynchronizationUploadsRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get file upload entries associated with the synchronization
+   * 
+   * @param request The request object
+   * @return V3SynchronizationUploadListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationUploadListing getKnowledgeSourceSynchronizationUploads(GetKnowledgeSourceSynchronizationUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SynchronizationUploadListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SynchronizationUploadListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get file upload entries associated with the synchronization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationUploadListing> getKnowledgeSourceSynchronizationUploads(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SynchronizationUploadListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationUploadListing> response = (ApiResponse<V3SynchronizationUploadListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationUploadListing> response = (ApiResponse<V3SynchronizationUploadListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10061,6 +10599,92 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Mark a previously synced file for deletion in the synchronization.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param body  (required)
+   * @return V3SynchronizationDeletion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationDeletion postKnowledgeSourceSynchronizationDeletions(String sourceId, String synchronizationId, V3SynchronizationFileDeletionRequest body) throws IOException, ApiException {
+    return  postKnowledgeSourceSynchronizationDeletions(createPostKnowledgeSourceSynchronizationDeletionsRequest(sourceId, synchronizationId, body));
+  }
+
+  /**
+   * Mark a previously synced file for deletion in the synchronization.
+   * 
+   * @param sourceId Source ID (required)
+   * @param synchronizationId Synchronization ID (required)
+   * @param body  (required)
+   * @return V3SynchronizationDeletion
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationDeletion> postKnowledgeSourceSynchronizationDeletionsWithHttpInfo(String sourceId, String synchronizationId, V3SynchronizationFileDeletionRequest body) throws IOException {
+    return postKnowledgeSourceSynchronizationDeletions(createPostKnowledgeSourceSynchronizationDeletionsRequest(sourceId, synchronizationId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeSourceSynchronizationDeletionsRequest createPostKnowledgeSourceSynchronizationDeletionsRequest(String sourceId, String synchronizationId, V3SynchronizationFileDeletionRequest body) {
+    return PostKnowledgeSourceSynchronizationDeletionsRequest.builder()
+            .withSourceId(sourceId)
+
+            .withSynchronizationId(synchronizationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Mark a previously synced file for deletion in the synchronization.
+   * 
+   * @param request The request object
+   * @return V3SynchronizationDeletion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SynchronizationDeletion postKnowledgeSourceSynchronizationDeletions(PostKnowledgeSourceSynchronizationDeletionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SynchronizationDeletion> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SynchronizationDeletion>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Mark a previously synced file for deletion in the synchronization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SynchronizationDeletion> postKnowledgeSourceSynchronizationDeletions(ApiRequest<V3SynchronizationFileDeletionRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SynchronizationDeletion>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationDeletion> response = (ApiResponse<V3SynchronizationDeletion>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SynchronizationDeletion> response = (ApiResponse<V3SynchronizationDeletion>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -404,6 +404,7 @@ public class PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private WfmHistoricalAdherenceQueryForAgent body;

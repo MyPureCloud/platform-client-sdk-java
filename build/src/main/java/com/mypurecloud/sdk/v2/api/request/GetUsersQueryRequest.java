@@ -164,6 +164,7 @@ public class GetUsersQueryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> expand;
@@ -231,6 +232,7 @@ public class GetUsersQueryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String integrationPresenceSource;
@@ -276,6 +278,7 @@ public class GetUsersQueryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> userCustomAttributeSchemaIds;
@@ -336,6 +339,7 @@ public class GetUsersQueryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

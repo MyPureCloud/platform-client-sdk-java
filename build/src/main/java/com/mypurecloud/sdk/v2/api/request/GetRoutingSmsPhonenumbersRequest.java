@@ -191,6 +191,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> phoneNumberStatus;
@@ -239,6 +240,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> countryCode;
@@ -334,6 +336,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -378,6 +381,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String language;
@@ -464,6 +468,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

@@ -188,6 +188,7 @@ public class GetJourneyViewsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String id;

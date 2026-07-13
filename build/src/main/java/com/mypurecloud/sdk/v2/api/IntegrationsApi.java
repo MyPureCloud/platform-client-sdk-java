@@ -73,7 +73,6 @@ import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
-import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UCThirdPartyPresence;
 import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegration;
 import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegrationListing;
@@ -113,7 +112,6 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegration
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsUnifiedcommunicationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsListingRequest;
@@ -2820,108 +2818,6 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ClientAppEntityListing> response = (ApiResponse<ClientAppEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * UC integration client application configuration.
-   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
-   * @return UCIntegrationListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public UCIntegrationListing getIntegrationsClientappsUnifiedcommunications(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
-    return  getIntegrationsClientappsUnifiedcommunications(createGetIntegrationsClientappsUnifiedcommunicationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
-  }
-
-  /**
-   * UC integration client application configuration.
-   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
-   * @return UCIntegrationListing
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<UCIntegrationListing> getIntegrationsClientappsUnifiedcommunicationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
-    return getIntegrationsClientappsUnifiedcommunications(createGetIntegrationsClientappsUnifiedcommunicationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
-  }
-
-  private GetIntegrationsClientappsUnifiedcommunicationsRequest createGetIntegrationsClientappsUnifiedcommunicationsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
-    return GetIntegrationsClientappsUnifiedcommunicationsRequest.builder()
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withSortBy(sortBy)
-
-            .withExpand(expand)
-
-            .withNextPage(nextPage)
-
-            .withPreviousPage(previousPage)
-
-            .build();
-  }
-
-  /**
-   * UC integration client application configuration.
-   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-   * @param request The request object
-   * @return UCIntegrationListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public UCIntegrationListing getIntegrationsClientappsUnifiedcommunications(GetIntegrationsClientappsUnifiedcommunicationsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<UCIntegrationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UCIntegrationListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * UC integration client application configuration.
-   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<UCIntegrationListing> getIntegrationsClientappsUnifiedcommunications(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<UCIntegrationListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<UCIntegrationListing> response = (ApiResponse<UCIntegrationListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<UCIntegrationListing> response = (ApiResponse<UCIntegrationListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

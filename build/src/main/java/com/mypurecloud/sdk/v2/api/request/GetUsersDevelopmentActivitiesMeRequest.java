@@ -179,6 +179,7 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String pass;
@@ -224,6 +225,7 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageSize;
@@ -296,6 +298,7 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> types;
@@ -344,6 +347,7 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> statuses;
@@ -391,6 +395,7 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> relationship;
@@ -436,6 +441,7 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

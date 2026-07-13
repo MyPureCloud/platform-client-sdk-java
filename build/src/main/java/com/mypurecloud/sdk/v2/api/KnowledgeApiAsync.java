@@ -124,8 +124,13 @@ import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
 import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
 import com.mypurecloud.sdk.v2.model.V3Synchronization;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationDeletion;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationDeletionListing;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationFileDeletionRequest;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUpload;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadListing;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlResponse;
 
@@ -143,6 +148,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesSer
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSourceSynchronizationDeletionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeSourceSynchronizationUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionOptionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeConnectionsRequest;
@@ -184,6 +191,10 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationDeletionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationDeletionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationUploadRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesSynchronizationsRequest;
@@ -244,6 +255,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSearchPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationDeletionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourcesRequest;
@@ -1211,6 +1223,156 @@ public class KnowledgeApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteKnowledgeSourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a deletion entry associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteKnowledgeSourceSynchronizationDeletionAsync(DeleteKnowledgeSourceSynchronizationDeletionRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a deletion entry associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteKnowledgeSourceSynchronizationDeletionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a file upload entry associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteKnowledgeSourceSynchronizationUploadAsync(DeleteKnowledgeSourceSynchronizationUploadRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a file upload entry associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteKnowledgeSourceSynchronizationUploadAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -4308,6 +4470,306 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<V3Synchronization> response = (ApiResponse<V3Synchronization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a deletion entry associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SynchronizationDeletion> getKnowledgeSourceSynchronizationDeletionAsync(GetKnowledgeSourceSynchronizationDeletionRequest request, final AsyncApiCallback<V3SynchronizationDeletion> callback) {
+    try {
+      final SettableFuture<V3SynchronizationDeletion> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SynchronizationDeletion>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationDeletion>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationDeletion> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a deletion entry associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SynchronizationDeletion>> getKnowledgeSourceSynchronizationDeletionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SynchronizationDeletion>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SynchronizationDeletion>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SynchronizationDeletion>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationDeletion>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationDeletion> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationDeletion> response = (ApiResponse<V3SynchronizationDeletion>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationDeletion> response = (ApiResponse<V3SynchronizationDeletion>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get deletion entries associated with the synchronization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SynchronizationDeletionListing> getKnowledgeSourceSynchronizationDeletionsAsync(GetKnowledgeSourceSynchronizationDeletionsRequest request, final AsyncApiCallback<V3SynchronizationDeletionListing> callback) {
+    try {
+      final SettableFuture<V3SynchronizationDeletionListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SynchronizationDeletionListing>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationDeletionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationDeletionListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get deletion entries associated with the synchronization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SynchronizationDeletionListing>> getKnowledgeSourceSynchronizationDeletionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SynchronizationDeletionListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SynchronizationDeletionListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SynchronizationDeletionListing>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationDeletionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationDeletionListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationDeletionListing> response = (ApiResponse<V3SynchronizationDeletionListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationDeletionListing> response = (ApiResponse<V3SynchronizationDeletionListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a file upload entry associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SynchronizationUpload> getKnowledgeSourceSynchronizationUploadAsync(GetKnowledgeSourceSynchronizationUploadRequest request, final AsyncApiCallback<V3SynchronizationUpload> callback) {
+    try {
+      final SettableFuture<V3SynchronizationUpload> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SynchronizationUpload>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationUpload> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a file upload entry associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SynchronizationUpload>> getKnowledgeSourceSynchronizationUploadAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SynchronizationUpload>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SynchronizationUpload>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SynchronizationUpload>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationUpload> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationUpload> response = (ApiResponse<V3SynchronizationUpload>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationUpload> response = (ApiResponse<V3SynchronizationUpload>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get file upload entries associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SynchronizationUploadListing> getKnowledgeSourceSynchronizationUploadsAsync(GetKnowledgeSourceSynchronizationUploadsRequest request, final AsyncApiCallback<V3SynchronizationUploadListing> callback) {
+    try {
+      final SettableFuture<V3SynchronizationUploadListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SynchronizationUploadListing>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationUploadListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationUploadListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get file upload entries associated with the synchronization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SynchronizationUploadListing>> getKnowledgeSourceSynchronizationUploadsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SynchronizationUploadListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SynchronizationUploadListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SynchronizationUploadListing>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationUploadListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationUploadListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationUploadListing> response = (ApiResponse<V3SynchronizationUploadListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationUploadListing> response = (ApiResponse<V3SynchronizationUploadListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -8808,6 +9270,81 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KnowledgeSettingsResponse> response = (ApiResponse<KnowledgeSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Mark a previously synced file for deletion in the synchronization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SynchronizationDeletion> postKnowledgeSourceSynchronizationDeletionsAsync(PostKnowledgeSourceSynchronizationDeletionsRequest request, final AsyncApiCallback<V3SynchronizationDeletion> callback) {
+    try {
+      final SettableFuture<V3SynchronizationDeletion> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SynchronizationDeletion>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationDeletion>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationDeletion> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Mark a previously synced file for deletion in the synchronization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SynchronizationDeletion>> postKnowledgeSourceSynchronizationDeletionsAsync(ApiRequest<V3SynchronizationFileDeletionRequest> request, final AsyncApiCallback<ApiResponse<V3SynchronizationDeletion>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SynchronizationDeletion>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SynchronizationDeletion>() {}, new AsyncApiCallback<ApiResponse<V3SynchronizationDeletion>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SynchronizationDeletion> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationDeletion> response = (ApiResponse<V3SynchronizationDeletion>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SynchronizationDeletion> response = (ApiResponse<V3SynchronizationDeletion>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

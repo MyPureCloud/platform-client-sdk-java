@@ -121,6 +121,7 @@ public class GetContentmanagementDocumentsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageSize;

@@ -17,8 +17,10 @@ import com.mypurecloud.sdk.v2.model.AiScoring;
 import com.mypurecloud.sdk.v2.model.Calibration;
 import com.mypurecloud.sdk.v2.model.ConversationReference;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
+import com.mypurecloud.sdk.v2.model.EvaluationReference;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationSource;
+import com.mypurecloud.sdk.v2.model.PagelessDomainEntityListingEvaluationVersion;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.User;
@@ -222,6 +224,12 @@ public class Evaluation  implements Serializable {
   private List<String> authorizedActions = null;
   private Boolean hasAssistanceFailed = null;
   private EvaluationSource evaluationSource = null;
+  private Integer disputeCount = null;
+  private Integer version = null;
+  private PagelessDomainEntityListingEvaluationVersion versionHistory = null;
+  private Boolean declinedReview = null;
+  private String evaluationContextId = null;
+  private EvaluationReference retractedEvaluation = null;
   private AiScoring aiScoring = null;
   private String selfUri = null;
 
@@ -839,6 +847,81 @@ public class Evaluation  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The number of times this evaluation has been disputed")
+  @JsonProperty("disputeCount")
+  public Integer getDisputeCount() {
+    return disputeCount;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The evaluation version number")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "List of all versions of the evaluation")
+  @JsonProperty("versionHistory")
+  public PagelessDomainEntityListingEvaluationVersion getVersionHistory() {
+    return versionHistory;
+  }
+
+
+  /**
+   * Is true when the evaluation review was declined
+   **/
+  public Evaluation declinedReview(Boolean declinedReview) {
+    this.declinedReview = declinedReview;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Is true when the evaluation review was declined")
+  @JsonProperty("declinedReview")
+  public Boolean getDeclinedReview() {
+    return declinedReview;
+  }
+  public void setDeclinedReview(Boolean declinedReview) {
+    this.declinedReview = declinedReview;
+  }
+
+
+  /**
+   * The shared id for different versions of an evaluation
+   **/
+  public Evaluation evaluationContextId(String evaluationContextId) {
+    this.evaluationContextId = evaluationContextId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The shared id for different versions of an evaluation")
+  @JsonProperty("evaluationContextId")
+  public String getEvaluationContextId() {
+    return evaluationContextId;
+  }
+  public void setEvaluationContextId(String evaluationContextId) {
+    this.evaluationContextId = evaluationContextId;
+  }
+
+
+  /**
+   * The previous evaluation version
+   **/
+  public Evaluation retractedEvaluation(EvaluationReference retractedEvaluation) {
+    this.retractedEvaluation = retractedEvaluation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The previous evaluation version")
+  @JsonProperty("retractedEvaluation")
+  public EvaluationReference getRetractedEvaluation() {
+    return retractedEvaluation;
+  }
+  public void setRetractedEvaluation(EvaluationReference retractedEvaluation) {
+    this.retractedEvaluation = retractedEvaluation;
+  }
+
+
   @ApiModelProperty(example = "null", value = "AI scoring details for the evaluation.")
   @JsonProperty("aiScoring")
   public AiScoring getAiScoring() {
@@ -898,13 +981,19 @@ public class Evaluation  implements Serializable {
             Objects.equals(this.authorizedActions, evaluation.authorizedActions) &&
             Objects.equals(this.hasAssistanceFailed, evaluation.hasAssistanceFailed) &&
             Objects.equals(this.evaluationSource, evaluation.evaluationSource) &&
+            Objects.equals(this.disputeCount, evaluation.disputeCount) &&
+            Objects.equals(this.version, evaluation.version) &&
+            Objects.equals(this.versionHistory, evaluation.versionHistory) &&
+            Objects.equals(this.declinedReview, evaluation.declinedReview) &&
+            Objects.equals(this.evaluationContextId, evaluation.evaluationContextId) &&
+            Objects.equals(this.retractedEvaluation, evaluation.retractedEvaluation) &&
             Objects.equals(this.aiScoring, evaluation.aiScoring) &&
             Objects.equals(this.selfUri, evaluation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, createdDate, changedDate, submittedDate, revisionCreatedDate, queue, mediaType, divisionIds, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, agentTeam, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, aiScoring, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, createdDate, changedDate, submittedDate, revisionCreatedDate, queue, mediaType, divisionIds, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, agentTeam, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, disputeCount, version, versionHistory, declinedReview, evaluationContextId, retractedEvaluation, aiScoring, selfUri);
   }
 
   @Override
@@ -947,6 +1036,12 @@ public class Evaluation  implements Serializable {
     sb.append("    authorizedActions: ").append(toIndentedString(authorizedActions)).append("\n");
     sb.append("    hasAssistanceFailed: ").append(toIndentedString(hasAssistanceFailed)).append("\n");
     sb.append("    evaluationSource: ").append(toIndentedString(evaluationSource)).append("\n");
+    sb.append("    disputeCount: ").append(toIndentedString(disputeCount)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    versionHistory: ").append(toIndentedString(versionHistory)).append("\n");
+    sb.append("    declinedReview: ").append(toIndentedString(declinedReview)).append("\n");
+    sb.append("    evaluationContextId: ").append(toIndentedString(evaluationContextId)).append("\n");
+    sb.append("    retractedEvaluation: ").append(toIndentedString(retractedEvaluation)).append("\n");
     sb.append("    aiScoring: ").append(toIndentedString(aiScoring)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

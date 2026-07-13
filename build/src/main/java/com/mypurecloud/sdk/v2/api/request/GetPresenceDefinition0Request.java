@@ -115,6 +115,7 @@ public class GetPresenceDefinition0Request {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

@@ -148,6 +148,7 @@ public class GetGamificationScorecardsValuesTrendsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private LocalDate referenceWorkday;

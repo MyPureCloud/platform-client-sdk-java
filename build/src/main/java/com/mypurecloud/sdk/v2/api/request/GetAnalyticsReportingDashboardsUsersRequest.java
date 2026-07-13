@@ -251,6 +251,7 @@ public class GetAnalyticsReportingDashboardsUsersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean deletedOnly;

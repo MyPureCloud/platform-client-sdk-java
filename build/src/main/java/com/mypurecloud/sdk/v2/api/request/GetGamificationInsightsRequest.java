@@ -120,6 +120,7 @@ public class GetGamificationInsightsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String filterId;
@@ -178,6 +179,7 @@ public class GetGamificationInsightsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private LocalDate comparativePeriodStartWorkday;
@@ -282,6 +284,7 @@ public class GetGamificationInsightsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortMetricId;
@@ -340,6 +343,7 @@ public class GetGamificationInsightsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String userIds;

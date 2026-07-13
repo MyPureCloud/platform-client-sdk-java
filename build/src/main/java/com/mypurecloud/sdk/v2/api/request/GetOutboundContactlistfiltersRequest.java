@@ -205,6 +205,7 @@ public class GetOutboundContactlistfiltersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -277,6 +278,7 @@ public class GetOutboundContactlistfiltersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String contactListId;

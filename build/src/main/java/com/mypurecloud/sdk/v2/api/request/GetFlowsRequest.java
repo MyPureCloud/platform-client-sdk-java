@@ -164,6 +164,7 @@ public class GetFlowsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageNumber;
@@ -377,6 +378,7 @@ public class GetFlowsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean deleted;

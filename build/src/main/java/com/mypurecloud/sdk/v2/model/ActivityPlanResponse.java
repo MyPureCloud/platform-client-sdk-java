@@ -201,6 +201,7 @@ public class ActivityPlanResponse  implements Serializable {
   private UserReference modifiedBy = null;
   private Date lastRunDate = null;
   private UserReference lastRunBy = null;
+  private Integer startTimeIncrementMinutes = null;
   private String selfUri = null;
 
   public ActivityPlanResponse() {
@@ -668,6 +669,24 @@ public class ActivityPlanResponse  implements Serializable {
   }
 
 
+  /**
+   * The valid start times available when scheduling sessions
+   **/
+  public ActivityPlanResponse startTimeIncrementMinutes(Integer startTimeIncrementMinutes) {
+    this.startTimeIncrementMinutes = startTimeIncrementMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The valid start times available when scheduling sessions")
+  @JsonProperty("startTimeIncrementMinutes")
+  public Integer getStartTimeIncrementMinutes() {
+    return startTimeIncrementMinutes;
+  }
+  public void setStartTimeIncrementMinutes(Integer startTimeIncrementMinutes) {
+    this.startTimeIncrementMinutes = startTimeIncrementMinutes;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -710,12 +729,13 @@ public class ActivityPlanResponse  implements Serializable {
             Objects.equals(this.modifiedBy, activityPlanResponse.modifiedBy) &&
             Objects.equals(this.lastRunDate, activityPlanResponse.lastRunDate) &&
             Objects.equals(this.lastRunBy, activityPlanResponse.lastRunBy) &&
+            Objects.equals(this.startTimeIncrementMinutes, activityPlanResponse.startTimeIncrementMinutes) &&
             Objects.equals(this.selfUri, activityPlanResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, managementUnits, description, activityCode, type, initialSchedulePeriod, lengthMinutes, groupSettings, recurrenceSettings, attendeesSearchRule, facilitated, facilitatorsSearchRule, transitionTimeMinutes, serviceGoalImpactOverrides, optimizationObjective, fixedAvailability, state, countsAsPaidTime, createdDate, createdBy, modifiedDate, modifiedBy, lastRunDate, lastRunBy, selfUri);
+    return Objects.hash(id, name, managementUnits, description, activityCode, type, initialSchedulePeriod, lengthMinutes, groupSettings, recurrenceSettings, attendeesSearchRule, facilitated, facilitatorsSearchRule, transitionTimeMinutes, serviceGoalImpactOverrides, optimizationObjective, fixedAvailability, state, countsAsPaidTime, createdDate, createdBy, modifiedDate, modifiedBy, lastRunDate, lastRunBy, startTimeIncrementMinutes, selfUri);
   }
 
   @Override
@@ -748,6 +768,7 @@ public class ActivityPlanResponse  implements Serializable {
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    lastRunDate: ").append(toIndentedString(lastRunDate)).append("\n");
     sb.append("    lastRunBy: ").append(toIndentedString(lastRunBy)).append("\n");
+    sb.append("    startTimeIncrementMinutes: ").append(toIndentedString(startTimeIncrementMinutes)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -61,6 +61,8 @@ import com.mypurecloud.sdk.v2.model.ConsultTransferToExternalContact;
 import com.mypurecloud.sdk.v2.model.ConsultTransferToQueue;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.Conversation;
+import com.mypurecloud.sdk.v2.model.ConversationAccessAttributesResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAccessAttributesUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationActivityQuery;
 import com.mypurecloud.sdk.v2.model.ConversationActivityResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
@@ -218,6 +220,8 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterOAuthSettings;
 import com.mypurecloud.sdk.v2.model.TwitterSignupOAuthSettings;
 import com.mypurecloud.sdk.v2.model.UpdateConferenceRequest;
+import com.mypurecloud.sdk.v2.model.UploadAttachmentRequest;
+import com.mypurecloud.sdk.v2.model.UploadAttachmentResponse;
 import com.mypurecloud.sdk.v2.model.UploadMediaRequest;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
@@ -262,6 +266,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationAccessattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationAssistantCopilotcontextRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistJobRequest;
@@ -490,6 +495,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCustomattributesSearc
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailInboundmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailReconnectRequest;
@@ -531,6 +537,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsSocialParticipantComm
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoAgentconferenceCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideosMeetingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationAccessattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationCustomattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
@@ -2739,6 +2746,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the access attributes on a conversation.
+   * 
+   * getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @return ConversationAccessAttributesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationAccessAttributesResponse getConversationAccessattributes(String conversationId) throws IOException, ApiException {
+    return  getConversationAccessattributes(createGetConversationAccessattributesRequest(conversationId));
+  }
+
+  /**
+   * Get the access attributes on a conversation.
+   * 
+   * getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @return ConversationAccessAttributesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationAccessAttributesResponse> getConversationAccessattributesWithHttpInfo(String conversationId) throws IOException {
+    return getConversationAccessattributes(createGetConversationAccessattributesRequest(conversationId).withHttpInfo());
+  }
+
+  private GetConversationAccessattributesRequest createGetConversationAccessattributesRequest(String conversationId) {
+    return GetConversationAccessattributesRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get the access attributes on a conversation.
+   * 
+   * getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ConversationAccessAttributesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationAccessAttributesResponse getConversationAccessattributes(GetConversationAccessattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationAccessAttributesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationAccessAttributesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the access attributes on a conversation.
+   * 
+   * getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationAccessAttributesResponse> getConversationAccessattributes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationAccessAttributesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationAccessAttributesResponse> response = (ApiResponse<ConversationAccessAttributesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationAccessAttributesResponse> response = (ApiResponse<ConversationAccessAttributesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -21717,6 +21806,88 @@ public class ConversationsApi {
   }
 
   /**
+   * Create a URL to upload a message attachment file
+   * See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+   * @param conversationId conversationId (required)
+   * @param body Create attachment pre-signed URL request (required)
+   * @return UploadAttachmentResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadAttachmentResponse postConversationsEmailMessagesDraftAttachmentsUploads(String conversationId, UploadAttachmentRequest body) throws IOException, ApiException {
+    return  postConversationsEmailMessagesDraftAttachmentsUploads(createPostConversationsEmailMessagesDraftAttachmentsUploadsRequest(conversationId, body));
+  }
+
+  /**
+   * Create a URL to upload a message attachment file
+   * See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+   * @param conversationId conversationId (required)
+   * @param body Create attachment pre-signed URL request (required)
+   * @return UploadAttachmentResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadAttachmentResponse> postConversationsEmailMessagesDraftAttachmentsUploadsWithHttpInfo(String conversationId, UploadAttachmentRequest body) throws IOException {
+    return postConversationsEmailMessagesDraftAttachmentsUploads(createPostConversationsEmailMessagesDraftAttachmentsUploadsRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PostConversationsEmailMessagesDraftAttachmentsUploadsRequest createPostConversationsEmailMessagesDraftAttachmentsUploadsRequest(String conversationId, UploadAttachmentRequest body) {
+    return PostConversationsEmailMessagesDraftAttachmentsUploadsRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a URL to upload a message attachment file
+   * See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+   * @param request The request object
+   * @return UploadAttachmentResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadAttachmentResponse postConversationsEmailMessagesDraftAttachmentsUploads(PostConversationsEmailMessagesDraftAttachmentsUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadAttachmentResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadAttachmentResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a URL to upload a message attachment file
+   * See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadAttachmentResponse> postConversationsEmailMessagesDraftAttachmentsUploads(ApiRequest<UploadAttachmentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadAttachmentResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadAttachmentResponse> response = (ApiResponse<UploadAttachmentResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadAttachmentResponse> response = (ApiResponse<UploadAttachmentResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Apply wrap-up for this conversation communication
    * 
    * @param conversationId conversationId (required)
@@ -25064,6 +25235,92 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Set the access attributes on a conversation.
+   * 
+   * putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param body Conversation Access Attributes (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationAccessattributes(String conversationId, ConversationAccessAttributesUpdate body) throws IOException, ApiException {
+    return  putConversationAccessattributes(createPutConversationAccessattributesRequest(conversationId, body));
+  }
+
+  /**
+   * Set the access attributes on a conversation.
+   * 
+   * putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param body Conversation Access Attributes (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationAccessattributesWithHttpInfo(String conversationId, ConversationAccessAttributesUpdate body) throws IOException {
+    return putConversationAccessattributes(createPutConversationAccessattributesRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationAccessattributesRequest createPutConversationAccessattributesRequest(String conversationId, ConversationAccessAttributesUpdate body) {
+    return PutConversationAccessattributesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Set the access attributes on a conversation.
+   * 
+   * putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationAccessattributes(PutConversationAccessattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set the access attributes on a conversation.
+   * 
+   * putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationAccessattributes(ApiRequest<ConversationAccessAttributesUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

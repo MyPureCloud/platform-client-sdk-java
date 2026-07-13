@@ -179,6 +179,7 @@ public class GetRoutingMessageRecipientsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;

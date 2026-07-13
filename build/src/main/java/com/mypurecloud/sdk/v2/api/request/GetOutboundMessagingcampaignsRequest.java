@@ -184,6 +184,7 @@ public class GetOutboundMessagingcampaignsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -228,6 +229,7 @@ public class GetOutboundMessagingcampaignsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -315,6 +317,7 @@ public class GetOutboundMessagingcampaignsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String senderSmsPhoneNumber;
@@ -406,6 +409,7 @@ public class GetOutboundMessagingcampaignsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> ruleSetIds;

@@ -216,6 +216,7 @@ public class GetRoutingQueueMembersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> expand;
@@ -283,6 +284,7 @@ public class GetRoutingQueueMembersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -411,6 +413,7 @@ public class GetRoutingQueueMembersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean joined;

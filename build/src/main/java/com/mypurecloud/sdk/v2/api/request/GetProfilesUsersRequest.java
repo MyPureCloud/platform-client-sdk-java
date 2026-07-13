@@ -192,6 +192,7 @@ public class GetProfilesUsersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> expand;
@@ -242,6 +243,7 @@ public class GetProfilesUsersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String integrationPresenceSource;
@@ -287,6 +289,7 @@ public class GetProfilesUsersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

@@ -147,6 +147,7 @@ public class GetGamificationScorecardsUserRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

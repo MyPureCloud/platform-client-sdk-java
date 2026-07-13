@@ -81,6 +81,7 @@ public class GetTextbotsBotsSearchRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String botName;

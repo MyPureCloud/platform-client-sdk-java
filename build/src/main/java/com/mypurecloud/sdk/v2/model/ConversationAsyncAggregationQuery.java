@@ -227,6 +227,7 @@ public class ConversationAsyncAggregationQuery  implements Serializable {
     TCALLBACKABANDON("tCallbackAbandon"),
     TCALLBACKCONNECT("tCallbackConnect"),
     TCALLBACKNOTREACHED("tCallbackNotReached"),
+    TCALLBACKVIRTUALWAIT("tCallbackVirtualWait"),
     TCFCABANDON("tCfcAbandon"),
     TCFCACD("tCfcAcd"),
     TCFCANSWERED("tCfcAnswered"),

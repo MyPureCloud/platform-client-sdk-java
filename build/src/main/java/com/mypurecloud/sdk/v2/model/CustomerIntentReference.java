@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class CustomerIntentReference  implements Serializable {
   
   private String id = null;
+  private String name = null;
   private String selfUri = null;
 
   public CustomerIntentReference() {
@@ -54,6 +55,23 @@ public class CustomerIntentReference  implements Serializable {
   }
 
 
+  /**
+   **/
+  public CustomerIntentReference name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -72,12 +90,13 @@ public class CustomerIntentReference  implements Serializable {
     CustomerIntentReference customerIntentReference = (CustomerIntentReference) o;
 
     return Objects.equals(this.id, customerIntentReference.id) &&
+            Objects.equals(this.name, customerIntentReference.name) &&
             Objects.equals(this.selfUri, customerIntentReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri);
+    return Objects.hash(id, name, selfUri);
   }
 
   @Override
@@ -86,6 +105,7 @@ public class CustomerIntentReference  implements Serializable {
     sb.append("class CustomerIntentReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

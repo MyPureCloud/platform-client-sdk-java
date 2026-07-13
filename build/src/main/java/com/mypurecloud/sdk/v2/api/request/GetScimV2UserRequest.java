@@ -127,6 +127,7 @@ public class GetScimV2UserRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> excludedAttributes;
@@ -206,6 +207,7 @@ public class GetScimV2UserRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String ifNoneMatch;

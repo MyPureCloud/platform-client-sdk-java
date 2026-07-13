@@ -23,6 +23,7 @@
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of this activity plan |  |
 | **countsAsPaidTime** | **Boolean** | Whether the activity should count as paid time |  |
 | **fixedAvailability** | [**List&lt;FixedAvailability&gt;**](FixedAvailability) | Fixed availability configuration for the activity plan |  [optional] |
+| **startTimeIncrementMinutes** | **Integer** | The valid start times available when scheduling sessions |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -54,4 +55,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

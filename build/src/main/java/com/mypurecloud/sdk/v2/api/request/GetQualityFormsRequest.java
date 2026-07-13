@@ -178,6 +178,7 @@ public class GetQualityFormsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;

@@ -64,6 +64,8 @@ import com.mypurecloud.sdk.v2.model.ConsultTransferToExternalContact;
 import com.mypurecloud.sdk.v2.model.ConsultTransferToQueue;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.Conversation;
+import com.mypurecloud.sdk.v2.model.ConversationAccessAttributesResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAccessAttributesUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationActivityQuery;
 import com.mypurecloud.sdk.v2.model.ConversationActivityResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
@@ -221,6 +223,8 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterOAuthSettings;
 import com.mypurecloud.sdk.v2.model.TwitterSignupOAuthSettings;
 import com.mypurecloud.sdk.v2.model.UpdateConferenceRequest;
+import com.mypurecloud.sdk.v2.model.UploadAttachmentRequest;
+import com.mypurecloud.sdk.v2.model.UploadAttachmentResponse;
 import com.mypurecloud.sdk.v2.model.UploadMediaRequest;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
@@ -265,6 +269,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationAccessattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationAssistantCopilotcontextRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistJobRequest;
@@ -493,6 +498,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCustomattributesSearc
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailInboundmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailReconnectRequest;
@@ -534,6 +540,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsSocialParticipantComm
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoAgentconferenceCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideosMeetingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationAccessattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationCustomattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationCustomattributesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
@@ -2671,6 +2678,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the access attributes on a conversation.
+   * 
+   * getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationAccessAttributesResponse> getConversationAccessattributesAsync(GetConversationAccessattributesRequest request, final AsyncApiCallback<ConversationAccessAttributesResponse> callback) {
+    try {
+      final SettableFuture<ConversationAccessAttributesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationAccessAttributesResponse>() {}, new AsyncApiCallback<ApiResponse<ConversationAccessAttributesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationAccessAttributesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the access attributes on a conversation.
+   * 
+   * getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationAccessAttributesResponse>> getConversationAccessattributesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationAccessAttributesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationAccessAttributesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationAccessAttributesResponse>() {}, new AsyncApiCallback<ApiResponse<ConversationAccessAttributesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationAccessAttributesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationAccessAttributesResponse> response = (ApiResponse<ConversationAccessAttributesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationAccessAttributesResponse> response = (ApiResponse<ConversationAccessAttributesResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -19859,6 +19943,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Create a URL to upload a message attachment file
+   * See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UploadAttachmentResponse> postConversationsEmailMessagesDraftAttachmentsUploadsAsync(PostConversationsEmailMessagesDraftAttachmentsUploadsRequest request, final AsyncApiCallback<UploadAttachmentResponse> callback) {
+    try {
+      final SettableFuture<UploadAttachmentResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UploadAttachmentResponse>() {}, new AsyncApiCallback<ApiResponse<UploadAttachmentResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadAttachmentResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a URL to upload a message attachment file
+   * See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UploadAttachmentResponse>> postConversationsEmailMessagesDraftAttachmentsUploadsAsync(ApiRequest<UploadAttachmentRequest> request, final AsyncApiCallback<ApiResponse<UploadAttachmentResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UploadAttachmentResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UploadAttachmentResponse>() {}, new AsyncApiCallback<ApiResponse<UploadAttachmentResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadAttachmentResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadAttachmentResponse> response = (ApiResponse<UploadAttachmentResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadAttachmentResponse> response = (ApiResponse<UploadAttachmentResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Apply wrap-up for this conversation communication
    * 
    * @param request the request object
@@ -22936,6 +23095,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set the access attributes on a conversation.
+   * 
+   * putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<String> putConversationAccessattributesAsync(PutConversationAccessattributesRequest request, final AsyncApiCallback<String> callback) {
+    try {
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set the access attributes on a conversation.
+   * 
+   * putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<String>> putConversationAccessattributesAsync(ApiRequest<ConversationAccessAttributesUpdate> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+    try {
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

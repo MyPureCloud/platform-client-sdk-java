@@ -78,6 +78,7 @@ public class GetNotificationsAvailabletopicsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean includePreview;

@@ -27,6 +27,7 @@ public class RecordingSettings  implements Serializable {
   private Boolean regionalRecordingStorageEnabled = null;
   private Integer recordingPlaybackUrlTtl = null;
   private Integer recordingBatchDownloadUrlTtl = null;
+  private Boolean stopRecordingWhenOnlyExternalParticipants = null;
 
   public RecordingSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -129,6 +130,24 @@ public class RecordingSettings  implements Serializable {
   }
 
 
+  /**
+   * Whether to stop recording in conference when only external participants remain
+   **/
+  public RecordingSettings stopRecordingWhenOnlyExternalParticipants(Boolean stopRecordingWhenOnlyExternalParticipants) {
+    this.stopRecordingWhenOnlyExternalParticipants = stopRecordingWhenOnlyExternalParticipants;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to stop recording in conference when only external participants remain")
+  @JsonProperty("stopRecordingWhenOnlyExternalParticipants")
+  public Boolean getStopRecordingWhenOnlyExternalParticipants() {
+    return stopRecordingWhenOnlyExternalParticipants;
+  }
+  public void setStopRecordingWhenOnlyExternalParticipants(Boolean stopRecordingWhenOnlyExternalParticipants) {
+    this.stopRecordingWhenOnlyExternalParticipants = stopRecordingWhenOnlyExternalParticipants;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -143,12 +162,13 @@ public class RecordingSettings  implements Serializable {
             Objects.equals(this.maxConfigurableScreenRecordingStreams, recordingSettings.maxConfigurableScreenRecordingStreams) &&
             Objects.equals(this.regionalRecordingStorageEnabled, recordingSettings.regionalRecordingStorageEnabled) &&
             Objects.equals(this.recordingPlaybackUrlTtl, recordingSettings.recordingPlaybackUrlTtl) &&
-            Objects.equals(this.recordingBatchDownloadUrlTtl, recordingSettings.recordingBatchDownloadUrlTtl);
+            Objects.equals(this.recordingBatchDownloadUrlTtl, recordingSettings.recordingBatchDownloadUrlTtl) &&
+            Objects.equals(this.stopRecordingWhenOnlyExternalParticipants, recordingSettings.stopRecordingWhenOnlyExternalParticipants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxSimultaneousStreams, maxConfigurableScreenRecordingStreams, regionalRecordingStorageEnabled, recordingPlaybackUrlTtl, recordingBatchDownloadUrlTtl);
+    return Objects.hash(maxSimultaneousStreams, maxConfigurableScreenRecordingStreams, regionalRecordingStorageEnabled, recordingPlaybackUrlTtl, recordingBatchDownloadUrlTtl, stopRecordingWhenOnlyExternalParticipants);
   }
 
   @Override
@@ -161,6 +181,7 @@ public class RecordingSettings  implements Serializable {
     sb.append("    regionalRecordingStorageEnabled: ").append(toIndentedString(regionalRecordingStorageEnabled)).append("\n");
     sb.append("    recordingPlaybackUrlTtl: ").append(toIndentedString(recordingPlaybackUrlTtl)).append("\n");
     sb.append("    recordingBatchDownloadUrlTtl: ").append(toIndentedString(recordingBatchDownloadUrlTtl)).append("\n");
+    sb.append("    stopRecordingWhenOnlyExternalParticipants: ").append(toIndentedString(stopRecordingWhenOnlyExternalParticipants)).append("\n");
     sb.append("}");
     return sb.toString();
   }

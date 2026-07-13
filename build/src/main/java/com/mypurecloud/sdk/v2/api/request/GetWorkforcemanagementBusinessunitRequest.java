@@ -422,6 +422,7 @@ public class GetWorkforcemanagementBusinessunitRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean includeSchedulingDefaultMessageSeverities;

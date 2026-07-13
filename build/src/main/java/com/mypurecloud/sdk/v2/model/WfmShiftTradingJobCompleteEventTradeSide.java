@@ -25,6 +25,7 @@ public class WfmShiftTradingJobCompleteEventTradeSide  implements Serializable {
   
   private String userId = null;
   private WfmShiftTradingJobCompleteEventTradeShift shift = null;
+  private String reviewNote = null;
 
   public WfmShiftTradingJobCompleteEventTradeSide() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -71,6 +72,23 @@ public class WfmShiftTradingJobCompleteEventTradeSide  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WfmShiftTradingJobCompleteEventTradeSide reviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("reviewNote")
+  public String getReviewNote() {
+    return reviewNote;
+  }
+  public void setReviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -82,12 +100,13 @@ public class WfmShiftTradingJobCompleteEventTradeSide  implements Serializable {
     WfmShiftTradingJobCompleteEventTradeSide wfmShiftTradingJobCompleteEventTradeSide = (WfmShiftTradingJobCompleteEventTradeSide) o;
 
     return Objects.equals(this.userId, wfmShiftTradingJobCompleteEventTradeSide.userId) &&
-            Objects.equals(this.shift, wfmShiftTradingJobCompleteEventTradeSide.shift);
+            Objects.equals(this.shift, wfmShiftTradingJobCompleteEventTradeSide.shift) &&
+            Objects.equals(this.reviewNote, wfmShiftTradingJobCompleteEventTradeSide.reviewNote);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, shift);
+    return Objects.hash(userId, shift, reviewNote);
   }
 
   @Override
@@ -97,6 +116,7 @@ public class WfmShiftTradingJobCompleteEventTradeSide  implements Serializable {
     
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    shift: ").append(toIndentedString(shift)).append("\n");
+    sb.append("    reviewNote: ").append(toIndentedString(reviewNote)).append("\n");
     sb.append("}");
     return sb.toString();
   }

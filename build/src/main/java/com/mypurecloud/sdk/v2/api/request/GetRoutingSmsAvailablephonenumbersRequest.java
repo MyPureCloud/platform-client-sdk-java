@@ -189,6 +189,7 @@ public class GetRoutingSmsAvailablephonenumbersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String region;
@@ -291,6 +292,7 @@ public class GetRoutingSmsAvailablephonenumbersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

@@ -153,6 +153,7 @@ public class GetTaskmanagementWorkitemsBulkJobsUsersMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String action;
@@ -197,6 +198,7 @@ public class GetTaskmanagementWorkitemsBulkJobsUsersMeRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

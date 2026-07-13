@@ -135,6 +135,7 @@ public class GetConversationRecordingRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String emailFormatId;
@@ -179,6 +180,7 @@ public class GetConversationRecordingRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String chatFormatId;
@@ -223,6 +225,7 @@ public class GetConversationRecordingRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String messageFormatId;
@@ -267,6 +270,7 @@ public class GetConversationRecordingRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean download;

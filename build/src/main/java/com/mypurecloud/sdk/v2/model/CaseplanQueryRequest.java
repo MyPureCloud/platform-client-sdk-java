@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.CaseplanFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -74,19 +75,25 @@ public class CaseplanQueryRequest  implements Serializable {
     }
   }
   private NameSearchTypeEnum nameSearchType = null;
+  private List<String> divisionIds = null;
+  private List<CaseplanFilter> filters = null;
+  private List<String> attributes = null;
   private Integer pageSize = null;
   private String after = null;
-  private List<String> divisionIds = null;
 
   public CaseplanQueryRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       divisionIds = new ArrayList<String>();
+      filters = new ArrayList<CaseplanFilter>();
+      attributes = new ArrayList<String>();
     }
   }
 
   public CaseplanQueryRequest(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       divisionIds = new ArrayList<String>();
+      filters = new ArrayList<CaseplanFilter>();
+      attributes = new ArrayList<String>();
     }
   }
 
@@ -128,6 +135,60 @@ public class CaseplanQueryRequest  implements Serializable {
 
 
   /**
+   * Divisions to filter by. Accepts a list of UUIDs and/or '*'.
+   **/
+  public CaseplanQueryRequest divisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Divisions to filter by. Accepts a list of UUIDs and/or '*'.")
+  @JsonProperty("divisionIds")
+  public List<String> getDivisionIds() {
+    return divisionIds;
+  }
+  public void setDivisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
+  }
+
+
+  /**
+   * List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId'. Multiple filters are combined with AND logic.
+   **/
+  public CaseplanQueryRequest filters(List<CaseplanFilter> filters) {
+    this.filters = filters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId'. Multiple filters are combined with AND logic.")
+  @JsonProperty("filters")
+  public List<CaseplanFilter> getFilters() {
+    return filters;
+  }
+  public void setFilters(List<CaseplanFilter> filters) {
+    this.filters = filters;
+  }
+
+
+  /**
+   * List of entity attributes to be retrieved in the result.
+   **/
+  public CaseplanQueryRequest attributes(List<String> attributes) {
+    this.attributes = attributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of entity attributes to be retrieved in the result.")
+  @JsonProperty("attributes")
+  public List<String> getAttributes() {
+    return attributes;
+  }
+  public void setAttributes(List<String> attributes) {
+    this.attributes = attributes;
+  }
+
+
+  /**
    * Number of results per page. Maximum is 200. Default is 25.
    * minimum: 1
    * maximum: 200
@@ -165,24 +226,6 @@ public class CaseplanQueryRequest  implements Serializable {
   }
 
 
-  /**
-   * Divisions to filter by. Accepts a list of UUIDs and/or '*'.
-   **/
-  public CaseplanQueryRequest divisionIds(List<String> divisionIds) {
-    this.divisionIds = divisionIds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Divisions to filter by. Accepts a list of UUIDs and/or '*'.")
-  @JsonProperty("divisionIds")
-  public List<String> getDivisionIds() {
-    return divisionIds;
-  }
-  public void setDivisionIds(List<String> divisionIds) {
-    this.divisionIds = divisionIds;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -195,14 +238,16 @@ public class CaseplanQueryRequest  implements Serializable {
 
     return Objects.equals(this.name, caseplanQueryRequest.name) &&
             Objects.equals(this.nameSearchType, caseplanQueryRequest.nameSearchType) &&
+            Objects.equals(this.divisionIds, caseplanQueryRequest.divisionIds) &&
+            Objects.equals(this.filters, caseplanQueryRequest.filters) &&
+            Objects.equals(this.attributes, caseplanQueryRequest.attributes) &&
             Objects.equals(this.pageSize, caseplanQueryRequest.pageSize) &&
-            Objects.equals(this.after, caseplanQueryRequest.after) &&
-            Objects.equals(this.divisionIds, caseplanQueryRequest.divisionIds);
+            Objects.equals(this.after, caseplanQueryRequest.after);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, nameSearchType, pageSize, after, divisionIds);
+    return Objects.hash(name, nameSearchType, divisionIds, filters, attributes, pageSize, after);
   }
 
   @Override
@@ -212,9 +257,11 @@ public class CaseplanQueryRequest  implements Serializable {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nameSearchType: ").append(toIndentedString(nameSearchType)).append("\n");
+    sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
+    sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    after: ").append(toIndentedString(after)).append("\n");
-    sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

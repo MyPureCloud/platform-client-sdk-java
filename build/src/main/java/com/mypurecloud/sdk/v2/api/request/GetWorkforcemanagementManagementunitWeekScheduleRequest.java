@@ -444,6 +444,7 @@ public class GetWorkforcemanagementManagementunitWeekScheduleRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean forceDownloadService;

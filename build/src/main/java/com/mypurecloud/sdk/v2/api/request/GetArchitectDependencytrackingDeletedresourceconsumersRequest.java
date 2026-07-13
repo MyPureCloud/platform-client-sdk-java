@@ -246,6 +246,7 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String flowFilter;
@@ -290,6 +291,7 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean consumedResources;
@@ -434,6 +436,7 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Integer pageNumber;

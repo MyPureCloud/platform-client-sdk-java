@@ -161,6 +161,7 @@ public class GetSpeechandtextanalyticsCategoriesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortBy;
@@ -205,6 +206,7 @@ public class GetSpeechandtextanalyticsCategoriesRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> ids;

@@ -191,6 +191,7 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;

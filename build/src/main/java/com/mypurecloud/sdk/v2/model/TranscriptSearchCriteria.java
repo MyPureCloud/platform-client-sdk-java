@@ -105,7 +105,8 @@ public class TranscriptSearchCriteria  implements Serializable {
     DATE_RANGE("DATE_RANGE"),
     RANGE("RANGE"),
     GREATER_THAN("GREATER_THAN"),
-    LESS_THAN("LESS_THAN");
+    LESS_THAN("LESS_THAN"),
+    REQUIRED_FIELDS("REQUIRED_FIELDS");
 
     private String value;
 

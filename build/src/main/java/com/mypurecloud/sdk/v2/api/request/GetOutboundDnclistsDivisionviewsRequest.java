@@ -219,6 +219,7 @@ public class GetOutboundDnclistsDivisionviewsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String name;
@@ -279,6 +280,7 @@ public class GetOutboundDnclistsDivisionviewsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private List<String> id;
@@ -351,6 +353,7 @@ public class GetOutboundDnclistsDivisionviewsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

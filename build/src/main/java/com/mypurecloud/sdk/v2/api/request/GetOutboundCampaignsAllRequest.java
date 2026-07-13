@@ -227,6 +227,7 @@ public class GetOutboundCampaignsAllRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String sortOrder;
@@ -271,6 +272,7 @@ public class GetOutboundCampaignsAllRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();

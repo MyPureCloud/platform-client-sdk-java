@@ -120,6 +120,7 @@ public class GetGamificationLeaderboardAllBestpointsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String filterId;

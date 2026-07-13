@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ListWrapperFixedAvailability;
+import com.mypurecloud.sdk.v2.model.RecurrenceSettingsBase;
 import com.mypurecloud.sdk.v2.model.ValueWrapperActivityPlanServiceGoalImpactOverrides;
 import com.mypurecloud.sdk.v2.model.ValueWrapperGroupSettings;
 import com.mypurecloud.sdk.v2.model.ValueWrapperUserSearchRule;
@@ -131,6 +132,58 @@ public class UpdateActivityPlanRequest  implements Serializable {
   }
   private StateEnum state = null;
   private ListWrapperFixedAvailability fixedAvailability = null;
+  private String activityCodeId = null;
+
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the activity plan
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INDIVIDUAL("Individual"),
+    GROUP("Group");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+  private Integer lengthMinutes = null;
+  private Boolean countsAsPaidTime = null;
+  private RecurrenceSettingsBase recurrenceSettings = null;
 
   public UpdateActivityPlanRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -323,6 +376,96 @@ public class UpdateActivityPlanRequest  implements Serializable {
   }
 
 
+  /**
+   * The activity code associated with the activity plan
+   **/
+  public UpdateActivityPlanRequest activityCodeId(String activityCodeId) {
+    this.activityCodeId = activityCodeId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The activity code associated with the activity plan")
+  @JsonProperty("activityCodeId")
+  public String getActivityCodeId() {
+    return activityCodeId;
+  }
+  public void setActivityCodeId(String activityCodeId) {
+    this.activityCodeId = activityCodeId;
+  }
+
+
+  /**
+   * The type of the activity plan
+   **/
+  public UpdateActivityPlanRequest type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the activity plan")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+
+  /**
+   * The length in minutes of the activity plan
+   **/
+  public UpdateActivityPlanRequest lengthMinutes(Integer lengthMinutes) {
+    this.lengthMinutes = lengthMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The length in minutes of the activity plan")
+  @JsonProperty("lengthMinutes")
+  public Integer getLengthMinutes() {
+    return lengthMinutes;
+  }
+  public void setLengthMinutes(Integer lengthMinutes) {
+    this.lengthMinutes = lengthMinutes;
+  }
+
+
+  /**
+   * Whether the activity should count as paid time
+   **/
+  public UpdateActivityPlanRequest countsAsPaidTime(Boolean countsAsPaidTime) {
+    this.countsAsPaidTime = countsAsPaidTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the activity should count as paid time")
+  @JsonProperty("countsAsPaidTime")
+  public Boolean getCountsAsPaidTime() {
+    return countsAsPaidTime;
+  }
+  public void setCountsAsPaidTime(Boolean countsAsPaidTime) {
+    this.countsAsPaidTime = countsAsPaidTime;
+  }
+
+
+  /**
+   * Settings controlling recurrence for the activity plan. If not set the activity plan will only occur once
+   **/
+  public UpdateActivityPlanRequest recurrenceSettings(RecurrenceSettingsBase recurrenceSettings) {
+    this.recurrenceSettings = recurrenceSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Settings controlling recurrence for the activity plan. If not set the activity plan will only occur once")
+  @JsonProperty("recurrenceSettings")
+  public RecurrenceSettingsBase getRecurrenceSettings() {
+    return recurrenceSettings;
+  }
+  public void setRecurrenceSettings(RecurrenceSettingsBase recurrenceSettings) {
+    this.recurrenceSettings = recurrenceSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -342,12 +485,17 @@ public class UpdateActivityPlanRequest  implements Serializable {
             Objects.equals(this.serviceGoalImpactOverrides, updateActivityPlanRequest.serviceGoalImpactOverrides) &&
             Objects.equals(this.optimizationObjective, updateActivityPlanRequest.optimizationObjective) &&
             Objects.equals(this.state, updateActivityPlanRequest.state) &&
-            Objects.equals(this.fixedAvailability, updateActivityPlanRequest.fixedAvailability);
+            Objects.equals(this.fixedAvailability, updateActivityPlanRequest.fixedAvailability) &&
+            Objects.equals(this.activityCodeId, updateActivityPlanRequest.activityCodeId) &&
+            Objects.equals(this.type, updateActivityPlanRequest.type) &&
+            Objects.equals(this.lengthMinutes, updateActivityPlanRequest.lengthMinutes) &&
+            Objects.equals(this.countsAsPaidTime, updateActivityPlanRequest.countsAsPaidTime) &&
+            Objects.equals(this.recurrenceSettings, updateActivityPlanRequest.recurrenceSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, groupSettings, attendeesSearchRule, facilitatorsSearchRule, transitionTimeMinutes, serviceGoalImpactOverrides, optimizationObjective, state, fixedAvailability);
+    return Objects.hash(name, description, groupSettings, attendeesSearchRule, facilitatorsSearchRule, transitionTimeMinutes, serviceGoalImpactOverrides, optimizationObjective, state, fixedAvailability, activityCodeId, type, lengthMinutes, countsAsPaidTime, recurrenceSettings);
   }
 
   @Override
@@ -365,6 +513,11 @@ public class UpdateActivityPlanRequest  implements Serializable {
     sb.append("    optimizationObjective: ").append(toIndentedString(optimizationObjective)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    fixedAvailability: ").append(toIndentedString(fixedAvailability)).append("\n");
+    sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    lengthMinutes: ").append(toIndentedString(lengthMinutes)).append("\n");
+    sb.append("    countsAsPaidTime: ").append(toIndentedString(countsAsPaidTime)).append("\n");
+    sb.append("    recurrenceSettings: ").append(toIndentedString(recurrenceSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

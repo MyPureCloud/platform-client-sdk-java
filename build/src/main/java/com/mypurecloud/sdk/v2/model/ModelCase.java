@@ -14,10 +14,10 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CaseExternalContactReference;
+import com.mypurecloud.sdk.v2.model.CaseUserReference;
 import com.mypurecloud.sdk.v2.model.CaseplanReference;
 import com.mypurecloud.sdk.v2.model.CustomerIntentReference;
 import com.mypurecloud.sdk.v2.model.StarrableDivision;
-import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -36,7 +36,7 @@ public class ModelCase  implements Serializable {
   private String reference = null;
   private CaseplanReference caseplan = null;
   private String summary = null;
-  private UserReference owner = null;
+  private CaseUserReference owner = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -146,7 +146,7 @@ public class ModelCase  implements Serializable {
   private Date dateClosed = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private UserReference modifiedBy = null;
+  private CaseUserReference modifiedBy = null;
   private CaseExternalContactReference externalContact = null;
   private CustomerIntentReference customerIntent = null;
 
@@ -331,17 +331,17 @@ public class ModelCase  implements Serializable {
   /**
    * The owner of the Case.
    **/
-  public ModelCase owner(UserReference owner) {
+  public ModelCase owner(CaseUserReference owner) {
     this.owner = owner;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The owner of the Case.")
   @JsonProperty("owner")
-  public UserReference getOwner() {
+  public CaseUserReference getOwner() {
     return owner;
   }
-  public void setOwner(UserReference owner) {
+  public void setOwner(CaseUserReference owner) {
     this.owner = owner;
   }
 
@@ -475,17 +475,17 @@ public class ModelCase  implements Serializable {
   /**
    * The ID of the User who modified the Case.
    **/
-  public ModelCase modifiedBy(UserReference modifiedBy) {
+  public ModelCase modifiedBy(CaseUserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The ID of the User who modified the Case.")
   @JsonProperty("modifiedBy")
-  public UserReference getModifiedBy() {
+  public CaseUserReference getModifiedBy() {
     return modifiedBy;
   }
-  public void setModifiedBy(UserReference modifiedBy) {
+  public void setModifiedBy(CaseUserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
   }
 

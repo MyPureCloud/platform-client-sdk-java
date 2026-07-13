@@ -133,6 +133,7 @@ public class GetSpeechandtextanalyticsDictionaryfeedbackRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String nextPage;

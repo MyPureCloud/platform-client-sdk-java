@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ActivityCodeReference;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.RecurrenceSettings;
+import com.mypurecloud.sdk.v2.model.SchedulingPeriodBase;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -186,6 +187,7 @@ public class ActivityPlanListItem  implements Serializable {
   private UserReference createdBy = null;
   private Date modifiedDate = null;
   private UserReference modifiedBy = null;
+  private SchedulingPeriodBase initialSchedulePeriod = null;
   private String selfUri = null;
 
   public ActivityPlanListItem() {
@@ -471,6 +473,24 @@ public class ActivityPlanListItem  implements Serializable {
   }
 
 
+  /**
+   * The initial schedule period of the activity plan
+   **/
+  public ActivityPlanListItem initialSchedulePeriod(SchedulingPeriodBase initialSchedulePeriod) {
+    this.initialSchedulePeriod = initialSchedulePeriod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The initial schedule period of the activity plan")
+  @JsonProperty("initialSchedulePeriod")
+  public SchedulingPeriodBase getInitialSchedulePeriod() {
+    return initialSchedulePeriod;
+  }
+  public void setInitialSchedulePeriod(SchedulingPeriodBase initialSchedulePeriod) {
+    this.initialSchedulePeriod = initialSchedulePeriod;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -503,12 +523,13 @@ public class ActivityPlanListItem  implements Serializable {
             Objects.equals(this.createdBy, activityPlanListItem.createdBy) &&
             Objects.equals(this.modifiedDate, activityPlanListItem.modifiedDate) &&
             Objects.equals(this.modifiedBy, activityPlanListItem.modifiedBy) &&
+            Objects.equals(this.initialSchedulePeriod, activityPlanListItem.initialSchedulePeriod) &&
             Objects.equals(this.selfUri, activityPlanListItem.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, managementUnits, description, activityCode, type, optimizationObjective, recurrenceSettings, state, lastRunDate, lastRunBy, createdDate, createdBy, modifiedDate, modifiedBy, selfUri);
+    return Objects.hash(id, name, managementUnits, description, activityCode, type, optimizationObjective, recurrenceSettings, state, lastRunDate, lastRunBy, createdDate, createdBy, modifiedDate, modifiedBy, initialSchedulePeriod, selfUri);
   }
 
   @Override
@@ -531,6 +552,7 @@ public class ActivityPlanListItem  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
+    sb.append("    initialSchedulePeriod: ").append(toIndentedString(initialSchedulePeriod)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

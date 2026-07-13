@@ -89,6 +89,7 @@ public class GetUsersRuleDependentTypeIdRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String typeId;

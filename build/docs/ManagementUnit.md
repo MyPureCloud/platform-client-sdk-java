@@ -14,8 +14,8 @@
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version info metadata for this management unit. Deprecated, use settings.metadata |  [optional] |
 | **division** | [**DivisionReference**](DivisionReference) | The division to which this entity belongs. |  [optional] |
 | **modifiedBy** | [**UserReference**](UserReference) | The user who last modified this entity.  Deprecated, use field from settings.metadata instead |  [optional] |
-| **version** | **Integer** | The version of the underlying entity.  Deprecated, use field from settings.metadata instead |  [optional] |
 | **dateModified** | [**Date**](Date) | The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **version** | **Integer** | The version of the underlying entity.  Deprecated, use field from settings.metadata instead |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -35,4 +35,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

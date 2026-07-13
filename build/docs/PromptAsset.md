@@ -10,6 +10,7 @@
 | **promptId** | **String** | Associated prompt ID |  [optional] |
 | **language** | **String** | Prompt resource language |  [optional] |
 | **mediaUri** | **String** | URI of the resource audio |  [optional] |
+| **audioFormat** | [**AudioFormat**](AudioFormat) | Audio format info |  [optional] |
 | **ttsString** | **String** | Text to speech of the resource |  [optional] |
 | **text** | **String** | Text of the resource |  [optional] |
 | **uploadStatus** | [**UploadStatusEnum**](#Enum--UploadStatusEnum) | Audio upload status |  [optional] |
@@ -33,4 +34,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:257.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_

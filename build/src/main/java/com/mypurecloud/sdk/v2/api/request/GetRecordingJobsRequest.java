@@ -130,6 +130,7 @@ public class GetRecordingJobsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private String state;
@@ -178,6 +179,7 @@ public class GetRecordingJobsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean showOnlyMyJobs;
@@ -237,6 +239,7 @@ public class GetRecordingJobsRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean includeTotal;

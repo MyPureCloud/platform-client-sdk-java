@@ -415,6 +415,7 @@ public class PostWorkforcemanagementAgentsOpportunitiesQueryRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private Boolean forceDownloadService;

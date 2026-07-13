@@ -131,8 +131,13 @@ import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
 import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
 import com.mypurecloud.sdk.v2.model.V3Synchronization;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationDeletion;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationDeletionListing;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationFileDeletionRequest;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationListing;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUpload;
+import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadListing;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.V3SynchronizationUploadUrlResponse;
 
@@ -195,6 +200,7 @@ public class GetKnowledgeSourceRequest {
 		public String toString() {
 			return String.valueOf(value);
 		}
+
 	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();
