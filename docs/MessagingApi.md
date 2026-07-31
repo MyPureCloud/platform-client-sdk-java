@@ -839,4 +839,4 @@ try {
 [**MessagingSetting**](MessagingSetting)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
