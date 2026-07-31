@@ -6,6 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** | The name of the object. |  [optional] |
 | **product** | [**BillingProduct**](BillingProduct) | Represents the details of a product. |  [optional] |
 | **organizations** | [**List&lt;NamedEntity&gt;**](NamedEntity) | List of plans within the organization. |  [optional] |
 | **prepaidQuantity** | [**BigDecimal**](BigDecimal) | The quantity of usage that is prepaid. |  [optional] |
@@ -21,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

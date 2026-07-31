@@ -377,7 +377,7 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get a list of Presence Definitions
+   * Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -411,7 +411,7 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get a list of Presence Definitions
+   * Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

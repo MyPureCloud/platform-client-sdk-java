@@ -37,14 +37,14 @@ public class AppleInvitationNotificationParameters  implements Serializable {
 
   
   /**
-   * Provides context for the notification message, such as an order number or case ID.
+   * An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID).
    **/
   public AppleInvitationNotificationParameters referenceId(String referenceId) {
     this.referenceId = referenceId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Provides context for the notification message, such as an order number or case ID.")
+  @ApiModelProperty(example = "orderId:1234;caseId:4321", value = "An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID).")
   @JsonProperty("referenceId")
   public String getReferenceId() {
     return referenceId;

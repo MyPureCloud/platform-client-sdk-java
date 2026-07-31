@@ -26,16 +26,19 @@ import java.io.Serializable;
 public class BuTimeOffLimitRange  implements Serializable {
   
   private LocalDate startDate = null;
+  private List<Integer> limitMinutesPerFifteenMinutes = null;
   private List<Integer> limitMinutesPerDay = null;
 
   public BuTimeOffLimitRange() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      limitMinutesPerFifteenMinutes = new ArrayList<Integer>();
       limitMinutesPerDay = new ArrayList<Integer>();
     }
   }
 
   public BuTimeOffLimitRange(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      limitMinutesPerFifteenMinutes = new ArrayList<Integer>();
       limitMinutesPerDay = new ArrayList<Integer>();
     }
   }
@@ -56,6 +59,24 @@ public class BuTimeOffLimitRange  implements Serializable {
   }
   public void setStartDate(LocalDate startDate) {
     this.startDate = startDate;
+  }
+
+
+  /**
+   * The list of time-off limit values in minutes per fifteen minute interval. It must be set if 'granularity' on time-off limit is fifteen minutes. If count of limit minutes array exceeds a day for given 'startDate', the slots overflowing into next day, should not be duplicated in another range entry with next day as 'startDate'.For example startDate 03/01/2026 - limitMinutesPerFifteenMinutes with 120 intervals, 03/02/2026 - limitMinutesPerFifteenMinutes with 20 intervals has overlap and not allowed
+   **/
+  public BuTimeOffLimitRange limitMinutesPerFifteenMinutes(List<Integer> limitMinutesPerFifteenMinutes) {
+    this.limitMinutesPerFifteenMinutes = limitMinutesPerFifteenMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of time-off limit values in minutes per fifteen minute interval. It must be set if 'granularity' on time-off limit is fifteen minutes. If count of limit minutes array exceeds a day for given 'startDate', the slots overflowing into next day, should not be duplicated in another range entry with next day as 'startDate'.For example startDate 03/01/2026 - limitMinutesPerFifteenMinutes with 120 intervals, 03/02/2026 - limitMinutesPerFifteenMinutes with 20 intervals has overlap and not allowed")
+  @JsonProperty("limitMinutesPerFifteenMinutes")
+  public List<Integer> getLimitMinutesPerFifteenMinutes() {
+    return limitMinutesPerFifteenMinutes;
+  }
+  public void setLimitMinutesPerFifteenMinutes(List<Integer> limitMinutesPerFifteenMinutes) {
+    this.limitMinutesPerFifteenMinutes = limitMinutesPerFifteenMinutes;
   }
 
 
@@ -88,12 +109,13 @@ public class BuTimeOffLimitRange  implements Serializable {
     BuTimeOffLimitRange buTimeOffLimitRange = (BuTimeOffLimitRange) o;
 
     return Objects.equals(this.startDate, buTimeOffLimitRange.startDate) &&
+            Objects.equals(this.limitMinutesPerFifteenMinutes, buTimeOffLimitRange.limitMinutesPerFifteenMinutes) &&
             Objects.equals(this.limitMinutesPerDay, buTimeOffLimitRange.limitMinutesPerDay);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, limitMinutesPerDay);
+    return Objects.hash(startDate, limitMinutesPerFifteenMinutes, limitMinutesPerDay);
   }
 
   @Override
@@ -102,6 +124,7 @@ public class BuTimeOffLimitRange  implements Serializable {
     sb.append("class BuTimeOffLimitRange {\n");
     
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    limitMinutesPerFifteenMinutes: ").append(toIndentedString(limitMinutesPerFifteenMinutes)).append("\n");
     sb.append("    limitMinutesPerDay: ").append(toIndentedString(limitMinutesPerDay)).append("\n");
     sb.append("}");
     return sb.toString();

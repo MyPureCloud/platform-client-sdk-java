@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ArchitectPromptResourceNotificationPromptResourceAudioFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
@@ -29,6 +30,7 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
   private String mediaUri = null;
   private String uploadStatus = null;
   private BigDecimal durationSeconds = null;
+  private ArchitectPromptResourceNotificationPromptResourceAudioFormat audioFormat = null;
 
   public ArchitectPromptResourceNotificationPromptResourceNotification() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -149,6 +151,23 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
   }
 
 
+  /**
+   **/
+  public ArchitectPromptResourceNotificationPromptResourceNotification audioFormat(ArchitectPromptResourceNotificationPromptResourceAudioFormat audioFormat) {
+    this.audioFormat = audioFormat;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("audioFormat")
+  public ArchitectPromptResourceNotificationPromptResourceAudioFormat getAudioFormat() {
+    return audioFormat;
+  }
+  public void setAudioFormat(ArchitectPromptResourceNotificationPromptResourceAudioFormat audioFormat) {
+    this.audioFormat = audioFormat;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -164,12 +183,13 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
             Objects.equals(this.language, architectPromptResourceNotificationPromptResourceNotification.language) &&
             Objects.equals(this.mediaUri, architectPromptResourceNotificationPromptResourceNotification.mediaUri) &&
             Objects.equals(this.uploadStatus, architectPromptResourceNotificationPromptResourceNotification.uploadStatus) &&
-            Objects.equals(this.durationSeconds, architectPromptResourceNotificationPromptResourceNotification.durationSeconds);
+            Objects.equals(this.durationSeconds, architectPromptResourceNotificationPromptResourceNotification.durationSeconds) &&
+            Objects.equals(this.audioFormat, architectPromptResourceNotificationPromptResourceNotification.audioFormat);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(promptId, id, language, mediaUri, uploadStatus, durationSeconds);
+    return Objects.hash(promptId, id, language, mediaUri, uploadStatus, durationSeconds, audioFormat);
   }
 
   @Override
@@ -183,6 +203,7 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
     sb.append("    mediaUri: ").append(toIndentedString(mediaUri)).append("\n");
     sb.append("    uploadStatus: ").append(toIndentedString(uploadStatus)).append("\n");
     sb.append("    durationSeconds: ").append(toIndentedString(durationSeconds)).append("\n");
+    sb.append("    audioFormat: ").append(toIndentedString(audioFormat)).append("\n");
     sb.append("}");
     return sb.toString();
   }

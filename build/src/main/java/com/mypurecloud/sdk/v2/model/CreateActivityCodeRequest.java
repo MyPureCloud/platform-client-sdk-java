@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ActivityCodeStyle;
 import com.mypurecloud.sdk.v2.model.SecondaryPresence;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -90,6 +91,7 @@ public class CreateActivityCodeRequest  implements Serializable {
   private Boolean interruptible = null;
   private List<SecondaryPresence> secondaryPresences = null;
   private List<String> planningGroupIds = null;
+  private ActivityCodeStyle style = null;
 
   public CreateActivityCodeRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -304,6 +306,24 @@ public class CreateActivityCodeRequest  implements Serializable {
   }
 
 
+  /**
+   * The style configuration for the activity code
+   **/
+  public CreateActivityCodeRequest style(ActivityCodeStyle style) {
+    this.style = style;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The style configuration for the activity code")
+  @JsonProperty("style")
+  public ActivityCodeStyle getStyle() {
+    return style;
+  }
+  public void setStyle(ActivityCodeStyle style) {
+    this.style = style;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -324,12 +344,13 @@ public class CreateActivityCodeRequest  implements Serializable {
             Objects.equals(this.plannedShrinkage, createActivityCodeRequest.plannedShrinkage) &&
             Objects.equals(this.interruptible, createActivityCodeRequest.interruptible) &&
             Objects.equals(this.secondaryPresences, createActivityCodeRequest.secondaryPresences) &&
-            Objects.equals(this.planningGroupIds, createActivityCodeRequest.planningGroupIds);
+            Objects.equals(this.planningGroupIds, createActivityCodeRequest.planningGroupIds) &&
+            Objects.equals(this.style, createActivityCodeRequest.style);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, planningGroupIds);
+    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, planningGroupIds, style);
   }
 
   @Override
@@ -348,6 +369,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     sb.append("    interruptible: ").append(toIndentedString(interruptible)).append("\n");
     sb.append("    secondaryPresences: ").append(toIndentedString(secondaryPresences)).append("\n");
     sb.append("    planningGroupIds: ").append(toIndentedString(planningGroupIds)).append("\n");
+    sb.append("    style: ").append(toIndentedString(style)).append("\n");
     sb.append("}");
     return sb.toString();
   }

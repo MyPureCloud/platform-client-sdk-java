@@ -177,6 +177,7 @@ public class Campaign  implements Serializable {
   private Boolean callbackAutoAnswer = null;
   private DynamicLineBalancingSettings dynamicLineBalancingSettings = null;
   private DiagnosticsSettings diagnosticsSettings = null;
+  private Boolean preciseDialingEnabled = null;
   private String selfUri = null;
 
   public Campaign() {
@@ -898,6 +899,24 @@ public class Campaign  implements Serializable {
   }
 
 
+  /**
+   * Option to enable precise dialing
+   **/
+  public Campaign preciseDialingEnabled(Boolean preciseDialingEnabled) {
+    this.preciseDialingEnabled = preciseDialingEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Option to enable precise dialing")
+  @JsonProperty("preciseDialingEnabled")
+  public Boolean getPreciseDialingEnabled() {
+    return preciseDialingEnabled;
+  }
+  public void setPreciseDialingEnabled(Boolean preciseDialingEnabled) {
+    this.preciseDialingEnabled = preciseDialingEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -956,12 +975,13 @@ public class Campaign  implements Serializable {
             Objects.equals(this.callbackAutoAnswer, campaign.callbackAutoAnswer) &&
             Objects.equals(this.dynamicLineBalancingSettings, campaign.dynamicLineBalancingSettings) &&
             Objects.equals(this.diagnosticsSettings, campaign.diagnosticsSettings) &&
+            Objects.equals(this.preciseDialingEnabled, campaign.preciseDialingEnabled) &&
             Objects.equals(this.selfUri, campaign.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, dynamicContactQueueingSettings, skillColumns, previewAutoEnd, maxCallsPerAgent, maxCallsPerAgentDecimal, callbackAutoAnswer, dynamicLineBalancingSettings, diagnosticsSettings, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, dynamicContactQueueingSettings, skillColumns, previewAutoEnd, maxCallsPerAgent, maxCallsPerAgentDecimal, callbackAutoAnswer, dynamicLineBalancingSettings, diagnosticsSettings, preciseDialingEnabled, selfUri);
   }
 
   @Override
@@ -1010,6 +1030,7 @@ public class Campaign  implements Serializable {
     sb.append("    callbackAutoAnswer: ").append(toIndentedString(callbackAutoAnswer)).append("\n");
     sb.append("    dynamicLineBalancingSettings: ").append(toIndentedString(dynamicLineBalancingSettings)).append("\n");
     sb.append("    diagnosticsSettings: ").append(toIndentedString(diagnosticsSettings)).append("\n");
+    sb.append("    preciseDialingEnabled: ").append(toIndentedString(preciseDialingEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

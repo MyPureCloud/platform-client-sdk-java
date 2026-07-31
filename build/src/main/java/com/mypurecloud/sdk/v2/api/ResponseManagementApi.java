@@ -15,6 +15,8 @@ import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Library;
 import com.mypurecloud.sdk.v2.model.LibraryBatchRequest;
+import com.mypurecloud.sdk.v2.model.LibraryDivisionView;
+import com.mypurecloud.sdk.v2.model.LibraryDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.QueryCriteriaQuery;
 import com.mypurecloud.sdk.v2.model.Response;
@@ -25,6 +27,8 @@ import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
 import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseDivisionView;
+import com.mypurecloud.sdk.v2.model.ResponseDivisionViewQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
@@ -34,11 +38,14 @@ import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementLibraryRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseassetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibrariesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibrariesDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibrariesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetsStatusStatusIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesQueryRequest;
@@ -46,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsBu
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesDivisionviewsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseRequest;
@@ -379,6 +387,174 @@ public class ResponseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get details about an existing response library.
+   * 
+   * @param libraryId Library ID (required)
+   * @return LibraryDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LibraryDivisionView getResponsemanagementLibrariesDivisionview(String libraryId) throws IOException, ApiException {
+    return  getResponsemanagementLibrariesDivisionview(createGetResponsemanagementLibrariesDivisionviewRequest(libraryId));
+  }
+
+  /**
+   * Get details about an existing response library.
+   * 
+   * @param libraryId Library ID (required)
+   * @return LibraryDivisionView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LibraryDivisionView> getResponsemanagementLibrariesDivisionviewWithHttpInfo(String libraryId) throws IOException {
+    return getResponsemanagementLibrariesDivisionview(createGetResponsemanagementLibrariesDivisionviewRequest(libraryId).withHttpInfo());
+  }
+
+  private GetResponsemanagementLibrariesDivisionviewRequest createGetResponsemanagementLibrariesDivisionviewRequest(String libraryId) {
+    return GetResponsemanagementLibrariesDivisionviewRequest.builder()
+            .withLibraryId(libraryId)
+
+            .build();
+  }
+
+  /**
+   * Get details about an existing response library.
+   * 
+   * @param request The request object
+   * @return LibraryDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LibraryDivisionView getResponsemanagementLibrariesDivisionview(GetResponsemanagementLibrariesDivisionviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LibraryDivisionView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LibraryDivisionView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about an existing response library.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LibraryDivisionView> getResponsemanagementLibrariesDivisionview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LibraryDivisionView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryDivisionView> response = (ApiResponse<LibraryDivisionView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryDivisionView> response = (ApiResponse<LibraryDivisionView>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a list of existing response libraries.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param messagingTemplateFilter Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel (optional)
+   * @param libraryPrefix Returns a list of libraries that contain the prefix provided (optional)
+   * @return LibraryDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LibraryDivisionViewEntityListing getResponsemanagementLibrariesDivisionviews(Integer pageNumber, Integer pageSize, String messagingTemplateFilter, String libraryPrefix) throws IOException, ApiException {
+    return  getResponsemanagementLibrariesDivisionviews(createGetResponsemanagementLibrariesDivisionviewsRequest(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix));
+  }
+
+  /**
+   * Gets a list of existing response libraries.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param messagingTemplateFilter Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel (optional)
+   * @param libraryPrefix Returns a list of libraries that contain the prefix provided (optional)
+   * @return LibraryDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LibraryDivisionViewEntityListing> getResponsemanagementLibrariesDivisionviewsWithHttpInfo(Integer pageNumber, Integer pageSize, String messagingTemplateFilter, String libraryPrefix) throws IOException {
+    return getResponsemanagementLibrariesDivisionviews(createGetResponsemanagementLibrariesDivisionviewsRequest(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix).withHttpInfo());
+  }
+
+  private GetResponsemanagementLibrariesDivisionviewsRequest createGetResponsemanagementLibrariesDivisionviewsRequest(Integer pageNumber, Integer pageSize, String messagingTemplateFilter, String libraryPrefix) {
+    return GetResponsemanagementLibrariesDivisionviewsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withMessagingTemplateFilter(messagingTemplateFilter)
+
+            .withLibraryPrefix(libraryPrefix)
+
+            .build();
+  }
+
+  /**
+   * Gets a list of existing response libraries.
+   * 
+   * @param request The request object
+   * @return LibraryDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LibraryDivisionViewEntityListing getResponsemanagementLibrariesDivisionviews(GetResponsemanagementLibrariesDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LibraryDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LibraryDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a list of existing response libraries.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LibraryDivisionViewEntityListing> getResponsemanagementLibrariesDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LibraryDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryDivisionViewEntityListing> response = (ApiResponse<LibraryDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryDivisionViewEntityListing> response = (ApiResponse<LibraryDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -785,6 +961,84 @@ public class ResponseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ResponseEntityListing> response = (ApiResponse<ResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get details about an existing response.
+   * 
+   * @param responseId Response ID (required)
+   * @return ResponseDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseDivisionView getResponsemanagementResponsesDivisionview(String responseId) throws IOException, ApiException {
+    return  getResponsemanagementResponsesDivisionview(createGetResponsemanagementResponsesDivisionviewRequest(responseId));
+  }
+
+  /**
+   * Get details about an existing response.
+   * 
+   * @param responseId Response ID (required)
+   * @return ResponseDivisionView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseDivisionView> getResponsemanagementResponsesDivisionviewWithHttpInfo(String responseId) throws IOException {
+    return getResponsemanagementResponsesDivisionview(createGetResponsemanagementResponsesDivisionviewRequest(responseId).withHttpInfo());
+  }
+
+  private GetResponsemanagementResponsesDivisionviewRequest createGetResponsemanagementResponsesDivisionviewRequest(String responseId) {
+    return GetResponsemanagementResponsesDivisionviewRequest.builder()
+            .withResponseId(responseId)
+
+            .build();
+  }
+
+  /**
+   * Get details about an existing response.
+   * 
+   * @param request The request object
+   * @return ResponseDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseDivisionView getResponsemanagementResponsesDivisionview(GetResponsemanagementResponsesDivisionviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ResponseDivisionView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseDivisionView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about an existing response.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseDivisionView> getResponsemanagementResponsesDivisionview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseDivisionView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseDivisionView> response = (ApiResponse<ResponseDivisionView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseDivisionView> response = (ApiResponse<ResponseDivisionView>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1347,6 +1601,84 @@ public class ResponseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query responses
+   * 
+   * @param body Response (required)
+   * @return ResponseDivisionViewQueryResults
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseDivisionViewQueryResults postResponsemanagementResponsesDivisionviewsQuery(ResponseQueryRequest body) throws IOException, ApiException {
+    return  postResponsemanagementResponsesDivisionviewsQuery(createPostResponsemanagementResponsesDivisionviewsQueryRequest(body));
+  }
+
+  /**
+   * Query responses
+   * 
+   * @param body Response (required)
+   * @return ResponseDivisionViewQueryResults
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseDivisionViewQueryResults> postResponsemanagementResponsesDivisionviewsQueryWithHttpInfo(ResponseQueryRequest body) throws IOException {
+    return postResponsemanagementResponsesDivisionviewsQuery(createPostResponsemanagementResponsesDivisionviewsQueryRequest(body).withHttpInfo());
+  }
+
+  private PostResponsemanagementResponsesDivisionviewsQueryRequest createPostResponsemanagementResponsesDivisionviewsQueryRequest(ResponseQueryRequest body) {
+    return PostResponsemanagementResponsesDivisionviewsQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query responses
+   * 
+   * @param request The request object
+   * @return ResponseDivisionViewQueryResults
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseDivisionViewQueryResults postResponsemanagementResponsesDivisionviewsQuery(PostResponsemanagementResponsesDivisionviewsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ResponseDivisionViewQueryResults> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseDivisionViewQueryResults>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query responses
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseDivisionViewQueryResults> postResponsemanagementResponsesDivisionviewsQuery(ApiRequest<ResponseQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseDivisionViewQueryResults>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseDivisionViewQueryResults> response = (ApiResponse<ResponseDivisionViewQueryResults>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseDivisionViewQueryResults> response = (ApiResponse<ResponseDivisionViewQueryResults>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -40,7 +40,7 @@ public class SupportCenterScreen  implements Serializable {
     }
   }
   /**
-   * The type of the screen
+   * The type of the screen. Required if support center is enabled
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -92,14 +92,14 @@ public class SupportCenterScreen  implements Serializable {
 
   
   /**
-   * The type of the screen
+   * The type of the screen. Required if support center is enabled
    **/
   public SupportCenterScreen type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The type of the screen")
+  @ApiModelProperty(example = "null", value = "The type of the screen. Required if support center is enabled")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -110,14 +110,14 @@ public class SupportCenterScreen  implements Serializable {
 
 
   /**
-   * Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;
+   * Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; Required if support center is enabled
    **/
   public SupportCenterScreen moduleSettings(List<SupportCenterModuleSetting> moduleSettings) {
     this.moduleSettings = moduleSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;")
+  @ApiModelProperty(example = "null", value = "Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; Required if support center is enabled")
   @JsonProperty("moduleSettings")
   public List<SupportCenterModuleSetting> getModuleSettings() {
     return moduleSettings;

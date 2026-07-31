@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.StaffingGroupReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -28,7 +29,56 @@ public class BuTimeOffLimitResponse  implements Serializable {
   private String id = null;
   private StaffingGroupReference staffingGroup = null;
   private ManagementUnitReference managementUnit = null;
+
+  private static class GranularityEnumDeserializer extends StdDeserializer<GranularityEnum> {
+    public GranularityEnumDeserializer() {
+      super(GranularityEnumDeserializer.class);
+    }
+
+    @Override
+    public GranularityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return GranularityEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Granularity choice for time off limit
+   */
+ @JsonDeserialize(using = GranularityEnumDeserializer.class)
+  public enum GranularityEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DAILY("Daily"),
+    FIFTEENMINUTES("FifteenMinutes");
+
+    private String value;
+
+    GranularityEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static GranularityEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (GranularityEnum value : GranularityEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return GranularityEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private GranularityEnum granularity = null;
   private WfmVersionedEntityMetadata metadata = null;
+  private String fullDayTimeOffStartTime = null;
   private String selfUri = null;
 
   public BuTimeOffLimitResponse() {
@@ -97,6 +147,24 @@ public class BuTimeOffLimitResponse  implements Serializable {
 
 
   /**
+   * Granularity choice for time off limit
+   **/
+  public BuTimeOffLimitResponse granularity(GranularityEnum granularity) {
+    this.granularity = granularity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Granularity choice for time off limit")
+  @JsonProperty("granularity")
+  public GranularityEnum getGranularity() {
+    return granularity;
+  }
+  public void setGranularity(GranularityEnum granularity) {
+    this.granularity = granularity;
+  }
+
+
+  /**
    * Version metadata for the time-off limit
    **/
   public BuTimeOffLimitResponse metadata(WfmVersionedEntityMetadata metadata) {
@@ -111,6 +179,24 @@ public class BuTimeOffLimitResponse  implements Serializable {
   }
   public void setMetadata(WfmVersionedEntityMetadata metadata) {
     this.metadata = metadata;
+  }
+
+
+  /**
+   * The start time of full day time off requests associated with this limit interval in HH:mm format.
+   **/
+  public BuTimeOffLimitResponse fullDayTimeOffStartTime(String fullDayTimeOffStartTime) {
+    this.fullDayTimeOffStartTime = fullDayTimeOffStartTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "09:00", value = "The start time of full day time off requests associated with this limit interval in HH:mm format.")
+  @JsonProperty("fullDayTimeOffStartTime")
+  public String getFullDayTimeOffStartTime() {
+    return fullDayTimeOffStartTime;
+  }
+  public void setFullDayTimeOffStartTime(String fullDayTimeOffStartTime) {
+    this.fullDayTimeOffStartTime = fullDayTimeOffStartTime;
   }
 
 
@@ -134,13 +220,15 @@ public class BuTimeOffLimitResponse  implements Serializable {
     return Objects.equals(this.id, buTimeOffLimitResponse.id) &&
             Objects.equals(this.staffingGroup, buTimeOffLimitResponse.staffingGroup) &&
             Objects.equals(this.managementUnit, buTimeOffLimitResponse.managementUnit) &&
+            Objects.equals(this.granularity, buTimeOffLimitResponse.granularity) &&
             Objects.equals(this.metadata, buTimeOffLimitResponse.metadata) &&
+            Objects.equals(this.fullDayTimeOffStartTime, buTimeOffLimitResponse.fullDayTimeOffStartTime) &&
             Objects.equals(this.selfUri, buTimeOffLimitResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, staffingGroup, managementUnit, metadata, selfUri);
+    return Objects.hash(id, staffingGroup, managementUnit, granularity, metadata, fullDayTimeOffStartTime, selfUri);
   }
 
   @Override
@@ -151,7 +239,9 @@ public class BuTimeOffLimitResponse  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    staffingGroup: ").append(toIndentedString(staffingGroup)).append("\n");
     sb.append("    managementUnit: ").append(toIndentedString(managementUnit)).append("\n");
+    sb.append("    granularity: ").append(toIndentedString(granularity)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    fullDayTimeOffStartTime: ").append(toIndentedString(fullDayTimeOffStartTime)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

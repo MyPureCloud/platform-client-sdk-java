@@ -74,6 +74,9 @@ import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
+import com.mypurecloud.sdk.v2.model.BuConvertTimeOffGranularityLimitJobListing;
+import com.mypurecloud.sdk.v2.model.BuConvertTimeOffLimitGranularityJobRequest;
+import com.mypurecloud.sdk.v2.model.BuConvertTimeOffLimitGranularityJobResponse;
 import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuCreateTimeOffLimitRequest;
@@ -85,6 +88,8 @@ import com.mypurecloud.sdk.v2.model.BuForecastStaffingRequirementsResultResponse
 import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuImportTimeOffLimitValuesRequest;
+import com.mypurecloud.sdk.v2.model.BuImportTimeOffLimitValuesUploadResponse;
 import com.mypurecloud.sdk.v2.model.BuListAlternativeShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsResponse;
@@ -103,6 +108,8 @@ import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffLimitListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffLimitResponse;
+import com.mypurecloud.sdk.v2.model.BuTimeOffLimitValuesForGranularityResponse;
+import com.mypurecloud.sdk.v2.model.BuTimeOffLimitValuesImportUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.BuTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
@@ -118,6 +125,8 @@ import com.mypurecloud.sdk.v2.model.BulkOpportunityEnrollmentsStatusUpdateReques
 import com.mypurecloud.sdk.v2.model.BulkPublishOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.BulkRemoveOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateActivityCodeResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateOpportunityEnrollmentsStatusResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
@@ -162,6 +171,10 @@ import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserTimeOffIntegrationStatusRequest;
+import com.mypurecloud.sdk.v2.model.DecisionMetricsResponse;
+import com.mypurecloud.sdk.v2.model.DecisionMetricsUpdateJobRequest;
+import com.mypurecloud.sdk.v2.model.DecisionMetricsUpdateJobResponse;
+import com.mypurecloud.sdk.v2.model.DecisionMetricsUploadResponse;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffRequest;
@@ -229,6 +242,7 @@ import com.mypurecloud.sdk.v2.model.QueryOpportunityEnrollmentsResponse;
 import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
 import com.mypurecloud.sdk.v2.model.QueryShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
+import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesForGranularityRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.QueryUserStaffingGroupListRequest;
@@ -405,6 +419,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapa
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplansRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitDecisionmetricsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest;
@@ -433,6 +448,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShif
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplansRequest;
@@ -471,6 +488,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAc
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentShifttradesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitDecisionmetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesMatchedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitTimeofflimitRequest;
@@ -518,6 +536,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshi
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCapacityplanRequest;
@@ -582,6 +601,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest;
@@ -605,6 +626,10 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShi
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitGranularityconversionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitValuesImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitValuesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeoffplansRequest;
@@ -4674,6 +4699,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Gets the status of the given job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionMetricsUpdateJobResponse> getWorkforcemanagementBusinessunitDecisionmetricsJobAsync(GetWorkforcemanagementBusinessunitDecisionmetricsJobRequest request, final AsyncApiCallback<DecisionMetricsUpdateJobResponse> callback) {
+    try {
+      final SettableFuture<DecisionMetricsUpdateJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionMetricsUpdateJobResponse>() {}, new AsyncApiCallback<ApiResponse<DecisionMetricsUpdateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionMetricsUpdateJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the status of the given job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionMetricsUpdateJobResponse>> getWorkforcemanagementBusinessunitDecisionmetricsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DecisionMetricsUpdateJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionMetricsUpdateJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionMetricsUpdateJobResponse>() {}, new AsyncApiCallback<ApiResponse<DecisionMetricsUpdateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionMetricsUpdateJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionMetricsUpdateJobResponse> response = (ApiResponse<DecisionMetricsUpdateJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionMetricsUpdateJobResponse> response = (ApiResponse<DecisionMetricsUpdateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get intraday planning groups for the given date
    * 
    * @param request the request object
@@ -6768,6 +6868,156 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuConvertTimeOffLimitGranularityJobResponse> getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobAsync(GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobRequest request, final AsyncApiCallback<BuConvertTimeOffLimitGranularityJobResponse> callback) {
+    try {
+      final SettableFuture<BuConvertTimeOffLimitGranularityJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuConvertTimeOffLimitGranularityJobResponse>() {}, new AsyncApiCallback<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>> getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuConvertTimeOffLimitGranularityJobResponse>() {}, new AsyncApiCallback<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = (ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = (ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the list of convert time-off limit granularity job operation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuConvertTimeOffGranularityLimitJobListing> getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsAsync(GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsRequest request, final AsyncApiCallback<BuConvertTimeOffGranularityLimitJobListing> callback) {
+    try {
+      final SettableFuture<BuConvertTimeOffGranularityLimitJobListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuConvertTimeOffGranularityLimitJobListing>() {}, new AsyncApiCallback<ApiResponse<BuConvertTimeOffGranularityLimitJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuConvertTimeOffGranularityLimitJobListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the list of convert time-off limit granularity job operation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuConvertTimeOffGranularityLimitJobListing>> getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BuConvertTimeOffGranularityLimitJobListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuConvertTimeOffGranularityLimitJobListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuConvertTimeOffGranularityLimitJobListing>() {}, new AsyncApiCallback<ApiResponse<BuConvertTimeOffGranularityLimitJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuConvertTimeOffGranularityLimitJobListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuConvertTimeOffGranularityLimitJobListing> response = (ApiResponse<BuConvertTimeOffGranularityLimitJobListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuConvertTimeOffGranularityLimitJobListing> response = (ApiResponse<BuConvertTimeOffGranularityLimitJobListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -9622,6 +9872,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the decision metrics of all user in given management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionMetricsResponse> getWorkforcemanagementManagementunitDecisionmetricsAsync(GetWorkforcemanagementManagementunitDecisionmetricsRequest request, final AsyncApiCallback<DecisionMetricsResponse> callback) {
+    try {
+      final SettableFuture<DecisionMetricsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionMetricsResponse>() {}, new AsyncApiCallback<ApiResponse<DecisionMetricsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionMetricsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the decision metrics of all user in given management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionMetricsResponse>> getWorkforcemanagementManagementunitDecisionmetricsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DecisionMetricsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionMetricsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionMetricsResponse>() {}, new AsyncApiCallback<ApiResponse<DecisionMetricsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionMetricsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionMetricsResponse> response = (ApiResponse<DecisionMetricsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionMetricsResponse> response = (ApiResponse<DecisionMetricsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -13157,6 +13482,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update multiple activity codes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkUpdateActivityCodeResponse> patchWorkforcemanagementBusinessunitActivitycodesBulkAsync(PatchWorkforcemanagementBusinessunitActivitycodesBulkRequest request, final AsyncApiCallback<BulkUpdateActivityCodeResponse> callback) {
+    try {
+      final SettableFuture<BulkUpdateActivityCodeResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkUpdateActivityCodeResponse>() {}, new AsyncApiCallback<ApiResponse<BulkUpdateActivityCodeResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkUpdateActivityCodeResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update multiple activity codes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkUpdateActivityCodeResponse>> patchWorkforcemanagementBusinessunitActivitycodesBulkAsync(ApiRequest<BulkUpdateActivityCodeRequest> request, final AsyncApiCallback<ApiResponse<BulkUpdateActivityCodeResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkUpdateActivityCodeResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkUpdateActivityCodeResponse>() {}, new AsyncApiCallback<ApiResponse<BulkUpdateActivityCodeResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkUpdateActivityCodeResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkUpdateActivityCodeResponse> response = (ApiResponse<BulkUpdateActivityCodeResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkUpdateActivityCodeResponse> response = (ApiResponse<BulkUpdateActivityCodeResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -17971,6 +18371,156 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Initiates the decision metrics update process
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionMetricsUpdateJobResponse> postWorkforcemanagementBusinessunitDecisionmetricsUpdateAsync(PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest request, final AsyncApiCallback<DecisionMetricsUpdateJobResponse> callback) {
+    try {
+      final SettableFuture<DecisionMetricsUpdateJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionMetricsUpdateJobResponse>() {}, new AsyncApiCallback<ApiResponse<DecisionMetricsUpdateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionMetricsUpdateJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiates the decision metrics update process
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionMetricsUpdateJobResponse>> postWorkforcemanagementBusinessunitDecisionmetricsUpdateAsync(ApiRequest<DecisionMetricsUpdateJobRequest> request, final AsyncApiCallback<ApiResponse<DecisionMetricsUpdateJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionMetricsUpdateJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionMetricsUpdateJobResponse>() {}, new AsyncApiCallback<ApiResponse<DecisionMetricsUpdateJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionMetricsUpdateJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionMetricsUpdateJobResponse> response = (ApiResponse<DecisionMetricsUpdateJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionMetricsUpdateJobResponse> response = (ApiResponse<DecisionMetricsUpdateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for updating decision metrics
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionMetricsUploadResponse> postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlAsync(PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest request, final AsyncApiCallback<DecisionMetricsUploadResponse> callback) {
+    try {
+      final SettableFuture<DecisionMetricsUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionMetricsUploadResponse>() {}, new AsyncApiCallback<ApiResponse<DecisionMetricsUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionMetricsUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for updating decision metrics
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionMetricsUploadResponse>> postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlAsync(ApiRequest<UploadUrlRequestBody> request, final AsyncApiCallback<ApiResponse<DecisionMetricsUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionMetricsUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionMetricsUploadResponse>() {}, new AsyncApiCallback<ApiResponse<DecisionMetricsUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionMetricsUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionMetricsUploadResponse> response = (ApiResponse<DecisionMetricsUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionMetricsUploadResponse> response = (ApiResponse<DecisionMetricsUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get intraday data for the given date for the requested planningGroupIds
    * 
    * @param request the request object
@@ -19684,6 +20234,306 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserStaffingGroupListing> response = (ApiResponse<UserStaffingGroupListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Converts existing time-off limit to another granularity.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuConvertTimeOffLimitGranularityJobResponse> postWorkforcemanagementBusinessunitTimeofflimitGranularityconversionAsync(PostWorkforcemanagementBusinessunitTimeofflimitGranularityconversionRequest request, final AsyncApiCallback<BuConvertTimeOffLimitGranularityJobResponse> callback) {
+    try {
+      final SettableFuture<BuConvertTimeOffLimitGranularityJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuConvertTimeOffLimitGranularityJobResponse>() {}, new AsyncApiCallback<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Converts existing time-off limit to another granularity.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>> postWorkforcemanagementBusinessunitTimeofflimitGranularityconversionAsync(ApiRequest<BuConvertTimeOffLimitGranularityJobRequest> request, final AsyncApiCallback<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuConvertTimeOffLimitGranularityJobResponse>() {}, new AsyncApiCallback<ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = (ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = (ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Starts importing the uploaded time-off limit values
+   * Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuTimeOffLimitResponse> postWorkforcemanagementBusinessunitTimeofflimitValuesImportAsync(PostWorkforcemanagementBusinessunitTimeofflimitValuesImportRequest request, final AsyncApiCallback<BuTimeOffLimitResponse> callback) {
+    try {
+      final SettableFuture<BuTimeOffLimitResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuTimeOffLimitResponse>() {}, new AsyncApiCallback<ApiResponse<BuTimeOffLimitResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuTimeOffLimitResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Starts importing the uploaded time-off limit values
+   * Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuTimeOffLimitResponse>> postWorkforcemanagementBusinessunitTimeofflimitValuesImportAsync(ApiRequest<BuImportTimeOffLimitValuesRequest> request, final AsyncApiCallback<ApiResponse<BuTimeOffLimitResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuTimeOffLimitResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuTimeOffLimitResponse>() {}, new AsyncApiCallback<ApiResponse<BuTimeOffLimitResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuTimeOffLimitResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for importing values into time-off limit
+   * Once the upload is complete, call the /import route to start the import process
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuImportTimeOffLimitValuesUploadResponse> postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlAsync(PostWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlRequest request, final AsyncApiCallback<BuImportTimeOffLimitValuesUploadResponse> callback) {
+    try {
+      final SettableFuture<BuImportTimeOffLimitValuesUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuImportTimeOffLimitValuesUploadResponse>() {}, new AsyncApiCallback<ApiResponse<BuImportTimeOffLimitValuesUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuImportTimeOffLimitValuesUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for importing values into time-off limit
+   * Once the upload is complete, call the /import route to start the import process
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuImportTimeOffLimitValuesUploadResponse>> postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlAsync(ApiRequest<BuTimeOffLimitValuesImportUploadUrlRequest> request, final AsyncApiCallback<ApiResponse<BuImportTimeOffLimitValuesUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuImportTimeOffLimitValuesUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuImportTimeOffLimitValuesUploadResponse>() {}, new AsyncApiCallback<ApiResponse<BuImportTimeOffLimitValuesUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuImportTimeOffLimitValuesUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuImportTimeOffLimitValuesUploadResponse> response = (ApiResponse<BuImportTimeOffLimitValuesUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuImportTimeOffLimitValuesUploadResponse> response = (ApiResponse<BuImportTimeOffLimitValuesUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuTimeOffLimitValuesForGranularityResponse> postWorkforcemanagementBusinessunitTimeofflimitValuesQueryAsync(PostWorkforcemanagementBusinessunitTimeofflimitValuesQueryRequest request, final AsyncApiCallback<BuTimeOffLimitValuesForGranularityResponse> callback) {
+    try {
+      final SettableFuture<BuTimeOffLimitValuesForGranularityResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuTimeOffLimitValuesForGranularityResponse>() {}, new AsyncApiCallback<ApiResponse<BuTimeOffLimitValuesForGranularityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuTimeOffLimitValuesForGranularityResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuTimeOffLimitValuesForGranularityResponse>> postWorkforcemanagementBusinessunitTimeofflimitValuesQueryAsync(ApiRequest<QueryTimeOffLimitValuesForGranularityRequest> request, final AsyncApiCallback<ApiResponse<BuTimeOffLimitValuesForGranularityResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuTimeOffLimitValuesForGranularityResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuTimeOffLimitValuesForGranularityResponse>() {}, new AsyncApiCallback<ApiResponse<BuTimeOffLimitValuesForGranularityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuTimeOffLimitValuesForGranularityResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuTimeOffLimitValuesForGranularityResponse> response = (ApiResponse<BuTimeOffLimitValuesForGranularityResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuTimeOffLimitValuesForGranularityResponse> response = (ApiResponse<BuTimeOffLimitValuesForGranularityResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

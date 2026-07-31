@@ -38,14 +38,14 @@ public class FunctionUploadRequest  implements Serializable {
 
   
   /**
-   * Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )
+   * Name of the file to upload.File name can only contain letters, numbers, spaces, and the following special characters: + - _ . ( )
    **/
   public FunctionUploadRequest fileName(String fileName) {
     this.fileName = fileName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )")
+  @ApiModelProperty(example = "null", required = true, value = "Name of the file to upload.File name can only contain letters, numbers, spaces, and the following special characters: + - _ . ( )")
   @JsonProperty("fileName")
   public String getFileName() {
     return fileName;

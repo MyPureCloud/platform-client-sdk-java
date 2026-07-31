@@ -20,6 +20,7 @@
 | **knowledgeArticle** | [**SuggestionKnowledgeArticle**](SuggestionKnowledgeArticle) | The suggested knowledge article that was provided as the suggestion. |  [optional] |
 | **cannedResponse** | [**SuggestionCannedResponse**](SuggestionCannedResponse) | The suggested canned response that was provided as the suggestion. |  [optional] |
 | **script** | [**SuggestionScript**](SuggestionScript) | The suggested script that was provided as the suggestion. |  [optional] |
+| **thirdPartySuggestion** | [**ThirdPartySuggestion**](ThirdPartySuggestion) | The third-party suggestion. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -65,4 +66,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

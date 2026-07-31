@@ -56,7 +56,9 @@ public class ConversationContentReaction  implements Serializable {
     SHARE("Share"),
     COMMENT("Comment"),
     VIEW("View"),
-    RATING("Rating");
+    RATING("Rating"),
+    REPOST("Repost"),
+    SAVE("Save");
 
     private String value;
 

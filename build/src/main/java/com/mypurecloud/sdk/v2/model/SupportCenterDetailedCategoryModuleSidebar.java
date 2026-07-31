@@ -36,14 +36,14 @@ public class SupportCenterDetailedCategoryModuleSidebar  implements Serializable
 
   
   /**
-   * Whether sidebar is enabled or not
+   * Whether sidebar is enabled or not. Required if support center is enabled
    **/
   public SupportCenterDetailedCategoryModuleSidebar enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether sidebar is enabled or not")
+  @ApiModelProperty(example = "null", value = "Whether sidebar is enabled or not. Required if support center is enabled")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;

@@ -30,6 +30,7 @@ public class PunctualityEvent  implements Serializable {
   private String activityCodeId = null;
   private String activityCode = null;
   private String activityName = null;
+  private String activityColor = null;
   private String category = null;
   private Integer points = null;
   private Double delta = null;
@@ -95,6 +96,13 @@ public class PunctualityEvent  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The activity color")
+  @JsonProperty("activityColor")
+  public String getActivityColor() {
+    return activityColor;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The category for the activity")
   @JsonProperty("category")
   public String getCategory() {
@@ -150,6 +158,7 @@ public class PunctualityEvent  implements Serializable {
             Objects.equals(this.activityCodeId, punctualityEvent.activityCodeId) &&
             Objects.equals(this.activityCode, punctualityEvent.activityCode) &&
             Objects.equals(this.activityName, punctualityEvent.activityName) &&
+            Objects.equals(this.activityColor, punctualityEvent.activityColor) &&
             Objects.equals(this.category, punctualityEvent.category) &&
             Objects.equals(this.points, punctualityEvent.points) &&
             Objects.equals(this.delta, punctualityEvent.delta) &&
@@ -158,7 +167,7 @@ public class PunctualityEvent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateScheduleStart, dateStart, lengthMinutes, description, activityCodeId, activityCode, activityName, category, points, delta, bullseye);
+    return Objects.hash(dateScheduleStart, dateStart, lengthMinutes, description, activityCodeId, activityCode, activityName, activityColor, category, points, delta, bullseye);
   }
 
   @Override
@@ -173,6 +182,7 @@ public class PunctualityEvent  implements Serializable {
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    activityCode: ").append(toIndentedString(activityCode)).append("\n");
     sb.append("    activityName: ").append(toIndentedString(activityName)).append("\n");
+    sb.append("    activityColor: ").append(toIndentedString(activityColor)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    points: ").append(toIndentedString(points)).append("\n");
     sb.append("    delta: ").append(toIndentedString(delta)).append("\n");

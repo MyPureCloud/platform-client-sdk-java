@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.TimeOffRequest;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestListItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,18 +25,18 @@ import java.io.Serializable;
 
 public class TimeOffRequestListing  implements Serializable {
   
-  private List<TimeOffRequest> entities = null;
+  private List<TimeOffRequestListItem> entities = null;
   private String downloadUrl = null;
 
   public TimeOffRequestListing() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      entities = new ArrayList<TimeOffRequest>();
+      entities = new ArrayList<TimeOffRequestListItem>();
     }
   }
 
   public TimeOffRequestListing(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
-      entities = new ArrayList<TimeOffRequest>();
+      entities = new ArrayList<TimeOffRequestListItem>();
     }
   }
 
@@ -44,17 +44,17 @@ public class TimeOffRequestListing  implements Serializable {
   /**
    * List of time off requests
    **/
-  public TimeOffRequestListing entities(List<TimeOffRequest> entities) {
+  public TimeOffRequestListing entities(List<TimeOffRequestListItem> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "List of time off requests")
   @JsonProperty("entities")
-  public List<TimeOffRequest> getEntities() {
+  public List<TimeOffRequestListItem> getEntities() {
     return entities;
   }
-  public void setEntities(List<TimeOffRequest> entities) {
+  public void setEntities(List<TimeOffRequestListItem> entities) {
     this.entities = entities;
   }
 

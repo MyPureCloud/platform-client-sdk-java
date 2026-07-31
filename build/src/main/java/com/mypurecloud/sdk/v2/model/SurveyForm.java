@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingSurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyQuestionGroup;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class SurveyForm  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private WritableStarrableDivision division = null;
   private Date modifiedDate = null;
   private Boolean published = null;
   private Boolean disabled = null;
@@ -38,6 +40,7 @@ public class SurveyForm  implements Serializable {
   private String footer = null;
   private List<SurveyQuestionGroup> questionGroups = null;
   private DomainEntityListingSurveyForm publishedVersions = null;
+  private Boolean redacted = null;
   private String selfUri = null;
 
   public SurveyForm() {
@@ -75,6 +78,24 @@ public class SurveyForm  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public SurveyForm division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -207,6 +228,24 @@ public class SurveyForm  implements Serializable {
   }
 
 
+  /**
+   * Is this form redacted
+   **/
+  public SurveyForm redacted(Boolean redacted) {
+    this.redacted = redacted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Is this form redacted")
+  @JsonProperty("redacted")
+  public Boolean getRedacted() {
+    return redacted;
+  }
+  public void setRedacted(Boolean redacted) {
+    this.redacted = redacted;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -226,6 +265,7 @@ public class SurveyForm  implements Serializable {
 
     return Objects.equals(this.id, surveyForm.id) &&
             Objects.equals(this.name, surveyForm.name) &&
+            Objects.equals(this.division, surveyForm.division) &&
             Objects.equals(this.modifiedDate, surveyForm.modifiedDate) &&
             Objects.equals(this.published, surveyForm.published) &&
             Objects.equals(this.disabled, surveyForm.disabled) &&
@@ -235,12 +275,13 @@ public class SurveyForm  implements Serializable {
             Objects.equals(this.footer, surveyForm.footer) &&
             Objects.equals(this.questionGroups, surveyForm.questionGroups) &&
             Objects.equals(this.publishedVersions, surveyForm.publishedVersions) &&
+            Objects.equals(this.redacted, surveyForm.redacted) &&
             Objects.equals(this.selfUri, surveyForm.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, disabled, contextId, language, header, footer, questionGroups, publishedVersions, selfUri);
+    return Objects.hash(id, name, division, modifiedDate, published, disabled, contextId, language, header, footer, questionGroups, publishedVersions, redacted, selfUri);
   }
 
   @Override
@@ -250,6 +291,7 @@ public class SurveyForm  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
@@ -259,6 +301,7 @@ public class SurveyForm  implements Serializable {
     sb.append("    footer: ").append(toIndentedString(footer)).append("\n");
     sb.append("    questionGroups: ").append(toIndentedString(questionGroups)).append("\n");
     sb.append("    publishedVersions: ").append(toIndentedString(publishedVersions)).append("\n");
+    sb.append("    redacted: ").append(toIndentedString(redacted)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

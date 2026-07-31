@@ -106,7 +106,10 @@ public class ActivityPlanJobResponse  implements Serializable {
     DELETEOCCURRENCE("DeleteOccurrence"),
     DELETEOCCURRENCES("DeleteOccurrences"),
     DELETESESSIONS("DeleteSessions"),
-    DELETESESSIONUSERS("DeleteSessionUsers");
+    DELETESESSIONUSERS("DeleteSessionUsers"),
+    MAXIMIZEOCCURRENCE("MaximizeOccurrence"),
+    CREATESESSION("CreateSession"),
+    EDITSESSION("EditSession");
 
     private String value;
 

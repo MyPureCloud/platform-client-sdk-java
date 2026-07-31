@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
+import com.mypurecloud.sdk.v2.model.BeginWebAuthnRegistrationResponse;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
 import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
@@ -30,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.ChatItemCursorListing;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateUser;
+import com.mypurecloud.sdk.v2.model.CreateVerifierRequest;
+import com.mypurecloud.sdk.v2.model.CreateVerifierResponse;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
@@ -40,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
 import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
+import com.mypurecloud.sdk.v2.model.FinishWebAuthnRegistrationRequest;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
 import com.mypurecloud.sdk.v2.model.PatchUser;
@@ -82,6 +86,7 @@ import com.mypurecloud.sdk.v2.model.UserState;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.UtilizationRequest;
+import com.mypurecloud.sdk.v2.model.ValidateVerifierRequest;
 import com.mypurecloud.sdk.v2.model.Verifier;
 import com.mypurecloud.sdk.v2.model.VerifierEntityListing;
 
@@ -101,6 +106,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequ
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUsersCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUsersMeVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUsersStationsMeAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobResultsRequest;
@@ -155,6 +161,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersExternalidAuthorityNameExternalKeyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersMeVerifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersStationsMeRequest;
@@ -188,6 +195,10 @@ import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersCustomattributesSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersDevelopmentActivitiesAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersMePasswordRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersMeVerifiersTotpRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersMeVerifiersTotpVerifierIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersMeVerifiersWebauthnRegisterRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersMeVerifiersWebauthnRegisterOptionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchConversationTargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchQueuemembersManageRequest;
@@ -208,6 +219,7 @@ import com.mypurecloud.sdk.v2.api.request.PutUserStationAssociatedstationStation
 import com.mypurecloud.sdk.v2.api.request.PutUserStationDefaultstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUsersCustomattributesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUsersMeVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUsersStationsMeAssociatedstationStationIdRequest;
 
 import java.io.IOException;
@@ -1320,6 +1332,81 @@ public class UsersApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteUsersCustomattributesSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a verifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteUsersMeVerifierAsync(DeleteUsersMeVerifierRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a verifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteUsersMeVerifierAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -5416,6 +5503,81 @@ public class UsersApiAsync {
   }
 
   /**
+   * Get a list of my verifiers
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<VerifierEntityListing> getUsersMeVerifiersAsync(GetUsersMeVerifiersRequest request, final AsyncApiCallback<VerifierEntityListing> callback) {
+    try {
+      final SettableFuture<VerifierEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VerifierEntityListing>() {}, new AsyncApiCallback<ApiResponse<VerifierEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerifierEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of my verifiers
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<VerifierEntityListing>> getUsersMeVerifiersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<VerifierEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<VerifierEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VerifierEntityListing>() {}, new AsyncApiCallback<ApiResponse<VerifierEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerifierEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerifierEntityListing> response = (ApiResponse<VerifierEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerifierEntityListing> response = (ApiResponse<VerifierEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
    * 
    * @param request the request object
@@ -7891,6 +8053,306 @@ public class UsersApiAsync {
   }
 
   /**
+   * Add a new TOTP verifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CreateVerifierResponse> postUsersMeVerifiersTotpAsync(PostUsersMeVerifiersTotpRequest request, final AsyncApiCallback<CreateVerifierResponse> callback) {
+    try {
+      final SettableFuture<CreateVerifierResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CreateVerifierResponse>() {}, new AsyncApiCallback<ApiResponse<CreateVerifierResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CreateVerifierResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a new TOTP verifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CreateVerifierResponse>> postUsersMeVerifiersTotpAsync(ApiRequest<CreateVerifierRequest> request, final AsyncApiCallback<ApiResponse<CreateVerifierResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CreateVerifierResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CreateVerifierResponse>() {}, new AsyncApiCallback<ApiResponse<CreateVerifierResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CreateVerifierResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CreateVerifierResponse> response = (ApiResponse<CreateVerifierResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CreateVerifierResponse> response = (ApiResponse<CreateVerifierResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate a TOTP verifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postUsersMeVerifiersTotpVerifierIdAsync(PostUsersMeVerifiersTotpVerifierIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate a TOTP verifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postUsersMeVerifiersTotpVerifierIdAsync(ApiRequest<ValidateVerifierRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Finish WebAuthn verifier registration
+   * Completes registration of a new WebAuthn authenticator by submitting the credential creation response produced by navigator.credentials.create().
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Verifier> postUsersMeVerifiersWebauthnRegisterAsync(PostUsersMeVerifiersWebauthnRegisterRequest request, final AsyncApiCallback<Verifier> callback) {
+    try {
+      final SettableFuture<Verifier> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Verifier>() {}, new AsyncApiCallback<ApiResponse<Verifier>>() {
+        @Override
+        public void onCompleted(ApiResponse<Verifier> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Finish WebAuthn verifier registration
+   * Completes registration of a new WebAuthn authenticator by submitting the credential creation response produced by navigator.credentials.create().
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Verifier>> postUsersMeVerifiersWebauthnRegisterAsync(ApiRequest<FinishWebAuthnRegistrationRequest> request, final AsyncApiCallback<ApiResponse<Verifier>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Verifier>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Verifier>() {}, new AsyncApiCallback<ApiResponse<Verifier>>() {
+        @Override
+        public void onCompleted(ApiResponse<Verifier> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Begin WebAuthn verifier registration
+   * Returns the public key credential creation options the client passes to navigator.credentials.create() to start registering a new WebAuthn authenticator.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BeginWebAuthnRegistrationResponse> postUsersMeVerifiersWebauthnRegisterOptionsAsync(PostUsersMeVerifiersWebauthnRegisterOptionsRequest request, final AsyncApiCallback<BeginWebAuthnRegistrationResponse> callback) {
+    try {
+      final SettableFuture<BeginWebAuthnRegistrationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BeginWebAuthnRegistrationResponse>() {}, new AsyncApiCallback<ApiResponse<BeginWebAuthnRegistrationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BeginWebAuthnRegistrationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Begin WebAuthn verifier registration
+   * Returns the public key credential creation options the client passes to navigator.credentials.create() to start registering a new WebAuthn authenticator.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BeginWebAuthnRegistrationResponse>> postUsersMeVerifiersWebauthnRegisterOptionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BeginWebAuthnRegistrationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BeginWebAuthnRegistrationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BeginWebAuthnRegistrationResponse>() {}, new AsyncApiCallback<ApiResponse<BeginWebAuthnRegistrationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BeginWebAuthnRegistrationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BeginWebAuthnRegistrationResponse> response = (ApiResponse<BeginWebAuthnRegistrationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BeginWebAuthnRegistrationResponse> response = (ApiResponse<BeginWebAuthnRegistrationResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Search users
    * 
    * @param request the request object
@@ -9383,6 +9845,81 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a verifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Verifier> putUsersMeVerifierAsync(PutUsersMeVerifierRequest request, final AsyncApiCallback<Verifier> callback) {
+    try {
+      final SettableFuture<Verifier> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Verifier>() {}, new AsyncApiCallback<ApiResponse<Verifier>>() {
+        @Override
+        public void onCompleted(ApiResponse<Verifier> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a verifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Verifier>> putUsersMeVerifierAsync(ApiRequest<UpdateVerifierRequest> request, final AsyncApiCallback<ApiResponse<Verifier>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Verifier>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Verifier>() {}, new AsyncApiCallback<ApiResponse<Verifier>>() {
+        @Override
+        public void onCompleted(ApiResponse<Verifier> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

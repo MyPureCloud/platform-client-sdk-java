@@ -41,14 +41,14 @@ public class SupportCenterGlobalStyle  implements Serializable {
 
   
   /**
-   * Global background color, in hexadecimal format, eg #ffffff
+   * Global background color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
    **/
   public SupportCenterGlobalStyle backgroundColor(String backgroundColor) {
     this.backgroundColor = backgroundColor;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Global background color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", value = "Global background color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided")
   @JsonProperty("backgroundColor")
   public String getBackgroundColor() {
     return backgroundColor;
@@ -59,14 +59,14 @@ public class SupportCenterGlobalStyle  implements Serializable {
 
 
   /**
-   * Global primary color, in hexadecimal format, eg #ffffff
+   * Global primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
    **/
   public SupportCenterGlobalStyle primaryColor(String primaryColor) {
     this.primaryColor = primaryColor;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Global primary color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", value = "Global primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided")
   @JsonProperty("primaryColor")
   public String getPrimaryColor() {
     return primaryColor;
@@ -77,14 +77,14 @@ public class SupportCenterGlobalStyle  implements Serializable {
 
 
   /**
-   * Global dark primary color, in hexadecimal format, eg #ffffff
+   * Global dark primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
    **/
   public SupportCenterGlobalStyle primaryColorDark(String primaryColorDark) {
     this.primaryColorDark = primaryColorDark;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Global dark primary color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", value = "Global dark primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided")
   @JsonProperty("primaryColorDark")
   public String getPrimaryColorDark() {
     return primaryColorDark;
@@ -95,14 +95,14 @@ public class SupportCenterGlobalStyle  implements Serializable {
 
 
   /**
-   * Global light primary color, in hexadecimal format, eg #ffffff
+   * Global light primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
    **/
   public SupportCenterGlobalStyle primaryColorLight(String primaryColorLight) {
     this.primaryColorLight = primaryColorLight;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Global light primary color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", value = "Global light primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided")
   @JsonProperty("primaryColorLight")
   public String getPrimaryColorLight() {
     return primaryColorLight;
@@ -113,14 +113,14 @@ public class SupportCenterGlobalStyle  implements Serializable {
 
 
   /**
-   * Global text color, in hexadecimal format, eg #ffffff
+   * Global text color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
    **/
   public SupportCenterGlobalStyle textColor(String textColor) {
     this.textColor = textColor;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Global text color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", value = "Global text color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided")
   @JsonProperty("textColor")
   public String getTextColor() {
     return textColor;
@@ -131,14 +131,14 @@ public class SupportCenterGlobalStyle  implements Serializable {
 
 
   /**
-   * Global font family
+   * Global font family. Required when globalStyle is provided
    **/
   public SupportCenterGlobalStyle fontFamily(String fontFamily) {
     this.fontFamily = fontFamily;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Global font family")
+  @ApiModelProperty(example = "null", value = "Global font family. Required when globalStyle is provided")
   @JsonProperty("fontFamily")
   public String getFontFamily() {
     return fontFamily;

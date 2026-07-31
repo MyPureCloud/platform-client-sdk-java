@@ -340,6 +340,7 @@ public class Call  implements Serializable {
   private String agentAssistantId = null;
   private String transferSource = null;
   private ConversationQueueMediaSettings queueMediaSettings = null;
+  private String clientIpAddress = null;
   private Disposition disposition = null;
 
   public Call() {
@@ -969,6 +970,24 @@ public class Call  implements Serializable {
 
 
   /**
+   * The reported client IP of the phone for the call.
+   **/
+  public Call clientIpAddress(String clientIpAddress) {
+    this.clientIpAddress = clientIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reported client IP of the phone for the call.")
+  @JsonProperty("clientIpAddress")
+  public String getClientIpAddress() {
+    return clientIpAddress;
+  }
+  public void setClientIpAddress(String clientIpAddress) {
+    this.clientIpAddress = clientIpAddress;
+  }
+
+
+  /**
    * Call resolution data for Dialer bulk make calls commands.
    **/
   public Call disposition(Disposition disposition) {
@@ -1030,12 +1049,13 @@ public class Call  implements Serializable {
             Objects.equals(this.agentAssistantId, call.agentAssistantId) &&
             Objects.equals(this.transferSource, call.transferSource) &&
             Objects.equals(this.queueMediaSettings, call.queueMediaSettings) &&
+            Objects.equals(this.clientIpAddress, call.clientIpAddress) &&
             Objects.equals(this.disposition, call.disposition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, direction, recording, recordingState, recordersState, muted, confined, held, securePause, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, transferSource, queueMediaSettings, disposition);
+    return Objects.hash(state, initialState, id, direction, recording, recordingState, recordersState, muted, confined, held, securePause, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, transferSource, queueMediaSettings, clientIpAddress, disposition);
   }
 
   @Override
@@ -1077,6 +1097,7 @@ public class Call  implements Serializable {
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    transferSource: ").append(toIndentedString(transferSource)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
+    sb.append("    clientIpAddress: ").append(toIndentedString(clientIpAddress)).append("\n");
     sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
     sb.append("}");
     return sb.toString();

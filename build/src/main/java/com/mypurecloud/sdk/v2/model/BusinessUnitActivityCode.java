@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ActivityCodeStyle;
 import com.mypurecloud.sdk.v2.model.PlanningGroupReference;
 import com.mypurecloud.sdk.v2.model.SecondaryPresence;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -95,6 +96,7 @@ public class BusinessUnitActivityCode  implements Serializable {
   private Boolean interruptible = null;
   private List<SecondaryPresence> secondaryPresences = null;
   private List<PlanningGroupReference> planningGroups = null;
+  private ActivityCodeStyle style = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 
@@ -365,6 +367,24 @@ public class BusinessUnitActivityCode  implements Serializable {
 
 
   /**
+   * The style configuration for the activity code
+   **/
+  public BusinessUnitActivityCode style(ActivityCodeStyle style) {
+    this.style = style;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The style configuration for the activity code")
+  @JsonProperty("style")
+  public ActivityCodeStyle getStyle() {
+    return style;
+  }
+  public void setStyle(ActivityCodeStyle style) {
+    this.style = style;
+  }
+
+
+  /**
    * Version metadata of this activity code
    **/
   public BusinessUnitActivityCode metadata(WfmVersionedEntityMetadata metadata) {
@@ -413,13 +433,14 @@ public class BusinessUnitActivityCode  implements Serializable {
             Objects.equals(this.interruptible, businessUnitActivityCode.interruptible) &&
             Objects.equals(this.secondaryPresences, businessUnitActivityCode.secondaryPresences) &&
             Objects.equals(this.planningGroups, businessUnitActivityCode.planningGroups) &&
+            Objects.equals(this.style, businessUnitActivityCode.style) &&
             Objects.equals(this.metadata, businessUnitActivityCode.metadata) &&
             Objects.equals(this.selfUri, businessUnitActivityCode.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, active, defaultCode, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, planningGroups, metadata, selfUri);
+    return Objects.hash(id, name, active, defaultCode, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, planningGroups, style, metadata, selfUri);
   }
 
   @Override
@@ -441,6 +462,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     sb.append("    interruptible: ").append(toIndentedString(interruptible)).append("\n");
     sb.append("    secondaryPresences: ").append(toIndentedString(secondaryPresences)).append("\n");
     sb.append("    planningGroups: ").append(toIndentedString(planningGroups)).append("\n");
+    sb.append("    style: ").append(toIndentedString(style)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

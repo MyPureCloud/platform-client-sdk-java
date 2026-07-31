@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Credential;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,6 +25,7 @@ public class UpdateVerifierRequest  implements Serializable {
   
   private String name = null;
   private Boolean enabled = null;
+  private Credential credential = null;
   private Boolean _default = null;
 
   public UpdateVerifierRequest() {
@@ -38,14 +40,14 @@ public class UpdateVerifierRequest  implements Serializable {
 
   
   /**
-   * The name of the verifier.
+   * The name of the verifier. Maximum length is 100 characters.
    **/
   public UpdateVerifierRequest name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The name of the verifier.")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the verifier. Maximum length is 100 characters.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -70,6 +72,24 @@ public class UpdateVerifierRequest  implements Serializable {
   }
   public void setEnabled(Boolean enabled) {
     this.enabled = enabled;
+  }
+
+
+  /**
+   * The WebAuthn credential associated with this verifier.
+   **/
+  public UpdateVerifierRequest credential(Credential credential) {
+    this.credential = credential;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The WebAuthn credential associated with this verifier.")
+  @JsonProperty("credential")
+  public Credential getCredential() {
+    return credential;
+  }
+  public void setCredential(Credential credential) {
+    this.credential = credential;
   }
 
 
@@ -103,12 +123,13 @@ public class UpdateVerifierRequest  implements Serializable {
 
     return Objects.equals(this.name, updateVerifierRequest.name) &&
             Objects.equals(this.enabled, updateVerifierRequest.enabled) &&
+            Objects.equals(this.credential, updateVerifierRequest.credential) &&
             Objects.equals(this._default, updateVerifierRequest._default);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, enabled, _default);
+    return Objects.hash(name, enabled, credential, _default);
   }
 
   @Override
@@ -118,6 +139,7 @@ public class UpdateVerifierRequest  implements Serializable {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    credential: ").append(toIndentedString(credential)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("}");
     return sb.toString();

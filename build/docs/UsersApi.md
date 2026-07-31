@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteUserStationDefaultstation**](UsersApi#deleteUserStationDefaultstation) | Clear default station |
 | [**deleteUserVerifier**](UsersApi#deleteUserVerifier) | Delete a verifier |
 | [**deleteUsersCustomattributesSchema**](UsersApi#deleteUsersCustomattributesSchema) | Delete a schema |
+| [**deleteUsersMeVerifier**](UsersApi#deleteUsersMeVerifier) | Delete a verifier |
 | [**deleteUsersStationsMeAssociatedstation**](UsersApi#deleteUsersStationsMeAssociatedstation) | Clear self associated station |
 | [**getAnalyticsUsersAggregatesJob**](UsersApi#getAnalyticsUsersAggregatesJob) | Get status for async query for user aggregates |
 | [**getAnalyticsUsersAggregatesJobResults**](UsersApi#getAnalyticsUsersAggregatesJobResults) | Fetch a page of results for an async aggregates query |
@@ -73,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | Get a Development Activity |
 | [**getUsersExternalidAuthorityNameExternalKey**](UsersApi#getUsersExternalidAuthorityNameExternalKey) | Get the user associated with external identifier. |
 | [**getUsersMe**](UsersApi#getUsersMe) | Get current user details. |
+| [**getUsersMeVerifiers**](UsersApi#getUsersMeVerifiers) | Get a list of my verifiers |
 | [**getUsersQuery**](UsersApi#getUsersQuery) | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required |
 | [**getUsersSearch**](UsersApi#getUsersSearch) | Search users using the q64 value returned from a previous search |
 | [**getUsersStationsMe**](UsersApi#getUsersStationsMe) | Get station information for self |
@@ -106,6 +108,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUsersCustomattributesSchemas**](UsersApi#postUsersCustomattributesSchemas) | Create a schema |
 | [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi#postUsersDevelopmentActivitiesAggregatesQuery) | Retrieve aggregated development activity data |
 | [**postUsersMePassword**](UsersApi#postUsersMePassword) | Change your password |
+| [**postUsersMeVerifiersTotp**](UsersApi#postUsersMeVerifiersTotp) | Add a new TOTP verifier |
+| [**postUsersMeVerifiersTotpVerifierId**](UsersApi#postUsersMeVerifiersTotpVerifierId) | Validate a TOTP verifier |
+| [**postUsersMeVerifiersWebauthnRegister**](UsersApi#postUsersMeVerifiersWebauthnRegister) | Finish WebAuthn verifier registration |
+| [**postUsersMeVerifiersWebauthnRegisterOptions**](UsersApi#postUsersMeVerifiersWebauthnRegisterOptions) | Begin WebAuthn verifier registration |
 | [**postUsersSearch**](UsersApi#postUsersSearch) | Search users |
 | [**postUsersSearchConversationTarget**](UsersApi#postUsersSearchConversationTarget) | Search users as conversation targets |
 | [**postUsersSearchQueuemembersManage**](UsersApi#postUsersSearchQueuemembersManage) | Search manage queue member |
@@ -126,6 +132,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | Set default station |
 | [**putUserVerifier**](UsersApi#putUserVerifier) | Update a verifier |
 | [**putUsersCustomattributesSchema**](UsersApi#putUsersCustomattributesSchema) | Update a schema |
+| [**putUsersMeVerifier**](UsersApi#putUsersMeVerifier) | Update a verifier |
 | [**putUsersStationsMeAssociatedstationStationId**](UsersApi#putUsersStationsMeAssociatedstationStationId) | Set self associated station |
 {: class="table-striped"}
 
@@ -1009,6 +1016,63 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteUsersMeVerifier**
+
+
+> Void deleteUsersMeVerifier(verifierId)
+
+Delete a verifier
+
+Wraps DELETE /api/v2/users/me/verifiers/{verifierId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String verifierId = "verifierId_example"; // String | Verifier ID
+try {
+    apiInstance.deleteUsersMeVerifier(verifierId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteUsersMeVerifier");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **verifierId** | **String**| Verifier ID | 
 {: class="table-striped"}
 
 
@@ -4369,6 +4433,60 @@ try {
 [**UserMe**](UserMe)
 
 
+# **getUsersMeVerifiers**
+
+
+> [VerifierEntityListing](VerifierEntityListing) getUsersMeVerifiers()
+
+Get a list of my verifiers
+
+Wraps GET /api/v2/users/me/verifiers  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    VerifierEntityListing result = apiInstance.getUsersMeVerifiers();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersMeVerifiers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**VerifierEntityListing**](VerifierEntityListing)
+
+
 # **getUsersQuery**
 
 
@@ -6401,6 +6519,239 @@ try {
 null (empty response body)
 
 
+# **postUsersMeVerifiersTotp**
+
+
+> [CreateVerifierResponse](CreateVerifierResponse) postUsersMeVerifiersTotp(body)
+
+Add a new TOTP verifier
+
+Wraps POST /api/v2/users/me/verifiers/totp  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+CreateVerifierRequest body = new CreateVerifierRequest(); // CreateVerifierRequest | Verifier
+try {
+    CreateVerifierResponse result = apiInstance.postUsersMeVerifiersTotp(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersMeVerifiersTotp");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateVerifierRequest**](CreateVerifierRequest)| Verifier | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CreateVerifierResponse**](CreateVerifierResponse)
+
+
+# **postUsersMeVerifiersTotpVerifierId**
+
+
+> Void postUsersMeVerifiersTotpVerifierId(verifierId, body)
+
+Validate a TOTP verifier
+
+Wraps POST /api/v2/users/me/verifiers/totp/{verifierId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String verifierId = "verifierId_example"; // String | Verifier ID
+ValidateVerifierRequest body = new ValidateVerifierRequest(); // ValidateVerifierRequest | Verifier Validate
+try {
+    apiInstance.postUsersMeVerifiersTotpVerifierId(verifierId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersMeVerifiersTotpVerifierId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **verifierId** | **String**| Verifier ID | 
+| **body** | [**ValidateVerifierRequest**](ValidateVerifierRequest)| Verifier Validate | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postUsersMeVerifiersWebauthnRegister**
+
+
+> [Verifier](Verifier) postUsersMeVerifiersWebauthnRegister(body)
+
+Finish WebAuthn verifier registration
+
+Completes registration of a new WebAuthn authenticator by submitting the credential creation response produced by navigator.credentials.create().
+
+Wraps POST /api/v2/users/me/verifiers/webauthn/register  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+FinishWebAuthnRegistrationRequest body = new FinishWebAuthnRegistrationRequest(); // FinishWebAuthnRegistrationRequest | WebAuthn registration result
+try {
+    Verifier result = apiInstance.postUsersMeVerifiersWebauthnRegister(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersMeVerifiersWebauthnRegister");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**FinishWebAuthnRegistrationRequest**](FinishWebAuthnRegistrationRequest)| WebAuthn registration result | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Verifier**](Verifier)
+
+
+# **postUsersMeVerifiersWebauthnRegisterOptions**
+
+
+> [BeginWebAuthnRegistrationResponse](BeginWebAuthnRegistrationResponse) postUsersMeVerifiersWebauthnRegisterOptions()
+
+Begin WebAuthn verifier registration
+
+Returns the public key credential creation options the client passes to navigator.credentials.create() to start registering a new WebAuthn authenticator.
+
+Wraps POST /api/v2/users/me/verifiers/webauthn/register/options  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    BeginWebAuthnRegistrationResponse result = apiInstance.postUsersMeVerifiersWebauthnRegisterOptions();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersMeVerifiersWebauthnRegisterOptions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**BeginWebAuthnRegistrationResponse**](BeginWebAuthnRegistrationResponse)
+
+
 # **postUsersSearch**
 
 
@@ -7617,6 +7968,66 @@ try {
 [**DataSchema**](DataSchema)
 
 
+# **putUsersMeVerifier**
+
+
+> [Verifier](Verifier) putUsersMeVerifier(verifierId, body)
+
+Update a verifier
+
+Wraps PUT /api/v2/users/me/verifiers/{verifierId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String verifierId = "verifierId_example"; // String | Verifier ID
+UpdateVerifierRequest body = new UpdateVerifierRequest(); // UpdateVerifierRequest | Verifier Update
+try {
+    Verifier result = apiInstance.putUsersMeVerifier(verifierId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#putUsersMeVerifier");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **verifierId** | **String**| Verifier ID | 
+| **body** | [**UpdateVerifierRequest**](UpdateVerifierRequest)| Verifier Update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Verifier**](Verifier)
+
+
 # **putUsersStationsMeAssociatedstationStationId**
 
 
@@ -7675,4 +8086,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

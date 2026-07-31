@@ -380,7 +380,6 @@ public class AnalyticsApiAsync {
   /**
    * Delete/cancel an async request for agent copilot aggregates
    * 
-   * deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -415,7 +414,6 @@ public class AnalyticsApiAsync {
   /**
    * Delete/cancel an async request for agent copilot aggregates
    * 
-   * deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2036,7 +2034,6 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for agent copilot aggregates
    * 
-   * getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2071,7 +2068,6 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for agent copilot aggregates
    * 
-   * getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2113,7 +2109,6 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2148,7 +2143,6 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6404,7 +6398,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for agent copilot aggregates asynchronously
    * 
-   * postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6439,7 +6432,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for agent copilot aggregates asynchronously
    * 
-   * postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

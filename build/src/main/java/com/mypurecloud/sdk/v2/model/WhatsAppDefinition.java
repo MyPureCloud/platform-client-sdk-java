@@ -121,14 +121,14 @@ public class WhatsAppDefinition  implements Serializable {
 
 
   /**
-   * The messaging template namespace.
+   * The messaging template namespace. This field is deprecated.
    **/
   public WhatsAppDefinition namespace(String namespace) {
     this.namespace = namespace;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The messaging template namespace.")
+  @ApiModelProperty(example = "null", value = "The messaging template namespace. This field is deprecated.")
   @JsonProperty("namespace")
   public String getNamespace() {
     return namespace;

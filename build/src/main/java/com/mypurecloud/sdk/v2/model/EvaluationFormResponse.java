@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.AiScoringSettings;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingEvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroup;
 import com.mypurecloud.sdk.v2.model.EvaluationSettings;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class EvaluationFormResponse  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private WritableStarrableDivision division = null;
   private Date modifiedDate = null;
   private Boolean published = null;
   private String contextId = null;
@@ -126,6 +128,24 @@ public class EvaluationFormResponse  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public EvaluationFormResponse division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -315,6 +335,7 @@ public class EvaluationFormResponse  implements Serializable {
 
     return Objects.equals(this.id, evaluationFormResponse.id) &&
             Objects.equals(this.name, evaluationFormResponse.name) &&
+            Objects.equals(this.division, evaluationFormResponse.division) &&
             Objects.equals(this.modifiedDate, evaluationFormResponse.modifiedDate) &&
             Objects.equals(this.published, evaluationFormResponse.published) &&
             Objects.equals(this.contextId, evaluationFormResponse.contextId) &&
@@ -330,7 +351,7 @@ public class EvaluationFormResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, weightMode, evaluationSettings, publishedVersions, latestVersionFormName, aiScoring, dialect, selfUri);
+    return Objects.hash(id, name, division, modifiedDate, published, contextId, questionGroups, weightMode, evaluationSettings, publishedVersions, latestVersionFormName, aiScoring, dialect, selfUri);
   }
 
   @Override
@@ -340,6 +361,7 @@ public class EvaluationFormResponse  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");

@@ -71,14 +71,14 @@ public class SendMessagingTemplateRequest  implements Serializable {
 
 
   /**
-   * A list of Response Management response substitutions for the response's messaging template. (Deprecated) use bodyParameters instead.
+   * (Deprecated) use bodyParameters instead.
    **/
   public SendMessagingTemplateRequest parameters(List<TemplateParameter> parameters) {
     this.parameters = parameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of Response Management response substitutions for the response's messaging template. (Deprecated) use bodyParameters instead.")
+  @ApiModelProperty(example = "null", value = "(Deprecated) use bodyParameters instead.")
   @JsonProperty("parameters")
   public List<TemplateParameter> getParameters() {
     return parameters;

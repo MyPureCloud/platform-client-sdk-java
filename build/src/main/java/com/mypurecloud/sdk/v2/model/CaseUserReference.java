@@ -12,9 +12,12 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Image;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -26,15 +29,18 @@ public class CaseUserReference  implements Serializable {
   private String id = null;
   private String name = null;
   private UserPresence presence = null;
+  private List<Image> images = null;
   private String selfUri = null;
 
   public CaseUserReference() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      images = new ArrayList<Image>();
     }
   }
 
   public CaseUserReference(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      images = new ArrayList<Image>();
     }
   }
 
@@ -81,6 +87,13 @@ public class CaseUserReference  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Profile images for the user")
+  @JsonProperty("images")
+  public List<Image> getImages() {
+    return images;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -101,12 +114,13 @@ public class CaseUserReference  implements Serializable {
     return Objects.equals(this.id, caseUserReference.id) &&
             Objects.equals(this.name, caseUserReference.name) &&
             Objects.equals(this.presence, caseUserReference.presence) &&
+            Objects.equals(this.images, caseUserReference.images) &&
             Objects.equals(this.selfUri, caseUserReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, presence, selfUri);
+    return Objects.hash(id, name, presence, images, selfUri);
   }
 
   @Override
@@ -117,6 +131,7 @@ public class CaseUserReference  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
+    sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

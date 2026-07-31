@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#Enum--TypeEnum) | Screen module type |  |
-| **enabled** | **Boolean** | Whether or not knowledge portal (previously support center) screen module is enabled |  |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Screen module type. Required if support center is enabled |  [optional] |
+| **enabled** | **Boolean** | Whether or not knowledge portal (previously support center) screen module is enabled. If not provided, the module is treated as hidden |  [optional] |
 | **compactCategoryModuleTemplate** | [**SupportCenterCompactCategoryModuleTemplate**](SupportCenterCompactCategoryModuleTemplate) | Compact category module template |  [optional] |
 | **detailedCategoryModuleTemplate** | [**SupportCenterDetailedCategoryModuleTemplate**](SupportCenterDetailedCategoryModuleTemplate) | Detailed category module template |  [optional] |
 
@@ -27,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

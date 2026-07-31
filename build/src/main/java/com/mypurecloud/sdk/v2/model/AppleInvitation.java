@@ -40,13 +40,12 @@ public class AppleInvitation  implements Serializable {
     }
   }
   /**
-   * The template type for the invitation
+   * The template type for the invitation. Only 'WithImage' is supported.
    */
  @JsonDeserialize(using = TemplateTypeEnumDeserializer.class)
   public enum TemplateTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    WITHIMAGE("WithImage"),
-    WITHOUTIMAGE("WithoutImage");
+    WITHIMAGE("WithImage");
 
     private String value;
 
@@ -124,14 +123,14 @@ public class AppleInvitation  implements Serializable {
 
 
   /**
-   * The template type for the invitation
+   * The template type for the invitation. Only 'WithImage' is supported.
    **/
   public AppleInvitation templateType(TemplateTypeEnum templateType) {
     this.templateType = templateType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The template type for the invitation")
+  @ApiModelProperty(example = "null", required = true, value = "The template type for the invitation. Only 'WithImage' is supported.")
   @JsonProperty("templateType")
   public TemplateTypeEnum getTemplateType() {
     return templateType;

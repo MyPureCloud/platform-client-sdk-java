@@ -89,6 +89,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     TCALLBACKABANDON("tCallbackAbandon"),
     TCALLBACKCONNECT("tCallbackConnect"),
     TCALLBACKNOTREACHED("tCallbackNotReached"),
+    TCALLBACKVIRTUALWAIT("tCallbackVirtualWait"),
     TCFCABANDON("tCfcAbandon"),
     TCFCACD("tCfcAcd"),
     TCFCANSWERED("tCfcAnswered"),

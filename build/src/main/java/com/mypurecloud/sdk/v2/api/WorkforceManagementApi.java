@@ -71,6 +71,9 @@ import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
+import com.mypurecloud.sdk.v2.model.BuConvertTimeOffGranularityLimitJobListing;
+import com.mypurecloud.sdk.v2.model.BuConvertTimeOffLimitGranularityJobRequest;
+import com.mypurecloud.sdk.v2.model.BuConvertTimeOffLimitGranularityJobResponse;
 import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuCreateTimeOffLimitRequest;
@@ -82,6 +85,8 @@ import com.mypurecloud.sdk.v2.model.BuForecastStaffingRequirementsResultResponse
 import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuImportTimeOffLimitValuesRequest;
+import com.mypurecloud.sdk.v2.model.BuImportTimeOffLimitValuesUploadResponse;
 import com.mypurecloud.sdk.v2.model.BuListAlternativeShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsResponse;
@@ -100,6 +105,8 @@ import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffLimitListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffLimitResponse;
+import com.mypurecloud.sdk.v2.model.BuTimeOffLimitValuesForGranularityResponse;
+import com.mypurecloud.sdk.v2.model.BuTimeOffLimitValuesImportUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.BuTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanListing;
 import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
@@ -115,6 +122,8 @@ import com.mypurecloud.sdk.v2.model.BulkOpportunityEnrollmentsStatusUpdateReques
 import com.mypurecloud.sdk.v2.model.BulkPublishOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.BulkRemoveOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateActivityCodeResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateOpportunityEnrollmentsStatusResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
@@ -159,6 +168,10 @@ import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserTimeOffIntegrationStatusRequest;
+import com.mypurecloud.sdk.v2.model.DecisionMetricsResponse;
+import com.mypurecloud.sdk.v2.model.DecisionMetricsUpdateJobRequest;
+import com.mypurecloud.sdk.v2.model.DecisionMetricsUpdateJobResponse;
+import com.mypurecloud.sdk.v2.model.DecisionMetricsUploadResponse;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffRequest;
@@ -226,6 +239,7 @@ import com.mypurecloud.sdk.v2.model.QueryOpportunityEnrollmentsResponse;
 import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
 import com.mypurecloud.sdk.v2.model.QueryShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
+import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesForGranularityRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.QueryUserStaffingGroupListRequest;
@@ -402,6 +416,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapa
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplansRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitDecisionmetricsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest;
@@ -430,6 +445,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShif
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplansRequest;
@@ -468,6 +485,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAc
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentShifttradesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitDecisionmetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesMatchedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitTimeofflimitRequest;
@@ -515,6 +533,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshi
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCapacityplanRequest;
@@ -579,6 +598,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest;
@@ -602,6 +623,10 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitShi
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitGranularityconversionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitValuesImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitValuesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeoffplansRequest;
@@ -4929,6 +4954,88 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Gets the status of the given job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the update job (required)
+   * @return DecisionMetricsUpdateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionMetricsUpdateJobResponse getWorkforcemanagementBusinessunitDecisionmetricsJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitDecisionmetricsJob(createGetWorkforcemanagementBusinessunitDecisionmetricsJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * Gets the status of the given job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the update job (required)
+   * @return DecisionMetricsUpdateJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionMetricsUpdateJobResponse> getWorkforcemanagementBusinessunitDecisionmetricsJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitDecisionmetricsJob(createGetWorkforcemanagementBusinessunitDecisionmetricsJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitDecisionmetricsJobRequest createGetWorkforcemanagementBusinessunitDecisionmetricsJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitDecisionmetricsJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Gets the status of the given job
+   * 
+   * @param request The request object
+   * @return DecisionMetricsUpdateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionMetricsUpdateJobResponse getWorkforcemanagementBusinessunitDecisionmetricsJob(GetWorkforcemanagementBusinessunitDecisionmetricsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionMetricsUpdateJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionMetricsUpdateJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the status of the given job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionMetricsUpdateJobResponse> getWorkforcemanagementBusinessunitDecisionmetricsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionMetricsUpdateJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionMetricsUpdateJobResponse> response = (ApiResponse<DecisionMetricsUpdateJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionMetricsUpdateJobResponse> response = (ApiResponse<DecisionMetricsUpdateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get intraday planning groups for the given date
    * 
    * @param businessUnitId The ID of the business unit (required)
@@ -7252,6 +7359,178 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit (required)
+   * @param jobId The ID of the convert time off limit granularity job (required)
+   * @return BuConvertTimeOffLimitGranularityJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuConvertTimeOffLimitGranularityJobResponse getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(String businessUnitId, String timeOffLimitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(createGetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobRequest(businessUnitId, timeOffLimitId, jobId));
+  }
+
+  /**
+   * Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit (required)
+   * @param jobId The ID of the convert time off limit granularity job (required)
+   * @return BuConvertTimeOffLimitGranularityJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobWithHttpInfo(String businessUnitId, String timeOffLimitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(createGetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobRequest(businessUnitId, timeOffLimitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobRequest createGetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobRequest(String businessUnitId, String timeOffLimitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffLimitId(timeOffLimitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+   * 
+   * @param request The request object
+   * @return BuConvertTimeOffLimitGranularityJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuConvertTimeOffLimitGranularityJobResponse getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuConvertTimeOffLimitGranularityJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuConvertTimeOffLimitGranularityJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = (ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = (ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the list of convert time-off limit granularity job operation.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit (required)
+   * @param statuses Status to filter the list of jobs (optional)
+   * @return BuConvertTimeOffGranularityLimitJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuConvertTimeOffGranularityLimitJobListing getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(String businessUnitId, String timeOffLimitId, String statuses) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(createGetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsRequest(businessUnitId, timeOffLimitId, statuses));
+  }
+
+  /**
+   * Query the list of convert time-off limit granularity job operation.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit (required)
+   * @param statuses Status to filter the list of jobs (optional)
+   * @return BuConvertTimeOffGranularityLimitJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuConvertTimeOffGranularityLimitJobListing> getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsWithHttpInfo(String businessUnitId, String timeOffLimitId, String statuses) throws IOException {
+    return getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(createGetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsRequest(businessUnitId, timeOffLimitId, statuses).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsRequest createGetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsRequest(String businessUnitId, String timeOffLimitId, String statuses) {
+    return GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffLimitId(timeOffLimitId)
+
+            .withStatuses(statuses)
+
+            .build();
+  }
+
+  /**
+   * Query the list of convert time-off limit granularity job operation.
+   * 
+   * @param request The request object
+   * @return BuConvertTimeOffGranularityLimitJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuConvertTimeOffGranularityLimitJobListing getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(GetWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuConvertTimeOffGranularityLimitJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuConvertTimeOffGranularityLimitJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the list of convert time-off limit granularity job operation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuConvertTimeOffGranularityLimitJobListing> getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuConvertTimeOffGranularityLimitJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuConvertTimeOffGranularityLimitJobListing> response = (ApiResponse<BuConvertTimeOffGranularityLimitJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuConvertTimeOffGranularityLimitJobListing> response = (ApiResponse<BuConvertTimeOffGranularityLimitJobListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10444,6 +10723,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets the decision metrics of all user in given management unit
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @return DecisionMetricsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionMetricsResponse getWorkforcemanagementManagementunitDecisionmetrics(String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitDecisionmetrics(createGetWorkforcemanagementManagementunitDecisionmetricsRequest(managementUnitId));
+  }
+
+  /**
+   * Gets the decision metrics of all user in given management unit
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @return DecisionMetricsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionMetricsResponse> getWorkforcemanagementManagementunitDecisionmetricsWithHttpInfo(String managementUnitId) throws IOException {
+    return getWorkforcemanagementManagementunitDecisionmetrics(createGetWorkforcemanagementManagementunitDecisionmetricsRequest(managementUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitDecisionmetricsRequest createGetWorkforcemanagementManagementunitDecisionmetricsRequest(String managementUnitId) {
+    return GetWorkforcemanagementManagementunitDecisionmetricsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .build();
+  }
+
+  /**
+   * Gets the decision metrics of all user in given management unit
+   * 
+   * @param request The request object
+   * @return DecisionMetricsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionMetricsResponse getWorkforcemanagementManagementunitDecisionmetrics(GetWorkforcemanagementManagementunitDecisionmetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionMetricsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionMetricsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the decision metrics of all user in given management unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionMetricsResponse> getWorkforcemanagementManagementunitDecisionmetrics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionMetricsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionMetricsResponse> response = (ApiResponse<DecisionMetricsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionMetricsResponse> response = (ApiResponse<DecisionMetricsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -14262,6 +14619,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update multiple activity codes
+   * 
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+   * @param body body (required)
+   * @return BulkUpdateActivityCodeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateActivityCodeResponse patchWorkforcemanagementBusinessunitActivitycodesBulk(String businessUnitId, BulkUpdateActivityCodeRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitActivitycodesBulk(createPatchWorkforcemanagementBusinessunitActivitycodesBulkRequest(businessUnitId, body));
+  }
+
+  /**
+   * Update multiple activity codes
+   * 
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+   * @param body body (required)
+   * @return BulkUpdateActivityCodeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateActivityCodeResponse> patchWorkforcemanagementBusinessunitActivitycodesBulkWithHttpInfo(String businessUnitId, BulkUpdateActivityCodeRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitActivitycodesBulk(createPatchWorkforcemanagementBusinessunitActivitycodesBulkRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitActivitycodesBulkRequest createPatchWorkforcemanagementBusinessunitActivitycodesBulkRequest(String businessUnitId, BulkUpdateActivityCodeRequest body) {
+    return PatchWorkforcemanagementBusinessunitActivitycodesBulkRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update multiple activity codes
+   * 
+   * @param request The request object
+   * @return BulkUpdateActivityCodeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateActivityCodeResponse patchWorkforcemanagementBusinessunitActivitycodesBulk(PatchWorkforcemanagementBusinessunitActivitycodesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkUpdateActivityCodeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkUpdateActivityCodeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update multiple activity codes
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateActivityCodeResponse> patchWorkforcemanagementBusinessunitActivitycodesBulk(ApiRequest<BulkUpdateActivityCodeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkUpdateActivityCodeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateActivityCodeResponse> response = (ApiResponse<BulkUpdateActivityCodeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateActivityCodeResponse> response = (ApiResponse<BulkUpdateActivityCodeResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -19630,6 +20069,170 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Initiates the decision metrics update process
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return DecisionMetricsUpdateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionMetricsUpdateJobResponse postWorkforcemanagementBusinessunitDecisionmetricsUpdate(String businessUnitId, DecisionMetricsUpdateJobRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitDecisionmetricsUpdate(createPostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest(businessUnitId, body));
+  }
+
+  /**
+   * Initiates the decision metrics update process
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return DecisionMetricsUpdateJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionMetricsUpdateJobResponse> postWorkforcemanagementBusinessunitDecisionmetricsUpdateWithHttpInfo(String businessUnitId, DecisionMetricsUpdateJobRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitDecisionmetricsUpdate(createPostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest createPostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest(String businessUnitId, DecisionMetricsUpdateJobRequest body) {
+    return PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Initiates the decision metrics update process
+   * 
+   * @param request The request object
+   * @return DecisionMetricsUpdateJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionMetricsUpdateJobResponse postWorkforcemanagementBusinessunitDecisionmetricsUpdate(PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionMetricsUpdateJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionMetricsUpdateJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Initiates the decision metrics update process
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionMetricsUpdateJobResponse> postWorkforcemanagementBusinessunitDecisionmetricsUpdate(ApiRequest<DecisionMetricsUpdateJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionMetricsUpdateJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionMetricsUpdateJobResponse> response = (ApiResponse<DecisionMetricsUpdateJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionMetricsUpdateJobResponse> response = (ApiResponse<DecisionMetricsUpdateJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for updating decision metrics
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return DecisionMetricsUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionMetricsUploadResponse postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(String businessUnitId, UploadUrlRequestBody body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(createPostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest(businessUnitId, body));
+  }
+
+  /**
+   * Creates a signed upload URL for updating decision metrics
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return DecisionMetricsUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionMetricsUploadResponse> postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlWithHttpInfo(String businessUnitId, UploadUrlRequestBody body) throws IOException {
+    return postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(createPostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest createPostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest(String businessUnitId, UploadUrlRequestBody body) {
+    return PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a signed upload URL for updating decision metrics
+   * 
+   * @param request The request object
+   * @return DecisionMetricsUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionMetricsUploadResponse postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionMetricsUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionMetricsUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for updating decision metrics
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionMetricsUploadResponse> postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(ApiRequest<UploadUrlRequestBody> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionMetricsUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionMetricsUploadResponse> response = (ApiResponse<DecisionMetricsUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionMetricsUploadResponse> response = (ApiResponse<DecisionMetricsUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get intraday data for the given date for the requested planningGroupIds
    * 
    * @param businessUnitId The ID of the business unit (required)
@@ -21575,6 +22178,350 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserStaffingGroupListing> response = (ApiResponse<UserStaffingGroupListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Converts existing time-off limit to another granularity.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit (required)
+   * @param body body (required)
+   * @return BuConvertTimeOffLimitGranularityJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuConvertTimeOffLimitGranularityJobResponse postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(String businessUnitId, String timeOffLimitId, BuConvertTimeOffLimitGranularityJobRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(createPostWorkforcemanagementBusinessunitTimeofflimitGranularityconversionRequest(businessUnitId, timeOffLimitId, body));
+  }
+
+  /**
+   * Converts existing time-off limit to another granularity.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit (required)
+   * @param body body (required)
+   * @return BuConvertTimeOffLimitGranularityJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> postWorkforcemanagementBusinessunitTimeofflimitGranularityconversionWithHttpInfo(String businessUnitId, String timeOffLimitId, BuConvertTimeOffLimitGranularityJobRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(createPostWorkforcemanagementBusinessunitTimeofflimitGranularityconversionRequest(businessUnitId, timeOffLimitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitTimeofflimitGranularityconversionRequest createPostWorkforcemanagementBusinessunitTimeofflimitGranularityconversionRequest(String businessUnitId, String timeOffLimitId, BuConvertTimeOffLimitGranularityJobRequest body) {
+    return PostWorkforcemanagementBusinessunitTimeofflimitGranularityconversionRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffLimitId(timeOffLimitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Converts existing time-off limit to another granularity.
+   * 
+   * @param request The request object
+   * @return BuConvertTimeOffLimitGranularityJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuConvertTimeOffLimitGranularityJobResponse postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(PostWorkforcemanagementBusinessunitTimeofflimitGranularityconversionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuConvertTimeOffLimitGranularityJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Converts existing time-off limit to another granularity.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(ApiRequest<BuConvertTimeOffLimitGranularityJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuConvertTimeOffLimitGranularityJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = (ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuConvertTimeOffLimitGranularityJobResponse> response = (ApiResponse<BuConvertTimeOffLimitGranularityJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Starts importing the uploaded time-off limit values
+   * Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit object to set limit values for (required)
+   * @param body body (required)
+   * @return BuTimeOffLimitResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimitValuesImport(String businessUnitId, String timeOffLimitId, BuImportTimeOffLimitValuesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitTimeofflimitValuesImport(createPostWorkforcemanagementBusinessunitTimeofflimitValuesImportRequest(businessUnitId, timeOffLimitId, body));
+  }
+
+  /**
+   * Starts importing the uploaded time-off limit values
+   * Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit object to set limit values for (required)
+   * @param body body (required)
+   * @return BuTimeOffLimitResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitResponse> postWorkforcemanagementBusinessunitTimeofflimitValuesImportWithHttpInfo(String businessUnitId, String timeOffLimitId, BuImportTimeOffLimitValuesRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitTimeofflimitValuesImport(createPostWorkforcemanagementBusinessunitTimeofflimitValuesImportRequest(businessUnitId, timeOffLimitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitTimeofflimitValuesImportRequest createPostWorkforcemanagementBusinessunitTimeofflimitValuesImportRequest(String businessUnitId, String timeOffLimitId, BuImportTimeOffLimitValuesRequest body) {
+    return PostWorkforcemanagementBusinessunitTimeofflimitValuesImportRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffLimitId(timeOffLimitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Starts importing the uploaded time-off limit values
+   * Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+   * @param request The request object
+   * @return BuTimeOffLimitResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimitValuesImport(PostWorkforcemanagementBusinessunitTimeofflimitValuesImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffLimitResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffLimitResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Starts importing the uploaded time-off limit values
+   * Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitResponse> postWorkforcemanagementBusinessunitTimeofflimitValuesImport(ApiRequest<BuImportTimeOffLimitValuesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffLimitResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for importing values into time-off limit
+   * Once the upload is complete, call the /import route to start the import process
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit object to set values for (required)
+   * @param body body (required)
+   * @return BuImportTimeOffLimitValuesUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuImportTimeOffLimitValuesUploadResponse postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(String businessUnitId, String timeOffLimitId, BuTimeOffLimitValuesImportUploadUrlRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(createPostWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlRequest(businessUnitId, timeOffLimitId, body));
+  }
+
+  /**
+   * Creates a signed upload URL for importing values into time-off limit
+   * Once the upload is complete, call the /import route to start the import process
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit object to set values for (required)
+   * @param body body (required)
+   * @return BuImportTimeOffLimitValuesUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuImportTimeOffLimitValuesUploadResponse> postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlWithHttpInfo(String businessUnitId, String timeOffLimitId, BuTimeOffLimitValuesImportUploadUrlRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(createPostWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlRequest(businessUnitId, timeOffLimitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlRequest createPostWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlRequest(String businessUnitId, String timeOffLimitId, BuTimeOffLimitValuesImportUploadUrlRequest body) {
+    return PostWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffLimitId(timeOffLimitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a signed upload URL for importing values into time-off limit
+   * Once the upload is complete, call the /import route to start the import process
+   * @param request The request object
+   * @return BuImportTimeOffLimitValuesUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuImportTimeOffLimitValuesUploadResponse postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(PostWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurlRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuImportTimeOffLimitValuesUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuImportTimeOffLimitValuesUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for importing values into time-off limit
+   * Once the upload is complete, call the /import route to start the import process
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuImportTimeOffLimitValuesUploadResponse> postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(ApiRequest<BuTimeOffLimitValuesImportUploadUrlRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuImportTimeOffLimitValuesUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuImportTimeOffLimitValuesUploadResponse> response = (ApiResponse<BuImportTimeOffLimitValuesUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuImportTimeOffLimitValuesUploadResponse> response = (ApiResponse<BuImportTimeOffLimitValuesUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit (required)
+   * @param body body (required)
+   * @return BuTimeOffLimitValuesForGranularityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitValuesForGranularityResponse postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(String businessUnitId, String timeOffLimitId, QueryTimeOffLimitValuesForGranularityRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(createPostWorkforcemanagementBusinessunitTimeofflimitValuesQueryRequest(businessUnitId, timeOffLimitId, body));
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit (required)
+   * @param body body (required)
+   * @return BuTimeOffLimitValuesForGranularityResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitValuesForGranularityResponse> postWorkforcemanagementBusinessunitTimeofflimitValuesQueryWithHttpInfo(String businessUnitId, String timeOffLimitId, QueryTimeOffLimitValuesForGranularityRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(createPostWorkforcemanagementBusinessunitTimeofflimitValuesQueryRequest(businessUnitId, timeOffLimitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitTimeofflimitValuesQueryRequest createPostWorkforcemanagementBusinessunitTimeofflimitValuesQueryRequest(String businessUnitId, String timeOffLimitId, QueryTimeOffLimitValuesForGranularityRequest body) {
+    return PostWorkforcemanagementBusinessunitTimeofflimitValuesQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffLimitId(timeOffLimitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param request The request object
+   * @return BuTimeOffLimitValuesForGranularityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitValuesForGranularityResponse postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(PostWorkforcemanagementBusinessunitTimeofflimitValuesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffLimitValuesForGranularityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffLimitValuesForGranularityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitValuesForGranularityResponse> postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(ApiRequest<QueryTimeOffLimitValuesForGranularityRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffLimitValuesForGranularityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitValuesForGranularityResponse> response = (ApiResponse<BuTimeOffLimitValuesForGranularityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitValuesForGranularityResponse> response = (ApiResponse<BuTimeOffLimitValuesForGranularityResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DecisionTableColumns;
 import com.mypurecloud.sdk.v2.model.DecisionTableContract;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -88,6 +89,8 @@ public class DecisionTableVersion  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Date datePublished = null;
+  private AddressableEntityRef createdBy = null;
+  private AddressableEntityRef publishedBy = null;
   private DecisionTableColumns columns = null;
   private DecisionTableContract contract = null;
   private String selfUri = null;
@@ -256,6 +259,20 @@ public class DecisionTableVersion  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The user who created this decision table version.")
+  @JsonProperty("createdBy")
+  public AddressableEntityRef getCreatedBy() {
+    return createdBy;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The user who published this decision table version.")
+  @JsonProperty("publishedBy")
+  public AddressableEntityRef getPublishedBy() {
+    return publishedBy;
+  }
+
+
   /**
    * The column definitions of this decision table version.
    **/
@@ -320,6 +337,8 @@ public class DecisionTableVersion  implements Serializable {
             Objects.equals(this.dateCreated, decisionTableVersion.dateCreated) &&
             Objects.equals(this.dateModified, decisionTableVersion.dateModified) &&
             Objects.equals(this.datePublished, decisionTableVersion.datePublished) &&
+            Objects.equals(this.createdBy, decisionTableVersion.createdBy) &&
+            Objects.equals(this.publishedBy, decisionTableVersion.publishedBy) &&
             Objects.equals(this.columns, decisionTableVersion.columns) &&
             Objects.equals(this.contract, decisionTableVersion.contract) &&
             Objects.equals(this.selfUri, decisionTableVersion.selfUri);
@@ -327,7 +346,7 @@ public class DecisionTableVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, version, status, description, rowCount, rowsUri, dateCreated, dateModified, datePublished, columns, contract, selfUri);
+    return Objects.hash(id, name, division, version, status, description, rowCount, rowsUri, dateCreated, dateModified, datePublished, createdBy, publishedBy, columns, contract, selfUri);
   }
 
   @Override
@@ -346,6 +365,8 @@ public class DecisionTableVersion  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    publishedBy: ").append(toIndentedString(publishedBy)).append("\n");
     sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

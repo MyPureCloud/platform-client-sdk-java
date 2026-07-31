@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -25,6 +26,7 @@ public class SttEngineEntity  implements Serializable {
   private String id = null;
   private String name = null;
   private Boolean grammarBased = null;
+  private AddressableEntityRef replacedBy = null;
   private String selfUri = null;
 
   public SttEngineEntity() {
@@ -80,6 +82,24 @@ public class SttEngineEntity  implements Serializable {
   }
 
 
+  /**
+   * If this STT engine has been deprecated, the STT engine that should be used as a replacement
+   **/
+  public SttEngineEntity replacedBy(AddressableEntityRef replacedBy) {
+    this.replacedBy = replacedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If this STT engine has been deprecated, the STT engine that should be used as a replacement")
+  @JsonProperty("replacedBy")
+  public AddressableEntityRef getReplacedBy() {
+    return replacedBy;
+  }
+  public void setReplacedBy(AddressableEntityRef replacedBy) {
+    this.replacedBy = replacedBy;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -100,12 +120,13 @@ public class SttEngineEntity  implements Serializable {
     return Objects.equals(this.id, sttEngineEntity.id) &&
             Objects.equals(this.name, sttEngineEntity.name) &&
             Objects.equals(this.grammarBased, sttEngineEntity.grammarBased) &&
+            Objects.equals(this.replacedBy, sttEngineEntity.replacedBy) &&
             Objects.equals(this.selfUri, sttEngineEntity.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, grammarBased, selfUri);
+    return Objects.hash(id, name, grammarBased, replacedBy, selfUri);
   }
 
   @Override
@@ -116,6 +137,7 @@ public class SttEngineEntity  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    grammarBased: ").append(toIndentedString(grammarBased)).append("\n");
+    sb.append("    replacedBy: ").append(toIndentedString(replacedBy)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

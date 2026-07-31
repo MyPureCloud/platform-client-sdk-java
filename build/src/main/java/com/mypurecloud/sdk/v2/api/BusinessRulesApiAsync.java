@@ -1762,7 +1762,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Update decision table row import job
-   * 
+   * Cancels an in-progress import job by supplying a status of Cancelled. Cancellation is idempotent: cancelling a job that is already Cancelled returns 200 with the cancelled job. Cancelling a job that is still Uploading or Processing returns 200. A job that has already finished (Complete or Failed) can no longer be cancelled.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1796,7 +1796,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Update decision table row import job
-   * 
+   * Cancels an in-progress import job by supplying a status of Cancelled. Cancellation is idempotent: cancelling a job that is already Cancelled returns 200 with the cancelled job. Cancelling a job that is still Uploading or Processing returns 200. A job that has already finished (Complete or Failed) can no longer be cancelled.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1912,7 +1912,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Execute a published decision table
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1946,7 +1946,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Execute a published decision table
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2212,7 +2212,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Execute a decision table version
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2246,7 +2246,7 @@ public class BusinessRulesApiAsync {
 
   /**
    * Execute a decision table version
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

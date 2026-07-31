@@ -28,6 +28,7 @@ import java.io.Serializable;
 public class BillingCharge  implements Serializable {
   
   private String id = null;
+  private String name = null;
   private BillingProduct product = null;
   private List<NamedEntity> organizations = null;
   private BigDecimal prepaidQuantity = null;
@@ -57,6 +58,13 @@ public class BillingCharge  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The name of the object.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
   }
 
 
@@ -269,6 +277,7 @@ public class BillingCharge  implements Serializable {
     BillingCharge billingCharge = (BillingCharge) o;
 
     return Objects.equals(this.id, billingCharge.id) &&
+            Objects.equals(this.name, billingCharge.name) &&
             Objects.equals(this.product, billingCharge.product) &&
             Objects.equals(this.organizations, billingCharge.organizations) &&
             Objects.equals(this.prepaidQuantity, billingCharge.prepaidQuantity) &&
@@ -284,7 +293,7 @@ public class BillingCharge  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, product, organizations, prepaidQuantity, fairuseQuantity, actualQuantity, overageQuantity, overageRate, overageCharge, overageCurrency, convertedTokenCount, tokenConversionRate);
+    return Objects.hash(id, name, product, organizations, prepaidQuantity, fairuseQuantity, actualQuantity, overageQuantity, overageRate, overageCharge, overageCurrency, convertedTokenCount, tokenConversionRate);
   }
 
   @Override
@@ -293,6 +302,7 @@ public class BillingCharge  implements Serializable {
     sb.append("class BillingCharge {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
     sb.append("    prepaidQuantity: ").append(toIndentedString(prepaidQuantity)).append("\n");

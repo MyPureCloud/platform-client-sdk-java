@@ -10,7 +10,7 @@
 | **division** | [**Division**](Division) | The division to which this entity belongs. |  [optional] |
 | **type** | [**WorktypeReference**](WorktypeReference) | The Worktype of the Workitem. |  [optional] |
 | **description** | **String** | The description of the Workitem. |  [optional] |
-| **language** | [**LanguageReference**](LanguageReference) | The language of the Workitem. |  [optional] |
+| **language** | [**WorkitemLanguageReference**](WorkitemLanguageReference) | The language of the Workitem. |  [optional] |
 | **utilizationLabel** | [**WorkitemUtilizationLabelReference**](WorkitemUtilizationLabelReference) | The utilization label of the Workitem. |  [optional] |
 | **priority** | **Integer** | The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000. |  [optional] |
 | **dateCreated** | [**Date**](Date) | The creation date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -33,7 +33,7 @@
 | **assignmentState** | [**AssignmentStateEnum**](#Enum--AssignmentStateEnum) | The assignment state of the workitem. |  [optional] |
 | **dateAssignmentStateChanged** | [**Date**](Date) | The assignment state change date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **alertTimeoutSeconds** | **Integer** | The duration in seconds before an alert will timeout. |  [optional] |
-| **skills** | [**List&lt;RoutingSkillReference&gt;**](RoutingSkillReference) | The skills of the Workitem. |  [optional] |
+| **skills** | [**List&lt;WorkitemRoutingSkillReference&gt;**](WorkitemRoutingSkillReference) | The skills of the Workitem. |  [optional] |
 | **preferredAgents** | [**List&lt;UserReference&gt;**](UserReference) | The preferred agents of the Workitem. |  [optional] |
 | **autoStatusTransition** | **Boolean** | Set it to false to disable auto status transition. By default, it is enabled. |  [optional] |
 | **schema** | [**WorkitemSchema**](WorkitemSchema) | The schema defining the custom fields of the Workitem. The schema is inherited from the Workitems Worktype at creation time. |  [optional] |
@@ -78,4 +78,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

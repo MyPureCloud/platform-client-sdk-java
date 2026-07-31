@@ -48,6 +48,8 @@ public class EvaluationSearchSubAggregationDTO  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     FORMID("formId"),
     FORMIDRELEASED("formIdReleased"),
+    AGENTID("agentId"),
+    EVALUATORID("evaluatorId"),
     CONTEXTID("contextId"),
     QUESTIONGROUPID("questionGroupId"),
     QUESTIONID("questionId"),

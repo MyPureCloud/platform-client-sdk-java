@@ -28,8 +28,10 @@
 | COMMENT | &quot;Comment&quot; | 
 | VIEW | &quot;View&quot; | 
 | RATING | &quot;Rating&quot; | 
+| REPOST | &quot;Repost&quot; | 
+| SAVE | &quot;Save&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

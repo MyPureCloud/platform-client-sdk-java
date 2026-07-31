@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.AiScoringSettings;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingEvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroup;
 import com.mypurecloud.sdk.v2.model.EvaluationSettings;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class EvaluationForm  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private WritableStarrableDivision division = null;
   private Date modifiedDate = null;
   private Boolean published = null;
   private String contextId = null;
@@ -39,6 +41,7 @@ public class EvaluationForm  implements Serializable {
   private EvaluationSettings evaluationSettings = null;
   private String latestVersionFormName = null;
   private AiScoringSettings aiScoring = null;
+  private Boolean redacted = null;
   private String dialect = null;
   private String selfUri = null;
 
@@ -77,6 +80,24 @@ public class EvaluationForm  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public EvaluationForm division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -212,6 +233,24 @@ public class EvaluationForm  implements Serializable {
 
 
   /**
+   * Is this form redacted
+   **/
+  public EvaluationForm redacted(Boolean redacted) {
+    this.redacted = redacted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Is this form redacted")
+  @JsonProperty("redacted")
+  public Boolean getRedacted() {
+    return redacted;
+  }
+  public void setRedacted(Boolean redacted) {
+    this.redacted = redacted;
+  }
+
+
+  /**
    * The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW
    **/
   public EvaluationForm dialect(String dialect) {
@@ -248,6 +287,7 @@ public class EvaluationForm  implements Serializable {
 
     return Objects.equals(this.id, evaluationForm.id) &&
             Objects.equals(this.name, evaluationForm.name) &&
+            Objects.equals(this.division, evaluationForm.division) &&
             Objects.equals(this.modifiedDate, evaluationForm.modifiedDate) &&
             Objects.equals(this.published, evaluationForm.published) &&
             Objects.equals(this.contextId, evaluationForm.contextId) &&
@@ -256,13 +296,14 @@ public class EvaluationForm  implements Serializable {
             Objects.equals(this.evaluationSettings, evaluationForm.evaluationSettings) &&
             Objects.equals(this.latestVersionFormName, evaluationForm.latestVersionFormName) &&
             Objects.equals(this.aiScoring, evaluationForm.aiScoring) &&
+            Objects.equals(this.redacted, evaluationForm.redacted) &&
             Objects.equals(this.dialect, evaluationForm.dialect) &&
             Objects.equals(this.selfUri, evaluationForm.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, publishedVersions, evaluationSettings, latestVersionFormName, aiScoring, dialect, selfUri);
+    return Objects.hash(id, name, division, modifiedDate, published, contextId, questionGroups, publishedVersions, evaluationSettings, latestVersionFormName, aiScoring, redacted, dialect, selfUri);
   }
 
   @Override
@@ -272,6 +313,7 @@ public class EvaluationForm  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
@@ -280,6 +322,7 @@ public class EvaluationForm  implements Serializable {
     sb.append("    evaluationSettings: ").append(toIndentedString(evaluationSettings)).append("\n");
     sb.append("    latestVersionFormName: ").append(toIndentedString(latestVersionFormName)).append("\n");
     sb.append("    aiScoring: ").append(toIndentedString(aiScoring)).append("\n");
+    sb.append("    redacted: ").append(toIndentedString(redacted)).append("\n");
     sb.append("    dialect: ").append(toIndentedString(dialect)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

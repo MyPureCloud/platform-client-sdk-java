@@ -5,11 +5,11 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **messageSeverities** | [**List&lt;SchedulerMessageTypeSeverity&gt;**](SchedulerMessageTypeSeverity) | Schedule generation message severity configuration |  [optional] |
-| **syncTimeOffProperties** | [**List<SyncTimeOffPropertiesEnum>**](#Enum--SyncTimeOffPropertiesEnum) | Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published |  [optional] |
-| **enableTimeOffFullDayEstimation** | **Boolean** | Enables start and end time estimation for full-day time-off requests |  [optional] |
-| **serviceGoalImpact** | [**WfmServiceGoalImpactSettings**](WfmServiceGoalImpactSettings) | Configures the max percent increase and decrease of service goals for this business unit |  [optional] |
-| **allowWorkPlanPerMinuteGranularity** | **Boolean** | Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false |  [optional] |
+| **messageSeverities** | [**List&lt;SchedulerMessageTypeSeverity&gt;**](SchedulerMessageTypeSeverity) | Schedule generation message severity configuration |  |
+| **syncTimeOffProperties** | [**List<SyncTimeOffPropertiesEnum>**](#Enum--SyncTimeOffPropertiesEnum) | Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published |  |
+| **enableTimeOffFullDayEstimation** | **Boolean** | Enables start and end time estimation for full-day time-off requests |  |
+| **serviceGoalImpact** | [**WfmServiceGoalImpactSettings**](WfmServiceGoalImpactSettings) | Configures the max percent increase and decrease of service goals for this business unit |  |
+| **allowWorkPlanPerMinuteGranularity** | **Boolean** | Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false |  |
 | **activitySmoothingType** | [**ActivitySmoothingTypeEnum**](#Enum--ActivitySmoothingTypeEnum) | The activity smoothing type for schedule generation in this business unit |  |
 | **induceScheduleVariability** | **Boolean** | Indicates whether to provide variability in schedule generation |  |
 
@@ -36,4 +36,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

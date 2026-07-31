@@ -75,6 +75,7 @@ public class AiAnswer  implements Serializable {
     }
   }
   private FailureTypeEnum failureType = null;
+  private Boolean markedNotApplicable = null;
 
   public AiAnswer() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -141,6 +142,24 @@ public class AiAnswer  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether the AI answer is marked as not applicable.
+   **/
+  public AiAnswer markedNotApplicable(Boolean markedNotApplicable) {
+    this.markedNotApplicable = markedNotApplicable;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether the AI answer is marked as not applicable.")
+  @JsonProperty("markedNotApplicable")
+  public Boolean getMarkedNotApplicable() {
+    return markedNotApplicable;
+  }
+  public void setMarkedNotApplicable(Boolean markedNotApplicable) {
+    this.markedNotApplicable = markedNotApplicable;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -153,12 +172,13 @@ public class AiAnswer  implements Serializable {
 
     return Objects.equals(this.answerId, aiAnswer.answerId) &&
             Objects.equals(this.explanation, aiAnswer.explanation) &&
-            Objects.equals(this.failureType, aiAnswer.failureType);
+            Objects.equals(this.failureType, aiAnswer.failureType) &&
+            Objects.equals(this.markedNotApplicable, aiAnswer.markedNotApplicable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(answerId, explanation, failureType);
+    return Objects.hash(answerId, explanation, failureType, markedNotApplicable);
   }
 
   @Override
@@ -169,6 +189,7 @@ public class AiAnswer  implements Serializable {
     sb.append("    answerId: ").append(toIndentedString(answerId)).append("\n");
     sb.append("    explanation: ").append(toIndentedString(explanation)).append("\n");
     sb.append("    failureType: ").append(toIndentedString(failureType)).append("\n");
+    sb.append("    markedNotApplicable: ").append(toIndentedString(markedNotApplicable)).append("\n");
     sb.append("}");
     return sb.toString();
   }

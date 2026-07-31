@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the screen |  |
-| **moduleSettings** | [**List&lt;SupportCenterModuleSetting&gt;**](SupportCenterModuleSetting) | Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; |  |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the screen. Required if support center is enabled |  [optional] |
+| **moduleSettings** | [**List&lt;SupportCenterModuleSetting&gt;**](SupportCenterModuleSetting) | Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; Required if support center is enabled |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -22,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

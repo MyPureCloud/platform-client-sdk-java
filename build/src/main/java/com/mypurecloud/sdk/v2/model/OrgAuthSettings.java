@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PasswordRequirements;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,6 +33,54 @@ public class OrgAuthSettings  implements Serializable {
   private PasswordRequirements passwordRequirements = null;
   private List<String> inactivityTimeoutExclusions = null;
   private Boolean universalLogout = null;
+
+  private static class TokenStorageLocationEnumDeserializer extends StdDeserializer<TokenStorageLocationEnum> {
+    public TokenStorageLocationEnumDeserializer() {
+      super(TokenStorageLocationEnumDeserializer.class);
+    }
+
+    @Override
+    public TokenStorageLocationEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TokenStorageLocationEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The browser storage location used for authentication tokens.
+   */
+ @JsonDeserialize(using = TokenStorageLocationEnumDeserializer.class)
+  public enum TokenStorageLocationEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PERSISTENT("persistent"),
+    SESSION("session");
+
+    private String value;
+
+    TokenStorageLocationEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TokenStorageLocationEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TokenStorageLocationEnum value : TokenStorageLocationEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TokenStorageLocationEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TokenStorageLocationEnum tokenStorageLocation = null;
 
   public OrgAuthSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -176,6 +225,24 @@ public class OrgAuthSettings  implements Serializable {
   }
 
 
+  /**
+   * The browser storage location used for authentication tokens.
+   **/
+  public OrgAuthSettings tokenStorageLocation(TokenStorageLocationEnum tokenStorageLocation) {
+    this.tokenStorageLocation = tokenStorageLocation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The browser storage location used for authentication tokens.")
+  @JsonProperty("tokenStorageLocation")
+  public TokenStorageLocationEnum getTokenStorageLocation() {
+    return tokenStorageLocation;
+  }
+  public void setTokenStorageLocation(TokenStorageLocationEnum tokenStorageLocation) {
+    this.tokenStorageLocation = tokenStorageLocation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -192,12 +259,13 @@ public class OrgAuthSettings  implements Serializable {
             Objects.equals(this.ipAddressAllowlist, orgAuthSettings.ipAddressAllowlist) &&
             Objects.equals(this.passwordRequirements, orgAuthSettings.passwordRequirements) &&
             Objects.equals(this.inactivityTimeoutExclusions, orgAuthSettings.inactivityTimeoutExclusions) &&
-            Objects.equals(this.universalLogout, orgAuthSettings.universalLogout);
+            Objects.equals(this.universalLogout, orgAuthSettings.universalLogout) &&
+            Objects.equals(this.tokenStorageLocation, orgAuthSettings.tokenStorageLocation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(multifactorAuthenticationRequired, domainAllowlistEnabled, domainAllowlist, ipAddressAllowlist, passwordRequirements, inactivityTimeoutExclusions, universalLogout);
+    return Objects.hash(multifactorAuthenticationRequired, domainAllowlistEnabled, domainAllowlist, ipAddressAllowlist, passwordRequirements, inactivityTimeoutExclusions, universalLogout, tokenStorageLocation);
   }
 
   @Override
@@ -212,6 +280,7 @@ public class OrgAuthSettings  implements Serializable {
     sb.append("    passwordRequirements: ").append(toIndentedString(passwordRequirements)).append("\n");
     sb.append("    inactivityTimeoutExclusions: ").append(toIndentedString(inactivityTimeoutExclusions)).append("\n");
     sb.append("    universalLogout: ").append(toIndentedString(universalLogout)).append("\n");
+    sb.append("    tokenStorageLocation: ").append(toIndentedString(tokenStorageLocation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

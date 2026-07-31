@@ -45,7 +45,7 @@ public class SupportCenterDetailedCategoryModuleTemplate  implements Serializabl
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether this template is active or not")
+  @ApiModelProperty(example = "null", value = "Whether this template is active or not")
   @JsonProperty("active")
   public Boolean getActive() {
     return active;
@@ -56,14 +56,14 @@ public class SupportCenterDetailedCategoryModuleTemplate  implements Serializabl
 
 
   /**
-   * Sidebar settings for the template
+   * Sidebar settings for the template. Required if support center is enabled
    **/
   public SupportCenterDetailedCategoryModuleTemplate sidebar(SupportCenterDetailedCategoryModuleSidebar sidebar) {
     this.sidebar = sidebar;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Sidebar settings for the template")
+  @ApiModelProperty(example = "null", value = "Sidebar settings for the template. Required if support center is enabled")
   @JsonProperty("sidebar")
   public SupportCenterDetailedCategoryModuleSidebar getSidebar() {
     return sidebar;

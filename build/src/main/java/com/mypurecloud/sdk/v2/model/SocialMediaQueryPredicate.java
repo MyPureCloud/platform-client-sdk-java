@@ -108,7 +108,8 @@ public class SocialMediaQueryPredicate  implements Serializable {
     LIKES("likes"),
     SHARES("shares"),
     COMMENTS("comments"),
-    VIEWS("views");
+    VIEWS("views"),
+    POSTTYPE("postType");
 
     private String value;
 

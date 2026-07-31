@@ -8,6 +8,7 @@
 | **answerId** | **String** | The unique identifier of the suggested AI answer. |  [optional] |
 | **explanation** | **String** | An explanation providing the reasoning behind the suggested answer. |  [optional] |
 | **failureType** | [**FailureTypeEnum**](#Enum--FailureTypeEnum) | Describes the type of error associated with the AI answer. |  [optional] |
+| **markedNotApplicable** | **Boolean** | Indicates whether the AI answer is marked as not applicable. |  [optional] |
 
 
 ## Enum: FailureTypeEnum
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

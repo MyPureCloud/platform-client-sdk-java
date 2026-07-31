@@ -13,6 +13,12 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AgenticVirtualAgent;
+import com.mypurecloud.sdk.v2.model.AgenticVirtualAgentEntityListing;
+import com.mypurecloud.sdk.v2.model.AgenticVirtualAgentJob;
+import com.mypurecloud.sdk.v2.model.AgenticVirtualAgentVersionPublishJob;
+import com.mypurecloud.sdk.v2.model.AgenticVirtualAgentVersionPublishJobRequest;
+import com.mypurecloud.sdk.v2.model.CreateAgenticVirtualAgent;
 import com.mypurecloud.sdk.v2.model.CreateGuide;
 import com.mypurecloud.sdk.v2.model.CreateGuideVersion;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -29,14 +35,19 @@ import com.mypurecloud.sdk.v2.model.GuideVersionPublishJobRequest;
 import com.mypurecloud.sdk.v2.model.SummarySetting;
 import com.mypurecloud.sdk.v2.model.SummarySettingEntityListing;
 import com.mypurecloud.sdk.v2.model.SummarySettingWithTranscript;
+import com.mypurecloud.sdk.v2.model.UpdateAgenticVirtualAgent;
 import com.mypurecloud.sdk.v2.model.UpdateGuide;
 import com.mypurecloud.sdk.v2.model.UpdateGuideVersion;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteAgenticVirtualagentJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsSummariesSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteGuideJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAgenticVirtualagentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAgenticVirtualagentJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAgenticVirtualagentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsSummariesSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsSummariesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuideRequest;
@@ -45,8 +56,11 @@ import com.mypurecloud.sdk.v2.api.request.GetGuideVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuideVersionJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuidesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuidesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchAgenticVirtualagentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGuideRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGuideVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAgenticVirtualagentVersionJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAgenticVirtualagentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsSummariesPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsSummariesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideSessionTurnsRequest;
@@ -73,6 +87,81 @@ public class AIStudioApiAsync {
 
   public AIStudioApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Start the deletion of a virtualAgent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgenticVirtualAgentJob> deleteAgenticVirtualagentJobsAsync(DeleteAgenticVirtualagentJobsRequest request, final AsyncApiCallback<AgenticVirtualAgentJob> callback) {
+    try {
+      final SettableFuture<AgenticVirtualAgentJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgenticVirtualAgentJob>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgentJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgentJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start the deletion of a virtualAgent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgenticVirtualAgentJob>> deleteAgenticVirtualagentJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgenticVirtualAgentJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgenticVirtualAgentJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgenticVirtualAgentJob>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgentJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgentJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgentJob> response = (ApiResponse<AgenticVirtualAgentJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgentJob> response = (ApiResponse<AgenticVirtualAgentJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -214,6 +303,231 @@ public class AIStudioApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<GuideJob> response = (ApiResponse<GuideJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get virtual agent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgenticVirtualAgent> getAgenticVirtualagentAsync(GetAgenticVirtualagentRequest request, final AsyncApiCallback<AgenticVirtualAgent> callback) {
+    try {
+      final SettableFuture<AgenticVirtualAgent> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgenticVirtualAgent>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgent> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get virtual agent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgenticVirtualAgent>> getAgenticVirtualagentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgenticVirtualAgent>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgenticVirtualAgent>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgenticVirtualAgent>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgent> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgent> response = (ApiResponse<AgenticVirtualAgent>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgent> response = (ApiResponse<AgenticVirtualAgent>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a virtualAgent job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgenticVirtualAgentJob> getAgenticVirtualagentJobAsync(GetAgenticVirtualagentJobRequest request, final AsyncApiCallback<AgenticVirtualAgentJob> callback) {
+    try {
+      final SettableFuture<AgenticVirtualAgentJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgenticVirtualAgentJob>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgentJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgentJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a virtualAgent job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgenticVirtualAgentJob>> getAgenticVirtualagentJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgenticVirtualAgentJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgenticVirtualAgentJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgenticVirtualAgentJob>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgentJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgentJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgentJob> response = (ApiResponse<AgenticVirtualAgentJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgentJob> response = (ApiResponse<AgenticVirtualAgentJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all virtual agents.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgenticVirtualAgentEntityListing> getAgenticVirtualagentsAsync(GetAgenticVirtualagentsRequest request, final AsyncApiCallback<AgenticVirtualAgentEntityListing> callback) {
+    try {
+      final SettableFuture<AgenticVirtualAgentEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgenticVirtualAgentEntityListing>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgentEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgentEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all virtual agents.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgenticVirtualAgentEntityListing>> getAgenticVirtualagentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgenticVirtualAgentEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgenticVirtualAgentEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgenticVirtualAgentEntityListing>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgentEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgentEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgentEntityListing> response = (ApiResponse<AgenticVirtualAgentEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgentEntityListing> response = (ApiResponse<AgenticVirtualAgentEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -826,6 +1140,81 @@ public class AIStudioApiAsync {
   }
 
   /**
+   * Update a virtual agent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgenticVirtualAgent> patchAgenticVirtualagentAsync(PatchAgenticVirtualagentRequest request, final AsyncApiCallback<AgenticVirtualAgent> callback) {
+    try {
+      final SettableFuture<AgenticVirtualAgent> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgenticVirtualAgent>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgent> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a virtual agent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgenticVirtualAgent>> patchAgenticVirtualagentAsync(ApiRequest<UpdateAgenticVirtualAgent> request, final AsyncApiCallback<ApiResponse<AgenticVirtualAgent>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgenticVirtualAgent>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgenticVirtualAgent>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgent> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgent> response = (ApiResponse<AgenticVirtualAgent>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgent> response = (ApiResponse<AgenticVirtualAgent>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update a guide.
    * 
    * @param request the request object
@@ -964,6 +1353,156 @@ public class AIStudioApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<GuideVersion> response = (ApiResponse<GuideVersion>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start the publishing of a virtual agent version.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgenticVirtualAgentVersionPublishJob> postAgenticVirtualagentVersionJobsAsync(PostAgenticVirtualagentVersionJobsRequest request, final AsyncApiCallback<AgenticVirtualAgentVersionPublishJob> callback) {
+    try {
+      final SettableFuture<AgenticVirtualAgentVersionPublishJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgenticVirtualAgentVersionPublishJob>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgentVersionPublishJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgentVersionPublishJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start the publishing of a virtual agent version.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgenticVirtualAgentVersionPublishJob>> postAgenticVirtualagentVersionJobsAsync(ApiRequest<AgenticVirtualAgentVersionPublishJobRequest> request, final AsyncApiCallback<ApiResponse<AgenticVirtualAgentVersionPublishJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgenticVirtualAgentVersionPublishJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgenticVirtualAgentVersionPublishJob>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgentVersionPublishJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgentVersionPublishJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgentVersionPublishJob> response = (ApiResponse<AgenticVirtualAgentVersionPublishJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgentVersionPublishJob> response = (ApiResponse<AgenticVirtualAgentVersionPublishJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a virtual agent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgenticVirtualAgent> postAgenticVirtualagentsAsync(PostAgenticVirtualagentsRequest request, final AsyncApiCallback<AgenticVirtualAgent> callback) {
+    try {
+      final SettableFuture<AgenticVirtualAgent> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgenticVirtualAgent>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgent> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a virtual agent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgenticVirtualAgent>> postAgenticVirtualagentsAsync(ApiRequest<CreateAgenticVirtualAgent> request, final AsyncApiCallback<ApiResponse<AgenticVirtualAgent>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgenticVirtualAgent>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgenticVirtualAgent>() {}, new AsyncApiCallback<ApiResponse<AgenticVirtualAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgenticVirtualAgent> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgent> response = (ApiResponse<AgenticVirtualAgent>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgenticVirtualAgent> response = (ApiResponse<AgenticVirtualAgent>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

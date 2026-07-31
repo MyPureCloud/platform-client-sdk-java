@@ -39,7 +39,7 @@ public class SupportCenterModuleSetting  implements Serializable {
     }
   }
   /**
-   * Screen module type
+   * Screen module type. Required if support center is enabled
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -94,14 +94,14 @@ public class SupportCenterModuleSetting  implements Serializable {
 
   
   /**
-   * Screen module type
+   * Screen module type. Required if support center is enabled
    **/
   public SupportCenterModuleSetting type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Screen module type")
+  @ApiModelProperty(example = "null", value = "Screen module type. Required if support center is enabled")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -112,14 +112,14 @@ public class SupportCenterModuleSetting  implements Serializable {
 
 
   /**
-   * Whether or not knowledge portal (previously support center) screen module is enabled
+   * Whether or not knowledge portal (previously support center) screen module is enabled. If not provided, the module is treated as hidden
    **/
   public SupportCenterModuleSetting enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether or not knowledge portal (previously support center) screen module is enabled")
+  @ApiModelProperty(example = "null", value = "Whether or not knowledge portal (previously support center) screen module is enabled. If not provided, the module is treated as hidden")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;

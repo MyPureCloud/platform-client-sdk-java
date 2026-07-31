@@ -22,6 +22,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FORMID | &quot;formId&quot; | 
 | FORMIDRELEASED | &quot;formIdReleased&quot; | 
+| AGENTID | &quot;agentId&quot; | 
+| EVALUATORID | &quot;evaluatorId&quot; | 
 | CONTEXTID | &quot;contextId&quot; | 
 | QUESTIONGROUPID | &quot;questionGroupId&quot; | 
 | QUESTIONID | &quot;questionId&quot; | 
@@ -69,4 +71,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

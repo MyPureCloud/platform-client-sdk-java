@@ -1918,7 +1918,7 @@ public class BusinessRulesApi {
 
   /**
    * Update decision table row import job
-   * 
+   * Cancels an in-progress import job by supplying a status of Cancelled. Cancellation is idempotent: cancelling a job that is already Cancelled returns 200 with the cancelled job. Cancelling a job that is still Uploading or Processing returns 200. A job that has already finished (Complete or Failed) can no longer be cancelled.
    * @param tableId Table ID (required)
    * @param importJobId Import job ID (required)
    * @param body Import job update request (required)
@@ -1932,7 +1932,7 @@ public class BusinessRulesApi {
 
   /**
    * Update decision table row import job
-   * 
+   * Cancels an in-progress import job by supplying a status of Cancelled. Cancellation is idempotent: cancelling a job that is already Cancelled returns 200 with the cancelled job. Cancelling a job that is still Uploading or Processing returns 200. A job that has already finished (Complete or Failed) can no longer be cancelled.
    * @param tableId Table ID (required)
    * @param importJobId Import job ID (required)
    * @param body Import job update request (required)
@@ -1956,7 +1956,7 @@ public class BusinessRulesApi {
 
   /**
    * Update decision table row import job
-   * 
+   * Cancels an in-progress import job by supplying a status of Cancelled. Cancellation is idempotent: cancelling a job that is already Cancelled returns 200 with the cancelled job. Cancelling a job that is still Uploading or Processing returns 200. A job that has already finished (Complete or Failed) can no longer be cancelled.
    * @param request The request object
    * @return DecisionTableImportJob
    * @throws ApiException if the request fails on the server
@@ -1975,7 +1975,7 @@ public class BusinessRulesApi {
 
   /**
    * Update decision table row import job
-   * 
+   * Cancels an in-progress import job by supplying a status of Cancelled. Cancellation is idempotent: cancelling a job that is already Cancelled returns 200 with the cancelled job. Cancelling a job that is still Uploading or Processing returns 200. A job that has already finished (Complete or Failed) can no longer be cancelled.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2090,7 +2090,7 @@ public class BusinessRulesApi {
 
   /**
    * Execute a published decision table
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param tableId Table ID (required)
    * @param body Decision Table (required)
    * @return DecisionTableExecutionResponse
@@ -2103,7 +2103,7 @@ public class BusinessRulesApi {
 
   /**
    * Execute a published decision table
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param tableId Table ID (required)
    * @param body Decision Table (required)
    * @return DecisionTableExecutionResponse
@@ -2124,7 +2124,7 @@ public class BusinessRulesApi {
 
   /**
    * Execute a published decision table
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param request The request object
    * @return DecisionTableExecutionResponse
    * @throws ApiException if the request fails on the server
@@ -2143,7 +2143,7 @@ public class BusinessRulesApi {
 
   /**
    * Execute a published decision table
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2422,7 +2422,7 @@ public class BusinessRulesApi {
 
   /**
    * Execute a decision table version
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Decision Table (required)
@@ -2436,7 +2436,7 @@ public class BusinessRulesApi {
 
   /**
    * Execute a decision table version
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Decision Table (required)
@@ -2460,7 +2460,7 @@ public class BusinessRulesApi {
 
   /**
    * Execute a decision table version
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param request The request object
    * @return DecisionTableExecutionResponse
    * @throws ApiException if the request fails on the server
@@ -2479,7 +2479,7 @@ public class BusinessRulesApi {
 
   /**
    * Execute a decision table version
-   * 
+   * Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

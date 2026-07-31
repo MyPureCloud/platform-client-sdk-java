@@ -44,12 +44,7 @@ public class RatingFilter  implements Serializable {
  @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    EQUALTO("EqualTo"),
-    GREATERTHAN("GreaterThan"),
-    GREATERTHANOREQUALTO("GreaterThanOrEqualTo"),
-    LESSTHAN("LessThan"),
-    LESSTHANOREQUALTO("LessThanOrEqualTo"),
-    BETWEEN("Between");
+    EQUALTO("EqualTo");
 
     private String value;
 
@@ -77,8 +72,6 @@ public class RatingFilter  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private Integer from = null;
-  private Integer to = null;
   private List<Integer> values = null;
 
   public RatingFilter() {
@@ -113,42 +106,6 @@ public class RatingFilter  implements Serializable {
 
 
   /**
-   * The lower bound for the Between operator
-   **/
-  public RatingFilter from(Integer from) {
-    this.from = from;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The lower bound for the Between operator")
-  @JsonProperty("from")
-  public Integer getFrom() {
-    return from;
-  }
-  public void setFrom(Integer from) {
-    this.from = from;
-  }
-
-
-  /**
-   * The upper bound for the Between operator
-   **/
-  public RatingFilter to(Integer to) {
-    this.to = to;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The upper bound for the Between operator")
-  @JsonProperty("to")
-  public Integer getTo() {
-    return to;
-  }
-  public void setTo(Integer to) {
-    this.to = to;
-  }
-
-
-  /**
    * One or more rating values to filter by
    **/
   public RatingFilter values(List<Integer> values) {
@@ -177,14 +134,12 @@ public class RatingFilter  implements Serializable {
     RatingFilter ratingFilter = (RatingFilter) o;
 
     return Objects.equals(this.operator, ratingFilter.operator) &&
-            Objects.equals(this.from, ratingFilter.from) &&
-            Objects.equals(this.to, ratingFilter.to) &&
             Objects.equals(this.values, ratingFilter.values);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operator, from, to, values);
+    return Objects.hash(operator, values);
   }
 
   @Override
@@ -193,8 +148,6 @@ public class RatingFilter  implements Serializable {
     sb.append("class RatingFilter {\n");
     
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
-    sb.append("    from: ").append(toIndentedString(from)).append("\n");
-    sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
     sb.append("}");
     return sb.toString();

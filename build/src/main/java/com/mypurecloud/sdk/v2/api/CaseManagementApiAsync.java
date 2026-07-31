@@ -33,6 +33,9 @@ import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanUpdate;
+import com.mypurecloud.sdk.v2.model.Comment;
+import com.mypurecloud.sdk.v2.model.CommentCreate;
+import com.mypurecloud.sdk.v2.model.CommentListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsUpdate;
@@ -51,11 +54,14 @@ import com.mypurecloud.sdk.v2.model.TerminateJob;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseCommentsMeCommentIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanDataschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseCommentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseCommentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseStageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseStageStepRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseStageStepsRequest;
@@ -79,6 +85,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanStageplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanStageplanStepplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseAssociationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseCommentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseTerminateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanDataschemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanPublishRequest;
@@ -150,6 +157,81 @@ public class CaseManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Empty>> deleteCasemanagementCaseAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete my Comment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> deleteCasemanagementCaseCommentsMeCommentIdAsync(DeleteCasemanagementCaseCommentsMeCommentIdRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete my Comment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> deleteCasemanagementCaseCommentsMeCommentIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
       final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -547,6 +629,156 @@ public class CaseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CaseAssociationListing> response = (ApiResponse<CaseAssociationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Comment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Comment> getCasemanagementCaseCommentAsync(GetCasemanagementCaseCommentRequest request, final AsyncApiCallback<Comment> callback) {
+    try {
+      final SettableFuture<Comment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Comment>() {}, new AsyncApiCallback<ApiResponse<Comment>>() {
+        @Override
+        public void onCompleted(ApiResponse<Comment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Comment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Comment>> getCasemanagementCaseCommentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Comment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Comment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Comment>() {}, new AsyncApiCallback<ApiResponse<Comment>>() {
+        @Override
+        public void onCompleted(ApiResponse<Comment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Comment> response = (ApiResponse<Comment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Comment> response = (ApiResponse<Comment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get comments for a Case.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CommentListing> getCasemanagementCaseCommentsAsync(GetCasemanagementCaseCommentsRequest request, final AsyncApiCallback<CommentListing> callback) {
+    try {
+      final SettableFuture<CommentListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CommentListing>() {}, new AsyncApiCallback<ApiResponse<CommentListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CommentListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get comments for a Case.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CommentListing>> getCasemanagementCaseCommentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CommentListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CommentListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CommentListing>() {}, new AsyncApiCallback<ApiResponse<CommentListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CommentListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CommentListing> response = (ApiResponse<CommentListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CommentListing> response = (ApiResponse<CommentListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2272,6 +2504,81 @@ public class CaseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CaseAssociation> response = (ApiResponse<CaseAssociation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a comment to a Case.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Comment> postCasemanagementCaseCommentsAsync(PostCasemanagementCaseCommentsRequest request, final AsyncApiCallback<Comment> callback) {
+    try {
+      final SettableFuture<Comment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Comment>() {}, new AsyncApiCallback<ApiResponse<Comment>>() {
+        @Override
+        public void onCompleted(ApiResponse<Comment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a comment to a Case.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Comment>> postCasemanagementCaseCommentsAsync(ApiRequest<CommentCreate> request, final AsyncApiCallback<ApiResponse<Comment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Comment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Comment>() {}, new AsyncApiCallback<ApiResponse<Comment>>() {
+        @Override
+        public void onCompleted(ApiResponse<Comment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Comment> response = (ApiResponse<Comment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Comment> response = (ApiResponse<Comment>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

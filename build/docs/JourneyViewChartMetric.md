@@ -9,6 +9,7 @@
 | **elementId** | **String** | The element in the list of elements which the metric is measuring |  |
 | **aggregate** | [**AggregateEnum**](#Enum--AggregateEnum) | How to aggregate the given element, defaults to CustomerCount |  [optional] |
 | **displayLabel** | **String** | A display label for the metric |  [optional] |
+| **attribute** | **String** | Attribute name |  [optional] |
 
 
 ## Enum: AggregateEnum
@@ -26,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

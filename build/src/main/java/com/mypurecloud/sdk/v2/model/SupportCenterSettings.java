@@ -108,14 +108,14 @@ public class SupportCenterSettings  implements Serializable {
 
   
   /**
-   * Whether or not knowledge portal (previously support center) is enabled
+   * Whether or not knowledge portal (previously support center) is enabled.
    **/
   public SupportCenterSettings enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether or not knowledge portal (previously support center) is enabled")
+  @ApiModelProperty(example = "null", value = "Whether or not knowledge portal (previously support center) is enabled.")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;
@@ -126,14 +126,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * The knowledge base for knowledge portal (previously support center)
+   * The knowledge base for knowledge portal (previously support center). Required if support center is enabled
    **/
   public SupportCenterSettings knowledgeBase(AddressableEntityRef knowledgeBase) {
     this.knowledgeBase = knowledgeBase;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The knowledge base for knowledge portal (previously support center)")
+  @ApiModelProperty(example = "null", value = "The knowledge base for knowledge portal (previously support center). Required if support center is enabled")
   @JsonProperty("knowledgeBase")
   public AddressableEntityRef getKnowledgeBase() {
     return knowledgeBase;
@@ -144,14 +144,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * Customizable display texts for knowledge portal (previously support center)
+   * Customizable display texts for knowledge portal (previously support center). Required if support center is enabled, must contain both Welcome and Fallback message entries
    **/
   public SupportCenterSettings customMessages(List<SupportCenterCustomMessage> customMessages) {
     this.customMessages = customMessages;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Customizable display texts for knowledge portal (previously support center)")
+  @ApiModelProperty(example = "null", value = "Customizable display texts for knowledge portal (previously support center). Required if support center is enabled, must contain both Welcome and Fallback message entries")
   @JsonProperty("customMessages")
   public List<SupportCenterCustomMessage> getCustomMessages() {
     return customMessages;
@@ -180,14 +180,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * Available screens for the knowledge portal (previously support center) with its modules
+   * Available screens for the knowledge portal (previously support center) with its modules. Required if support center is enabled
    **/
   public SupportCenterSettings screens(List<SupportCenterScreen> screens) {
     this.screens = screens;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Available screens for the knowledge portal (previously support center) with its modules")
+  @ApiModelProperty(example = "null", value = "Available screens for the knowledge portal (previously support center) with its modules. Required if support center is enabled")
   @JsonProperty("screens")
   public List<SupportCenterScreen> getScreens() {
     return screens;
@@ -198,14 +198,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * Featured categories for knowledge portal (previously support center) home screen
+   * Featured categories for knowledge portal (previously support center) home screen. Required if support center is enabled
    **/
   public SupportCenterSettings enabledCategories(List<SupportCenterCategory> enabledCategories) {
     this.enabledCategories = enabledCategories;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Featured categories for knowledge portal (previously support center) home screen")
+  @ApiModelProperty(example = "null", value = "Featured categories for knowledge portal (previously support center) home screen. Required if support center is enabled")
   @JsonProperty("enabledCategories")
   public List<SupportCenterCategory> getEnabledCategories() {
     return enabledCategories;
@@ -234,14 +234,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * Style attributes for knowledge portal (previously support center)
+   * Style attributes for knowledge portal (previously support center). Required if support center is enabled
    **/
   public SupportCenterSettings styleSetting(SupportCenterStyleSetting styleSetting) {
     this.styleSetting = styleSetting;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Style attributes for knowledge portal (previously support center)")
+  @ApiModelProperty(example = "null", value = "Style attributes for knowledge portal (previously support center). Required if support center is enabled")
   @JsonProperty("styleSetting")
   public SupportCenterStyleSetting getStyleSetting() {
     return styleSetting;

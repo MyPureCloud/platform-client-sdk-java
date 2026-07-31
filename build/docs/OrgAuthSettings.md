@@ -12,8 +12,18 @@
 | **passwordRequirements** | [**PasswordRequirements**](PasswordRequirements) | The password requirements for the organization. |  [optional] |
 | **inactivityTimeoutExclusions** | **List&lt;String&gt;** | The list of exempt apis from inactivity timeout. |  [optional] |
 | **universalLogout** | **Boolean** | Indicates whether universal logout is enabled for the organization. |  [optional] |
+| **tokenStorageLocation** | [**TokenStorageLocationEnum**](#Enum--TokenStorageLocationEnum) | The browser storage location used for authentication tokens. |  [optional] |
+
+
+## Enum: TokenStorageLocationEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PERSISTENT | &quot;persistent&quot; | 
+| SESSION | &quot;session&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

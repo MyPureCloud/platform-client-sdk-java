@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Division;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -26,6 +27,7 @@ public class RoutingSkill  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private Date dateModified = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
@@ -115,6 +117,24 @@ public class RoutingSkill  implements Serializable {
   }
 
 
+  /**
+   * The id of the division this skill belongs to.
+   **/
+  public RoutingSkill division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the division this skill belongs to.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Date last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
@@ -155,6 +175,7 @@ public class RoutingSkill  implements Serializable {
 
     return Objects.equals(this.id, routingSkill.id) &&
             Objects.equals(this.name, routingSkill.name) &&
+            Objects.equals(this.division, routingSkill.division) &&
             Objects.equals(this.dateModified, routingSkill.dateModified) &&
             Objects.equals(this.state, routingSkill.state) &&
             Objects.equals(this.version, routingSkill.version) &&
@@ -163,7 +184,7 @@ public class RoutingSkill  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateModified, state, version, selfUri);
+    return Objects.hash(id, name, division, dateModified, state, version, selfUri);
   }
 
   @Override
@@ -173,6 +194,7 @@ public class RoutingSkill  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");

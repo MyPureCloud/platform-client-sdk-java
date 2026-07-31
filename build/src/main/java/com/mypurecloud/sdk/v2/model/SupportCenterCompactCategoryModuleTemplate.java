@@ -36,14 +36,14 @@ public class SupportCenterCompactCategoryModuleTemplate  implements Serializable
 
   
   /**
-   * Whether this template is active or not
+   * Whether this template is active or not. Required if support center is enabled
    **/
   public SupportCenterCompactCategoryModuleTemplate active(Boolean active) {
     this.active = active;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether this template is active or not")
+  @ApiModelProperty(example = "null", value = "Whether this template is active or not. Required if support center is enabled")
   @JsonProperty("active")
   public Boolean getActive() {
     return active;

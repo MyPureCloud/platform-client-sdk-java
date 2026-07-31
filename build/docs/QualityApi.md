@@ -44,8 +44,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityPublishedforms**](QualityApi#getQualityPublishedforms) | Get the published evaluation forms. |
 | [**getQualityPublishedformsEvaluation**](QualityApi#getQualityPublishedformsEvaluation) | Get the most recent published version of an evaluation form. |
 | [**getQualityPublishedformsEvaluations**](QualityApi#getQualityPublishedformsEvaluations) | Get the published evaluation forms. |
+| [**getQualityPublishedformsEvaluationsDivisionview**](QualityApi#getQualityPublishedformsEvaluationsDivisionview) | Get the most recent published version of an evaluation form across any division. |
+| [**getQualityPublishedformsEvaluationsDivisionviews**](QualityApi#getQualityPublishedformsEvaluationsDivisionviews) | Get the published evaluation forms across any division. |
 | [**getQualityPublishedformsSurvey**](QualityApi#getQualityPublishedformsSurvey) | Get the most recent published version of a survey form. |
 | [**getQualityPublishedformsSurveys**](QualityApi#getQualityPublishedformsSurveys) | Get the published survey forms. |
+| [**getQualityPublishedformsSurveysDivisionview**](QualityApi#getQualityPublishedformsSurveysDivisionview) | Get the most recent published version of an enabled survey form across any division. |
+| [**getQualityPublishedformsSurveysDivisionviews**](QualityApi#getQualityPublishedformsSurveysDivisionviews) | Get the published and enabled survey forms across any division. |
 | [**getQualitySurvey**](QualityApi#getQualitySurvey) | Get a survey for a conversation |
 | [**getQualitySurveysScorable**](QualityApi#getQualitySurveysScorable) | Get a survey as an end-customer, for the purposes of scoring it. |
 | [**patchQualityFormsSurvey**](QualityApi#patchQualityFormsSurvey) | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form. |
@@ -2669,6 +2673,132 @@ try {
 [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
 
+# **getQualityPublishedformsEvaluationsDivisionview**
+
+
+> [EvaluationFormDivisionView](EvaluationFormDivisionView) getQualityPublishedformsEvaluationsDivisionview(evaluationFormId)
+
+Get the most recent published version of an evaluation form across any division.
+
+Wraps GET /api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}  
+
+Requires ALL permissions: 
+
+* quality:evaluationForm:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String evaluationFormId = "evaluationFormId_example"; // String | Evaluation Form ID
+try {
+    EvaluationFormDivisionView result = apiInstance.getQualityPublishedformsEvaluationsDivisionview(evaluationFormId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedformsEvaluationsDivisionview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **evaluationFormId** | **String**| Evaluation Form ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EvaluationFormDivisionView**](EvaluationFormDivisionView)
+
+
+# **getQualityPublishedformsEvaluationsDivisionviews**
+
+
+> [EvaluationFormDivisionViewListing](EvaluationFormDivisionViewListing) getQualityPublishedformsEvaluationsDivisionviews(id, pageSize, pageNumber, name, divisionId)
+
+Get the published evaluation forms across any division.
+
+Wraps GET /api/v2/quality/publishedforms/evaluations/divisionviews  
+
+Requires ALL permissions: 
+
+* quality:evaluationForm:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+List<String> id = Arrays.asList(null); // List<String> | A comma-delimited list of valid, published evaluation form ids
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name
+String divisionId = "divisionId_example"; // String | divisionId
+try {
+    EvaluationFormDivisionViewListing result = apiInstance.getQualityPublishedformsEvaluationsDivisionviews(id, pageSize, pageNumber, name, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedformsEvaluationsDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String)| A comma-delimited list of valid, published evaluation form ids | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **divisionId** | **String**| divisionId | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EvaluationFormDivisionViewListing**](EvaluationFormDivisionViewListing)
+
+
 # **getQualityPublishedformsSurvey**
 
 
@@ -2791,6 +2921,132 @@ try {
 ### Return type
 
 [**SurveyFormEntityListing**](SurveyFormEntityListing)
+
+
+# **getQualityPublishedformsSurveysDivisionview**
+
+
+> [SurveyFormDivisionView](SurveyFormDivisionView) getQualityPublishedformsSurveysDivisionview(surveyFormId)
+
+Get the most recent published version of an enabled survey form across any division.
+
+Wraps GET /api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}  
+
+Requires ALL permissions: 
+
+* quality:surveyForm:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String surveyFormId = "surveyFormId_example"; // String | Survey Form ID
+try {
+    SurveyFormDivisionView result = apiInstance.getQualityPublishedformsSurveysDivisionview(surveyFormId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedformsSurveysDivisionview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **surveyFormId** | **String**| Survey Form ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SurveyFormDivisionView**](SurveyFormDivisionView)
+
+
+# **getQualityPublishedformsSurveysDivisionviews**
+
+
+> [SurveyFormDivisionViewListing](SurveyFormDivisionViewListing) getQualityPublishedformsSurveysDivisionviews(id, pageSize, pageNumber, name, divisionId)
+
+Get the published and enabled survey forms across any division.
+
+Wraps GET /api/v2/quality/publishedforms/surveys/divisionviews  
+
+Requires ALL permissions: 
+
+* quality:surveyForm:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+List<String> id = Arrays.asList(null); // List<String> | A comma-delimited list of valid, published evaluation form ids
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name
+String divisionId = "divisionId_example"; // String | divisionId
+try {
+    SurveyFormDivisionViewListing result = apiInstance.getQualityPublishedformsSurveysDivisionviews(id, pageSize, pageNumber, name, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedformsSurveysDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String)| A comma-delimited list of valid, published evaluation form ids | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **divisionId** | **String**| divisionId | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SurveyFormDivisionViewListing**](SurveyFormDivisionViewListing)
 
 
 # **getQualitySurvey**
@@ -4583,4 +4839,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

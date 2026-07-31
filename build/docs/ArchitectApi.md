@@ -4379,7 +4379,7 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
-List<String> id = Arrays.asList(null); // List<String> | ID
+List<String> id = Arrays.asList(null); // List<String> | ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead
 String name = "name_example"; // String | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
@@ -4413,7 +4413,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc] 
-| **id** | [**List&lt;String&gt;**](String)| ID | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead | [optional] 
 | **name** | **String**| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
@@ -9788,4 +9788,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

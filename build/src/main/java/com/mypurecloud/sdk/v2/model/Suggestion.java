@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.SuggestionContext;
 import com.mypurecloud.sdk.v2.model.SuggestionKnowledgeArticle;
 import com.mypurecloud.sdk.v2.model.SuggestionKnowledgeSearch;
 import com.mypurecloud.sdk.v2.model.SuggestionScript;
+import com.mypurecloud.sdk.v2.model.ThirdPartySuggestion;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -201,6 +202,7 @@ public class Suggestion  implements Serializable {
   private SuggestionKnowledgeArticle knowledgeArticle = null;
   private SuggestionCannedResponse cannedResponse = null;
   private SuggestionScript script = null;
+  private ThirdPartySuggestion thirdPartySuggestion = null;
   private String selfUri = null;
 
   public Suggestion() {
@@ -319,6 +321,13 @@ public class Suggestion  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The third-party suggestion.")
+  @JsonProperty("thirdPartySuggestion")
+  public ThirdPartySuggestion getThirdPartySuggestion() {
+    return thirdPartySuggestion;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -351,12 +360,13 @@ public class Suggestion  implements Serializable {
             Objects.equals(this.knowledgeArticle, suggestion.knowledgeArticle) &&
             Objects.equals(this.cannedResponse, suggestion.cannedResponse) &&
             Objects.equals(this.script, suggestion.script) &&
+            Objects.equals(this.thirdPartySuggestion, suggestion.thirdPartySuggestion) &&
             Objects.equals(this.selfUri, suggestion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversation, assistant, type, faq, article, dateCreated, answerRecordId, triggerType, context, state, knowledgeSearch, knowledgeArticle, cannedResponse, script, selfUri);
+    return Objects.hash(id, conversation, assistant, type, faq, article, dateCreated, answerRecordId, triggerType, context, state, knowledgeSearch, knowledgeArticle, cannedResponse, script, thirdPartySuggestion, selfUri);
   }
 
   @Override
@@ -379,6 +389,7 @@ public class Suggestion  implements Serializable {
     sb.append("    knowledgeArticle: ").append(toIndentedString(knowledgeArticle)).append("\n");
     sb.append("    cannedResponse: ").append(toIndentedString(cannedResponse)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
+    sb.append("    thirdPartySuggestion: ").append(toIndentedString(thirdPartySuggestion)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

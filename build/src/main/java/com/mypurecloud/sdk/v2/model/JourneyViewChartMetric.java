@@ -79,6 +79,7 @@ public class JourneyViewChartMetric  implements Serializable {
   }
   private AggregateEnum aggregate = null;
   private String displayLabel = null;
+  private String attribute = null;
 
   public JourneyViewChartMetric() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -163,6 +164,24 @@ public class JourneyViewChartMetric  implements Serializable {
   }
 
 
+  /**
+   * Attribute name
+   **/
+  public JourneyViewChartMetric attribute(String attribute) {
+    this.attribute = attribute;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Attribute name")
+  @JsonProperty("attribute")
+  public String getAttribute() {
+    return attribute;
+  }
+  public void setAttribute(String attribute) {
+    this.attribute = attribute;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -176,12 +195,13 @@ public class JourneyViewChartMetric  implements Serializable {
     return Objects.equals(this.id, journeyViewChartMetric.id) &&
             Objects.equals(this.elementId, journeyViewChartMetric.elementId) &&
             Objects.equals(this.aggregate, journeyViewChartMetric.aggregate) &&
-            Objects.equals(this.displayLabel, journeyViewChartMetric.displayLabel);
+            Objects.equals(this.displayLabel, journeyViewChartMetric.displayLabel) &&
+            Objects.equals(this.attribute, journeyViewChartMetric.attribute);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, elementId, aggregate, displayLabel);
+    return Objects.hash(id, elementId, aggregate, displayLabel, attribute);
   }
 
   @Override
@@ -193,6 +213,7 @@ public class JourneyViewChartMetric  implements Serializable {
     sb.append("    elementId: ").append(toIndentedString(elementId)).append("\n");
     sb.append("    aggregate: ").append(toIndentedString(aggregate)).append("\n");
     sb.append("    displayLabel: ").append(toIndentedString(displayLabel)).append("\n");
+    sb.append("    attribute: ").append(toIndentedString(attribute)).append("\n");
     sb.append("}");
     return sb.toString();
   }

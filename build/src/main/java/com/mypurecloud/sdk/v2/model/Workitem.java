@@ -16,12 +16,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AutoStatusTransitionDetail;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.ExternalContactReference;
-import com.mypurecloud.sdk.v2.model.LanguageReference;
-import com.mypurecloud.sdk.v2.model.RoutingSkillReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.UserReferenceWithName;
 import com.mypurecloud.sdk.v2.model.WorkbinReference;
+import com.mypurecloud.sdk.v2.model.WorkitemLanguageReference;
 import com.mypurecloud.sdk.v2.model.WorkitemQueueReference;
+import com.mypurecloud.sdk.v2.model.WorkitemRoutingSkillReference;
 import com.mypurecloud.sdk.v2.model.WorkitemSchema;
 import com.mypurecloud.sdk.v2.model.WorkitemScoredAgent;
 import com.mypurecloud.sdk.v2.model.WorkitemScriptReference;
@@ -48,7 +48,7 @@ public class Workitem  implements Serializable {
   private Division division = null;
   private WorktypeReference type = null;
   private String description = null;
-  private LanguageReference language = null;
+  private WorkitemLanguageReference language = null;
   private WorkitemUtilizationLabelReference utilizationLabel = null;
   private Integer priority = null;
   private Date dateCreated = null;
@@ -179,7 +179,7 @@ public class Workitem  implements Serializable {
   private AssignmentStateEnum assignmentState = null;
   private Date dateAssignmentStateChanged = null;
   private Integer alertTimeoutSeconds = null;
-  private List<RoutingSkillReference> skills = null;
+  private List<WorkitemRoutingSkillReference> skills = null;
   private List<UserReference> preferredAgents = null;
   private Boolean autoStatusTransition = null;
   private WorkitemSchema schema = null;
@@ -191,7 +191,7 @@ public class Workitem  implements Serializable {
 
   public Workitem() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      skills = new ArrayList<RoutingSkillReference>();
+      skills = new ArrayList<WorkitemRoutingSkillReference>();
       preferredAgents = new ArrayList<UserReference>();
       scoredAgents = new ArrayList<WorkitemScoredAgent>();
     }
@@ -199,7 +199,7 @@ public class Workitem  implements Serializable {
 
   public Workitem(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
-      skills = new ArrayList<RoutingSkillReference>();
+      skills = new ArrayList<WorkitemRoutingSkillReference>();
       preferredAgents = new ArrayList<UserReference>();
       scoredAgents = new ArrayList<WorkitemScoredAgent>();
     }
@@ -288,17 +288,17 @@ public class Workitem  implements Serializable {
   /**
    * The language of the Workitem.
    **/
-  public Workitem language(LanguageReference language) {
+  public Workitem language(WorkitemLanguageReference language) {
     this.language = language;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The language of the Workitem.")
   @JsonProperty("language")
-  public LanguageReference getLanguage() {
+  public WorkitemLanguageReference getLanguage() {
     return language;
   }
-  public void setLanguage(LanguageReference language) {
+  public void setLanguage(WorkitemLanguageReference language) {
     this.language = language;
   }
 
@@ -702,17 +702,17 @@ public class Workitem  implements Serializable {
   /**
    * The skills of the Workitem.
    **/
-  public Workitem skills(List<RoutingSkillReference> skills) {
+  public Workitem skills(List<WorkitemRoutingSkillReference> skills) {
     this.skills = skills;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The skills of the Workitem.")
   @JsonProperty("skills")
-  public List<RoutingSkillReference> getSkills() {
+  public List<WorkitemRoutingSkillReference> getSkills() {
     return skills;
   }
-  public void setSkills(List<RoutingSkillReference> skills) {
+  public void setSkills(List<WorkitemRoutingSkillReference> skills) {
     this.skills = skills;
   }
 

@@ -13,12 +13,12 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Division;
-import com.mypurecloud.sdk.v2.model.LanguageReference;
-import com.mypurecloud.sdk.v2.model.RoutingSkillReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WorkbinReference;
 import com.mypurecloud.sdk.v2.model.WorkitemFlowReference;
+import com.mypurecloud.sdk.v2.model.WorkitemLanguageReference;
 import com.mypurecloud.sdk.v2.model.WorkitemQueueReference;
+import com.mypurecloud.sdk.v2.model.WorkitemRoutingSkillReference;
 import com.mypurecloud.sdk.v2.model.WorkitemRuleSettings;
 import com.mypurecloud.sdk.v2.model.WorkitemSchema;
 import com.mypurecloud.sdk.v2.model.WorkitemScriptReference;
@@ -50,11 +50,11 @@ public class WorktypeVersion  implements Serializable {
   private Integer defaultExpirationSeconds = null;
   private Integer defaultDueDurationSeconds = null;
   private Integer defaultPriority = null;
-  private LanguageReference defaultLanguage = null;
+  private WorkitemLanguageReference defaultLanguage = null;
   private Integer defaultTtlSeconds = null;
   private UserReference modifiedBy = null;
   private WorkitemQueueReference defaultQueue = null;
-  private List<RoutingSkillReference> defaultSkills = null;
+  private List<WorkitemRoutingSkillReference> defaultSkills = null;
   private Boolean assignmentEnabled = null;
   private WorkitemSchema schema = null;
   private Integer serviceLevelTarget = null;
@@ -68,14 +68,14 @@ public class WorktypeVersion  implements Serializable {
   public WorktypeVersion() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       statuses = new ArrayList<WorkitemStatus>();
-      defaultSkills = new ArrayList<RoutingSkillReference>();
+      defaultSkills = new ArrayList<WorkitemRoutingSkillReference>();
     }
   }
 
   public WorktypeVersion(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       statuses = new ArrayList<WorkitemStatus>();
-      defaultSkills = new ArrayList<RoutingSkillReference>();
+      defaultSkills = new ArrayList<WorkitemRoutingSkillReference>();
     }
   }
 
@@ -306,17 +306,17 @@ public class WorktypeVersion  implements Serializable {
   /**
    * The default language for Workitems created from the Worktype.
    **/
-  public WorktypeVersion defaultLanguage(LanguageReference defaultLanguage) {
+  public WorktypeVersion defaultLanguage(WorkitemLanguageReference defaultLanguage) {
     this.defaultLanguage = defaultLanguage;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The default language for Workitems created from the Worktype.")
   @JsonProperty("defaultLanguage")
-  public LanguageReference getDefaultLanguage() {
+  public WorkitemLanguageReference getDefaultLanguage() {
     return defaultLanguage;
   }
-  public void setDefaultLanguage(LanguageReference defaultLanguage) {
+  public void setDefaultLanguage(WorkitemLanguageReference defaultLanguage) {
     this.defaultLanguage = defaultLanguage;
   }
 
@@ -378,17 +378,17 @@ public class WorktypeVersion  implements Serializable {
   /**
    * The default skills for Workitems created from the Worktype.
    **/
-  public WorktypeVersion defaultSkills(List<RoutingSkillReference> defaultSkills) {
+  public WorktypeVersion defaultSkills(List<WorkitemRoutingSkillReference> defaultSkills) {
     this.defaultSkills = defaultSkills;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The default skills for Workitems created from the Worktype.")
   @JsonProperty("defaultSkills")
-  public List<RoutingSkillReference> getDefaultSkills() {
+  public List<WorkitemRoutingSkillReference> getDefaultSkills() {
     return defaultSkills;
   }
-  public void setDefaultSkills(List<RoutingSkillReference> defaultSkills) {
+  public void setDefaultSkills(List<WorkitemRoutingSkillReference> defaultSkills) {
     this.defaultSkills = defaultSkills;
   }
 

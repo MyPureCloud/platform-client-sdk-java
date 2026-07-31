@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.AiScoringSettings;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingEvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroup;
 import com.mypurecloud.sdk.v2.model.EvaluationSettings;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ import java.io.Serializable;
 public class EvaluationFormSearchResponse  implements Serializable {
   
   private String id = null;
+  private WritableStarrableDivision division = null;
   private Date modifiedDate = null;
   private Boolean published = null;
   private String contextId = null;
@@ -107,6 +109,24 @@ public class EvaluationFormSearchResponse  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public EvaluationFormSearchResponse division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -295,6 +315,7 @@ public class EvaluationFormSearchResponse  implements Serializable {
     EvaluationFormSearchResponse evaluationFormSearchResponse = (EvaluationFormSearchResponse) o;
 
     return Objects.equals(this.id, evaluationFormSearchResponse.id) &&
+            Objects.equals(this.division, evaluationFormSearchResponse.division) &&
             Objects.equals(this.modifiedDate, evaluationFormSearchResponse.modifiedDate) &&
             Objects.equals(this.published, evaluationFormSearchResponse.published) &&
             Objects.equals(this.contextId, evaluationFormSearchResponse.contextId) &&
@@ -310,7 +331,7 @@ public class EvaluationFormSearchResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, modifiedDate, published, contextId, questionGroups, weightMode, evaluationSettings, publishedVersions, latestVersionFormName, aiScoring, dialect, selfUri);
+    return Objects.hash(id, division, modifiedDate, published, contextId, questionGroups, weightMode, evaluationSettings, publishedVersions, latestVersionFormName, aiScoring, dialect, selfUri);
   }
 
   @Override
@@ -319,6 +340,7 @@ public class EvaluationFormSearchResponse  implements Serializable {
     sb.append("class EvaluationFormSearchResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");

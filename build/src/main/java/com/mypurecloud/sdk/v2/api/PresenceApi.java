@@ -382,7 +382,7 @@ public class PresenceApi {
   }
 
   /**
-   * Get a list of Presence Definitions
+   * Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
    * 
    * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
@@ -396,7 +396,7 @@ public class PresenceApi {
   }
 
   /**
-   * Get a list of Presence Definitions
+   * Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
    * 
    * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
@@ -420,7 +420,7 @@ public class PresenceApi {
   }
 
   /**
-   * Get a list of Presence Definitions
+   * Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
    * 
    * @param request The request object
    * @return OrganizationPresenceDefinitionEntityListing
@@ -439,7 +439,7 @@ public class PresenceApi {
   }
 
   /**
-   * Get a list of Presence Definitions
+   * Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
    * 
    * @param request The request object
    * @return the response

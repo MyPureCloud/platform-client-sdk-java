@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** | The name of the skill. |  |
+| **division** | [**Division**](Division) | The id of the division this skill belongs to. |  [optional] |
 | **dateModified** | [**Date**](Date) | Date last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The current state for this skill. |  [optional] |
 | **version** | **String** | Required when updating. Version must be the current version. Only the system can assign version. |  [optional] |
@@ -25,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

@@ -95,6 +95,7 @@ import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
+import com.mypurecloud.sdk.v2.model.CreateJoinVideoResponse;
 import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
 import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationResponse;
 import com.mypurecloud.sdk.v2.model.CreateSecureSession;
@@ -170,6 +171,8 @@ import com.mypurecloud.sdk.v2.model.MessagingSettingDefaultRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingPatchRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingRequest;
 import com.mypurecloud.sdk.v2.model.OAuthAppleAuthorizationResponse;
+import com.mypurecloud.sdk.v2.model.OnDemandConversationSummaryRequest;
+import com.mypurecloud.sdk.v2.model.OnDemandSummaryAcceptedResponse;
 import com.mypurecloud.sdk.v2.model.OpenEventNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedEvent;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedMessage;
@@ -202,6 +205,7 @@ import com.mypurecloud.sdk.v2.model.SocialMediaMessageData;
 import com.mypurecloud.sdk.v2.model.Suggestion;
 import com.mypurecloud.sdk.v2.model.SuggestionEngagement;
 import com.mypurecloud.sdk.v2.model.SuggestionListing;
+import com.mypurecloud.sdk.v2.model.SuggestionPatchRequest;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
 import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
@@ -386,6 +390,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationSuggestionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSummaryEngagementsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSummaryFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationUtilizationlabelRequest;
@@ -464,6 +469,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationSummaryFeedbackRequest
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantBargeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCoachRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCommunicationSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultAgentRequest;
@@ -514,6 +520,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenMes
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenReceiptRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenStructuredResponseRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantCommunicationSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantMonitorRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
@@ -12643,6 +12650,92 @@ public class ConversationsApi {
   }
 
   /**
+   * Update a suggestion.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param suggestionId Suggestion ID (required)
+   * @param body  (required)
+   * @return Suggestion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Suggestion patchConversationSuggestion(String conversationId, String suggestionId, SuggestionPatchRequest body) throws IOException, ApiException {
+    return  patchConversationSuggestion(createPatchConversationSuggestionRequest(conversationId, suggestionId, body));
+  }
+
+  /**
+   * Update a suggestion.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param suggestionId Suggestion ID (required)
+   * @param body  (required)
+   * @return Suggestion
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Suggestion> patchConversationSuggestionWithHttpInfo(String conversationId, String suggestionId, SuggestionPatchRequest body) throws IOException {
+    return patchConversationSuggestion(createPatchConversationSuggestionRequest(conversationId, suggestionId, body).withHttpInfo());
+  }
+
+  private PatchConversationSuggestionRequest createPatchConversationSuggestionRequest(String conversationId, String suggestionId, SuggestionPatchRequest body) {
+    return PatchConversationSuggestionRequest.builder()
+            .withConversationId(conversationId)
+
+            .withSuggestionId(suggestionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a suggestion.
+   * 
+   * @param request The request object
+   * @return Suggestion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Suggestion patchConversationSuggestion(PatchConversationSuggestionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Suggestion> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Suggestion>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a suggestion.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Suggestion> patchConversationSuggestion(ApiRequest<SuggestionPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Suggestion>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Suggestion> response = (ApiResponse<Suggestion>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Suggestion> response = (ApiResponse<Suggestion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update agent's engagement for the summary.
    * 
    * @param conversationId Conversation ID (required)
@@ -19202,6 +19295,96 @@ public class ConversationsApi {
   }
 
   /**
+   * Request an on-demand summary for a call communication.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param participantId Participant ID (required)
+   * @param communicationId Communication ID (required)
+   * @param body On-demand summary request (optional)
+   * @return OnDemandSummaryAcceptedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OnDemandSummaryAcceptedResponse postConversationsCallParticipantCommunicationSummaries(String conversationId, String participantId, String communicationId, OnDemandConversationSummaryRequest body) throws IOException, ApiException {
+    return  postConversationsCallParticipantCommunicationSummaries(createPostConversationsCallParticipantCommunicationSummariesRequest(conversationId, participantId, communicationId, body));
+  }
+
+  /**
+   * Request an on-demand summary for a call communication.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param participantId Participant ID (required)
+   * @param communicationId Communication ID (required)
+   * @param body On-demand summary request (optional)
+   * @return OnDemandSummaryAcceptedResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OnDemandSummaryAcceptedResponse> postConversationsCallParticipantCommunicationSummariesWithHttpInfo(String conversationId, String participantId, String communicationId, OnDemandConversationSummaryRequest body) throws IOException {
+    return postConversationsCallParticipantCommunicationSummaries(createPostConversationsCallParticipantCommunicationSummariesRequest(conversationId, participantId, communicationId, body).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantCommunicationSummariesRequest createPostConversationsCallParticipantCommunicationSummariesRequest(String conversationId, String participantId, String communicationId, OnDemandConversationSummaryRequest body) {
+    return PostConversationsCallParticipantCommunicationSummariesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withCommunicationId(communicationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Request an on-demand summary for a call communication.
+   * 
+   * @param request The request object
+   * @return OnDemandSummaryAcceptedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OnDemandSummaryAcceptedResponse postConversationsCallParticipantCommunicationSummaries(PostConversationsCallParticipantCommunicationSummariesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OnDemandSummaryAcceptedResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OnDemandSummaryAcceptedResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request an on-demand summary for a call communication.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OnDemandSummaryAcceptedResponse> postConversationsCallParticipantCommunicationSummaries(ApiRequest<OnDemandConversationSummaryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OnDemandSummaryAcceptedResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OnDemandSummaryAcceptedResponse> response = (ApiResponse<OnDemandSummaryAcceptedResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OnDemandSummaryAcceptedResponse> response = (ApiResponse<OnDemandSummaryAcceptedResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Apply wrap-up for this conversation communication
    * 
    * @param conversationId conversationId (required)
@@ -23372,6 +23555,96 @@ public class ConversationsApi {
   }
 
   /**
+   * Request an on-demand summary for a message communication.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param participantId Participant ID (required)
+   * @param communicationId Communication ID (required)
+   * @param body On-demand summary request (optional)
+   * @return OnDemandSummaryAcceptedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OnDemandSummaryAcceptedResponse postConversationsMessageParticipantCommunicationSummaries(String conversationId, String participantId, String communicationId, OnDemandConversationSummaryRequest body) throws IOException, ApiException {
+    return  postConversationsMessageParticipantCommunicationSummaries(createPostConversationsMessageParticipantCommunicationSummariesRequest(conversationId, participantId, communicationId, body));
+  }
+
+  /**
+   * Request an on-demand summary for a message communication.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param participantId Participant ID (required)
+   * @param communicationId Communication ID (required)
+   * @param body On-demand summary request (optional)
+   * @return OnDemandSummaryAcceptedResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OnDemandSummaryAcceptedResponse> postConversationsMessageParticipantCommunicationSummariesWithHttpInfo(String conversationId, String participantId, String communicationId, OnDemandConversationSummaryRequest body) throws IOException {
+    return postConversationsMessageParticipantCommunicationSummaries(createPostConversationsMessageParticipantCommunicationSummariesRequest(conversationId, participantId, communicationId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageParticipantCommunicationSummariesRequest createPostConversationsMessageParticipantCommunicationSummariesRequest(String conversationId, String participantId, String communicationId, OnDemandConversationSummaryRequest body) {
+    return PostConversationsMessageParticipantCommunicationSummariesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withCommunicationId(communicationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Request an on-demand summary for a message communication.
+   * 
+   * @param request The request object
+   * @return OnDemandSummaryAcceptedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OnDemandSummaryAcceptedResponse postConversationsMessageParticipantCommunicationSummaries(PostConversationsMessageParticipantCommunicationSummariesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OnDemandSummaryAcceptedResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OnDemandSummaryAcceptedResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request an on-demand summary for a message communication.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OnDemandSummaryAcceptedResponse> postConversationsMessageParticipantCommunicationSummaries(ApiRequest<OnDemandConversationSummaryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OnDemandSummaryAcceptedResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OnDemandSummaryAcceptedResponse> response = (ApiResponse<OnDemandSummaryAcceptedResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OnDemandSummaryAcceptedResponse> response = (ApiResponse<OnDemandSummaryAcceptedResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Apply wrap-up for this conversation communication
    * 
    * @param conversationId conversationId (required)
@@ -24994,11 +25267,11 @@ public class ConversationsApi {
    * postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
-   * @return VideoConferenceDetails
+   * @return CreateJoinVideoResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public VideoConferenceDetails postConversationsVideoAgentconferenceCommunication(String conversationId, String communicationId) throws IOException, ApiException {
+  public CreateJoinVideoResponse postConversationsVideoAgentconferenceCommunication(String conversationId, String communicationId) throws IOException, ApiException {
     return  postConversationsVideoAgentconferenceCommunication(createPostConversationsVideoAgentconferenceCommunicationRequest(conversationId, communicationId));
   }
 
@@ -25008,10 +25281,10 @@ public class ConversationsApi {
    * postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
-   * @return VideoConferenceDetails
+   * @return CreateJoinVideoResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VideoConferenceDetails> postConversationsVideoAgentconferenceCommunicationWithHttpInfo(String conversationId, String communicationId) throws IOException {
+  public ApiResponse<CreateJoinVideoResponse> postConversationsVideoAgentconferenceCommunicationWithHttpInfo(String conversationId, String communicationId) throws IOException {
     return postConversationsVideoAgentconferenceCommunication(createPostConversationsVideoAgentconferenceCommunicationRequest(conversationId, communicationId).withHttpInfo());
   }
 
@@ -25029,13 +25302,13 @@ public class ConversationsApi {
    * 
    * postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
-   * @return VideoConferenceDetails
+   * @return CreateJoinVideoResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public VideoConferenceDetails postConversationsVideoAgentconferenceCommunication(PostConversationsVideoAgentconferenceCommunicationRequest request) throws IOException, ApiException {
+  public CreateJoinVideoResponse postConversationsVideoAgentconferenceCommunication(PostConversationsVideoAgentconferenceCommunicationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<VideoConferenceDetails> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VideoConferenceDetails>() {});
+      ApiResponse<CreateJoinVideoResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateJoinVideoResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -25052,13 +25325,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VideoConferenceDetails> postConversationsVideoAgentconferenceCommunication(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<CreateJoinVideoResponse> postConversationsVideoAgentconferenceCommunication(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<VideoConferenceDetails>() {});
+      return pcapiClient.invoke(request, new TypeReference<CreateJoinVideoResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<VideoConferenceDetails> response = (ApiResponse<VideoConferenceDetails>)(ApiResponse<?>)exception;
+      ApiResponse<CreateJoinVideoResponse> response = (ApiResponse<CreateJoinVideoResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -25069,7 +25342,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<VideoConferenceDetails> response = (ApiResponse<VideoConferenceDetails>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CreateJoinVideoResponse> response = (ApiResponse<CreateJoinVideoResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

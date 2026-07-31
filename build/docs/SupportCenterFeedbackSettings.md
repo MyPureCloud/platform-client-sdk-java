@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | **Boolean** | Whether or not requesting customer feedback on article content and article search results is enabled |  |
+| **enabled** | **Boolean** | Whether or not requesting customer feedback on article content and article search results is enabled. Required if support center is enabled |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:258.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

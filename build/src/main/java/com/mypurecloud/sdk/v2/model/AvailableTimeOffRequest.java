@@ -28,15 +28,65 @@ public class AvailableTimeOffRequest  implements Serializable {
   private String activityCodeId = null;
   private List<LocalDateRange> dateRanges = null;
 
+  private static class SupportedGranularitiesEnumDeserializer extends StdDeserializer<SupportedGranularitiesEnum> {
+    public SupportedGranularitiesEnumDeserializer() {
+      super(SupportedGranularitiesEnumDeserializer.class);
+    }
+
+    @Override
+    public SupportedGranularitiesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SupportedGranularitiesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets supportedGranularities
+   */
+ @JsonDeserialize(using = SupportedGranularitiesEnumDeserializer.class)
+  public enum SupportedGranularitiesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DAILY("Daily"),
+    FIFTEENMINUTES("FifteenMinutes");
+
+    private String value;
+
+    SupportedGranularitiesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SupportedGranularitiesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SupportedGranularitiesEnum value : SupportedGranularitiesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SupportedGranularitiesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SupportedGranularitiesEnum> supportedGranularities = null;
+
   public AvailableTimeOffRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       dateRanges = new ArrayList<LocalDateRange>();
+      supportedGranularities = new ArrayList<SupportedGranularitiesEnum>();
     }
   }
 
   public AvailableTimeOffRequest(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       dateRanges = new ArrayList<LocalDateRange>();
+      supportedGranularities = new ArrayList<SupportedGranularitiesEnum>();
     }
   }
 
@@ -77,6 +127,24 @@ public class AvailableTimeOffRequest  implements Serializable {
   }
 
 
+  /**
+   * Granularity of time off limits supported to query availability information. Default is 'Daily'
+   **/
+  public AvailableTimeOffRequest supportedGranularities(List<SupportedGranularitiesEnum> supportedGranularities) {
+    this.supportedGranularities = supportedGranularities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Granularity of time off limits supported to query availability information. Default is 'Daily'")
+  @JsonProperty("supportedGranularities")
+  public List<SupportedGranularitiesEnum> getSupportedGranularities() {
+    return supportedGranularities;
+  }
+  public void setSupportedGranularities(List<SupportedGranularitiesEnum> supportedGranularities) {
+    this.supportedGranularities = supportedGranularities;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -88,12 +156,13 @@ public class AvailableTimeOffRequest  implements Serializable {
     AvailableTimeOffRequest availableTimeOffRequest = (AvailableTimeOffRequest) o;
 
     return Objects.equals(this.activityCodeId, availableTimeOffRequest.activityCodeId) &&
-            Objects.equals(this.dateRanges, availableTimeOffRequest.dateRanges);
+            Objects.equals(this.dateRanges, availableTimeOffRequest.dateRanges) &&
+            Objects.equals(this.supportedGranularities, availableTimeOffRequest.supportedGranularities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityCodeId, dateRanges);
+    return Objects.hash(activityCodeId, dateRanges, supportedGranularities);
   }
 
   @Override
@@ -103,6 +172,7 @@ public class AvailableTimeOffRequest  implements Serializable {
     
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    dateRanges: ").append(toIndentedString(dateRanges)).append("\n");
+    sb.append("    supportedGranularities: ").append(toIndentedString(supportedGranularities)).append("\n");
     sb.append("}");
     return sb.toString();
   }

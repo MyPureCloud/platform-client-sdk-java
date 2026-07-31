@@ -208,7 +208,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user associated with this time off request")
+  @ApiModelProperty(example = "null", required = true, value = "The user associated with this time off request")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
@@ -226,7 +226,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether this is a full day request (false means partial day)")
+  @ApiModelProperty(example = "null", required = true, value = "Whether this is a full day request (false means partial day)")
   @JsonProperty("isFullDayRequest")
   public Boolean getIsFullDayRequest() {
     return isFullDayRequest;
@@ -237,14 +237,14 @@ public class TimeOffRequestResponse  implements Serializable {
 
 
   /**
-   * Whether this request has been marked as read by the agent
+   * Deprecated - Always returns true.
    **/
   public TimeOffRequestResponse markedAsRead(Boolean markedAsRead) {
     this.markedAsRead = markedAsRead;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether this request has been marked as read by the agent")
+  @ApiModelProperty(example = "null", value = "Deprecated - Always returns true.")
   @JsonProperty("markedAsRead")
   public Boolean getMarkedAsRead() {
     return markedAsRead;
@@ -262,7 +262,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category")
   @JsonProperty("activityCodeId")
   public String getActivityCodeId() {
     return activityCodeId;
@@ -298,7 +298,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The status of this time off request")
+  @ApiModelProperty(example = "null", required = true, value = "The status of this time off request")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
@@ -334,7 +334,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A set of start date-times in ISO-8601 format for partial day requests. Will be not empty if isFullDayRequest == false")
+  @ApiModelProperty(example = "null", required = true, value = "A set of start date-times in ISO-8601 format for partial day requests. Will be not empty if isFullDayRequest == false")
   @JsonProperty("partialDayStartDateTimes")
   public List<Date> getPartialDayStartDateTimes() {
     return partialDayStartDateTimes;
@@ -352,7 +352,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone. Will be not empty if isFullDayRequest == true")
+  @ApiModelProperty(example = "null", required = true, value = "A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone. Will be not empty if isFullDayRequest == true")
   @JsonProperty("fullDayManagementUnitDates")
   public List<String> getFullDayManagementUnitDates() {
     return fullDayManagementUnitDates;
@@ -370,7 +370,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The daily duration of this time off request in minutes")
+  @ApiModelProperty(example = "null", required = true, value = "The daily duration of this time off request in minutes")
   @JsonProperty("dailyDurationMinutes")
   public Integer getDailyDurationMinutes() {
     return dailyDurationMinutes;
@@ -388,7 +388,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Daily durations for each day of this time off request in minutes")
+  @ApiModelProperty(example = "null", required = true, value = "Daily durations for each day of this time off request in minutes")
   @JsonProperty("durationMinutes")
   public List<Integer> getDurationMinutes() {
     return durationMinutes;
@@ -406,7 +406,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Payable minutes for each day of this time off request")
+  @ApiModelProperty(example = "null", required = true, value = "Payable minutes for each day of this time off request")
   @JsonProperty("payableMinutes")
   public List<Integer> getPayableMinutes() {
     return payableMinutes;
@@ -424,7 +424,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @ApiModelProperty(example = "null", required = true, value = "Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
   @JsonProperty("fullDayEarliestStartOffsetMinutes")
   public List<Integer> getFullDayEarliestStartOffsetMinutes() {
     return fullDayEarliestStartOffsetMinutes;
@@ -442,7 +442,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
+  @ApiModelProperty(example = "null", required = true, value = "Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available")
   @JsonProperty("fullDayLatestEndOffsetMinutes")
   public List<Integer> getFullDayLatestEndOffsetMinutes() {
     return fullDayLatestEndOffsetMinutes;
@@ -460,7 +460,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Notes about the time off request")
+  @ApiModelProperty(example = "null", required = true, value = "Notes about the time off request")
   @JsonProperty("notes")
   public String getNotes() {
     return notes;
@@ -478,7 +478,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user who submitted this time off request. The id may be 'System' if it was an automated process")
+  @ApiModelProperty(example = "null", required = true, value = "The user who submitted this time off request. The id may be 'System' if it was an automated process")
   @JsonProperty("submittedBy")
   public UserReference getSubmittedBy() {
     return submittedBy;
@@ -496,7 +496,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("submittedDate")
   public Date getSubmittedDate() {
     return submittedDate;
@@ -586,7 +586,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The sync version of this time off request for which the scheduled activity is associated")
+  @ApiModelProperty(example = "null", required = true, value = "The sync version of this time off request for which the scheduled activity is associated")
   @JsonProperty("syncVersion")
   public Integer getSyncVersion() {
     return syncVersion;
@@ -604,7 +604,7 @@ public class TimeOffRequestResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The version metadata of the time off request")
+  @ApiModelProperty(example = "null", required = true, value = "The version metadata of the time off request")
   @JsonProperty("metadata")
   public WfmVersionedEntityMetadata getMetadata() {
     return metadata;

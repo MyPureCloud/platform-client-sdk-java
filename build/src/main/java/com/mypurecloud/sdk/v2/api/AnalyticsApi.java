@@ -376,7 +376,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for agent copilot aggregates
    * 
-   * deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -388,7 +387,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for agent copilot aggregates
    * 
-   * deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -406,7 +404,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for agent copilot aggregates
    * 
-   * deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -425,7 +422,6 @@ public class AnalyticsApi {
   /**
    * Delete/cancel an async request for agent copilot aggregates
    * 
-   * deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2051,7 +2047,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for agent copilot aggregates
    * 
-   * getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -2064,7 +2059,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for agent copilot aggregates
    * 
-   * getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
@@ -2083,7 +2077,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for agent copilot aggregates
    * 
-   * getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
@@ -2103,7 +2096,6 @@ public class AnalyticsApi {
   /**
    * Get status for async query for agent copilot aggregates
    * 
-   * getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2133,7 +2125,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return AgentCopilotAsyncAggregateQueryResponse
@@ -2147,7 +2138,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return AgentCopilotAsyncAggregateQueryResponse
@@ -2169,7 +2159,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AgentCopilotAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -2189,7 +2178,6 @@ public class AnalyticsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
-   * getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6844,7 +6832,6 @@ public class AnalyticsApi {
   /**
    * Query for agent copilot aggregates asynchronously
    * 
-   * postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6857,7 +6844,6 @@ public class AnalyticsApi {
   /**
    * Query for agent copilot aggregates asynchronously
    * 
-   * postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
@@ -6876,7 +6862,6 @@ public class AnalyticsApi {
   /**
    * Query for agent copilot aggregates asynchronously
    * 
-   * postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6896,7 +6881,6 @@ public class AnalyticsApi {
   /**
    * Query for agent copilot aggregates asynchronously
    * 
-   * postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -36,14 +36,14 @@ public class SupportCenterFeedbackSettings  implements Serializable {
 
   
   /**
-   * Whether or not requesting customer feedback on article content and article search results is enabled
+   * Whether or not requesting customer feedback on article content and article search results is enabled. Required if support center is enabled
    **/
   public SupportCenterFeedbackSettings enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether or not requesting customer feedback on article content and article search results is enabled")
+  @ApiModelProperty(example = "null", value = "Whether or not requesting customer feedback on article content and article search results is enabled. Required if support center is enabled")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;

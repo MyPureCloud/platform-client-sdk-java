@@ -38,7 +38,7 @@ public class SupportCenterCustomMessage  implements Serializable {
     }
   }
   /**
-   * Type of the message
+   * Type of the message. Required for each custom message entry
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -85,14 +85,14 @@ public class SupportCenterCustomMessage  implements Serializable {
 
   
   /**
-   * Default value for the message
+   * Default value for the message. Required for each custom message entry
    **/
   public SupportCenterCustomMessage defaultValue(String defaultValue) {
     this.defaultValue = defaultValue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Default value for the message")
+  @ApiModelProperty(example = "null", value = "Default value for the message. Required for each custom message entry")
   @JsonProperty("defaultValue")
   public String getDefaultValue() {
     return defaultValue;
@@ -103,14 +103,14 @@ public class SupportCenterCustomMessage  implements Serializable {
 
 
   /**
-   * Type of the message
+   * Type of the message. Required for each custom message entry
    **/
   public SupportCenterCustomMessage type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Type of the message")
+  @ApiModelProperty(example = "null", value = "Type of the message. Required for each custom message entry")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

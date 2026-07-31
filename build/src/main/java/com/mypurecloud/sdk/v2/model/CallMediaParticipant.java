@@ -355,6 +355,7 @@ public class CallMediaParticipant  implements Serializable {
   private Boolean securePause = null;
   private Disposition disposition = null;
   private String transferSource = null;
+  private String clientIpAddress = null;
 
   public CallMediaParticipant() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -1395,6 +1396,24 @@ public class CallMediaParticipant  implements Serializable {
   }
 
 
+  /**
+   * The reported client IP of the phone for the call.
+   **/
+  public CallMediaParticipant clientIpAddress(String clientIpAddress) {
+    this.clientIpAddress = clientIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reported client IP of the phone for the call.")
+  @JsonProperty("clientIpAddress")
+  public String getClientIpAddress() {
+    return clientIpAddress;
+  }
+  public void setClientIpAddress(String clientIpAddress) {
+    this.clientIpAddress = clientIpAddress;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1461,12 +1480,13 @@ public class CallMediaParticipant  implements Serializable {
             Objects.equals(this.bargedTime, callMediaParticipant.bargedTime) &&
             Objects.equals(this.securePause, callMediaParticipant.securePause) &&
             Objects.equals(this.disposition, callMediaParticipant.disposition) &&
-            Objects.equals(this.transferSource, callMediaParticipant.transferSource);
+            Objects.equals(this.transferSource, callMediaParticipant.transferSource) &&
+            Objects.equals(this.clientIpAddress, callMediaParticipant.clientIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, startAlertingTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, muted, confined, recording, recordingState, recordersState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause, disposition, transferSource);
+    return Objects.hash(id, name, address, startTime, startAlertingTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, muted, confined, recording, recordingState, recordersState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause, disposition, transferSource, clientIpAddress);
   }
 
   @Override
@@ -1531,6 +1551,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
     sb.append("    transferSource: ").append(toIndentedString(transferSource)).append("\n");
+    sb.append("    clientIpAddress: ").append(toIndentedString(clientIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

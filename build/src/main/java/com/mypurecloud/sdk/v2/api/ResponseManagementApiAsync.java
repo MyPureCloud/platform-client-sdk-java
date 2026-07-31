@@ -18,6 +18,8 @@ import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Library;
 import com.mypurecloud.sdk.v2.model.LibraryBatchRequest;
+import com.mypurecloud.sdk.v2.model.LibraryDivisionView;
+import com.mypurecloud.sdk.v2.model.LibraryDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.QueryCriteriaQuery;
 import com.mypurecloud.sdk.v2.model.Response;
@@ -28,6 +30,8 @@ import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
 import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseDivisionView;
+import com.mypurecloud.sdk.v2.model.ResponseDivisionViewQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
@@ -37,11 +41,14 @@ import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementLibraryRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseassetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibrariesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibrariesDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibrariesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetsStatusStatusIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesQueryRequest;
@@ -49,6 +56,7 @@ import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsBu
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesDivisionviewsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseRequest;
@@ -361,6 +369,156 @@ public class ResponseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about an existing response library.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LibraryDivisionView> getResponsemanagementLibrariesDivisionviewAsync(GetResponsemanagementLibrariesDivisionviewRequest request, final AsyncApiCallback<LibraryDivisionView> callback) {
+    try {
+      final SettableFuture<LibraryDivisionView> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LibraryDivisionView>() {}, new AsyncApiCallback<ApiResponse<LibraryDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryDivisionView> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about an existing response library.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LibraryDivisionView>> getResponsemanagementLibrariesDivisionviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LibraryDivisionView>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LibraryDivisionView>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LibraryDivisionView>() {}, new AsyncApiCallback<ApiResponse<LibraryDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryDivisionView> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryDivisionView> response = (ApiResponse<LibraryDivisionView>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryDivisionView> response = (ApiResponse<LibraryDivisionView>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets a list of existing response libraries.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LibraryDivisionViewEntityListing> getResponsemanagementLibrariesDivisionviewsAsync(GetResponsemanagementLibrariesDivisionviewsRequest request, final AsyncApiCallback<LibraryDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<LibraryDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LibraryDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<LibraryDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets a list of existing response libraries.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LibraryDivisionViewEntityListing>> getResponsemanagementLibrariesDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LibraryDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LibraryDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LibraryDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<LibraryDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryDivisionViewEntityListing> response = (ApiResponse<LibraryDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryDivisionViewEntityListing> response = (ApiResponse<LibraryDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -736,6 +894,81 @@ public class ResponseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ResponseEntityListing> response = (ApiResponse<ResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about an existing response.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ResponseDivisionView> getResponsemanagementResponsesDivisionviewAsync(GetResponsemanagementResponsesDivisionviewRequest request, final AsyncApiCallback<ResponseDivisionView> callback) {
+    try {
+      final SettableFuture<ResponseDivisionView> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseDivisionView>() {}, new AsyncApiCallback<ApiResponse<ResponseDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseDivisionView> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about an existing response.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ResponseDivisionView>> getResponsemanagementResponsesDivisionviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ResponseDivisionView>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ResponseDivisionView>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResponseDivisionView>() {}, new AsyncApiCallback<ApiResponse<ResponseDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseDivisionView> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseDivisionView> response = (ApiResponse<ResponseDivisionView>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseDivisionView> response = (ApiResponse<ResponseDivisionView>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1261,6 +1494,81 @@ public class ResponseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query responses
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ResponseDivisionViewQueryResults> postResponsemanagementResponsesDivisionviewsQueryAsync(PostResponsemanagementResponsesDivisionviewsQueryRequest request, final AsyncApiCallback<ResponseDivisionViewQueryResults> callback) {
+    try {
+      final SettableFuture<ResponseDivisionViewQueryResults> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseDivisionViewQueryResults>() {}, new AsyncApiCallback<ApiResponse<ResponseDivisionViewQueryResults>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseDivisionViewQueryResults> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query responses
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ResponseDivisionViewQueryResults>> postResponsemanagementResponsesDivisionviewsQueryAsync(ApiRequest<ResponseQueryRequest> request, final AsyncApiCallback<ApiResponse<ResponseDivisionViewQueryResults>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ResponseDivisionViewQueryResults>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResponseDivisionViewQueryResults>() {}, new AsyncApiCallback<ApiResponse<ResponseDivisionViewQueryResults>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseDivisionViewQueryResults> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseDivisionViewQueryResults> response = (ApiResponse<ResponseDivisionViewQueryResults>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseDivisionViewQueryResults> response = (ApiResponse<ResponseDivisionViewQueryResults>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

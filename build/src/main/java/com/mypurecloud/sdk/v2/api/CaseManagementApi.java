@@ -30,6 +30,9 @@ import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanUpdate;
+import com.mypurecloud.sdk.v2.model.Comment;
+import com.mypurecloud.sdk.v2.model.CommentCreate;
+import com.mypurecloud.sdk.v2.model.CommentListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsUpdate;
@@ -48,11 +51,14 @@ import com.mypurecloud.sdk.v2.model.TerminateJob;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseCommentsMeCommentIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanDataschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseCommentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseCommentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseStageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseStageStepRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseStageStepsRequest;
@@ -76,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanStageplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanStageplanStepplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseAssociationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseCommentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseTerminateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanDataschemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanPublishRequest;
@@ -161,6 +168,88 @@ public class CaseManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Empty> deleteCasemanagementCase(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete my Comment.
+   * 
+   * @param caseId Case identifier. (required)
+   * @param commentId Comment identifier. (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteCasemanagementCaseCommentsMeCommentId(String caseId, String commentId) throws IOException, ApiException {
+    return  deleteCasemanagementCaseCommentsMeCommentId(createDeleteCasemanagementCaseCommentsMeCommentIdRequest(caseId, commentId));
+  }
+
+  /**
+   * Delete my Comment.
+   * 
+   * @param caseId Case identifier. (required)
+   * @param commentId Comment identifier. (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteCasemanagementCaseCommentsMeCommentIdWithHttpInfo(String caseId, String commentId) throws IOException {
+    return deleteCasemanagementCaseCommentsMeCommentId(createDeleteCasemanagementCaseCommentsMeCommentIdRequest(caseId, commentId).withHttpInfo());
+  }
+
+  private DeleteCasemanagementCaseCommentsMeCommentIdRequest createDeleteCasemanagementCaseCommentsMeCommentIdRequest(String caseId, String commentId) {
+    return DeleteCasemanagementCaseCommentsMeCommentIdRequest.builder()
+            .withCaseId(caseId)
+
+            .withCommentId(commentId)
+
+            .build();
+  }
+
+  /**
+   * Delete my Comment.
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteCasemanagementCaseCommentsMeCommentId(DeleteCasemanagementCaseCommentsMeCommentIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete my Comment.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteCasemanagementCaseCommentsMeCommentId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Empty>() {});
     }
@@ -346,12 +435,12 @@ public class CaseManagementApi {
    * Get a Case.
    * 
    * @param caseId Case identifier. (required)
-   * @param expands Fields to expand. (optional)
+   * @param expands Attributes to expand. Comma-separated if more than one. (optional)
    * @return ModelCase
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ModelCase getCasemanagementCase(String caseId, String expands) throws IOException, ApiException {
+  public ModelCase getCasemanagementCase(String caseId, List<String> expands) throws IOException, ApiException {
     return  getCasemanagementCase(createGetCasemanagementCaseRequest(caseId, expands));
   }
 
@@ -359,15 +448,15 @@ public class CaseManagementApi {
    * Get a Case.
    * 
    * @param caseId Case identifier. (required)
-   * @param expands Fields to expand. (optional)
+   * @param expands Attributes to expand. Comma-separated if more than one. (optional)
    * @return ModelCase
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ModelCase> getCasemanagementCaseWithHttpInfo(String caseId, String expands) throws IOException {
+  public ApiResponse<ModelCase> getCasemanagementCaseWithHttpInfo(String caseId, List<String> expands) throws IOException {
     return getCasemanagementCase(createGetCasemanagementCaseRequest(caseId, expands).withHttpInfo());
   }
 
-  private GetCasemanagementCaseRequest createGetCasemanagementCaseRequest(String caseId, String expands) {
+  private GetCasemanagementCaseRequest createGetCasemanagementCaseRequest(String caseId, List<String> expands) {
     return GetCasemanagementCaseRequest.builder()
             .withCaseId(caseId)
 
@@ -592,6 +681,178 @@ public class CaseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CaseAssociationListing> response = (ApiResponse<CaseAssociationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Comment.
+   * 
+   * @param caseId Case identifier. (required)
+   * @param commentId Comment identifier. (required)
+   * @return Comment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Comment getCasemanagementCaseComment(String caseId, String commentId) throws IOException, ApiException {
+    return  getCasemanagementCaseComment(createGetCasemanagementCaseCommentRequest(caseId, commentId));
+  }
+
+  /**
+   * Get a Comment.
+   * 
+   * @param caseId Case identifier. (required)
+   * @param commentId Comment identifier. (required)
+   * @return Comment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Comment> getCasemanagementCaseCommentWithHttpInfo(String caseId, String commentId) throws IOException {
+    return getCasemanagementCaseComment(createGetCasemanagementCaseCommentRequest(caseId, commentId).withHttpInfo());
+  }
+
+  private GetCasemanagementCaseCommentRequest createGetCasemanagementCaseCommentRequest(String caseId, String commentId) {
+    return GetCasemanagementCaseCommentRequest.builder()
+            .withCaseId(caseId)
+
+            .withCommentId(commentId)
+
+            .build();
+  }
+
+  /**
+   * Get a Comment.
+   * 
+   * @param request The request object
+   * @return Comment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Comment getCasemanagementCaseComment(GetCasemanagementCaseCommentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Comment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Comment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Comment.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Comment> getCasemanagementCaseComment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Comment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Comment> response = (ApiResponse<Comment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Comment> response = (ApiResponse<Comment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get comments for a Case.
+   * 
+   * @param caseId Case identifier. (required)
+   * @param after Cursor pointing to the end of the previously returned page of comments. (optional)
+   * @param pageSize Number of comments to return. Maximum is 100. (optional)
+   * @param sortOrder Ascending or descending sort order. (optional, default to desc)
+   * @return CommentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CommentListing getCasemanagementCaseComments(String caseId, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
+    return  getCasemanagementCaseComments(createGetCasemanagementCaseCommentsRequest(caseId, after, pageSize, sortOrder));
+  }
+
+  /**
+   * Get comments for a Case.
+   * 
+   * @param caseId Case identifier. (required)
+   * @param after Cursor pointing to the end of the previously returned page of comments. (optional)
+   * @param pageSize Number of comments to return. Maximum is 100. (optional)
+   * @param sortOrder Ascending or descending sort order. (optional, default to desc)
+   * @return CommentListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CommentListing> getCasemanagementCaseCommentsWithHttpInfo(String caseId, String after, Integer pageSize, String sortOrder) throws IOException {
+    return getCasemanagementCaseComments(createGetCasemanagementCaseCommentsRequest(caseId, after, pageSize, sortOrder).withHttpInfo());
+  }
+
+  private GetCasemanagementCaseCommentsRequest createGetCasemanagementCaseCommentsRequest(String caseId, String after, Integer pageSize, String sortOrder) {
+    return GetCasemanagementCaseCommentsRequest.builder()
+            .withCaseId(caseId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withSortOrder(sortOrder)
+
+            .build();
+  }
+
+  /**
+   * Get comments for a Case.
+   * 
+   * @param request The request object
+   * @return CommentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CommentListing getCasemanagementCaseComments(GetCasemanagementCaseCommentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CommentListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CommentListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get comments for a Case.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CommentListing> getCasemanagementCaseComments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CommentListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommentListing> response = (ApiResponse<CommentListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommentListing> response = (ApiResponse<CommentListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1926,12 +2187,12 @@ public class CaseManagementApi {
    * Get a Case by reference.
    * 
    * @param referenceId Case reference. (required)
-   * @param expands Fields to expand. (optional)
+   * @param expands Attributes to expand. Comma-separated if more than one. (optional)
    * @return ModelCase
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ModelCase getCasemanagementCasesReference(String referenceId, String expands) throws IOException, ApiException {
+  public ModelCase getCasemanagementCasesReference(String referenceId, List<String> expands) throws IOException, ApiException {
     return  getCasemanagementCasesReference(createGetCasemanagementCasesReferenceRequest(referenceId, expands));
   }
 
@@ -1939,15 +2200,15 @@ public class CaseManagementApi {
    * Get a Case by reference.
    * 
    * @param referenceId Case reference. (required)
-   * @param expands Fields to expand. (optional)
+   * @param expands Attributes to expand. Comma-separated if more than one. (optional)
    * @return ModelCase
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ModelCase> getCasemanagementCasesReferenceWithHttpInfo(String referenceId, String expands) throws IOException {
+  public ApiResponse<ModelCase> getCasemanagementCasesReferenceWithHttpInfo(String referenceId, List<String> expands) throws IOException {
     return getCasemanagementCasesReference(createGetCasemanagementCasesReferenceRequest(referenceId, expands).withHttpInfo());
   }
 
-  private GetCasemanagementCasesReferenceRequest createGetCasemanagementCasesReferenceRequest(String referenceId, String expands) {
+  private GetCasemanagementCasesReferenceRequest createGetCasemanagementCasesReferenceRequest(String referenceId, List<String> expands) {
     return GetCasemanagementCasesReferenceRequest.builder()
             .withReferenceId(referenceId)
 
@@ -2586,6 +2847,88 @@ public class CaseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CaseAssociation> response = (ApiResponse<CaseAssociation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add a comment to a Case.
+   * 
+   * @param caseId Case identifier. (required)
+   * @param body Comment create request. (required)
+   * @return Comment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Comment postCasemanagementCaseComments(String caseId, CommentCreate body) throws IOException, ApiException {
+    return  postCasemanagementCaseComments(createPostCasemanagementCaseCommentsRequest(caseId, body));
+  }
+
+  /**
+   * Add a comment to a Case.
+   * 
+   * @param caseId Case identifier. (required)
+   * @param body Comment create request. (required)
+   * @return Comment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Comment> postCasemanagementCaseCommentsWithHttpInfo(String caseId, CommentCreate body) throws IOException {
+    return postCasemanagementCaseComments(createPostCasemanagementCaseCommentsRequest(caseId, body).withHttpInfo());
+  }
+
+  private PostCasemanagementCaseCommentsRequest createPostCasemanagementCaseCommentsRequest(String caseId, CommentCreate body) {
+    return PostCasemanagementCaseCommentsRequest.builder()
+            .withCaseId(caseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add a comment to a Case.
+   * 
+   * @param request The request object
+   * @return Comment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Comment postCasemanagementCaseComments(PostCasemanagementCaseCommentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Comment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Comment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a comment to a Case.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Comment> postCasemanagementCaseComments(ApiRequest<CommentCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Comment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Comment> response = (ApiResponse<Comment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Comment> response = (ApiResponse<Comment>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

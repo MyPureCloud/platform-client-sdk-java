@@ -40,6 +40,9 @@ import com.mypurecloud.sdk.v2.model.CaseplanListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseplanQueryRequest;
 import com.mypurecloud.sdk.v2.model.CaseplanUpdate;
+import com.mypurecloud.sdk.v2.model.Comment;
+import com.mypurecloud.sdk.v2.model.CommentCreate;
+import com.mypurecloud.sdk.v2.model.CommentListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsListing;
 import com.mypurecloud.sdk.v2.model.IntakeSettingsUpdate;
@@ -72,22 +75,26 @@ public class GetCasemanagementCaseRequest {
 	    return this;
 	} 
 
-	private String expands;
-	public String getExpands() {
+	private List<String> expands;
+	public List<String> getExpands() {
 		return this.expands;
 	}
 
-	public void setExpands(String expands) {
+	public void setExpands(List<String> expands) {
 		this.expands = expands;
 	}
 
-	public GetCasemanagementCaseRequest withExpands(String expands) {
+	public GetCasemanagementCaseRequest withExpands(List<String> expands) {
 	    this.setExpands(expands);
 	    return this;
 	} 
 
 	public enum expandsValues { 
-		CASEPLAN("caseplan");
+		CASEPLAN("caseplan"),
+		OWNER("owner"),
+		MODIFIEDBY("modifiedBy"),
+		EXTERNALCONTACT("externalContact"),
+		CUSTOMERINTENT("customerIntent");
 
 		private String value;
 
@@ -147,7 +154,7 @@ public class GetCasemanagementCaseRequest {
                 .withPathParameter("caseId", caseId)
         
 
-                .withQueryParameters("expands", "", expands)
+                .withQueryParameters("expands", "multi", expands)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -180,17 +187,19 @@ public class GetCasemanagementCaseRequest {
 			return this;
 		}
 
-		public Builder withExpands(String expands) {
+		public Builder withExpands(List<String> expands) {
 			request.setExpands(expands);
 			return this;
 		}
 
 
 
-		
-		public Builder withExpands(expandsValues expands) {
-		    request.setExpands(expands.toString());
-
+		public Builder withExpandsEnumValues(List<expandsValues> expands) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandsValues e : expands) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpands(stringList);
 		    return this;
 		}
 

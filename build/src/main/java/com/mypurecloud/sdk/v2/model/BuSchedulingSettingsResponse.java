@@ -154,7 +154,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Schedule generation message severity configuration")
+  @ApiModelProperty(example = "null", required = true, value = "Schedule generation message severity configuration")
   @JsonProperty("messageSeverities")
   public List<SchedulerMessageTypeSeverity> getMessageSeverities() {
     return messageSeverities;
@@ -172,7 +172,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published")
+  @ApiModelProperty(example = "null", required = true, value = "Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published")
   @JsonProperty("syncTimeOffProperties")
   public List<SyncTimeOffPropertiesEnum> getSyncTimeOffProperties() {
     return syncTimeOffProperties;
@@ -190,7 +190,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Enables start and end time estimation for full-day time-off requests")
+  @ApiModelProperty(example = "null", required = true, value = "Enables start and end time estimation for full-day time-off requests")
   @JsonProperty("enableTimeOffFullDayEstimation")
   public Boolean getEnableTimeOffFullDayEstimation() {
     return enableTimeOffFullDayEstimation;
@@ -208,7 +208,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Configures the max percent increase and decrease of service goals for this business unit")
+  @ApiModelProperty(example = "null", required = true, value = "Configures the max percent increase and decrease of service goals for this business unit")
   @JsonProperty("serviceGoalImpact")
   public WfmServiceGoalImpactSettings getServiceGoalImpact() {
     return serviceGoalImpact;
@@ -226,7 +226,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false")
+  @ApiModelProperty(example = "null", required = true, value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false")
   @JsonProperty("allowWorkPlanPerMinuteGranularity")
   public Boolean getAllowWorkPlanPerMinuteGranularity() {
     return allowWorkPlanPerMinuteGranularity;
