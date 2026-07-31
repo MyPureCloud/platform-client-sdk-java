@@ -11,6 +11,7 @@
 | **mediaUri** | **String** | Uri to the file for this prompt resource. |  [optional] |
 | **uploadStatus** | **String** | Current upload status of the prompt resource (created, uploaded, transcoded, transcodeFailed). |  [optional] |
 | **durationSeconds** | [**BigDecimal**](BigDecimal) | Duration (in seconds) for the transcoded audio file. |  [optional] |
+| **audioFormat** | [**ArchitectPromptResourceNotificationPromptResourceAudioFormat**](ArchitectPromptResourceNotificationPromptResourceAudioFormat) |  |  [optional] |
 
 
 

@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **active** | **Boolean** | Whether this template is active or not |  |
+| **active** | **Boolean** | Whether this template is active or not. Required if support center is enabled |  [optional] |
 
 
 

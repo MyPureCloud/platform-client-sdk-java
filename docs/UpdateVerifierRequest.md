@@ -5,8 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | The name of the verifier. |  [optional] |
+| **name** | **String** | The name of the verifier. Maximum length is 100 characters. |  |
 | **enabled** | **Boolean** | Indicates whether this verifier will be enabled. |  [optional] |
+| **credential** | [**Credential**](Credential) | The WebAuthn credential associated with this verifier. |  [optional] |
 | **_default** | **Boolean** | Indicates whether this will be the default verifier. |  [optional] |
 
 

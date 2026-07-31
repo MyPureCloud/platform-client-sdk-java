@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **businessName** | **String** | The business name displayed in the invitation |  |
 | **transcriptMessage** | **String** | The transcript message displayed in the invitation |  |
-| **templateType** | [**TemplateTypeEnum**](#Enum--TemplateTypeEnum) | The template type for the invitation |  |
+| **templateType** | [**TemplateTypeEnum**](#Enum--TemplateTypeEnum) | The template type for the invitation. Only 'WithImage' is supported. |  |
 | **locale** | **String** | The locale for the invitation |  |
 
 
@@ -17,7 +17,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | WITHIMAGE | &quot;WithImage&quot; | 
-| WITHOUTIMAGE | &quot;WithoutImage&quot; | 
 
 
 

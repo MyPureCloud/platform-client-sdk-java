@@ -36,6 +36,9 @@
 | DELETEOCCURRENCES | &quot;DeleteOccurrences&quot; | 
 | DELETESESSIONS | &quot;DeleteSessions&quot; | 
 | DELETESESSIONUSERS | &quot;DeleteSessionUsers&quot; | 
+| MAXIMIZEOCCURRENCE | &quot;MaximizeOccurrence&quot; | 
+| CREATESESSION | &quot;CreateSession&quot; | 
+| EDITSESSION | &quot;EditSession&quot; | 
 
 
 

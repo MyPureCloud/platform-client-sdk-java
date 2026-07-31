@@ -36,6 +36,7 @@
 | SHARES | &quot;shares&quot; |
 | COMMENTS | &quot;comments&quot; |
 | VIEWS | &quot;views&quot; |
+| POSTTYPE | &quot;postType&quot; |
 
 
 ## Enum: MetricsEnum

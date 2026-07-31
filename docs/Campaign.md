@@ -46,6 +46,7 @@
 | **callbackAutoAnswer** | **Boolean** | The option manages the auto-answer callback calls |  [optional] |
 | **dynamicLineBalancingSettings** | [**DynamicLineBalancingSettings**](DynamicLineBalancingSettings) | Dynamic line balancing settings |  [optional] |
 | **diagnosticsSettings** | [**DiagnosticsSettings**](DiagnosticsSettings) | Campaign diagnostics settings |  [optional] |
+| **preciseDialingEnabled** | **Boolean** | Option to enable precise dialing |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 

@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **source** | [**SupportCenterImageSource**](SupportCenterImageSource) | Source URLs for image |  |
+| **source** | [**SupportCenterImageSource**](SupportCenterImageSource) | Source URLs for image |  [optional] |
 
 
 

@@ -52,6 +52,7 @@
 | FAILED | &quot;Failed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 | CANCELLED | &quot;Cancelled&quot; | 
+| THROTTLED | &quot;Throttled&quot; | 
 
 
 ## Enum: IngestionStatusEnum

@@ -62,6 +62,7 @@
 | **securePause** | **Boolean** | True when the recording of this call is in secure pause status. |  [optional] |
 | **disposition** | [**Disposition**](Disposition) | Call resolution data for Dialer bulk make calls commands. |  [optional] |
 | **transferSource** | **String** | Indicates how call reaches the agent. |  [optional] |
+| **clientIpAddress** | **String** | The reported client IP of the phone for the call. |  [optional] |
 
 
 ## Enum: StateEnum

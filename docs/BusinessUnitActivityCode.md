@@ -19,6 +19,7 @@
 | **interruptible** | **Boolean** | Whether this activity code is considered interruptible |  [optional] |
 | **secondaryPresences** | [**List&lt;SecondaryPresence&gt;**](SecondaryPresence) | The secondary presences of this activity code |  [optional] |
 | **planningGroups** | [**List&lt;PlanningGroupReference&gt;**](PlanningGroupReference) | Planning groups associated with this activity code |  [optional] |
+| **style** | [**ActivityCodeStyle**](ActivityCodeStyle) | The style configuration for the activity code |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata of this activity code |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 

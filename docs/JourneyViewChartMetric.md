@@ -9,6 +9,7 @@
 | **elementId** | **String** | The element in the list of elements which the metric is measuring |  |
 | **aggregate** | [**AggregateEnum**](#Enum--AggregateEnum) | How to aggregate the given element, defaults to CustomerCount |  [optional] |
 | **displayLabel** | **String** | A display label for the metric |  [optional] |
+| **attribute** | **String** | Attribute name |  [optional] |
 
 
 ## Enum: AggregateEnum

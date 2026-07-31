@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **referenceId** | **String** | Provides context for the notification message, such as an order number or case ID. |  [optional] |
+| **referenceId** | **String** | An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID). |  [optional] |
 
 
 

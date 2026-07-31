@@ -8,11 +8,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteResponsemanagementResponse**](ResponseManagementApi#deleteResponsemanagementResponse) | Delete an existing response. |
 | [**deleteResponsemanagementResponseasset**](ResponseManagementApi#deleteResponsemanagementResponseasset) | Delete response asset |
 | [**getResponsemanagementLibraries**](ResponseManagementApi#getResponsemanagementLibraries) | Gets a list of existing response libraries. |
+| [**getResponsemanagementLibrariesDivisionview**](ResponseManagementApi#getResponsemanagementLibrariesDivisionview) | Get details about an existing response library. |
+| [**getResponsemanagementLibrariesDivisionviews**](ResponseManagementApi#getResponsemanagementLibrariesDivisionviews) | Gets a list of existing response libraries. |
 | [**getResponsemanagementLibrary**](ResponseManagementApi#getResponsemanagementLibrary) | Get details about an existing response library. |
 | [**getResponsemanagementResponse**](ResponseManagementApi#getResponsemanagementResponse) | Get details about an existing response. |
 | [**getResponsemanagementResponseasset**](ResponseManagementApi#getResponsemanagementResponseasset) | Get response asset information |
 | [**getResponsemanagementResponseassetsStatusStatusId**](ResponseManagementApi#getResponsemanagementResponseassetsStatusStatusId) | Get response asset upload status |
 | [**getResponsemanagementResponses**](ResponseManagementApi#getResponsemanagementResponses) | Gets a list of existing responses. |
+| [**getResponsemanagementResponsesDivisionview**](ResponseManagementApi#getResponsemanagementResponsesDivisionview) | Get details about an existing response. |
 | [**postResponsemanagementLibraries**](ResponseManagementApi#postResponsemanagementLibraries) | Create a response library. |
 | [**postResponsemanagementLibrariesBulk**](ResponseManagementApi#postResponsemanagementLibrariesBulk) | Get response libraries. |
 | [**postResponsemanagementLibrariesQuery**](ResponseManagementApi#postResponsemanagementLibrariesQuery) | Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions. |
@@ -20,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postResponsemanagementResponseassetsSearch**](ResponseManagementApi#postResponsemanagementResponseassetsSearch) | Search response assets |
 | [**postResponsemanagementResponseassetsUploads**](ResponseManagementApi#postResponsemanagementResponseassetsUploads) | Creates pre-signed url for uploading response asset |
 | [**postResponsemanagementResponses**](ResponseManagementApi#postResponsemanagementResponses) | Create a response. |
+| [**postResponsemanagementResponsesDivisionviewsQuery**](ResponseManagementApi#postResponsemanagementResponsesDivisionviewsQuery) | Query responses |
 | [**postResponsemanagementResponsesQuery**](ResponseManagementApi#postResponsemanagementResponsesQuery) | Query responses |
 | [**putResponsemanagementLibrary**](ResponseManagementApi#putResponsemanagementLibrary) | Update an existing response library. |
 | [**putResponsemanagementResponse**](ResponseManagementApi#putResponsemanagementResponse) | Update an existing response. |
@@ -268,6 +272,130 @@ try {
 ### Return type
 
 [**LibraryEntityListing**](LibraryEntityListing)
+
+
+# **getResponsemanagementLibrariesDivisionview**
+
+
+> [LibraryDivisionView](LibraryDivisionView) getResponsemanagementLibrariesDivisionview(libraryId)
+
+Get details about an existing response library.
+
+Wraps GET /api/v2/responsemanagement/libraries/divisionviews/{libraryId}  
+
+Requires ANY permissions: 
+
+* responses:library:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+String libraryId = "libraryId_example"; // String | Library ID
+try {
+    LibraryDivisionView result = apiInstance.getResponsemanagementLibrariesDivisionview(libraryId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#getResponsemanagementLibrariesDivisionview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **libraryId** | **String**| Library ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LibraryDivisionView**](LibraryDivisionView)
+
+
+# **getResponsemanagementLibrariesDivisionviews**
+
+
+> [LibraryDivisionViewEntityListing](LibraryDivisionViewEntityListing) getResponsemanagementLibrariesDivisionviews(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix)
+
+Gets a list of existing response libraries.
+
+Wraps GET /api/v2/responsemanagement/libraries/divisionviews  
+
+Requires ANY permissions: 
+
+* responses:library:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String messagingTemplateFilter = "messagingTemplateFilter_example"; // String | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
+String libraryPrefix = "libraryPrefix_example"; // String | Returns a list of libraries that contain the prefix provided
+try {
+    LibraryDivisionViewEntityListing result = apiInstance.getResponsemanagementLibrariesDivisionviews(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#getResponsemanagementLibrariesDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **messagingTemplateFilter** | **String**| Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel | [optional]<br />**Values**: whatsapp 
+| **libraryPrefix** | **String**| Returns a list of libraries that contain the prefix provided | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LibraryDivisionViewEntityListing**](LibraryDivisionViewEntityListing)
 
 
 # **getResponsemanagementLibrary**
@@ -571,6 +699,65 @@ try {
 ### Return type
 
 [**ResponseEntityListing**](ResponseEntityListing)
+
+
+# **getResponsemanagementResponsesDivisionview**
+
+
+> [ResponseDivisionView](ResponseDivisionView) getResponsemanagementResponsesDivisionview(responseId)
+
+Get details about an existing response.
+
+Wraps GET /api/v2/responsemanagement/responses/divisionviews/{responseId}  
+
+Requires ANY permissions: 
+
+* responses:response:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+String responseId = "responseId_example"; // String | Response ID
+try {
+    ResponseDivisionView result = apiInstance.getResponsemanagementResponsesDivisionview(responseId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#getResponsemanagementResponsesDivisionview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **responseId** | **String**| Response ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ResponseDivisionView**](ResponseDivisionView)
 
 
 # **postResponsemanagementLibraries**
@@ -992,6 +1179,65 @@ try {
 ### Return type
 
 [**Response**](Response)
+
+
+# **postResponsemanagementResponsesDivisionviewsQuery**
+
+
+> [ResponseDivisionViewQueryResults](ResponseDivisionViewQueryResults) postResponsemanagementResponsesDivisionviewsQuery(body)
+
+Query responses
+
+Wraps POST /api/v2/responsemanagement/responses/divisionviews/query  
+
+Requires ANY permissions: 
+
+* responses:response:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+ResponseQueryRequest body = new ResponseQueryRequest(); // ResponseQueryRequest | Response
+try {
+    ResponseDivisionViewQueryResults result = apiInstance.postResponsemanagementResponsesDivisionviewsQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#postResponsemanagementResponsesDivisionviewsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ResponseQueryRequest**](ResponseQueryRequest)| Response | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ResponseDivisionViewQueryResults**](ResponseDivisionViewQueryResults)
 
 
 # **postResponsemanagementResponsesQuery**

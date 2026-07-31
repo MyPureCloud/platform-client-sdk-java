@@ -5,11 +5,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteCasemanagementCase**](CaseManagementApi#deleteCasemanagementCase) | Delete a Case. |
+| [**deleteCasemanagementCaseCommentsMeCommentId**](CaseManagementApi#deleteCasemanagementCaseCommentsMeCommentId) | Delete my Comment. |
 | [**deleteCasemanagementCaseplan**](CaseManagementApi#deleteCasemanagementCaseplan) | Delete a Caseplan. |
 | [**deleteCasemanagementCaseplanDataschema**](CaseManagementApi#deleteCasemanagementCaseplanDataschema) | Remove a data schema from a draft Caseplan. |
 | [**getCasemanagementCase**](CaseManagementApi#getCasemanagementCase) | Get a Case. |
 | [**getCasemanagementCaseAssociation**](CaseManagementApi#getCasemanagementCaseAssociation) | Get a Case Association. |
 | [**getCasemanagementCaseAssociations**](CaseManagementApi#getCasemanagementCaseAssociations) | Get a list of Case associations for the Case. |
+| [**getCasemanagementCaseComment**](CaseManagementApi#getCasemanagementCaseComment) | Get a Comment. |
+| [**getCasemanagementCaseComments**](CaseManagementApi#getCasemanagementCaseComments) | Get comments for a Case. |
 | [**getCasemanagementCaseStage**](CaseManagementApi#getCasemanagementCaseStage) | Get a Stage. |
 | [**getCasemanagementCaseStageStep**](CaseManagementApi#getCasemanagementCaseStageStep) | Get a Step. |
 | [**getCasemanagementCaseStageSteps**](CaseManagementApi#getCasemanagementCaseStageSteps) | Get a list of Steps. |
@@ -33,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchCasemanagementCaseplanStageplan**](CaseManagementApi#patchCasemanagementCaseplanStageplan) | Update the attributes of a Stageplan. |
 | [**patchCasemanagementCaseplanStageplanStepplan**](CaseManagementApi#patchCasemanagementCaseplanStageplanStepplan) | Update the attributes of a Stepplan. |
 | [**postCasemanagementCaseAssociations**](CaseManagementApi#postCasemanagementCaseAssociations) | Create a Case association. |
+| [**postCasemanagementCaseComments**](CaseManagementApi#postCasemanagementCaseComments) | Add a comment to a Case. |
 | [**postCasemanagementCaseTerminateJobs**](CaseManagementApi#postCasemanagementCaseTerminateJobs) | Create a Terminate Job for a Case. |
 | [**postCasemanagementCaseplanDataschemas**](CaseManagementApi#postCasemanagementCaseplanDataschemas) | Add a data schema to a draft Caseplan. |
 | [**postCasemanagementCaseplanPublish**](CaseManagementApi#postCasemanagementCaseplanPublish) | Publish Caseplan. |
@@ -97,6 +101,67 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **caseId** | **String**| Case identifier. | 
+{: class="table-striped"}
+
+
+### Return type
+
+**Empty**
+
+
+# **deleteCasemanagementCaseCommentsMeCommentId**
+
+
+> Empty deleteCasemanagementCaseCommentsMeCommentId(caseId, commentId)
+
+Delete my Comment.
+
+Wraps DELETE /api/v2/casemanagement/cases/{caseId}/comments/me/{commentId}  
+
+Requires ANY permissions: 
+
+* caseManagement:commentSelf:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseId = "caseId_example"; // String | Case identifier.
+String commentId = "commentId_example"; // String | Comment identifier.
+try {
+    Empty result = apiInstance.deleteCasemanagementCaseCommentsMeCommentId(caseId, commentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#deleteCasemanagementCaseCommentsMeCommentId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseId** | **String**| Case identifier. | 
+| **commentId** | **String**| Comment identifier. | 
 {: class="table-striped"}
 
 
@@ -261,7 +326,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 CaseManagementApi apiInstance = new CaseManagementApi();
 String caseId = "caseId_example"; // String | Case identifier.
-String expands = "expands_example"; // String | Fields to expand.
+List<String> expands = Arrays.asList(null); // List<String> | Attributes to expand. Comma-separated if more than one.
 try {
     ModelCase result = apiInstance.getCasemanagementCase(caseId, expands);
     System.out.println(result);
@@ -277,7 +342,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **caseId** | **String**| Case identifier. | 
-| **expands** | **String**| Fields to expand. | [optional]<br />**Values**: caseplan 
+| **expands** | [**List&lt;String&gt;**](String)| Attributes to expand. Comma-separated if more than one. | [optional]<br />**Values**: caseplan, owner, modifiedBy, externalContact, customerIntent 
 {: class="table-striped"}
 
 
@@ -410,6 +475,132 @@ try {
 ### Return type
 
 [**CaseAssociationListing**](CaseAssociationListing)
+
+
+# **getCasemanagementCaseComment**
+
+
+> [Comment](Comment) getCasemanagementCaseComment(caseId, commentId)
+
+Get a Comment.
+
+Wraps GET /api/v2/casemanagement/cases/{caseId}/comments/{commentId}  
+
+Requires ANY permissions: 
+
+* caseManagement:comment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseId = "caseId_example"; // String | Case identifier.
+String commentId = "commentId_example"; // String | Comment identifier.
+try {
+    Comment result = apiInstance.getCasemanagementCaseComment(caseId, commentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#getCasemanagementCaseComment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseId** | **String**| Case identifier. | 
+| **commentId** | **String**| Comment identifier. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Comment**](Comment)
+
+
+# **getCasemanagementCaseComments**
+
+
+> [CommentListing](CommentListing) getCasemanagementCaseComments(caseId, after, pageSize, sortOrder)
+
+Get comments for a Case.
+
+Wraps GET /api/v2/casemanagement/cases/{caseId}/comments  
+
+Requires ANY permissions: 
+
+* caseManagement:comment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseId = "caseId_example"; // String | Case identifier.
+String after = "after_example"; // String | Cursor pointing to the end of the previously returned page of comments.
+Integer pageSize = 56; // Integer | Number of comments to return. Maximum is 100.
+String sortOrder = "desc"; // String | Ascending or descending sort order.
+try {
+    CommentListing result = apiInstance.getCasemanagementCaseComments(caseId, after, pageSize, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#getCasemanagementCaseComments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseId** | **String**| Case identifier. | 
+| **after** | **String**| Cursor pointing to the end of the previously returned page of comments. | [optional] 
+| **pageSize** | **Integer**| Number of comments to return. Maximum is 100. | [optional] 
+| **sortOrder** | **String**| Ascending or descending sort order. | [optional] [default to desc]<br />**Values**: asc, desc 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CommentListing**](CommentListing)
 
 
 # **getCasemanagementCaseStage**
@@ -1411,7 +1602,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 CaseManagementApi apiInstance = new CaseManagementApi();
 String referenceId = "referenceId_example"; // String | Case reference.
-String expands = "expands_example"; // String | Fields to expand.
+List<String> expands = Arrays.asList(null); // List<String> | Attributes to expand. Comma-separated if more than one.
 try {
     ModelCase result = apiInstance.getCasemanagementCasesReference(referenceId, expands);
     System.out.println(result);
@@ -1427,7 +1618,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **referenceId** | **String**| Case reference. | 
-| **expands** | **String**| Fields to expand. | [optional]<br />**Values**: caseplan 
+| **expands** | [**List&lt;String&gt;**](String)| Attributes to expand. Comma-separated if more than one. | [optional]<br />**Values**: caseplan, owner, modifiedBy, externalContact, customerIntent 
 {: class="table-striped"}
 
 
@@ -1867,6 +2058,67 @@ try {
 ### Return type
 
 [**CaseAssociation**](CaseAssociation)
+
+
+# **postCasemanagementCaseComments**
+
+
+> [Comment](Comment) postCasemanagementCaseComments(caseId, body)
+
+Add a comment to a Case.
+
+Wraps POST /api/v2/casemanagement/cases/{caseId}/comments  
+
+Requires ANY permissions: 
+
+* caseManagement:comment:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseId = "caseId_example"; // String | Case identifier.
+CommentCreate body = new CommentCreate(); // CommentCreate | Comment create request.
+try {
+    Comment result = apiInstance.postCasemanagementCaseComments(caseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#postCasemanagementCaseComments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseId** | **String**| Case identifier. | 
+| **body** | [**CommentCreate**](CommentCreate)| Comment create request. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Comment**](Comment)
 
 
 # **postCasemanagementCaseTerminateJobs**

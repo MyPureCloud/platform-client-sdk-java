@@ -16,6 +16,8 @@
 | **dateCreated** | [**Date**](Date) | UTC date time indicating when this decision table version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | [**Date**](Date) | UTC date time indicating when this decision table version was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **datePublished** | [**Date**](Date) | UTC date time indicating when this decision table version was published. Null if never published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **createdBy** | [**AddressableEntityRef**](AddressableEntityRef) | The user who created this decision table version. |  [optional] |
+| **publishedBy** | [**AddressableEntityRef**](AddressableEntityRef) | The user who published this decision table version. |  [optional] |
 | **columns** | [**DecisionTableColumns**](DecisionTableColumns) | The column definitions of this decision table version. |  [optional] |
 | **contract** | [**DecisionTableContract**](DecisionTableContract) | The contract information for this decision table version. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |

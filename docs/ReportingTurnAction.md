@@ -96,6 +96,7 @@
 | SENDRICHLINKACTION | &quot;SendRichLinkAction&quot; | 
 | SENDDIGITALCONTENTACTION | &quot;SendDigitalContentAction&quot; | 
 | AGENTICASKFORINTENTACTION | &quot;AgenticAskForIntentAction&quot; | 
+| AGENTICANYTHINGELSEACTION | &quot;AgenticAnythingElseAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 

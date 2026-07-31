@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **defaultValue** | **String** | Default value for the message |  |
-| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the message |  |
+| **defaultValue** | **String** | Default value for the message. Required for each custom message entry |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the message. Required for each custom message entry |  [optional] |
 
 
 ## Enum: TypeEnum

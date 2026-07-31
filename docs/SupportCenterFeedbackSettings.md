@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | **Boolean** | Whether or not requesting customer feedback on article content and article search results is enabled |  |
+| **enabled** | **Boolean** | Whether or not requesting customer feedback on article content and article search results is enabled. Required if support center is enabled |  [optional] |
 
 
 

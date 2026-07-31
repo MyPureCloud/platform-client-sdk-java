@@ -4,8 +4,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteAgenticVirtualagentJobs**](AIStudioApi#deleteAgenticVirtualagentJobs) | Start the deletion of a virtualAgent. |
 | [**deleteConversationsSummariesSetting**](AIStudioApi#deleteConversationsSummariesSetting) | Delete a summary setting. |
 | [**deleteGuideJobs**](AIStudioApi#deleteGuideJobs) | Start the deletion of a guide. |
+| [**getAgenticVirtualagent**](AIStudioApi#getAgenticVirtualagent) | Get virtual agent. |
+| [**getAgenticVirtualagentJob**](AIStudioApi#getAgenticVirtualagentJob) | Get a virtualAgent job. |
+| [**getAgenticVirtualagents**](AIStudioApi#getAgenticVirtualagents) | Get all virtual agents. |
 | [**getConversationsSummariesSetting**](AIStudioApi#getConversationsSummariesSetting) | Receive a summary setting. |
 | [**getConversationsSummariesSettings**](AIStudioApi#getConversationsSummariesSettings) | Get all summary settings. |
 | [**getGuide**](AIStudioApi#getGuide) | Get guide. |
@@ -14,8 +18,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGuideVersionJob**](AIStudioApi#getGuideVersionJob) | Get the status of the publishing job for this guide version. |
 | [**getGuides**](AIStudioApi#getGuides) | Get all guides. |
 | [**getGuidesJob**](AIStudioApi#getGuidesJob) | Get the status of the guide content generation job. |
+| [**patchAgenticVirtualagent**](AIStudioApi#patchAgenticVirtualagent) | Update a virtual agent. |
 | [**patchGuide**](AIStudioApi#patchGuide) | Update a guide. |
 | [**patchGuideVersion**](AIStudioApi#patchGuideVersion) | Update a guide version. |
+| [**postAgenticVirtualagentVersionJobs**](AIStudioApi#postAgenticVirtualagentVersionJobs) | Start the publishing of a virtual agent version. |
+| [**postAgenticVirtualagents**](AIStudioApi#postAgenticVirtualagents) | Create a virtual agent. |
 | [**postConversationsSummariesPreview**](AIStudioApi#postConversationsSummariesPreview) | Trigger summary preview event generation. |
 | [**postConversationsSummariesSettings**](AIStudioApi#postConversationsSummariesSettings) | Create a summary setting. |
 | [**postGuideSessionTurns**](AIStudioApi#postGuideSessionTurns) | Add a turn to a guide session. |
@@ -26,6 +33,65 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postGuidesUploads**](AIStudioApi#postGuidesUploads) | Generate presigned URL for uploading a file content to generate guide |
 | [**putConversationsSummariesSetting**](AIStudioApi#putConversationsSummariesSetting) | Update a summary setting. |
 {: class="table-striped"}
+
+
+# **deleteAgenticVirtualagentJobs**
+
+
+> [AgenticVirtualAgentJob](AgenticVirtualAgentJob) deleteAgenticVirtualagentJobs(virtualAgentId)
+
+Start the deletion of a virtualAgent.
+
+Wraps DELETE /api/v2/agentic/virtualagents/{virtualAgentId}/jobs  
+
+Requires ALL permissions: 
+
+* agentic:virtualAgentJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String virtualAgentId = "virtualAgentId_example"; // String | Virtual Agent ID
+try {
+    AgenticVirtualAgentJob result = apiInstance.deleteAgenticVirtualagentJobs(virtualAgentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#deleteAgenticVirtualagentJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **virtualAgentId** | **String**| Virtual Agent ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgenticVirtualAgentJob**](AgenticVirtualAgentJob)
 
 
 # **deleteConversationsSummariesSetting**
@@ -143,6 +209,197 @@ try {
 ### Return type
 
 [**GuideJob**](GuideJob)
+
+
+# **getAgenticVirtualagent**
+
+
+> [AgenticVirtualAgent](AgenticVirtualAgent) getAgenticVirtualagent(virtualAgentId)
+
+Get virtual agent.
+
+Wraps GET /api/v2/agentic/virtualagents/{virtualAgentId}  
+
+Requires ALL permissions: 
+
+* agentic:virtualAgent:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String virtualAgentId = "virtualAgentId_example"; // String | Virtual Agent ID
+try {
+    AgenticVirtualAgent result = apiInstance.getAgenticVirtualagent(virtualAgentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#getAgenticVirtualagent");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **virtualAgentId** | **String**| Virtual Agent ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgenticVirtualAgent**](AgenticVirtualAgent)
+
+
+# **getAgenticVirtualagentJob**
+
+
+> [AgenticVirtualAgentJob](AgenticVirtualAgentJob) getAgenticVirtualagentJob(virtualAgentId, jobId)
+
+Get a virtualAgent job.
+
+Wraps GET /api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* agentic:virtualAgentJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String virtualAgentId = "virtualAgentId_example"; // String | Virtual Agent ID
+String jobId = "jobId_example"; // String | jobId
+try {
+    AgenticVirtualAgentJob result = apiInstance.getAgenticVirtualagentJob(virtualAgentId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#getAgenticVirtualagentJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **virtualAgentId** | **String**| Virtual Agent ID | 
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgenticVirtualAgentJob**](AgenticVirtualAgentJob)
+
+
+# **getAgenticVirtualagents**
+
+
+> [AgenticVirtualAgentEntityListing](AgenticVirtualAgentEntityListing) getAgenticVirtualagents(name, nameContains, status, sortBy, sortOrder, pageNumber, pageSize)
+
+Get all virtual agents.
+
+Wraps GET /api/v2/agentic/virtualagents  
+
+Requires ALL permissions: 
+
+* agentic:virtualAgent:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String name = "name_example"; // String | Filter by matching name - case insensitive.
+String nameContains = "nameContains_example"; // String | Filter by name contains - case insensitive.
+String status = "status_example"; // String | Filter by status.
+String sortBy = "dateModified"; // String | Sort by. Default value dateModified.
+String sortOrder = "desc"; // String | Sort Order. Default value desc.
+Integer pageNumber = 1; // Integer | Page number.
+Integer pageSize = 25; // Integer | Page size. The maximum page size is 100.
+try {
+    AgenticVirtualAgentEntityListing result = apiInstance.getAgenticVirtualagents(name, nameContains, status, sortBy, sortOrder, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#getAgenticVirtualagents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **String**| Filter by matching name - case insensitive. | [optional] 
+| **nameContains** | **String**| Filter by name contains - case insensitive. | [optional] 
+| **status** | **String**| Filter by status. | [optional]<br />**Values**: Draft, Published 
+| **sortBy** | **String**| Sort by. Default value dateModified. | [optional] [default to dateModified]<br />**Values**: dateModified, name, status 
+| **sortOrder** | **String**| Sort Order. Default value desc. | [optional] [default to desc]<br />**Values**: asc, desc 
+| **pageNumber** | **Integer**| Page number. | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size. The maximum page size is 100. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgenticVirtualAgentEntityListing**](AgenticVirtualAgentEntityListing)
 
 
 # **getConversationsSummariesSetting**
@@ -647,6 +904,67 @@ try {
 [**GuideContentGenerationJob**](GuideContentGenerationJob)
 
 
+# **patchAgenticVirtualagent**
+
+
+> [AgenticVirtualAgent](AgenticVirtualAgent) patchAgenticVirtualagent(virtualAgentId, body)
+
+Update a virtual agent.
+
+Wraps PATCH /api/v2/agentic/virtualagents/{virtualAgentId}  
+
+Requires ALL permissions: 
+
+* agentic:virtualAgent:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String virtualAgentId = "virtualAgentId_example"; // String | Virtual Agent ID
+UpdateAgenticVirtualAgent body = new UpdateAgenticVirtualAgent(); // UpdateAgenticVirtualAgent | 
+try {
+    AgenticVirtualAgent result = apiInstance.patchAgenticVirtualagent(virtualAgentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#patchAgenticVirtualagent");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **virtualAgentId** | **String**| Virtual Agent ID | 
+| **body** | [**UpdateAgenticVirtualAgent**](UpdateAgenticVirtualAgent)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgenticVirtualAgent**](AgenticVirtualAgent)
+
+
 # **patchGuide**
 
 
@@ -769,6 +1087,128 @@ try {
 ### Return type
 
 [**GuideVersion**](GuideVersion)
+
+
+# **postAgenticVirtualagentVersionJobs**
+
+
+> [AgenticVirtualAgentVersionPublishJob](AgenticVirtualAgentVersionPublishJob) postAgenticVirtualagentVersionJobs(virtualAgentId, versionId, body)
+
+Start the publishing of a virtual agent version.
+
+Wraps POST /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs  
+
+Requires ALL permissions: 
+
+* agentic:virtualAgentVersionJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String virtualAgentId = "virtualAgentId_example"; // String | Virtual Agent ID
+String versionId = "versionId_example"; // String | Version ID
+AgenticVirtualAgentVersionPublishJobRequest body = new AgenticVirtualAgentVersionPublishJobRequest(); // AgenticVirtualAgentVersionPublishJobRequest | 
+try {
+    AgenticVirtualAgentVersionPublishJob result = apiInstance.postAgenticVirtualagentVersionJobs(virtualAgentId, versionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#postAgenticVirtualagentVersionJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **virtualAgentId** | **String**| Virtual Agent ID | 
+| **versionId** | **String**| Version ID | 
+| **body** | [**AgenticVirtualAgentVersionPublishJobRequest**](AgenticVirtualAgentVersionPublishJobRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgenticVirtualAgentVersionPublishJob**](AgenticVirtualAgentVersionPublishJob)
+
+
+# **postAgenticVirtualagents**
+
+
+> [AgenticVirtualAgent](AgenticVirtualAgent) postAgenticVirtualagents(body)
+
+Create a virtual agent.
+
+Wraps POST /api/v2/agentic/virtualagents  
+
+Requires ALL permissions: 
+
+* agentic:virtualAgent:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+CreateAgenticVirtualAgent body = new CreateAgenticVirtualAgent(); // CreateAgenticVirtualAgent | 
+try {
+    AgenticVirtualAgent result = apiInstance.postAgenticVirtualagents(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#postAgenticVirtualagents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateAgenticVirtualAgent**](CreateAgenticVirtualAgent)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgenticVirtualAgent**](AgenticVirtualAgent)
 
 
 # **postConversationsSummariesPreview**

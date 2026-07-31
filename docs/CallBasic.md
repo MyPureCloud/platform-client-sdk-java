@@ -39,6 +39,7 @@
 | **agentAssistantId** | **String** | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
 | **transferSource** | **String** | Indicates how call reaches the agent. |  [optional] |
 | **queueMediaSettings** | [**ConversationQueueMediaSettings**](ConversationQueueMediaSettings) | Represents the queue settings for this media type. |  [optional] |
+| **clientIpAddress** | **String** | The reported client IP of the phone for the call. |  [optional] |
 | **disposition** | [**Disposition**](Disposition) | Call resolution data for Dialer bulk make calls commands. |  [optional] |
 
 

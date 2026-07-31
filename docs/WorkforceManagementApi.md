@@ -57,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements) | Get a capacity plan's staffing requirements |
 | [**getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast) | Get the latest long term staffing requirements for a business unit |
 | [**getWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplans) | Get list of capacity plans for a business unit |
+| [**getWorkforcemanagementBusinessunitDecisionmetricsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitDecisionmetricsJob) | Gets the status of the given job |
 | [**getWorkforcemanagementBusinessunitIntradayPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitIntradayPlanninggroups) | Get intraday planning groups for the given date |
 | [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession) | Get the latest session for the business unit ID |
 | [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId) | Get the session details for the session ID |
@@ -85,6 +86,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitStaffinggroup) | Gets a staffing group |
 | [**getWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitStaffinggroups) | Gets a list of staffing groups |
 | [**getWorkforcemanagementBusinessunitTimeofflimit**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimit) | Gets a time-off limit object |
+| [**getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob) | Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status. |
+| [**getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs) | Query the list of convert time-off limit granularity job operation. |
 | [**getWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimits) | Gets a list of time-off limit objects |
 | [**getWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeoffplan) | Gets a time-off plan |
 | [**getWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeoffplans) | Gets a list of time-off plans |
@@ -123,6 +126,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementManagementunitAdherence**](WorkforceManagementApi#getWorkforcemanagementManagementunitAdherence) | Get a list of user schedule adherence records for the requested management unit |
 | [**getWorkforcemanagementManagementunitAgent**](WorkforceManagementApi#getWorkforcemanagementManagementunitAgent) | Get data for agent in the management unit |
 | [**getWorkforcemanagementManagementunitAgentShifttrades**](WorkforceManagementApi#getWorkforcemanagementManagementunitAgentShifttrades) | Gets all the shift trades for a given agent |
+| [**getWorkforcemanagementManagementunitDecisionmetrics**](WorkforceManagementApi#getWorkforcemanagementManagementunitDecisionmetrics) | Gets the decision metrics of all user in given management unit |
 | [**getWorkforcemanagementManagementunitShifttradesMatched**](WorkforceManagementApi#getWorkforcemanagementManagementunitShifttradesMatched) | Gets a summary of all shift trades in the matched state |
 | [**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi#getWorkforcemanagementManagementunitShifttradesUsers) | Gets list of users available for whom you can send direct shift trade requests |
 | [**getWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeofflimit) | Gets a time off limit object |
@@ -170,6 +174,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementAlternativeshiftsTradesStateJobs**](WorkforceManagementApi#patchWorkforcemanagementAlternativeshiftsTradesStateJobs) | Bulk update alternative shift trade states |
 | [**patchWorkforcemanagementBusinessunit**](WorkforceManagementApi#patchWorkforcemanagementBusinessunit) | Update business unit |
 | [**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycode) | Update an activity code |
+| [**patchWorkforcemanagementBusinessunitActivitycodesBulk**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycodesBulk) | Update multiple activity codes |
 | [**patchWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivityplan) | Update an activity plan |
 | [**patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAlternativeshiftsSettings) | Update alternative shifts settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitCapacityplan) | Update a capacity plan configuration |
@@ -234,6 +239,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate) | Force regenerate the latest long term staffing requirements for a business unit |
 | [**postWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplans) | Create a new capacity plan |
 | [**postWorkforcemanagementBusinessunitCapacityplansBulkRemove**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansBulkRemove) | Delete capacity plans in a business unit |
+| [**postWorkforcemanagementBusinessunitDecisionmetricsUpdate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdate) | Initiates the decision metrics update process |
+| [**postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl) | Creates a signed upload URL for updating decision metrics |
 | [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi#postWorkforcemanagementBusinessunitIntraday) | Get intraday data for the given date for the requested planningGroupIds |
 | [**postWorkforcemanagementBusinessunitOpportunitiesBulkAdd**](WorkforceManagementApi#postWorkforcemanagementBusinessunitOpportunitiesBulkAdd) | Bulk add opportunities |
 | [**postWorkforcemanagementBusinessunitOpportunitiesBulkPublish**](WorkforceManagementApi#postWorkforcemanagementBusinessunitOpportunitiesBulkPublish) | Bulk publish opportunities |
@@ -257,6 +264,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroups) | Creates a new staffing group |
 | [**postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery) | Gets a list of planning group to staffing groups list association |
 | [**postWorkforcemanagementBusinessunitStaffinggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsQuery) | Gets staffing group associations for a list of user IDs |
+| [**postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion) | Converts existing time-off limit to another granularity. |
+| [**postWorkforcemanagementBusinessunitTimeofflimitValuesImport**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitValuesImport) | Starts importing the uploaded time-off limit values |
+| [**postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl) | Creates a signed upload URL for importing values into time-off limit |
+| [**postWorkforcemanagementBusinessunitTimeofflimitValuesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitValuesQuery) | Retrieves time-off limit related values based on a given set of filters. |
 | [**postWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimits) | Creates a new time-off limit object |
 | [**postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery) | Retrieves time-off limit related values based on a given set of filters. |
 | [**postWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeoffplans) | Creates a new time-off plan |
@@ -3745,6 +3756,67 @@ try {
 [**CapacityPlansListResponse**](CapacityPlansListResponse)
 
 
+# **getWorkforcemanagementBusinessunitDecisionmetricsJob**
+
+
+> [DecisionMetricsUpdateJobResponse](DecisionMetricsUpdateJobResponse) getWorkforcemanagementBusinessunitDecisionmetricsJob(businessUnitId, jobId)
+
+Gets the status of the given job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:decisionMetrics:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String jobId = "jobId_example"; // String | The ID of the update job
+try {
+    DecisionMetricsUpdateJobResponse result = apiInstance.getWorkforcemanagementBusinessunitDecisionmetricsJob(businessUnitId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitDecisionmetricsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **jobId** | **String**| The ID of the update job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionMetricsUpdateJobResponse**](DecisionMetricsUpdateJobResponse)
+
+
 # **getWorkforcemanagementBusinessunitIntradayPlanninggroups**
 
 
@@ -5491,6 +5563,132 @@ try {
 ### Return type
 
 [**BuTimeOffLimitResponse**](BuTimeOffLimitResponse)
+
+
+# **getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob**
+
+
+> [BuConvertTimeOffLimitGranularityJobResponse](BuConvertTimeOffLimitGranularityJobResponse) getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(businessUnitId, timeOffLimitId, jobId)
+
+Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:convertGranularity
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit
+String jobId = "jobId_example"; // String | The ID of the convert time off limit granularity job
+try {
+    BuConvertTimeOffLimitGranularityJobResponse result = apiInstance.getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(businessUnitId, timeOffLimitId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffLimitId** | **String**| The ID of the time-off limit | 
+| **jobId** | **String**| The ID of the convert time off limit granularity job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuConvertTimeOffLimitGranularityJobResponse**](BuConvertTimeOffLimitGranularityJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs**
+
+
+> [BuConvertTimeOffGranularityLimitJobListing](BuConvertTimeOffGranularityLimitJobListing) getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(businessUnitId, timeOffLimitId, statuses)
+
+Query the list of convert time-off limit granularity job operation.
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:convertGranularity
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit
+String statuses = "statuses_example"; // String | Status to filter the list of jobs
+try {
+    BuConvertTimeOffGranularityLimitJobListing result = apiInstance.getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(businessUnitId, timeOffLimitId, statuses);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffLimitId** | **String**| The ID of the time-off limit | 
+| **statuses** | **String**| Status to filter the list of jobs | [optional]<br />**Values**: Complete, Error, Processing 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuConvertTimeOffGranularityLimitJobListing**](BuConvertTimeOffGranularityLimitJobListing)
 
 
 # **getWorkforcemanagementBusinessunitTimeofflimits**
@@ -7965,6 +8163,65 @@ try {
 ### Return type
 
 [**ShiftTradeListResponse**](ShiftTradeListResponse)
+
+
+# **getWorkforcemanagementManagementunitDecisionmetrics**
+
+
+> [DecisionMetricsResponse](DecisionMetricsResponse) getWorkforcemanagementManagementunitDecisionmetrics(managementUnitId)
+
+Gets the decision metrics of all user in given management unit
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/decisionmetrics  
+
+Requires ANY permissions: 
+
+* wfm:decisionMetrics:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
+try {
+    DecisionMetricsResponse result = apiInstance.getWorkforcemanagementManagementunitDecisionmetrics(managementUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitDecisionmetrics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionMetricsResponse**](DecisionMetricsResponse)
 
 
 # **getWorkforcemanagementManagementunitShifttradesMatched**
@@ -10852,6 +11109,67 @@ try {
 ### Return type
 
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode)
+
+
+# **patchWorkforcemanagementBusinessunitActivitycodesBulk**
+
+
+> [BulkUpdateActivityCodeResponse](BulkUpdateActivityCodeResponse) patchWorkforcemanagementBusinessunitActivitycodesBulk(businessUnitId, body)
+
+Update multiple activity codes
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk  
+
+Requires ANY permissions: 
+
+* wfm:activityCodes:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+BulkUpdateActivityCodeRequest body = new BulkUpdateActivityCodeRequest(); // BulkUpdateActivityCodeRequest | body
+try {
+    BulkUpdateActivityCodeResponse result = apiInstance.patchWorkforcemanagementBusinessunitActivitycodesBulk(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycodesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
+| **body** | [**BulkUpdateActivityCodeRequest**](BulkUpdateActivityCodeRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkUpdateActivityCodeResponse**](BulkUpdateActivityCodeResponse)
 
 
 # **patchWorkforcemanagementBusinessunitActivityplan**
@@ -14841,6 +15159,128 @@ try {
 null (empty response body)
 
 
+# **postWorkforcemanagementBusinessunitDecisionmetricsUpdate**
+
+
+> [DecisionMetricsUpdateJobResponse](DecisionMetricsUpdateJobResponse) postWorkforcemanagementBusinessunitDecisionmetricsUpdate(businessUnitId, body)
+
+Initiates the decision metrics update process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update  
+
+Requires ANY permissions: 
+
+* wfm:decisionMetrics:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+DecisionMetricsUpdateJobRequest body = new DecisionMetricsUpdateJobRequest(); // DecisionMetricsUpdateJobRequest | body
+try {
+    DecisionMetricsUpdateJobResponse result = apiInstance.postWorkforcemanagementBusinessunitDecisionmetricsUpdate(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**DecisionMetricsUpdateJobRequest**](DecisionMetricsUpdateJobRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionMetricsUpdateJobResponse**](DecisionMetricsUpdateJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl**
+
+
+> [DecisionMetricsUploadResponse](DecisionMetricsUploadResponse) postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(businessUnitId, body)
+
+Creates a signed upload URL for updating decision metrics
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl  
+
+Requires ANY permissions: 
+
+* wfm:decisionMetrics:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+UploadUrlRequestBody body = new UploadUrlRequestBody(); // UploadUrlRequestBody | body
+try {
+    DecisionMetricsUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionMetricsUploadResponse**](DecisionMetricsUploadResponse)
+
+
 # **postWorkforcemanagementBusinessunitIntraday**
 
 
@@ -16290,6 +16730,262 @@ try {
 ### Return type
 
 [**UserStaffingGroupListing**](UserStaffingGroupListing)
+
+
+# **postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion**
+
+
+> [BuConvertTimeOffLimitGranularityJobResponse](BuConvertTimeOffLimitGranularityJobResponse) postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(businessUnitId, timeOffLimitId, body)
+
+Converts existing time-off limit to another granularity.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:convertGranularity
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit
+BuConvertTimeOffLimitGranularityJobRequest body = new BuConvertTimeOffLimitGranularityJobRequest(); // BuConvertTimeOffLimitGranularityJobRequest | body
+try {
+    BuConvertTimeOffLimitGranularityJobResponse result = apiInstance.postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(businessUnitId, timeOffLimitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffLimitId** | **String**| The ID of the time-off limit | 
+| **body** | [**BuConvertTimeOffLimitGranularityJobRequest**](BuConvertTimeOffLimitGranularityJobRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuConvertTimeOffLimitGranularityJobResponse**](BuConvertTimeOffLimitGranularityJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitTimeofflimitValuesImport**
+
+
+> [BuTimeOffLimitResponse](BuTimeOffLimitResponse) postWorkforcemanagementBusinessunitTimeofflimitValuesImport(businessUnitId, timeOffLimitId, body)
+
+Starts importing the uploaded time-off limit values
+
+Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to set limit values for
+BuImportTimeOffLimitValuesRequest body = new BuImportTimeOffLimitValuesRequest(); // BuImportTimeOffLimitValuesRequest | body
+try {
+    BuTimeOffLimitResponse result = apiInstance.postWorkforcemanagementBusinessunitTimeofflimitValuesImport(businessUnitId, timeOffLimitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitValuesImport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffLimitId** | **String**| The ID of the time-off limit object to set limit values for | 
+| **body** | [**BuImportTimeOffLimitValuesRequest**](BuImportTimeOffLimitValuesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse)
+
+
+# **postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl**
+
+
+> [BuImportTimeOffLimitValuesUploadResponse](BuImportTimeOffLimitValuesUploadResponse) postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(businessUnitId, timeOffLimitId, body)
+
+Creates a signed upload URL for importing values into time-off limit
+
+Once the upload is complete, call the /import route to start the import process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import/uploadurl  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to set values for
+BuTimeOffLimitValuesImportUploadUrlRequest body = new BuTimeOffLimitValuesImportUploadUrlRequest(); // BuTimeOffLimitValuesImportUploadUrlRequest | body
+try {
+    BuImportTimeOffLimitValuesUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(businessUnitId, timeOffLimitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffLimitId** | **String**| The ID of the time-off limit object to set values for | 
+| **body** | [**BuTimeOffLimitValuesImportUploadUrlRequest**](BuTimeOffLimitValuesImportUploadUrlRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuImportTimeOffLimitValuesUploadResponse**](BuImportTimeOffLimitValuesUploadResponse)
+
+
+# **postWorkforcemanagementBusinessunitTimeofflimitValuesQuery**
+
+
+> [BuTimeOffLimitValuesForGranularityResponse](BuTimeOffLimitValuesForGranularityResponse) postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(businessUnitId, timeOffLimitId, body)
+
+Retrieves time-off limit related values based on a given set of filters.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit
+QueryTimeOffLimitValuesForGranularityRequest body = new QueryTimeOffLimitValuesForGranularityRequest(); // QueryTimeOffLimitValuesForGranularityRequest | body
+try {
+    BuTimeOffLimitValuesForGranularityResponse result = apiInstance.postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(businessUnitId, timeOffLimitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitValuesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffLimitId** | **String**| The ID of the time-off limit | 
+| **body** | [**QueryTimeOffLimitValuesForGranularityRequest**](QueryTimeOffLimitValuesForGranularityRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffLimitValuesForGranularityResponse**](BuTimeOffLimitValuesForGranularityResponse)
 
 
 # **postWorkforcemanagementBusinessunitTimeofflimits**

@@ -58,8 +58,8 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
-| WEB_MESSAGING | &quot;web.messaging&quot; | 
+| USERS_RULES | &quot;users.rules&quot; | 
+| ADMIN_NOTICE | &quot;admin.notice&quot; | 
 | AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
 | AGENTIC_VIRTUAL_AGENTS | &quot;agentic.virtual.agents&quot; | 
 | ANALYTICS_AGENTS | &quot;analytics.agents&quot; | 
@@ -128,6 +128,7 @@
 | ROUTING | &quot;routing&quot; | 
 | SCIM | &quot;scim&quot; | 
 | SCREEN_MONITORING | &quot;screen.monitoring&quot; | 
+| SDA | &quot;sda&quot; | 
 | SEARCH | &quot;search&quot; | 
 | SECONDARY_AUTOMATION_TESTING | &quot;secondary.automation.testing&quot; | 
 | SKILLS | &quot;skills&quot; | 
@@ -139,8 +140,9 @@
 | TELEPHONY_CONFIGURATION | &quot;telephony.configuration&quot; | 
 | USAGE | &quot;usage&quot; | 
 | USERS | &quot;users&quot; | 
-| USERS_RULES | &quot;users.rules&quot; | 
 | VOICE_TRANSCRIPTION | &quot;voice.transcription&quot; | 
+| WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
+| WEB_MESSAGING | &quot;web.messaging&quot; | 
 | WEBCHAT | &quot;webchat&quot; | 
 | WEBHOOKS | &quot;webhooks&quot; | 
 | WORKFORCE_MANAGEMENT_ADHERENCE | &quot;workforce.management.adherence&quot; | 

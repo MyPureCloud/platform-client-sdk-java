@@ -152,6 +152,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationRecordingstate**](ConversationsApi#patchConversationRecordingstate) | Update a conversation by setting its recording state |
 | [**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | Update the secure attributes on a conversation. |
+| [**patchConversationSuggestion**](ConversationsApi#patchConversationSuggestion) | Update a suggestion. |
 | [**patchConversationSummaryEngagements**](ConversationsApi#patchConversationSummaryEngagements) | Update agent's engagement for the summary. |
 | [**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | Update the feedback for the summary. |
 | [**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied |
@@ -230,6 +231,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsCall**](ConversationsApi#postConversationsCall) | Place a new call as part of a callback conversation. |
 | [**postConversationsCallParticipantBarge**](ConversationsApi#postConversationsCallParticipantBarge) | Barge a given participant's call creating a barged in conference of connected participants. |
 | [**postConversationsCallParticipantCoach**](ConversationsApi#postConversationsCallParticipantCoach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant. |
+| [**postConversationsCallParticipantCommunicationSummaries**](ConversationsApi#postConversationsCallParticipantCommunicationSummaries) | Request an on-demand summary for a call communication. |
 | [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | Initiate and update consult transfer (Deprecated) |
 | [**postConversationsCallParticipantConsultAgent**](ConversationsApi#postConversationsCallParticipantConsultAgent) | Initiate a consult transfer to an agent |
@@ -280,6 +282,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageInboundOpenReceipt**](ConversationsApi#postConversationsMessageInboundOpenReceipt) | Send an inbound Open Receipt Message |
 | [**postConversationsMessageInboundOpenStructuredResponse**](ConversationsApi#postConversationsMessageInboundOpenStructuredResponse) | Send inbound Open Response |
 | [**postConversationsMessageMessagesBulk**](ConversationsApi#postConversationsMessageMessagesBulk) | Get messages in batch |
+| [**postConversationsMessageParticipantCommunicationSummaries**](ConversationsApi#postConversationsMessageParticipantCommunicationSummaries) | Request an on-demand summary for a message communication. |
 | [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#postConversationsMessageParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsMessageParticipantMonitor**](ConversationsApi#postConversationsMessageParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
 | [**postConversationsMessageParticipantReplace**](ConversationsApi#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
@@ -9315,6 +9318,69 @@ try {
 **String**
 
 
+# **patchConversationSuggestion**
+
+
+> [Suggestion](Suggestion) patchConversationSuggestion(conversationId, suggestionId, body)
+
+Update a suggestion.
+
+Wraps PATCH /api/v2/conversations/{conversationId}/suggestions/{suggestionId}  
+
+Requires ALL permissions: 
+
+* conversation:suggestion:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String suggestionId = "suggestionId_example"; // String | Suggestion ID
+SuggestionPatchRequest body = new SuggestionPatchRequest(); // SuggestionPatchRequest | 
+try {
+    Suggestion result = apiInstance.patchConversationSuggestion(conversationId, suggestionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationSuggestion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **suggestionId** | **String**| Suggestion ID | 
+| **body** | [**SuggestionPatchRequest**](SuggestionPatchRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Suggestion**](Suggestion)
+
+
 # **patchConversationSummaryEngagements**
 
 
@@ -14227,6 +14293,71 @@ try {
 null (empty response body)
 
 
+# **postConversationsCallParticipantCommunicationSummaries**
+
+
+> [OnDemandSummaryAcceptedResponse](OnDemandSummaryAcceptedResponse) postConversationsCallParticipantCommunicationSummaries(conversationId, participantId, communicationId, body)
+
+Request an on-demand summary for a call communication.
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries  
+
+Requires ALL permissions: 
+
+* conversation:summary:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String participantId = "participantId_example"; // String | Participant ID
+String communicationId = "communicationId_example"; // String | Communication ID
+OnDemandConversationSummaryRequest body = new OnDemandConversationSummaryRequest(); // OnDemandConversationSummaryRequest | On-demand summary request
+try {
+    OnDemandSummaryAcceptedResponse result = apiInstance.postConversationsCallParticipantCommunicationSummaries(conversationId, participantId, communicationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantCommunicationSummaries");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **participantId** | **String**| Participant ID | 
+| **communicationId** | **String**| Communication ID | 
+| **body** | [**OnDemandConversationSummaryRequest**](OnDemandConversationSummaryRequest)| On-demand summary request | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OnDemandSummaryAcceptedResponse**](OnDemandSummaryAcceptedResponse)
+
+
 # **postConversationsCallParticipantCommunicationWrapup**
 
 
@@ -17380,6 +17511,71 @@ try {
 [**TextMessageListing**](TextMessageListing)
 
 
+# **postConversationsMessageParticipantCommunicationSummaries**
+
+
+> [OnDemandSummaryAcceptedResponse](OnDemandSummaryAcceptedResponse) postConversationsMessageParticipantCommunicationSummaries(conversationId, participantId, communicationId, body)
+
+Request an on-demand summary for a message communication.
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries  
+
+Requires ALL permissions: 
+
+* conversation:summary:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String participantId = "participantId_example"; // String | Participant ID
+String communicationId = "communicationId_example"; // String | Communication ID
+OnDemandConversationSummaryRequest body = new OnDemandConversationSummaryRequest(); // OnDemandConversationSummaryRequest | On-demand summary request
+try {
+    OnDemandSummaryAcceptedResponse result = apiInstance.postConversationsMessageParticipantCommunicationSummaries(conversationId, participantId, communicationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageParticipantCommunicationSummaries");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **participantId** | **String**| Participant ID | 
+| **communicationId** | **String**| Communication ID | 
+| **body** | [**OnDemandConversationSummaryRequest**](OnDemandConversationSummaryRequest)| On-demand summary request | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OnDemandSummaryAcceptedResponse**](OnDemandSummaryAcceptedResponse)
+
+
 # **postConversationsMessageParticipantCommunicationWrapup**
 
 
@@ -18615,7 +18811,7 @@ null (empty response body)
 # **postConversationsVideoAgentconferenceCommunication**
 
 
-> [VideoConferenceDetails](VideoConferenceDetails) postConversationsVideoAgentconferenceCommunication(conversationId, communicationId)
+> [CreateJoinVideoResponse](CreateJoinVideoResponse) postConversationsVideoAgentconferenceCommunication(conversationId, communicationId)
 
 Create an Agent-Type video conference and assign an agent to it
 
@@ -18652,7 +18848,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String communicationId = "communicationId_example"; // String | communicationId
 try {
-    VideoConferenceDetails result = apiInstance.postConversationsVideoAgentconferenceCommunication(conversationId, communicationId);
+    CreateJoinVideoResponse result = apiInstance.postConversationsVideoAgentconferenceCommunication(conversationId, communicationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsVideoAgentconferenceCommunication");
@@ -18672,7 +18868,7 @@ try {
 
 ### Return type
 
-[**VideoConferenceDetails**](VideoConferenceDetails)
+[**CreateJoinVideoResponse**](CreateJoinVideoResponse)
 
 
 # **postConversationsVideoParticipantCommunicationWrapup**

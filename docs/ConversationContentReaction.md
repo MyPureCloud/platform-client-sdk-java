@@ -28,6 +28,8 @@
 | COMMENT | &quot;Comment&quot; | 
 | VIEW | &quot;View&quot; | 
 | RATING | &quot;Rating&quot; | 
+| REPOST | &quot;Repost&quot; | 
+| SAVE | &quot;Save&quot; | 
 
 
 

@@ -8,7 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deletePresenceSource**](PresenceApi#deletePresenceSource) | Delete a Presence Source |
 | [**deletePresencedefinition**](PresenceApi#deletePresencedefinition) | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead |
 | [**getPresenceDefinition0**](PresenceApi#getPresenceDefinition0) | Get a Presence Definition |
-| [**getPresenceDefinitions0**](PresenceApi#getPresenceDefinitions0) | Get a list of Presence Definitions |
+| [**getPresenceDefinitions0**](PresenceApi#getPresenceDefinitions0) | Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division |
 | [**getPresenceSettings**](PresenceApi#getPresenceSettings) | Get the presence settings |
 | [**getPresenceSource**](PresenceApi#getPresenceSource) | Get a Presence Source |
 | [**getPresenceSources**](PresenceApi#getPresenceSources) | Get a list of Presence Sources |
@@ -279,7 +279,7 @@ try {
 
 > [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing) getPresenceDefinitions0(deactivated, divisionId, localeCode)
 
-Get a list of Presence Definitions
+Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
 
 Wraps GET /api/v2/presence/definitions  
 

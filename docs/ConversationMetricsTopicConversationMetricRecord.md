@@ -139,6 +139,7 @@
 | TCALLBACKABANDON | &quot;tCallbackAbandon&quot; | 
 | TCALLBACKCONNECT | &quot;tCallbackConnect&quot; | 
 | TCALLBACKNOTREACHED | &quot;tCallbackNotReached&quot; | 
+| TCALLBACKVIRTUALWAIT | &quot;tCallbackVirtualWait&quot; | 
 | TCFCABANDON | &quot;tCfcAbandon&quot; | 
 | TCFCACD | &quot;tCfcAcd&quot; | 
 | TCFCANSWERED | &quot;tCfcAnswered&quot; | 

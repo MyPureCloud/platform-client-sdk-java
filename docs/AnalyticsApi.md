@@ -211,8 +211,6 @@ null (empty response body)
 
 Delete/cancel an async request for agent copilot aggregates
 
-deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -1501,8 +1499,6 @@ try {
 
 Get status for async query for agent copilot aggregates
 
-getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -1561,8 +1557,6 @@ try {
 > [AgentCopilotAsyncAggregateQueryResponse](AgentCopilotAsyncAggregateQueryResponse) getAnalyticsAgentcopilotsAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results  
 
@@ -5059,8 +5053,6 @@ try {
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsAgentcopilotsAggregatesJobs(body)
 
 Query for agent copilot aggregates asynchronously
-
-postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/agentcopilots/aggregates/jobs  
 

@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** | The evaluation form name |  |
+| **division** | [**WritableStarrableDivision**](WritableStarrableDivision) | The division to which this entity belongs. |  [optional] |
 | **modifiedDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **published** | **Boolean** |  |  [optional] |
 | **contextId** | **String** |  |  [optional] |
@@ -15,6 +16,7 @@
 | **evaluationSettings** | [**EvaluationSettings**](EvaluationSettings) | Settings for evaluations associated with this form |  [optional] |
 | **latestVersionFormName** | **String** | The name of the form's most recently published version |  [optional] |
 | **aiScoring** | [**AiScoringSettings**](AiScoringSettings) | AI scoring settings for the evaluation form. |  [optional] |
+| **redacted** | **Boolean** | Is this form redacted |  [optional] |
 | **dialect** | **String** | The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 

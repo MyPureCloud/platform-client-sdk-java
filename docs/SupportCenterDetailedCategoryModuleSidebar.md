@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | **Boolean** | Whether sidebar is enabled or not |  |
+| **enabled** | **Boolean** | Whether sidebar is enabled or not. Required if support center is enabled |  [optional] |
 
 
 
