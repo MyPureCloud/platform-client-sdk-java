@@ -97,6 +97,12 @@
 | SENDDIGITALCONTENTACTION | &quot;SendDigitalContentAction&quot; | 
 | AGENTICASKFORINTENTACTION | &quot;AgenticAskForIntentAction&quot; | 
 | AGENTICANYTHINGELSEACTION | &quot;AgenticAnythingElseAction&quot; | 
+| CREATECONVERSATIONATTRIBUTEACTION | &quot;CreateConversationAttributeAction&quot; | 
+| GETCONVERSATIONATTRIBUTEACTION | &quot;GetConversationAttributeAction&quot; | 
+| GETCONVERSATIONATTRIBUTESACTION | &quot;GetConversationAttributesAction&quot; | 
+| UPDATECONVERSATIONATTRIBUTEACTION | &quot;UpdateConversationAttributeAction&quot; | 
+| FINDDIVISIONACTION | &quot;FindDivisionAction&quot; | 
+| FINDDIVISIONSACTION | &quot;FindDivisionsAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 

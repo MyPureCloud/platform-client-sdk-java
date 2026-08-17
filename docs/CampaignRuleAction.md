@@ -30,6 +30,7 @@
 | SETCAMPAIGNMESSAGESPERMINUTE | &quot;setCampaignMessagesPerMinute&quot; | 
 | CHANGECAMPAIGNQUEUE | &quot;changeCampaignQueue&quot; | 
 | CHANGECAMPAIGNTEMPLATE | &quot;changeCampaignTemplate&quot; | 
+| SETCAMPAIGNRESERVATION | &quot;setCampaignReservation&quot; | 
 
 
 

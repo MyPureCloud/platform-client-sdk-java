@@ -3596,7 +3596,7 @@ try {
 # **putRecordingsDeletionprotection**
 
 
-> Void putRecordingsDeletionprotection(protect, body)
+> [ManageDeleteProtectionResult](ManageDeleteProtectionResult) putRecordingsDeletionprotection(protect, body)
 
 Apply or revoke recording protection for conversations
 
@@ -3632,7 +3632,8 @@ RecordingApi apiInstance = new RecordingApi();
 Boolean protect = true; // Boolean | Check for apply, uncheck for revoke (each action requires the respective permission)
 ConversationDeletionProtectionQuery body = new ConversationDeletionProtectionQuery(); // ConversationDeletionProtectionQuery | 
 try {
-    apiInstance.putRecordingsDeletionprotection(protect, body);
+    ManageDeleteProtectionResult result = apiInstance.putRecordingsDeletionprotection(protect, body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#putRecordingsDeletionprotection");
     e.printStackTrace();
@@ -3651,7 +3652,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**ManageDeleteProtectionResult**](ManageDeleteProtectionResult)
 
 
 _com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_

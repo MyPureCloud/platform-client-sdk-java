@@ -31,6 +31,7 @@
 | OPEN | &quot;Open&quot; | 
 | APPLE | &quot;Apple&quot; | 
 | SMS | &quot;Sms&quot; | 
+| LINKEDIN | &quot;LinkedIn&quot; | 
 
 
 ## Enum: TypeEnum

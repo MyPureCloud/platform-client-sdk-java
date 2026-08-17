@@ -9,6 +9,7 @@
 | **queueId** | **String** |  |  [optional] |
 | **participants** | [**List&lt;ConversationSummaryTopicConversationSummaryParticipant&gt;**](ConversationSummaryTopicConversationSummaryParticipant) |  |  [optional] |
 | **communicationIds** | **List&lt;String&gt;** |  |  [optional] |
+| **latestCommunicationId** | **String** |  |  [optional] |
 | **createdDate** | [**Date**](Date) |  |  [optional] |
 | **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) |  |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |

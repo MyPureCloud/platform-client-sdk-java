@@ -77,8 +77,6 @@ try {
 
 Publish Predictive Routing Custom Kpi Attribution Batch Events
 
-postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/events/routing/customkpiattributions  
 
 Requires ANY permissions: 

@@ -652,8 +652,6 @@ null (empty response body)
 
 Delete a custom Key Performance Indicator.
 
-deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/routing/predictors/keyperformanceindicators/{kpiId}  
 
 Requires ANY permissions: 
@@ -3483,8 +3481,6 @@ try {
 
 Retrieve a single Key Performance Indicator.
 
-getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/routing/predictors/keyperformanceindicators/{kpiId}  
 
 Requires ANY permissions: 
@@ -3606,8 +3602,6 @@ try {
 > [List&lt;KeyPerformanceIndicatorType&gt;](KeyPerformanceIndicatorType) getRoutingPredictorsKeyperformanceindicatortypes()
 
 Get a list of Key Performance Indicators Types available.
-
-getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/predictors/keyperformanceindicatortypes  
 
@@ -6981,8 +6975,6 @@ try {
 
 Update a custom Key Performance Indicator.
 
-patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/routing/predictors/keyperformanceindicators/{kpiId}  
 
 Requires ANY permissions: 
@@ -8882,8 +8874,6 @@ try {
 > [KeyPerformanceIndicator](KeyPerformanceIndicator) postRoutingPredictorsKeyperformanceindicators(body)
 
 Create a custom Key Performance Indicator.
-
-postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/routing/predictors/keyperformanceindicators  
 

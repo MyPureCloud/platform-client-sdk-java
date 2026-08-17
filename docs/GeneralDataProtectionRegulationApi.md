@@ -182,7 +182,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **searchType** | **String**| Search Type |<br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER, INSTAGRAM, FACEBOOK, APPLE_MESSAGES, EXTERNAL_ID 
+| **searchType** | **String**| Search Type |<br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER, INSTAGRAM, FACEBOOK, APPLE_MESSAGES, WHATSAPP, EXTERNAL_ID 
 | **searchValue** | **String**| Search Value | 
 {: class="table-striped"}
 

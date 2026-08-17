@@ -485,7 +485,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
 | **expand** | [**List&lt;String&gt;**](String)| expand | [optional] 
-| **integrationPresenceSource** | **String**| integrationPresenceSource | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight 
+| **integrationPresenceSource** | **String**| integrationPresenceSource | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral 
 {: class="table-striped"}
 
 

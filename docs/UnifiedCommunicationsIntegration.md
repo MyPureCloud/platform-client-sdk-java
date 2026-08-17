@@ -29,6 +29,7 @@
 | MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; | 
 | ZOOMPHONE | &quot;ZoomPhone&quot; | 
 | EIGHTBYEIGHT | &quot;EightByEight&quot; | 
+| RINGCENTRAL | &quot;RingCentral&quot; | 
 
 
 

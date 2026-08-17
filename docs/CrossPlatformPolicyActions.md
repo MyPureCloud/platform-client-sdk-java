@@ -13,7 +13,6 @@
 | **assignMeteredAssignmentByAgent** | [**List&lt;MeteredAssignmentByAgent&gt;**](MeteredAssignmentByAgent) |  |  [optional] |
 | **assignCalibrations** | [**List&lt;CalibrationAssignment&gt;**](CalibrationAssignment) |  |  [optional] |
 | **retentionDuration** | [**RetentionDuration**](RetentionDuration) |  |  [optional] |
-| **mediaTranscriptions** | [**List&lt;MediaTranscription&gt;**](MediaTranscription) |  |  [optional] |
 | **integrationExport** | [**IntegrationExport**](IntegrationExport) | Policy action for exporting recordings using an integration to 3rd party s3. |  [optional] |
 
 

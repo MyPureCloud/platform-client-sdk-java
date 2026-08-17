@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **assessment** | [**LearningAssessment**](LearningAssessment) | The assessment associated with this assignment |  [optional] |
+| **dateCompleted** | [**Date**](Date) | The date the assignment was completed. If not yet completed, this will be null. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **createdBy** | [**UserReference**](UserReference) | The user who created the assignment |  [optional] |
 | **dateCreated** | [**Date**](Date) | The date when the assignment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedBy** | [**UserReference**](UserReference) | The user who modified the assignment |  [optional] |

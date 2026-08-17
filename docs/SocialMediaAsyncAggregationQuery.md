@@ -37,6 +37,8 @@
 | COMMENTS | &quot;comments&quot; |
 | VIEWS | &quot;views&quot; |
 | POSTTYPE | &quot;postType&quot; |
+| REPOSTS | &quot;reposts&quot; |
+| SAVES | &quot;saves&quot; |
 
 
 ## Enum: MetricsEnum

@@ -18,6 +18,7 @@
 | INSTAGRAM | &quot;INSTAGRAM&quot; | 
 | FACEBOOK | &quot;FACEBOOK&quot; | 
 | APPLE_MESSAGES | &quot;APPLE_MESSAGES&quot; | 
+| WHATSAPP | &quot;WHATSAPP&quot; | 
 
 
 

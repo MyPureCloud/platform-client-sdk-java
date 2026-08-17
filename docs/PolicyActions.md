@@ -15,7 +15,6 @@
 | **assignSurveys** | [**List&lt;SurveyAssignment&gt;**](SurveyAssignment) |  |  [optional] |
 | **retentionDuration** | [**RetentionDuration**](RetentionDuration) |  |  [optional] |
 | **initiateScreenRecording** | [**InitiateScreenRecording**](InitiateScreenRecording) |  |  [optional] |
-| **mediaTranscriptions** | [**List&lt;MediaTranscription&gt;**](MediaTranscription) | Deprecated. The Voci and Call Journey transcription integrations are no longer supported. |  [optional] |
 | **integrationExport** | [**IntegrationExport**](IntegrationExport) | Policy action for exporting recordings using an integration to 3rd party s3. |  [optional] |
 
 
