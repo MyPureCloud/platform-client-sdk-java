@@ -56,7 +56,8 @@ public class ConversationMessagingChannel  implements Serializable {
     WEBMESSAGING("WebMessaging"),
     OPEN("Open"),
     APPLE("Apple"),
-    SMS("Sms");
+    SMS("Sms"),
+    LINKEDIN("LinkedIn");
 
     private String value;
 

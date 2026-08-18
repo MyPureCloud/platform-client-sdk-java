@@ -25,6 +25,7 @@
 | **customerIntent** | [**CustomerIntentReference**](CustomerIntentReference) | The customer intent for the Case. |  [optional] |
 | **creationStatus** | [**CreationStatusEnum**](#Enum--CreationStatusEnum) | The creation status of the Case. |  [optional] |
 | **ttlSeconds** | **Integer** | The time-to-live in seconds for the lifetime of the Case. |  [optional] |
+| **failureReason** | [**FailureReason**](FailureReason) | The reason the Case failed, if applicable. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -67,4 +68,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

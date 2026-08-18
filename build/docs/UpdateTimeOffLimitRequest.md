@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **defaultLimitMinutes** | **Integer** | The default time off limit value in minutes per granularity |  [optional] |
-| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the time off limit |  |
+| **defaultLimitMinutes** | **Integer** | Deprecated. The default time off limit value in minutes per granularity |  [optional] |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Deprecated. Version metadata for the time off limit |  |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

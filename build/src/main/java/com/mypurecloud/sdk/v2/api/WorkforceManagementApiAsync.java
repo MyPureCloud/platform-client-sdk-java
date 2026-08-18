@@ -58,6 +58,14 @@ import com.mypurecloud.sdk.v2.model.AgentsBidAssignedWorkPlanOverrideRequest;
 import com.mypurecloud.sdk.v2.model.AgentsEffectiveScheduleSetResponse;
 import com.mypurecloud.sdk.v2.model.AgentsIntegrationsListing;
 import com.mypurecloud.sdk.v2.model.AgentsWorkPlansResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedExportJobRequest;
+import com.mypurecloud.sdk.v2.model.AggregatedExportSnapshotJobRequest;
+import com.mypurecloud.sdk.v2.model.AggregatedHistoricalExportJobResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedHistoricalExportJobStatus;
+import com.mypurecloud.sdk.v2.model.AggregatedSessionExportJobResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedSessionExportJobStatus;
+import com.mypurecloud.sdk.v2.model.AggregatedSnapshotExportJobResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedSnapshotExportJobStatus;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftBuSettingsResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftJobResponse;
@@ -422,6 +430,9 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapa
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitDecisionmetricsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
@@ -604,6 +615,9 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest;
@@ -1999,11 +2013,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Deletes a time off limit object
+   * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteWorkforcemanagementManagementunitTimeofflimitAsync(DeleteWorkforcemanagementManagementunitTimeofflimitRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -2033,11 +2048,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Deletes a time off limit object
+   * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteWorkforcemanagementManagementunitTimeofflimitAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -2074,11 +2090,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Deletes a time off plan
+   * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteWorkforcemanagementManagementunitTimeoffplanAsync(DeleteWorkforcemanagementManagementunitTimeoffplanRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -2108,11 +2125,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Deletes a time off plan
+   * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteWorkforcemanagementManagementunitTimeoffplanAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -4914,6 +4932,231 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ContinuousForecastGetSessionResponse> response = (ApiResponse<ContinuousForecastGetSessionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status of the session export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AggregatedSessionExportJobStatus> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobAsync(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobRequest request, final AsyncApiCallback<AggregatedSessionExportJobStatus> callback) {
+    try {
+      final SettableFuture<AggregatedSessionExportJobStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregatedSessionExportJobStatus>() {}, new AsyncApiCallback<ApiResponse<AggregatedSessionExportJobStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedSessionExportJobStatus> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status of the session export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AggregatedSessionExportJobStatus>> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AggregatedSessionExportJobStatus>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AggregatedSessionExportJobStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AggregatedSessionExportJobStatus>() {}, new AsyncApiCallback<ApiResponse<AggregatedSessionExportJobStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedSessionExportJobStatus> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedSessionExportJobStatus> response = (ApiResponse<AggregatedSessionExportJobStatus>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedSessionExportJobStatus> response = (ApiResponse<AggregatedSessionExportJobStatus>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status of the historical export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AggregatedHistoricalExportJobStatus> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobAsync(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobRequest request, final AsyncApiCallback<AggregatedHistoricalExportJobStatus> callback) {
+    try {
+      final SettableFuture<AggregatedHistoricalExportJobStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregatedHistoricalExportJobStatus>() {}, new AsyncApiCallback<ApiResponse<AggregatedHistoricalExportJobStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedHistoricalExportJobStatus> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status of the historical export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AggregatedHistoricalExportJobStatus>> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AggregatedHistoricalExportJobStatus>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AggregatedHistoricalExportJobStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AggregatedHistoricalExportJobStatus>() {}, new AsyncApiCallback<ApiResponse<AggregatedHistoricalExportJobStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedHistoricalExportJobStatus> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedHistoricalExportJobStatus> response = (ApiResponse<AggregatedHistoricalExportJobStatus>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedHistoricalExportJobStatus> response = (ApiResponse<AggregatedHistoricalExportJobStatus>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status of the snapshot export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AggregatedSnapshotExportJobStatus> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobAsync(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobRequest request, final AsyncApiCallback<AggregatedSnapshotExportJobStatus> callback) {
+    try {
+      final SettableFuture<AggregatedSnapshotExportJobStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregatedSnapshotExportJobStatus>() {}, new AsyncApiCallback<ApiResponse<AggregatedSnapshotExportJobStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedSnapshotExportJobStatus> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status of the snapshot export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AggregatedSnapshotExportJobStatus>> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AggregatedSnapshotExportJobStatus>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AggregatedSnapshotExportJobStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AggregatedSnapshotExportJobStatus>() {}, new AsyncApiCallback<ApiResponse<AggregatedSnapshotExportJobStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedSnapshotExportJobStatus> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedSnapshotExportJobStatus> response = (ApiResponse<AggregatedSnapshotExportJobStatus>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedSnapshotExportJobStatus> response = (ApiResponse<AggregatedSnapshotExportJobStatus>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10112,10 +10355,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets a time off limit object
-   * Returns properties of time off limit object, but not daily values.
+   * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TimeOffLimit> getWorkforcemanagementManagementunitTimeofflimitAsync(GetWorkforcemanagementManagementunitTimeofflimitRequest request, final AsyncApiCallback<TimeOffLimit> callback) {
     try {
@@ -10146,10 +10390,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets a time off limit object
-   * Returns properties of time off limit object, but not daily values.
+   * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TimeOffLimit>> getWorkforcemanagementManagementunitTimeofflimitAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TimeOffLimit>> callback) {
     try {
@@ -10187,10 +10432,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets a list of time off limit objects under management unit.
-   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TimeOffLimitListing> getWorkforcemanagementManagementunitTimeofflimitsAsync(GetWorkforcemanagementManagementunitTimeofflimitsRequest request, final AsyncApiCallback<TimeOffLimitListing> callback) {
     try {
@@ -10221,10 +10467,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Gets a list of time off limit objects under management unit.
-   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TimeOffLimitListing>> getWorkforcemanagementManagementunitTimeofflimitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TimeOffLimitListing>> callback) {
     try {
@@ -10261,11 +10508,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Gets a time off plan
+   * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TimeOffPlan> getWorkforcemanagementManagementunitTimeoffplanAsync(GetWorkforcemanagementManagementunitTimeoffplanRequest request, final AsyncApiCallback<TimeOffPlan> callback) {
     try {
@@ -10295,11 +10543,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Gets a time off plan
+   * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TimeOffPlan>> getWorkforcemanagementManagementunitTimeoffplanAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TimeOffPlan>> callback) {
     try {
@@ -10336,11 +10585,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Gets a list of time off plans
+   * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TimeOffPlanListing> getWorkforcemanagementManagementunitTimeoffplansAsync(GetWorkforcemanagementManagementunitTimeoffplansRequest request, final AsyncApiCallback<TimeOffPlanListing> callback) {
     try {
@@ -10370,11 +10620,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Gets a list of time off plans
+   * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TimeOffPlanListing>> getWorkforcemanagementManagementunitTimeoffplansAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TimeOffPlanListing>> callback) {
     try {
@@ -15070,10 +15321,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Updates a time off limit object.
-   * Updates time off limit object properties, but not daily values.
+   * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TimeOffLimit> patchWorkforcemanagementManagementunitTimeofflimitAsync(PatchWorkforcemanagementManagementunitTimeofflimitRequest request, final AsyncApiCallback<TimeOffLimit> callback) {
     try {
@@ -15104,10 +15356,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Updates a time off limit object.
-   * Updates time off limit object properties, but not daily values.
+   * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TimeOffLimit>> patchWorkforcemanagementManagementunitTimeofflimitAsync(ApiRequest<UpdateTimeOffLimitRequest> request, final AsyncApiCallback<ApiResponse<TimeOffLimit>> callback) {
     try {
@@ -15144,11 +15397,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Updates a time off plan
+   * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TimeOffPlan> patchWorkforcemanagementManagementunitTimeoffplanAsync(PatchWorkforcemanagementManagementunitTimeoffplanRequest request, final AsyncApiCallback<TimeOffPlan> callback) {
     try {
@@ -15178,11 +15432,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Updates a time off plan
+   * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TimeOffPlan>> patchWorkforcemanagementManagementunitTimeoffplanAsync(ApiRequest<UpdateTimeOffPlanRequest> request, final AsyncApiCallback<ApiResponse<TimeOffPlan>> callback) {
     try {
@@ -18596,6 +18851,231 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Create a session export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AggregatedSessionExportJobResponse> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsAsync(PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsRequest request, final AsyncApiCallback<AggregatedSessionExportJobResponse> callback) {
+    try {
+      final SettableFuture<AggregatedSessionExportJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregatedSessionExportJobResponse>() {}, new AsyncApiCallback<ApiResponse<AggregatedSessionExportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedSessionExportJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a session export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AggregatedSessionExportJobResponse>> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsAsync(ApiRequest<AggregatedExportJobRequest> request, final AsyncApiCallback<ApiResponse<AggregatedSessionExportJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AggregatedSessionExportJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AggregatedSessionExportJobResponse>() {}, new AsyncApiCallback<ApiResponse<AggregatedSessionExportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedSessionExportJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedSessionExportJobResponse> response = (ApiResponse<AggregatedSessionExportJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedSessionExportJobResponse> response = (ApiResponse<AggregatedSessionExportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a historical export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AggregatedHistoricalExportJobResponse> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsAsync(PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsRequest request, final AsyncApiCallback<AggregatedHistoricalExportJobResponse> callback) {
+    try {
+      final SettableFuture<AggregatedHistoricalExportJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregatedHistoricalExportJobResponse>() {}, new AsyncApiCallback<ApiResponse<AggregatedHistoricalExportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedHistoricalExportJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a historical export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AggregatedHistoricalExportJobResponse>> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsAsync(ApiRequest<AggregatedExportJobRequest> request, final AsyncApiCallback<ApiResponse<AggregatedHistoricalExportJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AggregatedHistoricalExportJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AggregatedHistoricalExportJobResponse>() {}, new AsyncApiCallback<ApiResponse<AggregatedHistoricalExportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedHistoricalExportJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedHistoricalExportJobResponse> response = (ApiResponse<AggregatedHistoricalExportJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedHistoricalExportJobResponse> response = (ApiResponse<AggregatedHistoricalExportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a snapshot export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AggregatedSnapshotExportJobResponse> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsAsync(PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsRequest request, final AsyncApiCallback<AggregatedSnapshotExportJobResponse> callback) {
+    try {
+      final SettableFuture<AggregatedSnapshotExportJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregatedSnapshotExportJobResponse>() {}, new AsyncApiCallback<ApiResponse<AggregatedSnapshotExportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedSnapshotExportJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a snapshot export job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AggregatedSnapshotExportJobResponse>> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsAsync(ApiRequest<AggregatedExportSnapshotJobRequest> request, final AsyncApiCallback<ApiResponse<AggregatedSnapshotExportJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AggregatedSnapshotExportJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AggregatedSnapshotExportJobResponse>() {}, new AsyncApiCallback<ApiResponse<AggregatedSnapshotExportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregatedSnapshotExportJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedSnapshotExportJobResponse> response = (ApiResponse<AggregatedSnapshotExportJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregatedSnapshotExportJobResponse> response = (ApiResponse<AggregatedSnapshotExportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Bulk add opportunities
    * 
    * @param request the request object
@@ -20621,11 +21101,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Retrieves time-off limit related values based on a given set of filters.
+   * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<BuTimeOffLimitValuesResponse> postWorkforcemanagementBusinessunitTimeofflimitsValuesQueryAsync(PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest request, final AsyncApiCallback<BuTimeOffLimitValuesResponse> callback) {
     try {
@@ -20655,11 +21136,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Retrieves time-off limit related values based on a given set of filters.
+   * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<BuTimeOffLimitValuesResponse>> postWorkforcemanagementBusinessunitTimeofflimitsValuesQueryAsync(ApiRequest<QueryTimeOffLimitValuesRequest> request, final AsyncApiCallback<ApiResponse<BuTimeOffLimitValuesResponse>> callback) {
     try {
@@ -23099,10 +23581,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Creates a new time off limit object under management unit.
-   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TimeOffLimit> postWorkforcemanagementManagementunitTimeofflimitsAsync(PostWorkforcemanagementManagementunitTimeofflimitsRequest request, final AsyncApiCallback<TimeOffLimit> callback) {
     try {
@@ -23133,10 +23616,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Creates a new time off limit object under management unit.
-   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TimeOffLimit>> postWorkforcemanagementManagementunitTimeofflimitsAsync(ApiRequest<CreateTimeOffLimitRequest> request, final AsyncApiCallback<ApiResponse<TimeOffLimit>> callback) {
     try {
@@ -23173,11 +23657,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Retrieves time off limit related values based on a given set of filters.
+   * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<QueryTimeOffLimitValuesResponse> postWorkforcemanagementManagementunitTimeofflimitsValuesQueryAsync(PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest request, final AsyncApiCallback<QueryTimeOffLimitValuesResponse> callback) {
     try {
@@ -23207,11 +23692,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Retrieves time off limit related values based on a given set of filters.
+   * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<QueryTimeOffLimitValuesResponse>> postWorkforcemanagementManagementunitTimeofflimitsValuesQueryAsync(ApiRequest<QueryTimeOffLimitValuesRequest> request, final AsyncApiCallback<ApiResponse<QueryTimeOffLimitValuesResponse>> callback) {
     try {
@@ -23248,11 +23734,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Creates a new time off plan
+   * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TimeOffPlan> postWorkforcemanagementManagementunitTimeoffplansAsync(PostWorkforcemanagementManagementunitTimeoffplansRequest request, final AsyncApiCallback<TimeOffPlan> callback) {
     try {
@@ -23282,11 +23769,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Creates a new time off plan
+   * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TimeOffPlan>> postWorkforcemanagementManagementunitTimeoffplansAsync(ApiRequest<CreateTimeOffPlanRequest> request, final AsyncApiCallback<ApiResponse<TimeOffPlan>> callback) {
     try {
@@ -25959,10 +26447,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Sets daily values for a date range of time off limit object
-   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TimeOffLimit> putWorkforcemanagementManagementunitTimeofflimitValuesAsync(PutWorkforcemanagementManagementunitTimeofflimitValuesRequest request, final AsyncApiCallback<TimeOffLimit> callback) {
     try {
@@ -25993,10 +26482,11 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Sets daily values for a date range of time off limit object
-   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TimeOffLimit>> putWorkforcemanagementManagementunitTimeofflimitValuesAsync(ApiRequest<SetTimeOffLimitValuesRequest> request, final AsyncApiCallback<ApiResponse<TimeOffLimit>> callback) {
     try {

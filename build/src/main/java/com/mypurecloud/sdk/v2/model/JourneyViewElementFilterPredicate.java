@@ -42,7 +42,7 @@ public class JourneyViewElementFilterPredicate  implements Serializable {
     }
   }
   /**
-   * Optional operator, default is Matches. Valid values: Matches
+   * Optional operator, default is Matches. Valid values: Matches, NotMatches
    */
  @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
@@ -128,14 +128,14 @@ public class JourneyViewElementFilterPredicate  implements Serializable {
 
 
   /**
-   * Optional operator, default is Matches. Valid values: Matches
+   * Optional operator, default is Matches. Valid values: Matches, NotMatches
    **/
   public JourneyViewElementFilterPredicate operator(OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Optional operator, default is Matches. Valid values: Matches")
+  @ApiModelProperty(example = "null", value = "Optional operator, default is Matches. Valid values: Matches, NotMatches")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;

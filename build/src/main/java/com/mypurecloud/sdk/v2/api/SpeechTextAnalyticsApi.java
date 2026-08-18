@@ -21,6 +21,9 @@ import com.mypurecloud.sdk.v2.model.DictionaryFeedback;
 import com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GenAIPhrasesJob;
+import com.mypurecloud.sdk.v2.model.GenAIPhrasesJobRequest;
+import com.mypurecloud.sdk.v2.model.GenAIPhrasesJobs;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
@@ -106,6 +109,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsRequest
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralStatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneratedphrasesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsTestphraseJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguageConversationRequest;
@@ -119,6 +123,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsPubl
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsReprocessingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsGeneratedphrasesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsTestphraseJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
@@ -3383,6 +3388,84 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
+   * Get a Speech & Text Analytics GenAI phrases job by id
+   * 
+   * @param jobId the id of the GenAI phrases job (required)
+   * @return GenAIPhrasesJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GenAIPhrasesJob getSpeechandtextanalyticsTopicsGeneratedphrasesJob(String jobId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTopicsGeneratedphrasesJob(createGetSpeechandtextanalyticsTopicsGeneratedphrasesJobRequest(jobId));
+  }
+
+  /**
+   * Get a Speech & Text Analytics GenAI phrases job by id
+   * 
+   * @param jobId the id of the GenAI phrases job (required)
+   * @return GenAIPhrasesJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GenAIPhrasesJob> getSpeechandtextanalyticsTopicsGeneratedphrasesJobWithHttpInfo(String jobId) throws IOException {
+    return getSpeechandtextanalyticsTopicsGeneratedphrasesJob(createGetSpeechandtextanalyticsTopicsGeneratedphrasesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsTopicsGeneratedphrasesJobRequest createGetSpeechandtextanalyticsTopicsGeneratedphrasesJobRequest(String jobId) {
+    return GetSpeechandtextanalyticsTopicsGeneratedphrasesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get a Speech & Text Analytics GenAI phrases job by id
+   * 
+   * @param request The request object
+   * @return GenAIPhrasesJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GenAIPhrasesJob getSpeechandtextanalyticsTopicsGeneratedphrasesJob(GetSpeechandtextanalyticsTopicsGeneratedphrasesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GenAIPhrasesJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GenAIPhrasesJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics GenAI phrases job by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GenAIPhrasesJob> getSpeechandtextanalyticsTopicsGeneratedphrasesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GenAIPhrasesJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GenAIPhrasesJob> response = (ApiResponse<GenAIPhrasesJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GenAIPhrasesJob> response = (ApiResponse<GenAIPhrasesJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a Speech & Text Analytics publish topics job by id
    * 
    * @param jobId The id of the publish topics job (required)
@@ -4409,6 +4492,84 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
+   * Create new Speech & Text Analytics GenAI topic phrases generation job
+   * 
+   * @param body The GenAI topic phrases generation job to create (required)
+   * @return GenAIPhrasesJobs
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GenAIPhrasesJobs postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(GenAIPhrasesJobRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(createPostSpeechandtextanalyticsTopicsGeneratedphrasesJobsRequest(body));
+  }
+
+  /**
+   * Create new Speech & Text Analytics GenAI topic phrases generation job
+   * 
+   * @param body The GenAI topic phrases generation job to create (required)
+   * @return GenAIPhrasesJobs
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GenAIPhrasesJobs> postSpeechandtextanalyticsTopicsGeneratedphrasesJobsWithHttpInfo(GenAIPhrasesJobRequest body) throws IOException {
+    return postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(createPostSpeechandtextanalyticsTopicsGeneratedphrasesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsTopicsGeneratedphrasesJobsRequest createPostSpeechandtextanalyticsTopicsGeneratedphrasesJobsRequest(GenAIPhrasesJobRequest body) {
+    return PostSpeechandtextanalyticsTopicsGeneratedphrasesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create new Speech & Text Analytics GenAI topic phrases generation job
+   * 
+   * @param request The request object
+   * @return GenAIPhrasesJobs
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GenAIPhrasesJobs postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(PostSpeechandtextanalyticsTopicsGeneratedphrasesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GenAIPhrasesJobs> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GenAIPhrasesJobs>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create new Speech & Text Analytics GenAI topic phrases generation job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GenAIPhrasesJobs> postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(ApiRequest<GenAIPhrasesJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GenAIPhrasesJobs>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GenAIPhrasesJobs> response = (ApiResponse<GenAIPhrasesJobs>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GenAIPhrasesJobs> response = (ApiResponse<GenAIPhrasesJobs>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create new Speech & Text Analytics publish topics job
    * 
    * @param body The publish topics job to create (required)
@@ -4487,7 +4648,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech & Text Analytics publish topics job
+   * Create new Speech & Text Analytics test topic phrase job
    * 
    * @param body The publish test topic phrase job to create (required)
    * @return TestTopicPhraseJobs
@@ -4499,7 +4660,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech & Text Analytics publish topics job
+   * Create new Speech & Text Analytics test topic phrase job
    * 
    * @param body The publish test topic phrase job to create (required)
    * @return TestTopicPhraseJobs
@@ -4517,7 +4678,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech & Text Analytics publish topics job
+   * Create new Speech & Text Analytics test topic phrase job
    * 
    * @param request The request object
    * @return TestTopicPhraseJobs
@@ -4536,7 +4697,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech & Text Analytics publish topics job
+   * Create new Speech & Text Analytics test topic phrase job
    * 
    * @param request The request object
    * @return the response

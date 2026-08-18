@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CaseReference;
+import com.mypurecloud.sdk.v2.model.FailureReason;
 import com.mypurecloud.sdk.v2.model.StageReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WorkitemActivityReference;
@@ -60,7 +61,8 @@ public class Step  implements Serializable {
     INPROGRESS("InProgress"),
     OPEN("Open"),
     COMPLETED("Completed"),
-    TERMINATED("Terminated");
+    TERMINATED("Terminated"),
+    FAILED("Failed");
 
     private String value;
 
@@ -90,6 +92,7 @@ public class Step  implements Serializable {
   private StatusEnum status = null;
   private StageReference stage = null;
   private WorkitemActivityReference workitemActivity = null;
+  private FailureReason failureReason = null;
   private String selfUri = null;
   private CaseReference _case = null;
 
@@ -298,6 +301,24 @@ public class Step  implements Serializable {
   }
 
 
+  /**
+   * The reason the Step failed, if applicable.
+   **/
+  public Step failureReason(FailureReason failureReason) {
+    this.failureReason = failureReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason the Step failed, if applicable.")
+  @JsonProperty("failureReason")
+  public FailureReason getFailureReason() {
+    return failureReason;
+  }
+  public void setFailureReason(FailureReason failureReason) {
+    this.failureReason = failureReason;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -345,13 +366,14 @@ public class Step  implements Serializable {
             Objects.equals(this.status, step.status) &&
             Objects.equals(this.stage, step.stage) &&
             Objects.equals(this.workitemActivity, step.workitemActivity) &&
+            Objects.equals(this.failureReason, step.failureReason) &&
             Objects.equals(this.selfUri, step.selfUri) &&
             Objects.equals(this._case, step._case);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateCreated, dateModified, dateCompleted, dateStarted, modifiedBy, version, status, stage, workitemActivity, selfUri, _case);
+    return Objects.hash(id, name, description, dateCreated, dateModified, dateCompleted, dateStarted, modifiedBy, version, status, stage, workitemActivity, failureReason, selfUri, _case);
   }
 
   @Override
@@ -371,6 +393,7 @@ public class Step  implements Serializable {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    stage: ").append(toIndentedString(stage)).append("\n");
     sb.append("    workitemActivity: ").append(toIndentedString(workitemActivity)).append("\n");
+    sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    _case: ").append(toIndentedString(_case)).append("\n");
     sb.append("}");

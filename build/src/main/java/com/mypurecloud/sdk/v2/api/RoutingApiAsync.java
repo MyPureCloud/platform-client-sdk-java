@@ -921,7 +921,6 @@ public class RoutingApiAsync {
   /**
    * Delete a custom Key Performance Indicator.
    * 
-   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -956,7 +955,6 @@ public class RoutingApiAsync {
   /**
    * Delete a custom Key Performance Indicator.
    * 
-   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4450,7 +4448,6 @@ public class RoutingApiAsync {
   /**
    * Retrieve a single Key Performance Indicator.
    * 
-   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4485,7 +4482,6 @@ public class RoutingApiAsync {
   /**
    * Retrieve a single Key Performance Indicator.
    * 
-   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4602,7 +4598,6 @@ public class RoutingApiAsync {
   /**
    * Get a list of Key Performance Indicators Types available.
    * 
-   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4637,7 +4632,6 @@ public class RoutingApiAsync {
   /**
    * Get a list of Key Performance Indicators Types available.
    * 
-   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8581,7 +8575,6 @@ public class RoutingApiAsync {
   /**
    * Update a custom Key Performance Indicator.
    * 
-   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8616,7 +8609,6 @@ public class RoutingApiAsync {
   /**
    * Update a custom Key Performance Indicator.
    * 
-   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10912,7 +10904,6 @@ public class RoutingApiAsync {
   /**
    * Create a custom Key Performance Indicator.
    * 
-   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10947,7 +10938,6 @@ public class RoutingApiAsync {
   /**
    * Create a custom Key Performance Indicator.
    * 
-   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

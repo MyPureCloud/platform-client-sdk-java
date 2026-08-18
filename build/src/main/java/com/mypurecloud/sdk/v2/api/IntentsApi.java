@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BatchGetCustomerIntentsRequest;
 import com.mypurecloud.sdk.v2.model.BulkAddSourceIntentsRequest;
 import com.mypurecloud.sdk.v2.model.BulkRemoveSourceIntentsRequest;
 import com.mypurecloud.sdk.v2.model.BulkSourceIntentsResponse;
@@ -43,6 +44,7 @@ import com.mypurecloud.sdk.v2.api.request.PostIntentsCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentSourceintentsBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentSourceintentsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentsBulkRetrieveRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1375,6 +1377,88 @@ public class IntentsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CustomerIntentResponse> response = (ApiResponse<CustomerIntentResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get customer intents by IDs
+   * 
+   * postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Customer intent IDs to retrieve (required)
+   * @return List<CustomerIntentResponse>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<CustomerIntentResponse> postIntentsCustomerintentsBulkRetrieve(BatchGetCustomerIntentsRequest body) throws IOException, ApiException {
+    return  postIntentsCustomerintentsBulkRetrieve(createPostIntentsCustomerintentsBulkRetrieveRequest(body));
+  }
+
+  /**
+   * Get customer intents by IDs
+   * 
+   * postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Customer intent IDs to retrieve (required)
+   * @return List<CustomerIntentResponse>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<CustomerIntentResponse>> postIntentsCustomerintentsBulkRetrieveWithHttpInfo(BatchGetCustomerIntentsRequest body) throws IOException {
+    return postIntentsCustomerintentsBulkRetrieve(createPostIntentsCustomerintentsBulkRetrieveRequest(body).withHttpInfo());
+  }
+
+  private PostIntentsCustomerintentsBulkRetrieveRequest createPostIntentsCustomerintentsBulkRetrieveRequest(BatchGetCustomerIntentsRequest body) {
+    return PostIntentsCustomerintentsBulkRetrieveRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get customer intents by IDs
+   * 
+   * postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return List<CustomerIntentResponse>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<CustomerIntentResponse> postIntentsCustomerintentsBulkRetrieve(PostIntentsCustomerintentsBulkRetrieveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<CustomerIntentResponse>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<CustomerIntentResponse>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get customer intents by IDs
+   * 
+   * postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<CustomerIntentResponse>> postIntentsCustomerintentsBulkRetrieve(ApiRequest<BatchGetCustomerIntentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<CustomerIntentResponse>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<CustomerIntentResponse>> response = (ApiResponse<List<CustomerIntentResponse>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<CustomerIntentResponse>> response = (ApiResponse<List<CustomerIntentResponse>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

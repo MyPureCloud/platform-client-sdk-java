@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.BatchGetCustomerIntentsRequest;
 import com.mypurecloud.sdk.v2.model.BulkAddSourceIntentsRequest;
 import com.mypurecloud.sdk.v2.model.BulkRemoveSourceIntentsRequest;
 import com.mypurecloud.sdk.v2.model.BulkSourceIntentsResponse;

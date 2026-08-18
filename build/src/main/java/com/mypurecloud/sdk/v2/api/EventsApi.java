@@ -121,7 +121,6 @@ public class EventsApi {
   /**
    * Publish Predictive Routing Custom Kpi Attribution Batch Events
    * 
-   * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body batchRequest (required)
    * @return BatchEventResponse
    * @throws ApiException if the request fails on the server
@@ -134,7 +133,6 @@ public class EventsApi {
   /**
    * Publish Predictive Routing Custom Kpi Attribution Batch Events
    * 
-   * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body batchRequest (required)
    * @return BatchEventResponse
    * @throws IOException if the request fails to be processed
@@ -153,7 +151,6 @@ public class EventsApi {
   /**
    * Publish Predictive Routing Custom Kpi Attribution Batch Events
    * 
-   * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BatchEventResponse
    * @throws ApiException if the request fails on the server
@@ -173,7 +170,6 @@ public class EventsApi {
   /**
    * Publish Predictive Routing Custom Kpi Attribution Batch Events
    * 
-   * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

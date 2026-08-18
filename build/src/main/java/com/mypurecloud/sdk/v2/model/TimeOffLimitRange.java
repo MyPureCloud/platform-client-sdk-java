@@ -41,7 +41,7 @@ public class TimeOffLimitRange  implements Serializable {
     }
   }
   /**
-   * Granularity choice for the time-off limit
+   * Deprecated. Granularity choice for the time-off limit
    */
  @JsonDeserialize(using = GranularityEnumDeserializer.class)
   public enum GranularityEnum {
@@ -91,14 +91,14 @@ public class TimeOffLimitRange  implements Serializable {
 
   
   /**
-   * Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+   * Deprecated. Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
   public TimeOffLimitRange startDate(LocalDate startDate) {
     this.startDate = startDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "null", required = true, value = "Deprecated. Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("startDate")
   public LocalDate getStartDate() {
     return startDate;
@@ -109,14 +109,14 @@ public class TimeOffLimitRange  implements Serializable {
 
 
   /**
-   * Granularity choice for the time-off limit
+   * Deprecated. Granularity choice for the time-off limit
    **/
   public TimeOffLimitRange granularity(GranularityEnum granularity) {
     this.granularity = granularity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Granularity choice for the time-off limit")
+  @ApiModelProperty(example = "null", required = true, value = "Deprecated. Granularity choice for the time-off limit")
   @JsonProperty("granularity")
   public GranularityEnum getGranularity() {
     return granularity;
@@ -127,14 +127,14 @@ public class TimeOffLimitRange  implements Serializable {
 
 
   /**
-   * The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value
+   * Deprecated. The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value
    **/
   public TimeOffLimitRange limitMinutesPerInterval(List<Integer> limitMinutesPerInterval) {
     this.limitMinutesPerInterval = limitMinutesPerInterval;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value")
+  @ApiModelProperty(example = "null", required = true, value = "Deprecated. The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value")
   @JsonProperty("limitMinutesPerInterval")
   public List<Integer> getLimitMinutesPerInterval() {
     return limitMinutesPerInterval;

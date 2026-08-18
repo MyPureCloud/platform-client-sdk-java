@@ -45,7 +45,8 @@ public class SocialHandle  implements Serializable {
     TWITTER("TWITTER"),
     INSTAGRAM("INSTAGRAM"),
     FACEBOOK("FACEBOOK"),
-    APPLE_MESSAGES("APPLE_MESSAGES");
+    APPLE_MESSAGES("APPLE_MESSAGES"),
+    WHATSAPP("WHATSAPP");
 
     private String value;
 

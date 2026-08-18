@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CalibrationAssignment;
 import com.mypurecloud.sdk.v2.model.EvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.IntegrationExport;
-import com.mypurecloud.sdk.v2.model.MediaTranscription;
 import com.mypurecloud.sdk.v2.model.MeteredAssignmentByAgent;
 import com.mypurecloud.sdk.v2.model.MeteredEvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.RetentionDuration;
@@ -39,7 +38,6 @@ public class CrossPlatformPolicyActions  implements Serializable {
   private List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent = null;
   private List<CalibrationAssignment> assignCalibrations = null;
   private RetentionDuration retentionDuration = null;
-  private List<MediaTranscription> mediaTranscriptions = null;
   private IntegrationExport integrationExport = null;
 
   public CrossPlatformPolicyActions() {
@@ -48,7 +46,6 @@ public class CrossPlatformPolicyActions  implements Serializable {
       assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
       assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
       assignCalibrations = new ArrayList<CalibrationAssignment>();
-      mediaTranscriptions = new ArrayList<MediaTranscription>();
     }
   }
 
@@ -58,7 +55,6 @@ public class CrossPlatformPolicyActions  implements Serializable {
       assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
       assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
       assignCalibrations = new ArrayList<CalibrationAssignment>();
-      mediaTranscriptions = new ArrayList<MediaTranscription>();
     }
   }
 
@@ -203,23 +199,6 @@ public class CrossPlatformPolicyActions  implements Serializable {
 
 
   /**
-   **/
-  public CrossPlatformPolicyActions mediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
-    this.mediaTranscriptions = mediaTranscriptions;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("mediaTranscriptions")
-  public List<MediaTranscription> getMediaTranscriptions() {
-    return mediaTranscriptions;
-  }
-  public void setMediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
-    this.mediaTranscriptions = mediaTranscriptions;
-  }
-
-
-  /**
    * Policy action for exporting recordings using an integration to 3rd party s3.
    **/
   public CrossPlatformPolicyActions integrationExport(IntegrationExport integrationExport) {
@@ -255,13 +234,12 @@ public class CrossPlatformPolicyActions  implements Serializable {
             Objects.equals(this.assignMeteredAssignmentByAgent, crossPlatformPolicyActions.assignMeteredAssignmentByAgent) &&
             Objects.equals(this.assignCalibrations, crossPlatformPolicyActions.assignCalibrations) &&
             Objects.equals(this.retentionDuration, crossPlatformPolicyActions.retentionDuration) &&
-            Objects.equals(this.mediaTranscriptions, crossPlatformPolicyActions.mediaTranscriptions) &&
             Objects.equals(this.integrationExport, crossPlatformPolicyActions.integrationExport);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignMeteredAssignmentByAgent, assignCalibrations, retentionDuration, mediaTranscriptions, integrationExport);
+    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignMeteredAssignmentByAgent, assignCalibrations, retentionDuration, integrationExport);
   }
 
   @Override
@@ -277,7 +255,6 @@ public class CrossPlatformPolicyActions  implements Serializable {
     sb.append("    assignMeteredAssignmentByAgent: ").append(toIndentedString(assignMeteredAssignmentByAgent)).append("\n");
     sb.append("    assignCalibrations: ").append(toIndentedString(assignCalibrations)).append("\n");
     sb.append("    retentionDuration: ").append(toIndentedString(retentionDuration)).append("\n");
-    sb.append("    mediaTranscriptions: ").append(toIndentedString(mediaTranscriptions)).append("\n");
     sb.append("    integrationExport: ").append(toIndentedString(integrationExport)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -27,7 +27,7 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | USERS_RULES | &quot;users.rules&quot; | 
-| ADMIN_NOTICE | &quot;admin.notice&quot; | 
+| VOICE_TRANSCRIPTION | &quot;voice.transcription&quot; | 
 | AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
 | AGENTIC_VIRTUAL_AGENTS | &quot;agentic.virtual.agents&quot; | 
 | ANALYTICS_AGENTS | &quot;analytics.agents&quot; | 
@@ -86,6 +86,7 @@
 | MULTI_ORG | &quot;multi.org&quot; | 
 | NOTIFICATIONS | &quot;notifications&quot; | 
 | ONBOARDING | &quot;onboarding&quot; | 
+| ORGANIZATION_NOTICE | &quot;organization.notice&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
 | PLATFORM_API | &quot;platform.api&quot; | 
 | PREDICTIVE_ROUTING | &quot;predictive.routing&quot; | 
@@ -108,7 +109,6 @@
 | TELEPHONY_CONFIGURATION | &quot;telephony.configuration&quot; | 
 | USAGE | &quot;usage&quot; | 
 | USERS | &quot;users&quot; | 
-| VOICE_TRANSCRIPTION | &quot;voice.transcription&quot; | 
 | WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
 | WEB_MESSAGING | &quot;web.messaging&quot; | 
 | WEBCHAT | &quot;webchat&quot; | 
@@ -157,4 +157,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.CaseExternalContactReference;
 import com.mypurecloud.sdk.v2.model.CaseUserReference;
 import com.mypurecloud.sdk.v2.model.CaseplanReference;
 import com.mypurecloud.sdk.v2.model.CustomerIntentReference;
+import com.mypurecloud.sdk.v2.model.FailureReason;
 import com.mypurecloud.sdk.v2.model.StarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -200,6 +201,7 @@ public class ModelCase  implements Serializable {
   }
   private CreationStatusEnum creationStatus = null;
   private Integer ttlSeconds = null;
+  private FailureReason failureReason = null;
   private String selfUri = null;
 
   public ModelCase() {
@@ -562,6 +564,24 @@ public class ModelCase  implements Serializable {
   }
 
 
+  /**
+   * The reason the Case failed, if applicable.
+   **/
+  public ModelCase failureReason(FailureReason failureReason) {
+    this.failureReason = failureReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason the Case failed, if applicable.")
+  @JsonProperty("failureReason")
+  public FailureReason getFailureReason() {
+    return failureReason;
+  }
+  public void setFailureReason(FailureReason failureReason) {
+    this.failureReason = failureReason;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -599,12 +619,13 @@ public class ModelCase  implements Serializable {
             Objects.equals(this.customerIntent, _case.customerIntent) &&
             Objects.equals(this.creationStatus, _case.creationStatus) &&
             Objects.equals(this.ttlSeconds, _case.ttlSeconds) &&
+            Objects.equals(this.failureReason, _case.failureReason) &&
             Objects.equals(this.selfUri, _case.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, version, reference, caseplan, summary, owner, status, priority, dateDue, dateStarted, dateClosed, dateCreated, dateModified, modifiedBy, externalContact, customerIntent, creationStatus, ttlSeconds, selfUri);
+    return Objects.hash(id, name, division, version, reference, caseplan, summary, owner, status, priority, dateDue, dateStarted, dateClosed, dateCreated, dateModified, modifiedBy, externalContact, customerIntent, creationStatus, ttlSeconds, failureReason, selfUri);
   }
 
   @Override
@@ -632,6 +653,7 @@ public class ModelCase  implements Serializable {
     sb.append("    customerIntent: ").append(toIndentedString(customerIntent)).append("\n");
     sb.append("    creationStatus: ").append(toIndentedString(creationStatus)).append("\n");
     sb.append("    ttlSeconds: ").append(toIndentedString(ttlSeconds)).append("\n");
+    sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

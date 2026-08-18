@@ -6,9 +6,9 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  |
-| **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) | Granularity choice for the time off limit |  [optional] |
-| **defaultLimitMinutes** | **Integer** | The default time off limit value in minutes per granularity interval |  [optional] |
-| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the time off limit |  [optional] |
+| **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) | Deprecated. Granularity choice for the time off limit |  [optional] |
+| **defaultLimitMinutes** | **Integer** | Deprecated. The default time off limit value in minutes per granularity interval |  [optional] |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Deprecated. Version metadata for the time off limit |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -23,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

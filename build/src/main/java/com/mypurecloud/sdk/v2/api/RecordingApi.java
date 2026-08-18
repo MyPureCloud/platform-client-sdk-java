@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
+import com.mypurecloud.sdk.v2.model.ManageDeleteProtectionResult;
 import com.mypurecloud.sdk.v2.model.OrphanRecording;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
@@ -4793,11 +4794,12 @@ public class RecordingApi {
    * 
    * @param protect Check for apply, uncheck for revoke (each action requires the respective permission) (optional, default to true)
    * @param body  (optional)
+   * @return ManageDeleteProtectionResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void putRecordingsDeletionprotection(Boolean protect, ConversationDeletionProtectionQuery body) throws IOException, ApiException {
-     putRecordingsDeletionprotection(createPutRecordingsDeletionprotectionRequest(protect, body));
+  public ManageDeleteProtectionResult putRecordingsDeletionprotection(Boolean protect, ConversationDeletionProtectionQuery body) throws IOException, ApiException {
+    return  putRecordingsDeletionprotection(createPutRecordingsDeletionprotectionRequest(protect, body));
   }
 
   /**
@@ -4805,9 +4807,10 @@ public class RecordingApi {
    * 
    * @param protect Check for apply, uncheck for revoke (each action requires the respective permission) (optional, default to true)
    * @param body  (optional)
+   * @return ManageDeleteProtectionResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putRecordingsDeletionprotectionWithHttpInfo(Boolean protect, ConversationDeletionProtectionQuery body) throws IOException {
+  public ApiResponse<ManageDeleteProtectionResult> putRecordingsDeletionprotectionWithHttpInfo(Boolean protect, ConversationDeletionProtectionQuery body) throws IOException {
     return putRecordingsDeletionprotection(createPutRecordingsDeletionprotectionRequest(protect, body).withHttpInfo());
   }
 
@@ -4824,17 +4827,18 @@ public class RecordingApi {
    * Apply or revoke recording protection for conversations
    * 
    * @param request The request object
+   * @return ManageDeleteProtectionResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void putRecordingsDeletionprotection(PutRecordingsDeletionprotectionRequest request) throws IOException, ApiException {
+  public ManageDeleteProtectionResult putRecordingsDeletionprotection(PutRecordingsDeletionprotectionRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<ManageDeleteProtectionResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManageDeleteProtectionResult>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -4845,13 +4849,13 @@ public class RecordingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putRecordingsDeletionprotection(ApiRequest<ConversationDeletionProtectionQuery> request) throws IOException {
+  public ApiResponse<ManageDeleteProtectionResult> putRecordingsDeletionprotection(ApiRequest<ConversationDeletionProtectionQuery> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<ManageDeleteProtectionResult>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<ManageDeleteProtectionResult> response = (ApiResponse<ManageDeleteProtectionResult>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4862,7 +4866,7 @@ public class RecordingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ManageDeleteProtectionResult> response = (ApiResponse<ManageDeleteProtectionResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

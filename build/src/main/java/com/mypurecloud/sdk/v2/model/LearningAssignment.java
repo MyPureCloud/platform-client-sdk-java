@@ -34,6 +34,7 @@ public class LearningAssignment  implements Serializable {
   
   private String id = null;
   private LearningAssessment assessment = null;
+  private Date dateCompleted = null;
   private UserReference createdBy = null;
   private Date dateCreated = null;
   private UserReference modifiedBy = null;
@@ -144,6 +145,13 @@ public class LearningAssignment  implements Serializable {
   }
   public void setAssessment(LearningAssessment assessment) {
     this.assessment = assessment;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The date the assignment was completed. If not yet completed, this will be null. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCompleted")
+  public Date getDateCompleted() {
+    return dateCompleted;
   }
 
 
@@ -397,6 +405,7 @@ public class LearningAssignment  implements Serializable {
 
     return Objects.equals(this.id, learningAssignment.id) &&
             Objects.equals(this.assessment, learningAssignment.assessment) &&
+            Objects.equals(this.dateCompleted, learningAssignment.dateCompleted) &&
             Objects.equals(this.createdBy, learningAssignment.createdBy) &&
             Objects.equals(this.dateCreated, learningAssignment.dateCreated) &&
             Objects.equals(this.modifiedBy, learningAssignment.modifiedBy) &&
@@ -424,7 +433,7 @@ public class LearningAssignment  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assessment, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, percentageScore, assessmentPercentageScore, isRule, isManual, isPassed, isLatest, assessmentCompletionPercentage, completionPercentage, steps, nextStep, selfUri, state, dateRecommendedForCompletion, version, module, user, assessmentForm, lengthInMinutes);
+    return Objects.hash(id, assessment, dateCompleted, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, percentageScore, assessmentPercentageScore, isRule, isManual, isPassed, isLatest, assessmentCompletionPercentage, completionPercentage, steps, nextStep, selfUri, state, dateRecommendedForCompletion, version, module, user, assessmentForm, lengthInMinutes);
   }
 
   @Override
@@ -434,6 +443,7 @@ public class LearningAssignment  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    assessment: ").append(toIndentedString(assessment)).append("\n");
+    sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");

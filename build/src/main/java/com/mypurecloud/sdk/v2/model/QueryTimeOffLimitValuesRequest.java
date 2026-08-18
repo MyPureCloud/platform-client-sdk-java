@@ -43,14 +43,14 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
 
   
   /**
-   * The time off limit object id to retrieve values for. Required if activityCodeId is not specified
+   * Deprecated. The time off limit object id to retrieve values for. Required if activityCodeId is not specified
    **/
   public QueryTimeOffLimitValuesRequest timeOffLimitId(String timeOffLimitId) {
     this.timeOffLimitId = timeOffLimitId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time off limit object id to retrieve values for. Required if activityCodeId is not specified")
+  @ApiModelProperty(example = "null", value = "Deprecated. The time off limit object id to retrieve values for. Required if activityCodeId is not specified")
   @JsonProperty("timeOffLimitId")
   public String getTimeOffLimitId() {
     return timeOffLimitId;
@@ -61,14 +61,14 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
 
 
   /**
-   * The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
+   * Deprecated. The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
    **/
   public QueryTimeOffLimitValuesRequest activityCodeId(String activityCodeId) {
     this.activityCodeId = activityCodeId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified")
+  @ApiModelProperty(example = "null", value = "Deprecated. The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified")
   @JsonProperty("activityCodeId")
   public String getActivityCodeId() {
     return activityCodeId;
@@ -79,14 +79,14 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
 
 
   /**
-   * The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
+   * Deprecated. The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
    **/
   public QueryTimeOffLimitValuesRequest dateRanges(List<LocalDateRange> dateRanges) {
     this.dateRanges = dateRanges;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.")
+  @ApiModelProperty(example = "null", required = true, value = "Deprecated. The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.")
   @JsonProperty("dateRanges")
   public List<LocalDateRange> getDateRanges() {
     return dateRanges;

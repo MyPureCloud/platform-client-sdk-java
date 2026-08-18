@@ -39,7 +39,7 @@ public class TimeOffLimit  implements Serializable {
     }
   }
   /**
-   * Granularity choice for the time off limit
+   * Deprecated. Granularity choice for the time off limit
    */
  @JsonDeserialize(using = GranularityEnumDeserializer.class)
   public enum GranularityEnum {
@@ -107,14 +107,14 @@ public class TimeOffLimit  implements Serializable {
 
 
   /**
-   * Granularity choice for the time off limit
+   * Deprecated. Granularity choice for the time off limit
    **/
   public TimeOffLimit granularity(GranularityEnum granularity) {
     this.granularity = granularity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Granularity choice for the time off limit")
+  @ApiModelProperty(example = "null", value = "Deprecated. Granularity choice for the time off limit")
   @JsonProperty("granularity")
   public GranularityEnum getGranularity() {
     return granularity;
@@ -125,14 +125,14 @@ public class TimeOffLimit  implements Serializable {
 
 
   /**
-   * The default time off limit value in minutes per granularity interval
+   * Deprecated. The default time off limit value in minutes per granularity interval
    **/
   public TimeOffLimit defaultLimitMinutes(Integer defaultLimitMinutes) {
     this.defaultLimitMinutes = defaultLimitMinutes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The default time off limit value in minutes per granularity interval")
+  @ApiModelProperty(example = "null", value = "Deprecated. The default time off limit value in minutes per granularity interval")
   @JsonProperty("defaultLimitMinutes")
   public Integer getDefaultLimitMinutes() {
     return defaultLimitMinutes;
@@ -143,14 +143,14 @@ public class TimeOffLimit  implements Serializable {
 
 
   /**
-   * Version metadata for the time off limit
+   * Deprecated. Version metadata for the time off limit
    **/
   public TimeOffLimit metadata(WfmVersionedEntityMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Version metadata for the time off limit")
+  @ApiModelProperty(example = "null", value = "Deprecated. Version metadata for the time off limit")
   @JsonProperty("metadata")
   public WfmVersionedEntityMetadata getMetadata() {
     return metadata;

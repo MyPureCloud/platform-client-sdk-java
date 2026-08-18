@@ -13,9 +13,12 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ArchitectJobMessageDetail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -45,7 +48,8 @@ public class ArchitectJobMessage  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ERROR("Error"),
-    WARNING("Warning");
+    WARNING("Warning"),
+    UNKNOWN("Unknown");
 
     private String value;
 
@@ -74,69 +78,46 @@ public class ArchitectJobMessage  implements Serializable {
   }
   private TypeEnum type = null;
   private String text = null;
+  private List<ArchitectJobMessageDetail> details = null;
 
   public ArchitectJobMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      details = new ArrayList<ArchitectJobMessageDetail>();
     }
   }
 
   public ArchitectJobMessage(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      details = new ArrayList<ArchitectJobMessageDetail>();
     }
   }
 
-  
-  /**
-   * The DateTime when the message was generated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public ArchitectJobMessage dateTime(Date dateTime) {
-    this.dateTime = dateTime;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The DateTime when the message was generated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateTime")
   public Date getDateTime() {
     return dateTime;
   }
-  public void setDateTime(Date dateTime) {
-    this.dateTime = dateTime;
-  }
 
 
-  /**
-   * The message type.
-   **/
-  public ArchitectJobMessage type(TypeEnum type) {
-    this.type = type;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The message type.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
   }
-  public void setType(TypeEnum type) {
-    this.type = type;
-  }
 
 
-  /**
-   * The text of the message.
-   **/
-  public ArchitectJobMessage text(String text) {
-    this.text = text;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The text of the message.")
   @JsonProperty("text")
   public String getText() {
     return text;
   }
-  public void setText(String text) {
-    this.text = text;
+
+
+  @ApiModelProperty(example = "null", value = "Structured information about the message, absent from the large majority of messages. Populated only by publish jobs, and only on errors raised when a Genesys Cloud entity reference in the flow definition could not be resolved. Export and validate jobs resolve an existing flow by id rather than processing a flow definition, so they never return it. Holds one entry per request captured within the failing lookup, ordered oldest request first, and more than one entry is normal. Entries for requests that succeeded are included alongside the request that failed. A lookup failure usually also produces a separate message with similar text and no details.")
+  @JsonProperty("details")
+  public List<ArchitectJobMessageDetail> getDetails() {
+    return details;
   }
 
 
@@ -152,12 +133,13 @@ public class ArchitectJobMessage  implements Serializable {
 
     return Objects.equals(this.dateTime, architectJobMessage.dateTime) &&
             Objects.equals(this.type, architectJobMessage.type) &&
-            Objects.equals(this.text, architectJobMessage.text);
+            Objects.equals(this.text, architectJobMessage.text) &&
+            Objects.equals(this.details, architectJobMessage.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateTime, type, text);
+    return Objects.hash(dateTime, type, text, details);
   }
 
   @Override
@@ -168,6 +150,7 @@ public class ArchitectJobMessage  implements Serializable {
     sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

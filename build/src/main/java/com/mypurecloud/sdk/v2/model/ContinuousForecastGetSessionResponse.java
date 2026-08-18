@@ -74,55 +74,6 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
     }
   }
   private StateEnum state = null;
-
-  private static class ForecastDataStateEnumDeserializer extends StdDeserializer<ForecastDataStateEnum> {
-    public ForecastDataStateEnumDeserializer() {
-      super(ForecastDataStateEnumDeserializer.class);
-    }
-
-    @Override
-    public ForecastDataStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return ForecastDataStateEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * State of the forecast data
-   */
- @JsonDeserialize(using = ForecastDataStateEnumDeserializer.class)
-  public enum ForecastDataStateEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    CURRENT("Current"),
-    STALE("Stale"),
-    PROCESSING("Processing");
-
-    private String value;
-
-    ForecastDataStateEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static ForecastDataStateEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (ForecastDataStateEnum value : ForecastDataStateEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return ForecastDataStateEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private ForecastDataStateEnum forecastDataState = null;
   private String errorCode = null;
 
   public ContinuousForecastGetSessionResponse() {
@@ -191,24 +142,6 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
 
 
   /**
-   * State of the forecast data
-   **/
-  public ContinuousForecastGetSessionResponse forecastDataState(ForecastDataStateEnum forecastDataState) {
-    this.forecastDataState = forecastDataState;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "State of the forecast data")
-  @JsonProperty("forecastDataState")
-  public ForecastDataStateEnum getForecastDataState() {
-    return forecastDataState;
-  }
-  public void setForecastDataState(ForecastDataStateEnum forecastDataState) {
-    this.forecastDataState = forecastDataState;
-  }
-
-
-  /**
    * Failed session error code
    **/
   public ContinuousForecastGetSessionResponse errorCode(String errorCode) {
@@ -239,13 +172,12 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
     return Objects.equals(this.sessionId, continuousForecastGetSessionResponse.sessionId) &&
             Objects.equals(this.lastSuccessfulSessionId, continuousForecastGetSessionResponse.lastSuccessfulSessionId) &&
             Objects.equals(this.state, continuousForecastGetSessionResponse.state) &&
-            Objects.equals(this.forecastDataState, continuousForecastGetSessionResponse.forecastDataState) &&
             Objects.equals(this.errorCode, continuousForecastGetSessionResponse.errorCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sessionId, lastSuccessfulSessionId, state, forecastDataState, errorCode);
+    return Objects.hash(sessionId, lastSuccessfulSessionId, state, errorCode);
   }
 
   @Override
@@ -256,7 +188,6 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    lastSuccessfulSessionId: ").append(toIndentedString(lastSuccessfulSessionId)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    forecastDataState: ").append(toIndentedString(forecastDataState)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -16,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.CalibrationAssignment;
 import com.mypurecloud.sdk.v2.model.EvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.InitiateScreenRecording;
 import com.mypurecloud.sdk.v2.model.IntegrationExport;
-import com.mypurecloud.sdk.v2.model.MediaTranscription;
 import com.mypurecloud.sdk.v2.model.MeteredAssignmentByAgent;
 import com.mypurecloud.sdk.v2.model.MeteredEvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.RetentionDuration;
@@ -43,7 +42,6 @@ public class PolicyActions  implements Serializable {
   private List<SurveyAssignment> assignSurveys = null;
   private RetentionDuration retentionDuration = null;
   private InitiateScreenRecording initiateScreenRecording = null;
-  private List<MediaTranscription> mediaTranscriptions = null;
   private IntegrationExport integrationExport = null;
 
   public PolicyActions() {
@@ -53,7 +51,6 @@ public class PolicyActions  implements Serializable {
       assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
       assignCalibrations = new ArrayList<CalibrationAssignment>();
       assignSurveys = new ArrayList<SurveyAssignment>();
-      mediaTranscriptions = new ArrayList<MediaTranscription>();
     }
   }
 
@@ -64,7 +61,6 @@ public class PolicyActions  implements Serializable {
       assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
       assignCalibrations = new ArrayList<CalibrationAssignment>();
       assignSurveys = new ArrayList<SurveyAssignment>();
-      mediaTranscriptions = new ArrayList<MediaTranscription>();
     }
   }
 
@@ -243,24 +239,6 @@ public class PolicyActions  implements Serializable {
 
 
   /**
-   * Deprecated. The Voci and Call Journey transcription integrations are no longer supported.
-   **/
-  public PolicyActions mediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
-    this.mediaTranscriptions = mediaTranscriptions;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Deprecated. The Voci and Call Journey transcription integrations are no longer supported.")
-  @JsonProperty("mediaTranscriptions")
-  public List<MediaTranscription> getMediaTranscriptions() {
-    return mediaTranscriptions;
-  }
-  public void setMediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
-    this.mediaTranscriptions = mediaTranscriptions;
-  }
-
-
-  /**
    * Policy action for exporting recordings using an integration to 3rd party s3.
    **/
   public PolicyActions integrationExport(IntegrationExport integrationExport) {
@@ -298,13 +276,12 @@ public class PolicyActions  implements Serializable {
             Objects.equals(this.assignSurveys, policyActions.assignSurveys) &&
             Objects.equals(this.retentionDuration, policyActions.retentionDuration) &&
             Objects.equals(this.initiateScreenRecording, policyActions.initiateScreenRecording) &&
-            Objects.equals(this.mediaTranscriptions, policyActions.mediaTranscriptions) &&
             Objects.equals(this.integrationExport, policyActions.integrationExport);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignMeteredAssignmentByAgent, assignCalibrations, assignSurveys, retentionDuration, initiateScreenRecording, mediaTranscriptions, integrationExport);
+    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignMeteredAssignmentByAgent, assignCalibrations, assignSurveys, retentionDuration, initiateScreenRecording, integrationExport);
   }
 
   @Override
@@ -322,7 +299,6 @@ public class PolicyActions  implements Serializable {
     sb.append("    assignSurveys: ").append(toIndentedString(assignSurveys)).append("\n");
     sb.append("    retentionDuration: ").append(toIndentedString(retentionDuration)).append("\n");
     sb.append("    initiateScreenRecording: ").append(toIndentedString(initiateScreenRecording)).append("\n");
-    sb.append("    mediaTranscriptions: ").append(toIndentedString(mediaTranscriptions)).append("\n");
     sb.append("    integrationExport: ").append(toIndentedString(integrationExport)).append("\n");
     sb.append("}");
     return sb.toString();

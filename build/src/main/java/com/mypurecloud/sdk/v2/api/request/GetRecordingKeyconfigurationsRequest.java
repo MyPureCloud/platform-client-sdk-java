@@ -37,6 +37,7 @@ import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
+import com.mypurecloud.sdk.v2.model.ManageDeleteProtectionResult;
 import com.mypurecloud.sdk.v2.model.OrphanRecording;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;

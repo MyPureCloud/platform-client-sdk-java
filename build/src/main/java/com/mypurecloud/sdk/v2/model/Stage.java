@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CaseReference;
+import com.mypurecloud.sdk.v2.model.FailureReason;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -58,7 +59,8 @@ public class Stage  implements Serializable {
     INPROGRESS("InProgress"),
     OPEN("Open"),
     COMPLETED("Completed"),
-    TERMINATED("Terminated");
+    TERMINATED("Terminated"),
+    FAILED("Failed");
 
     private String value;
 
@@ -86,6 +88,7 @@ public class Stage  implements Serializable {
     }
   }
   private StatusEnum status = null;
+  private FailureReason failureReason = null;
   private String selfUri = null;
   private CaseReference _case = null;
 
@@ -269,6 +272,24 @@ public class Stage  implements Serializable {
   }
 
 
+  /**
+   * The reason the Stage failed, if applicable.
+   **/
+  public Stage failureReason(FailureReason failureReason) {
+    this.failureReason = failureReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason the Stage failed, if applicable.")
+  @JsonProperty("failureReason")
+  public FailureReason getFailureReason() {
+    return failureReason;
+  }
+  public void setFailureReason(FailureReason failureReason) {
+    this.failureReason = failureReason;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -314,13 +335,14 @@ public class Stage  implements Serializable {
             Objects.equals(this.modifiedBy, stage.modifiedBy) &&
             Objects.equals(this.version, stage.version) &&
             Objects.equals(this.status, stage.status) &&
+            Objects.equals(this.failureReason, stage.failureReason) &&
             Objects.equals(this.selfUri, stage.selfUri) &&
             Objects.equals(this._case, stage._case);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateCreated, dateModified, dateCompleted, dateStarted, modifiedBy, version, status, selfUri, _case);
+    return Objects.hash(id, name, description, dateCreated, dateModified, dateCompleted, dateStarted, modifiedBy, version, status, failureReason, selfUri, _case);
   }
 
   @Override
@@ -338,6 +360,7 @@ public class Stage  implements Serializable {
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    _case: ").append(toIndentedString(_case)).append("\n");
     sb.append("}");

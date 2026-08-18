@@ -31,6 +31,7 @@ public class ConversationVideoEventTopicConversationRoutingData  implements Seri
   private Long priority = null;
   private List<ConversationVideoEventTopicUriReference> skills = null;
   private List<ConversationVideoEventTopicScoredAgent> scoredAgents = null;
+  private ConversationVideoEventTopicUriReference skillExpressionId = null;
 
   public ConversationVideoEventTopicConversationRoutingData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -137,6 +138,24 @@ public class ConversationVideoEventTopicConversationRoutingData  implements Seri
   }
 
 
+  /**
+   * A UriReference for a resource
+   **/
+  public ConversationVideoEventTopicConversationRoutingData skillExpressionId(ConversationVideoEventTopicUriReference skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
+  @JsonProperty("skillExpressionId")
+  public ConversationVideoEventTopicUriReference getSkillExpressionId() {
+    return skillExpressionId;
+  }
+  public void setSkillExpressionId(ConversationVideoEventTopicUriReference skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -151,12 +170,13 @@ public class ConversationVideoEventTopicConversationRoutingData  implements Seri
             Objects.equals(this.language, conversationVideoEventTopicConversationRoutingData.language) &&
             Objects.equals(this.priority, conversationVideoEventTopicConversationRoutingData.priority) &&
             Objects.equals(this.skills, conversationVideoEventTopicConversationRoutingData.skills) &&
-            Objects.equals(this.scoredAgents, conversationVideoEventTopicConversationRoutingData.scoredAgents);
+            Objects.equals(this.scoredAgents, conversationVideoEventTopicConversationRoutingData.scoredAgents) &&
+            Objects.equals(this.skillExpressionId, conversationVideoEventTopicConversationRoutingData.skillExpressionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, language, priority, skills, scoredAgents);
+    return Objects.hash(queue, language, priority, skills, scoredAgents, skillExpressionId);
   }
 
   @Override
@@ -169,6 +189,7 @@ public class ConversationVideoEventTopicConversationRoutingData  implements Seri
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    skillExpressionId: ").append(toIndentedString(skillExpressionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

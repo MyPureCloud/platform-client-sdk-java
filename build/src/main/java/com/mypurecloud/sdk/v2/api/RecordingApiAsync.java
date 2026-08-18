@@ -30,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
+import com.mypurecloud.sdk.v2.model.ManageDeleteProtectionResult;
 import com.mypurecloud.sdk.v2.model.OrphanRecording;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
@@ -4335,13 +4336,13 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> putRecordingsDeletionprotectionAsync(PutRecordingsDeletionprotectionRequest request, final AsyncApiCallback<Void> callback) {
+  public Future<ManageDeleteProtectionResult> putRecordingsDeletionprotectionAsync(PutRecordingsDeletionprotectionRequest request, final AsyncApiCallback<ManageDeleteProtectionResult> callback) {
     try {
-      final SettableFuture<Void> future = SettableFuture.create();
+      final SettableFuture<ManageDeleteProtectionResult> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ManageDeleteProtectionResult>() {}, new AsyncApiCallback<ApiResponse<ManageDeleteProtectionResult>>() {
         @Override
-        public void onCompleted(ApiResponse<Void> response) {
+        public void onCompleted(ApiResponse<ManageDeleteProtectionResult> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4369,13 +4370,13 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> putRecordingsDeletionprotectionAsync(ApiRequest<ConversationDeletionProtectionQuery> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<ManageDeleteProtectionResult>> putRecordingsDeletionprotectionAsync(ApiRequest<ConversationDeletionProtectionQuery> request, final AsyncApiCallback<ApiResponse<ManageDeleteProtectionResult>> callback) {
     try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ManageDeleteProtectionResult>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ManageDeleteProtectionResult>() {}, new AsyncApiCallback<ApiResponse<ManageDeleteProtectionResult>>() {
         @Override
-        public void onCompleted(ApiResponse<Void> response) {
+        public void onCompleted(ApiResponse<ManageDeleteProtectionResult> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4383,7 +4384,7 @@ public class RecordingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            ApiResponse<ManageDeleteProtectionResult> response = (ApiResponse<ManageDeleteProtectionResult>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4391,7 +4392,7 @@ public class RecordingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ManageDeleteProtectionResult> response = (ApiResponse<ManageDeleteProtectionResult>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -8,6 +8,7 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of chart to display |  [optional] |
 | **groupByTitle** | **String** | A title for the grouped by attributes (aka the x axis) |  [optional] |
 | **metricsTitle** | **String** | A title for the metrics (aka the y axis) |  [optional] |
+| **secondaryMetricsTitle** | **String** | A title for the metrics on secondary axis |  [optional] |
 | **showLegend** | **Boolean** | Whether to show a legend |  [optional] |
 
 
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

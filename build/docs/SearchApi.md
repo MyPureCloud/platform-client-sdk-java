@@ -485,7 +485,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
 | **expand** | [**List&lt;String&gt;**](String)| expand | [optional] 
-| **integrationPresenceSource** | **String**| integrationPresenceSource | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight 
+| **integrationPresenceSource** | **String**| integrationPresenceSource | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral 
 {: class="table-striped"}
 
 
@@ -1527,4 +1527,4 @@ try {
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

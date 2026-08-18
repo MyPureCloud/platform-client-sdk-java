@@ -31,6 +31,7 @@
 | OPEN | &quot;Open&quot; | 
 | APPLE | &quot;Apple&quot; | 
 | SMS | &quot;Sms&quot; | 
+| LINKEDIN | &quot;LinkedIn&quot; | 
 
 
 ## Enum: TypeEnum
@@ -44,4 +45,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

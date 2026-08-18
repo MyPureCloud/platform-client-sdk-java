@@ -28,8 +28,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getCasemanagementCaseplanVersionStageplans**](CaseManagementApi#getCasemanagementCaseplanVersionStageplans) | Get a list of Stageplans. |
 | [**getCasemanagementCaseplans**](CaseManagementApi#getCasemanagementCaseplans) | Get a list of Caseplans. |
 | [**getCasemanagementCasesExternalcontact**](CaseManagementApi#getCasemanagementCasesExternalcontact) | Get a list of Cases for an External Contact. |
+| [**getCasemanagementCasesQueryJob**](CaseManagementApi#getCasemanagementCasesQueryJob) | Get a case query job by id |
+| [**getCasemanagementCasesQueryJobResults**](CaseManagementApi#getCasemanagementCasesQueryJobResults) | Get results for a case query job |
 | [**getCasemanagementCasesReference**](CaseManagementApi#getCasemanagementCasesReference) | Get a Case by reference. |
 | [**patchCasemanagementCaseDatedue**](CaseManagementApi#patchCasemanagementCaseDatedue) | Update the due date of a Case. |
+| [**patchCasemanagementCaseOwner**](CaseManagementApi#patchCasemanagementCaseOwner) | Update the ownerId of a Case |
 | [**patchCasemanagementCasePriority**](CaseManagementApi#patchCasemanagementCasePriority) | Update priority of a Case. |
 | [**patchCasemanagementCaseSummary**](CaseManagementApi#patchCasemanagementCaseSummary) | Update summary of a Case. |
 | [**patchCasemanagementCaseplan**](CaseManagementApi#patchCasemanagementCaseplan) | Update the attributes of a Caseplan. |
@@ -45,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postCasemanagementCaseplansQuery**](CaseManagementApi#postCasemanagementCaseplansQuery) | Query for Caseplans. |
 | [**postCasemanagementCases**](CaseManagementApi#postCasemanagementCases) | Create a Case. |
 | [**postCasemanagementCasesAssociationsQuery**](CaseManagementApi#postCasemanagementCasesAssociationsQuery) | Query for Case associations by interaction. |
+| [**postCasemanagementCasesQueryJobs**](CaseManagementApi#postCasemanagementCasesQueryJobs) | Create a Case query job. |
 | [**putCasemanagementCaseplanDataschema**](CaseManagementApi#putCasemanagementCaseplanDataschema) | Update a data schema on a draft Caseplan. |
 | [**putCasemanagementCaseplanIntakesettings**](CaseManagementApi#putCasemanagementCaseplanIntakesettings) | Update the intake settings for a Caseplan. |
 {: class="table-striped"}
@@ -1566,6 +1570,128 @@ try {
 [**CaseListing**](CaseListing)
 
 
+# **getCasemanagementCasesQueryJob**
+
+
+> [CaseQueryJobResponse](CaseQueryJobResponse) getCasemanagementCasesQueryJob(jobId)
+
+Get a case query job by id
+
+getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/casemanagement/cases/query/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* caseManagement:queryJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String jobId = "jobId_example"; // String | Job ID
+try {
+    CaseQueryJobResponse result = apiInstance.getCasemanagementCasesQueryJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#getCasemanagementCasesQueryJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| Job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CaseQueryJobResponse**](CaseQueryJobResponse)
+
+
+# **getCasemanagementCasesQueryJobResults**
+
+
+> [CaseQueryJobResultsResponse](CaseQueryJobResultsResponse) getCasemanagementCasesQueryJobResults(jobId)
+
+Get results for a case query job
+
+getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/casemanagement/cases/query/jobs/{jobId}/results  
+
+Requires ALL permissions: 
+
+* caseManagement:queryJobResults:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String jobId = "jobId_example"; // String | Job ID
+try {
+    CaseQueryJobResultsResponse result = apiInstance.getCasemanagementCasesQueryJobResults(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#getCasemanagementCasesQueryJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| Job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CaseQueryJobResultsResponse**](CaseQueryJobResultsResponse)
+
+
 # **getCasemanagementCasesReference**
 
 
@@ -1680,6 +1806,69 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **caseId** | **String**| Case identifier. | 
 | **body** | [**CaseDateDueUpdate**](CaseDateDueUpdate)| Due date update. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ModelCase**](Case)
+
+
+# **patchCasemanagementCaseOwner**
+
+
+> [ModelCase](Case) patchCasemanagementCaseOwner(caseId, body)
+
+Update the ownerId of a Case
+
+patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/casemanagement/cases/{caseId}/owner  
+
+Requires ANY permissions: 
+
+* caseManagement:caseOwner:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseId = "caseId_example"; // String | Case identifier.
+CaseOwnerUpdate body = new CaseOwnerUpdate(); // CaseOwnerUpdate | OwnerId
+try {
+    ModelCase result = apiInstance.patchCasemanagementCaseOwner(caseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#patchCasemanagementCaseOwner");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseId** | **String**| Case identifier. | 
+| **body** | [**CaseOwnerUpdate**](CaseOwnerUpdate)| OwnerId | 
 {: class="table-striped"}
 
 
@@ -2597,6 +2786,67 @@ try {
 [**CaseAssociationQueryEntityListing**](CaseAssociationQueryEntityListing)
 
 
+# **postCasemanagementCasesQueryJobs**
+
+
+> [CaseQueryJobResponse](CaseQueryJobResponse) postCasemanagementCasesQueryJobs(body)
+
+Create a Case query job.
+
+postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/casemanagement/cases/query/jobs  
+
+Requires ANY permissions: 
+
+* caseManagement:queryJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+CaseQueryJobCreate body = new CaseQueryJobCreate(); // CaseQueryJobCreate | Case query job create request.
+try {
+    CaseQueryJobResponse result = apiInstance.postCasemanagementCasesQueryJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#postCasemanagementCasesQueryJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CaseQueryJobCreate**](CaseQueryJobCreate)| Case query job create request. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CaseQueryJobResponse**](CaseQueryJobResponse)
+
+
 # **putCasemanagementCaseplanDataschema**
 
 
@@ -2721,4 +2971,4 @@ try {
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

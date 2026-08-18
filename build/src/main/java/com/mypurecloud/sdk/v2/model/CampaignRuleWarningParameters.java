@@ -57,7 +57,8 @@ public class CampaignRuleWarningParameters  implements Serializable {
     SETCAMPAIGNMAXCALLSPERAGENT("setCampaignMaxCallsPerAgent"),
     SETCAMPAIGNMESSAGESPERMINUTE("setCampaignMessagesPerMinute"),
     CHANGECAMPAIGNQUEUE("changeCampaignQueue"),
-    CHANGECAMPAIGNTEMPLATE("changeCampaignTemplate");
+    CHANGECAMPAIGNTEMPLATE("changeCampaignTemplate"),
+    SETCAMPAIGNRESERVATION("setCampaignReservation");
 
     private String value;
 

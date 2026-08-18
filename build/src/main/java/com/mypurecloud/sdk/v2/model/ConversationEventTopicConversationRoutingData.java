@@ -32,6 +32,7 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
   private Long priority = null;
   private List<ConversationEventTopicUriReference> skills = null;
   private List<ConversationEventTopicScoredAgent> scoredAgents = null;
+  private ConversationEventTopicUriReference skillExpressionId = null;
 
   public ConversationEventTopicConversationRoutingData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -137,6 +138,24 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
   }
 
 
+  /**
+   * A UriReference for a resource
+   **/
+  public ConversationEventTopicConversationRoutingData skillExpressionId(ConversationEventTopicUriReference skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
+  @JsonProperty("skillExpressionId")
+  public ConversationEventTopicUriReference getSkillExpressionId() {
+    return skillExpressionId;
+  }
+  public void setSkillExpressionId(ConversationEventTopicUriReference skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -151,12 +170,13 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
             Objects.equals(this.language, conversationEventTopicConversationRoutingData.language) &&
             Objects.equals(this.priority, conversationEventTopicConversationRoutingData.priority) &&
             Objects.equals(this.skills, conversationEventTopicConversationRoutingData.skills) &&
-            Objects.equals(this.scoredAgents, conversationEventTopicConversationRoutingData.scoredAgents);
+            Objects.equals(this.scoredAgents, conversationEventTopicConversationRoutingData.scoredAgents) &&
+            Objects.equals(this.skillExpressionId, conversationEventTopicConversationRoutingData.skillExpressionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, language, priority, skills, scoredAgents);
+    return Objects.hash(queue, language, priority, skills, scoredAgents, skillExpressionId);
   }
 
   @Override
@@ -169,6 +189,7 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    skillExpressionId: ").append(toIndentedString(skillExpressionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

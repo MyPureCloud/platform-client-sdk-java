@@ -40,6 +40,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
   private String queueId = null;
   private List<ConversationSummaryTopicConversationSummaryParticipant> participants = null;
   private List<String> communicationIds = null;
+  private String latestCommunicationId = null;
   private Date createdDate = null;
 
   private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
@@ -402,6 +403,23 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
 
   /**
    **/
+  public ConversationSummaryTopicConversationSummaryEvent latestCommunicationId(String latestCommunicationId) {
+    this.latestCommunicationId = latestCommunicationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("latestCommunicationId")
+  public String getLatestCommunicationId() {
+    return latestCommunicationId;
+  }
+  public void setLatestCommunicationId(String latestCommunicationId) {
+    this.latestCommunicationId = latestCommunicationId;
+  }
+
+
+  /**
+   **/
   public ConversationSummaryTopicConversationSummaryEvent createdDate(Date createdDate) {
     this.createdDate = createdDate;
     return this;
@@ -737,6 +755,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
             Objects.equals(this.queueId, conversationSummaryTopicConversationSummaryEvent.queueId) &&
             Objects.equals(this.participants, conversationSummaryTopicConversationSummaryEvent.participants) &&
             Objects.equals(this.communicationIds, conversationSummaryTopicConversationSummaryEvent.communicationIds) &&
+            Objects.equals(this.latestCommunicationId, conversationSummaryTopicConversationSummaryEvent.latestCommunicationId) &&
             Objects.equals(this.createdDate, conversationSummaryTopicConversationSummaryEvent.createdDate) &&
             Objects.equals(this.messageType, conversationSummaryTopicConversationSummaryEvent.messageType) &&
             Objects.equals(this.mediaType, conversationSummaryTopicConversationSummaryEvent.mediaType) &&
@@ -760,7 +779,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, summarySourceType, triggerType, lastEditedBy, errorType, durationMs, labels);
+    return Objects.hash(conversationId, queueId, participants, communicationIds, latestCommunicationId, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, summarySourceType, triggerType, lastEditedBy, errorType, durationMs, labels);
   }
 
   @Override
@@ -772,6 +791,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    communicationIds: ").append(toIndentedString(communicationIds)).append("\n");
+    sb.append("    latestCommunicationId: ").append(toIndentedString(latestCommunicationId)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");

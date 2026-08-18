@@ -55,6 +55,14 @@ import com.mypurecloud.sdk.v2.model.AgentsBidAssignedWorkPlanOverrideRequest;
 import com.mypurecloud.sdk.v2.model.AgentsEffectiveScheduleSetResponse;
 import com.mypurecloud.sdk.v2.model.AgentsIntegrationsListing;
 import com.mypurecloud.sdk.v2.model.AgentsWorkPlansResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedExportJobRequest;
+import com.mypurecloud.sdk.v2.model.AggregatedExportSnapshotJobRequest;
+import com.mypurecloud.sdk.v2.model.AggregatedHistoricalExportJobResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedHistoricalExportJobStatus;
+import com.mypurecloud.sdk.v2.model.AggregatedSessionExportJobResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedSessionExportJobStatus;
+import com.mypurecloud.sdk.v2.model.AggregatedSnapshotExportJobResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedSnapshotExportJobStatus;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftBuSettingsResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftJobResponse;
@@ -419,6 +427,9 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapa
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitDecisionmetricsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
@@ -601,6 +612,9 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitOpportunitiesBulkRemoveRequest;
@@ -2070,23 +2084,25 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Deletes a time off limit object
+   * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * 
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The ID of the time off limit object to delete (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWorkforcemanagementManagementunitTimeofflimit(String managementUnitId, String timeOffLimitId) throws IOException, ApiException {
      deleteWorkforcemanagementManagementunitTimeofflimit(createDeleteWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId));
   }
 
   /**
-   * Deletes a time off limit object
+   * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * 
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The ID of the time off limit object to delete (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWorkforcemanagementManagementunitTimeofflimitWithHttpInfo(String managementUnitId, String timeOffLimitId) throws IOException {
     return deleteWorkforcemanagementManagementunitTimeofflimit(createDeleteWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId).withHttpInfo());
@@ -2102,11 +2118,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Deletes a time off limit object
+   * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWorkforcemanagementManagementunitTimeofflimit(DeleteWorkforcemanagementManagementunitTimeofflimitRequest request) throws IOException, ApiException {
     try {
@@ -2120,11 +2137,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Deletes a time off limit object
+   * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWorkforcemanagementManagementunitTimeofflimit(ApiRequest<Void> request) throws IOException {
     try {
@@ -2149,23 +2167,25 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Deletes a time off plan
+   * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param timeOffPlanId The ID of the time off plan to delete (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWorkforcemanagementManagementunitTimeoffplan(String managementUnitId, String timeOffPlanId) throws IOException, ApiException {
      deleteWorkforcemanagementManagementunitTimeoffplan(createDeleteWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId));
   }
 
   /**
-   * Deletes a time off plan
+   * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param timeOffPlanId The ID of the time off plan to delete (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWorkforcemanagementManagementunitTimeoffplanWithHttpInfo(String managementUnitId, String timeOffPlanId) throws IOException {
     return deleteWorkforcemanagementManagementunitTimeoffplan(createDeleteWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId).withHttpInfo());
@@ -2181,11 +2201,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Deletes a time off plan
+   * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWorkforcemanagementManagementunitTimeoffplan(DeleteWorkforcemanagementManagementunitTimeoffplanRequest request) throws IOException, ApiException {
     try {
@@ -2199,11 +2220,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Deletes a time off plan
+   * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWorkforcemanagementManagementunitTimeoffplan(ApiRequest<Void> request) throws IOException {
     try {
@@ -5195,6 +5217,252 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ContinuousForecastGetSessionResponse> response = (ApiResponse<ContinuousForecastGetSessionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status of the session export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The job ID (required)
+   * @return AggregatedSessionExportJobStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedSessionExportJobStatus getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * Get status of the session export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The job ID (required)
+   * @return AggregatedSessionExportJobStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedSessionExportJobStatus> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobRequest createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status of the session export job
+   * 
+   * @param request The request object
+   * @return AggregatedSessionExportJobStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedSessionExportJobStatus getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AggregatedSessionExportJobStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregatedSessionExportJobStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status of the session export job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedSessionExportJobStatus> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregatedSessionExportJobStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedSessionExportJobStatus> response = (ApiResponse<AggregatedSessionExportJobStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedSessionExportJobStatus> response = (ApiResponse<AggregatedSessionExportJobStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status of the historical export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The job ID (required)
+   * @return AggregatedHistoricalExportJobStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedHistoricalExportJobStatus getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * Get status of the historical export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The job ID (required)
+   * @return AggregatedHistoricalExportJobStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedHistoricalExportJobStatus> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobRequest createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status of the historical export job
+   * 
+   * @param request The request object
+   * @return AggregatedHistoricalExportJobStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedHistoricalExportJobStatus getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AggregatedHistoricalExportJobStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregatedHistoricalExportJobStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status of the historical export job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedHistoricalExportJobStatus> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregatedHistoricalExportJobStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedHistoricalExportJobStatus> response = (ApiResponse<AggregatedHistoricalExportJobStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedHistoricalExportJobStatus> response = (ApiResponse<AggregatedHistoricalExportJobStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status of the snapshot export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The job ID (required)
+   * @return AggregatedSnapshotExportJobStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedSnapshotExportJobStatus getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * Get status of the snapshot export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The job ID (required)
+   * @return AggregatedSnapshotExportJobStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedSnapshotExportJobStatus> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobRequest createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status of the snapshot export job
+   * 
+   * @param request The request object
+   * @return AggregatedSnapshotExportJobStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedSnapshotExportJobStatus getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AggregatedSnapshotExportJobStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregatedSnapshotExportJobStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status of the snapshot export job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedSnapshotExportJobStatus> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregatedSnapshotExportJobStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedSnapshotExportJobStatus> response = (ApiResponse<AggregatedSnapshotExportJobStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedSnapshotExportJobStatus> response = (ApiResponse<AggregatedSnapshotExportJobStatus>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10967,12 +11235,13 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a time off limit object
-   * Returns properties of time off limit object, but not daily values.
+   * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The ID of the time off limit to fetch (required)
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(String managementUnitId, String timeOffLimitId) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitTimeofflimit(createGetWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId));
@@ -10980,11 +11249,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a time off limit object
-   * Returns properties of time off limit object, but not daily values.
+   * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The ID of the time off limit to fetch (required)
    * @return TimeOffLimit
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimit> getWorkforcemanagementManagementunitTimeofflimitWithHttpInfo(String managementUnitId, String timeOffLimitId) throws IOException {
     return getWorkforcemanagementManagementunitTimeofflimit(createGetWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId).withHttpInfo());
@@ -11001,11 +11271,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a time off limit object
-   * Returns properties of time off limit object, but not daily values.
+   * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * @param request The request object
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(GetWorkforcemanagementManagementunitTimeofflimitRequest request) throws IOException, ApiException {
     try {
@@ -11020,10 +11291,11 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a time off limit object
-   * Returns properties of time off limit object, but not daily values.
+   * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimit> getWorkforcemanagementManagementunitTimeofflimit(ApiRequest<Void> request) throws IOException {
     try {
@@ -11049,11 +11321,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a list of time off limit objects under management unit.
-   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param managementUnitId The ID of the management unit. (required)
    * @return TimeOffLimitListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(String managementUnitId) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitTimeofflimits(createGetWorkforcemanagementManagementunitTimeofflimitsRequest(managementUnitId));
@@ -11061,10 +11334,11 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a list of time off limit objects under management unit.
-   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param managementUnitId The ID of the management unit. (required)
    * @return TimeOffLimitListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimitListing> getWorkforcemanagementManagementunitTimeofflimitsWithHttpInfo(String managementUnitId) throws IOException {
     return getWorkforcemanagementManagementunitTimeofflimits(createGetWorkforcemanagementManagementunitTimeofflimitsRequest(managementUnitId).withHttpInfo());
@@ -11079,11 +11353,12 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a list of time off limit objects under management unit.
-   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param request The request object
    * @return TimeOffLimitListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(GetWorkforcemanagementManagementunitTimeofflimitsRequest request) throws IOException, ApiException {
     try {
@@ -11098,10 +11373,11 @@ public class WorkforceManagementApi {
 
   /**
    * Gets a list of time off limit objects under management unit.
-   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimitListing> getWorkforcemanagementManagementunitTimeofflimits(ApiRequest<Void> request) throws IOException {
     try {
@@ -11126,25 +11402,27 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Gets a time off plan
+   * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param timeOffPlanId The ID of the time off plan to fetch (required)
    * @return TimeOffPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(String managementUnitId, String timeOffPlanId) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitTimeoffplan(createGetWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId));
   }
 
   /**
-   * Gets a time off plan
+   * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param timeOffPlanId The ID of the time off plan to fetch (required)
    * @return TimeOffPlan
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffPlan> getWorkforcemanagementManagementunitTimeoffplanWithHttpInfo(String managementUnitId, String timeOffPlanId) throws IOException {
     return getWorkforcemanagementManagementunitTimeoffplan(createGetWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId).withHttpInfo());
@@ -11160,12 +11438,13 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Gets a time off plan
+   * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request The request object
    * @return TimeOffPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(GetWorkforcemanagementManagementunitTimeoffplanRequest request) throws IOException, ApiException {
     try {
@@ -11179,11 +11458,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Gets a time off plan
+   * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffPlan> getWorkforcemanagementManagementunitTimeoffplan(ApiRequest<Void> request) throws IOException {
     try {
@@ -11208,23 +11488,25 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Gets a list of time off plans
+   * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @return TimeOffPlanListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(String managementUnitId) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitTimeoffplans(createGetWorkforcemanagementManagementunitTimeoffplansRequest(managementUnitId));
   }
 
   /**
-   * Gets a list of time off plans
+   * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @return TimeOffPlanListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffPlanListing> getWorkforcemanagementManagementunitTimeoffplansWithHttpInfo(String managementUnitId) throws IOException {
     return getWorkforcemanagementManagementunitTimeoffplans(createGetWorkforcemanagementManagementunitTimeoffplansRequest(managementUnitId).withHttpInfo());
@@ -11238,12 +11520,13 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Gets a list of time off plans
+   * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param request The request object
    * @return TimeOffPlanListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(GetWorkforcemanagementManagementunitTimeoffplansRequest request) throws IOException, ApiException {
     try {
@@ -11257,11 +11540,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Gets a list of time off plans
+   * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffPlanListing> getWorkforcemanagementManagementunitTimeoffplans(ApiRequest<Void> request) throws IOException {
     try {
@@ -16413,13 +16697,14 @@ public class WorkforceManagementApi {
 
   /**
    * Updates a time off limit object.
-   * Updates time off limit object properties, but not daily values.
+   * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The id of time off limit object to update (required)
    * @param body body (required)
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(String managementUnitId, String timeOffLimitId, UpdateTimeOffLimitRequest body) throws IOException, ApiException {
     return  patchWorkforcemanagementManagementunitTimeofflimit(createPatchWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId, body));
@@ -16427,12 +16712,13 @@ public class WorkforceManagementApi {
 
   /**
    * Updates a time off limit object.
-   * Updates time off limit object properties, but not daily values.
+   * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The id of time off limit object to update (required)
    * @param body body (required)
    * @return TimeOffLimit
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimit> patchWorkforcemanagementManagementunitTimeofflimitWithHttpInfo(String managementUnitId, String timeOffLimitId, UpdateTimeOffLimitRequest body) throws IOException {
     return patchWorkforcemanagementManagementunitTimeofflimit(createPatchWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId, body).withHttpInfo());
@@ -16451,11 +16737,12 @@ public class WorkforceManagementApi {
 
   /**
    * Updates a time off limit object.
-   * Updates time off limit object properties, but not daily values.
+   * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
    * @param request The request object
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(PatchWorkforcemanagementManagementunitTimeofflimitRequest request) throws IOException, ApiException {
     try {
@@ -16470,10 +16757,11 @@ public class WorkforceManagementApi {
 
   /**
    * Updates a time off limit object.
-   * Updates time off limit object properties, but not daily values.
+   * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimit> patchWorkforcemanagementManagementunitTimeofflimit(ApiRequest<UpdateTimeOffLimitRequest> request) throws IOException {
     try {
@@ -16498,7 +16786,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Updates a time off plan
+   * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param timeOffPlanId The ID of the time off plan to update (required)
@@ -16506,19 +16794,21 @@ public class WorkforceManagementApi {
    * @return TimeOffPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(String managementUnitId, String timeOffPlanId, UpdateTimeOffPlanRequest body) throws IOException, ApiException {
     return  patchWorkforcemanagementManagementunitTimeoffplan(createPatchWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId, body));
   }
 
   /**
-   * Updates a time off plan
+   * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param timeOffPlanId The ID of the time off plan to update (required)
    * @param body body (required)
    * @return TimeOffPlan
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffPlan> patchWorkforcemanagementManagementunitTimeoffplanWithHttpInfo(String managementUnitId, String timeOffPlanId, UpdateTimeOffPlanRequest body) throws IOException {
     return patchWorkforcemanagementManagementunitTimeoffplan(createPatchWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId, body).withHttpInfo());
@@ -16536,12 +16826,13 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Updates a time off plan
+   * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request The request object
    * @return TimeOffPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(PatchWorkforcemanagementManagementunitTimeoffplanRequest request) throws IOException, ApiException {
     try {
@@ -16555,11 +16846,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Updates a time off plan
+   * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffPlan> patchWorkforcemanagementManagementunitTimeoffplan(ApiRequest<UpdateTimeOffPlanRequest> request) throws IOException {
     try {
@@ -20319,6 +20611,252 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Create a session export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @return AggregatedSessionExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedSessionExportJobResponse postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(String businessUnitId, AggregatedExportJobRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(createPostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Create a session export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @return AggregatedSessionExportJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedSessionExportJobResponse> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsWithHttpInfo(String businessUnitId, AggregatedExportJobRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(createPostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsRequest createPostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsRequest(String businessUnitId, AggregatedExportJobRequest body) {
+    return PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a session export job
+   * 
+   * @param request The request object
+   * @return AggregatedSessionExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedSessionExportJobResponse postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AggregatedSessionExportJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregatedSessionExportJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a session export job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedSessionExportJobResponse> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(ApiRequest<AggregatedExportJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregatedSessionExportJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedSessionExportJobResponse> response = (ApiResponse<AggregatedSessionExportJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedSessionExportJobResponse> response = (ApiResponse<AggregatedSessionExportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a historical export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @return AggregatedHistoricalExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedHistoricalExportJobResponse postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(String businessUnitId, AggregatedExportJobRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(createPostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Create a historical export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @return AggregatedHistoricalExportJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedHistoricalExportJobResponse> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsWithHttpInfo(String businessUnitId, AggregatedExportJobRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(createPostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsRequest createPostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsRequest(String businessUnitId, AggregatedExportJobRequest body) {
+    return PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a historical export job
+   * 
+   * @param request The request object
+   * @return AggregatedHistoricalExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedHistoricalExportJobResponse postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AggregatedHistoricalExportJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregatedHistoricalExportJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a historical export job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedHistoricalExportJobResponse> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(ApiRequest<AggregatedExportJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregatedHistoricalExportJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedHistoricalExportJobResponse> response = (ApiResponse<AggregatedHistoricalExportJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedHistoricalExportJobResponse> response = (ApiResponse<AggregatedHistoricalExportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a snapshot export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @return AggregatedSnapshotExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedSnapshotExportJobResponse postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(String businessUnitId, AggregatedExportSnapshotJobRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(createPostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Create a snapshot export job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @return AggregatedSnapshotExportJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedSnapshotExportJobResponse> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsWithHttpInfo(String businessUnitId, AggregatedExportSnapshotJobRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(createPostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsRequest createPostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsRequest(String businessUnitId, AggregatedExportSnapshotJobRequest body) {
+    return PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a snapshot export job
+   * 
+   * @param request The request object
+   * @return AggregatedSnapshotExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregatedSnapshotExportJobResponse postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(PostWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AggregatedSnapshotExportJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregatedSnapshotExportJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a snapshot export job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregatedSnapshotExportJobResponse> postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(ApiRequest<AggregatedExportSnapshotJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregatedSnapshotExportJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedSnapshotExportJobResponse> response = (ApiResponse<AggregatedSnapshotExportJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregatedSnapshotExportJobResponse> response = (ApiResponse<AggregatedSnapshotExportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Bulk add opportunities
    * 
    * @param businessUnitId The ID of the business unit (required)
@@ -22609,25 +23147,27 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Retrieves time-off limit related values based on a given set of filters.
+   * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param body body (required)
    * @return BuTimeOffLimitValuesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(String businessUnitId, QueryTimeOffLimitValuesRequest body) throws IOException, ApiException {
     return  postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(createPostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest(businessUnitId, body));
   }
 
   /**
-   * Retrieves time-off limit related values based on a given set of filters.
+   * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param body body (required)
    * @return BuTimeOffLimitValuesResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<BuTimeOffLimitValuesResponse> postWorkforcemanagementBusinessunitTimeofflimitsValuesQueryWithHttpInfo(String businessUnitId, QueryTimeOffLimitValuesRequest body) throws IOException {
     return postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(createPostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest(businessUnitId, body).withHttpInfo());
@@ -22643,12 +23183,13 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Retrieves time-off limit related values based on a given set of filters.
+   * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param request The request object
    * @return BuTimeOffLimitValuesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest request) throws IOException, ApiException {
     try {
@@ -22662,11 +23203,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Retrieves time-off limit related values based on a given set of filters.
+   * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<BuTimeOffLimitValuesResponse> postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(ApiRequest<QueryTimeOffLimitValuesRequest> request) throws IOException {
     try {
@@ -25432,12 +25974,13 @@ public class WorkforceManagementApi {
 
   /**
    * Creates a new time off limit object under management unit.
-   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param managementUnitId The ID of the management unit. (required)
    * @param body body (required)
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(String managementUnitId, CreateTimeOffLimitRequest body) throws IOException, ApiException {
     return  postWorkforcemanagementManagementunitTimeofflimits(createPostWorkforcemanagementManagementunitTimeofflimitsRequest(managementUnitId, body));
@@ -25445,11 +25988,12 @@ public class WorkforceManagementApi {
 
   /**
    * Creates a new time off limit object under management unit.
-   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param managementUnitId The ID of the management unit. (required)
    * @param body body (required)
    * @return TimeOffLimit
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimit> postWorkforcemanagementManagementunitTimeofflimitsWithHttpInfo(String managementUnitId, CreateTimeOffLimitRequest body) throws IOException {
     return postWorkforcemanagementManagementunitTimeofflimits(createPostWorkforcemanagementManagementunitTimeofflimitsRequest(managementUnitId, body).withHttpInfo());
@@ -25466,11 +26010,12 @@ public class WorkforceManagementApi {
 
   /**
    * Creates a new time off limit object under management unit.
-   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param request The request object
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(PostWorkforcemanagementManagementunitTimeofflimitsRequest request) throws IOException, ApiException {
     try {
@@ -25485,10 +26030,11 @@ public class WorkforceManagementApi {
 
   /**
    * Creates a new time off limit object under management unit.
-   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimit> postWorkforcemanagementManagementunitTimeofflimits(ApiRequest<CreateTimeOffLimitRequest> request) throws IOException {
     try {
@@ -25513,25 +26059,27 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Retrieves time off limit related values based on a given set of filters.
+   * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param managementUnitId The ID of the management unit. (required)
    * @param body body (required)
    * @return QueryTimeOffLimitValuesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(String managementUnitId, QueryTimeOffLimitValuesRequest body) throws IOException, ApiException {
     return  postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(createPostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest(managementUnitId, body));
   }
 
   /**
-   * Retrieves time off limit related values based on a given set of filters.
+   * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param managementUnitId The ID of the management unit. (required)
    * @param body body (required)
    * @return QueryTimeOffLimitValuesResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<QueryTimeOffLimitValuesResponse> postWorkforcemanagementManagementunitTimeofflimitsValuesQueryWithHttpInfo(String managementUnitId, QueryTimeOffLimitValuesRequest body) throws IOException {
     return postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(createPostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest(managementUnitId, body).withHttpInfo());
@@ -25547,12 +26095,13 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Retrieves time off limit related values based on a given set of filters.
+   * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param request The request object
    * @return QueryTimeOffLimitValuesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest request) throws IOException, ApiException {
     try {
@@ -25566,11 +26115,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Retrieves time off limit related values based on a given set of filters.
+   * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<QueryTimeOffLimitValuesResponse> postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(ApiRequest<QueryTimeOffLimitValuesRequest> request) throws IOException {
     try {
@@ -25595,25 +26145,27 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Creates a new time off plan
+   * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param body body (required)
    * @return TimeOffPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(String managementUnitId, CreateTimeOffPlanRequest body) throws IOException, ApiException {
     return  postWorkforcemanagementManagementunitTimeoffplans(createPostWorkforcemanagementManagementunitTimeoffplansRequest(managementUnitId, body));
   }
 
   /**
-   * Creates a new time off plan
+   * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param body body (required)
    * @return TimeOffPlan
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffPlan> postWorkforcemanagementManagementunitTimeoffplansWithHttpInfo(String managementUnitId, CreateTimeOffPlanRequest body) throws IOException {
     return postWorkforcemanagementManagementunitTimeoffplans(createPostWorkforcemanagementManagementunitTimeoffplansRequest(managementUnitId, body).withHttpInfo());
@@ -25629,12 +26181,13 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Creates a new time off plan
+   * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param request The request object
    * @return TimeOffPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(PostWorkforcemanagementManagementunitTimeoffplansRequest request) throws IOException, ApiException {
     try {
@@ -25648,11 +26201,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Creates a new time off plan
+   * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffPlan> postWorkforcemanagementManagementunitTimeoffplans(ApiRequest<CreateTimeOffPlanRequest> request) throws IOException {
     try {
@@ -28620,13 +29174,14 @@ public class WorkforceManagementApi {
 
   /**
    * Sets daily values for a date range of time off limit object
-   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The ID of the time off limit object to set values for (required)
    * @param body body (required)
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(String managementUnitId, String timeOffLimitId, SetTimeOffLimitValuesRequest body) throws IOException, ApiException {
     return  putWorkforcemanagementManagementunitTimeofflimitValues(createPutWorkforcemanagementManagementunitTimeofflimitValuesRequest(managementUnitId, timeOffLimitId, body));
@@ -28634,12 +29189,13 @@ public class WorkforceManagementApi {
 
   /**
    * Sets daily values for a date range of time off limit object
-   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The ID of the time off limit object to set values for (required)
    * @param body body (required)
    * @return TimeOffLimit
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimit> putWorkforcemanagementManagementunitTimeofflimitValuesWithHttpInfo(String managementUnitId, String timeOffLimitId, SetTimeOffLimitValuesRequest body) throws IOException {
     return putWorkforcemanagementManagementunitTimeofflimitValues(createPutWorkforcemanagementManagementunitTimeofflimitValuesRequest(managementUnitId, timeOffLimitId, body).withHttpInfo());
@@ -28658,11 +29214,12 @@ public class WorkforceManagementApi {
 
   /**
    * Sets daily values for a date range of time off limit object
-   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
    * @param request The request object
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(PutWorkforcemanagementManagementunitTimeofflimitValuesRequest request) throws IOException, ApiException {
     try {
@@ -28677,10 +29234,11 @@ public class WorkforceManagementApi {
 
   /**
    * Sets daily values for a date range of time off limit object
-   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TimeOffLimit> putWorkforcemanagementManagementunitTimeofflimitValues(ApiRequest<SetTimeOffLimitValuesRequest> request) throws IOException {
     try {

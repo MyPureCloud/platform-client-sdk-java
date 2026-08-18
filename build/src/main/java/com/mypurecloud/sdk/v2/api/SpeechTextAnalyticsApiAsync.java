@@ -24,6 +24,9 @@ import com.mypurecloud.sdk.v2.model.DictionaryFeedback;
 import com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GenAIPhrasesJob;
+import com.mypurecloud.sdk.v2.model.GenAIPhrasesJobRequest;
+import com.mypurecloud.sdk.v2.model.GenAIPhrasesJobs;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
@@ -109,6 +112,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsRequest
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralStatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneratedphrasesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsTestphraseJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguageConversationRequest;
@@ -122,6 +126,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsPubl
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsReprocessingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsGeneratedphrasesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsTestphraseJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
@@ -3161,6 +3166,81 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
+   * Get a Speech & Text Analytics GenAI phrases job by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GenAIPhrasesJob> getSpeechandtextanalyticsTopicsGeneratedphrasesJobAsync(GetSpeechandtextanalyticsTopicsGeneratedphrasesJobRequest request, final AsyncApiCallback<GenAIPhrasesJob> callback) {
+    try {
+      final SettableFuture<GenAIPhrasesJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GenAIPhrasesJob>() {}, new AsyncApiCallback<ApiResponse<GenAIPhrasesJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<GenAIPhrasesJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics GenAI phrases job by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GenAIPhrasesJob>> getSpeechandtextanalyticsTopicsGeneratedphrasesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GenAIPhrasesJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GenAIPhrasesJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GenAIPhrasesJob>() {}, new AsyncApiCallback<ApiResponse<GenAIPhrasesJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<GenAIPhrasesJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GenAIPhrasesJob> response = (ApiResponse<GenAIPhrasesJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GenAIPhrasesJob> response = (ApiResponse<GenAIPhrasesJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a Speech & Text Analytics publish topics job by id
    * 
    * @param request the request object
@@ -4138,6 +4218,81 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
+   * Create new Speech & Text Analytics GenAI topic phrases generation job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GenAIPhrasesJobs> postSpeechandtextanalyticsTopicsGeneratedphrasesJobsAsync(PostSpeechandtextanalyticsTopicsGeneratedphrasesJobsRequest request, final AsyncApiCallback<GenAIPhrasesJobs> callback) {
+    try {
+      final SettableFuture<GenAIPhrasesJobs> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GenAIPhrasesJobs>() {}, new AsyncApiCallback<ApiResponse<GenAIPhrasesJobs>>() {
+        @Override
+        public void onCompleted(ApiResponse<GenAIPhrasesJobs> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create new Speech & Text Analytics GenAI topic phrases generation job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GenAIPhrasesJobs>> postSpeechandtextanalyticsTopicsGeneratedphrasesJobsAsync(ApiRequest<GenAIPhrasesJobRequest> request, final AsyncApiCallback<ApiResponse<GenAIPhrasesJobs>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GenAIPhrasesJobs>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GenAIPhrasesJobs>() {}, new AsyncApiCallback<ApiResponse<GenAIPhrasesJobs>>() {
+        @Override
+        public void onCompleted(ApiResponse<GenAIPhrasesJobs> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GenAIPhrasesJobs> response = (ApiResponse<GenAIPhrasesJobs>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GenAIPhrasesJobs> response = (ApiResponse<GenAIPhrasesJobs>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create new Speech & Text Analytics publish topics job
    * 
    * @param request the request object
@@ -4213,7 +4368,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Create new Speech & Text Analytics publish topics job
+   * Create new Speech & Text Analytics test topic phrase job
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4247,7 +4402,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Create new Speech & Text Analytics publish topics job
+   * Create new Speech & Text Analytics test topic phrase job
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

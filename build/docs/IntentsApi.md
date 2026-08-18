@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postIntentsCustomerintentSourceintentsBulkAdd**](IntentsApi#postIntentsCustomerintentSourceintentsBulkAdd) | Bulk add source intents to a customer intent |
 | [**postIntentsCustomerintentSourceintentsBulkRemove**](IntentsApi#postIntentsCustomerintentSourceintentsBulkRemove) | Bulk remove source intents mapped to a customer intent |
 | [**postIntentsCustomerintents**](IntentsApi#postIntentsCustomerintents) | Create customer intents |
+| [**postIntentsCustomerintentsBulkRetrieve**](IntentsApi#postIntentsCustomerintentsBulkRetrieve) | Get customer intents by IDs |
 {: class="table-striped"}
 
 
@@ -1003,4 +1004,65 @@ try {
 [**CustomerIntentResponse**](CustomerIntentResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+# **postIntentsCustomerintentsBulkRetrieve**
+
+
+> [List&lt;CustomerIntentResponse&gt;](CustomerIntentResponse) postIntentsCustomerintentsBulkRetrieve(body)
+
+Get customer intents by IDs
+
+postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/intents/customerintents/bulk/retrieve  
+
+Requires ANY permissions: 
+
+* externalContacts:customerIntentTaxonomy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntentsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntentsApi apiInstance = new IntentsApi();
+BatchGetCustomerIntentsRequest body = new BatchGetCustomerIntentsRequest(); // BatchGetCustomerIntentsRequest | Customer intent IDs to retrieve
+try {
+    List<CustomerIntentResponse> result = apiInstance.postIntentsCustomerintentsBulkRetrieve(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntentsApi#postIntentsCustomerintentsBulkRetrieve");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BatchGetCustomerIntentsRequest**](BatchGetCustomerIntentsRequest)| Customer intent IDs to retrieve | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;CustomerIntentResponse&gt;**](CustomerIntentResponse)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

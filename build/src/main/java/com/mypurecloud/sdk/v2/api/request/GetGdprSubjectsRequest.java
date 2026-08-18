@@ -50,6 +50,7 @@ public class GetGdprSubjectsRequest {
 		INSTAGRAM("INSTAGRAM"),
 		FACEBOOK("FACEBOOK"),
 		APPLE_MESSAGES("APPLE_MESSAGES"),
+		WHATSAPP("WHATSAPP"),
 		EXTERNAL_ID("EXTERNAL_ID");
 
 		private String value;

@@ -15,6 +15,7 @@
 | **modifiedBy** | [**UserReference**](UserReference) | The ID of the User who modified the Stage. |  [optional] |
 | **version** | **Integer** | The version of the Stage. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The Status of the Stage. |  [optional] |
+| **failureReason** | [**FailureReason**](FailureReason) | The reason the Stage failed, if applicable. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **_case** | [**CaseReference**](CaseReference) | The parent Case of the Stage. |  [optional] |
 
@@ -29,8 +30,9 @@
 | OPEN | &quot;Open&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
 | TERMINATED | &quot;Terminated&quot; | 
+| FAILED | &quot;Failed&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

@@ -64,7 +64,9 @@ public class SocialMediaAsyncAggregationQuery  implements Serializable {
     SHARES("shares"),
     COMMENTS("comments"),
     VIEWS("views"),
-    POSTTYPE("postType");
+    POSTTYPE("postType"),
+    REPOSTS("reposts"),
+    SAVES("saves");
 
     private String value;
 

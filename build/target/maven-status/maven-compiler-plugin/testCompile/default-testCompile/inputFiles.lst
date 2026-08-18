@@ -5,4 +5,5 @@
 /workspace/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/InvokedMethodListener.java
 /workspace/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/MockPojo.java
 /workspace/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/SdkTests.java
+/workspace/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/TestWebSocketListener.java
 /workspace/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/UserPresenceListener.java

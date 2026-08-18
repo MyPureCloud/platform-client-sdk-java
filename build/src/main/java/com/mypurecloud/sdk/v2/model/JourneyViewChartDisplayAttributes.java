@@ -75,6 +75,7 @@ public class JourneyViewChartDisplayAttributes  implements Serializable {
   private TypeEnum type = null;
   private String groupByTitle = null;
   private String metricsTitle = null;
+  private String secondaryMetricsTitle = null;
   private Boolean showLegend = null;
 
   public JourneyViewChartDisplayAttributes() {
@@ -143,6 +144,24 @@ public class JourneyViewChartDisplayAttributes  implements Serializable {
 
 
   /**
+   * A title for the metrics on secondary axis
+   **/
+  public JourneyViewChartDisplayAttributes secondaryMetricsTitle(String secondaryMetricsTitle) {
+    this.secondaryMetricsTitle = secondaryMetricsTitle;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A title for the metrics on secondary axis")
+  @JsonProperty("secondaryMetricsTitle")
+  public String getSecondaryMetricsTitle() {
+    return secondaryMetricsTitle;
+  }
+  public void setSecondaryMetricsTitle(String secondaryMetricsTitle) {
+    this.secondaryMetricsTitle = secondaryMetricsTitle;
+  }
+
+
+  /**
    * Whether to show a legend
    **/
   public JourneyViewChartDisplayAttributes showLegend(Boolean showLegend) {
@@ -173,12 +192,13 @@ public class JourneyViewChartDisplayAttributes  implements Serializable {
     return Objects.equals(this.type, journeyViewChartDisplayAttributes.type) &&
             Objects.equals(this.groupByTitle, journeyViewChartDisplayAttributes.groupByTitle) &&
             Objects.equals(this.metricsTitle, journeyViewChartDisplayAttributes.metricsTitle) &&
+            Objects.equals(this.secondaryMetricsTitle, journeyViewChartDisplayAttributes.secondaryMetricsTitle) &&
             Objects.equals(this.showLegend, journeyViewChartDisplayAttributes.showLegend);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, groupByTitle, metricsTitle, showLegend);
+    return Objects.hash(type, groupByTitle, metricsTitle, secondaryMetricsTitle, showLegend);
   }
 
   @Override
@@ -189,6 +209,7 @@ public class JourneyViewChartDisplayAttributes  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    groupByTitle: ").append(toIndentedString(groupByTitle)).append("\n");
     sb.append("    metricsTitle: ").append(toIndentedString(metricsTitle)).append("\n");
+    sb.append("    secondaryMetricsTitle: ").append(toIndentedString(secondaryMetricsTitle)).append("\n");
     sb.append("    showLegend: ").append(toIndentedString(showLegend)).append("\n");
     sb.append("}");
     return sb.toString();

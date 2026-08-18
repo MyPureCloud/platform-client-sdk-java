@@ -53,7 +53,10 @@ public class WfmActivityPlanJobCompleteTopicActivityPlanJobCompleteNotification 
     DELETEACTIVITYPLAN("DeleteActivityPlan"),
     DELETEOCCURRENCES("DeleteOccurrences"),
     DELETESESSIONS("DeleteSessions"),
-    DELETESESSIONUSERS("DeleteSessionUsers");
+    DELETESESSIONUSERS("DeleteSessionUsers"),
+    MAXIMIZEOCCURRENCE("MaximizeOccurrence"),
+    CREATESESSION("CreateSession"),
+    EDITSESSION("EditSession");
 
     private String value;
 

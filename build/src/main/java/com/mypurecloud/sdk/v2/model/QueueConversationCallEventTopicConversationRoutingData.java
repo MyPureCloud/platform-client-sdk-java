@@ -31,6 +31,7 @@ public class QueueConversationCallEventTopicConversationRoutingData  implements 
   private Long priority = null;
   private List<QueueConversationCallEventTopicUriReference> skills = null;
   private List<QueueConversationCallEventTopicScoredAgent> scoredAgents = null;
+  private QueueConversationCallEventTopicUriReference skillExpressionId = null;
 
   public QueueConversationCallEventTopicConversationRoutingData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -137,6 +138,24 @@ public class QueueConversationCallEventTopicConversationRoutingData  implements 
   }
 
 
+  /**
+   * A UriReference for a resource
+   **/
+  public QueueConversationCallEventTopicConversationRoutingData skillExpressionId(QueueConversationCallEventTopicUriReference skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
+  @JsonProperty("skillExpressionId")
+  public QueueConversationCallEventTopicUriReference getSkillExpressionId() {
+    return skillExpressionId;
+  }
+  public void setSkillExpressionId(QueueConversationCallEventTopicUriReference skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -151,12 +170,13 @@ public class QueueConversationCallEventTopicConversationRoutingData  implements 
             Objects.equals(this.language, queueConversationCallEventTopicConversationRoutingData.language) &&
             Objects.equals(this.priority, queueConversationCallEventTopicConversationRoutingData.priority) &&
             Objects.equals(this.skills, queueConversationCallEventTopicConversationRoutingData.skills) &&
-            Objects.equals(this.scoredAgents, queueConversationCallEventTopicConversationRoutingData.scoredAgents);
+            Objects.equals(this.scoredAgents, queueConversationCallEventTopicConversationRoutingData.scoredAgents) &&
+            Objects.equals(this.skillExpressionId, queueConversationCallEventTopicConversationRoutingData.skillExpressionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, language, priority, skills, scoredAgents);
+    return Objects.hash(queue, language, priority, skills, scoredAgents, skillExpressionId);
   }
 
   @Override
@@ -169,6 +189,7 @@ public class QueueConversationCallEventTopicConversationRoutingData  implements 
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    skillExpressionId: ").append(toIndentedString(skillExpressionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

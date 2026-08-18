@@ -42,7 +42,7 @@ public class CreateTimeOffPlanRequest  implements Serializable {
     }
   }
   /**
-   * Auto approval rule for the time off plan.
+   * Deprecated. Auto approval rule for the time off plan.
    */
  @JsonDeserialize(using = AutoApprovalRuleEnumDeserializer.class)
   public enum AutoApprovalRuleEnum {
@@ -99,14 +99,14 @@ public class CreateTimeOffPlanRequest  implements Serializable {
 
   
   /**
-   * The name of this time off plan.
+   * Deprecated. The name of this time off plan.
    **/
   public CreateTimeOffPlanRequest name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of this time off plan.")
+  @ApiModelProperty(example = "null", required = true, value = "Deprecated. The name of this time off plan.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -117,14 +117,14 @@ public class CreateTimeOffPlanRequest  implements Serializable {
 
 
   /**
-   * The set of activity code IDs to associate with this time off plan.
+   * Deprecated. The set of activity code IDs to associate with this time off plan.
    **/
   public CreateTimeOffPlanRequest activityCodeIds(List<String> activityCodeIds) {
     this.activityCodeIds = activityCodeIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The set of activity code IDs to associate with this time off plan.")
+  @ApiModelProperty(example = "null", value = "Deprecated. The set of activity code IDs to associate with this time off plan.")
   @JsonProperty("activityCodeIds")
   public List<String> getActivityCodeIds() {
     return activityCodeIds;
@@ -135,14 +135,14 @@ public class CreateTimeOffPlanRequest  implements Serializable {
 
 
   /**
-   * The set of time off limit IDs to associate with this time off plan.
+   * Deprecated. The set of time off limit IDs to associate with this time off plan.
    **/
   public CreateTimeOffPlanRequest timeOffLimitIds(List<String> timeOffLimitIds) {
     this.timeOffLimitIds = timeOffLimitIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The set of time off limit IDs to associate with this time off plan.")
+  @ApiModelProperty(example = "null", value = "Deprecated. The set of time off limit IDs to associate with this time off plan.")
   @JsonProperty("timeOffLimitIds")
   public List<String> getTimeOffLimitIds() {
     return timeOffLimitIds;
@@ -153,14 +153,14 @@ public class CreateTimeOffPlanRequest  implements Serializable {
 
 
   /**
-   * Auto approval rule for the time off plan.
+   * Deprecated. Auto approval rule for the time off plan.
    **/
   public CreateTimeOffPlanRequest autoApprovalRule(AutoApprovalRuleEnum autoApprovalRule) {
     this.autoApprovalRule = autoApprovalRule;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Auto approval rule for the time off plan.")
+  @ApiModelProperty(example = "null", required = true, value = "Deprecated. Auto approval rule for the time off plan.")
   @JsonProperty("autoApprovalRule")
   public AutoApprovalRuleEnum getAutoApprovalRule() {
     return autoApprovalRule;
@@ -171,14 +171,14 @@ public class CreateTimeOffPlanRequest  implements Serializable {
 
 
   /**
-   * The number of days before the time off request start date for when the request will be expired from the waitlist.
+   * Deprecated. The number of days before the time off request start date for when the request will be expired from the waitlist.
    **/
   public CreateTimeOffPlanRequest daysBeforeStartToExpireFromWaitlist(Integer daysBeforeStartToExpireFromWaitlist) {
     this.daysBeforeStartToExpireFromWaitlist = daysBeforeStartToExpireFromWaitlist;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The number of days before the time off request start date for when the request will be expired from the waitlist.")
+  @ApiModelProperty(example = "null", value = "Deprecated. The number of days before the time off request start date for when the request will be expired from the waitlist.")
   @JsonProperty("daysBeforeStartToExpireFromWaitlist")
   public Integer getDaysBeforeStartToExpireFromWaitlist() {
     return daysBeforeStartToExpireFromWaitlist;
@@ -189,14 +189,14 @@ public class CreateTimeOffPlanRequest  implements Serializable {
 
 
   /**
-   * Time off type, if this time off plan is associated with the integration.
+   * Deprecated. Time off type, if this time off plan is associated with the integration.
    **/
   public CreateTimeOffPlanRequest hrisTimeOffType(HrisTimeOffType hrisTimeOffType) {
     this.hrisTimeOffType = hrisTimeOffType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Time off type, if this time off plan is associated with the integration.")
+  @ApiModelProperty(example = "null", value = "Deprecated. Time off type, if this time off plan is associated with the integration.")
   @JsonProperty("hrisTimeOffType")
   public HrisTimeOffType getHrisTimeOffType() {
     return hrisTimeOffType;
@@ -207,14 +207,14 @@ public class CreateTimeOffPlanRequest  implements Serializable {
 
 
   /**
-   * Whether this time off plan should be used by agents.
+   * Deprecated. Whether this time off plan should be used by agents.
    **/
   public CreateTimeOffPlanRequest active(Boolean active) {
     this.active = active;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether this time off plan should be used by agents.")
+  @ApiModelProperty(example = "null", required = true, value = "Deprecated. Whether this time off plan should be used by agents.")
   @JsonProperty("active")
   public Boolean getActive() {
     return active;

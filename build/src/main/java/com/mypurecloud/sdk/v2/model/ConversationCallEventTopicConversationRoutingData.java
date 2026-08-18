@@ -31,6 +31,7 @@ public class ConversationCallEventTopicConversationRoutingData  implements Seria
   private Long priority = null;
   private List<ConversationCallEventTopicUriReference> skills = null;
   private List<ConversationCallEventTopicScoredAgent> scoredAgents = null;
+  private ConversationCallEventTopicUriReference skillExpressionId = null;
 
   public ConversationCallEventTopicConversationRoutingData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -137,6 +138,24 @@ public class ConversationCallEventTopicConversationRoutingData  implements Seria
   }
 
 
+  /**
+   * A UriReference for a resource
+   **/
+  public ConversationCallEventTopicConversationRoutingData skillExpressionId(ConversationCallEventTopicUriReference skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
+  @JsonProperty("skillExpressionId")
+  public ConversationCallEventTopicUriReference getSkillExpressionId() {
+    return skillExpressionId;
+  }
+  public void setSkillExpressionId(ConversationCallEventTopicUriReference skillExpressionId) {
+    this.skillExpressionId = skillExpressionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -151,12 +170,13 @@ public class ConversationCallEventTopicConversationRoutingData  implements Seria
             Objects.equals(this.language, conversationCallEventTopicConversationRoutingData.language) &&
             Objects.equals(this.priority, conversationCallEventTopicConversationRoutingData.priority) &&
             Objects.equals(this.skills, conversationCallEventTopicConversationRoutingData.skills) &&
-            Objects.equals(this.scoredAgents, conversationCallEventTopicConversationRoutingData.scoredAgents);
+            Objects.equals(this.scoredAgents, conversationCallEventTopicConversationRoutingData.scoredAgents) &&
+            Objects.equals(this.skillExpressionId, conversationCallEventTopicConversationRoutingData.skillExpressionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, language, priority, skills, scoredAgents);
+    return Objects.hash(queue, language, priority, skills, scoredAgents, skillExpressionId);
   }
 
   @Override
@@ -169,6 +189,7 @@ public class ConversationCallEventTopicConversationRoutingData  implements Seria
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    skillExpressionId: ").append(toIndentedString(skillExpressionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

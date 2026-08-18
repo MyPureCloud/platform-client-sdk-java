@@ -9,6 +9,7 @@
 | **queueId** | **String** |  |  [optional] |
 | **participants** | [**List&lt;ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant&gt;**](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  |  [optional] |
 | **communicationIds** | **List&lt;String&gt;** |  |  [optional] |
+| **latestCommunicationId** | **String** |  |  [optional] |
 | **createdDate** | [**Date**](Date) |  |  [optional] |
 | **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) |  |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
@@ -91,4 +92,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

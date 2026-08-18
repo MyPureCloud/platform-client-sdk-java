@@ -6358,7 +6358,7 @@ public class UsersApi {
 
   /**
    * Update user
-   * 
+   * Updating some fields, like a user's extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
    * @param userId User ID (required)
    * @param body User (required)
    * @return User
@@ -6371,7 +6371,7 @@ public class UsersApi {
 
   /**
    * Update user
-   * 
+   * Updating some fields, like a user's extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
    * @param userId User ID (required)
    * @param body User (required)
    * @return User
@@ -6392,7 +6392,7 @@ public class UsersApi {
 
   /**
    * Update user
-   * 
+   * Updating some fields, like a user's extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
    * @param request The request object
    * @return User
    * @throws ApiException if the request fails on the server
@@ -6411,7 +6411,7 @@ public class UsersApi {
 
   /**
    * Update user
-   * 
+   * Updating some fields, like a user's extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

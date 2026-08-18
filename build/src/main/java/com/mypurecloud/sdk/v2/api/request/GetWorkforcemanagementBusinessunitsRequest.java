@@ -65,6 +65,14 @@ import com.mypurecloud.sdk.v2.model.AgentsBidAssignedWorkPlanOverrideRequest;
 import com.mypurecloud.sdk.v2.model.AgentsEffectiveScheduleSetResponse;
 import com.mypurecloud.sdk.v2.model.AgentsIntegrationsListing;
 import com.mypurecloud.sdk.v2.model.AgentsWorkPlansResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedExportJobRequest;
+import com.mypurecloud.sdk.v2.model.AggregatedExportSnapshotJobRequest;
+import com.mypurecloud.sdk.v2.model.AggregatedHistoricalExportJobResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedHistoricalExportJobStatus;
+import com.mypurecloud.sdk.v2.model.AggregatedSessionExportJobResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedSessionExportJobStatus;
+import com.mypurecloud.sdk.v2.model.AggregatedSnapshotExportJobResponse;
+import com.mypurecloud.sdk.v2.model.AggregatedSnapshotExportJobStatus;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftBuSettingsResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftJobResponse;
@@ -426,6 +434,8 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 		CAPACITYPLANFORECASTINPUTS("CapacityPlanForecastInputs"),
 		CAPACITYPLANPERFORMANCEPREDICTION("CapacityPlanPerformancePrediction"),
 		CONTINUOUSFORECAST("ContinuousForecast"),
+		PREDICTIONSFORECASTINGSCENARIOJOBS("PredictionsForecastingScenarioJobs"),
+		PREDICTIONSFORECASTINGSCENARIOS("PredictionsForecastingScenarios"),
 		HISTORICALADHERENCE("HistoricalAdherence"),
 		HISTORICALSHRINKAGE("HistoricalShrinkage"),
 		INTRADAYMONITORING("IntradayMonitoring"),

@@ -18,7 +18,11 @@ import com.mypurecloud.sdk.v2.model.CaseAssociationQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseCreate;
 import com.mypurecloud.sdk.v2.model.CaseDateDueUpdate;
 import com.mypurecloud.sdk.v2.model.CaseListing;
+import com.mypurecloud.sdk.v2.model.CaseOwnerUpdate;
 import com.mypurecloud.sdk.v2.model.CasePriorityUpdate;
+import com.mypurecloud.sdk.v2.model.CaseQueryJobCreate;
+import com.mypurecloud.sdk.v2.model.CaseQueryJobResponse;
+import com.mypurecloud.sdk.v2.model.CaseQueryJobResultsResponse;
 import com.mypurecloud.sdk.v2.model.CaseSummaryUpdate;
 import com.mypurecloud.sdk.v2.model.Caseplan;
 import com.mypurecloud.sdk.v2.model.CaseplanCreate;
@@ -74,8 +78,11 @@ import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseplanVersionStagep
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseplanVersionStageplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesExternalcontactRequest;
+import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesQueryJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesQueryJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesReferenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseDatedueRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseOwnerRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCasePriorityRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseplanRequest;
@@ -91,6 +98,7 @@ import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesAssociationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCasesQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanDataschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutCasemanagementCaseplanIntakesettingsRequest;
 
@@ -2184,6 +2192,170 @@ public class CaseManagementApi {
   }
 
   /**
+   * Get a case query job by id
+   * 
+   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId Job ID (required)
+   * @return CaseQueryJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseQueryJobResponse getCasemanagementCasesQueryJob(String jobId) throws IOException, ApiException {
+    return  getCasemanagementCasesQueryJob(createGetCasemanagementCasesQueryJobRequest(jobId));
+  }
+
+  /**
+   * Get a case query job by id
+   * 
+   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId Job ID (required)
+   * @return CaseQueryJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseQueryJobResponse> getCasemanagementCasesQueryJobWithHttpInfo(String jobId) throws IOException {
+    return getCasemanagementCasesQueryJob(createGetCasemanagementCasesQueryJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetCasemanagementCasesQueryJobRequest createGetCasemanagementCasesQueryJobRequest(String jobId) {
+    return GetCasemanagementCasesQueryJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get a case query job by id
+   * 
+   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CaseQueryJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseQueryJobResponse getCasemanagementCasesQueryJob(GetCasemanagementCasesQueryJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CaseQueryJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CaseQueryJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a case query job by id
+   * 
+   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseQueryJobResponse> getCasemanagementCasesQueryJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CaseQueryJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseQueryJobResponse> response = (ApiResponse<CaseQueryJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseQueryJobResponse> response = (ApiResponse<CaseQueryJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get results for a case query job
+   * 
+   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId Job ID (required)
+   * @return CaseQueryJobResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseQueryJobResultsResponse getCasemanagementCasesQueryJobResults(String jobId) throws IOException, ApiException {
+    return  getCasemanagementCasesQueryJobResults(createGetCasemanagementCasesQueryJobResultsRequest(jobId));
+  }
+
+  /**
+   * Get results for a case query job
+   * 
+   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId Job ID (required)
+   * @return CaseQueryJobResultsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseQueryJobResultsResponse> getCasemanagementCasesQueryJobResultsWithHttpInfo(String jobId) throws IOException {
+    return getCasemanagementCasesQueryJobResults(createGetCasemanagementCasesQueryJobResultsRequest(jobId).withHttpInfo());
+  }
+
+  private GetCasemanagementCasesQueryJobResultsRequest createGetCasemanagementCasesQueryJobResultsRequest(String jobId) {
+    return GetCasemanagementCasesQueryJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get results for a case query job
+   * 
+   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CaseQueryJobResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseQueryJobResultsResponse getCasemanagementCasesQueryJobResults(GetCasemanagementCasesQueryJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CaseQueryJobResultsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CaseQueryJobResultsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get results for a case query job
+   * 
+   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseQueryJobResultsResponse> getCasemanagementCasesQueryJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CaseQueryJobResultsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseQueryJobResultsResponse> response = (ApiResponse<CaseQueryJobResultsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseQueryJobResultsResponse> response = (ApiResponse<CaseQueryJobResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a Case by reference.
    * 
    * @param referenceId Case reference. (required)
@@ -2326,6 +2498,92 @@ public class CaseManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<ModelCase> patchCasemanagementCaseDatedue(ApiRequest<CaseDateDueUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ModelCase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the ownerId of a Case
+   * 
+   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseId Case identifier. (required)
+   * @param body OwnerId (required)
+   * @return ModelCase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ModelCase patchCasemanagementCaseOwner(String caseId, CaseOwnerUpdate body) throws IOException, ApiException {
+    return  patchCasemanagementCaseOwner(createPatchCasemanagementCaseOwnerRequest(caseId, body));
+  }
+
+  /**
+   * Update the ownerId of a Case
+   * 
+   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseId Case identifier. (required)
+   * @param body OwnerId (required)
+   * @return ModelCase
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ModelCase> patchCasemanagementCaseOwnerWithHttpInfo(String caseId, CaseOwnerUpdate body) throws IOException {
+    return patchCasemanagementCaseOwner(createPatchCasemanagementCaseOwnerRequest(caseId, body).withHttpInfo());
+  }
+
+  private PatchCasemanagementCaseOwnerRequest createPatchCasemanagementCaseOwnerRequest(String caseId, CaseOwnerUpdate body) {
+    return PatchCasemanagementCaseOwnerRequest.builder()
+            .withCaseId(caseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the ownerId of a Case
+   * 
+   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ModelCase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ModelCase patchCasemanagementCaseOwner(PatchCasemanagementCaseOwnerRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ModelCase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ModelCase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the ownerId of a Case
+   * 
+   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ModelCase> patchCasemanagementCaseOwner(ApiRequest<CaseOwnerUpdate> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ModelCase>() {});
     }
@@ -3557,6 +3815,88 @@ public class CaseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CaseAssociationQueryEntityListing> response = (ApiResponse<CaseAssociationQueryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a Case query job.
+   * 
+   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Case query job create request. (required)
+   * @return CaseQueryJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseQueryJobResponse postCasemanagementCasesQueryJobs(CaseQueryJobCreate body) throws IOException, ApiException {
+    return  postCasemanagementCasesQueryJobs(createPostCasemanagementCasesQueryJobsRequest(body));
+  }
+
+  /**
+   * Create a Case query job.
+   * 
+   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Case query job create request. (required)
+   * @return CaseQueryJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseQueryJobResponse> postCasemanagementCasesQueryJobsWithHttpInfo(CaseQueryJobCreate body) throws IOException {
+    return postCasemanagementCasesQueryJobs(createPostCasemanagementCasesQueryJobsRequest(body).withHttpInfo());
+  }
+
+  private PostCasemanagementCasesQueryJobsRequest createPostCasemanagementCasesQueryJobsRequest(CaseQueryJobCreate body) {
+    return PostCasemanagementCasesQueryJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a Case query job.
+   * 
+   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CaseQueryJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseQueryJobResponse postCasemanagementCasesQueryJobs(PostCasemanagementCasesQueryJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CaseQueryJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CaseQueryJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Case query job.
+   * 
+   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseQueryJobResponse> postCasemanagementCasesQueryJobs(ApiRequest<CaseQueryJobCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CaseQueryJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseQueryJobResponse> response = (ApiResponse<CaseQueryJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseQueryJobResponse> response = (ApiResponse<CaseQueryJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

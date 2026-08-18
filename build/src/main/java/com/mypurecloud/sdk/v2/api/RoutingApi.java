@@ -917,7 +917,6 @@ public class RoutingApi {
   /**
    * Delete a custom Key Performance Indicator.
    * 
-   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param kpiId Key Performance Indicator ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -929,7 +928,6 @@ public class RoutingApi {
   /**
    * Delete a custom Key Performance Indicator.
    * 
-   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param kpiId Key Performance Indicator ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -947,7 +945,6 @@ public class RoutingApi {
   /**
    * Delete a custom Key Performance Indicator.
    * 
-   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -966,7 +963,6 @@ public class RoutingApi {
   /**
    * Delete a custom Key Performance Indicator.
    * 
-   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4682,7 +4678,6 @@ public class RoutingApi {
   /**
    * Retrieve a single Key Performance Indicator.
    * 
-   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param kpiId Key Performance Indicator ID (required)
    * @param expand Parameter to request additional data to return in KPI payload (optional)
    * @return KeyPerformanceIndicator
@@ -4696,7 +4691,6 @@ public class RoutingApi {
   /**
    * Retrieve a single Key Performance Indicator.
    * 
-   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param kpiId Key Performance Indicator ID (required)
    * @param expand Parameter to request additional data to return in KPI payload (optional)
    * @return KeyPerformanceIndicator
@@ -4718,7 +4712,6 @@ public class RoutingApi {
   /**
    * Retrieve a single Key Performance Indicator.
    * 
-   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KeyPerformanceIndicator
    * @throws ApiException if the request fails on the server
@@ -4738,7 +4731,6 @@ public class RoutingApi {
   /**
    * Retrieve a single Key Performance Indicator.
    * 
-   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4850,7 +4842,6 @@ public class RoutingApi {
   /**
    * Get a list of Key Performance Indicators Types available.
    * 
-   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return List<KeyPerformanceIndicatorType>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4862,7 +4853,6 @@ public class RoutingApi {
   /**
    * Get a list of Key Performance Indicators Types available.
    * 
-   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return List<KeyPerformanceIndicatorType>
    * @throws IOException if the request fails to be processed
    */
@@ -4878,7 +4868,6 @@ public class RoutingApi {
   /**
    * Get a list of Key Performance Indicators Types available.
    * 
-   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return List<KeyPerformanceIndicatorType>
    * @throws ApiException if the request fails on the server
@@ -4898,7 +4887,6 @@ public class RoutingApi {
   /**
    * Get a list of Key Performance Indicators Types available.
    * 
-   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9464,7 +9452,6 @@ public class RoutingApi {
   /**
    * Update a custom Key Performance Indicator.
    * 
-   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param kpiId Key Performance Indicator ID (required)
    * @param body  (optional)
    * @return KeyPerformanceIndicator
@@ -9478,7 +9465,6 @@ public class RoutingApi {
   /**
    * Update a custom Key Performance Indicator.
    * 
-   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param kpiId Key Performance Indicator ID (required)
    * @param body  (optional)
    * @return KeyPerformanceIndicator
@@ -9500,7 +9486,6 @@ public class RoutingApi {
   /**
    * Update a custom Key Performance Indicator.
    * 
-   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KeyPerformanceIndicator
    * @throws ApiException if the request fails on the server
@@ -9520,7 +9505,6 @@ public class RoutingApi {
   /**
    * Update a custom Key Performance Indicator.
    * 
-   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11981,7 +11965,6 @@ public class RoutingApi {
   /**
    * Create a custom Key Performance Indicator.
    * 
-   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body request (required)
    * @return KeyPerformanceIndicator
    * @throws ApiException if the request fails on the server
@@ -11994,7 +11977,6 @@ public class RoutingApi {
   /**
    * Create a custom Key Performance Indicator.
    * 
-   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body request (required)
    * @return KeyPerformanceIndicator
    * @throws IOException if the request fails to be processed
@@ -12013,7 +11995,6 @@ public class RoutingApi {
   /**
    * Create a custom Key Performance Indicator.
    * 
-   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KeyPerformanceIndicator
    * @throws ApiException if the request fails on the server
@@ -12033,7 +12014,6 @@ public class RoutingApi {
   /**
    * Create a custom Key Performance Indicator.
    * 
-   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

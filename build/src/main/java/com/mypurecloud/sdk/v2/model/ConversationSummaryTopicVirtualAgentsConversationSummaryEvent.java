@@ -40,6 +40,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
   private String queueId = null;
   private List<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant> participants = null;
   private List<String> communicationIds = null;
+  private String latestCommunicationId = null;
   private Date createdDate = null;
 
   private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
@@ -402,6 +403,23 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
 
   /**
    **/
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent latestCommunicationId(String latestCommunicationId) {
+    this.latestCommunicationId = latestCommunicationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("latestCommunicationId")
+  public String getLatestCommunicationId() {
+    return latestCommunicationId;
+  }
+  public void setLatestCommunicationId(String latestCommunicationId) {
+    this.latestCommunicationId = latestCommunicationId;
+  }
+
+
+  /**
+   **/
   public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent createdDate(Date createdDate) {
     this.createdDate = createdDate;
     return this;
@@ -737,6 +755,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
             Objects.equals(this.queueId, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.queueId) &&
             Objects.equals(this.participants, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.participants) &&
             Objects.equals(this.communicationIds, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.communicationIds) &&
+            Objects.equals(this.latestCommunicationId, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.latestCommunicationId) &&
             Objects.equals(this.createdDate, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.createdDate) &&
             Objects.equals(this.messageType, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.messageType) &&
             Objects.equals(this.mediaType, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.mediaType) &&
@@ -760,7 +779,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, summarySourceType, triggerType, lastEditedBy, errorType, durationMs, labels);
+    return Objects.hash(conversationId, queueId, participants, communicationIds, latestCommunicationId, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, summarySourceType, triggerType, lastEditedBy, errorType, durationMs, labels);
   }
 
   @Override
@@ -772,6 +791,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    communicationIds: ").append(toIndentedString(communicationIds)).append("\n");
+    sb.append("    latestCommunicationId: ").append(toIndentedString(latestCommunicationId)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");

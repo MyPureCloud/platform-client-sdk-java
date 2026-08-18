@@ -254,6 +254,7 @@
 | ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; | 
 | MFAVERIFIER | &quot;MFAVerifier&quot; | 
 | IDENTITYPROVIDER | &quot;IdentityProvider&quot; | 
+| RULESOFBEHAVIOR | &quot;RulesOfBehavior&quot; | 
 | ROLE | &quot;Role&quot; | 
 | ROLESETTINGS | &quot;RoleSettings&quot; | 
 | POLICY | &quot;Policy&quot; | 
@@ -476,6 +477,7 @@
 | BULKJOB | &quot;BulkJob&quot; | 
 | CREDENTIAL | &quot;Credential&quot; | 
 | NUMBERORDER | &quot;NumberOrder&quot; | 
+| BULKDISCONNECTREQUEST | &quot;BulkDisconnectRequest&quot; | 
 | ENTERPRISEAGREEMENT | &quot;EnterpriseAgreement&quot; | 
 | VENDORLISTING | &quot;VendorListing&quot; | 
 | GDPRREQUEST | &quot;GdprRequest&quot; | 
@@ -526,4 +528,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:259.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_

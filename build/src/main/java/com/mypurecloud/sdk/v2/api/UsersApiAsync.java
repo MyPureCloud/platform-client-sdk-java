@@ -5804,7 +5804,7 @@ public class UsersApiAsync {
 
   /**
    * Update user
-   * 
+   * Updating some fields, like a user's extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5838,7 +5838,7 @@ public class UsersApiAsync {
 
   /**
    * Update user
-   * 
+   * Updating some fields, like a user's extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

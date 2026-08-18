@@ -38,14 +38,14 @@ public class UpdateTimeOffLimitRequest  implements Serializable {
 
   
   /**
-   * The default time off limit value in minutes per granularity
+   * Deprecated. The default time off limit value in minutes per granularity
    **/
   public UpdateTimeOffLimitRequest defaultLimitMinutes(Integer defaultLimitMinutes) {
     this.defaultLimitMinutes = defaultLimitMinutes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The default time off limit value in minutes per granularity")
+  @ApiModelProperty(example = "null", value = "Deprecated. The default time off limit value in minutes per granularity")
   @JsonProperty("defaultLimitMinutes")
   public Integer getDefaultLimitMinutes() {
     return defaultLimitMinutes;
@@ -56,14 +56,14 @@ public class UpdateTimeOffLimitRequest  implements Serializable {
 
 
   /**
-   * Version metadata for the time off limit
+   * Deprecated. Version metadata for the time off limit
    **/
   public UpdateTimeOffLimitRequest metadata(WfmVersionedEntityMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Version metadata for the time off limit")
+  @ApiModelProperty(example = "null", required = true, value = "Deprecated. Version metadata for the time off limit")
   @JsonProperty("metadata")
   public WfmVersionedEntityMetadata getMetadata() {
     return metadata;

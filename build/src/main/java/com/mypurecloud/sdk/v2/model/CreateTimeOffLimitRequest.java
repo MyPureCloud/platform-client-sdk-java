@@ -37,7 +37,7 @@ public class CreateTimeOffLimitRequest  implements Serializable {
     }
   }
   /**
-   * Granularity choice for time off limit. If not specified, 'Daily' is assumed
+   * Deprecated. Granularity choice for time off limit. If not specified, 'Daily' is assumed
    */
  @JsonDeserialize(using = GranularityEnumDeserializer.class)
   public enum GranularityEnum {
@@ -85,14 +85,14 @@ public class CreateTimeOffLimitRequest  implements Serializable {
 
   
   /**
-   * Granularity choice for time off limit. If not specified, 'Daily' is assumed
+   * Deprecated. Granularity choice for time off limit. If not specified, 'Daily' is assumed
    **/
   public CreateTimeOffLimitRequest granularity(GranularityEnum granularity) {
     this.granularity = granularity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Granularity choice for time off limit. If not specified, 'Daily' is assumed")
+  @ApiModelProperty(example = "null", value = "Deprecated. Granularity choice for time off limit. If not specified, 'Daily' is assumed")
   @JsonProperty("granularity")
   public GranularityEnum getGranularity() {
     return granularity;
@@ -103,14 +103,14 @@ public class CreateTimeOffLimitRequest  implements Serializable {
 
 
   /**
-   * The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
+   * Deprecated. The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
    **/
   public CreateTimeOffLimitRequest defaultLimitMinutes(Integer defaultLimitMinutes) {
     this.defaultLimitMinutes = defaultLimitMinutes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available")
+  @ApiModelProperty(example = "null", value = "Deprecated. The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available")
   @JsonProperty("defaultLimitMinutes")
   public Integer getDefaultLimitMinutes() {
     return defaultLimitMinutes;

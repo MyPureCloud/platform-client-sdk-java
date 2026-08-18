@@ -55,7 +55,8 @@ public class UnifiedCommunicationsIntegration  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MICROSOFTTEAMS("MicrosoftTeams"),
     ZOOMPHONE("ZoomPhone"),
-    EIGHTBYEIGHT("EightByEight");
+    EIGHTBYEIGHT("EightByEight"),
+    RINGCENTRAL("RingCentral");
 
     private String value;
 

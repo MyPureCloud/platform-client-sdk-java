@@ -126,6 +126,12 @@ public class ReportingTurnAction  implements Serializable {
     SENDDIGITALCONTENTACTION("SendDigitalContentAction"),
     AGENTICASKFORINTENTACTION("AgenticAskForIntentAction"),
     AGENTICANYTHINGELSEACTION("AgenticAnythingElseAction"),
+    CREATECONVERSATIONATTRIBUTEACTION("CreateConversationAttributeAction"),
+    GETCONVERSATIONATTRIBUTEACTION("GetConversationAttributeAction"),
+    GETCONVERSATIONATTRIBUTESACTION("GetConversationAttributesAction"),
+    UPDATECONVERSATIONATTRIBUTEACTION("UpdateConversationAttributeAction"),
+    FINDDIVISIONACTION("FindDivisionAction"),
+    FINDDIVISIONSACTION("FindDivisionsAction"),
     UNKNOWN("Unknown");
 
     private String value;
