@@ -4,7 +4,7 @@
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
   <name>platform-client-v2</name>
-  <version>260.0.0</version>
+  <version>260.1.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
 
@@ -282,21 +282,6 @@
       <artifactId>netty-all</artifactId>
       <version>${io-netty-version}</version>
     </dependency>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-codec-http</artifactId>
-      <version>${io-netty-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-codec-http2</artifactId>
-      <version>${io-netty-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-codec-compression</artifactId>
-      <version>${io-netty-version}</version>
-    </dependency>
     <!-- https://mvnrepository.com/artifact/xerces/xercesImpl -->
     <dependency>
       <groupId>xerces</groupId>
@@ -378,15 +363,15 @@
     <testng-version>7.10.2</testng-version>
     <apache-httpclient-version>4.5.14</apache-httpclient-version>
     <okhttpclient-version>4.12.0</okhttpclient-version>
-    <ning-asynchttpclient-version>3.0.11</ning-asynchttpclient-version>
+    <ning-asynchttpclient-version>3.0.13</ning-asynchttpclient-version>
     <nv-websocket-client-version>2.14</nv-websocket-client-version>
     <guava-version>33.6.0-jre</guava-version>
     <mockito.version>5.23.0</mockito.version>
     <commons-configuration-version>2.15.1</commons-configuration-version>
-    <io-netty-version>4.2.16.Final</io-netty-version>
+    <io-netty-version>4.2.17.Final</io-netty-version>
 
     <name>platform-client-v2</name>
-    <version>260.0.0</version>
+    <version>260.1.0</version>
     <description>A Java package to interface with the PureCloud Platform API</description>
     <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
   </properties>

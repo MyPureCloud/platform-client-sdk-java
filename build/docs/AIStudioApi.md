@@ -1755,4 +1755,4 @@ try {
 [**SummarySetting**](SummarySetting)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
