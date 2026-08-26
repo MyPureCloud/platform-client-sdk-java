@@ -22,6 +22,9 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CONVERSATION | &quot;Conversation&quot; | 
 | PRESENCE | &quot;Presence&quot; | 
+| WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
+| OPERATIONALCONSOLE | &quot;OperationalConsole&quot; | 
+| ANOMALY | &quot;Anomaly&quot; | 
 | ALL | &quot;All&quot; | 
 
 
@@ -74,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

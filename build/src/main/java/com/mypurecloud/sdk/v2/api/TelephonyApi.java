@@ -11,6 +11,9 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AgentGreeting;
+import com.mypurecloud.sdk.v2.model.BulkPrefixesRequest;
+import com.mypurecloud.sdk.v2.model.BulkPrefixesResponse;
+import com.mypurecloud.sdk.v2.model.CallSimulationResult;
 import com.mypurecloud.sdk.v2.model.Callheader;
 import com.mypurecloud.sdk.v2.model.Callmessage;
 import com.mypurecloud.sdk.v2.model.CreateOrganizationLink;
@@ -25,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.OrganizationCallMetrics;
 import com.mypurecloud.sdk.v2.model.OrganizationLink;
 import com.mypurecloud.sdk.v2.model.OrganizationLinkApprovalRequest;
 import com.mypurecloud.sdk.v2.model.OrganizationLinkResponse;
+import com.mypurecloud.sdk.v2.model.PrefixListing;
 import com.mypurecloud.sdk.v2.model.RegionResponse;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
 import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
@@ -42,6 +46,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyNumbersRoutingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyOrganizationLinkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyOrganizationLinkRegionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyPrefixesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyPrefixesSimulateCallRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
@@ -52,6 +58,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyNumbersRoutingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyNumbersRoutingAllRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyNumbersRoutingResetRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyOrganizationLinkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyPrefixesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentsGreetingsMeRequest;
@@ -699,6 +706,178 @@ public class TelephonyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<RegionResponse>> response = (ApiResponse<List<RegionResponse>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get prefixes
+   * 
+   * @param type Filter by prefix type (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param prefix Filter by phone number prefix (optional)
+   * @return PrefixListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PrefixListing getTelephonyPrefixes(String type, String before, String after, String pageSize, String prefix) throws IOException, ApiException {
+    return  getTelephonyPrefixes(createGetTelephonyPrefixesRequest(type, before, after, pageSize, prefix));
+  }
+
+  /**
+   * Get prefixes
+   * 
+   * @param type Filter by prefix type (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param prefix Filter by phone number prefix (optional)
+   * @return PrefixListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PrefixListing> getTelephonyPrefixesWithHttpInfo(String type, String before, String after, String pageSize, String prefix) throws IOException {
+    return getTelephonyPrefixes(createGetTelephonyPrefixesRequest(type, before, after, pageSize, prefix).withHttpInfo());
+  }
+
+  private GetTelephonyPrefixesRequest createGetTelephonyPrefixesRequest(String type, String before, String after, String pageSize, String prefix) {
+    return GetTelephonyPrefixesRequest.builder()
+            .withType(type)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withPrefix(prefix)
+
+            .build();
+  }
+
+  /**
+   * Get prefixes
+   * 
+   * @param request The request object
+   * @return PrefixListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PrefixListing getTelephonyPrefixes(GetTelephonyPrefixesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PrefixListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PrefixListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get prefixes
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PrefixListing> getTelephonyPrefixes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PrefixListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PrefixListing> response = (ApiResponse<PrefixListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PrefixListing> response = (ApiResponse<PrefixListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Simulate call to test fraud prefix functionality
+   * 
+   * @param number Phone number to simulate (required)
+   * @return CallSimulationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CallSimulationResult getTelephonyPrefixesSimulateCall(String number) throws IOException, ApiException {
+    return  getTelephonyPrefixesSimulateCall(createGetTelephonyPrefixesSimulateCallRequest(number));
+  }
+
+  /**
+   * Simulate call to test fraud prefix functionality
+   * 
+   * @param number Phone number to simulate (required)
+   * @return CallSimulationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CallSimulationResult> getTelephonyPrefixesSimulateCallWithHttpInfo(String number) throws IOException {
+    return getTelephonyPrefixesSimulateCall(createGetTelephonyPrefixesSimulateCallRequest(number).withHttpInfo());
+  }
+
+  private GetTelephonyPrefixesSimulateCallRequest createGetTelephonyPrefixesSimulateCallRequest(String number) {
+    return GetTelephonyPrefixesSimulateCallRequest.builder()
+            .withNumber(number)
+
+            .build();
+  }
+
+  /**
+   * Simulate call to test fraud prefix functionality
+   * 
+   * @param request The request object
+   * @return CallSimulationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CallSimulationResult getTelephonyPrefixesSimulateCall(GetTelephonyPrefixesSimulateCallRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CallSimulationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallSimulationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Simulate call to test fraud prefix functionality
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CallSimulationResult> getTelephonyPrefixesSimulateCall(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallSimulationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallSimulationResult> response = (ApiResponse<CallSimulationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallSimulationResult> response = (ApiResponse<CallSimulationResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1491,6 +1670,84 @@ public class TelephonyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrganizationLink> response = (ApiResponse<OrganizationLink>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk save prefixes
+   * 
+   * @param body Bulk save request with list of prefixes (required)
+   * @return BulkPrefixesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkPrefixesResponse postTelephonyPrefixesBulk(BulkPrefixesRequest body) throws IOException, ApiException {
+    return  postTelephonyPrefixesBulk(createPostTelephonyPrefixesBulkRequest(body));
+  }
+
+  /**
+   * Bulk save prefixes
+   * 
+   * @param body Bulk save request with list of prefixes (required)
+   * @return BulkPrefixesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkPrefixesResponse> postTelephonyPrefixesBulkWithHttpInfo(BulkPrefixesRequest body) throws IOException {
+    return postTelephonyPrefixesBulk(createPostTelephonyPrefixesBulkRequest(body).withHttpInfo());
+  }
+
+  private PostTelephonyPrefixesBulkRequest createPostTelephonyPrefixesBulkRequest(BulkPrefixesRequest body) {
+    return PostTelephonyPrefixesBulkRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk save prefixes
+   * 
+   * @param request The request object
+   * @return BulkPrefixesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkPrefixesResponse postTelephonyPrefixesBulk(PostTelephonyPrefixesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkPrefixesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkPrefixesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk save prefixes
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkPrefixesResponse> postTelephonyPrefixesBulk(ApiRequest<BulkPrefixesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkPrefixesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkPrefixesResponse> response = (ApiResponse<BulkPrefixesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkPrefixesResponse> response = (ApiResponse<BulkPrefixesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

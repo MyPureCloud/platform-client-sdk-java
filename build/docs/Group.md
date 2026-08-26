@@ -20,6 +20,7 @@
 | **rolesEnabled** | **Boolean** | Allow roles to be assigned to this group |  [optional] |
 | **includeOwners** | **Boolean** | Allow owners to be included as members of the group |  [optional] |
 | **callsEnabled** | **Boolean** | Allow calls to be placed to this group. |  [optional] |
+| **email** | **String** | Email address for the group. |  [optional] |
 | **owners** | [**List&lt;User&gt;**](User) | Owners of the group |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -55,4 +56,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

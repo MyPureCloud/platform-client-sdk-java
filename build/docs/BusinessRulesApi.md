@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteBusinessrulesDecisiontableImport**](BusinessRulesApi#deleteBusinessrulesDecisiontableImport) | Delete decision table row import job |
 | [**deleteBusinessrulesDecisiontableVersion**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersion) | Delete a decision table version |
 | [**deleteBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersionRow) | Delete a decision table row |
+| [**deleteBusinessrulesDecisiontableVersionSnapshot**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersionSnapshot) | Deletes a decision table version snapshot |
 | [**deleteBusinessrulesSchema**](BusinessRulesApi#deleteBusinessrulesSchema) | Delete a schema |
 | [**getBusinessrulesDecisiontable**](BusinessRulesApi#getBusinessrulesDecisiontable) | Get a decision table |
 | [**getBusinessrulesDecisiontableExport**](BusinessRulesApi#getBusinessrulesDecisiontableExport) | Get an export job for a decision table |
@@ -22,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getBusinessrulesDecisiontables**](BusinessRulesApi#getBusinessrulesDecisiontables) | Get a list of decision tables. |
 | [**getBusinessrulesDecisiontablesSearch**](BusinessRulesApi#getBusinessrulesDecisiontablesSearch) | Search for decision tables. |
 | [**getBusinessrulesSchema**](BusinessRulesApi#getBusinessrulesSchema) | Get a schema |
+| [**getBusinessrulesSchemaVersion**](BusinessRulesApi#getBusinessrulesSchemaVersion) | Get a schema version |
+| [**getBusinessrulesSchemaVersions**](BusinessRulesApi#getBusinessrulesSchemaVersions) | List schema versions |
 | [**getBusinessrulesSchemas**](BusinessRulesApi#getBusinessrulesSchemas) | Get a list of schemas. |
 | [**getBusinessrulesSchemasCoretype**](BusinessRulesApi#getBusinessrulesSchemasCoretype) | Get a specific named core type. |
 | [**getBusinessrulesSchemasCoretypes**](BusinessRulesApi#getBusinessrulesSchemasCoretypes) | Get the core types from which all schemas are built. |
@@ -33,11 +36,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postBusinessrulesDecisiontableImports**](BusinessRulesApi#postBusinessrulesDecisiontableImports) | Create a decision table row import job |
 | [**postBusinessrulesDecisiontableVersionCopy**](BusinessRulesApi#postBusinessrulesDecisiontableVersionCopy) | Copy a decision table version |
 | [**postBusinessrulesDecisiontableVersionExecute**](BusinessRulesApi#postBusinessrulesDecisiontableVersionExecute) | Execute a decision table version |
+| [**postBusinessrulesDecisiontableVersionRollback**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRollback) | Re-publish a superseded decision table version as the current published version |
 | [**postBusinessrulesDecisiontableVersionRows**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRows) | Create a decision table row |
 | [**postBusinessrulesDecisiontableVersionRowsBulkAdd**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkAdd) | Bulk add decision table rows |
 | [**postBusinessrulesDecisiontableVersionRowsBulkRemove**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkRemove) | Bulk delete decision table rows |
 | [**postBusinessrulesDecisiontableVersionRowsBulkUpdate**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkUpdate) | Bulk update decision table rows |
 | [**postBusinessrulesDecisiontableVersionRowsSearch**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsSearch) | Search for decision table rows |
+| [**postBusinessrulesDecisiontableVersionSnapshot**](BusinessRulesApi#postBusinessrulesDecisiontableVersionSnapshot) | Creates a decision table version snapshot |
 | [**postBusinessrulesDecisiontableVersionSync**](BusinessRulesApi#postBusinessrulesDecisiontableVersionSync) | Update the Business Rules Schema to the latest version for a given decision table version |
 | [**postBusinessrulesDecisiontableVersions**](BusinessRulesApi#postBusinessrulesDecisiontableVersions) | Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version. |
 | [**postBusinessrulesDecisiontables**](BusinessRulesApi#postBusinessrulesDecisiontables) | Create a decision table |
@@ -345,6 +350,66 @@ try {
 | **tableId** | **String**| Table ID | 
 | **tableVersion** | **Integer**| Table Version | 
 | **rowId** | **String**| Row ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteBusinessrulesDecisiontableVersionSnapshot**
+
+
+> Void deleteBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion)
+
+Deletes a decision table version snapshot
+
+Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableSnapshot:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+Integer tableVersion = 56; // Integer | Table Version
+try {
+    apiInstance.deleteBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#deleteBusinessrulesDecisiontableVersionSnapshot");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **tableVersion** | **Integer**| Table Version | 
 {: class="table-striped"}
 
 
@@ -910,7 +975,7 @@ try {
 # **getBusinessrulesDecisiontableVersions**
 
 
-> [DecisionTableVersionListing](DecisionTableVersionListing) getBusinessrulesDecisiontableVersions(tableId, after, pageSize)
+> [DecisionTableVersionListing](DecisionTableVersionListing) getBusinessrulesDecisiontableVersions(tableId, after, pageSize, status, hasSnapshot)
 
 Get a list of decision table versions
 
@@ -945,8 +1010,10 @@ BusinessRulesApi apiInstance = new BusinessRulesApi();
 String tableId = "tableId_example"; // String | Table ID
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 100.
+List<String> status = Arrays.asList(null); // List<String> | Filter by version status. Repeatable.
+Boolean hasSnapshot = true; // Boolean | When true, returns only versions that have snapshot metadata.
 try {
-    DecisionTableVersionListing result = apiInstance.getBusinessrulesDecisiontableVersions(tableId, after, pageSize);
+    DecisionTableVersionListing result = apiInstance.getBusinessrulesDecisiontableVersions(tableId, after, pageSize, status, hasSnapshot);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesDecisiontableVersions");
@@ -962,6 +1029,8 @@ try {
 | **tableId** | **String**| Table ID | 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] 
+| **status** | [**List&lt;String&gt;**](String)| Filter by version status. Repeatable. | [optional]<br />**Values**: Draft, Published, Error, Preparing, Superseded 
+| **hasSnapshot** | **Boolean**| When true, returns only versions that have snapshot metadata. | [optional] 
 {: class="table-striped"}
 
 
@@ -1163,6 +1232,132 @@ try {
 ### Return type
 
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
+
+
+# **getBusinessrulesSchemaVersion**
+
+
+> [BusinessRulesDataSchema](BusinessRulesDataSchema) getBusinessrulesSchemaVersion(schemaId, schemaVersion)
+
+Get a schema version
+
+Wraps GET /api/v2/businessrules/schemas/{schemaId}/versions/{schemaVersion}  
+
+Requires ANY permissions: 
+
+* businessrules:businessRulesSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+String schemaVersion = "schemaVersion_example"; // String | Schema version number
+try {
+    BusinessRulesDataSchema result = apiInstance.getBusinessrulesSchemaVersion(schemaId, schemaVersion);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesSchemaVersion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **schemaVersion** | **String**| Schema version number | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BusinessRulesDataSchema**](BusinessRulesDataSchema)
+
+
+# **getBusinessrulesSchemaVersions**
+
+
+> [BusinessRulesDataSchemaListing](BusinessRulesDataSchemaListing) getBusinessrulesSchemaVersions(schemaId, before, after, pageSize)
+
+List schema versions
+
+Wraps GET /api/v2/businessrules/schemas/{schemaId}/versions  
+
+Requires ANY permissions: 
+
+* businessrules:businessRulesSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of items per page (must be between 1 and 100)
+try {
+    BusinessRulesDataSchemaListing result = apiInstance.getBusinessrulesSchemaVersions(schemaId, before, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesSchemaVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of items per page (must be between 1 and 100) | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BusinessRulesDataSchemaListing**](BusinessRulesDataSchemaListing)
 
 
 # **getBusinessrulesSchemas**
@@ -1840,6 +2035,69 @@ try {
 [**DecisionTableExecutionResponse**](DecisionTableExecutionResponse)
 
 
+# **postBusinessrulesDecisiontableVersionRollback**
+
+
+> [DecisionTableVersion](DecisionTableVersion) postBusinessrulesDecisiontableVersionRollback(tableId, tableVersion, body)
+
+Re-publish a superseded decision table version as the current published version
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rollback  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTable:rollback
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+Integer tableVersion = 56; // Integer | Table Version
+RollbackDecisionTableVersionRequest body = new RollbackDecisionTableVersionRequest(); // RollbackDecisionTableVersionRequest | Rollback request
+try {
+    DecisionTableVersion result = apiInstance.postBusinessrulesDecisiontableVersionRollback(tableId, tableVersion, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#postBusinessrulesDecisiontableVersionRollback");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **tableVersion** | **Integer**| Table Version | 
+| **body** | [**RollbackDecisionTableVersionRequest**](RollbackDecisionTableVersionRequest)| Rollback request | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableVersion**](DecisionTableVersion)
+
+
 # **postBusinessrulesDecisiontableVersionRows**
 
 
@@ -2168,6 +2426,69 @@ try {
 ### Return type
 
 [**DecisionTableRowListing**](DecisionTableRowListing)
+
+
+# **postBusinessrulesDecisiontableVersionSnapshot**
+
+
+> [DecisionTableVersion](DecisionTableVersion) postBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion, body)
+
+Creates a decision table version snapshot
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot  
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableSnapshot:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+Integer tableVersion = 56; // Integer | Table Version
+CreateDecisionTableSnapshotRequest body = new CreateDecisionTableSnapshotRequest(); // CreateDecisionTableSnapshotRequest | Snapshot request
+try {
+    DecisionTableVersion result = apiInstance.postBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#postBusinessrulesDecisiontableVersionSnapshot");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **tableVersion** | **Integer**| Table Version | 
+| **body** | [**CreateDecisionTableSnapshotRequest**](CreateDecisionTableSnapshotRequest)| Snapshot request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableVersion**](DecisionTableVersion)
 
 
 # **postBusinessrulesDecisiontableVersionSync**
@@ -2604,4 +2925,4 @@ try {
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

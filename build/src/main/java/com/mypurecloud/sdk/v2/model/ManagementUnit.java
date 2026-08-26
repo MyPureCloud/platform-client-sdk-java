@@ -89,9 +89,9 @@ public class ManagementUnit  implements Serializable {
   private ManagementUnitSettingsResponse settings = null;
   private WfmVersionedEntityMetadata metadata = null;
   private DivisionReference division = null;
+  private Integer version = null;
   private UserReference modifiedBy = null;
   private Date dateModified = null;
-  private Integer version = null;
   private String selfUri = null;
 
   public ManagementUnit() {
@@ -237,6 +237,13 @@ public class ManagementUnit  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The version of the underlying entity.  Deprecated, use field from settings.metadata instead")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The user who last modified this entity.  Deprecated, use field from settings.metadata instead")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
@@ -248,13 +255,6 @@ public class ManagementUnit  implements Serializable {
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "The version of the underlying entity.  Deprecated, use field from settings.metadata instead")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
   }
 
 
@@ -283,15 +283,15 @@ public class ManagementUnit  implements Serializable {
             Objects.equals(this.settings, managementUnit.settings) &&
             Objects.equals(this.metadata, managementUnit.metadata) &&
             Objects.equals(this.division, managementUnit.division) &&
+            Objects.equals(this.version, managementUnit.version) &&
             Objects.equals(this.modifiedBy, managementUnit.modifiedBy) &&
             Objects.equals(this.dateModified, managementUnit.dateModified) &&
-            Objects.equals(this.version, managementUnit.version) &&
             Objects.equals(this.selfUri, managementUnit.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, businessUnit, startDayOfWeek, timeZone, settings, metadata, division, modifiedBy, dateModified, version, selfUri);
+    return Objects.hash(id, name, businessUnit, startDayOfWeek, timeZone, settings, metadata, division, version, modifiedBy, dateModified, selfUri);
   }
 
   @Override
@@ -307,9 +307,9 @@ public class ManagementUnit  implements Serializable {
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

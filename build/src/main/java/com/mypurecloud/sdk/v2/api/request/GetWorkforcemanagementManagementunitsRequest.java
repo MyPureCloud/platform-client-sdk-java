@@ -503,6 +503,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		BUACTIVITYCODES("BuActivityCodes"),
 		BUSINESSUNITS("BusinessUnits"),
 		CAPACITYPLAN("CapacityPlan"),
+		CAPACITYPLANFORECAST("CapacityPlanForecast"),
 		CAPACITYPLANFORECASTINPUTS("CapacityPlanForecastInputs"),
 		CAPACITYPLANPERFORMANCEPREDICTION("CapacityPlanPerformancePrediction"),
 		CONTINUOUSFORECAST("ContinuousForecast"),

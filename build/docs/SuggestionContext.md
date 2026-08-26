@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **queue** | [**AddressableEntityRef**](AddressableEntityRef) | The queue used to assign the interaction to the user, if any. |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the conversation in which the suggestion event was raised. |  [optional] |
+| **participantType** | [**ParticipantTypeEnum**](#Enum--ParticipantTypeEnum) | The type of the participant whose turn triggered the suggestion. |  [optional] |
 | **user** | [**UserReference**](UserReference) | The agent participant who received the raised suggestion, if any. |  [optional] |
 | **externalContact** | [**AddressableEntityRef**](AddressableEntityRef) | The external contact of the end-user participant, if any. |  [optional] |
 | **utterance** | [**Entity**](Entity) | The utterance in the voice conversation, after which the suggestion was raised, if any. |  [optional] |
@@ -24,6 +25,16 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
+## Enum: ParticipantTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| AGENT | &quot;Agent&quot; | 
+| CUSTOMER | &quot;Customer&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

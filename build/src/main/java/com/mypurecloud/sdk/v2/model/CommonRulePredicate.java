@@ -180,6 +180,55 @@ public class CommonRulePredicate  implements Serializable {
   private Double value = null;
   private String status = null;
   private String topic = null;
+
+  private static class CharacteristicEnumDeserializer extends StdDeserializer<CharacteristicEnum> {
+    public CharacteristicEnumDeserializer() {
+      super(CharacteristicEnumDeserializer.class);
+    }
+
+    @Override
+    public CharacteristicEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CharacteristicEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The anomaly detection characteristic being evaluated with respect to the metric.
+   */
+ @JsonDeserialize(using = CharacteristicEnumDeserializer.class)
+  public enum CharacteristicEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DEVIATION("Deviation"),
+    SCORE("Score"),
+    UNKNOWN("Unknown");
+
+    private String value;
+
+    CharacteristicEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CharacteristicEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CharacteristicEnum value : CharacteristicEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CharacteristicEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CharacteristicEnum characteristic = null;
   private CommonRulePredicateEntity entity = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
@@ -427,6 +476,24 @@ public class CommonRulePredicate  implements Serializable {
 
 
   /**
+   * The anomaly detection characteristic being evaluated with respect to the metric.
+   **/
+  public CommonRulePredicate characteristic(CharacteristicEnum characteristic) {
+    this.characteristic = characteristic;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The anomaly detection characteristic being evaluated with respect to the metric.")
+  @JsonProperty("characteristic")
+  public CharacteristicEnum getCharacteristic() {
+    return characteristic;
+  }
+  public void setCharacteristic(CharacteristicEnum characteristic) {
+    this.characteristic = characteristic;
+  }
+
+
+  /**
    * The entity whose metric is being represented.
    **/
   public CommonRulePredicate entity(CommonRulePredicateEntity entity) {
@@ -496,6 +563,7 @@ public class CommonRulePredicate  implements Serializable {
             Objects.equals(this.value, commonRulePredicate.value) &&
             Objects.equals(this.status, commonRulePredicate.status) &&
             Objects.equals(this.topic, commonRulePredicate.topic) &&
+            Objects.equals(this.characteristic, commonRulePredicate.characteristic) &&
             Objects.equals(this.entity, commonRulePredicate.entity) &&
             Objects.equals(this.mediaType, commonRulePredicate.mediaType) &&
             Objects.equals(this.metric, commonRulePredicate.metric);
@@ -503,7 +571,7 @@ public class CommonRulePredicate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(metricType, metricValueType, comparisonOperator, value, status, topic, entity, mediaType, metric);
+    return Objects.hash(metricType, metricValueType, comparisonOperator, value, status, topic, characteristic, entity, mediaType, metric);
   }
 
   @Override
@@ -517,6 +585,7 @@ public class CommonRulePredicate  implements Serializable {
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
+    sb.append("    characteristic: ").append(toIndentedString(characteristic)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");

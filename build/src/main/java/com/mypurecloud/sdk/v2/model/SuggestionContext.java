@@ -76,6 +76,55 @@ public class SuggestionContext  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
+
+  private static class ParticipantTypeEnumDeserializer extends StdDeserializer<ParticipantTypeEnum> {
+    public ParticipantTypeEnumDeserializer() {
+      super(ParticipantTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ParticipantTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ParticipantTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the participant whose turn triggered the suggestion.
+   */
+ @JsonDeserialize(using = ParticipantTypeEnumDeserializer.class)
+  public enum ParticipantTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    AGENT("Agent"),
+    CUSTOMER("Customer");
+
+    private String value;
+
+    ParticipantTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ParticipantTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ParticipantTypeEnum value : ParticipantTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ParticipantTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ParticipantTypeEnum participantType = null;
   private UserReference user = null;
   private AddressableEntityRef externalContact = null;
   private Entity utterance = null;
@@ -104,6 +153,13 @@ public class SuggestionContext  implements Serializable {
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The type of the participant whose turn triggered the suggestion.")
+  @JsonProperty("participantType")
+  public ParticipantTypeEnum getParticipantType() {
+    return participantType;
   }
 
 
@@ -154,6 +210,7 @@ public class SuggestionContext  implements Serializable {
 
     return Objects.equals(this.queue, suggestionContext.queue) &&
             Objects.equals(this.mediaType, suggestionContext.mediaType) &&
+            Objects.equals(this.participantType, suggestionContext.participantType) &&
             Objects.equals(this.user, suggestionContext.user) &&
             Objects.equals(this.externalContact, suggestionContext.externalContact) &&
             Objects.equals(this.utterance, suggestionContext.utterance) &&
@@ -163,7 +220,7 @@ public class SuggestionContext  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, mediaType, user, externalContact, utterance, message, queryStatement);
+    return Objects.hash(queue, mediaType, participantType, user, externalContact, utterance, message, queryStatement);
   }
 
   @Override
@@ -173,6 +230,7 @@ public class SuggestionContext  implements Serializable {
     
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    participantType: ").append(toIndentedString(participantType)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    utterance: ").append(toIndentedString(utterance)).append("\n");

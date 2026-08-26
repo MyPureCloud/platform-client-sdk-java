@@ -440,8 +440,8 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Allows an entity to mute/snooze an alert or update the unread status of the alert.
-   * Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals.
+   * Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
+   * Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals. Closing an alert will mark it as closed.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -474,8 +474,8 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Allows an entity to mute/snooze an alert or update the unread status of the alert.
-   * Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals.
+   * Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
+   * Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals. Closing an alert will mark it as closed.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

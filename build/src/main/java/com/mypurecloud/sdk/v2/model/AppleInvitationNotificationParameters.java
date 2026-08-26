@@ -37,14 +37,14 @@ public class AppleInvitationNotificationParameters  implements Serializable {
 
   
   /**
-   * An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID).
+   * An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID). Max: 1000 characters. Must not be empty and must not contain '?' or apostrophe (') characters.
    **/
   public AppleInvitationNotificationParameters referenceId(String referenceId) {
     this.referenceId = referenceId;
     return this;
   }
   
-  @ApiModelProperty(example = "orderId:1234;caseId:4321", value = "An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID).")
+  @ApiModelProperty(example = "orderId:1234;caseId:4321", value = "An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID). Max: 1000 characters. Must not be empty and must not contain '?' or apostrophe (') characters.")
   @JsonProperty("referenceId")
   public String getReferenceId() {
     return referenceId;

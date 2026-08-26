@@ -580,4 +580,4 @@ try {
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

@@ -14,6 +14,9 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AgentGreeting;
+import com.mypurecloud.sdk.v2.model.BulkPrefixesRequest;
+import com.mypurecloud.sdk.v2.model.BulkPrefixesResponse;
+import com.mypurecloud.sdk.v2.model.CallSimulationResult;
 import com.mypurecloud.sdk.v2.model.Callheader;
 import com.mypurecloud.sdk.v2.model.Callmessage;
 import com.mypurecloud.sdk.v2.model.CreateOrganizationLink;
@@ -28,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.OrganizationCallMetrics;
 import com.mypurecloud.sdk.v2.model.OrganizationLink;
 import com.mypurecloud.sdk.v2.model.OrganizationLinkApprovalRequest;
 import com.mypurecloud.sdk.v2.model.OrganizationLinkResponse;
+import com.mypurecloud.sdk.v2.model.PrefixListing;
 import com.mypurecloud.sdk.v2.model.RegionResponse;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
 import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
@@ -45,6 +49,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyNumbersRoutingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyOrganizationLinkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyOrganizationLinkRegionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyPrefixesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyPrefixesSimulateCallRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
@@ -55,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyNumbersRoutingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyNumbersRoutingAllRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyNumbersRoutingResetRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyOrganizationLinkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyPrefixesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentsGreetingsMeRequest;
@@ -667,6 +674,156 @@ public class TelephonyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<RegionResponse>> response = (ApiResponse<List<RegionResponse>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get prefixes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PrefixListing> getTelephonyPrefixesAsync(GetTelephonyPrefixesRequest request, final AsyncApiCallback<PrefixListing> callback) {
+    try {
+      final SettableFuture<PrefixListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PrefixListing>() {}, new AsyncApiCallback<ApiResponse<PrefixListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PrefixListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get prefixes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PrefixListing>> getTelephonyPrefixesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PrefixListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PrefixListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PrefixListing>() {}, new AsyncApiCallback<ApiResponse<PrefixListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PrefixListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PrefixListing> response = (ApiResponse<PrefixListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PrefixListing> response = (ApiResponse<PrefixListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Simulate call to test fraud prefix functionality
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CallSimulationResult> getTelephonyPrefixesSimulateCallAsync(GetTelephonyPrefixesSimulateCallRequest request, final AsyncApiCallback<CallSimulationResult> callback) {
+    try {
+      final SettableFuture<CallSimulationResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallSimulationResult>() {}, new AsyncApiCallback<ApiResponse<CallSimulationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<CallSimulationResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Simulate call to test fraud prefix functionality
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CallSimulationResult>> getTelephonyPrefixesSimulateCallAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallSimulationResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CallSimulationResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CallSimulationResult>() {}, new AsyncApiCallback<ApiResponse<CallSimulationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<CallSimulationResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CallSimulationResult> response = (ApiResponse<CallSimulationResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CallSimulationResult> response = (ApiResponse<CallSimulationResult>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1417,6 +1574,81 @@ public class TelephonyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OrganizationLink> response = (ApiResponse<OrganizationLink>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk save prefixes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkPrefixesResponse> postTelephonyPrefixesBulkAsync(PostTelephonyPrefixesBulkRequest request, final AsyncApiCallback<BulkPrefixesResponse> callback) {
+    try {
+      final SettableFuture<BulkPrefixesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkPrefixesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkPrefixesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkPrefixesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk save prefixes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkPrefixesResponse>> postTelephonyPrefixesBulkAsync(ApiRequest<BulkPrefixesRequest> request, final AsyncApiCallback<ApiResponse<BulkPrefixesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkPrefixesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkPrefixesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkPrefixesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkPrefixesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkPrefixesResponse> response = (ApiResponse<BulkPrefixesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkPrefixesResponse> response = (ApiResponse<BulkPrefixesResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

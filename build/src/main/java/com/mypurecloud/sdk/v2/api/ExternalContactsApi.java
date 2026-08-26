@@ -28,6 +28,11 @@ import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.Cluster;
+import com.mypurecloud.sdk.v2.model.ClusterList;
+import com.mypurecloud.sdk.v2.model.ClusterScan;
+import com.mypurecloud.sdk.v2.model.ClusterScanList;
+import com.mypurecloud.sdk.v2.model.ClusterScanStatistics;
 import com.mypurecloud.sdk.v2.model.ContactEnrichRequest;
 import com.mypurecloud.sdk.v2.model.ContactIdentifier;
 import com.mypurecloud.sdk.v2.model.ContactIdentifierListing;
@@ -70,6 +75,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifierListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
+import com.mypurecloud.sdk.v2.model.GraphSettings;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
 import com.mypurecloud.sdk.v2.model.Listing;
 import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
@@ -121,6 +127,14 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasCore
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscanClusterRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscanClustersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscanStatisticsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscansRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscansLatestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscansLatestStatisticsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadDetailsRequest;
@@ -218,6 +232,8 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsExternalsourceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsGraphsClusterscanClusterMergeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsGraphsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportCsvSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportSettingRequest;
@@ -2582,6 +2598,686 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CursorExternalSourceListing> response = (ApiResponse<CursorExternalSourceListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Returns a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @param expand which fields, if any, to expand (optional)
+   * @return ClusterScan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScan getExternalcontactsGraphsClusterscan(String scanId, List<String> expand) throws IOException, ApiException {
+    return  getExternalcontactsGraphsClusterscan(createGetExternalcontactsGraphsClusterscanRequest(scanId, expand));
+  }
+
+  /**
+   * Returns a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @param expand which fields, if any, to expand (optional)
+   * @return ClusterScan
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScan> getExternalcontactsGraphsClusterscanWithHttpInfo(String scanId, List<String> expand) throws IOException {
+    return getExternalcontactsGraphsClusterscan(createGetExternalcontactsGraphsClusterscanRequest(scanId, expand).withHttpInfo());
+  }
+
+  private GetExternalcontactsGraphsClusterscanRequest createGetExternalcontactsGraphsClusterscanRequest(String scanId, List<String> expand) {
+    return GetExternalcontactsGraphsClusterscanRequest.builder()
+            .withScanId(scanId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Returns a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ClusterScan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScan getExternalcontactsGraphsClusterscan(GetExternalcontactsGraphsClusterscanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClusterScan> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClusterScan>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScan> getExternalcontactsGraphsClusterscan(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClusterScan>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Returns a single cluster found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @param clusterId Cluster ID (required)
+   * @return Cluster
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Cluster getExternalcontactsGraphsClusterscanCluster(String scanId, String clusterId) throws IOException, ApiException {
+    return  getExternalcontactsGraphsClusterscanCluster(createGetExternalcontactsGraphsClusterscanClusterRequest(scanId, clusterId));
+  }
+
+  /**
+   * Returns a single cluster found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @param clusterId Cluster ID (required)
+   * @return Cluster
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Cluster> getExternalcontactsGraphsClusterscanClusterWithHttpInfo(String scanId, String clusterId) throws IOException {
+    return getExternalcontactsGraphsClusterscanCluster(createGetExternalcontactsGraphsClusterscanClusterRequest(scanId, clusterId).withHttpInfo());
+  }
+
+  private GetExternalcontactsGraphsClusterscanClusterRequest createGetExternalcontactsGraphsClusterscanClusterRequest(String scanId, String clusterId) {
+    return GetExternalcontactsGraphsClusterscanClusterRequest.builder()
+            .withScanId(scanId)
+
+            .withClusterId(clusterId)
+
+            .build();
+  }
+
+  /**
+   * Returns a single cluster found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Cluster
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Cluster getExternalcontactsGraphsClusterscanCluster(GetExternalcontactsGraphsClusterscanClusterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Cluster> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Cluster>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns a single cluster found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Cluster> getExternalcontactsGraphsClusterscanCluster(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Cluster>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Cluster> response = (ApiResponse<Cluster>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Cluster> response = (ApiResponse<Cluster>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Returns a list of clusters found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @param limit Max number of records to return (must be between 1 and 100) (optional, default to 20)
+   * @param cursor Cursor to continue scanning (optional)
+   * @param divisionIds which divisions to filter results to, up to 50 (defaults to all divisions use has access to) (optional)
+   * @param mergeInfoStatus which merge statuses to filter results to (optional)
+   * @return ClusterList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterList getExternalcontactsGraphsClusterscanClusters(String scanId, Integer limit, String cursor, List<String> divisionIds, String mergeInfoStatus) throws IOException, ApiException {
+    return  getExternalcontactsGraphsClusterscanClusters(createGetExternalcontactsGraphsClusterscanClustersRequest(scanId, limit, cursor, divisionIds, mergeInfoStatus));
+  }
+
+  /**
+   * Returns a list of clusters found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @param limit Max number of records to return (must be between 1 and 100) (optional, default to 20)
+   * @param cursor Cursor to continue scanning (optional)
+   * @param divisionIds which divisions to filter results to, up to 50 (defaults to all divisions use has access to) (optional)
+   * @param mergeInfoStatus which merge statuses to filter results to (optional)
+   * @return ClusterList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterList> getExternalcontactsGraphsClusterscanClustersWithHttpInfo(String scanId, Integer limit, String cursor, List<String> divisionIds, String mergeInfoStatus) throws IOException {
+    return getExternalcontactsGraphsClusterscanClusters(createGetExternalcontactsGraphsClusterscanClustersRequest(scanId, limit, cursor, divisionIds, mergeInfoStatus).withHttpInfo());
+  }
+
+  private GetExternalcontactsGraphsClusterscanClustersRequest createGetExternalcontactsGraphsClusterscanClustersRequest(String scanId, Integer limit, String cursor, List<String> divisionIds, String mergeInfoStatus) {
+    return GetExternalcontactsGraphsClusterscanClustersRequest.builder()
+            .withScanId(scanId)
+
+            .withLimit(limit)
+
+            .withCursor(cursor)
+
+            .withDivisionIds(divisionIds)
+
+            .withMergeInfoStatus(mergeInfoStatus)
+
+            .build();
+  }
+
+  /**
+   * Returns a list of clusters found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ClusterList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterList getExternalcontactsGraphsClusterscanClusters(GetExternalcontactsGraphsClusterscanClustersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClusterList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClusterList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns a list of clusters found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterList> getExternalcontactsGraphsClusterscanClusters(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClusterList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterList> response = (ApiResponse<ClusterList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterList> response = (ApiResponse<ClusterList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Returns the statistics about a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @return ClusterScanStatistics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScanStatistics getExternalcontactsGraphsClusterscanStatistics(String scanId) throws IOException, ApiException {
+    return  getExternalcontactsGraphsClusterscanStatistics(createGetExternalcontactsGraphsClusterscanStatisticsRequest(scanId));
+  }
+
+  /**
+   * Returns the statistics about a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @return ClusterScanStatistics
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScanStatistics> getExternalcontactsGraphsClusterscanStatisticsWithHttpInfo(String scanId) throws IOException {
+    return getExternalcontactsGraphsClusterscanStatistics(createGetExternalcontactsGraphsClusterscanStatisticsRequest(scanId).withHttpInfo());
+  }
+
+  private GetExternalcontactsGraphsClusterscanStatisticsRequest createGetExternalcontactsGraphsClusterscanStatisticsRequest(String scanId) {
+    return GetExternalcontactsGraphsClusterscanStatisticsRequest.builder()
+            .withScanId(scanId)
+
+            .build();
+  }
+
+  /**
+   * Returns the statistics about a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ClusterScanStatistics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScanStatistics getExternalcontactsGraphsClusterscanStatistics(GetExternalcontactsGraphsClusterscanStatisticsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClusterScanStatistics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClusterScanStatistics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns the statistics about a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScanStatistics> getExternalcontactsGraphsClusterscanStatistics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClusterScanStatistics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScanStatistics> response = (ApiResponse<ClusterScanStatistics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScanStatistics> response = (ApiResponse<ClusterScanStatistics>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Returns a list of cluster scans
+   * 
+   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit Max number of records to return (must be between 1 and 100) (optional, default to 20)
+   * @param cursor Cursor to continue scanning (optional)
+   * @param expand which fields, if any, to expand (optional)
+   * @return ClusterScanList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScanList getExternalcontactsGraphsClusterscans(Integer limit, String cursor, List<String> expand) throws IOException, ApiException {
+    return  getExternalcontactsGraphsClusterscans(createGetExternalcontactsGraphsClusterscansRequest(limit, cursor, expand));
+  }
+
+  /**
+   * Returns a list of cluster scans
+   * 
+   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit Max number of records to return (must be between 1 and 100) (optional, default to 20)
+   * @param cursor Cursor to continue scanning (optional)
+   * @param expand which fields, if any, to expand (optional)
+   * @return ClusterScanList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScanList> getExternalcontactsGraphsClusterscansWithHttpInfo(Integer limit, String cursor, List<String> expand) throws IOException {
+    return getExternalcontactsGraphsClusterscans(createGetExternalcontactsGraphsClusterscansRequest(limit, cursor, expand).withHttpInfo());
+  }
+
+  private GetExternalcontactsGraphsClusterscansRequest createGetExternalcontactsGraphsClusterscansRequest(Integer limit, String cursor, List<String> expand) {
+    return GetExternalcontactsGraphsClusterscansRequest.builder()
+            .withLimit(limit)
+
+            .withCursor(cursor)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Returns a list of cluster scans
+   * 
+   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ClusterScanList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScanList getExternalcontactsGraphsClusterscans(GetExternalcontactsGraphsClusterscansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClusterScanList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClusterScanList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns a list of cluster scans
+   * 
+   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScanList> getExternalcontactsGraphsClusterscans(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClusterScanList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScanList> response = (ApiResponse<ClusterScanList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScanList> response = (ApiResponse<ClusterScanList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Returns the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param expand which fields, if any, to expand (optional)
+   * @return ClusterScan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScan getExternalcontactsGraphsClusterscansLatest(List<String> expand) throws IOException, ApiException {
+    return  getExternalcontactsGraphsClusterscansLatest(createGetExternalcontactsGraphsClusterscansLatestRequest(expand));
+  }
+
+  /**
+   * Returns the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param expand which fields, if any, to expand (optional)
+   * @return ClusterScan
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScan> getExternalcontactsGraphsClusterscansLatestWithHttpInfo(List<String> expand) throws IOException {
+    return getExternalcontactsGraphsClusterscansLatest(createGetExternalcontactsGraphsClusterscansLatestRequest(expand).withHttpInfo());
+  }
+
+  private GetExternalcontactsGraphsClusterscansLatestRequest createGetExternalcontactsGraphsClusterscansLatestRequest(List<String> expand) {
+    return GetExternalcontactsGraphsClusterscansLatestRequest.builder()
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Returns the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ClusterScan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScan getExternalcontactsGraphsClusterscansLatest(GetExternalcontactsGraphsClusterscansLatestRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClusterScan> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClusterScan>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScan> getExternalcontactsGraphsClusterscansLatest(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClusterScan>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Returns the statistics about the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return ClusterScanStatistics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScanStatistics getExternalcontactsGraphsClusterscansLatestStatistics() throws IOException, ApiException {
+    return  getExternalcontactsGraphsClusterscansLatestStatistics(createGetExternalcontactsGraphsClusterscansLatestStatisticsRequest());
+  }
+
+  /**
+   * Returns the statistics about the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return ClusterScanStatistics
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScanStatistics> getExternalcontactsGraphsClusterscansLatestStatisticsWithHttpInfo() throws IOException {
+    return getExternalcontactsGraphsClusterscansLatestStatistics(createGetExternalcontactsGraphsClusterscansLatestStatisticsRequest().withHttpInfo());
+  }
+
+  private GetExternalcontactsGraphsClusterscansLatestStatisticsRequest createGetExternalcontactsGraphsClusterscansLatestStatisticsRequest() {
+    return GetExternalcontactsGraphsClusterscansLatestStatisticsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Returns the statistics about the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ClusterScanStatistics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClusterScanStatistics getExternalcontactsGraphsClusterscansLatestStatistics(GetExternalcontactsGraphsClusterscansLatestStatisticsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClusterScanStatistics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClusterScanStatistics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns the statistics about the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClusterScanStatistics> getExternalcontactsGraphsClusterscansLatestStatistics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClusterScanStatistics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScanStatistics> response = (ApiResponse<ClusterScanStatistics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClusterScanStatistics> response = (ApiResponse<ClusterScanStatistics>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Returns the org-wide settings for ExternalContact graph operations
+   * 
+   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return GraphSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GraphSettings getExternalcontactsGraphsSettings() throws IOException, ApiException {
+    return  getExternalcontactsGraphsSettings(createGetExternalcontactsGraphsSettingsRequest());
+  }
+
+  /**
+   * Returns the org-wide settings for ExternalContact graph operations
+   * 
+   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return GraphSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GraphSettings> getExternalcontactsGraphsSettingsWithHttpInfo() throws IOException {
+    return getExternalcontactsGraphsSettings(createGetExternalcontactsGraphsSettingsRequest().withHttpInfo());
+  }
+
+  private GetExternalcontactsGraphsSettingsRequest createGetExternalcontactsGraphsSettingsRequest() {
+    return GetExternalcontactsGraphsSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Returns the org-wide settings for ExternalContact graph operations
+   * 
+   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GraphSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GraphSettings getExternalcontactsGraphsSettings(GetExternalcontactsGraphsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GraphSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GraphSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns the org-wide settings for ExternalContact graph operations
+   * 
+   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GraphSettings> getExternalcontactsGraphsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GraphSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GraphSettings> response = (ApiResponse<GraphSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GraphSettings> response = (ApiResponse<GraphSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10465,6 +11161,174 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Merge a single cluster found by a scan
+   * 
+   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @param clusterId Cluster ID (required)
+   * @return Cluster
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Cluster putExternalcontactsGraphsClusterscanClusterMerge(String scanId, String clusterId) throws IOException, ApiException {
+    return  putExternalcontactsGraphsClusterscanClusterMerge(createPutExternalcontactsGraphsClusterscanClusterMergeRequest(scanId, clusterId));
+  }
+
+  /**
+   * Merge a single cluster found by a scan
+   * 
+   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param scanId Cluster scan ID (required)
+   * @param clusterId Cluster ID (required)
+   * @return Cluster
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Cluster> putExternalcontactsGraphsClusterscanClusterMergeWithHttpInfo(String scanId, String clusterId) throws IOException {
+    return putExternalcontactsGraphsClusterscanClusterMerge(createPutExternalcontactsGraphsClusterscanClusterMergeRequest(scanId, clusterId).withHttpInfo());
+  }
+
+  private PutExternalcontactsGraphsClusterscanClusterMergeRequest createPutExternalcontactsGraphsClusterscanClusterMergeRequest(String scanId, String clusterId) {
+    return PutExternalcontactsGraphsClusterscanClusterMergeRequest.builder()
+            .withScanId(scanId)
+
+            .withClusterId(clusterId)
+
+            .build();
+  }
+
+  /**
+   * Merge a single cluster found by a scan
+   * 
+   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Cluster
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Cluster putExternalcontactsGraphsClusterscanClusterMerge(PutExternalcontactsGraphsClusterscanClusterMergeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Cluster> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Cluster>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Merge a single cluster found by a scan
+   * 
+   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Cluster> putExternalcontactsGraphsClusterscanClusterMerge(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Cluster>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Cluster> response = (ApiResponse<Cluster>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Cluster> response = (ApiResponse<Cluster>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Updates the org-wide settings for ExternalContact graph operations
+   * 
+   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body OrgConfiguration (required)
+   * @return GraphSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GraphSettings putExternalcontactsGraphsSettings(GraphSettings body) throws IOException, ApiException {
+    return  putExternalcontactsGraphsSettings(createPutExternalcontactsGraphsSettingsRequest(body));
+  }
+
+  /**
+   * Updates the org-wide settings for ExternalContact graph operations
+   * 
+   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body OrgConfiguration (required)
+   * @return GraphSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GraphSettings> putExternalcontactsGraphsSettingsWithHttpInfo(GraphSettings body) throws IOException {
+    return putExternalcontactsGraphsSettings(createPutExternalcontactsGraphsSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutExternalcontactsGraphsSettingsRequest createPutExternalcontactsGraphsSettingsRequest(GraphSettings body) {
+    return PutExternalcontactsGraphsSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Updates the org-wide settings for ExternalContact graph operations
+   * 
+   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GraphSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GraphSettings putExternalcontactsGraphsSettings(PutExternalcontactsGraphsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GraphSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GraphSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates the org-wide settings for ExternalContact graph operations
+   * 
+   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GraphSettings> putExternalcontactsGraphsSettings(ApiRequest<GraphSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GraphSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GraphSettings> response = (ApiResponse<GraphSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GraphSettings> response = (ApiResponse<GraphSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

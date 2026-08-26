@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
+import com.mypurecloud.sdk.v2.model.CreateDecisionTableSnapshotRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableVersionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
@@ -51,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.DecisionTableVersion;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersionListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
+import com.mypurecloud.sdk.v2.model.RollbackDecisionTableVersionRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
@@ -100,6 +102,68 @@ public class GetBusinessrulesDecisiontableVersionsRequest {
 	    return this;
 	} 
 
+	private List<String> status;
+	public List<String> getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(List<String> status) {
+		this.status = status;
+	}
+
+	public GetBusinessrulesDecisiontableVersionsRequest withStatus(List<String> status) {
+	    this.setStatus(status);
+	    return this;
+	} 
+
+	public enum statusValues { 
+		DRAFT("Draft"),
+		PUBLISHED("Published"),
+		ERROR("Error"),
+		PREPARING("Preparing"),
+		SUPERSEDED("Superseded");
+
+		private String value;
+
+		statusValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static statusValues fromString(String key) {
+			if (key == null) return null;
+
+			for (statusValues value : statusValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return statusValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+
+	}
+
+	private Boolean hasSnapshot;
+	public Boolean getHasSnapshot() {
+		return this.hasSnapshot;
+	}
+
+	public void setHasSnapshot(Boolean hasSnapshot) {
+		this.hasSnapshot = hasSnapshot;
+	}
+
+	public GetBusinessrulesDecisiontableVersionsRequest withHasSnapshot(Boolean hasSnapshot) {
+	    this.setHasSnapshot(hasSnapshot);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -135,6 +199,12 @@ public class GetBusinessrulesDecisiontableVersionsRequest {
         
 
                 .withQueryParameters("pageSize", "", pageSize)
+        
+
+                .withQueryParameters("status", "multi", status)
+        
+
+                .withQueryParameters("hasSnapshot", "", hasSnapshot)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -174,6 +244,27 @@ public class GetBusinessrulesDecisiontableVersionsRequest {
 
 		public Builder withPageSize(String pageSize) {
 			request.setPageSize(pageSize);
+			return this;
+		}
+
+		public Builder withStatus(List<String> status) {
+			request.setStatus(status);
+			return this;
+		}
+
+
+
+		public Builder withStatusEnumValues(List<statusValues> status) {
+		    List<String> stringList = new ArrayList<>();
+	      for (statusValues e : status) {
+	        stringList.add(e.toString());
+	      }
+	      request.setStatus(stringList);
+		    return this;
+		}
+
+		public Builder withHasSnapshot(Boolean hasSnapshot) {
+			request.setHasSnapshot(hasSnapshot);
 			return this;
 		}
 

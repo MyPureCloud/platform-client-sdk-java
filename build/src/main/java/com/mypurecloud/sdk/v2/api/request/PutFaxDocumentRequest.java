@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.FaxConfig;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
+import com.mypurecloud.sdk.v2.model.OutboundFaxStatus;
 
 public class PutFaxDocumentRequest {
 

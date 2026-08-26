@@ -35,6 +35,8 @@ import com.mypurecloud.sdk.v2.model.EdgeMetrics;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnostic;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticRequest;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticResponse;
+import com.mypurecloud.sdk.v2.model.EdgeOfflineConfiguration;
+import com.mypurecloud.sdk.v2.model.EdgeOfflineConfigurationResponse;
 import com.mypurecloud.sdk.v2.model.EdgeRebootParameters;
 import com.mypurecloud.sdk.v2.model.EdgeServiceStateRequest;
 import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;
@@ -69,11 +71,14 @@ import com.mypurecloud.sdk.v2.model.SiteConnections;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
 import com.mypurecloud.sdk.v2.model.SiteSearchRequest;
 import com.mypurecloud.sdk.v2.model.SitesSearchResponse;
+import com.mypurecloud.sdk.v2.model.TelephonySearchRequest;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
+import com.mypurecloud.sdk.v2.model.TrunkBasesSearchResponse;
 import com.mypurecloud.sdk.v2.model.TrunkEntityListing;
+import com.mypurecloud.sdk.v2.model.TrunkInstanceSearchResponse;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetrics;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
@@ -162,6 +167,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkMetrics
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
@@ -174,6 +180,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticTr
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeOfflineconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeRebootRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeSoftwareupdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeStatuscodeRequest;
@@ -192,6 +199,8 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboun
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunksSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeLogicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesAlertablepresencesRequest;
@@ -6903,6 +6912,100 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
+   * Get Trunk Base Settings listing for site
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param siteId Site ID for trunk bases (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Value by which to sort (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @return TrunkBaseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId(String siteId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId(createGetTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdRequest(siteId, pageNumber, pageSize, sortBy, sortOrder));
+  }
+
+  /**
+   * Get Trunk Base Settings listing for site
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param siteId Site ID for trunk bases (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Value by which to sort (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @return TrunkBaseEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdWithHttpInfo(String siteId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
+    return getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId(createGetTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdRequest(siteId, pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdRequest createGetTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdRequest(String siteId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+    return GetTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdRequest.builder()
+            .withSiteId(siteId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .build();
+  }
+
+  /**
+   * Get Trunk Base Settings listing for site
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param request The request object
+   * @return TrunkBaseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId(GetTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrunkBaseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkBaseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Trunk Base Settings listing for site
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkBaseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBaseEntityListing> response = (ApiResponse<TrunkBaseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBaseEntityListing> response = (ApiResponse<TrunkBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
    * 
    * @param trunkMetabaseId The id of a metabase object upon which to base this Trunk Base Settings (required)
@@ -7891,6 +7994,88 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EdgeLogsJobResponse> response = (ApiResponse<EdgeLogsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a file that can be used to configure a hardware Edge's settings.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body EdgeOfflineConfiguration (required)
+   * @return EdgeOfflineConfigurationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeOfflineConfigurationResponse postTelephonyProvidersEdgeOfflineconfiguration(String edgeId, EdgeOfflineConfiguration body) throws IOException, ApiException {
+    return  postTelephonyProvidersEdgeOfflineconfiguration(createPostTelephonyProvidersEdgeOfflineconfigurationRequest(edgeId, body));
+  }
+
+  /**
+   * Create a file that can be used to configure a hardware Edge's settings.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body EdgeOfflineConfiguration (required)
+   * @return EdgeOfflineConfigurationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeOfflineConfigurationResponse> postTelephonyProvidersEdgeOfflineconfigurationWithHttpInfo(String edgeId, EdgeOfflineConfiguration body) throws IOException {
+    return postTelephonyProvidersEdgeOfflineconfiguration(createPostTelephonyProvidersEdgeOfflineconfigurationRequest(edgeId, body).withHttpInfo());
+  }
+
+  private PostTelephonyProvidersEdgeOfflineconfigurationRequest createPostTelephonyProvidersEdgeOfflineconfigurationRequest(String edgeId, EdgeOfflineConfiguration body) {
+    return PostTelephonyProvidersEdgeOfflineconfigurationRequest.builder()
+            .withEdgeId(edgeId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a file that can be used to configure a hardware Edge's settings.
+   * 
+   * @param request The request object
+   * @return EdgeOfflineConfigurationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeOfflineConfigurationResponse postTelephonyProvidersEdgeOfflineconfiguration(PostTelephonyProvidersEdgeOfflineconfigurationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeOfflineConfigurationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeOfflineConfigurationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a file that can be used to configure a hardware Edge's settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeOfflineConfigurationResponse> postTelephonyProvidersEdgeOfflineconfiguration(ApiRequest<EdgeOfflineConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeOfflineConfigurationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeOfflineConfigurationResponse> response = (ApiResponse<EdgeOfflineConfigurationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeOfflineConfigurationResponse> response = (ApiResponse<EdgeOfflineConfigurationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9305,6 +9490,162 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search Trunk Base Settings
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param body Telephony search request (required)
+   * @return TrunkBasesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkBasesSearchResponse postTelephonyProvidersEdgesTrunkbasesettingsSearch(TelephonySearchRequest body) throws IOException, ApiException {
+    return  postTelephonyProvidersEdgesTrunkbasesettingsSearch(createPostTelephonyProvidersEdgesTrunkbasesettingsSearchRequest(body));
+  }
+
+  /**
+   * Search Trunk Base Settings
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param body Telephony search request (required)
+   * @return TrunkBasesSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkBasesSearchResponse> postTelephonyProvidersEdgesTrunkbasesettingsSearchWithHttpInfo(TelephonySearchRequest body) throws IOException {
+    return postTelephonyProvidersEdgesTrunkbasesettingsSearch(createPostTelephonyProvidersEdgesTrunkbasesettingsSearchRequest(body).withHttpInfo());
+  }
+
+  private PostTelephonyProvidersEdgesTrunkbasesettingsSearchRequest createPostTelephonyProvidersEdgesTrunkbasesettingsSearchRequest(TelephonySearchRequest body) {
+    return PostTelephonyProvidersEdgesTrunkbasesettingsSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search Trunk Base Settings
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param request The request object
+   * @return TrunkBasesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkBasesSearchResponse postTelephonyProvidersEdgesTrunkbasesettingsSearch(PostTelephonyProvidersEdgesTrunkbasesettingsSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrunkBasesSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkBasesSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search Trunk Base Settings
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkBasesSearchResponse> postTelephonyProvidersEdgesTrunkbasesettingsSearch(ApiRequest<TelephonySearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkBasesSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBasesSearchResponse> response = (ApiResponse<TrunkBasesSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBasesSearchResponse> response = (ApiResponse<TrunkBasesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search for trunks
+   * 
+   * @param body Telephony search request (required)
+   * @return TrunkInstanceSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkInstanceSearchResponse postTelephonyProvidersEdgesTrunksSearch(TelephonySearchRequest body) throws IOException, ApiException {
+    return  postTelephonyProvidersEdgesTrunksSearch(createPostTelephonyProvidersEdgesTrunksSearchRequest(body));
+  }
+
+  /**
+   * Search for trunks
+   * 
+   * @param body Telephony search request (required)
+   * @return TrunkInstanceSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkInstanceSearchResponse> postTelephonyProvidersEdgesTrunksSearchWithHttpInfo(TelephonySearchRequest body) throws IOException {
+    return postTelephonyProvidersEdgesTrunksSearch(createPostTelephonyProvidersEdgesTrunksSearchRequest(body).withHttpInfo());
+  }
+
+  private PostTelephonyProvidersEdgesTrunksSearchRequest createPostTelephonyProvidersEdgesTrunksSearchRequest(TelephonySearchRequest body) {
+    return PostTelephonyProvidersEdgesTrunksSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search for trunks
+   * 
+   * @param request The request object
+   * @return TrunkInstanceSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkInstanceSearchResponse postTelephonyProvidersEdgesTrunksSearch(PostTelephonyProvidersEdgesTrunksSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrunkInstanceSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkInstanceSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search for trunks
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkInstanceSearchResponse> postTelephonyProvidersEdgesTrunksSearch(ApiRequest<TelephonySearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkInstanceSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkInstanceSearchResponse> response = (ApiResponse<TrunkInstanceSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkInstanceSearchResponse> response = (ApiResponse<TrunkInstanceSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

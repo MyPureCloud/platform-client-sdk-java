@@ -26,8 +26,8 @@ import java.io.Serializable;
 public class NluDetectionResponse  implements Serializable {
   
   private NluDomainVersion version = null;
-  private NluDetectionOutput output = null;
   private NluDetectionInput input = null;
+  private NluDetectionOutput output = null;
 
   public NluDetectionResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -49,23 +49,6 @@ public class NluDetectionResponse  implements Serializable {
 
   /**
    **/
-  public NluDetectionResponse output(NluDetectionOutput output) {
-    this.output = output;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("output")
-  public NluDetectionOutput getOutput() {
-    return output;
-  }
-  public void setOutput(NluDetectionOutput output) {
-    this.output = output;
-  }
-
-
-  /**
-   **/
   public NluDetectionResponse input(NluDetectionInput input) {
     this.input = input;
     return this;
@@ -81,6 +64,23 @@ public class NluDetectionResponse  implements Serializable {
   }
 
 
+  /**
+   **/
+  public NluDetectionResponse output(NluDetectionOutput output) {
+    this.output = output;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("output")
+  public NluDetectionOutput getOutput() {
+    return output;
+  }
+  public void setOutput(NluDetectionOutput output) {
+    this.output = output;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -92,13 +92,13 @@ public class NluDetectionResponse  implements Serializable {
     NluDetectionResponse nluDetectionResponse = (NluDetectionResponse) o;
 
     return Objects.equals(this.version, nluDetectionResponse.version) &&
-            Objects.equals(this.output, nluDetectionResponse.output) &&
-            Objects.equals(this.input, nluDetectionResponse.input);
+            Objects.equals(this.input, nluDetectionResponse.input) &&
+            Objects.equals(this.output, nluDetectionResponse.output);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, output, input);
+    return Objects.hash(version, input, output);
   }
 
   @Override
@@ -107,8 +107,8 @@ public class NluDetectionResponse  implements Serializable {
     sb.append("class NluDetectionResponse {\n");
     
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("    input: ").append(toIndentedString(input)).append("\n");
+    sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("}");
     return sb.toString();
   }

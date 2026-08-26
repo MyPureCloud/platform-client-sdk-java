@@ -5479,7 +5479,7 @@ try {
 # **getConversationsMessageDetails**
 
 
-> [MessageData](MessageData) getConversationsMessageDetails(messageId, useNormalizedMessage)
+> [MessageData](MessageData) getConversationsMessageDetails(messageId)
 
 Get message
 
@@ -5513,9 +5513,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String messageId = "messageId_example"; // String | messageId
-Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, media)
 try {
-    MessageData result = apiInstance.getConversationsMessageDetails(messageId, useNormalizedMessage);
+    MessageData result = apiInstance.getConversationsMessageDetails(messageId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessageDetails");
@@ -5529,7 +5528,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **messageId** | **String**| messageId | 
-| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, media) | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -5541,7 +5539,7 @@ try {
 # **getConversationsMessageMessage**
 
 
-> [MessageData](MessageData) getConversationsMessageMessage(conversationId, messageId, useNormalizedMessage)
+> [MessageData](MessageData) getConversationsMessageMessage(conversationId, messageId)
 
 Get conversation message
 
@@ -5576,9 +5574,8 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String messageId = "messageId_example"; // String | messageId
-Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, media)
 try {
-    MessageData result = apiInstance.getConversationsMessageMessage(conversationId, messageId, useNormalizedMessage);
+    MessageData result = apiInstance.getConversationsMessageMessage(conversationId, messageId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessageMessage");
@@ -5593,7 +5590,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **messageId** | **String**| messageId | 
-| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, media) | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -15782,7 +15778,7 @@ try {
 # **postConversationsMessageCommunicationMessages**
 
 
-> [MessageData](MessageData) postConversationsMessageCommunicationMessages(conversationId, communicationId, body, useNormalizedMessage)
+> [MessageData](MessageData) postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
 
 Send message
 
@@ -15820,9 +15816,8 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String communicationId = "communicationId_example"; // String | communicationId
 AdditionalMessage body = new AdditionalMessage(); // AdditionalMessage | Message
-Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, media)
 try {
-    MessageData result = apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body, useNormalizedMessage);
+    MessageData result = apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessageCommunicationMessages");
@@ -15838,7 +15833,6 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **communicationId** | **String**| communicationId | 
 | **body** | [**AdditionalMessage**](AdditionalMessage)| Message | 
-| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, media) | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -16369,7 +16363,7 @@ try {
 # **postConversationsMessageMessagesBulk**
 
 
-> [TextMessageListing](TextMessageListing) postConversationsMessageMessagesBulk(conversationId, useNormalizedMessage, body)
+> [TextMessageListing](TextMessageListing) postConversationsMessageMessagesBulk(conversationId, body)
 
 Get messages in batch
 
@@ -16405,10 +16399,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | 
-Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, media)
 List<String> body = Arrays.asList(null); // List<String> | messageIds
 try {
-    TextMessageListing result = apiInstance.postConversationsMessageMessagesBulk(conversationId, useNormalizedMessage, body);
+    TextMessageListing result = apiInstance.postConversationsMessageMessagesBulk(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessageMessagesBulk");
@@ -16422,7 +16415,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**|  | 
-| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, media) | [optional] [default to false] 
 | **body** | [**List&lt;String&gt;**](String)| messageIds | [optional] 
 {: class="table-striped"}
 
@@ -16747,7 +16739,7 @@ try {
 # **postConversationsMessagesAgentless**
 
 
-> [SendAgentlessOutboundMessageResponse](SendAgentlessOutboundMessageResponse) postConversationsMessagesAgentless(body, useNormalizedMessage)
+> [SendAgentlessOutboundMessageResponse](SendAgentlessOutboundMessageResponse) postConversationsMessagesAgentless(body)
 
 Send an agentless outbound message
 
@@ -16782,9 +16774,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 SendAgentlessOutboundMessageRequest body = new SendAgentlessOutboundMessageRequest(); // SendAgentlessOutboundMessageRequest | Create agentless outbound messaging request
-Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, messagingTemplate)
 try {
-    SendAgentlessOutboundMessageResponse result = apiInstance.postConversationsMessagesAgentless(body, useNormalizedMessage);
+    SendAgentlessOutboundMessageResponse result = apiInstance.postConversationsMessagesAgentless(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessagesAgentless");
@@ -16798,7 +16789,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**SendAgentlessOutboundMessageRequest**](SendAgentlessOutboundMessageRequest)| Create agentless outbound messaging request | 
-| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, messagingTemplate) | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -19580,4 +19570,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

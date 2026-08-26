@@ -47,7 +47,8 @@ public class CopilotCondition  implements Serializable {
     INTENT("Intent"),
     CONVERSATIONSTART("ConversationStart"),
     CONVERSATIONTRANSFER("ConversationTransfer"),
-    CONVERSATIONEND("ConversationEnd");
+    CONVERSATIONEND("ConversationEnd"),
+    SENTIMENT("Sentiment");
 
     private String value;
 

@@ -11,8 +11,8 @@
 | **participantId** | **String** | The ID of the participant being monitored (for conversation-level monitoring) |  [optional] |
 | **monitoringType** | [**MonitoringTypeEnum**](#Enum--MonitoringTypeEnum) | The type of screen monitoring session |  |
 | **dateCreated** | [**Date**](Date) | The date and time when the screen monitoring session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **screenMonitoringId** | **String** | The unique identifier for this screen monitoring session |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
+| **screenMonitoringId** | **String** | The unique identifier for this screen monitoring session |  |
 
 
 ## Enum: MonitoringTypeEnum
@@ -26,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

@@ -78,8 +78,8 @@ public class ScreenMonitoringSession  implements Serializable {
   }
   private MonitoringTypeEnum monitoringType = null;
   private Date dateCreated = null;
-  private String screenMonitoringId = null;
   private String selfUri = null;
+  private String screenMonitoringId = null;
 
   public ScreenMonitoringSession() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -200,6 +200,13 @@ public class ScreenMonitoringSession  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+
+
   /**
    * The unique identifier for this screen monitoring session
    **/
@@ -215,13 +222,6 @@ public class ScreenMonitoringSession  implements Serializable {
   }
   public void setScreenMonitoringId(String screenMonitoringId) {
     this.screenMonitoringId = screenMonitoringId;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
   }
 
 
@@ -241,13 +241,13 @@ public class ScreenMonitoringSession  implements Serializable {
             Objects.equals(this.participantId, screenMonitoringSession.participantId) &&
             Objects.equals(this.monitoringType, screenMonitoringSession.monitoringType) &&
             Objects.equals(this.dateCreated, screenMonitoringSession.dateCreated) &&
-            Objects.equals(this.screenMonitoringId, screenMonitoringSession.screenMonitoringId) &&
-            Objects.equals(this.selfUri, screenMonitoringSession.selfUri);
+            Objects.equals(this.selfUri, screenMonitoringSession.selfUri) &&
+            Objects.equals(this.screenMonitoringId, screenMonitoringSession.screenMonitoringId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceUser, targetUser, conversation, participantId, monitoringType, dateCreated, screenMonitoringId, selfUri);
+    return Objects.hash(sourceUser, targetUser, conversation, participantId, monitoringType, dateCreated, selfUri, screenMonitoringId);
   }
 
   @Override
@@ -261,8 +261,8 @@ public class ScreenMonitoringSession  implements Serializable {
     sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
     sb.append("    monitoringType: ").append(toIndentedString(monitoringType)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    screenMonitoringId: ").append(toIndentedString(screenMonitoringId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    screenMonitoringId: ").append(toIndentedString(screenMonitoringId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

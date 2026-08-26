@@ -44,6 +44,9 @@ public class GetAlertQuery  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATION("Conversation"),
     PRESENCE("Presence"),
+    WORKFORCEMANAGEMENT("WorkforceManagement"),
+    OPERATIONALCONSOLE("OperationalConsole"),
+    ANOMALY("Anomaly"),
     ALL("All");
 
     private String value;

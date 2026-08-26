@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
+import com.mypurecloud.sdk.v2.model.CreateDecisionTableSnapshotRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableVersionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
@@ -44,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.DecisionTableVersion;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersionListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
+import com.mypurecloud.sdk.v2.model.RollbackDecisionTableVersionRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
@@ -55,6 +57,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableExport
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableImportRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionRowRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionSnapshotRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableExportRequest;
@@ -68,6 +71,8 @@ import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableVersionsR
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontablesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypesRequest;
@@ -79,11 +84,13 @@ import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableExportsR
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionExecuteRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRollbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionSnapshotRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionSyncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontablesRequest;
@@ -452,6 +459,81 @@ public class BusinessRulesApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteBusinessrulesDecisiontableVersionRowAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Deletes a decision table version snapshot
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteBusinessrulesDecisiontableVersionSnapshotAsync(DeleteBusinessrulesDecisiontableVersionSnapshotRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Deletes a decision table version snapshot
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteBusinessrulesDecisiontableVersionSnapshotAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1461,6 +1543,156 @@ public class BusinessRulesApiAsync {
   }
 
   /**
+   * Get a schema version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BusinessRulesDataSchema> getBusinessrulesSchemaVersionAsync(GetBusinessrulesSchemaVersionRequest request, final AsyncApiCallback<BusinessRulesDataSchema> callback) {
+    try {
+      final SettableFuture<BusinessRulesDataSchema> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchema>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessRulesDataSchema> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a schema version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BusinessRulesDataSchema>> getBusinessrulesSchemaVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BusinessRulesDataSchema>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BusinessRulesDataSchema>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessRulesDataSchema> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List schema versions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BusinessRulesDataSchemaListing> getBusinessrulesSchemaVersionsAsync(GetBusinessrulesSchemaVersionsRequest request, final AsyncApiCallback<BusinessRulesDataSchemaListing> callback) {
+    try {
+      final SettableFuture<BusinessRulesDataSchemaListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessRulesDataSchemaListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List schema versions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BusinessRulesDataSchemaListing>> getBusinessrulesSchemaVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BusinessRulesDataSchemaListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BusinessRulesDataSchemaListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BusinessRulesDataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchemaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessRulesDataSchemaListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessRulesDataSchemaListing> response = (ApiResponse<BusinessRulesDataSchemaListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessRulesDataSchemaListing> response = (ApiResponse<BusinessRulesDataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a list of schemas.
    * 
    * @param request the request object
@@ -2286,6 +2518,81 @@ public class BusinessRulesApiAsync {
   }
 
   /**
+   * Re-publish a superseded decision table version as the current published version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableVersion> postBusinessrulesDecisiontableVersionRollbackAsync(PostBusinessrulesDecisiontableVersionRollbackRequest request, final AsyncApiCallback<DecisionTableVersion> callback) {
+    try {
+      final SettableFuture<DecisionTableVersion> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableVersion>() {}, new AsyncApiCallback<ApiResponse<DecisionTableVersion>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableVersion> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Re-publish a superseded decision table version as the current published version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableVersion>> postBusinessrulesDecisiontableVersionRollbackAsync(ApiRequest<RollbackDecisionTableVersionRequest> request, final AsyncApiCallback<ApiResponse<DecisionTableVersion>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableVersion>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableVersion>() {}, new AsyncApiCallback<ApiResponse<DecisionTableVersion>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableVersion> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create a decision table row
    * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param request the request object
@@ -2649,6 +2956,81 @@ public class BusinessRulesApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DecisionTableRowListing> response = (ApiResponse<DecisionTableRowListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a decision table version snapshot
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableVersion> postBusinessrulesDecisiontableVersionSnapshotAsync(PostBusinessrulesDecisiontableVersionSnapshotRequest request, final AsyncApiCallback<DecisionTableVersion> callback) {
+    try {
+      final SettableFuture<DecisionTableVersion> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableVersion>() {}, new AsyncApiCallback<ApiResponse<DecisionTableVersion>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableVersion> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a decision table version snapshot
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableVersion>> postBusinessrulesDecisiontableVersionSnapshotAsync(ApiRequest<CreateDecisionTableSnapshotRequest> request, final AsyncApiCallback<ApiResponse<DecisionTableVersion>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableVersion>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableVersion>() {}, new AsyncApiCallback<ApiResponse<DecisionTableVersion>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableVersion> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -14,7 +14,6 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNormalizedMessage;
-import com.mypurecloud.sdk.v2.model.MessageMedia;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -137,7 +136,6 @@ public class MessageData  implements Serializable {
     }
   }
   private MessengerTypeEnum messengerType = null;
-  private String textBody = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -193,7 +191,6 @@ public class MessageData  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<MessageMedia> media = null;
   private ConversationNormalizedMessage normalizedMessage = null;
   private List<ConversationNormalizedMessage> normalizedReceipts = null;
   private User createdBy = null;
@@ -202,14 +199,12 @@ public class MessageData  implements Serializable {
 
   public MessageData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      media = new ArrayList<MessageMedia>();
       normalizedReceipts = new ArrayList<ConversationNormalizedMessage>();
     }
   }
 
   public MessageData(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
-      media = new ArrayList<MessageMedia>();
       normalizedReceipts = new ArrayList<ConversationNormalizedMessage>();
     }
   }
@@ -348,24 +343,6 @@ public class MessageData  implements Serializable {
 
 
   /**
-   * The body of the text message. (Deprecated - Instead use normalizedMessage.text)
-   **/
-  public MessageData textBody(String textBody) {
-    this.textBody = textBody;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The body of the text message. (Deprecated - Instead use normalizedMessage.text)")
-  @JsonProperty("textBody")
-  public String getTextBody() {
-    return textBody;
-  }
-  public void setTextBody(String textBody) {
-    this.textBody = textBody;
-  }
-
-
-  /**
    * The status of the message.
    **/
   public MessageData status(StatusEnum status) {
@@ -380,24 +357,6 @@ public class MessageData  implements Serializable {
   }
   public void setStatus(StatusEnum status) {
     this.status = status;
-  }
-
-
-  /**
-   * The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)
-   **/
-  public MessageData media(List<MessageMedia> media) {
-    this.media = media;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)")
-  @JsonProperty("media")
-  public List<MessageMedia> getMedia() {
-    return media;
-  }
-  public void setMedia(List<MessageMedia> media) {
-    this.media = media;
   }
 
 
@@ -476,9 +435,7 @@ public class MessageData  implements Serializable {
             Objects.equals(this.toAddress, messageData.toAddress) &&
             Objects.equals(this.direction, messageData.direction) &&
             Objects.equals(this.messengerType, messageData.messengerType) &&
-            Objects.equals(this.textBody, messageData.textBody) &&
             Objects.equals(this.status, messageData.status) &&
-            Objects.equals(this.media, messageData.media) &&
             Objects.equals(this.normalizedMessage, messageData.normalizedMessage) &&
             Objects.equals(this.normalizedReceipts, messageData.normalizedReceipts) &&
             Objects.equals(this.createdBy, messageData.createdBy) &&
@@ -488,7 +445,7 @@ public class MessageData  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, normalizedMessage, normalizedReceipts, createdBy, conversationId, selfUri);
+    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, status, normalizedMessage, normalizedReceipts, createdBy, conversationId, selfUri);
   }
 
   @Override
@@ -504,9 +461,7 @@ public class MessageData  implements Serializable {
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    messengerType: ").append(toIndentedString(messengerType)).append("\n");
-    sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    normalizedMessage: ").append(toIndentedString(normalizedMessage)).append("\n");
     sb.append("    normalizedReceipts: ").append(toIndentedString(normalizedReceipts)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");

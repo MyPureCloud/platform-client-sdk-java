@@ -44,14 +44,14 @@ public class QuarterHourly  implements Serializable {
 
   
   /**
-   * List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete
+   * List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete. The downloaded data contains Newline Delimited JSON (NDJSON): one JSON object per line
    **/
   public QuarterHourly downloadUrls(List<String> downloadUrls) {
     this.downloadUrls = downloadUrls;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete")
+  @ApiModelProperty(example = "null", value = "List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete. The downloaded data contains Newline Delimited JSON (NDJSON): one JSON object per line")
   @JsonProperty("downloadUrls")
   public List<String> getDownloadUrls() {
     return downloadUrls;

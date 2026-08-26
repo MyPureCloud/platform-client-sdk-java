@@ -7481,32 +7481,28 @@ public class ConversationsApi {
    * Get message
    * 
    * @param messageId messageId (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @return MessageData
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MessageData getConversationsMessageDetails(String messageId, Boolean useNormalizedMessage) throws IOException, ApiException {
-    return  getConversationsMessageDetails(createGetConversationsMessageDetailsRequest(messageId, useNormalizedMessage));
+  public MessageData getConversationsMessageDetails(String messageId) throws IOException, ApiException {
+    return  getConversationsMessageDetails(createGetConversationsMessageDetailsRequest(messageId));
   }
 
   /**
    * Get message
    * 
    * @param messageId messageId (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @return MessageData
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MessageData> getConversationsMessageDetailsWithHttpInfo(String messageId, Boolean useNormalizedMessage) throws IOException {
-    return getConversationsMessageDetails(createGetConversationsMessageDetailsRequest(messageId, useNormalizedMessage).withHttpInfo());
+  public ApiResponse<MessageData> getConversationsMessageDetailsWithHttpInfo(String messageId) throws IOException {
+    return getConversationsMessageDetails(createGetConversationsMessageDetailsRequest(messageId).withHttpInfo());
   }
 
-  private GetConversationsMessageDetailsRequest createGetConversationsMessageDetailsRequest(String messageId, Boolean useNormalizedMessage) {
+  private GetConversationsMessageDetailsRequest createGetConversationsMessageDetailsRequest(String messageId) {
     return GetConversationsMessageDetailsRequest.builder()
             .withMessageId(messageId)
-
-            .withUseNormalizedMessage(useNormalizedMessage)
 
             .build();
   }
@@ -7564,13 +7560,12 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @return MessageData
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MessageData getConversationsMessageMessage(String conversationId, String messageId, Boolean useNormalizedMessage) throws IOException, ApiException {
-    return  getConversationsMessageMessage(createGetConversationsMessageMessageRequest(conversationId, messageId, useNormalizedMessage));
+  public MessageData getConversationsMessageMessage(String conversationId, String messageId) throws IOException, ApiException {
+    return  getConversationsMessageMessage(createGetConversationsMessageMessageRequest(conversationId, messageId));
   }
 
   /**
@@ -7578,21 +7573,18 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @return MessageData
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MessageData> getConversationsMessageMessageWithHttpInfo(String conversationId, String messageId, Boolean useNormalizedMessage) throws IOException {
-    return getConversationsMessageMessage(createGetConversationsMessageMessageRequest(conversationId, messageId, useNormalizedMessage).withHttpInfo());
+  public ApiResponse<MessageData> getConversationsMessageMessageWithHttpInfo(String conversationId, String messageId) throws IOException {
+    return getConversationsMessageMessage(createGetConversationsMessageMessageRequest(conversationId, messageId).withHttpInfo());
   }
 
-  private GetConversationsMessageMessageRequest createGetConversationsMessageMessageRequest(String conversationId, String messageId, Boolean useNormalizedMessage) {
+  private GetConversationsMessageMessageRequest createGetConversationsMessageMessageRequest(String conversationId, String messageId) {
     return GetConversationsMessageMessageRequest.builder()
             .withConversationId(conversationId)
 
             .withMessageId(messageId)
-
-            .withUseNormalizedMessage(useNormalizedMessage)
 
             .build();
   }
@@ -21280,13 +21272,12 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body Message (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @return MessageData
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MessageData postConversationsMessageCommunicationMessages(String conversationId, String communicationId, AdditionalMessage body, Boolean useNormalizedMessage) throws IOException, ApiException {
-    return  postConversationsMessageCommunicationMessages(createPostConversationsMessageCommunicationMessagesRequest(conversationId, communicationId, body, useNormalizedMessage));
+  public MessageData postConversationsMessageCommunicationMessages(String conversationId, String communicationId, AdditionalMessage body) throws IOException, ApiException {
+    return  postConversationsMessageCommunicationMessages(createPostConversationsMessageCommunicationMessagesRequest(conversationId, communicationId, body));
   }
 
   /**
@@ -21295,23 +21286,20 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body Message (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @return MessageData
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MessageData> postConversationsMessageCommunicationMessagesWithHttpInfo(String conversationId, String communicationId, AdditionalMessage body, Boolean useNormalizedMessage) throws IOException {
-    return postConversationsMessageCommunicationMessages(createPostConversationsMessageCommunicationMessagesRequest(conversationId, communicationId, body, useNormalizedMessage).withHttpInfo());
+  public ApiResponse<MessageData> postConversationsMessageCommunicationMessagesWithHttpInfo(String conversationId, String communicationId, AdditionalMessage body) throws IOException {
+    return postConversationsMessageCommunicationMessages(createPostConversationsMessageCommunicationMessagesRequest(conversationId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsMessageCommunicationMessagesRequest createPostConversationsMessageCommunicationMessagesRequest(String conversationId, String communicationId, AdditionalMessage body, Boolean useNormalizedMessage) {
+  private PostConversationsMessageCommunicationMessagesRequest createPostConversationsMessageCommunicationMessagesRequest(String conversationId, String communicationId, AdditionalMessage body) {
     return PostConversationsMessageCommunicationMessagesRequest.builder()
             .withConversationId(conversationId)
 
             .withCommunicationId(communicationId)
 
             .withBody(body)
-
-            .withUseNormalizedMessage(useNormalizedMessage)
 
             .build();
   }
@@ -22041,34 +22029,30 @@ public class ConversationsApi {
    * Get messages in batch
    * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
    * @param conversationId  (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @param body messageIds (optional)
    * @return TextMessageListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TextMessageListing postConversationsMessageMessagesBulk(String conversationId, Boolean useNormalizedMessage, List<String> body) throws IOException, ApiException {
-    return  postConversationsMessageMessagesBulk(createPostConversationsMessageMessagesBulkRequest(conversationId, useNormalizedMessage, body));
+  public TextMessageListing postConversationsMessageMessagesBulk(String conversationId, List<String> body) throws IOException, ApiException {
+    return  postConversationsMessageMessagesBulk(createPostConversationsMessageMessagesBulkRequest(conversationId, body));
   }
 
   /**
    * Get messages in batch
    * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
    * @param conversationId  (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @param body messageIds (optional)
    * @return TextMessageListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TextMessageListing> postConversationsMessageMessagesBulkWithHttpInfo(String conversationId, Boolean useNormalizedMessage, List<String> body) throws IOException {
-    return postConversationsMessageMessagesBulk(createPostConversationsMessageMessagesBulkRequest(conversationId, useNormalizedMessage, body).withHttpInfo());
+  public ApiResponse<TextMessageListing> postConversationsMessageMessagesBulkWithHttpInfo(String conversationId, List<String> body) throws IOException {
+    return postConversationsMessageMessagesBulk(createPostConversationsMessageMessagesBulkRequest(conversationId, body).withHttpInfo());
   }
 
-  private PostConversationsMessageMessagesBulkRequest createPostConversationsMessageMessagesBulkRequest(String conversationId, Boolean useNormalizedMessage, List<String> body) {
+  private PostConversationsMessageMessagesBulkRequest createPostConversationsMessageMessagesBulkRequest(String conversationId, List<String> body) {
     return PostConversationsMessageMessagesBulkRequest.builder()
             .withConversationId(conversationId)
-
-            .withUseNormalizedMessage(useNormalizedMessage)
 
             .withBody(body)
 
@@ -22544,32 +22528,28 @@ public class ConversationsApi {
    * Send an agentless outbound message
    * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and recipient specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
    * @param body Create agentless outbound messaging request (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (optional, default to false)
    * @return SendAgentlessOutboundMessageResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(SendAgentlessOutboundMessageRequest body, Boolean useNormalizedMessage) throws IOException, ApiException {
-    return  postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body, useNormalizedMessage));
+  public SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(SendAgentlessOutboundMessageRequest body) throws IOException, ApiException {
+    return  postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body));
   }
 
   /**
    * Send an agentless outbound message
    * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and recipient specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
    * @param body Create agentless outbound messaging request (required)
-   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (optional, default to false)
    * @return SendAgentlessOutboundMessageResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SendAgentlessOutboundMessageResponse> postConversationsMessagesAgentlessWithHttpInfo(SendAgentlessOutboundMessageRequest body, Boolean useNormalizedMessage) throws IOException {
-    return postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body, useNormalizedMessage).withHttpInfo());
+  public ApiResponse<SendAgentlessOutboundMessageResponse> postConversationsMessagesAgentlessWithHttpInfo(SendAgentlessOutboundMessageRequest body) throws IOException {
+    return postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body).withHttpInfo());
   }
 
-  private PostConversationsMessagesAgentlessRequest createPostConversationsMessagesAgentlessRequest(SendAgentlessOutboundMessageRequest body, Boolean useNormalizedMessage) {
+  private PostConversationsMessagesAgentlessRequest createPostConversationsMessagesAgentlessRequest(SendAgentlessOutboundMessageRequest body) {
     return PostConversationsMessagesAgentlessRequest.builder()
             .withBody(body)
-
-            .withUseNormalizedMessage(useNormalizedMessage)
 
             .build();
   }

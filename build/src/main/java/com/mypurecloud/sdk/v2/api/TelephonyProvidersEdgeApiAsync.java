@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.EdgeMetrics;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnostic;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticRequest;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticResponse;
+import com.mypurecloud.sdk.v2.model.EdgeOfflineConfiguration;
+import com.mypurecloud.sdk.v2.model.EdgeOfflineConfigurationResponse;
 import com.mypurecloud.sdk.v2.model.EdgeRebootParameters;
 import com.mypurecloud.sdk.v2.model.EdgeServiceStateRequest;
 import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;
@@ -72,11 +74,14 @@ import com.mypurecloud.sdk.v2.model.SiteConnections;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
 import com.mypurecloud.sdk.v2.model.SiteSearchRequest;
 import com.mypurecloud.sdk.v2.model.SitesSearchResponse;
+import com.mypurecloud.sdk.v2.model.TelephonySearchRequest;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
+import com.mypurecloud.sdk.v2.model.TrunkBasesSearchResponse;
 import com.mypurecloud.sdk.v2.model.TrunkEntityListing;
+import com.mypurecloud.sdk.v2.model.TrunkInstanceSearchResponse;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetrics;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
@@ -165,6 +170,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkMetrics
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
@@ -177,6 +183,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticTr
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeOfflineconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeRebootRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeSoftwareupdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeStatuscodeRequest;
@@ -195,6 +202,8 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboun
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunksSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeLogicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesAlertablepresencesRequest;
@@ -6234,6 +6243,81 @@ public class TelephonyProvidersEdgeApiAsync {
   }
 
   /**
+   * Get Trunk Base Settings listing for site
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdAsync(GetTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdRequest request, final AsyncApiCallback<TrunkBaseEntityListing> callback) {
+    try {
+      final SettableFuture<TrunkBaseEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBaseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Trunk Base Settings listing for site
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrunkBaseEntityListing>> getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrunkBaseEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrunkBaseEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBaseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBaseEntityListing> response = (ApiResponse<TrunkBaseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBaseEntityListing> response = (ApiResponse<TrunkBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
    * 
    * @param request the request object
@@ -7122,6 +7206,81 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EdgeLogsJobResponse> response = (ApiResponse<EdgeLogsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a file that can be used to configure a hardware Edge's settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeOfflineConfigurationResponse> postTelephonyProvidersEdgeOfflineconfigurationAsync(PostTelephonyProvidersEdgeOfflineconfigurationRequest request, final AsyncApiCallback<EdgeOfflineConfigurationResponse> callback) {
+    try {
+      final SettableFuture<EdgeOfflineConfigurationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeOfflineConfigurationResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeOfflineConfigurationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeOfflineConfigurationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a file that can be used to configure a hardware Edge's settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeOfflineConfigurationResponse>> postTelephonyProvidersEdgeOfflineconfigurationAsync(ApiRequest<EdgeOfflineConfiguration> request, final AsyncApiCallback<ApiResponse<EdgeOfflineConfigurationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeOfflineConfigurationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeOfflineConfigurationResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeOfflineConfigurationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeOfflineConfigurationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeOfflineConfigurationResponse> response = (ApiResponse<EdgeOfflineConfigurationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeOfflineConfigurationResponse> response = (ApiResponse<EdgeOfflineConfigurationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -8472,6 +8631,156 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search Trunk Base Settings
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrunkBasesSearchResponse> postTelephonyProvidersEdgesTrunkbasesettingsSearchAsync(PostTelephonyProvidersEdgesTrunkbasesettingsSearchRequest request, final AsyncApiCallback<TrunkBasesSearchResponse> callback) {
+    try {
+      final SettableFuture<TrunkBasesSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkBasesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<TrunkBasesSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBasesSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search Trunk Base Settings
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrunkBasesSearchResponse>> postTelephonyProvidersEdgesTrunkbasesettingsSearchAsync(ApiRequest<TelephonySearchRequest> request, final AsyncApiCallback<ApiResponse<TrunkBasesSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrunkBasesSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkBasesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<TrunkBasesSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBasesSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBasesSearchResponse> response = (ApiResponse<TrunkBasesSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBasesSearchResponse> response = (ApiResponse<TrunkBasesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search for trunks
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrunkInstanceSearchResponse> postTelephonyProvidersEdgesTrunksSearchAsync(PostTelephonyProvidersEdgesTrunksSearchRequest request, final AsyncApiCallback<TrunkInstanceSearchResponse> callback) {
+    try {
+      final SettableFuture<TrunkInstanceSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkInstanceSearchResponse>() {}, new AsyncApiCallback<ApiResponse<TrunkInstanceSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkInstanceSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search for trunks
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrunkInstanceSearchResponse>> postTelephonyProvidersEdgesTrunksSearchAsync(ApiRequest<TelephonySearchRequest> request, final AsyncApiCallback<ApiResponse<TrunkInstanceSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrunkInstanceSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkInstanceSearchResponse>() {}, new AsyncApiCallback<ApiResponse<TrunkInstanceSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkInstanceSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkInstanceSearchResponse> response = (ApiResponse<TrunkInstanceSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkInstanceSearchResponse> response = (ApiResponse<TrunkInstanceSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

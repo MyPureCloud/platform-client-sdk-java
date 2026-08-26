@@ -1,0 +1,339 @@
+package com.mypurecloud.sdk.v2.api.request;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiRequest;
+import com.mypurecloud.sdk.v2.ApiRequestBuilder;
+import com.mypurecloud.sdk.v2.ApiResponse;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.model.*;
+import com.mypurecloud.sdk.v2.Pair;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
+
+import com.mypurecloud.sdk.v2.model.BulkContactsEnrichRequest;
+import com.mypurecloud.sdk.v2.model.BulkContactsEnrichResponse;
+import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
+import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
+import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
+import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsEnrichRequest;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsEnrichResponse;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.Cluster;
+import com.mypurecloud.sdk.v2.model.ClusterList;
+import com.mypurecloud.sdk.v2.model.ClusterScan;
+import com.mypurecloud.sdk.v2.model.ClusterScanList;
+import com.mypurecloud.sdk.v2.model.ClusterScanStatistics;
+import com.mypurecloud.sdk.v2.model.ContactEnrichRequest;
+import com.mypurecloud.sdk.v2.model.ContactIdentifier;
+import com.mypurecloud.sdk.v2.model.ContactIdentifierListing;
+import com.mypurecloud.sdk.v2.model.ContactImportJobEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactImportJobRequest;
+import com.mypurecloud.sdk.v2.model.ContactImportJobResponse;
+import com.mypurecloud.sdk.v2.model.ContactImportJobStatusUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ContactImportJobStatusUpdateResponse;
+import com.mypurecloud.sdk.v2.model.ContactImportSettings;
+import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListing;
+import com.mypurecloud.sdk.v2.model.ContactsExport;
+import com.mypurecloud.sdk.v2.model.ContactsExportListing;
+import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
+import com.mypurecloud.sdk.v2.model.CsvJobRequest;
+import com.mypurecloud.sdk.v2.model.CsvJobResponse;
+import com.mypurecloud.sdk.v2.model.CsvSettings;
+import com.mypurecloud.sdk.v2.model.CsvUploadDetailsResponse;
+import com.mypurecloud.sdk.v2.model.CsvUploadPreviewResponse;
+import com.mypurecloud.sdk.v2.model.CsvUploadRequest;
+import com.mypurecloud.sdk.v2.model.CsvUploadResponse;
+import com.mypurecloud.sdk.v2.model.CursorContactListing;
+import com.mypurecloud.sdk.v2.model.CursorExternalSourceListing;
+import com.mypurecloud.sdk.v2.model.CursorNoteListing;
+import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
+import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
+import com.mypurecloud.sdk.v2.model.DataSchema;
+import com.mypurecloud.sdk.v2.model.DataSchemaListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ErrorInfo;
+import com.mypurecloud.sdk.v2.model.ExternalContact;
+import com.mypurecloud.sdk.v2.model.ExternalContactsPatchRequest;
+import com.mypurecloud.sdk.v2.model.ExternalOrganization;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationEnrichRequest;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifier;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifierListing;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
+import com.mypurecloud.sdk.v2.model.ExternalSource;
+import com.mypurecloud.sdk.v2.model.GraphSettings;
+import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.Listing;
+import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
+import com.mypurecloud.sdk.v2.model.MergeRequest;
+import com.mypurecloud.sdk.v2.model.Note;
+import com.mypurecloud.sdk.v2.model.NoteListing;
+import com.mypurecloud.sdk.v2.model.NotesExport;
+import com.mypurecloud.sdk.v2.model.NotesExportListing;
+import com.mypurecloud.sdk.v2.model.OrganizationsExport;
+import com.mypurecloud.sdk.v2.model.OrganizationsExportListing;
+import com.mypurecloud.sdk.v2.model.Relationship;
+import com.mypurecloud.sdk.v2.model.RelationshipListing;
+import com.mypurecloud.sdk.v2.model.RelationshipsExport;
+import com.mypurecloud.sdk.v2.model.RelationshipsExportListing;
+import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
+import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
+import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentResponse;
+
+public class GetExternalcontactsGraphsClusterscanClustersRequest {
+
+	private String scanId;
+	public String getScanId() {
+		return this.scanId;
+	}
+
+	public void setScanId(String scanId) {
+		this.scanId = scanId;
+	}
+
+	public GetExternalcontactsGraphsClusterscanClustersRequest withScanId(String scanId) {
+	    this.setScanId(scanId);
+	    return this;
+	} 
+
+	private Integer limit;
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+	}
+
+	public GetExternalcontactsGraphsClusterscanClustersRequest withLimit(Integer limit) {
+	    this.setLimit(limit);
+	    return this;
+	} 
+
+	private String cursor;
+	public String getCursor() {
+		return this.cursor;
+	}
+
+	public void setCursor(String cursor) {
+		this.cursor = cursor;
+	}
+
+	public GetExternalcontactsGraphsClusterscanClustersRequest withCursor(String cursor) {
+	    this.setCursor(cursor);
+	    return this;
+	} 
+
+	private List<String> divisionIds;
+	public List<String> getDivisionIds() {
+		return this.divisionIds;
+	}
+
+	public void setDivisionIds(List<String> divisionIds) {
+		this.divisionIds = divisionIds;
+	}
+
+	public GetExternalcontactsGraphsClusterscanClustersRequest withDivisionIds(List<String> divisionIds) {
+	    this.setDivisionIds(divisionIds);
+	    return this;
+	} 
+
+	private String mergeInfoStatus;
+	public String getMergeInfoStatus() {
+		return this.mergeInfoStatus;
+	}
+
+	public void setMergeInfoStatus(String mergeInfoStatus) {
+		this.mergeInfoStatus = mergeInfoStatus;
+	}
+
+	public GetExternalcontactsGraphsClusterscanClustersRequest withMergeInfoStatus(String mergeInfoStatus) {
+	    this.setMergeInfoStatus(mergeInfoStatus);
+	    return this;
+	} 
+
+	public enum mergeInfoStatusValues { 
+		AUTOQUEUED("AutoQueued"),
+		AUTOSUCCEEDED("AutoSucceeded"),
+		AUTOFAILED("AutoFailed"),
+		MANUALQUEUED("ManualQueued"),
+		MANUALSUCCEEDED("ManualSucceeded"),
+		MANUALFAILED("ManualFailed"),
+		NOTMERGED("NotMerged");
+
+		private String value;
+
+		mergeInfoStatusValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static mergeInfoStatusValues fromString(String key) {
+			if (key == null) return null;
+
+			for (mergeInfoStatusValues value : mergeInfoStatusValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return mergeInfoStatusValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+
+	}
+
+	private final Map<String, String> customHeaders = new HashMap<>();
+    public Map<String, String> getCustomHeaders() {
+        return this.customHeaders;
+    }
+
+    public void setCustomHeaders(Map<String, String> customHeaders) {
+        this.customHeaders.clear();
+        this.customHeaders.putAll(customHeaders);
+    }
+
+    public void addCustomHeader(String name, String value) {
+        this.customHeaders.put(name, value);
+    }
+
+    public GetExternalcontactsGraphsClusterscanClustersRequest withCustomHeader(String name, String value) {
+        this.addCustomHeader(name, value);
+        return this;
+    }
+
+    public ApiRequest<Void> withHttpInfo() {
+        
+        // verify the required parameter 'scanId' is set
+        if (this.scanId == null) {
+            throw new IllegalStateException("Missing the required parameter 'scanId' when building request for GetExternalcontactsGraphsClusterscanClustersRequest.");
+        }
+        
+
+        return ApiRequestBuilder.create("GET", "/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters")
+                .withPathParameter("scanId", scanId)
+        
+
+                .withQueryParameters("limit", "", limit)
+        
+
+                .withQueryParameters("cursor", "", cursor)
+        
+
+                .withQueryParameters("divisionIds", "multi", divisionIds)
+        
+
+                .withQueryParameters("mergeInfo.status", "", mergeInfoStatus)
+        
+		.withCustomHeaders(customHeaders)
+                .withContentTypes("application/json")
+                .withAccepts("application/json")
+                .withAuthNames("PureCloud OAuth")
+                .build();
+    }
+
+	public static Builder builder() {
+		return new Builder();
+	}
+
+
+	public static Builder builder(String scanId) {
+	    return new Builder()
+	            .withRequiredParams(scanId);
+	}
+
+
+	public static class Builder {
+		private final GetExternalcontactsGraphsClusterscanClustersRequest request;
+
+		private Builder() {
+			request = new GetExternalcontactsGraphsClusterscanClustersRequest();
+		}
+
+
+		public Builder withScanId(String scanId) {
+			request.setScanId(scanId);
+			return this;
+		}
+
+		public Builder withLimit(Integer limit) {
+			request.setLimit(limit);
+			return this;
+		}
+
+		public Builder withCursor(String cursor) {
+			request.setCursor(cursor);
+			return this;
+		}
+
+		public Builder withDivisionIds(List<String> divisionIds) {
+			request.setDivisionIds(divisionIds);
+			return this;
+		}
+
+		public Builder withMergeInfoStatus(String mergeInfoStatus) {
+			request.setMergeInfoStatus(mergeInfoStatus);
+			return this;
+		}
+
+
+
+		
+		public Builder withMergeInfoStatus(mergeInfoStatusValues mergeInfoStatus) {
+		    request.setMergeInfoStatus(mergeInfoStatus.toString());
+
+		    return this;
+		}
+
+
+
+		public Builder withRequiredParams(String scanId) {
+			request.setScanId(scanId);
+
+			return this;
+		}
+
+
+		public GetExternalcontactsGraphsClusterscanClustersRequest build() {
+            
+            // verify the required parameter 'scanId' is set
+            if (request.scanId == null) {
+                throw new IllegalStateException("Missing the required parameter 'scanId' when building request for GetExternalcontactsGraphsClusterscanClustersRequest.");
+            }
+            
+			return request;
+		}
+	}
+}

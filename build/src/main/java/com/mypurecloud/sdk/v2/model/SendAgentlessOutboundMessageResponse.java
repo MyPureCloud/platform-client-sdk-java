@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.MessageData;
-import com.mypurecloud.sdk.v2.model.SendMessagingTemplateRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -82,8 +81,6 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     }
   }
   private MessengerTypeEnum messengerType = null;
-  private String textBody = null;
-  private SendMessagingTemplateRequest messagingTemplate = null;
   private Boolean useExistingActiveConversation = null;
   private MessageData message = null;
   private Date timestamp = null;
@@ -181,42 +178,6 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
 
   /**
-   * The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)
-   **/
-  public SendAgentlessOutboundMessageResponse textBody(String textBody) {
-    this.textBody = textBody;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)")
-  @JsonProperty("textBody")
-  public String getTextBody() {
-    return textBody;
-  }
-  public void setTextBody(String textBody) {
-    this.textBody = textBody;
-  }
-
-
-  /**
-   * The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)
-   **/
-  public SendAgentlessOutboundMessageResponse messagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
-    this.messagingTemplate = messagingTemplate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)")
-  @JsonProperty("messagingTemplate")
-  public SendMessagingTemplateRequest getMessagingTemplate() {
-    return messagingTemplate;
-  }
-  public void setMessagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
-    this.messagingTemplate = messagingTemplate;
-  }
-
-
-  /**
    * Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
    **/
   public SendAgentlessOutboundMessageResponse useExistingActiveConversation(Boolean useExistingActiveConversation) {
@@ -299,8 +260,6 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
             Objects.equals(this.fromAddress, sendAgentlessOutboundMessageResponse.fromAddress) &&
             Objects.equals(this.toAddress, sendAgentlessOutboundMessageResponse.toAddress) &&
             Objects.equals(this.messengerType, sendAgentlessOutboundMessageResponse.messengerType) &&
-            Objects.equals(this.textBody, sendAgentlessOutboundMessageResponse.textBody) &&
-            Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageResponse.messagingTemplate) &&
             Objects.equals(this.useExistingActiveConversation, sendAgentlessOutboundMessageResponse.useExistingActiveConversation) &&
             Objects.equals(this.message, sendAgentlessOutboundMessageResponse.message) &&
             Objects.equals(this.timestamp, sendAgentlessOutboundMessageResponse.timestamp) &&
@@ -310,7 +269,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, textBody, messagingTemplate, useExistingActiveConversation, message, timestamp, user, selfUri);
+    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, useExistingActiveConversation, message, timestamp, user, selfUri);
   }
 
   @Override
@@ -323,8 +282,6 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
     sb.append("    messengerType: ").append(toIndentedString(messengerType)).append("\n");
-    sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
-    sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("    useExistingActiveConversation: ").append(toIndentedString(useExistingActiveConversation)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");

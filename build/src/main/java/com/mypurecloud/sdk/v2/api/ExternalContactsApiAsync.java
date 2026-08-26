@@ -31,6 +31,11 @@ import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.Cluster;
+import com.mypurecloud.sdk.v2.model.ClusterList;
+import com.mypurecloud.sdk.v2.model.ClusterScan;
+import com.mypurecloud.sdk.v2.model.ClusterScanList;
+import com.mypurecloud.sdk.v2.model.ClusterScanStatistics;
 import com.mypurecloud.sdk.v2.model.ContactEnrichRequest;
 import com.mypurecloud.sdk.v2.model.ContactIdentifier;
 import com.mypurecloud.sdk.v2.model.ContactIdentifierListing;
@@ -73,6 +78,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifierListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
+import com.mypurecloud.sdk.v2.model.GraphSettings;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
 import com.mypurecloud.sdk.v2.model.Listing;
 import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
@@ -124,6 +130,14 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasCore
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscanClusterRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscanClustersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscanStatisticsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscansRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscansLatestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsClusterscansLatestStatisticsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsGraphsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadDetailsRequest;
@@ -221,6 +235,8 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsExternalsourceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsGraphsClusterscanClusterMergeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsGraphsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportCsvSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportSettingRequest;
@@ -2412,6 +2428,622 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CursorExternalSourceListing> response = (ApiResponse<CursorExternalSourceListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ClusterScan> getExternalcontactsGraphsClusterscanAsync(GetExternalcontactsGraphsClusterscanRequest request, final AsyncApiCallback<ClusterScan> callback) {
+    try {
+      final SettableFuture<ClusterScan> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ClusterScan>() {}, new AsyncApiCallback<ApiResponse<ClusterScan>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScan> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ClusterScan>> getExternalcontactsGraphsClusterscanAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ClusterScan>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ClusterScan>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ClusterScan>() {}, new AsyncApiCallback<ApiResponse<ClusterScan>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScan> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a single cluster found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Cluster> getExternalcontactsGraphsClusterscanClusterAsync(GetExternalcontactsGraphsClusterscanClusterRequest request, final AsyncApiCallback<Cluster> callback) {
+    try {
+      final SettableFuture<Cluster> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Cluster>() {}, new AsyncApiCallback<ApiResponse<Cluster>>() {
+        @Override
+        public void onCompleted(ApiResponse<Cluster> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a single cluster found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Cluster>> getExternalcontactsGraphsClusterscanClusterAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Cluster>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Cluster>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Cluster>() {}, new AsyncApiCallback<ApiResponse<Cluster>>() {
+        @Override
+        public void onCompleted(ApiResponse<Cluster> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Cluster> response = (ApiResponse<Cluster>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Cluster> response = (ApiResponse<Cluster>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a list of clusters found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ClusterList> getExternalcontactsGraphsClusterscanClustersAsync(GetExternalcontactsGraphsClusterscanClustersRequest request, final AsyncApiCallback<ClusterList> callback) {
+    try {
+      final SettableFuture<ClusterList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ClusterList>() {}, new AsyncApiCallback<ApiResponse<ClusterList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a list of clusters found by a scan
+   * 
+   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ClusterList>> getExternalcontactsGraphsClusterscanClustersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ClusterList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ClusterList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ClusterList>() {}, new AsyncApiCallback<ApiResponse<ClusterList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterList> response = (ApiResponse<ClusterList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterList> response = (ApiResponse<ClusterList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the statistics about a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ClusterScanStatistics> getExternalcontactsGraphsClusterscanStatisticsAsync(GetExternalcontactsGraphsClusterscanStatisticsRequest request, final AsyncApiCallback<ClusterScanStatistics> callback) {
+    try {
+      final SettableFuture<ClusterScanStatistics> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ClusterScanStatistics>() {}, new AsyncApiCallback<ApiResponse<ClusterScanStatistics>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScanStatistics> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the statistics about a single cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ClusterScanStatistics>> getExternalcontactsGraphsClusterscanStatisticsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ClusterScanStatistics>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ClusterScanStatistics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ClusterScanStatistics>() {}, new AsyncApiCallback<ApiResponse<ClusterScanStatistics>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScanStatistics> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScanStatistics> response = (ApiResponse<ClusterScanStatistics>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScanStatistics> response = (ApiResponse<ClusterScanStatistics>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a list of cluster scans
+   * 
+   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ClusterScanList> getExternalcontactsGraphsClusterscansAsync(GetExternalcontactsGraphsClusterscansRequest request, final AsyncApiCallback<ClusterScanList> callback) {
+    try {
+      final SettableFuture<ClusterScanList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ClusterScanList>() {}, new AsyncApiCallback<ApiResponse<ClusterScanList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScanList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a list of cluster scans
+   * 
+   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ClusterScanList>> getExternalcontactsGraphsClusterscansAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ClusterScanList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ClusterScanList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ClusterScanList>() {}, new AsyncApiCallback<ApiResponse<ClusterScanList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScanList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScanList> response = (ApiResponse<ClusterScanList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScanList> response = (ApiResponse<ClusterScanList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ClusterScan> getExternalcontactsGraphsClusterscansLatestAsync(GetExternalcontactsGraphsClusterscansLatestRequest request, final AsyncApiCallback<ClusterScan> callback) {
+    try {
+      final SettableFuture<ClusterScan> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ClusterScan>() {}, new AsyncApiCallback<ApiResponse<ClusterScan>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScan> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ClusterScan>> getExternalcontactsGraphsClusterscansLatestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ClusterScan>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ClusterScan>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ClusterScan>() {}, new AsyncApiCallback<ApiResponse<ClusterScan>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScan> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the statistics about the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ClusterScanStatistics> getExternalcontactsGraphsClusterscansLatestStatisticsAsync(GetExternalcontactsGraphsClusterscansLatestStatisticsRequest request, final AsyncApiCallback<ClusterScanStatistics> callback) {
+    try {
+      final SettableFuture<ClusterScanStatistics> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ClusterScanStatistics>() {}, new AsyncApiCallback<ApiResponse<ClusterScanStatistics>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScanStatistics> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the statistics about the latest cluster scan
+   * 
+   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ClusterScanStatistics>> getExternalcontactsGraphsClusterscansLatestStatisticsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ClusterScanStatistics>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ClusterScanStatistics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ClusterScanStatistics>() {}, new AsyncApiCallback<ApiResponse<ClusterScanStatistics>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClusterScanStatistics> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScanStatistics> response = (ApiResponse<ClusterScanStatistics>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClusterScanStatistics> response = (ApiResponse<ClusterScanStatistics>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the org-wide settings for ExternalContact graph operations
+   * 
+   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GraphSettings> getExternalcontactsGraphsSettingsAsync(GetExternalcontactsGraphsSettingsRequest request, final AsyncApiCallback<GraphSettings> callback) {
+    try {
+      final SettableFuture<GraphSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GraphSettings>() {}, new AsyncApiCallback<ApiResponse<GraphSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<GraphSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the org-wide settings for ExternalContact graph operations
+   * 
+   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GraphSettings>> getExternalcontactsGraphsSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GraphSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GraphSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GraphSettings>() {}, new AsyncApiCallback<ApiResponse<GraphSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<GraphSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GraphSettings> response = (ApiResponse<GraphSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GraphSettings> response = (ApiResponse<GraphSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -9691,6 +10323,160 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Merge a single cluster found by a scan
+   * 
+   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Cluster> putExternalcontactsGraphsClusterscanClusterMergeAsync(PutExternalcontactsGraphsClusterscanClusterMergeRequest request, final AsyncApiCallback<Cluster> callback) {
+    try {
+      final SettableFuture<Cluster> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Cluster>() {}, new AsyncApiCallback<ApiResponse<Cluster>>() {
+        @Override
+        public void onCompleted(ApiResponse<Cluster> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Merge a single cluster found by a scan
+   * 
+   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Cluster>> putExternalcontactsGraphsClusterscanClusterMergeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Cluster>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Cluster>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Cluster>() {}, new AsyncApiCallback<ApiResponse<Cluster>>() {
+        @Override
+        public void onCompleted(ApiResponse<Cluster> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Cluster> response = (ApiResponse<Cluster>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Cluster> response = (ApiResponse<Cluster>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates the org-wide settings for ExternalContact graph operations
+   * 
+   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GraphSettings> putExternalcontactsGraphsSettingsAsync(PutExternalcontactsGraphsSettingsRequest request, final AsyncApiCallback<GraphSettings> callback) {
+    try {
+      final SettableFuture<GraphSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GraphSettings>() {}, new AsyncApiCallback<ApiResponse<GraphSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<GraphSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates the org-wide settings for ExternalContact graph operations
+   * 
+   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GraphSettings>> putExternalcontactsGraphsSettingsAsync(ApiRequest<GraphSettings> request, final AsyncApiCallback<ApiResponse<GraphSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GraphSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GraphSettings>() {}, new AsyncApiCallback<ApiResponse<GraphSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<GraphSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GraphSettings> response = (ApiResponse<GraphSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GraphSettings> response = (ApiResponse<GraphSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

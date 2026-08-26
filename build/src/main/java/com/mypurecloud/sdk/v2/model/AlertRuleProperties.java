@@ -48,6 +48,7 @@ public class AlertRuleProperties  implements Serializable {
     USERPRESENCE("UserPresence"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
     OPERATIONALCONSOLE("OperationalConsole"),
+    ANOMALY("Anomaly"),
     UNKNOWN("Unknown");
 
     private String value;

@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DecisionTableColumns;
 import com.mypurecloud.sdk.v2.model.DecisionTableContract;
+import com.mypurecloud.sdk.v2.model.DecisionTableSnapshot;
 import com.mypurecloud.sdk.v2.model.Division;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -91,8 +92,10 @@ public class DecisionTableVersion  implements Serializable {
   private Date datePublished = null;
   private AddressableEntityRef createdBy = null;
   private AddressableEntityRef publishedBy = null;
+  private String rollbackReason = null;
   private DecisionTableColumns columns = null;
   private DecisionTableContract contract = null;
+  private DecisionTableSnapshot snapshot = null;
   private String selfUri = null;
 
   public DecisionTableVersion() {
@@ -273,6 +276,13 @@ public class DecisionTableVersion  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Optional note recorded when this version was last published via rollback. Present while Published after rollback; cleared when Superseded. Not set on normal publish.")
+  @JsonProperty("rollbackReason")
+  public String getRollbackReason() {
+    return rollbackReason;
+  }
+
+
   /**
    * The column definitions of this decision table version.
    **/
@@ -309,6 +319,24 @@ public class DecisionTableVersion  implements Serializable {
   }
 
 
+  /**
+   * Snapshot metadata on this version, if one exists.
+   **/
+  public DecisionTableVersion snapshot(DecisionTableSnapshot snapshot) {
+    this.snapshot = snapshot;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Snapshot metadata on this version, if one exists.")
+  @JsonProperty("snapshot")
+  public DecisionTableSnapshot getSnapshot() {
+    return snapshot;
+  }
+  public void setSnapshot(DecisionTableSnapshot snapshot) {
+    this.snapshot = snapshot;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -339,14 +367,16 @@ public class DecisionTableVersion  implements Serializable {
             Objects.equals(this.datePublished, decisionTableVersion.datePublished) &&
             Objects.equals(this.createdBy, decisionTableVersion.createdBy) &&
             Objects.equals(this.publishedBy, decisionTableVersion.publishedBy) &&
+            Objects.equals(this.rollbackReason, decisionTableVersion.rollbackReason) &&
             Objects.equals(this.columns, decisionTableVersion.columns) &&
             Objects.equals(this.contract, decisionTableVersion.contract) &&
+            Objects.equals(this.snapshot, decisionTableVersion.snapshot) &&
             Objects.equals(this.selfUri, decisionTableVersion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, version, status, description, rowCount, rowsUri, dateCreated, dateModified, datePublished, createdBy, publishedBy, columns, contract, selfUri);
+    return Objects.hash(id, name, division, version, status, description, rowCount, rowsUri, dateCreated, dateModified, datePublished, createdBy, publishedBy, rollbackReason, columns, contract, snapshot, selfUri);
   }
 
   @Override
@@ -367,8 +397,10 @@ public class DecisionTableVersion  implements Serializable {
     sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    publishedBy: ").append(toIndentedString(publishedBy)).append("\n");
+    sb.append("    rollbackReason: ").append(toIndentedString(rollbackReason)).append("\n");
     sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
+    sb.append("    snapshot: ").append(toIndentedString(snapshot)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

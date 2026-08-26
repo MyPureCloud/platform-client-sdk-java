@@ -9,7 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAlertingRule**](AlertingApi#deleteAlertingRule) | Delete a rule. |
 | [**getAlertingAlert**](AlertingApi#getAlertingAlert) | Get an alert |
 | [**getAlertingRule**](AlertingApi#getAlertingRule) | Get a rule. |
-| [**patchAlertingAlert**](AlertingApi#patchAlertingAlert) | Allows an entity to mute/snooze an alert or update the unread status of the alert. |
+| [**patchAlertingAlert**](AlertingApi#patchAlertingAlert) | Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert. |
 | [**patchAlertingAlertsAll**](AlertingApi#patchAlertingAlertsAll) | Updates all alerts |
 | [**patchAlertingAlertsBulk**](AlertingApi#patchAlertingAlertsBulk) | Bulk alert updates |
 | [**patchAlertingRulesBulk**](AlertingApi#patchAlertingRulesBulk) | Bulk update of notification lists |
@@ -316,9 +316,9 @@ try {
 
 > [CommonAlert](CommonAlert) patchAlertingAlert(alertId, body)
 
-Allows an entity to mute/snooze an alert or update the unread status of the alert.
+Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
 
-Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals.
+Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals. Closing an alert will mark it as closed.
 
 Wraps PATCH /api/v2/alerting/alerts/{alertId}  
 
@@ -909,4 +909,4 @@ try {
 [**CommonRule**](CommonRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

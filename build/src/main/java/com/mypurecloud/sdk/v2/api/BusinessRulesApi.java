@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
+import com.mypurecloud.sdk.v2.model.CreateDecisionTableSnapshotRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableVersionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
@@ -41,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.DecisionTableVersion;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersionListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
+import com.mypurecloud.sdk.v2.model.RollbackDecisionTableVersionRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableImportJobRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
@@ -52,6 +54,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableExport
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableImportRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionRowRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesDecisiontableVersionSnapshotRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteBusinessrulesSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableExportRequest;
@@ -65,6 +68,8 @@ import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontableVersionsR
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesDecisiontablesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypesRequest;
@@ -76,11 +81,13 @@ import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableExportsR
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionExecuteRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRollbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionRowsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionSnapshotRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionSyncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontablesRequest;
@@ -484,6 +491,85 @@ public class BusinessRulesApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteBusinessrulesDecisiontableVersionRow(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes a decision table version snapshot
+   * 
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteBusinessrulesDecisiontableVersionSnapshot(String tableId, Integer tableVersion) throws IOException, ApiException {
+     deleteBusinessrulesDecisiontableVersionSnapshot(createDeleteBusinessrulesDecisiontableVersionSnapshotRequest(tableId, tableVersion));
+  }
+
+  /**
+   * Deletes a decision table version snapshot
+   * 
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteBusinessrulesDecisiontableVersionSnapshotWithHttpInfo(String tableId, Integer tableVersion) throws IOException {
+    return deleteBusinessrulesDecisiontableVersionSnapshot(createDeleteBusinessrulesDecisiontableVersionSnapshotRequest(tableId, tableVersion).withHttpInfo());
+  }
+
+  private DeleteBusinessrulesDecisiontableVersionSnapshotRequest createDeleteBusinessrulesDecisiontableVersionSnapshotRequest(String tableId, Integer tableVersion) {
+    return DeleteBusinessrulesDecisiontableVersionSnapshotRequest.builder()
+            .withTableId(tableId)
+
+            .withTableVersion(tableVersion)
+
+            .build();
+  }
+
+  /**
+   * Deletes a decision table version snapshot
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteBusinessrulesDecisiontableVersionSnapshot(DeleteBusinessrulesDecisiontableVersionSnapshotRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes a decision table version snapshot
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteBusinessrulesDecisiontableVersionSnapshot(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1258,12 +1344,14 @@ public class BusinessRulesApi {
    * @param tableId Table ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
+   * @param status Filter by version status. Repeatable. (optional)
+   * @param hasSnapshot When true, returns only versions that have snapshot metadata. (optional)
    * @return DecisionTableVersionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DecisionTableVersionListing getBusinessrulesDecisiontableVersions(String tableId, String after, String pageSize) throws IOException, ApiException {
-    return  getBusinessrulesDecisiontableVersions(createGetBusinessrulesDecisiontableVersionsRequest(tableId, after, pageSize));
+  public DecisionTableVersionListing getBusinessrulesDecisiontableVersions(String tableId, String after, String pageSize, List<String> status, Boolean hasSnapshot) throws IOException, ApiException {
+    return  getBusinessrulesDecisiontableVersions(createGetBusinessrulesDecisiontableVersionsRequest(tableId, after, pageSize, status, hasSnapshot));
   }
 
   /**
@@ -1272,20 +1360,26 @@ public class BusinessRulesApi {
    * @param tableId Table ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
+   * @param status Filter by version status. Repeatable. (optional)
+   * @param hasSnapshot When true, returns only versions that have snapshot metadata. (optional)
    * @return DecisionTableVersionListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DecisionTableVersionListing> getBusinessrulesDecisiontableVersionsWithHttpInfo(String tableId, String after, String pageSize) throws IOException {
-    return getBusinessrulesDecisiontableVersions(createGetBusinessrulesDecisiontableVersionsRequest(tableId, after, pageSize).withHttpInfo());
+  public ApiResponse<DecisionTableVersionListing> getBusinessrulesDecisiontableVersionsWithHttpInfo(String tableId, String after, String pageSize, List<String> status, Boolean hasSnapshot) throws IOException {
+    return getBusinessrulesDecisiontableVersions(createGetBusinessrulesDecisiontableVersionsRequest(tableId, after, pageSize, status, hasSnapshot).withHttpInfo());
   }
 
-  private GetBusinessrulesDecisiontableVersionsRequest createGetBusinessrulesDecisiontableVersionsRequest(String tableId, String after, String pageSize) {
+  private GetBusinessrulesDecisiontableVersionsRequest createGetBusinessrulesDecisiontableVersionsRequest(String tableId, String after, String pageSize, List<String> status, Boolean hasSnapshot) {
     return GetBusinessrulesDecisiontableVersionsRequest.builder()
             .withTableId(tableId)
 
             .withAfter(after)
 
             .withPageSize(pageSize)
+
+            .withStatus(status)
+
+            .withHasSnapshot(hasSnapshot)
 
             .build();
   }
@@ -1604,6 +1698,178 @@ public class BusinessRulesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a schema version
+   * 
+   * @param schemaId Schema ID (required)
+   * @param schemaVersion Schema version number (required)
+   * @return BusinessRulesDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessRulesDataSchema getBusinessrulesSchemaVersion(String schemaId, String schemaVersion) throws IOException, ApiException {
+    return  getBusinessrulesSchemaVersion(createGetBusinessrulesSchemaVersionRequest(schemaId, schemaVersion));
+  }
+
+  /**
+   * Get a schema version
+   * 
+   * @param schemaId Schema ID (required)
+   * @param schemaVersion Schema version number (required)
+   * @return BusinessRulesDataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessRulesDataSchema> getBusinessrulesSchemaVersionWithHttpInfo(String schemaId, String schemaVersion) throws IOException {
+    return getBusinessrulesSchemaVersion(createGetBusinessrulesSchemaVersionRequest(schemaId, schemaVersion).withHttpInfo());
+  }
+
+  private GetBusinessrulesSchemaVersionRequest createGetBusinessrulesSchemaVersionRequest(String schemaId, String schemaVersion) {
+    return GetBusinessrulesSchemaVersionRequest.builder()
+            .withSchemaId(schemaId)
+
+            .withSchemaVersion(schemaVersion)
+
+            .build();
+  }
+
+  /**
+   * Get a schema version
+   * 
+   * @param request The request object
+   * @return BusinessRulesDataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessRulesDataSchema getBusinessrulesSchemaVersion(GetBusinessrulesSchemaVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessRulesDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a schema version
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessRulesDataSchema> getBusinessrulesSchemaVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessRulesDataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List schema versions
+   * 
+   * @param schemaId Schema ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of items per page (must be between 1 and 100) (optional)
+   * @return BusinessRulesDataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessRulesDataSchemaListing getBusinessrulesSchemaVersions(String schemaId, String before, String after, String pageSize) throws IOException, ApiException {
+    return  getBusinessrulesSchemaVersions(createGetBusinessrulesSchemaVersionsRequest(schemaId, before, after, pageSize));
+  }
+
+  /**
+   * List schema versions
+   * 
+   * @param schemaId Schema ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of items per page (must be between 1 and 100) (optional)
+   * @return BusinessRulesDataSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessRulesDataSchemaListing> getBusinessrulesSchemaVersionsWithHttpInfo(String schemaId, String before, String after, String pageSize) throws IOException {
+    return getBusinessrulesSchemaVersions(createGetBusinessrulesSchemaVersionsRequest(schemaId, before, after, pageSize).withHttpInfo());
+  }
+
+  private GetBusinessrulesSchemaVersionsRequest createGetBusinessrulesSchemaVersionsRequest(String schemaId, String before, String after, String pageSize) {
+    return GetBusinessrulesSchemaVersionsRequest.builder()
+            .withSchemaId(schemaId)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * List schema versions
+   * 
+   * @param request The request object
+   * @return BusinessRulesDataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessRulesDataSchemaListing getBusinessrulesSchemaVersions(GetBusinessrulesSchemaVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessRulesDataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List schema versions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessRulesDataSchemaListing> getBusinessrulesSchemaVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessRulesDataSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessRulesDataSchemaListing> response = (ApiResponse<BusinessRulesDataSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessRulesDataSchemaListing> response = (ApiResponse<BusinessRulesDataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2507,6 +2773,92 @@ public class BusinessRulesApi {
   }
 
   /**
+   * Re-publish a superseded decision table version as the current published version
+   * 
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body Rollback request (optional)
+   * @return DecisionTableVersion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableVersion postBusinessrulesDecisiontableVersionRollback(String tableId, Integer tableVersion, RollbackDecisionTableVersionRequest body) throws IOException, ApiException {
+    return  postBusinessrulesDecisiontableVersionRollback(createPostBusinessrulesDecisiontableVersionRollbackRequest(tableId, tableVersion, body));
+  }
+
+  /**
+   * Re-publish a superseded decision table version as the current published version
+   * 
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body Rollback request (optional)
+   * @return DecisionTableVersion
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableVersion> postBusinessrulesDecisiontableVersionRollbackWithHttpInfo(String tableId, Integer tableVersion, RollbackDecisionTableVersionRequest body) throws IOException {
+    return postBusinessrulesDecisiontableVersionRollback(createPostBusinessrulesDecisiontableVersionRollbackRequest(tableId, tableVersion, body).withHttpInfo());
+  }
+
+  private PostBusinessrulesDecisiontableVersionRollbackRequest createPostBusinessrulesDecisiontableVersionRollbackRequest(String tableId, Integer tableVersion, RollbackDecisionTableVersionRequest body) {
+    return PostBusinessrulesDecisiontableVersionRollbackRequest.builder()
+            .withTableId(tableId)
+
+            .withTableVersion(tableVersion)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Re-publish a superseded decision table version as the current published version
+   * 
+   * @param request The request object
+   * @return DecisionTableVersion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableVersion postBusinessrulesDecisiontableVersionRollback(PostBusinessrulesDecisiontableVersionRollbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableVersion> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableVersion>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Re-publish a superseded decision table version as the current published version
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableVersion> postBusinessrulesDecisiontableVersionRollback(ApiRequest<RollbackDecisionTableVersionRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableVersion>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a decision table row
    * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
    * @param tableId Table ID (required)
@@ -2937,6 +3289,92 @@ public class BusinessRulesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DecisionTableRowListing> response = (ApiResponse<DecisionTableRowListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a decision table version snapshot
+   * 
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body Snapshot request (required)
+   * @return DecisionTableVersion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableVersion postBusinessrulesDecisiontableVersionSnapshot(String tableId, Integer tableVersion, CreateDecisionTableSnapshotRequest body) throws IOException, ApiException {
+    return  postBusinessrulesDecisiontableVersionSnapshot(createPostBusinessrulesDecisiontableVersionSnapshotRequest(tableId, tableVersion, body));
+  }
+
+  /**
+   * Creates a decision table version snapshot
+   * 
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param body Snapshot request (required)
+   * @return DecisionTableVersion
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableVersion> postBusinessrulesDecisiontableVersionSnapshotWithHttpInfo(String tableId, Integer tableVersion, CreateDecisionTableSnapshotRequest body) throws IOException {
+    return postBusinessrulesDecisiontableVersionSnapshot(createPostBusinessrulesDecisiontableVersionSnapshotRequest(tableId, tableVersion, body).withHttpInfo());
+  }
+
+  private PostBusinessrulesDecisiontableVersionSnapshotRequest createPostBusinessrulesDecisiontableVersionSnapshotRequest(String tableId, Integer tableVersion, CreateDecisionTableSnapshotRequest body) {
+    return PostBusinessrulesDecisiontableVersionSnapshotRequest.builder()
+            .withTableId(tableId)
+
+            .withTableVersion(tableVersion)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a decision table version snapshot
+   * 
+   * @param request The request object
+   * @return DecisionTableVersion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableVersion postBusinessrulesDecisiontableVersionSnapshot(PostBusinessrulesDecisiontableVersionSnapshotRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableVersion> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableVersion>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a decision table version snapshot
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableVersion> postBusinessrulesDecisiontableVersionSnapshot(ApiRequest<CreateDecisionTableSnapshotRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableVersion>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

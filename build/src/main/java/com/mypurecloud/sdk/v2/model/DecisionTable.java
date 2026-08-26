@@ -88,6 +88,7 @@ public class DecisionTable  implements Serializable {
     }
   }
   private LatestVersionStatusEnum latestVersionStatus = null;
+  private Integer snapshotCount = null;
   private DecisionTableColumns columns = null;
   private DecisionTableContract publishedContract = null;
   private String selfUri = null;
@@ -205,6 +206,13 @@ public class DecisionTable  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Number of snapshotted versions on this decision table.")
+  @JsonProperty("snapshotCount")
+  public Integer getSnapshotCount() {
+    return snapshotCount;
+  }
+
+
   /**
    * The column definitions of this decision table.
    **/
@@ -268,6 +276,7 @@ public class DecisionTable  implements Serializable {
             Objects.equals(this.published, decisionTable.published) &&
             Objects.equals(this.latest, decisionTable.latest) &&
             Objects.equals(this.latestVersionStatus, decisionTable.latestVersionStatus) &&
+            Objects.equals(this.snapshotCount, decisionTable.snapshotCount) &&
             Objects.equals(this.columns, decisionTable.columns) &&
             Objects.equals(this.publishedContract, decisionTable.publishedContract) &&
             Objects.equals(this.selfUri, decisionTable.selfUri);
@@ -275,7 +284,7 @@ public class DecisionTable  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, datePublished, published, latest, latestVersionStatus, columns, publishedContract, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, datePublished, published, latest, latestVersionStatus, snapshotCount, columns, publishedContract, selfUri);
   }
 
   @Override
@@ -293,6 +302,7 @@ public class DecisionTable  implements Serializable {
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    latest: ").append(toIndentedString(latest)).append("\n");
     sb.append("    latestVersionStatus: ").append(toIndentedString(latestVersionStatus)).append("\n");
+    sb.append("    snapshotCount: ").append(toIndentedString(snapshotCount)).append("\n");
     sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
     sb.append("    publishedContract: ").append(toIndentedString(publishedContract)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

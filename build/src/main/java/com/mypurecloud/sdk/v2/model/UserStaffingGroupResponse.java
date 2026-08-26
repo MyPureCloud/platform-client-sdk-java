@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.StaffingGroupReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.time.LocalDate;
 
 import java.io.Serializable;
 /**
@@ -24,6 +25,8 @@ import java.io.Serializable;
 
 public class UserStaffingGroupResponse  implements Serializable {
   
+  private LocalDate startDate = null;
+  private LocalDate endDate = null;
   private UserReference user = null;
   private StaffingGroupReference staffingGroup = null;
 
@@ -38,6 +41,42 @@ public class UserStaffingGroupResponse  implements Serializable {
   }
 
   
+  /**
+   * Effective start date of the user assignment in ISO-8601 format or empty value. Empty value means no limit on start-date.
+   **/
+  public UserStaffingGroupResponse startDate(LocalDate startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Effective start date of the user assignment in ISO-8601 format or empty value. Empty value means no limit on start-date.")
+  @JsonProperty("startDate")
+  public LocalDate getStartDate() {
+    return startDate;
+  }
+  public void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
+  }
+
+
+  /**
+   * Effective end date of the user assignment in ISO-8601 format or empty value. Empty value means no limit on end-date.
+   **/
+  public UserStaffingGroupResponse endDate(LocalDate endDate) {
+    this.endDate = endDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Effective end date of the user assignment in ISO-8601 format or empty value. Empty value means no limit on end-date.")
+  @JsonProperty("endDate")
+  public LocalDate getEndDate() {
+    return endDate;
+  }
+  public void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
+  }
+
+
   /**
    * The user associated with the staffing group
    **/
@@ -57,14 +96,14 @@ public class UserStaffingGroupResponse  implements Serializable {
 
 
   /**
-   * The current staffing group of the user
+   * The staffing group associated with the user
    **/
   public UserStaffingGroupResponse staffingGroup(StaffingGroupReference staffingGroup) {
     this.staffingGroup = staffingGroup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The current staffing group of the user")
+  @ApiModelProperty(example = "null", value = "The staffing group associated with the user")
   @JsonProperty("staffingGroup")
   public StaffingGroupReference getStaffingGroup() {
     return staffingGroup;
@@ -84,13 +123,15 @@ public class UserStaffingGroupResponse  implements Serializable {
     }
     UserStaffingGroupResponse userStaffingGroupResponse = (UserStaffingGroupResponse) o;
 
-    return Objects.equals(this.user, userStaffingGroupResponse.user) &&
+    return Objects.equals(this.startDate, userStaffingGroupResponse.startDate) &&
+            Objects.equals(this.endDate, userStaffingGroupResponse.endDate) &&
+            Objects.equals(this.user, userStaffingGroupResponse.user) &&
             Objects.equals(this.staffingGroup, userStaffingGroupResponse.staffingGroup);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, staffingGroup);
+    return Objects.hash(startDate, endDate, user, staffingGroup);
   }
 
   @Override
@@ -98,6 +139,8 @@ public class UserStaffingGroupResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserStaffingGroupResponse {\n");
     
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    staffingGroup: ").append(toIndentedString(staffingGroup)).append("\n");
     sb.append("}");

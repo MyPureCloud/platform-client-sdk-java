@@ -16,12 +16,14 @@ import com.mypurecloud.sdk.v2.model.FaxConfig;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
+import com.mypurecloud.sdk.v2.model.OutboundFaxStatus;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteFaxDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentContentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFaxFaxIdStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFaxDocumentRequest;
@@ -353,6 +355,84 @@ public class FaxApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FaxDocumentEntityListing> response = (ApiResponse<FaxDocumentEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get fax status
+   * Retrieves status for an outbound (sent) fax. Only the authenticated user who sent the fax can fetch its status; this operation does not expose inbound or other users' faxes. When the `result` field is present on the response body, it describes the terminal outcome of **transmitting** the fax to the remote endpoint (e.g. SUCCESS or FAILURE). 
+   * @param faxId Fax ID of an outbound fax sent by the authenticated user only. (required)
+   * @return OutboundFaxStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutboundFaxStatus getFaxFaxIdStatus(String faxId) throws IOException, ApiException {
+    return  getFaxFaxIdStatus(createGetFaxFaxIdStatusRequest(faxId));
+  }
+
+  /**
+   * Get fax status
+   * Retrieves status for an outbound (sent) fax. Only the authenticated user who sent the fax can fetch its status; this operation does not expose inbound or other users' faxes. When the `result` field is present on the response body, it describes the terminal outcome of **transmitting** the fax to the remote endpoint (e.g. SUCCESS or FAILURE). 
+   * @param faxId Fax ID of an outbound fax sent by the authenticated user only. (required)
+   * @return OutboundFaxStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutboundFaxStatus> getFaxFaxIdStatusWithHttpInfo(String faxId) throws IOException {
+    return getFaxFaxIdStatus(createGetFaxFaxIdStatusRequest(faxId).withHttpInfo());
+  }
+
+  private GetFaxFaxIdStatusRequest createGetFaxFaxIdStatusRequest(String faxId) {
+    return GetFaxFaxIdStatusRequest.builder()
+            .withFaxId(faxId)
+
+            .build();
+  }
+
+  /**
+   * Get fax status
+   * Retrieves status for an outbound (sent) fax. Only the authenticated user who sent the fax can fetch its status; this operation does not expose inbound or other users' faxes. When the `result` field is present on the response body, it describes the terminal outcome of **transmitting** the fax to the remote endpoint (e.g. SUCCESS or FAILURE). 
+   * @param request The request object
+   * @return OutboundFaxStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutboundFaxStatus getFaxFaxIdStatus(GetFaxFaxIdStatusRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutboundFaxStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundFaxStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get fax status
+   * Retrieves status for an outbound (sent) fax. Only the authenticated user who sent the fax can fetch its status; this operation does not expose inbound or other users' faxes. When the `result` field is present on the response body, it describes the terminal outcome of **transmitting** the fax to the remote endpoint (e.g. SUCCESS or FAILURE). 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutboundFaxStatus> getFaxFaxIdStatus(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundFaxStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundFaxStatus> response = (ApiResponse<OutboundFaxStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundFaxStatus> response = (ApiResponse<OutboundFaxStatus>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

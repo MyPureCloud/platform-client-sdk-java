@@ -13,9 +13,7 @@
 | **toAddress** | **String** | The recipient of the text message. |  [optional] |
 | **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction of the message. |  [optional] |
 | **messengerType** | [**MessengerTypeEnum**](#Enum--MessengerTypeEnum) | Type of text messenger. |  [optional] |
-| **textBody** | **String** | The body of the text message. (Deprecated - Instead use normalizedMessage.text) |  |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the message. |  |
-| **media** | [**List&lt;MessageMedia&gt;**](MessageMedia) | The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment) |  [optional] |
 | **normalizedMessage** | [**ConversationNormalizedMessage**](ConversationNormalizedMessage) | The message into normalized format |  [optional] |
 | **normalizedReceipts** | [**List&lt;ConversationNormalizedMessage&gt;**](ConversationNormalizedMessage) | The delivery event associated with this message in normalized format, if the message direction was outbound |  [optional] |
 | **createdBy** | [**User**](User) | User who sent this message. |  [optional] |
@@ -65,4 +63,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

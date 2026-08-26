@@ -21,6 +21,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AgentGreeting;
+import com.mypurecloud.sdk.v2.model.BulkPrefixesRequest;
+import com.mypurecloud.sdk.v2.model.BulkPrefixesResponse;
+import com.mypurecloud.sdk.v2.model.CallSimulationResult;
 import com.mypurecloud.sdk.v2.model.Callheader;
 import com.mypurecloud.sdk.v2.model.Callmessage;
 import com.mypurecloud.sdk.v2.model.CreateOrganizationLink;
@@ -35,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.OrganizationCallMetrics;
 import com.mypurecloud.sdk.v2.model.OrganizationLink;
 import com.mypurecloud.sdk.v2.model.OrganizationLinkApprovalRequest;
 import com.mypurecloud.sdk.v2.model.OrganizationLinkResponse;
+import com.mypurecloud.sdk.v2.model.PrefixListing;
 import com.mypurecloud.sdk.v2.model.RegionResponse;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
 import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;

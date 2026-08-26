@@ -27,9 +27,9 @@ public class TopicsDefinitionsProgramsMappingsEntityListing  implements Serializ
   
   private List<TopicsDefinitionsProgramMappings> entities = null;
   private Integer pageSize = null;
+  private String selfUri = null;
   private Integer pageCount = null;
   private String nextUri = null;
-  private String selfUri = null;
 
   public TopicsDefinitionsProgramsMappingsEntityListing() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -80,6 +80,23 @@ public class TopicsDefinitionsProgramsMappingsEntityListing  implements Serializ
 
   /**
    **/
+  public TopicsDefinitionsProgramsMappingsEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public TopicsDefinitionsProgramsMappingsEntityListing pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
@@ -112,23 +129,6 @@ public class TopicsDefinitionsProgramsMappingsEntityListing  implements Serializ
   }
 
 
-  /**
-   **/
-  public TopicsDefinitionsProgramsMappingsEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -141,14 +141,14 @@ public class TopicsDefinitionsProgramsMappingsEntityListing  implements Serializ
 
     return Objects.equals(this.entities, topicsDefinitionsProgramsMappingsEntityListing.entities) &&
             Objects.equals(this.pageSize, topicsDefinitionsProgramsMappingsEntityListing.pageSize) &&
+            Objects.equals(this.selfUri, topicsDefinitionsProgramsMappingsEntityListing.selfUri) &&
             Objects.equals(this.pageCount, topicsDefinitionsProgramsMappingsEntityListing.pageCount) &&
-            Objects.equals(this.nextUri, topicsDefinitionsProgramsMappingsEntityListing.nextUri) &&
-            Objects.equals(this.selfUri, topicsDefinitionsProgramsMappingsEntityListing.selfUri);
+            Objects.equals(this.nextUri, topicsDefinitionsProgramsMappingsEntityListing.nextUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageCount, nextUri, selfUri);
+    return Objects.hash(entities, pageSize, selfUri, pageCount, nextUri);
   }
 
   @Override
@@ -158,9 +158,9 @@ public class TopicsDefinitionsProgramsMappingsEntityListing  implements Serializ
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -11,6 +11,7 @@
 | **value** | **Double** | The value the metric will be compared to. |  |
 | **status** | **String** | The status of the entity corresponding to the metric. |  [optional] |
 | **topic** | **String** | The operational console topic corresponding to the metric. |  [optional] |
+| **characteristic** | [**CharacteristicEnum**](#Enum--CharacteristicEnum) | The anomaly detection characteristic being evaluated with respect to the metric. |  [optional] |
 | **entity** | [**CommonRulePredicateEntity**](CommonRulePredicateEntity) | The entity whose metric is being represented. |  |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the conversation the metric describes. |  [optional] |
 | **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric being evaluated. |  |
@@ -50,6 +51,16 @@
 | LTE | &quot;Lte&quot; | 
 | EQ | &quot;Eq&quot; | 
 | NE | &quot;Ne&quot; | 
+
+
+## Enum: CharacteristicEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DEVIATION | &quot;Deviation&quot; | 
+| SCORE | &quot;Score&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 
 
 ## Enum: MediaTypeEnum
@@ -101,4 +112,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

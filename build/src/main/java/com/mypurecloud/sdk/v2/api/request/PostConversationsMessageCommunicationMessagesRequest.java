@@ -288,20 +288,6 @@ public class PostConversationsMessageCommunicationMessagesRequest {
 	    return this;
 	} 
 
-	private Boolean useNormalizedMessage;
-	public Boolean getUseNormalizedMessage() {
-		return this.useNormalizedMessage;
-	}
-
-	public void setUseNormalizedMessage(Boolean useNormalizedMessage) {
-		this.useNormalizedMessage = useNormalizedMessage;
-	}
-
-	public PostConversationsMessageCommunicationMessagesRequest withUseNormalizedMessage(Boolean useNormalizedMessage) {
-	    this.setUseNormalizedMessage(useNormalizedMessage);
-	    return this;
-	} 
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -344,9 +330,6 @@ public class PostConversationsMessageCommunicationMessagesRequest {
         
                 .withPathParameter("communicationId", communicationId)
         
-
-                .withQueryParameters("useNormalizedMessage", "", useNormalizedMessage)
-        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -387,11 +370,6 @@ public class PostConversationsMessageCommunicationMessagesRequest {
 
 		public Builder withBody(AdditionalMessage body) {
 			request.setBody(body);
-			return this;
-		}
-
-		public Builder withUseNormalizedMessage(Boolean useNormalizedMessage) {
-			request.setUseNormalizedMessage(useNormalizedMessage);
 			return this;
 		}
 

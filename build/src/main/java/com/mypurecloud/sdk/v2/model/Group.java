@@ -187,6 +187,7 @@ public class Group  implements Serializable {
   private Boolean rolesEnabled = null;
   private Boolean includeOwners = null;
   private Boolean callsEnabled = null;
+  private String email = null;
   private List<User> owners = null;
   private String selfUri = null;
 
@@ -420,6 +421,24 @@ public class Group  implements Serializable {
 
 
   /**
+   * Email address for the group.
+   **/
+  public Group email(String email) {
+    this.email = email;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email address for the group.")
+  @JsonProperty("email")
+  public String getEmail() {
+    return email;
+  }
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+
+  /**
    * Owners of the group
    **/
   public Group owners(List<User> owners) {
@@ -469,13 +488,14 @@ public class Group  implements Serializable {
             Objects.equals(this.rolesEnabled, group.rolesEnabled) &&
             Objects.equals(this.includeOwners, group.includeOwners) &&
             Objects.equals(this.callsEnabled, group.callsEnabled) &&
+            Objects.equals(this.email, group.email) &&
             Objects.equals(this.owners, group.owners) &&
             Objects.equals(this.selfUri, group.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateModified, memberCount, state, version, type, images, addresses, rulesVisible, visibility, rolesEnabled, includeOwners, callsEnabled, owners, selfUri);
+    return Objects.hash(id, name, description, dateModified, memberCount, state, version, type, images, addresses, rulesVisible, visibility, rolesEnabled, includeOwners, callsEnabled, email, owners, selfUri);
   }
 
   @Override
@@ -498,6 +518,7 @@ public class Group  implements Serializable {
     sb.append("    rolesEnabled: ").append(toIndentedString(rolesEnabled)).append("\n");
     sb.append("    includeOwners: ").append(toIndentedString(includeOwners)).append("\n");
     sb.append("    callsEnabled: ").append(toIndentedString(callsEnabled)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

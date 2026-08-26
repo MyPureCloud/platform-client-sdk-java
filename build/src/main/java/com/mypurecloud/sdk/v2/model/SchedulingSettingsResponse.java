@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.MonthlyPlanningPeriodSettings;
 import com.mypurecloud.sdk.v2.model.PlanningPeriodSettings;
+import com.mypurecloud.sdk.v2.model.ScheduleVisibilitySettingsResponse;
 import com.mypurecloud.sdk.v2.model.ShrinkageOverrides;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -84,6 +85,7 @@ public class SchedulingSettingsResponse  implements Serializable {
     }
   }
   private StartDayOfWeekendEnum startDayOfWeekend = null;
+  private ScheduleVisibilitySettingsResponse scheduleVisibility = null;
 
   public SchedulingSettingsResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -204,6 +206,24 @@ public class SchedulingSettingsResponse  implements Serializable {
   }
 
 
+  /**
+   * Schedule visibility settings for agents
+   **/
+  public SchedulingSettingsResponse scheduleVisibility(ScheduleVisibilitySettingsResponse scheduleVisibility) {
+    this.scheduleVisibility = scheduleVisibility;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Schedule visibility settings for agents")
+  @JsonProperty("scheduleVisibility")
+  public ScheduleVisibilitySettingsResponse getScheduleVisibility() {
+    return scheduleVisibility;
+  }
+  public void setScheduleVisibility(ScheduleVisibilitySettingsResponse scheduleVisibility) {
+    this.scheduleVisibility = scheduleVisibility;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -219,12 +239,13 @@ public class SchedulingSettingsResponse  implements Serializable {
             Objects.equals(this.shrinkageOverrides, schedulingSettingsResponse.shrinkageOverrides) &&
             Objects.equals(this.planningPeriod, schedulingSettingsResponse.planningPeriod) &&
             Objects.equals(this.monthlyPlanningPeriod, schedulingSettingsResponse.monthlyPlanningPeriod) &&
-            Objects.equals(this.startDayOfWeekend, schedulingSettingsResponse.startDayOfWeekend);
+            Objects.equals(this.startDayOfWeekend, schedulingSettingsResponse.startDayOfWeekend) &&
+            Objects.equals(this.scheduleVisibility, schedulingSettingsResponse.scheduleVisibility);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxOccupancyPercentForDeferredWork, defaultShrinkagePercent, shrinkageOverrides, planningPeriod, monthlyPlanningPeriod, startDayOfWeekend);
+    return Objects.hash(maxOccupancyPercentForDeferredWork, defaultShrinkagePercent, shrinkageOverrides, planningPeriod, monthlyPlanningPeriod, startDayOfWeekend, scheduleVisibility);
   }
 
   @Override
@@ -238,6 +259,7 @@ public class SchedulingSettingsResponse  implements Serializable {
     sb.append("    planningPeriod: ").append(toIndentedString(planningPeriod)).append("\n");
     sb.append("    monthlyPlanningPeriod: ").append(toIndentedString(monthlyPlanningPeriod)).append("\n");
     sb.append("    startDayOfWeekend: ").append(toIndentedString(startDayOfWeekend)).append("\n");
+    sb.append("    scheduleVisibility: ").append(toIndentedString(scheduleVisibility)).append("\n");
     sb.append("}");
     return sb.toString();
   }

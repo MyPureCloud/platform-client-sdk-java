@@ -1,0 +1,95 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
+/**
+ * EdgeOfflineConfigurationResponse
+ */
+
+public class EdgeOfflineConfigurationResponse  implements Serializable {
+  
+  private String downloadUrl = null;
+
+  public EdgeOfflineConfigurationResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
+
+  public EdgeOfflineConfigurationResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+    }
+  }
+
+  
+  /**
+   * The URL to download the Edge configuration file. Save the file to a USB key and plug it into the Edge.
+   **/
+  public EdgeOfflineConfigurationResponse downloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The URL to download the Edge configuration file. Save the file to a USB key and plug it into the Edge.")
+  @JsonProperty("downloadUrl")
+  public String getDownloadUrl() {
+    return downloadUrl;
+  }
+  public void setDownloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    EdgeOfflineConfigurationResponse edgeOfflineConfigurationResponse = (EdgeOfflineConfigurationResponse) o;
+
+    return Objects.equals(this.downloadUrl, edgeOfflineConfigurationResponse.downloadUrl);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(downloadUrl);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class EdgeOfflineConfigurationResponse {\n");
+    
+    sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+
