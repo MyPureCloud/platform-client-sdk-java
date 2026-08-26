@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFaxDocument**](FaxApi#getFaxDocument) | Get a document. |
 | [**getFaxDocumentContent**](FaxApi#getFaxDocumentContent) | Download a fax document. |
 | [**getFaxDocuments**](FaxApi#getFaxDocuments) | Get a list of fax documents. |
+| [**getFaxFaxIdStatus**](FaxApi#getFaxFaxIdStatus) | Get fax status |
 | [**getFaxSettings**](FaxApi#getFaxSettings) | Get organization config for given organization |
 | [**getFaxSummary**](FaxApi#getFaxSummary) | Get fax summary |
 | [**putFaxDocument**](FaxApi#putFaxDocument) | Update a fax document. |
@@ -248,6 +249,67 @@ try {
 [**FaxDocumentEntityListing**](FaxDocumentEntityListing)
 
 
+# **getFaxFaxIdStatus**
+
+
+> [OutboundFaxStatus](OutboundFaxStatus) getFaxFaxIdStatus(faxId)
+
+Get fax status
+
+Retrieves status for an outbound (sent) fax. Only the authenticated user who sent the fax can fetch its status; this operation does not expose inbound or other users' faxes. When the `result` field is present on the response body, it describes the terminal outcome of **transmitting** the fax to the remote endpoint (e.g. SUCCESS or FAILURE). 
+
+Wraps GET /api/v2/fax/{faxId}/status  
+
+Requires ANY permissions: 
+
+* conversation:fax:send
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FaxApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+FaxApi apiInstance = new FaxApi();
+String faxId = "faxId_example"; // String | Fax ID of an outbound fax sent by the authenticated user only.
+try {
+    OutboundFaxStatus result = apiInstance.getFaxFaxIdStatus(faxId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FaxApi#getFaxFaxIdStatus");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **faxId** | **String**| Fax ID of an outbound fax sent by the authenticated user only. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutboundFaxStatus**](OutboundFaxStatus)
+
+
 # **getFaxSettings**
 
 
@@ -475,4 +537,4 @@ try {
 [**FaxConfig**](FaxConfig)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

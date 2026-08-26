@@ -12,6 +12,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyNumbersRouting**](TelephonyApi#getTelephonyNumbersRouting) | Get Number Routings by organizationId |
 | [**getTelephonyOrganizationLink**](TelephonyApi#getTelephonyOrganizationLink) | Get organization links |
 | [**getTelephonyOrganizationLinkRegions**](TelephonyApi#getTelephonyOrganizationLinkRegions) | Get all the replica regions by primary region |
+| [**getTelephonyPrefixes**](TelephonyApi#getTelephonyPrefixes) | Get prefixes |
+| [**getTelephonyPrefixesSimulateCall**](TelephonyApi#getTelephonyPrefixesSimulateCall) | Simulate call to test fraud prefix functionality |
 | [**getTelephonySettings**](TelephonyApi#getTelephonySettings) | Get the global telephony configuration. |
 | [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | Get a SIP message. |
 | [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | Get SIP headers. |
@@ -22,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTelephonyNumbersRoutingAll**](TelephonyApi#postTelephonyNumbersRoutingAll) | Re-route all numbers on an organization |
 | [**postTelephonyNumbersRoutingReset**](TelephonyApi#postTelephonyNumbersRoutingReset) | Reset routing for organization |
 | [**postTelephonyOrganizationLink**](TelephonyApi#postTelephonyOrganizationLink) | Create a link with an organization |
+| [**postTelephonyPrefixesBulk**](TelephonyApi#postTelephonyPrefixesBulk) | Bulk save prefixes |
 | [**postTelephonySiptracesDownload**](TelephonyApi#postTelephonySiptracesDownload) | Request a download of a pcap file to S3 |
 | [**putTelephonyAgentGreetings**](TelephonyApi#putTelephonyAgentGreetings) | Updates an agent's greetings. |
 | [**putTelephonyAgentsGreetingsMe**](TelephonyApi#putTelephonyAgentsGreetingsMe) | Updates the agent's own greetings. |
@@ -494,6 +497,132 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**List&lt;RegionResponse&gt;**](RegionResponse)
+
+
+# **getTelephonyPrefixes**
+
+
+> [PrefixListing](PrefixListing) getTelephonyPrefixes(type, before, after, pageSize, prefix)
+
+Get prefixes
+
+Wraps GET /api/v2/telephony/prefixes  
+
+Requires ALL permissions: 
+
+* telephony:prefix:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String type = "type_example"; // String | Filter by prefix type
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String prefix = "prefix_example"; // String | Filter by phone number prefix
+try {
+    PrefixListing result = apiInstance.getTelephonyPrefixes(type, before, after, pageSize, prefix);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonyPrefixes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **String**| Filter by prefix type |<br />**Values**: Allow, Block 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **prefix** | **String**| Filter by phone number prefix | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PrefixListing**](PrefixListing)
+
+
+# **getTelephonyPrefixesSimulateCall**
+
+
+> [CallSimulationResult](CallSimulationResult) getTelephonyPrefixesSimulateCall(number)
+
+Simulate call to test fraud prefix functionality
+
+Wraps GET /api/v2/telephony/prefixes/simulate/call  
+
+Requires ALL permissions: 
+
+* telephony:prefix:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String number = "number_example"; // String | Phone number to simulate
+try {
+    CallSimulationResult result = apiInstance.getTelephonyPrefixesSimulateCall(number);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonyPrefixesSimulateCall");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **String**| Phone number to simulate | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CallSimulationResult**](CallSimulationResult)
 
 
 # **getTelephonySettings**
@@ -1098,6 +1227,65 @@ try {
 [**OrganizationLink**](OrganizationLink)
 
 
+# **postTelephonyPrefixesBulk**
+
+
+> [BulkPrefixesResponse](BulkPrefixesResponse) postTelephonyPrefixesBulk(body)
+
+Bulk save prefixes
+
+Wraps POST /api/v2/telephony/prefixes/bulk  
+
+Requires ALL permissions: 
+
+* telephony:prefix:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+BulkPrefixesRequest body = new BulkPrefixesRequest(); // BulkPrefixesRequest | Bulk save request with list of prefixes
+try {
+    BulkPrefixesResponse result = apiInstance.postTelephonyPrefixesBulk(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#postTelephonyPrefixesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkPrefixesRequest**](BulkPrefixesRequest)| Bulk save request with list of prefixes | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkPrefixesResponse**](BulkPrefixesResponse)
+
+
 # **postTelephonySiptracesDownload**
 
 
@@ -1336,4 +1524,4 @@ try {
 [**TelephonySettings**](TelephonySettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

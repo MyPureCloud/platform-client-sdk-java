@@ -11,6 +11,7 @@
 | **planningPeriod** | [**PlanningPeriodSettings**](PlanningPeriodSettings) | Planning period settings for scheduling. Only one of planningPeriod or monthlyPlanningPeriod will be defined if applicable, but both can be null |  [optional] |
 | **monthlyPlanningPeriod** | [**MonthlyPlanningPeriodSettings**](MonthlyPlanningPeriodSettings) | Monthly planning period settings for scheduling. Only one of planningPeriod or monthlyPlanningPeriod will be defined if applicable, but both can be null |  [optional] |
 | **startDayOfWeekend** | [**StartDayOfWeekendEnum**](#Enum--StartDayOfWeekendEnum) | Start day of weekend for scheduling |  [optional] |
+| **scheduleVisibility** | [**ScheduleVisibilitySettingsResponse**](ScheduleVisibilitySettingsResponse) | Schedule visibility settings for agents |  [optional] |
 
 
 ## Enum: StartDayOfWeekendEnum
@@ -29,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

@@ -33,6 +33,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsContactsSchemasLimits**](ExternalContactsApi#getExternalcontactsContactsSchemasLimits) | Get quantitative limits on schemas |
 | [**getExternalcontactsExternalsource**](ExternalContactsApi#getExternalcontactsExternalsource) | Fetch an External Source |
 | [**getExternalcontactsExternalsources**](ExternalContactsApi#getExternalcontactsExternalsources) | Fetch a list of External Sources |
+| [**getExternalcontactsGraphsClusterscan**](ExternalContactsApi#getExternalcontactsGraphsClusterscan) | Returns a single cluster scan |
+| [**getExternalcontactsGraphsClusterscanCluster**](ExternalContactsApi#getExternalcontactsGraphsClusterscanCluster) | Returns a single cluster found by a scan |
+| [**getExternalcontactsGraphsClusterscanClusters**](ExternalContactsApi#getExternalcontactsGraphsClusterscanClusters) | Returns a list of clusters found by a scan |
+| [**getExternalcontactsGraphsClusterscanStatistics**](ExternalContactsApi#getExternalcontactsGraphsClusterscanStatistics) | Returns the statistics about a single cluster scan |
+| [**getExternalcontactsGraphsClusterscans**](ExternalContactsApi#getExternalcontactsGraphsClusterscans) | Returns a list of cluster scans |
+| [**getExternalcontactsGraphsClusterscansLatest**](ExternalContactsApi#getExternalcontactsGraphsClusterscansLatest) | Returns the latest cluster scan |
+| [**getExternalcontactsGraphsClusterscansLatestStatistics**](ExternalContactsApi#getExternalcontactsGraphsClusterscansLatestStatistics) | Returns the statistics about the latest cluster scan |
+| [**getExternalcontactsGraphsSettings**](ExternalContactsApi#getExternalcontactsGraphsSettings) | Returns the org-wide settings for ExternalContact graph operations |
 | [**getExternalcontactsImportCsvSetting**](ExternalContactsApi#getExternalcontactsImportCsvSetting) | Get settings for CSV import |
 | [**getExternalcontactsImportCsvSettings**](ExternalContactsApi#getExternalcontactsImportCsvSettings) | Retrieve all settings for organization filtered by externalSettingsId if provided |
 | [**getExternalcontactsImportCsvUploadDetails**](ExternalContactsApi#getExternalcontactsImportCsvUploadDetails) | Get details for CSV upload |
@@ -130,6 +138,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putExternalcontactsContactsSchema**](ExternalContactsApi#putExternalcontactsContactsSchema) | Update a schema |
 | [**putExternalcontactsConversation**](ExternalContactsApi#putExternalcontactsConversation) | Associate/disassociate an external contact with a conversation |
 | [**putExternalcontactsExternalsource**](ExternalContactsApi#putExternalcontactsExternalsource) | Update an External Source |
+| [**putExternalcontactsGraphsClusterscanClusterMerge**](ExternalContactsApi#putExternalcontactsGraphsClusterscanClusterMerge) | Merge a single cluster found by a scan |
+| [**putExternalcontactsGraphsSettings**](ExternalContactsApi#putExternalcontactsGraphsSettings) | Updates the org-wide settings for ExternalContact graph operations |
 | [**putExternalcontactsImportCsvSetting**](ExternalContactsApi#putExternalcontactsImportCsvSetting) | Update settings for CSV import |
 | [**putExternalcontactsImportJob**](ExternalContactsApi#putExternalcontactsImportJob) | Update Job's workflow status |
 | [**putExternalcontactsImportSetting**](ExternalContactsApi#putExternalcontactsImportSetting) | Update settings |
@@ -1901,6 +1911,502 @@ try {
 ### Return type
 
 [**CursorExternalSourceListing**](CursorExternalSourceListing)
+
+
+# **getExternalcontactsGraphsClusterscan**
+
+
+> [ClusterScan](ClusterScan) getExternalcontactsGraphsClusterscan(scanId, expand)
+
+Returns a single cluster scan
+
+getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}  
+
+Requires ANY permissions: 
+
+* externalContacts:graphClusterScan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String scanId = "scanId_example"; // String | Cluster scan ID
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
+try {
+    ClusterScan result = apiInstance.getExternalcontactsGraphsClusterscan(scanId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsGraphsClusterscan");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scanId** | **String**| Cluster scan ID | 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: statistics.aggregated 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClusterScan**](ClusterScan)
+
+
+# **getExternalcontactsGraphsClusterscanCluster**
+
+
+> [Cluster](Cluster) getExternalcontactsGraphsClusterscanCluster(scanId, clusterId)
+
+Returns a single cluster found by a scan
+
+getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}  
+
+Requires ANY permissions: 
+
+* externalContacts:graphCluster:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String scanId = "scanId_example"; // String | Cluster scan ID
+String clusterId = "clusterId_example"; // String | Cluster ID
+try {
+    Cluster result = apiInstance.getExternalcontactsGraphsClusterscanCluster(scanId, clusterId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsGraphsClusterscanCluster");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scanId** | **String**| Cluster scan ID | 
+| **clusterId** | **String**| Cluster ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Cluster**](Cluster)
+
+
+# **getExternalcontactsGraphsClusterscanClusters**
+
+
+> [ClusterList](ClusterList) getExternalcontactsGraphsClusterscanClusters(scanId, limit, cursor, divisionIds, mergeInfoStatus)
+
+Returns a list of clusters found by a scan
+
+getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters  
+
+Requires ANY permissions: 
+
+* externalContacts:graphCluster:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String scanId = "scanId_example"; // String | Cluster scan ID
+Integer limit = 20; // Integer | Max number of records to return (must be between 1 and 100)
+String cursor = "cursor_example"; // String | Cursor to continue scanning
+List<String> divisionIds = Arrays.asList(null); // List<String> | which divisions to filter results to, up to 50 (defaults to all divisions use has access to)
+String mergeInfoStatus = "mergeInfoStatus_example"; // String | which merge statuses to filter results to
+try {
+    ClusterList result = apiInstance.getExternalcontactsGraphsClusterscanClusters(scanId, limit, cursor, divisionIds, mergeInfoStatus);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsGraphsClusterscanClusters");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scanId** | **String**| Cluster scan ID | 
+| **limit** | **Integer**| Max number of records to return (must be between 1 and 100) | [optional] [default to 20] 
+| **cursor** | **String**| Cursor to continue scanning | [optional] 
+| **divisionIds** | [**List&lt;String&gt;**](String)| which divisions to filter results to, up to 50 (defaults to all divisions use has access to) | [optional] 
+| **mergeInfoStatus** | **String**| which merge statuses to filter results to | [optional]<br />**Values**: AutoQueued, AutoSucceeded, AutoFailed, ManualQueued, ManualSucceeded, ManualFailed, NotMerged 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClusterList**](ClusterList)
+
+
+# **getExternalcontactsGraphsClusterscanStatistics**
+
+
+> [ClusterScanStatistics](ClusterScanStatistics) getExternalcontactsGraphsClusterscanStatistics(scanId)
+
+Returns the statistics about a single cluster scan
+
+getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics  
+
+Requires ANY permissions: 
+
+* externalContacts:graphClusterScan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String scanId = "scanId_example"; // String | Cluster scan ID
+try {
+    ClusterScanStatistics result = apiInstance.getExternalcontactsGraphsClusterscanStatistics(scanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsGraphsClusterscanStatistics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scanId** | **String**| Cluster scan ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClusterScanStatistics**](ClusterScanStatistics)
+
+
+# **getExternalcontactsGraphsClusterscans**
+
+
+> [ClusterScanList](ClusterScanList) getExternalcontactsGraphsClusterscans(limit, cursor, expand)
+
+Returns a list of cluster scans
+
+getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans  
+
+Requires ANY permissions: 
+
+* externalContacts:graphClusterScan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+Integer limit = 20; // Integer | Max number of records to return (must be between 1 and 100)
+String cursor = "cursor_example"; // String | Cursor to continue scanning
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
+try {
+    ClusterScanList result = apiInstance.getExternalcontactsGraphsClusterscans(limit, cursor, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsGraphsClusterscans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **Integer**| Max number of records to return (must be between 1 and 100) | [optional] [default to 20] 
+| **cursor** | **String**| Cursor to continue scanning | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: statistics.aggregated 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClusterScanList**](ClusterScanList)
+
+
+# **getExternalcontactsGraphsClusterscansLatest**
+
+
+> [ClusterScan](ClusterScan) getExternalcontactsGraphsClusterscansLatest(expand)
+
+Returns the latest cluster scan
+
+getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/latest  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
+try {
+    ClusterScan result = apiInstance.getExternalcontactsGraphsClusterscansLatest(expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsGraphsClusterscansLatest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: statistics.aggregated 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClusterScan**](ClusterScan)
+
+
+# **getExternalcontactsGraphsClusterscansLatestStatistics**
+
+
+> [ClusterScanStatistics](ClusterScanStatistics) getExternalcontactsGraphsClusterscansLatestStatistics()
+
+Returns the statistics about the latest cluster scan
+
+getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/latest/statistics  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+try {
+    ClusterScanStatistics result = apiInstance.getExternalcontactsGraphsClusterscansLatestStatistics();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsGraphsClusterscansLatestStatistics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ClusterScanStatistics**](ClusterScanStatistics)
+
+
+# **getExternalcontactsGraphsSettings**
+
+
+> [GraphSettings](GraphSettings) getExternalcontactsGraphsSettings()
+
+Returns the org-wide settings for ExternalContact graph operations
+
+getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/settings  
+
+Requires ANY permissions: 
+
+* externalContacts:graphSettingsGlobal:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+try {
+    GraphSettings result = apiInstance.getExternalcontactsGraphsSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsGraphsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**GraphSettings**](GraphSettings)
 
 
 # **getExternalcontactsImportCsvSetting**
@@ -7843,6 +8349,130 @@ try {
 [**ExternalSource**](ExternalSource)
 
 
+# **putExternalcontactsGraphsClusterscanClusterMerge**
+
+
+> [Cluster](Cluster) putExternalcontactsGraphsClusterscanClusterMerge(scanId, clusterId)
+
+Merge a single cluster found by a scan
+
+putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge  
+
+Requires ANY permissions: 
+
+* externalContacts:graphCluster:merge
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String scanId = "scanId_example"; // String | Cluster scan ID
+String clusterId = "clusterId_example"; // String | Cluster ID
+try {
+    Cluster result = apiInstance.putExternalcontactsGraphsClusterscanClusterMerge(scanId, clusterId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsGraphsClusterscanClusterMerge");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scanId** | **String**| Cluster scan ID | 
+| **clusterId** | **String**| Cluster ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Cluster**](Cluster)
+
+
+# **putExternalcontactsGraphsSettings**
+
+
+> [GraphSettings](GraphSettings) putExternalcontactsGraphsSettings(body)
+
+Updates the org-wide settings for ExternalContact graph operations
+
+putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/externalcontacts/graphs/settings  
+
+Requires ANY permissions: 
+
+* externalContacts:graphSettingsGlobal:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+GraphSettings body = new GraphSettings(); // GraphSettings | OrgConfiguration
+try {
+    GraphSettings result = apiInstance.putExternalcontactsGraphsSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsGraphsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**GraphSettings**](GraphSettings)| OrgConfiguration | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GraphSettings**](GraphSettings)
+
+
 # **putExternalcontactsImportCsvSetting**
 
 
@@ -8336,4 +8966,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

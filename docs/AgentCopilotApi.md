@@ -78,9 +78,10 @@ Get information about the support of features for all the languages or only for 
 
 Wraps GET /api/v2/assistants/copilot/featuresupport  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * assistants:copilot:view
+* assistants:copilotFeatureSupport:view
 
 ### Example
 
@@ -189,4 +190,4 @@ try {
 [**Copilot**](Copilot)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_

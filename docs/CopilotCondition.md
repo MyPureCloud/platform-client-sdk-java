@@ -18,8 +18,9 @@
 | CONVERSATIONSTART | &quot;ConversationStart&quot; | 
 | CONVERSATIONTRANSFER | &quot;ConversationTransfer&quot; | 
 | CONVERSATIONEND | &quot;ConversationEnd&quot; | 
+| SENTIMENT | &quot;Sentiment&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:260.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
