@@ -175,7 +175,8 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     WEBMESSAGING("WEBMESSAGING"),
     OPEN("OPEN"),
     INSTAGRAM("INSTAGRAM"),
-    APPLE("APPLE");
+    APPLE("APPLE"),
+    LINKEDIN("LINKEDIN");
 
     private String value;
 

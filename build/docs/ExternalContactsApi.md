@@ -115,6 +115,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsContactsExports**](ExternalContactsApi#postExternalcontactsContactsExports) | Create bulk export |
 | [**postExternalcontactsContactsMerge**](ExternalContactsApi#postExternalcontactsContactsMerge) | Merge up to 25 contacts into a new contact record |
 | [**postExternalcontactsContactsSchemas**](ExternalContactsApi#postExternalcontactsContactsSchemas) | Create a schema |
+| [**postExternalcontactsContactsSearch**](ExternalContactsApi#postExternalcontactsContactsSearch) | Search for external contacts |
 | [**postExternalcontactsExternalsources**](ExternalContactsApi#postExternalcontactsExternalsources) | Create an External Source |
 | [**postExternalcontactsIdentifierlookup**](ExternalContactsApi#postExternalcontactsIdentifierlookup) | Fetch a contact using an identifier type and value. |
 | [**postExternalcontactsIdentifierlookupContacts**](ExternalContactsApi#postExternalcontactsIdentifierlookupContacts) | Fetch a contact using an identifier type and value. |
@@ -6942,6 +6943,65 @@ try {
 [**DataSchema**](DataSchema)
 
 
+# **postExternalcontactsContactsSearch**
+
+
+> [ContactListing](ContactListing) postExternalcontactsContactsSearch(body)
+
+Search for external contacts
+
+Wraps POST /api/v2/externalcontacts/contacts/search  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+ContactSearchRequest body = new ContactSearchRequest(); // ContactSearchRequest | Search request
+try {
+    ContactListing result = apiInstance.postExternalcontactsContactsSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsContactsSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactSearchRequest**](ContactSearchRequest)| Search request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListing**](ContactListing)
+
+
 # **postExternalcontactsExternalsources**
 
 
@@ -8966,4 +9026,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

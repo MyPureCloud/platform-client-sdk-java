@@ -22,7 +22,6 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
-import com.mypurecloud.sdk.v2.model.DataIngestionRuleResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.DataIngestionRuleStatusPatchRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EscalationRuleRequest;
@@ -31,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.GenericDataIngestionRuleResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleVersionResponse;

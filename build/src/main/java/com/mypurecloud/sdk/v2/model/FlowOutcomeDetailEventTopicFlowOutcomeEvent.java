@@ -170,7 +170,8 @@ public class FlowOutcomeDetailEventTopicFlowOutcomeEvent  implements Serializabl
     WEBMESSAGING("WEBMESSAGING"),
     OPEN("OPEN"),
     INSTAGRAM("INSTAGRAM"),
-    APPLE("APPLE");
+    APPLE("APPLE"),
+    LINKEDIN("LINKEDIN");
 
     private String value;
 

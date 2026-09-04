@@ -146,6 +146,224 @@ public class AnalyticsAgentStateAgentResponse  implements Serializable {
   private RoutingStatusEnum routingStatus = null;
   private Date routingStatusDate = null;
   private Boolean isOutOfOffice = null;
+  private String managementUnitId = null;
+  private String businessUnitId = null;
+
+  private static class AdherenceStateEnumDeserializer extends StdDeserializer<AdherenceStateEnum> {
+    public AdherenceStateEnumDeserializer() {
+      super(AdherenceStateEnumDeserializer.class);
+    }
+
+    @Override
+    public AdherenceStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AdherenceStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The user's adherence state
+   */
+ @JsonDeserialize(using = AdherenceStateEnumDeserializer.class)
+  public enum AdherenceStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INADHERENCE("InAdherence"),
+    OUTOFADHERENCE("OutOfAdherence"),
+    UNSCHEDULED("Unscheduled"),
+    UNKNOWN("Unknown"),
+    IGNORED("Ignored"),
+    EXPLAINED("Explained");
+
+    private String value;
+
+    AdherenceStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AdherenceStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AdherenceStateEnum value : AdherenceStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AdherenceStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AdherenceStateEnum adherenceState = null;
+
+  private static class AdherenceImpactEnumDeserializer extends StdDeserializer<AdherenceImpactEnum> {
+    public AdherenceImpactEnumDeserializer() {
+      super(AdherenceImpactEnumDeserializer.class);
+    }
+
+    @Override
+    public AdherenceImpactEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AdherenceImpactEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The user's adherence impact
+   */
+ @JsonDeserialize(using = AdherenceImpactEnumDeserializer.class)
+  public enum AdherenceImpactEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    POSITIVE("Positive"),
+    NEGATIVE("Negative"),
+    NEUTRAL("Neutral"),
+    UNKNOWN("Unknown");
+
+    private String value;
+
+    AdherenceImpactEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AdherenceImpactEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AdherenceImpactEnum value : AdherenceImpactEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AdherenceImpactEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AdherenceImpactEnum adherenceImpact = null;
+  private Date adherenceDate = null;
+  private String scheduledActivityCodeId = null;
+
+  private static class ScheduledActivityCategoryEnumDeserializer extends StdDeserializer<ScheduledActivityCategoryEnum> {
+    public ScheduledActivityCategoryEnumDeserializer() {
+      super(ScheduledActivityCategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public ScheduledActivityCategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ScheduledActivityCategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The user's scheduled activity category
+   */
+ @JsonDeserialize(using = ScheduledActivityCategoryEnumDeserializer.class)
+  public enum ScheduledActivityCategoryEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ONQUEUEWORK("OnQueueWork"),
+    BREAK("Break"),
+    MEAL("Meal"),
+    MEETING("Meeting"),
+    OFFQUEUEWORK("OffQueueWork"),
+    TIMEOFF("TimeOff"),
+    TRAINING("Training"),
+    UNAVAILABLE("Unavailable"),
+    UNSCHEDULED("Unscheduled"),
+    UNKNOWN("Unknown");
+
+    private String value;
+
+    ScheduledActivityCategoryEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ScheduledActivityCategoryEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ScheduledActivityCategoryEnum value : ScheduledActivityCategoryEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ScheduledActivityCategoryEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ScheduledActivityCategoryEnum scheduledActivityCategory = null;
+
+  private static class ActualActivityCategoryEnumDeserializer extends StdDeserializer<ActualActivityCategoryEnum> {
+    public ActualActivityCategoryEnumDeserializer() {
+      super(ActualActivityCategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public ActualActivityCategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActualActivityCategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The user's actual activity category
+   */
+ @JsonDeserialize(using = ActualActivityCategoryEnumDeserializer.class)
+  public enum ActualActivityCategoryEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ONQUEUEWORK("OnQueueWork"),
+    BREAK("Break"),
+    MEAL("Meal"),
+    MEETING("Meeting"),
+    OFFQUEUEWORK("OffQueueWork"),
+    TIMEOFF("TimeOff"),
+    TRAINING("Training"),
+    UNAVAILABLE("Unavailable"),
+    UNSCHEDULED("Unscheduled"),
+    UNKNOWN("Unknown");
+
+    private String value;
+
+    ActualActivityCategoryEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ActualActivityCategoryEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ActualActivityCategoryEnum value : ActualActivityCategoryEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ActualActivityCategoryEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ActualActivityCategoryEnum actualActivityCategory = null;
 
   public AnalyticsAgentStateAgentResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -376,6 +594,150 @@ public class AnalyticsAgentStateAgentResponse  implements Serializable {
   }
 
 
+  /**
+   * The id of the user's management unit
+   **/
+  public AnalyticsAgentStateAgentResponse managementUnitId(String managementUnitId) {
+    this.managementUnitId = managementUnitId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the user's management unit")
+  @JsonProperty("managementUnitId")
+  public String getManagementUnitId() {
+    return managementUnitId;
+  }
+  public void setManagementUnitId(String managementUnitId) {
+    this.managementUnitId = managementUnitId;
+  }
+
+
+  /**
+   * The id of the user's business unit
+   **/
+  public AnalyticsAgentStateAgentResponse businessUnitId(String businessUnitId) {
+    this.businessUnitId = businessUnitId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the user's business unit")
+  @JsonProperty("businessUnitId")
+  public String getBusinessUnitId() {
+    return businessUnitId;
+  }
+  public void setBusinessUnitId(String businessUnitId) {
+    this.businessUnitId = businessUnitId;
+  }
+
+
+  /**
+   * The user's adherence state
+   **/
+  public AnalyticsAgentStateAgentResponse adherenceState(AdherenceStateEnum adherenceState) {
+    this.adherenceState = adherenceState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user's adherence state")
+  @JsonProperty("adherenceState")
+  public AdherenceStateEnum getAdherenceState() {
+    return adherenceState;
+  }
+  public void setAdherenceState(AdherenceStateEnum adherenceState) {
+    this.adherenceState = adherenceState;
+  }
+
+
+  /**
+   * The user's adherence impact
+   **/
+  public AnalyticsAgentStateAgentResponse adherenceImpact(AdherenceImpactEnum adherenceImpact) {
+    this.adherenceImpact = adherenceImpact;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user's adherence impact")
+  @JsonProperty("adherenceImpact")
+  public AdherenceImpactEnum getAdherenceImpact() {
+    return adherenceImpact;
+  }
+  public void setAdherenceImpact(AdherenceImpactEnum adherenceImpact) {
+    this.adherenceImpact = adherenceImpact;
+  }
+
+
+  /**
+   * The timestamp for when the user's adherence state began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public AnalyticsAgentStateAgentResponse adherenceDate(Date adherenceDate) {
+    this.adherenceDate = adherenceDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp for when the user's adherence state began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("adherenceDate")
+  public Date getAdherenceDate() {
+    return adherenceDate;
+  }
+  public void setAdherenceDate(Date adherenceDate) {
+    this.adherenceDate = adherenceDate;
+  }
+
+
+  /**
+   * The id of the user's scheduled activity code
+   **/
+  public AnalyticsAgentStateAgentResponse scheduledActivityCodeId(String scheduledActivityCodeId) {
+    this.scheduledActivityCodeId = scheduledActivityCodeId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the user's scheduled activity code")
+  @JsonProperty("scheduledActivityCodeId")
+  public String getScheduledActivityCodeId() {
+    return scheduledActivityCodeId;
+  }
+  public void setScheduledActivityCodeId(String scheduledActivityCodeId) {
+    this.scheduledActivityCodeId = scheduledActivityCodeId;
+  }
+
+
+  /**
+   * The user's scheduled activity category
+   **/
+  public AnalyticsAgentStateAgentResponse scheduledActivityCategory(ScheduledActivityCategoryEnum scheduledActivityCategory) {
+    this.scheduledActivityCategory = scheduledActivityCategory;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user's scheduled activity category")
+  @JsonProperty("scheduledActivityCategory")
+  public ScheduledActivityCategoryEnum getScheduledActivityCategory() {
+    return scheduledActivityCategory;
+  }
+  public void setScheduledActivityCategory(ScheduledActivityCategoryEnum scheduledActivityCategory) {
+    this.scheduledActivityCategory = scheduledActivityCategory;
+  }
+
+
+  /**
+   * The user's actual activity category
+   **/
+  public AnalyticsAgentStateAgentResponse actualActivityCategory(ActualActivityCategoryEnum actualActivityCategory) {
+    this.actualActivityCategory = actualActivityCategory;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user's actual activity category")
+  @JsonProperty("actualActivityCategory")
+  public ActualActivityCategoryEnum getActualActivityCategory() {
+    return actualActivityCategory;
+  }
+  public void setActualActivityCategory(ActualActivityCategoryEnum actualActivityCategory) {
+    this.actualActivityCategory = actualActivityCategory;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -397,12 +759,20 @@ public class AnalyticsAgentStateAgentResponse  implements Serializable {
             Objects.equals(this.presenceDate, analyticsAgentStateAgentResponse.presenceDate) &&
             Objects.equals(this.routingStatus, analyticsAgentStateAgentResponse.routingStatus) &&
             Objects.equals(this.routingStatusDate, analyticsAgentStateAgentResponse.routingStatusDate) &&
-            Objects.equals(this.isOutOfOffice, analyticsAgentStateAgentResponse.isOutOfOffice);
+            Objects.equals(this.isOutOfOffice, analyticsAgentStateAgentResponse.isOutOfOffice) &&
+            Objects.equals(this.managementUnitId, analyticsAgentStateAgentResponse.managementUnitId) &&
+            Objects.equals(this.businessUnitId, analyticsAgentStateAgentResponse.businessUnitId) &&
+            Objects.equals(this.adherenceState, analyticsAgentStateAgentResponse.adherenceState) &&
+            Objects.equals(this.adherenceImpact, analyticsAgentStateAgentResponse.adherenceImpact) &&
+            Objects.equals(this.adherenceDate, analyticsAgentStateAgentResponse.adherenceDate) &&
+            Objects.equals(this.scheduledActivityCodeId, analyticsAgentStateAgentResponse.scheduledActivityCodeId) &&
+            Objects.equals(this.scheduledActivityCategory, analyticsAgentStateAgentResponse.scheduledActivityCategory) &&
+            Objects.equals(this.actualActivityCategory, analyticsAgentStateAgentResponse.actualActivityCategory);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, divisionId, userName, managerId, sessionCount, sessions, systemPresence, organizationPresenceId, presenceDate, routingStatus, routingStatusDate, isOutOfOffice);
+    return Objects.hash(userId, divisionId, userName, managerId, sessionCount, sessions, systemPresence, organizationPresenceId, presenceDate, routingStatus, routingStatusDate, isOutOfOffice, managementUnitId, businessUnitId, adherenceState, adherenceImpact, adherenceDate, scheduledActivityCodeId, scheduledActivityCategory, actualActivityCategory);
   }
 
   @Override
@@ -422,6 +792,14 @@ public class AnalyticsAgentStateAgentResponse  implements Serializable {
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
     sb.append("    routingStatusDate: ").append(toIndentedString(routingStatusDate)).append("\n");
     sb.append("    isOutOfOffice: ").append(toIndentedString(isOutOfOffice)).append("\n");
+    sb.append("    managementUnitId: ").append(toIndentedString(managementUnitId)).append("\n");
+    sb.append("    businessUnitId: ").append(toIndentedString(businessUnitId)).append("\n");
+    sb.append("    adherenceState: ").append(toIndentedString(adherenceState)).append("\n");
+    sb.append("    adherenceImpact: ").append(toIndentedString(adherenceImpact)).append("\n");
+    sb.append("    adherenceDate: ").append(toIndentedString(adherenceDate)).append("\n");
+    sb.append("    scheduledActivityCodeId: ").append(toIndentedString(scheduledActivityCodeId)).append("\n");
+    sb.append("    scheduledActivityCategory: ").append(toIndentedString(scheduledActivityCategory)).append("\n");
+    sb.append("    actualActivityCategory: ").append(toIndentedString(actualActivityCategory)).append("\n");
     sb.append("}");
     return sb.toString();
   }

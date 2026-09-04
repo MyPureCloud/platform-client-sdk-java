@@ -87,8 +87,8 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
   private Date dateModified = null;
   private String platform = null;
   private MessageInfo ingestionRuleInfo = null;
-  private List<String> countries = null;
   private String searchTerms = null;
+  private List<String> countries = null;
   private String selfUri = null;
 
   public TwitterDataIngestionRuleVersionResponse() {
@@ -234,24 +234,6 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
 
 
   /**
-   * ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
-   **/
-  public TwitterDataIngestionRuleVersionResponse countries(List<String> countries) {
-    this.countries = countries;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.")
-  @JsonProperty("countries")
-  public List<String> getCountries() {
-    return countries;
-  }
-  public void setCountries(List<String> countries) {
-    this.countries = countries;
-  }
-
-
-  /**
    * Search terms for X (formally Twitter).
    **/
   public TwitterDataIngestionRuleVersionResponse searchTerms(String searchTerms) {
@@ -266,6 +248,24 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
   }
   public void setSearchTerms(String searchTerms) {
     this.searchTerms = searchTerms;
+  }
+
+
+  /**
+   * ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
+   **/
+  public TwitterDataIngestionRuleVersionResponse countries(List<String> countries) {
+    this.countries = countries;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.")
+  @JsonProperty("countries")
+  public List<String> getCountries() {
+    return countries;
+  }
+  public void setCountries(List<String> countries) {
+    this.countries = countries;
   }
 
 
@@ -295,14 +295,14 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
             Objects.equals(this.dateModified, twitterDataIngestionRuleVersionResponse.dateModified) &&
             Objects.equals(this.platform, twitterDataIngestionRuleVersionResponse.platform) &&
             Objects.equals(this.ingestionRuleInfo, twitterDataIngestionRuleVersionResponse.ingestionRuleInfo) &&
-            Objects.equals(this.countries, twitterDataIngestionRuleVersionResponse.countries) &&
             Objects.equals(this.searchTerms, twitterDataIngestionRuleVersionResponse.searchTerms) &&
+            Objects.equals(this.countries, twitterDataIngestionRuleVersionResponse.countries) &&
             Objects.equals(this.selfUri, twitterDataIngestionRuleVersionResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, ingestionRuleInfo, countries, searchTerms, selfUri);
+    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, ingestionRuleInfo, searchTerms, countries, selfUri);
   }
 
   @Override
@@ -319,8 +319,8 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("    ingestionRuleInfo: ").append(toIndentedString(ingestionRuleInfo)).append("\n");
-    sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    searchTerms: ").append(toIndentedString(searchTerms)).append("\n");
+    sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

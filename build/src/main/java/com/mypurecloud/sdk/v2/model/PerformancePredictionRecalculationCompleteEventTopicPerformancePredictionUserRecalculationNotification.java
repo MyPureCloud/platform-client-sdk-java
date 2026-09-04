@@ -26,6 +26,7 @@ public class PerformancePredictionRecalculationCompleteEventTopicPerformancePred
   
   private String operationId = null;
   private String downloadUrl = null;
+  private String allocationDownloadUrl = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -125,6 +126,23 @@ public class PerformancePredictionRecalculationCompleteEventTopicPerformancePred
 
   /**
    **/
+  public PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification allocationDownloadUrl(String allocationDownloadUrl) {
+    this.allocationDownloadUrl = allocationDownloadUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("allocationDownloadUrl")
+  public String getAllocationDownloadUrl() {
+    return allocationDownloadUrl;
+  }
+  public void setAllocationDownloadUrl(String allocationDownloadUrl) {
+    this.allocationDownloadUrl = allocationDownloadUrl;
+  }
+
+
+  /**
+   **/
   public PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification state(StateEnum state) {
     this.state = state;
     return this;
@@ -169,13 +187,14 @@ public class PerformancePredictionRecalculationCompleteEventTopicPerformancePred
 
     return Objects.equals(this.operationId, performancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.operationId) &&
             Objects.equals(this.downloadUrl, performancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.downloadUrl) &&
+            Objects.equals(this.allocationDownloadUrl, performancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.allocationDownloadUrl) &&
             Objects.equals(this.state, performancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.state) &&
             Objects.equals(this.error, performancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operationId, downloadUrl, state, error);
+    return Objects.hash(operationId, downloadUrl, allocationDownloadUrl, state, error);
   }
 
   @Override
@@ -185,6 +204,7 @@ public class PerformancePredictionRecalculationCompleteEventTopicPerformancePred
     
     sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("    allocationDownloadUrl: ").append(toIndentedString(allocationDownloadUrl)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");

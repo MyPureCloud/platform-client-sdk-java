@@ -12,7 +12,6 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
-import com.mypurecloud.sdk.v2.model.DataIngestionRuleResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.DataIngestionRuleStatusPatchRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EscalationRuleRequest;
@@ -21,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.GenericDataIngestionRuleResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.GoogleBusinessProfileDataIngestionRuleVersionResponse;
@@ -1361,11 +1361,11 @@ public class SocialMediaApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
-   * @return DataIngestionRuleResponseEntityListing
+   * @return GenericDataIngestionRuleResponseEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataIngestionRuleResponseEntityListing getSocialmediaTopicDataingestionrules(String topicId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException, ApiException {
+  public GenericDataIngestionRuleResponseEntityListing getSocialmediaTopicDataingestionrules(String topicId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException, ApiException {
     return  getSocialmediaTopicDataingestionrules(createGetSocialmediaTopicDataingestionrulesRequest(topicId, pageNumber, pageSize, includeDeleted));
   }
 
@@ -1376,10 +1376,10 @@ public class SocialMediaApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
-   * @return DataIngestionRuleResponseEntityListing
+   * @return GenericDataIngestionRuleResponseEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataIngestionRuleResponseEntityListing> getSocialmediaTopicDataingestionrulesWithHttpInfo(String topicId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException {
+  public ApiResponse<GenericDataIngestionRuleResponseEntityListing> getSocialmediaTopicDataingestionrulesWithHttpInfo(String topicId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException {
     return getSocialmediaTopicDataingestionrules(createGetSocialmediaTopicDataingestionrulesRequest(topicId, pageNumber, pageSize, includeDeleted).withHttpInfo());
   }
 
@@ -1400,13 +1400,13 @@ public class SocialMediaApi {
    * Retrieve all social topic data ingestion rules with pagination.
    * 
    * @param request The request object
-   * @return DataIngestionRuleResponseEntityListing
+   * @return GenericDataIngestionRuleResponseEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataIngestionRuleResponseEntityListing getSocialmediaTopicDataingestionrules(GetSocialmediaTopicDataingestionrulesRequest request) throws IOException, ApiException {
+  public GenericDataIngestionRuleResponseEntityListing getSocialmediaTopicDataingestionrules(GetSocialmediaTopicDataingestionrulesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DataIngestionRuleResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataIngestionRuleResponseEntityListing>() {});
+      ApiResponse<GenericDataIngestionRuleResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GenericDataIngestionRuleResponseEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1422,13 +1422,13 @@ public class SocialMediaApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataIngestionRuleResponseEntityListing> getSocialmediaTopicDataingestionrules(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<GenericDataIngestionRuleResponseEntityListing> getSocialmediaTopicDataingestionrules(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DataIngestionRuleResponseEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<GenericDataIngestionRuleResponseEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DataIngestionRuleResponseEntityListing> response = (ApiResponse<DataIngestionRuleResponseEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<GenericDataIngestionRuleResponseEntityListing> response = (ApiResponse<GenericDataIngestionRuleResponseEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1439,7 +1439,7 @@ public class SocialMediaApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DataIngestionRuleResponseEntityListing> response = (ApiResponse<DataIngestionRuleResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<GenericDataIngestionRuleResponseEntityListing> response = (ApiResponse<GenericDataIngestionRuleResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

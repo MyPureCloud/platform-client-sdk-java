@@ -189,6 +189,55 @@ public class V2MobiusRulesTopicConditionRulePredicate  implements Serializable {
   private MediaTypeEnum mediaType = null;
   private String topic = null;
 
+  private static class CharacteristicEnumDeserializer extends StdDeserializer<CharacteristicEnum> {
+    public CharacteristicEnumDeserializer() {
+      super(CharacteristicEnumDeserializer.class);
+    }
+
+    @Override
+    public CharacteristicEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CharacteristicEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets characteristic
+   */
+ @JsonDeserialize(using = CharacteristicEnumDeserializer.class)
+  public enum CharacteristicEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    DEVIATION("Deviation"),
+    SCORE("Score");
+
+    private String value;
+
+    CharacteristicEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CharacteristicEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CharacteristicEnum value : CharacteristicEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CharacteristicEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CharacteristicEnum characteristic = null;
+
   private static class ComparisonOperatorEnumDeserializer extends StdDeserializer<ComparisonOperatorEnum> {
     public ComparisonOperatorEnumDeserializer() {
       super(ComparisonOperatorEnumDeserializer.class);
@@ -408,6 +457,23 @@ public class V2MobiusRulesTopicConditionRulePredicate  implements Serializable {
 
   /**
    **/
+  public V2MobiusRulesTopicConditionRulePredicate characteristic(CharacteristicEnum characteristic) {
+    this.characteristic = characteristic;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("characteristic")
+  public CharacteristicEnum getCharacteristic() {
+    return characteristic;
+  }
+  public void setCharacteristic(CharacteristicEnum characteristic) {
+    this.characteristic = characteristic;
+  }
+
+
+  /**
+   **/
   public V2MobiusRulesTopicConditionRulePredicate comparisonOperator(ComparisonOperatorEnum comparisonOperator) {
     this.comparisonOperator = comparisonOperator;
     return this;
@@ -442,12 +508,13 @@ public class V2MobiusRulesTopicConditionRulePredicate  implements Serializable {
             Objects.equals(this.status, v2MobiusRulesTopicConditionRulePredicate.status) &&
             Objects.equals(this.mediaType, v2MobiusRulesTopicConditionRulePredicate.mediaType) &&
             Objects.equals(this.topic, v2MobiusRulesTopicConditionRulePredicate.topic) &&
+            Objects.equals(this.characteristic, v2MobiusRulesTopicConditionRulePredicate.characteristic) &&
             Objects.equals(this.comparisonOperator, v2MobiusRulesTopicConditionRulePredicate.comparisonOperator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, entity, metric, metricType, metricValueType, value, status, mediaType, topic, comparisonOperator);
+    return Objects.hash(id, entity, metric, metricType, metricValueType, value, status, mediaType, topic, characteristic, comparisonOperator);
   }
 
   @Override
@@ -464,6 +531,7 @@ public class V2MobiusRulesTopicConditionRulePredicate  implements Serializable {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
+    sb.append("    characteristic: ").append(toIndentedString(characteristic)).append("\n");
     sb.append("    comparisonOperator: ").append(toIndentedString(comparisonOperator)).append("\n");
     sb.append("}");
     return sb.toString();

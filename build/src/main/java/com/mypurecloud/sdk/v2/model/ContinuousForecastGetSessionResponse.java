@@ -39,7 +39,7 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
     }
   }
   /**
-   * State of the latest session
+   * The state of the latest session
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
@@ -88,14 +88,14 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
 
   
   /**
-   * Latest session ID of the business unit
+   * The ID of the latest session, regardless of the session's status
    **/
   public ContinuousForecastGetSessionResponse sessionId(String sessionId) {
     this.sessionId = sessionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Latest session ID of the business unit")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the latest session, regardless of the session's status")
   @JsonProperty("sessionId")
   public String getSessionId() {
     return sessionId;
@@ -106,14 +106,14 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
 
 
   /**
-   * Last successful session ID of the business unit
+   * The ID of the last session that has a state of Complete
    **/
   public ContinuousForecastGetSessionResponse lastSuccessfulSessionId(String lastSuccessfulSessionId) {
     this.lastSuccessfulSessionId = lastSuccessfulSessionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Last successful session ID of the business unit")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the last session that has a state of Complete")
   @JsonProperty("lastSuccessfulSessionId")
   public String getLastSuccessfulSessionId() {
     return lastSuccessfulSessionId;
@@ -124,14 +124,14 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
 
 
   /**
-   * State of the latest session
+   * The state of the latest session
    **/
   public ContinuousForecastGetSessionResponse state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "State of the latest session")
+  @ApiModelProperty(example = "null", required = true, value = "The state of the latest session")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -142,14 +142,14 @@ public class ContinuousForecastGetSessionResponse  implements Serializable {
 
 
   /**
-   * Failed session error code
+   * The error code if the latest session has a state of Error
    **/
   public ContinuousForecastGetSessionResponse errorCode(String errorCode) {
     this.errorCode = errorCode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Failed session error code")
+  @ApiModelProperty(example = "null", value = "The error code if the latest session has a state of Error")
   @JsonProperty("errorCode")
   public String getErrorCode() {
     return errorCode;

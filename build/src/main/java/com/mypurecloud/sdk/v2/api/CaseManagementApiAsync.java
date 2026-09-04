@@ -47,7 +47,9 @@ import com.mypurecloud.sdk.v2.model.ModelCase;
 import com.mypurecloud.sdk.v2.model.Stage;
 import com.mypurecloud.sdk.v2.model.StageListing;
 import com.mypurecloud.sdk.v2.model.Stageplan;
+import com.mypurecloud.sdk.v2.model.StageplanCreate;
 import com.mypurecloud.sdk.v2.model.StageplanListing;
+import com.mypurecloud.sdk.v2.model.StageplanReposition;
 import com.mypurecloud.sdk.v2.model.StageplanUpdate;
 import com.mypurecloud.sdk.v2.model.Step;
 import com.mypurecloud.sdk.v2.model.StepListing;
@@ -61,6 +63,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseCommentsMeCommentIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanDataschemaRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanStageplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationsRequest;
@@ -96,6 +99,8 @@ import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseCommentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseTerminateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanDataschemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanPublishRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanStageplanRepositionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanStageplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansQueryRequest;
@@ -390,6 +395,83 @@ public class CaseManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Empty>> deleteCasemanagementCaseplanDataschemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Stageplan from a draft Caseplan.
+   * 
+   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> deleteCasemanagementCaseplanStageplanAsync(DeleteCasemanagementCaseplanStageplanRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Stageplan from a draft Caseplan.
+   * 
+   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> deleteCasemanagementCaseplanStageplanAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
       final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3043,6 +3125,160 @@ public class CaseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Caseplan> response = (ApiResponse<Caseplan>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Reposition a Stageplan within a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> postCasemanagementCaseplanStageplanRepositionAsync(PostCasemanagementCaseplanStageplanRepositionRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Reposition a Stageplan within a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> postCasemanagementCaseplanStageplanRepositionAsync(ApiRequest<StageplanReposition> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Stageplan on a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Stageplan> postCasemanagementCaseplanStageplansAsync(PostCasemanagementCaseplanStageplansRequest request, final AsyncApiCallback<Stageplan> callback) {
+    try {
+      final SettableFuture<Stageplan> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Stageplan>() {}, new AsyncApiCallback<ApiResponse<Stageplan>>() {
+        @Override
+        public void onCompleted(ApiResponse<Stageplan> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Stageplan on a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Stageplan>> postCasemanagementCaseplanStageplansAsync(ApiRequest<StageplanCreate> request, final AsyncApiCallback<ApiResponse<Stageplan>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Stageplan>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Stageplan>() {}, new AsyncApiCallback<ApiResponse<Stageplan>>() {
+        @Override
+        public void onCompleted(ApiResponse<Stageplan> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Stageplan> response = (ApiResponse<Stageplan>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Stageplan> response = (ApiResponse<Stageplan>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

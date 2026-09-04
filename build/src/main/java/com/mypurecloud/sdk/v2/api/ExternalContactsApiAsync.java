@@ -47,6 +47,7 @@ import com.mypurecloud.sdk.v2.model.ContactImportJobStatusUpdateResponse;
 import com.mypurecloud.sdk.v2.model.ContactImportSettings;
 import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
+import com.mypurecloud.sdk.v2.model.ContactSearchRequest;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
 import com.mypurecloud.sdk.v2.model.ContactsExportListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
@@ -212,6 +213,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsEnrichRequ
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsMergeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupContactsRequest;
@@ -8594,6 +8596,81 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search for external contacts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactListing> postExternalcontactsContactsSearchAsync(PostExternalcontactsContactsSearchRequest request, final AsyncApiCallback<ContactListing> callback) {
+    try {
+      final SettableFuture<ContactListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search for external contacts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactListing>> postExternalcontactsContactsSearchAsync(ApiRequest<ContactSearchRequest> request, final AsyncApiCallback<ApiResponse<ContactListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

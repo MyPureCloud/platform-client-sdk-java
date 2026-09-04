@@ -43,8 +43,7 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpointChannel  implement
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
-    CONTENTOFFER("ContentOffer"),
-    WEBCHAT("Webchat");
+    CONTENTOFFER("ContentOffer");
 
     private String value;
 

@@ -43,6 +43,8 @@ public class ConversationAggregationView  implements Serializable {
  @JsonDeserialize(using = TargetEnumDeserializer.class)
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NAGENTDECLINED("nAgentDeclined"),
+    NALERTEXPIRED("nAlertExpired"),
     NBLINDTRANSFERRED("nBlindTransferred"),
     NBOTINTERACTIONS("nBotInteractions"),
     NCALLBACKATTEMPTS("nCallbackAttempts"),

@@ -229,7 +229,6 @@ docs/AgentUtilizationAggregateQueryFilter.md
 docs/AgentUtilizationAggregateQueryPredicate.md
 docs/AgentUtilizationAggregateQueryResponse.md
 docs/AgentUtilizationAggregationQuery.md
-docs/AgentUtilizationAggregationSort.md
 docs/AgentUtilizationAggregationView.md
 docs/AgentUtilizationAsyncAggregateQueryResponse.md
 docs/AgentUtilizationAsyncAggregationQuery.md
@@ -297,6 +296,8 @@ docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AlertingUnreadStatus.md
 docs/AllTimePoints.md
+docs/AllocationOutputsTemplate.md
+docs/AllocationResultsTemplate.md
 docs/Alteration.md
 docs/AlternativeShiftAgentScheduledShift.md
 docs/AlternativeShiftAsyncResponse.md
@@ -1218,6 +1219,9 @@ docs/ContactListing.md
 docs/ContactListingRequest.md
 docs/ContactListingResponse.md
 docs/ContactPhoneNumberColumn.md
+docs/ContactSearchOperation.md
+docs/ContactSearchRequest.md
+docs/ContactSimpleSearch.md
 docs/ContactSort.md
 docs/ContactVertex.md
 docs/ContactableStatus.md
@@ -1963,8 +1967,6 @@ docs/DataExtractionFileSchemaListing.md
 docs/DataExtractionFileUrl.md
 docs/DataExtractionFileUrlListing.md
 docs/DataIngestionRuleCriteria.md
-docs/DataIngestionRuleResponse.md
-docs/DataIngestionRuleResponseEntityListing.md
 docs/DataIngestionRuleStatusPatchRequest.md
 docs/DataIngestionRulesMetadata.md
 docs/DataPrivacyApi.json
@@ -2881,6 +2883,8 @@ docs/GenerateBuForecastRequest.md
 docs/GenerateGuideContentRequest.md
 docs/GenerateMeetingIdRequest.md
 docs/GeneratedGuideContent.md
+docs/GenericDataIngestionRuleResponse.md
+docs/GenericDataIngestionRuleResponseEntityListing.md
 docs/GenericSAML.md
 docs/GenericTemplate.md
 docs/GenesysBotConnector.md
@@ -5375,8 +5379,10 @@ docs/Stage.md
 docs/StageListing.md
 docs/StageReference.md
 docs/Stageplan.md
+docs/StageplanCreate.md
 docs/StageplanListing.md
 docs/StageplanReference.md
+docs/StageplanReposition.md
 docs/StageplanUpdate.md
 docs/StarrableDivision.md
 docs/StartScreenMonitorResponseBody.md
@@ -6811,6 +6817,7 @@ docs/deleteCasemanagementCase-example.txt
 docs/deleteCasemanagementCaseCommentsMeCommentId-example.txt
 docs/deleteCasemanagementCaseplan-example.txt
 docs/deleteCasemanagementCaseplanDataschema-example.txt
+docs/deleteCasemanagementCaseplanStageplan-example.txt
 docs/deleteChatsRoomMessage-example.txt
 docs/deleteChatsRoomMessagesPin-example.txt
 docs/deleteChatsRoomParticipant-example.txt
@@ -9139,6 +9146,8 @@ docs/postCasemanagementCaseComments-example.txt
 docs/postCasemanagementCaseTerminateJobs-example.txt
 docs/postCasemanagementCaseplanDataschemas-example.txt
 docs/postCasemanagementCaseplanPublish-example.txt
+docs/postCasemanagementCaseplanStageplanReposition-example.txt
+docs/postCasemanagementCaseplanStageplans-example.txt
 docs/postCasemanagementCaseplanVersions-example.txt
 docs/postCasemanagementCaseplans-example.txt
 docs/postCasemanagementCaseplansQuery-example.txt
@@ -9313,6 +9322,7 @@ docs/postExternalcontactsContactsEnrich-example.txt
 docs/postExternalcontactsContactsExports-example.txt
 docs/postExternalcontactsContactsMerge-example.txt
 docs/postExternalcontactsContactsSchemas-example.txt
+docs/postExternalcontactsContactsSearch-example.txt
 docs/postExternalcontactsExternalsources-example.txt
 docs/postExternalcontactsIdentifierlookup-example.txt
 docs/postExternalcontactsIdentifierlookupContacts-example.txt
@@ -10455,6 +10465,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseComment
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseplanDataschemaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseplanRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteCasemanagementCaseplanStageplanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomMessagesPinRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomParticipantRequest.java
@@ -12783,6 +12794,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseCommentsR
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseTerminateJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplanDataschemasRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplanPublishRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplanStageplanRepositionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplanStageplansRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplanVersionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplansQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCasemanagementCaseplansRequest.java
@@ -12957,6 +12970,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactsExp
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactsMergeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactsSchemasRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactsSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsExternalsourcesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsIdentifierlookupContactsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsIdentifierlookupOrganizationsRequest.java
@@ -14067,7 +14081,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentUtilizationAggregateQueryFilter.
 src/main/java/com/mypurecloud/sdk/v2/model/AgentUtilizationAggregateQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentUtilizationAggregateQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentUtilizationAggregationQuery.java
-src/main/java/com/mypurecloud/sdk/v2/model/AgentUtilizationAggregationSort.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentUtilizationAggregationView.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentUtilizationAsyncAggregateQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentUtilizationAsyncAggregationQuery.java
@@ -14133,6 +14146,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/AlertSummaryEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertablePresences.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertingUnreadStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/AllTimePoints.java
+src/main/java/com/mypurecloud/sdk/v2/model/AllocationOutputsTemplate.java
+src/main/java/com/mypurecloud/sdk/v2/model/AllocationResultsTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/Alteration.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlternativeShiftAgentScheduledShift.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlternativeShiftAsyncResponse.java
@@ -15030,6 +15045,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContactListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListingResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactPhoneNumberColumn.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactSearchOperation.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactSimpleSearch.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactSort.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactVertex.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactableStatus.java
@@ -15769,8 +15787,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/DataExtractionFileSchemaListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DataExtractionFileUrl.java
 src/main/java/com/mypurecloud/sdk/v2/model/DataExtractionFileUrlListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DataIngestionRuleCriteria.java
-src/main/java/com/mypurecloud/sdk/v2/model/DataIngestionRuleResponse.java
-src/main/java/com/mypurecloud/sdk/v2/model/DataIngestionRuleResponseEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DataIngestionRuleStatusPatchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/DataIngestionRulesMetadata.java
 src/main/java/com/mypurecloud/sdk/v2/model/DataRange.java
@@ -16665,6 +16681,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/GenerateBuForecastRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GenerateGuideContentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GenerateMeetingIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GeneratedGuideContent.java
+src/main/java/com/mypurecloud/sdk/v2/model/GenericDataIngestionRuleResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/GenericDataIngestionRuleResponseEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/GenericSAML.java
 src/main/java/com/mypurecloud/sdk/v2/model/GenericTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/GenesysBotConnector.java
@@ -19085,8 +19103,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/Stage.java
 src/main/java/com/mypurecloud/sdk/v2/model/StageListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/StageReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/Stageplan.java
+src/main/java/com/mypurecloud/sdk/v2/model/StageplanCreate.java
 src/main/java/com/mypurecloud/sdk/v2/model/StageplanListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/StageplanReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/StageplanReposition.java
 src/main/java/com/mypurecloud/sdk/v2/model/StageplanUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/StarrableDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/StartScreenMonitorResponseBody.java

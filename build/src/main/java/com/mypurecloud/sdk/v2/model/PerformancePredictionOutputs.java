@@ -44,14 +44,14 @@ public class PerformancePredictionOutputs  implements Serializable {
 
   
   /**
-   * Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results
+   * The beginning of the performance prediction results, in ISO-8601 format
    **/
   public PerformancePredictionOutputs calculationStartDate(Date calculationStartDate) {
     this.calculationStartDate = calculationStartDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results")
+  @ApiModelProperty(example = "null", required = true, value = "The beginning of the performance prediction results, in ISO-8601 format")
   @JsonProperty("calculationStartDate")
   public Date getCalculationStartDate() {
     return calculationStartDate;

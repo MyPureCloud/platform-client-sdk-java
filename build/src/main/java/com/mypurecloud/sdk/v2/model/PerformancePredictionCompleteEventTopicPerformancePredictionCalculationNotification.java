@@ -27,6 +27,7 @@ public class PerformancePredictionCompleteEventTopicPerformancePredictionCalcula
   private String scheduleId = null;
   private String weekDate = null;
   private String downloadUrl = null;
+  private String allocationDownloadUrl = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -143,6 +144,23 @@ public class PerformancePredictionCompleteEventTopicPerformancePredictionCalcula
 
   /**
    **/
+  public PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification allocationDownloadUrl(String allocationDownloadUrl) {
+    this.allocationDownloadUrl = allocationDownloadUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("allocationDownloadUrl")
+  public String getAllocationDownloadUrl() {
+    return allocationDownloadUrl;
+  }
+  public void setAllocationDownloadUrl(String allocationDownloadUrl) {
+    this.allocationDownloadUrl = allocationDownloadUrl;
+  }
+
+
+  /**
+   **/
   public PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification state(StateEnum state) {
     this.state = state;
     return this;
@@ -188,13 +206,14 @@ public class PerformancePredictionCompleteEventTopicPerformancePredictionCalcula
     return Objects.equals(this.scheduleId, performancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.scheduleId) &&
             Objects.equals(this.weekDate, performancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.weekDate) &&
             Objects.equals(this.downloadUrl, performancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.downloadUrl) &&
+            Objects.equals(this.allocationDownloadUrl, performancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.allocationDownloadUrl) &&
             Objects.equals(this.state, performancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.state) &&
             Objects.equals(this.error, performancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scheduleId, weekDate, downloadUrl, state, error);
+    return Objects.hash(scheduleId, weekDate, downloadUrl, allocationDownloadUrl, state, error);
   }
 
   @Override
@@ -205,6 +224,7 @@ public class PerformancePredictionCompleteEventTopicPerformancePredictionCalcula
     sb.append("    scheduleId: ").append(toIndentedString(scheduleId)).append("\n");
     sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("    allocationDownloadUrl: ").append(toIndentedString(allocationDownloadUrl)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");

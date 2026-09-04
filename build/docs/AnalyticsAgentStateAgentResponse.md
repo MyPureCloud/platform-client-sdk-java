@@ -17,6 +17,14 @@
 | **routingStatus** | [**RoutingStatusEnum**](#Enum--RoutingStatusEnum) | The user's routing status |  [optional] |
 | **routingStatusDate** | [**Date**](Date) | The timestamp for when the user's routing status began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **isOutOfOffice** | **Boolean** | Whether the user is out of office |  [optional] |
+| **managementUnitId** | **String** | The id of the user's management unit |  [optional] |
+| **businessUnitId** | **String** | The id of the user's business unit |  [optional] |
+| **adherenceState** | [**AdherenceStateEnum**](#Enum--AdherenceStateEnum) | The user's adherence state |  [optional] |
+| **adherenceImpact** | [**AdherenceImpactEnum**](#Enum--AdherenceImpactEnum) | The user's adherence impact |  [optional] |
+| **adherenceDate** | [**Date**](Date) | The timestamp for when the user's adherence state began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **scheduledActivityCodeId** | **String** | The id of the user's scheduled activity code |  [optional] |
+| **scheduledActivityCategory** | [**ScheduledActivityCategoryEnum**](#Enum--ScheduledActivityCategoryEnum) | The user's scheduled activity category |  [optional] |
+| **actualActivityCategory** | [**ActualActivityCategoryEnum**](#Enum--ActualActivityCategoryEnum) | The user's actual activity category |  [optional] |
 
 
 ## Enum: SystemPresenceEnum
@@ -50,6 +58,64 @@
 | COMMUNICATING | &quot;COMMUNICATING&quot; | 
 
 
+## Enum: AdherenceStateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INADHERENCE | &quot;InAdherence&quot; | 
+| OUTOFADHERENCE | &quot;OutOfAdherence&quot; | 
+| UNSCHEDULED | &quot;Unscheduled&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| IGNORED | &quot;Ignored&quot; | 
+| EXPLAINED | &quot;Explained&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+## Enum: AdherenceImpactEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| POSITIVE | &quot;Positive&quot; | 
+| NEGATIVE | &quot;Negative&quot; | 
+| NEUTRAL | &quot;Neutral&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+
+
+## Enum: ScheduledActivityCategoryEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ONQUEUEWORK | &quot;OnQueueWork&quot; | 
+| BREAK | &quot;Break&quot; | 
+| MEAL | &quot;Meal&quot; | 
+| MEETING | &quot;Meeting&quot; | 
+| OFFQUEUEWORK | &quot;OffQueueWork&quot; | 
+| TIMEOFF | &quot;TimeOff&quot; | 
+| TRAINING | &quot;Training&quot; | 
+| UNAVAILABLE | &quot;Unavailable&quot; | 
+| UNSCHEDULED | &quot;Unscheduled&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+
+
+## Enum: ActualActivityCategoryEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ONQUEUEWORK | &quot;OnQueueWork&quot; | 
+| BREAK | &quot;Break&quot; | 
+| MEAL | &quot;Meal&quot; | 
+| MEETING | &quot;Meeting&quot; | 
+| OFFQUEUEWORK | &quot;OffQueueWork&quot; | 
+| TIMEOFF | &quot;TimeOff&quot; | 
+| TRAINING | &quot;Training&quot; | 
+| UNAVAILABLE | &quot;Unavailable&quot; | 
+| UNSCHEDULED | &quot;Unscheduled&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

@@ -185,7 +185,10 @@ public class PostAnalyticsAgentsStatusCountsRequest {
 		SEGMENTTYPE("segmentType"),
 		PRESENCE("presence"),
 		ROUTINGSTATUS("routingStatus"),
-		ISOUTOFOFFICE("isOutOfOffice");
+		ISOUTOFOFFICE("isOutOfOffice"),
+		ADHERENCESTATE("adherenceState"),
+		SCHEDULEDACTIVITYCATEGORY("scheduledActivityCategory"),
+		ACTUALACTIVITYCATEGORY("actualActivityCategory");
 
 		private String value;
 

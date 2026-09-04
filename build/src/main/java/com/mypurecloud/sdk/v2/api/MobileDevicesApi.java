@@ -39,21 +39,23 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Delete device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
    * 
    * @param deviceId Device ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteMobiledevice(String deviceId) throws IOException, ApiException {
      deleteMobiledevice(createDeleteMobiledeviceRequest(deviceId));
   }
 
   /**
-   * Delete device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
    * 
    * @param deviceId Device ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteMobiledeviceWithHttpInfo(String deviceId) throws IOException {
     return deleteMobiledevice(createDeleteMobiledeviceRequest(deviceId).withHttpInfo());
@@ -67,11 +69,12 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Delete device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteMobiledevice(DeleteMobiledeviceRequest request) throws IOException, ApiException {
     try {
@@ -85,11 +88,12 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Delete device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteMobiledevice(ApiRequest<Void> request) throws IOException {
     try {
@@ -114,23 +118,25 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Get device
+   * (Deprecated) Get device
    * 
    * @param deviceId Device ID (required)
    * @return UserDevice
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserDevice getMobiledevice(String deviceId) throws IOException, ApiException {
     return  getMobiledevice(createGetMobiledeviceRequest(deviceId));
   }
 
   /**
-   * Get device
+   * (Deprecated) Get device
    * 
    * @param deviceId Device ID (required)
    * @return UserDevice
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserDevice> getMobiledeviceWithHttpInfo(String deviceId) throws IOException {
     return getMobiledevice(createGetMobiledeviceRequest(deviceId).withHttpInfo());
@@ -144,12 +150,13 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Get device
+   * (Deprecated) Get device
    * 
    * @param request The request object
    * @return UserDevice
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserDevice getMobiledevice(GetMobiledeviceRequest request) throws IOException, ApiException {
     try {
@@ -163,11 +170,12 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Get device
+   * (Deprecated) Get device
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserDevice> getMobiledevice(ApiRequest<Void> request) throws IOException {
     try {
@@ -192,7 +200,7 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Get a list of all devices.
+   * (Deprecated) Get a list of all devices.
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -200,19 +208,21 @@ public class MobileDevicesApi {
    * @return DirectoryUserDevicesListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DirectoryUserDevicesListing getMobiledevices(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     return  getMobiledevices(createGetMobiledevicesRequest(pageSize, pageNumber, sortOrder));
   }
 
   /**
-   * Get a list of all devices.
+   * (Deprecated) Get a list of all devices.
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Ascending or descending sort order (optional, default to ascending)
    * @return DirectoryUserDevicesListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DirectoryUserDevicesListing> getMobiledevicesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
     return getMobiledevices(createGetMobiledevicesRequest(pageSize, pageNumber, sortOrder).withHttpInfo());
@@ -230,12 +240,13 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Get a list of all devices.
+   * (Deprecated) Get a list of all devices.
    * 
    * @param request The request object
    * @return DirectoryUserDevicesListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DirectoryUserDevicesListing getMobiledevices(GetMobiledevicesRequest request) throws IOException, ApiException {
     try {
@@ -249,11 +260,12 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Get a list of all devices.
+   * (Deprecated) Get a list of all devices.
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DirectoryUserDevicesListing> getMobiledevices(ApiRequest<Void> request) throws IOException {
     try {
@@ -278,23 +290,25 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Create User device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
    * 
    * @param body Device (required)
    * @return UserDevice
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserDevice postMobiledevices(UserDevice body) throws IOException, ApiException {
     return  postMobiledevices(createPostMobiledevicesRequest(body));
   }
 
   /**
-   * Create User device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
    * 
    * @param body Device (required)
    * @return UserDevice
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserDevice> postMobiledevicesWithHttpInfo(UserDevice body) throws IOException {
     return postMobiledevices(createPostMobiledevicesRequest(body).withHttpInfo());
@@ -308,12 +322,13 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Create User device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
    * 
    * @param request The request object
    * @return UserDevice
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserDevice postMobiledevices(PostMobiledevicesRequest request) throws IOException, ApiException {
     try {
@@ -327,11 +342,12 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Create User device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserDevice> postMobiledevices(ApiRequest<UserDevice> request) throws IOException {
     try {
@@ -356,25 +372,27 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Update device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
    * 
    * @param deviceId Device ID (required)
    * @param body Device (optional)
    * @return UserDevice
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserDevice putMobiledevice(String deviceId, UserDevice body) throws IOException, ApiException {
     return  putMobiledevice(createPutMobiledeviceRequest(deviceId, body));
   }
 
   /**
-   * Update device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
    * 
    * @param deviceId Device ID (required)
    * @param body Device (optional)
    * @return UserDevice
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserDevice> putMobiledeviceWithHttpInfo(String deviceId, UserDevice body) throws IOException {
     return putMobiledevice(createPutMobiledeviceRequest(deviceId, body).withHttpInfo());
@@ -390,12 +408,13 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Update device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
    * 
    * @param request The request object
    * @return UserDevice
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserDevice putMobiledevice(PutMobiledeviceRequest request) throws IOException, ApiException {
     try {
@@ -409,11 +428,12 @@ public class MobileDevicesApi {
   }
 
   /**
-   * Update device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserDevice> putMobiledevice(ApiRequest<UserDevice> request) throws IOException {
     try {

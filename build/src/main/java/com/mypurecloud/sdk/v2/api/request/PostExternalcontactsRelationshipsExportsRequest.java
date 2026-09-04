@@ -54,6 +54,7 @@ import com.mypurecloud.sdk.v2.model.ContactImportJobStatusUpdateResponse;
 import com.mypurecloud.sdk.v2.model.ContactImportSettings;
 import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
+import com.mypurecloud.sdk.v2.model.ContactSearchRequest;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
 import com.mypurecloud.sdk.v2.model.ContactsExportListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;

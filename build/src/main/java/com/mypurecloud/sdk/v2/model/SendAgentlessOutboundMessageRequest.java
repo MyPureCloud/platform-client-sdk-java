@@ -26,6 +26,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
   
   private String fromAddress = null;
   private String toAddress = null;
+  private String externalContactId = null;
 
   private static class ToAddressMessengerTypeEnumDeserializer extends StdDeserializer<ToAddressMessengerTypeEnum> {
     public ToAddressMessengerTypeEnumDeserializer() {
@@ -129,6 +130,24 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
 
   /**
+   * The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.
+   **/
+  public SendAgentlessOutboundMessageRequest externalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.")
+  @JsonProperty("externalContactId")
+  public String getExternalContactId() {
+    return externalContactId;
+  }
+  public void setExternalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+  }
+
+
+  /**
    * The recipient messaging address messenger type.
    **/
   public SendAgentlessOutboundMessageRequest toAddressMessengerType(ToAddressMessengerTypeEnum toAddressMessengerType) {
@@ -212,6 +231,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
     return Objects.equals(this.fromAddress, sendAgentlessOutboundMessageRequest.fromAddress) &&
             Objects.equals(this.toAddress, sendAgentlessOutboundMessageRequest.toAddress) &&
+            Objects.equals(this.externalContactId, sendAgentlessOutboundMessageRequest.externalContactId) &&
             Objects.equals(this.toAddressMessengerType, sendAgentlessOutboundMessageRequest.toAddressMessengerType) &&
             Objects.equals(this.textBody, sendAgentlessOutboundMessageRequest.textBody) &&
             Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageRequest.messagingTemplate) &&
@@ -220,7 +240,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fromAddress, toAddress, toAddressMessengerType, textBody, messagingTemplate, useExistingActiveConversation);
+    return Objects.hash(fromAddress, toAddress, externalContactId, toAddressMessengerType, textBody, messagingTemplate, useExistingActiveConversation);
   }
 
   @Override
@@ -230,6 +250,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     
     sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
+    sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    toAddressMessengerType: ").append(toIndentedString(toAddressMessengerType)).append("\n");
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");

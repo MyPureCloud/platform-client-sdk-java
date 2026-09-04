@@ -42,7 +42,14 @@ public class WorkitemOnAttributeChangeConditionUpdate  implements Serializable {
  @JsonDeserialize(using = AttributeEnumDeserializer.class)
   public enum AttributeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    STATUSID("statusId");
+    STATUSID("statusId"),
+    PRIORITY("priority"),
+    QUEUEID("queueId"),
+    ASSIGNEEID("assigneeId"),
+    ASSIGNMENTSTATE("assignmentState"),
+    LANGUAGEID("languageId"),
+    EXTERNALTAG("externalTag"),
+    WRAPUP("wrapup");
 
     private String value;
 
@@ -72,6 +79,58 @@ public class WorkitemOnAttributeChangeConditionUpdate  implements Serializable {
   private AttributeEnum attribute = null;
   private String newValue = null;
   private String oldValue = null;
+
+  private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
+    public OperatorEnumDeserializer() {
+      super(OperatorEnumDeserializer.class);
+    }
+
+    @Override
+    public OperatorEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OperatorEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The comparison operator used to evaluate the priority attribute against the value.
+   */
+ @JsonDeserialize(using = OperatorEnumDeserializer.class)
+  public enum OperatorEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EQ("EQ"),
+    GT("GT"),
+    LT("LT"),
+    GTE("GTE"),
+    LTE("LTE");
+
+    private String value;
+
+    OperatorEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static OperatorEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (OperatorEnum value : OperatorEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return OperatorEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private OperatorEnum operator = null;
+  private Integer value = null;
 
   public WorkitemOnAttributeChangeConditionUpdate() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -103,14 +162,14 @@ public class WorkitemOnAttributeChangeConditionUpdate  implements Serializable {
 
 
   /**
-   * The new value of the attribute. If the attribute is updated to this value this part of the condition will be met.
+   * The new value of the attribute. If the attribute is updated to this value this part of the condition will be met. Required for exact-match conditions (when operator is not set).
    **/
   public WorkitemOnAttributeChangeConditionUpdate newValue(String newValue) {
     this.newValue = newValue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The new value of the attribute. If the attribute is updated to this value this part of the condition will be met.")
+  @ApiModelProperty(example = "null", value = "The new value of the attribute. If the attribute is updated to this value this part of the condition will be met. Required for exact-match conditions (when operator is not set).")
   @JsonProperty("newValue")
   public String getNewValue() {
     return newValue;
@@ -138,6 +197,42 @@ public class WorkitemOnAttributeChangeConditionUpdate  implements Serializable {
   }
 
 
+  /**
+   * The comparison operator used to evaluate the priority attribute against the value.
+   **/
+  public WorkitemOnAttributeChangeConditionUpdate operator(OperatorEnum operator) {
+    this.operator = operator;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The comparison operator used to evaluate the priority attribute against the value.")
+  @JsonProperty("operator")
+  public OperatorEnum getOperator() {
+    return operator;
+  }
+  public void setOperator(OperatorEnum operator) {
+    this.operator = operator;
+  }
+
+
+  /**
+   * The numeric value compared against the priority attribute using the operator. Required when operator is set. Only supported for the priority attribute.
+   **/
+  public WorkitemOnAttributeChangeConditionUpdate value(Integer value) {
+    this.value = value;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The numeric value compared against the priority attribute using the operator. Required when operator is set. Only supported for the priority attribute.")
+  @JsonProperty("value")
+  public Integer getValue() {
+    return value;
+  }
+  public void setValue(Integer value) {
+    this.value = value;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -150,12 +245,14 @@ public class WorkitemOnAttributeChangeConditionUpdate  implements Serializable {
 
     return Objects.equals(this.attribute, workitemOnAttributeChangeConditionUpdate.attribute) &&
             Objects.equals(this.newValue, workitemOnAttributeChangeConditionUpdate.newValue) &&
-            Objects.equals(this.oldValue, workitemOnAttributeChangeConditionUpdate.oldValue);
+            Objects.equals(this.oldValue, workitemOnAttributeChangeConditionUpdate.oldValue) &&
+            Objects.equals(this.operator, workitemOnAttributeChangeConditionUpdate.operator) &&
+            Objects.equals(this.value, workitemOnAttributeChangeConditionUpdate.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attribute, newValue, oldValue);
+    return Objects.hash(attribute, newValue, oldValue, operator, value);
   }
 
   @Override
@@ -166,6 +263,8 @@ public class WorkitemOnAttributeChangeConditionUpdate  implements Serializable {
     sb.append("    attribute: ").append(toIndentedString(attribute)).append("\n");
     sb.append("    newValue: ").append(toIndentedString(newValue)).append("\n");
     sb.append("    oldValue: ").append(toIndentedString(oldValue)).append("\n");
+    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -70,7 +70,8 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     WHATSAPP("WHATSAPP"),
     WEBMESSAGING("WEBMESSAGING"),
     OPEN("OPEN"),
-    APPLE("APPLE");
+    APPLE("APPLE"),
+    LINKEDIN("LINKEDIN");
 
     private String value;
 

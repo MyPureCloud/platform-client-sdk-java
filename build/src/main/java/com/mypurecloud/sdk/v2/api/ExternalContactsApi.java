@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.ContactImportJobStatusUpdateResponse;
 import com.mypurecloud.sdk.v2.model.ContactImportSettings;
 import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
+import com.mypurecloud.sdk.v2.model.ContactSearchRequest;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
 import com.mypurecloud.sdk.v2.model.ContactsExportListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
@@ -209,6 +210,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsEnrichRequ
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsMergeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupContactsRequest;
@@ -9318,6 +9320,84 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search for external contacts
+   * 
+   * @param body Search request (required)
+   * @return ContactListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListing postExternalcontactsContactsSearch(ContactSearchRequest body) throws IOException, ApiException {
+    return  postExternalcontactsContactsSearch(createPostExternalcontactsContactsSearchRequest(body));
+  }
+
+  /**
+   * Search for external contacts
+   * 
+   * @param body Search request (required)
+   * @return ContactListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListing> postExternalcontactsContactsSearchWithHttpInfo(ContactSearchRequest body) throws IOException {
+    return postExternalcontactsContactsSearch(createPostExternalcontactsContactsSearchRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsContactsSearchRequest createPostExternalcontactsContactsSearchRequest(ContactSearchRequest body) {
+    return PostExternalcontactsContactsSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search for external contacts
+   * 
+   * @param request The request object
+   * @return ContactListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListing postExternalcontactsContactsSearch(PostExternalcontactsContactsSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search for external contacts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListing> postExternalcontactsContactsSearch(ApiRequest<ContactSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

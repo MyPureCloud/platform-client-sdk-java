@@ -14,6 +14,8 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NAGENTDECLINED | &quot;nAgentDeclined&quot; | 
+| NALERTEXPIRED | &quot;nAlertExpired&quot; | 
 | NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; | 
 | NBOTINTERACTIONS | &quot;nBotInteractions&quot; | 
 | NCALLBACKATTEMPTS | &quot;nCallbackAttempts&quot; | 
@@ -106,4 +108,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

@@ -982,7 +982,7 @@ try {
 # **getSocialmediaTopicDataingestionrules**
 
 
-> [DataIngestionRuleResponseEntityListing](DataIngestionRuleResponseEntityListing) getSocialmediaTopicDataingestionrules(topicId, pageNumber, pageSize, includeDeleted)
+> [GenericDataIngestionRuleResponseEntityListing](GenericDataIngestionRuleResponseEntityListing) getSocialmediaTopicDataingestionrules(topicId, pageNumber, pageSize, includeDeleted)
 
 Retrieve all social topic data ingestion rules with pagination.
 
@@ -1019,7 +1019,7 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 Boolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted items in the result.
 try {
-    DataIngestionRuleResponseEntityListing result = apiInstance.getSocialmediaTopicDataingestionrules(topicId, pageNumber, pageSize, includeDeleted);
+    GenericDataIngestionRuleResponseEntityListing result = apiInstance.getSocialmediaTopicDataingestionrules(topicId, pageNumber, pageSize, includeDeleted);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SocialMediaApi#getSocialmediaTopicDataingestionrules");
@@ -1041,7 +1041,7 @@ try {
 
 ### Return type
 
-[**DataIngestionRuleResponseEntityListing**](DataIngestionRuleResponseEntityListing)
+[**GenericDataIngestionRuleResponseEntityListing**](GenericDataIngestionRuleResponseEntityListing)
 
 
 # **getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId**
@@ -3643,4 +3643,4 @@ try {
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

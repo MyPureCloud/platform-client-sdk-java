@@ -46,7 +46,13 @@ public class WfmActivityPlanJobCompleteTopicActivityPlanJobException  implements
   public enum ExceptionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNSCHEDULEDATTENDEES("UnscheduledAttendees"),
-    SESSIONSNOTDELETED("SessionsNotDeleted");
+    SESSIONSNOTDELETED("SessionsNotDeleted"),
+    INVALIDUSERIDS("InvalidUserIds"),
+    INVALIDFACILITATORID("InvalidFacilitatorId"),
+    RULEERROR("RuleError"),
+    INVALIDOCCURRENCE("InvalidOccurrence"),
+    NOSCHEDULEFOUND("NoScheduleFound"),
+    SESSIONUSERSNOTREMOVED("SessionUsersNotRemoved");
 
     private String value;
 

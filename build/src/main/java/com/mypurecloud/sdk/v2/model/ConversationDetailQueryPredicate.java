@@ -149,6 +149,8 @@ public class ConversationDetailQueryPredicate  implements Serializable {
  @JsonDeserialize(using = MetricEnumDeserializer.class)
   public enum MetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NAGENTDECLINED("nAgentDeclined"),
+    NALERTEXPIRED("nAlertExpired"),
     NBLINDTRANSFERRED("nBlindTransferred"),
     NBOTINTERACTIONS("nBotInteractions"),
     NCALLBACKATTEMPTS("nCallbackAttempts"),

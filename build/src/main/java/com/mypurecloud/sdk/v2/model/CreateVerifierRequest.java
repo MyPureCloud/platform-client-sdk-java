@@ -98,7 +98,7 @@ public class CreateVerifierRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The hashing algorithm for the TOTP verifier.")
+  @ApiModelProperty(example = "null", value = "The hashing algorithm for the TOTP verifier.")
   @JsonProperty("algorithm")
   public AlgorithmEnum getAlgorithm() {
     return algorithm;
@@ -118,7 +118,7 @@ public class CreateVerifierRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The number of digits in the TOTP code. Must be between 6 and 12.")
+  @ApiModelProperty(example = "null", value = "The number of digits in the TOTP code. Must be between 6 and 12.")
   @JsonProperty("digits")
   public Integer getDigits() {
     return digits;
@@ -136,7 +136,7 @@ public class CreateVerifierRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Indicates whether this verifier will be enabled.")
+  @ApiModelProperty(example = "null", value = "Indicates whether this verifier will be enabled.")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;
@@ -172,7 +172,7 @@ public class CreateVerifierRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The time period in seconds for the TOTP code.")
+  @ApiModelProperty(example = "null", value = "The time period in seconds for the TOTP code.")
   @JsonProperty("period")
   public Integer getPeriod() {
     return period;
@@ -192,7 +192,7 @@ public class CreateVerifierRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The size of the shared secret in bytes. Must be between 10 and 64.")
+  @ApiModelProperty(example = "null", value = "The size of the shared secret in bytes. Must be between 10 and 64.")
   @JsonProperty("secretSize")
   public Integer getSecretSize() {
     return secretSize;
@@ -210,7 +210,7 @@ public class CreateVerifierRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Indicates whether this will be the default verifier.")
+  @ApiModelProperty(example = "null", value = "Indicates whether this will be the default verifier.")
   @JsonProperty("default")
   public Boolean getDefault() {
     return _default;

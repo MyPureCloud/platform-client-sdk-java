@@ -105,7 +105,6 @@ public class JourneyAppEventsNotificationEventAction  implements Serializable {
  @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    WEBCHAT("webchat"),
     WEBMESSAGINGOFFER("webMessagingOffer"),
     CONTENTOFFER("contentOffer"),
     ARCHITECTFLOW("architectFlow");

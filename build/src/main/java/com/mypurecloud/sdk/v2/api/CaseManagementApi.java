@@ -44,7 +44,9 @@ import com.mypurecloud.sdk.v2.model.ModelCase;
 import com.mypurecloud.sdk.v2.model.Stage;
 import com.mypurecloud.sdk.v2.model.StageListing;
 import com.mypurecloud.sdk.v2.model.Stageplan;
+import com.mypurecloud.sdk.v2.model.StageplanCreate;
 import com.mypurecloud.sdk.v2.model.StageplanListing;
+import com.mypurecloud.sdk.v2.model.StageplanReposition;
 import com.mypurecloud.sdk.v2.model.StageplanUpdate;
 import com.mypurecloud.sdk.v2.model.Step;
 import com.mypurecloud.sdk.v2.model.StepListing;
@@ -58,6 +60,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseCommentsMeCommentIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanDataschemaRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteCasemanagementCaseplanStageplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCaseAssociationsRequest;
@@ -93,6 +96,8 @@ import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseCommentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseTerminateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanDataschemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanPublishRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanStageplanRepositionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanStageplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplanVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCasemanagementCaseplansQueryRequest;
@@ -418,6 +423,92 @@ public class CaseManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Empty> deleteCasemanagementCaseplanDataschema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a Stageplan from a draft Caseplan.
+   * 
+   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseplanId Caseplan identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteCasemanagementCaseplanStageplan(String caseplanId, String stageplanId) throws IOException, ApiException {
+    return  deleteCasemanagementCaseplanStageplan(createDeleteCasemanagementCaseplanStageplanRequest(caseplanId, stageplanId));
+  }
+
+  /**
+   * Delete a Stageplan from a draft Caseplan.
+   * 
+   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseplanId Caseplan identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteCasemanagementCaseplanStageplanWithHttpInfo(String caseplanId, String stageplanId) throws IOException {
+    return deleteCasemanagementCaseplanStageplan(createDeleteCasemanagementCaseplanStageplanRequest(caseplanId, stageplanId).withHttpInfo());
+  }
+
+  private DeleteCasemanagementCaseplanStageplanRequest createDeleteCasemanagementCaseplanStageplanRequest(String caseplanId, String stageplanId) {
+    return DeleteCasemanagementCaseplanStageplanRequest.builder()
+            .withCaseplanId(caseplanId)
+
+            .withStageplanId(stageplanId)
+
+            .build();
+  }
+
+  /**
+   * Delete a Stageplan from a draft Caseplan.
+   * 
+   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteCasemanagementCaseplanStageplan(DeleteCasemanagementCaseplanStageplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete a Stageplan from a draft Caseplan.
+   * 
+   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteCasemanagementCaseplanStageplan(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Empty>() {});
     }
@@ -3425,6 +3516,182 @@ public class CaseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Caseplan> response = (ApiResponse<Caseplan>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Reposition a Stageplan within a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseplanId Caseplan identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param body Stageplan reposition request. (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty postCasemanagementCaseplanStageplanReposition(String caseplanId, String stageplanId, StageplanReposition body) throws IOException, ApiException {
+    return  postCasemanagementCaseplanStageplanReposition(createPostCasemanagementCaseplanStageplanRepositionRequest(caseplanId, stageplanId, body));
+  }
+
+  /**
+   * Reposition a Stageplan within a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseplanId Caseplan identifier. (required)
+   * @param stageplanId Stageplan identifier. (required)
+   * @param body Stageplan reposition request. (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> postCasemanagementCaseplanStageplanRepositionWithHttpInfo(String caseplanId, String stageplanId, StageplanReposition body) throws IOException {
+    return postCasemanagementCaseplanStageplanReposition(createPostCasemanagementCaseplanStageplanRepositionRequest(caseplanId, stageplanId, body).withHttpInfo());
+  }
+
+  private PostCasemanagementCaseplanStageplanRepositionRequest createPostCasemanagementCaseplanStageplanRepositionRequest(String caseplanId, String stageplanId, StageplanReposition body) {
+    return PostCasemanagementCaseplanStageplanRepositionRequest.builder()
+            .withCaseplanId(caseplanId)
+
+            .withStageplanId(stageplanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Reposition a Stageplan within a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty postCasemanagementCaseplanStageplanReposition(PostCasemanagementCaseplanStageplanRepositionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Reposition a Stageplan within a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> postCasemanagementCaseplanStageplanReposition(ApiRequest<StageplanReposition> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a Stageplan on a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseplanId Caseplan identifier. (required)
+   * @param body Stageplan create request. (required)
+   * @return Stageplan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Stageplan postCasemanagementCaseplanStageplans(String caseplanId, StageplanCreate body) throws IOException, ApiException {
+    return  postCasemanagementCaseplanStageplans(createPostCasemanagementCaseplanStageplansRequest(caseplanId, body));
+  }
+
+  /**
+   * Create a Stageplan on a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseplanId Caseplan identifier. (required)
+   * @param body Stageplan create request. (required)
+   * @return Stageplan
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Stageplan> postCasemanagementCaseplanStageplansWithHttpInfo(String caseplanId, StageplanCreate body) throws IOException {
+    return postCasemanagementCaseplanStageplans(createPostCasemanagementCaseplanStageplansRequest(caseplanId, body).withHttpInfo());
+  }
+
+  private PostCasemanagementCaseplanStageplansRequest createPostCasemanagementCaseplanStageplansRequest(String caseplanId, StageplanCreate body) {
+    return PostCasemanagementCaseplanStageplansRequest.builder()
+            .withCaseplanId(caseplanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a Stageplan on a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Stageplan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Stageplan postCasemanagementCaseplanStageplans(PostCasemanagementCaseplanStageplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Stageplan> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Stageplan>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Stageplan on a draft Caseplan.
+   * 
+   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Stageplan> postCasemanagementCaseplanStageplans(ApiRequest<StageplanCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Stageplan>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Stageplan> response = (ApiResponse<Stageplan>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Stageplan> response = (ApiResponse<Stageplan>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

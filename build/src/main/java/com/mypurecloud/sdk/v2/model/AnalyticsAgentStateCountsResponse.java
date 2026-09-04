@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AgentStateActivityCategoryCount;
+import com.mypurecloud.sdk.v2.model.AgentStateAdherenceStateCount;
 import com.mypurecloud.sdk.v2.model.AgentStateIsOutOfOfficeCount;
 import com.mypurecloud.sdk.v2.model.AgentStatePresenceCount;
 import com.mypurecloud.sdk.v2.model.AgentStateRoutingStatusCount;
@@ -32,6 +34,9 @@ public class AnalyticsAgentStateCountsResponse  implements Serializable {
   private List<AgentStatePresenceCount> presenceCounts = null;
   private List<AgentStateRoutingStatusCount> routingStatusCounts = null;
   private List<AgentStateIsOutOfOfficeCount> isOutOfOfficeCounts = null;
+  private List<AgentStateAdherenceStateCount> adherenceStateCounts = null;
+  private List<AgentStateActivityCategoryCount> scheduledActivityCategoryCounts = null;
+  private List<AgentStateActivityCategoryCount> actualActivityCategoryCounts = null;
 
   public AnalyticsAgentStateCountsResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -39,6 +44,9 @@ public class AnalyticsAgentStateCountsResponse  implements Serializable {
       presenceCounts = new ArrayList<AgentStatePresenceCount>();
       routingStatusCounts = new ArrayList<AgentStateRoutingStatusCount>();
       isOutOfOfficeCounts = new ArrayList<AgentStateIsOutOfOfficeCount>();
+      adherenceStateCounts = new ArrayList<AgentStateAdherenceStateCount>();
+      scheduledActivityCategoryCounts = new ArrayList<AgentStateActivityCategoryCount>();
+      actualActivityCategoryCounts = new ArrayList<AgentStateActivityCategoryCount>();
     }
   }
 
@@ -48,6 +56,9 @@ public class AnalyticsAgentStateCountsResponse  implements Serializable {
       presenceCounts = new ArrayList<AgentStatePresenceCount>();
       routingStatusCounts = new ArrayList<AgentStateRoutingStatusCount>();
       isOutOfOfficeCounts = new ArrayList<AgentStateIsOutOfOfficeCount>();
+      adherenceStateCounts = new ArrayList<AgentStateAdherenceStateCount>();
+      scheduledActivityCategoryCounts = new ArrayList<AgentStateActivityCategoryCount>();
+      actualActivityCategoryCounts = new ArrayList<AgentStateActivityCategoryCount>();
     }
   }
 
@@ -124,6 +135,60 @@ public class AnalyticsAgentStateCountsResponse  implements Serializable {
   }
 
 
+  /**
+   * List of count by adherence state
+   **/
+  public AnalyticsAgentStateCountsResponse adherenceStateCounts(List<AgentStateAdherenceStateCount> adherenceStateCounts) {
+    this.adherenceStateCounts = adherenceStateCounts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of count by adherence state")
+  @JsonProperty("adherenceStateCounts")
+  public List<AgentStateAdherenceStateCount> getAdherenceStateCounts() {
+    return adherenceStateCounts;
+  }
+  public void setAdherenceStateCounts(List<AgentStateAdherenceStateCount> adherenceStateCounts) {
+    this.adherenceStateCounts = adherenceStateCounts;
+  }
+
+
+  /**
+   * List of count by scheduled activity category
+   **/
+  public AnalyticsAgentStateCountsResponse scheduledActivityCategoryCounts(List<AgentStateActivityCategoryCount> scheduledActivityCategoryCounts) {
+    this.scheduledActivityCategoryCounts = scheduledActivityCategoryCounts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of count by scheduled activity category")
+  @JsonProperty("scheduledActivityCategoryCounts")
+  public List<AgentStateActivityCategoryCount> getScheduledActivityCategoryCounts() {
+    return scheduledActivityCategoryCounts;
+  }
+  public void setScheduledActivityCategoryCounts(List<AgentStateActivityCategoryCount> scheduledActivityCategoryCounts) {
+    this.scheduledActivityCategoryCounts = scheduledActivityCategoryCounts;
+  }
+
+
+  /**
+   * List of count by actual activity category
+   **/
+  public AnalyticsAgentStateCountsResponse actualActivityCategoryCounts(List<AgentStateActivityCategoryCount> actualActivityCategoryCounts) {
+    this.actualActivityCategoryCounts = actualActivityCategoryCounts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of count by actual activity category")
+  @JsonProperty("actualActivityCategoryCounts")
+  public List<AgentStateActivityCategoryCount> getActualActivityCategoryCounts() {
+    return actualActivityCategoryCounts;
+  }
+  public void setActualActivityCategoryCounts(List<AgentStateActivityCategoryCount> actualActivityCategoryCounts) {
+    this.actualActivityCategoryCounts = actualActivityCategoryCounts;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -137,12 +202,15 @@ public class AnalyticsAgentStateCountsResponse  implements Serializable {
     return Objects.equals(this.segmentCounts, analyticsAgentStateCountsResponse.segmentCounts) &&
             Objects.equals(this.presenceCounts, analyticsAgentStateCountsResponse.presenceCounts) &&
             Objects.equals(this.routingStatusCounts, analyticsAgentStateCountsResponse.routingStatusCounts) &&
-            Objects.equals(this.isOutOfOfficeCounts, analyticsAgentStateCountsResponse.isOutOfOfficeCounts);
+            Objects.equals(this.isOutOfOfficeCounts, analyticsAgentStateCountsResponse.isOutOfOfficeCounts) &&
+            Objects.equals(this.adherenceStateCounts, analyticsAgentStateCountsResponse.adherenceStateCounts) &&
+            Objects.equals(this.scheduledActivityCategoryCounts, analyticsAgentStateCountsResponse.scheduledActivityCategoryCounts) &&
+            Objects.equals(this.actualActivityCategoryCounts, analyticsAgentStateCountsResponse.actualActivityCategoryCounts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentCounts, presenceCounts, routingStatusCounts, isOutOfOfficeCounts);
+    return Objects.hash(segmentCounts, presenceCounts, routingStatusCounts, isOutOfOfficeCounts, adherenceStateCounts, scheduledActivityCategoryCounts, actualActivityCategoryCounts);
   }
 
   @Override
@@ -154,6 +222,9 @@ public class AnalyticsAgentStateCountsResponse  implements Serializable {
     sb.append("    presenceCounts: ").append(toIndentedString(presenceCounts)).append("\n");
     sb.append("    routingStatusCounts: ").append(toIndentedString(routingStatusCounts)).append("\n");
     sb.append("    isOutOfOfficeCounts: ").append(toIndentedString(isOutOfOfficeCounts)).append("\n");
+    sb.append("    adherenceStateCounts: ").append(toIndentedString(adherenceStateCounts)).append("\n");
+    sb.append("    scheduledActivityCategoryCounts: ").append(toIndentedString(scheduledActivityCategoryCounts)).append("\n");
+    sb.append("    actualActivityCategoryCounts: ").append(toIndentedString(actualActivityCategoryCounts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

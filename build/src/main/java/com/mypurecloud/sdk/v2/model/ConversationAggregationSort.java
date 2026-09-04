@@ -42,6 +42,8 @@ public class ConversationAggregationSort  implements Serializable {
  @JsonDeserialize(using = NameEnumDeserializer.class)
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NAGENTDECLINED("nAgentDeclined"),
+    NALERTEXPIRED("nAlertExpired"),
     NBLINDTRANSFERRED("nBlindTransferred"),
     NBOTINTERACTIONS("nBotInteractions"),
     NCALLBACKATTEMPTS("nCallbackAttempts"),

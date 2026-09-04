@@ -70,7 +70,8 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
     WHATSAPP("WHATSAPP"),
     WEBMESSAGING("WEBMESSAGING"),
     OPEN("OPEN"),
-    APPLE("APPLE");
+    APPLE("APPLE"),
+    LINKEDIN("LINKEDIN");
 
     private String value;
 

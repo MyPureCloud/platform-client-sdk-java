@@ -17,9 +17,7 @@ import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MessageInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -88,20 +86,17 @@ public class GoogleBusinessProfileDataIngestionRuleResponse  implements Serializ
   private Date dateModified = null;
   private String platform = null;
   private MessageInfo ingestionRuleInfo = null;
-  private List<String> countries = null;
   private String integrationId = null;
   private DomainEntityRef externalSource = null;
   private String selfUri = null;
 
   public GoogleBusinessProfileDataIngestionRuleResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      countries = new ArrayList<String>();
     }
   }
 
   public GoogleBusinessProfileDataIngestionRuleResponse(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
-      countries = new ArrayList<String>();
     }
   }
 
@@ -235,13 +230,6 @@ public class GoogleBusinessProfileDataIngestionRuleResponse  implements Serializ
   }
 
 
-  @ApiModelProperty(example = "null", value = "The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.")
-  @JsonProperty("countries")
-  public List<String> getCountries() {
-    return countries;
-  }
-
-
   /**
    * The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/open/extensions/googlebusinessprofile resource
    **/
@@ -304,7 +292,6 @@ public class GoogleBusinessProfileDataIngestionRuleResponse  implements Serializ
             Objects.equals(this.dateModified, googleBusinessProfileDataIngestionRuleResponse.dateModified) &&
             Objects.equals(this.platform, googleBusinessProfileDataIngestionRuleResponse.platform) &&
             Objects.equals(this.ingestionRuleInfo, googleBusinessProfileDataIngestionRuleResponse.ingestionRuleInfo) &&
-            Objects.equals(this.countries, googleBusinessProfileDataIngestionRuleResponse.countries) &&
             Objects.equals(this.integrationId, googleBusinessProfileDataIngestionRuleResponse.integrationId) &&
             Objects.equals(this.externalSource, googleBusinessProfileDataIngestionRuleResponse.externalSource) &&
             Objects.equals(this.selfUri, googleBusinessProfileDataIngestionRuleResponse.selfUri);
@@ -312,7 +299,7 @@ public class GoogleBusinessProfileDataIngestionRuleResponse  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, ingestionRuleInfo, countries, integrationId, externalSource, selfUri);
+    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, ingestionRuleInfo, integrationId, externalSource, selfUri);
   }
 
   @Override
@@ -329,7 +316,6 @@ public class GoogleBusinessProfileDataIngestionRuleResponse  implements Serializ
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("    ingestionRuleInfo: ").append(toIndentedString(ingestionRuleInfo)).append("\n");
-    sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    externalSource: ").append(toIndentedString(externalSource)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -84,6 +84,55 @@ public class ConversationIntentSuggestionsTopicSuggestionContext  implements Ser
   private String language = null;
   private ConversationIntentSuggestionsTopicQueryReformulationContext queryReformulationContext = null;
 
+  private static class ParticipantTypeEnumDeserializer extends StdDeserializer<ParticipantTypeEnum> {
+    public ParticipantTypeEnumDeserializer() {
+      super(ParticipantTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ParticipantTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ParticipantTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets participantType
+   */
+ @JsonDeserialize(using = ParticipantTypeEnumDeserializer.class)
+  public enum ParticipantTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
+    AGENT("AGENT"),
+    CUSTOMER("CUSTOMER");
+
+    private String value;
+
+    ParticipantTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ParticipantTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ParticipantTypeEnum value : ParticipantTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ParticipantTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ParticipantTypeEnum participantType = null;
+
   public ConversationIntentSuggestionsTopicSuggestionContext() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
     }
@@ -265,6 +314,23 @@ public class ConversationIntentSuggestionsTopicSuggestionContext  implements Ser
   }
 
 
+  /**
+   **/
+  public ConversationIntentSuggestionsTopicSuggestionContext participantType(ParticipantTypeEnum participantType) {
+    this.participantType = participantType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("participantType")
+  public ParticipantTypeEnum getParticipantType() {
+    return participantType;
+  }
+  public void setParticipantType(ParticipantTypeEnum participantType) {
+    this.participantType = participantType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -284,12 +350,13 @@ public class ConversationIntentSuggestionsTopicSuggestionContext  implements Ser
             Objects.equals(this.messageId, conversationIntentSuggestionsTopicSuggestionContext.messageId) &&
             Objects.equals(this.queryStatement, conversationIntentSuggestionsTopicSuggestionContext.queryStatement) &&
             Objects.equals(this.language, conversationIntentSuggestionsTopicSuggestionContext.language) &&
-            Objects.equals(this.queryReformulationContext, conversationIntentSuggestionsTopicSuggestionContext.queryReformulationContext);
+            Objects.equals(this.queryReformulationContext, conversationIntentSuggestionsTopicSuggestionContext.queryReformulationContext) &&
+            Objects.equals(this.participantType, conversationIntentSuggestionsTopicSuggestionContext.participantType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, utteranceId, messageId, queryStatement, language, queryReformulationContext);
+    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, utteranceId, messageId, queryStatement, language, queryReformulationContext, participantType);
   }
 
   @Override
@@ -307,6 +374,7 @@ public class ConversationIntentSuggestionsTopicSuggestionContext  implements Ser
     sb.append("    queryStatement: ").append(toIndentedString(queryStatement)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    queryReformulationContext: ").append(toIndentedString(queryReformulationContext)).append("\n");
+    sb.append("    participantType: ").append(toIndentedString(participantType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

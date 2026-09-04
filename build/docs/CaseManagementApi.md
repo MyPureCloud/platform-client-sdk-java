@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteCasemanagementCaseCommentsMeCommentId**](CaseManagementApi#deleteCasemanagementCaseCommentsMeCommentId) | Delete my Comment. |
 | [**deleteCasemanagementCaseplan**](CaseManagementApi#deleteCasemanagementCaseplan) | Delete a Caseplan. |
 | [**deleteCasemanagementCaseplanDataschema**](CaseManagementApi#deleteCasemanagementCaseplanDataschema) | Remove a data schema from a draft Caseplan. |
+| [**deleteCasemanagementCaseplanStageplan**](CaseManagementApi#deleteCasemanagementCaseplanStageplan) | Delete a Stageplan from a draft Caseplan. |
 | [**getCasemanagementCase**](CaseManagementApi#getCasemanagementCase) | Get a Case. |
 | [**getCasemanagementCaseAssociation**](CaseManagementApi#getCasemanagementCaseAssociation) | Get a Case Association. |
 | [**getCasemanagementCaseAssociations**](CaseManagementApi#getCasemanagementCaseAssociations) | Get a list of Case associations for the Case. |
@@ -43,6 +44,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postCasemanagementCaseTerminateJobs**](CaseManagementApi#postCasemanagementCaseTerminateJobs) | Create a Terminate Job for a Case. |
 | [**postCasemanagementCaseplanDataschemas**](CaseManagementApi#postCasemanagementCaseplanDataschemas) | Add a data schema to a draft Caseplan. |
 | [**postCasemanagementCaseplanPublish**](CaseManagementApi#postCasemanagementCaseplanPublish) | Publish Caseplan. |
+| [**postCasemanagementCaseplanStageplanReposition**](CaseManagementApi#postCasemanagementCaseplanStageplanReposition) | Reposition a Stageplan within a draft Caseplan. |
+| [**postCasemanagementCaseplanStageplans**](CaseManagementApi#postCasemanagementCaseplanStageplans) | Create a Stageplan on a draft Caseplan. |
 | [**postCasemanagementCaseplanVersions**](CaseManagementApi#postCasemanagementCaseplanVersions) | Create Caseplan version. |
 | [**postCasemanagementCaseplans**](CaseManagementApi#postCasemanagementCaseplans) | Create a Caseplan. |
 | [**postCasemanagementCaseplansQuery**](CaseManagementApi#postCasemanagementCaseplansQuery) | Query for Caseplans. |
@@ -286,6 +289,69 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **caseplanId** | **String**| Caseplan identifier. | 
 | **schemaKeyName** | **String**| Schema key (for example \&quot;default\&quot;). | 
+{: class="table-striped"}
+
+
+### Return type
+
+**Empty**
+
+
+# **deleteCasemanagementCaseplanStageplan**
+
+
+> Empty deleteCasemanagementCaseplanStageplan(caseplanId, stageplanId)
+
+Delete a Stageplan from a draft Caseplan.
+
+deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}  
+
+Requires ANY permissions: 
+
+* caseManagement:stageplan:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+String stageplanId = "stageplanId_example"; // String | Stageplan identifier.
+try {
+    Empty result = apiInstance.deleteCasemanagementCaseplanStageplan(caseplanId, stageplanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#deleteCasemanagementCaseplanStageplan");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseplanId** | **String**| Caseplan identifier. | 
+| **stageplanId** | **String**| Stageplan identifier. | 
 {: class="table-striped"}
 
 
@@ -2489,6 +2555,134 @@ try {
 [**Caseplan**](Caseplan)
 
 
+# **postCasemanagementCaseplanStageplanReposition**
+
+
+> Empty postCasemanagementCaseplanStageplanReposition(caseplanId, stageplanId, body)
+
+Reposition a Stageplan within a draft Caseplan.
+
+postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition  
+
+Requires ANY permissions: 
+
+* caseManagement:stageplan:reposition
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+String stageplanId = "stageplanId_example"; // String | Stageplan identifier.
+StageplanReposition body = new StageplanReposition(); // StageplanReposition | Stageplan reposition request.
+try {
+    Empty result = apiInstance.postCasemanagementCaseplanStageplanReposition(caseplanId, stageplanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#postCasemanagementCaseplanStageplanReposition");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseplanId** | **String**| Caseplan identifier. | 
+| **stageplanId** | **String**| Stageplan identifier. | 
+| **body** | [**StageplanReposition**](StageplanReposition)| Stageplan reposition request. | 
+{: class="table-striped"}
+
+
+### Return type
+
+**Empty**
+
+
+# **postCasemanagementCaseplanStageplans**
+
+
+> [Stageplan](Stageplan) postCasemanagementCaseplanStageplans(caseplanId, body)
+
+Create a Stageplan on a draft Caseplan.
+
+postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans  
+
+Requires ANY permissions: 
+
+* caseManagement:stageplan:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+StageplanCreate body = new StageplanCreate(); // StageplanCreate | Stageplan create request.
+try {
+    Stageplan result = apiInstance.postCasemanagementCaseplanStageplans(caseplanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#postCasemanagementCaseplanStageplans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseplanId** | **String**| Caseplan identifier. | 
+| **body** | [**StageplanCreate**](StageplanCreate)| Stageplan create request. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Stageplan**](Stageplan)
+
+
 # **postCasemanagementCaseplanVersions**
 
 
@@ -2971,4 +3165,4 @@ try {
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

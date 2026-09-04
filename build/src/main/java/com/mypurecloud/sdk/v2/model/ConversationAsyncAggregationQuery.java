@@ -180,6 +180,8 @@ public class ConversationAsyncAggregationQuery  implements Serializable {
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NAGENTDECLINED("nAgentDeclined"),
+    NALERTEXPIRED("nAlertExpired"),
     NBLINDTRANSFERRED("nBlindTransferred"),
     NBOTINTERACTIONS("nBotInteractions"),
     NCALLBACKATTEMPTS("nCallbackAttempts"),

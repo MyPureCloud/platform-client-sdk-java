@@ -43,11 +43,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Delete device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteMobiledeviceAsync(DeleteMobiledeviceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -77,11 +78,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Delete device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteMobiledeviceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -118,11 +120,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Get device
+   * (Deprecated) Get device
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UserDevice> getMobiledeviceAsync(GetMobiledeviceRequest request, final AsyncApiCallback<UserDevice> callback) {
     try {
@@ -152,11 +155,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Get device
+   * (Deprecated) Get device
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UserDevice>> getMobiledeviceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserDevice>> callback) {
     try {
@@ -193,11 +197,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Get a list of all devices.
+   * (Deprecated) Get a list of all devices.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<DirectoryUserDevicesListing> getMobiledevicesAsync(GetMobiledevicesRequest request, final AsyncApiCallback<DirectoryUserDevicesListing> callback) {
     try {
@@ -227,11 +232,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Get a list of all devices.
+   * (Deprecated) Get a list of all devices.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<DirectoryUserDevicesListing>> getMobiledevicesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DirectoryUserDevicesListing>> callback) {
     try {
@@ -268,11 +274,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Create User device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UserDevice> postMobiledevicesAsync(PostMobiledevicesRequest request, final AsyncApiCallback<UserDevice> callback) {
     try {
@@ -302,11 +309,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Create User device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UserDevice>> postMobiledevicesAsync(ApiRequest<UserDevice> request, final AsyncApiCallback<ApiResponse<UserDevice>> callback) {
     try {
@@ -343,11 +351,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Update device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UserDevice> putMobiledeviceAsync(PutMobiledeviceRequest request, final AsyncApiCallback<UserDevice> callback) {
     try {
@@ -377,11 +386,12 @@ public class MobileDevicesApiAsync {
   }
 
   /**
-   * Update device
+   * (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UserDevice>> putMobiledeviceAsync(ApiRequest<UserDevice> request, final AsyncApiCallback<ApiResponse<UserDevice>> callback) {
     try {

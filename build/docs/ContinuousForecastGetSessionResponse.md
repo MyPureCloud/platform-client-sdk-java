@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **sessionId** | **String** | Latest session ID of the business unit |  [optional] |
-| **lastSuccessfulSessionId** | **String** | Last successful session ID of the business unit |  [optional] |
-| **state** | [**StateEnum**](#Enum--StateEnum) | State of the latest session |  [optional] |
-| **errorCode** | **String** | Failed session error code |  [optional] |
+| **sessionId** | **String** | The ID of the latest session, regardless of the session's status |  |
+| **lastSuccessfulSessionId** | **String** | The ID of the last session that has a state of Complete |  |
+| **state** | [**StateEnum**](#Enum--StateEnum) | The state of the latest session |  |
+| **errorCode** | **String** | The error code if the latest session has a state of Error |  [optional] |
 
 
 ## Enum: StateEnum
@@ -23,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
